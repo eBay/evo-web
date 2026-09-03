@@ -27,7 +27,8 @@ export interface Input extends Omit<Marko.HTML.Div, "aria-label" | "role"> {
   role="img"
   aria-label=a11yText
   class=["star-rating", inputClass]
-  data-stars=toDataStars(value)>
+  data-stars=toDataStars(value)
+>
   <for until=5>
     <evo-icon-star-dynamic class="star-rating__icon"/>
   </for>

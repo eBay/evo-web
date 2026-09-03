@@ -57,8 +57,8 @@ static const MIN_PAGES = 5;
 <const/hasDots=variant === "show-last" || variant === "overflow">
 <const/hasOverflow=variant === "overflow">
 <const/lastItemIndex=baseItems.length - 1>
-<const/dotsIndex=(hasDots ? lastItemIndex : -1)>
-<const/leadingDotsIndex=(hasOverflow ? 1 : -1)>
+<const/dotsIndex=hasDots ? lastItemIndex : -1>
+<const/leadingDotsIndex=hasOverflow ? 1 : -1>
 
 <const/{ start, end, hideDots /* , hideLeadingDots */ }=(() => {
   let hideDots = false;
@@ -129,13 +129,11 @@ static const MIN_PAGES = 5;
   ...htmlInput
   role="navigation"
   class=["pagination", inputClass]
-  aria-labelledby=headingId>
+  aria-labelledby=headingId
+>
   <span aria-live="polite" role="status">
-    <${a11yHeadingTag} id=headingId class="clipped">
-      ${a11yCurrentText}
-    </>
+    <${a11yHeadingTag} id=headingId class="clipped">${a11yCurrentText}</>
   </span>
-
   <if=prev>
     <evo-icon-button
       ...prev
@@ -145,7 +143,8 @@ static const MIN_PAGES = 5;
         prev.class,
       ]
       a11yText=prev.a11yText || "Previous Page"
-      style=[prev.style, { "min-width": "40" }]>
+      style=[prev.style, { "min-width": "40" }]
+    >
       <evo-icon-arrow-left-16/>
     </evo-icon-button>
   </if>
@@ -197,7 +196,8 @@ static const MIN_PAGES = 5;
         <${item.href ? "a" : "button"}
           ...item
           class=["pagination__item", item.class]
-          aria-current=item.current && "page"/>
+          aria-current=item.current && "page"
+        />
       </li>
     </for>
   </ol>
@@ -211,7 +211,8 @@ static const MIN_PAGES = 5;
         next?.class,
       ]
       a11yText=next.a11yText || "Next Page"
-      style=[next.style, { "min-width": "40" }]>
+      style=[next.style, { "min-width": "40" }]
+    >
       <evo-icon-arrow-right-16/>
     </evo-icon-button>
   </if>

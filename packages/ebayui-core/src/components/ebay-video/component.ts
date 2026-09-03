@@ -48,6 +48,9 @@ const compactLayoutControlPanelElements = [
 ];
 
 const videoConfig = {
+    // shaka-player 5 no longer merges partial UI configs with the defaults,
+    // so the buffering spinner must be requested explicitly
+    showBufferingSpinner: true,
     doubleClickForFullscreen: true,
     singleClickForPlayAndPause: true,
     customContextMenu: true,
@@ -58,6 +61,7 @@ const videoConfig = {
 };
 
 const compactConfig = {
+    showBufferingSpinner: true,
     doubleClickForFullscreen: true,
     singleClickForPlayAndPause: true,
     customContextMenu: true,
@@ -429,6 +433,7 @@ class Video extends Marko.Component<Input, State> {
         this.ui.configure({
             controlPanelElements: [],
             addSeekBar: false,
+            showBufferingSpinner: true,
             ...(this.input.nav ? { showUIAlways: true } : {}),
         });
 

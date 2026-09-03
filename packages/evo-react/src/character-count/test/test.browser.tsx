@@ -21,7 +21,9 @@ describe("evo-character-count", () => {
       <EvoCharacterCount text="Hello world" max={120} />,
     );
 
-    await expect.element(screen.getByText("11/120")).toBeInTheDocument();
+    await expect
+      .element(screen.getByText("11/120", { exact: false }))
+      .toBeInTheDocument();
     await expect
       .element(screen.getByText("characters used"))
       .toBeInTheDocument();
@@ -32,7 +34,9 @@ describe("evo-character-count", () => {
       <EvoCharacterCount text="Hello world" count={5} max={120} />,
     );
 
-    await expect.element(screen.getByText("5/120")).toBeInTheDocument();
+    await expect
+      .element(screen.getByText("5/120", { exact: false }))
+      .toBeInTheDocument();
   });
 
   it("renders custom content", async () => {

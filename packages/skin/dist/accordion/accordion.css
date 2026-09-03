@@ -3,7 +3,6 @@ ul.accordion {
     padding: 0;
     width: 100%;
 }
-
 ul.accordion ::marker {
     font-size: 0;
 }
@@ -60,7 +59,6 @@ ul.accordion--animated
     animation: chevron-bounce-open var(--motion-duration-medium-1)
         var(--motion-easing-standard) var(--motion-duration-short-1);
 }
-
 ul.accordion details svg.details__expand,
 ul.accordion details[open] svg.details__collapse {
     display: inline-block;

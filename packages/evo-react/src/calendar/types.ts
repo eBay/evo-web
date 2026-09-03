@@ -144,8 +144,6 @@ export type RangeCalendarProps = BaseCalendarProps & {
 };
 
 export type EvoCalendarProps =
-  | StaticCalendarProps
-  | DayCalendarProps
-  | RangeCalendarProps;
+  StaticCalendarProps | DayCalendarProps | RangeCalendarProps;
 
 export type SelectedValue = DayISO | DateRange;

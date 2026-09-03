@@ -1,5 +1,6 @@
 import flags from "../../../../data/flags";
-import { flag as flagStyle } from "../../../../sass/global.module.scss";
+import __styles from "../../../../sass/global.module.scss";
+static const { flag: flagStyle } = __styles;
 <div id="flag">
   <section-header/>
 
@@ -15,7 +16,7 @@ import { flag as flagStyle } from "../../../../sass/global.module.scss";
 
   <h3>Including an Flag</h3>
   <p>
-    A flag can be referenced from the${" "}
+    A flag can be referenced from the
     <a href="https://raw.githubusercontent.com/eBay/evo-web/main/packages/skin/dist/flag/flag.css">
       flag css file
     </a>
@@ -23,15 +24,9 @@ import { flag as flagStyle } from "../../../../sass/global.module.scss";
   <h3>Flag sizes</h3>
 
   <p>
-    For different sizes, you can use${" "}
-    <code>.ff-sm</code>
-    ${" "}for small (18px),${" "}
-    <code>.ff-md</code>
-    ${" "}for medium (27px),${" "}
-    <code>.ff-lg</code>
-    ${" "}for large (42px), and${" "}
-    <code>.ff-xl</code>
-    ${" "}for extra large (60px).
+    For different sizes, you can use <code>.ff-sm</code> for small (18px),
+    <code>.ff-md</code> for medium (27px), <code>.ff-lg</code> for large (42px),
+    and <code>.ff-xl</code> for extra large (60px).
   </p>
 
   <div class="demo">
@@ -52,28 +47,21 @@ import { flag as flagStyle } from "../../../../sass/global.module.scss";
   </div>
 
   <highlight-code type="html">
-    <p>
-      <span role="img" aria-label="US flag" class="fflag fflag--us ff-sm"/>
-    </p>
-    <p>
-      <span role="img" aria-label="US flag" class="fflag fflag--us ff-md"/>
-    </p>
-    <p>
-      <span role="img" aria-label="US flag" class="fflag fflag--us ff-lg"/>
-    </p>
-    <p>
-      <span role="img" aria-label="US flag" class="fflag fflag--us ff-xl"/>
-    </p>
+    <p><span role="img" aria-label="US flag" class="fflag fflag--us ff-sm"/></p>
+    <p><span role="img" aria-label="US flag" class="fflag fflag--us ff-md"/></p>
+    <p><span role="img" aria-label="US flag" class="fflag fflag--us ff-lg"/></p>
+    <p><span role="img" aria-label="US flag" class="fflag fflag--us ff-xl"/></p>
   </highlight-code>
 
   <ul class=flagStyle>
-    <for|flag| of=(flags.flags.list)>
+    <for|flag| of=flags.flags.list>
       <li>
         <b>${flag.code}</b>
         <span
           role="img"
           aria-label=`${flag.name} flag`
-          class=["fflag", `fflag--${flag.code}`, "ff-lg"]/>
+          class=["fflag", `fflag--${flag.code}`, "ff-lg"]
+        />
         <span>${flag.name}</span>
       </li>
     </for>

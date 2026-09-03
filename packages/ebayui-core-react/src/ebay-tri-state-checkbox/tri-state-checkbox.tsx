@@ -48,7 +48,7 @@ const EbayTriStateCheckbox: FC<EbayTriStateCheckboxProps> = ({
     const currentCheckboxState = isControlled(checked) ? checked : checkboxState;
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const input = e.target;
-        let newCheckboxState: CheckboxState = checkboxState;
+        let newCheckboxState: CheckboxState;
         if (currentCheckboxState === "true") {
             newCheckboxState = "false";
         } else if (currentCheckboxState === "false" && !skipMixed) {

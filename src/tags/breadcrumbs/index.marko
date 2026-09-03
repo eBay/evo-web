@@ -1,33 +1,29 @@
 import { getProperName, basePath } from "../../data";
-import {breadcrumbs} from "./style.module.scss";
+import __styles from "./style.module.scss";
+static const { breadcrumbs } = __styles;
 <const/url=$global.url.pathname.split("/")>
 
 <div class=breadcrumbs>
   <nav
     aria-labelledby="site-breadcrumbs-heading"
     class="breadcrumbs"
-    role="navigation">
-    <p id="site-breadcrumbs-heading" class="clipped">
-      You are here
-    </p>
+    role="navigation"
+  >
+    <p id="site-breadcrumbs-heading" class="clipped">You are here</p>
     <ul>
       <for|breadcrumb, index| of=url>
         <li>
           <if=index !== url.length - 1>
-            <const/href=(url.slice(1, index + 1).join("/"))>
-            <const/name=(!!href ? breadcrumb : "Evo Web")>
-            <a href=(!!href ? `${basePath}${href}` : basePath )>
+            <const/href=url.slice(1, index + 1).join("/")>
+            <const/name=!!href ? breadcrumb : "Evo Web">
+            <a href=!!href ? `${basePath}${href}` : basePath>
               ${getProperName(name)}
             </a>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
               <use href="#icon-chevron-right-12"/>
             </svg>
           </if>
-          <else>
-            <a aria-current="page">
-              ${getProperName(breadcrumb)}
-            </a>
-          </else>
+          <else><a aria-current="page">${getProperName(breadcrumb)}</a></else>
         </li>
       </for>
     </ul>

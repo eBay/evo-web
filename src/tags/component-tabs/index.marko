@@ -1,5 +1,6 @@
-import { getMetadataFromUrl, urls  } from "../../data";
-import { badge, component, tabs, pagination} from "./style.module.scss";
+import { getMetadataFromUrl, urls } from "../../data";
+import __styles from "./style.module.scss";
+static const { badge, component, tabs, pagination } = __styles;
 export interface Input {
   content?: Marko.Body;
 }
@@ -29,7 +30,8 @@ export interface Input {
         <li class="fake-tabs__item fake-tabs__items--large">
           <a
             href=componentUrls?.overview
-            aria-current=getAriaCurrentValue("overview")>
+            aria-current=getAriaCurrentValue("overview")
+          >
             Overview
           </a>
         </li>
@@ -37,7 +39,8 @@ export interface Input {
           <li class="fake-tabs__item fake-tabs__items--large">
             <a
               href=componentUrls?.accessibility
-              aria-current=getAriaCurrentValue("accessibility")>
+              aria-current=getAriaCurrentValue("accessibility")
+            >
               Accessibility
             </a>
           </li>
@@ -50,7 +53,8 @@ export interface Input {
                 <span
                   class=badgeClass
                   role="img"
-                  aria-label=`Static version ${dsComponent?.version || ""}`>
+                  aria-label=`Static version ${dsComponent?.version || ""}`
+                >
                   ${dsComponent?.version || ""}
                 </span>
               </if>
@@ -68,18 +72,20 @@ export interface Input {
         <if=componentUrls?.marko>
           <li class="fake-tabs__item fake-tabs__items--large">
             <a href=componentUrls?.marko target="_blank">
-              Marko Storybook${" "}
+              Marko Storybook
               <span
                 class=badgeClass
                 role="img"
-                aria-label=`Marko version ${dsComponent?.markoVersion || ""}`>
+                aria-label=`Marko version ${dsComponent?.markoVersion || ""}`
+              >
                 ${dsComponent?.markoVersion || ""}
               </span>
               <svg
                 class="icon icon--16"
                 height="16"
                 width="16"
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 <use href="#icon-external-link-16"/>
               </svg>
             </a>
@@ -88,19 +94,20 @@ export interface Input {
         <if=componentUrls?.react>
           <li class="fake-tabs__item fake-tabs__items--large">
             <a href=componentUrls?.react target="_blank">
-              React Storybook${" "}
-
+              React Storybook
               <span
                 class=badgeClass
                 role="img"
-                aria-label=`React version ${dsComponent?.reactVersion || ""}`>
+                aria-label=`React version ${dsComponent?.reactVersion || ""}`
+              >
                 ${dsComponent?.reactVersion || ""}
               </span>
               <svg
                 class="icon icon--16"
                 height="16"
                 width="16"
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 <use href="#icon-external-link-16"/>
               </svg>
             </a>
@@ -114,7 +121,8 @@ export interface Input {
                 class="icon icon--16"
                 height="16"
                 width="16"
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 <use href="#icon-external-link-16"/>
               </svg>
             </a>
@@ -129,7 +137,7 @@ export interface Input {
     </div>
     <div class=pagination>
       <if=prev>
-        <a href=(prev.componentUrls.overview)>
+        <a href=prev.componentUrls.overview>
           <svg class="icon icon--12">
             <use href="#icon-arrow-left-12"/>
           </svg>
@@ -141,7 +149,7 @@ export interface Input {
         <span/>
       </else>
       <if=next>
-        <a href=(next.componentUrls.overview)>
+        <a href=next.componentUrls.overview>
           <span>${next.properName} Component</span>
           <svg class="icon icon--12">
             <use href="#icon-arrow-right-12"/>

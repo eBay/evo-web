@@ -36,9 +36,10 @@ describe("<EbayVideo>", () => {
         expect(playButtons.length).toBeGreaterThan(0);
     });
 
-    it("shows loading spinner", () => {
-        const spinner = document.querySelector(".shaka-spinner");
-        expect(spinner).toBeInTheDocument();
+    it("shows loading spinner", async () => {
+        // The spinner is created once the player attaches to the media element,
+        // which is asynchronous as of shaka-player 5.
+        await waitFor(() => expect(document.querySelector(".shaka-spinner")).toBeInTheDocument());
     });
 
     it("renders initial play button in shaka controls container", () => {

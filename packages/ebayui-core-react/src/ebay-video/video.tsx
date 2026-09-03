@@ -191,7 +191,7 @@ const EbayVideo: FC<EbayVideoProps> = ({
 
         shaka.polyfill.installAll();
 
-        playerRef.current = new shaka.Player(video);
+        playerRef.current = new shaka.Player();
         if (!playerRef.current) return;
 
         if (shakaConfig) {
@@ -205,6 +205,9 @@ const EbayVideo: FC<EbayVideoProps> = ({
         uiRef.current.configure({
             controlPanelElements: [],
             addSeekBar: false,
+            // shaka-player 5 no longer merges partial configs with the
+            // defaults, which silently dropped the buffering spinner
+            showBufferingSpinner: true,
         });
 
         // Set locale if document language is available
@@ -271,7 +274,10 @@ const EbayVideo: FC<EbayVideoProps> = ({
             }, spinnerTimeout || DEFAULT_SPINNER_TIMEOUT);
         }
 
-        loadSource();
+        playerRef.current
+            .attach(video)
+            .then(() => loadSource())
+            .catch((err: Error) => handleError(err));
 
         return () => {
             if (playerRef.current) {

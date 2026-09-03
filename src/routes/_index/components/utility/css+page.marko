@@ -1,16 +1,10 @@
-import { table } from "./styles.module.scss";
+import __styles from "./styles.module.scss";
+static const { table } = __styles;
 <div id="utility">
-  <h2>
-    <span class="secondary-text">
-      @ebay/skin/
-    </span>
-    ${" "}utility
-  </h2>
+  <h2><span class="secondary-text">@ebay/skin/</span> utility</h2>
 
   <table class=table>
-    <caption class="clipped">
-      Utility Classes
-    </caption>
+    <caption class="clipped">Utility Classes</caption>
     <thead>
       <tr>
         <th>Class</th>
@@ -69,9 +63,7 @@ import { table } from "./styles.module.scss";
 
   <h3>Utility Notes</h3>
   <table class=table>
-    <caption class="clipped">
-      Utility Notes
-    </caption>
+    <caption class="clipped">Utility Notes</caption>
     <thead>
       <tr>
         <th>Item</th>
@@ -80,15 +72,13 @@ import { table } from "./styles.module.scss";
     </thead>
     <tbody>
       <tr>
+        <td><code>will-change</code></td>
         <td>
-          <code>will-change</code>
-        </td>
-        <td>
-          There are known${" "}
+          There are known
           <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/will-change">
             performance issues using this approach
           </a>
-          ${" "}to indicate imminent element style changes for browsers. It's
+          to indicate imminent element style changes for browsers. It's
           recommended to use this sparingly and only to remedy known performance
           issues and not anticipate them.
         </td>

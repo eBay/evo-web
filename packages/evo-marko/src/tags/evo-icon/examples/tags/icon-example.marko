@@ -24,11 +24,12 @@ export interface Input {
   }
 </style>
 
-<div class=((styles as any).cell)>
+<div class=(styles as any).cell>
   <evo-infotip
-    class=((styles as any).tip)
+    class=(styles as any).tip
     a11yIconText=input.name
-    a11yCloseText="Dismiss">
+    a11yCloseText="Dismiss"
+  >
     <@icon>
       <${input.content}/>
     </@icon>

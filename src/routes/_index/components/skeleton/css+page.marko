@@ -1,27 +1,18 @@
-import {table} from "../../../../sass/table.module.scss";
-import {urls} from "../../../../data";
+import __styles from "../../../../sass/table.module.scss";
+import { urls } from "../../../../data";
+static const { table } = __styles;
 
 <div id="skeleton">
   <!-- <section-header/> -->
-  <h2>
-    @ebay/skin/skeleton
-    <sup class="beta">
-      BETA
-    </sup>
-  </h2>
+  <h2>@ebay/skin/skeleton <sup class="beta">BETA</sup></h2>
 
   <p>
-    The
-    <a href=`${urls.guides}/skeleton`>
-      Skeleton Use Guide
-    </a>
-    illustrates various techniques for implementing skeletons across some
-    common loading scenarios.
+    The <a href=`${urls.guides}/skeleton`>Skeleton Use Guide</a> illustrates
+    various techniques for implementing skeletons across some common loading
+    scenarios.
   </p>
 
-  <h3 id="skeleton-types">
-    Skeleton Types
-  </h3>
+  <h3 id="skeleton-types">Skeleton Types</h3>
   <table class=table>
     <thead>
       <tr>
@@ -36,9 +27,7 @@ import {urls} from "../../../../data";
     <tbody>
       <tr>
         <td>
-          <a href=`${urls.components}/skeleton/css/#skeleton-avatar`>
-            Avatar
-          </a>
+          <a href=`${urls.components}/skeleton/css/#skeleton-avatar`>Avatar</a>
         </td>
         <td>
           <div class="skeleton" role="img" aria-label="loading">
@@ -50,7 +39,8 @@ import {urls} from "../../../../data";
           <div
             class="skeleton skeleton--on-secondary"
             role="img"
-            aria-label="loading">
+            aria-label="loading"
+          >
             <div class="skeleton__avatar"/>
           </div>
         </td>
@@ -59,7 +49,8 @@ import {urls} from "../../../../data";
           <div
             class="skeleton skeleton--purple"
             role="img"
-            aria-label="loading">
+            aria-label="loading"
+          >
             <div class="skeleton__avatar"/>
           </div>
         </td>
@@ -76,9 +67,7 @@ import {urls} from "../../../../data";
       </tr>
       <tr>
         <td>
-          <a href=`${urls.components}/skeleton/css/#skeleton-button`>
-            Button
-          </a>
+          <a href=`${urls.components}/skeleton/css/#skeleton-button`>Button</a>
         </td>
         <td>
           <div class="skeleton" role="img" aria-label="loading">
@@ -90,7 +79,8 @@ import {urls} from "../../../../data";
           <div
             class="skeleton skeleton--on-secondary"
             role="img"
-            aria-label="loading">
+            aria-label="loading"
+          >
             <div class="skeleton__button"/>
           </div>
         </td>
@@ -99,7 +89,8 @@ import {urls} from "../../../../data";
           <div
             class="skeleton skeleton--purple"
             role="img"
-            aria-label="loading">
+            aria-label="loading"
+          >
             <div class="skeleton__button"/>
           </div>
         </td>
@@ -129,7 +120,8 @@ import {urls} from "../../../../data";
           <div
             class="skeleton skeleton--on-secondary"
             role="img"
-            aria-label="loading">
+            aria-label="loading"
+          >
             <div class="skeleton__textbox"/>
           </div>
         </td>
@@ -137,7 +129,8 @@ import {urls} from "../../../../data";
           <div
             class="skeleton skeleton--purple"
             role="img"
-            aria-label="loading">
+            aria-label="loading"
+          >
             <div class="skeleton__textbox"/>
           </div>
         </td>
@@ -154,9 +147,7 @@ import {urls} from "../../../../data";
       </tr>
       <tr>
         <td>
-          <a href=`${urls.components}/skeleton/css/#skeleton-image`>
-            Image
-          </a>
+          <a href=`${urls.components}/skeleton/css/#skeleton-image`>Image</a>
         </td>
         <td>
           <div class="skeleton" role="img" aria-label="loading">
@@ -167,7 +158,8 @@ import {urls} from "../../../../data";
           <div
             class="skeleton skeleton--on-secondary"
             role="img"
-            aria-label="loading">
+            aria-label="loading"
+          >
             <div class="skeleton__image" style="height: 50px; width: 50px;"/>
           </div>
         </td>
@@ -175,7 +167,8 @@ import {urls} from "../../../../data";
           <div
             class="skeleton skeleton--purple"
             role="img"
-            aria-label="loading">
+            aria-label="loading"
+          >
             <div class="skeleton__image" style="height: 50px; width: 50px;"/>
           </div>
         </td>
@@ -192,9 +185,7 @@ import {urls} from "../../../../data";
       </tr>
       <tr>
         <td>
-          <a href=`${urls.components}/skeleton/css/#skeleton-text`>
-            Text
-          </a>
+          <a href=`${urls.components}/skeleton/css/#skeleton-text`>Text</a>
         </td>
         <td>
           <div class="skeleton" role="img" aria-label="loading">
@@ -205,7 +196,8 @@ import {urls} from "../../../../data";
           <div
             class="skeleton skeleton--on-secondary"
             role="img"
-            aria-label="loading">
+            aria-label="loading"
+          >
             <div class="skeleton__text"/>
           </div>
         </td>
@@ -213,7 +205,8 @@ import {urls} from "../../../../data";
           <div
             class="skeleton skeleton--purple"
             role="img"
-            aria-label="loading">
+            aria-label="loading"
+          >
             <div class="skeleton__text"/>
           </div>
         </td>
@@ -237,22 +230,17 @@ import {urls} from "../../../../data";
   </p>
   <p>
     The color can be changed to purple, green or blue by applying the
-    appropriate modifier, e.g.
-    <code>skeleton--green</code>
-    . View the
+    appropriate modifier, e.g. <code>skeleton--green</code> . View the
     <a href=`${urls.components}/skeleton/css/#skeleton-composite`>
       composite skeletons
     </a>
     examples for further details.
   </p>
 
-  <h3 id="skeleton-avatar">
-    Avatar Skeleton
-  </h3>
+  <h3 id="skeleton-avatar">Avatar Skeleton</h3>
   <p>
-    Use the
-    <code>skeleton__avatar</code>
-    class to create a skeleton placeholder for an avatar.
+    Use the <code>skeleton__avatar</code> class to create a skeleton placeholder
+    for an avatar.
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -267,14 +255,11 @@ import {urls} from "../../../../data";
     </div>
   </highlight-code>
 
-  <h3 id="skeleton-button">
-    Button Skeleton
-  </h3>
+  <h3 id="skeleton-button">Button Skeleton</h3>
 
   <p>
-    Use the
-    <code>skeleton__button</code>
-    class to create a skeleton placeholder for the default button shape.
+    Use the <code>skeleton__button</code> class to create a skeleton placeholder
+    for the default button shape.
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -282,7 +267,8 @@ import {urls} from "../../../../data";
         class="skeleton"
         role="img"
         aria-label="loading"
-        style="width: 200px;">
+        style="width: 200px;"
+      >
         <div class="skeleton__button"/>
       </div>
     </div>
@@ -294,9 +280,7 @@ import {urls} from "../../../../data";
   </highlight-code>
 
   <p>
-    Use the
-    <code>small</code>
-    modifier to match the shape of a small button.
+    Use the <code>small</code> modifier to match the shape of a small button.
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -304,7 +288,8 @@ import {urls} from "../../../../data";
         class="skeleton"
         role="img"
         aria-label="loading"
-        style="width: 200px;">
+        style="width: 200px;"
+      >
         <div class="skeleton__button skeleton__button--small"/>
       </div>
     </div>
@@ -316,9 +301,7 @@ import {urls} from "../../../../data";
   </highlight-code>
 
   <p>
-    Use the
-    <code>large</code>
-    modifier to match the shape of a large button.
+    Use the <code>large</code> modifier to match the shape of a large button.
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -326,7 +309,8 @@ import {urls} from "../../../../data";
         class="skeleton"
         role="img"
         aria-label="loading"
-        style="width: 200px;">
+        style="width: 200px;"
+      >
         <div class="skeleton__button skeleton__button--large"/>
       </div>
     </div>
@@ -337,13 +321,10 @@ import {urls} from "../../../../data";
     </div>
   </highlight-code>
 
-  <h3 id="skeleton-textbox">
-    Textbox Skeleton
-  </h3>
+  <h3 id="skeleton-textbox">Textbox Skeleton</h3>
   <p>
-    Use the
-    <code>skeleton__textbox</code>
-    class to create a skeleton placeholder for a textbox.
+    Use the <code>skeleton__textbox</code> class to create a skeleton
+    placeholder for a textbox.
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -351,7 +332,8 @@ import {urls} from "../../../../data";
         class="skeleton"
         role="img"
         aria-label="loading"
-        style="width: 200px;">
+        style="width: 200px;"
+      >
         <div class="skeleton__textbox"/>
       </div>
     </div>
@@ -362,13 +344,10 @@ import {urls} from "../../../../data";
     </div>
   </highlight-code>
 
-  <h3 id="skeleton-image">
-    Image Skeleton
-  </h3>
+  <h3 id="skeleton-image">Image Skeleton</h3>
   <p>
-    Use the
-    <code>skeleton__image</code>
-    class to create a skeleton placeholder for an image.
+    Use the <code>skeleton__image</code> class to create a skeleton placeholder
+    for an image.
   </p>
 
   <div class="demo">
@@ -386,8 +365,7 @@ import {urls} from "../../../../data";
 
   <p>
     Notice that the height and width must be set on the
-    <code>skeleton__image</code>
-    element.
+    <code>skeleton__image</code> element.
   </p>
 
   <div class="demo">
@@ -403,13 +381,10 @@ import {urls} from "../../../../data";
     </div>
   </highlight-code>
 
-  <h3 id="skeleton-text">
-    Text Block Skeleton
-  </h3>
+  <h3 id="skeleton-text">Text Block Skeleton</h3>
   <p>
-    Use the
-    <code>skeleton__text</code>
-    class to create a skeleton for a single block of text.
+    Use the <code>skeleton__text</code> class to create a skeleton for a single
+    block of text.
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -417,7 +392,8 @@ import {urls} from "../../../../data";
         class="skeleton"
         role="img"
         aria-label="loading"
-        style="width: 200px;">
+        style="width: 200px;"
+      >
         <div class="skeleton__text"/>
       </div>
     </div>
@@ -429,9 +405,8 @@ import {urls} from "../../../../data";
   </highlight-code>
 
   <p>
-    Use the
-    <code>skeleton__text--large</code>
-    modifier to match the shape of a large block of text.
+    Use the <code>skeleton__text--large</code> modifier to match the shape of a
+    large block of text.
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -439,7 +414,8 @@ import {urls} from "../../../../data";
         class="skeleton"
         role="img"
         aria-label="loading"
-        style="width: 200px;">
+        style="width: 200px;"
+      >
         <div class="skeleton__text skeleton__text--large"/>
       </div>
     </div>
@@ -451,9 +427,8 @@ import {urls} from "../../../../data";
   </highlight-code>
 
   <p>
-    Use the
-    <code>skeleton__text--multiline</code>
-    mofifier to create a skeleton for two lines of text.
+    Use the <code>skeleton__text--multiline</code> mofifier to create a skeleton
+    for two lines of text.
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -461,7 +436,8 @@ import {urls} from "../../../../data";
         class="skeleton"
         role="img"
         aria-label="loading"
-        style="width: 200px;">
+        style="width: 200px;"
+      >
         <div class="skeleton__text skeleton__text--multiline"/>
       </div>
     </div>
@@ -472,9 +448,7 @@ import {urls} from "../../../../data";
     </div>
   </highlight-code>
 
-  <h3 id="skeleton-composite">
-    Composite Skeleton
-  </h3>
+  <h3 id="skeleton-composite">Composite Skeleton</h3>
   <p>
     Combinations of skeletons can form a custom placeholder for more complex
     content, such as a typical eCommerce item tile in the example below.
@@ -486,7 +460,8 @@ import {urls} from "../../../../data";
         class="skeleton skeleton--purple"
         role="img"
         aria-label="loading"
-        style="width: 225px;">
+        style="width: 225px;"
+      >
         <div class="skeleton__image" style="width: 225px; height: 225px"/>
         <div class="skeleton__text skeleton__text--multiline"/>
       </div>
@@ -497,7 +472,8 @@ import {urls} from "../../../../data";
       class="skeleton skeleton--purple"
       role="img"
       aria-label="loading"
-      style="width: 225px;">
+      style="width: 225px;"
+    >
       <div class="skeleton__image" style="width: 225px; height: 225px"/>
       <div class="skeleton__text skeleton__text--multiline"/>
     </div>
@@ -505,10 +481,8 @@ import {urls} from "../../../../data";
 
   <p>
     Here is a skeleton for a compact user profile. Notice that a
-    <code>div</code>
-    tag can be replaced with a
-    <code>span</code>
-    tag for inline-block layout of elements.
+    <code>div</code> tag can be replaced with a <code>span</code> tag for
+    inline-block layout of elements.
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -516,7 +490,8 @@ import {urls} from "../../../../data";
         <span class="skeleton__avatar"/>
         <span
           class="skeleton__text skeleton__text--multiline"
-          style="width: 200px; vertical-align: top;"/>
+          style="width: 200px; vertical-align: top;"
+        />
       </div>
     </div>
   </div>
@@ -525,13 +500,11 @@ import {urls} from "../../../../data";
       <span class="skeleton__avatar"/>
       <span
         class="skeleton__text skeleton__text--multiline"
-        style="width: 200px; vertical-align: top;"/>
+        style="width: 200px; vertical-align: top;"
+      />
     </div>
   </highlight-code>
-  <h3 id="skeleton-animation">
-    Skeleton Animation
-    <sup>EXPERIMENTAL</sup>
-  </h3>
+  <h3 id="skeleton-animation">Skeleton Animation <sup>EXPERIMENTAL</sup></h3>
   <p>
     The skeleton loader uses view-transition animation to swap between the
     skeleton and the loaded content. This is an experimental feature and may not
@@ -540,84 +513,80 @@ import {urls} from "../../../../data";
 
   <p>
     In order to use view-transition animation, the skeleton must have a
-    <code>view-transition-name</code>
-    style attribute set. The value of the attribute must be unique for
-    each skeleton on the page. For this you can use
-    <code>skeleton-transition-1</code>
-    and
-    <code>skeleton-transition-2</code>
+    <code>view-transition-name</code> style attribute set. The value of the
+    attribute must be unique for each skeleton on the page. For this you can use
+    <code>skeleton-transition-1</code> and <code>skeleton-transition-2</code>
     etc view transition names. These names should correspond to the loaded
     content view transition names so that they can transition properly.
   </p>
   <p>
-    We have defined
-    <code>skeleton-transition-*</code>
-    so that you can use any arbitray name after skeleton-transition-. Just
-    make sure that the names are unique and do not conflict with other view
-    transition names on the page. Also verify that the view-transition-name set
-    on the skeleton matches the view-transition-name set on the loaded content.
+    We have defined <code>skeleton-transition-*</code> so that you can use any
+    arbitray name after skeleton-transition-. Just make sure that the names are
+    unique and do not conflict with other view transition names on the page.
+    Also verify that the view-transition-name set on the skeleton matches the
+    view-transition-name set on the loaded content.
   </p>
   <p>
     Reminder: when swapping between the skeleton and the loaded content, use
-    <code>document.startViewTransition()</code>
-    to start the view transition.
+    <code>document.startViewTransition()</code> to start the view transition.
   </p>
   <div class="demo">
     <div class="demo__inner">
-      <button type="button" class="btn skeleton-trigger">
-        Load content
-      </button>
+      <button type="button" class="btn skeleton-trigger">Load content</button>
 
       <div
         class="skeleton"
         role="img"
         aria-label="loading"
-        style="display: flex;">
+        style="display: flex;"
+      >
         <span
           id="skeleton-transition-0"
           class="skeleton__image"
-          style="height: 200px; width: 200px; view-transition-name: skeleton-transition-0"/>
+          style="height: 200px; width: 200px; view-transition-name: skeleton-transition-0"
+        />
         <span
           id="skeleton-transition-1"
           class="skeleton__image"
-          style="height: 200px; width: 200px; view-transition-name: skeleton-transition-1"/>
+          style="height: 200px; width: 200px; view-transition-name: skeleton-transition-1"
+        />
         <span
           id="skeleton-transition-2"
           class="skeleton__image"
-          style="height: 200px; width: 200px; view-transition-name: skeleton-transition-2"/>
+          style="height: 200px; width: 200px; view-transition-name: skeleton-transition-2"
+        />
       </div>
     </div>
   </div>
 
   <highlight-code type="html">
-    <button type="button" class="btn skeleton-trigger">
-      Load content
-    </button>
+    <button type="button" class="btn skeleton-trigger">Load content</button>
 
     <div
       class="skeleton"
       role="img"
       aria-label="loading"
-      style="display: flex;">
+      style="display: flex;"
+    >
       <span
         id="skeleton-transition-0"
         class="skeleton__image"
-        style="height: 200px; width: 200px; view-transition-name: skeleton-transition-0"/>
+        style="height: 200px; width: 200px; view-transition-name: skeleton-transition-0"
+      />
       <span
         id="skeleton-transition-1"
         class="skeleton__image"
-        style="height: 200px; width: 200px; view-transition-name: skeleton-transition-1"/>
+        style="height: 200px; width: 200px; view-transition-name: skeleton-transition-1"
+      />
       <span
         id="skeleton-transition-2"
         class="skeleton__image"
-        style="height: 200px; width: 200px; view-transition-name: skeleton-transition-2"/>
+        style="height: 200px; width: 200px; view-transition-name: skeleton-transition-2"
+      />
     </div>
   </highlight-code>
 
-  <h3 id="skeleton-variables">
-    Skeleton Variables
-    <sup>EXPERIMENTAL</sup>
-  </h3>
+  <h3 id="skeleton-variables">Skeleton Variables <sup>EXPERIMENTAL</sup></h3>
   <p>
     The following custom properties (aka CSS Variables) are available for
     component-level overrides and other general theming purposes.

@@ -1,11 +1,12 @@
-<let/files: File[]=([] as File[])>
+<let/files: File[]=[] as File[]>
 <evo-file-input
   multiple
   on-input=(e: InputEvent) => {
     const fileInput = Array.from((e.target as HTMLInputElement).files || []);
     files = fileInput.concat(Array.from(files));
   }
-  ...input>
+  ...input
+>
   <@header class="subtitleClass" id="subtitleId">
     <p>Multiple files</p>
   </@header>

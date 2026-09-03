@@ -5,6 +5,7 @@
     --state-layer-neutral-on-strong: rgb(var(--color-neutral-900-rgb), 0);
     --state-layer-neutral: rgb(var(--color-neutral-900-rgb), 0);
 }
+
 @keyframes toast-dialog-open {
     0% {
         opacity: 0;
@@ -52,9 +53,11 @@ dialog.toast-dialog {
 .toast-dialog[open].toast-dialog--close {
     animation: toast-dialog-close 0.2s cubic-bezier(0.21, 0.31, 1, 1.22);
 }
+
 .toast-dialog a {
     color: var(--color-foreground-on-success);
 }
+
 .toast-dialog a:focus {
     outline: 1px auto currentColor;
 }
@@ -75,9 +78,11 @@ dialog.toast-dialog {
     opacity: 0;
     transform: translateY(110%);
 }
+
 .toast-dialog__window {
     padding: var(--spacing-100) var(--spacing-200) var(--spacing-200);
 }
+
 .toast-dialog__header {
     align-items: center;
     display: flex;
@@ -92,8 +97,8 @@ button.icon-btn.toast-dialog__close {
     color: var(--color-foreground-on-success);
     flex-shrink: 0;
     margin-inline-start: auto;
-    overflow: hidden;
     padding: 0;
+    overflow: hidden;
     position: relative;
 }
 button.icon-btn.toast-dialog__close:after {
@@ -127,9 +132,11 @@ button.icon-btn.toast-dialog__close[href]:active:after {
 button.icon-btn.toast-dialog__close:focus {
     outline: 2px solid var(--color-foreground-on-success);
 }
+
 button.icon-btn.toast-dialog__close > svg {
     fill: currentColor;
 }
+
 .toast-dialog__footer {
     display: flex;
     justify-content: flex-end;
@@ -137,8 +144,7 @@ button.icon-btn.toast-dialog__close > svg {
 .toast-dialog__footer button:first-letter {
     text-decoration: underline;
 }
-.toast-dialog__footer button.btn--primary,
-.toast-dialog__footer button.btn--secondary {
+.toast-dialog__footer :is(button.btn--primary, button.btn--secondary) {
     overflow: hidden;
     position: relative;
 }
@@ -180,8 +186,7 @@ button.icon-btn.toast-dialog__close > svg {
 .toast-dialog__footer button.btn--secondary[href]:active:after {
     background-color: var(--color-state-layer-pressed);
 }
-.toast-dialog__footer button.btn--primary,
-.toast-dialog__footer button.btn--secondary {
+.toast-dialog__footer :is(button.btn--primary, button.btn--secondary) {
     border-color: var(--color-foreground-on-accent);
     border-style: solid;
     border-width: 1px;
@@ -197,10 +202,11 @@ button.icon-btn.toast-dialog__close > svg {
     font-weight: 700;
     margin-inline-end: var(--spacing-100);
 }
-.toast-dialog__footer button.btn--primary:focus,
-.toast-dialog__footer button.btn--secondary:focus {
+.toast-dialog__footer
+    :is(button.btn--primary:focus, button.btn--secondary:focus) {
     outline: 2px solid var(--color-foreground-on-success);
 }
+
 @media (min-width: 512px) {
     .toast-dialog {
         border-radius: var(--border-radius-100);

@@ -1,5 +1,6 @@
 import { type IconsData, type Icon } from "../../../../../data/icons";
-import {icon as iconStyle, large} from "../../../../../sass/global.module.scss";
+import __styles from "../../../../../sass/global.module.scss";
+static const { icon: iconStyle, large } = __styles;
 export interface Input {
   list: Icon[];
   icons: IconsData["icons"];
@@ -12,8 +13,9 @@ export interface Input {
         aria-hidden="true"
         class=[input.icons.prefix, `${input.icons.prefix}--${icon.size}`]
         height=icon.height || 24
-        width=icon.width || 24>
-        <icon-symbol name=icon.name prefix=(input.icons.prefix)/>
+        width=icon.width || 24
+      >
+        <icon-symbol name=icon.name prefix=input.icons.prefix/>
       </svg>
     </li>
   </for>

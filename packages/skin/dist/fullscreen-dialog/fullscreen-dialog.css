@@ -15,9 +15,11 @@
 .fullscreen-dialog[role="dialog"]:not([hidden]) {
     display: flex;
 }
+
 .fullscreen-dialog--no-mask[role="dialog"] {
     background-color: initial;
 }
+
 .fullscreen-dialog__window {
     background-color: var(
         --dialog-window-background-color,
@@ -27,22 +29,18 @@
     flex: 1 0 auto;
     flex-direction: column;
     min-height: 55px;
+    will-change: opacity, transform;
     overflow-y: auto;
     width: 100%;
-    will-change: opacity, transform;
 }
+
 .fullscreen-dialog__header {
     display: flex;
     flex-shrink: 0;
     margin: var(--spacing-200) var(--spacing-200) 0;
     position: relative;
 }
-.fullscreen-dialog__header h1,
-.fullscreen-dialog__header h2,
-.fullscreen-dialog__header h3,
-.fullscreen-dialog__header h4,
-.fullscreen-dialog__header h5,
-.fullscreen-dialog__header h6 {
+.fullscreen-dialog__header :is(h1, h2, h3, h4, h5, h6) {
     align-self: center;
     flex: 1 1 auto;
     margin: 0;
@@ -51,15 +49,17 @@
 .fullscreen-dialog__header > :last-child:not(:only-child) {
     margin-inline-start: var(--spacing-200);
 }
+
 .fullscreen-dialog__header .fake-link {
     align-self: flex-start;
     outline-offset: 4px;
     text-decoration: none;
 }
+
 .fullscreen-dialog__main {
+    min-height: auto;
     box-sizing: border-box;
     flex: 1 1 auto;
-    min-height: auto;
     padding: var(--spacing-200);
     position: relative;
 }
@@ -69,6 +69,7 @@
 .fullscreen-dialog__main > :last-child {
     margin-bottom: 0;
 }
+
 .fullscreen-dialog__footer {
     display: flex;
     flex-direction: column;
@@ -79,6 +80,7 @@
 .fullscreen-dialog__footer > :not(:first-child) {
     margin-top: var(--spacing-200);
 }
+
 button.icon-btn.fullscreen-dialog__close {
     height: 32px;
     min-width: 32px;
@@ -92,6 +94,7 @@ button.fullscreen-dialog__close {
     position: relative;
     z-index: 1;
 }
+
 .fullscreen-dialog--hide.fullscreen-dialog--mask-fade,
 .fullscreen-dialog--show.fullscreen-dialog--mask-fade {
     transition: background-color 0.16s ease-out;
@@ -100,8 +103,8 @@ button.fullscreen-dialog__close {
 .fullscreen-dialog--show.fullscreen-dialog--mask-fade-slow {
     transition: background-color 0.32s ease-out;
 }
-.fullscreen-dialog--hide .fullscreen-dialog__window--fade,
-.fullscreen-dialog--show .fullscreen-dialog__window--fade {
+:is(.fullscreen-dialog--hide, .fullscreen-dialog--show)
+    .fullscreen-dialog__window--fade {
     transition: opacity 0.16s ease-out;
 }
 .fullscreen-dialog--hide .fullscreen-dialog__window--slide,
@@ -110,6 +113,7 @@ button.fullscreen-dialog__close {
 .fullscreen-dialog--show .fullscreen-dialog__window--slide-end {
     transition: transform 0.32s ease-out;
 }
+
 .fullscreen-dialog--hide.fullscreen-dialog--hide,
 .fullscreen-dialog--hide.fullscreen-dialog--show-init,
 .fullscreen-dialog--show-init.fullscreen-dialog--hide,
@@ -122,18 +126,19 @@ button.fullscreen-dialog__close {
 .fullscreen-dialog--show-init.fullscreen-dialog--mask-fade-slow {
     background-color: var(--dialog-scrim-color-hide);
 }
-.fullscreen-dialog--hide .fullscreen-dialog__window--fade,
-.fullscreen-dialog--show-init .fullscreen-dialog__window--fade {
+:is(.fullscreen-dialog--hide, .fullscreen-dialog--show-init)
+    .fullscreen-dialog__window--fade {
     opacity: 0;
 }
-.fullscreen-dialog--hide .fullscreen-dialog__window--slide,
-.fullscreen-dialog--show-init .fullscreen-dialog__window--slide {
+:is(.fullscreen-dialog--hide, .fullscreen-dialog--show-init)
+    .fullscreen-dialog__window--slide {
     transform: translateY(100%);
 }
-.fullscreen-dialog--hide .fullscreen-dialog__window--slide-end,
-.fullscreen-dialog--show-init .fullscreen-dialog__window--slide-end {
+:is(.fullscreen-dialog--hide, .fullscreen-dialog--show-init)
+    .fullscreen-dialog__window--slide-end {
     transform: translateX(100%);
 }
+
 .fullscreen-dialog--hide-init.fullscreen-dialog--hide-init,
 .fullscreen-dialog--hide-init.fullscreen-dialog--show,
 .fullscreen-dialog--show.fullscreen-dialog--hide-init,
@@ -146,13 +151,13 @@ button.fullscreen-dialog__close {
 .fullscreen-dialog--show.fullscreen-dialog--mask-fade-slow {
     background-color: var(--dialog-scrim-color-show);
 }
-.fullscreen-dialog--hide-init .fullscreen-dialog__window--fade,
-.fullscreen-dialog--show .fullscreen-dialog__window--fade {
+:is(.fullscreen-dialog--hide-init, .fullscreen-dialog--show)
+    .fullscreen-dialog__window--fade {
     opacity: 1;
 }
-.fullscreen-dialog--hide-init .fullscreen-dialog__window--slide,
-.fullscreen-dialog--hide-init .fullscreen-dialog__window--slide-end,
-.fullscreen-dialog--show .fullscreen-dialog__window--slide,
-.fullscreen-dialog--show .fullscreen-dialog__window--slide-end {
+:is(.fullscreen-dialog--hide-init, .fullscreen-dialog--show)
+    .fullscreen-dialog__window--slide,
+:is(.fullscreen-dialog--hide-init, .fullscreen-dialog--show)
+    .fullscreen-dialog__window--slide-end {
     transform: translateX(0);
 }

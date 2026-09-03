@@ -57,7 +57,7 @@ static function renderSymbol(key: WeakKey, name: string, symbol: string) {
       );
       const root = getRoot()!;
       const icons = document.querySelectorAll<SVGSymbolElement>(".icon>symbol");
-      for (let i = icons.length; i--; ) {
+      for (let i = icons.length; i--;) {
         const icon = icons[i];
         root.appendChild(icon);
         seen.add(icon.id.slice("icon-".length));
@@ -87,12 +87,11 @@ static function renderSymbol(key: WeakKey, name: string, symbol: string) {
   class=[inputClass, getIconClass(input._type ?? "", input._name, input._size)]
   role=!!hasA11yText && "img"
   aria-hidden=!hasA11yText && "true"
-  aria-labelledby=hasTitle && titleId>
+  aria-labelledby=hasTitle && titleId
+>
   $!{renderSymbol($global, input._name, input._symbol)}
   <use href=`#icon-${input._name}`/>
   <if=hasTitle>
-    <title id=titleId>
-      ${a11yText}
-    </title>
+    <title id=titleId>${a11yText}</title>
   </if>
 </svg>

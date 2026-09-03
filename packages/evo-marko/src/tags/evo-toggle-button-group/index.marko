@@ -44,7 +44,8 @@ export interface Input<
   data-columns-sm=columnsSM
   data-columns-md=columnsMD
   data-columns-xl=columnsXL
-  ...htmlInput>
+  ...htmlInput
+>
   <ul aria-label=a11yText aria-labelledby=a11yLabelId>
     <for|button, i| of=buttons>
       <const/{
@@ -72,7 +73,8 @@ export interface Input<
             } else if (!required) {
               pressed = undefined as Pressed;
             }
-          }/>
+          }
+        />
       </li>
     </for>
   </ul>

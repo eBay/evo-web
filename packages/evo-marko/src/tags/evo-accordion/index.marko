@@ -38,12 +38,13 @@ export interface Input<Open extends number | number[] | undefined> extends Omit<
     size === "large" && "accordion--large",
     inputClass,
     interacted && "accordion--animated",
-  ]>
+  ]
+>
   <for|item, index| of=items>
     <li>
       <evo-details
         ...item
-        open=(Array.isArray(open) ? open.includes(index) : open === index)
+        open=Array.isArray(open) ? open.includes(index) : open === index
         openChange(isOpen) {
           interacted = true;
           if (Array.isArray(open)) {
@@ -58,7 +59,8 @@ export interface Input<Open extends number | number[] | undefined> extends Omit<
           } else {
             open = (isOpen ? index : -1) as Open;
           }
-        }/>
+        }
+      />
     </li>
   </for>
 </ul>

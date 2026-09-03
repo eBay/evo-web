@@ -4,9 +4,11 @@
 .tourtip {
     position: relative;
 }
+
 span.tourtip {
     display: inline-block;
 }
+
 .tourtip__overlay {
     box-shadow: var(--bubble-shadow);
     display: none;
@@ -18,28 +20,32 @@ span.tourtip {
     transform: scaleX(1);
     width: max-content;
 }
+
 .tourtip__mask,
 .tourtip__overlay {
     border-radius: var(--bubble-border-radius, var(--border-radius-100));
     z-index: 1;
 }
+
 .tourtip__mask {
+    position: relative;
     background-color: var(
         --tourtip-background-color,
         var(--color-background-inverse)
     );
     color: var(--tourtip-foreground-color, var(--color-foreground-on-inverse));
-    position: relative;
 }
+
 span.tourtip__mask {
     display: block;
 }
+
 .tourtip__cell {
     display: flex;
-    flex-wrap: wrap;
     overflow-wrap: anywhere;
     padding: var(--spacing-200);
     word-break: normal;
+    flex-wrap: wrap;
 }
 .tourtip__cell a {
     color: var(--tourtip-foreground-color, var(--color-foreground-on-inverse));
@@ -47,6 +53,7 @@ span.tourtip__mask {
 .tourtip__cell a:focus {
     outline: 1px dashed currentColor;
 }
+
 .tourtip__content {
     flex-basis: 0;
     flex-grow: 1;
@@ -57,15 +64,16 @@ span.tourtip__mask {
 .tourtip__content p:not(:first-of-type) {
     margin-top: var(--spacing-50);
 }
+
 .tourtip button.tourtip__close {
+    outline-offset: -2px;
     align-self: flex-start;
     background: none;
     border: 0;
     flex-shrink: 0;
     height: var(--spacing-400);
-    margin: calc(var(--spacing-100) * -1) calc(var(--spacing-100) * -1) 0
+    margin: calc(-1 * var(--spacing-100)) calc(-1 * var(--spacing-100)) 0
         var(--spacing-100);
-    outline-offset: -2px;
     padding: 0;
     white-space: nowrap;
     width: 32px;
@@ -73,84 +81,100 @@ span.tourtip__mask {
 .tourtip button.tourtip__close svg.icon {
     fill: var(--tourtip-foreground-color, var(--color-foreground-on-inverse));
 }
+
 .tourtip__pointer {
-    background-color: var(
-        --tourtip-background-color,
-        var(--color-background-inverse)
-    );
     height: 8px;
     position: absolute;
     transform: rotate(45deg);
     width: 8px;
     z-index: 0;
+    background-color: var(
+        --tourtip-background-color,
+        var(--color-background-inverse)
+    );
 }
+
 .tourtip__pointer--top-left {
+    top: -4px;
     left: 12px;
-    top: -4px;
 }
+
 .tourtip__pointer--top {
-    left: calc(50% - 4px);
     top: -4px;
+    left: calc(50% - 4px);
 }
+
 .tourtip__pointer--top-right {
+    top: -4px;
     left: auto;
     right: 12px;
-    top: -4px;
 }
+
 .tourtip__pointer--bottom-left {
     bottom: -4px;
-    left: 12px;
     top: auto;
+    left: 12px;
 }
+
 .tourtip__pointer--bottom {
     bottom: -4px;
-    left: calc(50% - 4px);
     top: auto;
+    left: calc(50% - 4px);
 }
+
 .tourtip__pointer--bottom-right {
     bottom: -4px;
+    top: auto;
     left: auto;
     right: 12px;
-    top: auto;
 }
+
 .tourtip__pointer--left {
-    left: -4px;
     top: calc(50% - 4px);
+    left: -4px;
 }
+
 .tourtip__pointer--left-bottom {
     bottom: 12px;
     left: -4px;
     top: auto;
 }
+
 .tourtip__pointer--left-top {
     left: -4px;
     top: 12px;
 }
+
 .tourtip__pointer--right {
+    top: calc(50% - 4px);
     left: auto;
     right: -4px;
-    top: calc(50% - 4px);
 }
+
 .tourtip__pointer--right-bottom {
     bottom: 12px;
     left: auto;
     right: -4px;
     top: auto;
 }
+
 .tourtip__pointer--right-top {
     left: auto;
     right: -4px;
     top: 12px;
 }
+
 .tourtip__heading {
     font-size: var(--font-size-large-1);
     font-weight: 700;
     margin: 0 0 var(--spacing-100);
 }
+
 .tourtip--expanded .tourtip__overlay,
 span.tourtip__heading {
     display: block;
 }
+
 .tourtip__footer {
     align-items: center;
     display: flex;
@@ -158,6 +182,7 @@ span.tourtip__heading {
     margin-top: 16px;
     width: 100%;
 }
+
 .tourtip__footer > button.btn--primary {
     background-color: var(
         --tourtip-background-color,
@@ -165,6 +190,7 @@ span.tourtip__heading {
     );
     color: var(--tourtip-foreground-color, var(--color-background-inverse));
 }
+
 .tourtip__footer > a:not(:last-child),
 .tourtip__footer > button:not(:last-child) {
     margin-right: var(--spacing-200);
@@ -182,6 +208,7 @@ span.tourtip__heading {
 .tourtip__index {
     flex: 1;
 }
+
 @media (min-width: 512px) {
     .tourtip__overlay {
         max-width: 400px;

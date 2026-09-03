@@ -8,8 +8,8 @@ static declare global {
 <const/{ pageImg, page }=getMetadataFromUrl($global.url.pathname)>
 
 <style.scss>
-    @use "@ebay/skin/src/tokens/evo-core";
-    @use "@ebay/skin/src/sass/page-grid/page-grid";
+  @use "@ebay/skin/src/tokens/evo-core";
+  @use "@ebay/skin/src/sass/page-grid/page-grid";
 </style>
 
 <!DOCTYPE html>
@@ -18,40 +18,50 @@ static declare global {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${$global.meta.pageTitle}</title>
-    <meta property="og:title" content=`${$global.meta.pageTitle || "evo web"}`>
+    <title>${$global.meta?.pageTitle}</title>
+    <meta property="og:title" content=`${$global.meta?.pageTitle || "evo web"}`>
     <meta
       property="og:description"
-      content=`${$global.meta.pageDescription || "Evo Web contains the latest components built with a11y in mind"}`>
+      content=`${$global.meta?.pageDescription || "Evo Web contains the latest components built with a11y in mind"}`
+    >
     <meta property="og:type" content="website">
     <meta
       property="og:image"
-      content=`${pageImg || ($global.meta as any).pageImg || ""}`>
+      content=`${pageImg || ($global.meta as any).pageImg || ""}`
+    >
     <meta
       name="twitter:image"
-      content=`${pageImg || ($global.meta as any).pageImg || ""}`>
+      content=`${pageImg || ($global.meta as any).pageImg || ""}`
+    >
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content=`${$global.meta.pageTitle || "evo web"}`>
+    <meta
+      name="twitter:title"
+      content=`${$global.meta?.pageTitle || "evo web"}`
+    >
     <meta
       name="twitter:description"
-      content=`${$global.meta.pageDescription || "Evo Web contains the latest components built with a11y in mind"}`>
+      content=`${$global.meta?.pageDescription || "Evo Web contains the latest components built with a11y in mind"}`
+    >
     <link
       rel="icon"
       type="image/png"
       href=`${basePath}favicon/favicon-96x96.png`
-      sizes="96x96">
+      sizes="96x96"
+    >
     <link rel="icon" type="image/svg+xml" href=`${basePath}favicon/favicon.svg`>
     <link rel="shortcut icon" href=`${basePath}favicon/favicon.ico`>
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href=`${basePath}favicon/apple-touch-icon.png`>
+      href=`${basePath}favicon/apple-touch-icon.png`
+    >
     <meta name="apple-mobile-web-app-title" content="Evo Web">
     <link rel="manifest" href=`${basePath}favicon/site.webmanifest`>
     // tracking
     <html-script
       async
-      src="https://www.googletagmanager.com/gtag/js?id=G-9HQJ5CWCJZ"/>
+      src="https://www.googletagmanager.com/gtag/js?id=G-9HQJ5CWCJZ"
+    />
     <script>
       (window.dataLayer ||= []).push(
         ["js", new Date()],
