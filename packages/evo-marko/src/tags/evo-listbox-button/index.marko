@@ -82,7 +82,12 @@ export interface Input<Index extends number | string> extends Marko.HTML.Div {
 
 <evo-expander/expander: Marko.Return<
   (typeof import("<evo-expander>"))["default"]
->["value"] open=open strategy=strategy host=$root overlay=$listbox/>
+>["value"]
+  open=open
+  strategy=strategy
+  host=$root
+  overlay=$listbox
+/>
 
 <${truncate && !fluid ? "div" : "span"}
   ...htmlInput
@@ -105,7 +110,8 @@ export interface Input<Index extends number | string> extends Marko.HTML.Div {
       open = false;
     }
     onFocusOut && onFocusOut(e as any, el);
-  }>
+  }
+>
   <id/labelId>
   <button
     class=[
@@ -122,12 +128,13 @@ export interface Input<Index extends number | string> extends Marko.HTML.Div {
     name=buttonName
     aria-haspopup="listbox"
     aria-describedby=a11yDescribedBy
-    aria-labelledby=(prefixId ? `${prefixId} ${labelId}` : labelId)
+    aria-labelledby=prefixId ? `${prefixId} ${labelId}` : labelId
     aria-invalid=invalid && "true"
     aria-expanded=expander.ariaExpanded
     onClick() {
       open = !open;
-    }>
+    }
+  >
     <span class="btn__cell">
       <if=floatingLabel>
         <span class=[
@@ -138,11 +145,7 @@ export interface Input<Index extends number | string> extends Marko.HTML.Div {
           ${floatingLabel}
         </span>
       </if>
-      <else if=prefixLabel>
-        <span class="btn__label">
-          ${prefixLabel}
-        </span>
-      </else>
+      <else if=prefixLabel><span class="btn__label">${prefixLabel}</span></else>
 
       <if=selectedOption>
         <if=selectedOption.icon>
@@ -152,15 +155,11 @@ export interface Input<Index extends number | string> extends Marko.HTML.Div {
           <${selectedOption.content}/>
         </span>
         <if=postfixLabel>
-          <span class="btn__postfix-label">
-            ${" "}${postfixLabel}
-          </span>
+          <span class="btn__postfix-label">${" "}${postfixLabel}</span>
         </if>
       </if>
       <else if=!floatingLabel>
-        <span id=labelId class="btn__text">
-          ${unselectedText}
-        </span>
+        <span id=labelId class="btn__text">${unselectedText}</span>
       </else>
       <evo-icon-chevron-down-16/>
     </span>
@@ -178,5 +177,6 @@ export interface Input<Index extends number | string> extends Marko.HTML.Div {
     onClick() {
       if (collapseOnSelect) open = false;
     }
-    option=input.option/>
+    option=input.option
+  />
 </>

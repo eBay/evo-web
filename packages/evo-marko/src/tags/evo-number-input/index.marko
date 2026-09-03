@@ -1,19 +1,19 @@
 import type { Input as TextboxInput } from "<evo-input>";
 export type Input = Omit<TextboxInput, "value" | "valueChange"> & {
-    value?: number;
-    valueChange?: (value: number) => void;
-    min?: number;
-    max?: number;
-    a11yDeleteText?: string;
-    onIncrement?: (event: Event, target: HTMLElement, value:number) => void;
-    onDecrement?: (event: Event, target:HTMLElement, value:number) => void;
-    onDelete?: (event: Event, target:HTMLElement) => void;
+  value?: number;
+  valueChange?: (value: number) => void;
+  min?: number;
+  max?: number;
+  a11yDeleteText?: string;
+  onIncrement?: (event: Event, target: HTMLElement, value: number) => void;
+  onDecrement?: (event: Event, target: HTMLElement, value: number) => void;
+  onDelete?: (event: Event, target: HTMLElement) => void;
 } & (
     | { label: Marko.AttrTag<Marko.HTML.Label>; a11yText?: never }
-    | { a11yText: string; label?: never; }
-);
+    | { a11yText: string; label?: never }
+  );
 
-<const/defaultMin=(input.a11yDeleteText ? 1 : 0)>
+<const/defaultMin=input.a11yDeleteText ? 1 : 0>
 
 <const/{
   label,
@@ -53,7 +53,7 @@ export type Input = Omit<TextboxInput, "value" | "valueChange"> & {
 ]>
   <evo-input
     ...htmlInput
-    aria-label=(!a11yText && !label ? "Number Input" : a11yText)
+    aria-label=!a11yText && !label ? "Number Input" : a11yText
     min=min
     max=max
     id=numberInput
@@ -61,15 +61,14 @@ export type Input = Omit<TextboxInput, "value" | "valueChange"> & {
     value=displayValue
     valueChange(newValue) {
       value = checkBoundary(parseInt(newValue, 10) || defaultMin, 0);
-    }>
+    }
+  >
     <@prefixIcon>
-      <if=label>
-        <label ...label for=numberInput/>
-      </if>
+      <if=label><label ...label for=numberInput/></if>
       <evo-icon-button
         aria-hidden="true"
         a11yText=null
-        disabled=(displayValue <= min)
+        disabled=displayValue <= min
         size="small"
         class="number-input__decrement"
         transparent
@@ -77,7 +76,8 @@ export type Input = Omit<TextboxInput, "value" | "valueChange"> & {
         onClick(event, target) {
           value = checkBoundary(displayValue, -1);
           (onDecrement || null)?.(event, target, value!);
-        }>
+        }
+      >
         <evo-icon-remove-24/>
       </evo-icon-button>
     </@prefixIcon>
@@ -90,7 +90,8 @@ export type Input = Omit<TextboxInput, "value" | "valueChange"> & {
           a11yText=a11yDeleteText
           onClick(event, target) {
             (onDelete || null)?.(event, target);
-          }>
+          }
+        >
           <evo-icon-delete-24/>
         </evo-icon-button>
       </if>
@@ -98,7 +99,7 @@ export type Input = Omit<TextboxInput, "value" | "valueChange"> & {
       <evo-icon-button
         aria-hidden="true"
         a11yText=null
-        disabled=(displayValue >= max)
+        disabled=displayValue >= max
         class="number-input__increment"
         size="small"
         transparent
@@ -106,7 +107,8 @@ export type Input = Omit<TextboxInput, "value" | "valueChange"> & {
           value = checkBoundary(displayValue, 1);
           (onIncrement || null)?.(event, target, value!);
         }
-        tabindex="-1">
+        tabindex="-1"
+      >
         <evo-icon-add-24/>
       </evo-icon-button>
     </@postfixIcon>

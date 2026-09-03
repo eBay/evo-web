@@ -7,9 +7,9 @@
   }
 </style>
 
-<div class=((styles as any).grid)>
-  <for|placement| of=(
-    [
+<div class=(styles as any).grid>
+  <for|placement|
+    of=[
       "top-start",
       "top",
       "top-end",
@@ -23,20 +23,13 @@
       "left",
       "left-end",
     ] as const
-  )>
+  >
     <evo-tooltip ...input placement=placement flip=false>
-      <@host as="button">
-        ${placement}
-      </@host>
+      <@host as="button">${placement}</@host>
+      <p>Tooltip content for <code>${placement}</code></p>
       <p>
-        Tooltip content for${" "}
-        <code>${placement}</code>
-      </p>
-      <p>
-        Here we explicitly set${" "}
-        <code>flip=false</code>
-        ${" "}for demonstration. By default, tourtip will not extend outside the
-        window
+        Here we explicitly set <code>flip=false</code> for demonstration. By
+        default, tourtip will not extend outside the window
       </p>
     </evo-tooltip>
   </for>

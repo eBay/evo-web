@@ -21,7 +21,8 @@ export interface Input extends Omit<TextboxInput, "size"> {
     fluid
     type="search"
     aria-controls=a11yControlsId
-    placeholder=placeholder>
+    placeholder=placeholder
+  >
     <@prefixIcon>
       <evo-icon-search-16/>
     </@prefixIcon>
@@ -34,7 +35,8 @@ export interface Input extends Omit<TextboxInput, "size"> {
           transparent
           onClick() {
             (input.valueChange || null)?.("");
-          }>
+          }
+        >
           <evo-icon-clear-16/>
         </evo-icon-button>
       </if>

@@ -39,10 +39,9 @@ export interface Input extends Marko.HTML.Button {
   onClick(event, target) {
     pressed = !pressed;
     (onClick || null)?.(event, target);
-  }>
-  <if=icon>
-    <span ...icon class=["toggle-button__icon", icon.class]/>
-  </if>
+  }
+>
+  <if=icon><span ...icon class=["toggle-button__icon", icon.class]/></if>
   <else if=image>
     <span class="toggle-button__image-container">
       <if=image.fillPlacement>
@@ -55,7 +54,8 @@ export interface Input extends Marko.HTML.Button {
             "background-position": image.fillPlacement || "center",
             "background-size": "cover",
             "background-repeat": "no-repeat",
-          }/>
+          }
+        />
       </if>
       <else>
         <span class="toggle-button__image">
@@ -66,9 +66,7 @@ export interface Input extends Marko.HTML.Button {
   </else>
   <span class="toggle-button__content">
     <span class="toggle-button__title">
-      <if=title>
-        ${title}
-      </if>
+      <if=title>${title}</if>
       <else>
         <${content}/>
       </else>

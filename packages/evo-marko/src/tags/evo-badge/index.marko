@@ -33,7 +33,8 @@ export interface Input extends Omit<Marko.HTML.Span, "role" | "aria-label"> {
     ...htmlInput
     aria-label=a11yText
     role=role
-    class=["badge", "badge--circle", inputClass]>
+    class=["badge", "badge--circle", inputClass]
+  >
     ${number}
   </span>
 </else>

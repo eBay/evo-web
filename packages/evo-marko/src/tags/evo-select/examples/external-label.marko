@@ -19,14 +19,10 @@ static const options = [
 ];
 
 <span class="field">
-  <label class="field__label field__label--start" for="select">
-    Option
-  </label>
+  <label class="field__label field__label--start" for="select">Option</label>
   <evo-select ...input value:=selected name="formFieldName" id="select">
     <for|option| of=options>
-      <@option value=option.value>
-        ${option.text}
-      </@option>
+      <@option value=option.value>${option.text}</@option>
     </for>
   </evo-select>
 </span>

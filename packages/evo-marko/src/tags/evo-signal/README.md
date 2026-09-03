@@ -8,9 +8,7 @@
 </h1>
 
 ```marko
-<evo-signal status="trustworthy">
-  Trustworthy
-</evo-signal>
+<evo-signal status="trustworthy">Trustworthy</evo-signal>
 ```
 
 ## Examples and Documentation

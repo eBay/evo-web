@@ -33,8 +33,9 @@ export interface Input extends Marko.HTML.Span {
   <else>
     <a
       ...rest as Marko.HTML.A
-      href=(disabled ? undefined : href)
-      aria-disabled=disabled && "true"/>
+      href=disabled ? undefined : href
+      aria-disabled=disabled && "true"
+    />
   </else>
 </define>
 
@@ -46,11 +47,12 @@ export interface Input extends Marko.HTML.Span {
     fixed && `${baseClass}__menu--fixed`,
     fixWidth && `${baseClass}__menu--fix-width`,
     inputClass,
-  ]>
+  ]
+>
   <ul class="fake-menu__items" tabindex="-1">
     <for|item| of=items>
       <!-- Lifted out of <if>/<else> to work around Marko 6 SSR translator
-                 bug with `<const/{ named, ...rest }=obj>` inside a conditional branch. -->
+      bug with `<const/{ named, ...rest }=obj>` inside a conditional branch. -->
       <const/{
         class: itemClass,
         current,
@@ -77,7 +79,8 @@ export interface Input extends Marko.HTML.Span {
           <ItemTag
             ...htmlItem
             class=[`${baseClass}__item`, itemClass]
-            aria-current=ariaCurrent>
+            aria-current=ariaCurrent
+          >
             <span>
               <${content}/>
             </span>
