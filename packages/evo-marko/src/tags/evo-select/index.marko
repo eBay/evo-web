@@ -75,6 +75,7 @@ export interface Input extends Marko.HTML.Select {
     ]
     style=style>
     <select
+      ...htmlInput
       onBlur(e, target) {
         focused = false;
         onBlur && onBlur(e, target);
@@ -85,8 +86,7 @@ export interface Input extends Marko.HTML.Select {
       }
       disabled=disabled
       id=id
-      value:=value
-      ...htmlInput>
+      value:=value>
       <for|optionOrGroup| of=list>
         <if=isGroup(optionOrGroup)>
           <optgroup label=optionOrGroup.optgroup>

@@ -50,6 +50,10 @@
   "dependencies": {
     "@floating-ui/dom": "^1.7.5",
     "@google/model-viewer": "^4.1.0",
+    "@videojs/core": "10.0.0-beta.26",
+    "@videojs/media": "10.0.0-beta.26",
+    "@videojs/spf": "10.0.0-beta.26",
+    "@videojs/utils": "10.0.0-beta.26",
     "highcharts": "^12.5.0",
     "makeup-active-descendant": "0.7.11",
     "makeup-expander": "~0.11.10",

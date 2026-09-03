@@ -156,6 +156,7 @@ static function nextSelected(
           }
           onKeyDown(e, target) {
             if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
               selected = nextSelected(selected, value);
             }
             rovTabindex.onKeyDown(e);
