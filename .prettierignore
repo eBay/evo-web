@@ -1,28 +1,2 @@
 # Generated changelogs are managed by Changesets
 packages/*/CHANGELOG.md
-
-# TEMP: reverting merge formatting churn
-.claude/hooks/session-start-context.js
-.marko-run/routes.d.ts
-CLAUDE.md
-src/routes/_index/accessibility/techniques/live-region+page.marko
-src/routes/_index/components/chart-legend/accessibility+page.marko
-src/routes/_index/components/chip/accessibility+page.marko
-src/routes/_index/components/education-notice/accessibility+page.marko
-src/routes/_index/components/field/accessibility+page.marko
-src/routes/_index/components/field/css+page.marko
-src/routes/_index/components/file-preview-card-group/accessibility+page.marko
-src/routes/_index/components/file-preview-card/accessibility+page.marko
-src/routes/_index/components/filter-chip/accessibility+page.marko
-src/routes/_index/components/filter-chip/css+page.marko
-src/routes/_index/components/floating-label/accessibility+page.marko
-src/routes/_index/components/image-placeholder/accessibility+page.marko
-src/routes/_index/components/inline-notice/accessibility+page.marko
-src/routes/_index/components/list/accessibility+page.marko
-src/routes/_index/components/page-notice/accessibility+page.marko
-src/routes/_index/components/panel-dialog/accessibility+page.marko
-src/routes/_index/components/section-notice/accessibility+page.marko
-src/routes/_index/components/section-title/accessibility+page.marko
-src/routes/_index/components/selection-chip/accessibility+page.marko
-src/routes/_index/components/split-button/accessibility+page.marko
-src/routes/_index/components/split-button/css+page.marko

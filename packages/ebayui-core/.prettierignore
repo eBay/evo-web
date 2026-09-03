@@ -5,4 +5,3 @@ docs/
 _cdn/
 __snapshots__/
 !src/node_modules
-CHANGELOG.md
