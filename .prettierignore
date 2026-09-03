@@ -1,5 +1,2 @@
 # Generated changelogs are managed by Changesets
 packages/*/CHANGELOG.md
-
-# Copied from packages/skin/src/svg/icons.svg by the Skin build
-src/tags/master-icons.marko
