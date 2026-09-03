@@ -86,7 +86,7 @@
     "@storybook/mdx2-csf": "^1.1.0",
     "@storybook/react-vite": "^10",
     "@storybook/web-components-vite": "^10.6.0",
-    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/jest-dom": "^7.0.1",
     "@testing-library/react": "^16",
     "@testing-library/user-event": "^14",
     "@types/markdown-it": "^14.2.0",
@@ -96,11 +96,11 @@
     "@typescript-eslint/eslint-plugin": "^8",
     "@typescript-eslint/parser": "^8",
     "@vitejs/plugin-react": "^5",
-    "@vitest/browser": "^4.1.7",
-    "@vitest/browser-playwright": "^4.1.7",
-    "@vitest/coverage-v8": "^4.1.7",
+    "@vitest/browser": "^5.0.0",
+    "@vitest/browser-playwright": "^5.0.0",
+    "@vitest/coverage-v8": "^5.0.0",
     "@vitest/eslint-plugin": "^1.6.27",
-    "@vitest/ui": "^4.1.7",
+    "@vitest/ui": "^5.0.0",
     "autoprefixer": "^10.4.23",
     "cheerio": "^1.2.0",
     "cldr-core": "^48.2.0",
@@ -125,7 +125,7 @@
     "html-minifier": "^4.0.0",
     "husky": "^9.1.7",
     "identity-obj-proxy": "^3.0.0",
-    "jsdom": "^27.4.0",
+    "jsdom": "^30.0.1",
     "libphonenumber-js": "^1.13.12",
     "lint-staged": "^17.4.1",
     "lintspaces-cli": "^1.0.0",
@@ -185,9 +185,14 @@
     "vite": "^7.3.2",
     "vite-css-modules": "^1.12.0",
     "vite-plugin-cjs-interop": "^2.3.0",
-    "vitest": "^4.1.7",
-    "vitest-browser-react": "^2.0.5",
+    "vitest": "^5.0.0",
+    "vitest-browser-react": "^2.2.0",
     "xmlserializer": "^0.6.1",
     "yargs": "^18.1.0"
+  },
+  "overrides": {
+    "vitest-browser-react": {
+      "vitest": "$vitest"
+    }
   }
 }

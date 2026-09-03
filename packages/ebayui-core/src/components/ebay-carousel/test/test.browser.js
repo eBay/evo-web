@@ -14,6 +14,8 @@ import template from "../index.marko";
 import * as mock from "./mock";
 import * as scrollTransitionModule from "../utils/scroll-transition";
 
+vi.mock("../utils/scroll-transition", { spy: true });
+
 beforeAll(() => fastAnimations.start());
 afterAll(() => fastAnimations.stop());
 afterEach(cleanup);
@@ -32,8 +34,6 @@ beforeEach(() => {
         ],
         shouldAdvanceTime: true,
     });
-
-    vi.mock("../utils/scroll-transition", { spy: true });
 
     vi.mocked(scrollTransitionModule.scrollTransition).mockImplementation(
         (el, to, fn) => {
