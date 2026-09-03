@@ -1,54 +1,54 @@
 export interface Input {
-    htmlFor?: Marko.HTMLAttributes["id"]
-    size?: "regular" | "large";
-    alwaysUp?: boolean;
-    fluid?: boolean;
-    opaqueLabel?: boolean;
-    floatingLabel?: string;
-    focused?: boolean;
-    invalid?: boolean;
-    value?: unknown;
-    disabled?: Marko.HTML.Input["disabled"];
-    autocorrect?: Marko.HTML.TextArea["autocorrect"];
-    cols?: Marko.HTML.TextArea["cols"];
-    rows?: Marko.HTML.TextArea["rows"];
-    content?: Marko.Body<[{ showPlaceholder: boolean }]>
+  htmlFor?: Marko.HTMLAttributes["id"];
+  size?: "regular" | "large";
+  alwaysUp?: boolean;
+  fluid?: boolean;
+  opaqueLabel?: boolean;
+  floatingLabel?: string;
+  focused?: boolean;
+  invalid?: boolean;
+  value?: unknown;
+  disabled?: Marko.HTML.Input["disabled"];
+  autocorrect?: Marko.HTML.TextArea["autocorrect"];
+  cols?: Marko.HTML.TextArea["cols"];
+  rows?: Marko.HTML.TextArea["rows"];
+  content?: Marko.Body<[{ showPlaceholder: boolean }]>;
 }
 
 <const/{
-    disabled,
-    floatingLabel,
-    htmlFor,
-    alwaysUp,
-    size,
-    focused,
-    value,
-    invalid,
-    opaqueLabel,
-    fluid,
-    content,
+  disabled,
+  floatingLabel,
+  htmlFor,
+  alwaysUp,
+  size,
+  focused,
+  value,
+  invalid,
+  opaqueLabel,
+  fluid,
+  content,
 }=input>
 
 <const/defaultTag=(fluid ? "div" : "span")>
 <const/isFloating=value || focused || alwaysUp>
 
 <${floatingLabel && defaultTag} class=[
-    "floating-label",
-    size === "large" && "floating-label--large",
-    opaqueLabel && "floating-label--opaque",
+  "floating-label",
+  size === "large" && "floating-label--large",
+  opaqueLabel && "floating-label--opaque",
 ]>
-    <if=floatingLabel>
-        <label
-            for=htmlFor
-            class=[
-                "floating-label__label floating-label__label--animate",
-                disabled && "floating-label__label--disabled",
-                invalid && "floating-label__label--invalid",
-                !isFloating && "floating-label__label--inline",
-                isFloating && "floating-label__label--focus",
-            ]>
-            ${floatingLabel}
-        </label>
-    </if>
-    <${content} showPlaceholder=!floatingLabel || isFloating/>
- </>
+  <if=floatingLabel>
+    <label
+      for=htmlFor
+      class=[
+        "floating-label__label floating-label__label--animate",
+        disabled && "floating-label__label--disabled",
+        invalid && "floating-label__label--invalid",
+        !isFloating && "floating-label__label--inline",
+        isFloating && "floating-label__label--focus",
+      ]>
+      ${floatingLabel}
+    </label>
+  </if>
+  <${content} showPlaceholder=!floatingLabel || isFloating/>
+</>

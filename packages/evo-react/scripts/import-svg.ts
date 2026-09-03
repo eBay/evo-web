@@ -103,6 +103,7 @@ export function ${iconComponentName}(props: EvoIconComponentProps) {
   const storiesContent = `${fileHeader}\n// @ts-nocheck\n
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { EvoIconProvider } from "./context";
+import { IconExample, IconGrid } from "./icon-example";
 import type { EvoIconComponentProps } from "./icons/types";
 ${icons.map(({ componentName, filePath }) => `import { ${componentName} } from "./icons/${filePath}";`).join("\n")}
 
@@ -169,22 +170,15 @@ type Story = StoryObj<EvoIconComponentProps>;
 export const AllIcons: Story = {
   render: (args) => (
     <EvoIconProvider>
-      <table>
-        <tbody>
-          ${icons
-            .map(
-              ({ componentName, filePath }) => `
-          <tr>
-            <td>{${componentName}.name || "${filePath}"}</td>
-            <td>
-              <${componentName} {...args} />
-            </td>
-          </tr>
-              `,
-            )
-            .join("\n")}
-        </tbody>
-      </table>
+      <IconGrid>
+        ${icons
+          .map(
+            ({ componentName }) => `<IconExample name="${componentName}">
+          <${componentName} {...args} />
+        </IconExample>`,
+          )
+          .join("\n        ")}
+      </IconGrid>
     </EvoIconProvider>
   ),
 };

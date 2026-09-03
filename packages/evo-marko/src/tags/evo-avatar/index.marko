@@ -2,69 +2,68 @@ import { getColorForText } from "./util";
 static type Size = 32 | 40 | 48 | 56 | 64 | 96 | 128;
 static type ImagePlacement = "cover" | "fit";
 export interface Input extends Omit<Marko.HTML.Div, "role" | "aria-label"> {
-    username?: string;
-    color?: string;
-    size?: Size | `${Size}`;
-    image?: Marko.AttrTag<Omit<Marko.HTML.Img, "alt">>;
-    knownAspectRatio?: number;
-    /**
-     * The `aria-label` of the avatar
-     *
-     * English default to be overridden is `"avatar"`
-     * 
-     * Pass `null` explicitly _only_ if alternative accessibility information is present
-     */
-    a11yText: string | null;
+  username?: string;
+  color?: string;
+  size?: Size | `${Size}`;
+  image?: Marko.AttrTag<Omit<Marko.HTML.Img, "alt">>;
+  knownAspectRatio?: number;
+  /**
+   * The `aria-label` of the avatar
+   *
+   * English default to be overridden is `"avatar"`
+   *
+   * Pass `null` explicitly _only_ if alternative accessibility information is present
+   */
+  a11yText: string | null;
 }
 
 <const/{
-    class: inputClass,
-    size,
-    color,
-    image,
-    username,
-    content,
-    knownAspectRatio,
-    a11yText = "avatar",
-    ...htmlInput
+  class: inputClass,
+  size,
+  color,
+  image,
+  username,
+  content,
+  knownAspectRatio,
+  a11yText = "avatar",
+  ...htmlInput
 }=input>
 
 <let/aspectRatio=knownAspectRatio>
 
 <const/imagePlacement=(
-    (aspectRatio && (aspectRatio < 3 / 4 || aspectRatio > 4 / 3)
-        ? "fit"
-        : "cover") as ImagePlacement
+  (aspectRatio && (aspectRatio < 3 / 4 || aspectRatio > 4 / 3)
+    ? "fit"
+    : "cover") as ImagePlacement
 )>
 
 <div
-    ...htmlInput
-    aria-label=a11yText
-    role="img"
-    class=[
-        "avatar",
-        imagePlacement === "fit" && "avatar--fit",
-        inputClass,
-        size && `avatar--${size}`,
-        username && !image && `avatar--${getColorForText(username, color)}`,
-    ]>
-    <if=image>
-        <img
-            ...image
-            alt=""
-            onLoad(_, el) {
-                aspectRatio = el.naturalWidth / el.naturalHeight;
-                image.onLoad && image.onLoad(_, el);
-            }
-        >
-    </if>
-    <else if=content>
-        <${content}/>
-    </else>
-    <else if=username>
-        ${username.charAt(0).toUpperCase()}
-    </else>
-    <else>
-        <evo-icon-avatar-signed-out/>
-    </else>
+  ...htmlInput
+  aria-label=a11yText
+  role="img"
+  class=[
+    "avatar",
+    imagePlacement === "fit" && "avatar--fit",
+    inputClass,
+    size && `avatar--${size}`,
+    username && !image && `avatar--${getColorForText(username, color)}`,
+  ]>
+  <if=image>
+    <img
+      ...image
+      alt=""
+      onLoad(_, el) {
+        aspectRatio = el.naturalWidth / el.naturalHeight;
+        image.onLoad && image.onLoad(_, el);
+      }>
+  </if>
+  <else if=content>
+    <${content}/>
+  </else>
+  <else if=username>
+    ${username.charAt(0).toUpperCase()}
+  </else>
+  <else>
+    <evo-icon-avatar-signed-out/>
+  </else>
 </div>

@@ -1,17 +1,19 @@
 import "../../../../sass/accessibility.scss";
+import { urls } from "../../../../data";
+
 <div class="a11y-pattern-content">
   <h1>Inline Notice Accessibility</h1>
   <h2>Best Practices</h2>
   <p>Avoid having more than one high-priority notice visible at any time.</p>
   <p>
     Avoid rendering high-priority inline notices on the server. For better
-    discoverability, use a
-    <a href="page-notice">
+    discoverability, use a${" "}
+    <a href=`${urls.components}/page-notice`>
       page notice
     </a>
-    instead. If you cannot use a page notice, then focus
+    ${" "}instead. If you cannot use a page notice, then focus${" "}
     <strong>must</strong>
-    be set on the inline notice.
+    ${" "}be set on the inline notice.
   </p>
   <p>
     Avoid using progress bars and spinners in conjunction with client-side
@@ -25,49 +27,88 @@ import "../../../../sass/accessibility.scss";
   <h2>Interaction Design</h2>
   <h3>Keyboard</h3>
   <p>
-    Nested interactive elements (such as links)
+    Nested interactive elements (such as links)${" "}
     <strong>must</strong>
-    be keyboard focusable.
+    ${" "}be keyboard focusable.
+  </p>
+  <p>
+    A high-priority notice rendered on the server and visible on page load${" "}
+    <strong>must</strong>
+    ${" "}receive focus. These cases should be rare; use a${" "}
+    <a href=`${urls.components}/page-notice`>
+      page notice
+    </a>
+    ${" "}when possible.
   </p>
   <h3>Screen Reader</h3>
   <p>
-    Screen reader
+    Screen reader${" "}
     <strong>must</strong>
-    not announce low-priority server-side notices.
+    ${" "}not announce low-priority server-side notices.
   </p>
   <p>
-    Screen reader
+    Screen reader${" "}
     <strong>must</strong>
-    announce client-side content changes to any type of notice.
+    ${" "}announce client-side content changes to any type of notice.
   </p>
   <p>
-    Screen reader
+    Screen reader${" "}
     <strong>must</strong>
-    announce client-side visibility change of a hidden notice.
+    ${" "}announce client-side visibility change of a hidden notice.
   </p>
   <p>
-    If the notice is related to a control, the notice
+    If the notice is related to a control, the notice${" "}
     <strong>must</strong>
-    be announced as the description of that control.
+    ${" "}be announced as the description of that control.
   </p>
-  <h2>FAQ</h2>
-  <h3>When do I use role=“region” with an inline notice?</h3>
-  <p>
-    For all notices. It creates a landmark region. All landmark regions should
-    be labelled (e.g. “Confirmation”, “Information”, “Attention”).
-  </p>
-  <h3>When do I use role=“alert” with an inline notice?</h3>
-  <p>
-    For high-priority notices rendered and updated on the client only. The alert
-    must be nested inside of the landmark region element.
-  </p>
-  <h3>When do I set keyboard focus on an inline notice?</h3>
-  <p>
-    Always set keyboard focus on high priority notices rendered by the server
-    and visible at page load time. Again, these situations should be rare. Use a
-    <a href="page-notice">
-      page notice
-    </a>
-    instead.
-  </p>
+  <h3>Pointer</h3>
+  <p>Clicking or tapping a notice action activates its link or button.</p>
+  <h2>ARIA Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>role="region"</strong>
+        </td>
+        <td>
+          Exposes the notice as a named landmark region. Use a label such as
+          "Confirmation," "Information," or "Attention."
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>role="alert"</strong>
+        </td>
+        <td>
+          Announces a high-priority notice rendered on the client. Nest the
+          alert inside the landmark region.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-describedby</strong>
+        </td>
+        <td>Associates a notice with the control it describes.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Further Reading</h2>
+  <ul>
+    <li>
+      <a href=`${urls.components}/page-notice`>
+        Page Notice
+      </a>
+    </li>
+    <li>
+      <a href=`${urls.components}/section-notice`>
+        Section Notice
+      </a>
+    </li>
+  </ul>
 </div>

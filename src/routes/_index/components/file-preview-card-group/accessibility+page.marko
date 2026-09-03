@@ -1,1 +1,73 @@
-<p>Accessibility guidelines coming soon.</p>
+import "../../../../sass/accessibility.scss";
+import { urls } from "../../../../data";
+
+<div class="a11y-pattern-content">
+  <h1>File Preview Card Group Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    A file preview card group${" "}
+    <strong>must</strong>
+    ${" "}use a semantic list, with each card in a list item. Each image${" "}
+    <strong>must</strong>
+    ${" "}have alternative text that identifies the file, unless the same
+    information is adjacent.
+  </p>
+  <p>
+    Repeated card actions${" "}
+    <strong>must</strong>
+    ${" "}have names that identify their target file. Decorative file and action
+    icons${" "}
+    <strong>must</strong>
+    ${" "}be hidden from assistive technology.
+  </p>
+  <h2>Interaction Design</h2>
+  <h3>Keyboard</h3>
+  <p>
+    <strong>TAB</strong>
+    ${" "}moves through links and buttons in DOM order. The group itself does
+    not add a tab stop.
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    A screen reader announces the list length, each card's content, and the
+    accessible name of each action.
+  </p>
+  <h3>Pointer</h3>
+  <p>Clicking or tapping a card action performs that action for its file.</p>
+  <h2>ARIA Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>aria-label</strong>
+        </td>
+        <td>Names an icon-only card action.</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-hidden="true"</strong>
+        </td>
+        <td>Hides decorative file and action icons.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Further Reading</h2>
+  <ul>
+    <li>
+      <a href=`${urls.components}/file-preview-card`>
+        File Preview Card
+      </a>
+    </li>
+    <li>
+      <a href=`${urls.accessibility}/techniques/alternative-text`>
+        Alternative Text
+      </a>
+    </li>
+  </ul>
+</div>

@@ -2,13 +2,20 @@ import { urls } from "../../../../data";
 <div class="a11y-pattern-content">
   <h1>Live Region</h1>
   <p>
-    If an area of a page is dynamically updated without a full-page reload, we
+    If an area of a page is dynamically updated without a full-page reload, we${" "}
     <em>might</em>
-    (see
+    ${" "}(see${" "}
     <a href=`${urls.accessibility}/misc/faq`>
       FAQ: When Should A Live Region Be Used?
     </a>
-    ) wish to inform the user that there was a change.
+    ${" "}) wish to inform the user that there was a change.
+  </p>
+  <p>
+    The live region${" "}
+    <strong>must</strong>
+    ${" "}exist in the DOM before its content changes. Mounting a live region at
+    the same time as its message may not trigger an announcement. Render a
+    persistent, empty live region and add the message when the update occurs.
   </p>
   <pre><code class="language-html">&lt;div aria-live=&quot;”polite”&quot;&gt;
   &lt;p&gt;Newcastle United 0 - Barcelona 0&lt;/p&gt;
@@ -36,9 +43,9 @@ import { urls } from "../../../../data";
     and interactive elements.
   </p>
   <p>
-    [1] It is very important to note that any CSS display operation
+    [1] It is very important to note that any CSS display operation${" "}
     <strong>must</strong>
-    happen on a descendant node of the live region, and not on the live
+    ${" "}happen on a descendant node of the live region, and not on the live
     region node itself.
   </p>
 </div>

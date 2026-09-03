@@ -1,24 +1,44 @@
 <style/styles>
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 4rem;
-        justify-items: center;
-    }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    justify-items: center;
+  }
 </style>
 
-<div class=(styles as any).grid>
-    <for|placement| of=([
-        "top-start", "top", "top-end",
-        "right-start", "right", "right-end",
-        "bottom-start", "bottom", "bottom-end",
-        "left-start", "left", "left-end",
-    ] as const)>
-        <evo-tooltip ...input placement=placement flip=false>
-            <@host as="button">${placement}</@host>
-            <p>Tooltip content for <code>${placement}</code></p>
-            <p>Here we explicitly set <code>flip=false</code> for demonstration. By default, tourtip will not extend outside the window</p>
-        </evo-tooltip>
-    </for>
+<div class=((styles as any).grid)>
+  <for|placement| of=(
+    [
+      "top-start",
+      "top",
+      "top-end",
+      "right-start",
+      "right",
+      "right-end",
+      "bottom-start",
+      "bottom",
+      "bottom-end",
+      "left-start",
+      "left",
+      "left-end",
+    ] as const
+  )>
+    <evo-tooltip ...input placement=placement flip=false>
+      <@host as="button">
+        ${placement}
+      </@host>
+      <p>
+        Tooltip content for${" "}
+        <code>${placement}</code>
+      </p>
+      <p>
+        Here we explicitly set${" "}
+        <code>flip=false</code>
+        ${" "}for demonstration. By default, tourtip will not extend outside the
+        window
+      </p>
+    </evo-tooltip>
+  </for>
 </div>
-a
+<a/>

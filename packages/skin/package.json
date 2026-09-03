@@ -1,6 +1,6 @@
 {
     "name": "@ebay/skin",
-    "version": "19.32.0",
+    "version": "19.33.0",
     "description": "Skin - CSS modules that represent the brand eBay",
     "keywords": [
         "eBay",
@@ -70,8 +70,11 @@
         "extends": "@commitlint/config-conventional"
     },
     "lint-staged": {
-        "*.{js,css,md,scss,json}": "prettier --write",
-        "*.{css,scss}": "stylelint --config .stylelintrc"
+        "*.{js,md,json}": "prettier --write",
+        "*.{css,scss}": [
+            "prettier --write",
+            "stylelint --fix --config .stylelintrc"
+        ]
     },
     "browserslist": [
         "extends @ebay/browserslist-config"

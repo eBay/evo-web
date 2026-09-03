@@ -1,6 +1,6 @@
 {
   "name": "@evo-web/marko",
-  "version": "0.6.1",
+  "version": "0.7.0",
   "description": "Collection of core eBay components; considered to be the building blocks for all composite structures, pages & apps.",
   "keywords": [
     "marko-components",
@@ -39,6 +39,13 @@
     "test:ci": "CI=true vitest run --no-color",
     "test:server": "vitest run server",
     "test:watch": "vitest"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{js,jsx,mjs,marko,css,md,json}": "prettier --write"
   },
   "dependencies": {
     "@floating-ui/dom": "^1.7.5",

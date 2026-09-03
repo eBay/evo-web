@@ -50,9 +50,9 @@ describe("evo-icon SSR", () => {
       );
 
       expect(html).toContain(`id="${ROOT_ID}"`);
-      expect(html).toContain('position:absolute');
-      expect(html).toContain('height:0px');
-      expect(html).toContain('width:0px');
+      expect(html).toContain("position:absolute");
+      expect(html).toContain("height:0px");
+      expect(html).toContain("width:0px");
     });
 
     it("renders SVG use elements referencing symbols", () => {
@@ -74,8 +74,8 @@ describe("evo-icon SSR", () => {
       const html = renderToString(<EvoIconCart16 />);
 
       // Without provider, icon should have inline defs with symbol
-      expect(html).toContain('<defs');
-      expect(html).toContain('<symbol');
+      expect(html).toContain("<defs");
+      expect(html).toContain("<symbol");
       expect(html).toContain('id="icon-cart-16"');
     });
 

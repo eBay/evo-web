@@ -1,0 +1,15 @@
+export interface Input {
+  content?: Marko.Body;
+}
+
+<style/styles>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+    gap: 4px;
+  }
+</style>
+
+<div class=((styles as any).grid)>
+  <${input.content}/>
+</div>

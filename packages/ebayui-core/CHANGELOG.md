@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 16.13.0
+
+### Minor Changes
+
+- [#893](https://github.com/eBay/evo-web/pull/893) [`895e90a`](https://github.com/eBay/evo-web/commit/895e90aea0b1b6b4c077aea391d1b3d4bf94e08e) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add a `strategy` input to date textbox components to control calendar popover positioning (`absolute` or `fixed`).
+
 ## 16.12.0
 
 ### Minor Changes
@@ -12,7 +18,7 @@
 
 - [#757](https://github.com/eBay/evo-web/pull/757) [`3c02952`](https://github.com/eBay/evo-web/commit/3c02952c4ff2923284dddc791c2f2abc43727a33) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - fix(ebay-pagination): disabled prev/next links no longer navigate when clicked
 
-  When a `previous` or `next` pagination item has an `href` (link variant) and is marked `disabled`, the rendered `<a>` element no longer includes the `href` attribute. The click handlers also now call `event.preventDefault()` when `aria-disabled` is set, providing defense-in-depth against navigation in both the Marko and React implementations.
+    When a `previous` or `next` pagination item has an `href` (link variant) and is marked `disabled`, the rendered `<a>` element no longer includes the `href` attribute. The click handlers also now call `event.preventDefault()` when `aria-disabled` is set, providing defense-in-depth against navigation in both the Marko and React implementations.
 
 ## 16.11.1
 
@@ -54,9 +60,9 @@
 
 - [#718](https://github.com/eBay/evo-web/pull/718) [`57d9fa1`](https://github.com/eBay/evo-web/commit/57d9fa102dff67c4dbd86950f60f2653a4ea2dc2) Thanks [@ArtBlue](https://github.com/ArtBlue)! - Add new icons: bank-of-america, capital-one, chase, citi, td, usaa, wells-fargo (colored, 32/24/18/12), pay-by-bank-be/de/fr/uk (colored, 24), ship-and-safety (24/16), tire (24/16), gift (20), ai-mobile (24/20/16), ai-summary (24/20/16), fast-forward (16), rewind (16), battery-waste (48), markdown (24/20/16), stop (24/20/16), skull (24/16/12), reply-chat (24/16/12), link (20/16), pin (12), pin-filled (12), home (20/16), locker (64/24/16), bids (12), promotion (12), selling (12), wire-transfer (24/16).
 
-  Update existing icons: ship-and-local (16), link (24), markdown (24/16).
+    Update existing icons: ship-and-local (16), link (24), markdown (24/16).
 
-  Closes #717 (sub-issues #543, #599, #680).
+    Closes #717 (sub-issues #543, #599, #680).
 
 - [#714](https://github.com/eBay/evo-web/pull/714) [`ce92606`](https://github.com/eBay/evo-web/commit/ce92606c2dfb59285de8bbb9c99c832d35505ebb) Thanks [@ArtBlue](https://github.com/ArtBlue)! - Deprecate `the-ebay-vault-24`, `the-ebay-vault-16`, `psa-16`, `psa-16-colored`, `psa-vault-16`, `psa-vault-16-colored`, `live-eye-16`, `live-eye-24`, `ebay-live-16`, `ebay-live-24` icons in favor of their renamed replacements.
 
@@ -81,8 +87,8 @@
 ### Patch Changes
 
 - [#699](https://github.com/eBay/evo-web/pull/699) [`c6f9113`](https://github.com/eBay/evo-web/commit/c6f91132215ba3eb05d8c488210accfb271c63ba) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Fix test noise and flaky carousel scroll test.
-  - `@evo-web/react`: Guard `EvoIcon`'s missing-provider `console.warn` with `process.env.NODE_ENV === 'development'` so it is silent in Vitest (`NODE_ENV=test`) without removing the warning from development builds.
-  - `@ebay/ebayui-core`: Fix flaky `ebay-carousel` browser test — "when it is scrolled to the second slide" `beforeEach` was calling `waitForCarouselUpdate()` which resolved immediately from the init render's `move` event, before the 640 ms scroll debounce fired. Replaced with `vi.advanceTimersByTimeAsync(700)` to deterministically trigger the debounce and flush the resulting Marko re-render.
+    - `@evo-web/react`: Guard `EvoIcon`'s missing-provider `console.warn` with `process.env.NODE_ENV === 'development'` so it is silent in Vitest (`NODE_ENV=test`) without removing the warning from development builds.
+    - `@ebay/ebayui-core`: Fix flaky `ebay-carousel` browser test — "when it is scrolled to the second slide" `beforeEach` was calling `waitForCarouselUpdate()` which resolved immediately from the init render's `move` event, before the 640 ms scroll debounce fired. Replaced with `vi.advanceTimersByTimeAsync(700)` to deterministically trigger the debounce and flush the resulting Marko re-render.
 
 ## 16.7.5
 
@@ -122,9 +128,9 @@
 
 - [#606](https://github.com/eBay/evo-web/pull/606) [`86c99fa`](https://github.com/eBay/evo-web/commit/86c99fa198805086c9c8377a000b0842597a51dd) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - feat(item-tile): add a11yExternalLinkText prop to EbayFilePreviewCard and EbayItemTile
 
-  When `a11yExternalLinkText` (`a11y-external-link-text` in Marko) is provided, the anchor tag renders with `target="_blank"` and `rel="noopener noreferrer"`, and a visually-hidden `<span class="clipped">` containing the text is appended inside the anchor for screen reader accessibility.
+    When `a11yExternalLinkText` (`a11y-external-link-text` in Marko) is provided, the anchor tag renders with `target="_blank"` and `rel="noopener noreferrer"`, and a visually-hidden `<span class="clipped">` containing the text is appended inside the anchor for screen reader accessibility.
 
-  Also fixes TypeScript typing on `EbayItemTileDescription` so the `as` prop accepts any element type (was limited to `<p>` element props).
+    Also fixes TypeScript typing on `EbayItemTileDescription` so the `as` prop accepts any element type (was limited to `<p>` element props).
 
 ## 16.6.1
 
@@ -139,9 +145,9 @@
 
 - [#570](https://github.com/eBay/evo-web/pull/570) [`5d5eaf8`](https://github.com/eBay/evo-web/commit/5d5eaf8841903b600dff2db2eb9d805f472822cc) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - **@ebay/ui-core-react:** Align video component with Marko implementation and shaka-player v5 - refactor to declarative approach with createPortal, implement missing controls, fix icon re-rendering and autoplay behavior.
 
-  **@ebay/ebayui-core:** Add accessible button wrapper for play button.
+    **@ebay/ebayui-core:** Add accessible button wrapper for play button.
 
-  **@ebay/skin:** Add button reset styles for shaka-play-button.
+    **@ebay/skin:** Add button reset styles for shaka-play-button.
 
 ## 16.6.0
 
@@ -242,7 +248,7 @@
 
 - [#413](https://github.com/eBay/evo-web/pull/413) [`df550f5`](https://github.com/eBay/evo-web/commit/df550f5f7d009511f37c4764d1981ca2959d77fa) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - fix(avatar): add alt="" to img for accessibility
 
-  Fixed accessibility issue where avatar images were announced twice by assistive technologies. The img element inside role="img" containers now has alt="" to prevent double announcement.
+    Fixed accessibility issue where avatar images were announced twice by assistive technologies. The img element inside role="img" containers now has alt="" to prevent double announcement.
 
 ## 16.0.0
 
@@ -415,7 +421,7 @@
 - [#210](https://github.com/eBay/evo-web/pull/210) [`66463ee`](https://github.com/eBay/evo-web/commit/66463ee6cc8b07c6b65f616108daa4bafb663687) Thanks [@agliga](https://github.com/agliga)! - feat(chip): added selection and filter chip
 
 - Updated dependencies [[`05d3c40`](https://github.com/eBay/evo-web/commit/05d3c4023776de1e2ac1f4c46b8e19dec2e3ddf6)]:
-  - @ebay/skin@19.11.0
+    - @ebay/skin@19.11.0
 
 ## 15.8.1
 

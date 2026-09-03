@@ -1,40 +1,40 @@
 import type { Input as ExpanderInput } from "<evo-expander>";
 export interface Input extends Marko.HTML.Span {
-    open?: boolean;
-    openChange?: (open: boolean) => void;
-    placement?: ExpanderInput["placement"];
-    offset?: number;
-    flip?: boolean;
-    shift?: boolean;
-    inline?: boolean;
-    host: Marko.AttrTag<
-        Marko.HTML.Span & {
-            as?: Marko.Renderable;
-        }
-    >;
-    heading?: Marko.AttrTag<
-        Marko.HTML.Span & {
-            as?: Marko.Renderable;
-        }
-    >;
+  open?: boolean;
+  openChange?: (open: boolean) => void;
+  placement?: ExpanderInput["placement"];
+  offset?: number;
+  flip?: boolean;
+  shift?: boolean;
+  inline?: boolean;
+  host: Marko.AttrTag<
+    Marko.HTML.Span & {
+      as?: Marko.Renderable;
+    }
+  >;
+  heading?: Marko.AttrTag<
+    Marko.HTML.Span & {
+      as?: Marko.Renderable;
+    }
+  >;
 }
 
 <const/{
-    class: inputClass,
-    placement = "bottom" as const,
-    offset = 8,
-    flip,
-    shift,
-    inline,
-    open: inputOpen,
-    openChange,
-    host,
-    heading,
-    onMouseEnter,
-    onMouseLeave,
-    onFocusIn,
-    onFocusOut,
-    ...htmlInput
+  class: inputClass,
+  placement = "bottom" as const,
+  offset = 8,
+  flip,
+  shift,
+  inline,
+  open: inputOpen,
+  openChange,
+  host,
+  heading,
+  onMouseEnter,
+  onMouseLeave,
+  onFocusIn,
+  onFocusOut,
+  ...htmlInput
 }=input>
 
 <let/open=(input.open ?? false) valueChange=input.openChange>
@@ -43,85 +43,85 @@ export interface Input extends Marko.HTML.Span {
 <id/hostId>
 // TODO: Remove when Marko support dynamic tag variables
 <const/$host() {
-    return document.getElementById(hostId)!;
+  return document.getElementById(hostId)!;
 }>
 <id/overlayId>
 // TODO: remove when Marko TS fixes its recursive issue
 <const/$overlay() {
-    return document.getElementById(overlayId)!;
+  return document.getElementById(overlayId)!;
 }>
 <id/arrowId>
 // TODO: remove when Marko TS fixes its recursive issue
 <const/$arrow() {
-    return document.getElementById(arrowId)!;
+  return document.getElementById(arrowId)!;
 }>
 
 <evo-expander/expander
-    open=open
-    placement=placement
-    offset=offset
-    flip=flip
-    shift=shift
-    inline=inline
-    strategy="absolute"
-    host=$host
-    overlay=$overlay
-    arrow=$arrow/>
+  open=open
+  placement=placement
+  offset=offset
+  flip=flip
+  shift=shift
+  inline=inline
+  strategy="absolute"
+  host=$host
+  overlay=$overlay
+  arrow=$arrow/>
 
 <span/$root
-    ...htmlInput
-    class=["tooltip", inputClass]
-    onMouseEnter(e, el) {
-        clearTimeout(hoverTimeout);
-        open = true;
-        onMouseEnter && onMouseEnter(e, el);
-    }
-    onMouseLeave(e, el) {
-        clearTimeout(hoverTimeout);
-        hoverTimeout = setTimeout(() => {
-            open = false;
-        }, 300);
-        onMouseLeave && onMouseLeave(e, el);
-    }
-    onFocusIn(e, el) {
-        open = true;
-        onFocusIn && onFocusIn(e, el);
-    }
-    onFocusOut(e, el) {
-        open = el.contains(e.relatedTarget as Node | null);
-        onFocusOut && onFocusOut(e, el);
-    }>
-    <const/{ as: hostAs = "span", class: hostClass, ...htmlHost }=host>
-    <${hostAs}
-        ...htmlHost
-        id=hostId
-        class=["tooltip__host", hostClass]
-        aria-expanded=expander.ariaExpanded/>
-    <span
-        id=overlayId
-        tabindex=(
-            open && -1 // required to prevent onFocusOut from closing the tooltip
-        )
-        class="tooltip__overlay"
-        style=expander.floatingStyles
-        role="tooltip">
-        <span id=arrowId class="tooltip__pointer" style=expander.arrowStyles/>
-        <span class="tooltip__mask">
-            <span class="tooltip__cell">
-                <span class="tooltip__content">
-                    <if=heading>
-                        <const/{
-                            as: headingAs = "span",
-                            class: headingClass,
-                            ...htmlHeading
-                        }=heading>
-                        <${headingAs}
-                            ...htmlHeading
-                            class=["tooltip__heading", headingClass]/>
-                    </if>
-                    <${input.content}/>
-                </span>
-            </span>
+  ...htmlInput
+  class=["tooltip", inputClass]
+  onMouseEnter(e, el) {
+    clearTimeout(hoverTimeout);
+    open = true;
+    onMouseEnter && onMouseEnter(e, el);
+  }
+  onMouseLeave(e, el) {
+    clearTimeout(hoverTimeout);
+    hoverTimeout = setTimeout(() => {
+      open = false;
+    }, 300);
+    onMouseLeave && onMouseLeave(e, el);
+  }
+  onFocusIn(e, el) {
+    open = true;
+    onFocusIn && onFocusIn(e, el);
+  }
+  onFocusOut(e, el) {
+    open = el.contains(e.relatedTarget as Node | null);
+    onFocusOut && onFocusOut(e, el);
+  }>
+  <const/{ as: hostAs = "span", class: hostClass, ...htmlHost }=host>
+  <${hostAs}
+    ...htmlHost
+    id=hostId
+    class=["tooltip__host", hostClass]
+    aria-expanded=expander.ariaExpanded/>
+  <span
+    id=overlayId
+    tabindex=(
+      open && -1 // required to prevent onFocusOut from closing the tooltip
+    )
+    class="tooltip__overlay"
+    style=expander.floatingStyles
+    role="tooltip">
+    <span id=arrowId class="tooltip__pointer" style=expander.arrowStyles/>
+    <span class="tooltip__mask">
+      <span class="tooltip__cell">
+        <span class="tooltip__content">
+          <if=heading>
+            <const/{
+              as: headingAs = "span",
+              class: headingClass,
+              ...htmlHeading
+            }=heading>
+            <${headingAs}
+              ...htmlHeading
+              class=["tooltip__heading", headingClass]/>
+          </if>
+          <${input.content}/>
         </span>
+      </span>
     </span>
+  </span>
 </span>

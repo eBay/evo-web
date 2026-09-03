@@ -22,7 +22,8 @@
     "deploy:build": "concurrently --kill-others-on-fail \"marko-run build -o ./_site\" \"npm run deploy -w packages/skin\" \"npm run deploy -w packages/ebayui-core\" \"npm run deploy -w packages/evo-marko\" \"npm run deploy -w packages/ebayui-core-react\" \"npm run deploy -w packages/evo-react\"",
     "deploy:copy-site": "copyfiles packages/skin/_site/public _site/public/skin-storybook -u 4 && copyfiles packages/ebayui-core/_site _site/public/ebayui-core -u 3 && copyfiles packages/evo-marko/_site _site/public/marko -u 3 && copyfiles packages/ebayui-core-react/_site _site/public/ebayui-core-react -u 3 && copyfiles packages/evo-react/_site _site/public/react -u 3",
     "postinstall": "npx playwright install --with-deps chromium",
-    "lint": "stylelint src --config .stylelintrc",
+    "lint": "npm run lint:root && npm run lint --workspaces --if-present",
+    "lint:root": "stylelint src --config .stylelintrc",
     "prepare": "husky",
     "release": "npm run release --ws --if-present && changeset publish",
     "start": "marko-run dev",
@@ -35,8 +36,11 @@
     "extends": "@commitlint/config-conventional"
   },
   "lint-staged": {
-    "*.{js,css,md,less,json}": "prettier --write --with-node-modules",
-    "*.{css,scss}": "stylelint --config .stylelintrc"
+    "*.{js,jsx,ts,tsx,marko,md,json,less}": "prettier --write --with-node-modules",
+    "*.{css,scss}": [
+      "prettier --write --with-node-modules",
+      "stylelint --fix --config .stylelintrc"
+    ]
   },
   "browserslist": [
     "extends @ebay/browserslist-config"

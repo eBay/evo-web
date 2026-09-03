@@ -110,6 +110,7 @@ Declare `<const/>`, `<let/>`, `<id/>`, and other tag variables close to where th
 **Marko 6 AttrTag content:** When already spreading an AttrTag onto a native element with no other body content, use self-closing — `<button ...button/>`. Never `<button ...button><${button.content}/></button>`.
 
 **Marko 6 AttrTag slot types — pick the right generic:**
+
 - ✅ Body-only slot: `action?: Marko.AttrTag<{ content?: Marko.Body }>` — accepts arbitrary child content
 - ❌ Empty generic: `action?: Marko.AttrTag<{}>` — rejects children at compile time (TS2353)
 - ✅ Typed-props slot: `image?: Marko.AttrTag<Omit<Marko.HTML.Img, "alt">>` — slot has specific props
@@ -284,6 +285,12 @@ npx vitest run packages/ebayui-core/src/components/ebay-button/test/test.browser
 ## Agent Feedback
 
 Anything actionable but out of scope for the current task (suspected bug, a11y gap, cleanup, perf or size win, tooling friction, confusing code) must be filed in [`agent-feedback/`](agent-feedback/README.md) before finishing. Never drop it silently. Never fix it inside an unrelated diff.
+
+---
+
+## Agent Lessons
+
+A correction about how you should work — not the code — belongs in [`agent-lessons/`](agent-lessons/README.md): a correction you shouldn't need twice, a wrong turn that cost real rework, or a guardrail that fired. If the rule is mechanically checkable, it belongs in a hook or permission instead, not here.
 
 ---
 

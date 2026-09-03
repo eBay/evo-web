@@ -1,1 +1,64 @@
-<p>Accessibility guidelines coming soon.</p>
+import "../../../../sass/accessibility.scss";
+import { urls } from "../../../../data";
+
+<div class="a11y-pattern-content">
+  <h1>Chart Legend Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    Use a description list so each legend key is programmatically associated
+    with its value. The legend${" "}
+    <strong>must</strong>
+    ${" "}have an accessible name that identifies the chart it describes.
+  </p>
+  <p>
+    Color${" "}
+    <strong>must not</strong>
+    ${" "}be the only way to associate a legend entry with chart data. Provide
+    matching text, patterns, or symbols in the chart.
+  </p>
+  <h2>Interaction Design</h2>
+  <h3>Keyboard</h3>
+  <p>A static chart legend is not included in the keyboard tab order.</p>
+  <h3>Screen Reader</h3>
+  <p>
+    A screen reader announces the legend name, followed by each term and its
+    associated value in source order.
+  </p>
+  <h3>Pointer</h3>
+  <p>A static chart legend has no pointer interaction.</p>
+  <h2>ARIA Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>aria-label</strong>
+        </td>
+        <td>Names the description list and identifies its related chart.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Further Reading</h2>
+  <ul>
+    <li>
+      <a href=`${urls.accessibility}/patterns/description-list`>
+        Description List
+      </a>
+    </li>
+    <li>
+      <a href=`${urls.components}/donut-chart`>
+        Donut Chart
+      </a>
+    </li>
+    <li>
+      <a href="https://www.w3.org/WAI/tutorials/images/complex/">
+        W3C Complex Images Tutorial
+      </a>
+    </li>
+  </ul>
+</div>

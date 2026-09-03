@@ -10,44 +10,44 @@ afterEach(cleanup);
 let component;
 
 describe.skip("given button is toggled", () => {
+  beforeEach(async () => {
+    component = await render(Default);
+  });
+
+  describe("when button is clicked", () => {
     beforeEach(async () => {
-        component = await render(Default);
+      await fireEvent.click(component.getByText("Q2"));
     });
 
-    describe("when button is clicked", () => {
-        beforeEach(async () => {
-            await fireEvent.click(component.getByText("Q2"));
-        });
+    it("then it emits the event with correct data", () => {
+      const data = component.emitted("change");
+      expect(data).has.length(1);
+      expect(data[0][0].index).equals(1);
+      expect(data[0][0].value).equals("quarter2");
+    });
+  });
 
-        it("then it emits the event with correct data", () => {
-            const data = component.emitted("change");
-            expect(data).has.length(1);
-            expect(data[0][0].index).equals(1);
-            expect(data[0][0].value).equals("quarter2");
-        });
+  describe("when the same button is clicked", () => {
+    beforeEach(async () => {
+      await fireEvent.click(component.getByText("Q1"));
     });
 
-    describe("when the same button is clicked", () => {
-        beforeEach(async () => {
-            await fireEvent.click(component.getByText("Q1"));
-        });
-
-        it("then it emits the event with correct data", () => {
-            const data = component.emitted("change");
-            expect(data).has.length(0);
-        });
+    it("then it emits the event with correct data", () => {
+      const data = component.emitted("change");
+      expect(data).has.length(0);
     });
-    describe("when the button is clicked twice", () => {
-        beforeEach(async () => {
-            await fireEvent.click(component.getByText("Q3"));
-            await fireEvent.click(component.getByText("Q3"));
-        });
-
-        it("then it emits the event with correct data", () => {
-            const data = component.emitted("change");
-            expect(data).has.length(1);
-            expect(data[0][0].index).equals(2);
-            expect(data[0][0].value).equals("quarter3");
-        });
+  });
+  describe("when the button is clicked twice", () => {
+    beforeEach(async () => {
+      await fireEvent.click(component.getByText("Q3"));
+      await fireEvent.click(component.getByText("Q3"));
     });
+
+    it("then it emits the event with correct data", () => {
+      const data = component.emitted("change");
+      expect(data).has.length(1);
+      expect(data[0][0].index).equals(2);
+      expect(data[0][0].value).equals("quarter3");
+    });
+  });
 });

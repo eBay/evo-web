@@ -1,5 +1,21 @@
 # @evo-web/marko
 
+## 0.7.0
+
+### Minor Changes
+
+- [#878](https://github.com/eBay/evo-web/pull/878) [`c24655f`](https://github.com/eBay/evo-web/commit/c24655f1a40c6df437b623245025875e8e389790) Thanks [@LuLaValva](https://github.com/LuLaValva)! - BREAKING: `<evo-menu>` / `<evo-menu-button>`: replace the `separator` attribute on `<@item>` with a new `<@group>` attribute tag. Each `<@group>` accepts its own `selected`/`selectedChange` and nested `<@item>` tags, and adjacent groups are divided by separators automatically. Top-level `<@item>` tags may be combined with `<@group>` tags and always render first, sharing the menu-level `selected`. `selected` (on the menu or a `<@group>`) now also accepts `null`, meaning single-select with nothing selected yet, whereas omitting `selected` means the items are not selectable.
+
+### Patch Changes
+
+- [#787](https://github.com/eBay/evo-web/pull/787) [`772319c`](https://github.com/eBay/evo-web/commit/772319c7d076ceab10ed1202849bba95966f38e7) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoMenu to React and align its accessible naming API with Marko using `a11yText` and `a11yLabelId`.
+
+- [#886](https://github.com/eBay/evo-web/pull/886) [`cc36a99`](https://github.com/eBay/evo-web/commit/cc36a990c8d843fe80710d3e5a353abd2cd40135) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoFakeTabs, rename EvoTabPanelList to EvoTabPanels, and align React and Marko fake-tab link and disabled behavior.
+
+- [#890](https://github.com/eBay/evo-web/pull/890) [`1d72e7a`](https://github.com/eBay/evo-web/commit/1d72e7a5bf09fc86b2f7a40c6ad0925ce82d636f) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Stop leaking controllable change handlers and nested attribute tags onto rendered DOM elements: `evo-filter-chip`, `evo-selection-chip` and `evo-toggle-button-group` no longer render `selectedChange`/`pressedChange`, `evo-tabs` no longer renders `panel` on each tab, and `evo-tooltip`, `evo-menu-button` and `evo-fake-menu-button` no longer render `open`/`openChange`.
+
+- [#897](https://github.com/eBay/evo-web/pull/897) [`a665f2d`](https://github.com/eBay/evo-web/commit/a665f2d32f247bd41388579786da33da7719dc22) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Simplify EvoInfotip button and positioning behavior.
+
 ## 0.6.1
 
 ### Patch Changes

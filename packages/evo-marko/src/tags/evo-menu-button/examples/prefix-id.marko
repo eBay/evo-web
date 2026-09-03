@@ -1,17 +1,21 @@
 <id/customLabel>
 <let/text="Name">
-<const/clickHandler=(e:Event, target:HTMLElement) => {
-    text = target.textContent;
+<const/clickHandler=(e: Event, target: HTMLElement) => {
+  text = target.textContent;
 }>
 
 <div id=customLabel>
-    Sort By:
+  Sort By:
 </div>
-<evo-menu-button
-    prefixId=customLabel
->
-    ${text}
-    <@item onClick=clickHandler>Name</@item>
-    <@item onClick=clickHandler>Year</@item>
-    <@item onClick=clickHandler>Group</@item>
+<evo-menu-button prefixId=customLabel>
+  <@item onClick=clickHandler>
+    Name
+  </@item>
+  <@item onClick=clickHandler>
+    Year
+  </@item>
+  <@item onClick=clickHandler>
+    Group
+  </@item>
+  ${text}
 </evo-menu-button>

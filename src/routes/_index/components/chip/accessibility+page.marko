@@ -1,1 +1,150 @@
-<p>Accessibility guidelines coming soon.</p>
+import "../../../../sass/accessibility.scss";
+import { urls } from "../../../../data";
+
+<div class="a11y-pattern-content">
+  <h1>Chip Accessibility</h1>
+  <h2>Best Practices</h2>
+  <h3>Static Chip</h3>
+  <p>
+    A static chip contains non-interactive text for readonly content. It${" "}
+    <strong>must not</strong>
+    ${" "}contain interactive elements.
+  </p>
+  <h3>Removable Chip</h3>
+  <p>
+    A removable chip${" "}
+    <strong>must</strong>
+    ${" "}use a native button adjacent to the chip text for its delete action.
+    Activating the button${" "}
+    <strong>must</strong>
+    ${" "}remove the entire chip from the page.
+  </p>
+  <p>
+    The delete button${" "}
+    <strong>must</strong>
+    ${" "}have an${" "}
+    <code>aria-label</code>
+    ${" "}that describes the action and use${" "}
+    <code>aria-describedby</code>
+    ${" "}to associate the action with the visible chip value. The decorative
+    delete icon${" "}
+    <strong>must</strong>
+    ${" "}use${" "}
+    <code>aria-hidden="true"</code>
+    ${" "}.
+  </p>
+  <p>
+    Use a${" "}
+    <a href=`${urls.components}/selection-chip`>
+      selection chip
+    </a>
+    ${" "}or${" "}
+    <a href=`${urls.components}/filter-chip`>
+      filter chip
+    </a>
+    ${" "}when the chip itself toggles a value or filter. Removable chips are
+    primarily used in the${" "}
+    <a href=`${urls.components}/chips-combobox`>
+      chips combobox
+    </a>
+    ${" "}pattern.
+  </p>
+  <h2>Interaction Design</h2>
+  <h3>Keyboard</h3>
+  <p>
+    Pressing${" "}
+    <strong>TAB</strong>
+    ${" "}key${" "}
+    <strong>must</strong>
+    ${" "}move focus to the delete button unless it is disabled.
+  </p>
+  <p>
+    Pressing${" "}
+    <strong>ENTER</strong>
+    ${" "}or${" "}
+    <strong>SPACEBAR</strong>
+    ${" "}key${" "}
+    <strong>must</strong>
+    ${" "}activate the delete button. After the chip is removed, the application${" "}
+    <strong>must</strong>
+    ${" "}move focus to the next interactive element.
+  </p>
+  <p>
+    In a chips combobox, focus${" "}
+    <strong>must</strong>
+    ${" "}move to the textbox when no next chip is available. In other chip
+    groups, when no next chip is available, focus${" "}
+    <strong>must</strong>
+    ${" "}move to a nearby static heading within the component. The heading${" "}
+    <strong>must</strong>
+    ${" "}use${" "}
+    <code>tabindex="-1"</code>
+    ${" "}to receive programmatic focus without entering the sequential tab
+    order.
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    A screen reader${" "}
+    <strong>must</strong>
+    ${" "}announce the delete action, button role, and associated chip value.
+    Chip text and the delete button${" "}
+    <strong>must</strong>
+    ${" "}remain available to screen readers when the button is disabled.
+  </p>
+  <h3>Pointer</h3>
+  <p>
+    Clicking or tapping the delete button${" "}
+    <strong>must</strong>
+    ${" "}remove the entire chip.
+  </p>
+  <h2>ARIA Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>aria-label</strong>
+        </td>
+        <td>
+          Applied to the delete button to provide an accessible name describing
+          the action.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-describedby</strong>
+        </td>
+        <td>
+          Applied to the delete button to reference the visible chip value.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-hidden="true"</strong>
+        </td>
+        <td>
+          Applied to the decorative delete icon to hide it from assistive
+          technologies.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Further Reading</h2>
+  <ul>
+    <li>
+      <a href=`${urls.components}/chips-combobox`>
+        Chips Combobox
+      </a>
+    </li>
+    <li>
+      <a href="https://www.w3.org/WAI/ARIA/apg/patterns/button/">
+        APG Button Pattern
+      </a>
+    </li>
+  </ul>
+</div>

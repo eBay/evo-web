@@ -1,74 +1,71 @@
 import type { ModelViewerElement } from "@google/model-viewer";
 import { load as modelViewerLoad } from "@internal/model-viewer";
 export interface Input extends Partial<ModelViewerElement> {
-    class?: Marko.HTMLAttributes["class"];
-    errorText: string;
-    /**
-     * The `aria-label` for `<evo-progress-spinner>` while model is loading
-     * 
-     * English default to be overridden is `"loading"`
-     **/
-    a11yLoadingText: string;
-    onLoadError?: (err: CustomEvent) => void;
+  class?: Marko.HTMLAttributes["class"];
+  errorText: string;
+  /**
+   * The `aria-label` for `<evo-progress-spinner>` while model is loading
+   *
+   * English default to be overridden is `"loading"`
+   **/
+  a11yLoadingText: string;
+  onLoadError?: (err: CustomEvent) => void;
 }
 <const/{
-    class: inputClass,
-    src,
-    errorText,
-    onLoadError,
-    a11yLoadingText = "loading",
-    ...htmlInput
-}=input/>
-
+  class: inputClass,
+  src,
+  errorText,
+  onLoadError,
+  a11yLoadingText = "loading",
+  ...htmlInput
+}=input>
 static type LoadState = "ready" | "error" | "loading";
 
-<let/loadState="loading" as LoadState/>
+<let/loadState=("loading" as LoadState)>
 <script>
-    try {
-        await modelViewerLoad();
-        loadState = "ready"
-    } catch (err:any) {
-        onLoadError?.(err);
-        loadState = "error"
-    }
+  try {
+    await modelViewerLoad();
+    loadState = "ready";
+  } catch (err: any) {
+    onLoadError?.(err);
+    loadState = "error";
+  }
 </script>
 
 <style/styles>
-    .player {
-        position: relative;
-    }
+  .player {
+    position: relative;
+  }
 
-    .overlay {
-        position: absolute;
-        display: flex;
-        inset: 0;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
+  .overlay {
+    position: absolute;
+    display: flex;
+    inset: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 </style>
 
 <div class=[(styles as any).player, inputClass]>
-    <if=loadState === "ready">
-        <${"model-viewer"}
-            ...htmlInput
-            camera-controls
-            touch-action="pan-y"
-            src=src
-        />
-    </if>
-    <else if=loadState === "error">
-        <div class=(styles as any).overlay>
-            <evo-icon-attention-24/>
-            <div class="three-d-player__overlay-text">
-                ${errorText}
-            </div>
-        </div>
-    </else>
-    <else>
-        <div class=(styles as any).overlay>
-            <evo-progress-spinner a11yText=a11yLoadingText/>
-        </div>
-    </else>
+  <if=loadState === "ready">
+    <${"model-viewer"}
+      ...htmlInput
+      camera-controls
+      touch-action="pan-y"
+      src=src/>
+  </if>
+  <else if=loadState === "error">
+    <div class=((styles as any).overlay)>
+      <evo-icon-attention-24/>
+      <div class="three-d-player__overlay-text">
+        ${errorText}
+      </div>
+    </div>
+  </else>
+  <else>
+    <div class=((styles as any).overlay)>
+      <evo-progress-spinner a11yText=a11yLoadingText/>
+    </div>
+  </else>
 </div>
-

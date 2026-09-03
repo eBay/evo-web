@@ -84,7 +84,10 @@ function setupDir(fileName: string) {
   cp.execSync(`rm -rf ${JSON.stringify(outputDir)}`);
   cp.execSync(`rm -rf ${JSON.stringify(example)}`);
   fs.mkdirSync(outputDir);
-  fs.writeFileSync(example, `div.icon-examples`);
+  fs.writeFileSync(
+    example,
+    fileName === "icon" ? `icon-grid` : `div.icon-examples`,
+  );
 }
 
 function addIcons(component: string, iconMap: Map<string, string>) {
@@ -138,13 +141,19 @@ function generateExamples(type: string, iconsList: string[]) {
     }
     const postfixName = type === "icon" ? "-icon" : "";
     const iconName = `evo${postfixName}-${name}`;
-    exampleHTML.push(`    div
+    if (type === "icon") {
+      exampleHTML.push(`  icon-example name="${iconName}"
+    ${iconName}\n`);
+    } else {
+      exampleHTML.push(`    div
         span.icon
             ${iconName}
         span.text
             -- ${iconName}\n`);
+    }
   }
   fs.writeFileSync(exampleFile, `${file}\n${exampleHTML.join("\n")}`);
+  cp.execSync(`npx prettier --write ${JSON.stringify(exampleFile)}`);
 }
 
 function generateIcon(componentName: string) {

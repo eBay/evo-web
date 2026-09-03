@@ -1,6 +1,6 @@
 {
   "name": "@evo-web/react",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "Collection of core eBay components; considered to be the building blocks for all composite structures, pages & apps.",
   "keywords": [
     "React",
@@ -43,6 +43,13 @@
     "type:check": "tsc --noEmit",
     "update-icons": "tsx scripts/import-svg.ts",
     "version": "npm run update-icons && git add -A src"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,scss,md,json}": "prettier --write"
   },
   "dependencies": {
     "@floating-ui/react": "^0.27.17",

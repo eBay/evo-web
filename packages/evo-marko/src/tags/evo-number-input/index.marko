@@ -16,17 +16,17 @@ export type Input = Omit<TextboxInput, "value" | "valueChange"> & {
 <const/defaultMin=(input.a11yDeleteText ? 1 : 0)>
 
 <const/{
-    label,
-    a11yText,
-    a11yDeleteText,
-    class: inputClass,
-    min = defaultMin,
-    max = Infinity,
-    onIncrement,
-    id,
-    onDecrement,
-    onDelete,
-    ...htmlInput
+  label,
+  a11yText,
+  a11yDeleteText,
+  class: inputClass,
+  min = defaultMin,
+  max = Infinity,
+  onIncrement,
+  id,
+  onDecrement,
+  onDelete,
+  ...htmlInput
 }=input>
 
 <id/numberInput=id>
@@ -35,80 +35,80 @@ export type Input = Omit<TextboxInput, "value" | "valueChange"> & {
 <const/displayValue=value || defaultMin>
 
 <const/checkBoundary(value: number, inc: number = 0) {
-    let newValue = value + inc;
-    if (isNaN(newValue)) {
-        newValue = defaultMin;
-    } else if (newValue > max) {
-        newValue = max;
-    } else if (newValue < min) {
-        newValue = min;
-    }
-    return newValue;
+  let newValue = value + inc;
+  if (isNaN(newValue)) {
+    newValue = defaultMin;
+  } else if (newValue > max) {
+    newValue = max;
+  } else if (newValue < min) {
+    newValue = min;
+  }
+  return newValue;
 }>
 
 <span class=[
-    "number-input",
-    a11yDeleteText && value === 1 && "number-input--show-delete",
-    inputClass,
+  "number-input",
+  a11yDeleteText && value === 1 && "number-input--show-delete",
+  inputClass,
 ]>
-    <evo-input
-        ...htmlInput
-        aria-label=(!a11yText && !label ? "Number Input" : a11yText)
-        min=min
-        max=max
-        id=numberInput
-        type="number"
-        value=displayValue
-        valueChange(newValue) {
-            value = checkBoundary(parseInt(newValue, 10) || defaultMin, 0);
+  <evo-input
+    ...htmlInput
+    aria-label=(!a11yText && !label ? "Number Input" : a11yText)
+    min=min
+    max=max
+    id=numberInput
+    type="number"
+    value=displayValue
+    valueChange(newValue) {
+      value = checkBoundary(parseInt(newValue, 10) || defaultMin, 0);
+    }>
+    <@prefixIcon>
+      <if=label>
+        <label ...label for=numberInput/>
+      </if>
+      <evo-icon-button
+        aria-hidden="true"
+        a11yText=null
+        disabled=(displayValue <= min)
+        size="small"
+        class="number-input__decrement"
+        transparent
+        tabindex="-1"
+        onClick(event, target) {
+          value = checkBoundary(displayValue, -1);
+          (onDecrement || null)?.(event, target, value!);
         }>
-        <@prefixIcon>
-            <if=label>
-                <label ...label for=numberInput/>
-            </if>
-            <evo-icon-button
-                aria-hidden="true"
-                a11yText=null
-                disabled=(displayValue <= min)
-                size="small"
-                class="number-input__decrement"
-                transparent
-                tabindex="-1"
-                onClick(event, target) {
-                    value = checkBoundary(displayValue, -1);
-                    (onDecrement || null)?.(event, target, value!);
-                }>
-                <evo-icon-remove-24/>
-            </evo-icon-button>
-        </@prefixIcon>
-        <@postfixIcon>
-            <if=a11yDeleteText>
-                <evo-icon-button
-                    class="number-input__delete"
-                    size="small"
-                    transparent
-                    a11yText=a11yDeleteText
-                    onClick(event, target) {
-                        (onDelete || null)?.(event, target);
-                    }>
-                    <evo-icon-delete-24/>
-                </evo-icon-button>
-            </if>
+        <evo-icon-remove-24/>
+      </evo-icon-button>
+    </@prefixIcon>
+    <@postfixIcon>
+      <if=a11yDeleteText>
+        <evo-icon-button
+          class="number-input__delete"
+          size="small"
+          transparent
+          a11yText=a11yDeleteText
+          onClick(event, target) {
+            (onDelete || null)?.(event, target);
+          }>
+          <evo-icon-delete-24/>
+        </evo-icon-button>
+      </if>
 
-            <evo-icon-button
-                aria-hidden="true"
-                a11yText=null
-                disabled=(displayValue >= max)
-                class="number-input__increment"
-                size="small"
-                transparent
-                onClick(event, target) {
-                    value = checkBoundary(displayValue, 1);
-                    (onIncrement || null)?.(event, target, value!);
-                }
-                tabindex="-1">
-                <evo-icon-add-24/>
-            </evo-icon-button>
-        </@postfixIcon>
-    </evo-input>
+      <evo-icon-button
+        aria-hidden="true"
+        a11yText=null
+        disabled=(displayValue >= max)
+        class="number-input__increment"
+        size="small"
+        transparent
+        onClick(event, target) {
+          value = checkBoundary(displayValue, 1);
+          (onIncrement || null)?.(event, target, value!);
+        }
+        tabindex="-1">
+        <evo-icon-add-24/>
+      </evo-icon-button>
+    </@postfixIcon>
+  </evo-input>
 </span>

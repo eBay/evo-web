@@ -1,34 +1,42 @@
 import type { Input as FilePreviewCardInput } from "../evo-file-preview-card/index.marko";
 export interface Input extends Marko.HTML.Div {
-    card?: Marko.AttrTag<FilePreviewCardInput>;
-    seeMoreAction?: FilePreviewCardInput["seeMoreAction"];
-    visibleCardCount?: number;
-    visibleCardCountChange?: (s: number) => void;
+  card?: Marko.AttrTag<FilePreviewCardInput>;
+  seeMoreAction?: FilePreviewCardInput["seeMoreAction"];
+  visibleCardCount?: number;
+  visibleCardCountChange?: (s: number) => void;
 }
 static const SHOW_AMOUNT = 15;
 
-<const/{ card, seeMoreAction, visibleCardCount, visibleCardCountChange, ...htmlInput }=input>
-<let/showing=visibleCardCount ?? SHOW_AMOUNT valueChange=visibleCardCountChange>
-<const/cards=[...card || []]>
+<const/{
+  card,
+  seeMoreAction,
+  visibleCardCount,
+  visibleCardCountChange,
+  ...htmlInput
+}=input>
+<let/showing=(
+  visibleCardCount ?? SHOW_AMOUNT
+) valueChange=visibleCardCountChange>
+<const/cards=[...(card || [])]>
 
 <div ...htmlInput class=["file-preview-card-group", input.class]>
-    <ul>
-        <for|i| until=Math.min(showing, cards.length)>
-            <const/cardInput=cards[i]>
-            <evo-file-preview-card as="li" ...cardInput/>
-        </for>
-        <if=(cards.length > showing)>
-            <evo-file-preview-card as="li" file=(cards[showing].file)>
-                <@seeMoreAction
-                    a11yText=null
-                    ...seeMoreAction
-                    onClick(e, target) {
-                        showing += SHOW_AMOUNT;
-                        (seeMoreAction?.onClick || null)?.(e, target);
-                    }>
-                    +${cards.length - showing}
-                </@seeMoreAction>
-            </evo-file-preview-card>
-        </if>
-    </ul>
+  <ul>
+    <for|i| until=Math.min(showing, cards.length)>
+      <const/cardInput=cards[i]>
+      <evo-file-preview-card as="li" ...cardInput/>
+    </for>
+    <if=(cards.length > showing)>
+      <evo-file-preview-card as="li" file=(cards[showing].file)>
+        <@seeMoreAction
+          a11yText=null
+          ...seeMoreAction
+          onClick(e, target) {
+            showing += SHOW_AMOUNT;
+            (seeMoreAction?.onClick || null)?.(e, target);
+          }>
+          +${cards.length - showing}
+        </@seeMoreAction>
+      </evo-file-preview-card>
+    </if>
+  </ul>
 </div>

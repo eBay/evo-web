@@ -1,63 +1,64 @@
-import { urls } from "../../../../data";
 import "../../../../sass/accessibility.scss";
+import { urls } from "../../../../data";
+
 <div class="a11y-pattern-content">
   <h1>File Preview Card Accessibility</h1>
   <h2>Best Practices</h2>
   <p>
-    File preview cards
+    File preview cards${" "}
     <strong>must</strong>
-    contain the file name as part of their accessible name. The name may
+    ${" "}contain the file name as part of their accessible name. The name may
     be displayed as text in the card or included as the alternative text for the
     preview image. If the file name is displayed visually, the preview image’s
-    alternative text
+    alternative text${" "}
     <em>should</em>
-    be an empty string to avoid redundancy.
+    ${" "}be an empty string to avoid redundancy.
   </p>
   <p>
-    If a file is in the process of uploading, it
+    If a file is in the process of uploading, it${" "}
     <em>should</em>
-    include a progress indicator with appropriate alternative text, e.g.
+    ${" "}include a progress indicator with appropriate alternative text, e.g.
     “Uploading…” or “Busy.” It is not recommended to make the progress indicator
     a live region, as this can get noisy for multiple file upload. To convey
-    upload error states, follow
+    upload error states, follow${" "}
     <a href=`${urls.accessibility}/patterns/form-validation`>
       form validation best practices
     </a>
-    and group similar errors into
+    ${" "}and group similar errors into${" "}
     <a href=`${urls.components}/inline-notice`>
       inline notices
     </a>
-    .
+    ${" "}.
   </p>
   <p>
-    Multiple file preview cards
+    Multiple file preview cards${" "}
     <strong>must</strong>
-    be grouped in a list. If the number of visual files exceeds the
-    maximum display limit, a file preview card containing a “See more” button
+    ${" "}be grouped in a list. If the number of visual files exceeds the
+    maximum display limit, a file preview card containing a “See more” button${" "}
     <em>should</em>
-    be introduced as the last element in the list.
+    ${" "}be introduced as the last element in the list.
   </p>
   <h2>Interaction Design</h2>
   <h3>Keyboard</h3>
   <p>File preview cards themselves are not focusable or interactive.</p>
   <p>
-    Their actions follow standard
+    Their actions follow standard${" "}
     <a href=`${urls.accessibility}/input/button`>
       button
     </a>
-    and
+    ${" "}and${" "}
     <a href=`${urls.accessibility}/input/menu-button`>
       menu button
     </a>
-    keyboard interaction.
+    ${" "}keyboard interaction.
   </p>
   <h3>Screen Reader</h3>
   <p>
-    Action buttons
+    Action buttons${" "}
     <strong>must</strong>
-    have accessible names. They
+    ${" "}have accessible names. They${" "}
     <em>should</em>
-    make it obvious to the user what file they are taking action on,
+    ${" "}make it obvious to the user what file they are taking action on,
     either through an explicit aria-label or sufficient DOM context. For
     example, a cancel icon button could have an aria-label of “Cancel upload:
     my-document.jpg”, or an aria-label of simply “Cancel upload” when nested
@@ -69,4 +70,34 @@ import "../../../../sass/accessibility.scss";
     to interact with any of the file preview card’s action buttons using a
     pointer device.
   </p>
+  <h2>ARIA Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>aria-label</strong>
+        </td>
+        <td>Names an icon-only card action and identifies its target file.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Further Reading</h2>
+  <ul>
+    <li>
+      <a href=`${urls.components}/file-preview-card-group`>
+        File Preview Card Group
+      </a>
+    </li>
+    <li>
+      <a href=`${urls.accessibility}/techniques/alternative-text`>
+        Alternative Text
+      </a>
+    </li>
+  </ul>
 </div>

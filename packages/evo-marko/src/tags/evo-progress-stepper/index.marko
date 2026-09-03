@@ -1,129 +1,130 @@
 export interface Step extends Omit<Marko.HTML.Div, `on${string}` | "title"> {
-    current?: boolean;
-    a11yText?: string;
-    title?: Marko.AttrTag<Marko.HTML.H4 & {
-            as?: keyof Marko.NativeTags;
-        }
-    >;
+  current?: boolean;
+  a11yText?: string;
+  title?: Marko.AttrTag<
+    Marko.HTML.H4 & {
+      as?: keyof Marko.NativeTags;
+    }
+  >;
 }
 export interface Input extends Marko.HTML.Div {
-    direction?: "row" | "column";
-    step?: Marko.AttrTag<Step>;
-    defaultState?: "active" | "complete" | "upcoming" | "attention" | "current";
-    headingAs?: keyof Marko.NativeTags;
-    /**
-     * The clipped text that describes the heading for the progress stepper
-     * 
-     * English default to be overridden is `"Progress"`
-     */
-    a11yHeadingText: string;
-    stepContentAs?: keyof Marko.NativeTags;
+  direction?: "row" | "column";
+  step?: Marko.AttrTag<Step>;
+  defaultState?: "active" | "complete" | "upcoming" | "attention" | "current";
+  headingAs?: keyof Marko.NativeTags;
+  /**
+   * The clipped text that describes the heading for the progress stepper
+   *
+   * English default to be overridden is `"Progress"`
+   */
+  a11yHeadingText: string;
+  stepContentAs?: keyof Marko.NativeTags;
 }
 <const/{
-    content,
-    step: steps,
-    direction,
-    defaultState,
-    class: inputClass,
-    headingAs = "h2",
-    a11yHeadingText = "Progress",
-    stepContentAs = "p",
-    ...htmlInput
+  content,
+  step: steps,
+  direction,
+  defaultState,
+  class: inputClass,
+  headingAs = "h2",
+  a11yHeadingText = "Progress",
+  stepContentAs = "p",
+  ...htmlInput
 }=input>
 
 <const/current=(() => {
-    switch (defaultState) {
-        case "complete":
-        case "upcoming":
-            return -1;
-        default:
-            const step = [...steps || []].findIndex((item) => item.current);
-            return step === -1 ? 0 : step;
-    }
+  switch (defaultState) {
+    case "complete":
+    case "upcoming":
+      return -1;
+    default:
+      const step = [...(steps || [])].findIndex((item) => item.current);
+      return step === -1 ? 0 : step;
+  }
 })()>
 
 <id/stepperHeading>
 
 <div
-    class=[
-        "progress-stepper",
-        direction === "column" && "progress-stepper--vertical",
-        inputClass,
-    ]
-    aria-labelledby=stepperHeading
-    ...htmlInput>
-    <${headingAs} id=stepperHeading class="clipped">
-        ${a11yHeadingText}
-    </>
+  class=[
+    "progress-stepper",
+    direction === "column" && "progress-stepper--vertical",
+    inputClass,
+  ]
+  aria-labelledby=stepperHeading
+  ...htmlInput>
+  <${headingAs} id=stepperHeading class="clipped">
+    ${a11yHeadingText}
+  </>
 
-    <div
+  <div
+    class=[
+      "progress-stepper__items",
+      defaultState === "upcoming" && "progress-stepper__items--upcoming",
+      defaultState === "current" && "progress-stepper__items--current",
+    ]
+    role="list">
+    <for|step, index| of=steps>
+      <const/{
+        current: stepCurrent,
+        class: stepClass,
+        title,
+        a11yText,
+        content,
+        ...htmlStep
+      }=step>
+      <if=(index > 0)>
+        <hr role="presentation" class="progress-stepper__separator">
+      </if>
+      <div
         class=[
-            "progress-stepper__items",
-            defaultState === "upcoming" && "progress-stepper__items--upcoming",
-            defaultState === "current" && "progress-stepper__items--current",
+          "progress-stepper__item",
+          index === current &&
+            defaultState === "attention" &&
+            "progress-stepper__item--attention",
+          stepClass,
         ]
-        role="list">
-        <for|step, index| of=steps>
-            <const/{
-                current: stepCurrent,
-                class: stepClass,
-                title,
-                a11yText,
-                content,
-                ...htmlStep
-            }=step>
-            <if=(index > 0)>
-                <hr role="presentation" class="progress-stepper__separator">
+        aria-current=current === index && "step"
+        role="listitem"
+        ...htmlStep>
+        <span class="progress-stepper__icon">
+          <if=index < current || defaultState === "complete">
+            <evo-icon-stepper-confirmation-24
+              width="24"
+              height="24"
+              a11yText=a11yText || "complete"/>
+          </if>
+          <else if=index === current>
+            <if=defaultState === "attention">
+              <evo-icon-stepper-attention-24
+                width="24"
+                height="24"
+                a11yText=a11yText || "blocked"/>
             </if>
-            <div
-                class=[
-                    "progress-stepper__item",
-                    index === current &&
-                        defaultState === "attention" &&
-                        "progress-stepper__item--attention",
-                    stepClass,
-                ]
-                aria-current=current === index && "step"
-                role="listitem"
-                ...htmlStep>
-                <span class="progress-stepper__icon">
-                    <if=(index < current || defaultState === "complete")>
-                        <evo-icon-stepper-confirmation-24
-                            width="24"
-                            height="24"
-                            a11yText=a11yText || "complete"/>
-                    </if>
-                    <else if=index === current>
-                        <if=defaultState === "attention">
-                            <evo-icon-stepper-attention-24
-                                width="24"
-                                height="24"
-                                a11yText=a11yText || "blocked"/>
-                        </if>
-                        <else>
-                            <evo-icon-stepper-confirmation-24
-                                width="24"
-                                height="24"
-                                a11yText=a11yText || "current"/>
-                        </else>
-                    </else>
-                    <else>
-                        <evo-icon-stepper-upcoming-24
-                            width="24"
-                            height="24"
-                            a11yText=a11yText || "upcoming"/>
-                    </else>
-                </span>
-                <span class="progress-stepper__text">
-                    <if=title>
-                        <const/{ as: titleEl = "h4", ...titleInput }=title>
-                        <${titleEl} ...title/>
-                    </if>
-                    <${stepContentAs}>
-                        <${content}/>
-                    </>
-                </span>
-            </div>
-        </for>
-    </div>
+            <else>
+              <evo-icon-stepper-confirmation-24
+                width="24"
+                height="24"
+                a11yText=a11yText || "current"/>
+            </else>
+          </else>
+          <else>
+            <evo-icon-stepper-upcoming-24
+              width="24"
+              height="24"
+              a11yText=a11yText || "upcoming"/>
+          </else>
+        </span>
+        <span class="progress-stepper__text">
+          <if=title>
+            <const/{ as: titleEl = "h4", ...titleInput }=title>
+            <${titleEl} ...title/>
+          </if>
+          <${stepContentAs}>
+            <${content}/>
+          </>
+        </span>
+      </div>
+    </for>
+  </div>
 </div>

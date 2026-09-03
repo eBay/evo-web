@@ -1,5 +1,17 @@
 # Skin Changelog
 
+## 19.33.0
+
+### Minor Changes
+
+- [#893](https://github.com/eBay/evo-web/pull/893) [`895e90a`](https://github.com/eBay/evo-web/commit/895e90aea0b1b6b4c077aea391d1b3d4bf94e08e) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add a `strategy` input to date textbox components to control calendar popover positioning (`absolute` or `fixed`).
+
+### Patch Changes
+
+- [#790](https://github.com/eBay/evo-web/pull/790) [`8ada1ec`](https://github.com/eBay/evo-web/commit/8ada1eca8cdfe976ed61f8234b5cf3644aab9386) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoFakeMenu component.
+
+- [#787](https://github.com/eBay/evo-web/pull/787) [`772319c`](https://github.com/eBay/evo-web/commit/772319c7d076ceab10ed1202849bba95966f38e7) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoMenu to React and align its accessible naming API with Marko using `a11yText` and `a11yLabelId`.
+
 ## 19.32.0
 
 ### Minor Changes

@@ -1,43 +1,43 @@
 import type { Input as TextboxInput } from "<evo-input>";
 export interface Input extends Omit<TextboxInput, "size"> {
-    size?: "large" | "small";
-    a11yClearButtonText?: string;
-    a11yControlsId: string;
-    placeholder: NonNullable<TextboxInput["placeholder"]>
+  size?: "large" | "small";
+  a11yClearButtonText?: string;
+  a11yControlsId: string;
+  placeholder: NonNullable<TextboxInput["placeholder"]>;
 }
 
 <const/{
-    class: inputClass,
-    placeholder = "Filter",
-    a11yClearButtonText,
-    a11yControlsId,
-    size,
-    ...htmlInput
+  class: inputClass,
+  placeholder = "Filter",
+  a11yClearButtonText,
+  a11yControlsId,
+  size,
+  ...htmlInput
 }=input>
 
 <span class=["filter-input", size && `filter-input--${size}`, inputClass]>
-    <evo-input
-        ...htmlInput
-        fluid
-        type="search"
-        aria-controls=a11yControlsId
-        placeholder=placeholder>
-        <@prefixIcon>
-            <evo-icon-search-16/>
-        </@prefixIcon>
-        <@postfixIcon>
-            <if=a11yClearButtonText>
-                <evo-icon-button
-                    a11yText=a11yClearButtonText
-                    class="filter-input__clear-btn"
-                    size="small"
-                    transparent
-                    onClick() {
-                        (input.valueChange || null)?.("");
-                    }>
-                    <evo-icon-clear-16/>
-                </evo-icon-button>
-            </if>
-        </@postfixIcon>
-    </evo-input>
+  <evo-input
+    ...htmlInput
+    fluid
+    type="search"
+    aria-controls=a11yControlsId
+    placeholder=placeholder>
+    <@prefixIcon>
+      <evo-icon-search-16/>
+    </@prefixIcon>
+    <@postfixIcon>
+      <if=a11yClearButtonText>
+        <evo-icon-button
+          a11yText=a11yClearButtonText
+          class="filter-input__clear-btn"
+          size="small"
+          transparent
+          onClick() {
+            (input.valueChange || null)?.("");
+          }>
+          <evo-icon-clear-16/>
+        </evo-icon-button>
+      </if>
+    </@postfixIcon>
+  </evo-input>
 </span>

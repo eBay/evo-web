@@ -1,47 +1,44 @@
 static async function mockFetch() {
-    await new Promise((resolve) => setTimeout(resolve, Math.random() * 5000));
-    return `https://fakeurl.com/${Math.random().toString(36).substring(7)}`;
+  await new Promise((resolve) => setTimeout(resolve, Math.random() * 5000));
+  return `https://fakeurl.com/${Math.random().toString(36).substring(7)}`;
 }
 
 <let/files=([] as [File, string | undefined][])>
 <evo-file-input
-    multiple
-    on-input(e: InputEvent) {
-        const fileList = Array.from((e.target as HTMLInputElement).files || []);
-        files = files.concat(fileList.map((file) => [file, undefined]));
-        for (const file of fileList) {
-            mockFetch().then((url) => {
-                const index = files.findIndex(([f]) => f === file);
-                files = [
-                    ...files.slice(0, index),
-                    [file, url],
-                    ...files.slice(index + 1),
-                ];
-            });
-        }
+  multiple
+  on-input(e: InputEvent) {
+    const fileList = Array.from((e.target as HTMLInputElement).files || []);
+    files = files.concat(fileList.map((file) => [file, undefined]));
+    for (const file of fileList) {
+      mockFetch().then((url) => {
+        const index = files.findIndex(([f]) => f === file);
+        files = [
+          ...files.slice(0, index),
+          [file, url],
+          ...files.slice(index + 1),
+        ];
+      });
     }
-    ...input>
-    <@header class="subtitleClass" id="subtitleId">
-        <p>Multiple files</p>
-    </@header>
-    <span>Browse files</span>
+  }
+  ...input>
+  <@header class="subtitleClass" id="subtitleId">
+    <p>Multiple files</p>
+  </@header>
+  <span>Browse files</span>
 </evo-file-input>
 
 <evo-file-preview-card-group>
-    <for|[file, url], index| of=files>
-        <@card
-            a11yCancelUploadText="Cancel upload"
-            file=file
-            status=(url ? undefined : "uploading")>
-            <@deleteAction
-                a11yText="Delete Card"
-                onClick() {
-                    files = [
-                        ...files.slice(0, index),
-                        ...files.slice(index + 1),
-                    ];
-                }/>
-            <@cancelAction a11yText="Cancel" onClick() {}/>
-        </@card>
-    </for>
+  <for|[file, url], index| of=files>
+    <@card
+      a11yCancelUploadText="Cancel upload"
+      file=file
+      status=(url ? undefined : "uploading")>
+      <@deleteAction
+        a11yText="Delete Card"
+        onClick() {
+          files = [...files.slice(0, index), ...files.slice(index + 1)];
+        }/>
+      <@cancelAction a11yText="Cancel" onClick() {}/>
+    </@card>
+  </for>
 </evo-file-preview-card-group>

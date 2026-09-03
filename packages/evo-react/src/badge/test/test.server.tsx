@@ -28,16 +28,11 @@ describe("EvoBadge SSR", () => {
     ).toMatchSnapshot();
   });
 
-  it.each<BadgeType>(["menu", "icon"])(
-    "renders with type=%s",
-    (type) => {
-      expect(
-        renderToString(
-          <EvoBadge number={5} type={type} a11yText={null} />,
-        ),
-      ).toMatchSnapshot();
-    },
-  );
+  it.each<BadgeType>(["menu", "icon"])("renders with type=%s", (type) => {
+    expect(
+      renderToString(<EvoBadge number={5} type={type} a11yText={null} />),
+    ).toMatchSnapshot();
+  });
 
   it("renders with null a11yText (no aria-label)", () => {
     expect(
@@ -48,7 +43,11 @@ describe("EvoBadge SSR", () => {
   it("renders with a custom className", () => {
     expect(
       renderToString(
-        <EvoBadge number={5} a11yText="5 unread items" className="custom-class" />,
+        <EvoBadge
+          number={5}
+          a11yText="5 unread items"
+          className="custom-class"
+        />,
       ),
     ).toMatchSnapshot();
   });
@@ -56,14 +55,16 @@ describe("EvoBadge SSR", () => {
   it("renders with additional html attributes", () => {
     expect(
       renderToString(
-        <EvoBadge number={5} a11yText="5 unread items" data-testid="my-badge" />,
+        <EvoBadge
+          number={5}
+          a11yText="5 unread items"
+          data-testid="my-badge"
+        />,
       ),
     ).toMatchSnapshot();
   });
 
   it("renders an empty badge when no number is provided", () => {
-    expect(
-      renderToString(<EvoBadge a11yText="new" />),
-    ).toMatchSnapshot();
+    expect(renderToString(<EvoBadge a11yText="new" />)).toMatchSnapshot();
   });
 });

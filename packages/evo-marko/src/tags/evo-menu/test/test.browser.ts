@@ -31,9 +31,10 @@ describe("given the menu is single-select with no selection (selected=null)", ()
     });
 
     it("then it becomes the checked item", () => {
-      expect(
-        component.getByText(firstItemText).parentElement,
-      ).toHaveAttribute("aria-checked", "true");
+      expect(component.getByText(firstItemText).parentElement).toHaveAttribute(
+        "aria-checked",
+        "true",
+      );
     });
   });
 });
@@ -59,7 +60,10 @@ describe("given the menu selection is controlled and shared across groups", () =
         "aria-checked",
         "true",
       );
-      expect(getItem(selectedItemText)).toHaveAttribute("aria-checked", "false");
+      expect(getItem(selectedItemText)).toHaveAttribute(
+        "aria-checked",
+        "false",
+      );
     });
   });
 
@@ -70,7 +74,10 @@ describe("given the menu selection is controlled and shared across groups", () =
 
     it("then the menu reflects the external selection", () => {
       expect(getItem("Light")).toHaveAttribute("aria-checked", "true");
-      expect(getItem(selectedItemText)).toHaveAttribute("aria-checked", "false");
+      expect(getItem(selectedItemText)).toHaveAttribute(
+        "aria-checked",
+        "false",
+      );
     });
   });
 });

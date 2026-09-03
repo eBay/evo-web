@@ -2,21 +2,26 @@ static const SIZE = 15;
 
 <let/current=0>
 
-<evo-pagination
-    a11yCurrentText=`Results Pagination - Page ${current}`
-    ...input
->
-    <@prev a11yText="previous" disabled=(current === 0) onClick() {
-        current = Math.max(current - 1, 0);
+<evo-pagination a11yCurrentText=`Results Pagination - Page ${current}` ...input>
+  <@prev
+    a11yText="previous"
+    disabled=current === 0
+    onClick() {
+      current = Math.max(current - 1, 0);
     }/>
-    <for|i| from=1 to=SIZE>
-        <@item current=(i === current) onClick() {
-            current = i;
-        }>
-            ${i}
-        </@item>
-    </for>
-    <@next a11yText="next" disabled=(current === SIZE) onClick() {
-        current = Math.min(current + 1, SIZE);
+  <for|i| from=1 to=SIZE>
+    <@item
+      current=i === current
+      onClick() {
+        current = i;
+      }>
+      ${i}
+    </@item>
+  </for>
+  <@next
+    a11yText="next"
+    disabled=current === SIZE
+    onClick() {
+      current = Math.min(current + 1, SIZE);
     }/>
 </evo-pagination>

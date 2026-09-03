@@ -1,1 +1,76 @@
-<p>Accessibility guidelines coming soon.</p>
+import "../../../../sass/accessibility.scss";
+import { urls } from "../../../../data";
+
+<div class="a11y-pattern-content">
+  <h1>Floating Label Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    Every control${" "}
+    <strong>must</strong>
+    ${" "}have a visible${" "}
+    <code>label</code>
+    ${" "}whose${" "}
+    <code>for</code>
+    ${" "}value matches the control ID. The label${" "}
+    <strong>must</strong>
+    ${" "}remain visible when the control has focus or a value.
+  </p>
+  <p>
+    Placeholder text is optional guidance, not a substitute for the label.
+    Invalid controls${" "}
+    <strong>must</strong>
+    ${" "}use${" "}
+    <code>aria-invalid="true"</code>
+    ${" "}and reference a visible error message.
+  </p>
+  <h2>Interaction Design</h2>
+  <h3>Keyboard</h3>
+  <p>
+    <strong>TAB</strong>
+    ${" "}moves focus to the form control. The floating label does not add
+    another tab stop.
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    A screen reader announces the label, control role, value, and applicable
+    disabled or invalid state.
+  </p>
+  <h3>Pointer</h3>
+  <p>Clicking or tapping the label moves focus to its associated control.</p>
+  <h2>ARIA Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>aria-invalid</strong>
+        </td>
+        <td>Indicates that the control value is invalid.</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-describedby</strong>
+        </td>
+        <td>Associates supporting or error text with the control.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Further Reading</h2>
+  <ul>
+    <li>
+      <a href=`${urls.components}/textbox`>
+        Textbox
+      </a>
+    </li>
+    <li>
+      <a href=`${urls.accessibility}/patterns/form-validation`>
+        Form Validation
+      </a>
+    </li>
+  </ul>
+</div>

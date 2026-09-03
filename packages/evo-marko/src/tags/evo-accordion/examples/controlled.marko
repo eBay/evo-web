@@ -1,7 +1,7 @@
 import { type Input as AccordionInput } from "<evo-accordion>";
 export interface Input extends AccordionInput<number> {}
 
-<let/open=input.open ?? 0 valueChange=input.openChange>
+<let/open=(input.open ?? 0) valueChange=input.openChange>
 
 <div>
   <for|i| until=3>

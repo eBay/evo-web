@@ -1,4 +1,9 @@
-import type { ComponentProps, ElementType, ReactNode, SyntheticEvent } from "react";
+import type {
+  ComponentProps,
+  ElementType,
+  ReactNode,
+  SyntheticEvent,
+} from "react";
 
 export type Size = "regular" | "small";
 export type Alignment = "regular" | "center";

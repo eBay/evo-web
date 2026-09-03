@@ -1,210 +1,204 @@
 import { type Input as ButtonInput } from "../evo-button/index.marko";
 export interface Item extends Marko.HTML.Div {
-    value?: string;
-    badgeNumber?: number;
-    disabled?: boolean;
+  value?: string;
+  badgeNumber?: number;
+  disabled?: boolean;
 }
 export interface Group<
-    Index extends number | string | (number | string)[] =
-        | number
-        | string
-        | (number | string)[],
+  Index extends number | string | (number | string)[] =
+    | number
+    | string
+    | (number | string)[],
 > {
-    selected?: Index | null;
-    selectedChange?(selected: Index): void;
-    item?: Marko.AttrTag<Item>;
+  selected?: Index | null;
+  selectedChange?(selected: Index): void;
+  item?: Marko.AttrTag<Item>;
 }
 export interface Input<
-    Index extends number | string | (number | string)[],
+  Index extends number | string | (number | string)[],
 > extends Omit<Marko.HTML.Span, "aria-label" | "aria-labelledby"> {
-    /** Localized accessible name for the menu. Cannot be used with `a11yLabelId`. */
-    a11yText?: string;
-    /** ID of the element that labels the menu. Cannot be used with `a11yText`. */
-    a11yLabelId?: string;
-    selected?: Index | null;
-    selectedChange?: (selected: Index) => void;
-    item?: Marko.AttrTag<Item>;
-    group?: Marko.AttrTag<Group>;
-    variant?: "filter" | "none";
-    classPrefix?: string;
-    typeaheadTimeoutLength?: number;
-    reverse?: boolean;
-    fixed?: boolean;
-    fixWidth?: boolean;
-    footerButton?: Marko.AttrTag<ButtonInput>;
+  /** Localized accessible name for the menu. Cannot be used with `a11yLabelId`. */
+  a11yText?: string;
+  /** ID of the element that labels the menu. Cannot be used with `a11yText`. */
+  a11yLabelId?: string;
+  selected?: Index | null;
+  selectedChange?: (selected: Index) => void;
+  item?: Marko.AttrTag<Item>;
+  group?: Marko.AttrTag<Group>;
+  variant?: "filter" | "none";
+  classPrefix?: string;
+  typeaheadTimeoutLength?: number;
+  reverse?: boolean;
+  fixed?: boolean;
+  fixWidth?: boolean;
+  footerButton?: Marko.AttrTag<ButtonInput>;
 }
-
 static function nextSelected(
-    current: number | string | (number | string)[] | null | undefined,
-    value: number | string,
+  current: number | string | (number | string)[] | null | undefined,
+  value: number | string,
 ) {
-    if (Array.isArray(current)) {
-        return current.includes(value)
-            ? current.filter((n) => n !== value)
-            : [...current, value];
-    }
-    return value;
+  if (Array.isArray(current)) {
+    return current.includes(value)
+      ? current.filter((n) => n !== value)
+      : [...current, value];
+  }
+  return value;
 }
 
 <const/{
-    class: inputClass,
-    classPrefix,
-    a11yText,
-    a11yLabelId,
-    selected: inputIndex,
-    selectedChange,
-    reverse,
-    fixed,
-    fixWidth,
-    footerButton,
-    typeaheadTimeoutLength,
-    item,
-    group,
-    variant,
-    ...htmlInput
+  class: inputClass,
+  classPrefix,
+  a11yText,
+  a11yLabelId,
+  selected: inputIndex,
+  selectedChange,
+  reverse,
+  fixed,
+  fixWidth,
+  footerButton,
+  typeaheadTimeoutLength,
+  item,
+  group,
+  variant,
+  ...htmlInput
 }=input>
 <const/isFilter=variant === "filter">
 <const/baseClass=classPrefix || "menu">
 <const/menuClass=(baseClass === "menu" ? "items" : "menu")>
 
 <const/groups=(() => {
-    let offset = 0;
-    return [
-        ...(item
-            ? [{ selected: inputIndex, selectedChange, item } as Group]
-            : []),
-        ...(group || []),
-    ].map((group) => {
-        const items = [...(group.item || [])];
-        const normalized = { ...group, items, offset };
-        offset += items.length;
-        return normalized;
-    });
+  let offset = 0;
+  return [
+    ...(item ? [{ selected: inputIndex, selectedChange, item } as Group] : []),
+    ...(group || []),
+  ].map((group) => {
+    const items = [...(group.item || [])];
+    const normalized = { ...group, items, offset };
+    offset += items.length;
+    return normalized;
+  });
 })()>
 <const/initialSelected=(
-    groups.find(({ selected }) =>
-        Array.isArray(selected) ? selected.length > 0 : selected != null,
-    )?.selected ?? undefined
+  groups.find(({ selected }) =>
+    Array.isArray(selected) ? selected.length > 0 : selected != null,
+  )?.selected ?? undefined
 )>
 
 <id/menu>
 <span/$el
-    ...htmlInput
-    class=[
-        classPrefix ? `${baseClass}__menu` : "menu",
-        reverse && `${baseClass}__${menuClass}--reverse`,
-        fixed && `${baseClass}__${menuClass}--fixed`,
-        fixWidth && `${baseClass}__${menuClass}--fix-width`,
-        isFilter && `${baseClass}--filter`,
-        inputClass,
-    ]>
-    <div
-        role="menu"
-        class=`${baseClass}__items`
-        aria-label=a11yText
-        aria-labelledby=a11yLabelId
-        id=menu>
-        // TODO: remove when Marko TS works ($item errors when referenced
-        // directly because it is declared inside nested loops)
-        <const/$items: Iterable<HTMLElement>=$item>
-        <evo-roving-tabindex/rovTabindex
-            nodeList=$items
-            selected=initialSelected/>
-        <evo-typeahead/{ typeahead }
-            nodeList=$items
-            timeoutLength=typeaheadTimeoutLength/>
+  ...htmlInput
+  class=[
+    classPrefix ? `${baseClass}__menu` : "menu",
+    reverse && `${baseClass}__${menuClass}--reverse`,
+    fixed && `${baseClass}__${menuClass}--fixed`,
+    fixWidth && `${baseClass}__${menuClass}--fix-width`,
+    isFilter && `${baseClass}--filter`,
+    inputClass,
+  ]>
+  <div
+    role="menu"
+    class=`${baseClass}__items`
+    aria-label=a11yText
+    aria-labelledby=a11yLabelId
+    id=menu>
+    // TODO: remove when Marko TS works ($item errors when referenced
+    // directly because it is declared inside nested loops)
+    <const/$items: Iterable<HTMLElement>=$item>
+    <evo-roving-tabindex/rovTabindex nodeList=$items selected=initialSelected/>
+    <evo-typeahead/{ typeahead }
+      nodeList=$items
+      timeoutLength=typeaheadTimeoutLength/>
 
-        <for|group, groupIndex| of=groups>
-            <if=groupIndex>
-                <hr class=`${baseClass}__separator` role="separator">
+    <for|group, groupIndex| of=groups>
+      <if=groupIndex>
+        <hr class=`${baseClass}__separator` role="separator">
+      </if>
+      <let/selected:=group.selected>
+      <const/isRadio=(
+        typeof group.selected === "number" ||
+        typeof group.selected === "string" ||
+        group.selected === null
+      )>
+      <const/isCheckbox=Array.isArray(group.selected) || (isFilter && !isRadio)>
+      <const/isCheckable=isRadio || isCheckbox>
+      <const/itemRole=(
+        (isRadio
+          ? "menuitemradio"
+          : isCheckbox
+            ? "menuitemcheckbox"
+            : "menuitem") as Marko.HTML.Div["role"]
+      )>
+      <for|item, i| of=group.items>
+        <const/{
+          class: itemClass,
+          value = group.offset + i,
+          badgeNumber,
+          disabled,
+          content,
+          ...htmlItem
+        }=item>
+        <const/checked=(
+          Array.isArray(selected)
+            ? selected.includes(value)
+            : selected === value
+        )>
+        <div/$item
+          ...htmlItem
+          class=[
+            `${baseClass}__item`,
+            itemClass,
+            badgeNumber !== undefined && `${baseClass}__item--badged`,
+          ]
+          onClick(e, target) {
+            rovTabindex.onClick(value);
+            selected = nextSelected(selected, value);
+            item.onClick && item.onClick(e, target);
+          }
+          onKeyDown(e, target) {
+            if (e.key === "Enter" || e.key === " ") {
+              selected = nextSelected(selected, value);
+            }
+            rovTabindex.onKeyDown(e);
+            const newIndex = typeahead(e);
+            if (newIndex !== -1) {
+              rovTabindex.setFocusIndex(newIndex);
+            }
+
+            item.onKeyDown && item.onKeyDown(e, target);
+          }
+          data-value=value
+          tabindex=(rovTabindex.isFocused(value) ? 0 : -1)
+          aria-checked=isCheckable && (checked ? "true" : "false")
+          aria-disabled=disabled && "true"
+          role=itemRole>
+          <if=isFilter>
+            <if=isRadio>
+              <evo-icon-radio-unchecked-18 class="icon--unchecked"/>
+              <evo-icon-radio-checked-18 class="icon--checked"/>
             </if>
-            <let/selected:=group.selected>
-            <const/isRadio=(
-                typeof group.selected === "number" ||
-                typeof group.selected === "string" ||
-                group.selected === null
-            )>
-            <const/isCheckbox=Array.isArray(group.selected) || (isFilter && !isRadio)>
-            <const/isCheckable=isRadio || isCheckbox>
-            <const/itemRole=(
-                (isRadio
-                    ? "menuitemradio"
-                    : isCheckbox
-                      ? "menuitemcheckbox"
-                      : "menuitem") as Marko.HTML.Div["role"]
-            )>
-            <for|item, i| of=group.items>
-                <const/{
-                    class: itemClass,
-                    value = group.offset + i,
-                    badgeNumber,
-                    disabled,
-                    content,
-                    ...htmlItem
-                }=item>
-                <const/checked=(
-                    Array.isArray(selected)
-                        ? selected.includes(value)
-                        : selected === value
-                )>
-                <div/$item
-                    ...htmlItem
-                    class=[
-                        `${baseClass}__item`,
-                        itemClass,
-                        badgeNumber !== undefined &&
-                            `${baseClass}__item--badged`,
-                    ]
-                    onClick(e, target) {
-                        rovTabindex.onClick(value);
-                        selected = nextSelected(selected, value);
-                        item.onClick && item.onClick(e, target);
-                    }
-                    onKeyDown(e, target) {
-                        if (e.key === "Enter" || e.key === " ") {
-                            selected = nextSelected(selected, value);
-                        }
-                        rovTabindex.onKeyDown(e);
-                        const newIndex = typeahead(e);
-                        if (newIndex !== -1) {
-                            rovTabindex.setFocusIndex(newIndex);
-                        }
-
-                        item.onKeyDown && item.onKeyDown(e, target);
-                    }
-                    data-value=value
-                    tabindex=(rovTabindex.isFocused(value) ? 0 : -1)
-                    aria-checked=isCheckable && (checked ? "true" : "false")
-                    aria-disabled=disabled && "true"
-                    role=itemRole>
-                    <if=isFilter>
-                        <if=isRadio>
-                            <evo-icon-radio-unchecked-18 class="icon--unchecked"/>
-                            <evo-icon-radio-checked-18 class="icon--checked"/>
-                        </if>
-                        <else>
-                            <evo-icon-checkbox-unchecked-18 class="icon--unchecked"/>
-                            <evo-icon-checkbox-checked-18 class="icon--checked"/>
-                        </else>
-                    </if>
-                    <span>
-                        <${content}/>
-                        <if=badgeNumber>
-                            <evo-badge type="menu" number=badgeNumber a11yText=null/>
-                        </if>
-                    </span>
-                    <if=!isFilter>
-                        <evo-icon-tick-16/>
-                    </if>
-                </div>
-            </for>
-        </for>
-    </div>
-    <if=footerButton>
-        <div class=`${baseClass}__footer`>
-            <evo-button ...footerButton/>
+            <else>
+              <evo-icon-checkbox-unchecked-18 class="icon--unchecked"/>
+              <evo-icon-checkbox-checked-18 class="icon--checked"/>
+            </else>
+          </if>
+          <span>
+            <${content}/>
+            <if=badgeNumber>
+              <evo-badge type="menu" number=badgeNumber a11yText=null/>
+            </if>
+          </span>
+          <if=!isFilter>
+            <evo-icon-tick-16/>
+          </if>
         </div>
-    </if>
+      </for>
+    </for>
+  </div>
+  <if=footerButton>
+    <div class=`${baseClass}__footer`>
+      <evo-button ...footerButton/>
+    </div>
+  </if>
 </span>
 
 <return=$el>

@@ -2,7 +2,10 @@ import type { ComponentProps } from "react";
 
 export type BadgeType = "menu" | "icon";
 
-export type EvoBadgeProps = Omit<ComponentProps<"span">, "role" | "aria-label" | "children"> & {
+export type EvoBadgeProps = Omit<
+  ComponentProps<"span">,
+  "role" | "aria-label" | "children"
+> & {
   /** Number displayed in the badge. */
   number?: number | string;
   /** Badge type. Omit for the default image badge (`role="img"`). */

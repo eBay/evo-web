@@ -1,6 +1,6 @@
 {
     "name": "@ebay/ebayui-core",
-    "version": "16.12.0",
+    "version": "16.13.0",
     "description": "Collection of core eBay components; considered to be the building blocks for all composite structures, pages & apps.",
     "keywords": [
         "marko-components"
@@ -51,6 +51,17 @@
         "tt": "mtc",
         "update-snapshots": "vitest run -u --browser.headless",
         "version": "npm run importSVG && npm run build:readme"
+    },
+    "lint-staged": {
+        "*.{js,mjs}": [
+            "eslint --fix",
+            "prettier --write"
+        ],
+        "*.{css,less}": [
+            "prettier --write",
+            "stylelint --fix --config .stylelintrc"
+        ],
+        "*.{ts,marko,md,mdx,json}": "prettier --write"
     },
     "dependencies": {
         "@floating-ui/dom": "^1.7.5",

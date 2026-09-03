@@ -1,6 +1,8 @@
 import { type Input as ButtonInput } from "<evo-button>";
-
-export interface Input extends Omit<Marko.HTML.Dialog, "open" | "role" | "aria-labelledby" | "aria-modal" | "closedby"> {
+export interface Input extends Omit<
+  Marko.HTML.Dialog,
+  "open" | "role" | "aria-labelledby" | "aria-modal" | "closedby"
+> {
   open?: boolean;
   openChange?: (o: boolean) => void;
   header: Marko.AttrTag<Marko.HTML.H2 & { as?: string }>;
@@ -32,17 +34,14 @@ export interface Input extends Omit<Marko.HTML.Dialog, "open" | "role" | "aria-l
 
 <dialog/$dialog
   ...htmlInput
-  open=null // tell Marko it's not a part of the spread because the browser does DOM manipulation
+  open=(
+    null // tell Marko it's not a part of the spread because the browser does DOM manipulation
+  )
   role="alertdialog"
   aria-modal="true"
   closedby="closerequest"
   aria-labelledby=headerId
-  class=[
-    "dialog",
-    "dialog--narrow",
-    !open && "dialog--close",
-    inputClass,
-  ]
+  class=["dialog", "dialog--narrow", !open && "dialog--close", inputClass]
   onCancel(e, el) {
     e.preventDefault();
     open = false;
@@ -53,15 +52,13 @@ export interface Input extends Omit<Marko.HTML.Dialog, "open" | "role" | "aria-l
       el.close();
     }
     onAnimationEnd && onAnimationEnd(e, el);
-  }
->
+  }>
   <div class="dialog__header">
     <const/{ as: headerAs = "h2", ...headerInput }=header>
     <${headerAs}
       ...headerInput
       id=headerId
-      class=["dialog__title", headerInput.class]
-    />
+      class=["dialog__title", headerInput.class]/>
   </div>
   <id/mainId>
   <div id=mainId class="dialog__main">
@@ -74,8 +71,7 @@ export interface Input extends Omit<Marko.HTML.Dialog, "open" | "role" | "aria-l
       onClick(e, el) {
         $dialog().requestClose();
         rejectOnClick && rejectOnClick(e, el);
-      }
-    />
+      }/>
     <const/{ onClick: confirmOnClick, ...confirmInput }=confirm>
     <evo-button
       ...confirmInput
@@ -85,7 +81,6 @@ export interface Input extends Omit<Marko.HTML.Dialog, "open" | "role" | "aria-l
       onClick(e, el) {
         open = false;
         confirmOnClick && confirmOnClick(e, el);
-      }
-    />
+      }/>
   </div>
 </dialog>

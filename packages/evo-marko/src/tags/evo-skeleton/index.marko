@@ -1,18 +1,18 @@
 export interface Input extends Omit<Marko.HTML.Div, "role" | "aria-label"> {
-    /**
-     * The accessibility text for the skeleton
-     *
-     * English default to be overridden is `"Loading..."`
-     * 
-     * Pass `null` explicitly _only_ if alternative accessibility information is present
-     */
-    a11yText: string | null;
+  /**
+   * The accessibility text for the skeleton
+   *
+   * English default to be overridden is `"Loading..."`
+   *
+   * Pass `null` explicitly _only_ if alternative accessibility information is present
+   */
+  a11yText: string | null;
 }
 
 <const/{ class: inputClass, a11yText = "Loading...", ...htmlInput }=input>
 
 <div
-    ...htmlInput
-    role="img"
-    aria-label=a11yText
-    class=["skeleton", inputClass]/>
+  ...htmlInput
+  role="img"
+  aria-label=a11yText
+  class=["skeleton", inputClass]/>

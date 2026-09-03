@@ -1,44 +1,42 @@
 export interface Input {
-    timeoutLength?: number;
-    nodeList: Iterable<HTMLElement>;
+  timeoutLength?: number;
+  nodeList: Iterable<HTMLElement>;
 }
 
 <let/typeStr="">
 
 <script>
-    if (typeStr) {
-        const timeout = setTimeout(() => {
-            typeStr = "";
-        }, input.timeoutLength || 2000);
-        $signal.onabort = () => {
-            clearTimeout(timeout);
-        };
-    }
+  if (typeStr) {
+    const timeout = setTimeout(() => {
+      typeStr = "";
+    }, input.timeoutLength || 2000);
+    $signal.onabort = () => {
+      clearTimeout(timeout);
+    };
+  }
 </script>
 
 <return={
-    typeahead({ key }: KeyboardEvent) {
-        if (!/^(?:\w| )$/.test(key)) {
-            return -1;
-        }
-        typeStr += key;
-        const nodes = [...input.nodeList];
-        if (nodes.length === 0) return -1;
-        const lowerTypeStr = typeStr.toLocaleLowerCase();
-        let index = nodes.findIndex((el) =>
-            el.textContent.toLocaleLowerCase().startsWith(lowerTypeStr),
-        );
-        if (index === -1) {
-            index = nodes.findIndex((el) =>
-                el.textContent.toLocaleLowerCase().includes(lowerTypeStr),
-            );
-        }
-        if (index < 0) return index;
-        const node = nodes[index];
-        return (
-            node.getAttribute("data-value") ||
-            node.getAttribute("value") ||
-            index
-        );
-    },
+  typeahead({ key }: KeyboardEvent) {
+    if (!/^(?:\w| )$/.test(key)) {
+      return -1;
+    }
+    typeStr += key;
+    const nodes = [...input.nodeList];
+    if (nodes.length === 0) return -1;
+    const lowerTypeStr = typeStr.toLocaleLowerCase();
+    let index = nodes.findIndex((el) =>
+      el.textContent.toLocaleLowerCase().startsWith(lowerTypeStr),
+    );
+    if (index === -1) {
+      index = nodes.findIndex((el) =>
+        el.textContent.toLocaleLowerCase().includes(lowerTypeStr),
+      );
+    }
+    if (index < 0) return index;
+    const node = nodes[index];
+    return (
+      node.getAttribute("data-value") || node.getAttribute("value") || index
+    );
+  },
 }>

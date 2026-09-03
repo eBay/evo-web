@@ -16,7 +16,9 @@ export const ConfirmDialogContext =
 export function useConfirmDialogContext() {
   const value = use(ConfirmDialogContext);
   if (!value) {
-    throw new Error("EvoConfirmDialog sub-components must be used within EvoConfirmDialog!");
+    throw new Error(
+      "EvoConfirmDialog sub-components must be used within EvoConfirmDialog!",
+    );
   }
   return value;
 }
@@ -45,7 +47,5 @@ export function ConfirmDialogProvider({
     }),
     [headerId, setHeaderId, mainId, setMainId, onConfirmClick, onRejectClick],
   );
-  return (
-    <ConfirmDialogContext value={value}>{children}</ConfirmDialogContext>
-  );
+  return <ConfirmDialogContext value={value}>{children}</ConfirmDialogContext>;
 }
