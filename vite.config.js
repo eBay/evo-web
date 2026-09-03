@@ -7,7 +7,6 @@ export default defineConfig({
   plugins: [
     patchCssModules({
       exportMode: "both",
-      generateSourceTypes: true,
     }),
   ],
   resolve: {
