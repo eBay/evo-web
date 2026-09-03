@@ -1,15 +1,15 @@
 .avatar {
-    align-items: center;
-    border-radius: 50%;
-    display: inline-flex;
     font-size: var(--font-size-large-2);
     font-weight: var(--font-weight-600);
     height: 48px;
-    justify-content: center;
     line-height: 48px;
+    width: 48px;
+    align-items: center;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
     overflow: hidden;
     position: relative;
-    width: 48px;
 }
 .avatar:after {
     background: rgba(0, 0, 0, 0.05);
@@ -25,50 +25,62 @@
     max-width: 100%;
     object-fit: contain;
 }
+
 .avatar > svg {
     height: 100%;
     width: 100%;
 }
+
 .avatar > img {
     height: 48px;
     object-fit: cover;
     width: 48px;
 }
+
 .avatar--fit > img {
     object-fit: contain;
 }
+
 .avatar--teal {
     background-color: #84b4fb;
     color: #002a69;
 }
+
 .avatar--light-teal {
     background-color: #44ccd5;
     color: #07465a;
 }
+
 .avatar--green {
     background-color: #4ce160;
     color: #1b561a;
 }
+
 .avatar--lime {
     background-color: #c1d737;
     color: #4e4e0c;
 }
+
 .avatar--yellow {
     background-color: #ffbd14;
     color: #553b06;
 }
+
 .avatar--orange {
     background-color: #ff8806;
     color: #562501;
 }
+
 .avatar--magenta {
     background-color: #cc9ef0;
     color: #3e135f;
 }
+
 .avatar--pink {
     background-color: #f79cc8;
     color: #4b112d;
 }
+
 .avatar--32,
 .avatar--32 > img {
     font-size: var(--font-size-medium);
@@ -76,6 +88,7 @@
     line-height: 32px;
     width: 32px;
 }
+
 .avatar--40,
 .avatar--40 > img {
     font-size: var(--font-size-large-1);
@@ -83,6 +96,7 @@
     line-height: 40px;
     width: 40px;
 }
+
 .avatar--48,
 .avatar--48 > img {
     font-size: var(--font-size-large-2);
@@ -90,6 +104,7 @@
     line-height: 48px;
     width: 48px;
 }
+
 .avatar--56,
 .avatar--56 > img {
     font-size: var(--font-size-giant-1);
@@ -97,6 +112,7 @@
     line-height: 56px;
     width: 56px;
 }
+
 .avatar--64,
 .avatar--64 > img {
     font-size: var(--font-size-giant-2);
@@ -104,6 +120,7 @@
     line-height: 64px;
     width: 64px;
 }
+
 .avatar--96,
 .avatar--96 > img {
     font-size: var(--font-size-giant-3);
@@ -111,6 +128,7 @@
     line-height: 96px;
     width: 96px;
 }
+
 .avatar--128,
 .avatar--128 > img {
     font-size: var(--font-size-giant-4);

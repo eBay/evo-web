@@ -1,13 +1,16 @@
 .video-player {
     position: relative;
 }
+
 .video-player video {
     height: 100%;
     width: 100%;
 }
+
 .video-player button {
     font-family: inherit;
 }
+
 .video-player__overlay {
     align-items: center;
     background-color: rgba(0, 0, 0, 0.6);
@@ -23,27 +26,33 @@
     text-align: center;
     top: 0;
 }
+
 .video-player__overlay-text {
     margin: 20px 20px 0;
 }
+
 .video-player__overlay--hidden {
     display: none;
 }
+
 .video-player__report-button > svg {
     margin-inline-end: var(--spacing-50);
 }
+
 .video-player .shaka-overflow-menu svg {
     height: 24px;
     margin-left: 10px;
     margin-right: 10px;
     width: 24px;
 }
+
 .video-player .shaka-range-container {
     margin-bottom: -25px;
     margin-left: 105px;
     margin-right: 133px;
     z-index: 3;
 }
+
 .video-player .shaka-controls-container .shaka-play-button-container {
     align-items: center;
     display: flex;
@@ -51,6 +60,7 @@
     justify-content: center;
     width: 100%;
 }
+
 .video-player .shaka-play-button-container .shaka-play-button {
     background: none;
     border: 0;
@@ -58,40 +68,51 @@
     margin: 0;
     padding: 0;
 }
+
 .video-player--with-nav .shaka-controls-container {
     pointer-events: none;
 }
-.video-player--with-nav .shaka-controls-container .shaka-bottom-controls,
-.video-player--with-nav .shaka-controls-container .shaka-play-button-container {
+
+.video-player--with-nav
+    .shaka-controls-container
+    :is(.shaka-bottom-controls, .shaka-play-button-container) {
     pointer-events: auto;
 }
+
 .video-player--compact {
     container-type: inline-size;
     width: 100%;
 }
+
 .video-player--compact .shaka-controls-button-panel {
     background-color: initial;
     margin-bottom: 10px;
 }
+
 .video-player--compact .shaka-controls-button-panel button {
     background-color: rgba(0, 0, 0, 0.32);
     border-radius: 50%;
     margin: 0 5px;
 }
-.video-player .shaka-controls-button-panel span.shaka-current-time,
-.video-player .shaka-controls-button-panel span.shaka-remaining-time {
+
+.video-player
+    .shaka-controls-button-panel
+    :is(span.shaka-current-time, span.shaka-remaining-time) {
     align-items: center;
     display: inline-flex;
 }
+
 .video-player--compact .shaka-controls-button-panel .shaka-remaining-time {
     border-radius: 16px;
     font-size: var(--font-size-medium);
     min-width: 80px;
     padding: var(--spacing-200) var(--spacing-100);
 }
+
 .video-player--with-nav.video-player--compact .shaka-big-buttons-container {
     display: none;
 }
+
 @container (inline-size < 320px) {
     .video-player--compact video {
         object-fit: cover;

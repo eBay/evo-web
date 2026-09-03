@@ -2,25 +2,27 @@
     --state-layer-neutral-on-strong: rgb(var(--color-neutral-900-rgb), 0);
     --state-layer-neutral: rgb(var(--color-neutral-900-rgb), 0);
 }
+
 .list {
     max-width: 480px;
 }
-.list ol,
-.list ul {
+
+.list :is(ol, ul) {
     margin: 0;
     padding: 0;
 }
+
 .list li::marker {
     content: "";
     font-size: 0;
 }
-.list fieldset > *,
-.list li > * {
-    align-items: center;
+
+.list :is(fieldset, li) > * {
     background-color: var(
         --list-background-color,
         var(--color-background-primary)
     );
+    align-items: center;
     box-sizing: border-box;
     color: var(--color-foreground-primary);
     display: inline-flex;
@@ -30,30 +32,35 @@
     padding: var(--spacing-150) var(--spacing-200);
     width: 100%;
 }
+
 .list__leading {
     margin-inline-end: var(--spacing-200);
 }
+
 .list__trailing {
     margin-inline-start: var(--spacing-200);
 }
+
 .list__body {
     flex: 1;
 }
+
 .list ol li {
     counter-increment: item;
 }
+
 .list ol li > :before {
     content: counter(item) ".";
     margin-inline-end: var(--spacing-200);
     width: var(--spacing-300);
 }
-.list li > a,
-.list li > button {
+
+.list li > :is(a, button) {
     border: none;
-    overflow: hidden;
-    position: relative;
     text-align: left;
     text-decoration: none;
+    overflow: hidden;
+    position: relative;
 }
 .list li > a:after,
 .list li > button:after {
@@ -81,6 +88,7 @@
 .list li > button[href]:active:after {
     background-color: var(--color-state-layer-pressed);
 }
+
 .list hr {
     border: 0;
     border-top: 1px solid var(--color-border-subtle);
@@ -88,7 +96,7 @@
     margin-inline: var(--spacing-200);
     padding: 0;
 }
-[dir="rtl"] .list li > a,
-[dir="rtl"] .list li > button {
+
+[dir="rtl"] .list li > :is(a, button) {
     text-align: right;
 }

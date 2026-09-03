@@ -15,7 +15,6 @@
         background-size: 100% 100%;
     }
 }
-
 @keyframes chevron-bounce-open {
     0% {
         transform: translateY(0);
@@ -27,7 +26,6 @@
         transform: translateY(0);
     }
 }
-
 @keyframes chevron-bounce-close {
     0% {
         transform: translateY(0);
@@ -39,19 +37,11 @@
         transform: translateY(0);
     }
 }
-
 a.filter-chip,
 button.filter-chip {
-    align-items: center;
-    background-color: var(--color-background-primary);
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: 0 100%;
-    border: 1px solid var(--color-border-medium);
     border-radius: var(--border-radius-100);
-    box-shadow: none;
+    align-items: center;
     box-sizing: border-box;
-    color: var(--color-foreground-primary);
     display: inline-flex;
     font-size: var(--font-size-body);
     gap: var(--spacing-75);
@@ -61,22 +51,26 @@ button.filter-chip {
     min-width: 32px;
     padding: 0 var(--spacing-150);
     text-decoration: none;
+    vertical-align: bottom;
+    background-color: var(--color-background-primary);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 0 100%;
+    border: 1px solid var(--color-border-medium);
+    box-shadow: none;
+    color: var(--color-foreground-primary);
     transition: all var(--motion-duration-short-3)
         var(--motion-easing-quick-enter);
-    vertical-align: bottom;
 }
-
 a.filter-chip:active,
 button.filter-chip:active {
     transform: scale(0.97);
 }
-
 a.filter-chip,
 button.filter-chip {
     overflow: hidden;
     position: relative;
 }
-
 a.filter-chip:after,
 button.filter-chip:after {
     background-color: var(--color-state-layer-neutral);
@@ -85,21 +79,18 @@ button.filter-chip:after {
     pointer-events: none;
     position: absolute;
 }
-
 a.filter-chip:not([disabled], [aria-disabled="true"]):hover:after,
 a.filter-chip[href]:hover:after,
 button.filter-chip:not([disabled], [aria-disabled="true"]):hover:after,
 button.filter-chip[href]:hover:after {
     background-color: var(--color-state-layer-hover);
 }
-
 a.filter-chip:not([disabled], [aria-disabled="true"]):focus-visible:after,
 a.filter-chip[href]:focus-visible:after,
 button.filter-chip:not([disabled], [aria-disabled="true"]):focus-visible:after,
 button.filter-chip[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
-
 a.filter-chip:not([disabled], [aria-disabled="true"]):active:after,
 a.filter-chip[href]:active:after,
 button.filter-chip:not([disabled], [aria-disabled="true"]):active:after,
@@ -114,15 +105,14 @@ button.filter-chip--expressive {
 }
 
 .filter-chip__media {
+    margin-inline-start: -8px;
     align-items: center;
     border-radius: var(--spacing-400);
     display: flex;
     justify-content: center;
-    margin-inline-start: -8px;
     overflow: hidden;
     position: relative;
 }
-
 .filter-chip__media:after {
     background: rgba(0, 0, 0, 0.05);
     content: "";
@@ -131,13 +121,12 @@ button.filter-chip--expressive {
     pointer-events: none;
     position: absolute;
 }
-
 .filter-chip__media > img {
     display: inline-block;
-    height: var(--spacing-400);
     max-height: 100%;
     max-width: 100%;
     object-fit: contain;
+    height: var(--spacing-400);
     object-fit: cover;
     width: var(--spacing-400);
 }
@@ -156,7 +145,6 @@ button.filter-chip[aria-pressed="true"] {
     overflow: hidden;
     position: relative;
 }
-
 a.filter-chip--selected:after,
 button.filter-chip.filter-chip--selected:after,
 button.filter-chip[aria-pressed="true"]:after {
@@ -166,7 +154,6 @@ button.filter-chip[aria-pressed="true"]:after {
     pointer-events: none;
     position: absolute;
 }
-
 a.filter-chip--selected:not([disabled], [aria-disabled="true"]):hover:after,
 a.filter-chip--selected[href]:hover:after,
 button.filter-chip.filter-chip--selected:not(
@@ -181,7 +168,6 @@ button.filter-chip[aria-pressed="true"]:not(
 button.filter-chip[aria-pressed="true"][href]:hover:after {
     background-color: var(--color-state-layer-hover-on-strong);
 }
-
 a.filter-chip--selected:not(
         [disabled],
         [aria-disabled="true"]
@@ -199,7 +185,6 @@ button.filter-chip[aria-pressed="true"]:not(
 button.filter-chip[aria-pressed="true"][href]:focus-visible:after {
     background-color: var(--color-state-layer-focus-on-strong);
 }
-
 a.filter-chip--selected:not([disabled], [aria-disabled="true"]):active:after,
 a.filter-chip--selected[href]:active:after,
 button.filter-chip.filter-chip--selected:not(
@@ -223,9 +208,9 @@ button.filter-chip--animated[aria-pressed="true"] {
 }
 
 button.filter-chip[aria-expanded="false"]:active .filter-chip__trailing {
+    rotate: 180deg;
     animation: chevron-bounce-close var(--motion-duration-medium-1)
         var(--motion-easing-standard);
-    rotate: 180deg;
 }
 
 button.filter-chip[aria-expanded="false"] .filter-chip__trailing {
@@ -234,9 +219,9 @@ button.filter-chip[aria-expanded="false"] .filter-chip__trailing {
 }
 
 button.filter-chip[aria-expanded="true"]:active .filter-chip__trailing {
+    rotate: 0deg;
     animation: chevron-bounce-open var(--motion-duration-medium-1)
         var(--motion-easing-standard) var(--motion-duration-short-1);
-    rotate: 0deg;
 }
 
 button.filter-chip[aria-expanded="true"] .filter-chip__trailing {

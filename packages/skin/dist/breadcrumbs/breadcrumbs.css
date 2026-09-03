@@ -12,6 +12,7 @@ nav.breadcrumbs {
     scrollbar-width: none;
     white-space: nowrap;
 }
+
 nav.breadcrumbs > ul {
     display: inline-block;
     margin: 0;
@@ -24,20 +25,25 @@ nav.breadcrumbs > ul > li {
     display: inline-flex;
     vertical-align: middle;
 }
+
 nav.breadcrumbs > ul > li[hidden] {
     display: none;
 }
+
 nav.breadcrumbs > ul > li svg {
     margin-left: 3px;
     margin-right: 3px;
 }
+
 nav.breadcrumbs > ul > li svg.icon--12 {
     margin-left: var(--spacing-75);
     margin-right: var(--spacing-75);
 }
+
 nav.breadcrumbs > ul > li > a {
     text-decoration: none;
 }
+
 nav.breadcrumbs > ul > li > button {
     background: none;
     border: none;
@@ -46,28 +52,25 @@ nav.breadcrumbs > ul > li > button {
     margin: 0;
     padding: 0;
 }
-nav.breadcrumbs > ul > li > a,
-nav.breadcrumbs > ul > li > button {
+
+nav.breadcrumbs > ul > li > :is(a, button) {
     color: inherit;
     max-width: 168px;
     outline-offset: 5px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-nav.breadcrumbs > ul > li > a:focus,
-nav.breadcrumbs > ul > li > a:hover,
-nav.breadcrumbs > ul > li > button:focus,
-nav.breadcrumbs > ul > li > button:hover {
+nav.breadcrumbs > ul > li > :is(a:focus, a:hover, button:focus, button:hover) {
     text-decoration: underline;
 }
-nav.breadcrumbs > ul > li > a[aria-current],
-nav.breadcrumbs > ul > li > button[aria-current] {
+nav.breadcrumbs > ul > li > :is(a[aria-current], button[aria-current]) {
     color: var(
         --breadcrumbs-item-current-foreground-color,
         var(--color-foreground-primary)
     );
     text-decoration: none;
 }
+
 nav.breadcrumbs > ul > li > a:focus:not(:focus-visible),
 nav.breadcrumbs > ul > li > button:focus:not(:focus-visible) {
     outline: none;
@@ -79,8 +82,8 @@ nav.breadcrumbs.breadcrumb--overflow {
     overflow-x: unset;
     scrollbar-width: unset;
 }
-nav.breadcrumbs .fake-menu-button__button,
-nav.breadcrumbs .menu-button__button {
+
+nav.breadcrumbs :is(.fake-menu-button__button, .menu-button__button) {
     background-color: var(
         --icon-button-background-color,
         var(--color-background-secondary)
@@ -91,20 +94,22 @@ nav.breadcrumbs .menu-button__button {
     outline-offset: 1px;
     width: var(--spacing-300);
 }
-nav.breadcrumbs .fake-menu-button__button svg.icon,
-nav.breadcrumbs .menu-button__button svg.icon {
+
+nav.breadcrumbs :is(.fake-menu-button__button, .menu-button__button) svg.icon {
     fill: var(
         --breadcrumbs-overflow-foreground-color,
         var(--color-foreground-secondary)
     );
 }
-nav.breadcrumbs .fake-menu-button__menu,
-nav.breadcrumbs .menu-button__menu {
+
+nav.breadcrumbs :is(.fake-menu-button__menu, .menu-button__menu) {
     font-size: var(--font-size-body);
 }
+
 [dir="rtl"] nav.breadcrumbs svg.icon--12 {
     transform: rotate(180deg);
 }
+
 @media (min-width: 512px) {
     nav.breadcrumbs {
         margin: 16px 0;

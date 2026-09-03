@@ -76,8 +76,7 @@ button.card:hover {
     width: 100%;
 }
 
-.card--full-hero .card__hero-image,
-.card--full-hero .card__media {
+.card--full-hero :is(.card__hero-image, .card__media) {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
