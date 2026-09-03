@@ -57,3 +57,5 @@ _site
 .worktrees/
 .auto
 .vitest-attachments/
+.vitest/
+.vitest-attachments/
