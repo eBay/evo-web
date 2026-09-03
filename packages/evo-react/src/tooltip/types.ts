@@ -37,8 +37,6 @@ export type EvoTooltipProps = ComponentProps<"span"> & {
   shift?: boolean;
   /** Uses inline positioning for hosts that wrap across multiple lines. Defaults to `true`. */
   inline?: boolean;
-  /** Disables hover and opens only for keyboard-visible focus. Defaults to `false`. */
-  noHover?: boolean;
 };
 
 type TooltipHostOwnProps<T extends ElementType> = {

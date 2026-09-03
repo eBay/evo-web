@@ -1,5 +1,5 @@
 import { useCallback, useId, useRef } from "react";
-import type { FocusEvent, MouseEvent, PointerEvent } from "react";
+import type { FocusEvent, MouseEvent } from "react";
 import classNames from "classnames";
 import { TooltipProvider } from "./context";
 import type { EvoTooltipProps } from "./types";
@@ -16,20 +16,17 @@ export function EvoTooltip({
   flip = true,
   shift = true,
   inline = true,
-  noHover = false,
   className,
   children,
   onMouseEnter,
   onMouseLeave,
   onFocus,
   onBlur,
-  onPointerDown,
   ref,
   ...rest
 }: EvoTooltipProps) {
   const tooltipId = useId();
   const hoverTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const modalityRef = useRef<"keyboard" | "pointer" | null>(null);
   const expander = useExpander({
     open,
     defaultOpen,
@@ -52,36 +49,30 @@ export function EvoTooltip({
   const handleMouseEnter = useCallback(
     (event: MouseEvent<HTMLSpanElement>) => {
       onMouseEnter?.(event);
-      if (!noHover) {
-        clearHoverTimeout();
-        expander.setOpen(true);
-      }
+      clearHoverTimeout();
+      expander.setOpen(true);
     },
-    [clearHoverTimeout, expander.setOpen, noHover, onMouseEnter],
+    [clearHoverTimeout, expander.setOpen, onMouseEnter],
   );
 
   const handleMouseLeave = useCallback(
     (event: MouseEvent<HTMLSpanElement>) => {
       onMouseLeave?.(event);
-      if (!noHover) {
-        clearHoverTimeout();
-        hoverTimeoutRef.current = setTimeout(() => {
-          expander.setOpen(false);
-        }, 300);
-      }
+      clearHoverTimeout();
+      hoverTimeoutRef.current = setTimeout(() => {
+        expander.setOpen(false);
+      }, 300);
     },
-    [clearHoverTimeout, expander.setOpen, noHover, onMouseLeave],
+    [clearHoverTimeout, expander.setOpen, onMouseLeave],
   );
 
   const handleFocus = useCallback(
     (event: FocusEvent<HTMLSpanElement>) => {
       onFocus?.(event);
-      if (!noHover || modalityRef.current !== "pointer") {
-        clearHoverTimeout();
-        expander.setOpen(true);
-      }
+      clearHoverTimeout();
+      expander.setOpen(true);
     },
-    [clearHoverTimeout, expander.setOpen, noHover, onFocus],
+    [clearHoverTimeout, expander.setOpen, onFocus],
   );
 
   const handleBlur = useCallback(
@@ -95,18 +86,6 @@ export function EvoTooltip({
     [clearHoverTimeout, expander.setOpen, onBlur],
   );
 
-  const handlePointerDown = useCallback(
-    (event: PointerEvent<HTMLSpanElement>) => {
-      onPointerDown?.(event);
-      modalityRef.current = "pointer";
-      if (noHover) {
-        clearHoverTimeout();
-        expander.setOpen(false);
-      }
-    },
-    [clearHoverTimeout, expander.setOpen, noHover, onPointerDown],
-  );
-
   const [rootRef] = useRefTee(ref, null);
   const lifecycleRef = useCallback(
     (root: HTMLSpanElement | null) => {
@@ -117,7 +96,6 @@ export function EvoTooltip({
 
       const ownerDocument = root.ownerDocument;
       const handleKeyDown = (event: KeyboardEvent) => {
-        modalityRef.current = "keyboard";
         if (expander.open && (event.key === "Escape" || event.key === "Esc")) {
           clearHoverTimeout();
           expander.setOpen(false);
@@ -157,7 +135,6 @@ export function EvoTooltip({
         onMouseLeave={handleMouseLeave}
         onFocus={handleFocus}
         onBlur={handleBlur}
-        onPointerDown={handlePointerDown}
       >
         {children}
       </span>

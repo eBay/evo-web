@@ -62,6 +62,7 @@ function CustomEvoButton({ ref, href, ...rest }: CustomEvoButtonProps) {
 - `noFlip` → `flip` with inverted meaning.
 - `noShift` → `shift` with inverted meaning.
 - `notInline` → `inline` with inverted meaning.
+- `noHover` is removed. `EvoTooltip` always opens on hover and on focus. Use `EvoInfotip` for content that should open on click instead.
 - `overlayStyle` is removed; positioning is managed by Floating UI.
 - `defaultOpen` is added for uncontrolled initial state.
 - The default placement is now `bottom`, matching evo-marko. The legacy default pointer placed the overlay on top.

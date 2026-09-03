@@ -11,15 +11,9 @@ import { EvoTooltipContent } from "../tooltip-content";
 import { EvoTooltipHeading } from "../tooltip-heading";
 import { EvoTooltipHost } from "../tooltip-host";
 
-function DefaultTooltip({
-  noHover = false,
-  defaultOpen,
-}: {
-  noHover?: boolean;
-  defaultOpen?: boolean;
-}) {
+function DefaultTooltip() {
   return (
-    <EvoTooltip noHover={noHover} defaultOpen={defaultOpen}>
+    <EvoTooltip>
       <EvoTooltipHost>Information</EvoTooltipHost>
       <EvoTooltipContent>Additional information</EvoTooltipContent>
     </EvoTooltip>
@@ -38,12 +32,11 @@ describe("evo-tooltip", () => {
   });
 
   it("renders an accessible host and tooltip relationship", async () => {
-    const screen = await render(<DefaultTooltip noHover />);
+    const screen = await render(<DefaultTooltip />);
     const host = screen.getByRole("button", { name: "Information" });
 
     await expect.element(host).toHaveClass("tooltip__host");
     await expect.element(host).toHaveAttribute("type", "button");
-    await expect.element(host).toHaveAttribute("aria-expanded", "false");
 
     await user.tab();
     await expect.element(host).toHaveAttribute("aria-expanded", "true");
@@ -69,21 +62,22 @@ describe("evo-tooltip", () => {
     });
   });
 
-  it("opens a no-hover tooltip only for keyboard-visible focus", async () => {
-    const screen = await render(<DefaultTooltip noHover />);
+  it("opens on focus and closes when focus leaves", async () => {
+    const screen = await render(<DefaultTooltip />);
     const host = screen.getByRole("button", { name: "Information" });
-
-    await user.hover(host);
-    await expect.element(host).toHaveAttribute("aria-expanded", "false");
 
     await user.tab();
     await expect.element(host).toHaveFocus();
     await expect.element(host).toHaveAttribute("aria-expanded", "true");
+
+    await user.tab();
+    await expect.element(host).not.toHaveFocus();
+    await expect.element(host).toHaveAttribute("aria-expanded", "false");
   });
 
-  it("does not open a no-hover tooltip when an input is clicked", async () => {
+  it("opens when a nested input host receives focus", async () => {
     const screen = await render(
-      <EvoTooltip noHover>
+      <EvoTooltip>
         <EvoTooltipHost
           as={EvoInput}
           aria-label="Email address"
@@ -94,32 +88,15 @@ describe("evo-tooltip", () => {
         </EvoTooltipContent>
       </EvoTooltip>,
     );
-    const host = screen.getByPlaceholder("Email address");
+    const input = screen.getByPlaceholder("Email address");
     const tooltip =
       screen.container.querySelector<HTMLElement>('[role="tooltip"]')!;
 
-    await user.hover(host);
-    await expect.element(host).toHaveAttribute("aria-expanded", "false");
-    expect(getComputedStyle(tooltip).display).toBe("none");
+    input.element().focus();
 
-    await user.click(host);
-    await expect.element(host).toHaveFocus();
-    await expect.element(host).toHaveAttribute("aria-expanded", "false");
-    expect(getComputedStyle(tooltip).display).toBe("none");
-  });
-
-  it("closes a no-hover tooltip on touch pointer down", async () => {
-    const screen = await render(<DefaultTooltip noHover defaultOpen />);
-    const host = screen.getByRole("button", { name: "Information" });
-
-    await expect.element(host).toHaveAttribute("aria-expanded", "true");
-    host.element().dispatchEvent(
-      new PointerEvent("pointerdown", {
-        bubbles: true,
-        pointerType: "touch",
-      }),
-    );
-    await expect.element(host).toHaveAttribute("aria-expanded", "false");
+    await expect.element(input).toHaveFocus();
+    await expect.element(input).toHaveAttribute("aria-expanded", "true");
+    expect(getComputedStyle(tooltip).display).not.toBe("none");
   });
 
   it("closes a hover-opened tooltip when Escape is pressed", async () => {

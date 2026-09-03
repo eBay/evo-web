@@ -4,7 +4,6 @@ import { EvoButton } from "../button/button";
 import type { AnchorButtonProps } from "../button/types";
 import { EvoIconButton } from "../icon-button";
 import { EvoIconSettings24 } from "../icon/icons/settings-24";
-import { EvoInput } from "../input";
 import { EvoTooltip } from "./tooltip";
 import { EvoTooltipContent } from "./tooltip-content";
 import { EvoTooltipHeading } from "./tooltip-heading";
@@ -85,10 +84,6 @@ import {
       control: "boolean",
       table: { defaultValue: { summary: "true" } },
     },
-    noHover: {
-      control: "boolean",
-      table: { defaultValue: { summary: "false" } },
-    },
   },
 };
 
@@ -101,21 +96,6 @@ export const Default: Story = {
       <EvoTooltipHost>View options</EvoTooltipHost>
       <EvoTooltipContent>
         Use Access Key &apos;S&apos; to display settings.
-      </EvoTooltipContent>
-    </EvoTooltip>
-  ),
-};
-
-export const NoHover: Story = {
-  render: (args) => (
-    <EvoTooltip {...args} noHover>
-      <EvoTooltipHost
-        as={EvoInput}
-        aria-label="Email address"
-        placeholder="Email address"
-      />
-      <EvoTooltipContent>
-        Please choose the email address you use the most.
       </EvoTooltipContent>
     </EvoTooltip>
   ),
