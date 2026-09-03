@@ -1,4 +1,4 @@
-import { useCallback, useLayoutEffect, useRef, useState } from "react";
+import { useCallback, useLayoutEffect, useMemo, useRef, useState } from "react";
 import type { RefObject } from "react";
 
 export type ActiveDescendantItem<Key, Data> = {
@@ -20,6 +20,7 @@ export type ActiveDescendant<Key, Data> = {
 type UseActiveDescendantOptions = {
   containerRef: RefObject<HTMLElement | null>;
   shouldWrap?: boolean;
+  scrollIntoView?: ScrollIntoViewOptions;
 };
 
 type UseActiveDescendantItemOptions<Key, Data> = {
@@ -47,6 +48,7 @@ function compareDomOrder<Key, Data>(
 
 export function useActiveDescendant<Key, Data>({
   containerRef,
+  scrollIntoView,
   shouldWrap = true,
 }: UseActiveDescendantOptions): ActiveDescendant<Key, Data> {
   const itemsRef = useRef(new Map<Key, ActiveDescendantItem<Key, Data>>());
@@ -74,21 +76,27 @@ export function useActiveDescendant<Key, Data>({
     return getItems().find((item) => item.key === key);
   }, [getItems]);
 
-  const activateKey = useCallback((key: Key | null) => {
-    if (key === null) {
-      activeKeyRef.current = null;
-      setActiveKeyState(null);
-      return;
-    }
+  const activateKey = useCallback(
+    (key: Key | null) => {
+      if (key === null) {
+        activeKeyRef.current = null;
+        setActiveKeyState(null);
+        return;
+      }
 
-    const item = itemsRef.current.get(key);
-    if (!item || !item.ref.current) {
-      return;
-    }
+      const item = itemsRef.current.get(key);
+      if (!item || !item.ref.current) {
+        return;
+      }
 
-    activeKeyRef.current = key;
-    setActiveKeyState(key);
-  }, []);
+      activeKeyRef.current = key;
+      setActiveKeyState(key);
+      if (scrollIntoView) {
+        item.ref.current.scrollIntoView?.(scrollIntoView);
+      }
+    },
+    [scrollIntoView],
+  );
 
   const reset = useCallback(() => {
     activateKey(null);
@@ -151,14 +159,24 @@ export function useActiveDescendant<Key, Data>({
   const activateNext = useCallback(() => move(1), [move]);
   const activatePrevious = useCallback(() => move(-1), [move]);
 
-  return {
-    activeKey,
-    registerItem,
-    getActiveItem,
-    activateNext,
-    activatePrevious,
-    reset,
-  };
+  return useMemo(
+    () => ({
+      activeKey,
+      registerItem,
+      getActiveItem,
+      activateNext,
+      activatePrevious,
+      reset,
+    }),
+    [
+      activeKey,
+      activateNext,
+      activatePrevious,
+      getActiveItem,
+      registerItem,
+      reset,
+    ],
+  );
 }
 
 export function useActiveDescendantItem<Key, Data>({

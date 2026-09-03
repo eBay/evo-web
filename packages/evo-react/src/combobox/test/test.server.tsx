@@ -34,6 +34,18 @@ describe("EvoCombobox SSR", () => {
     ).toMatchSnapshot();
   });
 
+  it("renders a fixed-strategy listbox", () => {
+    expect(
+      renderCombobox({ defaultOpen: true, strategy: "fixed" }),
+    ).toMatchSnapshot();
+  });
+
+  it("renders a disabled combobox as closed", () => {
+    expect(
+      renderCombobox({ defaultOpen: true, disabled: true }),
+    ).toMatchSnapshot();
+  });
+
   it("renders an actionable postfix", () => {
     expect(
       renderCombobox({

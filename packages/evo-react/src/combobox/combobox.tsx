@@ -1,4 +1,4 @@
-import { useCallback, useId, useState } from "react";
+import { useCallback, useEffect, useId, useState } from "react";
 import type {
   ChangeEvent,
   FocusEvent,
@@ -15,6 +15,16 @@ import { useRefTee } from "../utils/use-ref-tee";
 import { ComboboxProvider } from "./context";
 import type { EvoComboboxProps } from "./types";
 import "@ebay/skin/combobox.mjs";
+
+type TemporaryValue = {
+  key: string;
+  origin: string;
+  value: string;
+};
+
+const activeDescendantScrollIntoView: ScrollIntoViewOptions = {
+  block: "nearest",
+};
 
 export function EvoCombobox({
   autocomplete = "none",
@@ -49,23 +59,21 @@ export function EvoCombobox({
   const listboxId = `${inputId}-listbox`;
   const isControlled = value !== undefined;
   const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue);
-  const [temporaryValue, setTemporaryValue] = useState<string | null>(null);
+  const [temporaryValue, setTemporaryValue] = useState<TemporaryValue | null>(
+    null,
+  );
   const [focused, setFocused] = useState(false);
   const currentValue = isControlled ? value : uncontrolledValue;
-
-  if (listSelection === "manual" && temporaryValue !== null) {
-    setTemporaryValue(null);
-  }
-
-  const displayedValue = temporaryValue ?? currentValue;
   const expander = useExpander({
     defaultOpen,
     offset: 4,
     onOpenChange,
     open,
     placement: "bottom-start",
+    resetOnDisabled: Boolean(disabled),
     strategy,
   });
+  const effectiveOpen = !disabled && expander.open;
   const [setListboxElement, listboxRef] = useRefTee<HTMLElement | null>(
     expander.refs.setFloating,
     null,
@@ -76,12 +84,37 @@ export function EvoCombobox({
   );
   const activeDescendant = useActiveDescendant<string, string>({
     containerRef: listboxRef as RefObject<HTMLElement | null>,
+    scrollIntoView: activeDescendantScrollIntoView,
     shouldWrap: true,
   });
+  const activeOption = effectiveOpen
+    ? activeDescendant.getActiveItem()
+    : undefined;
+  const hasValidTemporaryValue =
+    temporaryValue !== null &&
+    listSelection === "automatic" &&
+    temporaryValue.origin === currentValue &&
+    temporaryValue.key === activeOption?.key;
+
+  if (temporaryValue !== null && !hasValidTemporaryValue) {
+    setTemporaryValue(null);
+  }
+
+  const displayedValue = hasValidTemporaryValue
+    ? temporaryValue.value
+    : currentValue;
+  const previewValue = hasValidTemporaryValue ? temporaryValue.value : null;
+
+  useEffect(() => {
+    if (disabled) {
+      activeDescendant.reset();
+    }
+  }, [activeDescendant.reset, disabled]);
+
   const floatingLabel = useFloatingLabel({
     containerTagName: fluid ? "div" : "span",
     disabled,
-    focused: focused || expander.open,
+    focused: focused || effectiveOpen,
     text: floatingLabelText,
     value: displayedValue,
   });
@@ -96,11 +129,15 @@ export function EvoCombobox({
 
   const requestOpen = useCallback(
     (nextOpen: boolean) => {
+      if (disabled && nextOpen) {
+        return;
+      }
+
       if (nextOpen !== expander.open) {
         expander.setOpen(nextOpen);
       }
     },
-    [expander.open, expander.setOpen],
+    [disabled, expander.open, expander.setOpen],
   );
 
   const updateValue = useCallback(
@@ -118,89 +155,163 @@ export function EvoCombobox({
 
   const selectOption = useCallback(
     (text: string) => {
+      if (disabled) {
+        return;
+      }
+
       updateValue(text);
       activeDescendant.reset();
       requestOpen(false);
     },
-    [activeDescendant.reset, requestOpen, updateValue],
+    [activeDescendant.reset, disabled, requestOpen, updateValue],
   );
 
-  const handleFocusOut = (event: FocusEvent<HTMLElement>) => {
-    if (event.currentTarget.contains(event.relatedTarget as Node | null)) {
-      return;
-    }
-
-    setFocused(false);
-    const preview = temporaryValue;
-    requestOpen(false);
-    activeDescendant.reset();
-
-    if (preview === null) {
-      return;
-    }
-
-    updateValue(preview);
-  };
-
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    activeDescendant.reset();
-    updateValue(event.currentTarget.value);
-    requestOpen(true);
-    onChange?.(event);
-  };
-
-  const handleFocus = (event: FocusEvent<HTMLInputElement>) => {
-    setFocused(true);
-    requestOpen(true);
-    onFocus?.(event);
-  };
-
-  const handleBlur = (event: FocusEvent<HTMLInputElement>) => {
-    onBlur?.(event);
-  };
-
-  const handleClick = (event: MouseEvent<HTMLInputElement>) => {
-    requestOpen(true);
-    onClick?.(event);
-  };
-
-  const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === "ArrowDown" || event.key === "ArrowUp") {
-      event.preventDefault();
-      if (!expander.open) {
-        requestOpen(true);
-      } else {
-        const option =
-          event.key === "ArrowDown"
-            ? activeDescendant.activateNext()
-            : activeDescendant.activatePrevious();
-        if (listSelection === "automatic") {
-          setTemporaryValue(option?.data ?? null);
-        }
+  const handleFocusOut = useCallback(
+    (event: FocusEvent<HTMLElement>) => {
+      if (event.currentTarget.contains(event.relatedTarget as Node | null)) {
+        return;
       }
-    } else if (event.key === "Enter" && expander.open) {
-      const option = activeDescendant.getActiveItem();
-      if (option) {
+
+      setFocused(false);
+      requestOpen(false);
+      activeDescendant.reset();
+
+      if (previewValue !== null) {
+        updateValue(previewValue);
+      }
+    },
+    [activeDescendant.reset, previewValue, requestOpen, updateValue],
+  );
+
+  const handleChange = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      if (disabled) {
+        return;
+      }
+
+      activeDescendant.reset();
+      updateValue(event.currentTarget.value);
+      requestOpen(true);
+      onChange?.(event);
+    },
+    [activeDescendant.reset, disabled, onChange, requestOpen, updateValue],
+  );
+
+  const handleFocus = useCallback(
+    (event: FocusEvent<HTMLInputElement>) => {
+      if (disabled) {
+        return;
+      }
+
+      setFocused(true);
+      requestOpen(true);
+      onFocus?.(event);
+    },
+    [disabled, onFocus, requestOpen],
+  );
+
+  const handleBlur = useCallback(
+    (event: FocusEvent<HTMLInputElement>) => {
+      onBlur?.(event);
+    },
+    [onBlur],
+  );
+
+  const handleClick = useCallback(
+    (event: MouseEvent<HTMLInputElement>) => {
+      if (disabled) {
+        return;
+      }
+
+      requestOpen(true);
+      onClick?.(event);
+    },
+    [disabled, onClick, requestOpen],
+  );
+
+  const handleKeyDown = useCallback(
+    (event: KeyboardEvent<HTMLInputElement>) => {
+      if (disabled) {
+        return;
+      }
+
+      if (event.key === "ArrowDown" || event.key === "ArrowUp") {
         event.preventDefault();
-        selectOption(option.data);
-      } else {
+        if (!effectiveOpen) {
+          requestOpen(true);
+        } else {
+          const option =
+            event.key === "ArrowDown"
+              ? activeDescendant.activateNext()
+              : activeDescendant.activatePrevious();
+          if (listSelection === "automatic") {
+            setTemporaryValue(
+              option
+                ? {
+                    key: option.key,
+                    origin: currentValue,
+                    value: option.data,
+                  }
+                : null,
+            );
+          }
+        }
+      } else if (event.key === "Enter" && effectiveOpen) {
+        const option = activeDescendant.getActiveItem();
+        if (option) {
+          event.preventDefault();
+          selectOption(option.data);
+        } else {
+          requestOpen(false);
+        }
+      } else if (event.key === "Escape") {
+        setTemporaryValue(null);
+        activeDescendant.reset();
         requestOpen(false);
       }
-    } else if (event.key === "Escape") {
-      setTemporaryValue(null);
-      activeDescendant.reset();
-      requestOpen(false);
-    }
 
-    onKeyDown?.(event);
-  };
+      onKeyDown?.(event);
+    },
+    [
+      activeDescendant.activateNext,
+      activeDescendant.activatePrevious,
+      activeDescendant.getActiveItem,
+      activeDescendant.reset,
+      currentValue,
+      disabled,
+      effectiveOpen,
+      listSelection,
+      onKeyDown,
+      requestOpen,
+      selectOption,
+    ],
+  );
 
   const Wrapper = fluid ? "div" : "span";
-  const activeOption = expander.open
-    ? activeDescendant.getActiveItem()
-    : undefined;
   const postfixButtonProps = postfix?.buttonProps;
   const postfixMouseDown = postfixButtonProps?.onMouseDown;
+  const postfixClick = postfixButtonProps?.onClick;
+  const handlePostfixClick = useCallback(
+    (event: MouseEvent<HTMLButtonElement>) => {
+      if (disabled) {
+        return;
+      }
+
+      setTemporaryValue(null);
+      activeDescendant.reset();
+      postfixClick?.(event);
+    },
+    [activeDescendant.reset, disabled, postfixClick],
+  );
+  const handlePostfixMouseDown = useCallback(
+    (event: MouseEvent<HTMLButtonElement>) => {
+      event.preventDefault();
+      if (!disabled) {
+        postfixMouseDown?.(event);
+      }
+    },
+    [disabled, postfixMouseDown],
+  );
 
   return (
     <ComboboxProvider
@@ -208,6 +319,7 @@ export function EvoCombobox({
       autocomplete={autocomplete}
       displayedValue={displayedValue}
       filterValue={currentValue}
+      disabled={disabled}
       selectOption={selectOption}
     >
       <floatingLabel.Container {...floatingLabel.containerProps}>
@@ -216,11 +328,11 @@ export function EvoCombobox({
           className={classNames(
             "combobox",
             fluid && "combobox--fluid",
-            expander.open && "combobox--expanded",
+            effectiveOpen && "combobox--expanded",
             className,
           )}
           style={style}
-          onBlur={handleFocusOut}
+          onBlurCapture={handleFocusOut}
         >
           <span
             className={classNames("combobox__control", {
@@ -242,7 +354,7 @@ export function EvoCombobox({
               autoComplete="off"
               aria-autocomplete={autocomplete}
               aria-haspopup="listbox"
-              aria-expanded={expander.open}
+              aria-expanded={effectiveOpen}
               aria-owns={listboxId}
               aria-controls={listboxId}
               aria-activedescendant={activeOption?.id}
@@ -258,10 +370,8 @@ export function EvoCombobox({
                   {...postfixButtonProps}
                   disabled={disabled || postfixButtonProps.disabled}
                   transparent
-                  onMouseDown={(event) => {
-                    event.preventDefault();
-                    postfixMouseDown?.(event);
-                  }}
+                  onClick={handlePostfixClick}
+                  onMouseDown={handlePostfixMouseDown}
                 >
                   {postfix.icon}
                 </EvoIconButton>
@@ -273,7 +383,11 @@ export function EvoCombobox({
             id={listboxId}
             ref={setListboxElement}
             role="listbox"
-            className="combobox__listbox"
+            className={classNames(
+              "combobox__listbox",
+              "combobox__listbox--set-position",
+              strategy === "fixed" && "combobox__listbox--fixed",
+            )}
             style={expander.floatingStyles}
           >
             {children}

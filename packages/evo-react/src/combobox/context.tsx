@@ -8,6 +8,7 @@ export type ComboboxContextValue = {
   autocomplete: ComboboxAutocomplete;
   displayedValue: string;
   filterValue: string;
+  disabled?: boolean;
   selectOption: (text: string) => void;
 };
 
@@ -34,6 +35,7 @@ export function ComboboxProvider({
   autocomplete,
   displayedValue,
   filterValue,
+  disabled,
   selectOption,
   children,
 }: ComboboxProviderProps) {
@@ -43,9 +45,17 @@ export function ComboboxProvider({
       autocomplete,
       displayedValue,
       filterValue,
+      disabled,
       selectOption,
     }),
-    [activeDescendant, autocomplete, displayedValue, filterValue, selectOption],
+    [
+      activeDescendant,
+      autocomplete,
+      disabled,
+      displayedValue,
+      filterValue,
+      selectOption,
+    ],
   );
 
   return <ComboboxContext value={value}>{children}</ComboboxContext>;

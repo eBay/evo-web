@@ -40,7 +40,9 @@ Replace `onInputChange` with `onValueChange`. It receives the displayed string a
 </EvoCombobox>
 ```
 
-The legacy blur-based `onChange` behavior is removed; use native `onBlur` when needed. Root `onSelect` is removed because this component does not manage selected option identity.
+The legacy blur-based `onChange` behavior is removed; use native `onBlur` when needed. Native `onBlur` runs after Evo's internal focus-leave processing, so controlled consumers may restore a value in their blur handler without the wrapper overwriting it afterward.
+
+EvoCombobox represents textbox text, not selected option identity. Text suggestions and free-form autocomplete can migrate to the text-only API. Legacy uses of option `value`, root `onSelect`, or separate ID and label state are entity selectors; entity selectors have no direct Evo replacement yet and require manual engineering review. Agents must not remove identity handling automatically.
 
 ## Open state
 
@@ -62,5 +64,5 @@ Use `defaultOpen` for an initially open uncontrolled combobox. The new `strategy
 - `opaqueLabel`: not supported by Evo Marko or Evo React input conventions.
 - `onFloatingLabelInit`: the floating label no longer has an imperative initialization phase.
 - `onSelect`: use `onValueChange` for committed textbox value changes.
-- Option `value`: EvoCombobox does not manage machine-readable selection identity.
-- Option `selected`: selection state is managed by `EvoCombobox`.
+- Option `value`: Text suggestion migrations should use the option's `text`; legacy machine-readable values identify an entity selector and require manual engineering review.
+- Option `selected`: EvoCombobox does not manage committed option identity; do not remove legacy identity handling automatically.

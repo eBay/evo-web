@@ -1,6 +1,6 @@
+import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { action } from "storybook/actions";
-import { EvoIconClose12 } from "../icon/icons/close-12";
+import { EvoIconClear16 } from "../icon/icons/clear-16";
 import { EvoCombobox } from "./combobox";
 import { EvoComboboxOption } from "./combobox-option";
 
@@ -75,13 +75,6 @@ import {
     autocomplete: "none",
     listSelection: "automatic",
     placeholder: "Choose a campaign",
-    postfix: {
-      icon: <EvoIconClose12 />,
-      buttonProps: {
-        a11yText: "Clear",
-        onClick: action("clear"),
-      },
-    },
   },
 };
 
@@ -97,4 +90,44 @@ export const Default: Story = {
       <EvoComboboxOption text="Create campaign" sticky />
     </EvoCombobox>
   ),
+};
+
+export const Controlled: Story = {
+  args: {
+    value: "August Campaign",
+  },
+  render: (args) => (
+    <EvoCombobox {...args}>
+      <EvoComboboxOption text="August Campaign" />
+      <EvoComboboxOption text="4th of July Sale (paused)" />
+      <EvoComboboxOption text="Basic Offer" />
+      <EvoComboboxOption text="Create campaign" sticky />
+    </EvoCombobox>
+  ),
+};
+
+export const Postfix: Story = {
+  render: (args) => {
+    const [value, setValue] = useState("August Campaign");
+
+    return (
+      <EvoCombobox
+        {...args}
+        value={value}
+        onValueChange={setValue}
+        postfix={{
+          icon: <EvoIconClear16 />,
+          buttonProps: {
+            a11yText: "Clear",
+            onClick: () => setValue(""),
+          },
+        }}
+      >
+        <EvoComboboxOption text="August Campaign" />
+        <EvoComboboxOption text="4th of July Sale (paused)" />
+        <EvoComboboxOption text="Basic Offer" />
+        <EvoComboboxOption text="Create campaign" sticky />
+      </EvoCombobox>
+    );
+  },
 };

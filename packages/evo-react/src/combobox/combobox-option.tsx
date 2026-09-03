@@ -1,4 +1,4 @@
-import { useEffect, useId } from "react";
+import { useId } from "react";
 import type { Ref, RefObject } from "react";
 import classNames from "classnames";
 import { useActiveDescendantItem } from "../utils/use-active-descendant";
@@ -27,6 +27,7 @@ export function EvoComboboxOption({
     displayedValue,
     filterValue,
     selectOption,
+    disabled,
   } = useComboboxContext();
   const [optionRef, internalRef] = useRefTee<HTMLDivElement | null>(
     ref as Ref<HTMLDivElement | null>,
@@ -44,12 +45,6 @@ export function EvoComboboxOption({
       data: text,
     },
   });
-
-  useEffect(() => {
-    if (isActive) {
-      internalRef.current?.scrollIntoView({ block: "nearest" });
-    }
-  }, [internalRef, isActive]);
 
   if (hidden) {
     return null;
@@ -70,15 +65,25 @@ export function EvoComboboxOption({
       )}
       onMouseDown={(event) => {
         event.preventDefault();
-        onMouseDown?.(event);
+        if (!disabled) {
+          onMouseDown?.(event);
+        }
       }}
       onClick={(event) => {
+        if (disabled) {
+          return;
+        }
+
         onClick?.(event);
         if (!event.defaultPrevented) {
           selectOption(text);
         }
       }}
       onKeyDown={(event) => {
+        if (disabled) {
+          return;
+        }
+
         onKeyDown?.(event);
         if (
           !event.defaultPrevented &&
