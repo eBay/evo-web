@@ -13,9 +13,6 @@ export default [
             parserOptions: {
                 requireConfigFile: false,
                 sourceType: "module",
-                babelOptions: {
-                    plugins: ["@babel/plugin-syntax-import-assertions"],
-                },
             },
         },
     },
