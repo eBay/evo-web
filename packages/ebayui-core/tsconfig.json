@@ -8,6 +8,7 @@
         "lib": ["dom", "ESNext"],
         "module": "CommonJS",
         "moduleResolution": "node",
+        "ignoreDeprecations": "6.0",
         "noImplicitOverride": true,
         "noUnusedLocals": true,
         "outDir": "dist",
