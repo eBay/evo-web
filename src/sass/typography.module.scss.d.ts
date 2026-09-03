@@ -59,3 +59,33 @@ export {
 	mediumScreenSmall,
 	smallScreenSmall
 };
+
+declare const __default_export__: {
+	list: typeof list;
+	giant3: typeof giant3;
+	giant2: typeof giant2;
+	giant1: typeof giant1;
+	large2: typeof large2;
+	large2Secondary: typeof large2Secondary;
+	large1: typeof large1;
+	large1Secondary: typeof large1Secondary;
+	mediumBold: typeof mediumBold;
+	medium: typeof medium;
+	mediumSecondary: typeof mediumSecondary;
+	regularBold: typeof regularBold;
+	regular: typeof regular;
+	regularSecondary: typeof regularSecondary;
+	smallBold: typeof smallBold;
+	small: typeof small;
+	smallSecondary: typeof smallSecondary;
+	giantScreenLarge: typeof giantScreenLarge;
+	largeScreenLarge: typeof largeScreenLarge;
+	mediumScreenLarge: typeof mediumScreenLarge;
+	smallScreenLarge: typeof smallScreenLarge;
+	giantScreenSmall: typeof giantScreenSmall;
+	largeScreenSmall: typeof largeScreenSmall;
+	mediumScreenSmall: typeof mediumScreenSmall;
+	smallScreenSmall: typeof smallScreenSmall;
+};
+export default __default_export__;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidHlwb2dyYXBoeS5tb2R1bGUuc2Nzcy5kLnRzIiwic291cmNlcyI6WyJ0eXBvZ3JhcGh5Lm1vZHVsZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7O2NBRUE7Y0FVQTtjQUlBO2NBSUE7Y0FJQTtjQUlBO2NBSUE7Y0FJQTtjQUlBO2NBSUE7Y0FJQTtjQUlBO2NBSUE7Y0FJQTtjQUlBO2NBSUE7Y0FJQTtjQUtBO2NBSUE7Y0FJQTtjQUlBO2NBTUE7Y0FJQTtjQUlBO2NBSUE7OztDQXpHQTtDQVVBO0NBSUE7Q0FJQTtDQUlBO0NBSUE7Q0FJQTtDQUlBO0NBSUE7Q0FJQTtDQUlBO0NBSUE7Q0FJQTtDQUlBO0NBSUE7Q0FJQTtDQUlBO0NBS0E7Q0FJQTtDQUlBO0NBSUE7Q0FNQTtDQUlBO0NBSUE7Q0FJQTs7OztDQXpHQTtDQVVBO0NBSUE7Q0FJQTtDQUlBO0NBSUE7Q0FJQTtDQUlBO0NBSUE7Q0FJQTtDQUlBO0NBSUE7Q0FJQTtDQUlBO0NBSUE7Q0FJQTtDQUlBO0NBS0E7Q0FJQTtDQUlBO0NBSUE7Q0FNQTtDQUlBO0NBSUE7Q0FJQTs7In0=

@@ -11,3 +11,9 @@ declare const breadcrumbs: string;
 export {
 	breadcrumbs
 };
+
+declare const __default_export__: {
+	breadcrumbs: typeof breadcrumbs;
+};
+export default __default_export__;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3R5bGUubW9kdWxlLnNjc3MuZC50cyIsInNvdXJjZXMiOlsic3R5bGUubW9kdWxlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Y0FBQTs7O0NBQUE7Ozs7Q0FBQTs7In0=

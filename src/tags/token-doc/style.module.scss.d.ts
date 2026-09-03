@@ -13,3 +13,10 @@ export {
 	item,
 	list
 };
+
+declare const __default_export__: {
+	item: typeof item;
+	list: typeof list;
+};
+export default __default_export__;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3R5bGUubW9kdWxlLnNjc3MuZC50cyIsInNvdXJjZXMiOlsic3R5bGUubW9kdWxlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Y0FFQTtjQVdBOzs7Q0FYQTtDQVdBOzs7O0NBWEE7Q0FXQTs7In0=

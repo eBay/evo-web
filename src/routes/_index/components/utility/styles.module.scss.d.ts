@@ -11,3 +11,9 @@ declare const table: string;
 export {
 	table
 };
+
+declare const __default_export__: {
+	table: typeof table;
+};
+export default __default_export__;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3R5bGVzLm1vZHVsZS5zY3NzLmQudHMiLCJzb3VyY2VzIjpbInN0eWxlcy5tb2R1bGUuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7OztjQUFBOzs7Q0FBQTs7OztDQUFBOzsifQ==

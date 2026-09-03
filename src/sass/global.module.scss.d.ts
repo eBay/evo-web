@@ -15,3 +15,11 @@ export {
 	icon,
 	large
 };
+
+declare const __default_export__: {
+	flag: typeof flag;
+	icon: typeof icon;
+	large: typeof large;
+};
+export default __default_export__;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZ2xvYmFsLm1vZHVsZS5zY3NzLmQudHMiLCJzb3VyY2VzIjpbImdsb2JhbC5tb2R1bGUuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7OztjQUFBO2NBQ0E7Y0F1QkU7OztDQXhCRjtDQUNBO0NBdUJFOzs7O0NBeEJGO0NBQ0E7Q0F1QkU7OyJ9

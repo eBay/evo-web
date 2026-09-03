@@ -18,3 +18,13 @@ export {
 	tabs,
 	pagination
 };
+
+declare const __default_export__: {
+	badge: typeof badge;
+	"badge--circle": typeof badge_Circle;
+	component: typeof component;
+	tabs: typeof tabs;
+	pagination: typeof pagination;
+};
+export default __default_export__;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3R5bGUubW9kdWxlLnNjc3MuZC50cyIsInNvdXJjZXMiOlsic3R5bGUubW9kdWxlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Y0FDQTs7Y0FRQTtjQVFBO2NBSUE7OztDQXBCQTtDQVFBO0NBUUE7Q0FJQTs7OztDQXBCQTs7Q0FRQTtDQVFBO0NBSUE7OyJ9
