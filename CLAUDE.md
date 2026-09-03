@@ -110,7 +110,6 @@ Declare `<const/>`, `<let/>`, `<id/>`, and other tag variables close to where th
 **Marko 6 AttrTag content:** When already spreading an AttrTag onto a native element with no other body content, use self-closing — `<button ...button/>`. Never `<button ...button><${button.content}/></button>`.
 
 **Marko 6 AttrTag slot types — pick the right generic:**
-
 - ✅ Body-only slot: `action?: Marko.AttrTag<{ content?: Marko.Body }>` — accepts arbitrary child content
 - ❌ Empty generic: `action?: Marko.AttrTag<{}>` — rejects children at compile time (TS2353)
 - ✅ Typed-props slot: `image?: Marko.AttrTag<Omit<Marko.HTML.Img, "alt">>` — slot has specific props

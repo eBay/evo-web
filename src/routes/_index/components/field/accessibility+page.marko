@@ -6,54 +6,54 @@ import { urls } from "../../../../data";
   <h2>Best Practices</h2>
   <p>
     The field component provides layout only. It does not automatically
-    associate labels, descriptions, or errors with a control. Applications${" "}
+    associate labels, descriptions, or errors with a control. Applications
     <strong>must</strong>
-    ${" "}provide those relationships.
+    provide those relationships.
   </p>
   <p>
-    Every field${" "}
+    Every field
     <strong>must</strong>
-    ${" "}have a visible${" "}
+    have a visible
     <code>label</code>
-    ${" "}whose${" "}
+    whose
     <code>for</code>
-    ${" "}value matches the control ID. Group related fields with a${" "}
+    value matches the control ID. Group related fields with a
     <code>fieldset</code>
-    ${" "}and${" "}
+    and
     <code>legend</code>
-    ${" "}when the group label provides necessary context.
+    when the group label provides necessary context.
   </p>
   <p>
-    Prefer a native${" "}
+    Prefer a native
     <code>label</code>
-    ${" "}with matching${" "}
+    with matching
     <code>for</code>
-    ${" "}and control ID. When a native label cannot be used, associate visible
-    text with${" "}
+    and control ID. When a native label cannot be used, associate visible
+    text with
     <code>aria-labelledby</code>
-    ${" "}. Use${" "}
+    . Use
     <code>aria-label</code>
-    ${" "}only when no visible label is available. Do not use${" "}
+    only when no visible label is available. Do not use
     <code>aria-label</code>
-    ${" "}to replace or override an associated visible label.
+    to replace or override an associated visible label.
   </p>
   <p>
-    Supporting and error text${" "}
+    Supporting and error text
     <strong>must</strong>
-    ${" "}have an ID referenced by the control's${" "}
+    have an ID referenced by the control's
     <code>aria-describedby</code>
-    ${" "}. When more than one description applies, include each ID separated by
-    a space. Use native${" "}
+    . When more than one description applies, include each ID separated by
+    a space. Use native
     <code>disabled</code>
-    ${" "}and${" "}
+    and
     <code>readonly</code>
-    ${" "}attributes, and do not communicate state through styling alone.
+    attributes, and do not communicate state through styling alone.
   </p>
   <h2>Interaction Design</h2>
   <h3>Keyboard</h3>
   <p>
     <strong>TAB</strong>
-    ${" "}moves focus through enabled field controls in DOM order. The field
+    moves focus through enabled field controls in DOM order. The field
     layout does not add tab stops.
   </p>
   <h3>Screen Reader</h3>

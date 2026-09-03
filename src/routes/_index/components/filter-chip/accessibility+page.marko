@@ -2,145 +2,146 @@ import "../../../../sass/accessibility.scss";
 import { urls } from "../../../../data";
 
 <div class="a11y-pattern-content">
-  <h1>Filter Chip Accessibility</h1>
-  <h2>Best Practices</h2>
-  <p>
-    Use a native button when applying the filter updates content on the current
-    page. The button${" "}
-    <strong>must</strong>
-    ${" "}expose whether the filter is applied with${" "}
-    <code>aria-pressed</code>
-    ${" "}.
-  </p>
-  <p>
-    Use a link when applying the filter navigates to another page. An applied
-    link${" "}
-    <strong>must</strong>
-    ${" "}include clipped text that communicates the applied state.
-  </p>
-  <p>
-    A filter chip used as a menu button${" "}
-    <strong>must</strong>
-    ${" "}have a permanent visible label that describes its purpose, such as
-    "Brand: Yamaha" or "Brand: Yamaha (+3)." It${" "}
-    <strong>must</strong>
-    ${" "}expose whether the menu is open with${" "}
-    <code>aria-expanded</code>
-    ${" "}.
-  </p>
-  <p>
-    Decorative leading icons${" "}
-    <strong>must</strong>
-    ${" "}use${" "}
-    <code>aria-hidden="true"</code>
-    ${" "}. Expressive images that duplicate the visible chip text${" "}
-    <strong>must</strong>
-    ${" "}use an empty${" "}
-    <code>alt</code>
-    ${" "}attribute.
-  </p>
-  <h2>Interaction Design</h2>
-  <h3>Keyboard</h3>
-  <p>
-    Pressing${" "}
-    <strong>TAB</strong>
-    ${" "}key${" "}
-    <strong>must</strong>
-    ${" "}move focus to the filter chip unless it is disabled.
-  </p>
-  <p>
-    Pressing${" "}
-    <strong>ENTER</strong>
-    ${" "}or${" "}
-    <strong>SPACEBAR</strong>
-    ${" "}key on a button filter chip${" "}
-    <strong>must</strong>
-    ${" "}toggle its applied state. When used as a menu button, either key${" "}
-    <strong>must</strong>
-    ${" "}toggle its expanded state.
-  </p>
-  <p>
-    Pressing${" "}
-    <strong>ENTER</strong>
-    ${" "}key on a filter link${" "}
-    <strong>must</strong>
-    ${" "}navigate to the link destination. The destination page${" "}
-    <strong>must</strong>
-    ${" "}render the filter link in its new state.
-  </p>
-  <h3>Screen Reader</h3>
-  <p>
-    A screen reader${" "}
-    <strong>must</strong>
-    ${" "}announce the visible label, element role, and pressed state for a
-    button filter chip. For a filter link, it${" "}
-    <strong>must</strong>
-    ${" "}announce the clipped applied-state text when the filter is applied.
-  </p>
-  <p>
-    For a menu button filter chip, a screen reader${" "}
-    <strong>must</strong>
-    ${" "}announce the visible label, button role, and expanded or collapsed
-    state.
-  </p>
-  <h3>Pointer</h3>
-  <p>
-    Clicking or tapping a button filter chip${" "}
-    <strong>must</strong>
-    ${" "}toggle its applied state. When used as a menu button, it${" "}
-    <strong>must</strong>
-    ${" "}toggle its expanded state. Clicking or tapping a filter link${" "}
-    <strong>must</strong>
-    ${" "}navigate to the link destination.
-  </p>
-  <h2>ARIA Reference</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Attribute</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          <strong>aria-pressed</strong>
-        </td>
-        <td>
-          Applied to a button filter chip to communicate whether the filter is
-          applied.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <strong>aria-expanded</strong>
-        </td>
-        <td>
-          Applied to a menu button filter chip to communicate whether the
-          associated menu is open.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <strong>aria-hidden="true"</strong>
-        </td>
-        <td>
-          Applied to decorative icons to hide them from assistive technologies.
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <h2>Further Reading</h2>
-  <ul>
-    <li>
-      <a href=`${urls.components}/menu-button`>
-        Menu Button
-      </a>
-    </li>
-    <li>
-      <a href="https://www.w3.org/WAI/ARIA/apg/patterns/button/">
-        APG Button Pattern
-      </a>
-    </li>
-  </ul>
+    <h1>Filter Chip Accessibility</h1>
+    <h2>Best Practices</h2>
+    <p>
+        Use a native button when applying the filter updates content on the
+        current page. The button
+        <strong>must</strong>
+        expose whether the filter is applied with
+        <code>aria-pressed</code>
+        .
+    </p>
+    <p>
+        Use a link when applying the filter navigates to another page. An
+        applied link
+        <strong>must</strong>
+        include clipped text that communicates the applied state.
+    </p>
+    <p>
+        A filter chip used as a menu button
+        <strong>must</strong>
+        have a permanent visible label that describes its purpose, such as
+        "Brand: Yamaha" or "Brand: Yamaha (+3)." It
+        <strong>must</strong>
+        expose whether the menu is open with
+        <code>aria-expanded</code>
+        .
+    </p>
+    <p>
+        Decorative leading icons
+        <strong>must</strong>
+        use
+        <code>aria-hidden="true"</code>
+        . Expressive images that duplicate the visible chip text
+        <strong>must</strong>
+        use an empty
+        <code>alt</code>
+        attribute.
+    </p>
+    <h2>Interaction Design</h2>
+    <h3>Keyboard</h3>
+    <p>
+        Pressing
+        <strong>TAB</strong>
+        key
+        <strong>must</strong>
+        move focus to the filter chip unless it is disabled.
+    </p>
+    <p>
+        Pressing
+        <strong>ENTER</strong>
+        or
+        <strong>SPACEBAR</strong>
+        key on a button filter chip
+        <strong>must</strong>
+        toggle its applied state. When used as a menu button, either key
+        <strong>must</strong>
+        toggle its expanded state.
+    </p>
+    <p>
+        Pressing
+        <strong>ENTER</strong>
+        key on a filter link
+        <strong>must</strong>
+        navigate to the link destination. The destination page
+        <strong>must</strong>
+        render the filter link in its new state.
+    </p>
+    <h3>Screen Reader</h3>
+    <p>
+        A screen reader
+        <strong>must</strong>
+        announce the visible label, element role, and pressed state for a
+        button filter chip. For a filter link, it
+        <strong>must</strong>
+        announce the clipped applied-state text when the filter is applied.
+    </p>
+    <p>
+        For a menu button filter chip, a screen reader
+        <strong>must</strong>
+        announce the visible label, button role, and expanded or collapsed
+        state.
+    </p>
+    <h3>Pointer</h3>
+    <p>
+        Clicking or tapping a button filter chip
+        <strong>must</strong>
+        toggle its applied state. When used as a menu button, it
+        <strong>must</strong>
+        toggle its expanded state. Clicking or tapping a filter link
+        <strong>must</strong>
+        navigate to the link destination.
+    </p>
+    <h2>ARIA Reference</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Attribute</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <strong>aria-pressed</strong>
+                </td>
+                <td>
+                    Applied to a button filter chip to communicate whether the
+                    filter is applied.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>aria-expanded</strong>
+                </td>
+                <td>
+                    Applied to a menu button filter chip to communicate whether
+                    the associated menu is open.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>aria-hidden="true"</strong>
+                </td>
+                <td>
+                    Applied to decorative icons to hide them from assistive
+                    technologies.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Further Reading</h2>
+    <ul>
+        <li>
+            <a href=`${urls.components}/menu-button`>
+                Menu Button
+            </a>
+        </li>
+        <li>
+            <a href="https://www.w3.org/WAI/ARIA/apg/patterns/button/">
+                APG Button Pattern
+            </a>
+        </li>
+    </ul>
 </div>

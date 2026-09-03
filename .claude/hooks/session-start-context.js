@@ -83,7 +83,9 @@ function readFrontmatterField(filePath, key) {
   const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/);
   if (!match) return null;
 
-  const fieldMatch = match[1].match(new RegExp("^" + key + ":\\s*(\\S+)", "m"));
+  const fieldMatch = match[1].match(
+    new RegExp("^" + key + ":\\s*(\\S+)", "m"),
+  );
   return fieldMatch ? fieldMatch[1].trim() : null;
 }
 
@@ -105,7 +107,10 @@ function countOpenLessons(dir) {
   }
 
   return files.filter((f) => {
-    const disposition = readFrontmatterField(path.join(dir, f), "disposition");
+    const disposition = readFrontmatterField(
+      path.join(dir, f),
+      "disposition",
+    );
     return disposition !== "applied" && disposition !== "declined";
   }).length;
 }

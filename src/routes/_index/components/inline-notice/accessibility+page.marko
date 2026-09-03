@@ -7,13 +7,13 @@ import { urls } from "../../../../data";
   <p>Avoid having more than one high-priority notice visible at any time.</p>
   <p>
     Avoid rendering high-priority inline notices on the server. For better
-    discoverability, use a${" "}
+    discoverability, use a
     <a href=`${urls.components}/page-notice`>
       page notice
     </a>
-    ${" "}instead. If you cannot use a page notice, then focus${" "}
+    instead. If you cannot use a page notice, then focus
     <strong>must</strong>
-    ${" "}be set on the inline notice.
+    be set on the inline notice.
   </p>
   <p>
     Avoid using progress bars and spinners in conjunction with client-side
@@ -27,42 +27,44 @@ import { urls } from "../../../../data";
   <h2>Interaction Design</h2>
   <h3>Keyboard</h3>
   <p>
-    Nested interactive elements (such as links)${" "}
+    Nested interactive elements (such as links)
     <strong>must</strong>
-    ${" "}be keyboard focusable.
+    be keyboard focusable.
   </p>
   <p>
-    A high-priority notice rendered on the server and visible on page load${" "}
+    A high-priority notice rendered on the server and visible on page load
     <strong>must</strong>
-    ${" "}receive focus. These cases should be rare; use a${" "}
+    receive focus. These cases should be rare; use a
     <a href=`${urls.components}/page-notice`>
       page notice
     </a>
-    ${" "}when possible.
+    when possible.
   </p>
   <h3>Screen Reader</h3>
   <p>
-    Screen reader${" "}
+    Screen reader
     <strong>must</strong>
-    ${" "}not announce low-priority server-side notices.
+    not announce low-priority server-side notices.
   </p>
   <p>
-    Screen reader${" "}
+    Screen reader
     <strong>must</strong>
-    ${" "}announce client-side content changes to any type of notice.
+    announce client-side content changes to any type of notice.
   </p>
   <p>
-    Screen reader${" "}
+    Screen reader
     <strong>must</strong>
-    ${" "}announce client-side visibility change of a hidden notice.
+    announce client-side visibility change of a hidden notice.
   </p>
   <p>
-    If the notice is related to a control, the notice${" "}
+    If the notice is related to a control, the notice
     <strong>must</strong>
-    ${" "}be announced as the description of that control.
+    be announced as the description of that control.
   </p>
   <h3>Pointer</h3>
-  <p>Clicking or tapping a notice action activates its link or button.</p>
+  <p>
+    Clicking or tapping a notice action activates its link or button.
+  </p>
   <h2>ARIA Reference</h2>
   <table>
     <thead>

@@ -5,23 +5,23 @@
     Unstacked Field
   </h3>
   <p>
-    The${" "}
+    The
     <span class="highlight">
       field__label
     </span>
-    ${" "}&amp;${" "}
+    &amp;
     <span class="highlight">
       field__control
     </span>
-    ${" "}elements are inline by default, taking up only as much horizontal
+    elements are inline by default, taking up only as much horizontal
     space as they need.
   </p>
   <p>
-    Multiple fields can be laid out inline by using the span tag with${" "}
+    Multiple fields can be laid out inline by using the span tag with
     <span class="highlight">
       field
     </span>
-    ${" "}class, as per the example below.
+    class, as per the example below.
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -238,11 +238,11 @@
 
   <p>
     For a textarea, the label will be vertically aligned to the middle of the
-    field by default. Apply the${" "}
+    field by default. Apply the
     <span class="highlight">
       field--align-top
     </span>
-    ${" "}modifier to align it to the top.
+    modifier to align it to the top.
   </p>
 
   <div class="demo">
@@ -273,11 +273,11 @@
     Stacked Field
   </h3>
   <p>
-    For a label stacked above the control, use the${" "}
+    For a label stacked above the control, use the
     <span class="highlight">
       field__label--stacked
     </span>
-    ${" "}element modifier.
+    element modifier.
   </p>
   <p>
     Again, multiple fields can be laid out inline by using a span tag, as per
@@ -502,15 +502,15 @@
   </h3>
   <p>
     The field label will honour any font-size cascade. Wrap the label and
-    control in a${" "}
+    control in a
     <span class="highlight">
       field__group
     </span>
-    ${" "}element to maintain vertical alignment.
+    element to maintain vertical alignment.
   </p>
   <p>
     <strong>NOTE</strong>
-    ${" "}: form controls do not inherit the font-size cascade. This is default
+    : form controls do not inherit the font-size cascade. This is default
     browser behaviour.
   </p>
 
@@ -637,13 +637,13 @@
     Disabled Field
   </h3>
   <p>
-    The disabled control is conveyed using the${" "}
+    The disabled control is conveyed using the
     <span class="highlight">
       disabled
     </span>
-    ${" "}attribute. The value of a disabled control is${" "}
+    attribute. The value of a disabled control is
     <strong>not</strong>
-    ${" "}passed to the server.
+    passed to the server.
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -761,22 +761,22 @@
 
   <p>
     <strong>TIP:</strong>
-    ${" "}Disabled controls are exempt from${" "}
+    Disabled controls are exempt from
     <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html">
       WCAG colour contrast requirements
     </a>
-    ${" "}.
+    .
   </p>
 
   <h3 id="field-readonly">
     Readonly Field
   </h3>
   <p>
-    A readonly control is conveyed using the${" "}
+    A readonly control is conveyed using the
     <span class="highlight">
       readonly
     </span>
-    ${" "}attribute. The value of a readonly control is passed to the server.
+    attribute. The value of a readonly control is passed to the server.
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -864,17 +864,17 @@
   </h3>
   <p>
     A required field is conveyed visually with an asterisk, and non-visually
-    using the${" "}
+    using the
     <span class="highlight">
       aria-required
     </span>
-    ${" "}property.
+    property.
   </p>
   <div class="demo">
     <div class="demo__inner">
       <span class="field">
         <label class="field__label" for="field-required-1">
-          Field 1${" "}
+          Field 1
           <sup>*</sup>
         </label>
         <span class="field__control textbox">
@@ -888,7 +888,7 @@
       </span>
       <span class="field">
         <label class="field__label" for="field-required-2">
-          Field 2${" "}
+          Field 2
           <sup>*</sup>
         </label>
         <span class="field__control">
@@ -918,7 +918,7 @@
   <highlight-code type="html">
     <span class="field">
       <label class="field__label" for="field1">
-        Field 1${" "}
+        Field 1
         <sup>*</sup>
       </label>
       <span class="field__control textbox">
@@ -932,7 +932,7 @@
     </span>
     <span class="field">
       <label class="field__label" for="field2">
-        Field 2${" "}
+        Field 2
         <sup>*</sup>
       </label>
       <span class="field__control">
@@ -963,26 +963,26 @@
     Invalid Field
   </h3>
   <p>
-    An invalid control is conveyed${" "}
+    An invalid control is conveyed
     <em>visually</em>
-    ${" "}via a combination of red outline and some other indicator (usually
-    either text and/or an icon). The invalid state is conveyed${" "}
+    via a combination of red outline and some other indicator (usually
+    either text and/or an icon). The invalid state is conveyed
     <em>non-visually</em>
-    ${" "}using the${" "}
+    using the
     <span class="highlight">
       aria-invalid
     </span>
-    ${" "}state.
+    state.
   </p>
   <p>
     <strong>IMPORTANT:</strong>
-    ${" "}The example below shows the field with red border only. Do not forget
-    that${" "}
+    The example below shows the field with red border only. Do not forget
+    that
     <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-without-color.html">
       colour should not be used as the only visual means of conveying
       information
     </a>
-    ${" "}. A description and/or icon is also required. See next section for
+    . A description and/or icon is also required. See next section for
     more details.
   </p>
   <div class="demo">
@@ -1079,32 +1079,32 @@
     validation error of the control.
   </p>
   <p>
-    The${" "}
+    The
     <span class="highlight">
       field__description
     </span>
-    ${" "}element defines some minimal styling, but does not dictate location or
-    layout. This element has modifiers for${" "}
+    element defines some minimal styling, but does not dictate location or
+    layout. This element has modifiers for
     <span class="positive">
       confirmation
     </span>
-    ${" "},${" "}
+    ,
     <span style="color: #0654ba;">
       information
     </span>
-    ${" "}and${" "}
+    and
     <span class="emphasis">
       attention
     </span>
-    ${" "}, depending on the type of descriptive text (or icon).
+    , depending on the type of descriptive text (or icon).
   </p>
   <p>
     <strong>TIP:</strong>
-    ${" "}The description element can be designated as an ARIA${" "}
+    The description element can be designated as an ARIA
     <a href="https://ebay.gitbooks.io/mindpatterns/content/techniques/liveregions.html">
       live-region
     </a>
-    ${" "}if client-side updates occur.
+    if client-side updates occur.
   </p>
 
   <h4>Text on Side of Field</h4>
@@ -1150,19 +1150,19 @@
   </highlight-code>
 
   <p>
-    To change the type of decription you would use${" "}
+    To change the type of decription you would use
     <span class="highlight">
       field__description--confirmation
     </span>
-    ${" "},${" "}
+    ,
     <span class="highlight">
       field__description--information
     </span>
-    ${" "}, or${" "}
+    , or
     <span class="highlight">
       field__description--attention
     </span>
-    ${" "}.
+    .
   </p>
 
   <div class="demo">
@@ -1298,15 +1298,15 @@
   <h4>Text Above or Below Unstacked Field</h4>
   <p>
     A description can be added directly above and/or below the control by
-    utlising CSS table-layout via the${" "}
+    utlising CSS table-layout via the
     <span class="highlight">
       field--table
     </span>
-    ${" "}modifier and${" "}
+    modifier and
     <span class="highlight">
       field__row
     </span>
-    ${" "}elements.
+    elements.
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -1657,23 +1657,23 @@
     Fluid Field
   </h3>
   <p>
-    Form control elements (such as${" "}
+    Form control elements (such as
     <span class="highlight">
       select
     </span>
-    ${" "}and${" "}
+    and
     <span class="highlight">
       input
     </span>
-    ${" "}) are inline-block by default, and will only use up as much of their
+    ) are inline-block by default, and will only use up as much of their
     parent's horizontal space as they need.
   </p>
   <p>
-    For a stacked field the control must be set to 100% width (using the${" "}
+    For a stacked field the control must be set to 100% width (using the
     <span class="highlight">
       fluid
     </span>
-    ${" "}utility class) to fill all available space.
+    utility class) to fill all available space.
   </p>
 
   <div class="demo">
@@ -1767,28 +1767,28 @@
   </highlight-code>
   <p>
     The above example shows the fields in a flexbox layout. This layout is
-    created using the${" "}
+    created using the
     <span class="highlight">
       field-group
     </span>
-    ${" "}helper class. Notice that each field is also set to fluid, in order to
+    helper class. Notice that each field is also set to fluid, in order to
     fill all available flexbox space (flexbox layout takes care of dividing the
     space evenly between fluid fields).
   </p>
 
   <p>
-    If we set the form control width to 100% in an${" "}
+    If we set the form control width to 100% in an
     <em>unstacked</em>
-    ${" "}field, the control would flow to a new line${" "}
+    field, the control would flow to a new line
     <em>below</em>
-    ${" "}the label (effectively behaving like a stacked label). This behaviour
-    can be avoided by adding an additional${" "}
+    the label (effectively behaving like a stacked label). This behaviour
+    can be avoided by adding an additional
     <span class="highlight">
       field__group
     </span>
-    ${" "}element to create flex layout${" "}
+    element to create flex layout
     <em>inside</em>
-    ${" "}of the field.
+    of the field.
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -1890,20 +1890,20 @@
   </highlight-code>
   <p>
     <strong>TIP:</strong>
-    ${" "}You may want to experiment with sizes other than 100%, and also the
-    flexbox${" "}
+    You may want to experiment with sizes other than 100%, and also the
+    flexbox
     <span class="highlight">
       justify-content
     </span>
-    ${" "}property.
+    property.
   </p>
 
   <p>
-    For a fluid control and description, those elements can be wrapped in a${" "}
+    For a fluid control and description, those elements can be wrapped in a
     <span class="highlight">
       field__group
     </span>
-    ${" "}container to create flex layout.
+    container to create flex layout.
   </p>
 
   <div class="demo">
@@ -2042,29 +2042,29 @@
     A field may have a character count section typically under the input and
     aligned to the right.
   </p>
-  ${" "}This variant adds a top-level container that houses both the field
+  This variant adds a top-level container that houses both the field
   description and the character count, though field description or error is not
-  necessary.${" "}
+  necessary.
 
   <p>
     In order to be accessible, the character count should have a clipped element
     to describe what it is. At the same time, aria-describedby should be added
-    to the input element that points to the character count element. Finally,${" "}
+    to the input element that points to the character count element. Finally,
     <span class="highlight">
       aria-live
     </span>
-    ${" "}should be off by default, but if it passes the current max characters,
+    should be off by default, but if it passes the current max characters,
     then it should be changed to polite. Once it goes back down below the max,
     it should go back to off.
   </p>
 
   <h4>Field with Character Count Only</h4>
   <p>
-    Character character can be added by utlising CSS grid via the${" "}
+    Character character can be added by utlising CSS grid via the
     <span class="highlight">
       field__description--group
     </span>
-    ${" "}modifier and the addition of the relevant markup. By default if there
+    modifier and the addition of the relevant markup. By default if there
     is only one element in the group, it will align to the right
   </p>
 
@@ -2087,7 +2087,7 @@
         </span>
         <div class="field__description field__description--group">
           <span id="field-character-2">
-            0 of 140${" "}
+            0 of 140
             <span class="clipped">
               charaters
             </span>
@@ -2114,7 +2114,7 @@
       </span>
       <div class="field__description field__description--group">
         <span id="field-character-2">
-          0 of 140${" "}
+          0 of 140
           <span class="clipped">
             charaters
           </span>
@@ -2152,7 +2152,7 @@
             Field description or error
           </span>
           <span id="field-character-3">
-            0 of 140${" "}
+            0 of 140
             <span class="clipped">
               charaters
             </span>
@@ -2181,7 +2181,7 @@
           Field description or error
         </span>
         <span id="field-character-3">
-          0 of 140${" "}
+          0 of 140
           <span class="clipped">
             charaters
           </span>
@@ -2217,7 +2217,7 @@
             Field description or error
           </span>
           <span id="field-character-4">
-            0 of 140${" "}
+            0 of 140
             <span class="clipped">
               charaters
             </span>
@@ -2243,7 +2243,7 @@
           Field description or error
         </span>
         <span id="field-character-4">
-          0 of 140${" "}
+          0 of 140
           <span class="clipped">
             charaters
           </span>
