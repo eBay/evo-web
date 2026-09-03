@@ -1,11 +1,10 @@
+import js from "@eslint/js";
 import prettier from "eslint-config-prettier";
-import { FlatCompat } from "@eslint/eslintrc";
+import globals from "globals";
 import babelParser from "@babel/eslint-parser";
 
-const compatbility = new FlatCompat();
-
 export default [
-    ...compatbility.extends("eslint-config-ebay"),
+    js.configs.recommended,
     prettier,
     {
         languageOptions: {
@@ -14,6 +13,18 @@ export default [
                 requireConfigFile: false,
                 sourceType: "module",
             },
+            globals: {
+                ...globals.browser,
+                ...globals.node,
+                ...globals.mocha,
+            },
+        },
+        rules: {
+            "no-var": "error",
+            "prefer-const": "error",
+            "prefer-arrow-callback": "error",
+            "prefer-spread": "error",
+            "prefer-template": "error",
         },
     },
     {

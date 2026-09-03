@@ -37,7 +37,6 @@ async function walkDirs() {
                         );
                         await addVersionAndWrite(readmePath, value);
                     } else {
-                        // eslint-disable-next-line no-console
                         console.log("not in ds-versions.json: ", key);
                     }
                 }
@@ -50,7 +49,7 @@ async function readFile(readmePath) {
 }
 
 async function addVersionAndWrite(myFilePath, newVersion) {
-    const h1Regex = /\<h1/;
+    const h1Regex = /<h1/;
     const preContent = await readFile(myFilePath);
     const lines = preContent.split("\n");
     let finalAdditions = "";
