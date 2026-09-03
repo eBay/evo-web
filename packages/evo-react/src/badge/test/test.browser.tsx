@@ -11,11 +11,11 @@ describe("evo-badge", () => {
       await expect.element(screen.getByText("5")).toBeInTheDocument();
     });
 
-    it("truncates decimal values", async () => {
+    it("renders decimal values as-is", async () => {
       const screen = await render(
         <EvoBadge number={5.6} a11yText="5 unread items" />,
       );
-      await expect.element(screen.getByText("5")).toBeInTheDocument();
+      await expect.element(screen.getByText("5.6")).toBeInTheDocument();
     });
 
     it("truncates numbers greater than 99 to '99+'", async () => {
@@ -34,11 +34,11 @@ describe("evo-badge", () => {
       await expect.element(screen.getByText("5")).toBeInTheDocument();
     });
 
-    it("truncates decimal string values", async () => {
+    it("renders decimal string values as-is", async () => {
       const screen = await render(
         <EvoBadge number="5.6" a11yText="5 unread items" />,
       );
-      await expect.element(screen.getByText("5")).toBeInTheDocument();
+      await expect.element(screen.getByText("5.6")).toBeInTheDocument();
     });
 
     it("does not render with an invalid string", async () => {
