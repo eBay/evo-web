@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 16.14.0
+
+### Minor Changes
+
+- [#912](https://github.com/eBay/evo-web/pull/912) [`2f81318`](https://github.com/eBay/evo-web/commit/2f813186210bf27fdb4ce188d46c060dc7c10854) Thanks [@ArtBlue](https://github.com/ArtBlue)! - Add `affirm-black` and `affirm-white` colored icons (12, 18, 24, 32).
+
 ## 16.13.0
 
 ### Minor Changes
