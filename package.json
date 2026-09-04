@@ -132,6 +132,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jsdom": "^30.0.1",
     "libphonenumber-js": "^1.13.12",
+    "lightningcss": "^1.33.0",
     "lint-staged": "^17.4.1",
     "lintspaces-cli": "^1.0.0",
     "makeup-alert-dialog": "~0.5.0",
