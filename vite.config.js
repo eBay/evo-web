@@ -6,8 +6,7 @@ export default defineConfig({
   base: process.env.BASE_URL,
   plugins: [
     patchCssModules({
-      exportMode: "named",
-      generateSourceTypes: true,
+      exportMode: "both",
     }),
   ],
   resolve: {
