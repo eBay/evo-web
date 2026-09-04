@@ -45,6 +45,11 @@
   "browserslist": [
     "extends @ebay/browserslist-config"
   ],
+  "overrides": {
+    "vitest-browser-react": {
+      "vitest": "$vitest"
+    }
+  },
   "devDependencies": {
     "@actions/core": "^3.0.1",
     "@babel/core": "^8.0.1",
@@ -179,7 +184,7 @@
     "stylelint-prettier": "^5",
     "svgson": "^5.3.1",
     "tsx": "^4.23.13",
-    "typescript": "5",
+    "typescript": "~6.0.3",
     "typescript-eslint": "^8.69.0",
     "visual-html": "^2.1.8",
     "vite": "^8.2.2",
@@ -189,10 +194,5 @@
     "vitest-browser-react": "^2.2.0",
     "xmlserializer": "^0.6.1",
     "yargs": "^18.1.0"
-  },
-  "overrides": {
-    "vitest-browser-react": {
-      "vitest": "$vitest"
-    }
   }
 }
