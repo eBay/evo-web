@@ -64,7 +64,8 @@ export interface Input extends Marko.HTML.Select {
   htmlFor=id
   disabled=disabled
   value=value
-  focused=focused>
+  focused=focused
+>
   <span/selectEl
     class=[
       "select",
@@ -73,7 +74,8 @@ export interface Input extends Marko.HTML.Select {
       borderless && "select--borderless",
       inputClass,
     ]
-    style=style>
+    style=style
+  >
     <select
       onBlur(e, target) {
         focused = false;
@@ -86,7 +88,8 @@ export interface Input extends Marko.HTML.Select {
       disabled=disabled
       id=id
       value:=value
-      ...htmlInput>
+      ...htmlInput
+    >
       <for|optionOrGroup| of=list>
         <if=isGroup(optionOrGroup)>
           <optgroup label=optionOrGroup.optgroup>

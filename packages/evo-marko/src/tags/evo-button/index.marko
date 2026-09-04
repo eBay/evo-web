@@ -46,22 +46,23 @@ export interface Input
   ...htmlInput
 }=input>
 
-<const/priority=(borderless || variant === "form" ? "none" : inputPriority)>
-<const/size=(inputSize && validSizes.includes(inputSize) ? inputSize : null)>
+<const/priority=borderless || variant === "form" ? "none" : inputPriority>
+<const/size=inputSize && validSizes.includes(inputSize) ? inputSize : null>
 
-<const/baseClass=(href ? "fake-btn" : "btn")>
+<const/baseClass=href ? "fake-btn" : "btn">
 <const/sizeClass=size && baseClass + "--" + size>
-<const/truncateClass=truncate &&
-(sizeClass ? sizeClass + "-truncated" : baseClass + "--truncated")>
+<const/truncateClass=(
+  truncate && (sizeClass ? sizeClass + "-truncated" : baseClass + "--truncated")
+)>
 <const/transparentClass=transparent && baseClass + "--transparent">
-<const/fixedHeightClass=fixedHeight &&
-(sizeClass ? sizeClass + "-fixed-height" : baseClass + "--fixed-height")>
+<const/fixedHeightClass=(
+  fixedHeight &&
+  (sizeClass ? sizeClass + "-fixed-height" : baseClass + "--fixed-height")
+)>
 <const/variantClass=variant !== "standard" && `${baseClass}--${variant}`>
 
 <define/Root|input: RootInput|>
-  <if=href>
-    <a ...input as Marko.HTML.A href=href/>
-  </if>
+  <if=href><a ...input as Marko.HTML.A href=href/></if>
   <else>
     <button ...input as Marko.HTML.Button type=type/>
   </else>
@@ -88,7 +89,8 @@ export interface Input
     validPriorities.includes(priority) && `${baseClass}--${priority}`,
   ]
   aria-disabled=partiallyDisabled && "true"
-  aria-label=(bodyState === "loading" ? a11yLoadingText : input["aria-label"])>
+  aria-label=bodyState === "loading" ? a11yLoadingText : input["aria-label"]
+>
   <if=bodyState === "loading">
     <span class="btn__cell">
       <evo-progress-spinner a11yText=null/>

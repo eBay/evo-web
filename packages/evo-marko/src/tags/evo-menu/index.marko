@@ -6,9 +6,7 @@ export interface Item extends Marko.HTML.Div {
 }
 export interface Group<
   Index extends number | string | (number | string)[] =
-    | number
-    | string
-    | (number | string)[],
+    number | string | (number | string)[],
 > {
   selected?: Index | null;
   selectedChange?(selected: Index): void;
@@ -64,7 +62,7 @@ static function nextSelected(
 }=input>
 <const/isFilter=variant === "filter">
 <const/baseClass=classPrefix || "menu">
-<const/menuClass=(baseClass === "menu" ? "items" : "menu")>
+<const/menuClass=baseClass === "menu" ? "items" : "menu">
 
 <const/groups=(() => {
   let offset = 0;
@@ -78,11 +76,9 @@ static function nextSelected(
     return normalized;
   });
 })()>
-<const/initialSelected=(
-  groups.find(({ selected }) =>
-    Array.isArray(selected) ? selected.length > 0 : selected != null,
-  )?.selected ?? undefined
-)>
+<const/initialSelected=groups.find(({ selected }) =>
+  Array.isArray(selected) ? selected.length > 0 : selected != null,
+)?.selected ?? undefined>
 
 <id/menu>
 <span/$el
@@ -94,20 +90,23 @@ static function nextSelected(
     fixWidth && `${baseClass}__${menuClass}--fix-width`,
     isFilter && `${baseClass}--filter`,
     inputClass,
-  ]>
+  ]
+>
   <div
     role="menu"
     class=`${baseClass}__items`
     aria-label=a11yText
     aria-labelledby=a11yLabelId
-    id=menu>
+    id=menu
+  >
     // TODO: remove when Marko TS works ($item errors when referenced
     // directly because it is declared inside nested loops)
     <const/$items: Iterable<HTMLElement>=$item>
     <evo-roving-tabindex/rovTabindex nodeList=$items selected=initialSelected/>
     <evo-typeahead/{ typeahead }
       nodeList=$items
-      timeoutLength=typeaheadTimeoutLength/>
+      timeoutLength=typeaheadTimeoutLength
+    />
 
     <for|group, groupIndex| of=groups>
       <if=groupIndex>
@@ -121,13 +120,11 @@ static function nextSelected(
       )>
       <const/isCheckbox=Array.isArray(group.selected) || (isFilter && !isRadio)>
       <const/isCheckable=isRadio || isCheckbox>
-      <const/itemRole=(
-        (isRadio
-          ? "menuitemradio"
-          : isCheckbox
-            ? "menuitemcheckbox"
-            : "menuitem") as Marko.HTML.Div["role"]
-      )>
+      <const/itemRole=(isRadio
+        ? "menuitemradio"
+        : isCheckbox
+          ? "menuitemcheckbox"
+          : "menuitem") as Marko.HTML.Div["role"]>
       <for|item, i| of=group.items>
         <const/{
           class: itemClass,
@@ -167,10 +164,11 @@ static function nextSelected(
             item.onKeyDown && item.onKeyDown(e, target);
           }
           data-value=value
-          tabindex=(rovTabindex.isFocused(value) ? 0 : -1)
+          tabindex=rovTabindex.isFocused(value) ? 0 : -1
           aria-checked=isCheckable && (checked ? "true" : "false")
           aria-disabled=disabled && "true"
-          role=itemRole>
+          role=itemRole
+        >
           <if=isFilter>
             <if=isRadio>
               <evo-icon-radio-unchecked-18 class="icon--unchecked"/>

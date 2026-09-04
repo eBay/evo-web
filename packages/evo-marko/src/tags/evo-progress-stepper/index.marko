@@ -52,10 +52,9 @@ export interface Input extends Marko.HTML.Div {
     inputClass,
   ]
   aria-labelledby=stepperHeading
-  ...htmlInput>
-  <${headingAs} id=stepperHeading class="clipped">
-    ${a11yHeadingText}
-  </>
+  ...htmlInput
+>
+  <${headingAs} id=stepperHeading class="clipped">${a11yHeadingText}</>
 
   <div
     class=[
@@ -63,7 +62,8 @@ export interface Input extends Marko.HTML.Div {
       defaultState === "upcoming" && "progress-stepper__items--upcoming",
       defaultState === "current" && "progress-stepper__items--current",
     ]
-    role="list">
+    role="list"
+  >
     <for|step, index| of=steps>
       <const/{
         current: stepCurrent,
@@ -86,33 +86,38 @@ export interface Input extends Marko.HTML.Div {
         ]
         aria-current=current === index && "step"
         role="listitem"
-        ...htmlStep>
+        ...htmlStep
+      >
         <span class="progress-stepper__icon">
           <if=index < current || defaultState === "complete">
             <evo-icon-stepper-confirmation-24
               width="24"
               height="24"
-              a11yText=a11yText || "complete"/>
+              a11yText=a11yText || "complete"
+            />
           </if>
           <else if=index === current>
             <if=defaultState === "attention">
               <evo-icon-stepper-attention-24
                 width="24"
                 height="24"
-                a11yText=a11yText || "blocked"/>
+                a11yText=a11yText || "blocked"
+              />
             </if>
             <else>
               <evo-icon-stepper-confirmation-24
                 width="24"
                 height="24"
-                a11yText=a11yText || "current"/>
+                a11yText=a11yText || "current"
+              />
             </else>
           </else>
           <else>
             <evo-icon-stepper-upcoming-24
               width="24"
               height="24"
-              a11yText=a11yText || "upcoming"/>
+              a11yText=a11yText || "upcoming"
+            />
           </else>
         </span>
         <span class="progress-stepper__text">

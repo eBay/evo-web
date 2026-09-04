@@ -5,17 +5,16 @@ export interface FilePreviewCardEvent {
   originalEvent: Event;
 }
 export type FilePreviewCardMenuAction = {
-    event: string;
-    label: string;
+  event: string;
+  label: string;
 };
-export type FilePreviewCardFile = (
-    | File
-    | {
-          name: string;
-          type?: File["type"];
-          src?: string;
-      }
-);
+export type FilePreviewCardFile =
+  | File
+  | {
+      name: string;
+      type?: File["type"];
+      src?: string;
+    };
 export interface Input extends Marko.HTML.Div {
   as?: keyof Marko.NativeTags;
   file?: FilePreviewCardFile;
@@ -67,7 +66,8 @@ export interface Input extends Marko.HTML.Div {
         <evo-progress-spinner
           a11yText="uploading"
           class="file-preview-card__asset"
-          size="large"/>
+          size="large"
+        />
       </if>
       <else if=type === "image">
         <img
@@ -76,7 +76,8 @@ export interface Input extends Marko.HTML.Div {
             "file-preview-card__asset--fade": seeMoreAction !== undefined,
           }
           src=src
-          alt=name>
+          alt=name
+        >
       </else>
       <else if=type === "video">
         <video class="file-preview-card__asset" src=src/>
@@ -90,13 +91,15 @@ export interface Input extends Marko.HTML.Div {
         ...seeMoreAction
         type="button"
         class=["file-preview-card__see-more", seeMoreAction.class]
-        aria-label=null/>
+        aria-label=null
+      />
     </if>
     <else>
       <if=status === "uploading" && cancelAction>
         <evo-icon-button
           ...cancelAction
-          class=["file-preview-card__action", cancelAction?.class]>
+          class=["file-preview-card__action", cancelAction?.class]
+        >
           <evo-icon-close-16/>
         </evo-icon-button>
       </if>
@@ -121,12 +124,14 @@ export interface Input extends Marko.HTML.Div {
         <else if=action>
           <evo-icon-button
             ...action
-            class=["file-preview-card__action", action.class]/>
+            class=["file-preview-card__action", action.class]
+          />
         </else>
         <else if=deleteAction>
           <evo-icon-button
             ...deleteAction
-            class=["file-preview-card__action", deleteAction.class]>
+            class=["file-preview-card__action", deleteAction.class]
+          >
             <evo-icon-delete-16/>
           </evo-icon-button>
         </else>
@@ -136,8 +141,9 @@ export interface Input extends Marko.HTML.Div {
           <if=type === "video">
             <evo-icon-play-16 class="file-preview-card__video-icon"/>
           </if>
-          ${infoText ||
-          name?.substring(name.lastIndexOf(".") + 1).toUpperCase()}
+          ${
+            infoText || name?.substring(name.lastIndexOf(".") + 1).toUpperCase()
+          }
         </div>
       </if>
     </else>
@@ -145,9 +151,7 @@ export interface Input extends Marko.HTML.Div {
   <if=footerTitle>
     <div class="file-preview-card__footer">
       <span>${footerTitle}</span>
-      <if=footerSubtitle>
-        <span>${footerSubtitle}</span>
-      </if>
+      <if=footerSubtitle><span>${footerSubtitle}</span></if>
     </div>
   </if>
 </>

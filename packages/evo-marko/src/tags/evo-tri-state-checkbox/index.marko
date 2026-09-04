@@ -26,7 +26,9 @@ export interface Input extends Omit<
 }=input>
 
 <let/checked=inputChecked || "false" valueChange=checkedChange>
-<let/checkedValues=inputCheckedValues as string[] valueChange=checkedValuesChange>
+<let/checkedValues=inputCheckedValues as string[]
+  valueChange=checkedValuesChange
+>
 
 <const/usesCheckedValue=!!(checkedValues && checkedValuesChange && values)>
 <let/lastMixed=null as string[] | null>
@@ -67,10 +69,9 @@ export interface Input extends Omit<
       }
     }
     aria-checked=effectiveChecked
-    type="checkbox">
-  <script>
-    $checkbox().indeterminate = effectiveChecked === "mixed";
-  </script>
+    type="checkbox"
+  >
+  <script>$checkbox().indeterminate = effectiveChecked === "mixed";</script>
   <span class="checkbox__icon" hidden>
     <if=effectiveChecked === "mixed">
       <if=size === "large">

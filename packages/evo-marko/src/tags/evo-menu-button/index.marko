@@ -128,8 +128,9 @@ span/$root
     ,selected=isSelected
     ,transparent=transparent
     ,aria-expanded=expander.ariaExpanded
-    ,aria-labelledby=prefixId &&
-    (variant === "icon" ? prefixId : `${prefixId} ${labelId}`)
+    ,aria-labelledby=(
+      prefixId && (variant === "icon" ? prefixId : `${prefixId} ${labelId}`)
+    )
     ,split=split
     ,disabled=disabled
     ,partiallyDisabled=partiallyDisabled
@@ -151,7 +152,7 @@ span/$root
     ,selected:=input.selected
     ,classPrefix="menu-button"
     ,fixed=strategy === "fixed"
-    ,variant=(variant as MenuInput<Index>["variant"])
+    ,variant=variant as MenuInput<Index>["variant"]
     ,fixWidth=fixWidth
     ,tabindex=-1
     ,footerButton=footerButton

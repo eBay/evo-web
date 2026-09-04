@@ -37,10 +37,12 @@ export interface Input<Index extends number | string> extends Marko.HTML.Div {
 <evo-roving-tabindex/rovTabindex
   autoSelect=listSelection === "auto"
   nodeList=$item
-  selected:=selected/>
+  selected:=selected
+/>
 <evo-typeahead/{ typeahead }
   nodeList=$item
-  timeoutLength=typeaheadTimeoutLength/>
+  timeoutLength=typeaheadTimeoutLength
+/>
 
 <div/$root
   ...htmlInput
@@ -56,7 +58,8 @@ export interface Input<Index extends number | string> extends Marko.HTML.Div {
     (input.onKeyDown || null)?.(e, target);
   }
   class=["listbox__options", inputClass]
-  tabindex=tabindex>
+  tabindex=tabindex
+>
   <for|option, index| of=options>
     <const/{
       value = index,
@@ -77,7 +80,7 @@ export interface Input<Index extends number | string> extends Marko.HTML.Div {
         optionClass,
       ]
       role="option"
-      tabindex=(disabled ? -1 : tabindex)
+      tabindex=disabled ? -1 : tabindex
       aria-disabled=disabled && "true"
       aria-selected=isSelected && "true"
       data-value=value
@@ -85,17 +88,14 @@ export interface Input<Index extends number | string> extends Marko.HTML.Div {
         rovTabindex.onClick(value as string | number);
 
         (option.onClick || null)?.(e, target);
-      }>
+      }
+    >
       <span class="listbox__value">
         <${icon}/>
         <${icon ? "span" : null}>
           <${option.content}/>
         </>
-        <if=isSelected>
-          <span class="clipped">
-            ${a11ySelectedText}
-          </span>
-        </if>
+        <if=isSelected><span class="clipped">${a11ySelectedText}</span></if>
       </span>
       <if=description>
         <span ...description class=["listbox__description", description.class]/>
@@ -110,7 +110,8 @@ export interface Input<Index extends number | string> extends Marko.HTML.Div {
     <option
       value=option.value
       selected=(option.value || i) === selected
-      class=option.class/>
+      class=option.class
+    />
   </for>
 </select>
 

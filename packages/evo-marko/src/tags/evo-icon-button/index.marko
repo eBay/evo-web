@@ -38,8 +38,8 @@ export interface Input
   ...htmlInput
 }=input>
 
-<const/tagType=(input.href ? "a" : "button")>
-<const/baseClassName=(input.href ? "icon-link" : "icon-btn")>
+<const/tagType=input.href ? "a" : "button">
+<const/baseClassName=input.href ? "icon-link" : "icon-btn">
 
 <${tagType}
   ...htmlInput
@@ -58,7 +58,8 @@ export interface Input
     size && validSizes.includes(size) && `${baseClassName}--${size}`,
   ]
   type=tagType === "button" && (type || "button")
-  aria-disabled=partiallyDisabled && "true">
+  aria-disabled=partiallyDisabled && "true"
+>
   <${content}/>
   <if=badge>
     <evo-badge ...badge type="icon" a11yText=null/>

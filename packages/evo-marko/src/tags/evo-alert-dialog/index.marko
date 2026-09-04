@@ -50,13 +50,15 @@ export interface Input extends Omit<
       el.close();
     }
     onAnimationEnd && onAnimationEnd(e, el);
-  }>
+  }
+>
   <div class="dialog__header">
     <const/{ as: headerAs = "h2", ...headerInput }=header>
     <${headerAs}
       ...headerInput
       id=headerId
-      class=["dialog__title", headerInput.class]/>
+      class=["dialog__title", headerInput.class]
+    />
   </div>
   <id/mainId>
   <div id=mainId class="dialog__main">
@@ -72,6 +74,7 @@ export interface Input extends Omit<
       onClick(e, el) {
         open = false;
         confirmOnClick && confirmOnClick(e, el);
-      }/>
+      }
+    />
   </div>
 </dialog>

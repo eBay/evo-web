@@ -59,9 +59,7 @@ export interface Input extends Omit<
   aria-modal="false"
   aria-live="polite"
   closedby="closerequest"
-  aria-labelledby=(
-    inputLabelledBy ? `${inputLabelledBy} ${headerId}` : headerId
-  )
+  aria-labelledby=inputLabelledBy ? `${inputLabelledBy} ${headerId}` : headerId
   class=["toast-dialog", !open && "toast-dialog--close", inputClass]
   onCancel(e, el) {
     e.preventDefault();
@@ -73,14 +71,16 @@ export interface Input extends Omit<
       el.close();
     }
     onAnimationEnd && onAnimationEnd(e, el);
-  }>
+  }
+>
   <div class="toast-dialog__window">
     <div class="toast-dialog__header">
       <const/{ as: headerAs = "h2", ...headerInput }=header>
       <${headerAs}
         ...headerInput
         id=headerId
-        class=["toast-dialog__title", headerInput.class]/>
+        class=["toast-dialog__title", headerInput.class]
+      />
       <evo-icon-button
         ...close
         transparent
@@ -88,7 +88,8 @@ export interface Input extends Omit<
         onClick(e, el) {
           $dialog().requestClose();
           close.onClick && close.onClick(e, el);
-        }>
+        }
+      >
         <evo-icon-close-16/>
       </evo-icon-button>
     </div>
