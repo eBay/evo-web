@@ -7,7 +7,6 @@ export interface Input extends Marko.HTML.Span {
   flip?: boolean;
   shift?: boolean;
   inline?: boolean;
-  noHover?: boolean;
   host: Marko.AttrTag<
     Marko.HTML.Span & {
       as?: Marko.Renderable;
@@ -27,7 +26,6 @@ export interface Input extends Marko.HTML.Span {
   flip,
   shift,
   inline,
-  noHover,
   open: inputOpen,
   openChange,
   host,
@@ -73,26 +71,18 @@ export interface Input extends Marko.HTML.Span {
 <span/$root
   ...htmlInput
   class=["tooltip", inputClass]
-  onMouseEnter=(
-    noHover
-      ? onMouseEnter
-      : (e, el) => {
-          clearTimeout(hoverTimeout);
-          open = true;
-          onMouseEnter && onMouseEnter(e, el);
-        }
-  )
-  onMouseLeave=(
-    noHover
-      ? onMouseLeave
-      : (e, el) => {
-          clearTimeout(hoverTimeout);
-          hoverTimeout = setTimeout(() => {
-            open = false;
-          }, 300);
-          onMouseLeave && onMouseLeave(e, el);
-        }
-  )
+  onMouseEnter(e, el) {
+    clearTimeout(hoverTimeout);
+    open = true;
+    onMouseEnter && onMouseEnter(e, el);
+  }
+  onMouseLeave(e, el) {
+    clearTimeout(hoverTimeout);
+    hoverTimeout = setTimeout(() => {
+      open = false;
+    }, 300);
+    onMouseLeave && onMouseLeave(e, el);
+  }
   onFocusIn(e, el) {
     open = true;
     onFocusIn && onFocusIn(e, el);

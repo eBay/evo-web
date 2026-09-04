@@ -92,18 +92,16 @@ type Story = StoryObj<typeof EvoInfotip>;
 
 export const Default: Story = {
   render: (args) => (
-    <div style={{ margin: 200 }}>
-      <EvoInfotip {...args}>
-        <EvoInfotipHeading>Heading</EvoInfotipHeading>
-        <p>Content</p>
-      </EvoInfotip>
-    </div>
+    <EvoInfotip {...args}>
+      <EvoInfotipHeading>Heading</EvoInfotipHeading>
+      <p>Content</p>
+    </EvoInfotip>
   ),
 };
 
 export const WrappedParagraph: Story = {
   render: (args) => (
-    <div style={{ margin: 200, width: 240 }}>
+    <div style={{ width: 240 }}>
       <p>
         This paragraph wraps around the infotip button{" "}
         <EvoInfotip {...args} defaultOpen placement="bottom">

@@ -86,6 +86,7 @@ When migrating a listed component, read the linked file completely and apply the
 - `ebay-radio`: [evo-radio.md](components/evo-radio.md)
 - `ebay-tabs`: [evo-tabs.md](components/evo-tabs.md)
 - `ebay-textbox`: [evo-input.md](components/evo-input.md) / [evo-textarea.md](components/evo-textarea.md)
+- `ebay-tooltip`: [evo-tooltip.md](components/evo-tooltip.md)
 
 ---
 
