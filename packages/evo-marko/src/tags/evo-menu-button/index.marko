@@ -115,9 +115,7 @@ export interface Input<Index extends number | string | (number | string)[]>
 <script>
   if (open && focusOnOpen && expander.positioned) {
     $menu()
-      .querySelector<HTMLElement>(
-        `[role^="menuitem"]:not([aria-disabled="true"])`,
-      )
+      .querySelector(`[role^="menuitem"]:not([aria-disabled="true"])`)
       ?.focus();
   }
 </script>
