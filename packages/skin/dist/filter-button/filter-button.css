@@ -6,10 +6,12 @@ div.filter-group {
     display: flex;
     flex-wrap: wrap;
 }
+
 a.filter-link,
 button.filter-button {
-    align-items: center;
     background-color: var(--color-background-secondary);
+    border-color: var(--color-border-medium);
+    align-items: center;
     border: 1px solid transparent;
     border-radius: 16px;
     box-sizing: border-box;
@@ -69,6 +71,7 @@ button.filter-button:not([disabled], [aria-disabled="true"]):active:after,
 button.filter-button[href]:active:after {
     background-color: var(--color-state-layer-pressed);
 }
+
 a.filter-link .filter-link__cell,
 button.filter-button .filter-button__cell {
     display: inline-block;
@@ -78,16 +81,19 @@ button.filter-button .filter-button__cell {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
 a.filter-link:visited {
     color: var(
         --filter-button-foreground-color,
         var(--color-foreground-primary)
     );
 }
+
 a.filter-link--selected,
 button.filter-button[aria-pressed="true"] {
     font-weight: 700;
 }
+
 a.filter-link--selected,
 a.filter-link--selected:visited,
 button.filter-button[aria-pressed="true"] {
@@ -96,6 +102,7 @@ button.filter-button[aria-pressed="true"] {
         var(--color-border-strong)
     );
 }
+
 a.filter-link--selected:not([href]),
 a.filter-link--selected[aria-disabled="true"],
 a.filter-link:not([href]),

@@ -16,6 +16,9 @@ export default (ctx) => ({
                     normalizeWhitespace: ctx.env === "production",
                     rawCache: ctx.env === "production",
                     colormin: ctx.env === "production",
+                    // Keep selector lists uncollapsed; the :is() form breaks
+                    // snapshots in Firefox.
+                    minifySelectors: { convertToIs: false },
                 },
             ],
         }),
