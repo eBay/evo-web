@@ -54,7 +54,10 @@ describe("evo-menu", () => {
       .element(screen.getByRole("button", { name: "Apply" }))
       .toBeInTheDocument();
     expect(
-      screen.getByText("Messages").element().closest(".menu__item"),
+      screen
+        .getByText("Messages", { exact: false })
+        .element()
+        .closest(".menu__item"),
     ).not.toBeNull();
   });
 

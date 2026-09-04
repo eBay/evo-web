@@ -4,12 +4,13 @@
 .infotip {
     position: relative;
 }
+
 span.infotip {
     display: inline-block;
 }
+
 .infotip__overlay {
     box-shadow: var(--bubble-shadow);
-    display: none;
     font-size: 14px;
     left: 0;
     max-width: min(344px, 80vw);
@@ -17,29 +18,35 @@ span.infotip {
     top: 0;
     transform: scaleX(1);
     width: max-content;
+    display: none;
 }
+
 .infotip__mask,
 .infotip__overlay {
+    border-radius: var(--bubble-border-radius, var(--border-radius-50));
+    z-index: 1;
     background-color: var(
         --infotip-background-color,
         var(--color-background-elevated)
     );
-    border-radius: var(--bubble-border-radius, var(--border-radius-50));
     color: var(--infotip-foreground-color, var(--color-foreground-primary));
-    z-index: 1;
 }
+
 .infotip__mask {
     position: relative;
 }
+
 span.infotip__mask {
     display: block;
 }
+
 .infotip__cell {
     display: flex;
     overflow-wrap: anywhere;
     padding: var(--spacing-100) var(--spacing-200);
     word-break: normal;
 }
+
 .infotip__content {
     flex-grow: 1;
 }
@@ -49,6 +56,7 @@ span.infotip__mask {
 .infotip__content p:not(:first-of-type) {
     margin-top: var(--spacing-50);
 }
+
 .infotip__pointer {
     background-color: var(
         --infotip-background-color,
@@ -60,69 +68,83 @@ span.infotip__mask {
     width: 8px;
     z-index: 0;
 }
+
 .infotip__pointer--top-left {
+    top: -4px;
     left: 12px;
-    top: -4px;
 }
+
 .infotip__pointer--top {
-    left: calc(50% - 4px);
     top: -4px;
+    left: calc(50% - 4px);
 }
+
 .infotip__pointer--top-right {
+    top: -4px;
     left: auto;
     right: 12px;
-    top: -4px;
 }
+
 .infotip__pointer--bottom-left {
     bottom: -4px;
-    left: 12px;
     top: auto;
+    left: 12px;
 }
+
 .infotip__pointer--bottom {
     bottom: -4px;
-    left: calc(50% - 4px);
     top: auto;
+    left: calc(50% - 4px);
 }
+
 .infotip__pointer--bottom-right {
     bottom: -4px;
+    top: auto;
     left: auto;
     right: 12px;
-    top: auto;
 }
+
 .infotip__pointer--left {
-    left: -4px;
     top: calc(50% - 4px);
+    left: -4px;
 }
+
 .infotip__pointer--left-bottom {
     bottom: 12px;
     left: -4px;
     top: auto;
 }
+
 .infotip__pointer--left-top {
     left: -4px;
     top: 12px;
 }
+
 .infotip__pointer--right {
+    top: calc(50% - 4px);
     left: auto;
     right: -4px;
-    top: calc(50% - 4px);
 }
+
 .infotip__pointer--right-bottom {
     bottom: 12px;
     left: auto;
     right: -4px;
     top: auto;
 }
+
 .infotip__pointer--right-top {
     left: auto;
     right: -4px;
     top: 12px;
 }
+
 .infotip__heading {
     font-size: 1em;
     font-weight: 700;
     margin: 0 0 var(--spacing-50);
 }
+
 .infotip__host[aria-expanded="true"] ~ .infotip__overlay,
 span.infotip__heading {
     display: block;
@@ -136,10 +158,12 @@ span.infotip__heading {
     overflow: visible;
     width: 20px;
 }
+
 .infotip__close,
 button.infotip__close {
     margin-left: var(--spacing-200);
 }
+
 @media (min-width: 512px) {
     .infotip__overlay {
         max-width: 400px;

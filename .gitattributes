@@ -1,0 +1,3 @@
+# Generated files: collapsed in GitHub diffs and excluded from diff stats
+.marko-run/** linguist-generated=true
+packages/skin/dist/** linguist-generated=true

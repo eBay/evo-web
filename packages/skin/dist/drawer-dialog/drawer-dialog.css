@@ -7,9 +7,9 @@
 }
 .drawer-dialog[role="dialog"] {
     align-items: flex-end;
+    overflow: hidden;
     background-color: var(--dialog-scrim-color-show);
     inset: 0;
-    overflow: hidden;
     position: fixed;
     will-change: background-color;
     z-index: 100000;
@@ -17,9 +17,11 @@
 .drawer-dialog[role="dialog"]:not([hidden]) {
     display: flex;
 }
+
 .drawer-dialog--no-mask[role="dialog"] {
     background-color: initial;
 }
+
 .drawer-dialog__header {
     display: flex;
     flex-shrink: 0;
@@ -40,10 +42,12 @@
 .drawer-dialog__header > :last-child:not(:only-child) {
     margin-inline-start: var(--spacing-200);
 }
+
 .drawer-dialog__header .fake-link {
     align-self: flex-start;
     text-decoration: none;
 }
+
 .drawer-dialog__handle {
     background-color: initial;
     border: none;
@@ -63,11 +67,12 @@
     height: 2px;
     width: 24px;
 }
+
 .drawer-dialog__main {
-    box-sizing: border-box;
-    flex: 1 1 auto;
     min-height: auto;
     overflow: auto;
+    box-sizing: border-box;
+    flex: 1 1 auto;
     padding: var(--spacing-200);
     position: relative;
 }
@@ -77,6 +82,7 @@
 .drawer-dialog__main > :last-child {
     margin-bottom: 0;
 }
+
 .drawer-dialog__footer {
     display: flex;
     flex-direction: row;
@@ -99,25 +105,28 @@ button.icon-btn.drawer-dialog__close {
     width: 32px;
     z-index: 1;
 }
+
 .drawer-dialog__window {
     background-color: var(
         --dialog-window-background-color,
         var(--color-background-primary)
     );
-    border-radius: var(--border-radius-100) var(--border-radius-100) 0 0;
     display: flex;
     flex: 1 0 auto;
     flex-direction: column;
+    min-height: 55px;
+    will-change: opacity, transform;
+    border-radius: var(--border-radius-100) var(--border-radius-100) 0 0;
     max-height: 50%;
     max-width: 100%;
-    min-height: 55px;
     overflow-y: hidden;
-    will-change: opacity, transform;
 }
+
 .drawer-dialog__window--expanded {
     height: 95%;
     max-height: 95%;
 }
+
 .drawer-dialog__window--slide {
     transition: max-height 0.32s ease-out;
 }
@@ -173,6 +182,7 @@ button.icon-btn.drawer-dialog__close {
 .drawer-dialog--show .drawer-dialog__window--slide {
     transform: translateX(0);
 }
+
 .drawer-dialog__handle:focus:not(:focus-visible) {
     outline: none;
 }

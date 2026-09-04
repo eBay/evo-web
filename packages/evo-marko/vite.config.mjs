@@ -1,6 +1,7 @@
 import fsp from "node:fs/promises";
 import { playwright } from "@vitest/browser-playwright";
 import { defineConfig } from "vite";
+import { Features } from "lightningcss";
 import marko from "@marko/vite";
 const isCI = !!process.env.CI;
 
@@ -18,6 +19,13 @@ const rawMarkdown = {
 };
 
 export default defineConfig({
+  css: {
+    lightningcss: {
+      // Never rewrite :dir() into the :lang() approximation; direction is
+      // set with dir attributes, not language tags.
+      exclude: Features.DirSelector,
+    },
+  },
   test: {
     pool: "forks",
     globals: true,

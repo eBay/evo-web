@@ -1,13 +1,20 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
+import { Features } from "lightningcss";
 import { patchCssModules } from "vite-css-modules";
 
 export default defineConfig({
+  css: {
+    lightningcss: {
+      // Never rewrite :dir() into the :lang() approximation; direction is
+      // set with dir attributes, not language tags.
+      exclude: Features.DirSelector,
+    },
+  },
   base: process.env.BASE_URL,
   plugins: [
     patchCssModules({
-      exportMode: "named",
-      generateSourceTypes: true,
+      exportMode: "both",
     }),
   ],
   resolve: {

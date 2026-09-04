@@ -114,11 +114,10 @@ export interface Input<Index extends number | string | (number | string)[]>
 // made visible, it.
 <script>
   if (open && focusOnOpen && expander.positioned) {
-    $menu()
-      .querySelector<HTMLElement>(
-        `[role^="menuitem"]:not([aria-disabled="true"])`,
-      )
-      ?.focus();
+    const item = $menu().querySelector(
+      `[role^="menuitem"]:not([aria-disabled="true"])`,
+    );
+    if (item instanceof HTMLElement) item.focus();
   }
 </script>
 

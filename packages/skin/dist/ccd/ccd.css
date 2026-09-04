@@ -11,10 +11,12 @@
         sans-serif;
     gap: 8px;
 }
+
 .ccd__charger-icon {
     height: 57px;
     width: 42px;
 }
+
 .ccd__description-figure {
     align-items: center;
     display: flex;
@@ -22,10 +24,12 @@
     justify-content: center;
     width: 39px;
 }
+
 .ccd__top-icon {
     height: 18px;
     width: 27px;
 }
+
 .ccd__body {
     align-items: center;
     border: 1px solid var(--color-foreground-primary);
