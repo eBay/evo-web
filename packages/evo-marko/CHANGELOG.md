@@ -1,5 +1,18 @@
 # @evo-web/marko
 
+## 0.7.1
+
+### Patch Changes
+
+- [#912](https://github.com/eBay/evo-web/pull/912) [`2f81318`](https://github.com/eBay/evo-web/commit/2f813186210bf27fdb4ce188d46c060dc7c10854) Thanks [@ArtBlue](https://github.com/ArtBlue)! - Add `affirm-black` and `affirm-white` colored icons (12, 18, 24, 32).
+
+- [#920](https://github.com/eBay/evo-web/pull/920) [`d46b5ed`](https://github.com/eBay/evo-web/commit/d46b5edbe422674881aeacd5e1dab048779cb161) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Fix keyboard accessibility of `evo-menu` and `evo-menu-button`. The menu button
+  now moves focus into the menu when it is opened, and returns focus to the button when it is
+  closed with Escape or by selecting an item. Menu items now activate on
+  Enter/Space, support Home/End, and no longer respond to
+  clicks while disabled. Fixes a roving tabindex bug that left no item focusable after arrow
+  navigation when items had no explicit `value`.
+
 ## 0.7.0
 
 ### Minor Changes
