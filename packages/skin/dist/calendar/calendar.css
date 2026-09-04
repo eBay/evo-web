@@ -95,9 +95,9 @@
 .calendar__month
     td:not(.calendar__cell--selected)
     > [aria-current="date"]:not(:disabled) {
+    color: var(--calendar-day-today-color, var(--color-foreground-accent));
     border-color: var(--calendar-day-today-border-color, currentcolor);
     border-style: solid;
-    color: var(--calendar-day-today-color, var(--color-foreground-accent));
 }
 
 .calendar__month td > .calendar__cell--disabled,
@@ -151,6 +151,7 @@
         var(--color-background-secondary)
     );
 }
+
 .calendar__month
     td:not(.calendar__range, .calendar__cell--selected)
     > button:not(:disabled, [aria-disabled="true"]):hover:not(
@@ -159,6 +160,7 @@
     ):after {
     background-color: initial;
 }
+
 .calendar__month
     td:not(.calendar__range, .calendar__cell--selected)
     > button:not(:disabled):active {
