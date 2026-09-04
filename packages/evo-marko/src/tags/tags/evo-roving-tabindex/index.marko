@@ -27,23 +27,43 @@ export interface Input<
 static function getValue(el: HTMLElement) {
   return el.getAttribute("data-value") || el.getAttribute("value");
 }
+// `data-value` is read back as a string, while the value passed in by the
+// consumer may be a number, so values are compared as strings.
+static function isSameValue(a: unknown, b: unknown) {
+  return String(a) === String(b);
+}
+static function indexOfValue(nodes: HTMLElement[], value: number | string) {
+  const index = nodes.findIndex((node) => isSameValue(getValue(node), value));
+  // Lists without values fall back to the value being an index.
+  return index === -1 && typeof value === "number" ? value : index;
+}
+// Moves focus to the first item after `start` in `direction`, skipping disabled
+// items and wrapping around.
+<const/focusFrom(start: number, direction: number) {
+  const nodes = [...input.nodeList];
+  for (let i = 0, index = start; i < nodes.length; i++) {
+    index = (index + nodes.length + direction) % nodes.length;
+    const node = nodes[index];
+    if (node.getAttribute("aria-disabled") !== "true") {
+      focusValue = getValue(node) ?? index;
+      node.focus();
+      return true;
+    }
+  }
+  return false;
+}>
 
 <return={
   setFocusIndex(value: number | string) {
-    const nodes = [...input.nodeList];
-    let currentItem: HTMLElement | undefined;
-    if (typeof value === "number") {
-      currentItem = nodes[value];
-    } else {
-      currentItem = nodes.find((node) => getValue(node) === value);
-    }
-    if (currentItem && currentItem.getAttribute("aria-disabled") !== "true") {
-      focusValue = value;
-      currentItem.focus();
-    }
+    const index = indexOfValue([...input.nodeList], value);
+    if (index !== -1) focusFrom(index - 1, 1);
   },
   isFocused(value: number | string) {
-    return focusValue === value;
+    return isSameValue(focusValue, value);
+  },
+  /** Keeps the tab stop on an item that was focused from elsewhere. */
+  onFocus(value: number | string) {
+    focusValue = value;
   },
   onClick(value: number | string) {
     setSelected(value);
@@ -52,39 +72,28 @@ static function getValue(el: HTMLElement) {
   onKeyDown(e: KeyboardEvent) {
     if (e.key === "Enter" || e.key === " ") {
       setSelected(focusValue);
+      return;
     }
-    if (
-      ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].indexOf(e.key) !== -1
-    ) {
-      const nodes = [...input.nodeList];
-      const size = nodes.length;
-      const direction = e.key === "ArrowLeft" || e.key === "ArrowUp" ? -1 : 1;
 
-      let currentIndex: number;
-      if (typeof focusValue === "number") {
-        currentIndex = focusValue;
-      } else {
-        currentIndex = nodes.findIndex((node) => getValue(node) === focusValue);
-      }
+    const direction =
+      (e.key === "ArrowUp" && -1) ||
+      (e.key === "ArrowDown" && 1) ||
+      (e.key === "ArrowLeft" && -1) ||
+      (e.key === "ArrowRight" && 1) ||
+      (e.key === "Home" && 1) ||
+      (e.key === "End" && -1);
+    if (!direction) return;
 
-      let currentItem: HTMLElement;
-      while (true) {
-        currentIndex = ((currentIndex as number) + size + direction) % size;
-        currentItem = nodes[currentIndex];
-        if (
-          currentItem.getAttribute("aria-disabled") !== "true" ||
-          currentIndex === focusValue
-        ) {
-          break;
-        }
-      }
-      const value = getValue(currentItem);
-
-      focusValue = value || currentIndex;
-      if (input.autoSelect) {
-        setSelected(value || currentIndex);
-      }
-      currentItem.focus();
+    e.preventDefault();
+    // Home/End, and an unknown current value, start from the end that
+    // `direction` moves away from.
+    let start = direction === 1 ? -1 : 0;
+    if (e.key !== "Home" && e.key !== "End") {
+      const index = indexOfValue([...input.nodeList], focusValue);
+      if (index !== -1) start = index;
+    }
+    if (focusFrom(start, direction) && input.autoSelect) {
+      setSelected(focusValue);
     }
   },
 }>
