@@ -97,22 +97,23 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox {
     border-color: inherit;
 }
 
-.listbox-button :is(button.btn--borderless, button.expand-btn--borderless) {
+.listbox-button button.btn--borderless,
+.listbox-button button.expand-btn--borderless {
     background-color: initial;
     border-color: transparent;
     padding-left: 0;
     vertical-align: initial;
 }
-.listbox-button
-    :is(button.btn--borderless:focus, button.expand-btn--borderless:focus) {
+.listbox-button button.btn--borderless:focus,
+.listbox-button button.expand-btn--borderless:focus {
     outline: none;
     text-decoration: underline;
 }
 .listbox-button
-    :is(
-        button.btn--borderless[aria-expanded="true"],
-        button.expand-btn--borderless[aria-expanded="true"]
-    )
+    button.btn--borderless[aria-expanded="true"]
+    ~ .listbox-button__listbox,
+.listbox-button
+    button.expand-btn--borderless[aria-expanded="true"]
     ~ .listbox-button__listbox {
     top: 41px;
 }
@@ -132,8 +133,8 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox {
     );
 }
 
-.listbox-button.listbox-button--form
-    :is(button[aria-disabled="true"], button[disabled]) {
+.listbox-button.listbox-button--form button[aria-disabled="true"],
+.listbox-button.listbox-button--form button[disabled] {
     border-color: var(
         --listbox-button-disabled-border-color,
         var(--color-background-disabled)
@@ -178,9 +179,8 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox {
     color: var(--listbox-button-label-color, var(--color-foreground-primary));
 }
 
-.listbox-button.listbox-button--error
-    button
-    :is(.btn__floating-label, .btn__label) {
+.listbox-button.listbox-button--error button .btn__floating-label,
+.listbox-button.listbox-button--error button .btn__label {
     color: var(--listbox-button-label-color, var(--color-foreground-attention));
 }
 

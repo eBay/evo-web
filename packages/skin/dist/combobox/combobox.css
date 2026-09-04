@@ -250,7 +250,8 @@ span.combobox {
         var(--color-background-primary)
     );
 }
-.combobox__control > :is(input[aria-disabled="true"], input[disabled]) {
+.combobox__control > input[aria-disabled="true"],
+.combobox__control > input[disabled] {
     border-color: var(
         --combobox-textbox-disabled-border-color,
         var(--color-background-disabled)
@@ -260,11 +261,12 @@ span.combobox {
         var(--color-foreground-disabled)
     );
 }
-.combobox__control
-    > :is(input[aria-disabled="true"][readonly], input[disabled][readonly]) {
+.combobox__control > input[aria-disabled="true"][readonly],
+.combobox__control > input[disabled][readonly] {
     text-shadow: 0 0 0 var(--color-foreground-disabled);
 }
-.combobox__control > :is(input[aria-disabled="true"], input[disabled]) + svg {
+.combobox__control > input[aria-disabled="true"] + svg,
+.combobox__control > input[disabled] + svg {
     opacity: 0.5;
 }
 .combobox__control > input[aria-invalid="true"] {

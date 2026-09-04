@@ -42,7 +42,12 @@
     margin: var(--spacing-200) var(--spacing-200) 0;
     position: relative;
 }
-.panel-dialog__header :is(h1, h2, h3, h4, h5, h6) {
+.panel-dialog__header h1,
+.panel-dialog__header h2,
+.panel-dialog__header h3,
+.panel-dialog__header h4,
+.panel-dialog__header h5,
+.panel-dialog__header h6 {
     align-self: center;
     flex: 1 1 auto;
     margin: 0;
@@ -111,7 +116,8 @@ button.icon-btn.panel-dialog__prev {
 .panel-dialog--show.panel-dialog--mask-fade-slow {
     transition: background-color 0.32s ease-out;
 }
-:is(.panel-dialog--hide, .panel-dialog--show) .panel-dialog__window--slide {
+.panel-dialog--hide .panel-dialog__window--slide,
+.panel-dialog--show .panel-dialog__window--slide {
     transition: transform 0.32s ease-out;
 }
 
@@ -127,21 +133,22 @@ button.icon-btn.panel-dialog__prev {
 .panel-dialog--show-init.panel-dialog--mask-fade-slow {
     background-color: var(--dialog-scrim-color-hide);
 }
-:is(.panel-dialog--hide, .panel-dialog--show-init)
-    .panel-dialog__window--slide-left {
+.panel-dialog--hide .panel-dialog__window--slide-left,
+.panel-dialog--show-init .panel-dialog__window--slide-left {
     transform: translateX(-100%);
 }
-:is(.panel-dialog--hide, .panel-dialog--show-init)
-    .panel-dialog__window--slide-right {
+.panel-dialog--hide .panel-dialog__window--slide-right,
+.panel-dialog--show-init .panel-dialog__window--slide-right {
     transform: translateX(100%);
 }
 
-:is(.panel-dialog--hide, .panel-dialog--show-init)
-    .panel-dialog__window--slide {
+.panel-dialog--hide .panel-dialog__window--slide,
+.panel-dialog--show-init .panel-dialog__window--slide {
     transform: translateX(-100%);
 }
 
-:is(.panel-dialog--hide, .panel-dialog--show-init)
+.panel-dialog--hide .panel-dialog__window--end.panel-dialog__window--slide,
+.panel-dialog--show-init
     .panel-dialog__window--end.panel-dialog__window--slide {
     transform: translateX(100%);
 }
@@ -158,8 +165,8 @@ button.icon-btn.panel-dialog__prev {
 .panel-dialog--show.panel-dialog--mask-fade-slow {
     background-color: var(--dialog-scrim-color-show);
 }
-:is(.panel-dialog--hide-init, .panel-dialog--show)
-    .panel-dialog__window--slide {
+.panel-dialog--hide-init .panel-dialog__window--slide,
+.panel-dialog--show .panel-dialog__window--slide {
     transform: translateX(0);
 }
 

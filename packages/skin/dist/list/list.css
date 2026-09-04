@@ -7,7 +7,8 @@
     max-width: 480px;
 }
 
-.list :is(ol, ul) {
+.list ol,
+.list ul {
     margin: 0;
     padding: 0;
 }
@@ -17,7 +18,8 @@
     font-size: 0;
 }
 
-.list :is(fieldset, li) > * {
+.list fieldset > *,
+.list li > * {
     background-color: var(
         --list-background-color,
         var(--color-background-primary)
@@ -55,7 +57,8 @@
     width: var(--spacing-300);
 }
 
-.list li > :is(a, button) {
+.list li > a,
+.list li > button {
     border: none;
     text-align: left;
     text-decoration: none;
@@ -97,6 +100,7 @@
     padding: 0;
 }
 
-[dir="rtl"] .list li > :is(a, button) {
+[dir="rtl"] .list li > a,
+[dir="rtl"] .list li > button {
     text-align: right;
 }

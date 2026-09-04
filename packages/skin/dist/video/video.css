@@ -73,9 +73,8 @@
     pointer-events: none;
 }
 
-.video-player--with-nav
-    .shaka-controls-container
-    :is(.shaka-bottom-controls, .shaka-play-button-container) {
+.video-player--with-nav .shaka-controls-container .shaka-bottom-controls,
+.video-player--with-nav .shaka-controls-container .shaka-play-button-container {
     pointer-events: auto;
 }
 
@@ -95,9 +94,8 @@
     margin: 0 5px;
 }
 
-.video-player
-    .shaka-controls-button-panel
-    :is(span.shaka-current-time, span.shaka-remaining-time) {
+.video-player .shaka-controls-button-panel span.shaka-current-time,
+.video-player .shaka-controls-button-panel span.shaka-remaining-time {
     align-items: center;
     display: inline-flex;
 }

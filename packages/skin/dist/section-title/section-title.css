@@ -50,7 +50,8 @@
     margin-right: 0;
 }
 
-:is(.section-title, .section-title__overflow) button.icon-btn {
+.section-title button.icon-btn,
+.section-title__overflow button.icon-btn {
     height: var(--spacing-400);
     min-width: var(--spacing-400);
     width: var(--spacing-400);
@@ -65,8 +66,9 @@
     font-weight: var(--font-weight-600);
     line-height: 28px;
 }
-.section-title--large
-    > :is(.section-title__cta, .section-title__info, .section-title__overflow) {
+.section-title--large > .section-title__cta,
+.section-title--large > .section-title__info,
+.section-title--large > .section-title__overflow {
     height: var(--spacing-400);
 }
 

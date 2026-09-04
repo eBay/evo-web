@@ -111,8 +111,8 @@ button.icon-btn.icon-btn--secondary > svg {
     fill: var(--color-foreground-accent);
 }
 
-:is(a.icon-link.icon-link--small, button.icon-btn.icon-btn--small)
-    .progress-spinner {
+a.icon-link.icon-link--small .progress-spinner,
+button.icon-btn.icon-btn--small .progress-spinner {
     height: 20px;
     width: 20px;
 }
@@ -264,8 +264,8 @@ button[disabled].icon-btn.icon-btn--primary > svg {
     fill: var(--color-foreground-on-accent);
 }
 
-:is(a.icon-link.icon-link--primary, button.icon-btn.icon-btn--primary)
-    .progress-spinner {
+a.icon-link.icon-link--primary .progress-spinner,
+button.icon-btn.icon-btn--primary .progress-spinner {
     --color-spinner-icon-background: var(--color-background-primary);
     --color-spinner-icon-foreground: #8fa3f8;
 }
@@ -295,13 +295,10 @@ button.icon-btn.icon-btn--primary:not(
     filter: brightness(92%);
 }
 
-:is(
-        a.icon-link.icon-link--secondary,
-        a.icon-link.icon-link--tertiary,
-        button.icon-btn.icon-btn--secondary,
-        button.icon-btn.icon-btn--tertiary
-    )
-    .progress-spinner {
+a.icon-link.icon-link--secondary .progress-spinner,
+a.icon-link.icon-link--tertiary .progress-spinner,
+button.icon-btn.icon-btn--secondary .progress-spinner,
+button.icon-btn.icon-btn--tertiary .progress-spinner {
     --color-spinner-icon-foreground: #3665f366;
 }
 

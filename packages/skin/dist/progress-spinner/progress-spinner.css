@@ -13,8 +13,9 @@
         transform: rotate(2turn);
     }
 }
-.progress-spinner
-    > :is(svg.icon.icon--20, svg.icon.icon--24, svg.icon.icon--30) {
+.progress-spinner > svg.icon.icon--20,
+.progress-spinner > svg.icon.icon--24,
+.progress-spinner > svg.icon.icon--30 {
     height: inherit;
     margin: 0;
     max-height: inherit;

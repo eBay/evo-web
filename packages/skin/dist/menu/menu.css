@@ -29,7 +29,8 @@ span.menu__items[role="menu"] {
     padding: 0;
 }
 
-:is(.fake-menu__item, .menu__item) > svg.icon--16 {
+.fake-menu__item > svg.icon--16,
+.menu__item > svg.icon--16 {
     align-self: center;
     fill: currentColor;
     margin: 0 auto;
@@ -148,11 +149,8 @@ a.fake-menu__item:focus {
     text-decoration: underline;
 }
 
-:is(
-        a.fake-menu__item[aria-current="page"],
-        button.fake-menu__item[aria-current="page"]
-    )
-    svg.icon--16 {
+a.fake-menu__item[aria-current="page"] svg.icon--16,
+button.fake-menu__item[aria-current="page"] svg.icon--16 {
     opacity: 1;
 }
 
@@ -200,18 +198,12 @@ div.menu__item[role^="menuitem"] span.badge {
     z-index: 1;
 }
 
-:is(
-        .menu__item[role="menuitemcheckbox"][aria-checked="true"],
-        .menu__item[role="menuitemradio"][aria-checked="true"]
-    )
-    svg.icon--unchecked {
+.menu__item[role="menuitemcheckbox"][aria-checked="true"] svg.icon--unchecked,
+.menu__item[role="menuitemradio"][aria-checked="true"] svg.icon--unchecked {
     display: none;
 }
-:is(
-        .menu__item[role="menuitemcheckbox"][aria-checked="true"],
-        .menu__item[role="menuitemradio"][aria-checked="true"]
-    )
-    svg.icon--checked {
+.menu__item[role="menuitemcheckbox"][aria-checked="true"] svg.icon--checked,
+.menu__item[role="menuitemradio"][aria-checked="true"] svg.icon--checked {
     display: block;
 }
 .menu__item[role="menuitemcheckbox"] svg.icon--unchecked {
@@ -249,13 +241,15 @@ div.menu__item[role^="menuitem"] span.badge {
     right: 0;
 }
 
-:is(.fake-menu, .menu) button.expand-btn--borderless {
+.fake-menu button.expand-btn--borderless,
+.menu button.expand-btn--borderless {
     background-color: initial;
     border-color: transparent;
     padding-left: 0;
     vertical-align: initial;
 }
-:is(.fake-menu, .menu) button.expand-btn--borderless:focus {
+.fake-menu button.expand-btn--borderless:focus,
+.menu button.expand-btn--borderless:focus {
     outline: none;
     text-decoration: underline;
 }

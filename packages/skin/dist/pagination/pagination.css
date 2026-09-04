@@ -17,7 +17,8 @@ nav.pagination {
     max-width: 100%;
 }
 
-nav.pagination :is(a, button) {
+nav.pagination a,
+nav.pagination button {
     color: inherit;
     font-size: 1em;
 }
@@ -181,9 +182,8 @@ nav.pagination--fluid ol.pagination__items li {
     flex: 1 0 var(--spacing-600);
 }
 
-[dir="rtl"]
-    nav.pagination
-    :is(svg.icon--arrow-left-16, svg.icon--arrow-right-16) {
+[dir="rtl"] nav.pagination svg.icon--arrow-left-16,
+[dir="rtl"] nav.pagination svg.icon--arrow-right-16 {
     transform: rotate(180deg);
 }
 

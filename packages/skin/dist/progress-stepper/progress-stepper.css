@@ -33,31 +33,55 @@ hr.progress-stepper__separator {
     width: 80px;
 }
 
-.progress-stepper__text :is(h2, h3, h4, h5, h6) {
+.progress-stepper__text h2,
+.progress-stepper__text h3,
+.progress-stepper__text h4,
+.progress-stepper__text h5,
+.progress-stepper__text h6 {
     color: var(--progress-stepper-text-color, var(--color-foreground-primary));
     font-size: var(--font-size-body);
     font-weight: 400;
 }
 
-.progress-stepper__items--upcoming
-    .progress-stepper__text
-    :is(h2, h3, h4, h5, h6) {
+.progress-stepper__items--upcoming .progress-stepper__text h2,
+.progress-stepper__items--upcoming .progress-stepper__text h3,
+.progress-stepper__items--upcoming .progress-stepper__text h4,
+.progress-stepper__items--upcoming .progress-stepper__text h5,
+.progress-stepper__items--upcoming .progress-stepper__text h6 {
     color: var(
         --progress-stepper-text-light-color,
         var(--color-foreground-secondary)
     );
 }
 
-.progress-stepper__item[aria-current]
-    .progress-stepper__text
-    :is(h2, h3, h4, h5, h6) {
+.progress-stepper__item[aria-current] .progress-stepper__text h2,
+.progress-stepper__item[aria-current] .progress-stepper__text h3,
+.progress-stepper__item[aria-current] .progress-stepper__text h4,
+.progress-stepper__item[aria-current] .progress-stepper__text h5,
+.progress-stepper__item[aria-current] .progress-stepper__text h6 {
     font-weight: 700;
 }
 
 .progress-stepper__item[aria-current]
     ~ .progress-stepper__item
     .progress-stepper__text
-    :is(h2, h3, h4, h5, h6),
+    h2,
+.progress-stepper__item[aria-current]
+    ~ .progress-stepper__item
+    .progress-stepper__text
+    h3,
+.progress-stepper__item[aria-current]
+    ~ .progress-stepper__item
+    .progress-stepper__text
+    h4,
+.progress-stepper__item[aria-current]
+    ~ .progress-stepper__item
+    .progress-stepper__text
+    h5,
+.progress-stepper__item[aria-current]
+    ~ .progress-stepper__item
+    .progress-stepper__text
+    h6,
 .progress-stepper__text p {
     color: var(
         --progress-stepper-text-light-color,

@@ -66,7 +66,8 @@
 .alert-dialog--show.alert-dialog--mask-fade-slow {
     transition: background-color 0.32s ease-out;
 }
-:is(.alert-dialog--hide, .alert-dialog--show) .alert-dialog__window--fade {
+.alert-dialog--hide .alert-dialog__window--fade,
+.alert-dialog--show .alert-dialog__window--fade {
     transition: opacity 0.16s ease-out;
 }
 .alert-dialog--hide.alert-dialog--mask-fade,
@@ -118,12 +119,12 @@
 .alert-dialog--show-init.alert-dialog--mask-fade-slow {
     background-color: var(--dialog-scrim-color-hide);
 }
-:is(.alert-dialog--hide, .alert-dialog--show-init)
-    .alert-dialog__window--animate,
-:is(.alert-dialog--hide, .alert-dialog--show-init)
-    .alert-dialog__window--animate
-    > *,
-:is(.alert-dialog--hide, .alert-dialog--show-init) .alert-dialog__window--fade {
+.alert-dialog--hide .alert-dialog__window--animate,
+.alert-dialog--hide .alert-dialog__window--animate > *,
+.alert-dialog--hide .alert-dialog__window--fade,
+.alert-dialog--show-init .alert-dialog__window--animate,
+.alert-dialog--show-init .alert-dialog__window--animate > *,
+.alert-dialog--show-init .alert-dialog__window--fade {
     opacity: 0;
 }
 
@@ -139,12 +140,12 @@
 .alert-dialog--show.alert-dialog--mask-fade-slow {
     background-color: var(--dialog-scrim-color-show);
 }
-:is(.alert-dialog--hide-init, .alert-dialog--show)
-    .alert-dialog__window--animate,
-:is(.alert-dialog--hide-init, .alert-dialog--show)
-    .alert-dialog__window--animate
-    > *,
-:is(.alert-dialog--hide-init, .alert-dialog--show) .alert-dialog__window--fade {
+.alert-dialog--hide-init .alert-dialog__window--animate,
+.alert-dialog--hide-init .alert-dialog__window--animate > *,
+.alert-dialog--hide-init .alert-dialog__window--fade,
+.alert-dialog--show .alert-dialog__window--animate,
+.alert-dialog--show .alert-dialog__window--animate > *,
+.alert-dialog--show .alert-dialog__window--fade {
     opacity: 1;
 }
 
@@ -178,24 +179,21 @@
             var(--motion-easing-soft-enter) var(--motion-duration-short-3);
     }
 }
-:is(.alert-dialog--hide-init, .alert-dialog--show)
-    .alert-dialog__window--animate {
+.alert-dialog--hide-init .alert-dialog__window--animate,
+.alert-dialog--show .alert-dialog__window--animate {
     transform: scale(1);
 }
 
-:is(.alert-dialog--hide, .alert-dialog--show-init)
-    .alert-dialog__window--animate {
+.alert-dialog--hide .alert-dialog__window--animate,
+.alert-dialog--show-init .alert-dialog__window--animate {
     transform: scale(0.75);
 }
 
 @media (prefers-reduced-motion) {
-    :is(
-            .alert-dialog--hide,
-            .alert-dialog--hide-init,
-            .alert-dialog--show,
-            .alert-dialog--show-init
-        )
-        .alert-dialog__window--animate {
+    .alert-dialog--hide .alert-dialog__window--animate,
+    .alert-dialog--hide-init .alert-dialog__window--animate,
+    .alert-dialog--show .alert-dialog__window--animate,
+    .alert-dialog--show-init .alert-dialog__window--animate {
         transform: scale(1);
     }
 }

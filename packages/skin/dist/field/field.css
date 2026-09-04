@@ -70,7 +70,8 @@ div.field--table {
     );
 }
 
-.field__group > :is(.field__description, .field__label) {
+.field__group > .field__description,
+.field__group > .field__label {
     align-self: center;
 }
 
@@ -97,7 +98,9 @@ div.field__description {
 .field__row {
     display: table-row;
 }
-.field__row > :is(.field__control, .field__description, .field__label) {
+.field__row > .field__control,
+.field__row > .field__description,
+.field__row > .field__label {
     display: table-cell;
 }
 .field__row .field__label {

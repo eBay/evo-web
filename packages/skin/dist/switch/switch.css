@@ -70,8 +70,8 @@ span.switch__control {
     width: 40px;
     z-index: 1;
 }
-:is(input.switch__control[disabled], span.switch__control[aria-disabled="true"])
-    + span.switch__button {
+input.switch__control[disabled] + span.switch__button,
+span.switch__control[aria-disabled="true"] + span.switch__button {
     border-color: var(--switch-border-color, var(--color-border-disabled));
 }
 
@@ -85,8 +85,8 @@ input.switch__control:focus + span.switch__button {
 input.switch__control:focus:not(:focus-visible) + span.switch__button {
     outline: none;
 }
-:is(input.switch__control[disabled], span.switch__control[aria-disabled="true"])
-    + span.switch__button:after {
+input.switch__control[disabled] + span.switch__button:after,
+span.switch__control[aria-disabled="true"] + span.switch__button:after {
     border-color: var(--switch-border-color, var(--color-background-disabled));
 }
 

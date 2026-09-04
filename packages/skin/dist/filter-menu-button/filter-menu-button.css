@@ -134,12 +134,16 @@ button.filter-menu-button__button[disabled]:hover {
         var(--color-background-disabled)
     );
 }
-:is(
-        button.filter-menu-button__button--selected[aria-disabled="true"],
-        button.filter-menu-button__button--selected[disabled],
-        button.filter-menu-button__button[aria-disabled="true"],
-        button.filter-menu-button__button[disabled]
-    )
+button.filter-menu-button__button--selected[aria-disabled="true"]
+    .filter-menu-button__button-cell
+    > svg.icon,
+button.filter-menu-button__button--selected[disabled]
+    .filter-menu-button__button-cell
+    > svg.icon,
+button.filter-menu-button__button[aria-disabled="true"]
+    .filter-menu-button__button-cell
+    > svg.icon,
+button.filter-menu-button__button[disabled]
     .filter-menu-button__button-cell
     > svg.icon {
     color: var(
@@ -294,7 +298,8 @@ span.filter-menu-button__radio svg.icon--checked {
 .filter-menu-button__item:last-child {
     margin-bottom: 8px;
 }
-.filter-menu-button__item :is(span.checkbox, span.radio) {
+.filter-menu-button__item span.checkbox,
+.filter-menu-button__item span.radio {
     align-items: flex-start;
     display: flex;
     flex-shrink: 1;

@@ -53,17 +53,22 @@ nav.breadcrumbs > ul > li > button {
     padding: 0;
 }
 
-nav.breadcrumbs > ul > li > :is(a, button) {
+nav.breadcrumbs > ul > li > a,
+nav.breadcrumbs > ul > li > button {
     color: inherit;
     max-width: 168px;
     outline-offset: 5px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-nav.breadcrumbs > ul > li > :is(a:focus, a:hover, button:focus, button:hover) {
+nav.breadcrumbs > ul > li > a:focus,
+nav.breadcrumbs > ul > li > a:hover,
+nav.breadcrumbs > ul > li > button:focus,
+nav.breadcrumbs > ul > li > button:hover {
     text-decoration: underline;
 }
-nav.breadcrumbs > ul > li > :is(a[aria-current], button[aria-current]) {
+nav.breadcrumbs > ul > li > a[aria-current],
+nav.breadcrumbs > ul > li > button[aria-current] {
     color: var(
         --breadcrumbs-item-current-foreground-color,
         var(--color-foreground-primary)
@@ -83,7 +88,8 @@ nav.breadcrumbs.breadcrumb--overflow {
     scrollbar-width: unset;
 }
 
-nav.breadcrumbs :is(.fake-menu-button__button, .menu-button__button) {
+nav.breadcrumbs .fake-menu-button__button,
+nav.breadcrumbs .menu-button__button {
     background-color: var(
         --icon-button-background-color,
         var(--color-background-secondary)
@@ -95,14 +101,16 @@ nav.breadcrumbs :is(.fake-menu-button__button, .menu-button__button) {
     width: var(--spacing-300);
 }
 
-nav.breadcrumbs :is(.fake-menu-button__button, .menu-button__button) svg.icon {
+nav.breadcrumbs .fake-menu-button__button svg.icon,
+nav.breadcrumbs .menu-button__button svg.icon {
     fill: var(
         --breadcrumbs-overflow-foreground-color,
         var(--color-foreground-secondary)
     );
 }
 
-nav.breadcrumbs :is(.fake-menu-button__menu, .menu-button__menu) {
+nav.breadcrumbs .fake-menu-button__menu,
+nav.breadcrumbs .menu-button__menu {
     font-size: var(--font-size-body);
 }
 

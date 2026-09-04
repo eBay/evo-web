@@ -182,14 +182,11 @@ div.skeleton__textbox:not(:last-child) {
         animation: var(--motion-duration-long-3) var(--motion-easing-continuous)
             infinite alternate on-primary;
     }
-    .skeleton--on-secondary
-        :is(
-            .skeleton__avatar,
-            .skeleton__button,
-            .skeleton__image,
-            .skeleton__text,
-            .skeleton__textbox
-        ) {
+    .skeleton--on-secondary .skeleton__avatar,
+    .skeleton--on-secondary .skeleton__button,
+    .skeleton--on-secondary .skeleton__image,
+    .skeleton--on-secondary .skeleton__text,
+    .skeleton--on-secondary .skeleton__textbox {
         animation: var(--motion-duration-long-3) var(--motion-easing-continuous)
             infinite alternate on-secondary;
     }

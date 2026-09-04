@@ -142,20 +142,25 @@ button.btn--form .btn__cell {
     justify-content: space-between;
 }
 
-:is(a.fake-btn, button.btn) svg.icon {
+a.fake-btn svg.icon,
+button.btn svg.icon {
     align-self: center;
 }
-:is(a.fake-btn, button.btn) svg.icon:first-child {
+a.fake-btn svg.icon:first-child,
+button.btn svg.icon:first-child {
     margin-inline-end: 8px;
 }
-:is(a.fake-btn, button.btn) svg.icon:last-child {
+a.fake-btn svg.icon:last-child,
+button.btn svg.icon:last-child {
     margin-inline-start: 8px;
 }
-:is(a.fake-btn, button.btn) svg.icon:only-child {
+a.fake-btn svg.icon:only-child,
+button.btn svg.icon:only-child {
     margin: 0;
 }
 
-:is(a.fake-btn__cell--fixed-height, button.btn__cell--fixed-height) svg.icon {
+a.fake-btn__cell--fixed-height svg.icon,
+button.btn__cell--fixed-height svg.icon {
     align-self: center;
     height: 1rem;
     overflow: visible;
@@ -297,16 +302,18 @@ button.btn--primary.btn--destructive .progress-spinner {
     --color-spinner-icon-foreground: #ec7089;
 }
 
-:is(a.fake-btn[aria-expanded="true"], button.btn[aria-expanded="true"])
-    svg.icon--12 {
+a.fake-btn[aria-expanded="true"] svg.icon--12,
+button.btn[aria-expanded="true"] svg.icon--12 {
     transform: rotate(180deg);
 }
 
-:is(a.fake-btn--large, button.btn--large) svg.icon {
+a.fake-btn--large svg.icon,
+button.btn--large svg.icon {
     max-height: 48px;
 }
 
-:is(a.fake-btn--small, button.btn--small) svg.icon {
+a.fake-btn--small svg.icon,
+button.btn--small svg.icon {
     max-height: 32px;
 }
 
@@ -325,8 +332,8 @@ button.btn--primary[disabled] {
         var(--color-foreground-on-accent)
     );
 }
-:is(button.btn--primary[aria-disabled="true"], button.btn--primary[disabled])
-    svg.icon {
+button.btn--primary[aria-disabled="true"] svg.icon,
+button.btn--primary[disabled] svg.icon {
     fill: var(
         --btn-primary-disabled-foreground-color,
         var(--color-background-primary)
@@ -443,11 +450,8 @@ button.btn--secondary[disabled] {
         var(--color-background-disabled)
     );
 }
-:is(
-        button.btn--secondary[aria-disabled="true"],
-        button.btn--secondary[disabled]
-    )
-    svg.icon {
+button.btn--secondary[aria-disabled="true"] svg.icon,
+button.btn--secondary[disabled] svg.icon {
     fill: var(
         --btn-secondary-disabled-foreground-color,
         var(--color-foreground-disabled)
@@ -716,33 +720,26 @@ button.btn--floating-label .btn__floating-label--inline {
     transform: translateY(-6px);
 }
 
-[dir="rtl"] :is(a.fake-btn--split-start, button.btn--split-start) {
+[dir="rtl"] a.fake-btn--split-start,
+[dir="rtl"] button.btn--split-start {
     border-radius: 0 24px 24px 0;
 }
-[dir="rtl"] :is(a.fake-btn--split-end, button.btn--split-end) {
+[dir="rtl"] a.fake-btn--split-end,
+[dir="rtl"] button.btn--split-end {
     border-radius: 24px 0 0 24px;
     margin-left: inherit;
     margin-right: -1px;
 }
-[dir="rtl"]
-    :is(
-        a.fake-btn.fake-btn--tertiary.fake-btn--split-end,
-        button.btn.btn--tertiary.btn--split-end
-    ) {
+[dir="rtl"] a.fake-btn.fake-btn--tertiary.fake-btn--split-end,
+[dir="rtl"] button.btn.btn--tertiary.btn--split-end {
     margin-right: -2px;
 }
-[dir="rtl"]
-    :is(
-        a.fake-btn.fake-btn--primary.fake-btn--split-end,
-        button.btn.btn--primary.btn--split-end
-    ),
-[dir="rtl"]
-    :is(
-        a.fake-btn.fake-btn--primary.fake-btn--split-end:focus,
-        a.fake-btn.fake-btn--primary.fake-btn--split-end:hover,
-        button.btn.btn--primary.btn--split-end:focus,
-        button.btn.btn--primary.btn--split-end:hover
-    ) {
+[dir="rtl"] a.fake-btn.fake-btn--primary.fake-btn--split-end,
+[dir="rtl"] a.fake-btn.fake-btn--primary.fake-btn--split-end:focus,
+[dir="rtl"] a.fake-btn.fake-btn--primary.fake-btn--split-end:hover,
+[dir="rtl"] button.btn.btn--primary.btn--split-end,
+[dir="rtl"] button.btn.btn--primary.btn--split-end:focus,
+[dir="rtl"] button.btn.btn--primary.btn--split-end:hover {
     border-left-color: var(
         --btn-primary-border-color,
         var(--color-border-accent)

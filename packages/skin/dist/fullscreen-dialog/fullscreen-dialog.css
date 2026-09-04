@@ -40,7 +40,12 @@
     margin: var(--spacing-200) var(--spacing-200) 0;
     position: relative;
 }
-.fullscreen-dialog__header :is(h1, h2, h3, h4, h5, h6) {
+.fullscreen-dialog__header h1,
+.fullscreen-dialog__header h2,
+.fullscreen-dialog__header h3,
+.fullscreen-dialog__header h4,
+.fullscreen-dialog__header h5,
+.fullscreen-dialog__header h6 {
     align-self: center;
     flex: 1 1 auto;
     margin: 0;
@@ -103,8 +108,8 @@ button.fullscreen-dialog__close {
 .fullscreen-dialog--show.fullscreen-dialog--mask-fade-slow {
     transition: background-color 0.32s ease-out;
 }
-:is(.fullscreen-dialog--hide, .fullscreen-dialog--show)
-    .fullscreen-dialog__window--fade {
+.fullscreen-dialog--hide .fullscreen-dialog__window--fade,
+.fullscreen-dialog--show .fullscreen-dialog__window--fade {
     transition: opacity 0.16s ease-out;
 }
 .fullscreen-dialog--hide .fullscreen-dialog__window--slide,
@@ -126,16 +131,16 @@ button.fullscreen-dialog__close {
 .fullscreen-dialog--show-init.fullscreen-dialog--mask-fade-slow {
     background-color: var(--dialog-scrim-color-hide);
 }
-:is(.fullscreen-dialog--hide, .fullscreen-dialog--show-init)
-    .fullscreen-dialog__window--fade {
+.fullscreen-dialog--hide .fullscreen-dialog__window--fade,
+.fullscreen-dialog--show-init .fullscreen-dialog__window--fade {
     opacity: 0;
 }
-:is(.fullscreen-dialog--hide, .fullscreen-dialog--show-init)
-    .fullscreen-dialog__window--slide {
+.fullscreen-dialog--hide .fullscreen-dialog__window--slide,
+.fullscreen-dialog--show-init .fullscreen-dialog__window--slide {
     transform: translateY(100%);
 }
-:is(.fullscreen-dialog--hide, .fullscreen-dialog--show-init)
-    .fullscreen-dialog__window--slide-end {
+.fullscreen-dialog--hide .fullscreen-dialog__window--slide-end,
+.fullscreen-dialog--show-init .fullscreen-dialog__window--slide-end {
     transform: translateX(100%);
 }
 
@@ -151,13 +156,13 @@ button.fullscreen-dialog__close {
 .fullscreen-dialog--show.fullscreen-dialog--mask-fade-slow {
     background-color: var(--dialog-scrim-color-show);
 }
-:is(.fullscreen-dialog--hide-init, .fullscreen-dialog--show)
-    .fullscreen-dialog__window--fade {
+.fullscreen-dialog--hide-init .fullscreen-dialog__window--fade,
+.fullscreen-dialog--show .fullscreen-dialog__window--fade {
     opacity: 1;
 }
-:is(.fullscreen-dialog--hide-init, .fullscreen-dialog--show)
-    .fullscreen-dialog__window--slide,
-:is(.fullscreen-dialog--hide-init, .fullscreen-dialog--show)
-    .fullscreen-dialog__window--slide-end {
+.fullscreen-dialog--hide-init .fullscreen-dialog__window--slide,
+.fullscreen-dialog--hide-init .fullscreen-dialog__window--slide-end,
+.fullscreen-dialog--show .fullscreen-dialog__window--slide,
+.fullscreen-dialog--show .fullscreen-dialog__window--slide-end {
     transform: translateX(0);
 }
