@@ -179,7 +179,7 @@
     "stylelint-prettier": "^5",
     "svgson": "^5.3.1",
     "tsx": "^4.23.13",
-    "typescript": "5",
+    "typescript": "~6.0.3",
     "typescript-eslint": "^8.69.0",
     "visual-html": "^2.1.8",
     "vite": "^7.3.2",
