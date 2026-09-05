@@ -82,6 +82,7 @@ When migrating a listed component, read the linked file completely and apply the
 - `ebay-infotip`: [evo-infotip.md](components/evo-infotip.md)
 - `ebay-lightbox-dialog`: [evo-dialog.md](components/evo-dialog.md)
 - `ebay-menu`: [evo-menu.md](components/evo-menu.md)
+- `ebay-progress-bar`: [evo-progress-bar.md](components/evo-progress-bar.md)
 - `ebay-progress-spinner`: [evo-progress-spinner.md](components/evo-progress-spinner.md)
 - `ebay-radio`: [evo-radio.md](components/evo-radio.md)
 - `ebay-tabs`: [evo-tabs.md](components/evo-tabs.md)
