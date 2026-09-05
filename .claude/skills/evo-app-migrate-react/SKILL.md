@@ -72,6 +72,7 @@ When migrating a listed component, read the linked file completely and apply the
 - `ebay-chip`: [evo-chip.md](components/evo-chip.md)
 - `ebay-confirm-dialog`: [evo-confirm-dialog.md](components/evo-confirm-dialog.md)
 - `ebay-cta-button`: [evo-cta-button.md](components/evo-cta-button.md)
+- `ebay-date-textbox`: [evo-date-input.md](components/evo-date-input.md)
 - `ebay-details`: [evo-details.md](components/evo-details.md)
 - `ebay-eek`: [evo-eek.md](components/evo-eek.md)
 - `ebay-fake-menu`: [evo-fake-menu.md](components/evo-fake-menu.md)

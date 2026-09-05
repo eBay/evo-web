@@ -14,7 +14,7 @@ import {
   monthOffset,
   offsetISO,
   toISO,
-} from "./date-utils";
+} from "../utils/dates";
 import type {
   A11yRangeText,
   DateRange,

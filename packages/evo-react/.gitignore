@@ -2,3 +2,4 @@
 /_site
 coverage
 __screenshots__
+.vitest-attachments
