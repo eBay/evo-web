@@ -1,0 +1,11 @@
+import{r as t,e as a,u as n}from"./_zF_vds5p.js";const o=`<div class=a11y-pattern-content><h1>Live Region</h1><p>If an area of a page is dynamically updated without a full-page reload, we <em>might</em> (see <a>FAQ: When Should A Live Region Be Used?</a> ) wish to inform the user that there was a change.</p><pre><code class=language-html>&lt;div aria-live=&quot;”polite”&quot;&gt;
+  &lt;p&gt;Newcastle United 0 - Barcelona 0&lt;/p&gt;
+&lt;/div&gt;
+</code></pre><p>Whenever the inner text changes, or the CSS display of the content changes from none to block[1], the screen reader will announce the contents.</p><pre><code class=language-html>&lt;div aria-live=&quot;”polite”&quot;&gt;
+  &lt;p&gt;Goal!&lt;/p&gt;
+&lt;/div&gt;
+</code></pre><p>Screen reader announces “Goal!”</p><pre><code class=language-html>&lt;div aria-live=&quot;”polite”&quot;&gt;
+  &lt;p&gt;Newcastle United 1 - Barcelona 0&lt;/p&gt;
+&lt;/div&gt;
+</code></pre><p>Screen reader announces “Newcastle United 1 - Barcelona 0&quot;.</p><p>Note, sometimes we may wish to announce the content that changed (as in this football score example), in other cases we may only wish to give an update as to the nature of the change (e.g. “Attention! Errors found”). A general rule of thumb is to keep the live-region short and free from structured data and interactive elements.</p><p>[1] It is very important to note that any CSS display operation <strong>must</strong> happen on a descendant node of the live region, and not on the live region node itself.</p></div>`,l="DbDd m";function i(e){a(e.a,"href",`${n.accessibility}/misc/faq`)}const s=t("ve",o,l,i);export{i as $setup,o as $template,l as $walks,s as default};
+//# sourceMappingURL=_BePcp6SD.js.map

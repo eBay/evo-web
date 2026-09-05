@@ -1,0 +1,65 @@
+import{a as e,n as t}from"./rolldown-runtime-DkW27tQK.js";import{n}from"./storybook-code-source-DlBTenms.js";import{t as r}from"./utils-C7m-hPxw.js";import{c as i,h as a,l as o,n as s,r as c,s as l,t as u,u as d}from"./registry-95LfxIAE.js";import{t as f}from"./icon-yrMh4EQf.js";import{t as p}from"./render-tag-hXgrwudm.js";import{t as m}from"./dynamic-tag-CCbAf3a9.js";import{t as h}from"./of-fallback-rY0Dkoru.js";import{t as g}from"./attr-tag--AgZ8oJt.js";import{c as _,l as v}from"./event-utils-Bu5IuP5L.js";import{t as y}from"./icon-button-BNGaPj6P.js";import{n as ee,t as b}from"./dom-C2KCbcve.js";import{t as x}from"./utility-ByrNQMTr.js";import{n as te,t as ne}from"./ebay-fake-menu-button-BmezQ6d6.js";import{a as re,i as ie,n as S,o as ae,r as oe,t as se}from"./ebay-overflow-horizontal-24-icon-D-Uhqtl6.js";var C;function w(){return(w=t((()=>{C=`<h1 style='display: flex; justify-content: space-between; align-items: center;'>
+    <span>
+        ebay-pagination
+    </span>
+    <span style='font-weight: normal; font-size: medium; margin-bottom: -15px;'>
+        DS v1.1.0
+    </span>
+</h1>
+
+The \`<ebay-pagination>\` is a tag used to create a pagination navigation. It will display up to 9 page links.
+
+**Note:** If you want to have client side or ajax based navigation then you should omit the \`href\` attribute on each item. This will cause each item to be \`<button>\` instead of an \`<a>\`.
+
+## Examples and Documentation
+
+- [Storybook](https://ebay.github.io/evo-web/ebayui-core/?path=/story/navigation-disclosure-ebay-pagination)
+- [Storybook Docs](https://ebay.github.io/evo-web/ebayui-core/?path=/docs/navigation-disclosure-ebay-pagination)
+- [Code Examples](https://github.com/eBay/evo-web/tree/main/packages/ebayui-core/src/components/ebay-pagination/examples)
+`})))()}function T(){return(T=t((()=>{})))()}function ce(){return(ce=t((()=>{T(),x(),f(),y()})))()}var E,D,O;function le(){return(le=t((()=>{_(),ee(),E=9,D=5,O=class extends Marko.Component{handlePageNumberClick(e,t,n){this.emit(`select`,{el:n,originalEvent:t,value:n.innerText,index:e})}handleMenuPageNumber({originalEvent:e,el:t}){let n=parseInt(t?.getAttribute(`data-page-number`),10);this.emit(`select`,{el:t,originalEvent:e,value:t?.innerText??``,index:n}),setTimeout(()=>this.getEl(`pageItem[]`,n).focus(),0)}handleNextPageClick(e,t){if(t.hasAttribute(`aria-disabled`)){e.preventDefault();return}this.emit(`next`,{el:t,originalEvent:e})}handlePreviousPageClick(e,t){if(t.hasAttribute(`aria-disabled`)){e.preventDefault();return}this.emit(`previous`,{el:t,originalEvent:e})}onCreate(){this.state={maxItems:D}}onMount(){this._calculateMaxItems(),this.subscribeTo(v).on(`resize`,this._calculateMaxItems.bind(this))}getItemTag(e){return e.variant?e.variant===`link`?`a`:`button`:e.href?`a`:`button`}_getVisibleRange(e){let{state:t,input:n}=this,{maxItems:r}=t,{variant:i}=n,a=i===`show-last`||i===`overflow`,o=i===`overflow`,s=i===`overflow`,c=e.length-1,l=a?c:-1,u=o?1:-1,d=!1,f=!1,p=e.findIndex(e=>e.current),m=Math.floor(r/2),h=p-m,g=p+m;return h<=0?(g=r-1,h=0):g>=c?(g=c,h=c-(r-1)):r%2==0&&h++,a&&(p+m>=c||g>=c?d=!0:p<=g-2?g-=2:(h+=1,--g)),o&&(p-m<=0?f=!0:p>=h-1?h+=2:(--g,--h)),{start:h,end:g,hideDots:d,dotsIndex:l,hasOverflow:s,leadingDotsIndex:u,hideLeadingDots:f}}_calculateMaxItems(){let{input:e,state:t}=this;if(!(e.item||[]).some(e=>!e.type))return;let n=this.getEl(`root`);if(!this._itemWidth){let{children:e}=this.getEl(`items`);for(let t=0;t<e.length;t++){let n=e[t];if(n.offsetWidth){this._itemWidth=n.offsetWidth;break}}}t.maxItems=Math.max(D,Math.min(E,Math.floor(b(n)/this._itemWidth)-2))}}})))()}function ue(e,t){return(e<t.start||e>t.end)&&t.dotsIndex!==e&&t.leadingDotsIndex-1!==e}var k,A,j,M,N,P,de,F,I,L,R,z,B,V;function H(){return(H=t((()=>{k=d(),ce(),i(),S(),A=e(m()),ae(),j=e(p()),M=g(),N=e(h()),te(),P=e(a()),ie(),de=e(l()),le(),F=e(s()),I=u(),L=e(c()),R=`ob`,z=(0,k.t)(R),B={disabled:!0},(0,I.r)(R,()=>z),V=O,z._=(0,F.default)(function(e,t,n,r,i,a){let{class:s,item:c=[],a11yHeadingTag:l=`h2`,a11yCurrentText:u=`Results Pagination - Page 1`,a11yPreviousText:d=`Previous page`,a11yNextText:f=`Next page`,...p}=e,m=[...c];var h=m.length-1,g=m[0]&&m[0].type===`previous`&&m[0]||B,_=m[h]&&m[h].type===`next`&&m[h]||B,v=m.slice(g===B?0:1,_===B?void 0:h),y=r._getVisibleRange(v);let{current:ee,disabled:b,href:x,...te}=g,{current:ie,disabled:S,href:ae,...C}=_;t.be(`nav`,(0,de.default)(o(p),{role:`navigation`,class:(0,P.default)([`pagination`,s]),"aria-labelledby":n.elId(`heading`)}),`@root`,r,null,4),t.be(`span`,{"aria-live":`polite`,role:`status`},`0`,r,null,0),(0,A.default)(t,l,()=>({id:n.elId(`heading`),class:`clipped`}),e=>{e.t(u,r)},null,null,n,`1`),t.ee(),(0,A.default)(t,r.getItemTag(g),()=>({...o(te),href:b?void 0:x,class:[`pagination__previous`,g.href?`icon-link`:`icon-btn`,g.class],"aria-disabled":b&&`true`,"aria-label":d,style:[g.style,{minWidth:40}]}),e=>{(0,j.default)(re,{},e,n,`3`)},null,null,n,`2`,[[`click`,`handlePreviousPageClick`,!1]]),t.be(`ol`,{class:`pagination__items`},`@items`,r,null,1);{let e=0;for(let i of(0,N.default)(v)){let a=e++,s=`[${a}]`,{current:c,disabled:l,...u}=i;if(y.dotsIndex===a||y.leadingDotsIndex===a){var w=y.hideDots,T=!1;y.leadingDotsIndex===a&&(T=!0,w=!!y.hideLeadingDots),t.be(`li`,{hidden:w},`4`+s,r,null,0),y.hasOverflow?(t.be(`span`,{class:(0,P.default)([`pagination__item`,i.class]),role:`separator`},`5`+s,r,null,0),(0,j.default)(ne,(0,M.i)(()=>{let e=0;for(let i of(0,N.default)(v)){let a=e++,c=`[${a+s}]`;var t=T?a<y.start:a>y.end;if(ue(a,y)&&t){let{current:e,disabled:t,...s}=i;(0,M.r)(`item`,{...o(s),type:r.getItemTag(i),dataPageNumber:a,renderBody:e=>{(0,A.default)(e,i.renderBody,null,null,null,null,n,`7`+c)}})}}},{variant:`icon`,transparent:!0,icon:se,collapseOnSelect:!0}),t,n,`6`+s,[[`select`,`handleMenuPageNumber`,!1]]),t.ee()):(t.be(`span`,{class:(0,P.default)([`pagination__item`,i.class]),role:`separator`},`8`+s,r,null,0),(0,j.default)(se,{},t,n,`9`+s),t.ee()),t.ee()}t.be(`li`,{hidden:ue(a,y)},`10`+s,r,null,0),(0,A.default)(t,r.getItemTag(i),()=>({...o(u),class:[`pagination__item`,i.class],"aria-current":c&&`page`}),e=>{(0,A.default)(e,i.renderBody,null,null,null,null,n,`11`+s)},null,null,n,`@pageItem[]`,[[`click`,`handlePageNumberClick`,!1,[a]]]),t.ee()}}t.ee(),(0,A.default)(t,r.getItemTag(_),()=>({...o(C),href:S?void 0:ae,class:[`pagination__next`,_.href?`icon-link`:`icon-btn`,_.class],"aria-disabled":S&&`true`,"aria-label":f,style:[_.style,{minWidth:40}]}),e=>{(0,j.default)(oe,{},e,n,`13`)},null,null,n,`12`,[[`click`,`handleNextPageClick`,!1]]),t.ee()},{t:R},V),z.Component=(0,L.default)(V,z._)})))()}var U,W,fe,pe,me,he,G,K,q,J;function ge(){return(ge=t((()=>{U=d(),W=g(),H(),fe=e(p()),pe=e(s()),me=u(),he=e(c()),G=`q5EdRXH`,K=(0,U.t)(G),q=15,(0,me.r)(G,()=>K),J={onCreate(){this.handlePrev=e=>{this.state.current=Math.max(this.state.current-1,0),this.emit(`previous`,e)},this.handleNext=e=>{this.state.current=Math.min(this.state.current+1,q),this.emit(`next`,e)},this.state={current:0}},handleSelect(e){this.state.current=e.index,this.emit(`select`,e)}},K._=(0,pe.default)(function(e,t,n,r,i,a){(0,fe.default)(z,(0,W.i)(()=>{(0,W.r)(`item`,{type:`previous`,disabled:i.current===0});for(let e=0;e<=15;e++){let t=0+e*1;(0,W.r)(`item`,{current:t===i.current,renderBody:e=>{e.t(t,r)}})}(0,W.r)(`item`,{type:`next`,disabled:i.current===q})},{a11yCurrentText:`Results Pagination - Page ${i.current}`,...e,item:void 0}),t,n,`0`,[[`next`,`handleNext`,!1],[`previous`,`handlePrev`,!1],[`select`,`handleSelect`,!1]])},{t:G},J),K.Component=(0,he.default)(J,K._)})))()}var _e;function ve(){return(ve=t((()=>{_e=`import type { Input as PaginationInput } from "<ebay-pagination>";
+static const SIZE = 15;
+class {
+    declare state: {
+        current: number;
+    };
+
+    onCreate() {
+        this.state = { current: 0 };
+    }
+    handlePrev: PaginationInput["on-previous"] = (e) => {
+        this.state.current = Math.max(this.state.current - 1, 0);
+        this.emit("previous", e);
+    };
+    handleNext: PaginationInput["on-next"] = (e) => {
+        this.state.current = Math.min(this.state.current + 1, SIZE);
+        this.emit("next", e);
+    };
+    handleSelect(e: { index: number }) {
+        this.state.current = e.index;
+        this.emit("select", e);
+    }
+}
+
+<ebay-pagination
+    on-next("handleNext")
+    on-previous("handlePrev")
+    on-select("handleSelect")
+    a11yCurrentText=\`Results Pagination - Page \${state.current}\`
+    ...input
+>
+    <@item type=("previous" as any) disabled=state.current === 0/>
+    <for|i| from=0 to=SIZE>
+        <@item current=i === state.current>
+            \${i}
+        </@item>
+    </for>
+    <@item type="next" disabled=state.current === SIZE/>
+</ebay-pagination>
+`})))()}var Y,X,Z,Q,$,ye;function be(){return(be=t((()=>{w(),ge(),ve(),H(),Y=e=>({input:r(e)}),X={title:`navigation & disclosure/ebay-pagination`,component:z,parameters:{docs:{description:{component:C}}},argTypes:{a11yPreviousText:{control:{type:`text`},description:`Localized, a11y text for previous arrow button`},a11yNextText:{control:{type:`text`},description:`Localized, a11y text for next arrow button`},a11yCurrentText:{control:{type:`text`},description:`Localized, description for the current page (e.g. Results of Page 1)`},a11yHeadingTag:{control:{type:`text`},table:{defaultValue:{summary:`h2`}},description:`Heading tag for the clipped pagination label`},variant:{control:{type:`select`},table:{defaultValue:{summary:`show-range`}},options:[`show-last`,`show-range`,`overflow`],description:"Either `show-last`, or `show-range`. If `show-last` then will show the last page always and will put `…` between the last visible range and the last page. `…` and the last page will take up two items in the range. `…` will be hidden when the range to the last item is fully visible."},disabled:{name:`disabled`,table:{category:`@item attribute tags`},description:`Previous/next button is disabled or not`},href:{name:`href`,table:{category:`@item attribute tags`},description:`for link that looks like a menu-item; omitting the href will switch to a button`},item:{name:`@item`,table:{category:`@attribute tags`}},"@item variant":{name:`variant`,table:{category:`@item attribute tags`},description:'"button" or "link". Will force an item to be a link if href is omitted. Defaults to button. If not specified, tag type will still be controlled by `href`'},current:{name:`current`,table:{category:`@item attribute tags`},description:`the current page`},type:{name:`type`,table:{category:`@item attribute tags`},description:`"previous", "next" or "page"(default). To specify if the information entered is for the previous or next arrrow button or a page. If the type='previous  | next' isn't provided the previous/next arrow buttons will be taken as'disabled'`},onPrevious:{action:`on-previous`,description:`Triggered on previous arrow button`,table:{category:`Events`,defaultValue:{summary:`{ originalEvent, el }`}}},onNext:{action:`on-next`,description:`Triggered on next arrow button`,table:{category:`Events`,defaultValue:{summary:`{ originalEvent, el }`}}},onSelect:{action:`on-select`,description:`Triggered on page selected clicked`,table:{category:`Events`,defaultValue:{summary:`{ originalEvent, el, value, index }`}}}}},Z=Y.bind({}),Z.args={a11yPreviousText:`previous`,a11yNextText:`next`,a11yCurrentText:`Current page`,item:[{renderBody:``,type:`previous`,href:`#`,disabled:!0},{renderBody:`1`,href:`#`,current:!0},{renderBody:`2`,href:`#`},{renderBody:`3`,href:`#`},{renderBody:`4`,href:`#`},{renderBody:`5`,href:`#`},{renderBody:`6`,href:`#`},{renderBody:`7`,href:`#`},{renderBody:`8`,href:`#`},{renderBody:`9`,href:`#`},{renderBody:``,type:`next`,href:`#`,disabled:!0}]},Z.parameters={docs:{source:{code:n(`ebay-pagination`,Z.args)}}},Q=Y.bind({}),Q.args={a11yPreviousText:`previous`,a11yNextText:`next`,a11yCurrentText:`Current page`,item:[{renderBody:``,type:`previous`,disabled:!0},{renderBody:`1`,current:!0},{renderBody:`2`},{renderBody:`3`},{renderBody:`4`},{renderBody:`5`},{renderBody:`6`},{renderBody:`7`},{renderBody:`8`},{renderBody:`9`},{renderBody:``,type:`next`,disabled:!0}]},Q.parameters={docs:{source:{code:n(`ebay-pagination`,Q.args)}}},$=e=>({component:K,input:r(e)}),$.args={},$.parameters={docs:{source:{code:_e}}},ye=[`Links`,`Buttons`,`Interactive`],Z.parameters={...Z.parameters,docs:{...Z.parameters?.docs,source:{originalSource:`(args: Input) => ({
+  input: addRenderBodies(args)
+})`,...Z.parameters?.docs?.source}}},Q.parameters={...Q.parameters,docs:{...Q.parameters?.docs,source:{originalSource:`(args: Input) => ({
+  input: addRenderBodies(args)
+})`,...Q.parameters?.docs?.source}}},$.parameters={...$.parameters,docs:{...$.parameters?.docs,source:{originalSource:`(args: Input) => ({
+  component: interactiveTemplate,
+  input: addRenderBodies(args)
+})`,...$.parameters?.docs?.source}}}})))()}be();export{Q as Buttons,$ as Interactive,Z as Links,ye as __namedExportsOrder,X as default};

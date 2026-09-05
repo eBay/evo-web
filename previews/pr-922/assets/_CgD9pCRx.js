@@ -1,0 +1,12 @@
+import{t as e}from"./_XkvwCyHu.js";import{t}from"./_CGDmBjR1.js";import{s as n}from"./_wACSQSXh.js";var r=`<div class=a11y-pattern-content><h1>Ambiguous Label</h1><p>A typical e-commerce sight is rife with buttons and links such as ‘Add’, ‘Edit’, ‘Update’, and ‘Delete’ etc. We class them as <em>ambiguous labels,</em> because the label is not unique to the page; the visual label alone does not explicitly call out the item, or noun, that it refers to. This can be a challenge for users of assistive technology.</p><p>One way of reducing the barrier for assistive technology is to ensure good heading structure for your page, so that the full context of the label can be perceived from the preceding heading.</p><p>If the context <em>cannot</em> be derived from the nearest heading, or you are striving to meet WCAG AAA requirements, the <em>programmatic</em> label can be set explicitly (via aria-label) with the necessary context:</p><pre><code class=language-html>&lt;a href=&quot;http://www.ebay.com/cart/add&quot; aria-label=&quot;Add to Cart - iPhone 6, 32GB&quot;
+  &gt;Add to Cart 6&lt;/a
+&gt;
+
+&lt;button aria-label=&quot;Place Bid - iPhone 6, 32GB&quot;&gt;Place Bid&lt;/button&gt;
+</code></pre><p>The same result can be achieved with clipped text instead of ARIA:</p><pre><code class=language-html>&lt;a href=&quot;http://www.ebay.com/cart/add&quot;
+  &gt;Add to Cart&lt;span class=&quot;clipped&quot;&gt; - iPhone 6, 32GB&lt;/span&gt;&lt;/a
+&gt;
+
+&lt;button&gt;Place Bid&lt;span class=&quot;clipped&quot;&gt; - iPhone 6, 32GB&lt;/span&gt;&lt;/button&gt;
+</code></pre><p>Clipped text remains hidden to sighted users but visible for AT. Please refer to the <a>Utilities page</a> for more information on the clipped class.</p><p><strong>NOTE</strong> : additions to the labelling text must always be <em>appended</em> , not prepended; prepending text that does not appear visually creates issues for users of voice input software.</p></div>`,i=`DhDb m`;function a(t){e(t.a,`href`,`${n.components}/utility/css`)}var o=t(`ne`,r,i,a);export{a as $setup,r as $template,i as $walks,o as default};
+//# sourceMappingURL=_CgD9pCRx.js.map

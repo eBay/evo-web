@@ -1,0 +1,120 @@
+import{t as e}from"./rolldown-runtime-Dh6celcD.js";var t,n,r,i,a;function o(){return(o=e((()=>{t={title:`Skin/Pagination/Links/Cascade`},n=()=>`
+<nav class="pagination" aria-labelledby="pagination-heading" role="navigation" style="font-size: 200%">
+    <span aria-live="polite" role="status">
+        <h2 class="clipped" id="pagination-heading">Results Pagination - Page 1</h2>
+    </span>
+    <a aria-disabled="true" aria-label="Previous Page" class="icon-link pagination__previous" href="http://www.ebay.com/sch/i.html?_nkw=guitars">
+        <svg class="icon icon--16" height="24" width="24" aria-hidden="true">
+            <use href="#icon-arrow-left-16"></use>
+        </svg>
+    </a>
+    <ol class="pagination__items">
+        <li>
+            <a aria-current="page" href="http://www.ebay.com/sch/i.html?_nkw=guitars" class="pagination__item">1</a>
+        </li>
+        <li>
+            <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=2" class="pagination__item">2</a>
+        </li>
+        <li>
+            <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=3" class="pagination__item">3</a>
+        </li>
+        <li>
+            <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=4" class="pagination__item">4</a>
+        </li>
+        <li>
+            <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=5" class="pagination__item">5</a>
+        </li>
+        <li>
+            <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=6" class="pagination__item">6</a>
+        </li>
+        <li>
+            <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=7" class="pagination__item">7</a>
+        </li>
+    </ol>
+    <a aria-label="Next Page" class="icon-link pagination__next" href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=2">
+        <svg class="icon icon--16" height="24" width="24" aria-hidden="true">
+            <use href="#icon-arrow-right-16"></use>
+        </svg>
+    </a>
+</nav>
+`,r=()=>`
+<nav class="pagination" aria-labelledby="pagination-heading" role="navigation" style="color: green">
+    <span aria-live="polite" role="status">
+        <h2 class="clipped" id="pagination-heading">Results Pagination - Page 1</h2>
+    </span>
+    <a aria-disabled="true" aria-label="Previous Page" class="icon-link pagination__previous" href="http://www.ebay.com/sch/i.html?_nkw=guitars">
+        <svg class="icon icon--16" height="24" width="24" aria-hidden="true">
+            <use href="#icon-arrow-left-16"></use>
+        </svg>
+    </a>
+    <ol class="pagination__items">
+        <li>
+            <a aria-current="page" href="http://www.ebay.com/sch/i.html?_nkw=guitars" class="pagination__item">1</a>
+        </li>
+        <li>
+            <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=2" class="pagination__item">2</a>
+        </li>
+        <li>
+            <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=3" class="pagination__item">3</a>
+        </li>
+        <li>
+            <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=4" class="pagination__item">4</a>
+        </li>
+        <li>
+            <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=5" class="pagination__item">5</a>
+        </li>
+        <li>
+            <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=6" class="pagination__item">6</a>
+        </li>
+        <li>
+            <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=7" class="pagination__item">7</a>
+        </li>
+    </ol>
+    <a aria-label="Next Page" class="icon-link pagination__next" href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=2">
+        <svg class="icon icon--16" height="24" width="24" aria-hidden="true">
+            <use href="#icon-arrow-right-16"></use>
+        </svg>
+    </a>
+</nav>
+`,i=()=>`
+<div dir="rtl">
+    <nav class="pagination" aria-labelledby="pagination-heading" role="navigation">
+        <span aria-live="polite" role="status">
+            <h2 class="clipped" id="pagination-heading">Results Pagination - Page 1</h2>
+        </span>
+        <a aria-disabled="true" aria-label="Previous Page" class="icon-link pagination__previous" href="http://www.ebay.com/sch/i.html?_nkw=guitars">
+            <svg class="icon icon--16" height="24" width="24" aria-hidden="true">
+                <use href="#icon-arrow-left-16"></use>
+            </svg>
+        </a>
+        <ol class="pagination__items">
+            <li>
+                <a aria-current="page" href="http://www.ebay.com/sch/i.html?_nkw=guitars" class="pagination__item">1</a>
+            </li>
+            <li>
+                <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=2" class="pagination__item">2</a>
+            </li>
+            <li>
+                <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=3" class="pagination__item">3</a>
+            </li>
+            <li>
+                <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=4" class="pagination__item">4</a>
+            </li>
+            <li>
+                <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=5" class="pagination__item">5</a>
+            </li>
+            <li>
+                <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=6" class="pagination__item">6</a>
+            </li>
+            <li>
+                <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=7" class="pagination__item">7</a>
+            </li>
+        </ol>
+        <a aria-label="Next Page" class="icon-link pagination__next" href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=2">
+            <svg class="icon icon--16" height="24" width="24" aria-hidden="true">
+                <use href="#icon-arrow-right-16"></use>
+            </svg>
+        </a>
+    </nav>
+</div>
+`,a=[`fontSize`,`color`,`RTL`]})))()}o();export{i as RTL,a as __namedExportsOrder,r as color,t as default,n as fontSize};

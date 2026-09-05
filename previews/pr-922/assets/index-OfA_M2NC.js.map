@@ -1,0 +1,1 @@
+{"version":3,"file":"index-OfA_M2NC.js","names":[],"sources":["../../.marko-run/index.client-entry.marko"],"sourcesContent":["<!-- use tags -->\n\nimport Layout1 from \"../../src/routes/_index/+layout.marko\";\nimport Page from \"../../src/routes/_index/+page.marko\";\n\n<Layout1>\n\t<Page/>\n</>\n"],"mappings":"iFAGA,EAAK"}

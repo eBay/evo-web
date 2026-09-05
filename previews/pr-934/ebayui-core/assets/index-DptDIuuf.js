@@ -1,0 +1,1 @@
+const n=new Set([" ","PageUp","PageDown","End","Home","ArrowLeft","ArrowUp","ArrowRight","ArrowDown"]),o=e=>{n.has(e.key)&&e.preventDefault()},r=e=>{e.addEventListener("keydown",o)},t=e=>{e.removeEventListener("keydown",o)};export{r as a,t as r};

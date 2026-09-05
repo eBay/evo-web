@@ -1,0 +1,3 @@
+import{j as e,M as r}from"./blocks-B8BWhdia.js";import{useMDXComponents as s}from"./index-DKUXpQtX.js";import"./preload-helper-PPVm8Dsz.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./iframe-BYU8siq3.js";function o(n){const t={h1:"h1",p:"p",...s(),...n.components};return e.jsxs(e.Fragment,{children:[e.jsx(r,{title:"media/Overview"}),`
+`,e.jsx(t.h1,{id:"media-components",children:"Media Components"}),`
+`,e.jsx(t.p,{children:"These components are used to house media for the user, such as images and video."})]})}function p(n={}){const{wrapper:t}={...s(),...n.components};return t?e.jsx(t,{...n,children:e.jsx(o,{...n})}):o(n)}export{p as default};

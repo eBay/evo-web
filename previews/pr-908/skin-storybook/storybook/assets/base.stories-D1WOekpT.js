@@ -1,0 +1,23 @@
+const v={title:"Skin/Skeleton/Base"},e=()=>`<div class="skeleton" role="img" aria-label="loading">
+        <div class="skeleton__avatar"></div>
+    </div>`,a=()=>`<div class="skeleton" role="img" aria-label="loading">
+        <div class="skeleton__button"></div>
+    </div>`,s=()=>`<div class="skeleton" role="img" aria-label="loading">
+        <div class="skeleton__button skeleton__button--small"></div>
+    </div>`,l=()=>`<div class="skeleton" role="img" aria-label="loading">
+        <div class="skeleton__button skeleton__button--large"></div>
+    </div>`,t=()=>`<div class="skeleton" role="img" aria-label="loading">
+        <div class="skeleton__text "></div>
+    </div>`,o=()=>`<div class="skeleton" role="img" aria-label="loading">
+        <div class="skeleton__text skeleton__text--large"></div>
+    </div>`,i=()=>`<div class="skeleton" role="img" aria-label="loading">
+        <div class="skeleton__text  skeleton__text--multiline"></div>
+    </div>`,r=()=>`<div class="skeleton" role="img" aria-label="loading">
+        <div class="skeleton__text skeleton__text--large skeleton__text--multiline"></div>
+    </div>`,n=()=>`<div class="skeleton" role="img" aria-label="loading">
+        <div class="skeleton__textbox"></div>
+    </div>`,d=()=>`<div class="skeleton" role="img" aria-label="loading">
+        <div class="skeleton__image" style="height: 75px; width: 75px;"></div>
+    </div>`,c=()=>`<div class="skeleton" role="img" aria-label="loading">
+        <div class="skeleton__image" style="height: 250px; width: 250px;"></div>
+    </div>`;e.parameters={...e.parameters,docs:{...e.parameters?.docs,source:{originalSource:'() => `<div class="skeleton" role="img" aria-label="loading">\n        <div class="skeleton__avatar"></div>\n    </div>`',...e.parameters?.docs?.source}}};a.parameters={...a.parameters,docs:{...a.parameters?.docs,source:{originalSource:'() => `<div class="skeleton" role="img" aria-label="loading">\n        <div class="skeleton__button"></div>\n    </div>`',...a.parameters?.docs?.source}}};s.parameters={...s.parameters,docs:{...s.parameters?.docs,source:{originalSource:'() => `<div class="skeleton" role="img" aria-label="loading">\n        <div class="skeleton__button skeleton__button--small"></div>\n    </div>`',...s.parameters?.docs?.source}}};l.parameters={...l.parameters,docs:{...l.parameters?.docs,source:{originalSource:'() => `<div class="skeleton" role="img" aria-label="loading">\n        <div class="skeleton__button skeleton__button--large"></div>\n    </div>`',...l.parameters?.docs?.source}}};t.parameters={...t.parameters,docs:{...t.parameters?.docs,source:{originalSource:'() => `<div class="skeleton" role="img" aria-label="loading">\n        <div class="skeleton__text "></div>\n    </div>`',...t.parameters?.docs?.source}}};o.parameters={...o.parameters,docs:{...o.parameters?.docs,source:{originalSource:'() => `<div class="skeleton" role="img" aria-label="loading">\n        <div class="skeleton__text skeleton__text--large"></div>\n    </div>`',...o.parameters?.docs?.source}}};i.parameters={...i.parameters,docs:{...i.parameters?.docs,source:{originalSource:'() => `<div class="skeleton" role="img" aria-label="loading">\n        <div class="skeleton__text  skeleton__text--multiline"></div>\n    </div>`',...i.parameters?.docs?.source}}};r.parameters={...r.parameters,docs:{...r.parameters?.docs,source:{originalSource:'() => `<div class="skeleton" role="img" aria-label="loading">\n        <div class="skeleton__text skeleton__text--large skeleton__text--multiline"></div>\n    </div>`',...r.parameters?.docs?.source}}};n.parameters={...n.parameters,docs:{...n.parameters?.docs,source:{originalSource:'() => `<div class="skeleton" role="img" aria-label="loading">\n        <div class="skeleton__textbox"></div>\n    </div>`',...n.parameters?.docs?.source}}};d.parameters={...d.parameters,docs:{...d.parameters?.docs,source:{originalSource:'() => `<div class="skeleton" role="img" aria-label="loading">\n        <div class="skeleton__image" style="height: 75px; width: 75px;"></div>\n    </div>`',...d.parameters?.docs?.source}}};c.parameters={...c.parameters,docs:{...c.parameters?.docs,source:{originalSource:'() => `<div class="skeleton" role="img" aria-label="loading">\n        <div class="skeleton__image" style="height: 250px; width: 250px;"></div>\n    </div>`',...c.parameters?.docs?.source}}};const m=["avatar","button","buttonSmall","buttonLarge","textSmall","textLarge","textSmallMultiLine","textLargeMultiLine","textBox","smallImage","image"];export{m as __namedExportsOrder,e as avatar,a as button,l as buttonLarge,s as buttonSmall,v as default,c as image,d as smallImage,n as textBox,o as textLarge,r as textLargeMultiLine,t as textSmall,i as textSmallMultiLine};

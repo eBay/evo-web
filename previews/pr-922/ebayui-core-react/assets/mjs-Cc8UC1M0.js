@@ -1,0 +1,1 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";function t(e){e.keyCode>=32&&e.keyCode<=40&&e.preventDefault()}function n(e){e.addEventListener(`keydown`,t)}function r(e){e.removeEventListener(`keydown`,t)}function i(){return(i=e((()=>{})))()}export{i as n,r,n as t};

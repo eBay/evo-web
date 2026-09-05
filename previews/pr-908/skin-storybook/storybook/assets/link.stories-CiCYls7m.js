@@ -1,0 +1,17 @@
+const i={title:"Skin/Link"},a=()=>`
+<a href="https://www.ebay.com/urw/ZTE-AXON-7-Mini-32GB-Ion-Gold-Unlocked-Smartphone/product-reviews/230215749?_itm=222972816761">Link</a>
+`,e=()=>`
+<a class="action-link" href="https://www.ebay.com/?r=${Math.floor(Math.random()*Math.floor(1e3))}">See all 17 Reviews</a>
+`,t=()=>`
+<div dir="rtl">
+    <a class="action-link" href="https://www.ebay.com/?r=${Math.floor(Math.random()*Math.floor(1e3))}">See all 17 Reviews</a>
+<div>
+`,o=()=>'<button class="fake-link" type="button">Button</button>',r=()=>'<button class="fake-link" disbaled type="button">Button</button>',s=()=>`<a class="nav-link" href="https://www.ebay.com/?r=${Math.floor(Math.random()*Math.floor(1e3))}">Link 1</a></li>`,n=()=>`
+<a class="legal-link" href="https://www.ebay.com/urw/ZTE-AXON-7-Mini-32GB-Ion-Gold-Unlocked-Smartphone/product-reviews/230215749?_itm=222972816761">Link</a>
+`,c=()=>'<button class="fake-link legal-link" type="button">Button</button>',l=()=>`
+<a class="action-link demo-a11y-text-spacing" href="https://www.ebay.com/?r=${Math.floor(Math.random()*Math.floor(1e3))}">Text Spacing</a>
+`;a.parameters={...a.parameters,docs:{...a.parameters?.docs,source:{originalSource:'() => `\n<a href="https://www.ebay.com/urw/ZTE-AXON-7-Mini-32GB-Ion-Gold-Unlocked-Smartphone/product-reviews/230215749?_itm=222972816761">Link</a>\n`',...a.parameters?.docs?.source}}};e.parameters={...e.parameters,docs:{...e.parameters?.docs,source:{originalSource:'() => `\n<a class="action-link" href="https://www.ebay.com/?r=${Math.floor(Math.random() * Math.floor(1000))}">See all 17 Reviews</a>\n`',...e.parameters?.docs?.source}}};t.parameters={...t.parameters,docs:{...t.parameters?.docs,source:{originalSource:`() => \`
+<div dir="rtl">
+    <a class="action-link" href="https://www.ebay.com/?r=\${Math.floor(Math.random() * Math.floor(1000))}">See all 17 Reviews</a>
+<div>
+\``,...t.parameters?.docs?.source}}};o.parameters={...o.parameters,docs:{...o.parameters?.docs,source:{originalSource:'() => `<button class="fake-link" type="button">Button</button>`',...o.parameters?.docs?.source}}};r.parameters={...r.parameters,docs:{...r.parameters?.docs,source:{originalSource:'() => `<button class="fake-link" disbaled type="button">Button</button>`',...r.parameters?.docs?.source}}};s.parameters={...s.parameters,docs:{...s.parameters?.docs,source:{originalSource:'() => `<a class="nav-link" href="https://www.ebay.com/?r=${Math.floor(Math.random() * Math.floor(1000))}">Link 1</a></li>`',...s.parameters?.docs?.source}}};n.parameters={...n.parameters,docs:{...n.parameters?.docs,source:{originalSource:'() => `\n<a class="legal-link" href="https://www.ebay.com/urw/ZTE-AXON-7-Mini-32GB-Ion-Gold-Unlocked-Smartphone/product-reviews/230215749?_itm=222972816761">Link</a>\n`',...n.parameters?.docs?.source}}};c.parameters={...c.parameters,docs:{...c.parameters?.docs,source:{originalSource:'() => `<button class="fake-link legal-link" type="button">Button</button>`',...c.parameters?.docs?.source}}};l.parameters={...l.parameters,docs:{...l.parameters?.docs,source:{originalSource:'() => `\n<a class="action-link demo-a11y-text-spacing" href="https://www.ebay.com/?r=${Math.floor(Math.random() * Math.floor(1000))}">Text Spacing</a>\n`',...l.parameters?.docs?.source}}};const p=["base","action","RTL","fake","disabledFake","nav","legal","legalFake","textSpacing"];export{t as RTL,p as __namedExportsOrder,e as action,a as base,i as default,r as disabledFake,o as fake,n as legal,c as legalFake,s as nav,l as textSpacing};

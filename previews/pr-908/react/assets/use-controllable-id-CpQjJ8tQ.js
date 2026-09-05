@@ -1,0 +1,1 @@
+import{r as s}from"./iframe-BrHXHCNP.js";function c(n){let t=n;const r=new Set;return{get:()=>t,set:e=>{e!==t&&(t=e,r.forEach(o=>o()))},subscribe:e=>(r.add(e),()=>r.delete(e))}}function a(n){const t=s.useId(),e=s.useRef(c(t)).current;return[s.useSyncExternalStore(e.subscribe,e.get,e.get),e.set,e]}export{a as u};

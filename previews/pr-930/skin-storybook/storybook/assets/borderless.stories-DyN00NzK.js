@@ -1,0 +1,1 @@
+const t={title:"Skin/Button/Destructive/Borderless"},e=()=>'<button class="btn btn--borderless btn--destructive">Destructive Borderless Button</button>',s=["base"];export{s as __namedExportsOrder,e as base,t as default};

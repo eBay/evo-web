@@ -1,0 +1,1 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";function t(e){e.wrap(e.Legend.prototype,`colorizeItem`,function(t,n,r){let i=e.pick(n.borderWidth,1),a=-(i%2)/2,o=n.options?.borderColor;t.apply(this,[].slice.call(arguments,1)),n.legendSymbol&&r&&n.legendSymbol.attr({"stroke-width":i,translateX:a,translateY:a,stroke:o})})}function n(){return(n=e((()=>{})))()}export{n,t};

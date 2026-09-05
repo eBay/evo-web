@@ -1,0 +1,3 @@
+import{j as t,M as s}from"./blocks-BnDyhN92.js";import{useMDXComponents as r}from"./index-DMg0EQHO.js";import"./preload-helper-PPVm8Dsz.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./iframe-NEoM8ogJ.js";function o(n){const e={h1:"h1",p:"p",...r(),...n.components};return t.jsxs(t.Fragment,{children:[t.jsx(s,{title:"buttons/Overview"}),`
+`,t.jsx(e.h1,{id:"button-components",children:"Button Components"}),`
+`,t.jsx(e.p,{children:"All components that are triggered by a button are contained within this category."})]})}function u(n={}){const{wrapper:e}={...r(),...n.components};return e?t.jsx(e,{...n,children:t.jsx(o,{...n})}):o(n)}export{u as default};

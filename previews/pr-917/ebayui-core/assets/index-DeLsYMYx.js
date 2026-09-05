@@ -1,0 +1,1 @@
+import{v as m,b as n,_ as c,d as l,p,e as f,c as g}from"./defineComponent-B-Bg3Ud2.js";const s="EOKlmNU",o=m.t(s);n.r(s,()=>o);const e={};o._=c(function(a,t,k,r,d,i){const{flag:_}=a;t.e("span",l(p(a,["flag","class"]),{class:f(["fflag",`fflag--${_?.toLowerCase()}`,a.class])}),"0",r,0,4)},{t:s,i:!0},e);o.Component=g(e,o._);export{o as _};

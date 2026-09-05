@@ -1,0 +1,3 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{i as t,r as n}from"./react-CkXiLnOg.js";import{a as r}from"./chunk-W22LQPXL-xjpAY3hq.js";import{o as i,s as a}from"./blocks-BnIb2ITy.js";function o(e){let n={h1:`h1`,p:`p`,...t(),...e.components};return(0,c.jsxs)(c.Fragment,{children:[(0,c.jsx)(i,{title:`graphics & icons/Overview`}),`
+`,(0,c.jsx)(n.h1,{id:`graphical-components`,children:`Graphical Components`}),`
+`,(0,c.jsx)(n.p,{children:`These components are used to communicate with the user in a visual manner.`})]})}function s(e={}){let{wrapper:n}={...t(),...e.components};return n?(0,c.jsx)(n,{...e,children:(0,c.jsx)(o,{...e})}):o(e)}var c;function l(){return(l=e((()=>{c=r(),n(),a()})))()}l();export{s as default};

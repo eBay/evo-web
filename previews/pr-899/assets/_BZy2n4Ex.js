@@ -1,0 +1,2 @@
+import{$ as n,a as e,b as s,c as o,d as i,e as c}from"./_0_3iSu54.js";import{r as d,s as p,t as a}from"./_zF_vds5p.js";const r=n,$=(t=>`/${t}&`)(c),_=a("Xd0","Patterns"),l=a("Xd1","List of design patterns that don't have a dedicated component.");function m(t){e(t.a),s(t.a,p({content:_(t)})),o(t.a,l(t)),i(t.a,"patterns")}const g=d("Xd",r,$,m);export{m as $setup,r as $template,$ as $walks,g as default};
+//# sourceMappingURL=_BZy2n4Ex.js.map

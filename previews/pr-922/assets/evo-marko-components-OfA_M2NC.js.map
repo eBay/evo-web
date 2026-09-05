@@ -1,0 +1,1 @@
+{"version":3,"file":"evo-marko-components-OfA_M2NC.js","names":[],"sources":["../../.marko-run/evo-marko-components.client-entry.marko"],"sourcesContent":["<!-- use tags -->\n\nimport Layout1 from \"../../src/routes/_index/+layout.marko\";\nimport Page from \"../../src/routes/_index/evo-marko-components+page.marko\";\n\n<Layout1>\n\t<Page/>\n</>\n"],"mappings":"iFAGA,EAAK"}

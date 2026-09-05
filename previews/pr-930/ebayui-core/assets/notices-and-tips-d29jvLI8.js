@@ -1,0 +1,3 @@
+import{u as i,j as t,M as s}from"./blocks-Ch5dAUh-.js";import"./preload-helper-PPVm8Dsz.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./iframe-CREcNwxl.js";function o(n){const e={h1:"h1",p:"p",...i(),...n.components};return t.jsxs(t.Fragment,{children:[t.jsx(s,{title:"notices & tips/Overview"}),`
+`,t.jsx(e.h1,{id:"notice-and-tip-components",children:"Notice and Tip Components"}),`
+`,t.jsx(e.p,{children:"These components are used to draw attention to certain pieces of information, or provide the user with clarification."})]})}function m(n={}){const{wrapper:e}={...i(),...n.components};return e?t.jsx(e,{...n,children:t.jsx(o,{...n})}):o(n)}export{m as default};

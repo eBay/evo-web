@@ -1,0 +1,21 @@
+import{r as n,e as t,u as a}from"./_BVUlZabi.js";const o=`<div class=a11y-pattern-content><h1>Region</h1><p>Upon visiting a website for the first time, a sighted user will typically scan the page with their eyes to create a <em>visual</em> model of the page layout. Assuming the page is visually well designed, the sighted user can quickly glean a high level view of what page regions are available.</p><p>Using screen reader assistive technology, a non-sighted user can achieve a similar a <em>mental</em> model; again though, this is assuming the page has been <em>semantically</em> well structured using regions*.</p><p>Similar to <a>headings</a> , regions can be used as navigational aids. Screen readers like JAWS and NVDA not only provide a full list of regions, but also provide keyboard shortcuts to move between them. For example, in JAWS you can press the R key to go to the next region or SHIFT + R to go to the previous one.</p><p><em>*regions are synonymous with HTML5 sections and the terms are used interchangeably.</em></p><h3>Best Practices</h3><p>There are two types of region:</p><p><strong>Landmark regions</strong> identify the main regions of a page that are common across websites. Site banner/logo, the search box, site navigation, main content area, sidebar, etc. HTML5 and ARIA provide us with a limited list of landmark tags and roles respectively.</p><p><strong>Custom landmark regions</strong> identify the main areas of a page that are common to a specific website. Search filters, user profile, notifications, help, etc. HTML5 and ARIA provide us with the section tag and region role respectively, as the building blocks to create any number of custom regions.</p><p>Do not overuses regions! The list of regions should be quickly readable &amp; scannable in order to create a high-level mental model of the main page sections. A general rule of thumb is no more than ten.</p><p>Every region should have a corresponding, on screen level-2 <a>heading</a> .</p><h3>Example</h3><p>The following example shows how we can markup the main regions of a page:</p><pre><code class=language-html>&lt;body&gt;
+  &lt;header&gt;
+    &lt;img src=&quot;“sitelogo.jpg”&quot; /&gt;
+    &lt;nav&gt;…&lt;/nav&gt;
+    &lt;div role=&quot;search&quot;&gt;…&lt;/div&gt;
+  &lt;/header&gt;
+  &lt;main&gt;
+    &lt;section role=&quot;“region”&quot; aria-labelledby=&quot;userprofile_heading&quot;&gt;
+      &lt;h2 id=&quot;userprofile_heading&quot;&gt;User Profile&lt;/h2&gt;
+      …
+    &lt;/section&gt;
+    …
+  &lt;/main&gt;
+  &lt;aside&gt;
+    &lt;h2&gt;Advertisement&lt;/h2&gt;
+    …
+  &lt;/aside&gt;
+  &lt;footer&gt;…&lt;/footer&gt;
+&lt;/body&gt;
+</code></pre><p>In this example, we have added a custom user profile region inside of our main content. Custom regions <strong>must</strong> be labelled. The screen reader will identify the region in our example as ‘User Profile region’ (or words to those affect).</p><h3>Interaction Design</h3><p>This section provides interaction design for keyboard, screen reader and pointing devices.</p><h4>Keyboard</h4><p>Regions are not interactive elements and therefore have no keyboard interaction.</p><h4>Screen Reader</h4><p>Screen readers will identify regions by their label, and all regions (landmarks &amp; custom) are available with screen reader shortcut keys. Note that VoiceOver identifies both types of regions as ‘landmarks’.</p><h4>Pointer</h4><p>Regions are not interactive elements and therefore have no pointer interaction.</p><h3>ARIA Reference</h3><table><thead><tr><th>Attribute</th><th>Description</th></tr></thead><tbody><tr><td><strong>role=region</strong></td><td>Informs assistive technology that this element starts a region landmark</td></tr><tr><td><strong>aria-labelledby</strong></td><td>Regions must be labelled in order to appear in the screen reader’s list of custom landmarks.</td></tr></tbody></table></div>`,i="DdDb lgDb m";function r(e){t(e.a,"href",`${a.accessibility}/patterns/heading`),t(e.b,"href",`${a.accessibility}/patterns/heading`)}const l=n("ke",o,i,r);export{r as $setup,o as $template,i as $walks,l as default};
+//# sourceMappingURL=_XA5NGuhQ.js.map

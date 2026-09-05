@@ -1,0 +1,10 @@
+import{r as t}from"./_zF_vds5p.js";const e=`<div class=a11y-pattern-content><h1>Alternative Text</h1><p>The alt attribute (more often just referred to as “alt text”) is an alternative means to convey information that is otherwise only provided visually in images.</p><p>Proper use of alt text is relevant in the following situations:</p><ul><li>Embedded image text</li><li>Image links</li><li>Adjacent alt text</li></ul><p>In all cases the alt attribute <strong>must</strong><strong>always</strong> be present, but it <em>can</em> and should have an empty value in certain situations (read on for more details). Removing the alt attribute altogether would result in the screen reader announcing the entire image url, which is not desirable for our users.</p><h2>Embedded image text</h2><p>If the image contains text (usually ads and promo banners), we must convey this text in the alt attribute.</p><pre><code class=language-html>&lt;img src=&quot;”fashion_promo.jpg”&quot; alt=&quot;”Explore&quot; eBay Fashion” /&gt;
+</code></pre><h2>Image links</h2><p>If an image is a link, its alt text is incorporated as the link text.</p><pre><code class=language-html>&lt;a href=”http://www.ebay.com/itm/12345”&gt;
+    &lt;img src=”lumia_950.jpg” alt=”Microsoft Lumia 950” /&gt;
+&lt;/a&gt;
+</code></pre><h2>Adjacent alt text</h2><p>If the alt text would repeat nearby or adjacent text, we can leave its value empty so that the screen reader will ignore the image.</p><pre><code class=language-html>&lt;a href=”http://www.ebay.com/itm/12345”&gt;
+    &lt;img src=”lumia_950.jpg” alt=”” role=”presentation” /&gt;
+    &lt;p&gt;Microsoft Lumia 950&lt;/p&gt;
+&lt;/a&gt;
+</code></pre><p>Remember, removing the alt attribute is <strong>not</strong> the same as an alt attribute with an empty value. Removing the alt attribute would result in the screen reader announcing the entire image url, which is not desirable.</p></div>`,a="b",n=()=>{},l=t("qe",e,a,n);export{n as $setup,e as $template,a as $walks,l as default};
+//# sourceMappingURL=_BfzKVdxh.js.map

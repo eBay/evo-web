@@ -1,0 +1,2 @@
+import{r as s}from"./_DRgDtfix.js";const t="<div class=a11y-pattern-content><h1>Known Issues</h1><ul><li><a href=https://issues.chromium.org/issues/40260928>https://issues.chromium.org/issues/40260928</a></li><li><a href=https://issues.chromium.org/issues/40945405>https://issues.chromium.org/issues/40945405</a></li></ul></div>",e="b",i=()=>{},u=s("lqrsgTG",t,e,i);export{i as $setup,t as $template,e as $walks,u as default};
+//# sourceMappingURL=_DrZMS3eW.js.map

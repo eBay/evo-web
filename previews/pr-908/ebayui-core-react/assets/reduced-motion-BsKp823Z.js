@@ -1,0 +1,1 @@
+var t=Object.defineProperty;var e=(o,r)=>t(o,"name",{value:r,configurable:!0});import{r as n}from"./iframe-CVwxB9bq.js";function d(){return n.useSyncExternalStore(()=>()=>{},()=>u(),()=>!1)}e(d,"useReducedMotion");function u(){return!!window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches}e(u,"isReducedMotion");export{d as u};

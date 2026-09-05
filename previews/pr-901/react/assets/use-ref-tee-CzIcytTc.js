@@ -1,0 +1,1 @@
+import{r as o}from"./iframe-D9crypn6.js";function n(t,f){const r=o.useRef(f),a=Array.isArray(t)?t:[t];return[o.useCallback(s=>{r.current=s,a.forEach(e=>{typeof e=="function"?e(s):e&&(e.current=s)})},a),r]}export{n as u};

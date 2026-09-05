@@ -1,0 +1,53 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{t}from"./utils-CkiB0p9L.js";import{$ as n,C as r,J as i,L as a,T as o,X as ee,Y as s,at as c,c as te,et as l,i as u,it as d,k as f,n as p,s as ne,t as m}from"./dom-CrmgVQ1h.js";import{a as re,i as ie,n as ae,r as oe,t as se}from"./evo-icon-CFoPYBpm.js";function ce(e,t){if(t)return t;let n=0,r,i;if(e&&e.length>0)for(i=0;i<e.length;i++)r=e.charCodeAt(i),n=(n<<5)-n+r,n|=0;let a=h.length,o=Math.abs(n)%a;return h[o]}var h;function g(){return(g=e((()=>{h=[`teal`,`light-teal`,`green`,`lime`,`yellow`,`orange`,`magenta`,`pink`]})))()}function le(e){ae(e.a)}var _,v,y;function b(){return(b=e((()=>{re(),_=oe,v=(e=>`/${e}&`)(ie),y=(e,t)=>se(e.a,{...t,_name:`avatar-signed-out`,_type:`icon`,_symbol:`<symbol viewbox="0 0 40 40" id=icon-avatar-signed-out><circle cx=20 cy=20 r=20 fill="var(--color-background-secondary, #F7F7F7)"></circle><circle cx=20 cy=17.5 r=8.333 fill="var(--color-foreground-secondary, #707070)"></circle><path d="M7.67 35.748c2-4.84 6.767-8.248 12.33-8.248s10.33 3.407 12.33 8.249A19.914 19.914 0 0 1 20 40a19.914 19.914 0 0 1-12.33-4.252Z" fill="var(--color-foreground-secondary, #707070)"></path></symbol>`})})))()}function x(){return(x=e((()=>{})))()}function S(){return(S=e((()=>{x()})))()}var C,ue,de,w,T,E,D,O,k,A,j,M,N,P,F,I,L,R,z,B,V,H,U,W,G,fe,K,q,pe,me,J;function Y(){return(Y=e((()=>{g(),u(),b(),S(),C=`<div role=img></div>`,ue=()=>{},de=e=>{le(e.a),y(e.a,{})},w=a(0),T=s(0,1,e=>w(e,e._.j)),E=T,D=s(0,2,e=>c(e.a,e._.i.charAt(0).toUpperCase())),O=D,k=d(`d0`,e=>o(e,`a`)),A=s(0,0,e=>{r(e,`a`,e._.g,{alt:1,"on-load":1}),k(e)}),j=d(`d1`,e=>n(e.a,`load`,function(t,n){L(e._,n.naturalWidth/n.naturalHeight),e._.h&&e._.h(t,n)})),M=e=>{A._(e),j(e)},N=(e,t)=>ne(e.a,`aria-label`,t),P=(e,t)=>N(e,t===void 0?`avatar`:t),F=l(17,e=>te(e.a,[`avatar`,e.q===`fit`&&`avatar--fit`,e.d,e.e&&`avatar--${e.e}`,e.i&&!e.g&&`avatar--${ce(e.i,e.f)}`]),5),I=f(16,F),L=ee(15,e=>I(e,e.p&&(e.p<3/4||e.p>4/3)?`fit`:`cover`)),R=L,z=f(3,F),B=f(4,F),V=f(5,F),H=i(0,`<img alt>`,` `,M,`<!><!><!>`,`b%`,E,` `,` `,O,_,(e=>`/${e}&`)(v),de),U=l(10,e=>H(e,e.g?0:e.j?1:e.i?2:3),2),W=f(6,e=>{me(e,e.g?.onLoad),F(e),U(e),A(e)}),G=f(8,e=>{F(e),U(e),D(e)}),fe=d(`d2`,e=>o(e,`a`)),K=f(13,e=>{r(e,`a`,e.n,{"aria-label":1,role:1,class:1}),fe(e)}),q=f(9,e=>{U(e),T(e)}),pe=(e,t)=>{(({a11yText:t,class:n,color:r,content:i,image:a,knownAspectRatio:o,size:ee,username:s,...c})=>K(e,c))(t),z(e,t.class),B(e,t.size),V(e,t.color),W(e,t.image),G(e,t.username),q(e,t.content),R(e,t.knownAspectRatio),P(e,t.a11yText)},me=f(7),J=m(`d`,C,` b`,ue,pe)})))()}var he;function ge(){return(ge=e((()=>{he=`<h1 style="display: flex; justify-content: space-between; align-items: center;">
+    <span>
+        evo-avatar
+    </span>
+    <span style="font-weight: normal; font-size: medium; margin-bottom: -15px;">
+        DS v1.2.0
+    </span>
+</h1>
+
+Avatar is a users badge which shows their current state, either signed out or signed in. It can take different colors or a profile pic.
+
+## Examples and Documentation
+
+- [Storybook](https://ebay.github.io/evo-web/ebayui-core/?path=/story/graphics-icons-evo-avatar)
+- [Storybook Docs](https://ebay.github.io/evo-web/ebayui-core/?path=/docs/graphics-icons-evo-avatar)
+- [Code Examples](https://github.com/eBay/evo-web/tree/main/packages/ebayui-core/src/components/evo-avatar/examples)
+`})))()}function _e(e){e.a,P(e.a,`Signed in as Elizabeth`),V(e.a,`teal`),G(e.a,`Elizabeth`)}var ve,ye,be,xe;function Se(){return(Se=e((()=>{Y(),u(),ve=C,ye=(e=>`/${e}&`)(` b`),be=f(2,e=>{z(e.a,e.c.class),q(e.a,e.c.content),W(e.a,e.c.image),R(e.a,e.c.knownAspectRatio),B(e.a,e.c.size),K(e.a,(({a11yText:e,class:t,color:n,content:r,image:i,knownAspectRatio:a,size:o,username:ee,...s})=>s)(e.c))}),xe=m(`GNkF45z`,ve,ye,_e,be)})))()}var Ce;function we(){return(we=e((()=>{Ce=`<evo-avatar
+  ...input
+  a11yText="Signed in as Elizabeth"
+  color="teal"
+  username="Elizabeth"/>
+`})))()}function Te(e){e.a,W(e.a,p({src:`https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile.png`}))}var Ee,De,Oe,ke;function Ae(){return(Ae=e((()=>{Y(),u(),Ee=C,De=(e=>`/${e}&`)(` b`),Oe=f(2,e=>{let t={a11yText:`Signed in as Doggy`,...e.c};P(e.a,t.a11yText),z(e.a,t.class),V(e.a,t.color),q(e.a,t.content),R(e.a,t.knownAspectRatio),B(e.a,t.size),G(e.a,t.username),K(e.a,(({a11yText:e,class:t,color:n,content:r,image:i,knownAspectRatio:a,size:o,username:ee,...s})=>s)(t))}),ke=m(`gnuZvT6`,Ee,De,Te,Oe)})))()}var je;function Me(){return(Me=e((()=>{je=`<evo-avatar a11yText="Signed in as Doggy" ...input>
+  <@image src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile.png"/>
+</evo-avatar>
+`})))()}function Ne(e){e.a,W(e.a,p({src:`https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile2.png`})),e.b,W(e.b,p({src:`https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile3.png`})),e.c,W(e.c,p({src:`https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile4.png`}))}var Pe,Fe,Ie,Le;function Re(){return(Re=e((()=>{Y(),u(),Pe=((e,t,n)=>`<div>${e}</div><div>${t}</div><div>${n}</div>`)(C,C,C),Fe=((e,t,n)=>`D/${e}&lD/${t}&lD/${n}&l`)(` b`,` b`,` b`),Ie=f(4,e=>{let t={a11yText:`Signed in as Doggy`,...e.e};P(e.a,t.a11yText),z(e.a,t.class),V(e.a,t.color),q(e.a,t.content),R(e.a,t.knownAspectRatio),B(e.a,t.size),G(e.a,t.username),K(e.a,(({a11yText:e,class:t,color:n,content:r,image:i,knownAspectRatio:a,size:o,username:ee,...s})=>s)(t));let n={a11yText:`Signed in as Doggy`,...e.e};P(e.b,n.a11yText),z(e.b,n.class),V(e.b,n.color),q(e.b,n.content),R(e.b,n.knownAspectRatio),B(e.b,n.size),G(e.b,n.username),K(e.b,(({a11yText:e,class:t,color:n,content:r,image:i,knownAspectRatio:a,size:o,username:ee,...s})=>s)(n));let r={a11yText:`Signed in as Doggy`,...e.e};P(e.c,r.a11yText),z(e.c,r.class),V(e.c,r.color),q(e.c,r.content),R(e.c,r.knownAspectRatio),B(e.c,r.size),G(e.c,r.username),K(e.c,(({a11yText:e,class:t,color:n,content:r,image:i,knownAspectRatio:a,size:o,username:ee,...s})=>s)(r))}),Le=m(`Aqu94TA`,Pe,Fe,Ne,Ie)})))()}var ze;function Be(){return(Be=e((()=>{ze=`<div>
+  <evo-avatar a11yText="Signed in as Doggy" ...input>
+    <@image src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile2.png"/>
+  </evo-avatar>
+</div>
+<div>
+  <evo-avatar a11yText="Signed in as Doggy" ...input>
+    <@image src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile3.png"/>
+  </evo-avatar>
+</div>
+<div>
+  <evo-avatar a11yText="Signed in as Doggy" ...input>
+    <@image src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile4.png"/>
+  </evo-avatar>
+</div>
+`})))()}function Ve(e){e.a}var He,Ue,We,Ge;function Ke(){return(Ke=e((()=>{Y(),u(),He=C,Ue=(e=>`/${e}&`)(` b`),We=f(2,e=>{let t={a11yText:`Signed out`,...e.c};P(e.a,t.a11yText),z(e.a,t.class),V(e.a,t.color),q(e.a,t.content),W(e.a,t.image),R(e.a,t.knownAspectRatio),B(e.a,t.size),G(e.a,t.username),K(e.a,(({a11yText:e,class:t,color:n,content:r,image:i,knownAspectRatio:a,size:o,username:ee,...s})=>s)(t))}),Ge=m(`GdmTmI_`,He,Ue,Ve,We)})))()}var qe;function Je(){return(Je=e((()=>{qe=`<evo-avatar a11yText="Signed out" ...input/>
+`})))()}var Ye,X,Z,Q,$,Xe;function Ze(){return(Ze=e((()=>{Y(),ge(),Se(),we(),Ae(),Me(),Re(),Be(),Ke(),Je(),Ye={title:`graphics & icons/evo-avatar`,component:J,parameters:{docs:{description:{component:he}}},argTypes:{content:{},color:{type:`string`,options:[`teal`,`light-teal`,`green`,`lime`,`yellow`,`orange`,`magenta`,`pink`],control:`select`,description:`The color to color the background. This can be only used in the non icon/image case. This is used simply as an override to the username hash`},size:{type:`string`,options:[`32`,`40`,`48`,`56`,`64`,`96`,`128`],control:`select`,description:`The pixel size of the avatar. Can only be specific sizes`,table:{defaultValue:{summary:`48`}}},username:{type:`string`,control:`text`,description:`The username to display. If there is no body, then this will determine what the content is. If there is no username passed, then user is signed out. Based on the username, the icon will change colors and show the first letter if there is no user profile pic.`},a11yText:{type:{name:`string`,required:!0},control:`text`,description:'The label to describe the users state as well as their user name. Usually in the format of "Signed in as Bob" or "Signed out". May be set to `null` only if accessibility is provided through other means.'},knownAspectRatio:{type:`number`,control:`number`,description:`Optional, as aspect ratio will be calculated when the image loads on the client. This can be passed to help prevent a flash of incorrectly styled content before the image loads`},image:{description:"An optional image. Should be passed alongside `knownAspectRatio`, but if not aspect ratio will be automatically adjusted after the image loads.","@":{"<img> attributes":{description:"All attributes and event handlers from [the native `<img>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img) will be passed through to `<@image>`, except `alt`"}}},"<div> attributes":{description:"All attributes and event handlers from [the native HTML `<div>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/div) will be passed through, except `role`"}}},X=t(xe,Ce,{a11yText:`Signed in - as Elizabeth`,username:`Elizabeth`,color:`teal`}),Z=t(ke,je,{a11yText:`Signed in - as Doggy`,username:`Doggy`}),Q=t(Le,ze,{a11yText:`Signed in - as Doggy`,username:`Doggy`}),$=t(Ge,qe,{a11yText:`Signed out`}),Xe=[`Default`,`WithImage`,`WithAutoPlacement`,`SignedOut`],X.parameters={...X.parameters,docs:{...X.parameters?.docs,source:{originalSource:`buildExtensionTemplate(DefaultTemplate, DefaultTemplateCode, {
+  a11yText: "Signed in - as Elizabeth",
+  username: "Elizabeth",
+  color: "teal"
+})`,...X.parameters?.docs?.source}}},Z.parameters={...Z.parameters,docs:{...Z.parameters?.docs,source:{originalSource:`buildExtensionTemplate(imageTemplate, imageTemplateCode, {
+  a11yText: "Signed in - as Doggy",
+  username: "Doggy"
+})`,...Z.parameters?.docs?.source}}},Q.parameters={...Q.parameters,docs:{...Q.parameters?.docs,source:{originalSource:`buildExtensionTemplate(autoImageTemplate, autoImageTemplateCode, {
+  a11yText: "Signed in - as Doggy",
+  username: "Doggy"
+})`,...Q.parameters?.docs?.source}}},$.parameters={...$.parameters,docs:{...$.parameters?.docs,source:{originalSource:`buildExtensionTemplate(signedOutTemplate, signedOutTemplateCode, {
+  a11yText: "Signed out"
+})`,...$.parameters?.docs?.source}}}})))()}Ze();export{X as Default,$ as SignedOut,Q as WithAutoPlacement,Z as WithImage,Xe as __namedExportsOrder,Ye as default};

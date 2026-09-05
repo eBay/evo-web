@@ -1,0 +1,23 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{t}from"./utils-CkiB0p9L.js";import{M as n,i as r,t as i}from"./dom-CrmgVQ1h.js";import{a,i as o,n as s,o as c,r as l,t as u}from"./evo-button-OmHu2dco.js";var d;function f(){return(f=e((()=>{d=`<h1 style="display: flex; justify-content: space-between; align-items: center;">
+    <span>
+        evo-button
+    </span>
+    <span style="font-weight: normal; font-size: medium; margin-bottom: -15px;">
+        DS v1.1.0
+    </span>
+</h1>
+
+Button styled with core classes.
+
+## Examples and Documentation
+
+- [Storybook](https://ebay.github.io/evo-web/ebayui-core/?path=/story/buttons-evo-button)
+- [Storybook Docs](https://ebay.github.io/evo-web/ebayui-core/?path=/docs/buttons-evo-button)
+- [Code Examples](https://github.com/eBay/evo-web/tree/main/packages/ebayui-core/src/components/evo-button/examples)
+`})))()}function p(e){s(e.a)}var m,h,g,_,v;function y(){return(y=e((()=>{c(),r(),m=(e=>`<!>${e}<!>`)(l),h=(e=>`b/${e}&b`)(o),g=n(`XpOqgXg`,`Button`),_=(e,t)=>u(e.a,{...t,content:g(e)}),v=i(`ayoFQBk`,m,h,p,_)})))()}var b;function x(){return(x=e((()=>{b=`<evo-button ...input>
+  Button
+</evo-button>
+`})))()}function S(e){s(e.a)}var C,w,T,E,D;function O(){return(O=e((()=>{c(),r(),C=(e=>`<!>${e}<!>`)(l),w=(e=>`b/${e}&b`)(o),T=n(`E4E_75O`,`Button`),E=(e,t)=>u(e.a,{bodyState:`expand`,variant:`form`,...t,content:T(e)}),D=i(`n3tUgdf`,C,w,S,E)})))()}var k;function A(){return(A=e((()=>{k=`<evo-button bodyState="expand" variant="form" ...input>
+  Button
+</evo-button>
+`})))()}var j,M,N,P;function F(){return(F=e((()=>{c(),f(),y(),x(),O(),A(),j={title:`buttons/evo-button`,component:a,parameters:{docs:{description:{component:d}}},argTypes:{href:{description:`URL for link behavior (switches to anchor tag)`},size:{type:`string`,options:[`regular (default)`,`large`,`small`],control:`inline-radio`,description:`The size of the button`},priority:{type:`string`,options:[`primary`,`secondary`,`tertiary`,`none`],control:`inline-radio`,description:`Button priority`,table:{defaultValue:{summary:`secondary`}}},fluid:{type:`boolean`,description:"If `true`, button will fill 100% of the container width.",control:`boolean`,table:{defaultValue:{summary:`false`}}},borderless:{type:`boolean`,description:"If `true`, border is removed.",control:`boolean`,table:{defaultValue:{summary:`false`}}},bodyState:{type:`string`,description:`when state is loading, adds progress spinner. when user interacts with button, reset should be called to reset aria-live state. default is none`,options:[`none`,`loading`,`reset`,`expand`],control:`inline-radio`,table:{defaultValue:{summary:`none`}}},a11yLoadingText:{type:`string`,description:"Localized aria label for button when `bodyState` is `loading`",control:`text`},disabled:{type:`boolean`,description:`Disabled state`,table:{defaultValue:{summary:`false`}}},variant:{type:`string`,options:[`standard (default)`,`destructive`,`form`],control:`inline-radio`,description:"Additional style transformations beyond `priority`."},partiallyDisabled:{type:`boolean`,description:`programmatically disabled, but remains keyboard focusable`,control:`boolean`,table:{defaultValue:{summary:`false`}}},transparent:{type:`boolean`,description:"transparent background color (overrides `priority`).",control:`boolean`,table:{defaultValue:{summary:`false`}}},fixedHeight:{type:`boolean`,description:"fixes the height based on `size`",control:`boolean`,table:{defaultValue:{summary:`false`}}},truncate:{type:`boolean`,description:"used in conjunction with `fixedHeight`; truncates text to single line with ellipsis when text overflows",control:`boolean`,table:{defaultValue:{summary:`false`}}},split:{type:`string`,options:[`none (default)`,`start`,`end`],control:`inline-radio`,description:`Apply split button styles.`},"<button> attributes":{description:"All attributes and event handlers from [the native HTML `<button>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button) will be passed through"}}},M=t(v,b),N=t(D,k),P=[`Default`,`ExpandButton`],M.parameters={...M.parameters,docs:{...M.parameters?.docs,source:{originalSource:`buildExtensionTemplate(ButtonTemplate, ButtonTemplateCode)`,...M.parameters?.docs?.source}}},N.parameters={...N.parameters,docs:{...N.parameters?.docs,source:{originalSource:`buildExtensionTemplate(ExpandButtonTemplate, ExpandButtonTemplateCode)`,...N.parameters?.docs?.source}}}})))()}F();export{M as Default,N as ExpandButton,P as __namedExportsOrder,j as default};

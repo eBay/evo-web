@@ -1,0 +1,1 @@
+function a(){let r,e="";return{getIndex:function(t,l,u){if(e=e.concat(l),t==null)return-1;const i=e.toLocaleLowerCase();let n=[...t].findIndex(o=>o.textContent.toLocaleLowerCase().startsWith(i));return n===-1&&(n=[...t].findIndex(o=>o.textContent.toLocaleLowerCase().includes(i))),r=setTimeout(()=>{e=""},u),n},destroy:function(){clearTimeout(r)}}}export{a as i};

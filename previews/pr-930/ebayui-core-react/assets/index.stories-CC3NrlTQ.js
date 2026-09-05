@@ -1,0 +1,72 @@
+var j=Object.defineProperty;var n=(t,a)=>j(t,"name",{value:a,configurable:!0});import{R as e,c as w,r as x}from"./iframe-DXKVC7Wu.js";import{c as K}from"./index-Bs7juWnU.js";import{a as U,r as Y}from"./index-Ci6J5-yz.js";import{a as R}from"./utils-4VXCHhuo.js";import{E as $}from"./ebay-icon-tick-16-BRYYV87n.js";import"./preload-helper-Cc2_yIPf.js";import"./index-DkyuG-bT.js";import"./index-BzamGs-v.js";function G(t){if(!t)return;const a=t.parentElement,s=t.offsetTop+t.offsetHeight,u=a.scrollTop+a.offsetHeight;t.offsetTop<a.scrollTop?a.scrollTop=t.offsetTop:s>u&&(a.scrollTop=s-a.offsetHeight)}n(G,"scroll");function J(){let t,a="";return{getIndex:n(function(s,u,O){a=a.concat(u);let l;if(s==null)return-1;const b=a.toLocaleLowerCase();return l=[...s].findIndex(d=>d.textContent.toLocaleLowerCase().startsWith(b)),l===-1&&(l=[...s].findIndex(d=>d.textContent.toLocaleLowerCase().includes(b))),setTimeout(()=>{clearTimeout(t),a=""},O),l},"getIndex"),destroy:n(function(){},"destroy")}}n(J,"index_default");const L=n(({children:t,className:a,...s})=>e.createElement("div",{className:w("listbox__description",a),...s},t),"EbayListboxOptionDescription");try{L.displayName="EbayListboxOptionDescription",L.__docgenInfo={description:"",displayName:"EbayListboxOptionDescription",filePath:"/home/runner/work/evo-web/evo-web/packages/ebayui-core-react/src/ebay-listbox/listbox-option-description.tsx",methods:[],props:{},tags:{}}}catch{}const r=n(({className:t,icon:a,text:s,children:u,disabled:O,tabIndex:l,selected:b,a11ySelectedText:d="selected",...k})=>{const y=R(u,L),h=s||(y?.length?"":u);return e.createElement("div",{...k,tabIndex:O?-1:l,className:w("listbox__option",t),"aria-disabled":O,"aria-selected":b,role:"option"},a?e.createElement("span",{className:"listbox__value"},a,h?e.createElement("span",null,h):null,y?.length?y:null,b&&e.createElement("span",{className:"clipped"},d)):e.createElement(e.Fragment,null,e.createElement("span",{className:"listbox__value"},h,b&&e.createElement("span",{className:"clipped"},d)),y?.length?y:null),e.createElement($,null))},"EbayListboxOption");try{r.displayName="EbayListboxOption",r.__docgenInfo={description:"",displayName:"EbayListboxOption",filePath:"/home/runner/work/evo-web/evo-web/packages/ebayui-core-react/src/ebay-listbox/listbox-option.tsx",methods:[],props:{icon:{defaultValue:null,declarations:[{fileName:"ebayui-core-react/src/ebay-listbox/listbox-option.tsx",name:"TypeLiteral"}],description:"",name:"icon",required:!1,tags:{},type:{name:"ReactElement<unknown, string | JSXElementConstructor<any>>"}},text:{defaultValue:null,declarations:[{fileName:"ebayui-core-react/src/ebay-listbox/listbox-option.tsx",name:"TypeLiteral"}],description:"",name:"text",required:!1,tags:{},type:{name:"string"}},value:{defaultValue:null,declarations:[{fileName:"ebayui-core-react/src/ebay-listbox/listbox-option.tsx",name:"TypeLiteral"}],description:"",name:"value",required:!0,tags:{},type:{name:"string"}},disabled:{defaultValue:null,declarations:[{fileName:"ebayui-core-react/src/ebay-listbox/listbox-option.tsx",name:"TypeLiteral"}],description:"",name:"disabled",required:!1,tags:{},type:{name:"boolean"}},selected:{defaultValue:null,declarations:[{fileName:"ebayui-core-react/src/ebay-listbox/listbox-option.tsx",name:"TypeLiteral"}],description:"",name:"selected",required:!1,tags:{},type:{name:"boolean"}},a11ySelectedText:{defaultValue:{value:"selected"},declarations:[{fileName:"ebayui-core-react/src/ebay-listbox/listbox-option.tsx",name:"TypeLiteral"}],description:"",name:"a11ySelectedText",required:!1,tags:{},type:{name:"string"}}},tags:{}}}catch{}const X=1300,g=n(({name:t,className:a,disabled:s,children:u,tabIndex:O=0,listSelection:l,maxHeight:b,typeaheadTimeoutLength:d,selectClassName:k,a11ySelectedText:y,onChange:h=n(()=>{},"onChange"),onEscape:H=n(()=>{},"onEscape"),...W})=>{const m=R(u,r),S=m.findIndex(i=>i.props.selected),[f,I]=x.useState(m.findIndex(i=>i.props.selected));x.useEffect(()=>{S!==f&&I(S)},[S]);const c=x.useRef(null),E=x.useRef(null),v=x.useRef(null),C=x.useRef(!1);function B(i,o,p){o===f||m[o].props.disabled||(I(o),h(i,{index:o,selected:[m[o].props.value],wasClicked:p}))}n(B,"handleChange");function M(i){switch(i.code){case"Esc":case"Escape":H();break;case"Space":case"Enter":B(i,E.current.index,!1);break}const o=v.current.getIndex(c.current.children,i.key,d||X);if(o!==-1){E.current.index=o;const p=c.current.querySelectorAll("[role=option]")[o];c.current.scrollTop=p.offsetTop-c.current.offsetHeight/2}}n(M,"handleKeyDown");function F(){C.current=!0}return n(F,"handleMouseDown"),x.useEffect(()=>{const i=n(o=>{const p=parseInt(o.detail.toIndex,10),V=c.current?c.current.querySelectorAll("[role=option]")[f]:null,P=C.current;G(V),C.current&&(C.current=!1),B(o,p,P)},"handleListboxChange");if(m.length&&!s){const o=c.current,p=c.current;E.current=K(o,p,p,".listbox__option[role=option]",{activeDescendantClassName:"listbox__option--active",autoInit:f,autoReset:null,autoScroll:l!=="auto"}),U(o),v.current=J()}return l==="auto"&&c.current.addEventListener("activeDescendantChange",i),()=>{E.current&&(E.current.reset(),E.current.destroy(),E.current=void 0),v.current&&(v.current.destroy(),v.current=void 0),c.current&&(c.current.removeEventListener("activeDescendantChange",i),Y(c.current))}},[f,s,l]),e.createElement(e.Fragment,null,e.createElement("div",{...W,tabIndex:O,ref:c,role:"listbox",onKeyDown:l!=="auto"?M:void 0,className:w("listbox__options",a),style:{maxHeight:b}},m.map((i,o)=>x.cloneElement(i,{key:i.props.value||o,...i.props,onMouseDown:l==="auto"?F:void 0,onClick:n(p=>{l!=="auto"&&B(p,o,!0)},"onClick"),selected:o===f,a11ySelectedText:y}))),e.createElement("select",{hidden:!0,className:w("listbox__native",k),name:t,disabled:s,value:m[f]?.props.value,onChange:n((()=>{}),"onChange")},m.map((i,o)=>e.createElement("option",{key:i.props.value||o,value:i.props.value,disabled:i.props.disabled}))))},"EbayListbox");try{g.displayName="EbayListbox",g.__docgenInfo={description:"",displayName:"EbayListbox",filePath:"/home/runner/work/evo-web/evo-web/packages/ebayui-core-react/src/ebay-listbox/listbox.tsx",methods:[],props:{name:{defaultValue:null,declarations:[{fileName:"ebayui-core-react/src/ebay-listbox/listbox.tsx",name:"TypeLiteral"}],description:"",name:"name",required:!1,tags:{},type:{name:"string"}},disabled:{defaultValue:null,declarations:[{fileName:"ebayui-core-react/src/ebay-listbox/listbox.tsx",name:"TypeLiteral"}],description:"",name:"disabled",required:!1,tags:{},type:{name:"boolean"}},listSelection:{defaultValue:null,declarations:[{fileName:"ebayui-core-react/src/ebay-listbox/listbox.tsx",name:"TypeLiteral"}],description:"",name:"listSelection",required:!1,tags:{},type:{name:'"auto" | "manual"'}},typeaheadTimeoutLength:{defaultValue:null,declarations:[{fileName:"ebayui-core-react/src/ebay-listbox/listbox.tsx",name:"TypeLiteral"}],description:"",name:"typeaheadTimeoutLength",required:!1,tags:{},type:{name:"number"}},maxHeight:{defaultValue:null,declarations:[{fileName:"ebayui-core-react/src/ebay-listbox/listbox.tsx",name:"TypeLiteral"}],description:"",name:"maxHeight",required:!1,tags:{},type:{name:"string | number"}},selectClassName:{defaultValue:null,declarations:[{fileName:"ebayui-core-react/src/ebay-listbox/listbox.tsx",name:"TypeLiteral"}],description:"",name:"selectClassName",required:!1,tags:{},type:{name:"string"}},a11ySelectedText:{defaultValue:null,declarations:[{fileName:"ebayui-core-react/src/ebay-listbox/listbox.tsx",name:"TypeLiteral"}],description:"",name:"a11ySelectedText",required:!1,tags:{},type:{name:"string"}},onChange:{defaultValue:{value:"() => {}"},declarations:[{fileName:"ebayui-core-react/src/ebay-listbox/listbox.tsx",name:"TypeLiteral"}],description:"",name:"onChange",required:!1,tags:{},type:{name:"EbayChangeEventHandler<HTMLSpanElement, ChangeEventProps>"}},onEscape:{defaultValue:{value:"() => {}"},declarations:[{fileName:"ebayui-core-react/src/ebay-listbox/listbox.tsx",name:"TypeLiteral"}],description:"",name:"onEscape",required:!1,tags:{},type:{name:"() => void"}}},tags:{}}}catch{}const{action:q}=__STORYBOOK_MODULE_ACTIONS__,se={title:"building blocks/ebay-listbox",argTypes:{name:{control:{type:"text"},description:"used for the `name` attribute of the native `<select>`"},disabled:{control:{type:"boolean"},description:"If true, the listbox is disabled"},listSelection:{table:{defaultValue:{summary:"manual"}},description:"If manual then user will need to press enter to select an item using keyboard. Otherwise auto will automatically select as the user presses up/down",options:["manual","auto"],control:{type:"select"}},maxHeight:{control:{type:"text"},description:"The max height of the listbox"},typeaheadTimeoutLength:{control:{type:"number"},description:"The time in milliseconds to wait before the typeahead search resets",table:{defaultValue:{summary:"1300"}}},a11ySelectedText:{control:{type:"text"},description:"Accessible text for selected option",table:{defaultValue:{summary:"selected"}}},onChange:{action:"onChange",description:"Triggered on item clicked",table:{category:"Events",defaultValue:{summary:"event, { index, selected, wasClicked }"}}},onEscape:{action:"onEscape",description:"Triggered on esc key pressed",table:{category:"Events",defaultValue:{summary:""}}},selectClassName:{control:{type:"text"},description:"CSS class for the hidden native select element"},icon:{description:"An optional icon to display alongside the option text.",control:"text"},text:{description:"The text to display for the option.",control:"text"},value:{description:"The value of the option.",control:"text"},selected:{description:"Set to true if the option is selected by default.",control:"boolean"}},tags:["autodocs"],parameters:{docs:{description:{component:`## Import
+
+\`\`\`jsx harmony
+import { EbayListbox, EbayListboxOption, EbayListboxOptionDescription } from "@ebay/ui-core-react/ebay-listbox";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/icon";
+import "@ebay/skin/listbox";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/listbox.css";
+\`\`\`
+### Default
+
+### Basic
+
+\`\`\`jsx
+<EbayListbox>
+    <EbayListboxOption value="AA" text="Option 1" />
+    <EbayListboxOption value="BB" text="Option 2" />
+    <EbayListboxOption value="CC" text="Option 3" />
+</EbayListbox>
+\`\`\`
+
+### With Description
+
+\`\`\`jsx
+<EbayListbox>
+    <EbayListboxOption value="AA" text="Option 1">
+        <EbayListboxOptionDescription>Option 1 extra info</EbayListboxOptionDescription>
+    </EbayListboxOption>
+    <EbayListboxOption value="BB" text="Option 2">
+        <EbayListboxOptionDescription>Option 2 extra info</EbayListboxOptionDescription>
+    </EbayListboxOption>
+    <EbayListboxOption value="CC" text="Option 3">
+        <EbayListboxOptionDescription>Option 3 extra info</EbayListboxOptionDescription>
+    </EbayListboxOption>
+</EbayListbox>
+\`\`\``}}}},_=n(t=>e.createElement(g,{...t},e.createElement(r,{value:"AA",text:"Option 1"}),e.createElement(r,{value:"BB",text:"Option 2"}),e.createElement(r,{value:"CC",text:"Option 3"})),"Default"),T=n(t=>e.createElement(g,{...t},e.createElement(r,{value:"AA",text:"Option 1"},e.createElement(L,null,"Option 1 extra info")),e.createElement(r,{value:"BB",text:"Option 2"},e.createElement(L,null,"Option 2 extra info")),e.createElement(r,{value:"CC",text:"Option 3"},e.createElement(L,null,"Option 3 extra info"))),"WithDescription"),N=n(t=>e.createElement(g,{...t},e.createElement(r,{value:"AA",text:"Option 1"}),e.createElement(r,{value:"BB",text:"Option 2",disabled:!0}),e.createElement(r,{value:"CC",text:"Option 3"})),"WithDisabled"),D=n(t=>e.createElement(g,{...t,name:"formFieldName"},Array.from({length:20},(a,s)=>e.createElement(r,{key:s,value:s.toString(),text:`Option ${s+1}`}))),"WithManyOptions"),A=n(t=>e.createElement(g,{...t,name:"formFieldName",onChange:q("onChange"),onEscape:q("onEscape")},e.createElement(r,{value:"AA",text:"Option 1"}),e.createElement(r,{value:"BB",text:"Option 2"}),e.createElement(r,{value:"CC",text:"Option 3"})),"WithActions"),re=["Default","WithDescription","WithDisabled","WithManyOptions","WithActions"];_.parameters={..._.parameters,docs:{..._.parameters?.docs,source:{originalSource:`args => <EbayListbox {...args}>
+        <EbayListboxOption value="AA" text="Option 1" />
+        <EbayListboxOption value="BB" text="Option 2" />
+        <EbayListboxOption value="CC" text="Option 3" />
+    </EbayListbox>`,..._.parameters?.docs?.source}}};T.parameters={...T.parameters,docs:{...T.parameters?.docs,source:{originalSource:`args => <EbayListbox {...args}>
+        <EbayListboxOption value="AA" text="Option 1">
+            <EbayListboxOptionDescription>Option 1 extra info</EbayListboxOptionDescription>
+        </EbayListboxOption>
+        <EbayListboxOption value="BB" text="Option 2">
+            <EbayListboxOptionDescription>Option 2 extra info</EbayListboxOptionDescription>
+        </EbayListboxOption>
+        <EbayListboxOption value="CC" text="Option 3">
+            <EbayListboxOptionDescription>Option 3 extra info</EbayListboxOptionDescription>
+        </EbayListboxOption>
+    </EbayListbox>`,...T.parameters?.docs?.source}}};N.parameters={...N.parameters,docs:{...N.parameters?.docs,source:{originalSource:`args => <EbayListbox {...args}>
+        <EbayListboxOption value="AA" text="Option 1" />
+        <EbayListboxOption value="BB" text="Option 2" disabled />
+        <EbayListboxOption value="CC" text="Option 3" />
+    </EbayListbox>`,...N.parameters?.docs?.source}}};D.parameters={...D.parameters,docs:{...D.parameters?.docs,source:{originalSource:`args => <EbayListbox {...args} name="formFieldName">
+        {Array.from({
+    length: 20
+  }, (_, i) => <EbayListboxOption key={i} value={i.toString()} text={\`Option \${i + 1}\`} />)}
+    </EbayListbox>`,...D.parameters?.docs?.source}}};A.parameters={...A.parameters,docs:{...A.parameters?.docs,source:{originalSource:`args => <EbayListbox {...args} name="formFieldName" onChange={action("onChange")} onEscape={action("onEscape")}>
+        <EbayListboxOption value="AA" text="Option 1" />
+        <EbayListboxOption value="BB" text="Option 2" />
+        <EbayListboxOption value="CC" text="Option 3" />
+    </EbayListbox>`,...A.parameters?.docs?.source}}};export{_ as Default,A as WithActions,T as WithDescription,N as WithDisabled,D as WithManyOptions,re as __namedExportsOrder,se as default};

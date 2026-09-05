@@ -1,0 +1,3 @@
+import{j as t,M as i}from"./blocks-8fQwNQ9Q.js";import{useMDXComponents as r}from"./index-CJBC2FOE.js";import"./preload-helper-PPVm8Dsz.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./iframe--gzoI4Uo.js";function o(n){const e={h1:"h1",p:"p",...r(),...n.components};return t.jsxs(t.Fragment,{children:[t.jsx(i,{title:"dialogs/Overview"}),`
+`,t.jsx(e.h1,{id:"dialog-components",children:"Dialog Components"}),`
+`,t.jsx(e.p,{children:"Dialogs are components that demand attention from the user by obscuring their view until they are closed or an action is performed."})]})}function d(n={}){const{wrapper:e}={...r(),...n.components};return e?t.jsx(e,{...n,children:t.jsx(o,{...n})}):o(n)}export{d as default};

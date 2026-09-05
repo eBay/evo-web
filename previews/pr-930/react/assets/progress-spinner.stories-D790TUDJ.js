@@ -1,0 +1,9 @@
+import{j as a}from"./iframe-DjAcWYNC.js";import{c as p}from"./index-C04a5A_d.js";import{E as c,a as l,b as m}from"./spinner-30-CHrlwImJ.js";import"./preload-helper-PPVm8Dsz.js";import"./icon-OW-XSJJv.js";function s({a11yText:n="Loading",size:r,className:o,...t}){const i=r==="large"?c:r==="small"?l:m;return a.jsx("span",{...t,"aria-label":n??void 0,className:p("progress-spinner",r==="large"&&"progress-spinner--large",o),role:"img",children:a.jsx(i,{})})}try{s.displayName="EvoProgressSpinner",s.__docgenInfo={description:"",displayName:"EvoProgressSpinner",filePath:"/home/runner/work/evo-web/evo-web/packages/evo-react/src/progress-spinner/progress-spinner.tsx",methods:[],props:{a11yText:{defaultValue:{value:"Loading"},declarations:[{fileName:"evo-react/src/progress-spinner/types.ts",name:"TypeLiteral"}],description:'Localized accessible label that describes the progress spinner.\nEnglish default to be overridden is `"Loading"`.\nPass `null` explicitly _only_ if alternative accessibility information is present.',name:"a11yText",required:!1,tags:{},type:{name:"string"}},size:{defaultValue:null,declarations:[{fileName:"evo-react/src/progress-spinner/types.ts",name:"TypeLiteral"}],description:"Spinner size. Omit for the default 24px spinner.",name:"size",required:!1,tags:{},type:{name:"SpinnerSize"}}},tags:{}}}catch{}const v={title:"progress/evo-progress-spinner",component:s,tags:["autodocs"],parameters:{docs:{description:{component:`
+A progress spinner that communicates an ongoing operation.
+
+## Usage
+
+\`\`\`tsx
+import { EvoProgressSpinner } from "@evo-web/react/progress-spinner";
+\`\`\`
+        `}}},argTypes:{size:{control:"select",options:["small","large"]},a11yText:{type:{name:"string",required:!0},control:"text"}},args:{a11yText:"Loading"}},e={},x=["Default"];e.parameters={...e.parameters,docs:{...e.parameters?.docs,source:{originalSource:"{}",...e.parameters?.docs?.source}}};export{e as Default,x as __namedExportsOrder,v as default};

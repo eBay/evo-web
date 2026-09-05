@@ -1,0 +1,1 @@
+{"version":3,"file":"404-DCob1ZER.js","names":[],"sources":["../../.marko-run/404.client-entry.marko"],"sourcesContent":["import Page from \"../../src/routes/+404.marko\";\n\n<Page/>\n"],"mappings":"0DAKA,EAAK"}

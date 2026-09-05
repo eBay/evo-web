@@ -1,0 +1,3 @@
+import{j as n,M as r}from"./blocks-CfEC9wZ-.js";import{useMDXComponents as s}from"./index-CKV0M4MT.js";import"./preload-helper-PPVm8Dsz.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./iframe-C_ZvzdqO.js";function e(o){const t={h1:"h1",p:"p",...s(),...o.components};return n.jsxs(n.Fragment,{children:[n.jsx(r,{title:"progress/Overview"}),`
+`,n.jsx(t.h1,{id:"progress-components",children:"Progress Components"}),`
+`,n.jsx(t.p,{children:"Progress components indicate a portion of the page that is loading, or display information about a process such as a shipment."})]})}function h(o={}){const{wrapper:t}={...s(),...o.components};return t?n.jsx(t,{...o,children:n.jsx(e,{...o})}):e(o)}export{h as default};

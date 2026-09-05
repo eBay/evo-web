@@ -1,0 +1,3 @@
+import{j as n,M as s}from"./blocks-Jk3XFeN2.js";import{useMDXComponents as i}from"./index-Cfh4ley_.js";import"./preload-helper-PPVm8Dsz.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./iframe-C3jlT5NX.js";function e(t){const o={h1:"h1",p:"p",...i(),...t.components};return n.jsxs(n.Fragment,{children:[n.jsx(s,{title:"navigation & disclosure/Overview"}),`
+`,n.jsx(o.h1,{id:"navigation-and-disclosure-components",children:"Navigation and Disclosure Components"}),`
+`,n.jsx(o.p,{children:"Navigation components bring the user to a new page, and disclosure components show information to the user that was originally hidden."})]})}function p(t={}){const{wrapper:o}={...i(),...t.components};return o?n.jsx(o,{...t,children:n.jsx(e,{...t})}):e(t)}export{p as default};

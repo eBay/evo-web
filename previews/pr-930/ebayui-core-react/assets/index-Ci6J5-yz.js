@@ -1,0 +1,1 @@
+var d=Object.defineProperty;var n=(e,t)=>d(e,"name",{value:t,configurable:!0});function o(e){e.keyCode>=32&&e.keyCode<=40&&e.preventDefault()}n(o,"onKeyDown");function a(e){e.addEventListener("keydown",o)}n(a,"add");function i(e){e.removeEventListener("keydown",o)}n(i,"remove");export{a,i as r};

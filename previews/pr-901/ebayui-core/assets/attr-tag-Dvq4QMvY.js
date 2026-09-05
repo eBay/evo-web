@@ -1,0 +1,1 @@
+var n={},s;function v(){if(s)return n;s=1;var r;n.r=function(i,e){var a=r[i];a?a.push(e):r[i]=[e]},n.a=function(i,e){var a=r[i];a?Array.isArray(a)?a.push(e):r[i]=[a,e]:(e[Symbol.iterator]=u,r[i]=e)},n.i=function(i,e){var a=r;r=e||{};try{var f=i();return f&&(r.renderBody=f),r}finally{r=a}};function*u(){yield this}return n}var l=v();export{l as a};
