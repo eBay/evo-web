@@ -8,7 +8,7 @@ import {
   useFloating,
 } from "@floating-ui/react";
 import type { Middleware, Placement, Strategy } from "@floating-ui/react";
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 
 type UseExpanderOptions = {
@@ -21,6 +21,8 @@ type UseExpanderOptions = {
   flip?: boolean;
   shift?: boolean;
   inline?: boolean;
+  /** Closes uncontrolled state when the owning component is disabled. */
+  resetOnDisabled?: boolean;
 };
 
 export function useExpander({
@@ -33,11 +35,18 @@ export function useExpander({
   flip = true,
   shift = true,
   inline = true,
+  resetOnDisabled = false,
 }: UseExpanderOptions = {}) {
   const isControlled = open !== undefined;
   const [uncontrolledOpen, setUncontrolledOpen] = useState(defaultOpen);
   const currentOpen = isControlled ? open : uncontrolledOpen;
   const arrowRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (resetOnDisabled && !isControlled) {
+      setUncontrolledOpen(false);
+    }
+  }, [isControlled, resetOnDisabled]);
 
   const setOpen = useCallback(
     (nextOpen: boolean) => {
