@@ -571,8 +571,6 @@ static interface DashLikeMedia extends MediaElement {
 </script>
 
 <script>
-  // the play overlay leaves the document when playback is requested;
-  // hand its focus to the controls
   if (started && flags.focusControls) {
     flags.focusControls = false;
     $playButton().focus();
