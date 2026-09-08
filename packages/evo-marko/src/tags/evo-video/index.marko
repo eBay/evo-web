@@ -56,7 +56,7 @@ export interface Input extends Marko.HTML.Video {
   /**
    * Label of the menu item that turns captions off
    *
-   * English default to be overridden is `"None"`
+   * English default to be overridden is `"Off"`
    */
   captionsOffText?: string;
   /**
@@ -129,7 +129,7 @@ static interface DashLikeMedia extends MediaElement {
   a11yPlayText = "Play",
   a11yPauseText = "Pause",
   a11ySeekText,
-  captionsOffText = "None",
+  captionsOffText = "Off",
   a11yCaptionsText,
   a11yMuteText,
   a11yUnmuteText,
@@ -381,13 +381,13 @@ static interface DashLikeMedia extends MediaElement {
             </button>
             <span class="video__popover">
               <evo-menu/$languageMenu
-                selected=language || "none"
+                selected=language || "off"
                 selectedChange(value) {
                   language = value === "none" ? null : (value as string);
                   languageOpen = false;
                   $languageButton().focus();
                 }>
-                <@item value="none">
+                <@item value="off">
                   ${captionsOffText}
                 </@item>
                 <for|textTrack| of=textTracks>
