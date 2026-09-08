@@ -173,6 +173,12 @@ export default {
       description:
         "Localized accessible name for the captions button. The button only renders when this is provided and the video has text tracks.",
     },
+    captionsOffText: {
+      type: "string",
+      control: "text",
+      description:
+        'Label of the menu item that turns captions off. English default to be overridden is `"Off"`.',
+    },
     a11yMuteText: {
       type: "string",
       control: "text",
