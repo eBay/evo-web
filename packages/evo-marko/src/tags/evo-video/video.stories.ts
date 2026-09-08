@@ -177,7 +177,7 @@ export default {
       type: "string",
       control: "text",
       description:
-        'Label of the menu item that turns captions off. English default to be overridden is `"None"`.',
+        'Label of the menu item that turns captions off. English default to be overridden is `"Off"`.',
     },
     a11yMuteText: {
       type: "string",
