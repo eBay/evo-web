@@ -88,7 +88,8 @@
     margin-bottom: 10px;
 }
 
-.video-player--compact .shaka-controls-button-panel button {
+.video-player--compact .shaka-controls-button-panel button,
+.video-player--compact .shaka-controls-button-panel > span {
     background-color: rgba(0, 0, 0, 0.32);
     border-radius: 50%;
     margin: 0 5px;
@@ -97,12 +98,14 @@
 .video-player .shaka-controls-button-panel span.shaka-current-time,
 .video-player .shaka-controls-button-panel span.shaka-remaining-time {
     align-items: center;
+    box-sizing: border-box;
     display: inline-flex;
 }
 
 .video-player--compact .shaka-controls-button-panel .shaka-remaining-time {
     border-radius: 16px;
     font-size: var(--font-size-medium);
+    justify-content: center;
     min-width: 80px;
     padding: var(--spacing-200) var(--spacing-100);
 }
