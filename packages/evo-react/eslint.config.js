@@ -45,9 +45,17 @@ export default tseslint.config(
 
     rules: {
       "no-console": ["error", { allow: ["error", "warn"] }],
+      "jsx-a11y/no-autofocus": ["error", { ignoreNonDOM: true }],
+      "react/no-unknown-property": ["error", { ignore: ["closedby"] }],
       "react/prop-types": "off",
       "react/react-in-jsx-scope": "off",
       ...vitest.configs.recommended.rules,
+    },
+  },
+  {
+    files: ["src/icon/icon.stories.tsx"],
+    rules: {
+      "@typescript-eslint/ban-ts-comment": "off",
     },
   },
 );

@@ -136,7 +136,11 @@ export const AsLink: Story = {
   ),
 };
 
-function Link({ to, ...rest }: ComponentProps<"a"> & { to?: string }) {
+function Link({
+  to,
+  children,
+  ...rest
+}: ComponentProps<"a"> & { to?: string }) {
   return (
     <a
       data-custom-link="true"
@@ -146,7 +150,9 @@ function Link({ to, ...rest }: ComponentProps<"a"> & { to?: string }) {
         event.preventDefault();
         alert("client side navigation");
       }}
-    />
+    >
+      {children}
+    </a>
   );
 }
 

@@ -10,19 +10,19 @@ describe("details", () => {
   });
 
   it("renders as div version", async () => {
-    await snapshotHTML(Default, {as: "div"});
+    await snapshotHTML(Default, { as: "div" });
   });
 
   it("renders in open state", async () => {
-    await snapshotHTML(Default, {open: true});
+    await snapshotHTML(Default, { open: true });
   });
 
   it("renders small version", async () => {
-    await snapshotHTML(Default, {size: "small"});
+    await snapshotHTML(Default, { size: "small" });
   });
 
   it("renders center version", async () => {
-    await snapshotHTML(Default, {alignment: "center" });
+    await snapshotHTML(Default, { alignment: "center" });
   });
 
   it("renders with leading element", async () => {

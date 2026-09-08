@@ -3,13 +3,15 @@ export interface Input extends ConfirmDialogInput {}
 
 <let/open:=input.open>
 
-<evo-button onClick() { open = true; }>
-    Open Confirm Dialog
+<evo-button onClick() {
+  open = true;
+}>
+  Open Confirm Dialog
 </evo-button>
 
 <evo-confirm-dialog ...input open:=open>
-    <@header>Delete Address?</@header>
-    <@reject>Cancel</@reject>
-    <@confirm>Delete</@confirm>
-    <p>You will permanently lose this address.</p>
+  <@header>Delete Address?</@header>
+  <@reject>Cancel</@reject>
+  <@confirm>Delete</@confirm>
+  <p>You will permanently lose this address.</p>
 </evo-confirm-dialog>

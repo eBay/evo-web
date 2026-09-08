@@ -5,10 +5,37 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node -e \"const fs=require('fs'),path=require('path');const base='src/routes/_index/components';if(!fs.existsSync(base))process.exit(0);const comps=fs.readdirSync(base,{withFileTypes:true}).filter(d=>d.isDirectory()).map(d=>d.name);let found=false;comps.forEach(c=>{const p=path.join(base,c,'pipeline-state.json');if(!fs.existsSync(p))return;try{const s=JSON.parse(fs.readFileSync(p,'utf8'));const ip=Object.entries(s.steps||{}).filter(([,v])=>v.status==='in-progress');if(ip.length){found=true;process.stdout.write('\\n⚠️  PIPELINE IN-PROGRESS — do not stop.\\n  Component: '+s.component+'\\n  Step '+ip.map(([k])=>k).join(', ')+' is still in-progress.\\n  Read pipeline-state.json and advance to the next step before stopping.\\n');}}catch(e){}});if(found)process.exit(2);\" 2>/dev/null"
+            "command": "node .claude/hooks/check-pipeline-stop.js"
           }
         ]
       }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|fork",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/session-start-context.js"
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "deny": [
+      "Edit(packages/skin/dist/**)",
+      "Write(packages/skin/dist/**)",
+      "Edit(packages/evo-react/src/icon/icons/**)",
+      "Write(packages/evo-react/src/icon/icons/**)",
+      "Edit(packages/ebayui-core-react/src/ebay-icon/icons/**)",
+      "Write(packages/ebayui-core-react/src/ebay-icon/icons/**)",
+      "Edit(packages/evo-marko/src/tags/evo-icon/tags/**)",
+      "Write(packages/evo-marko/src/tags/evo-icon/tags/**)",
+      "Edit(packages/ebayui-core/src/components/ebay-icon/icons/**)",
+      "Write(packages/ebayui-core/src/components/ebay-icon/icons/**)",
+      "Edit(packages/skin/src/sass/mixins/private/_generated-icon-mixins.scss)",
+      "Write(packages/skin/src/sass/mixins/private/_generated-icon-mixins.scss)"
     ]
   }
 }

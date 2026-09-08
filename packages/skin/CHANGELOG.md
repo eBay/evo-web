@@ -1,5 +1,15 @@
 # Skin Changelog
 
+## 19.34.0
+
+### Minor Changes
+
+- [#912](https://github.com/eBay/evo-web/pull/912) [`2f81318`](https://github.com/eBay/evo-web/commit/2f813186210bf27fdb4ce188d46c060dc7c10854) Thanks [@ArtBlue](https://github.com/ArtBlue)! - Add `affirm-black` and `affirm-white` colored icons (12, 18, 24, 32).
+
+### Patch Changes
+
+- [#910](https://github.com/eBay/evo-web/pull/910) [`67e3f18`](https://github.com/eBay/evo-web/commit/67e3f18fd013fb6a166c4a154d12b37be73a64d5) Thanks [@LuLaValva](https://github.com/LuLaValva)! - calendar: use a solid background token for day hover and range fills so they match and no longer stack translucent state layers, and switch the selected-day background and the current-day border and text to the accent (blue) color
+
 ## 19.33.0
 
 ### Minor Changes

@@ -14,22 +14,32 @@ describe("EvoAvatar SSR", () => {
     },
   );
 
-  it.each<Color>(["teal", "light-teal", "green", "lime", "yellow", "orange", "magenta", "pink"])(
-    "should render avatar with color=%s",
-    (color) => {
-      expect(
-        renderToString(<EvoAvatar color={color} username="Joe" a11yText="Joe" />),
-      ).toMatchSnapshot();
-    },
-  );
+  it.each<Color>([
+    "teal",
+    "light-teal",
+    "green",
+    "lime",
+    "yellow",
+    "orange",
+    "magenta",
+    "pink",
+  ])("should render avatar with color=%s", (color) => {
+    expect(
+      renderToString(<EvoAvatar color={color} username="Joe" a11yText="Joe" />),
+    ).toMatchSnapshot();
+  });
 
   it("should render signed-out avatar when no username or children", () => {
-    expect(renderToString(<EvoAvatar a11yText="Signed out" />)).toMatchSnapshot();
+    expect(
+      renderToString(<EvoAvatar a11yText="Signed out" />),
+    ).toMatchSnapshot();
   });
 
   it("should render avatar with username initial", () => {
     expect(
-      renderToString(<EvoAvatar username="Elizabeth" a11yText="Signed in as Elizabeth" />),
+      renderToString(
+        <EvoAvatar username="Elizabeth" a11yText="Signed in as Elizabeth" />,
+      ),
     ).toMatchSnapshot();
   });
 

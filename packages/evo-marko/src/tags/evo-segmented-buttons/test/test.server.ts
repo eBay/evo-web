@@ -7,15 +7,15 @@ import * as stories from "../segmented-buttons.stories"; // import all stories f
 const { Default, WithIcons } = composeStories(stories);
 
 describe("evo-segmented-buttons", () => {
-    it("renders defaults", async () => {
-        await snapshotHTML(Default);
-    });
+  it("renders defaults", async () => {
+    await snapshotHTML(Default);
+  });
 
-    it("renders large", async () => {
-        await snapshotHTML(Default, { size: "large" });
-    });
+  it("renders large", async () => {
+    await snapshotHTML(Default, { size: "large" });
+  });
 
-    it("renders with menu items", async () => {
-        await snapshotHTML(WithIcons);
-    });
+  it("renders with menu items", async () => {
+    await snapshotHTML(WithIcons);
+  });
 });

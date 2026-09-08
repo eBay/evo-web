@@ -69,34 +69,39 @@ jobs:
         run: |
           set -euo pipefail
           repo_url="https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
-          # gh-pages commits in its own temporary clone, so set the identity globally
-          # rather than via --user (whose parser rejects the github-actions[bot]
-          # brackets). Retry on a non-fast-forward rejection in case a concurrent
-          # gh-pages write (another preview, the cleanup job, or the production deploy)
-          # lands first; each run re-clones the branch, so clear the cache between attempts.
+          PR=${{ github.event.pull_request.number }}
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Deploy by fully REPLACING previews/pr-<N> rather than gh-pages --add,
+          # which layered every build's hashed assets on top of the last and let a
+          # single preview grow to many copies of its storybooks. A blobless
+          # sparse clone keeps this cheap: only this PR's directory is ever
+          # checked out, never the whole (multi-GB) branch. Retry on a
+          # non-fast-forward rejection in case a concurrent gh-pages write
+          # (another preview, the cleanup job, or the production deploy) lands first.
+          git clone --filter=blob:none --no-checkout --depth 1 --branch gh-pages "$repo_url" gh-pages-work
+          cd gh-pages-work
+          git sparse-checkout set "previews/pr-${PR}"
           pushed=false
           for attempt in 1 2 3; do
-            rm -rf node_modules/.cache/gh-pages
-            if npx gh-pages \
-              --dist _site/public \
-              --dest previews/pr-${{ github.event.pull_request.number }} \
-              --branch gh-pages \
-              --nojekyll \
-              --add \
-              --message "preview: pr-${{ github.event.pull_request.number }} @ ${{ github.sha }}" \
-              --repo "$repo_url"; then
+            git fetch --depth 1 origin gh-pages
+            git checkout -B gh-pages origin/gh-pages
+            rm -rf "previews/pr-${PR}"
+            mkdir -p "previews/pr-${PR}"
+            cp -R ../_site/public/. "previews/pr-${PR}/"
+            touch .nojekyll
+            git add -A .nojekyll "previews/pr-${PR}"
+            git commit -m "preview: pr-${PR} @ ${{ github.sha }}"
+            if git push origin gh-pages; then
               pushed=true
               break
             fi
-            echo "gh-pages push failed (attempt ${attempt}); retrying."
+            echo "gh-pages push rejected (attempt ${attempt}); retrying against new tip."
             sleep $((attempt * 3))
           done
+          cd ..
           $pushed || { echo "Failed to deploy preview after 3 attempts."; exit 1; }
-          # gh-pages nests its clone under find-cache-dir's path, not directly at
-          # node_modules/.cache/gh-pages, so read the pushed tip back from the
-          # remote rather than relying on that cache layout.
           echo "sha=$(git ls-remote "$repo_url" gh-pages | cut -f1)" >> "$GITHUB_OUTPUT"
 
       - name: Wait for GitHub Pages deployment

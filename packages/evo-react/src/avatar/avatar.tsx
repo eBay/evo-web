@@ -31,10 +31,14 @@ export function EvoAvatar({
           className,
           size && `avatar--${size}`,
           imagePlacement === "fit" && "avatar--fit",
-          username && !children && `avatar--${getColorForText(username, color)}`,
+          username &&
+            !children &&
+            `avatar--${getColorForText(username, color)}`,
         )}
       >
-        {children || username?.charAt(0).toUpperCase() || <EvoIconAvatarSignedOut />}
+        {children || username?.charAt(0).toUpperCase() || (
+          <EvoIconAvatarSignedOut />
+        )}
       </div>
     </AvatarProvider>
   );

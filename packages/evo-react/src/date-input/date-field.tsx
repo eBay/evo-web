@@ -103,7 +103,7 @@ export function DateField({
       const { o: order, s: sep } = getLocale(locale);
       let i = 0;
       let start = 0;
-      for (let currStart; ~(currStart = value.indexOf(sep[i], start)); ) {
+      for (let currStart; ~(currStart = value.indexOf(sep[i], start));) {
         start = currStart + sep[i].length;
         i++;
       }

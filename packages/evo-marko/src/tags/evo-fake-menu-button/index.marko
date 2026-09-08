@@ -1,132 +1,123 @@
 import IconButton from "<evo-icon-button>";
 import Button, { type Input as ButtonInput } from "<evo-button>";
 import { type Item as FakeMenuItem } from "<evo-fake-menu>";
+export type MenuRef = () => HTMLSpanElement;
 export interface Input extends Marko.HTML.Span {
-    open?: boolean;
-    openChange?: (open: boolean) => void;
-    collapseOnSelect?: boolean;
-    variant?: "form" | "button" | "icon";
-    borderless?: boolean;
-    priority?: "primary" | "secondary" | "tertiary" | "delete" | "none";
-    size?: ButtonInput["size"];
-    transparent?: boolean;
-    disabled?: boolean;
-    noToggleIcon?: boolean;
-    a11yText?: string;
-    label?: Marko.AttrTag<Marko.HTML.Span>;
-    reverse?: boolean;
-    strategy?: "absolute" | "fixed";
-    fixWidth?: boolean;
-    flip?: boolean;
-    item?: Marko.AttrTag<FakeMenuItem>;
+  open?: boolean;
+  openChange?: (open: boolean) => void;
+  collapseOnSelect?: boolean;
+  variant?: "form" | "button" | "icon";
+  borderless?: boolean;
+  priority?: "primary" | "secondary" | "tertiary" | "delete" | "none";
+  size?: ButtonInput["size"];
+  transparent?: boolean;
+  disabled?: boolean;
+  noToggleIcon?: boolean;
+  a11yText?: string;
+  label?: Marko.AttrTag<Marko.HTML.Span>;
+  reverse?: boolean;
+  strategy?: "absolute" | "fixed";
+  fixWidth?: boolean;
+  flip?: boolean;
+  item?: Marko.AttrTag<FakeMenuItem>;
 }
-<const/{
-    class: inputClass,
-    noToggleIcon,
-    reverse,
-    strategy,
-    fixWidth,
-    flip,
-    borderless,
-    size,
-    priority: inputPriority,
-    disabled,
-    variant,
-    item: items,
-    label,
-    open: inputOpen,
-    openChange,
-    collapseOnSelect,
-    transparent: inputTransparent,
-    a11yText,
-    onKeyDown,
-    onFocusOut,
-    ...htmlInput
-}=input>
+const/{
+  class: inputClass,
+  noToggleIcon,
+  reverse,
+  strategy,
+  fixWidth,
+  flip,
+  borderless,
+  size,
+  priority: inputPriority,
+  disabled,
+  variant,
+  item: items,
+  label,
+  open: inputOpen,
+  openChange,
+  collapseOnSelect,
+  transparent: inputTransparent,
+  a11yText,
+  onKeyDown,
+  onFocusOut,
+  ...htmlInput
+}=input
 
-<let/open:=input.open>
+let/open:=input.open
 
-<const/{
+const/{ tagName, transparent, priority }=(() => {
+  let priority = null;
+  let transparent;
+  let tagName;
+
+  if (variant === "icon") {
+    tagName = IconButton;
+    transparent = inputTransparent;
+  } else {
+    tagName = Button;
+    priority = inputPriority;
+  }
+
+  return {
     tagName,
     transparent,
     priority,
-}=(() => {
-    let priority = null;
-    let transparent;
-    let tagName;
+  };
+})()
 
-    if (variant === "icon") {
-        tagName = IconButton;
-        transparent = inputTransparent;
-    } else {
-        tagName = Button;
-        priority = inputPriority;
+evo-expander/expander
+  ,open=open
+  ,placement=(reverse ? "bottom-end" : "bottom-start")
+  ,strategy=strategy
+  ,flip=flip
+  ,host=$root
+  ,overlay=$menu
+
+span/$root
+  ,...htmlInput
+  ,class=["fake-menu-button", inputClass]
+  ,onKeyDown(e, el) {
+    if (open && e.key === "Escape") open = false;
+    onKeyDown && onKeyDown(e, el);
+  }
+  ,onFocusOut(e, el) {
+    if (!el.contains(e.relatedTarget as Node)) {
+      open = false;
     }
-
-    return {
-        tagName,
-        transparent,
-        priority,
-    };
-})()>
-
-<evo-expander/expander
-    open=open
-    placement=(reverse ? "bottom-end" : "bottom-start")
-    strategy=strategy
-    flip=flip
-    host=$root
-    overlay=$menu/>
-
-<span/$root
-    ...htmlInput
-    class=["fake-menu-button", inputClass]
-    onKeyDown(e, el) {
-        if (open && e.key === "Escape") open = false;
-        onKeyDown && onKeyDown(e, el);
+    onFocusOut && onFocusOut(e, el);
+  }
+  ${tagName as any}.fake-menu-button__button
+    ,size=size
+    ,priority=priority as ButtonInput["priority"]
+    ,borderless=borderless
+    ,variant=(variant === "form" ? ("form" as any) : undefined)
+    ,transparent=transparent
+    ,aria-expanded=expander.ariaExpanded
+    ,aria-label=a11yText
+    ,disabled=disabled
+    ,onClick() {
+      open = !open;
     }
-    onFocusOut(e, el) {
-        if (!el.contains(e.relatedTarget as Node)) {
-            open = false;
-        }
-        onFocusOut && onFocusOut(e, el);
-    }>
-    <${tagName as any}
-        class="fake-menu-button__button"
-        size=size
-        priority=priority as ButtonInput["priority"]
-        borderless=borderless
-        variant=(variant === "form" ? "form" as any : undefined)
-        transparent=transparent
-        aria-expanded=expander.ariaExpanded
-        aria-label=a11yText
-        disabled=disabled
-        onClick() { open = !open; }>
-        <if=label>
-            <span ...label class=["menu-button-prefix-label", label.class]/>
-            ${" "}
-        </if>
-        <if=(variant === "icon")>
-            <${input.content}/>
-        </if>
-        <else>
-            <span>
-                <${input.content}/>
-            </span>
-            <if=!noToggleIcon>
-                <evo-icon-chevron-down-12/>
-            </if>
-        </else>
-    </>
-    <evo-fake-menu/$menu:(() => HTMLSpanElement)
-        style=expander.floatingStyles
-        classPrefix="fake-menu-button"
-        reverse=reverse
-        fixed=strategy === "fixed"
-        fixWidth=fixWidth
-        tabindex=-1
-        onClick() {
-            if (collapseOnSelect) open = false;
-        }
-        item=items/>
-</span>
+    if=label
+      span ...label class=["menu-button-prefix-label", label.class]
+      -- ${" "}
+    if=variant === "icon"
+      ${input.content}
+    else
+      span
+        ${input.content}
+      if=!noToggleIcon
+        evo-icon-chevron-down-12
+  evo-fake-menu/$menu: MenuRef
+    ,style=expander.floatingStyles
+    ,classPrefix="fake-menu-button"
+    ,reverse=reverse
+    ,fixed=strategy === "fixed"
+    ,fixWidth=fixWidth
+    ,tabindex=-1
+    ,onClick() {
+      if (collapseOnSelect) open = false;
+    }
+    ,item=items

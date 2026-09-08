@@ -21,8 +21,14 @@ describe("EvoBreadcrumbs SSR", () => {
         <EvoBreadcrumbs
           items={[
             { href: "https://www.ebay.com/", content: "eBay" },
-            { href: "https://www.ebay.com/rpp/cell-phone-pda", content: "Cell Phones" },
-            { href: "https://www.ebay.com/b/Smart-Watch-Bands/182068", content: "Smart Watch Bands" },
+            {
+              href: "https://www.ebay.com/rpp/cell-phone-pda",
+              content: "Cell Phones",
+            },
+            {
+              href: "https://www.ebay.com/b/Smart-Watch-Bands/182068",
+              content: "Smart Watch Bands",
+            },
           ]}
         />,
       ),
@@ -46,16 +52,17 @@ describe("EvoBreadcrumbs SSR", () => {
   it("should render with custom a11yHeadingText", () => {
     expect(
       renderToString(
-        <EvoBreadcrumbs items={mixedItems} a11yHeadingText="Custom navigation" />,
+        <EvoBreadcrumbs
+          items={mixedItems}
+          a11yHeadingText="Custom navigation"
+        />,
       ),
     ).toMatchSnapshot();
   });
 
   it("should render with custom a11yHeadingTag", () => {
     expect(
-      renderToString(
-        <EvoBreadcrumbs items={mixedItems} a11yHeadingTag="h3" />,
-      ),
+      renderToString(<EvoBreadcrumbs items={mixedItems} a11yHeadingTag="h3" />),
     ).toMatchSnapshot();
   });
 

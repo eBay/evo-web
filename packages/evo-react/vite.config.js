@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import { join, resolve } from "node:path";
 import { defineConfig } from "vite";
+import { Features } from "lightningcss";
 import react from "@vitejs/plugin-react";
 import { nodeExternals } from "rollup-plugin-node-externals";
 import typescript from "@rollup/plugin-typescript";
@@ -38,6 +39,13 @@ const iconsEntries = fs
   }, {});
 
 export default defineConfig({
+  css: {
+    lightningcss: {
+      // Never rewrite :dir() into the :lang() approximation; direction is
+      // set with dir attributes, not language tags.
+      exclude: Features.DirSelector,
+    },
+  },
   plugins: [
     react(),
     nodeExternals({

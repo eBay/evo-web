@@ -1,16 +1,8 @@
 export interface Input extends Omit<Marko.HTML.Input, "type" | "role"> {}
 
-<const/{
-    class: inputClass,
-    ...htmlInput
-} = input>
+<const/{ class: inputClass, ...htmlInput }=input>
 
 <span class=["switch", inputClass]>
-    <input
-        ...htmlInput
-        type="checkbox"
-        role="switch"
-        class="switch__control"
-    >
-    <span class="switch__button"/>
+  <input ...htmlInput type="checkbox" role="switch" class="switch__control">
+  <span class="switch__button"/>
 </span>

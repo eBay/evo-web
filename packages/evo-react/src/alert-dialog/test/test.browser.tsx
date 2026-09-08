@@ -19,7 +19,9 @@ function renderOpenDialog(
         <p>You must acknowledge this alert to continue.</p>
       </EvoAlertDialogMain>
       <EvoAlertDialogFooter>
-        <EvoAlertDialogConfirm onClick={onConfirmClick}>OK</EvoAlertDialogConfirm>
+        <EvoAlertDialogConfirm onClick={onConfirmClick}>
+          OK
+        </EvoAlertDialogConfirm>
       </EvoAlertDialogFooter>
     </EvoAlertDialog>,
   );
@@ -99,7 +101,9 @@ describe("evo-alert-dialog", () => {
       const dialog = screen.getByRole("alertdialog");
       const heading = screen.getByRole("heading", { name: "Alert" });
       expect(heading.element().id).toBe("my-custom-id");
-      await expect.element(dialog).toHaveAttribute("aria-labelledby", "my-custom-id");
+      await expect
+        .element(dialog)
+        .toHaveAttribute("aria-labelledby", "my-custom-id");
     });
 
     it("should use a custom id on EvoAlertDialogMain and update aria-describedby to match", async () => {
@@ -115,9 +119,13 @@ describe("evo-alert-dialog", () => {
         </EvoAlertDialog>,
       );
       const button = screen.getByRole("button", { name: "OK" });
-      const main = button.element().closest(".dialog__main") ?? document.getElementById("my-custom-main-id");
+      const main =
+        button.element().closest(".dialog__main") ??
+        document.getElementById("my-custom-main-id");
       expect(main?.id).toBe("my-custom-main-id");
-      await expect.element(button).toHaveAttribute("aria-describedby", "my-custom-main-id");
+      await expect
+        .element(button)
+        .toHaveAttribute("aria-describedby", "my-custom-main-id");
     });
 
     it("should render the confirm button", async () => {
@@ -128,7 +136,9 @@ describe("evo-alert-dialog", () => {
 
     it("should render the main content area with dialog__main class", async () => {
       const screen = await renderOpenDialog();
-      const mainContent = screen.getByText("You must acknowledge this alert to continue.");
+      const mainContent = screen.getByText(
+        "You must acknowledge this alert to continue.",
+      );
       const main = mainContent.element().closest(".dialog__main");
       expect(main).not.toBeNull();
     });
@@ -144,7 +154,9 @@ describe("evo-alert-dialog", () => {
       const screen = await render(
         <EvoAlertDialog open>
           <EvoAlertDialogHeader>Alert</EvoAlertDialogHeader>
-          <EvoAlertDialogMain><p>Content</p></EvoAlertDialogMain>
+          <EvoAlertDialogMain>
+            <p>Content</p>
+          </EvoAlertDialogMain>
           <EvoAlertDialogFooter className="my-footer">
             <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
           </EvoAlertDialogFooter>

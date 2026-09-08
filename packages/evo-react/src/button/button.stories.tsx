@@ -96,7 +96,11 @@ export const Default: Story = {
   },
 };
 
-function Link({ to, ...rest }: ComponentProps<"a"> & { to?: string }) {
+function Link({
+  to,
+  children,
+  ...rest
+}: ComponentProps<"a"> & { to?: string }) {
   return (
     <a
       data-custom-link="true"
@@ -106,7 +110,9 @@ function Link({ to, ...rest }: ComponentProps<"a"> & { to?: string }) {
         event.preventDefault();
         alert("client side navigation");
       }}
-    />
+    >
+      {children}
+    </a>
   );
 }
 
@@ -127,7 +133,7 @@ export const WithCustomLinkComponent: Story = {
     docs: {
       description: {
         story: `
-Pass a custom component via the \`as\` prop to replace the native \`<a>\`. Only applies when \`href\` is set. Here we simulate React Router\'s \`<Link to="/home">\`
+Pass a custom component via the \`as\` prop to replace the native \`<a>\`. Only applies when \`href\` is set. Here we simulate React Router's \`<Link to="/home">\`
 
 \`\`\`tsx
 import { Link, href } from "react-router";

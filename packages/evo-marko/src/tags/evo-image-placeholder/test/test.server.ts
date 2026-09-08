@@ -7,11 +7,11 @@ import * as stories from "../image-placeholder.stories"; // import all stories f
 const { Default, Resized } = composeStories(stories);
 
 describe("image-placeholder", () => {
-    it("renders default image placeholder", async () => {
-        await snapshotHTML(Default);
-    });
+  it("renders default image placeholder", async () => {
+    await snapshotHTML(Default);
+  });
 
-    it("renders resized image placeholder", async () => {
-        await snapshotHTML(Resized);
-    });
+  it("renders resized image placeholder", async () => {
+    await snapshotHTML(Resized);
+  });
 });

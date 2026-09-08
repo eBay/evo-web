@@ -1,7 +1,10 @@
 import { describe, it } from "vitest";
 import { render, cleanup, fireEvent } from "@marko/testing-library";
 import { composeStories } from "@storybook/marko";
-import { snapshotHTML, prettyNormalizedDOM } from "../../../common/test-utils/snapshots";
+import {
+  snapshotHTML,
+  prettyNormalizedDOM,
+} from "../../../common/test-utils/snapshots";
 import * as stories from "../eek.stories"; // import all stories from the stories file
 const { Default } = composeStories(stories);
 

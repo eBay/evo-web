@@ -5,17 +5,17 @@ import * as stories from "../accordion.stories"; // import all stories from the 
 const { Default } = composeStories(stories);
 
 describe("accordion", () => {
-    it("renders default accordion", async () => {
-        await snapshotHTML(Default);
-    });
+  it("renders default accordion", async () => {
+    await snapshotHTML(Default);
+  });
 
-    it("renders accordion with large size", async () => {
-        await snapshotHTML(Default, { size: "large" });
-    });
+  it("renders accordion with large size", async () => {
+    await snapshotHTML(Default, { size: "large" });
+  });
 
-    it("renders accordion with localized role description", async () => {
-        await snapshotHTML(Default, {
-            a11yRoleDescription: "Akkordeon",
-        });
+  it("renders accordion with localized role description", async () => {
+    await snapshotHTML(Default, {
+      a11yRoleDescription: "Akkordeon",
     });
+  });
 });

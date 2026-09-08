@@ -1,5 +1,6 @@
 import { getMetadataFromUrl } from "../../data";
-import { subtitle, image } from "./style.module.scss";
+import __styles from "./style.module.scss";
+static const { subtitle, image } = __styles;
 
 <const/{ pageImg, metadata, properName }=getMetadataFromUrl(
     $global.url.pathname,

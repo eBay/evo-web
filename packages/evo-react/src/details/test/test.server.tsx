@@ -29,17 +29,16 @@ describe("EvoDetails SSR", () => {
     expect(renderToString(<Details open />)).toMatchSnapshot();
   });
 
-  it.each<Size>(["regular", "small"])(
-    "renders with size=%s",
-    (size) => {
-      expect(renderToString(<Details size={size} />)).toMatchSnapshot();
-    },
-  );
+  it.each<Size>(["regular", "small"])("renders with size=%s", (size) => {
+    expect(renderToString(<Details size={size} />)).toMatchSnapshot();
+  });
 
   it.each<Alignment>(["regular", "center"])(
     "renders with alignment=%s",
     (alignment) => {
-      expect(renderToString(<Details alignment={alignment} />)).toMatchSnapshot();
+      expect(
+        renderToString(<Details alignment={alignment} />),
+      ).toMatchSnapshot();
     },
   );
 

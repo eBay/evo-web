@@ -13,6 +13,7 @@ export default tseslint.config(
             "dist",
             "config",
             "scripts",
+            "smoke-tests",
             ".storybook",
             "vitest.config.ts",
             "node_modules",

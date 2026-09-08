@@ -6,11 +6,11 @@ import * as stories from "../chip.stories";
 const { Default, WithDelete } = composeStories(stories);
 
 describe("evo-chip SSR", () => {
-    it("renders default", async () => {
-        await snapshotHTML(Default);
-    });
+  it("renders default", async () => {
+    await snapshotHTML(Default);
+  });
 
-    it("renders with delete button", async () => {
-        await snapshotHTML(WithDelete);
-    });
+  it("renders with delete button", async () => {
+    await snapshotHTML(WithDelete);
+  });
 });

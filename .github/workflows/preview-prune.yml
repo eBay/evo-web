@@ -1,0 +1,104 @@
+name: PR Preview Prune
+
+# Safety net for preview-cleanup.yml: removes any previews/pr-* directories on
+# gh-pages whose PR is no longer open. Runs nightly and on demand.
+
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: "preview-prune"
+  cancel-in-progress: false
+
+jobs:
+  prune-previews:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: read
+    steps:
+      - name: Remove previews for closed PRs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          repo_url="https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Blobless, checkout-less clone: we only need the tree listing and the
+          # index, never the (multi-GB) file contents.
+          git clone --filter=blob:none --no-checkout --depth 1 --branch gh-pages "$repo_url" gh-pages-work
+          cd gh-pages-work
+
+          for attempt in 1 2 3; do
+            git fetch --depth 1 origin gh-pages
+            git reset --soft origin/gh-pages
+            git read-tree origin/gh-pages
+
+            stale=()
+            for dir in $(git ls-tree --name-only origin/gh-pages previews/ | grep -E '^previews/pr-[0-9]+$' || true); do
+              pr="${dir#previews/pr-}"
+              state=$(gh api "repos/${{ github.repository }}/pulls/${pr}" --jq .state 2>/dev/null || echo "unknown")
+              if [ "$state" = "closed" ]; then
+                stale+=("$dir")
+              elif [ "$state" = "unknown" ]; then
+                echo "Could not determine state of PR #${pr}; leaving ${dir} alone."
+              fi
+            done
+
+            if [ "${#stale[@]}" -eq 0 ]; then
+              echo "No stale previews found."
+              exit 0
+            fi
+
+            echo "Removing: ${stale[*]}"
+            git rm -r -q --cached --ignore-unmatch "${stale[@]}"
+            git commit -m "cleanup: prune previews for closed PRs (${stale[*]#previews/})"
+            if git push origin HEAD:gh-pages; then
+              exit 0
+            fi
+            echo "Push rejected (attempt ${attempt}); retrying against new tip."
+            sleep $((attempt * 5))
+          done
+          echo "Failed to prune previews after 3 attempts."
+          exit 1
+
+      - name: Squash gh-pages history
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          repo_url="https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Pages only serves the branch tip, but the branch history keeps every
+          # old build's blobs forever. Rewrite gh-pages to a single root commit
+          # holding the current tree. A treeless clone suffices: commit-tree
+          # never needs blob contents.
+          git clone --filter=tree:0 --no-checkout --depth 1 --branch gh-pages "$repo_url" gh-pages-squash
+          cd gh-pages-squash
+          for attempt in 1 2 3; do
+            git fetch --depth 1 origin gh-pages
+            tip=$(git rev-parse origin/gh-pages)
+            # The clone is shallow, so inspect the raw commit object for parent
+            # lines rather than walking history.
+            if ! git cat-file -p "$tip" | grep -q '^parent '; then
+              echo "gh-pages is already a single commit; nothing to squash."
+              exit 0
+            fi
+            squashed=$(git commit-tree "${tip}^{tree}" -m "site @ $(git log -1 --format=%cI "$tip")")
+            # force-with-lease against the tip we read, so a concurrent preview
+            # deploy that lands mid-squash is never clobbered — we just retry.
+            if git push --force-with-lease="refs/heads/gh-pages:${tip}" origin "${squashed}:refs/heads/gh-pages"; then
+              echo "Squashed gh-pages history to ${squashed}."
+              exit 0
+            fi
+            echo "Push rejected (attempt ${attempt}); gh-pages moved, retrying."
+            sleep $((attempt * 5))
+          done
+          echo "Failed to squash gh-pages history after 3 attempts."
+          exit 1

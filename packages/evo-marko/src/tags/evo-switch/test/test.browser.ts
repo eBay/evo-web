@@ -8,44 +8,38 @@ afterEach(cleanup);
 let component;
 
 describe.skip("given switch button is enabled", () => {
+  beforeEach(async () => {
+    component = await render(template, { value: "food" });
+  });
+
+  describe("when switch button is clicked", () => {
     beforeEach(async () => {
-        component = await render(template, { value: "food" });
+      await fireEvent.click(component.getByRole("switch", { hidden: true }));
     });
 
-    describe("when switch button is clicked", () => {
-        beforeEach(async () => {
-            await fireEvent.click(
-                component.getByRole("switch", { hidden: true }),
-            );
-        });
+    it("then it emits the event", () => {
+      const changeEvents = component.emitted("change");
+      expect(changeEvents).has.length(1);
 
-        it("then it emits the event", () => {
-            const changeEvents = component.emitted("change");
-            expect(changeEvents).has.length(1);
-
-            const [[eventArg]] = changeEvents;
-            expect(eventArg)
-                .has.property("originalEvent")
-                .is.an.instanceof(Event);
-            expect(eventArg).has.property("value", "food");
-        });
+      const [[eventArg]] = changeEvents;
+      expect(eventArg).has.property("originalEvent").is.an.instanceof(Event);
+      expect(eventArg).has.property("value", "food");
     });
+  });
 });
 
 describe.skip("given switch button is disabled", () => {
+  beforeEach(async () => {
+    component = await render(template, { disabled: true });
+  });
+
+  describe("when switch button is clicked", () => {
     beforeEach(async () => {
-        component = await render(template, { disabled: true });
+      await fireEvent.click(component.getByRole("switch", { hidden: true }));
     });
 
-    describe("when switch button is clicked", () => {
-        beforeEach(async () => {
-            await fireEvent.click(
-                component.getByRole("switch", { hidden: true }),
-            );
-        });
-
-        it("then it doesn't emit the event", () => {
-            expect(component.emitted("change")).has.length(0);
-        });
+    it("then it doesn't emit the event", () => {
+      expect(component.emitted("change")).has.length(0);
     });
+  });
 });

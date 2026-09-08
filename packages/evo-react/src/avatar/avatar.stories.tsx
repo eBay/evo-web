@@ -30,7 +30,16 @@ import { EvoAvatar, EvoAvatarImage } from "@evo-web/react/avatar";
     },
     color: {
       control: "select",
-      options: ["teal", "light-teal", "green", "lime", "yellow", "orange", "magenta", "pink"],
+      options: [
+        "teal",
+        "light-teal",
+        "green",
+        "lime",
+        "yellow",
+        "orange",
+        "magenta",
+        "pink",
+      ],
       description:
         "Background color override for the initials variant. When omitted, color is derived from the username hash.",
     },

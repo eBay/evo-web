@@ -32,6 +32,54 @@
         "width": "24"
       },
       {
+        "name": "affirm-black-12-colored",
+        "size": "12-colored",
+        "height": "12",
+        "width": "19"
+      },
+      {
+        "name": "affirm-black-18-colored",
+        "size": "18-colored",
+        "height": "18",
+        "width": "29"
+      },
+      {
+        "name": "affirm-black-24-colored",
+        "size": "24-colored",
+        "height": "24",
+        "width": "38"
+      },
+      {
+        "name": "affirm-black-32-colored",
+        "size": "32-colored",
+        "height": "32",
+        "width": "50"
+      },
+      {
+        "name": "affirm-white-12-colored",
+        "size": "12-colored",
+        "height": "12",
+        "width": "19"
+      },
+      {
+        "name": "affirm-white-18-colored",
+        "size": "18-colored",
+        "height": "18",
+        "width": "29"
+      },
+      {
+        "name": "affirm-white-24-colored",
+        "size": "24-colored",
+        "height": "24",
+        "width": "38"
+      },
+      {
+        "name": "affirm-white-32-colored",
+        "size": "32-colored",
+        "height": "32",
+        "width": "50"
+      },
+      {
         "name": "afterpay-12-colored",
         "size": "12-colored",
         "height": "12",

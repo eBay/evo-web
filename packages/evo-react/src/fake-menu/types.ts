@@ -52,8 +52,7 @@ export type EvoFakeMenuButtonItemProps = Omit<
   };
 
 export type EvoFakeMenuItemProps =
-  | EvoFakeMenuAnchorItemProps
-  | EvoFakeMenuButtonItemProps;
+  EvoFakeMenuAnchorItemProps | EvoFakeMenuButtonItemProps;
 
 export type EvoFakeMenuItemBadgeProps = Omit<EvoBadgeProps, "type">;
 

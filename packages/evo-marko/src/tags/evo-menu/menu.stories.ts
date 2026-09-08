@@ -20,6 +20,8 @@ import GroupsTemplate from "./examples/groups.marko";
 import GroupsTemplateCode from "./examples/groups.marko?raw";
 import ControlledTemplate from "./examples/controlled.marko";
 import ControlledTemplateCode from "./examples/controlled.marko?raw";
+import ItemDisabledTemplate from "./examples/item-diabled.marko";
+import ItemDisabledTemplateCode from "./examples/item-diabled.marko?raw";
 import FooterTemplate from "./examples/footer.marko";
 import FooterTemplateCode from "./examples/footer.marko?raw";
 
@@ -164,7 +166,10 @@ export const MultiSelect = buildExtensionTemplate(
   },
 );
 
-export const Groups = buildExtensionTemplate(GroupsTemplate, GroupsTemplateCode);
+export const Groups = buildExtensionTemplate(
+  GroupsTemplate,
+  GroupsTemplateCode,
+);
 
 export const Controlled = buildExtensionTemplate(
   ControlledTemplate,
@@ -184,6 +189,11 @@ export const Badged = buildExtensionTemplate(
 export const Sprites = buildExtensionTemplate(
   SpritesTemplate,
   SpritesTemplateCode,
+);
+
+export const ItemDisabled = buildExtensionTemplate(
+  ItemDisabledTemplate,
+  ItemDisabledTemplateCode,
 );
 
 export const Footer = buildExtensionTemplate(

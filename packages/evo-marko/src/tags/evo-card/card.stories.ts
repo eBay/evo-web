@@ -8,6 +8,8 @@ import AnchorTemplate from "./examples/anchor.marko";
 import AnchorTemplateCode from "./examples/anchor.marko?raw";
 import ButtonTemplate from "./examples/button.marko";
 import ButtonTemplateCode from "./examples/button.marko?raw";
+import VideoTemplate from "./examples/video.marko";
+import VideoTemplateCode from "./examples/video.marko?raw";
 import MinimumTemplate from "./examples/minimum.marko";
 import MinimumTemplateCode from "./examples/minimum.marko?raw";
 
@@ -47,14 +49,21 @@ export default {
       control: "boolean",
       description: "Disables the interactive elements of the card.",
     },
-    image: {
-      type: { name: "object", value: {}, required: true },
+    media: {
       description:
-        "The top image tag. Will be passed as attributes to the `<img>` tag.",
+        "Optional media displayed at the top of the card. Renders an `<img>` from `src`, or your own content when the tag has any. Apply `card__hero-image` to your own media element to get the standard fill and hover styles.",
       "@": {
-        ["<img> attributes" as any]: {
+        src: {
+          type: "string",
+          description: "URL of the card image",
+        },
+        alt: {
+          type: "string",
+          description: "Alternative text for the card image",
+        },
+        ["<div> attributes" as any]: {
           description:
-            "All attributes and event handlers from [the native `<img>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img) will be passed through to `<@image>`.",
+            "All attributes and event handlers from [the native HTML `<div>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/div) will be passed through",
         },
       },
     },
@@ -125,6 +134,8 @@ export const Button = buildExtensionTemplate(
   ButtonTemplate,
   ButtonTemplateCode,
 );
+
+export const Video = buildExtensionTemplate(VideoTemplate, VideoTemplateCode);
 
 export const Minimum = buildExtensionTemplate(
   MinimumTemplate,

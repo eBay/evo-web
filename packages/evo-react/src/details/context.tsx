@@ -22,9 +22,6 @@ export function DetailsProvider({
   alignment,
   children,
 }: DetailsProviderProps) {
-  const value = useMemo(
-    () => ({ size, alignment }),
-    [size, alignment],
-  );
+  const value = useMemo(() => ({ size, alignment }), [size, alignment]);
   return <DetailsContext value={value}>{children}</DetailsContext>;
 }

@@ -5,10 +5,12 @@
     --calendar-month-width: 311px;
     display: inline-block;
 }
+
 .date-textbox > .floating-label + .floating-label,
 .date-textbox > .textbox + .textbox {
     margin-left: var(--spacing-100);
 }
+
 .date-textbox__popover {
     background-color: var(
         --calendar-background-color,
@@ -16,17 +18,20 @@
     );
     border-radius: var(--spacing-200);
     box-shadow: var(--bubble-shadow);
-    margin-left: calc(var(--spacing-100) * -1);
+    margin-left: calc(-1 * var(--spacing-100));
     padding: var(--spacing-200);
     position: absolute;
     z-index: 1;
 }
+
 .date-textbox__popover--fixed {
     position: fixed;
 }
+
 .date-textbox__popover[hidden] {
     display: none;
 }
+
 @media only screen and (max-width: 512px) {
     .date-textbox__popover {
         left: 0;

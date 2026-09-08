@@ -161,7 +161,9 @@ describe("EvoConfirmDialog SSR", () => {
     const html = renderToString(
       <EvoConfirmDialog open>
         <EvoConfirmDialogHeader>Title</EvoConfirmDialogHeader>
-        <EvoConfirmDialogMain><p>Content</p></EvoConfirmDialogMain>
+        <EvoConfirmDialogMain>
+          <p>Content</p>
+        </EvoConfirmDialogMain>
         <EvoConfirmDialogFooter className="my-footer">
           <EvoConfirmDialogReject>Cancel</EvoConfirmDialogReject>
           <EvoConfirmDialogConfirm>Delete</EvoConfirmDialogConfirm>

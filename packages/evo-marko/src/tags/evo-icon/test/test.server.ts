@@ -21,7 +21,7 @@ describe("icon", () => {
     const input = {
       _name: iconName,
       _type: "icon",
-      _symbol: () => {}
+      _symbol: () => {},
     };
     await snapshotHTML(template, input);
   });

@@ -52,32 +52,39 @@ export function EvoAccordion(props: EvoAccordionProps) {
   const isControlled = "open" in props;
   const currentOpen = isControlled ? open : uncontrolledOpen;
 
-  const onItemToggle = useCallback((id: AccordionId, isOpen: boolean) => {
-    const nextOpen = getNextOpenValue(currentOpen, id, isOpen);
+  const onItemToggle = useCallback(
+    (id: AccordionId, isOpen: boolean) => {
+      const nextOpen = getNextOpenValue(currentOpen, id, isOpen);
 
-    if (nextOpen === currentOpen) {
-      return;
-    }
+      if (nextOpen === currentOpen) {
+        return;
+      }
 
-    setInteracted(true);
+      setInteracted(true);
 
-    if (!isControlled) {
-      setUncontrolledOpen(nextOpen);
-    }
+      if (!isControlled) {
+        setUncontrolledOpen(nextOpen);
+      }
 
-    if (Array.isArray(currentOpen)) {
-      (onOpenChange as MultipleAccordionProps["onOpenChange"])?.(
-        nextOpen as AccordionId[],
-      );
-    } else {
-      (onOpenChange as SingleAccordionProps["onOpenChange"])?.(
-        nextOpen as AccordionId | undefined,
-      );
-    }
-  }, [currentOpen, isControlled, onOpenChange]);
+      if (Array.isArray(currentOpen)) {
+        (onOpenChange as MultipleAccordionProps["onOpenChange"])?.(
+          nextOpen as AccordionId[],
+        );
+      } else {
+        (onOpenChange as SingleAccordionProps["onOpenChange"])?.(
+          nextOpen as AccordionId | undefined,
+        );
+      }
+    },
+    [currentOpen, isControlled, onOpenChange],
+  );
 
   return (
-    <AccordionProvider open={currentOpen} isControlled={isControlled} onItemToggle={onItemToggle}>
+    <AccordionProvider
+      open={currentOpen}
+      isControlled={isControlled}
+      onItemToggle={onItemToggle}
+    >
       <ul
         {...rest}
         aria-roledescription={a11yText}

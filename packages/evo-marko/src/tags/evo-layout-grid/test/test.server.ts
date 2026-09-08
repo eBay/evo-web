@@ -6,11 +6,11 @@ import * as stories from "../layout-grid.stories"; // import all stories from th
 const { Default, WithCustomColumns } = composeStories(stories);
 
 describe("evo-layout-grid", () => {
-    it("renders default", async () => {
-        await snapshotHTML(Default);
-    });
+  it("renders default", async () => {
+    await snapshotHTML(Default);
+  });
 
-    it("renders with custom columns", async () => {
-        await snapshotHTML(WithCustomColumns);
-    });
+  it("renders with custom columns", async () => {
+    await snapshotHTML(WithCustomColumns);
+  });
 });

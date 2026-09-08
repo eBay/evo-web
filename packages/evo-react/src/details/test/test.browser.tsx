@@ -9,9 +9,7 @@ import { EvoDetailsLeading } from "../details-leading";
 import { EvoDetailsContent } from "../details-content";
 import { EvoIconLightbulb16 } from "../../icon/icons/lightbulb-16";
 
-function renderDetails(
-  props: Partial<ComponentProps<typeof EvoDetails>> = {},
-) {
+function renderDetails(props: Partial<ComponentProps<typeof EvoDetails>> = {}) {
   return render(
     <EvoDetails {...props}>
       <EvoDetailsSummary>

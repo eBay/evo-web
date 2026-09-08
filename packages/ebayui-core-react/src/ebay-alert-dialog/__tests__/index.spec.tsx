@@ -82,10 +82,7 @@ describe("<EbayAlertDialog />", () => {
         });
 
         describe("accessibility", () => {
-            it.skip("when the dialog opens, then it should focus on the confirm button", async () => {
-                const button = screen.getByRole("button", { name: "OK" });
-                expect(button).toHaveFocus();
-            });
+            it.todo("when the dialog opens, then it should focus on the confirm button");
 
             it("then it should have role alertdialog", () => {
                 const dialog = screen.getByRole("alertdialog");

@@ -11,6 +11,14 @@ import { EbayIconAdjustPriceDown16 } from "../icons/ebay-icon-adjust-price-down-
 import { EbayIconAdjustPriceDown24 } from "../icons/ebay-icon-adjust-price-down-24";
 import { EbayIconAdjustPriceUp16 } from "../icons/ebay-icon-adjust-price-up-16";
 import { EbayIconAdjustPriceUp24 } from "../icons/ebay-icon-adjust-price-up-24";
+import { EbayIconAffirmBlack12Colored } from "../icons/ebay-icon-affirm-black-12-colored";
+import { EbayIconAffirmBlack18Colored } from "../icons/ebay-icon-affirm-black-18-colored";
+import { EbayIconAffirmBlack24Colored } from "../icons/ebay-icon-affirm-black-24-colored";
+import { EbayIconAffirmBlack32Colored } from "../icons/ebay-icon-affirm-black-32-colored";
+import { EbayIconAffirmWhite12Colored } from "../icons/ebay-icon-affirm-white-12-colored";
+import { EbayIconAffirmWhite18Colored } from "../icons/ebay-icon-affirm-white-18-colored";
+import { EbayIconAffirmWhite24Colored } from "../icons/ebay-icon-affirm-white-24-colored";
+import { EbayIconAffirmWhite32Colored } from "../icons/ebay-icon-affirm-white-32-colored";
 import { EbayIconAfterpay12Colored } from "../icons/ebay-icon-afterpay-12-colored";
 import { EbayIconAfterpay18Colored } from "../icons/ebay-icon-afterpay-18-colored";
 import { EbayIconAfterpay24Colored } from "../icons/ebay-icon-afterpay-24-colored";
@@ -1219,6 +1227,70 @@ export const AllIcons = () => (
             <td>ebay-icon-adjust-price-up-24</td>
             <td>
                 <EbayIconAdjustPriceUp24 />
+            </td>
+        </tr>
+            
+
+        <tr>
+            <td>ebay-icon-affirm-black-12-colored</td>
+            <td>
+                <EbayIconAffirmBlack12Colored />
+            </td>
+        </tr>
+            
+
+        <tr>
+            <td>ebay-icon-affirm-black-18-colored</td>
+            <td>
+                <EbayIconAffirmBlack18Colored />
+            </td>
+        </tr>
+            
+
+        <tr>
+            <td>ebay-icon-affirm-black-24-colored</td>
+            <td>
+                <EbayIconAffirmBlack24Colored />
+            </td>
+        </tr>
+            
+
+        <tr>
+            <td>ebay-icon-affirm-black-32-colored</td>
+            <td>
+                <EbayIconAffirmBlack32Colored />
+            </td>
+        </tr>
+            
+
+        <tr>
+            <td>ebay-icon-affirm-white-12-colored</td>
+            <td>
+                <EbayIconAffirmWhite12Colored />
+            </td>
+        </tr>
+            
+
+        <tr>
+            <td>ebay-icon-affirm-white-18-colored</td>
+            <td>
+                <EbayIconAffirmWhite18Colored />
+            </td>
+        </tr>
+            
+
+        <tr>
+            <td>ebay-icon-affirm-white-24-colored</td>
+            <td>
+                <EbayIconAffirmWhite24Colored />
+            </td>
+        </tr>
+            
+
+        <tr>
+            <td>ebay-icon-affirm-white-32-colored</td>
+            <td>
+                <EbayIconAffirmWhite32Colored />
             </td>
         </tr>
             

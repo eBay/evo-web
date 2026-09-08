@@ -1,25 +1,24 @@
-<const/options = [
-    {
-        value: 1,
-        text: "Option 1",
-    },
-    {
-        value: 2,
-        text: "Option 2",
-        selected: true,
-    },
-    {
-        value: 3,
-        text: "Option 3",
-    },
+<const/options=[
+  {
+    value: 1,
+    text: "Option 1",
+  },
+  {
+    value: 2,
+    text: "Option 2",
+    selected: true,
+  },
+  {
+    value: 3,
+    text: "Option 3",
+  },
 ]>
 <evo-select name="formFieldName">
-    <if=true>
-        <for|option| of=options>
-            <@option
-                value=option.value
-                selected=option.selected
-            >${option.text}</>
-        </for>
-    </if>
+  <if=true>
+    <for|option| of=options>
+      <@option value=option.value selected=option.selected>
+        ${option.text}
+      </@option>
+    </for>
+  </if>
 </evo-select>
