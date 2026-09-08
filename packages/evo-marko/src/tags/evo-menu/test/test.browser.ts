@@ -3,7 +3,8 @@ import { composeStories } from "@storybook/marko";
 import { render, fireEvent, cleanup, waitFor } from "@marko/testing-library";
 import { pressKey } from "../../../common/test-utils/browser";
 import * as stories from "../menu.stories"; // import all stories from the stories file
-const { Default, Groups, Controlled, Typeahead } = composeStories(stories);
+const { Default, Groups, Controlled, Typeahead, ItemDisabled } =
+  composeStories(stories);
 const Separator: any = Default;
 
 afterEach(cleanup);
@@ -518,6 +519,116 @@ describe.skip("given the menu has checkbox items with separator", () => {
 
     it("then the item is unchecked", () => {
       expect(thirdItem).toHaveAttribute("aria-checked", "false");
+    });
+  });
+});
+
+describe("given the menu items have no explicit values", () => {
+  const firstItemText = "item 1 that has very long text";
+  const secondItemText = "item 2";
+  const thirdItemText = "item 3";
+
+  const getItem = (text: string) =>
+    component.getByText(text).parentElement as HTMLElement;
+
+  beforeEach(async () => {
+    component = await render(Default);
+    getItem(firstItemText).focus();
+  });
+
+  describe("when the down key is pressed", () => {
+    beforeEach(async () => {
+      await pressKey(getItem(firstItemText), { key: "ArrowDown" });
+    });
+
+    it("then focus and the tab stop move to the next item", () => {
+      expect(document.activeElement).to.equal(getItem(secondItemText));
+      expect(getItem(secondItemText)).toHaveAttribute("tabindex", "0");
+      expect(getItem(firstItemText)).toHaveAttribute("tabindex", "-1");
+    });
+  });
+
+  describe("when the end key is pressed", () => {
+    beforeEach(async () => {
+      await pressKey(getItem(firstItemText), { key: "End" });
+    });
+
+    it("then focus moves to the last item", () => {
+      expect(document.activeElement).to.equal(getItem(thirdItemText));
+      expect(getItem(thirdItemText)).toHaveAttribute("tabindex", "0");
+    });
+
+    describe("when the home key is pressed", () => {
+      beforeEach(async () => {
+        await pressKey(getItem(thirdItemText), { key: "Home" });
+      });
+
+      it("then focus moves back to the first item", () => {
+        expect(document.activeElement).to.equal(getItem(firstItemText));
+        expect(getItem(firstItemText)).toHaveAttribute("tabindex", "0");
+      });
+    });
+  });
+});
+
+describe("given the menu is single-select", () => {
+  const firstItemText = "item 1 that has very long text";
+  const secondItemText = "item 2";
+
+  const getItem = (text: string) =>
+    component.getByText(text).parentElement as HTMLElement;
+
+  beforeEach(async () => {
+    component = await render(Default, { selected: 0 });
+  });
+
+  for (const key of ["Enter", " "]) {
+    describe(`when "${key}" is pressed on an item`, () => {
+      beforeEach(async () => {
+        await pressKey(getItem(secondItemText), { key });
+      });
+
+      it("then it checks that item", () => {
+        expect(getItem(secondItemText)).toHaveAttribute("aria-checked", "true");
+        expect(getItem(firstItemText)).toHaveAttribute("aria-checked", "false");
+      });
+    });
+  }
+});
+
+describe("given the menu has a disabled item", () => {
+  const firstItemText = "item 1 that has very long text";
+  const disabledItemText = "item 2";
+  const lastItemText = "item 3";
+
+  const getItem = (text: string) =>
+    component.getByText(text).parentElement as HTMLElement;
+
+  beforeEach(async () => {
+    component = await render(ItemDisabled);
+  });
+
+  describe("when the down key is pressed before the disabled item", () => {
+    beforeEach(async () => {
+      getItem(firstItemText).focus();
+      await pressKey(getItem(firstItemText), { key: "ArrowDown" });
+    });
+
+    it("then focus skips the disabled item", () => {
+      expect(document.activeElement).to.equal(getItem(lastItemText));
+    });
+  });
+
+  describe("when the disabled item is clicked", () => {
+    beforeEach(async () => {
+      await fireEvent.click(getItem(disabledItemText));
+    });
+
+    it("then it is not selected", () => {
+      expect(getItem(disabledItemText)).not.toHaveAttribute(
+        "aria-checked",
+        "true",
+      );
     });
   });
 });

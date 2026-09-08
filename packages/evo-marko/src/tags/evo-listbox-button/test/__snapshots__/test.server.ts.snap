@@ -1307,7 +1307,7 @@ exports[`listbox button > renders with second item selected 1`] = `
     tabindex="0"
   >
     <div
-      class="listbox__option"
+      class="listbox__option listbox__option--active"
       data-value="1"
       role="option"
     >
