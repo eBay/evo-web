@@ -79,9 +79,7 @@ export interface Input extends Marko.HTML.Dialog {
     null // tell Marko it's not a part of the spread because the browser does DOM manipulation
   )
   closedby=closedby
-  aria-labelledby=(
-    inputLabelledBy ? `${inputLabelledBy} ${headerId}` : headerId
-  )
+  aria-labelledby=inputLabelledBy ? `${inputLabelledBy} ${headerId}` : headerId
   class=[
     "dialog",
     !open && "dialog--close",
@@ -99,7 +97,8 @@ export interface Input extends Marko.HTML.Dialog {
       el.close();
     }
     onAnimationEnd && onAnimationEnd(e, el);
-  }>
+  }
+>
   <if=banner>
     <const/{
       src: bannerSrc,
@@ -115,7 +114,8 @@ export interface Input extends Marko.HTML.Dialog {
         ...(bannerStyle as Record<string, unknown>),
         "background-image": bannerSrc && `url(${bannerSrc})`,
         "background-position": bannerPosition,
-      }/>
+      }
+    />
   </if>
   <div class="dialog__header">
     <if=previous>
@@ -127,14 +127,16 @@ export interface Input extends Marko.HTML.Dialog {
     <${headerAs || "h2"}
       ...headerInput
       id=headerId
-      class=["dialog__title", headerInput.class]/>
+      class=["dialog__title", headerInput.class]
+    />
     <evo-icon-button
       ...close
       class=["dialog__close", close.class]
       onClick(e, el) {
         $dialog().requestClose();
         close.onClick && close.onClick(e, el);
-      }>
+      }
+    >
       <evo-icon-close-16/>
     </evo-icon-button>
   </div>

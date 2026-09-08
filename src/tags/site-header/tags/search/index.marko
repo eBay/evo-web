@@ -1,12 +1,14 @@
 import "@docsearch/css";
-import docsearch from "@docsearch/js";
+// The root export of @docsearch/js v5 is the Ask AI variant; the classic
+// search-only widget moved to the /docsearch subpath.
+import docsearch from "@docsearch/js/docsearch";
 
 <script>
   docsearch({
     container: container(),
-    appId: '892O7GNQGV',
-    indexName: 'evo-web',
-    apiKey: '109d9e4e428a3e217b62e6840df79c71',
+    appId: "892O7GNQGV",
+    indices: ["evo-web"],
+    apiKey: "109d9e4e428a3e217b62e6840df79c71",
   });
 </script>
 

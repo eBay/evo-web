@@ -1,21 +1,21 @@
 a.cta-btn {
     align-content: center;
-    align-items: center;
+    border-radius: var(--cta-btn-border-radius, 20px);
+    display: inline-block;
+    font-size: var(--font-size-body);
+    max-width: 100%;
+    min-height: 40px;
+    padding: 0 20px;
     background-color: var(
         --cta-btn-background-color,
         var(--color-background-primary)
     );
-    border: 1px solid;
-    border-radius: var(--cta-btn-border-radius, 20px);
-    box-sizing: border-box;
     color: var(--cta-btn-foreground-color, var(--color-foreground-primary));
-    display: inline-block;
+    align-items: center;
+    border: 1px solid;
+    box-sizing: border-box;
     font-family: inherit;
-    font-size: var(--font-size-body);
     margin: 0;
-    max-width: 100%;
-    min-height: 40px;
-    padding: 0 20px;
     text-align: center;
     text-decoration: none;
     vertical-align: bottom;
@@ -32,12 +32,14 @@ a.cta-btn:focus-visible {
 a.cta-btn:focus:not(:focus-visible) {
     outline: none;
 }
+
 a.cta-btn:visited {
     color: var(
         --cta-btn-visited-foreground-color,
         var(--color-foreground-primary)
     );
 }
+
 a.cta-btn:focus,
 a.cta-btn:hover {
     background-color: var(
@@ -53,6 +55,7 @@ a.cta-btn:hover {
         var(--color-background-primary)
     );
 }
+
 a.cta-btn:not([href]),
 a.cta-btn[aria-disabled="true"] {
     background-color: var(
@@ -68,14 +71,16 @@ a.cta-btn[aria-disabled="true"] {
         var(--color-foreground-disabled)
     );
 }
+
 a.cta-btn--fluid {
     width: 100%;
 }
+
 span.cta-btn__cell {
     align-items: center;
     display: flex;
-    justify-content: center;
     width: 100%;
+    justify-content: center;
 }
 span.cta-btn__cell--fixed-height {
     display: inline-flex;
@@ -91,11 +96,12 @@ span.cta-btn__cell--truncated > svg {
     align-self: baseline;
     max-width: calc(100% - 32px);
 }
+
 a.cta-btn svg.icon {
-    align-self: center;
     flex-shrink: 0;
     height: 10px;
     width: 10px;
+    align-self: center;
 }
 a.cta-btn svg.icon:first-child {
     margin-inline-end: 8px;
@@ -106,12 +112,14 @@ a.cta-btn svg.icon:last-child {
 a.cta-btn svg.icon:only-child {
     margin: 0;
 }
+
 span.cta-btn__cell--fixed-height svg.icon {
     align-self: center;
     height: 1rem;
     overflow: visible;
     width: 1rem;
 }
+
 a.cta-btn--truncated,
 a.cta-btn--truncated span {
     line-height: 1.4em;
@@ -119,12 +127,14 @@ a.cta-btn--truncated span {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
 a.cta-btn--large {
     border-radius: 24px;
     display: inline-flex;
     font-size: var(--font-size-medium);
     min-height: 48px;
 }
+
 [dir="rtl"] a.cta-btn svg.icon--arrow-right-24 {
     transform: rotate(180deg);
 }

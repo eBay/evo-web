@@ -94,9 +94,7 @@ export interface RangeInput extends BaseInput {
 export type Input = StaticInput | DayInput | RangeInput;
 
 <let/systemDay=getTodayISO()>
-<script>
-  systemDay = getTodayISO();
-</script>
+<script>systemDay = getTodayISO();</script>
 
 <const/locale=localeDefault(input.locale)>
 
@@ -109,12 +107,12 @@ export type Input = StaticInput | DayInput | RangeInput;
   a11yRangeText,
 }=input>
 
-<let/selected:=((input as StaticInput).selected)>
+<let/selected:=(input as StaticInput).selected>
 // `viewStart` is the first displayed month (YYYY-MM). `valueChange` notifies `input.visibleMonthChange`.
 // `focus` is fully uncontrolled — always within the visible window, resets when viewStart changes.
-<let/viewStart=(
-  input.visibleMonth ?? (today.slice(0, 7) as MonthISO)
-) valueChange=input.visibleMonthChange>
+<let/viewStart=input.visibleMonth ?? (today.slice(0, 7) as MonthISO)
+  valueChange=input.visibleMonthChange
+>
 <let/focus=getInitialFocus(viewStart, today, numMonths)>
 <script>
   // If viewStart changes externally and focus is no longer in the window, reset it.
@@ -169,10 +167,8 @@ export type Input = StaticInput | DayInput | RangeInput;
               );
             }
           }
-          a11yText=a11yNavigateText(
-            getMonthName(locale, viewStart, -1),
-            "prev",
-          )>
+          a11yText=a11yNavigateText(getMonthName(locale, viewStart, -1), "prev")
+        >
           <evo-icon-chevron-left-24/>
         </evo-icon-button>
         <for|i| until=numMonths>
@@ -196,7 +192,8 @@ export type Input = StaticInput | DayInput | RangeInput;
           a11yText=a11yNavigateText(
             getMonthName(locale, viewStart, numMonths),
             "next",
-          )>
+          )
+        >
           <evo-icon-chevron-right-24/>
         </evo-icon-button>
       </div>
@@ -308,7 +305,8 @@ export type Input = StaticInput | DayInput | RangeInput;
             break;
           }
         }
-    }>
+    }
+  >
     <for|i| until=numMonths>
       <div class="calendar__month">
         <table>
@@ -406,7 +404,8 @@ export type Input = StaticInput | DayInput | RangeInput;
                               selected = { from: iso };
                             }
                           }
-                        }>
+                        }
+                      >
                         ${day}
                       </button>
                     </if>
@@ -423,7 +422,8 @@ export type Input = StaticInput | DayInput | RangeInput;
                           "calendar__cell--disabled": disabled,
                           "calendar__cell--current": iso === today,
                         }
-                        href=link>
+                        href=link
+                      >
                         ${day}
                         <const/clippedText=(
                           [
@@ -439,9 +439,7 @@ export type Input = StaticInput | DayInput | RangeInput;
                             .join(" - ")
                         )>
                         <if=clippedText>
-                          <span class="clipped">
-                            ${clippedText}
-                          </span>
+                          <span class="clipped">${clippedText}</span>
                         </if>
                       </>
                     </else>

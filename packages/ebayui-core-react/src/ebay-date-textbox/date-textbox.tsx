@@ -237,7 +237,7 @@ const EbayDateTextbox: FC<EbayDateTextboxProps> = ({
         // Find which date segment we're currently in
         let i = 0;
         let start = 0;
-        for (let currStart; ~(currStart = value.indexOf(sep[i], start)); ) {
+        for (let currStart; ~(currStart = value.indexOf(sep[i], start));) {
             start = currStart + sep[i].length;
             i++;
         }

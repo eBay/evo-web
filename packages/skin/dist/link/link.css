@@ -31,17 +31,18 @@ a.standalone-link[aria-disabled="true"] {
     );
     text-decoration: none;
 }
+
 button.fake-link {
     background-color: initial;
     border: 0;
-    color: var(
-        --fake-link-foreground-color,
-        var(--color-foreground-link-primary)
-    );
     font-family: inherit;
     font-size: inherit;
     padding: 0;
     text-decoration: underline;
+    color: var(
+        --fake-link-foreground-color,
+        var(--color-foreground-link-primary)
+    );
 }
 button.fake-link:hover {
     color: var(
@@ -56,6 +57,7 @@ button.fake-link[disabled] {
         var(--color-foreground-disabled)
     );
 }
+
 a.legal-link,
 button.legal-link {
     text-decoration: underline;

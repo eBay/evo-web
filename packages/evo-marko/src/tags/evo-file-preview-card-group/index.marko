@@ -14,9 +14,7 @@ static const SHOW_AMOUNT = 15;
   visibleCardCountChange,
   ...htmlInput
 }=input>
-<let/showing=(
-  visibleCardCount ?? SHOW_AMOUNT
-) valueChange=visibleCardCountChange>
+<let/showing=visibleCardCount ?? SHOW_AMOUNT valueChange=visibleCardCountChange>
 <const/cards=[...(card || [])]>
 
 <div ...htmlInput class=["file-preview-card-group", input.class]>
@@ -26,14 +24,15 @@ static const SHOW_AMOUNT = 15;
       <evo-file-preview-card as="li" ...cardInput/>
     </for>
     <if=(cards.length > showing)>
-      <evo-file-preview-card as="li" file=(cards[showing].file)>
+      <evo-file-preview-card as="li" file=cards[showing].file>
         <@seeMoreAction
           a11yText=null
           ...seeMoreAction
           onClick(e, target) {
             showing += SHOW_AMOUNT;
             (seeMoreAction?.onClick || null)?.(e, target);
-          }>
+          }
+        >
           +${cards.length - showing}
         </@seeMoreAction>
       </evo-file-preview-card>

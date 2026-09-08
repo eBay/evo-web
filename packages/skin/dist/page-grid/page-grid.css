@@ -3,17 +3,17 @@
     --page-grid-outside-margins: 16px;
     --page-grid-column-gaps: var(--spacing-100);
     --page-grid-row-gaps: var(--spacing-200);
-    --page-grid-column-widths: calc(12.5% - var(--spacing-100) + 1px);
+    --page-grid-column-widths: calc(12.5% + 1px - var(--spacing-100));
     --page-grid-max-width: 1584px;
     --page-grid-total-max-width: calc(
-        var(--page-grid-max-width) + var(--page-grid-outside-margins) * 2
+        var(--page-grid-max-width) + 2 * var(--page-grid-outside-margins)
     );
 }
 @media (min-width: 512px) {
     :root {
         --page-grid-number-cols: 16;
         --page-grid-column-gaps: var(--spacing-200);
-        --page-grid-column-widths: calc(6.25% - var(--spacing-200) + 1px);
+        --page-grid-column-widths: calc(6.25% + 1px - var(--spacing-200));
         --page-grid-outside-margins: 32px;
     }
 }
@@ -33,6 +33,7 @@
     position: relative;
     width: 100%;
 }
+
 .page-grid {
     column-gap: var(--page-grid-column-gaps);
     grid-template-columns: repeat(

@@ -31,11 +31,10 @@ export interface Input extends Omit<Marko.HTML.Div, "role" | "aria-label"> {
 
 <let/aspectRatio=knownAspectRatio>
 
-<const/imagePlacement=(
-  (aspectRatio && (aspectRatio < 3 / 4 || aspectRatio > 4 / 3)
-    ? "fit"
-    : "cover") as ImagePlacement
-)>
+<const/imagePlacement=(aspectRatio &&
+(aspectRatio < 3 / 4 || aspectRatio > 4 / 3)
+  ? "fit"
+  : "cover") as ImagePlacement>
 
 <div
   ...htmlInput
@@ -47,7 +46,8 @@ export interface Input extends Omit<Marko.HTML.Div, "role" | "aria-label"> {
     inputClass,
     size && `avatar--${size}`,
     username && !image && `avatar--${getColorForText(username, color)}`,
-  ]>
+  ]
+>
   <if=image>
     <img
       ...image
@@ -55,14 +55,13 @@ export interface Input extends Omit<Marko.HTML.Div, "role" | "aria-label"> {
       onLoad(_, el) {
         aspectRatio = el.naturalWidth / el.naturalHeight;
         image.onLoad && image.onLoad(_, el);
-      }>
+      }
+    >
   </if>
   <else if=content>
     <${content}/>
   </else>
-  <else if=username>
-    ${username.charAt(0).toUpperCase()}
-  </else>
+  <else if=username>${username.charAt(0).toUpperCase()}</else>
   <else>
     <evo-icon-avatar-signed-out/>
   </else>

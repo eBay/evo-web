@@ -106,19 +106,19 @@ export interface Input<Index extends number | string | (number | string)[]>
 
 <evo-expander/expander
   open=open
-  placement=(reverse ? "bottom-end" : "bottom-start")
+  placement=reverse ? "bottom-end" : "bottom-start"
   strategy=strategy
   host=$root
-  overlay=$menu/>
+  overlay=$menu
+/>
 // The menu only becomes focusable once the expander has positioned, and so
 // made visible, it.
 <script>
   if (open && focusOnOpen && expander.positioned) {
-    $menu()
-      .querySelector<HTMLElement>(
-        `[role^="menuitem"]:not([aria-disabled="true"])`,
-      )
-      ?.focus();
+    const item = $menu().querySelector(
+      `[role^="menuitem"]:not([aria-disabled="true"])`,
+    );
+    if (item instanceof HTMLElement) item.focus();
   }
 </script>
 
@@ -137,7 +137,8 @@ export interface Input<Index extends number | string | (number | string)[]>
       open = false;
     }
     onFocusOut && onFocusOut(e, el);
-  }>
+  }
+>
   <${tagName as any}
     class=[`menu-button__button`]
     size=size
@@ -148,18 +149,19 @@ export interface Input<Index extends number | string | (number | string)[]>
     selected=isSelected
     transparent=transparent
     aria-expanded=expander.ariaExpanded
-    aria-labelledby=prefixId &&
-    (variant === "icon" ? prefixId : `${prefixId} ${labelId}`)
+    aria-labelledby=(
+      prefixId && (variant === "icon" ? prefixId : `${prefixId} ${labelId}`)
+    )
     split=split
     disabled=disabled
     partiallyDisabled=partiallyDisabled
     onClick() {
       focusOnOpen = true;
       open = !open;
-    }>
+    }
+  >
     <if=label>
-      <span ...label class=["menu-button-prefix-label", label.class]/>
-      ${" "}
+      <span ...label class=["menu-button-prefix-label", label.class]/>${" "}
     </if>
     <if=variant === "icon">
       <${input.content}/>
@@ -178,7 +180,7 @@ export interface Input<Index extends number | string | (number | string)[]>
     selected:=input.selected
     classPrefix="menu-button"
     fixed=strategy === "fixed"
-    variant=(variant as MenuInput<Index>["variant"])
+    variant=variant as MenuInput<Index>["variant"]
     fixWidth=fixWidth
     tabindex=-1
     footerButton=footerButton
@@ -189,5 +191,6 @@ export interface Input<Index extends number | string | (number | string)[]>
       }
     }
     item=items
-    group=groups/>
+    group=groups
+  />
 </span>

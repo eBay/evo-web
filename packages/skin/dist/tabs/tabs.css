@@ -45,7 +45,6 @@ li.fake-tabs__item > a {
     display: inline-block;
     padding: var(--spacing-150) var(--spacing-200);
 }
-
 div.tabs__item[role="tab"]:after,
 li.fake-tabs__item > a:after {
     background-color: initial;
@@ -64,12 +63,10 @@ li.fake-tabs__item > a[aria-current] {
         var(--color-foreground-primary)
     );
 }
-
 div.tabs__item[role="tab"][aria-selected="true"]:after,
 li.fake-tabs__item > a[aria-current]:after {
     background-color: currentColor;
 }
-
 div.tabs__item[role="tab"]:focus:not(:focus-visible),
 li.fake-tabs__item a:focus:not(:focus-visible) {
     outline: none;
@@ -87,7 +84,6 @@ li.fake-tabs__item > a:not([aria-current]):not([href]):focus,
 li.fake-tabs__item > a:not([aria-current]):not([href]):hover {
     color: var(--color-foreground-disabled);
 }
-
 div.tabs__item[role="tab"]:not(
         [aria-selected="true"]
     )[aria-disabled="true"]:after,
@@ -109,7 +105,6 @@ li.fake-tabs__item > a:not([aria-current]):focus,
 li.fake-tabs__item > a:not([aria-current]):hover {
     color: var(--color-foreground-secondary);
 }
-
 div.tabs__item[role="tab"]:not([aria-selected="true"]):focus:after,
 div.tabs__item[role="tab"]:not([aria-selected="true"]):hover:after,
 li.fake-tabs__item > a:not([aria-current]):focus:after,

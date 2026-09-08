@@ -1,6 +1,7 @@
 import fsp from "node:fs/promises";
 import { defineConfig } from "vite";
-import { playwright } from '@vitest/browser-playwright';
+import { Features } from "lightningcss";
+import { playwright } from "@vitest/browser-playwright";
 import marko from "@marko/vite";
 const isCI = !!process.env.CI;
 
@@ -18,11 +19,16 @@ const rawMarkdown = {
 };
 
 export default defineConfig({
+    css: {
+        lightningcss: {
+            // Never rewrite :dir() into the :lang() approximation; direction is
+            // set with dir attributes, not language tags.
+            exclude: Features.DirSelector,
+        },
+    },
     onConsoleLog: () => true,
     optimizeDeps: {
-        include: [
-            "marko/src/runtime/vdom/hot-reload.js"
-        ]
+        include: ["marko/src/runtime/vdom/hot-reload.js"],
     },
     test: {
         onConsoleLog: () => true,
@@ -48,12 +54,14 @@ export default defineConfig({
                         enabled: true,
                         provider: playwright(),
                         headless: true,
-                        instances: [{
-                            browser: "chromium",
-                        }]
+                        instances: [
+                            {
+                                browser: "chromium",
+                            },
+                        ],
                     },
                     include: ["src/**/test.browser.{ts,js}"],
-                    setupFiles: ["./test.setup.ts"]
+                    setupFiles: ["./test.setup.ts"],
                 },
             },
             {
@@ -64,8 +72,7 @@ export default defineConfig({
                     include: ["src/**/test.server.{ts,js}"],
                 },
             },
-
-        ]
+        ],
     },
 
     plugins: [marko({ linked: false }), rawMarkdown],

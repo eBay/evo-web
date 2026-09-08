@@ -39,8 +39,8 @@ export interface Input extends Marko.HTML.Span {
   ...htmlInput
 }=input>
 
-<let/open=(input.open ?? false) valueChange=input.openChange>
-<let/hoverTimeout=(undefined as ReturnType<typeof setTimeout> | undefined)>
+<let/open=input.open ?? false valueChange=input.openChange>
+<let/hoverTimeout=undefined as ReturnType<typeof setTimeout> | undefined>
 
 <id/hostId>
 // TODO: Remove when Marko support dynamic tag variables
@@ -68,7 +68,8 @@ export interface Input extends Marko.HTML.Span {
   strategy="absolute"
   host=$host
   overlay=$overlay
-  arrow=$arrow/>
+  arrow=$arrow
+/>
 
 <span/$root
   ...htmlInput
@@ -100,13 +101,15 @@ export interface Input extends Marko.HTML.Span {
   onFocusOut(e, el) {
     open = el.contains(e.relatedTarget as Node | null);
     onFocusOut && onFocusOut(e, el);
-  }>
+  }
+>
   <const/{ as: hostAs = "span", class: hostClass, ...htmlHost }=host>
   <${hostAs}
     ...htmlHost
     id=hostId
     class=["tooltip__host", hostClass]
-    aria-expanded=expander.ariaExpanded/>
+    aria-expanded=expander.ariaExpanded
+  />
   <span
     id=overlayId
     tabindex=(
@@ -114,7 +117,8 @@ export interface Input extends Marko.HTML.Span {
     )
     class="tooltip__overlay"
     style=expander.floatingStyles
-    role="tooltip">
+    role="tooltip"
+  >
     <span id=arrowId class="tooltip__pointer" style=expander.arrowStyles/>
     <span class="tooltip__mask">
       <span class="tooltip__cell">
@@ -127,7 +131,8 @@ export interface Input extends Marko.HTML.Span {
             }=heading>
             <${headingAs}
               ...htmlHeading
-              class=["tooltip__heading", headingClass]/>
+              class=["tooltip__heading", headingClass]
+            />
           </if>
           <${input.content}/>
         </span>

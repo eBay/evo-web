@@ -2,22 +2,23 @@
     --state-layer-neutral-on-strong: rgb(var(--color-neutral-900-rgb), 0);
     --state-layer-neutral: rgb(var(--color-neutral-900-rgb), 0);
 }
+
 a.fake-btn,
 button.btn {
     align-content: center;
-    align-items: center;
     background-color: initial;
-    border: 1px solid;
     border-radius: var(--btn-border-radius, 20px);
-    box-sizing: border-box;
     color: inherit;
     display: inline-block;
-    font-family: inherit;
     font-size: var(--font-size-body);
-    margin: 0;
     min-height: 40px;
     min-width: 88px;
     padding: 0 20px;
+    align-items: center;
+    border: 1px solid;
+    box-sizing: border-box;
+    font-family: inherit;
+    margin: 0;
     text-align: center;
     text-decoration: none;
     vertical-align: bottom;
@@ -38,6 +39,7 @@ a.fake-btn:focus:not(:focus-visible),
 button.btn:focus:not(:focus-visible) {
     outline: none;
 }
+
 button.btn[aria-disabled="true"],
 button.btn[disabled] {
     border-color: var(
@@ -49,6 +51,7 @@ button.btn[disabled] {
         var(--color-foreground-disabled)
     );
 }
+
 a.fake-btn:not([href]),
 a.fake-btn[aria-disabled="true"] {
     color: var(
@@ -56,6 +59,7 @@ a.fake-btn[aria-disabled="true"] {
         var(--color-foreground-disabled)
     );
 }
+
 a.fake-btn--borderless,
 button.btn--borderless {
     border-color: transparent;
@@ -71,12 +75,14 @@ button.btn--borderless:hover {
     outline: none;
     text-decoration: underline;
 }
+
 a.fake-btn--borderless[aria-disabled="true"],
 a.fake-btn--borderless[disabled],
 button.btn--borderless[aria-disabled="true"],
 button.btn--borderless[disabled] {
     border-color: transparent;
 }
+
 a.fake-btn--borderless.btn--destructive,
 button.btn--borderless.btn--destructive {
     color: var(
@@ -84,6 +90,7 @@ button.btn--borderless.btn--destructive {
         var(--color-foreground-attention)
     );
 }
+
 a.fake-btn--slim,
 button.btn--slim {
     height: 40px;
@@ -91,19 +98,22 @@ button.btn--slim {
     padding-left: var(--spacing-100);
     padding-right: var(--spacing-100);
 }
+
 a.fake-btn:hover,
 a.fake-btn:visited {
     color: inherit;
 }
+
 a.fake-btn--fluid,
 button.btn--fluid {
     width: 100%;
 }
+
 .btn__cell,
 .fake-btn__cell {
+    justify-content: center;
     align-items: center;
     display: flex;
-    justify-content: center;
     width: 100%;
 }
 .btn__cell--fixed-height,
@@ -124,12 +134,14 @@ button.btn--fluid {
     align-self: baseline;
     max-width: calc(100% - 32px);
 }
+
 a.fake-btn--borderless .fake-btn__cell,
 a.fake-btn--form .fake-btn__cell,
 button.btn--borderless .btn__cell,
 button.btn--form .btn__cell {
     justify-content: space-between;
 }
+
 a.fake-btn svg.icon,
 button.btn svg.icon {
     align-self: center;
@@ -146,6 +158,7 @@ a.fake-btn svg.icon:only-child,
 button.btn svg.icon:only-child {
     margin: 0;
 }
+
 a.fake-btn__cell--fixed-height svg.icon,
 button.btn__cell--fixed-height svg.icon {
     align-self: center;
@@ -153,6 +166,7 @@ button.btn__cell--fixed-height svg.icon {
     overflow: visible;
     width: 1rem;
 }
+
 a.fake-btn--primary,
 button.btn--primary {
     background-color: var(--color-background-accent);
@@ -197,13 +211,16 @@ button.btn--primary:not([disabled], [aria-disabled="true"]):active:after,
 button.btn--primary[href]:active:after {
     background-color: var(--color-state-layer-pressed);
 }
+
 a.fake-btn--primary {
     outline-color: var(--color-foreground-primary);
 }
+
 a.fake-btn--primary:hover,
 a.fake-btn--primary:visited {
     color: var(--color-foreground-on-accent);
 }
+
 a.fake-btn--primary.fake-btn--destructive,
 button.btn--primary.btn--destructive {
     background-color: var(--color-background-attention);
@@ -257,40 +274,49 @@ button.btn--primary.btn--destructive:not(
 button.btn--primary.btn--destructive[href]:active:after {
     background-color: var(--color-state-layer-pressed);
 }
+
 button.btn--primary.btn--destructive[aria-disabled="true"],
 button.btn--primary.btn--destructive[disabled] {
     background-color: var(--color-background-disabled);
     border-color: var(--color-border-disabled);
 }
+
 button.btn .progress-spinner {
     height: 24px;
     margin: -4px 0;
     width: 24px;
 }
+
 button.btn--form .progress-spinner {
     margin-left: auto;
     margin-right: auto;
 }
+
 button.btn--primary .progress-spinner {
     --color-spinner-icon-background: var(--color-background-primary);
     --color-spinner-icon-foreground: #8fa3f8;
 }
+
 button.btn--primary.btn--destructive .progress-spinner {
     --color-spinner-icon-background: var(--color-foreground-on-accent);
     --color-spinner-icon-foreground: #ec7089;
 }
+
 a.fake-btn[aria-expanded="true"] svg.icon--12,
 button.btn[aria-expanded="true"] svg.icon--12 {
     transform: rotate(180deg);
 }
+
 a.fake-btn--large svg.icon,
 button.btn--large svg.icon {
     max-height: 48px;
 }
+
 a.fake-btn--small svg.icon,
 button.btn--small svg.icon {
     max-height: 32px;
 }
+
 button.btn--primary[aria-disabled="true"],
 button.btn--primary[disabled] {
     background-color: var(
@@ -313,6 +339,7 @@ button.btn--primary[disabled] svg.icon {
         var(--color-background-primary)
     );
 }
+
 a.fake-btn--primary:not([href]),
 a.fake-btn--primary[aria-disabled="true"] {
     background-color: var(
@@ -328,6 +355,7 @@ a.fake-btn--primary[aria-disabled="true"] {
         var(--color-foreground-on-accent)
     );
 }
+
 a.fake-btn--secondary,
 button.btn--secondary {
     background-color: var(--btn-secondary-background-color, transparent);
@@ -377,6 +405,7 @@ button.btn--secondary:not([disabled], [aria-disabled="true"]):active:after,
 button.btn--secondary[href]:active:after {
     background-color: var(--color-state-layer-pressed);
 }
+
 a.fake-btn--secondary:hover,
 a.fake-btn--secondary:visited {
     color: var(
@@ -384,6 +413,7 @@ a.fake-btn--secondary:visited {
         var(--color-foreground-accent)
     );
 }
+
 a.fake-btn--secondary.fake-btn--destructive,
 button.btn--secondary.btn--destructive {
     background-color: var(
@@ -399,10 +429,12 @@ button.btn--secondary.btn--destructive {
         var(--color-foreground-attention)
     );
 }
+
 button.btn--secondary.btn--destructive .progress-spinner {
     --color-spinner-icon-background: #f39fb0;
     --color-spinner-icon-foreground: #e0103a;
 }
+
 button.btn--secondary[aria-disabled="true"],
 button.btn--secondary[disabled] {
     background-color: var(
@@ -425,6 +457,7 @@ button.btn--secondary[disabled] svg.icon {
         var(--color-foreground-disabled)
     );
 }
+
 a.fake-btn--secondary:not([href]),
 a.fake-btn--secondary[aria-disabled="true"] {
     border-color: var(
@@ -436,6 +469,7 @@ a.fake-btn--secondary[aria-disabled="true"] {
         var(--color-background-disabled)
     );
 }
+
 a.fake-btn--tertiary,
 button.btn--tertiary {
     border-color: var(--btn-tertiary-border-color, var(--color-border-medium));
@@ -483,21 +517,23 @@ button.btn--tertiary:not([disabled], [aria-disabled="true"]):active:after,
 button.btn--tertiary[href]:active:after {
     background-color: var(--color-state-layer-pressed);
 }
+
 a.fake-btn--tertiary:not([href]),
 a.fake-btn--tertiary[aria-disabled="true"],
 button.btn--tertiary[aria-disabled="true"]:not(
         [aria-live="polite"][aria-disabled="true"]
     ),
 button.btn--tertiary[disabled] {
-    border-color: var(
-        --expand-btn-disabled-border-color,
-        var(--color-border-disabled)
-    );
     color: var(
         --btn-tertiary-disabled-foreground-color,
         var(--color-background-disabled)
     );
+    border-color: var(
+        --expand-btn-disabled-border-color,
+        var(--color-border-disabled)
+    );
 }
+
 a.fake-btn--tertiary.fake-btn--destructive,
 button.btn--tertiary.btn--destructive {
     border-color: var(
@@ -505,6 +541,7 @@ button.btn--tertiary.btn--destructive {
         var(--color-border-subtle)
     );
 }
+
 button.btn--tertiary.btn--destructive[aria-disabled="true"],
 button.btn--tertiary.btn--destructive[disabled] {
     color: var(
@@ -512,10 +549,12 @@ button.btn--tertiary.btn--destructive[disabled] {
         var(--color-foreground-disabled)
     );
 }
+
 button.btn--tertiary.btn--destructive .progress-spinner {
     --color-spinner-icon-background: #ee9aab;
     --color-spinner-icon-foreground: #e0103a;
 }
+
 a.fake-btn--large,
 button.btn--large {
     border-radius: var(--btn-border-radius, 24px);
@@ -523,6 +562,7 @@ button.btn--large {
     min-height: 48px;
     padding: 0 20px;
 }
+
 a.fake-btn--small,
 button.btn--small {
     border-radius: var(--btn-border-radius, 16px);
@@ -530,11 +570,12 @@ button.btn--small {
     min-height: 32px;
     padding: 0 16px;
 }
+
 a.fake-btn--form,
 button.btn--form {
     border-color: inherit;
-    border-radius: var(--expand-btn-border-radius, var(--border-radius-50));
     max-width: 100%;
+    border-radius: var(--expand-btn-border-radius, var(--border-radius-50));
     overflow: hidden;
     position: relative;
 }
@@ -564,9 +605,11 @@ button.btn--form:not([disabled], [aria-disabled="true"]):active:after,
 button.btn--form[href]:active:after {
     background-color: var(--color-state-layer-pressed);
 }
+
 button.btn--form.btn--large {
     padding: 0 20px;
 }
+
 button.btn--form.btn--small {
     padding: 0 16px;
 }
@@ -578,11 +621,13 @@ button.btn--transparent:focus,
 button.btn--transparent:hover {
     background-color: initial;
 }
+
 a.fake-btn--large-fixed-height,
 button.btn--large-fixed-height {
     height: 48px;
     min-height: 48px;
 }
+
 a.fake-btn--truncated,
 a.fake-btn--truncated span,
 button.btn--truncated,
@@ -592,6 +637,7 @@ button.btn--truncated span {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
 a.fake-btn--large-truncated,
 button.btn--large-truncated {
     font-size: var(--font-size-medium);
@@ -608,10 +654,12 @@ button.btn--large-truncated span {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
 a.fake-btn--split-start,
 button.btn--split-start {
     border-radius: 24px 0 0 24px;
 }
+
 a.fake-btn--split-end,
 button.btn--split-end {
     border-radius: 0 24px 24px 0;
@@ -631,15 +679,18 @@ button.btn.btn--primary.btn--split-end:hover {
         var(--color-background-primary)
     );
 }
+
 button.btn--floating-label {
     padding-bottom: 0;
     padding-top: 0;
 }
+
 button.btn--floating-label .btn__text {
     min-height: 19px;
     padding-bottom: 2px;
     padding-top: 17px;
 }
+
 button.btn--floating-label .btn__floating-label {
     align-self: flex-start;
     display: inline-block;
@@ -656,16 +707,19 @@ button.btn--floating-label .btn__floating-label {
     width: calc(100% - 24px);
     z-index: 1;
 }
+
 button.btn--floating-label .btn__floating-label--animate {
     transition:
         transform 0.3s ease,
         bottom 0.3s ease;
 }
+
 button.btn--floating-label .btn__floating-label--inline {
     font-size: 0.875rem;
     position: unset;
     transform: translateY(-6px);
 }
+
 [dir="rtl"] a.fake-btn--split-start,
 [dir="rtl"] button.btn--split-start {
     border-radius: 0 24px 24px 0;

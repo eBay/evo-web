@@ -136,7 +136,7 @@ const EbayPhoneInput: FC<EbayPhoneInputProps> = ({
     const handleCountryChange = (event: React.ChangeEvent<HTMLButtonElement>, { index }: ChangeEventProps) => {
         setSelectedIndex(index);
         if (onChange) {
-            onChange(event as React.ChangeEvent<HTMLInputElement>, createEventData({ index }));
+            onChange(event as unknown as React.ChangeEvent<HTMLInputElement>, createEventData({ index }));
         }
     };
 

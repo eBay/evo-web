@@ -1,11 +1,13 @@
 import type { Input as CCDInput } from "../index.marko";
 export interface Input extends CCDInput {}
 
-<const/a11yCharger=`${
-  input.chargerIcon
-    ? `Charger ${input.chargerIcon === "included" ? "" : "not "}included.`
-    : ""
-} `.trim()>
+<const/a11yCharger=(
+  `${
+    input.chargerIcon
+      ? `Charger ${input.chargerIcon === "included" ? "" : "not "}included.`
+      : ""
+  } `.trim()
+)>
 <const/a11yRange=(
   input.min || input.max
     ? `${input.min} - ${input.max} Watts. ${input.secondaryType === "usbpd" ? "USB PD" : ""}`

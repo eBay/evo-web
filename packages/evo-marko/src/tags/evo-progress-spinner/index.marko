@@ -19,7 +19,8 @@ export interface Input extends Omit<Marko.HTML.Span, "role" | "aria-label"> {
     size === "large" && "progress-spinner--large",
     inputClass,
   ]
-  role="img">
+  role="img"
+>
   <if=size === "large">
     <evo-icon-spinner-30/>
   </if>

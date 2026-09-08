@@ -82,6 +82,4 @@ export type MenuFilterChipProps = Omit<ComponentProps<"button">, "onClick"> &
   };
 
 export type EvoFilterChipProps =
-  | AnchorFilterChipProps
-  | NativeFilterChipProps
-  | MenuFilterChipProps;
+  AnchorFilterChipProps | NativeFilterChipProps | MenuFilterChipProps;

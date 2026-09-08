@@ -46,7 +46,7 @@ export interface Input extends Marko.HTML.Span {
   ...htmlInput
 }=input>
 
-<let/open=(input.open ?? true) valueChange=openChange>
+<let/open=input.open ?? true valueChange=openChange>
 
 <id/hostId>
 // remove once Marko supports dynamic tag vars
@@ -62,22 +62,25 @@ export interface Input extends Marko.HTML.Span {
   shift=shift
   inline=inline
   strategy="absolute"
-  host=(() => document.getElementById(hostId) as HTMLElement)
-  overlay=(() => document.getElementById(overlayId) as HTMLElement)
-  arrow=(() => document.getElementById(arrowId) as HTMLElement)/>
+  host=() => document.getElementById(hostId) as HTMLElement
+  overlay=() => document.getElementById(overlayId) as HTMLElement
+  arrow=() => document.getElementById(arrowId) as HTMLElement
+/>
 
 <span ...htmlInput class=["tourtip", open && "tourtip--expanded", inputClass]>
   <const/{ as: hostAs, class: hostClass, ...htmlHost }=host>
   <${hostAs ?? "span"}
     ...htmlHost
     id=hostId
-    class=["tourtip__host", hostClass]/>
+    class=["tourtip__host", hostClass]
+  />
   <span
     class="tourtip__overlay"
     id=overlayId
     style=expander.floatingStyles
     role="region"
-    aria-labelledby=heading && headingId>
+    aria-labelledby=heading && headingId
+  >
     <span class="tourtip__pointer" id=arrowId style=expander.arrowStyles/>
     <span class="tourtip__mask">
       <span class="tourtip__cell">
@@ -92,7 +95,8 @@ export interface Input extends Marko.HTML.Span {
             <${headingAs}
               ...headingInput
               class=["tourtip__heading", headingClass]
-              id=headingId>
+              id=headingId
+            >
               <${headingContent}/>
             </>
           </if>
@@ -104,7 +108,8 @@ export interface Input extends Marko.HTML.Span {
           type="button"
           onClick() {
             open = false;
-          }>
+          }
+        >
           <evo-icon-close-16/>
         </button>
         <if=footer>
@@ -115,11 +120,7 @@ export interface Input extends Marko.HTML.Span {
             ...htmlFooter
           }=footer>
           <span ...htmlFooter class=["tourtip__footer", footerClass]>
-            <if=index>
-              <span class="tourtip__index">
-                ${index}
-              </span>
-            </if>
+            <if=index><span class="tourtip__index">${index}</span></if>
             <${footerContent}/>
           </span>
         </if>
