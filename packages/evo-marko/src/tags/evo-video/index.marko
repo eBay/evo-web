@@ -392,7 +392,7 @@ static interface DashLikeMedia extends MediaElement {
                 </@item>
                 <for|textTrack| of=textTracks>
                   <if=textTrack.language>
-                    <@item value=textTrack.language>
+                    <@item value=textTrack.language lang=textTrack.language>
                       ${languageLabel(textTrack.language)}
                     </@item>
                   </if>
