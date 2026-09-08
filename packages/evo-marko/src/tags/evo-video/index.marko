@@ -326,6 +326,7 @@ static interface DashLikeMedia extends MediaElement {
             value=scrubberPercent
             style=`--value-percent: ${scrubberPercent * 100}%`
             aria-label=a11ySeekText
+            aria-valuetext=formatTime(currentTime)
             valueChange(value) {
               const nextTime = Number(value) * duration;
               if (Number.isFinite(nextTime)) {
@@ -430,7 +431,8 @@ static interface DashLikeMedia extends MediaElement {
                     volume = next < 0.005 ? 0 : next;
                   }
                   style=`--value-percent: ${effectiveVolume * 100}%`
-                  aria-label=a11yVolumeText>
+                  aria-label=a11yVolumeText
+                  aria-valuetext=`${Math.round(effectiveVolume * 100)}%`>
               </div>
             </if>
           </span>
