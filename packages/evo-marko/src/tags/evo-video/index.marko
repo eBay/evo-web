@@ -56,7 +56,7 @@ export interface Input extends Marko.HTML.Video {
   /**
    * Label of the menu item that turns captions off
    *
-   * English default to be overridden is `"Off"`
+   * English default to be overridden is `"None"`
    */
   captionsOffText?: string;
   /**
@@ -129,7 +129,7 @@ static interface DashLikeMedia extends MediaElement {
   a11yPlayText = "Play",
   a11yPauseText = "Pause",
   a11ySeekText,
-  captionsOffText = "Off",
+  captionsOffText = "None",
   a11yCaptionsText,
   a11yMuteText,
   a11yUnmuteText,
@@ -348,10 +348,6 @@ static interface DashLikeMedia extends MediaElement {
 
         <if=a11yCaptionsText && textTracks && textTracks.length>
           <let/languageOpen=false>
-          <const/closeLanguageMenu=() => {
-            languageOpen = false;
-            $languageButton().focus();
-          }>
           <script>
             if (languageOpen) {
               $languageMenu()
@@ -363,7 +359,8 @@ static interface DashLikeMedia extends MediaElement {
             class="video__popover-container"
             onKeyDown(e) {
               if (e.key === "Escape" && languageOpen) {
-                closeLanguageMenu();
+                languageOpen = false;
+                $languageButton().focus();
               }
             }
             onFocusOut(e, el) {
@@ -383,23 +380,19 @@ static interface DashLikeMedia extends MediaElement {
               <evo-icon-closed-caption-16/>
             </button>
             <span class="video__popover">
-              <evo-menu/$languageMenu selected=language || "off">
-                <@item
-                  value="off"
-                  onClick() {
-                    language = null;
-                    closeLanguageMenu();
-                  }>
+              <evo-menu/$languageMenu
+                selected=language || "none"
+                selectedChange(value) {
+                  language = value === "none" ? null : (value as string);
+                  languageOpen = false;
+                  $languageButton().focus();
+                }>
+                <@item value="none">
                   ${captionsOffText}
                 </@item>
                 <for|textTrack| of=textTracks>
                   <if=textTrack.language>
-                    <@item
-                      value=textTrack.language
-                      onClick() {
-                        language = textTrack.language;
-                        closeLanguageMenu();
-                      }>
+                    <@item value=textTrack.language>
                       ${languageLabel(textTrack.language)}
                     </@item>
                   </if>
