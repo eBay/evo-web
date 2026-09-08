@@ -1,6 +1,6 @@
 <const/titles=["Option 1", "Option 2", "Option 3"]>
 
-<let/pressed=([] as string[])>
+<let/pressed=[] as string[]>
 
 <div style={ width: "100%" }>
   <evo-button onClick() {
@@ -11,11 +11,10 @@
   <evo-toggle-button-group
     ...input
     pressed:=pressed
-    a11yText="Toggle Button Group">
+    a11yText="Toggle Button Group"
+  >
     <for|title, i| of=titles>
-      <@button name=`button${i}`>
-        ${title}
-      </@button>
+      <@button name=`button${i}`>${title}</@button>
     </for>
   </evo-toggle-button-group>
 </div>

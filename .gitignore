@@ -60,4 +60,3 @@ _site
 # vitest browser-mode screenshot attachments
 .vitest-attachments/
 .vitest/
-.vitest-attachments/

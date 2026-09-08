@@ -1,16 +1,8 @@
 <let/selected=["item 1"]>
 <evo-menu-button selected:=selected variant="filter" ...input>
-  <@item value="item 1">
-    item 1
-  </@item>
-  <@item value="item 2">
-    item 2
-  </@item>
-  <@item value="item 3">
-    item 3
-  </@item>
+  <@item value="item 1">item 1</@item>
+  <@item value="item 2">item 2</@item>
+  <@item value="item 3">item 3</@item>
   Filter Items${" "}
-  <if=(selected.length > 0)>
-    (+${selected.length})
-  </if>
+  <if=(selected.length > 0)>(+${selected.length})</if>
 </evo-menu-button>

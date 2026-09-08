@@ -85,9 +85,7 @@ export interface Input extends Omit<Marko.HTML.Nav, "role"> {
 </script>
 
 <define/Breadcrumb|input: Item|>
-  <if=input.href>
-    <a ...input as Marko.HTML.A/>
-  </if>
+  <if=input.href><a ...input as Marko.HTML.A/></if>
   <else>
     <button ...input as Marko.HTML.Button/>
   </else>
@@ -97,17 +95,17 @@ export interface Input extends Omit<Marko.HTML.Nav, "role"> {
   ...htmlInput
   aria-labelledby=headingId
   class=["breadcrumbs", "breadcrumb--overflow", inputClass]
-  role="navigation">
-  <${a11yHeadingTag} id=headingId class="clipped">
-    ${a11yHeadingText}
-  </>
+  role="navigation"
+>
+  <${a11yHeadingTag} id=headingId class="clipped">${a11yHeadingText}</>
   <ul/$items>
     <if=itemList.length>
       <const/firstItem=itemList[0]>
       <li>
         <Breadcrumb
           ...firstItem
-          aria-current=itemList.length === 1 && !firstItem.href && "location"/>
+          aria-current=itemList.length === 1 && !firstItem.href && "location"
+        />
         <if=(itemList.length > 1)>
           <evo-icon-chevron-right-12/>
         </if>
@@ -119,9 +117,10 @@ export interface Input extends Omit<Marko.HTML.Nav, "role"> {
           variant="icon"
           transparent
           collapseOnSelect
-          a11yText=a11yMenuButtonText>
+          a11yText=a11yMenuButtonText
+        >
           <for|i| from=1 to=hiddenCount>
-            <@item href=(itemList[i].href) content=(itemList[i].content)/>
+            <@item href=itemList[i].href content=itemList[i].content/>
           </for>
           <evo-icon-overflow-horizontal-16/>
         </evo-fake-menu-button>
@@ -129,7 +128,7 @@ export interface Input extends Omit<Marko.HTML.Nav, "role"> {
       </li>
     </if>
     <for|i| from=1 to=itemList.length - 2>
-      <li hidden=(i <= hiddenCount)>
+      <li hidden=i <= hiddenCount>
         <Breadcrumb ...itemList[i]/>
         <evo-icon-chevron-right-12/>
       </li>

@@ -7,9 +7,9 @@
   }
 </style>
 
-<div class=((styles as any).grid)>
-  <for|placement| of=(
-    [
+<div class=(styles as any).grid>
+  <for|placement|
+    of=[
       "top-start",
       "top",
       "top-end",
@@ -23,27 +23,27 @@
       "left",
       "left-end",
     ] as const
-  )>
+  >
     <let/open=false>
     <evo-tourtip
       ...input
       open:=open
       placement=placement
       a11yCloseText="Dismiss"
-      flip=false>
+      flip=false
+    >
       <@host
         as="button"
         onClick() {
           open = !open;
-        }>
+        }
+      >
         ${placement}
       </@host>
       <@heading>${placement}</@heading>
       <p>
-        Here we explicitly set${" "}
-        <code>flip=false</code>
-        ${" "}for demonstration. By default, tourtip will not extend outside the
-        window
+        Here we explicitly set <code>flip=false</code> for demonstration. By
+        default, tourtip will not extend outside the window
       </p>
     </evo-tourtip>
   </for>

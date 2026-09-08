@@ -9,8 +9,7 @@ import type { EvoBadgeProps } from "../badge/types";
 export type MenuValue = string | number;
 export type EvoMenuVariant = "filter" | "none";
 export type EvoMenuItemSelectEvent =
-  | MouseEvent<HTMLDivElement>
-  | KeyboardEvent<HTMLDivElement>;
+  MouseEvent<HTMLDivElement> | KeyboardEvent<HTMLDivElement>;
 
 export type EvoMenuProps = ComponentProps<"span"> & {
   /** Changes the menu presentation. The filter variant displays selection controls. */
