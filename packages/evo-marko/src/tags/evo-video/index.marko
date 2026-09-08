@@ -54,6 +54,12 @@ export interface Input extends Marko.HTML.Video {
    */
   a11ySeekText?: string;
   /**
+   * Label of the menu item that turns captions off
+   *
+   * English default to be overridden is `"Off"`
+   */
+  captionsOffText?: string;
+  /**
    * The `aria-label` of the captions button
    *
    * The button only renders when this is provided and the video has
@@ -123,6 +129,7 @@ static interface DashLikeMedia extends MediaElement {
   a11yPlayText = "Play",
   a11yPauseText = "Pause",
   a11ySeekText,
+  captionsOffText = "Off",
   a11yCaptionsText,
   a11yMuteText,
   a11yUnmuteText,
@@ -341,32 +348,49 @@ static interface DashLikeMedia extends MediaElement {
 
         <if=a11yCaptionsText && textTracks && textTracks.length>
           <let/languageOpen=false>
+          <const/closeLanguageMenu=() => {
+            languageOpen = false;
+            $languageButton().focus();
+          }>
+          <script>
+            if (languageOpen) {
+              $languageMenu()
+                .querySelector<HTMLElement>(`[role^="menuitem"]`)
+                ?.focus();
+            }
+          </script>
           <span
             class="video__popover-container"
+            onKeyDown(e) {
+              if (e.key === "Escape" && languageOpen) {
+                closeLanguageMenu();
+              }
+            }
             onFocusOut(e, el) {
               if (!el.contains(e.relatedTarget as Node)) {
                 languageOpen = false;
               }
             }>
-            <button
+            <button/$languageButton
               class="video__control"
               type="button"
               aria-label=a11yCaptionsText
               aria-expanded=(languageOpen ? "true" : "false")
+              aria-haspopup="true"
               onClick() {
                 languageOpen = !languageOpen;
               }>
               <evo-icon-closed-caption-16/>
             </button>
             <span class="video__popover">
-              <evo-menu selected=language || "off">
+              <evo-menu/$languageMenu selected=language || "off">
                 <@item
                   value="off"
                   onClick() {
                     language = null;
-                    languageOpen = false;
+                    closeLanguageMenu();
                   }>
-                  Off
+                  ${captionsOffText}
                 </@item>
                 <for|textTrack| of=textTracks>
                   <if=textTrack.language>
@@ -374,7 +398,7 @@ static interface DashLikeMedia extends MediaElement {
                       value=textTrack.language
                       onClick() {
                         language = textTrack.language;
-                        languageOpen = false;
+                        closeLanguageMenu();
                       }>
                       ${languageLabel(textTrack.language)}
                     </@item>
