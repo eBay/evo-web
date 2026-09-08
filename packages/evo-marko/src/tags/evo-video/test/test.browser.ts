@@ -254,6 +254,53 @@ describe("evo-video", () => {
     });
   });
 
+  describe("given a captions label and a text track", () => {
+    beforeEach(async () => {
+      component = await render(Video, {
+        source: [{ src: "https://example.com/video.mp4" }],
+        preload: "none",
+        a11yCaptionsText: "Closed captions",
+        track: [
+          {
+            src: "https://example.com/captions.vtt",
+            srclang: "en",
+            kind: "captions",
+          },
+        ],
+      });
+      await startPlayback();
+      await fireEvent(
+        component.container.querySelector("video")!,
+        new Event("loadedmetadata"),
+      );
+    });
+
+    it("moves focus into the menu when opened", async () => {
+      await fireEvent.click(component.getByLabelText("Closed captions"));
+      await vi.waitFor(() =>
+        expect(document.activeElement?.getAttribute("role")).toMatch(
+          /^menuitem/,
+        ),
+      );
+    });
+
+    it("closes the menu and refocuses the button on Escape", async () => {
+      const button = component.getByLabelText("Closed captions");
+      await fireEvent.click(button);
+      await fireEvent.keyDown(component.getByText("Off"), { key: "Escape" });
+      expect(button.getAttribute("aria-expanded")).toBe("false");
+      expect(document.activeElement).toBe(button);
+    });
+
+    it("closes the menu and refocuses the button on selection", async () => {
+      const button = component.getByLabelText("Closed captions");
+      await fireEvent.click(button);
+      await fireEvent.click(component.getByText("Off"));
+      expect(button.getAttribute("aria-expanded")).toBe("false");
+      expect(document.activeElement).toBe(button);
+    });
+  });
+
   describe("given no seek label", () => {
     beforeEach(async () => {
       component = await render(Video, {
