@@ -176,7 +176,7 @@ class DateTextbox extends Marko.Component<Input, State> {
             const { o: order, s: sep } = getLocale(this.input.locale);
             let i = 0;
             let start = 0;
-            for (let currStart; ~(currStart = value.indexOf(sep[i], start)); ) {
+            for (let currStart; ~(currStart = value.indexOf(sep[i], start));) {
                 start = currStart + sep[i].length;
                 i++;
             }
