@@ -287,7 +287,7 @@ describe("evo-video", () => {
     it("closes the menu and refocuses the button on Escape", async () => {
       const button = component.getByLabelText("Closed captions");
       await fireEvent.click(button);
-      await fireEvent.keyDown(component.getByText("Off"), { key: "Escape" });
+      await fireEvent.keyDown(component.getByText("None"), { key: "Escape" });
       expect(button.getAttribute("aria-expanded")).toBe("false");
       expect(document.activeElement).toBe(button);
     });
@@ -295,7 +295,7 @@ describe("evo-video", () => {
     it("closes the menu and refocuses the button on selection", async () => {
       const button = component.getByLabelText("Closed captions");
       await fireEvent.click(button);
-      await fireEvent.click(component.getByText("Off"));
+      await fireEvent.click(component.getByText("None"));
       expect(button.getAttribute("aria-expanded")).toBe("false");
       expect(document.activeElement).toBe(button);
     });
