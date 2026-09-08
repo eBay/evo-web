@@ -156,10 +156,10 @@ static interface DashLikeMedia extends MediaElement {
 <let/media=null as MediaElement | null>
 <let/playing:=input.playing>
 <let/language:=input.language>
-<let/volume=(input.volume ?? 1) valueChange=input.volumeChange>
-<let/muted=(input.muted ?? false) valueChange=input.mutedChange>
+<let/volume=input.volume ?? 1 valueChange=input.volumeChange>
+<let/muted=input.muted ?? false valueChange=input.mutedChange>
 <let/textTracks=null as TextTrack[] | null>
-<let/currentTime=(input.currentTime ?? 0) valueChange=input.currentTimeChange>
+<let/currentTime=input.currentTime ?? 0 valueChange=input.currentTimeChange>
 <let/duration=0>
 <let/sourceIndex=0>
 <let/played=false>
@@ -198,7 +198,8 @@ static interface DashLikeMedia extends MediaElement {
   }
   onMouseLeave() {
     lastActive = 0;
-  }>
+  }
+>
   <video/$video
     playsinline
     ...htmlInput
@@ -259,21 +260,18 @@ static interface DashLikeMedia extends MediaElement {
         fullscreen = !fullscreen;
       }
       input.onDblClick && input.onDblClick(e, el);
-    }>
+    }
+  >
     <for|textTrack| of=track>
       <track ...textTrack>
     </for>
   </video>
-  <if=nav>
-    <a ...nav class=["video__nav", nav.class]/>
-  </if>
+  <if=nav><a ...nav class=["video__nav", nav.class]/></if>
 
   <if=failed>
     <div class="video__overlay">
       <evo-icon-attention-24/>
-      <div class="video__overlay-text">
-        ${errorText}
-      </div>
+      <div class="video__overlay-text">${errorText}</div>
     </div>
   </if>
   <else>
@@ -290,7 +288,8 @@ static interface DashLikeMedia extends MediaElement {
         onClick() {
           playing = true;
           flags.focusControls = true;
-        }>
+        }
+      >
         <evo-icon-play-filled-64-colored/>
       </button>
     </else>
@@ -306,10 +305,11 @@ static interface DashLikeMedia extends MediaElement {
         <button/$playButton
           class="video__control"
           type="button"
-          aria-label=(playing ? a11yPauseText : a11yPlayText)
+          aria-label=playing ? a11yPauseText : a11yPlayText
           onClick() {
             playing = !playing;
-          }>
+          }
+        >
           <if=playing>
             <evo-icon-pause-20/>
           </if>
@@ -322,7 +322,6 @@ static interface DashLikeMedia extends MediaElement {
           <span class="video__timestamp" aria-hidden="true">
             ${formatTime(currentTime)}
           </span>
-
           <const/scrubberPercent=(duration > 0 ? currentTime / duration : 0)>
           <input
             class="video__scrubber"
@@ -339,11 +338,10 @@ static interface DashLikeMedia extends MediaElement {
               if (Number.isFinite(nextTime)) {
                 currentTime = nextTime;
               }
-            }>
+            }
+          >
 
-          <span class="video__timestamp">
-            ${formatTime(duration)}
-          </span>
+          <span class="video__timestamp">${formatTime(duration)}</span>
         </if>
 
         <if=a11yCaptionsText && textTracks && textTracks.length>
@@ -367,16 +365,18 @@ static interface DashLikeMedia extends MediaElement {
               if (!el.contains(e.relatedTarget as Node)) {
                 languageOpen = false;
               }
-            }>
+            }
+          >
             <button/$languageButton
               class="video__control"
               type="button"
               aria-label=a11yCaptionsText
-              aria-expanded=(languageOpen ? "true" : "false")
+              aria-expanded=languageOpen ? "true" : "false"
               aria-haspopup="true"
               onClick() {
                 languageOpen = !languageOpen;
-              }>
+              }
+            >
               <evo-icon-closed-caption-16/>
             </button>
             <span class="video__popover">
@@ -386,10 +386,9 @@ static interface DashLikeMedia extends MediaElement {
                   language = value === "none" ? null : (value as string);
                   languageOpen = false;
                   $languageButton().focus();
-                }>
-                <@item value="off">
-                  ${captionsOffText}
-                </@item>
+                }
+              >
+                <@item value="off">${captionsOffText}</@item>
                 <for|textTrack| of=textTracks>
                   <if=textTrack.language>
                     <@item value=textTrack.language lang=textTrack.language>
@@ -410,8 +409,8 @@ static interface DashLikeMedia extends MediaElement {
             <button
               class="video__control"
               type="button"
-              aria-label=(audioOff ? a11yUnmuteText : a11yMuteText)
-              aria-pressed=(audioOff ? "true" : "false")
+              aria-label=audioOff ? a11yUnmuteText : a11yMuteText
+              aria-pressed=audioOff ? "true" : "false"
               onClick() {
                 if (audioOff) {
                   muted = false;
@@ -421,7 +420,8 @@ static interface DashLikeMedia extends MediaElement {
                 } else {
                   muted = true;
                 }
-              }>
+              }
+            >
               <if=audioOff>
                 <evo-icon-audio-off-16/>
               </if>
@@ -434,7 +434,7 @@ static interface DashLikeMedia extends MediaElement {
             </button>
             <if=a11yVolumeText>
               <div class="video__popover">
-                <const/effectiveVolume=(audioOff ? 0 : volume)>
+                <const/effectiveVolume=audioOff ? 0 : volume>
                 <input
                   class="video__volume"
                   type="range"
@@ -449,7 +449,8 @@ static interface DashLikeMedia extends MediaElement {
                   }
                   style=`--value-percent: ${effectiveVolume * 100}%`
                   aria-label=a11yVolumeText
-                  aria-valuetext=`${Math.round(effectiveVolume * 100)}%`>
+                  aria-valuetext=`${Math.round(effectiveVolume * 100)}%`
+                >
               </div>
             </if>
           </span>
@@ -466,7 +467,8 @@ static interface DashLikeMedia extends MediaElement {
             type="button"
             ...reportAttrs
             aria-label=reportText
-            class=["video__control", reportClass]>
+            class=["video__control", reportClass]
+          >
             <if=reportContent>
               <${reportContent}/>
             </if>
@@ -480,12 +482,11 @@ static interface DashLikeMedia extends MediaElement {
           <button
             class="video__control"
             type="button"
-            aria-label=(
-              fullscreen ? a11yExitFullscreenText : a11yFullscreenText
-            )
+            aria-label=fullscreen ? a11yExitFullscreenText : a11yFullscreenText
             onClick() {
               fullscreen = !fullscreen;
-            }>
+            }
+          >
             <if=fullscreen>
               <evo-icon-contract-16/>
             </if>
@@ -746,7 +747,8 @@ static interface DashLikeMedia extends MediaElement {
   }
   onDestroy() {
     detachMedia();
-  }>
+  }
+>
 static async function createHlsMediaElement() {
   try {
     const { SimpleHlsMedia } = await import("@videojs/media/dom/simple-hls");
