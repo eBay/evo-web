@@ -20,7 +20,7 @@
         "noImplicitAny": false, // 300+ errors
         "noImplicitThis": true,
         "alwaysStrict": true,
-        "moduleResolution": "node",
+        "moduleResolution": "bundler",
         "types": ["@testing-library/jest-dom", "@types/node", "vitest/globals"],
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,

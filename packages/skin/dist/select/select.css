@@ -3,16 +3,13 @@
     font-size: var(--font-size-body);
     position: relative;
 }
+
 span.select {
     display: inline-block;
 }
+
 .select select {
     appearance: none;
-    background-color: var(
-        --select-background-color,
-        var(--color-background-secondary)
-    );
-    border-color: var(--select-border-color, var(--color-border-medium));
     border-radius: var(--select-border-radius, var(--border-radius-50));
     border-style: solid;
     border-width: 1px;
@@ -22,7 +19,13 @@ span.select {
     height: 40px;
     padding: 0 var(--spacing-400) 0 var(--spacing-200);
     vertical-align: middle;
+    background-color: var(
+        --select-background-color,
+        var(--color-background-secondary)
+    );
+    border-color: var(--select-border-color, var(--color-border-medium));
 }
+
 .select svg.icon--12 {
     height: 100%;
     pointer-events: none;
@@ -30,14 +33,17 @@ span.select {
     right: 16px;
     top: 0;
 }
+
 .select--large select {
     font-size: var(--font-size-medium);
     height: 48px;
 }
+
 .select--fluid,
 .select--fluid select {
     width: 100%;
 }
+
 .select--borderless select {
     background-color: initial;
     border: 0;
@@ -48,12 +54,14 @@ span.select {
     background-color: initial;
     text-decoration: underline;
 }
+
 .select select:focus {
     background-color: var(
         --select-focus-background-color,
         var(--color-background-primary)
     );
 }
+
 .select select:focus:not(:read-only) {
     background-color: var(
         --select-focus-background-color,
@@ -66,6 +74,7 @@ span.select {
 .select select::-ms-expand {
     display: none;
 }
+
 .select select[disabled] {
     border-color: var(
         --textbox-disabled-border-color,
@@ -77,16 +86,19 @@ span.select {
     );
     opacity: 1;
 }
+
 .select select[disabled] + svg {
     color: var(
         --select-disabled-foregound-color,
         var(--color-foreground-on-disabled)
     );
 }
+
 .select select[readonly] {
     background-color: initial;
     border: none;
 }
+
 .select select[aria-invalid="true"] {
     border-color: var(
         --select-invalid-border-color,
