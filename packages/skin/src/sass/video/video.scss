@@ -155,6 +155,12 @@
     translate: -50%;
 
     --color-background-primary: var(--color-neutral-700);
+    --color-foreground-primary: var(--color-neutral-200);
+    --color-foreground-secondary: var(--color-neutral-500);
+    --color-foreground-disabled: var(--color-neutral-600);
+    --color-state-layer-hover: rgb(255 255 255 / 0.08);
+    --color-state-layer-focus: rgb(255 255 255 / 0.08);
+    --color-state-layer-pressed: rgb(255 255 255 / 0.12);
 }
 
 .video__popover .menu {
