@@ -275,6 +275,12 @@ describe("evo-video", () => {
       );
     });
 
+    it("marks each track item with its language", () => {
+      expect(
+        component.container.querySelector('[role^="menuitem"][lang="en"]'),
+      ).toBeTruthy();
+    });
+
     it("moves focus into the menu when opened", async () => {
       await fireEvent.click(component.getByLabelText("Closed captions"));
       await vi.waitFor(() =>
