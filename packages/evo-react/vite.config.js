@@ -73,6 +73,7 @@ export default defineConfig({
           declaration: true,
           declarationMap: true,
           outDir: "./dist",
+          rootDir: "./src",
         }),
       ],
     },
