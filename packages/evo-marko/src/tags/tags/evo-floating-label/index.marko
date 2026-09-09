@@ -29,7 +29,7 @@ export interface Input {
   content,
 }=input>
 
-<const/defaultTag=(fluid ? "div" : "span")>
+<const/defaultTag=fluid ? "div" : "span">
 <const/isFloating=value || focused || alwaysUp>
 
 <${floatingLabel && defaultTag} class=[
@@ -46,7 +46,8 @@ export interface Input {
         invalid && "floating-label__label--invalid",
         !isFloating && "floating-label__label--inline",
         isFloating && "floating-label__label--focus",
-      ]>
+      ]
+    >
       ${floatingLabel}
     </label>
   </if>

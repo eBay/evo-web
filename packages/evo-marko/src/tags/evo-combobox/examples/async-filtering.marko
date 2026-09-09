@@ -10,7 +10,7 @@ static async function searchCountries(query: string, signal: AbortSignal) {
 }
 
 <let/value="">
-<let/options=([] as typeof countries)>
+<let/options=[] as typeof countries>
 
 <script>
   const results = await searchCountries(value, $signal);

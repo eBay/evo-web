@@ -1,5 +1,6 @@
 import { getMetadataFromUrl } from "../../data";
-import { header, link } from "./style.module.scss";
+import __styles from "./style.module.scss";
+static const { header, link } = __styles;
 
 <const/{ properName, componentUrls }=getMetadataFromUrl($global.url.pathname)>
 export interface Input {

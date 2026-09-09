@@ -1,9 +1,10 @@
 .progress-bar {
     border: none;
-    color: var(--progress-bar-foreground-color, var(--color-foreground-accent));
     height: 4px;
     margin: var(--spacing-100) 0;
+    color: var(--progress-bar-foreground-color, var(--color-foreground-accent));
 }
+
 .progress-bar::-webkit-progress-bar {
     background-color: var(
         --progress-bar-background-color,
@@ -11,6 +12,7 @@
     );
     border-radius: 8px;
 }
+
 .progress-bar::-webkit-progress-value {
     background-color: var(
         --progress-bar-foreground-color,
@@ -20,6 +22,7 @@
     -webkit-transition: width 0.45s ease-in-out;
     transition: width 0.45s ease-in-out;
 }
+
 .progress-bar::-moz-progress-bar {
     background-color: var(
         --progress-bar-foreground-color,
@@ -27,9 +30,11 @@
     );
     border-radius: 8px;
 }
+
 .progress-bar--fluid {
     width: 100%;
 }
+
 @media (min-width: 512px) {
     .progress-bar {
         margin: var(--spacing-200) 0;

@@ -3,7 +3,7 @@ export interface Input {
 }
 
 <let/filterMethod="auto">
-<let/value=(input.value ?? "missing")>
+<let/value=input.value ?? "missing">
 
 <button onClick() {
   filterMethod = filterMethod === "auto" ? "none" : "auto";

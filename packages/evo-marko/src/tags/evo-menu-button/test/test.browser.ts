@@ -1,6 +1,7 @@
 import { afterEach, beforeEach, describe, it, expect } from "vitest";
 import { composeStories } from "@storybook/marko";
 import { render, fireEvent, cleanup } from "@marko/testing-library";
+import { userEvent, type UserEvent } from "vitest/browser";
 import { pressKey } from "../../../common/test-utils/browser";
 import * as stories from "../menu-button.stories"; // import all stories from the stories file
 const { Default } = composeStories(stories);
@@ -392,6 +393,86 @@ describe("given the evo-menu-button is open", () => {
         "aria-expanded",
         "false",
       );
+    });
+  });
+});
+
+describe("given the evo-menu-button is closed", () => {
+  const firstItemText = "item 1";
+  let user: UserEvent;
+
+  const getItem = (text: string) =>
+    component.getByText(text).parentElement as HTMLElement;
+
+  beforeEach(async () => {
+    user = userEvent.setup();
+    component = await render(Default);
+    await user.click(component.getByRole("button"));
+  });
+
+  it("then clicking the button expands it and moves focus to the first item", () => {
+    expect(document.activeElement).to.equal(getItem(firstItemText));
+    expect(component.getByRole("button")).toHaveAttribute(
+      "aria-expanded",
+      "true",
+    );
+  });
+
+  for (const key of ["{Enter}", "{ }"]) {
+    describe(`when "${key}" is pressed on the button`, () => {
+      beforeEach(async () => {
+        await user.keyboard("{Escape}");
+        await user.keyboard(key);
+      });
+
+      it("then it expands and moves focus to the first item", () => {
+        expect(component.getByRole("button")).toHaveAttribute(
+          "aria-expanded",
+          "true",
+        );
+        expect(document.activeElement).to.equal(getItem(firstItemText));
+      });
+    });
+  }
+});
+
+describe("given the evo-menu-button is open via the keyboard", () => {
+  const firstItemText = "item 1";
+
+  const getItem = (text: string) =>
+    component.getByText(text).parentElement as HTMLElement;
+
+  beforeEach(async () => {
+    component = await render(Default, { collapseOnSelect: true });
+    component.getByRole("button").focus();
+    await fireEvent.click(component.getByRole("button"));
+  });
+
+  describe("when escape is pressed inside the menu", () => {
+    beforeEach(async () => {
+      await pressKey(getItem(firstItemText), { key: "Escape" });
+    });
+
+    it("then it collapses and returns focus to the button", () => {
+      expect(component.getByRole("button")).toHaveAttribute(
+        "aria-expanded",
+        "false",
+      );
+      expect(document.activeElement).to.equal(component.getByRole("button"));
+    });
+  });
+
+  describe("when an item is activated with the space key", () => {
+    beforeEach(async () => {
+      await pressKey(getItem(firstItemText), { key: " " });
+    });
+
+    it("then it collapses and returns focus to the button", () => {
+      expect(component.getByRole("button")).toHaveAttribute(
+        "aria-expanded",
+        "false",
+      );
+      expect(document.activeElement).to.equal(component.getByRole("button"));
     });
   });
 });

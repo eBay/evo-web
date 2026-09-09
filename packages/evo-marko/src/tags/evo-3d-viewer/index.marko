@@ -21,7 +21,7 @@ export interface Input extends Partial<ModelViewerElement> {
 }=input>
 static type LoadState = "ready" | "error" | "loading";
 
-<let/loadState=("loading" as LoadState)>
+<let/loadState="loading" as LoadState>
 <script>
   try {
     await modelViewerLoad();
@@ -53,18 +53,17 @@ static type LoadState = "ready" | "error" | "loading";
       ...htmlInput
       camera-controls
       touch-action="pan-y"
-      src=src/>
+      src=src
+    />
   </if>
   <else if=loadState === "error">
-    <div class=((styles as any).overlay)>
+    <div class=(styles as any).overlay>
       <evo-icon-attention-24/>
-      <div class="three-d-player__overlay-text">
-        ${errorText}
-      </div>
+      <div class="three-d-player__overlay-text">${errorText}</div>
     </div>
   </else>
   <else>
-    <div class=((styles as any).overlay)>
+    <div class=(styles as any).overlay>
       <evo-progress-spinner a11yText=a11yLoadingText/>
     </div>
   </else>

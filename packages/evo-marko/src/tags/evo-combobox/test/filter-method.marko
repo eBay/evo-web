@@ -3,8 +3,8 @@ export interface Input {
   value?: string;
 }
 
-<let/value=(input.value ?? "")>
-<let/options=(["New York", "C++", "C#"] as string[])>
+<let/value=input.value ?? "">
+<let/options=["New York", "C++", "C#"] as string[]>
 
 <button onClick() {
   options = [...options, "London"];
@@ -14,9 +14,10 @@ export interface Input {
 
 <evo-combobox
   ...input
-  filterMethod=(input.filterMethod ?? "manual")
+  filterMethod=input.filterMethod ?? "manual"
   value:=value
-  aria-label="City">
+  aria-label="City"
+>
   <for|text| of=options>
     <@option text=text/>
   </for>

@@ -2,6 +2,7 @@
     --state-layer-neutral-on-strong: rgb(var(--color-neutral-900-rgb), 0);
     --state-layer-neutral: rgb(var(--color-neutral-900-rgb), 0);
 }
+
 .carousel {
     position: relative;
 }
@@ -32,10 +33,6 @@
     border-radius: 50%;
     bottom: 16px;
     box-sizing: border-box;
-    color: var(
-        --carousel-playback-foreground-color,
-        var(--color-foreground-on-inverse)
-    );
     height: 40px;
     margin-bottom: 19px;
     margin-right: 19px;
@@ -45,6 +42,10 @@
     text-align: center;
     width: 40px;
     z-index: 2;
+    color: var(
+        --carousel-playback-foreground-color,
+        var(--color-foreground-on-inverse)
+    );
 }
 .carousel__playback svg {
     opacity: 0.75;
@@ -52,6 +53,7 @@
 .carousel__playback .icon--play {
     padding-left: 1px;
 }
+
 .carousel__list--image-treatment > li {
     align-items: center;
     border-radius: 8px;
@@ -74,6 +76,7 @@
     max-width: 100%;
     object-fit: contain;
 }
+
 .carousel__list--image-treatment-large > li {
     align-items: center;
     border-radius: 16px;
@@ -96,9 +99,11 @@
     max-width: 100%;
     object-fit: contain;
 }
+
 div.carousel {
     margin: 16px 0;
 }
+
 .carousel__control {
     background-color: var(
         --carousel-paddle-background-color,
@@ -129,10 +134,6 @@ div.carousel {
 .carousel__control {
     align-items: center;
     border: 1px solid;
-    border-color: var(
-        --carousel-paddle-border-color,
-        var(--color-border-subtle)
-    );
     border-radius: 16px;
     box-shadow:
         0 2px 2px 0 rgba(0, 0, 0, 0.24),
@@ -149,14 +150,18 @@ div.carousel {
     transition: opacity 0.45s ease-in-out;
     width: 32px;
     z-index: 1;
+    border-color: var(
+        --carousel-paddle-border-color,
+        var(--color-border-subtle)
+    );
 }
 .carousel__control--prev {
-    left: calc(var(--spacing-200) * -1);
+    left: calc(-1 * var(--spacing-200));
     margin-inline-end: 1px;
 }
 .carousel__control--next {
     margin-inline-start: 1px;
-    right: calc(var(--spacing-200) * -1);
+    right: calc(-1 * var(--spacing-200));
 }
 .carousel__control svg {
     color: var(--color-foreground-primary);
@@ -191,13 +196,16 @@ div.carousel {
 .carousel__control:hover svg {
     color: var(--color-foreground-primary);
 }
+
 .carousel__playback:focus:not(:focus-visible) {
     outline: none;
 }
+
 span.carousel,
 span.carousel__container {
     display: inline-block;
 }
+
 .carousel__viewport--mask {
     -webkit-mask-image: linear-gradient(
         to right,
@@ -210,12 +218,13 @@ span.carousel__container {
         rgba(0, 0, 0, 0) 100%
     );
 }
+
 [dir="rtl"] .carousel__control--prev {
     left: unset;
-    right: calc(var(--spacing-200) * -1);
+    right: calc(-1 * var(--spacing-200));
 }
 [dir="rtl"] .carousel__control--next {
-    left: calc(var(--spacing-200) * -1);
+    left: calc(-1 * var(--spacing-200));
     right: unset;
 }
 [dir="rtl"] .carousel__control .icon--12 {
@@ -291,12 +300,15 @@ span.carousel__container {
 .carousel.carousel--hidden-scrollbar:not(.carousel__autoplay) {
     overflow: hidden;
 }
+
 .carousel--hidden-scrollbar .carousel__container {
     margin-bottom: -80px;
 }
+
 .carousel--hidden-scrollbar .carousel__container .carousel__control {
     margin-top: -40px;
 }
+
 .carousel--hidden-scrollbar .carousel__container .carousel__list {
     padding-bottom: 80px;
 }

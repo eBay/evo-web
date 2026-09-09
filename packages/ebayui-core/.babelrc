@@ -9,12 +9,7 @@
                 }
             }
         ],
-        [
-            "@babel/preset-typescript",
-            {
-                "allowDeclareFields": true
-            }
-        ]
+        "@babel/preset-typescript"
     ],
     "env": {
         "prod": {

@@ -327,7 +327,7 @@ class Carousel extends Marko.Component<Input, State> {
                 offsetOverride = -slideWidth - gap;
 
                 // Move the items in the last slide to be before the first slide.
-                for (let i = Math.ceil(itemsPerSlide + peek); i--; ) {
+                for (let i = Math.ceil(itemsPerSlide + peek); i--;) {
                     const item = items[items.length - i - 1];
                     item.transform = `translateX(${
                         (this.getMaxOffset(state) + slideWidth + gap) * -1
@@ -338,7 +338,7 @@ class Carousel extends Marko.Component<Input, State> {
                 offsetOverride = this.getMaxOffset(state) + slideWidth + gap;
 
                 // Moves the items in the first slide to be after the last slide.
-                for (let i = Math.ceil(itemsPerSlide + peek); i--; ) {
+                for (let i = Math.ceil(itemsPerSlide + peek); i--;) {
                     const item = items[i];
                     item.transform = `translateX(${
                         this.getMaxOffset(state) + slideWidth + gap

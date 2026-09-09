@@ -14,15 +14,14 @@ export interface Input extends Marko.HTML.Div {
   ...htmlInput
 }=input>
 
-<const/tabAriaCurrent=(
-  (tabMatchesCurrentUrl === false
-    ? "true"
-    : "page") as Marko.HTML.LI["aria-current"]
-)>
+<const/tabAriaCurrent=(tabMatchesCurrentUrl === false
+  ? "true"
+  : "page") as Marko.HTML.LI["aria-current"]>
 
 <div
   ...htmlInput
-  class=["fake-tabs", size === "large" && "fake-tabs--large", inputClass]>
+  class=["fake-tabs", size === "large" && "fake-tabs--large", inputClass]
+>
   <ul class="fake-tabs__items">
     <for|tab, i| of=tabs || []>
       <const/{ href, class: tabClass, ...htmlTab }=tab>
@@ -31,7 +30,8 @@ export interface Input extends Marko.HTML.Div {
           ...htmlTab
           href=href
           aria-current=href !== undefined && selected === i && tabAriaCurrent
-          aria-disabled=href === undefined && "true"/>
+          aria-disabled=href === undefined && "true"
+        />
       </li>
     </for>
   </ul>

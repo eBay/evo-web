@@ -55,7 +55,6 @@ export interface Input extends Omit<
 
 <let/rawValue:=input.value>
 <let/tempValue=null as null | string>
-
 <const/visibleOptions=filterOptions(options, filterMethod, rawValue)>
 <const/activeIndex=(
   activeText === null
@@ -70,12 +69,12 @@ export interface Input extends Omit<
   }
 </script>
 
-<let/value=(activeIndex >= 0 && tempValue ? tempValue : rawValue) valueChange(
-  v: string,
-) {
-  tempValue = null;
-  rawValue = v;
-}>
+<let/value=activeIndex >= 0 && tempValue ? tempValue : rawValue
+  valueChange(v: string) {
+    tempValue = null;
+    rawValue = v;
+  }
+>
 
 <id/listboxId>
 
@@ -85,7 +84,8 @@ export interface Input extends Omit<
   disabled=disabled
   htmlFor=inputId
   value=value
-  focused=open>
+  focused=open
+>
   <${fluid ? "div" : "span"}
     style=style
     class=[
@@ -101,7 +101,8 @@ export interface Input extends Omit<
         activeText = null;
         tempValue = null;
       }
-    }>
+    }
+  >
     <span class=[
       "combobox__control",
       button && "combobox__control--actionable",
@@ -118,9 +119,9 @@ export interface Input extends Omit<
         autocomplete="off"
         aria-owns=listboxId
         aria-controls=listboxId
-        aria-autocomplete=(filterMethod === "none" ? "none" : "list")
+        aria-autocomplete=filterMethod === "none" ? "none" : "list"
         aria-haspopup="listbox"
-        aria-expanded=(open ? "true" : "false")
+        aria-expanded=open ? "true" : "false"
         aria-activedescendant=(
           open && activeIndex >= 0
             ? `${inputId}-option-${activeIndex}`
@@ -194,7 +195,8 @@ export interface Input extends Omit<
             tempValue = null;
           }
           onKeyDown && onKeyDown(e, el);
-        }>
+        }
+      >
       <if=button>
         <evo-icon-button
           ...button
@@ -202,7 +204,8 @@ export interface Input extends Omit<
             // prevent input blur when clicking the action button
             e.preventDefault();
             button.onMouseDown && button.onMouseDown(e, el);
-          }/>
+          }
+        />
       </if>
     </span>
     <div
@@ -212,7 +215,8 @@ export interface Input extends Omit<
         "combobox__listbox",
         "combobox__listbox--set-position",
         strategy === "fixed" && "combobox__listbox--fixed",
-      ]>
+      ]
+    >
       <for|option, i| of=visibleOptions>
         <const/{
           text,
@@ -231,7 +235,7 @@ export interface Input extends Omit<
             optionClass,
           ]
           tabindex=-1
-          aria-selected=(text === value ? "true" : "false")
+          aria-selected=text === value ? "true" : "false"
           onMouseDown(e, el) {
             // prevent input blur before click fires
             e.preventDefault();
@@ -243,7 +247,8 @@ export interface Input extends Omit<
             tempValue = null;
             open = false;
             onClick && onClick(e, el);
-          }>
+          }
+        >
           ${text}
         </div>
       </for>

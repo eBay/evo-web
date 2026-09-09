@@ -35,12 +35,14 @@ export interface Input extends Omit<Marko.HTML.Input, "type"> {
         <const/{ as: headerAs, class: headerClass, ...headerHtmlInput }=header>
         <${headerAs || "span"}
           ...headerHtmlInput
-          class=["file-input__content-header", headerClass]/>
+          class=["file-input__content-header", headerClass]
+        />
       </if>
       <if=description>
         <span
           ...description
-          class=["file-input__content-subheader", description.class]/>
+          class=["file-input__content-subheader", description.class]
+        />
       </if>
       <if=content>
         <label for=inputId>
@@ -71,5 +73,6 @@ export interface Input extends Omit<Marko.HTML.Input, "type"> {
     onDrop(e, target) {
       dragging = false;
       onDrop && onDrop(e, target);
-    }>
+    }
+  >
 </div>

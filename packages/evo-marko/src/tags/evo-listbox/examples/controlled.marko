@@ -1,18 +1,12 @@
 import { type Input as ListboxInput } from "<evo-listbox>";
 export interface Input extends ListboxInput<string> {}
 
-<let/selected=(input.selected ?? "A") valueChange=input.selectedChange>
+<let/selected=input.selected ?? "A" valueChange=input.selectedChange>
 
 <evo-listbox ...input selected:=selected>
-  <@option value="A">
-    Option A
-  </@option>
-  <@option value="B">
-    Option B
-  </@option>
-  <@option value="C">
-    Option C
-  </@option>
+  <@option value="A">Option A</@option>
+  <@option value="B">Option B</@option>
+  <@option value="C">Option C</@option>
 </evo-listbox>
 
 <for|value| of=["A", "B", "C"]>

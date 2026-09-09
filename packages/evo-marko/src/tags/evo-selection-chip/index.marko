@@ -17,12 +17,13 @@ export interface Input extends Marko.HTML.Button {
 <button
   ...htmlInput
   class=["selection-chip", "selection-chip--animated", inputClass]
-  aria-pressed=(selected ? "true" : "false")
+  aria-pressed=selected ? "true" : "false"
   type="button"
   onClick(e, el) {
     selected = !selected;
     input.onClick && input.onClick(e, el);
-  }>
+  }
+>
   <span class="selection-chip__text">
     <${content}/>
   </span>

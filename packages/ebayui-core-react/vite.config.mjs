@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import { join, resolve } from "node:path";
 import { defineConfig } from "vite";
+import { Features } from "lightningcss";
 import { nodeExternals } from "rollup-plugin-node-externals";
 import typescript from "@rollup/plugin-typescript";
 import { cjsInterop } from "vite-plugin-cjs-interop";
@@ -32,6 +33,13 @@ const iconsEntries = fs
     }, {});
 
 export default defineConfig({
+    css: {
+        lightningcss: {
+            // Never rewrite :dir() into the :lang() approximation; direction is
+            // set with dir attributes, not language tags.
+            exclude: Features.DirSelector,
+        },
+    },
     plugins: [
         // This plugin will automatically unwrap the default export from CJS dependencies that are specified in the list.
         // https://github.com/eBay/ebayui-core-react/issues/420

@@ -71,7 +71,7 @@ export default {
     FJ: { countryCode: "FJ", callingCode: "679", mask: "000 0000" },
     FK: { countryCode: "FK", callingCode: "500", mask: "00000" },
     FM: { countryCode: "FM", callingCode: "691", mask: "000 0000" },
-    FO: { countryCode: "FO", callingCode: "298", mask: "000000" },
+    FO: { countryCode: "FO", callingCode: "298", mask: "00 00 00" },
     FR: { countryCode: "FR", callingCode: "33", mask: "00 00 00 00 00" },
     GA: { countryCode: "GA", callingCode: "241", mask: "00 00 00 00" },
     GB: { countryCode: "GB", callingCode: "44", mask: "00000 000000" },

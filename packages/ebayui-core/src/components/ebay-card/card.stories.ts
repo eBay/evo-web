@@ -7,6 +7,8 @@ import AnchorTemplate from "./examples/anchor.marko";
 import AnchorTemplateCode from "./examples/anchor.marko?raw";
 import ButtonTemplate from "./examples/button.marko";
 import ButtonTemplateCode from "./examples/button.marko?raw";
+import MediaTemplate from "./examples/media.marko";
+import MediaTemplateCode from "./examples/media.marko?raw";
 import MinimumTemplate from "./examples/minimum.marko";
 import MinimumTemplateCode from "./examples/minimum.marko?raw";
 
@@ -52,6 +54,14 @@ export default {
             },
             description:
                 "The top image tag. Will be passed as attributes to the <img> tag.",
+        },
+        media: {
+            name: "@media",
+            table: {
+                category: "@attribute tags",
+            },
+            description:
+                "Arbitrary media content (e.g. a `<video>`) rendered in place of the top image. Takes precedence over `@image` when present. Apply `card__hero-image` to your media element to get the standard fill/hover styles.",
         },
         title: {
             name: "@title",
@@ -110,6 +120,8 @@ export const Button = buildExtensionTemplate(
     ButtonTemplate,
     ButtonTemplateCode,
 );
+
+export const Media = buildExtensionTemplate(MediaTemplate, MediaTemplateCode);
 
 export const Minimum = buildExtensionTemplate(
     MinimumTemplate,
