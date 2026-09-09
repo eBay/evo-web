@@ -186,7 +186,7 @@ static interface DashLikeMedia extends MediaElement {
 }>
 
 <const/started=played || playing>
-<const/controlsHidden=!nav && !failed && playing && !lastActive>
+<const/controlsHidden=Boolean(!nav && !failed && playing && !lastActive)>
 <const/audioOff=muted || volume === 0>
 <div/$root
   class=[
@@ -765,13 +765,14 @@ static interface DashLikeMedia extends MediaElement {
   }
 >
 static async function createHlsMediaElement() {
-  try {
-    const { SimpleHlsMedia } = await import("@videojs/media/dom/simple-hls");
-    return new SimpleHlsMedia();
-  } catch {
-    const { SimpleHlsMediaElement } = await import("@videojs/spf/hls");
-    return new SimpleHlsMediaElement();
+  if (
+    document.createElement("video").canPlayType("application/vnd.apple.mpegurl")
+  ) {
+    const { NativeHlsMedia } = await import("@videojs/media/dom/native-hls");
+    return new NativeHlsMedia();
   }
+  const { HlsJsMedia } = await import("@videojs/media/dom/hls-js");
+  return new HlsJsMedia();
 }
 static function isDashMedia(media: MediaElement): media is DashLikeMedia {
   return "engine" in media && "getTracksFor" in (media as DashLikeMedia).engine;
