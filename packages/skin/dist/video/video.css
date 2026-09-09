@@ -2,17 +2,24 @@
     --state-layer-neutral-on-strong: rgb(var(--color-neutral-900-rgb), 0);
     --state-layer-neutral: rgb(var(--color-neutral-900-rgb), 0);
 }
+
 .video {
+    aspect-ratio: 16/9;
+    background-color: #000;
     position: relative;
 }
+.video > a > video,
 .video > video {
     display: block;
-    height: auto;
+    height: 100%;
+    object-fit: contain;
     width: 100%;
 }
+.video > a > video::-webkit-media-text-track-container,
 .video > video::-webkit-media-text-track-container {
     transform: translateY(-56px);
 }
+
 .video__controls {
     align-items: center;
     background-color: var(--color-neutral-700);
@@ -26,14 +33,17 @@
     right: var(--spacing-150);
     transition: opacity 0.6s cubic-bezier(0.4, 0, 0.6, 1);
 }
+
 .video--controls-hidden .video__controls {
     opacity: 0;
     pointer-events: none;
 }
+
 .video--controls-hidden .video__controls:focus-within {
     opacity: 1;
     pointer-events: auto;
 }
+
 @media (prefers-reduced-motion: reduce) {
     .video__controls {
         transition: none;
@@ -69,23 +79,29 @@
     color: inherit;
     padding: var(--spacing-75);
 }
+
 .video__timestamp {
     padding-inline: var(--spacing-75);
     width: 4ch;
 }
+
 .video__scrubber {
     flex: 1 1 0;
 }
+
 .video__timestamp--remaining {
     width: auto;
 }
+
 .video__spacer {
     flex: 1 1 0;
 }
+
 .video__scrubber + .video__timestamp {
     padding-right: var(--spacing-125);
     width: auto;
 }
+
 .video input[type="range"] {
     appearance: none;
     background: transparent;
@@ -119,7 +135,7 @@
     border: 0;
     border-radius: 50%;
     height: var(--dimension-150);
-    margin-top: calc((var(--dimension-150) - var(--spacing-50)) / -2);
+    margin-top: calc(-0.5 * (var(--dimension-150) - var(--spacing-50)));
     width: var(--dimension-150);
 }
 .video input[type="range"]::-moz-range-thumb {
@@ -129,12 +145,15 @@
     height: var(--dimension-150);
     width: var(--dimension-150);
 }
+
 .video__popover-container {
     position: relative;
 }
+
 .video__control[aria-expanded="true"] + .video__popover {
     display: block;
 }
+
 .video__popover {
     background-color: var(--color-neutral-700);
     border-radius: var(--radius-medium);
@@ -153,15 +172,18 @@
     --color-state-layer-focus: rgb(255 255 255 / 0.08);
     --color-state-layer-pressed: rgb(255 255 255 / 0.12);
 }
+
 .video__popover .menu {
     max-height: 200px;
     overflow: scroll;
     scrollbar-width: thin;
 }
+
 .video__popover:has(> .video__volume) {
     line-height: 0;
     overflow: visible;
 }
+
 .video input[type="range"].video__volume {
     direction: rtl;
     height: var(--dimension-800);
@@ -183,10 +205,11 @@
 }
 .video input[type="range"].video__volume::-webkit-slider-thumb {
     height: var(--dimension-100);
-    margin-left: calc((var(--dimension-100) - var(--spacing-50)) / -2);
+    margin-left: calc(-0.5 * (var(--dimension-100) - var(--spacing-50)));
     margin-top: 0;
     width: var(--dimension-100);
 }
+
 .video__popover-container--hover > .video__popover {
     display: block;
     opacity: 0;
@@ -195,11 +218,13 @@
         opacity 0.2s 0.3s,
         pointer-events allow-discrete 1s;
 }
+
 .video__popover-container--hover:is(:hover, :focus-within) > .video__popover {
     opacity: 1;
     pointer-events: auto;
     transition: none;
 }
+
 .video__overlay {
     align-items: center;
     background-color: rgba(0, 0, 0, 0.6);
@@ -211,13 +236,16 @@
     position: absolute;
     text-align: center;
 }
+
 .video__overlay--transparent {
     background-color: initial;
     pointer-events: none;
 }
+
 .video__overlay-text {
     margin: var(--spacing-200) var(--spacing-200) 0;
 }
+
 .video__play-overlay {
     background: none;
     border: 0;
@@ -235,33 +263,12 @@
     height: 100%;
     width: 100%;
 }
+
 .video--with-nav > a {
     display: block;
-}
-.video:-webkit-full-screen {
-    align-items: center;
-    background-color: #000;
-    display: flex;
-    justify-content: center;
-}
-.video:fullscreen {
-    align-items: center;
-    background-color: #000;
-    display: flex;
-    justify-content: center;
-}
-.video:-webkit-full-screen > a > video,
-.video:-webkit-full-screen > video {
     height: 100%;
-    object-fit: contain;
-    width: 100%;
 }
-.video:fullscreen > a > video,
-.video:fullscreen > video {
-    height: 100%;
-    object-fit: contain;
-    width: 100%;
-}
+
 .video-player {
     position: relative;
 }
