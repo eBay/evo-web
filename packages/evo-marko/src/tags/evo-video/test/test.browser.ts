@@ -305,6 +305,21 @@ describe("evo-video", () => {
       expect(button.getAttribute("aria-expanded")).toBe("false");
       expect(document.activeElement).toBe(button);
     });
+
+    it("switches to the filled icon while a language is selected", async () => {
+      const button = component.getByLabelText("Closed captions");
+      const icon = () =>
+        button.innerHTML.match(/closed-caption[a-z-]*-16/)?.[0];
+      expect(icon()).toBe("closed-caption-16");
+      await fireEvent.click(button);
+      await fireEvent.click(
+        component.container.querySelector('[role^="menuitem"][lang="en"]')!,
+      );
+      expect(icon()).toBe("closed-caption-filled-16");
+      await fireEvent.click(button);
+      await fireEvent.click(component.getByText("Off"));
+      expect(icon()).toBe("closed-caption-16");
+    });
   });
 
   describe("given no seek label", () => {
@@ -346,6 +361,28 @@ describe("evo-video", () => {
         a11yUnmuteText: "Unmute",
         a11yVolumeText: "Volume",
       });
+    });
+
+    it("reveals hidden controls on the first tap and only pauses on the second", async () => {
+      const video = component.container.querySelector("video")!;
+      const root = component.container.querySelector(".video")!;
+      await startPlayback();
+      expect(root.classList.contains("video--controls-hidden")).toBe(true);
+
+      const tap = async () => {
+        await fireEvent(
+          video,
+          new PointerEvent("pointerdown", { pointerType: "touch" }),
+        );
+        await fireEvent.click(video);
+      };
+
+      await tap();
+      expect(root.classList.contains("video--controls-hidden")).toBe(false);
+      expect(component.getByLabelText("Pause")).toBeTruthy(); // still playing
+
+      await tap();
+      expect(component.getByLabelText("Play")).toBeTruthy(); // now paused
     });
 
     it("keeps the controls out of the document until playback starts", async () => {
