@@ -364,6 +364,9 @@ describe("evo-video", () => {
     });
 
     it("reveals hidden controls on the first tap and only pauses on the second", async () => {
+      // the placeholder source would reject play() and yank `playing` back
+      // to false mid-test; a real source resolves it
+      vi.spyOn(HTMLMediaElement.prototype, "play").mockResolvedValue();
       const video = component.container.querySelector("video")!;
       const root = component.container.querySelector(".video")!;
       await startPlayback();
