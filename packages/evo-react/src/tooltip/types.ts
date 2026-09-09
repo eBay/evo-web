@@ -1,3 +1,4 @@
+import type { Placement } from "@floating-ui/react";
 import type {
   ComponentProps,
   ComponentPropsWithRef,
@@ -6,19 +7,7 @@ import type {
 } from "react";
 import type { EvoButton } from "../button";
 
-export type TooltipPlacement =
-  | "top"
-  | "top-start"
-  | "top-end"
-  | "right"
-  | "right-start"
-  | "right-end"
-  | "bottom"
-  | "bottom-start"
-  | "bottom-end"
-  | "left"
-  | "left-start"
-  | "left-end";
+export type TooltipPlacement = Placement;
 
 export type EvoTooltipProps = ComponentProps<"span"> & {
   /** Controlled open state. When provided, the consumer manages it via `onOpenChange`. */
