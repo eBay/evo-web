@@ -172,7 +172,7 @@ static interface DashLikeMedia extends MediaElement {
   autoPause: false,
   focusFromClick: false,
   focusControls: false,
-  touchOnHiddenControls: false,
+  clickOnHiddenControls: false,
 }>
 <const/fullscreenEnabled=Boolean(a11yFullscreenText && a11yExitFullscreenText)>
 <const/failSource=(error: unknown) => {
@@ -251,15 +251,13 @@ static interface DashLikeMedia extends MediaElement {
       input.onError && input.onError(e, el);
     }
     onPointerDown(e, el) {
-      if (e.pointerType === "touch") {
-        flags.touchOnHiddenControls = controlsHidden;
-      }
+      flags.clickOnHiddenControls = controlsHidden;
       input.onPointerDown && input.onPointerDown(e, el);
     }
     onClick(e, el) {
       if (!nav) {
-        if (flags.touchOnHiddenControls) {
-          flags.touchOnHiddenControls = false;
+        if (flags.clickOnHiddenControls) {
+          flags.clickOnHiddenControls = false;
           lastActive++;
         } else {
           playing = !playing;

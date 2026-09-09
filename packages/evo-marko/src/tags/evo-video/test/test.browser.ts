@@ -363,7 +363,7 @@ describe("evo-video", () => {
       });
     });
 
-    it("reveals hidden controls on the first tap and only pauses on the second", async () => {
+    it("reveals hidden controls on the first click and only pauses on the second", async () => {
       // the placeholder source would reject play() and yank `playing` back
       // to false mid-test; a real source resolves it
       vi.spyOn(HTMLMediaElement.prototype, "play").mockResolvedValue();
@@ -372,19 +372,16 @@ describe("evo-video", () => {
       await startPlayback();
       expect(root.classList.contains("video--controls-hidden")).toBe(true);
 
-      const tap = async () => {
-        await fireEvent(
-          video,
-          new PointerEvent("pointerdown", { pointerType: "touch" }),
-        );
+      const click = async () => {
+        await fireEvent(video, new PointerEvent("pointerdown"));
         await fireEvent.click(video);
       };
 
-      await tap();
+      await click();
       expect(root.classList.contains("video--controls-hidden")).toBe(false);
       expect(component.getByLabelText("Pause")).toBeTruthy(); // still playing
 
-      await tap();
+      await click();
       expect(component.getByLabelText("Play")).toBeTruthy(); // now paused
     });
 
