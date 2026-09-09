@@ -16,6 +16,12 @@ function ComboboxFixture(props: EvoComboboxProps) {
   );
 }
 
+function getOptionTexts(container: HTMLElement) {
+  return Array.from(container.querySelectorAll('[role="option"]')).map(
+    (option) => option.textContent?.trim(),
+  );
+}
+
 describe("evo-combobox", () => {
   let user: ReturnType<typeof userEvent.setup>;
 
@@ -29,6 +35,13 @@ describe("evo-combobox", () => {
   });
 
   describe("ARIA attributes", () => {
+    it("uses list autocomplete by default", async () => {
+      const screen = await render(<ComboboxFixture />);
+      const input = screen.getByRole("combobox");
+
+      await expect.element(input).toHaveAttribute("aria-autocomplete", "list");
+    });
+
     it("links the combobox to its listbox", async () => {
       const screen = await render(<ComboboxFixture />);
       const input = screen.getByRole("combobox", { name: "Campaign" });
@@ -188,8 +201,8 @@ describe("evo-combobox", () => {
   });
 
   describe("filtering", () => {
-    it("filters options by text when autocomplete is list", async () => {
-      const screen = await render(<ComboboxFixture autocomplete="list" />);
+    it("filters options by text in the default mode", async () => {
+      const screen = await render(<ComboboxFixture />);
       const input = screen.getByRole("combobox");
 
       await user.type(input, "Basic");
@@ -202,26 +215,209 @@ describe("evo-combobox", () => {
         .toBeInTheDocument();
     });
 
-    it("keeps sticky options visible when they do not match", async () => {
-      const screen = await render(
-        <EvoCombobox floatingLabel="Campaign" autocomplete="list">
-          <EvoComboboxOption text="Create campaign" sticky />
-          <EvoComboboxOption text="Basic Offer" />
-        </EvoCombobox>,
-      );
+    it("matches case-insensitively and ignores query whitespace", async () => {
+      const screen = await render(<ComboboxFixture filterMethod="auto" />);
+      const input = screen.getByRole("combobox");
 
-      await user.type(screen.getByRole("combobox"), "missing");
+      await user.type(input, "  bAsIc  ");
 
       await expect
-        .element(screen.getByRole("option", { name: "Create campaign" }))
+        .element(screen.getByRole("option", { name: "Basic Offer" }))
+        .toBeInTheDocument();
+      await expect
+        .element(screen.getByRole("option", { name: "August Campaign" }))
+        .not.toBeInTheDocument();
+    });
+
+    it("treats regex characters in the query literally", async () => {
+      const screen = await render(
+        <EvoCombobox floatingLabel="Language" filterMethod="auto">
+          <EvoComboboxOption text="C++" />
+          <EvoComboboxOption text="C#" />
+        </EvoCombobox>,
+      );
+      const input = screen.getByRole("combobox");
+
+      await user.type(input, "C++");
+
+      await expect
+        .element(screen.getByRole("option", { name: "C++" }))
+        .toBeInTheDocument();
+      await expect
+        .element(screen.getByRole("option", { name: "C#" }))
+        .not.toBeInTheDocument();
+    });
+
+    it("keeps all options for an empty query", async () => {
+      const screen = await render(<ComboboxFixture filterMethod="auto" />);
+      const input = screen.getByRole("combobox");
+
+      await user.type(input, "Basic");
+      await user.clear(input);
+
+      await expect
+        .element(screen.getByRole("option", { name: "August Campaign" }))
         .toBeInTheDocument();
       await expect
         .element(screen.getByRole("option", { name: "Basic Offer" }))
-        .not.toBeInTheDocument();
+        .toBeInTheDocument();
     });
+
+    it("filters a prefilled value immediately", async () => {
+      const screen = await render(
+        <ComboboxFixture filterMethod="auto" defaultValue="Basic" />,
+      );
+
+      expect(getOptionTexts(screen.container)).toEqual(["Basic Offer"]);
+    });
+
+    it("does not filter application-supplied options in manual mode", async () => {
+      function ManualCombobox() {
+        const [value, setValue] = useState("");
+        const [options, setOptions] = useState(["New York"]);
+
+        return (
+          <>
+            <button onClick={() => setOptions(["New York", "London"])}>
+              Load more suggestions
+            </button>
+            <EvoCombobox
+              floatingLabel="City"
+              filterMethod="manual"
+              value={value}
+              onValueChange={setValue}
+            >
+              {options.map((text) => (
+                <EvoComboboxOption key={text} text={text} />
+              ))}
+            </EvoCombobox>
+          </>
+        );
+      }
+
+      const screen = await render(<ManualCombobox />);
+      const input = screen.getByRole("combobox");
+
+      await user.type(input, "nyc");
+      await expect
+        .element(screen.getByRole("option", { name: "New York" }))
+        .toBeInTheDocument();
+
+      await user.click(
+        screen.getByRole("button", { name: "Load more suggestions" }),
+      );
+      await user.click(input);
+      await expect
+        .element(screen.getByRole("option", { name: "London" }))
+        .toBeInTheDocument();
+      await expect.element(input).toHaveAttribute("aria-autocomplete", "list");
+    });
+
+    it("does not filter input-independent options in none mode", async () => {
+      const screen = await render(
+        <ComboboxFixture filterMethod="none" defaultValue="missing" />,
+      );
+      const input = screen.getByRole("combobox");
+
+      await user.click(input);
+      await expect
+        .element(screen.getByRole("option", { name: "August Campaign" }))
+        .toBeInTheDocument();
+      await expect.element(input).toHaveAttribute("aria-autocomplete", "none");
+    });
+
+    it("updates filtering and ARIA when the mode changes", async () => {
+      function ChangingFilterCombobox() {
+        const [filterMethod, setFilterMethod] = useState<"auto" | "none">(
+          "auto",
+        );
+
+        return (
+          <>
+            <button
+              onClick={() =>
+                setFilterMethod((current) =>
+                  current === "auto" ? "none" : "auto",
+                )
+              }
+            >
+              Change filter method
+            </button>
+            <EvoCombobox
+              floatingLabel="Campaign"
+              defaultValue="missing"
+              filterMethod={filterMethod}
+            >
+              <EvoComboboxOption text="August Campaign" />
+              <EvoComboboxOption text="Basic Offer" />
+            </EvoCombobox>
+          </>
+        );
+      }
+
+      const screen = await render(<ChangingFilterCombobox />);
+      const input = screen.getByRole("combobox");
+
+      await expect.element(input).toHaveAttribute("aria-autocomplete", "list");
+      expect(getOptionTexts(screen.container)).toEqual([]);
+
+      await user.click(
+        screen.getByRole("button", { name: "Change filter method" }),
+      );
+      await user.click(input);
+
+      await expect.element(input).toHaveAttribute("aria-autocomplete", "none");
+      await expect
+        .element(screen.getByRole("option", { name: "August Campaign" }))
+        .toBeInTheDocument();
+    });
+
+    it.each(["auto", "manual", "none"] as const)(
+      "keeps native autocomplete off and does not leak filterMethod in %s mode",
+      async (filterMethod) => {
+        const screen = await render(
+          <ComboboxFixture filterMethod={filterMethod} />,
+        );
+        const input = screen.getByRole("combobox").element();
+
+        expect(input.getAttribute("autocomplete")).toBe("off");
+        expect(input.getAttribute("filtermethod")).toBeNull();
+      },
+    );
   });
 
   describe("keyboard interactions", () => {
+    it("previews without narrowing options using the preview value", async () => {
+      const screen = await render(<ComboboxFixture />);
+      const input = screen.getByRole("combobox");
+
+      await user.click(input);
+      await user.keyboard("{ArrowDown}");
+
+      await expect
+        .element(screen.getByRole("option", { name: "August Campaign" }))
+        .toBeInTheDocument();
+      await expect
+        .element(screen.getByRole("option", { name: "Basic Offer" }))
+        .toBeInTheDocument();
+    });
+
+    it("filters independently of list selection", async () => {
+      const screen = await render(
+        <ComboboxFixture filterMethod="auto" listSelection="manual" />,
+      );
+      const input = screen.getByRole("combobox");
+
+      await user.type(input, "Basic");
+
+      await expect
+        .element(screen.getByRole("option", { name: "Basic Offer" }))
+        .toBeInTheDocument();
+      await expect
+        .element(screen.getByRole("option", { name: "August Campaign" }))
+        .not.toBeInTheDocument();
+    });
+
     it("previews and selects options in automatic mode", async () => {
       const onValueChange = vi.fn();
       const screen = await render(
@@ -253,7 +449,7 @@ describe("evo-combobox", () => {
 
     it("restores the committed value on Escape", async () => {
       const screen = await render(
-        <ComboboxFixture defaultValue="Initial value" />,
+        <ComboboxFixture defaultValue="Initial value" filterMethod="none" />,
       );
       const input = screen.getByRole("combobox");
 
@@ -308,6 +504,7 @@ describe("evo-combobox", () => {
         return (
           <ComboboxFixture
             value={value}
+            filterMethod="none"
             onValueChange={(nextValue) => {
               onValueChange(nextValue);
               setValue(nextValue);

@@ -26,6 +26,21 @@ describe("evo-combobox SSR", () => {
     await snapshotHTML(Default, { value: "Basic Offer" });
   });
 
+  it("renders auto filtering for a nonmatching prefilled value", async () => {
+    await snapshotHTML(Default, { filterMethod: "auto", value: "missing" });
+  });
+
+  it("renders supplied suggestions in manual mode", async () => {
+    await snapshotHTML(Default, {
+      filterMethod: "manual",
+      value: "missing",
+    });
+  });
+
+  it("renders input-independent suggestions in none mode", async () => {
+    await snapshotHTML(Default, { filterMethod: "none", value: "missing" });
+  });
+
   it("renders with fixed strategy", async () => {
     await snapshotHTML(Default, { strategy: "fixed" });
   });

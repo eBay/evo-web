@@ -1,0 +1,17 @@
+export interface Input {
+  value?: string;
+}
+
+<let/filterMethod="auto">
+<let/value=(input.value ?? "missing")>
+
+<button onClick() {
+  filterMethod = filterMethod === "auto" ? "none" : "auto";
+}>
+  Change filter method
+</button>
+
+<evo-combobox filterMethod=filterMethod value:=value aria-label="Campaign">
+  <@option text="August Campaign"/>
+  <@option text="Basic Offer"/>
+</evo-combobox>

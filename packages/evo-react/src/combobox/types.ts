@@ -3,7 +3,7 @@ import type { Strategy } from "@floating-ui/react";
 import type { NativeIconButtonProps } from "../icon-button";
 
 /** How the combobox filters its options. */
-export type ComboboxAutocomplete = "list" | "none";
+export type ComboboxFilterMethod = "auto" | "manual" | "none";
 
 /** How keyboard navigation previews the active option. */
 export type ComboboxListSelection = "automatic" | "manual";
@@ -39,10 +39,11 @@ export type EvoComboboxProps = Omit<
   | "value"
 > & {
   /**
-   * Filters visible options to those whose text includes the current input
-   * value. Defaults to `"none"`.
+   * Controls who filters the supplied options. Defaults to `"auto"`.
+   * `"manual"` leaves filtering to the application, while `"none"` treats
+   * options as independent of the input value.
    */
-  autocomplete?: ComboboxAutocomplete;
+  filterMethod?: ComboboxFilterMethod;
   /** Removes the input border. */
   borderless?: boolean;
   /** EvoComboboxOption children rendered in the component's listbox. */
@@ -82,8 +83,6 @@ export type EvoComboboxOptionProps = Omit<
   ComponentProps<"div">,
   "aria-selected" | "children" | "id" | "role" | "tabIndex"
 > & {
-  /** Always shown during list autocomplete, even when its text does not match. */
-  sticky?: boolean;
   /** Display text shown by the option and written into the input when selected. */
   text: string;
 };

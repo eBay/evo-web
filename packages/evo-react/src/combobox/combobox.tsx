@@ -27,7 +27,7 @@ const activeDescendantScrollIntoView: ScrollIntoViewOptions = {
 };
 
 export function EvoCombobox({
-  autocomplete = "none",
+  filterMethod = "auto",
   borderless = false,
   children,
   className,
@@ -316,7 +316,7 @@ export function EvoCombobox({
   return (
     <ComboboxProvider
       activeDescendant={activeDescendant}
-      autocomplete={autocomplete}
+      filterMethod={filterMethod}
       displayedValue={displayedValue}
       filterValue={currentValue}
       disabled={disabled}
@@ -352,7 +352,7 @@ export function EvoCombobox({
                 floatingLabel.showPlaceholder ? placeholder : undefined
               }
               autoComplete="off"
-              aria-autocomplete={autocomplete}
+              aria-autocomplete={filterMethod === "none" ? "none" : "list"}
               aria-haspopup="listbox"
               aria-expanded={effectiveOpen}
               aria-owns={listboxId}

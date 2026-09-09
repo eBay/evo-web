@@ -28,9 +28,9 @@ import {
     },
   },
   argTypes: {
-    autocomplete: {
+    filterMethod: {
       control: "select",
-      options: ["none", "list"],
+      options: ["auto", "manual", "none"],
     },
     listSelection: {
       control: "select",
@@ -72,7 +72,7 @@ import {
   },
   args: {
     floatingLabel: "Campaign",
-    autocomplete: "none",
+    filterMethod: "auto",
     listSelection: "automatic",
     placeholder: "Choose a campaign",
   },
@@ -87,7 +87,6 @@ export const Default: Story = {
       <EvoComboboxOption text="August Campaign" />
       <EvoComboboxOption text="4th of July Sale (paused)" />
       <EvoComboboxOption text="Basic Offer" />
-      <EvoComboboxOption text="Create campaign" sticky />
     </EvoCombobox>
   ),
 };
@@ -96,14 +95,47 @@ export const Controlled: Story = {
   args: {
     value: "August Campaign",
   },
-  render: (args) => (
-    <EvoCombobox {...args}>
-      <EvoComboboxOption text="August Campaign" />
-      <EvoComboboxOption text="4th of July Sale (paused)" />
-      <EvoComboboxOption text="Basic Offer" />
-      <EvoComboboxOption text="Create campaign" sticky />
-    </EvoCombobox>
-  ),
+  render: (args) => {
+    const [value, setValue] = useState(args.value ?? "");
+
+    return (
+      <EvoCombobox {...args} value={value} onValueChange={setValue}>
+        <EvoComboboxOption text="August Campaign" />
+        <EvoComboboxOption text="4th of July Sale (paused)" />
+        <EvoComboboxOption text="Basic Offer" />
+      </EvoCombobox>
+    );
+  },
+};
+
+export const ManualFiltering: Story = {
+  render: (args) => {
+    const [value, setValue] = useState("");
+    const options = [
+      { text: "New York", aliases: ["nyc"] },
+      { text: "London", aliases: ["ldn"] },
+      { text: "Tokyo", aliases: ["tyo"] },
+    ];
+    const query = value.trim().toLowerCase();
+    const visibleOptions = options.filter(
+      ({ text, aliases }) =>
+        !query ||
+        [text, ...aliases].some((term) => term.toLowerCase().includes(query)),
+    );
+
+    return (
+      <EvoCombobox
+        {...args}
+        filterMethod="manual"
+        value={value}
+        onValueChange={setValue}
+      >
+        {visibleOptions.map(({ text }) => (
+          <EvoComboboxOption key={text} text={text} />
+        ))}
+      </EvoCombobox>
+    );
+  },
 };
 
 export const Postfix: Story = {
@@ -126,7 +158,6 @@ export const Postfix: Story = {
         <EvoComboboxOption text="August Campaign" />
         <EvoComboboxOption text="4th of July Sale (paused)" />
         <EvoComboboxOption text="Basic Offer" />
-        <EvoComboboxOption text="Create campaign" sticky />
       </EvoCombobox>
     );
   },

@@ -28,7 +28,15 @@ EvoCombobox is a textbox with text suggestions. It renders its input and listbox
 </EvoCombobox>
 ```
 
-Options render their `text` and do not accept `children`. The new `sticky` prop keeps an option visible when `autocomplete="list"` filters other options.
+Options render their `text` and do not accept `children`.
+
+## Filtering
+
+EvoCombobox uses `filterMethod` to define filtering ownership. The default is `"auto"`, which applies case-insensitive literal substring matching to the trimmed input value. The previous `autocomplete="list"` behavior maps to `filterMethod="auto"`.
+
+For previous `autocomplete="none"` usage, choose `filterMethod="manual"` when the application supplies filtered suggestions, or `filterMethod="none"` when suggestions are independent of the input text. Consumers preserving the previous unfiltered default must explicitly choose one of those modes. There is no replacement for the removed `sticky` option behavior.
+
+`filterMethod` also manages `aria-autocomplete`: `"auto"` and `"manual"` use `"list"`, while `"none"` uses `"none"`. Native browser autocomplete remains disabled. `listSelection` controls keyboard preview only; it does not control filtering ownership.
 
 ## Value changes
 

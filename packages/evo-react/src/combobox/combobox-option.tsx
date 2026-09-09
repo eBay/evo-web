@@ -16,14 +16,13 @@ export function EvoComboboxOption({
   onKeyDown,
   onMouseDown,
   ref,
-  sticky = false,
   text,
   ...rest
 }: EvoComboboxOptionProps) {
   const generatedId = useId();
   const {
     activeDescendant,
-    autocomplete,
+    filterMethod,
     displayedValue,
     filterValue,
     selectOption,
@@ -33,8 +32,7 @@ export function EvoComboboxOption({
     ref as Ref<HTMLDivElement | null>,
     null,
   );
-  const hidden =
-    autocomplete === "list" && !sticky && !matchesFilter(text, filterValue);
+  const hidden = filterMethod === "auto" && !matchesFilter(text, filterValue);
   const { isActive } = useActiveDescendantItem({
     activeDescendant,
     enabled: !hidden,

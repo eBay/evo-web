@@ -28,6 +28,24 @@ describe("EvoCombobox SSR", () => {
     ).toMatchSnapshot();
   });
 
+  it("renders auto filtering for a nonmatching prefilled value", () => {
+    expect(
+      renderCombobox({ defaultValue: "missing", filterMethod: "auto" }),
+    ).toMatchSnapshot();
+  });
+
+  it("renders supplied suggestions in manual mode", () => {
+    expect(
+      renderCombobox({ defaultValue: "missing", filterMethod: "manual" }),
+    ).toMatchSnapshot();
+  });
+
+  it("renders input-independent suggestions in none mode", () => {
+    expect(
+      renderCombobox({ defaultValue: "missing", filterMethod: "none" }),
+    ).toMatchSnapshot();
+  });
+
   it("renders an open borderless combobox", () => {
     expect(
       renderCombobox({ borderless: true, defaultOpen: true }),

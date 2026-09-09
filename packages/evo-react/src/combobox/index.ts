@@ -1,7 +1,7 @@
 export { EvoCombobox } from "./combobox";
 export { EvoComboboxOption } from "./combobox-option";
 export type {
-  ComboboxAutocomplete,
+  ComboboxFilterMethod,
   ComboboxListSelection,
   ComboboxStrategy,
   EvoComboboxOptionProps,

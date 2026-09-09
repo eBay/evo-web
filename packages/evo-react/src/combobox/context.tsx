@@ -1,11 +1,11 @@
 import { createContext, use, useMemo } from "react";
 import type { ReactNode } from "react";
 import type { ActiveDescendant } from "../utils/use-active-descendant";
-import type { ComboboxAutocomplete } from "./types";
+import type { ComboboxFilterMethod } from "./types";
 
 export type ComboboxContextValue = {
   activeDescendant: ActiveDescendant<string, string>;
-  autocomplete: ComboboxAutocomplete;
+  filterMethod: ComboboxFilterMethod;
   displayedValue: string;
   filterValue: string;
   disabled?: boolean;
@@ -32,7 +32,7 @@ type ComboboxProviderProps = ComboboxContextValue & {
 
 export function ComboboxProvider({
   activeDescendant,
-  autocomplete,
+  filterMethod,
   displayedValue,
   filterValue,
   disabled,
@@ -42,7 +42,7 @@ export function ComboboxProvider({
   const value = useMemo(
     () => ({
       activeDescendant,
-      autocomplete,
+      filterMethod,
       displayedValue,
       filterValue,
       disabled,
@@ -50,7 +50,7 @@ export function ComboboxProvider({
     }),
     [
       activeDescendant,
-      autocomplete,
+      filterMethod,
       disabled,
       displayedValue,
       filterValue,
