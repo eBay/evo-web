@@ -12,6 +12,28 @@ import type {
 import { EvoIconChevronDown16 } from "../icon/icons/chevron-down-16";
 import "@ebay/skin/button.mjs";
 
+/**
+ * Buttons help people take an action, such as saving changes or continuing
+ * through a flow. Use a button for actions and a link for navigation.
+ *
+ * Omit `href` for an action, or provide it when the control should take someone
+ * to another location. Use `as` with `href` to integrate with a client-side
+ * router. Native button and anchor attributes are also supported.
+ *
+ * ## Usage
+ *
+ * ```tsx
+ * import { EvoButton } from "@evo-web/react/button";
+ *
+ * <EvoButton priority="primary" onClick={save}>
+ *   Save
+ * </EvoButton>
+ *
+ * <EvoButton href="/orders">View orders</EvoButton>
+ * ```
+ *
+ * @summary Action or navigation control.
+ */
 export function EvoButton(props: AnchorButtonProps): React.JSX.Element;
 export function EvoButton(props: NativeButtonProps): React.JSX.Element;
 export function EvoButton({
