@@ -6,13 +6,15 @@ import type {
 } from "react";
 import type { NativeIconButtonProps } from "../icon-button/types";
 
+/** Supported dialog width treatments. */
 export type DialogSize = "wide" | "narrow" | "large";
+/** User interactions that the native dialog allows to request dismissal. */
 export type DialogClosedBy = "any" | "closerequest" | "none";
 
 export type EvoDialogBannerProps = ComponentProps<"div"> & {
-  /** URL of the banner image. */
+  /** Image URL rendered as the banner's CSS background image. */
   src?: string;
-  /** CSS background position used for the banner image. */
+  /** Background position applied to the image supplied through `src`. */
   position?: CSSProperties["backgroundPosition"];
 };
 
@@ -23,7 +25,10 @@ export type EvoDialogPreviousProps = Omit<NativeIconButtonProps, "children">;
 export type EvoDialogHeaderProps = ComponentProps<"div">;
 
 export type EvoDialogTitleProps = ComponentProps<"h2"> & {
-  /** Heading element used for the dialog title. Defaults to `h2`. */
+  /**
+   * Heading element used for the dialog title. Match it to the surrounding
+   * page's heading hierarchy. Defaults to `"h2"`.
+   */
   as?: ElementType;
 };
 
@@ -35,16 +40,25 @@ export type EvoDialogProps = Omit<
   ComponentProps<"dialog">,
   "open" | "closedby"
 > & {
-  /** Controlled open state. When provided, the consumer manages it via `onOpenChange`. */
+  /**
+   * Controls whether the dialog is open. Pair with `onOpenChange`; omit to use
+   * `defaultOpen` for uncontrolled state.
+   */
   open?: boolean;
-  /** Initial open state for uncontrolled usage. Ignored when `open` is provided. */
+  /** Sets the initial open state when `open` is omitted. Defaults to `false`. */
   defaultOpen?: boolean;
-  /** Callback fired when the dialog requests to change its open state. */
+  /** Called with `false` when the dialog receives an allowed close request. */
   onOpenChange?: (open: boolean) => void;
-  /** Size variant of the dialog. */
+  /** Selects a supported dialog width treatment. */
   size?: DialogSize;
-  /** User actions that may close the native dialog. Defaults to `any`. */
+  /**
+   * Sets which user interactions can request dismissal through the native
+   * `closedby` behavior. Defaults to `"any"`.
+   */
   closedby?: DialogClosedBy;
-  /** Optional banner rendered before the dialog header. */
+  /**
+   * Banner rendered before the dialog contents. Use `EvoDialogBanner` to apply
+   * the expressive image structure expected by Skin.
+   */
   banner?: ReactElement<EvoDialogBannerProps> | null;
 };

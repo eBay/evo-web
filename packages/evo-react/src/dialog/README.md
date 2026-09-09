@@ -2,4 +2,4 @@
 
 ## Documentation
 
-[Storybook](https://opensource.ebay.com/evo-web/react/?path=/docs/navigation-disclosure-evo-dialog--documentation)
+[Storybook](https://opensource.ebay.com/evo-web/react/?path=/docs/navigation-disclosure-evodialog--documentation)

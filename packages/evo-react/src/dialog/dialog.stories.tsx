@@ -11,7 +11,7 @@ import { EvoDialogPrevious } from "./dialog-previous";
 import { EvoDialogTitle } from "./dialog-title";
 
 const meta: Meta<typeof EvoDialog> = {
-  title: "navigation & disclosure/evo-dialog",
+  title: "Navigation & Disclosure/EvoDialog",
   component: EvoDialog,
   subcomponents: {
     EvoDialogBanner,
@@ -22,33 +22,10 @@ const meta: Meta<typeof EvoDialog> = {
     EvoDialogMain,
     EvoDialogFooter,
   },
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-A native modal dialog with a backdrop scrim, close animation, size variants, and optional expressive banner.
-
-## Usage
-
-\`\`\`tsx
-import {
-  EvoDialog,
-  EvoDialogClose,
-  EvoDialogHeader,
-  EvoDialogTitle,
-  EvoDialogMain,
-} from "@evo-web/react/dialog";
-\`\`\`
-        `,
-      },
-    },
-  },
   argTypes: {
     open: { control: "boolean" },
     defaultOpen: {
       control: "boolean",
-      table: { defaultValue: { summary: "false" } },
     },
     onOpenChange: {
       action: "onOpenChange",
@@ -56,12 +33,9 @@ import {
     },
     size: {
       control: "select",
-      options: ["wide", "narrow", "large"],
     },
     closedby: {
       control: "select",
-      options: ["any", "closerequest", "none"],
-      table: { defaultValue: { summary: "any" } },
     },
     banner: { control: false },
     children: { control: false },
@@ -74,6 +48,7 @@ import {
 export default meta;
 type Story = StoryObj<typeof EvoDialog>;
 
+/** A standard dialog pairs a clear title with focused content and an action. */
 export const Default: Story = {
   render: (args) => {
     const [open, setOpen] = useState(false);
@@ -113,6 +88,7 @@ export const Default: Story = {
   },
 };
 
+/** Add an image when it provides useful visual context for the dialog. */
 export const Banner: Story = {
   render: (args) => {
     const [open, setOpen] = useState(false);
@@ -150,6 +126,7 @@ export const Banner: Story = {
   },
 };
 
+/** A banner can also hold branded or custom visual content. */
 export const CustomBanner: Story = {
   render: (args) => {
     const [open, setOpen] = useState(false);
@@ -201,6 +178,7 @@ export const CustomBanner: Story = {
   },
 };
 
+/** In a multi-step flow, offer a clear way to return to the previous step. */
 export const WithPrevious: Story = {
   render: (args) => {
     const [open, setOpen] = useState(false);

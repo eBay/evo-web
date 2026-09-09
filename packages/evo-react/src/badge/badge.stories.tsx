@@ -2,24 +2,8 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { EvoBadge } from "./badge";
 
 const meta: Meta<typeof EvoBadge> = {
-  title: "graphics & icons/evo-badge",
+  title: "Graphics & Icons/EvoBadge",
   component: EvoBadge,
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-A badge component that displays a numeric count.
-
-## Usage
-
-\`\`\`tsx
-import { EvoBadge } from "@evo-web/react/badge";
-\`\`\`
-        `,
-      },
-    },
-  },
   argTypes: {
     number: {
       control: "number",
@@ -43,8 +27,10 @@ export default meta;
 
 type Story = StoryObj<typeof EvoBadge>;
 
+/** Use a count when it helps people understand how many items need attention. */
 export const Default: Story = {};
 
+/** Use an empty badge to signal new activity when a count is not useful. */
 export const Empty: Story = {
   args: {
     number: undefined,
