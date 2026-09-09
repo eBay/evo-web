@@ -172,6 +172,7 @@ static interface DashLikeMedia extends MediaElement {
   autoPause: false,
   focusFromClick: false,
   focusControls: false,
+  touchOnHiddenControls: false,
 }>
 <const/fullscreenEnabled=Boolean(a11yFullscreenText && a11yExitFullscreenText)>
 <const/failSource=(error: unknown) => {
@@ -249,9 +250,20 @@ static interface DashLikeMedia extends MediaElement {
       failSource(e);
       input.onError && input.onError(e, el);
     }
+    onPointerDown(e, el) {
+      if (e.pointerType === "touch") {
+        flags.touchOnHiddenControls = controlsHidden;
+      }
+      input.onPointerDown && input.onPointerDown(e, el);
+    }
     onClick(e, el) {
       if (!nav) {
-        playing = !playing;
+        if (flags.touchOnHiddenControls) {
+          flags.touchOnHiddenControls = false;
+          lastActive++;
+        } else {
+          playing = !playing;
+        }
       }
       input.onClick && input.onClick(e, el);
     }
@@ -377,13 +389,18 @@ static interface DashLikeMedia extends MediaElement {
                 languageOpen = !languageOpen;
               }
             >
-              <evo-icon-closed-caption-16/>
+              <if=language>
+                <evo-icon-closed-caption-filled-16/>
+              </if>
+              <else>
+                <evo-icon-closed-caption-16/>
+              </else>
             </button>
             <span class="video__popover">
               <evo-menu/$languageMenu
                 selected=language || "off"
                 selectedChange(value) {
-                  language = value === "none" ? null : (value as string);
+                  language = value === "off" ? null : (value as string);
                   languageOpen = false;
                   $languageButton().focus();
                 }
