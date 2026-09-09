@@ -44,8 +44,6 @@ class {
     ...input
 >
     <for|{ name, code }| of=state.visibleCountries>
-        <@item value=code checked=(state.checkedCodes[code])>
-            ${name}
-        </@item>
+        <@item value=code checked=(state.checkedCodes[code])>${name}</@item>
     </for>
 </ebay-filter-menu>

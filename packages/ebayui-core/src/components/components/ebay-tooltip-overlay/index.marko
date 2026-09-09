@@ -8,9 +8,9 @@ $ const { id, type, heading, content, footer, a11yCloseText } = input;
     id=id
     class=`${type}__overlay`
     role=typeRoles[type]
-    aria-labelledby=type === "tourtip" &&
-    heading &&
-    component.elId("tourtip-label")
+    aria-labelledby=(
+        type === "tourtip" && heading && component.elId("tourtip-label")
+    )
 >
     <span class=`${type}__pointer`/>
     <span class=`${type}__mask`>

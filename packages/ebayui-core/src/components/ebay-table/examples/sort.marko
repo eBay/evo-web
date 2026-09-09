@@ -14,54 +14,48 @@ class {
 }
 
 <ebay-table on-sort("onSort") ...input>
-    <@header
-        name="sellerCol"
-        row-header
-        sort=(state.sorted.sellerCol || "none")
-    >
+    <@header name="sellerCol" row-header sort=state.sorted.sellerCol || "none">
         Seller
     </@header>
-    <@header name="itemCol" sort=(state.sorted.itemCol || "none")>
-        Item
-    </@header>
-    <@header name="statusCol" sort=(state.sorted.statusCol || "none")>
+    <@header name="itemCol" sort=state.sorted.itemCol || "none">Item</@header>
+    <@header name="statusCol" sort=state.sorted.statusCol || "none">
         Status
     </@header>
     <@header
         name="listPriceCol"
         column-type="numeric"
-        sort=(state.sorted.listPriceCol || "none")
+        sort=state.sorted.listPriceCol || "none"
     >
         List Price
     </@header>
     <@header
         name="quantityCol"
         column-type="numeric"
-        sort=(state.sorted.quantityCol || "none")
+        sort=state.sorted.quantityCol || "none"
     >
         Quantity Available
     </@header>
-    <@header name="orderCol" sort=(state.sorted.orderCol || "none")>
+    <@header name="orderCol" sort=state.sorted.orderCol || "none">
         Orders
     </@header>
     <@header
         name="watchersCol"
         column-type="numeric"
-        sort=(state.sorted.watchersCol || "none")
+        sort=state.sorted.watchersCol || "none"
     >
         Watchers
     </@header>
     <@header
         name="protectionCol"
         column-type="numeric"
-        sort=(state.sorted.protectionCol || "none")
+        sort=state.sorted.protectionCol || "none"
     >
         Protection
     </@header>
-    <@header name="shippingCol" sort=(state.sorted.shippingCol || "none")>
+    <@header name="shippingCol" sort=state.sorted.shippingCol || "none">
         Shipping
     </@header>
-    <@header name="deliveryCol" sort=(state.sorted.deliveryCol || "none")>
+    <@header name="deliveryCol" sort=state.sorted.deliveryCol || "none">
         Delivery
     </@header>
     <for|r| of=data>
@@ -75,11 +69,7 @@ class {
             </@cell>
             <@cell>${r.listPrice}</@cell>
             <@cell>${r.quantityAvailable}</@cell>
-            <@cell>
-                <a href="https://ebay.com">
-                    ${r.orders.number}
-                </a>
-            </@cell>
+            <@cell><a href="https://ebay.com">${r.orders.number}</a></@cell>
             <@cell>${r.watchers}</@cell>
             <@cell>${r.protection}</@cell>
             <@cell>${r.shipping}</@cell>

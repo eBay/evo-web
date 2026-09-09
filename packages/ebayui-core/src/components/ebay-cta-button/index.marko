@@ -6,12 +6,7 @@ static {
     }
 }
 export interface Input extends WithNormalizedProps<CtaButtonInput> {}
-$ const {
-    size,
-    class: inputClass,
-    renderBody,
-    ...htmlInput
-} = input;
+$ const { size, class: inputClass, renderBody, ...htmlInput } = input;
 
 <a
     ...processHtmlAttributes(htmlInput)

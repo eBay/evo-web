@@ -3,7 +3,9 @@ $ var config = data.config;
 
 <div
     ...data.htmlAttributes
-    aria-roledescription=data.htmlAttributes["aria-roledescription"] || "Carousel",
+    aria-roledescription=(
+        data.htmlAttributes["aria-roledescription"] || "Carousel"
+    )
     class=data.classes
     style=data.style
     role="group"
@@ -45,11 +47,14 @@ $ var config = data.config;
                     input.imageTreatment === "matte" &&
                         "carousel__list--image-treatment",
                 ]
-                style=!config.nativeScrolling &&
-                !!data.offset && {
-                    transform: "translate3d(" + data.offset * -1 + "px,0,0)",
-                    transition: data.disableTransition ? "none" : undefined,
-                }
+                style=(
+                    !config.nativeScrolling &&
+                    !!data.offset && {
+                        transform:
+                            "translate3d(" + data.offset * -1 + "px,0,0)",
+                        transition: data.disableTransition ? "none" : undefined,
+                    }
+                )
                 key="list"
                 id:scoped="list"
             >
@@ -81,9 +86,7 @@ $ var config = data.config;
         <if(data.autoplayInterval && !data.bothControlsDisabled)>
             <button
                 type="button"
-                aria-label=(
-                    data.paused ? data.a11yPlayText : data.a11yPauseText
-                )
+                aria-label=data.paused ? data.a11yPlayText : data.a11yPauseText
                 onClick("togglePlay")
                 class="carousel__playback"
             >

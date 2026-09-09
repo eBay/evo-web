@@ -7,10 +7,6 @@ $ const { renderBody, max, clippedText, value, ...htmlInput } = input;
     </if>
     <else>
         ${state.count}/${max}
-        <if(clippedText)>
-            <span class="clipped">
-                ${clippedText}
-            </span>
-        </if>
+        <if(clippedText)><span class="clipped">${clippedText}</span></if>
     </else>
 </span>

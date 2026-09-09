@@ -2,11 +2,8 @@
     <div class="tooltip__mask">
         <div class="tooltip__cell">
             <div class="tooltip__content">
-                <b>${input.name}</b>
-                <br>
-                <if(input.tooltip)>
-                    ${input.tooltip}
-                </if>
+                <b>${input.name}</b><br>
+                <if(input.tooltip)>${input.tooltip}</if>
                 <else>${input.value}</else>
             </div>
         </div>

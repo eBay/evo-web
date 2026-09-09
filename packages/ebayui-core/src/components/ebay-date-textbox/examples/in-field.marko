@@ -18,9 +18,7 @@ class {
 }
 
 <div class="field">
-    <label for:scoped="textbox">
-        Enter Date
-    </label>
+    <label for:scoped="textbox">Enter Date</label>
     <div>
         <ebay-date-textbox onInvalid-date("onError") on-change("onChange")>
             <@textbox
@@ -35,9 +33,7 @@ class {
             class="field__description field__description--attention"
             id:scoped="error-label"
         >
-            Use
-            <strong>YYYY-MM-DD</strong>
-             format
+            Use <strong>YYYY-MM-DD</strong> format
         </div>
     </if>
 </div>

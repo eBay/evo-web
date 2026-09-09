@@ -6,11 +6,7 @@ static {
     }
 }
 export interface Input extends WithNormalizedProps<SkeletonInput> {}
-$ const {
-    a11yText = "Loading",
-    class: inputClass,
-    ...htmlInput
-} = input;
+$ const { a11yText = "Loading", class: inputClass, ...htmlInput } = input;
 
 <div
     role="img"

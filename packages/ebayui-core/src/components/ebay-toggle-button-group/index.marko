@@ -23,14 +23,9 @@ $ const {
     ...processHtmlAttributes(htmlInput)
 >
     <ul aria-label=a11yText aria-labelledby=a11yLabelId>
-        <for|
-            {
-                layoutType = baseLayoutType,
-                pressed,
-                ...toggleButtonInput
-            },
-            i,
-        | of=buttons>
+        <for|{ layoutType = baseLayoutType, pressed, ...toggleButtonInput }, i|
+            of=buttons
+        >
             <li>
                 <ebay-toggle-button
                     layoutType=layoutType

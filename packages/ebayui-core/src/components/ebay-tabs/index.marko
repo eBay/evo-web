@@ -10,7 +10,10 @@ $ const {
     ...htmlInput
 } = input;
 
-<div ...processHtmlAttributes(htmlInput) class=["tabs", size === "large" && "tabs--large", inputClass]>
+<div
+    ...processHtmlAttributes(htmlInput)
+    class=["tabs", size === "large" && "tabs--large", inputClass]
+>
     <div role="tablist" key="tabs" class="tabs__items">
         <for|tab, i| of=state.tab>
             $ var isSelected = state.selectedIndex === i;

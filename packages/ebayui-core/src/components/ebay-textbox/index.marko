@@ -99,9 +99,7 @@ $ var disablePrefix = !!floatingLabel && !floatingLabelStatic;
             onBlur("onBlur")
             onInvalid("forwardEvent", "invalid")
         >
-            <if(multiline && value)>
-                ${value}
-            </if>
+            <if(multiline && value)>${value}</if>
         </>
         <if(postfixText)>
             <span id=postfixId ...postfixText>

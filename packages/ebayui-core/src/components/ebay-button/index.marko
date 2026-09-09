@@ -6,7 +6,10 @@ export interface ButtonEvent<T extends Event> {
     originalEvent: T;
 }
 
-export interface ButtonInput extends Omit<Marko.HTML.Button, `on${string}` | "type">, Omit<Marko.HTML.A, `on${string}`> {
+export interface ButtonInput
+    extends
+        Omit<Marko.HTML.Button, `on${string}` | "type">,
+        Omit<Marko.HTML.A, `on${string}`> {
     href?: string;
     size?: (typeof validSizes)[number];
     priority?: "primary" | "secondary" | "tertiary" | "none";
@@ -62,15 +65,19 @@ $ if (borderless || variant === "form") {
 }
 $ var baseClass = href ? "fake-btn" : "btn";
 $ var sizeClass = size && baseClass + "--" + size;
-$ var truncateClass = (
-    truncate &&
-    (sizeClass ? sizeClass + "-truncated" : baseClass + "--truncated")
-);
+$ {
+    var truncateClass =
+        truncate &&
+        (sizeClass ? sizeClass + "-truncated" : baseClass + "--truncated");
+}
 $ var transparentClass = transparent ? baseClass + "--transparent" : "";
-$ var fixedHeightClass = (
-    fixedHeight &&
-    (sizeClass ? sizeClass + "-fixed-height" : baseClass + "--fixed-height")
-);
+$ {
+    var fixedHeightClass =
+        fixedHeight &&
+        (sizeClass
+            ? sizeClass + "-fixed-height"
+            : baseClass + "--fixed-height");
+}
 $ var variantClass = variant !== "standard" && `${baseClass}--${variant}`;
 $ var tag = href ? "a" : "button";
 <${tag}
@@ -96,7 +103,7 @@ $ var tag = href ? "a" : "button";
     data-ebayui
     type=tag === "button" && (type || "button")
     aria-disabled=partiallyDisabled && "true"
-    aria-label=(bodyState === "loading" ? a11yText || "Loading..." : ariaLabel)
+    aria-label=bodyState === "loading" ? a11yText || "Loading..." : ariaLabel
 >
     <if(bodyState === "loading")>
         <span class="btn__cell">
