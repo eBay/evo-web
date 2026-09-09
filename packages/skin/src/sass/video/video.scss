@@ -7,11 +7,15 @@
 // --------------------------------------------------------
 
 .video {
+    aspect-ratio: 16 / 9;
+    background-color: #000;
     position: relative;
 
-    > video {
+    > video,
+    > a > video {
         display: block;
-        height: auto;
+        height: 100%;
+        object-fit: contain;
         width: 100%;
 
         // Keep native captions above the control bar (even while it is
@@ -266,20 +270,7 @@
 
 .video--with-nav > a {
     display: block;
-}
-
-.video:fullscreen {
-    align-items: center;
-    background-color: #000;
-    display: flex;
-    justify-content: center;
-
-    > video,
-    > a > video {
-        height: 100%;
-        object-fit: contain;
-        width: 100%;
-    }
+    height: 100%;
 }
 
 // --------------------------------------------------------
