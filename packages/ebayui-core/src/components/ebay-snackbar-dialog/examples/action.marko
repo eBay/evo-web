@@ -16,9 +16,7 @@ class {
         this.emit("close");
     }
 }
-<ebay-button on-click("handleOpen")>
-    Open Action Snackbar
-</ebay-button>
+<ebay-button on-click("handleOpen")>Open Action Snackbar</ebay-button>
 <ebay-snackbar-dialog
     open=state.open
     on-close("handleClose")
@@ -26,8 +24,6 @@ class {
     on-action("emit", "action")
     ...input
 >
-    <@action accesskey="U">
-        Undo
-    </@action>
+    <@action accesskey="U">Undo</@action>
     This 'snackbar' text should be 1-2 lines.
 </ebay-snackbar-dialog>

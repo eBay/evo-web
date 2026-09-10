@@ -3,7 +3,7 @@ $ const { renderBody, selected, ...htmlInput } = input;
 
 <button
     class=["selection-chip", state.mounted && "selection-chip--animated"]
-    aria-pressed=(state.selected ? "true" : "false")
+    aria-pressed=state.selected ? "true" : "false"
     type="button"
     on-click("handleButtonClick")
     ...processHtmlAttributes(htmlInput)

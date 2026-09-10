@@ -19,7 +19,8 @@ $ const {
     on-activeDescendantChange(
         component.isAutoSelection ? "handleListboxChange" : undefined,
     )
-    onKeydown(!component.isAutoSelection && "handleKeyDown")>
+    onKeydown(!component.isAutoSelection && "handleKeyDown")
+>
     <for|option, index| of=options || []>
         $ const {
             value,
@@ -32,26 +33,25 @@ $ const {
             description,
             ...htmlOption
         } = option;
-        $ var isSelected = (index === state.selectedIndex);
+        $ var isSelected = index === state.selectedIndex;
         <div
             ...processHtmlAttributes(htmlOption)
             key="option[]"
             class:no-update=["listbox__option", optionClass]
             role="option"
-            tabindex=(disabled ? -1 : tabindex)
+            tabindex=disabled ? -1 : tabindex
             aria-disabled=disabled && "true"
             aria-selected=isSelected && "true"
             onClick(!component.isAutoSelection && "handleClick", index)
-            onMousedown(component.isAutoSelection && "handleMouseDown")>
+            onMousedown(component.isAutoSelection && "handleMouseDown")
+        >
             <if(icon)>
                 <span class="listbox__value">
                     <${icon}/>
                     <if(text)>
                         <span>${text}</span>
                         <if(isSelected)>
-                            <span class="clipped">
-                                ${a11ySelectedText}
-                            </span>
+                            <span class="clipped">${a11ySelectedText}</span>
                         </if>
                     </if>
                     <if(description)>
@@ -65,9 +65,7 @@ $ const {
                 <span class="listbox__value">
                     ${text}
                     <if(isSelected)>
-                        <span class="clipped">
-                            ${a11ySelectedText}
-                        </span>
+                        <span class="clipped">${a11ySelectedText}</span>
                     </if>
                 </span>
                 <if(description)>
@@ -85,6 +83,7 @@ $ const {
         <option
             value=option.value
             selected=i === state.selectedIndex
-            class=option.class/>
+            class=option.class
+        />
     </for>
 </select>

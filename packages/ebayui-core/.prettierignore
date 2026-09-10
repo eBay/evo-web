@@ -1,4 +1,5 @@
 *.marko.js
+CHANGELOG.md
 static/
 dist/
 docs/

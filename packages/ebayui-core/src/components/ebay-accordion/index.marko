@@ -10,8 +10,13 @@ $ const {
 
 <ul
     ...processHtmlAttributes(htmlInput)
-    class=["accordion", size === "large" && "accordion--large", inputClass, state.interacted && "accordion--animated"]
-    aria-roledescription=(a11yRoleDescription ?? "accordion")
+    class=[
+        "accordion",
+        size === "large" && "accordion--large",
+        inputClass,
+        state.interacted && "accordion--animated",
+    ]
+    aria-roledescription=a11yRoleDescription ?? "accordion"
     key="accordion-root"
 >
     <for|item, index| of=items || []>

@@ -14,9 +14,10 @@ $ const messages = [...rawMessages];
     class=["progress-bar-expressive", inputClass]
 >
     <if(messages && messages.length > 0)>
-        $ const currentMessage = (
-            messages[state.currentMessageIndex]?.renderBody
-        );
+        $ {
+            const currentMessage =
+                messages[state.currentMessageIndex]?.renderBody;
+        }
         $ const nextMessage = messages[state.nextMessageIndex]?.renderBody;
         <div class=[
             "progress-bar-expressive__messages",

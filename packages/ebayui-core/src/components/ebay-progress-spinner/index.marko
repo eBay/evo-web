@@ -1,18 +1,16 @@
 import { processHtmlAttributes } from "../../common/html-attributes";
 import type { WithNormalizedProps } from "../../global";
 static {
-    interface ProgressSpinnerInput
-        extends Omit<Marko.HTML.Span, `on${string}`> {
+    interface ProgressSpinnerInput extends Omit<
+        Marko.HTML.Span,
+        `on${string}`
+    > {
         size?: "large" | "small";
         "a11y-text"?: Marko.HTMLAttributes["aria-label"];
     }
 }
 export interface Input extends WithNormalizedProps<ProgressSpinnerInput> {}
-$ const {
-    class: inputClass,
-    size,
-    ...htmlInput
-} = input;
+$ const { class: inputClass, size, ...htmlInput } = input;
 
 <span
     ...processHtmlAttributes(htmlInput)

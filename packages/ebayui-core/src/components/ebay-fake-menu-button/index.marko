@@ -35,7 +35,7 @@ $ var prefix = "expand-btn";
 $ var variant: string | undefined;
 $ var isIconVariant = inputVariant === "icon" || isOverflowVariant;
 
-$ var tagName:any = Button;
+$ var tagName: any = Button;
 $ if (isFormVariant) {
     prefix = "btn";
     variant = "form";
@@ -85,9 +85,7 @@ $ if (isFormVariant) {
                     <if(icon)>
                         <${icon}/>
                     </if>
-                    <if(text)>
-                        <span>${text}</span>
-                    </if>
+                    <if(text)><span>${text}</span></if>
                 </else>
                 <if(isButtonVariant && !noToggleIcon)>
                     <ebay-chevron-down-12-icon/>
@@ -98,7 +96,7 @@ $ if (isFormVariant) {
     <ebay-fake-menu
         classPrefix="fake-menu-button"
         type=type
-        reverse=(isOverflowVariant ? !reverse : reverse)
+        reverse=isOverflowVariant ? !reverse : reverse
         fixed=strategy === "fixed"
         fixWidth=fixWidth
         tabindex=-1

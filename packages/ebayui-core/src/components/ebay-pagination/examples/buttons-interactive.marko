@@ -29,11 +29,9 @@ class {
     a11yCurrentText=`Results Pagination - Page ${state.current}`
     ...input
 >
-    <@item type=("previous" as any) disabled=state.current === 0/>
+    <@item type="previous" as any disabled=state.current === 0/>
     <for|i| from=0 to=SIZE>
-        <@item current=i === state.current>
-            ${i}
-        </@item>
+        <@item current=i === state.current>${i}</@item>
     </for>
     <@item type="next" disabled=state.current === SIZE/>
 </ebay-pagination>
