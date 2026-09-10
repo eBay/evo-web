@@ -6,7 +6,6 @@
     display: inline-block;
 }
 
-.date-textbox > .floating-label + .floating-label,
 .date-textbox > .textbox + .textbox {
     margin-left: var(--spacing-100);
 }
