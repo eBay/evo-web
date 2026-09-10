@@ -95,17 +95,13 @@ export const Controlled: Story = {
   args: {
     value: "August Campaign",
   },
-  render: (args) => {
-    const [value, setValue] = useState(args.value ?? "");
-
-    return (
-      <EvoCombobox {...args} value={value} onValueChange={setValue}>
-        <EvoComboboxOption text="August Campaign" />
-        <EvoComboboxOption text="4th of July Sale (paused)" />
-        <EvoComboboxOption text="Basic Offer" />
-      </EvoCombobox>
-    );
-  },
+  render: (args) => (
+    <EvoCombobox {...args}>
+      <EvoComboboxOption text="August Campaign" />
+      <EvoComboboxOption text="4th of July Sale (paused)" />
+      <EvoComboboxOption text="Basic Offer" />
+    </EvoCombobox>
+  ),
 };
 
 export const ManualFiltering: Story = {
