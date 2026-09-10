@@ -34,7 +34,8 @@ $ var monthDates = [...Array(numMonths)].map((_, i) =>
                             component.getMonthDate(state.offset - 1),
                         ),
                     )
-                    onClick("prevMonth", false)>
+                    onClick("prevMonth", false)
+                >
                     <ebay-chevron-left-24-icon/>
                 </ebay-icon-button>
                 <for|monthDate| of=monthDates>
@@ -52,7 +53,8 @@ $ var monthDates = [...Array(numMonths)].map((_, i) =>
                             component.getMonthDate(state.offset + numMonths),
                         ),
                     )
-                    onClick("nextMonth", false)>
+                    onClick("nextMonth", false)
+                >
                     <ebay-chevron-right-24-icon/>
                 </ebay-icon-button>
             </div>
@@ -71,10 +73,13 @@ $ var monthDates = [...Array(numMonths)].map((_, i) =>
                         </tr>
                     </thead>
                     <tbody>
-                        $ var numBlankDays = (
-                            (monthDate.getUTCDay() - state.firstDayOfWeek + 7) %
-                            7
-                        );
+                        $ {
+                            var numBlankDays =
+                                (monthDate.getUTCDay() -
+                                    state.firstDayOfWeek +
+                                    7) %
+                                7;
+                        }
                         $ var year = monthDate.getUTCFullYear();
                         $ var month = monthDate.getUTCMonth();
                         $ var daysInMonth = new Date(
@@ -84,7 +89,8 @@ $ var monthDates = [...Array(numMonths)].map((_, i) =>
                         ).getDate();
                         <for|row|
                             from=0
-                            to=Math.floor((numBlankDays + daysInMonth) / 7)>
+                            to=Math.floor((numBlankDays + daysInMonth) / 7)
+                        >
                             <tr>
                                 $ var startDate = row * 7 - numBlankDays + 1;
                                 $ var endDate = startDate + 6;
@@ -100,25 +106,21 @@ $ var monthDates = [...Array(numMonths)].map((_, i) =>
                                         new Date(Date.UTC(year, month, day)),
                                     );
                                     $ var isToday = dayISO === state.todayISO;
-                                    $ var isSelected = (
-                                        Array.isArray(selected)
+                                    $ {
+                                        var isSelected = Array.isArray(selected)
                                             ? selected.some(
                                                   (iso) => iso === dayISO,
                                               )
-                                            : selected && selected === dayISO
-                                    );
-                                    $ var isRangeStart = (
-                                        dayISO === state.rangeStart
-                                    );
-                                    $ var isInRange = component.isInRange(
-                                        dayISO,
-                                    );
-                                    $ var isRangeEnd = (
-                                        dayISO === state.rangeEnd
-                                    );
-                                    $ var isDisabled = component.isDisabled(
-                                        dayISO,
-                                    );
+                                            : selected && selected === dayISO;
+                                    }
+                                    $ var isRangeStart =
+                                        dayISO === state.rangeStart;
+                                    $ var isInRange =
+                                        component.isInRange(dayISO);
+                                    $ var isRangeEnd =
+                                        dayISO === state.rangeEnd;
+                                    $ var isDisabled =
+                                        component.isDisabled(dayISO);
                                     $ var a11yTexts = [""];
                                     $ {
                                         if (
@@ -176,7 +178,8 @@ $ var monthDates = [...Array(numMonths)].map((_, i) =>
                                                     dayISO,
                                                 )
                                                 onBlur("onDayBlur")
-                                                onMouseout("onDayBlur")>
+                                                onMouseout("onDayBlur")
+                                            >
                                                 ${day}
                                             </button>
                                         </if>
@@ -196,11 +199,12 @@ $ var monthDates = [...Array(numMonths)].map((_, i) =>
                                                         a11yDisabledText,
                                                     );
                                             }
-                                            $ var link = (
-                                                !isDisabled &&
-                                                linkBuilder &&
-                                                linkBuilder(dayISO)
-                                            );
+                                            $ {
+                                                var link =
+                                                    !isDisabled &&
+                                                    linkBuilder &&
+                                                    linkBuilder(dayISO);
+                                            }
                                             <${link ? "a" : "span"}
                                                 class={
                                                     "calendar__cell--disabled":
@@ -208,13 +212,16 @@ $ var monthDates = [...Array(numMonths)].map((_, i) =>
                                                     "calendar__cell--current":
                                                         isToday,
                                                 }
-                                                href=link>
+                                                href=link
+                                            >
                                                 ${day}
                                                 <if(a11yTexts.length > 1)>
                                                     <span class="clipped">
-                                                        ${a11yTexts.join(
-                                                            a11ySeparator,
-                                                        )}
+                                                        ${
+                                                            a11yTexts.join(
+                                                                a11ySeparator,
+                                                            )
+                                                        }
                                                     </span>
                                                 </if>
                                             </>

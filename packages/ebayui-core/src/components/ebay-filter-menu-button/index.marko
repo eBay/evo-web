@@ -34,7 +34,10 @@ $ const hasSelected = selected ?? !!checkedValues.length;
     <button
         key="button"
         type="button"
-        class=["filter-menu-button__button", hasSelected && "filter-menu-button__button--selected"]
+        class=[
+            "filter-menu-button__button",
+            hasSelected && "filter-menu-button__button--selected",
+        ]
         disabled=disabled
         aria-expanded:no-update="false"
         aria-haspopup="true"

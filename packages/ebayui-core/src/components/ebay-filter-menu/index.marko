@@ -74,7 +74,7 @@ $ var isForm = variant === "form";
                 <${isForm ? "label" : "div"}
                     ...processHtmlAttributes(htmlItem)
                     class=[`${baseClass}__item`, itemClass]
-                    role=(isRadio ? "menuitemradio" : "menuitemcheckbox")
+                    role=isRadio ? "menuitemradio" : "menuitemcheckbox"
                     aria-checked=String(isChecked)
                     aria-disabled=disabled && "true"
                     for=isForm && component.elId(`${prefixName}-${i}`)
@@ -126,7 +126,7 @@ $ var isForm = variant === "form";
         </div>
         <if(footerText)>
             <button
-                type=(isForm ? "submit" : "button")
+                type=isForm ? "submit" : "button"
                 aria-label=a11yFooterText
                 class=`${baseClass}__footer`
                 onClick(!isForm && "handleFooterButtonClick")
@@ -138,7 +138,7 @@ $ var isForm = variant === "form";
             $ const { renderBody, a11yFooterText, ...htmlFooter } = footer;
             <button
                 ...processHtmlAttributes(htmlFooter)
-                type=(isForm ? "submit" : "button")
+                type=isForm ? "submit" : "button"
                 aria-label=a11yFooterText
                 class=`${baseClass}__footer`
                 onClick(!isForm && "handleFooterButtonClick")

@@ -13,9 +13,7 @@ $ var size = inputSize && validSizes.includes(inputSize) ? inputSize : null;
 
 $ const placeholder = inputPlaceholder ?? "Filter";
 
-<span class=["filter-input",
-    size && `filter-input--${size}`,
-    inputClass]>
+<span class=["filter-input", size && `filter-input--${size}`, inputClass]>
     <ebay-textbox
         fluid
         type="search"

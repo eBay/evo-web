@@ -28,16 +28,18 @@ static function isItemHidden(
 }
 $ const baseItems = [...items];
 $ var lastItemIndex = baseItems.length - 1;
-$ var prevItem = (
-    (baseItems[0] && baseItems[0].type === "previous" && baseItems[0]) ||
-    disabledItem
-);
-$ var nextItem = (
-    (baseItems[lastItemIndex] &&
-        baseItems[lastItemIndex].type === "next" &&
-        baseItems[lastItemIndex]) ||
-    disabledItem
-);
+$ {
+    var prevItem =
+        (baseItems[0] && baseItems[0].type === "previous" && baseItems[0]) ||
+        disabledItem;
+}
+$ {
+    var nextItem =
+        (baseItems[lastItemIndex] &&
+            baseItems[lastItemIndex].type === "next" &&
+            baseItems[lastItemIndex]) ||
+        disabledItem;
+}
 $ var slicedItems = baseItems.slice(
     prevItem === disabledItem ? 0 : 1,
     nextItem === disabledItem ? undefined : lastItemIndex,
@@ -61,16 +63,16 @@ $ const {
     role="navigation"
     class=["pagination", inputClass]
     key="root"
-    aria-labelledby:scoped="heading">
+    aria-labelledby:scoped="heading"
+>
     <span aria-live="polite" role="status">
         <${a11yHeadingTag} id:scoped="heading" class="clipped">
             ${a11yCurrentText}
         </>
     </span>
-
     <${component.getItemTag(prevItem)}
         ...processHtmlAttributes(prevItemHtmlInput)
-        href=(prevItemDisabled ? undefined : prevItemHref)
+        href=prevItemDisabled ? undefined : prevItemHref
         class=[
             "pagination__previous",
             prevItem.href ? "icon-link" : "icon-btn",
@@ -79,7 +81,8 @@ $ const {
         aria-disabled=prevItemDisabled && "true"
         aria-label=a11yPreviousText
         style=[prevItem.style, { minWidth: 40 }]
-        onClick("handlePreviousPageClick")>
+        onClick("handlePreviousPageClick")
+    >
         <ebay-arrow-left-16-icon/>
     </>
 
@@ -101,19 +104,21 @@ $ const {
                     <if(range.hasOverflow)>
                         <span
                             class=["pagination__item", item.class]
-                            role="separator">
+                            role="separator"
+                        >
                             <ebay-fake-menu-button
                                 variant="icon"
                                 transparent
                                 icon=DotsIcon
                                 collapseOnSelect
-                                on-select("handleMenuPageNumber")>
+                                on-select("handleMenuPageNumber")
+                            >
                                 <for|menuItem, j| of=slicedItems>
-                                    $ var visible = (
-                                        isLeading
+                                    $ {
+                                        var visible = isLeading
                                             ? j < range.start
-                                            : j > range.end
-                                    );
+                                            : j > range.end;
+                                    }
                                     <if(isItemHidden(j, range) && visible)>
                                         $ const {
                                             current: menuItemCurrent,
@@ -124,12 +129,11 @@ $ const {
                                             ...processHtmlAttributes(
                                                 menuItemHtmlInput,
                                             )
-                                            type=(
-                                                component.getItemTag(
-                                                    menuItem,
-                                                ) as Marko.HTML.Button["type"]
-                                            )
-                                            data-page-number=j>
+                                            type=component.getItemTag(
+                                                menuItem,
+                                            ) as Marko.HTML.Button["type"]
+                                            data-page-number=j
+                                        >
                                             <${menuItem.renderBody}/>
                                         </@item>
                                     </if>
@@ -140,7 +144,8 @@ $ const {
                     <else>
                         <span
                             class=["pagination__item", item.class]
-                            role="separator">
+                            role="separator"
+                        >
                             <ebay-overflow-horizontal-24-icon/>
                         </span>
                     </else>
@@ -152,7 +157,8 @@ $ const {
                     key="pageItem[]"
                     class=["pagination__item", item.class]
                     aria-current=itemCurrent && "page"
-                    onClick("handlePageNumberClick", i)>
+                    onClick("handlePageNumberClick", i)
+                >
                     <${item.renderBody}/>
                 </>
             </li>
@@ -161,7 +167,7 @@ $ const {
 
     <${component.getItemTag(nextItem)}
         ...processHtmlAttributes(nextItemHtmlInput)
-        href=(nextItemDisabled ? undefined : nextItemHref)
+        href=nextItemDisabled ? undefined : nextItemHref
         class=[
             "pagination__next",
             nextItem.href ? "icon-link" : "icon-btn",
@@ -170,7 +176,8 @@ $ const {
         aria-disabled=nextItemDisabled && "true"
         aria-label=a11yNextText
         style=[nextItem.style, { minWidth: 40 }]
-        onClick("handleNextPageClick")>
+        onClick("handleNextPageClick")
+    >
         <ebay-arrow-right-16-icon/>
     </>
 </nav>

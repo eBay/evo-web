@@ -1,30 +1,16 @@
 import data from "./data.json";
 
 <ebay-table ...input>
-    <@header row-header>
-        Seller
-    </@header>
+    <@header row-header>Seller</@header>
     <@header>Item</@header>
     <@header>Condition</@header>
-    <@header column-type="layout">
-        Mutiple Actions
-    </@header>
-    <@header column-type="icon-action">
-        Actions Plus
-    </@header>
-    <@header column-type="numeric">
-        List Price
-    </@header>
-    <@header column-type="numeric">
-        Quantity Available
-    </@header>
+    <@header column-type="layout">Mutiple Actions</@header>
+    <@header column-type="icon-action">Actions Plus</@header>
+    <@header column-type="numeric">List Price</@header>
+    <@header column-type="numeric">Quantity Available</@header>
     <@header>Orders</@header>
-    <@header column-type="numeric">
-        Watchers
-    </@header>
-    <@header column-type="numeric">
-        Protection
-    </@header>
+    <@header column-type="numeric">Watchers</@header>
+    <@header column-type="numeric">Protection</@header>
     <@header>Shipping</@header>
     <@header>Delivery</@header>
     <for|r| of=data>
@@ -53,11 +39,7 @@ import data from "./data.json";
             </@cell>
             <@cell>${r.listPrice}</@cell>
             <@cell>${r.quantityAvailable}</@cell>
-            <@cell>
-                <a href="https://ebay.com">
-                    ${r.orders.number}
-                </a>
-            </@cell>
+            <@cell><a href="https://ebay.com">${r.orders.number}</a></@cell>
             <@cell>${r.watchers}</@cell>
             <@cell>${r.protection}</@cell>
             <@cell>${r.shipping}</@cell>

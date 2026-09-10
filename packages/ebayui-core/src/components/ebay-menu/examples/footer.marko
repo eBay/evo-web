@@ -4,17 +4,10 @@
     on-keydown("emit", "keydown")
     on-change("emit", "change")
     on-select("emit", "select")
-    on-footer-button-click("emit", "footer-button-click")>
-    <@item value="item 1">
-        item 1
-    </@item>
-    <@item value="item 2">
-        item 2
-    </@item>
-    <@item value="item 3">
-        item 3
-    </@item>
-    <@footer-button priority="tertiary">
-        Apply
-    </@footer-button>
+    on-footer-button-click("emit", "footer-button-click")
+>
+    <@item value="item 1">item 1</@item>
+    <@item value="item 2">item 2</@item>
+    <@item value="item 3">item 3</@item>
+    <@footer-button priority="tertiary">Apply</@footer-button>
 </ebay-menu>

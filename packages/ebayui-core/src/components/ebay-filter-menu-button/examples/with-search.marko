@@ -45,10 +45,9 @@ $ const checkedCount = Object.values(state.checkedCodes).filter(Boolean).length;
     count-text=(checkedCount > 0 ? `(${checkedCount})` : undefined)
     on-search-change("handleSearchChange")
     on-change("handleChange")
-    ...input>
+    ...input
+>
     <for|{ name, code }| of=state.visibleCountries>
-        <@item value=code checked=(state.checkedCodes[code])>
-            ${name}
-        </@item>
+        <@item value=code checked=(state.checkedCodes[code])>${name}</@item>
     </for>
 </ebay-filter-menu-button>

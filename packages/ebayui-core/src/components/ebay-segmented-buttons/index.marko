@@ -6,12 +6,18 @@ export interface SegmentedButtonsEvent {
     index: number;
     value?: string;
 }
-export interface SegmentedButton extends Omit<Marko.HTML.Button, `on${string}`> {
+export interface SegmentedButton extends Omit<
+    Marko.HTML.Button,
+    `on${string}`
+> {
     selected?: boolean;
     icon?: Marko.AttrTag<{ renderBody: Marko.Body }>;
 }
 static {
-    interface SegmentedButtonsInput extends Omit<Marko.HTML.Div, `on${string}`> {
+    interface SegmentedButtonsInput extends Omit<
+        Marko.HTML.Div,
+        `on${string}`
+    > {
         button?: Marko.AttrTag<SegmentedButton>;
         size?: (typeof validSizes)[number];
         "on-change"?: (event: SegmentedButtonsEvent) => void;

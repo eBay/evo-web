@@ -18,13 +18,13 @@ $ const {
     ...htmlInput
 } = input;
 $ let file = (rawFile || {}) as Exclude<typeof rawFile, File | undefined>;
-$ const type = (
-    rawFile?.type?.startsWith("image")
+$ {
+    const type = rawFile?.type?.startsWith("image")
         ? "image"
         : rawFile?.type?.startsWith("video")
           ? "video"
-          : undefined
-);
+          : undefined;
+}
 $ if (rawFile instanceof File) {
     file = {
         name: rawFile.name,
@@ -36,7 +36,11 @@ $ file.type = type;
 
 <${cardEl} class="file-preview-card" ...htmlInput>
     <div class="file-preview-card__body">
-        <${href ? "a" : null} href=href target=(a11yExternalLinkText ? "_blank" : undefined) rel=(a11yExternalLinkText ? "noopener noreferrer" : undefined)>
+        <${href ? "a" : null}
+            href=href
+            target=a11yExternalLinkText ? "_blank" : undefined
+            rel=a11yExternalLinkText ? "noopener noreferrer" : undefined
+        >
             <if(status === "uploading")>
                 <ebay-progress-spinner
                     class="file-preview-card__asset"
@@ -60,7 +64,7 @@ $ file.type = type;
                 <ebay-file-24-icon class="file-preview-card__asset"/>
             </else>
             <if(a11yExternalLinkText)>
-                <span class="clipped"> - ${a11yExternalLinkText}</span>
+                <span class="clipped">${" "}- ${a11yExternalLinkText}</span>
             </if>
         </>
         <if(seeMore)>
@@ -91,13 +95,13 @@ $ file.type = type;
                         variant="overflow"
                         on-select("handleMenuSelect")
                     >
-                        <for|action| of=menuActions.concat({
-                            event: "delete",
-                            label: deleteText as string,
-                        })>
-                            <@item value=action.event>
-                                ${action.label}
-                            </@item>
+                        <for|action|
+                            of=menuActions.concat({
+                                event: "delete",
+                                label: deleteText as string,
+                            })
+                        >
+                            <@item value=action.event>${action.label}</@item>
                         </for>
                     </ebay-menu-button>
                 </if>
@@ -125,10 +129,12 @@ $ file.type = type;
                     <if(file.type === "video")>
                         <ebay-play-16-icon class="file-preview-card__video-icon"/>
                     </if>
-                    ${infoText ||
-                    file.name
-                        .substring(file.name.lastIndexOf(".") + 1)
-                        .toUpperCase()}
+                    ${
+                        infoText ||
+                        file.name
+                            .substring(file.name.lastIndexOf(".") + 1)
+                            .toUpperCase()
+                    }
                 </div>
             </if>
         </else>
@@ -136,9 +142,7 @@ $ file.type = type;
     <if(footerTitle)>
         <div class="file-preview-card__footer">
             <span>${footerTitle}</span>
-            <if(footerSubtitle)>
-                <span>${footerSubtitle}</span>
-            </if>
+            <if(footerSubtitle)><span>${footerSubtitle}</span></if>
         </div>
     </if>
 </>
