@@ -26,7 +26,7 @@ $ const notShowing = cards.length - state.showing;
         <if(notShowing > 0)>
             <ebay-file-preview-card
                 as="li"
-                file=(cards[state.showing].file)
+                file=cards[state.showing].file
                 see-more=notShowing
                 a11y-see-more-text=a11ySeeMoreText
                 on-see-more("seeMore")

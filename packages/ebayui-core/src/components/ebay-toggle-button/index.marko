@@ -51,18 +51,14 @@ $ const {
     </else-if>
     <span class="toggle-button__content">
         <span class="toggle-button__title">
-            <if(title)>
-                ${title}
-            </if>
+            <if(title)>${title}</if>
             <else>
                 <${renderBody}/>
             </else>
         </span>
         <if(subtitle)>
             <span class="toggle-button__subtitle">
-                <if(typeof subtitle === "string")>
-                    ${subtitle}
-                </if>
+                <if(typeof subtitle === "string")>${subtitle}</if>
                 <else>
                     <${subtitle}/>
                 </else>

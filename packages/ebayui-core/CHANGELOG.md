@@ -1,5 +1,21 @@
 # eBayUI-Core Changelog
 
+## 16.15.0
+
+### Minor Changes
+
+- [#899](https://github.com/eBay/evo-web/pull/899) [`739bfb7`](https://github.com/eBay/evo-web/commit/739bfb7fa861e5645d5c92707089ff4e89b6e6a3) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Support arbitrary media content in the card, alongside images.
+  
+  `ebay-card` gains a generic `@media` attribute tag which, when present, renders in place of `@image`, which is now optional.
+  
+  **Breaking:** `evo-card` replaces `@image` with `@media`, following the same shape as `@banner` in `evo-dialog`. It renders a `div.card__media` that takes the attributes you pass it, holding your own content when the tag has any and an `<img>` built from `src` and `alt` otherwise. Rename `<@image>` to `<@media>`; templates passing only `src` and `alt` need no other change, and any other `<img>` attributes now land on the wrapping `<div>` instead.
+  
+  Both cards also apply the `card__hero-image` class to the image they render, so it fills the media slot. Skin defines the image sizing, hover transform, and horizontal/full-hero overrides on that class.
+
+### Patch Changes
+
+- [#922](https://github.com/eBay/evo-web/pull/922) [`23e5199`](https://github.com/eBay/evo-web/commit/23e5199f9dbce608eb4c219901dd114321ade315) Thanks [@LuLaValva](https://github.com/LuLaValva)! - rebuild all packages with the updated toolchain (babel 8, typescript 6, vite 8, cssnano 9, storybook 10.6). Skin's dist CSS is re-minified with the same styles — selector lists are kept in expanded form (no :is() collapsing) and :dir() selectors are preserved rather than lowered to a :lang() approximation, so attribute-based RTL styling keeps working. evo-menu-button narrows its focus target with an instanceof check (behavior unchanged), and the @internal shim packages in ebayui-core expose their type declarations through their exports maps
+
 ## 16.14.0
 
 ### Minor Changes

@@ -30,9 +30,7 @@ $ const {
     ]>
         <ebay-attention-24-icon/>
         <div class="three-d-player__overlay-text">
-            <if(errorText)>
-                ${errorText}
-            </if>
+            <if(errorText)>${errorText}</if>
             <else>An error has occurred</else>
         </div>
     </div>
@@ -41,8 +39,9 @@ $ const {
         state.isLoaded && "three-d-player__overlay--hidden",
     ]>
         <if(!state.showLoading)>
-            <ebay-play-filled-64-colored-icon a11y-text=a11yStartText ||
-            "Click to start"/>
+            <ebay-play-filled-64-colored-icon a11y-text=(
+                a11yStartText || "Click to start"
+            )/>
         </if>
         <else>
             <ebay-progress-spinner a11yText=a11yLoadText || "Loading"/>

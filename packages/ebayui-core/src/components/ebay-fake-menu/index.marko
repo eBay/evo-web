@@ -40,9 +40,10 @@ $ var separatorMap = component.getSeparatorMap(input);
                 disabled,
                 ...htmlItem
             } = item;
-            $ var defaultAriaCurrent = (
-                itemMatchesUrl === false ? "true" : "page"
-            );
+            $ {
+                var defaultAriaCurrent =
+                    itemMatchesUrl === false ? "true" : "page";
+            }
             <if(separatorMap[index])>
                 <li>
                     <hr class=`${baseClass}__separator` role="separator">
@@ -56,8 +57,8 @@ $ var separatorMap = component.getSeparatorMap(input);
                     style=style
                     disabled=isButton && disabled
                     aria-disabled=!isButton && disabled && "true"
-                    aria-current=(current ? defaultAriaCurrent : false)
-                    href=(disabled ? null : href)
+                    aria-current=current ? defaultAriaCurrent : false
+                    href=disabled ? null : href
                     type=isButton && type
                     onKeydown(!disabled && "handleItemKeydown", index)
                     onClick(!disabled && "handleItemClick", index)

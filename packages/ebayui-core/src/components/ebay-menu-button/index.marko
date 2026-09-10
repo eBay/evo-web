@@ -75,14 +75,14 @@ $ var separatorCount = 0;
         size=size
         priority=priority as ButtonInput["priority"]
         borderless=borderless
-        variant=(variant as any)
+        variant=variant as any
         aria-expanded="false"
         aria-haspopup="true"
         selected=isFilterVariant && state.isSelected
         transparent=isIconVariant && transparent
         aria-label=a11yText
         aria-labelledby=labelId && `${prefixId} ${labelId}`
-        split=(isButtonVariant ? split : undefined)
+        split=isButtonVariant ? split : undefined
         disabled=disabled
         partiallyDisabled=partiallyDisabled
         on-escape("handleButtonEscape")
@@ -94,9 +94,7 @@ $ var separatorCount = 0;
         <else>
             <if(label)>
                 <if(prefixLabel)>
-                    <span class="menu-button-prefix-label">
-                        ${prefixLabel}
-                    </span>
+                    <span class="menu-button-prefix-label">${prefixLabel}</span>
                     <${label.renderBody}/>
                 </if>
                 <else>
@@ -109,11 +107,7 @@ $ var separatorCount = 0;
                 <if(icon)>
                     <${icon}/>
                 </if>
-                <if(text)>
-                    <span id=labelId>
-                        ${text}
-                    </span>
-                </if>
+                <if(text)><span id=labelId>${text}</span></if>
                 <if(isFilterVariant && status)>
                     <${status}(state.selectedCount, state.checkedItems || [])/>
                 </if>

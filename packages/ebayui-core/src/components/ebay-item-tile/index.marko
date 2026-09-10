@@ -5,7 +5,10 @@ export type ItemTileLayout = "gallery" | "list";
 export interface ItemTileDescription extends Omit<Marko.HTML.P, `on${string}`> {
     as?: string;
 }
-export interface ItemTileInput extends Omit<Marko.HTML.Div, "title" | `on${string}`> {
+export interface ItemTileInput extends Omit<
+    Marko.HTML.Div,
+    "title" | `on${string}`
+> {
     layout?: ItemTileLayout;
     supertitle?: Marko.AttrTag<Marko.Renderable>;
     title?: Marko.AttrTag<Marko.Renderable>;

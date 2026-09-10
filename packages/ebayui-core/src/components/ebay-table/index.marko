@@ -39,7 +39,7 @@ $ const isLoading = bodyState === "loading";
                     <th class="table-cell">
                         <ebay-tri-state-checkbox
                             disabled=isLoading
-                            aria-label=(a11ySelectAllText ?? "Select all rows")
+                            aria-label=a11ySelectAllText ?? "Select all rows"
                             checked=state.allSelected
                             on-change("headerSelect")
                         />
@@ -125,16 +125,18 @@ $ const isLoading = bodyState === "loading";
                         <th scope="row" class="table__cell">
                             <ebay-checkbox
                                 disabled=isLoading
-                                aria-label=(a11ySelectRowText ?? "Select row")
+                                aria-label=a11ySelectRowText ?? "Select row"
                                 checked=(state.selected[name])
                                 on-change("rowSelect", name)
                             />
                         </th>
                     </if>
                     <for|header, index| of=headers>
-                        $ const cell = (
-                            Array.isArray(cells) ? cells[index] : cells
-                        );
+                        $ {
+                            const cell = Array.isArray(cells)
+                                ? cells[index]
+                                : cells;
+                        }
                         <if(cell)>
                             $ const {
                                 class: tdClass,
@@ -167,8 +169,9 @@ $ const isLoading = bodyState === "loading";
     </table>
     <div role="status">
         <if(isLoading)>
-            <ebay-progress-bar-expressive a11y-text=a11yLoadingText ||
-            "Loading..."/>
+            <ebay-progress-bar-expressive a11y-text=(
+                a11yLoadingText || "Loading..."
+            )/>
         </if>
     </div>
 </div>

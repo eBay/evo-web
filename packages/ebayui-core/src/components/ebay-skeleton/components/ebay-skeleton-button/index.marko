@@ -8,12 +8,7 @@ static {
     }
 }
 export interface Input extends WithNormalizedProps<SkeletonButtonInput> {}
-$ const {
-    as: inputAs,
-    class: inputClass,
-    size,
-    ...htmlInput
-} = input;
+$ const { as: inputAs, class: inputClass, size, ...htmlInput } = input;
 $ let sizeClass = size ? `skeleton__button--${size}` : "";
 
 <${inputAs || "div"}

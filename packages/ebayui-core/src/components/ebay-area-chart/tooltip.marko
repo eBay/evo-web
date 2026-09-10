@@ -1,4 +1,4 @@
-import type { Point } from 'highcharts';
+import type { Point } from "highcharts";
 
 export interface Input {
     date: string;
@@ -11,9 +11,7 @@ export interface Input {
 <for|points| of=input.points || []>
     <div class="ebay-area-chart__tooltip-value">
         <span>${points.series.name}</span>
-        <if(points.label)>
-            <span>${points.label}</span>
-        </if>
+        <if(points.label)><span>${points.label}</span></if>
         <else-if(points.y != null)>
             <span>${input.valueFormatter(points.y)}</span>
         </else-if>
@@ -21,8 +19,7 @@ export interface Input {
 </for>
 <if(input.total)>
     <div class="ebay-area-chart__tooltip-value">
-        <span>Total</span>
-        <span>${input.valueFormatter(input.total)}</span>
+        <span>Total</span><span>${input.valueFormatter(input.total)}</span>
     </div>
 </if>
 

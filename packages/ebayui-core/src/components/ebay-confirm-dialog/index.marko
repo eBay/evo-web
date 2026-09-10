@@ -39,12 +39,14 @@ $ const {
     renderBody,
     ...dialogInput
 } = input;
-$ const { renderBody: confirmRenderBody, ...confirmRestOfInput } = (
-    confirm || ({} as NonNullable<typeof confirm>)
-);
-$ const { renderBody: rejectRenderBody, ...rejectRestOfInput } = (
-    reject || ({} as NonNullable<typeof reject>)
-);
+$ {
+    const { renderBody: confirmRenderBody, ...confirmRestOfInput } =
+        confirm || ({} as NonNullable<typeof confirm>);
+}
+$ {
+    const { renderBody: rejectRenderBody, ...rejectRestOfInput } =
+        reject || ({} as NonNullable<typeof reject>);
+}
 
 <ebay-dialog-base
     ...dialogInput
@@ -66,10 +68,7 @@ $ const { renderBody: rejectRenderBody, ...rejectRestOfInput } = (
             class="confirm-dialog__reject"
             ...rejectRestOfInput
         >
-
-            <if(rejectText)>
-                ${rejectText}
-            </if>
+            <if(rejectText)>${rejectText}</if>
             <else>
                 <${rejectRenderBody}/>
             </else>
@@ -87,9 +86,7 @@ $ const { renderBody: rejectRenderBody, ...rejectRestOfInput } = (
             ]
             ...confirmRestOfInput
         >
-            <if(confirmText)>
-                ${confirmText}
-            </if>
+            <if(confirmText)>${confirmText}</if>
             <else>
                 <${confirmRenderBody}/>
             </else>
