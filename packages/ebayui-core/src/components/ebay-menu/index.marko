@@ -30,14 +30,16 @@ $ var separatorMap = component.getSeparatorMap(input);
         isFilter && `${baseClass}--filter`,
         inputClass,
     ]
-    style=style>
+    style=style
+>
     <div
         role="menu"
         class=`${baseClass}__items`
         key="menu"
         aria-label=ariaLabel
         aria-labelledby=ariaLabelledby
-        id:scoped="menu">
+        id:scoped="menu"
+    >
         <for|item, index| of=component.items>
             $ const {
                 class: itemClass,
@@ -49,13 +51,13 @@ $ var separatorMap = component.getSeparatorMap(input);
                 renderBody,
                 ...htmlItem
             } = item;
-            $ var itemRole: Marko.HTML.Div["role"] = (
-                isRadio
+            $ {
+                var itemRole: Marko.HTML.Div["role"] = isRadio
                     ? "menuitemradio"
                     : isCheckbox
                       ? "menuitemcheckbox"
-                      : "menuitem"
-            );
+                      : "menuitem";
+            }
             $ var checked = component.isChecked(index);
             <if(separatorMap[index])>
                 <hr class=`${baseClass}__separator` role="separator">
@@ -74,7 +76,8 @@ $ var separatorMap = component.getSeparatorMap(input);
                 onClick(!disabled && "handleItemClick", index)
                 onKeydown(!disabled && "handleItemKeydown", index)
                 onKeypress(!disabled && "handleItemKeypress")
-                key="item[]">
+                key="item[]"
+            >
                 <if(isFilter)>
                     <if(isRadio)>
                         <ebay-radio-unchecked-18-icon class="icon--unchecked"/>
@@ -98,10 +101,13 @@ $ var separatorMap = component.getSeparatorMap(input);
         </for>
     </div>
     <if(footerButton)>
-        <div class=`${baseClass}__footer` >
-            <ebay-button on-click("emit", "footer-button-click") ...footerButton>
+        <div class=`${baseClass}__footer`>
+            <ebay-button
+                on-click("emit", "footer-button-click")
+                ...footerButton
+            >
                 <${footerButton}/>
-            </>
+            </ebay-button>
         </div>
     </if>
 </span>

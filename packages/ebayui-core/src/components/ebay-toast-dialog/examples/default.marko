@@ -7,20 +7,12 @@
 >
     <@header>Heading</@header>
     <@footer>
-        <ebay-button accesskey="i" on-click("closeToast")>
-            Close
-        </ebay-button>
+        <ebay-button accesskey="i" on-click("closeToast")>Close</ebay-button>
     </@footer>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-    <p>
-        <a href="http://www.ebay.com">
-            www.ebay.com
-        </a>
-    </p>
+    <p><a href="http://www.ebay.com">www.ebay.com</a></p>
 </ebay-toast-dialog>
-<ebay-button on-click("openToast")>
-    Open Toast
-</ebay-button>
+<ebay-button on-click("openToast")>Open Toast</ebay-button>
 class {
     declare state: {
         open: boolean;

@@ -10,4 +10,4 @@ export default {
 };
 ```
 
-The addon provides the Evo Web manager theme and logo, the color-scheme toolbar, Evo token overrides for explicit selections, and live system-theme updates.
+The addon provides the Evo Web manager theme and logo, the color-scheme toolbar, Evo token overrides for explicit selections, live system-theme updates, and the shared preview layout. Stories are vertically centered by default while retaining their natural horizontal alignment; individual stories can override Storybook's `layout` parameter when needed.

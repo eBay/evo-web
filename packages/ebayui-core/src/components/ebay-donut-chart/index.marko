@@ -13,9 +13,7 @@ $ const {
     <div class="donut-chart__grid">
         <if(title)>
             <div class="donut-chart__title">
-                <if(typeof title === "string")>
-                    ${title}
-                </if>
+                <if(typeof title === "string")>${title}</if>
                 <else>
                     <${title}/>
                 </else>
@@ -25,9 +23,7 @@ $ const {
             <div class="donut-chart__metric">
                 <if(metricValue)>
                     <div class="donut-chart__metric-value">
-                        <if(typeof metricValue === "string")>
-                            ${metricValue}
-                        </if>
+                        <if(typeof metricValue === "string")>${metricValue}</if>
                         <else>
                             <${metricValue}/>
                         </else>
@@ -35,9 +31,7 @@ $ const {
                 </if>
                 <if(metricLabel)>
                     <div class="donut-chart__metric-label">
-                        <if(typeof metricLabel === "string")>
-                            ${metricLabel}
-                        </if>
+                        <if(typeof metricLabel === "string")>${metricLabel}</if>
                         <else>
                             <${metricLabel}/>
                         </else>

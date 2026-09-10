@@ -1,8 +1,10 @@
 import { processHtmlAttributes } from "../../common/html-attributes";
 import type { WithNormalizedProps } from "../../global";
 static {
-    interface SectionTitleInput
-        extends Omit<Marko.HTML.Div, `on${string}` | "title"> {
+    interface SectionTitleInput extends Omit<
+        Marko.HTML.Div,
+        `on${string}` | "title"
+    > {
         "cta-text"?: string;
         title?: Marko.AttrTag<Omit<Marko.HTML.H2, `on${string}`>>;
         href?: string;
@@ -62,9 +64,7 @@ $ const {
     <if(href)>
         <div class="section-title__cta">
             <a href=href>
-                <span class="section-title__cta-text">
-                    ${ctaText}
-                </span>
+                <span class="section-title__cta-text">${ctaText}</span>
             </a>
         </div>
     </if>

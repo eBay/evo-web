@@ -1,23 +1,25 @@
 import { useCallback, useRef } from "react";
 import type { Ref } from "react";
 
-export function useRefTee<T>(ref?: Ref<T>, initialValue?: T) {
+type RefTeeInput<T> = Ref<T> | readonly (Ref<T> | undefined)[];
+
+export function useRefTee<T>(ref?: RefTeeInput<T>, initialValue?: T) {
   const internalRef = useRef(initialValue);
+  const refs: readonly (Ref<T> | undefined)[] = Array.isArray(ref)
+    ? ref
+    : [ref as Ref<T> | undefined];
 
-  const teeRef = useCallback(
-    (node: T) => {
-      internalRef.current = node;
+  const teeRef = useCallback((node: T) => {
+    internalRef.current = node;
 
-      if (ref) {
-        if (typeof ref === "function") {
-          ref(node);
-        } else {
-          ref.current = node;
-        }
+    refs.forEach((currentRef) => {
+      if (typeof currentRef === "function") {
+        currentRef(node);
+      } else if (currentRef) {
+        currentRef.current = node;
       }
-    },
-    [ref],
-  );
+    });
+  }, refs);
 
   return [teeRef, internalRef] as const;
 }

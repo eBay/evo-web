@@ -7,11 +7,7 @@ static {
     }
 }
 export interface Input extends WithNormalizedProps<SkeletonTextBoxInput> {}
-$ const {
-    as: inputAs,
-    class: inputClass,
-    ...htmlInput
-} = input;
+$ const { as: inputAs, class: inputClass, ...htmlInput } = input;
 
 <${inputAs || "div"}
     class=["skeleton__textbox", inputClass]

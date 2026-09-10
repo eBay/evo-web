@@ -36,44 +36,28 @@ class {
     };
 }
 <ebay-table on-sort("onSort") ...input>
-    <@header name="sellerCol" row-header>
-        Seller
-    </@header>
-    <@header name="itemCol">
-        Item
-    </@header>
-    <@header name="statusCol">
-        Status
-    </@header>
+    <@header name="sellerCol" row-header>Seller</@header>
+    <@header name="itemCol">Item</@header>
+    <@header name="statusCol">Status</@header>
     <@header
         name="listPriceCol"
         column-type="numeric"
-        sort=(state.sorted.listPriceCol || "none")
+        sort=state.sorted.listPriceCol || "none"
     >
         List Price
     </@header>
     <@header
         name="quantityCol"
         column-type="numeric"
-        sort=(state.sorted.quantityCol || "none")
+        sort=state.sorted.quantityCol || "none"
     >
         Quantity Available
     </@header>
-    <@header name="orderCol">
-        Orders
-    </@header>
-    <@header name="watchersCol" column-type="numeric">
-        Watchers
-    </@header>
-    <@header name="protectionCol" column-type="numeric">
-        Protection
-    </@header>
-    <@header name="shippingCol">
-        Shipping
-    </@header>
-    <@header name="deliveryCol">
-        Delivery
-    </@header>
+    <@header name="orderCol">Orders</@header>
+    <@header name="watchersCol" column-type="numeric">Watchers</@header>
+    <@header name="protectionCol" column-type="numeric">Protection</@header>
+    <@header name="shippingCol">Shipping</@header>
+    <@header name="deliveryCol">Delivery</@header>
     <for|r| of=state.data>
         <@row>
             <@cell>${r.seller}</@cell>
@@ -85,11 +69,7 @@ class {
             </@cell>
             <@cell>${r.listPrice}</@cell>
             <@cell>${r.quantityAvailable}</@cell>
-            <@cell>
-                <a href="https://ebay.com">
-                    ${r.orders.number}
-                </a>
-            </@cell>
+            <@cell><a href="https://ebay.com">${r.orders.number}</a></@cell>
             <@cell>${r.watchers}</@cell>
             <@cell>${r.protection}</@cell>
             <@cell>${r.shipping}</@cell>

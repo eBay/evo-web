@@ -36,8 +36,8 @@ $ const styleSize = {
         layout === "compact" && "video-player--compact",
         nav && "video-player--with-nav",
     ]
-    style=styleSize>
-
+    style=styleSize
+>
     <if(isBrowser && !width)>
         <subscribe to=window on-resize("handleResize")/>
     </if>
@@ -47,7 +47,8 @@ $ const styleSize = {
                 no-controls
                 playsinline
                 poster=thumbnail
-                ...processHtmlAttributes(htmlInput)>
+                ...processHtmlAttributes(htmlInput)
+            >
                 <for|src| of=sources>
                     <source ...src>
                 </for>
@@ -63,9 +64,7 @@ $ const styleSize = {
     ]>
         <ebay-attention-24-icon/>
         <div class="video-player__overlay-text">
-            <if(errorText)>
-                ${errorText}
-            </if>
+            <if(errorText)>${errorText}</if>
             <else>An error has occurred</else>
         </div>
     </div>
@@ -73,18 +72,23 @@ $ const styleSize = {
         <ebay-play-filled-64-colored-icon key="play-icon" width=64/>
         <ebay-flag-16-icon
             a11y-text=a11yReportText || reportText || "Report"
-            key="flag-icon"/>
+            key="flag-icon"
+        />
         <ebay-audio-off-16-icon
             key="audio-off-icon"
-            a11y-text=a11yUnmuteText || "Unmute"/>
+            a11y-text=a11yUnmuteText || "Unmute"
+        />
         <ebay-audio-high-16-icon
             key="audio-high-icon"
-            a11y-text=a11yMuteText || "Mute"/>
+            a11y-text=a11yMuteText || "Mute"
+        />
         <ebay-expand-16-icon
             key="expand-icon"
-            a11y-text=a11yFullscreenText || "Enter fullscreen"/>
+            a11y-text=a11yFullscreenText || "Enter fullscreen"
+        />
         <ebay-contract-16-icon
             key="contract-icon"
-            a11y-text=a11yExitFullscreenText || "Exit fullscreen"/>
+            a11y-text=a11yExitFullscreenText || "Exit fullscreen"
+        />
     </div>
 </div>

@@ -10,22 +10,13 @@ export interface Input {
     on-footer-button-click("emit", "footer-button-click")
     text="Filter Items"
     variant="filter"
-    ...input>
+    ...input
+>
     <@status|count, checkedItems|>
-        <if(count > 0)>
-            (+${count})
-        </if>
+        <if(count > 0)>(+${count})</if>
     </@status>
-    <@item value="item 1">
-        item 1
-    </@item>
-    <@item value="item 2">
-        item 2
-    </@item>
-    <@item value="item 3">
-        item 3
-    </@item>
-    <@footer-button priority="tertiary">
-            Apply
-    </@footer-button>
+    <@item value="item 1">item 1</@item>
+    <@item value="item 2">item 2</@item>
+    <@item value="item 3">item 3</@item>
+    <@footer-button priority="tertiary">Apply</@footer-button>
 </ebay-menu-button>

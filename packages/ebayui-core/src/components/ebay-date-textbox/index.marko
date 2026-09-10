@@ -9,14 +9,18 @@ $ const {
     textbox,
     ...calendarInput
 } = input;
-$ const [rangeStartPlaceholder, mainPlaceholder] = (
-    Array.isArray(inputPlaceholderText)
+$ {
+    const [rangeStartPlaceholder, mainPlaceholder] = Array.isArray(
+        inputPlaceholderText,
+    )
         ? inputPlaceholderText
-        : [inputPlaceholderText, inputPlaceholderText]
-);
-$ const [rangeStartTextboxInput, mainTextboxInput] = (
-    Array.isArray(textbox) ? textbox : [textbox, textbox]
-);
+        : [inputPlaceholderText, inputPlaceholderText];
+}
+$ {
+    const [rangeStartTextboxInput, mainTextboxInput] = Array.isArray(textbox)
+        ? textbox
+        : [textbox, textbox];
+}
 $ const formatValue = (date: DayISO | null) => {
     return date ? format(date, input.locale) : "";
 };

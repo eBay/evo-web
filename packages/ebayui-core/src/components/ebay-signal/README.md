@@ -8,9 +8,7 @@
 </h1>
 
 ```marko
-<ebay-signal status="trustworthy">
-    Trustworthy
-</ebay-signal>
+<ebay-signal status="trustworthy">Trustworthy</ebay-signal>
 ```
 
 ## Examples and Documentation

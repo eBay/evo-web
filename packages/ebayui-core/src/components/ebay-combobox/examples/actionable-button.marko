@@ -16,9 +16,7 @@ class {
     }
 }
 
-<label for="my-test-label">
-    My label
-</label>
+<label for="my-test-label">My label</label>
 <ebay-combobox
     key="combobox"
     id="my-test-label"
@@ -26,7 +24,8 @@ class {
     value=state.value
     autocomplete="list"
     on-button-click("handleClear")
-    on-select("handleSelect")>
+    on-select("handleSelect")
+>
     <@button aria-label="Toggle autocomplete">
         <ebay-clear-16-icon/>
     </@button>
