@@ -13,12 +13,7 @@ static {
     }
 }
 export interface Input extends WithNormalizedProps<ItemTileGroupInput> {}
-$ const {
-    class: inputClass,
-    item: items = [],
-    layout,
-    ...htmlInput
-} = input;
+$ const { class: inputClass, item: items = [], layout, ...htmlInput } = input;
 
 <ebay-layout-grid
     class=[

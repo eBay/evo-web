@@ -18,8 +18,7 @@ $ const eekRating = eekUtil(input);
     ...processHtmlAttributes(htmlInput)
     role="img"
     style=style
-    aria-label=a11yText ||
-    `Energy Rating: ${rating}. Range: ${max} - ${min}.`
+    aria-label=a11yText || `Energy Rating: ${rating}. Range: ${max} - ${min}.`
     class=[
         "eek",
         eekRating ? `eek--rating-${eekRating}` : null,
@@ -29,17 +28,11 @@ $ const eekRating = eekUtil(input);
 >
     <div class="eek__container" aria-hidden="true">
         <span class="eek__rating-range">
-            <span>
-                ${max}
-            </span>
+            <span>${max}</span>
             <ebay-eek-range-arrow-icon/>
-            <span>
-                ${min}
-            </span>
+            <span>${min}</span>
         </span>
-        <span class="eek__rating">
-            ${rating}
-        </span>
+        <span class="eek__rating">${rating}</span>
     </div>
     <ebay-eek-arrow-icon/>
 </div>

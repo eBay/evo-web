@@ -4,13 +4,7 @@ static function toJSON(this: any) {
         disabled: this.disabled,
     };
 }
-$ const {
-    variant,
-    type,
-    renderBody,
-    class: inputClass,
-    ...htmlInput
-} = input;
+$ const { variant, type, renderBody, class: inputClass, ...htmlInput } = input;
 $ (input as any).toJSON = toJSON;
 
 <button

@@ -19,9 +19,7 @@ class {
         this.emit("close");
     }
 }
-<ebay-button on-click("handleOpen")>
-    Open Default Snackbar
-</ebay-button>
+<ebay-button on-click("handleOpen")>Open Default Snackbar</ebay-button>
 <ebay-snackbar-dialog
     open=state.open
     on-close("handleClose")

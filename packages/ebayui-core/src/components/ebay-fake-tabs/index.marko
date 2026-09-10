@@ -21,11 +21,15 @@ static {
     }
 }
 export interface Input extends WithNormalizedProps<FakeTabsInput> {}
-$ var tabAriaCurrent: Marko.HTML.LI["aria-current"] = (
-    tabMatchesCurrentUrl === false ? "true" : "page"
-);
+$ {
+    var tabAriaCurrent: Marko.HTML.LI["aria-current"] =
+        tabMatchesCurrentUrl === false ? "true" : "page";
+}
 
-<div ...processHtmlAttributes(htmlInput) class=["fake-tabs", size === "large" && "fake-tabs--large", inputClass]>
+<div
+    ...processHtmlAttributes(htmlInput)
+    class=["fake-tabs", size === "large" && "fake-tabs--large", inputClass]
+>
     <ul class="fake-tabs__items">
         <for|tab, i| of=tabs || []>
             $ const { href, ...htmlTab } = tab;

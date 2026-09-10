@@ -1,7 +1,10 @@
 static const validSizes = ["wide", "narrow", "fullscreen", "large"] as const;
 import type { WithNormalizedProps } from "../../global";
 import type { Input as DialogBaseInput } from "../components/ebay-dialog-base/component";
-export interface LightboxDialogInput extends Omit<DialogBaseInput, `on${string}`> {
+export interface LightboxDialogInput extends Omit<
+    DialogBaseInput,
+    `on${string}`
+> {
     variant?: "_mini";
     "banner-img-src"?: string;
     size?: (typeof validSizes)[number];

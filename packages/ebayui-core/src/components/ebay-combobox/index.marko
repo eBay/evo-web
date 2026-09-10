@@ -17,11 +17,13 @@ $ const {
     fluid,
     ...htmlInput
 } = input;
-$ const {
-    class: buttonClass,
-    renderBody: buttonRenderBody,
-    ...htmlButton
-} = button || {};
+$ {
+    const {
+        class: buttonClass,
+        renderBody: buttonRenderBody,
+        ...htmlButton
+    } = button || {};
+}
 $ var hasButton = !!button;
 $ var defaultTag = fluid ? "div" : "span";
 $ var id = inputId || component.getElId("input");

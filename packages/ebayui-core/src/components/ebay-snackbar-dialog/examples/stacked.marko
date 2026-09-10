@@ -21,17 +21,14 @@ class {
     }
 }
 
-<ebay-button on-click("handleOpen")>
-    Open Stacked Snackbar
-</ebay-button>
+<ebay-button on-click("handleOpen")>Open Stacked Snackbar</ebay-button>
 <ebay-snackbar-dialog
     open=state.open
     layout="column"
     on-close("handleClose")
     on-action("handleAction")
 >
-    <@action accesskey="U">
-        Undo
-    </@action>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    <@action accesskey="U">Undo</@action>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.
 </ebay-snackbar-dialog>

@@ -29,20 +29,24 @@ $ const {
     renderBody,
     ...htmlInput
 } = input;
-$ const {
-    id: headerId,
-    as: headerAs,
-    class: headerClass,
-    renderBody: headerRenderBody,
-    ...headerHtmlInput
-} = header || ({} as NonNullable<typeof header>);
-$ const {
-    id: prevButtonId,
-    class: prevButtonClass,
-    a11yText: prevButtonA11yText,
-    renderBody: prevButtonRenderBody,
-    ...prevButtonHtmlInput
-} = prevButton || ({} as NonNullable<typeof prevButton>);
+$ {
+    const {
+        id: headerId,
+        as: headerAs,
+        class: headerClass,
+        renderBody: headerRenderBody,
+        ...headerHtmlInput
+    } = header || ({} as NonNullable<typeof header>);
+}
+$ {
+    const {
+        id: prevButtonId,
+        class: prevButtonClass,
+        a11yText: prevButtonA11yText,
+        renderBody: prevButtonRenderBody,
+        ...prevButtonHtmlInput
+    } = prevButton || ({} as NonNullable<typeof prevButton>);
+}
 <macro name="header-content">
     <${headerAs || "h2"}
         class=[headerClass, `${classPrefix}__title`]
@@ -65,9 +69,7 @@ $ const {
             aria-label=a11yCloseText
             onClick("handleCloseButtonClick")
         >
-            <if(closeButtonText)>
-                ${closeButtonText}
-            </if>
+            <if(closeButtonText)>${closeButtonText}</if>
             <else-if(closeButton)>
                 <${closeButton}/>
             </else-if>
@@ -79,8 +81,9 @@ $ const {
 </macro>
 <${baseEl}
     ...processHtmlAttributes(htmlInput)
-    aria-labelledby=ariaLabelledby ||
-    (header && component.getElId("dialog-title"))
+    aria-labelledby=(
+        ariaLabelledby || (header && component.getElId("dialog-title"))
+    )
     aria-modal=isModal ? "true" : "false"
     role=role || "dialog"
     class=[classPrefix, inputClass]
@@ -129,7 +132,7 @@ $ const {
             </if>
             <if(
                 header &&
-                (buttonPosition === "left" || buttonPosition === "hidden")
+                    (buttonPosition === "left" || buttonPosition === "hidden"),
             )>
                 <header-content/>
             </if>

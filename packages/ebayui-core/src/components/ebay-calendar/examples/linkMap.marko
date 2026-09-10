@@ -8,11 +8,9 @@ static const linkMap = {
 
 <ebay-calendar
     ...input
-    linkBuilder=(
-        (iso) => {
-            return linkMap[iso];
-        }
-    )
+    linkBuilder=(iso) => {
+        return linkMap[iso];
+    }
     on-select("emit", "select")
     on-month-change("emit", "month")
     on-focus("emit", "focus")

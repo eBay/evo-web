@@ -8,12 +8,7 @@ static {
     }
 }
 export interface Input extends WithNormalizedProps<FullscreenDialogInput> {}
-$ const {
-    class: inputClass,
-    renderBody,
-    slideFrom,
-    ...dialogInput
-} = input;
+$ const { class: inputClass, renderBody, slideFrom, ...dialogInput } = input;
 
 <ebay-dialog-base
     ...dialogInput

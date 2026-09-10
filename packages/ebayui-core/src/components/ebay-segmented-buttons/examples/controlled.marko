@@ -16,8 +16,6 @@ class {
 
 <ebay-segmented-buttons on-change("selectItem")>
     <for|item, index| of=items>
-        <@button selected=index === state.selected>
-            ${item}
-        </@button>
+        <@button selected=index === state.selected>${item}</@button>
     </for>
 </ebay-segmented-buttons>

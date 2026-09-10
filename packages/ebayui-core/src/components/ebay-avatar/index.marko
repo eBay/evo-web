@@ -23,16 +23,12 @@ $ const {
         username && !img && `avatar--${getColorForText(username, color)}`,
     ]
 >
-    <if(img)>
-        <img ...img alt="" onLoad("handleImageLoad")>
-    </if>
+    <if(img)><img ...img alt="" onLoad("handleImageLoad")></if>
 
     <else-if(renderBody)>
         <${input}/>
     </else-if>
-    <else-if(username)>
-        ${username.charAt(0).toUpperCase()}
-    </else-if>
+    <else-if(username)>${username.charAt(0).toUpperCase()}</else-if>
 
     <else>
         <ebay-avatar-signed-out-icon/>

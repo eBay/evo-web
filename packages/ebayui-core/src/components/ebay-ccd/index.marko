@@ -29,16 +29,19 @@ $ const {
 } = input;
 $ (input as any).toJSON = noop;
 $ const hasFastCharging = secondaryType === "usbpd";
-$ const a11yCharger = `${
-    chargerIcon
-        ? `Charger ${chargerIcon === "included" ? "" : "not "}included.`
-        : ""
-} `.trim();
-$ const a11yRange = (
-    min || max
-        ? `${min} - ${max} ${a11yUnits}. ${hasFastCharging ? secondaryText : ""}`
-        : "".trim()
-);
+$ {
+    const a11yCharger = `${
+        chargerIcon
+            ? `Charger ${chargerIcon === "included" ? "" : "not "}included.`
+            : ""
+    } `.trim();
+}
+$ {
+    const a11yRange =
+        min || max
+            ? `${min} - ${max} ${a11yUnits}. ${hasFastCharging ? secondaryText : ""}`
+            : "".trim();
+}
 $ const a11yCombined = `${a11yCharger} ${a11yRange}`.trim();
 
 <div

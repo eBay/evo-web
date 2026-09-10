@@ -25,10 +25,12 @@ $ const {
         placement=input.placement
         offset=input.offset
         on-loaded("handleLoaded")
-        overlay-id:scoped="overlay">
+        overlay-id:scoped="overlay"
+    >
         <span
             ...processHtmlAttributes(htmlInput)
-            class=["tourtip", state.expanded && "tourtip--expanded"]>
+            class=["tourtip", state.expanded && "tourtip--expanded"]
+        >
             <if(host)>
                 $ const {
                     as: hostAs = "span",
@@ -37,7 +39,8 @@ $ const {
                 } = host;
                 <${hostAs}
                     class=[hostClass, "tourtip__host"]
-                    ...processHtmlAttributes(hostInput)>
+                    ...processHtmlAttributes(hostInput)
+                >
                     <${host.renderBody}/>
                 </>
             </if>
@@ -47,13 +50,12 @@ $ const {
                 heading=heading
                 content=content
                 a11yCloseText=a11yCloseText
-                onOverlay-close("handleCollapse")>
+                onOverlay-close("handleCollapse")
+            >
                 <if(footer)>
                     <@footer class=[footer.class]>
                         <if(footer.index)>
-                            <span class="tourtip__index">
-                                ${footer.index}
-                            </span>
+                            <span class="tourtip__index">${footer.index}</span>
                         </if>
                         <${footer}/>
                     </@footer>

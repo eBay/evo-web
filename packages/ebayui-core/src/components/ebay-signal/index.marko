@@ -6,11 +6,7 @@ static {
     }
 }
 export interface Input extends WithNormalizedProps<SignalInput> {}
-$ const {
-    class: inputClass,
-    status = "neutral",
-    ...htmlAttributes
-} = input;
+$ const { class: inputClass, status = "neutral", ...htmlAttributes } = input;
 
 <span
     ...processHtmlAttributes(htmlAttributes)

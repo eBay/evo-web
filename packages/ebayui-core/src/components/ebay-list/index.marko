@@ -1,10 +1,5 @@
 import { processHtmlAttributes } from "../../common/html-attributes";
-$ const {
-    class: inputClass,
-    style,
-    item: items = [],
-    ...htmlInput
-} = input;
+$ const { class: inputClass, style, item: items = [], ...htmlInput } = input;
 
 <div style=style class=["list", inputClass] ...processHtmlAttributes(htmlInput)>
     <ul>
@@ -22,19 +17,15 @@ $ const {
                 <hr>
             </if>
             <else>
-
                 <li>
                     <${as || "div"}
                         class=["list__body", itemInputClass]
                         style=itemStyle
-                        on-click(
-                            as === "button" && "emit",
-                            "button-click",
-                            { index: i },
-                        )
+                        on-click(as === "button" && "emit", "button-click", {
+                            index: i,
+                        })
                         ...processHtmlAttributes(itemInput)
                     >
-
                         <if(leading)>
                             $ const {
                                 class: leadingInputClass,
