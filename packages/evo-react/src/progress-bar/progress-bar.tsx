@@ -3,7 +3,7 @@ import type { EvoProgressBarProps } from "./types";
 import "@ebay/skin/progress-bar.mjs";
 
 export function EvoProgressBar({
-  a11yText,
+  a11yText = "Progress",
   value,
   max = 100,
   fluid,
