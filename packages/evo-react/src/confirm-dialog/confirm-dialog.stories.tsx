@@ -55,13 +55,15 @@ export const Default: Story = {
     return (
       <div>
         <button className="btn btn--secondary" onClick={() => setOpen(true)}>
-          Open Confirm Dialog
+          Delete shipping address
         </button>
-        <p>Some outside content...</p>
+        <p>123 Market St, San Jose, CA 95113</p>
         <EvoConfirmDialog {...args} open={open} onOpenChange={setOpen}>
-          <EvoConfirmDialogHeader>Delete Address?</EvoConfirmDialogHeader>
+          <EvoConfirmDialogHeader>
+            Delete shipping address?
+          </EvoConfirmDialogHeader>
           <EvoConfirmDialogMain>
-            <p>You will permanently lose this address.</p>
+            <p>This address will be removed from your account.</p>
           </EvoConfirmDialogMain>
           <EvoConfirmDialogFooter>
             <EvoConfirmDialogReject>Cancel</EvoConfirmDialogReject>

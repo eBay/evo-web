@@ -16,7 +16,7 @@ const meta: Meta<typeof EvoProgressSpinner> = {
     },
   },
   args: {
-    a11yText: "Loading",
+    a11yText: "Loading search results",
   },
 };
 

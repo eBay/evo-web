@@ -9,11 +9,8 @@ import {
   EvoAccordionSummary,
 } from "./index";
 import { EvoIconGraph24 } from "../icon/icons/graph-24";
-import { EvoIconLightbulb24 } from "../icon/icons/lightbulb-24";
+import { EvoIconTruck24 } from "../icon/icons/truck-24";
 import { EvoIconPencil24 } from "../icon/icons/pencil-24";
-
-const LOREM =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
 
 const meta: Meta<typeof EvoAccordion> = {
   title: "Navigation & Disclosure/EvoAccordion",
@@ -52,33 +49,39 @@ const meta: Meta<typeof EvoAccordion> = {
   },
   args: {
     size: "regular",
-    a11yText: "accordion",
+    a11yText: "Product details",
   },
   render(args) {
     return (
       <EvoAccordion {...args}>
-        <EvoAccordionItem id="one">
+        <EvoAccordionItem id="shipping">
           <EvoAccordionSummary>
             <EvoAccordionLabel>Shipping and returns</EvoAccordionLabel>
           </EvoAccordionSummary>
           <EvoAccordionContent>
-            <p>{LOREM}</p>
+            <p>
+              Free delivery in 3–5 business days. Returns are accepted within 30
+              days.
+            </p>
           </EvoAccordionContent>
         </EvoAccordionItem>
-        <EvoAccordionItem id="two">
+        <EvoAccordionItem id="description">
           <EvoAccordionSummary>
             <EvoAccordionLabel>Description</EvoAccordionLabel>
           </EvoAccordionSummary>
           <EvoAccordionContent>
-            <p>{LOREM}</p>
+            <p>
+              Refurbished noise-canceling headphones with a charging case and
+              USB-C cable.
+            </p>
           </EvoAccordionContent>
         </EvoAccordionItem>
-        <EvoAccordionItem id="three">
+        <EvoAccordionItem id="specifications">
           <EvoAccordionSummary>
             <EvoAccordionLabel>Specifications</EvoAccordionLabel>
           </EvoAccordionSummary>
           <EvoAccordionContent>
-            <p>{LOREM}</p>
+            <p>Bluetooth 5.3 · Up to 30 hours of battery life · Black</p>
           </EvoAccordionContent>
         </EvoAccordionItem>
       </EvoAccordion>
@@ -97,28 +100,34 @@ export const MultipleSelection: Story = {
   render(args) {
     return (
       <EvoAccordion size={args.size} a11yText={args.a11yText} defaultOpen={[]}>
-        <EvoAccordionItem id="one">
+        <EvoAccordionItem id="shipping">
           <EvoAccordionSummary>
             <EvoAccordionLabel>Shipping and returns</EvoAccordionLabel>
           </EvoAccordionSummary>
           <EvoAccordionContent>
-            <p>{LOREM}</p>
+            <p>
+              Free delivery in 3–5 business days. Returns are accepted within 30
+              days.
+            </p>
           </EvoAccordionContent>
         </EvoAccordionItem>
-        <EvoAccordionItem id="two">
+        <EvoAccordionItem id="description">
           <EvoAccordionSummary>
             <EvoAccordionLabel>Description</EvoAccordionLabel>
           </EvoAccordionSummary>
           <EvoAccordionContent>
-            <p>{LOREM}</p>
+            <p>
+              Refurbished noise-canceling headphones with a charging case and
+              USB-C cable.
+            </p>
           </EvoAccordionContent>
         </EvoAccordionItem>
-        <EvoAccordionItem id="three">
+        <EvoAccordionItem id="specifications">
           <EvoAccordionSummary>
             <EvoAccordionLabel>Specifications</EvoAccordionLabel>
           </EvoAccordionSummary>
           <EvoAccordionContent>
-            <p>{LOREM}</p>
+            <p>Bluetooth 5.3 · Up to 30 hours of battery life · Black</p>
           </EvoAccordionContent>
         </EvoAccordionItem>
       </EvoAccordion>
@@ -129,7 +138,7 @@ export const MultipleSelection: Story = {
 /** Controlled state synchronizes the open item with the parent. */
 export const Controlled: Story = {
   args: {
-    open: "0",
+    open: "shipping",
   },
   render(args: Story["args"]) {
     const [open, setOpen] = useState<string | undefined>(args?.open || "");
@@ -140,7 +149,11 @@ export const Controlled: Story = {
     return (
       <>
         <div>
-          {["0", "1", "2"].map((id) => (
+          {[
+            ["shipping", "Shipping and returns"],
+            ["description", "Description"],
+            ["specifications", "Specifications"],
+          ].map(([id, label]) => (
             <label key={id}>
               <input
                 type="radio"
@@ -149,7 +162,7 @@ export const Controlled: Story = {
                 checked={open === id}
                 onChange={() => handleOpenChange(id)}
               />{" "}
-              {id}
+              {label}
             </label>
           ))}
         </div>
@@ -158,30 +171,36 @@ export const Controlled: Story = {
           {...args}
           open={open}
           onOpenChange={handleOpenChange}
-          a11yText="Accordion Menu"
+          a11yText="Product details"
         >
-          <EvoAccordionItem id="0">
+          <EvoAccordionItem id="shipping">
             <EvoAccordionSummary>
               <EvoAccordionLabel>Shipping and returns</EvoAccordionLabel>
             </EvoAccordionSummary>
             <EvoAccordionContent>
-              <p>{LOREM}</p>
+              <p>
+                Free delivery in 3–5 business days. Returns are accepted within
+                30 days.
+              </p>
             </EvoAccordionContent>
           </EvoAccordionItem>
-          <EvoAccordionItem id="1">
+          <EvoAccordionItem id="description">
             <EvoAccordionSummary>
               <EvoAccordionLabel>Description</EvoAccordionLabel>
             </EvoAccordionSummary>
             <EvoAccordionContent>
-              <p>{LOREM}</p>
+              <p>
+                Refurbished noise-canceling headphones with a charging case and
+                USB-C cable.
+              </p>
             </EvoAccordionContent>
           </EvoAccordionItem>
-          <EvoAccordionItem id="2">
+          <EvoAccordionItem id="specifications">
             <EvoAccordionSummary>
               <EvoAccordionLabel>Specifications</EvoAccordionLabel>
             </EvoAccordionSummary>
             <EvoAccordionContent>
-              <p>{LOREM}</p>
+              <p>Bluetooth 5.3 · Up to 30 hours of battery life · Black</p>
             </EvoAccordionContent>
           </EvoAccordionItem>
         </EvoAccordion>
@@ -195,18 +214,21 @@ export const WithLeadingIcon: Story = {
   render(args) {
     return (
       <EvoAccordion {...args}>
-        <EvoAccordionItem id="lightbulb">
+        <EvoAccordionItem id="shipping">
           <EvoAccordionSummary>
             <EvoAccordionLeading>
-              <EvoIconLightbulb24 />
+              <EvoIconTruck24 />
             </EvoAccordionLeading>
             <EvoAccordionLabel>Shipping and returns</EvoAccordionLabel>
           </EvoAccordionSummary>
           <EvoAccordionContent>
-            <p>{LOREM}</p>
+            <p>
+              Free delivery in 3–5 business days. Returns are accepted within 30
+              days.
+            </p>
           </EvoAccordionContent>
         </EvoAccordionItem>
-        <EvoAccordionItem id="pencil">
+        <EvoAccordionItem id="description">
           <EvoAccordionSummary>
             <EvoAccordionLeading>
               <EvoIconPencil24 />
@@ -214,10 +236,13 @@ export const WithLeadingIcon: Story = {
             <EvoAccordionLabel>Description</EvoAccordionLabel>
           </EvoAccordionSummary>
           <EvoAccordionContent>
-            <p>{LOREM}</p>
+            <p>
+              Refurbished noise-canceling headphones with a charging case and
+              USB-C cable.
+            </p>
           </EvoAccordionContent>
         </EvoAccordionItem>
-        <EvoAccordionItem id="graph">
+        <EvoAccordionItem id="specifications">
           <EvoAccordionSummary>
             <EvoAccordionLeading>
               <EvoIconGraph24 />
@@ -225,7 +250,7 @@ export const WithLeadingIcon: Story = {
             <EvoAccordionLabel>Specifications</EvoAccordionLabel>
           </EvoAccordionSummary>
           <EvoAccordionContent>
-            <p>{LOREM}</p>
+            <p>Bluetooth 5.3 · Up to 30 hours of battery life · Black</p>
           </EvoAccordionContent>
         </EvoAccordionItem>
       </EvoAccordion>

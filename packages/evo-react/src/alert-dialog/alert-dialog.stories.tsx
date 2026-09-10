@@ -6,9 +6,6 @@ import { EvoAlertDialogMain } from "./alert-dialog-main";
 import { EvoAlertDialogFooter } from "./alert-dialog-footer";
 import { EvoAlertDialogConfirm } from "./alert-dialog-confirm";
 
-const LOREM =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-
 const meta: Meta<typeof EvoAlertDialog> = {
   title: "Dialogs/EvoAlertDialog",
   component: EvoAlertDialog,
@@ -56,19 +53,23 @@ export const Default: Story = {
     return (
       <div>
         <button className="btn btn--secondary" onClick={() => setOpen(true)}>
-          Open Alert Dialog
+          Review listing issue
         </button>
-        <p>Some outside content...</p>
+        <p>Draft listing: Vintage leather messenger bag</p>
         <EvoAlertDialog {...args} open={open} onOpenChange={setOpen}>
-          <EvoAlertDialogHeader>Alert!</EvoAlertDialogHeader>
+          <EvoAlertDialogHeader>
+            Your listing needs attention
+          </EvoAlertDialogHeader>
           <EvoAlertDialogMain>
-            <p>{LOREM}</p>
+            <p>Add a shipping service before publishing this listing.</p>
             <p>
-              <a href="http://www.ebay.com">www.ebay.com</a>
+              <a href="https://www.ebay.com/help/selling/listings/creating-listing?id=4142">
+                Review listing requirements
+              </a>
             </p>
           </EvoAlertDialogMain>
           <EvoAlertDialogFooter>
-            <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
+            <EvoAlertDialogConfirm>Got it</EvoAlertDialogConfirm>
           </EvoAlertDialogFooter>
         </EvoAlertDialog>
       </div>

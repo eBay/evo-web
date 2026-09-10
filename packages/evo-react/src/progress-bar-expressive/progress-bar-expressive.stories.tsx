@@ -18,11 +18,11 @@ const meta: Meta<typeof EvoProgressBarExpressive> = {
     },
   },
   args: {
-    a11yText: "Loading...",
+    a11yText: "Processing your order",
     messages: [
-      { content: "Hang tight" },
-      { content: "We're processing your order" },
-      { content: "Just a moment longer" },
+      { content: "Checking payment details" },
+      { content: "Confirming inventory" },
+      { content: "Preparing your order" },
     ],
   },
 };
@@ -37,7 +37,7 @@ export const Default: Story = {};
 /** A single message remains visible while progress continues. */
 export const SingleMessage: Story = {
   args: {
-    messages: [{ content: "We're processing your order" }],
+    messages: [{ content: "Processing your order" }],
   },
 };
 
@@ -45,9 +45,9 @@ export const SingleMessage: Story = {
 export const CustomTiming: Story = {
   args: {
     messages: [
-      { content: "Display for 2 seconds", duration: 2000 },
-      { content: "Display for 3 seconds", duration: 3000 },
-      { content: "Display for 4 seconds", duration: 4000 },
+      { content: "Checking payment details", duration: 2000 },
+      { content: "Confirming inventory", duration: 3000 },
+      { content: "Preparing your order", duration: 4000 },
     ],
   },
 };

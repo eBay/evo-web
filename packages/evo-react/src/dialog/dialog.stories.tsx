@@ -60,18 +60,23 @@ export const Default: Story = {
     return (
       <div>
         <EvoButton priority="secondary" onClick={() => setOpen(true)}>
-          Open Dialog
+          Review order
         </EvoButton>
-        <p>Some outside content...</p>
+        <p>Order total: $84.99</p>
         <EvoDialog {...args} open={open} onOpenChange={handleOpenChange}>
           <EvoDialogHeader>
-            <EvoDialogTitle>Dialog Title</EvoDialogTitle>
-            <EvoDialogClose a11yText="Close Dialog" />
+            <EvoDialogTitle>Review your order</EvoDialogTitle>
+            <EvoDialogClose a11yText="Close order review" />
           </EvoDialogHeader>
           <EvoDialogMain>
-            <p>This is the default dialog content.</p>
             <p>
-              <a href="https://www.ebay.com">www.ebay.com</a>
+              Confirm your shipping address and payment method before placing
+              the order.
+            </p>
+            <p>
+              <a href="https://www.ebay.com/help/buying/returns-refunds/return-item-refund?id=4041">
+                Review return policy
+              </a>
             </p>
           </EvoDialogMain>
           <EvoDialogFooter>
@@ -79,7 +84,7 @@ export const Default: Story = {
               priority="primary"
               onClick={() => handleOpenChange(false)}
             >
-              Done
+              Continue to checkout
             </EvoButton>
           </EvoDialogFooter>
         </EvoDialog>
@@ -100,7 +105,7 @@ export const Banner: Story = {
     return (
       <div>
         <EvoButton priority="secondary" onClick={() => setOpen(true)}>
-          Open Dialog With Banner
+          View refurbished benefits
         </EvoButton>
         <EvoDialog
           {...args}
@@ -114,11 +119,14 @@ export const Banner: Story = {
           }
         >
           <EvoDialogHeader>
-            <EvoDialogTitle>Dialog Title</EvoDialogTitle>
-            <EvoDialogClose a11yText="Close Dialog" />
+            <EvoDialogTitle>eBay Refurbished</EvoDialogTitle>
+            <EvoDialogClose a11yText="Close refurbished benefits" />
           </EvoDialogHeader>
           <EvoDialogMain>
-            <p>This dialog uses an expressive banner image.</p>
+            <p>
+              Shop professionally inspected products backed by the applicable
+              seller guarantee.
+            </p>
           </EvoDialogMain>
         </EvoDialog>
       </div>
@@ -149,7 +157,7 @@ export const CustomBanner: Story = {
           }
         `}</style>
         <EvoButton priority="secondary" onClick={() => setOpen(true)}>
-          Open Dialog With Custom Banner
+          View certified refurbished
         </EvoButton>
         <EvoDialog
           {...args}
@@ -157,19 +165,19 @@ export const CustomBanner: Story = {
           onOpenChange={handleOpenChange}
           banner={
             <EvoDialogBanner className="banner-demo">
-              Custom Banner
+              Certified refurbished
             </EvoDialogBanner>
           }
         >
           <EvoDialogHeader>
-            <EvoDialogPrevious a11yText="Back" />
-            <EvoDialogTitle>Dialog Title</EvoDialogTitle>
-            <EvoDialogClose a11yText="Close Dialog" />
+            <EvoDialogPrevious a11yText="Back to item photos" />
+            <EvoDialogTitle>Shop with confidence</EvoDialogTitle>
+            <EvoDialogClose a11yText="Close refurbished details" />
           </EvoDialogHeader>
           <EvoDialogMain>
             <p>
-              This dialog uses custom content inside the banner instead of a
-              background image.
+              Review the item’s condition, seller details, and included
+              accessories.
             </p>
           </EvoDialogMain>
         </EvoDialog>
@@ -190,16 +198,16 @@ export const WithPreviousAction: Story = {
     return (
       <div>
         <EvoButton priority="secondary" onClick={() => setOpen(true)}>
-          Open Dialog With Previous Action
+          Continue listing
         </EvoButton>
         <EvoDialog {...args} open={open} onOpenChange={handleOpenChange}>
           <EvoDialogHeader>
-            <EvoDialogPrevious a11yText="Back" />
-            <EvoDialogTitle>Dialog Title</EvoDialogTitle>
-            <EvoDialogClose a11yText="Close Dialog" />
+            <EvoDialogPrevious a11yText="Back to photos" />
+            <EvoDialogTitle>Set your price</EvoDialogTitle>
+            <EvoDialogClose a11yText="Close listing" />
           </EvoDialogHeader>
           <EvoDialogMain>
-            <p>This dialog includes a previous navigation action.</p>
+            <p>Choose a starting price or add a Buy It Now price.</p>
           </EvoDialogMain>
         </EvoDialog>
       </div>

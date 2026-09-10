@@ -74,10 +74,8 @@ type Story = StoryObj<typeof EvoTooltip>;
 export const Default: Story = {
   render: (args) => (
     <EvoTooltip {...args}>
-      <EvoTooltipHost>View options</EvoTooltipHost>
-      <EvoTooltipContent>
-        Use Access Key &apos;S&apos; to display settings.
-      </EvoTooltipContent>
+      <EvoTooltipHost>Estimated delivery</EvoTooltipHost>
+      <EvoTooltipContent>Get it within 3–5 business days.</EvoTooltipContent>
     </EvoTooltip>
   ),
 };
@@ -86,10 +84,12 @@ export const Default: Story = {
 export const IconButtonHost: Story = {
   render: (args) => (
     <EvoTooltip {...args} placement="right">
-      <EvoTooltipHost as={EvoIconButton} a11yText="Settings">
+      <EvoTooltipHost as={EvoIconButton} a11yText="Seller settings">
         <EvoIconSettings24 />
       </EvoTooltipHost>
-      <EvoTooltipContent>Configure your settings</EvoTooltipContent>
+      <EvoTooltipContent>
+        Manage payment, shipping, and return preferences.
+      </EvoTooltipContent>
     </EvoTooltip>
   ),
 };
@@ -130,11 +130,7 @@ export const Placements: Story = {
           <EvoTooltipHost>{placement}</EvoTooltipHost>
           <EvoTooltipContent>
             <span style={{ display: "block" }}>
-              Tooltip content for <code>{placement}</code>
-            </span>
-            <span style={{ display: "block" }}>
-              Here we explicitly set <code>flip=false</code> for demonstration.
-              By default, the tooltip will not extend outside the window.
+              Estimated delivery: 3–5 business days.
             </span>
           </EvoTooltipContent>
         </EvoTooltip>
@@ -226,14 +222,14 @@ export const CustomHost: Story = {
     <EvoTooltip {...args}>
       <EvoTooltipHost
         as={CustomEvoButton}
-        href="https://www.ebay.com"
+        href="/delivery"
         priority="secondary"
       >
-        View options
+        View delivery details
       </EvoTooltipHost>
       <EvoTooltipContent>
-        <EvoTooltipHeading>Available options</EvoTooltipHeading>
-        Use this link to view available options.
+        <EvoTooltipHeading>Delivery options</EvoTooltipHeading>
+        Compare standard and expedited shipping.
       </EvoTooltipContent>
     </EvoTooltip>
   ),

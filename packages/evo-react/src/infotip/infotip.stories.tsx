@@ -67,8 +67,8 @@ const meta: Meta<typeof EvoInfotip> = {
     },
   },
   args: {
-    a11yIconText: "Important information",
-    a11yCloseText: "Dismiss infotip",
+    a11yIconText: "More pricing information",
+    a11yCloseText: "Close price details",
   },
 };
 
@@ -79,8 +79,8 @@ type Story = StoryObj<typeof EvoInfotip>;
 export const Default: Story = {
   render: (args) => (
     <EvoInfotip {...args}>
-      <EvoInfotipHeading>Heading</EvoInfotipHeading>
-      <p>Content</p>
+      <EvoInfotipHeading>Price details</EvoInfotipHeading>
+      <p>The total may change when shipping and taxes are calculated.</p>
     </EvoInfotip>
   ),
 };
@@ -90,13 +90,18 @@ export const WrappedParagraph: Story = {
   render: (args) => (
     <div style={{ width: 240 }}>
       <p>
-        This paragraph wraps around the infotip button{" "}
-        <EvoInfotip {...args} defaultOpen placement="bottom">
-          <EvoInfotipHeading>Positioning check</EvoInfotipHeading>
-          The infotip should remain aligned with its icon button as the
-          paragraph wraps.
+        Check how shipping costs are calculated{" "}
+        <EvoInfotip
+          {...args}
+          a11yIconText="More shipping information"
+          a11yCloseText="Close shipping costs"
+          defaultOpen
+          placement="bottom"
+        >
+          <EvoInfotipHeading>Shipping costs</EvoInfotipHeading>
+          Shipping is calculated from the item location and delivery address.
         </EvoInfotip>{" "}
-        while the button itself remains a single box.
+        before checkout.
       </p>
     </div>
   ),
