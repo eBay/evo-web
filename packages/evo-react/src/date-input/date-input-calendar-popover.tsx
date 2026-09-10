@@ -1,9 +1,14 @@
 import { EvoCalendar } from "../calendar";
+import type { Disable } from "../calendar";
 import { DateInputPopover, useDatePopoverPosition } from "./date-input-popover";
 import { useDateInputContext } from "./context";
 import type { EvoDateInputCalendarPopoverProps } from "./types";
 import { monthFromValue, useFollowSelectedMonth } from "./visible-month";
 import { useResponsiveMonthCount } from "./use-date-popover";
+
+const DISABLE_ALL_DATES = {
+  callback: () => true,
+} satisfies Disable;
 
 export function EvoDateInputCalendarPopover({
   strategy = "absolute",
@@ -16,6 +21,7 @@ export function EvoDateInputCalendarPopover({
     monthFromValue(context.selected),
     calendar.visibleMonth,
     calendar.defaultVisibleMonth ?? monthFromValue(calendar.today),
+    context.open,
   );
 
   return (
@@ -26,6 +32,8 @@ export function EvoDateInputCalendarPopover({
     >
       <EvoCalendar
         {...calendar}
+        disable={context.disabled ? DISABLE_ALL_DATES : calendar.disable}
+        readOnly={context.readOnly}
         locale={context.locale}
         selectMode="day"
         selected={context.selected || undefined}

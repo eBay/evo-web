@@ -31,6 +31,7 @@ export type EvoDateFieldProps = Omit<
   EvoInputProps,
   | "value"
   | "defaultValue"
+  | "prefix"
   | "postfix"
   | "type"
   | "disabled"
@@ -44,6 +45,7 @@ type OwnedCalendarProps =
   | "defaultSelected"
   | "onSelectedChange"
   | "locale"
+  | "readOnly"
   | "getDayHref"
   | "dayLinkAs";
 

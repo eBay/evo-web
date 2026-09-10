@@ -66,6 +66,7 @@ type OwnedCalendarProps =
   | "defaultSelected"
   | "onSelectedChange"
   | "locale"
+  | "readOnly"
   | "getDayHref"
   | "dayLinkAs";
 

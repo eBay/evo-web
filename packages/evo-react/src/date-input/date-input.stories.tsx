@@ -42,6 +42,12 @@ import {
     collapseOnSelect: {
       control: "boolean",
     },
+    open: {
+      control: "boolean",
+    },
+    defaultOpen: {
+      control: "boolean",
+    },
     popoverStrategy: {
       control: "select",
       options: ["absolute", "fixed"],

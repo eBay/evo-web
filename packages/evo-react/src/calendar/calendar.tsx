@@ -48,6 +48,7 @@ export function EvoCalendar({
   locale: localeProp,
   today: todayProp,
   disable,
+  readOnly,
   visibleMonth: visibleMonthProp,
   defaultVisibleMonth,
   onVisibleMonthChange,
@@ -108,6 +109,10 @@ export function EvoCalendar({
 
   const setSelected = useCallback(
     (nextSelected: SelectedValue) => {
+      if (readOnly) {
+        return;
+      }
+
       if (selectedProp === undefined) {
         setUncontrolledSelected(nextSelected);
       }
@@ -115,7 +120,7 @@ export function EvoCalendar({
         nextSelected,
       );
     },
-    [onSelectedChange, selectedProp],
+    [onSelectedChange, readOnly, selectedProp],
   );
 
   const requestFocus = useCallback((iso: DayISO) => {

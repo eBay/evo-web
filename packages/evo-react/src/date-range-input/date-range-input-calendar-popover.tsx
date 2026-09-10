@@ -1,5 +1,5 @@
 import { EvoCalendar } from "../calendar";
-import type { DateRange } from "../calendar";
+import type { DateRange, Disable } from "../calendar";
 import {
   DateInputPopover,
   useDatePopoverPosition,
@@ -14,6 +14,10 @@ import {
   useFollowSelectedMonth,
 } from "../date-input/visible-month";
 import { useResponsiveMonthCount } from "../date-input/use-date-popover";
+
+const DISABLE_ALL_DATES = {
+  callback: () => true,
+} satisfies Disable;
 
 function toCalendarRange(
   selected: DateInputRange | undefined,
@@ -42,6 +46,7 @@ export function EvoDateRangeInputCalendarPopover({
     monthFromValue(context.selected),
     calendar.visibleMonth,
     calendar.defaultVisibleMonth ?? monthFromValue(calendar.today),
+    context.open,
   );
 
   return (
@@ -52,6 +57,8 @@ export function EvoDateRangeInputCalendarPopover({
     >
       <EvoCalendar
         {...calendar}
+        disable={context.disabled ? DISABLE_ALL_DATES : calendar.disable}
+        readOnly={context.readOnly}
         locale={context.locale}
         selectMode="range"
         selected={toCalendarRange(context.selected)}

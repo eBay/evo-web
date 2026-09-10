@@ -119,6 +119,68 @@ describe("evo-date-range-input", () => {
       .toHaveValue("01/02/2024");
   });
 
+  it("keeps both visible months stationary after selecting from the right pane", async () => {
+    const screen = await render(
+      <TestRangeInput
+        calendarPopover={{
+          visibleMonthCount: 2,
+          defaultVisibleMonth: "2024-01",
+        }}
+      />,
+    );
+    await user.click(screen.getByRole("button", { name: a11yOpenPopoverText }));
+
+    await expect
+      .element(screen.getByRole("heading", { name: "January 2024" }))
+      .toBeInTheDocument();
+    await expect
+      .element(screen.getByRole("heading", { name: "February 2024" }))
+      .toBeInTheDocument();
+
+    const februaryDate = screen.container.querySelector<HTMLButtonElement>(
+      '[data-iso="2024-02-01"]',
+    );
+    if (!februaryDate) {
+      throw new Error("February 1 must be rendered in the right pane");
+    }
+    await user.click(februaryDate);
+
+    await expect
+      .element(screen.getByRole("heading", { name: "January 2024" }))
+      .toBeInTheDocument();
+    await expect
+      .element(screen.getByRole("heading", { name: "February 2024" }))
+      .toBeInTheDocument();
+    expect(
+      Array.from(
+        screen.container.querySelectorAll("h3"),
+        (heading) => heading.textContent,
+      ),
+    ).not.toContain("March 2024");
+  });
+
+  it("keeps the disabled calendar open and disables all dates", async () => {
+    const onChange = vi.fn();
+    const screen = await render(<TestRangeInput onChange={onChange} />);
+    const trigger = screen.getByRole("button", { name: a11yOpenPopoverText });
+    const popover = screen.container.querySelector(".date-textbox__popover");
+
+    await user.click(trigger);
+    screen.rerender(<TestRangeInput disabled onChange={onChange} />);
+
+    expect(popover).not.toHaveAttribute("hidden");
+    await expect.element(trigger).toBeDisabled();
+    await expect.element(trigger).toHaveAttribute("aria-expanded", "true");
+
+    const dates =
+      screen.container.querySelectorAll<HTMLButtonElement>("[data-iso]");
+    expect(dates.length).toBeGreaterThan(0);
+    for (const date of dates) {
+      expect(date).toBeDisabled();
+    }
+    expect(onChange).not.toHaveBeenCalled();
+  });
+
   it("anchors the popover to the complete date range group", async () => {
     const screen = await render(
       <TestRangeInput calendarPopover={{ visibleMonthCount: 1 }} />,
@@ -223,6 +285,50 @@ describe("evo-date-range-input", () => {
     await expect
       .element(screen.getByRole("button", { name: a11yOpenPopoverText }))
       .toBeDisabled();
+  });
+
+  it("keeps an empty read-only calendar open without selecting a range", async () => {
+    const onChange = vi.fn();
+    const screen = await render(<TestRangeInput onChange={onChange} />);
+    const trigger = screen.getByRole("button", { name: a11yOpenPopoverText });
+    const popover = screen.container.querySelector(".date-textbox__popover");
+
+    await user.click(trigger);
+    screen.rerender(<TestRangeInput readOnly onChange={onChange} />);
+
+    expect(popover).not.toHaveAttribute("hidden");
+    await expect.element(trigger).toBeDisabled();
+    await expect.element(trigger).toHaveAttribute("aria-expanded", "true");
+
+    const startInput = screen.getByRole("textbox", { name: "Start" });
+    const endInput = screen.getByRole("textbox", { name: "End" });
+    await expect.element(startInput).toHaveValue("");
+    await expect.element(endInput).toHaveValue("");
+
+    const januaryStart = screen.container.querySelector<HTMLButtonElement>(
+      '[data-iso="2024-01-01"]',
+    );
+    const januaryEnd = screen.container.querySelector<HTMLButtonElement>(
+      '[data-iso="2024-01-02"]',
+    );
+    if (!januaryStart || !januaryEnd) {
+      throw new Error("January dates must be rendered");
+    }
+    expect(januaryStart).not.toBeDisabled();
+    expect(januaryEnd).not.toBeDisabled();
+
+    await user.click(januaryStart);
+    await user.click(januaryEnd);
+    await expect.element(januaryStart).not.toBeDisabled();
+    await expect.element(januaryEnd).not.toBeDisabled();
+    await expect.element(startInput).toHaveValue("");
+    await expect.element(endInput).toHaveValue("");
+    expect(screen.container.querySelector('[aria-pressed="true"]')).toBeNull();
+    expect(
+      screen.container.querySelector(".calendar__cell--selected"),
+    ).toBeNull();
+    expect(onChange).not.toHaveBeenCalled();
+    expect(popover).not.toHaveAttribute("hidden");
   });
 
   it("keeps invalid typed text and reports the start field index", async () => {

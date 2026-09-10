@@ -29,8 +29,9 @@ function currentMonth() {
 
 export function useFollowSelectedMonth(
   selectedMonth: MonthISO | undefined,
-  controlledVisibleMonth?: MonthISO,
-  defaultVisibleMonth?: MonthISO,
+  controlledVisibleMonth: MonthISO | undefined,
+  defaultVisibleMonth: MonthISO | undefined,
+  open: boolean,
 ) {
   const [visibleMonth, setVisibleMonth] = useState(
     controlledVisibleMonth ??
@@ -42,6 +43,7 @@ export function useFollowSelectedMonth(
 
   if (
     controlledVisibleMonth === undefined &&
+    !open &&
     selectedMonth &&
     selectedMonth !== prevSelectedMonth
   ) {

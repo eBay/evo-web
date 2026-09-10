@@ -367,10 +367,12 @@ describe("evo-date-input", () => {
     );
     const input = screen.getByRole("textbox", { name: "Date" });
     const trigger = screen.getByRole("button", { name: a11yOpenPopoverText });
+    const popover = screen.container.querySelector(".date-textbox__popover");
 
     await expect.element(input).toHaveAttribute("readonly");
     await expect.element(trigger).toBeDisabled();
     await expect.element(trigger).toHaveAttribute("aria-expanded", "false");
+    expect(popover).toHaveAttribute("hidden");
     expect(onChange).not.toHaveBeenCalled();
   });
 
@@ -378,13 +380,118 @@ describe("evo-date-input", () => {
     const screen = await render(
       <TestDateInput disabled floatingLabel="Date" />,
     );
+    const trigger = screen.getByRole("button", { name: a11yOpenPopoverText });
+    const popover = screen.container.querySelector(".date-textbox__popover");
 
     await expect
       .element(screen.getByRole("textbox", { name: "Date" }))
       .toBeDisabled();
+    await expect.element(trigger).toBeDisabled();
+    expect(popover).toHaveAttribute("hidden");
+  });
+
+  it("keeps both visible months stationary after selecting from the right pane", async () => {
+    const screen = await render(
+      <TestDateInput
+        floatingLabel="Date"
+        calendarPopover={{
+          visibleMonthCount: 2,
+          defaultVisibleMonth: "2024-01",
+        }}
+      />,
+    );
+    await user.click(screen.getByRole("button", { name: a11yOpenPopoverText }));
+
     await expect
-      .element(screen.getByRole("button", { name: a11yOpenPopoverText }))
-      .toBeDisabled();
+      .element(screen.getByRole("heading", { name: "January 2024" }))
+      .toBeInTheDocument();
+    await expect
+      .element(screen.getByRole("heading", { name: "February 2024" }))
+      .toBeInTheDocument();
+
+    const februaryDate = screen.container.querySelector<HTMLButtonElement>(
+      '[data-iso="2024-02-01"]',
+    );
+    if (!februaryDate) {
+      throw new Error("February 1 must be rendered in the right pane");
+    }
+    await user.click(februaryDate);
+
+    await expect
+      .element(screen.getByRole("heading", { name: "January 2024" }))
+      .toBeInTheDocument();
+    await expect
+      .element(screen.getByRole("heading", { name: "February 2024" }))
+      .toBeInTheDocument();
+    expect(
+      Array.from(
+        screen.container.querySelectorAll("h3"),
+        (heading) => heading.textContent,
+      ),
+    ).not.toContain("March 2024");
+  });
+
+  it("keeps the disabled calendar open and disables all dates", async () => {
+    const onChange = vi.fn();
+    const screen = await render(
+      <TestDateInput onChange={onChange} floatingLabel="Date" />,
+    );
+    const trigger = screen.getByRole("button", { name: a11yOpenPopoverText });
+    const popover = screen.container.querySelector(".date-textbox__popover");
+
+    await user.click(trigger);
+    screen.rerender(
+      <TestDateInput disabled onChange={onChange} floatingLabel="Date" />,
+    );
+
+    expect(popover).not.toHaveAttribute("hidden");
+    await expect.element(trigger).toBeDisabled();
+    await expect.element(trigger).toHaveAttribute("aria-expanded", "true");
+
+    const dates =
+      screen.container.querySelectorAll<HTMLButtonElement>("[data-iso]");
+    expect(dates.length).toBeGreaterThan(0);
+    for (const date of dates) {
+      expect(date).toBeDisabled();
+    }
+  });
+
+  it("keeps an empty read-only calendar open without selecting a date", async () => {
+    const onChange = vi.fn();
+    const screen = await render(
+      <TestDateInput onChange={onChange} floatingLabel="Date" />,
+    );
+    const input = screen.getByRole("textbox", { name: "Date" });
+    const trigger = screen.getByRole("button", { name: a11yOpenPopoverText });
+    const popover = screen.container.querySelector(".date-textbox__popover");
+
+    await user.click(trigger);
+    screen.rerender(
+      <TestDateInput readOnly onChange={onChange} floatingLabel="Date" />,
+    );
+
+    expect(popover).not.toHaveAttribute("hidden");
+    await expect.element(trigger).toBeDisabled();
+    await expect.element(trigger).toHaveAttribute("aria-expanded", "true");
+    await expect.element(input).toHaveValue("");
+
+    const januaryDate = screen.container.querySelector<HTMLButtonElement>(
+      '[data-iso="2024-01-01"]',
+    );
+    if (!januaryDate) {
+      throw new Error("January 1 must be rendered");
+    }
+    expect(januaryDate).not.toBeDisabled();
+
+    await user.click(januaryDate);
+    await expect.element(januaryDate).not.toBeDisabled();
+    await expect.element(input).toHaveValue("");
+    expect(screen.container.querySelector('[aria-pressed="true"]')).toBeNull();
+    expect(
+      screen.container.querySelector(".calendar__cell--selected"),
+    ).toBeNull();
+    expect(onChange).not.toHaveBeenCalled();
+    expect(popover).not.toHaveAttribute("hidden");
   });
 
   it("opens the calendar on the selected month", async () => {
