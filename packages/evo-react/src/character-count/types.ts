@@ -27,6 +27,6 @@ export type EvoCharacterCountProps = ComponentProps<"span"> &
      * accessibility information is present.
      */
     a11yText?: string | null;
-    /** Reference to the associated input or textarea. Its `aria-live` becomes `"polite"` above the maximum. */
+    /** Reference to an input or textarea. Its `aria-live` is set to `"polite"` only when the count exceeds `max`. */
     inputRef?: CharacterCountInputRef;
   };

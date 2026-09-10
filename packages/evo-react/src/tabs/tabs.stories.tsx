@@ -6,7 +6,7 @@ import { EvoTabPanels } from "./tab-panels";
 import { EvoTabs } from "./tabs";
 
 const meta: Meta<typeof EvoTabs> = {
-  title: "navigation & disclosure/evo-tabs",
+  title: "Navigation & Disclosure/EvoTabs",
   component: EvoTabs,
   subcomponents: {
     EvoTabList,
@@ -14,40 +14,15 @@ const meta: Meta<typeof EvoTabs> = {
     EvoTabPanels,
     EvoTabPanel,
   },
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-A compound tabs component with id-based selection and automatic or manual keyboard activation.
 
-## Usage
-
-\`\`\`tsx
-import {
-  EvoTabs,
-  EvoTabList,
-  EvoTab,
-  EvoTabPanels,
-  EvoTabPanel,
-} from "@evo-web/react/tabs";
-\`\`\`
-        `,
-      },
-    },
-  },
   argTypes: {
     selected: {
       control: "select",
       options: ["overview", "shipping", "returns"],
-      description:
-        "Controlled id shared by the selected tab and tab panel. Required when `defaultSelected` is not provided.",
     },
     defaultSelected: {
       control: "select",
       options: ["overview", "shipping", "returns"],
-      description:
-        "Initial id shared by the selected tab and tab panel. Required when `selected` is not provided.",
     },
     activation: {
       control: "select",
@@ -112,4 +87,5 @@ import {
 export default meta;
 type Story = StoryObj<typeof EvoTabs>;
 
+/** The default `activation="auto"` setting switches between peer content sections. */
 export const Default: Story = {};

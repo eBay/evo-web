@@ -5,18 +5,18 @@ import type {
   ElementType,
   ReactNode,
 } from "react";
-import type { EvoButton } from "../button";
+import type { EvoButton } from "../button/button";
 
 export type TooltipPlacement = Placement;
 
 export type EvoTooltipProps = ComponentProps<"span"> & {
-  /** Controlled open state. When provided, the consumer manages it via `onOpenChange`. */
+  /** Controlled `open` state. When provided, the consumer manages it via `onOpenChange`. */
   open?: boolean;
   /** Initial open state for uncontrolled usage. Ignored when `open` is provided. */
   defaultOpen?: boolean;
-  /** Callback fired when the tooltip requests to change its open state. */
+  /** Callback fired when the tooltip requests to change its `open` state. */
   onOpenChange?: (open: boolean) => void;
-  /** Position of the overlay relative to the host. Defaults to `bottom`. */
+  /** Position of the overlay relative to the host. Defaults to `"bottom"`. */
   placement?: TooltipPlacement;
   /** Distance between the host and overlay in pixels. Defaults to `8`. */
   offset?: number;
@@ -35,7 +35,11 @@ type TooltipHostOwnProps<T extends ElementType> = {
   children?: ReactNode;
   /** Additional class name merged with the Skin host class. */
   className?: string;
-  /** Ref forwarded to the rendered host. Custom components must pass it to their DOM element. */
+  /**
+   * Ref forwarded to the rendered host. Custom components must pass it and
+   * forwarded DOM attributes to their DOM element so `aria-expanded` and
+   * `aria-describedby` reach the rendered host.
+   */
   ref?: ComponentPropsWithRef<T>["ref"];
 };
 
@@ -52,7 +56,7 @@ export type EvoTooltipContentProps = Omit<
 >;
 
 type TooltipHeadingOwnProps<T extends ElementType> = {
-  /** Element or component used for the heading. Defaults to `span`. */
+  /** Element or component used for the heading. Defaults to `<span>`. */
   as?: T;
   /** Content rendered inside the tooltip heading. */
   children?: ReactNode;

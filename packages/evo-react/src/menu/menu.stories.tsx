@@ -14,7 +14,7 @@ import { EvoMenuSeparator } from "./menu-separator";
 import { EvoMenuFooter } from "./menu-footer";
 
 const meta: Meta<typeof EvoMenu> = {
-  title: "building blocks/evo-menu",
+  title: "Building Blocks/EvoMenu",
   component: EvoMenu,
   subcomponents: {
     EvoMenuItems,
@@ -27,28 +27,7 @@ const meta: Meta<typeof EvoMenu> = {
     EvoMenuSeparator,
     EvoMenuFooter,
   },
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-A compound menu component with command, single-select, and multi-select items managed by one keyboard navigation system.
 
-## Usage
-
-\`\`\`tsx
-import {
-  EvoMenu,
-  EvoMenuItems,
-  EvoMenuItem,
-  EvoMenuRadioGroup,
-  EvoMenuRadioItem,
-} from "@evo-web/react/menu";
-\`\`\`
-        `,
-      },
-    },
-  },
   argTypes: {
     variant: {
       control: "select",
@@ -113,4 +92,5 @@ import {
 export default meta;
 type Story = StoryObj<typeof EvoMenu>;
 
+/** Commands appear alongside single- and multi-selection choices. */
 export const Default: Story = {};

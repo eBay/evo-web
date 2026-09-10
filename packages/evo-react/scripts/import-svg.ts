@@ -108,17 +108,18 @@ import type { EvoIconComponentProps } from "./icons/types";
 ${icons.map(({ componentName, filePath }) => `import { ${componentName} } from "./icons/${filePath}";`).join("\n")}
 
 const meta: Meta<EvoIconComponentProps> = {
-  title: "Graphics & Icons/evo-icon",
-  tags: ["autodocs"],
+  title: "Graphics & Icons/EvoIcon",
   argTypes: {
     a11yText: {
       control: "text",
-      description: "Accessible label text for the icon. When provided, the icon will have role=\\"img\\".",
+      description:
+        'Accessible label text for the icon. When provided, the icon will have \`role="img"\`.',
     },
     a11yVariant: {
       control: "select",
       options: ["label"],
-      description: "Controls how the accessible text is exposed. \\"label\\" uses aria-label directly; default uses a <title> element with aria-labelledby.",
+      description:
+        'Controls how the accessible text is exposed. "label" uses \`aria-label\` directly; default uses a \`<title>\` element with \`aria-labelledby\`.',
     },
     prominent: {
       control: "boolean",
@@ -129,7 +130,7 @@ const meta: Meta<EvoIconComponentProps> = {
     docs: {
       description: {
         component: \`
-Icon components from the eBay Skin icon set. Each icon is available as an individual component for optimal tree-shaking.
+\\\`EvoIcon\\\` is the base implementation for generated named icon components. Import a named \\\`EvoIcon*\\\` component for normal use, and wrap icon groups in \\\`EvoIconProvider\\\` to share SVG symbols.
 
 ## Usage
 
@@ -152,7 +153,7 @@ Icons are imported individually via subpath exports:
 - \\\`@evo-web/react/icons/<name>\\\` - Import specific icon component
 - Wrap your app with \\\`<EvoIconProvider>\\\` for better SSR performance
 - Use \\\`a11yText\\\` prop for accessible labels
-- Use \\\`a11yVariant="label"\\\` to use aria-label instead of title element
+- Use \\\`a11yVariant="label"\\\` to use \\\`aria-label\\\` instead of a \\\`<title>\\\` element
 
 ## Available Icons
 
@@ -168,6 +169,13 @@ export default meta;
 type Story = StoryObj<EvoIconComponentProps>;
 
 export const AllIcons: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: "The complete set of named \`EvoIcon*\` components.",
+      },
+    },
+  },
   render: (args) => (
     <EvoIconProvider>
       <IconGrid>

@@ -27,10 +27,18 @@ You are migrating `$ARGUMENTS` from `packages/ebayui-core-react/src/$ARGUMENTS/`
 | `EbayButton` (component) | `EvoButton` (component) |
 | `EbayButtonProps` (type) | `EvoButtonProps` (type) |
 
-Keep the existing Storybook category, but write category words in title case and use the PascalCase React component name for the story title:
+Keep the existing Storybook category, write category words in title case, and use the PascalCase `Evo*` component name after the slash. For example, `"buttons/ebay-button"` becomes `"Buttons/EvoButton"`.
 
-- `"buttons/ebay-button"` → `"Buttons/EvoButton"`
-- `"graphics & icons/ebay-avatar"` → `"Graphics & Icons/EvoAvatar"`
+Name story exports according to their semantic purpose:
+
+- `Default` for the baseline scenario.
+- `WithX` when optional content or a subcomponent is added.
+- `CustomX` when the consumer supplies a custom implementation.
+- `AsX` when the component renders as a different semantic form.
+- Name states and modes directly, such as `Controlled`, `Disabled`, and `Indeterminate`.
+- Name contexts directly, such as `InField` and `WrappedParagraph`.
+- Name cardinality directly, such as `SingleMessage` and `MultipleSelection`.
+- Do not add `With` to every non-default story.
 
 ---
 
@@ -264,7 +272,20 @@ Do not guess — get alignment before migrating this pattern.
 
 Source JSDoc is the source of truth for generated declarations and Storybook Autodocs.
 
-Place a JSDoc comment immediately above every exported `Evo*` component function. For overloads, place it above the first overload. Write for someone choosing and using the component, not someone reading its implementation. Start with the user need in plain language, then explain when to use the component. Put native elements, BEM structure, state mechanics, and other implementation details later, and only when they help consumers use the API correctly. Avoid mechanical openings such as “Renders,” “Displays,” or “Wraps.” Cover composition rules and accessibility work left to the consumer when they apply. Each component needs a non-empty `@summary`. The primary component description also needs a concise `## Usage` code block using the public subpath so it renders directly in Autodocs and survives in published declarations. Prettier does not format fenced code inside TypeScript JSDoc; format each example manually as clean, idiomatic TSX, including indentation and line breaks.
+Place a JSDoc comment immediately above every exported `Evo*` component function. For overloads, place it above the first overload. Documentation follows this source hierarchy:
+
+- Playbook is canonical for component purpose and design terminology.
+- Component source and tests are canonical for React behavior.
+- Begin primary component docs with a close adaptation of the matching Playbook introduction.
+- Put React API behavior in a separate paragraph.
+- If Playbook and the React implementation differ, document the difference.
+- Do not invent missing design guidance.
+- Do not use “people” as a default substitute for “users.”
+- Avoid repeating one sentence template across components.
+- Subcomponent documentation should be short and API-specific.
+- In JSDoc prose, wrap exported component names, public types, prop names, literal values, HTML elements, attributes, ARIA attributes, and keyboard keys in inline code. Keep generic design-system terms in plain text. Fenced examples are already code and do not need inline backticks.
+
+Cover composition rules and accessibility work left to the consumer when they apply. Each component needs a non-empty `@summary`. The primary component description also needs a concise `## Usage` code block using the public subpath so it renders directly in Autodocs and survives in published declarations. Prettier does not format fenced code inside TypeScript JSDoc; format each example manually as clean, idiomatic TSX, including indentation and line breaks.
 
 Keep all custom types in `types.ts`. Export them from `index.ts`. Do not inline complex types inside the component file.
 
@@ -504,6 +525,7 @@ Keep component entries concise. App owners read these files, not component autho
 - [ ] Props cross-checked against evo-marko — missing props added, unnecessary props removed or queried
 - [ ] Every exported `Evo*` component has a JSDoc description and non-empty `@summary`; the primary component also has a public-import `## Usage` example
 - [ ] Every custom public prop and public object field has a JSDoc description in `types.ts`
+- [ ] Every API and code identifier in JSDoc prose uses inline code formatting
 - [ ] Duplicate `parameters.docs.description.component` and `argTypes.description` entries removed; only verified docgen fallbacks remain
 - [ ] Production Storybook build confirms JSDoc descriptions appear in generated descriptions and prop tables
 - [ ] `aria-label` prop replaced with `a11yText` if evo-marko uses it (mapped internally to `aria-label`); asked if naming is unclear
@@ -513,6 +535,7 @@ Keep component entries concise. App owners read these files, not component autho
 - [ ] `README.md` created with component name and Storybook documentation link only
 - [ ] Stories in `{name}.stories.tsx` co-located with source
 - [ ] Story title follows the `"Title Case Category/EvoName"` pattern
+- [ ] Story export names follow the semantic naming convention and avoid redundant `WithCustomX` constructions
 - [ ] App migration skill has a linked `components/evo-{name}.md` file and no inline component details in `SKILL.md`
 - [ ] `npm run build -w packages/evo-react` passes
 - [ ] Changeset added in `.changeset/` with `patch` bump for `@evo-web/react` (`@evo-web/react` is still experimental, so all additions use `patch`). Keep the description to one short line — e.g. `Add EvoFoo component.` — no bullet points or implementation details.

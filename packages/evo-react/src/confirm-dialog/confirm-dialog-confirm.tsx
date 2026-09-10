@@ -5,6 +5,12 @@ import { useRefTee } from "../utils/use-ref-tee";
 import { EvoButton } from "../button";
 import type { NativeButtonProps } from "../button/types";
 
+/**
+ * Accepts the decision and closes the dialog. It receives initial focus and
+ * belongs in `EvoConfirmDialogFooter`.
+ *
+ * @summary Confirm dialog acceptance action.
+ */
 export function EvoConfirmDialogConfirm({
   ref,
   onClick,

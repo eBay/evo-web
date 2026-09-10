@@ -2,4 +2,4 @@
 
 ## Documentation
 
-[Storybook](https://opensource.ebay.com/evo-web/react/?path=/docs/building-blocks-evo-chip--documentation)
+[Storybook](https://opensource.ebay.com/evo-web/react/?path=/docs/building-blocks-evochip--documentation)

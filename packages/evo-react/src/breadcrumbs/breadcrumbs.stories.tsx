@@ -2,24 +2,9 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { EvoBreadcrumbs } from "./breadcrumbs";
 
 const meta: Meta<typeof EvoBreadcrumbs> = {
-  title: "navigation & disclosure/evo-breadcrumbs",
+  title: "Navigation & Disclosure/EvoBreadcrumbs",
   component: EvoBreadcrumbs,
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-A breadcrumb navigation component that renders a list of hierarchical links or buttons, displaying the path of the current resource.
 
-## Usage
-
-\`\`\`tsx
-import { EvoBreadcrumbs } from "@evo-web/react/breadcrumbs";
-\`\`\`
-        `,
-      },
-    },
-  },
   argTypes: {
     a11yHeadingText: {
       control: "text",
@@ -51,8 +36,10 @@ import { EvoBreadcrumbs } from "@evo-web/react/breadcrumbs";
 export default meta;
 type Story = StoryObj<typeof EvoBreadcrumbs>;
 
+/** A mixed path contains ancestor links and the current location. */
 export const Default: Story = {};
 
+/** Links throughout the path lead to other locations. */
 export const AllLinks: Story = {
   args: {
     a11yHeadingText: "Custom page navigation",
@@ -75,6 +62,7 @@ export const AllLinks: Story = {
   },
 };
 
+/** Button items keep breadcrumb selection in the current view. */
 export const AllButtons: Story = {
   args: {
     a11yHeadingText: "Custom page navigation",
@@ -88,6 +76,7 @@ export const AllButtons: Story = {
   },
 };
 
+/** A shallow hierarchy contains only the current location. */
 export const SingleItem: Story = {
   args: {
     items: [{ content: "Smart Watch Bands" }],

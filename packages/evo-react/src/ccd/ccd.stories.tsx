@@ -2,24 +2,9 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { EvoCCD } from "./ccd";
 
 const meta: Meta<typeof EvoCCD> = {
-  title: "graphics & icons/evo-ccd",
+  title: "Graphics & Icons/EvoCCD",
   component: EvoCCD,
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-A Charging Capability Display (CCD) component that visualises charger power range and USB PD support.
 
-## Usage
-
-\`\`\`tsx
-import { EvoCCD } from "@evo-web/react/ccd";
-\`\`\`
-                `,
-      },
-    },
-  },
   argTypes: {
     max: {
       control: "text",
@@ -54,6 +39,7 @@ import { EvoCCD } from "@evo-web/react/ccd";
 export default meta;
 type Story = StoryObj<typeof EvoCCD>;
 
+/** The figure combines charger inclusion with a product's power range. */
 export const Default: Story = {
   args: {
     chargerIcon: "included",

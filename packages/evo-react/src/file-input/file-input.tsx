@@ -6,6 +6,33 @@ import { EvoIconUpload24 } from "../icon/icons/upload-24";
 import type { EvoFileInputProps } from "./types";
 import "@ebay/skin/file-input.mjs";
 
+/**
+ * File upload allows users to upload one or more files.
+ *
+ * `EvoFileInput` wraps the native file input and supplies its heading, guidance,
+ * picker label, and drag-over styling. The `<input type="file">` remains
+ * responsible for selection and form behavior, while input attributes and the
+ * ref are forwarded to that control.
+ *
+ * ## Usage
+ *
+ * ```tsx
+ * import {
+ *   EvoFileInput,
+ *   EvoFileInputCTA,
+ *   EvoFileInputDescription,
+ *   EvoFileInputHeader,
+ * } from "@evo-web/react/file-input";
+ *
+ * <EvoFileInput accept="image/*">
+ *   <EvoFileInputHeader>Upload a photo</EvoFileInputHeader>
+ *   <EvoFileInputDescription>PNG or JPG</EvoFileInputDescription>
+ *   <EvoFileInputCTA>Choose file</EvoFileInputCTA>
+ * </EvoFileInput>
+ * ```
+ *
+ * @summary Styled file selection control.
+ */
 export function EvoFileInput({
   children,
   className,

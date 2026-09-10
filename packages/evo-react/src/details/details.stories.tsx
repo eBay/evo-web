@@ -10,7 +10,7 @@ const LOREM =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 
 const meta: Meta<typeof EvoDetails> = {
-  title: "navigation & disclosure/evo-details",
+  title: "Navigation & Disclosure/EvoDetails",
   component: EvoDetails,
   subcomponents: {
     EvoDetailsSummary,
@@ -18,28 +18,7 @@ const meta: Meta<typeof EvoDetails> = {
     EvoDetailsLabel,
     EvoDetailsContent,
   },
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-A disclosure component that shows/hides content using the native \`<details>\` element. Composed using sub-components: \`EvoDetailsSummary\`, \`EvoDetailsLabel\`, \`EvoDetailsLeading\`, and \`EvoDetailsContent\`.
 
-## Usage
-
-\`\`\`tsx
-import {
-  EvoDetails,
-  EvoDetailsSummary,
-  EvoDetailsLabel,
-  EvoDetailsLeading,
-  EvoDetailsContent,
-} from "@evo-web/react/details";
-\`\`\`
-        `,
-      },
-    },
-  },
   argTypes: {
     size: {
       control: "select",
@@ -53,7 +32,7 @@ import {
     },
     open: {
       control: "boolean",
-      description: "Whether the details is open",
+
       table: { defaultValue: { summary: "false" } },
     },
     onToggle: {
@@ -71,6 +50,7 @@ import {
 export default meta;
 type Story = StoryObj<typeof EvoDetails>;
 
+/** Native disclosure keeps secondary information collapsed until opened. */
 export const Default: Story = {
   render: (args) => (
     <EvoDetails {...args}>
@@ -82,7 +62,8 @@ export const Default: Story = {
   ),
 };
 
-export const WithLeading: Story = {
+/** A decorative icon distinguishes the disclosure section. */
+export const WithLeadingIcon: Story = {
   render: (args) => (
     <EvoDetails {...args}>
       <EvoDetailsSummary>

@@ -7,55 +7,31 @@ import { EvoInput } from "./input";
 import "@ebay/skin/field.mjs";
 
 const meta: Meta<typeof EvoInput> = {
-  title: "form input/evo-input",
+  title: "Form Input/EvoInput",
   component: EvoInput,
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-A single-line text input with optional floating label and prefix or postfix content.
 
-## Usage
-
-\`\`\`tsx
-import { EvoInput } from "@evo-web/react/input";
-\`\`\`
-        `,
-      },
-    },
-  },
   argTypes: {
     inputSize: {
       control: "select",
       options: ["regular", "large"],
-      description: "Input size.",
     },
     fluid: {
       control: "boolean",
-      description: "Makes the input fill its container.",
     },
     invalid: {
       control: "boolean",
-      description: "Indicates a field-level error.",
     },
     floatingLabel: {
       control: "text",
-      description: "Text displayed as a floating label.",
     },
     floatingLabelStatic: {
       control: "boolean",
-      description: "Keeps the floating label raised.",
     },
     prefix: {
       control: false,
-      description:
-        "Optional content and icon displayed before the input. Native span attributes are applied to the content element.",
     },
     postfix: {
       control: false,
-      description:
-        "Optional content and icon displayed after the input. Supply buttonProps to make the icon actionable.",
     },
   },
 };
@@ -63,12 +39,14 @@ import { EvoInput } from "@evo-web/react/input";
 export default meta;
 type Story = StoryObj<typeof EvoInput>;
 
+/** A standard single-line input has an accessible name. */
 export const Default: Story = {
   args: {
     "aria-label": "Example input",
   },
 };
 
+/** A separate visible label names the input in its surrounding field. */
 export const WithLabel: Story = {
   render: (args) => (
     <span className="field">
@@ -80,6 +58,7 @@ export const WithLabel: Story = {
   ),
 };
 
+/** A disabled input preserves its field context while preventing edits. */
 export const Disabled: Story = {
   render: (args) => (
     <span className="field">
@@ -94,12 +73,14 @@ export const Disabled: Story = {
   ),
 };
 
+/** A floating label provides the compact field treatment. */
 export const FloatingLabel: Story = {
   args: {
     floatingLabel: "Email address",
   },
 };
 
+/** Floating labels can be combined with browser autocomplete semantics. */
 export const FloatingLabelAutocomplete: Story = {
   render: (args) => (
     <>
@@ -123,6 +104,7 @@ export const FloatingLabelAutocomplete: Story = {
   ),
 };
 
+/** A decorative icon appears before the value. */
 export const WithPrefixIcon: Story = {
   args: {
     "aria-label": "Email",
@@ -133,6 +115,7 @@ export const WithPrefixIcon: Story = {
   },
 };
 
+/** A decorative icon appears after the value. */
 export const WithPostfixIcon: Story = {
   args: {
     "aria-label": "Name",
@@ -143,6 +126,7 @@ export const WithPostfixIcon: Story = {
   },
 };
 
+/** Leading context combines with an actionable postfix icon. */
 export const WithBothIcons: Story = {
   args: {
     "aria-label": "Name",
@@ -160,6 +144,7 @@ export const WithBothIcons: Story = {
   },
 };
 
+/** Text and icons on both sides format the value. */
 export const FullyDecorated: Story = {
   args: {
     "aria-label": "Monthly price",

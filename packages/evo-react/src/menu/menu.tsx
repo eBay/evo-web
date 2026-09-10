@@ -3,6 +3,28 @@ import { MenuProvider } from "./context";
 import type { EvoMenuProps } from "./types";
 import "@ebay/skin/menu.mjs";
 
+/**
+ * Menus present contextually related actions or choices in a temporary list.
+ *
+ * `EvoMenuItems` provides arrow-key and typeahead navigation. Ordinary items
+ * perform commands, radio groups select one value, and checkbox groups select
+ * multiple values. The items region needs an accessible name through
+ * `a11yText` or `a11yLabelId`.
+ *
+ * ## Usage
+ *
+ * ```tsx
+ * import { EvoMenu, EvoMenuItem, EvoMenuItems } from "@evo-web/react/menu";
+ *
+ * <EvoMenu>
+ *   <EvoMenuItems a11yText="Account actions">
+ *     <EvoMenuItem>View profile</EvoMenuItem>
+ *   </EvoMenuItems>
+ * </EvoMenu>
+ * ```
+ *
+ * @summary Keyboard-navigable command menu.
+ */
 export function EvoMenu({
   variant = "none",
   classPrefix,

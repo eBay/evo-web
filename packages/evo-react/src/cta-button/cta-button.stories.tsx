@@ -3,24 +3,9 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { EvoCtaButton } from "./cta-button";
 
 const meta: Meta<typeof EvoCtaButton> = {
-  title: "buttons/evo-cta-button",
+  title: "Buttons/EvoCtaButton",
   component: EvoCtaButton,
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-A call-to-action link with prominent button styling and a directional icon.
 
-## Usage
-
-\`\`\`tsx
-import { EvoCtaButton } from "@evo-web/react/cta-button";
-\`\`\`
-        `,
-      },
-    },
-  },
   argTypes: {
     as: {
       control: false,
@@ -37,11 +22,9 @@ import { EvoCtaButton } from "@evo-web/react/cta-button";
     },
     href: {
       control: "text",
-      description: "The destination URL.",
     },
     children: {
       control: "text",
-      description: "CTA button content.",
     },
   },
   args: {
@@ -53,6 +36,7 @@ import { EvoCtaButton } from "@evo-web/react/cta-button";
 export default meta;
 type Story = StoryObj<typeof EvoCtaButton>;
 
+/** A prominent link marks the destination as the primary next step. */
 export const Default: Story = {};
 
 function Link({
@@ -67,7 +51,8 @@ function Link({
   );
 }
 
-export const WithCustomLinkComponent: Story = {
+/** The `as` prop connects the CTA destination to a client-side link component. */
+export const CustomLink: Story = {
   render: (args) => (
     <EvoCtaButton
       {...args}

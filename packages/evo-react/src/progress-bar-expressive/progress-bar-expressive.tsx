@@ -13,6 +13,32 @@ const MESSAGE_FADE_IN_DURATION = 833;
 const EXPRESSIVE_LINE_COUNT = 12;
 const EMPTY_MESSAGES: readonly ProgressBarExpressiveMessage[] = [];
 
+/**
+ * Expressive progress informs users during longer-than-normal wait times and
+ * can add a branded moment.
+ *
+ * `EvoProgressBarExpressive` presents indeterminate progress and can rotate
+ * through the entries in `messages`. Each message may specify its own
+ * `duration`; the active message is exposed as a status and describes the
+ * progress bar. Reduced-motion preferences avoid the staged message
+ * animation.
+ *
+ * ## Usage
+ *
+ * ```tsx
+ * import { EvoProgressBarExpressive } from "@evo-web/react/progress-bar-expressive";
+ *
+ * <EvoProgressBarExpressive
+ *   a11yText="Processing your order"
+ *   messages={[
+ *     { content: "Checking inventory" },
+ *     { content: "Confirming delivery" },
+ *   ]}
+ * />
+ * ```
+ *
+ * @summary Branded progress for longer wait times.
+ */
 export function EvoProgressBarExpressive({
   a11yText = "Loading...",
   messages: inputMessages,

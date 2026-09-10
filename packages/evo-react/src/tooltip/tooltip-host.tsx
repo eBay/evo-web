@@ -1,10 +1,20 @@
 import classNames from "classnames";
 import type { ElementType } from "react";
 import { useTooltipContext } from "./context";
-import { EvoButton } from "../button";
+import { EvoButton } from "../button/button";
 import type { EvoTooltipHostProps } from "./types";
 import { useRefTee } from "../utils/use-ref-tee";
 
+/**
+ * Provides the element that opens and anchors the tooltip. It defaults to
+ * `EvoButton`; use `as` for another element or component.
+ *
+ * Custom components must forward the supplied `ref` and DOM attributes to the
+ * rendered host. The tooltip automatically applies `aria-expanded` and
+ * `aria-describedby`.
+ *
+ * @summary Tooltip trigger and anchor.
+ */
 export function EvoTooltipHost<T extends ElementType = typeof EvoButton>({
   as,
   children,

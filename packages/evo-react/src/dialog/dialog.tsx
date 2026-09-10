@@ -21,14 +21,12 @@ function supportsClosedBy() {
 }
 
 /**
- * Dialogs focus attention on information or a task without taking people away
- * from the current page. Use them for short, self-contained interactions that
- * need an immediate response.
+ * Standard dialogs focus the user's attention on a specific piece of content or
+ * task.
  *
- * Use `open` with `onOpenChange` when the parent owns the dialog state, or
- * `defaultOpen` when the dialog manages its own state. Build the dialog with
- * its title and region components to keep the content and accessible label
- * connected.
+ * Use `open` with `onOpenChange` for controlled state, or `defaultOpen` for
+ * state managed by the dialog. `EvoDialogTitle` labels the dialog, while
+ * `EvoDialogHeader` and `EvoDialogMain` provide its named regions.
  *
  * ## Usage
  *

@@ -54,19 +54,19 @@ export type EvoMenuItemProps = Omit<
   disabled?: boolean;
   /** Text used for typeahead. Defaults to the rendered text content. */
   textValue?: string;
-  /** Triggered when the item is activated by click, Enter, or Space. */
+  /** Triggered when the item is activated by click, `Enter`, or `Space`. */
   onSelect?: (event: EvoMenuItemSelectEvent) => void;
 };
 
 export type EvoMenuRadioItemProps<Value extends MenuValue = MenuValue> =
   EvoMenuItemProps & {
-    /** Selection value managed by the nearest EvoMenuRadioGroup. */
+    /** Selection value managed by the nearest `EvoMenuRadioGroup`. */
     value: Value;
   };
 
 export type EvoMenuCheckboxItemProps<Value extends MenuValue = MenuValue> =
   EvoMenuItemProps & {
-    /** Selection value managed by the nearest EvoMenuCheckboxGroup. */
+    /** Selection value managed by the nearest `EvoMenuCheckboxGroup`. */
     value: Value;
   };
 
@@ -75,20 +75,20 @@ type MenuGroupProps = {
 };
 
 type ControlledRadioGroupProps<Value extends MenuValue> = {
-  /** Controlled selected value. Pass null when no item is selected. */
+  /** Controlled `selected` value. Pass `null` when no item is selected. */
   selected: Value | null;
-  /** Unavailable when selected controls the group. */
+  /** Unavailable when `selected` controls the group. */
   defaultSelected?: never;
-  /** Triggered when the selected value changes. */
+  /** Triggered when the `selected` value changes. */
   onSelectedChange?: (selected: Value) => void;
 };
 
 type UncontrolledRadioGroupProps<Value extends MenuValue> = {
-  /** Unavailable when defaultSelected initializes an uncontrolled group. */
+  /** Unavailable when `defaultSelected` initializes an uncontrolled group. */
   selected?: never;
-  /** Initial selected value for an uncontrolled group. Pass null or omit when no item is selected. */
+  /** Initial `selected` value for an uncontrolled group. Pass `null` or omit when no item is selected. */
   defaultSelected?: Value | null;
-  /** Triggered when the selected value changes. */
+  /** Triggered when the `selected` value changes. */
   onSelectedChange?: (selected: Value) => void;
 };
 
@@ -97,20 +97,20 @@ export type EvoMenuRadioGroupProps<Value extends MenuValue = MenuValue> =
     (ControlledRadioGroupProps<Value> | UncontrolledRadioGroupProps<Value>);
 
 type ControlledCheckboxGroupProps<Value extends MenuValue> = {
-  /** Controlled selected values. */
+  /** Controlled `selected` values. */
   selected: readonly Value[];
-  /** Unavailable when selected controls the group. */
+  /** Unavailable when `selected` controls the group. */
   defaultSelected?: never;
-  /** Triggered when the selected values change. */
+  /** Triggered when the `selected` values change. */
   onSelectedChange?: (selected: Value[]) => void;
 };
 
 type UncontrolledCheckboxGroupProps<Value extends MenuValue> = {
-  /** Unavailable when defaultSelected initializes an uncontrolled group. */
+  /** Unavailable when `defaultSelected` initializes an uncontrolled group. */
   selected?: never;
-  /** Initial selected values for an uncontrolled group. */
+  /** Initial `selected` values for an uncontrolled group. */
   defaultSelected?: readonly Value[];
-  /** Triggered when the selected values change. */
+  /** Triggered when the `selected` values change. */
   onSelectedChange?: (selected: Value[]) => void;
 };
 

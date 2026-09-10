@@ -1,6 +1,11 @@
 import classNames from "classnames";
 import type { EvoFakeMenuItemsProps } from "./types";
 
+/**
+ * Contains the list of fake menu entries, including items and separators.
+ *
+ * @summary Fake menu item list.
+ */
 export function EvoFakeMenuItems({
   className,
   children,

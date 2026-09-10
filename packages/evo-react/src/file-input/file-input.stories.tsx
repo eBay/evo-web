@@ -5,34 +5,14 @@ import { EvoFileInputDescription } from "./file-input-description";
 import { EvoFileInputCTA } from "./file-input-cta";
 
 const meta: Meta<typeof EvoFileInput> = {
-  title: "form input/evo-file-input",
+  title: "Form Input/EvoFileInput",
   component: EvoFileInput,
   subcomponents: {
     EvoFileInputHeader,
     EvoFileInputDescription,
     EvoFileInputCTA,
   },
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-A styled \`<input type="file">\` composed with named sub-components for the header, description, and call-to-action label.
 
-## Usage
-
-\`\`\`tsx
-import {
-  EvoFileInput,
-  EvoFileInputHeader,
-  EvoFileInputDescription,
-  EvoFileInputCTA,
-} from "@evo-web/react/file-input";
-\`\`\`
-        `,
-      },
-    },
-  },
   argTypes: {
     multiple: {
       control: "boolean",
@@ -43,7 +23,6 @@ import {
     },
     accept: {
       control: "text",
-      description: "Comma-separated list of accepted file types.",
     },
     onChange: {
       action: "change",
@@ -55,12 +34,13 @@ import {
 export default meta;
 type Story = StoryObj<typeof EvoFileInput>;
 
+/** The upload affordance combines guidance with a file-picker action. */
 export const Default: Story = {
   render: (args) => (
     <EvoFileInput {...args}>
-      <EvoFileInputHeader>Upload your files</EvoFileInputHeader>
+      <EvoFileInputHeader>Drag and drop files</EvoFileInputHeader>
       <EvoFileInputDescription>
-        Supported formats: JPG, PNG
+        Accepted formats: JPG and PNG. Maximum size: 10 MB.
       </EvoFileInputDescription>
       <EvoFileInputCTA>Browse files</EvoFileInputCTA>
     </EvoFileInput>

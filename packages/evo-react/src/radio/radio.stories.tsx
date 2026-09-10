@@ -3,24 +3,9 @@ import { EvoRadio } from "./index";
 import "@ebay/skin/field.mjs";
 
 const meta: Meta<typeof EvoRadio> = {
-  title: "form input/evo-radio",
+  title: "Form Input/EvoRadio",
   component: EvoRadio,
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-A native radio control styled with eBay Skin.
 
-## Usage
-
-\`\`\`tsx
-import { EvoRadio } from "@evo-web/react/radio";
-\`\`\`
-        `,
-      },
-    },
-  },
   argTypes: {
     size: {
       control: "select",
@@ -53,6 +38,7 @@ import { EvoRadio } from "@evo-web/react/radio";
 export default meta;
 type Story = StoryObj<typeof EvoRadio>;
 
+/** A visible label names the radio in a standard form. */
 export const Default: Story = {
   render: (args) => (
     <span className="field">
@@ -64,12 +50,14 @@ export const Default: Story = {
   ),
 };
 
+/** An accessible name labels the radio without visible text. */
 export const Isolated: Story = {
   args: {
     "aria-label": "Option",
   },
 };
 
+/** A fieldset groups mutually exclusive choices under a shared legend and name. */
 export const Group: Story = {
   render: (args) => (
     <fieldset>

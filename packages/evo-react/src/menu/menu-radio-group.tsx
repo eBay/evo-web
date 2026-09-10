@@ -2,6 +2,12 @@ import { useCallback, useState } from "react";
 import { RadioGroupProvider } from "./context";
 import type { EvoMenuRadioGroupProps, MenuValue } from "./types";
 
+/**
+ * Manages one selected value for radio menu items. `selected` makes the group
+ * controlled; `defaultSelected` initializes local state.
+ *
+ * @summary Single-selection menu group.
+ */
 export function EvoMenuRadioGroup<Value extends MenuValue>({
   selected: selectedProp,
   defaultSelected = null,

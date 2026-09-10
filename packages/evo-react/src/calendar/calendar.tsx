@@ -36,6 +36,31 @@ const DAY_UPDATE_KB = {
   ArrowUp: -7,
 };
 
+/**
+ * Calendars allow users to choose a date or a range of dates.
+ *
+ * Without `selectMode`, the calendar presents static dates or links; `"day"`
+ * selects one date, and `"range"` selects a start and end date. `selected` and
+ * `defaultSelected` use the documented ISO formats, and disabled dates cannot
+ * be selected.
+ *
+ * ## Usage
+ *
+ * ```tsx
+ * import { EvoCalendar } from "@evo-web/react/calendar";
+ *
+ * <EvoCalendar
+ *   selectMode="day"
+ *   selected={selectedDate}
+ *   onSelectedChange={setSelectedDate}
+ *   a11yNavigateText={(month, direction) =>
+ *     `${direction === "prev" ? "Previous" : "Next"}: ${month}`
+ *   }
+ * />
+ * ```
+ *
+ * @summary Date and date-range selection calendar.
+ */
 export function EvoCalendar(props: StaticCalendarProps): JSX.Element;
 export function EvoCalendar(props: DayCalendarProps): JSX.Element;
 export function EvoCalendar(props: RangeCalendarProps): JSX.Element;

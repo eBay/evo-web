@@ -13,12 +13,11 @@ import { EvoIconChevronDown16 } from "../icon/icons/chevron-down-16";
 import "@ebay/skin/button.mjs";
 
 /**
- * Buttons help people take an action, such as saving changes or continuing
- * through a flow. Use a button for actions and a link for navigation.
+ * Buttons help direct and capture user action and intent.
  *
- * Omit `href` for an action, or provide it when the control should take someone
- * to another location. Use `as` with `href` to integrate with a client-side
- * router. Native button and anchor attributes are also supported.
+ * Without `href`, `EvoButton` renders a `<button>` for an in-page action. With
+ * `href`, it renders an `<a>` for navigation; `as` can adapt that anchor to a
+ * client-side router. Native button and anchor attributes are also supported.
  *
  * ## Usage
  *

@@ -4,6 +4,32 @@ import type { EvoDetailsProps } from "./types";
 import { DetailsProvider } from "./context";
 import "@ebay/skin/details.mjs";
 
+/**
+ * Details let users reveal secondary content on demand.
+ *
+ * `EvoDetails` uses the native `<details>`/`<summary>` disclosure model and is
+ * composed from `EvoDetailsSummary` and `EvoDetailsContent`.
+ *
+ * ## Usage
+ *
+ * ```tsx
+ * import {
+ *   EvoDetails,
+ *   EvoDetailsContent,
+ *   EvoDetailsLabel,
+ *   EvoDetailsSummary,
+ * } from "@evo-web/react/details";
+ *
+ * <EvoDetails>
+ *   <EvoDetailsSummary>
+ *     <EvoDetailsLabel>More information</EvoDetailsLabel>
+ *   </EvoDetailsSummary>
+ *   <EvoDetailsContent>Additional information.</EvoDetailsContent>
+ * </EvoDetails>
+ * ```
+ *
+ * @summary Native expandable disclosure.
+ */
 export function EvoDetails({
   size,
   alignment,

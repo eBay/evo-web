@@ -8,7 +8,7 @@ import { EvoConfirmDialogReject } from "./confirm-dialog-reject";
 import { EvoConfirmDialogConfirm } from "./confirm-dialog-confirm";
 
 const meta: Meta<typeof EvoConfirmDialog> = {
-  title: "dialogs/evo-confirm-dialog",
+  title: "Dialogs/EvoConfirmDialog",
   component: EvoConfirmDialog,
   subcomponents: {
     EvoConfirmDialogHeader,
@@ -17,31 +17,7 @@ const meta: Meta<typeof EvoConfirmDialog> = {
     EvoConfirmDialogReject,
     EvoConfirmDialogConfirm,
   },
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-A confirm dialog that prompts the user to confirm or reject an action. Renders a reject (secondary) and a confirm (primary) button. Escape key closes the dialog without invoking the reject button's click handler.
 
-Uses a native \`<dialog>\` element with \`role="alertdialog"\` and \`closedby="closerequest"\`.
-
-## Usage
-
-\`\`\`tsx
-import {
-  EvoConfirmDialog,
-  EvoConfirmDialogHeader,
-  EvoConfirmDialogMain,
-  EvoConfirmDialogFooter,
-  EvoConfirmDialogReject,
-  EvoConfirmDialogConfirm,
-} from "@evo-web/react/confirm-dialog";
-\`\`\`
-        `,
-      },
-    },
-  },
   argTypes: {
     open: {
       control: "boolean",
@@ -56,14 +32,12 @@ import {
     },
     onCancel: {
       action: "onCancel",
-      description:
-        "Native `cancel` event handler on the `<dialog>` element. Fired when Escape is pressed; the dialog closes via `onOpenChange` without invoking the reject button's `onClick`.",
+
       table: { category: "Events" },
     },
     onAnimationEnd: {
       action: "onAnimationEnd",
-      description:
-        "Native `animationend` event handler on the `<dialog>` element. Used internally to call `dialog.close()` after the closing animation finishes.",
+
       table: { category: "Events" },
     },
   },
@@ -73,6 +47,7 @@ import {
 export default meta;
 type Story = StoryObj<typeof EvoConfirmDialog>;
 
+/** The dialog presents cancel and confirm actions before a destructive change. */
 export const Default: Story = {
   render: (args) => {
     const [open, setOpen] = useState(false);

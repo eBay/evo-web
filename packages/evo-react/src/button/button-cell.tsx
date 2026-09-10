@@ -14,11 +14,8 @@ const classPrefixes: { [key in ButtonType]: string } = {
 };
 
 /**
- * Use a button cell when a button needs custom alignment or more than one
- * content region, such as a label with an icon or secondary value.
- *
- * Place it inside a compatible button component. The cell provides the
- * structure needed to lay out its contents consistently.
+ * Provides a layout cell for custom button content, such as a label with an
+ * icon or secondary value. It belongs inside a compatible button component.
  *
  * @summary Layout for custom button content.
  */

@@ -11,6 +11,30 @@ import type {
 } from "./types";
 import "@ebay/skin/filter-chip.mjs";
 
+/**
+ * Filter chips let users filter a list of content by applying one or more
+ * values.
+ *
+ * The normal `<button>` toggles `selected` state, `variant="menu"` toggles
+ * `open` state, and `href` selects the `<a>` form. `variant="expressive"`
+ * permits image content, and `selected` or `open` state can be controlled or
+ * managed internally.
+ *
+ * ## Usage
+ *
+ * ```tsx
+ * import { EvoFilterChip } from "@evo-web/react/filter-chip";
+ *
+ * <EvoFilterChip
+ *   selected={isSelected}
+ *   onClick={(event, data) => setSelected(data.selected)}
+ * >
+ *   On sale
+ * </EvoFilterChip>
+ * ```
+ *
+ * @summary Filter and menu selection control.
+ */
 export function EvoFilterChip(props: AnchorFilterChipProps): JSX.Element;
 export function EvoFilterChip(props: MenuFilterChipProps): JSX.Element;
 export function EvoFilterChip(props: NativeFilterChipProps): JSX.Element;

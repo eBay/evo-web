@@ -2,24 +2,8 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { EvoProgressBarExpressive } from "./progress-bar-expressive";
 
 const meta: Meta<typeof EvoProgressBarExpressive> = {
-  title: "progress/evo-progress-bar-expressive",
+  title: "Progress/EvoProgressBarExpressive",
   component: EvoProgressBarExpressive,
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-An expressive progress bar that communicates ongoing work with animated messages.
-
-## Usage
-
-\`\`\`tsx
-import { EvoProgressBarExpressive } from "@evo-web/react/progress-bar-expressive";
-\`\`\`
-        `,
-      },
-    },
-  },
   argTypes: {
     a11yText: {
       type: { name: "string", required: true },
@@ -47,14 +31,17 @@ export default meta;
 
 type Story = StoryObj<typeof EvoProgressBarExpressive>;
 
+/** The default expressive progress bar rotates through several status messages. */
 export const Default: Story = {};
 
+/** A single message remains visible while progress continues. */
 export const SingleMessage: Story = {
   args: {
     messages: [{ content: "We're processing your order" }],
   },
 };
 
+/** Custom durations control how long each message remains visible. */
 export const CustomTiming: Story = {
   args: {
     messages: [

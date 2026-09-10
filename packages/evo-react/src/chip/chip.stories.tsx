@@ -4,34 +4,10 @@ import { EvoChipDeleteButton } from "./chip-delete-button";
 import { EvoChipText } from "./chip-text";
 
 const meta: Meta<typeof EvoChip> = {
-  title: "building blocks/evo-chip",
+  title: "Building Blocks/EvoChip",
   component: EvoChip,
   subcomponents: { EvoChipText, EvoChipDeleteButton },
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-A chip that composes text and an optional delete button through named sub-components.
 
-## Usage
-
-\`\`\`tsx
-import {
-  EvoChip,
-  EvoChipDeleteButton,
-  EvoChipText,
-} from "@evo-web/react/chip";
-
-<EvoChip>
-  <EvoChipText>Football</EvoChipText>
-  <EvoChipDeleteButton a11yText="Delete Football" />
-</EvoChip>
-\`\`\`
-        `,
-      },
-    },
-  },
   argTypes: {
     children: {
       control: false,
@@ -42,6 +18,7 @@ import {
 export default meta;
 type Story = StoryObj<typeof EvoChip>;
 
+/** A chip displays a compact value without its own action. */
 export const Default: Story = {
   render: (args) => (
     <EvoChip {...args}>
@@ -50,6 +27,7 @@ export const Default: Story = {
   ),
 };
 
+/** A delete button removes the chip value through the application. */
 export const WithDeleteButton: Story = {
   render: (args) => (
     <EvoChip {...args}>

@@ -88,7 +88,7 @@ export const Default: Story = {
   },
 };
 
-/** Add an image when it provides useful visual context for the dialog. */
+/** An image provides visual context for the dialog. */
 export const Banner: Story = {
   render: (args) => {
     const [open, setOpen] = useState(false);
@@ -178,8 +178,8 @@ export const CustomBanner: Story = {
   },
 };
 
-/** In a multi-step flow, offer a clear way to return to the previous step. */
-export const WithPrevious: Story = {
+/** A multi-step flow includes a way to return to the previous step. */
+export const WithPreviousAction: Story = {
   render: (args) => {
     const [open, setOpen] = useState(false);
     const handleOpenChange = (nextOpen: boolean) => {
