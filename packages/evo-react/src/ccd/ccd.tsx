@@ -5,6 +5,28 @@ import { EvoIconCcdTop } from "../icon/icons/ccd-top";
 import type { EvoCCDProps } from "./types";
 import "@ebay/skin/ccd.mjs";
 
+/**
+ * The common charger directive (CCD) figure communicates whether a charger is
+ * included and shows the power range required by a device.
+ *
+ * `a11yText` describes the complete figure. `min` and `max` control the visible
+ * range, and `secondaryType="usbpd"` adds the USB Power Delivery label.
+ *
+ * ## Usage
+ *
+ * ```tsx
+ * import { EvoCCD } from "@evo-web/react/ccd";
+ *
+ * <EvoCCD
+ *   min="1000"
+ *   max="2000"
+ *   chargerIcon="included"
+ *   a11yText="Charger included. 1000 - 2000 Watts"
+ * />
+ * ```
+ *
+ * @summary Charger capability summary.
+ */
 export function EvoCCD({
   max,
   min,

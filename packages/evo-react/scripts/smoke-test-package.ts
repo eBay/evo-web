@@ -102,16 +102,44 @@ import {
   EvoDialogTitle,
 } from "@evo-web/react/dialog";
 import type { EvoDialogProps } from "@evo-web/react/dialog";
+import { EvoProgressBar } from "@evo-web/react/progress-bar";
+import { EvoProgressBarExpressive } from "@evo-web/react/progress-bar-expressive";
+import type { ProgressBarExpressiveMessage } from "@evo-web/react/progress-bar-expressive";
+import {
+  EvoTooltip,
+  EvoTooltipContent,
+  EvoTooltipHeading,
+  EvoTooltipHost,
+} from "@evo-web/react/tooltip";
+import type { TooltipPlacement } from "@evo-web/react/tooltip";
 import { EvoIconChevronDown16 } from "@evo-web/react/icons/chevron-down-16";
 
 const badgeProps: EvoBadgeProps = { a11yText: "5 unread items", number: 5 };
 const buttonProps: EvoButtonProps = { children: "Save", priority: "primary" };
 const dialogProps: EvoDialogProps = { defaultOpen: false, size: "narrow" };
+const expressiveMessage: ProgressBarExpressiveMessage = {
+  content: "Processing your order",
+};
+const tooltipPlacement: TooltipPlacement = "top";
 
 export const packageSmokeTest = (
   <>
     <EvoBadge {...badgeProps} />
     <EvoButton {...buttonProps} />
+    <EvoProgressBar a11yText="Uploading files" value={50} />
+    <EvoProgressBarExpressive
+      a11yText="Processing your order"
+      messages={[expressiveMessage]}
+    />
+    <EvoTooltip placement={tooltipPlacement}>
+      <EvoTooltipHost as="a" href="/details">
+        Delivery estimate
+      </EvoTooltipHost>
+      <EvoTooltipContent>
+        <EvoTooltipHeading>Estimated delivery</EvoTooltipHeading>
+        Arrives within three business days.
+      </EvoTooltipContent>
+    </EvoTooltip>
     <EvoDialog {...dialogProps}>
       <EvoDialogHeader>
         <EvoDialogTitle>Example dialog</EvoDialogTitle>

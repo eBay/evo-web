@@ -2,24 +2,8 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { EvoProgressBar } from "./progress-bar";
 
 const meta: Meta<typeof EvoProgressBar> = {
-  title: "progress/evo-progress-bar",
+  title: "Progress/EvoProgressBar",
   component: EvoProgressBar,
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-The progress bar gives an immediate, real-time visualisation of the current task completion status.
-
-## Usage
-
-\`\`\`tsx
-import { EvoProgressBar } from "@evo-web/react/progress-bar";
-\`\`\`
-        `,
-      },
-    },
-  },
   argTypes: {
     value: {
       control: "number",
@@ -27,7 +11,7 @@ import { EvoProgressBar } from "@evo-web/react/progress-bar";
     },
     max: {
       control: "number",
-      description: "Maximum progress value. Defaults to 100.",
+      description: "Maximum progress value. Defaults to `100`.",
     },
     fluid: {
       control: "boolean",
@@ -49,4 +33,12 @@ export default meta;
 
 type Story = StoryObj<typeof EvoProgressBar>;
 
+/** A determinate progress bar shows the task halfway to completion. */
 export const Default: Story = {};
+
+/** An indeterminate progress bar indicates activity without a completion percentage. */
+export const Indeterminate: Story = {
+  args: {
+    value: undefined,
+  },
+};

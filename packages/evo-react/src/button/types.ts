@@ -46,7 +46,7 @@ export type AnchorButtonProps = ComponentProps<"a"> &
      * a client-side router. Only applies when `href` is provided.
      */
     as?: ComponentType<ComponentProps<"a">>;
-    /** Called after `onKeyDown` when the enabled anchor receives Escape. */
+    /** Called after `onKeyDown` when the enabled anchor receives `Escape`. */
     onEscape?: (event: KeyboardEvent<HTMLAnchorElement>) => void;
     /** Removes `href` from the rendered anchor to prevent navigation. */
     disabled?: boolean;
@@ -58,7 +58,7 @@ export type NativeButtonProps = ComponentProps<"button"> &
     href?: never;
     /** Anchor-only prop. Provide `href` to use a custom link component. */
     as?: never;
-    /** Called after `onKeyDown` when the enabled button receives Escape. */
+    /** Called after `onKeyDown` when the enabled button receives `Escape`. */
     onEscape?: (event: KeyboardEvent<HTMLButtonElement>) => void;
   };
 

@@ -6,24 +6,8 @@ import { countCharacters } from "./count-characters";
 import "@ebay/skin/field.mjs";
 
 const meta: Meta<typeof EvoCharacterCount> = {
-  title: "building blocks/evo-character-count",
+  title: "Building Blocks/EvoCharacterCount",
   component: EvoCharacterCount,
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-Displays the number of grapheme characters in text relative to a maximum.
-
-## Usage
-
-\`\`\`tsx
-import { EvoCharacterCount } from "@evo-web/react/character-count";
-\`\`\`
-        `,
-      },
-    },
-  },
   argTypes: {
     text: {
       control: "text",
@@ -43,7 +27,6 @@ import { EvoCharacterCount } from "@evo-web/react/character-count";
     },
     children: {
       control: false,
-      description: "Custom content that replaces the default count display.",
     },
   },
   args: {
@@ -56,8 +39,10 @@ import { EvoCharacterCount } from "@evo-web/react/character-count";
 export default meta;
 type Story = StoryObj<typeof EvoCharacterCount>;
 
+/** A calculated count compares text with a configured maximum. */
 export const Default: Story = {};
 
+/** The `inputRef` target receives `aria-live="polite"` when the count exceeds the maximum. */
 export const InField: Story = {
   args: {
     text: "",
@@ -104,6 +89,7 @@ export const InField: Story = {
 const customText = "Custom";
 const customCount = countCharacters(customText);
 
+/** Custom content replaces the default count wording. */
 export const CustomContent: Story = {
   args: {
     text: undefined,

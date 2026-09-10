@@ -10,6 +10,12 @@ import {
 } from "./context";
 import type { EvoTabProps, TabId } from "./types";
 
+/**
+ * Acts as one tab trigger and references its panel through a matching `id`.
+ * Set `disabled` when the section is temporarily unavailable.
+ *
+ * @summary Interactive tab trigger.
+ */
 export function EvoTab<Id extends TabId>({
   id,
   disabled = false,

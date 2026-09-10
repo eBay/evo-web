@@ -27,10 +27,10 @@ export default meta;
 
 type Story = StoryObj<typeof EvoBadge>;
 
-/** Use a count when it helps people understand how many items need attention. */
+/** A numeric badge indicates how many items need attention. */
 export const Default: Story = {};
 
-/** Use an empty badge to signal new activity when a count is not useful. */
+/** An empty badge signals new activity without displaying a count. */
 export const Empty: Story = {
   args: {
     number: undefined,

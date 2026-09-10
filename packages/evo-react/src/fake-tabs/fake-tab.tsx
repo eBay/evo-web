@@ -2,6 +2,12 @@ import classNames from "classnames";
 import { useFakeTabsContext } from "./context";
 import type { EvoFakeTabProps } from "./types";
 
+/**
+ * Represents one destination in a fake tab strip. Its `id` is compared with the
+ * parent `selected` value; omitting `href` marks the tab unavailable.
+ *
+ * @summary URL-based tab link.
+ */
 export function EvoFakeTab({
   id,
   href,

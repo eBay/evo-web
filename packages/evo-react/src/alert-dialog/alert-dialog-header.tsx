@@ -2,6 +2,12 @@ import classNames from "classnames";
 import type { EvoAlertDialogHeaderProps } from "./types";
 import { useAlertDialogContext } from "./context";
 
+/**
+ * Names the alert dialog. Include it in `EvoAlertDialog` so its `id` supplies
+ * the dialog's accessible name.
+ *
+ * @summary Alert dialog heading.
+ */
 export function EvoAlertDialogHeader({
   as: As = "h2",
   id,

@@ -7,6 +7,38 @@ import { useRefTee } from "../utils/use-ref-tee";
 import { useControllableId } from "../utils/use-controllable-id";
 import "@ebay/skin/dialog.mjs";
 
+/**
+ * Confirmation dialogs ask users to confirm a potentially destructive action,
+ * make a high-impact decision, or accept or reject terms.
+ *
+ * `EvoConfirmDialog` supports confirm and reject actions with controlled or
+ * uncontrolled state. `Escape` requests cancellation without invoking the reject
+ * button's click handler, and the dialog is composed from named regions.
+ *
+ * ## Usage
+ *
+ * ```tsx
+ * import {
+ *   EvoConfirmDialog,
+ *   EvoConfirmDialogConfirm,
+ *   EvoConfirmDialogFooter,
+ *   EvoConfirmDialogHeader,
+ *   EvoConfirmDialogMain,
+ *   EvoConfirmDialogReject,
+ * } from "@evo-web/react/confirm-dialog";
+ *
+ * <EvoConfirmDialog open={open} onOpenChange={setOpen}>
+ *   <EvoConfirmDialogHeader>Delete this address?</EvoConfirmDialogHeader>
+ *   <EvoConfirmDialogMain>This cannot be undone.</EvoConfirmDialogMain>
+ *   <EvoConfirmDialogFooter>
+ *     <EvoConfirmDialogReject>Cancel</EvoConfirmDialogReject>
+ *     <EvoConfirmDialogConfirm>Delete</EvoConfirmDialogConfirm>
+ *   </EvoConfirmDialogFooter>
+ * </EvoConfirmDialog>
+ * ```
+ *
+ * @summary Confirm-or-reject dialog.
+ */
 export function EvoConfirmDialog({
   open,
   defaultOpen = false,

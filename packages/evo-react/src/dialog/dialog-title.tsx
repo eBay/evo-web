@@ -3,7 +3,7 @@ import { useDialogContext } from "./context";
 import type { EvoDialogTitleProps } from "./types";
 
 /**
- * Every dialog needs a title that clearly describes its purpose.
+ * Names the purpose of the dialog.
  *
  * The title automatically labels the dialog. Use `as` to choose the heading
  * level that fits the page hierarchy, and provide `id` only when another part

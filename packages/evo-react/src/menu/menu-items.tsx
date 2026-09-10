@@ -6,6 +6,12 @@ import { useRefTee } from "../utils/use-ref-tee";
 import { useRovingTabIndex } from "../utils/use-roving-tab-index";
 import { useTypeahead } from "../utils/use-typeahead";
 
+/**
+ * Owns the menu role, typeahead, and roving keyboard navigation. The items
+ * region requires an accessible name.
+ *
+ * @summary Menu item navigation region.
+ */
 export function EvoMenuItems({
   a11yText,
   a11yLabelId,

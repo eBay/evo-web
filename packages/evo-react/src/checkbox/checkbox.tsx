@@ -6,6 +6,26 @@ import { EvoIconCheckboxUnchecked24 } from "../icon/icons/checkbox-unchecked-24"
 import type { EvoCheckboxProps } from "./types";
 import "@ebay/skin/checkbox.mjs";
 
+/**
+ * Checkboxes allow the user to select multiple options from a list or a single
+ * yes/no option.
+ *
+ * `EvoCheckbox` accepts native checkbox props and supports `size="large"`. Provide
+ * a visible label or an accessible name for the `<input type="checkbox">`.
+ *
+ * ## Usage
+ *
+ * ```tsx
+ * import { EvoCheckbox } from "@evo-web/react/checkbox";
+ *
+ * <label>
+ *   <EvoCheckbox name="updates" />
+ *   Send me updates
+ * </label>
+ * ```
+ *
+ * @summary Native checkbox with Skin styling.
+ */
 export function EvoCheckbox({
   className,
   ref,

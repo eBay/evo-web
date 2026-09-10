@@ -10,7 +10,7 @@ const LOREM =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 
 const meta: Meta<typeof EvoAlertDialog> = {
-  title: "dialogs/evo-alert-dialog",
+  title: "Dialogs/EvoAlertDialog",
   component: EvoAlertDialog,
   subcomponents: {
     EvoAlertDialogHeader,
@@ -18,30 +18,7 @@ const meta: Meta<typeof EvoAlertDialog> = {
     EvoAlertDialogFooter,
     EvoAlertDialogConfirm,
   },
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-An alert dialog that forces the user to acknowledge a message before continuing. The dialog can only be dismissed by clicking the confirm button — Escape and backdrop clicks are blocked.
 
-Uses a native \`<dialog>\` element with \`role="alertdialog"\` and \`closedby="none"\`.
-
-## Usage
-
-\`\`\`tsx
-import {
-  EvoAlertDialog,
-  EvoAlertDialogHeader,
-  EvoAlertDialogMain,
-  EvoAlertDialogFooter,
-  EvoAlertDialogConfirm,
-} from "@evo-web/react/alert-dialog";
-\`\`\`
-        `,
-      },
-    },
-  },
   argTypes: {
     open: {
       control: "boolean",
@@ -56,14 +33,12 @@ import {
     },
     onCancel: {
       action: "onCancel",
-      description:
-        "Native `cancel` event handler on the `<dialog>` element. The default Escape-key behaviour is always prevented.",
+
       table: { category: "Events" },
     },
     onAnimationEnd: {
       action: "onAnimationEnd",
-      description:
-        "Native `animationend` event handler on the `<dialog>` element. Used internally to call `dialog.close()` after the closing animation finishes.",
+
       table: { category: "Events" },
     },
   },
@@ -73,6 +48,7 @@ import {
 export default meta;
 type Story = StoryObj<typeof EvoAlertDialog>;
 
+/** The alert dialog requires acknowledgement before returning to the page. */
 export const Default: Story = {
   render: (args) => {
     const [open, setOpen] = useState(false);

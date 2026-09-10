@@ -33,6 +33,43 @@ function getNextOpenValue(
   return currentOpen === id ? undefined : currentOpen;
 }
 
+/**
+ * An accordion is a vertically stacked set of sections that users can expand
+ * or collapse to reveal related content.
+ *
+ * A `string` `open` value keeps one section open, while a `string[]` value allows
+ * multiple sections to remain open. Localize the `a11yText` value, which
+ * defaults to `"accordion"`.
+ *
+ * ## Usage
+ *
+ * ```tsx
+ * import {
+ *   EvoAccordion,
+ *   EvoAccordionContent,
+ *   EvoAccordionItem,
+ *   EvoAccordionLabel,
+ *   EvoAccordionSummary,
+ * } from "@evo-web/react/accordion";
+ *
+ * <EvoAccordion>
+ *   <EvoAccordionItem id="shipping">
+ *     <EvoAccordionSummary>
+ *       <EvoAccordionLabel>Shipping</EvoAccordionLabel>
+ *     </EvoAccordionSummary>
+ *     <EvoAccordionContent>Shipping details.</EvoAccordionContent>
+ *   </EvoAccordionItem>
+ *   <EvoAccordionItem id="returns">
+ *     <EvoAccordionSummary>
+ *       <EvoAccordionLabel>Returns</EvoAccordionLabel>
+ *     </EvoAccordionSummary>
+ *     <EvoAccordionContent>Return details.</EvoAccordionContent>
+ *   </EvoAccordionItem>
+ * </EvoAccordion>
+ * ```
+ *
+ * @summary Expandable group of related sections.
+ */
 export function EvoAccordion(props: MultipleAccordionProps): JSX.Element;
 export function EvoAccordion(props: SingleAccordionProps): JSX.Element;
 export function EvoAccordion(props: EvoAccordionProps) {

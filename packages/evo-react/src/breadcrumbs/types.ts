@@ -29,5 +29,6 @@ export type EvoBreadcrumbsProps = Omit<ComponentProps<"nav">, "role"> & {
   a11yHeadingTag?: keyof HTMLElementTagNameMap;
   /** List of items rendered as anchors when `href` is present or buttons otherwise. */
   items: BreadcrumbItem[] | undefined;
+  /** Reserved for overflow-menu labeling; `EvoBreadcrumbs` does not currently render the overflow control. */
   a11yMenuButtonText?: string;
 };

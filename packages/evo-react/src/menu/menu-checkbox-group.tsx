@@ -2,6 +2,12 @@ import { useCallback, useState } from "react";
 import { CheckboxGroupProvider } from "./context";
 import type { EvoMenuCheckboxGroupProps, MenuValue } from "./types";
 
+/**
+ * Manages an array of selected values for checkbox menu items. `selected`
+ * makes the group controlled; `defaultSelected` initializes local state.
+ *
+ * @summary Multi-selection menu group.
+ */
 export function EvoMenuCheckboxGroup<Value extends MenuValue>({
   selected: selectedProp,
   defaultSelected = [],

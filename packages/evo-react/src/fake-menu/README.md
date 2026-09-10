@@ -2,4 +2,4 @@
 
 ## Documentation
 
-[Storybook](https://opensource.ebay.com/evo-web/react/?path=/docs/building-blocks-evo-fake-menu--documentation)
+[Storybook](https://opensource.ebay.com/evo-web/react/?path=/docs/building-blocks-evofakemenu--documentation)

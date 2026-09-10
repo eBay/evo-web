@@ -2,24 +2,9 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { EvoEek } from "./eek";
 
 const meta: Meta<typeof EvoEek> = {
-  title: "graphics & icons/evo-eek",
+  title: "Graphics & Icons/EvoEek",
   component: EvoEek,
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-An energy efficiency class graphic that displays a rating within its supported range.
 
-## Usage
-
-\`\`\`tsx
-import { EvoEek } from "@evo-web/react/eek";
-\`\`\`
-        `,
-      },
-    },
-  },
   argTypes: {
     a11yText: {
       type: { name: "string", required: true },
@@ -51,4 +36,5 @@ export default meta;
 
 type Story = StoryObj<typeof EvoEek>;
 
+/** The current energy rating appears against its supported range. */
 export const Default: Story = {};

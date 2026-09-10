@@ -2,6 +2,7 @@ import type { ComponentProps, ElementType, ReactNode } from "react";
 import type { NativeButtonProps } from "../button/types";
 
 export type EvoConfirmDialogHeaderProps = ComponentProps<"h2"> & {
+  /** Heading element used for the confirmation title. Defaults to `h2`. */
   as?: ElementType;
 };
 

@@ -4,7 +4,7 @@ import { EvoIconChevronLeft16 } from "../icon/icons/chevron-left-16";
 import type { EvoDialogPreviousProps } from "./types";
 
 /**
- * A previous button lets people move back within a multi-step dialog.
+ * Moves back within a multi-step dialog.
  *
  * Provide localized `a11yText` that identifies the destination or action. The
  * application owns the navigation behavior.

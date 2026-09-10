@@ -1,6 +1,12 @@
 import classNames from "classnames";
 import type { EvoAlertDialogFooterProps } from "./types";
 
+/**
+ * Contains the confirmation action for an alert dialog. The confirm control
+ * belongs in this region.
+ *
+ * @summary Alert dialog action region.
+ */
 export function EvoAlertDialogFooter({
   className,
   children,

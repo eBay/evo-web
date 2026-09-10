@@ -16,7 +16,7 @@ const LOREM =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
 
 const meta: Meta<typeof EvoAccordion> = {
-  title: "navigation & disclosure/evo-accordion",
+  title: "Navigation & Disclosure/EvoAccordion",
   component: EvoAccordion,
   subcomponents: {
     EvoAccordionItem,
@@ -25,28 +25,7 @@ const meta: Meta<typeof EvoAccordion> = {
     EvoAccordionLabel,
     EvoAccordionContent,
   },
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-A grouped disclosure component that coordinates open items by id.
 
-## Usage
-
-\`\`\`tsx
-import {
-  EvoAccordion,
-  EvoAccordionItem,
-  EvoAccordionSummary,
-  EvoAccordionLabel,
-  EvoAccordionContent,
-} from "@evo-web/react/accordion";
-\`\`\`
-        `,
-      },
-    },
-  },
   argTypes: {
     size: {
       control: "select",
@@ -110,8 +89,10 @@ import {
 export default meta;
 type Story = StoryObj<typeof EvoAccordion>;
 
+/** The default accordion keeps one section open at a time. */
 export const Default: Story = {};
 
+/** Multiple selection allows several sections to remain open. */
 export const MultipleSelection: Story = {
   render(args) {
     return (
@@ -145,6 +126,7 @@ export const MultipleSelection: Story = {
   },
 };
 
+/** Controlled state synchronizes the open item with the parent. */
 export const Controlled: Story = {
   args: {
     open: "0",
@@ -208,6 +190,7 @@ export const Controlled: Story = {
   },
 };
 
+/** Leading icons provide a decorative cue for each section. */
 export const WithLeadingIcon: Story = {
   render(args) {
     return (

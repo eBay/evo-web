@@ -3,25 +3,10 @@ import { EvoInfotip } from "./infotip";
 import { EvoInfotipHeading } from "./infotip-heading";
 
 const meta: Meta<typeof EvoInfotip> = {
-  title: "notices & tips/evo-infotip",
+  title: "Notices & Tips/EvoInfotip",
   component: EvoInfotip,
   subcomponents: { EvoInfotipHeading },
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-An infotip provides additional information through a clickable information icon.
 
-## Usage
-
-\`\`\`tsx
-import { EvoInfotip, EvoInfotipHeading } from "@evo-web/react/infotip";
-\`\`\`
-        `,
-      },
-    },
-  },
   argTypes: {
     open: {
       control: "boolean",
@@ -90,6 +75,7 @@ import { EvoInfotip, EvoInfotipHeading } from "@evo-web/react/infotip";
 export default meta;
 type Story = StoryObj<typeof EvoInfotip>;
 
+/** A clickable help trigger reveals supporting information. */
 export const Default: Story = {
   render: (args) => (
     <EvoInfotip {...args}>
@@ -99,6 +85,7 @@ export const Default: Story = {
   ),
 };
 
+/** The overlay shifts to stay aligned with a trigger inside wrapping text. */
 export const WrappedParagraph: Story = {
   render: (args) => (
     <div style={{ width: 240 }}>

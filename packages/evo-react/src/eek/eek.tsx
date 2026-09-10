@@ -35,6 +35,28 @@ function getRatingPosition(max: string, min: string, rating: string) {
   return Math.min(position, 7);
 }
 
+/**
+ * The EEK rating and range communicates a product's energy efficiency class.
+ *
+ * The figure is required for relevant product categories. `max`, `min`, and
+ * `rating` must form a supported range, and `a11yText` supplies the localized
+ * figure description.
+ *
+ * ## Usage
+ *
+ * ```tsx
+ * import { EvoEek } from "@evo-web/react/eek";
+ *
+ * <EvoEek
+ *   max="A+++"
+ *   min="E"
+ *   rating="C"
+ *   a11yText="Energy rating C. Range A+++ to E."
+ * />
+ * ```
+ *
+ * @summary Energy efficiency rating graphic.
+ */
 export function EvoEek({
   a11yText,
   max,
