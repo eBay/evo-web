@@ -1,15 +1,18 @@
 .floating-label {
     position: relative;
 }
+
 span.floating-label {
     display: inline-block;
 }
+
 div.floating-label {
     display: block;
 }
+
 label.floating-label__label {
-    background-color: initial;
     color: var(--floating-label-color, var(--color-foreground-secondary));
+    background-color: initial;
     display: inline-block;
     left: 16px;
     overflow: hidden;
@@ -20,9 +23,10 @@ label.floating-label__label {
     transform: scale(0.75) translateY(2px);
     transform-origin: left;
     white-space: nowrap;
-    width: calc(133.33333% - var(--spacing-200) * 2 / 0.75 - 2.66667px);
+    width: calc(1.33333 * (100% - 2px - 2 * var(--spacing-200)));
     z-index: 1;
 }
+
 .floating-label--opaque label.floating-label__label {
     background-color: var(
         --floating-label-background-color,
@@ -32,55 +36,66 @@ label.floating-label__label {
     top: -3px;
     width: calc(100% - 40px);
 }
+
 label.floating-label__label--focus {
     color: var(--floating-label-focus-color, var(--color-foreground-primary));
 }
+
 .floating-label--opaque label.floating-label__label--focus {
     background-color: var(
         --floating-label-focus-background-color,
         var(--color-background-primary)
     );
 }
+
 .floating-label--large label.floating-label__label {
     transform: scale(0.75) translateY(3px);
 }
+
 label.floating-label__label--inline {
     font-size: var(--font-size-body);
     transform: translateY(12px);
     width: calc(100% - 40px);
 }
+
 .floating-label--large label.floating-label__label--inline {
     transform: translateY(16px);
 }
+
 label.floating-label__label--animate {
     transition:
         transform 0.3s ease,
         width 0.3s ease,
         bottom 0.3s ease;
 }
+
 label.floating-label__label--disabled {
     color: var(
         --floating-label-disabled-color,
         var(--color-foreground-disabled)
     );
 }
+
 .floating-label--opaque label.floating-label__label--disabled {
     background-color: var(
         --floating-label-disabled-background-color,
         var(--color-background-secondary)
     );
 }
+
 label.floating-label__label--invalid {
     color: var(
         --floating-label-invalid-color,
         var(--color-foreground-attention)
     );
 }
+
 .floating-label .combobox__control > input,
 .floating-label .textbox__control {
     padding-bottom: 2px;
     padding-top: 18px;
 }
+
 .floating-label--large .combobox__control > input,
 .floating-label--large .textbox__control {
     padding-bottom: 5px;
@@ -89,6 +104,7 @@ label.floating-label__label--invalid {
 .floating-label .select select {
     line-height: 52px !important;
 }
+
 .floating-label .select--large select {
     line-height: 60px !important;
 }
@@ -107,12 +123,14 @@ label.floating-label__label.floating-label__label--inline:has(
     ) {
     transform: scale(0.75) translateY(2px);
 }
+
 .floating-label--large
     label.floating-label__label.floating-label__label--inline:has(
         + .textbox > :-webkit-autofill
     ) {
     transform: scale(0.75) translateY(3px);
 }
+
 .floating-label--large
     label.floating-label__label.floating-label__label--inline:has(
         + .textbox > :autofill

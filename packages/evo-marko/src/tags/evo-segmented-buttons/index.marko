@@ -19,12 +19,13 @@ export interface Input<Selected extends string | number>
   ...htmlInput
 }=input>
 
-<const/size=(inputSize && validSizes.includes(inputSize) ? inputSize : null)>
+<const/size=inputSize && validSizes.includes(inputSize) ? inputSize : null>
 <let/selected:=input.selected>
 
 <div
   class=["segmented-buttons", size && `segmented-buttons--${size}`, inputClass]
-  ...htmlInput>
+  ...htmlInput
+>
   <ul>
     <for|button, i| of=buttons>
       <const/{
@@ -43,7 +44,8 @@ export interface Input<Selected extends string | number>
             selected = name as Selected;
             (onClick || null)?.(e, target);
           }
-          aria-current=isSelected && "true">
+          aria-current=isSelected && "true"
+        >
           <if=icon>
             <span class="segmented-buttons__button-cell">
               <${icon}/>

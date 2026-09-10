@@ -3,7 +3,7 @@ import { composeStories } from "@storybook/marko";
 import { snapshotHTML } from "../../../common/test-utils/snapshots";
 import * as stories from "../card.stories"; // import all stories from the stories file
 
-const { Default, Anchor, Button, Minimum } = composeStories(stories);
+const { Default, Anchor, Button, Video, Minimum } = composeStories(stories);
 
 describe("evo-card", () => {
   it("renders default", async () => {
@@ -20,6 +20,10 @@ describe("evo-card", () => {
 
   it("renders button", async () => {
     await snapshotHTML(Button);
+  });
+
+  it("renders video", async () => {
+    await snapshotHTML(Video);
   });
 
   it("renders minimum", async () => {

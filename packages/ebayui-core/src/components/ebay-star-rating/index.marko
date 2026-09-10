@@ -7,19 +7,15 @@ static {
     }
 }
 export interface Input extends WithNormalizedProps<StarRatingInput> {}
-$ const {
-    class: inputClass,
-    value,
-    a11yText,
-    ...htmlInput
-} = input;
+$ const { class: inputClass, value, a11yText, ...htmlInput } = input;
 
 <div
     role="img"
     aria-label=a11yText
     class=["star-rating", inputClass]
     data-stars=value
-    ...processHtmlAttributes(htmlInput)>
+    ...processHtmlAttributes(htmlInput)
+>
     <for|i| from=1 to=5>
         <ebay-star-dynamic-icon class="star-rating__icon"/>
     </for>

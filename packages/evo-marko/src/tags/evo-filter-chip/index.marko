@@ -30,9 +30,7 @@ export interface Input
 <const/isAnchor=href && a11ySelectedText && variant !== "menu">
 <const/expressiveImage=image as Marko.HTML.Img>
 <let/mounted=false>
-<script>
-  mounted = true;
-</script>
+<script>mounted = true;</script>
 <let/selected:=input.selected>
 <let/open:=input.open>
 
@@ -41,14 +39,16 @@ export interface Input
     <a
       ...input as Marko.HTML.A
       class=[input.class, selected && "filter-chip--selected"]
-      href=!disabled && href/>
+      href=!disabled && href
+    />
   </if>
   <else>
     <button
       ...input as Marko.HTML.Button
       disabled=disabled
       type="button"
-      aria-selected=!isMenu && (selected ? "true" : "false")/>
+      aria-selected=!isMenu && (selected ? "true" : "false")
+    />
   </else>
 </define>
 
@@ -61,7 +61,7 @@ export interface Input
     (isAnchor || isMenu) && selected && "filter-chip--selected",
     inputClass,
   ]
-  href=(!disabled ? href : undefined)
+  href=!disabled ? href : undefined
   aria-expanded=variant === "menu" && (open ? "true" : "false")
   onClick(e: PointerEvent, target: HTMLButtonElement) {
     if (!disabled) {
@@ -72,12 +72,10 @@ export interface Input
       }
       (input.onClick || null)?.(e as any, target);
     }
-  }>
-
+  }
+>
   <if=variant === "expressive">
-    <span class="filter-chip__media">
-      <img ...expressiveImage>
-    </span>
+    <span class="filter-chip__media"><img ...expressiveImage></span>
   </if>
   <else if=variant === "default">
     <${icon}/>
@@ -86,9 +84,7 @@ export interface Input
   <span class="filter-chip__text">
     <${content}/>
     <if=selected && (isAnchor || isMenu)>
-      <span class="clipped">
-        ${" "}- ${a11ySelectedText}
-      </span>
+      <span class="clipped">${" "}- ${a11ySelectedText}</span>
     </if>
   </span>
   <if=variant === "menu">

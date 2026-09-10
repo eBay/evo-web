@@ -76,7 +76,8 @@ export interface Input extends Marko.HTML.Span {
   strategy="absolute"
   host=$host
   overlay=$overlay
-  arrow=$arrow/>
+  arrow=$arrow
+/>
 
 <span ...htmlInput class=["infotip", inputClass]>
   <evo-icon-button
@@ -88,7 +89,8 @@ export interface Input extends Marko.HTML.Span {
     aria-expanded=expander.ariaExpanded
     onClick() {
       open = !open;
-    }>
+    }
+  >
     <if=icon>
       <${icon}/>
     </if>
@@ -101,7 +103,8 @@ export interface Input extends Marko.HTML.Span {
     class="infotip__overlay"
     style=expander.floatingStyles
     role="tooltip"
-    aria-labelledby=heading && headingId>
+    aria-labelledby=heading && headingId
+  >
     <span id=arrowId class="infotip__pointer" style=expander.arrowStyles/>
     <span class="infotip__mask">
       <span class="infotip__cell">
@@ -115,7 +118,8 @@ export interface Input extends Marko.HTML.Span {
             <${headingAs}
               ...htmlHeading
               class=["infotip__heading", headingClass]
-              id=headingId/>
+              id=headingId
+            />
           </if>
           <${input.content}/>
         </span>
@@ -126,7 +130,8 @@ export interface Input extends Marko.HTML.Span {
           onClick() {
             open = false;
             $host().focus();
-          }>
+          }
+        >
           <evo-icon-close-16/>
         </evo-icon-button>
       </span>

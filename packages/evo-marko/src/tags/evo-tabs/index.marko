@@ -26,7 +26,8 @@ export interface Input extends Marko.HTML.Div {
 <evo-roving-tabindex/rovingTabIndex
   autoSelect=activation === "auto"
   nodeList=$item
-  selected:=index/>
+  selected:=index
+/>
 
 <div class=["tabs", size === "large" && "tabs--large", inputClass] ...htmlInput>
   <div/tabListEl role="tablist" class="tabs__items">
@@ -43,12 +44,13 @@ export interface Input extends Marko.HTML.Div {
           (rovingTabIndex.onKeyDown || null)?.(e);
           (tab.onKeyDown || null)?.(e, target);
         }
-        tabindex=(rovingTabIndex.isFocused(i) ? 0 : -1)
+        tabindex=rovingTabIndex.isFocused(i) ? 0 : -1
         id=`${tabId}-${i}`
         aria-controls=`${tabpanelId}-${i}`
         role="tab"
         aria-selected=isSelected && "true"
-        class=[tab.class, "tabs__item"]>
+        class=[tab.class, "tabs__item"]
+      >
         <span>
           <${tab.content}/>
         </span>
@@ -65,7 +67,8 @@ export interface Input extends Marko.HTML.Div {
         aria-labelledby=`${tabId}-${i}`
         role="tabpanel"
         class=[panel.class, "tabs__panel"]
-        hidden=!isSelected>
+        hidden=!isSelected
+      >
         <div class="tabs__cell">
           <div>
             <${panel.content}/>

@@ -11,11 +11,12 @@ export interface Input extends Omit<Marko.HTML.Span, "content"> {
   inputRef?: () => HTMLInputElement | HTMLTextAreaElement;
   content?: Marko.Body<[count: number]>;
 }
-static const segmenter = (
-  "Segmenter" in Intl
-    ? new (Intl as any).Segmenter(undefined, { granularity: "grapheme" })
-    : null
-);
+static {
+  const segmenter =
+    "Segmenter" in Intl
+      ? new (Intl as any).Segmenter(undefined, { granularity: "grapheme" })
+      : null;
+}
 static function countGraphemes(value: string): number {
   if (segmenter) {
     return [...segmenter.segment(value)].length;
@@ -33,9 +34,7 @@ static function countGraphemes(value: string): number {
   ...htmlInput
 }=input>
 
-<const/count=(
-  inputCount !== undefined ? inputCount : countGraphemes(text ?? "")
-)>
+<const/count=inputCount !== undefined ? inputCount : countGraphemes(text ?? "")>
 <const/ariaLive=(count > max ? "polite" : "off")>
 
 <lifecycle<{
@@ -59,7 +58,8 @@ static function countGraphemes(value: string): number {
         this.inputElement.setAttribute("aria-live", this.previousAriaLive);
       }
     }
-  }>
+  }
+>
 
 <span ...htmlInput>
   <if=content>
@@ -67,11 +67,6 @@ static function countGraphemes(value: string): number {
   </if>
   <else>
     ${count}/${max}
-    <if=a11yText>
-      ${" "}
-      <span class="clipped">
-        ${a11yText}
-      </span>
-    </if>
+    <if=a11yText>${" "}<span class="clipped">${a11yText}</span></if>
   </else>
 </span>

@@ -29,7 +29,7 @@ function checkIcon(iconId) {
     svg.childNodes.forEach((child) => {
         expect(child.tagName).to.match(/symbol|defs/);
         if (child.id === iconId) {
-            if (!!iconAdd) {
+            if (iconAdd) {
                 throw new Error(`Found multiple ${iconId}, expect only 1.`);
             } else {
                 iconAdd = child;

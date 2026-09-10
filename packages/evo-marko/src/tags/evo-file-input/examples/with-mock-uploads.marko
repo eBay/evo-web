@@ -3,7 +3,7 @@ static async function mockFetch() {
   return `https://fakeurl.com/${Math.random().toString(36).substring(7)}`;
 }
 
-<let/files=([] as [File, string | undefined][])>
+<let/files=[] as [File, string | undefined][]>
 <evo-file-input
   multiple
   on-input(e: InputEvent) {
@@ -20,7 +20,8 @@ static async function mockFetch() {
       });
     }
   }
-  ...input>
+  ...input
+>
   <@header class="subtitleClass" id="subtitleId">
     <p>Multiple files</p>
   </@header>
@@ -32,12 +33,14 @@ static async function mockFetch() {
     <@card
       a11yCancelUploadText="Cancel upload"
       file=file
-      status=(url ? undefined : "uploading")>
+      status=url ? undefined : "uploading"
+    >
       <@deleteAction
         a11yText="Delete Card"
         onClick() {
           files = [...files.slice(0, index), ...files.slice(index + 1)];
-        }/>
+        }
+      />
       <@cancelAction a11yText="Cancel" onClick() {}/>
     </@card>
   </for>
