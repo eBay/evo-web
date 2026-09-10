@@ -28,8 +28,8 @@ const meta: Meta<typeof EvoCtaButton> = {
     },
   },
   args: {
-    children: "Take Action Now!",
-    href: "https://www.ebay.com",
+    children: "Shop refurbished tech",
+    href: "/refurbished",
   },
 };
 
@@ -69,10 +69,10 @@ Pass a custom component via the \`as\` prop to replace the native \`<a>\`.
 import { Link } from "react-router";
 
 <EvoCtaButton
-  href="/home"
+  href="/refurbished"
   as={({ href, ...rest }) => <Link {...rest} to={href} />}
 >
-  Take Action Now!
+  Shop refurbished tech
 </EvoCtaButton>
 \`\`\`
         `,

@@ -41,9 +41,9 @@ type Story = StoryObj<typeof EvoCheckbox>;
 export const Default: Story = {
   render: (args) => (
     <span className="field">
-      <EvoCheckbox {...args} className="field__control" id="checkbox" />
-      <label className="field__label field__label--end" htmlFor="checkbox">
-        Option
+      <EvoCheckbox {...args} className="field__control" id="accept-offers" />
+      <label className="field__label field__label--end" htmlFor="accept-offers">
+        Accept offers
       </label>
     </span>
   ),
@@ -52,7 +52,7 @@ export const Default: Story = {
 /** An accessible name labels the checkbox without visible text. */
 export const Isolated: Story = {
   args: {
-    "aria-label": "Option",
+    "aria-label": "Save this search",
   },
 };
 
@@ -60,9 +60,12 @@ export const Isolated: Story = {
 export const Group: Story = {
   render: (args) => (
     <fieldset>
-      <legend>Choose an option</legend>
-      {[1, 2, 3].map((option) => {
-        const id = `checkbox-${option}`;
+      <legend>Delivery options</legend>
+      {[
+        { id: "free-shipping", label: "Free shipping" },
+        { id: "local-pickup", label: "Local pickup" },
+        { id: "returns-accepted", label: "Returns accepted" },
+      ].map(({ id, label }) => {
         return (
           <span className="field" key={id}>
             <EvoCheckbox
@@ -70,10 +73,10 @@ export const Group: Story = {
               className="field__control"
               id={id}
               name="checkbox-group"
-              value={option}
+              value={id}
             />
             <label className="field__label field__label--end" htmlFor={id}>
-              Option {option}
+              {label}
             </label>
           </span>
         );

@@ -4,10 +4,7 @@ import { EvoDetailsSummary } from "./details-summary";
 import { EvoDetailsLeading } from "./details-leading";
 import { EvoDetailsLabel } from "./details-label";
 import { EvoDetailsContent } from "./details-content";
-import { EvoIconLightbulb16 } from "../icon/icons/lightbulb-16";
-
-const LOREM =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+import { EvoIconMoneyBackGuarantee16 } from "../icon/icons/money-back-guarantee-16";
 
 const meta: Meta<typeof EvoDetails> = {
   title: "Navigation & Disclosure/EvoDetails",
@@ -55,9 +52,11 @@ export const Default: Story = {
   render: (args) => (
     <EvoDetails {...args}>
       <EvoDetailsSummary>
-        <EvoDetailsLabel>Show me the details!</EvoDetailsLabel>
+        <EvoDetailsLabel>Shipping, returns, and payments</EvoDetailsLabel>
       </EvoDetailsSummary>
-      <EvoDetailsContent>{LOREM}</EvoDetailsContent>
+      <EvoDetailsContent>
+        Free delivery in 3–5 business days. Returns are accepted within 30 days.
+      </EvoDetailsContent>
     </EvoDetails>
   ),
 };
@@ -68,11 +67,13 @@ export const WithLeadingIcon: Story = {
     <EvoDetails {...args}>
       <EvoDetailsSummary>
         <EvoDetailsLeading>
-          <EvoIconLightbulb16 />
+          <EvoIconMoneyBackGuarantee16 />
         </EvoDetailsLeading>
-        <EvoDetailsLabel>Show me the details!</EvoDetailsLabel>
+        <EvoDetailsLabel>eBay Money Back Guarantee</EvoDetailsLabel>
       </EvoDetailsSummary>
-      <EvoDetailsContent>{LOREM}</EvoDetailsContent>
+      <EvoDetailsContent>
+        Get the item you ordered or your money back.
+      </EvoDetailsContent>
     </EvoDetails>
   ),
 };

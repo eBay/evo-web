@@ -50,16 +50,16 @@ const meta: Meta<EvoFilterChipProps> = {
     },
   },
   args: {
-    children: "Filter",
+    children: "Sneakers",
     variant: "default",
     icon: <EvoIconSneaker16 />,
     image: (
       <img
-        src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile2.png"
-        alt="Category"
+        src="https://ir.ebaystatic.com/cr/v/c1/skin/image-treatment/shoes.jpeg"
+        alt="Sneakers"
       />
     ),
-    a11ySelectedText: "Filter Applied",
+    a11ySelectedText: "Sneakers filter applied",
   },
 };
 
