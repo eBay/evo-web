@@ -1,8 +1,7 @@
-/*
-A couple of modules need to have a fixed with otherwise they will not work well
-*/
-.docs-story div[scale="1"],
-#storybook-root {
+// Storybook's centered layout vertically aligns the story root. Keeping the
+// root full-width preserves each story's natural horizontal alignment.
+#storybook-root,
+.docs-story div[scale="1"] {
   width: 100%;
 }
 
@@ -12,41 +11,42 @@ A couple of modules need to have a fixed with otherwise they will not work well
 
 .icon-examples {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 10px;
+  grid-template-columns: 1fr 1fr;
 }
 
 .icon-examples > div {
+  align-items: center;
+  border: 1px solid black;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 150px;
   justify-content: center;
-  border: 1px solid black;
   padding: 5px;
+  width: 150px;
 }
 
 .icon-examples > div > span.icon {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  width: 100%;
+  display: flex;
   height: 64px;
+  justify-content: center;
   margin: 15px 0;
+  width: 100%;
 }
+
 .icon-examples > div > span.text {
   color: var(--color-yellow-6);
   text-align: center;
 }
 
 .icon-examples > div > span.text::before {
-  content: "<";
   color: var(--color-blue-5);
+  content: "<";
 }
 
 .icon-examples > div > span.text::after {
-  content: "/>";
   color: var(--color-blue-5);
+  content: "/>";
 }
 
 @media (min-width: 601px) {
