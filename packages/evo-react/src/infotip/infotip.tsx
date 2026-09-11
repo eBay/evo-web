@@ -9,6 +9,27 @@ import { useControllableId } from "../utils/use-controllable-id";
 import { useExpander } from "../utils/use-expander";
 import "@ebay/skin/infotip.mjs";
 
+/**
+ * Infotips reveal brief supporting information when the user activates an
+ * information control. They are not suitable for essential instructions.
+ *
+ * The heading labels the content, and the trigger and close buttons need
+ * localized labels. `open` and `defaultOpen` support controlled or uncontrolled
+ * state, while positioning can flip or shift.
+ *
+ * ## Usage
+ *
+ * ```tsx
+ * import { EvoInfotip, EvoInfotipHeading } from "@evo-web/react/infotip";
+ *
+ * <EvoInfotip a11yIconText="More information" a11yCloseText="Close">
+ *   <EvoInfotipHeading>Shipping</EvoInfotipHeading>
+ *   Delivery details and timing.
+ * </EvoInfotip>
+ * ```
+ *
+ * @summary Contextual help overlay.
+ */
 export function EvoInfotip({
   open,
   defaultOpen = false,

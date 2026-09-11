@@ -6,7 +6,7 @@ import { useDialogContext } from "./context";
 import type { EvoDialogCloseProps } from "./types";
 
 /**
- * A close button gives people a clear way to dismiss a dialog.
+ * Dismisses the dialog when activated.
  *
  * Provide localized `a11yText` that identifies the action. Activating the
  * button requests the containing dialog to close.

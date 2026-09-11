@@ -7,6 +7,37 @@ import { useRefTee } from "../utils/use-ref-tee";
 import { useControllableId } from "../utils/use-controllable-id";
 import "@ebay/skin/dialog.mjs";
 
+/**
+ * Alert dialogs present critical information and require an explicit decision
+ * from the user before they close.
+ *
+ * `EvoAlertDialog` cannot be dismissed with `Escape` or by clicking the backdrop.
+ * Its controlled or uncontrolled state is composed with a header, main region,
+ * footer, and confirm action. The header labels the dialog, and the main region
+ * supplies the description referenced by the auto-focused confirm button.
+ *
+ * ## Usage
+ *
+ * ```tsx
+ * import {
+ *   EvoAlertDialog,
+ *   EvoAlertDialogConfirm,
+ *   EvoAlertDialogFooter,
+ *   EvoAlertDialogHeader,
+ *   EvoAlertDialogMain,
+ * } from "@evo-web/react/alert-dialog";
+ *
+ * <EvoAlertDialog open={open} onOpenChange={setOpen}>
+ *   <EvoAlertDialogHeader>Important notice</EvoAlertDialogHeader>
+ *   <EvoAlertDialogMain>Please review this message.</EvoAlertDialogMain>
+ *   <EvoAlertDialogFooter>
+ *     <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
+ *   </EvoAlertDialogFooter>
+ * </EvoAlertDialog>
+ * ```
+ *
+ * @summary Required-acknowledgement alert dialog.
+ */
 export function EvoAlertDialog({
   open,
   defaultOpen = false,

@@ -6,7 +6,7 @@ export type ProgressBarExpressiveMessage = {
   /** Content displayed for this message. */
   content: ReactNode;
 
-  /** Time in milliseconds that the message remains visible. Defaults to 1500. */
+  /** Time in milliseconds that the message remains visible. Defaults to `1500`. */
   duration?: number;
 };
 
@@ -20,9 +20,9 @@ export type EvoProgressBarExpressiveProps = Omit<
    */
   a11yText: string;
 
-  /** Messages displayed in order while progress continues. */
+  /** Entries in `messages` are displayed in order and repeat while progress continues. */
   messages?: readonly ProgressBarExpressiveMessage[];
 
-  /** Message text size. Defaults to `"large"`. */
+  /** Controls message presentation size. Defaults to `"large"`. */
   size?: ProgressBarExpressiveSize;
 };

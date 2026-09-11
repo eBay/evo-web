@@ -4,6 +4,39 @@ import { TabsProvider } from "./context";
 import type { EvoTabsProps, TabId } from "./types";
 import "@ebay/skin/tabs.mjs";
 
+/**
+ * Tabs organize content into sections that users can switch between without
+ * leaving the current page.
+ *
+ * `EvoTabList` contains the triggers, and each `EvoTab` `id` must match its
+ * `EvoTabPanel` `id`. `EvoTabPanels` groups the panels; `selected` and
+ * `defaultSelected` control state, and switching tabs does not navigate.
+ *
+ * ## Usage
+ *
+ * ```tsx
+ * import {
+ *   EvoTab,
+ *   EvoTabList,
+ *   EvoTabPanel,
+ *   EvoTabPanels,
+ *   EvoTabs,
+ * } from "@evo-web/react/tabs";
+ *
+ * <EvoTabs defaultSelected="overview">
+ *   <EvoTabList>
+ *     <EvoTab id="overview">Overview</EvoTab>
+ *     <EvoTab id="shipping">Shipping</EvoTab>
+ *   </EvoTabList>
+ *   <EvoTabPanels>
+ *     <EvoTabPanel id="overview">Overview content.</EvoTabPanel>
+ *     <EvoTabPanel id="shipping">Shipping content.</EvoTabPanel>
+ *   </EvoTabPanels>
+ * </EvoTabs>
+ * ```
+ *
+ * @summary Interactive tab set.
+ */
 export function EvoTabs<Id extends TabId>({
   selected: selectedProp,
   defaultSelected,

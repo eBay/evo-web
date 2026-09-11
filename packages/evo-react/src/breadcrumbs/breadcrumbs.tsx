@@ -42,6 +42,28 @@ function BreadcrumbButton({
   );
 }
 
+/**
+ * Breadcrumbs show the navigational hierarchy of a page.
+ *
+ * Items with `href` render as `<a>` elements; items without `href` render as
+ * `<button>` elements. The last item receives `aria-current`, and
+ * `a11yHeadingText` labels the navigation.
+ *
+ * ## Usage
+ *
+ * ```tsx
+ * import { EvoBreadcrumbs } from "@evo-web/react/breadcrumbs";
+ *
+ * <EvoBreadcrumbs
+ *   items={[
+ *     { href: "/", content: "Home" },
+ *     { content: "Account" },
+ *   ]}
+ * />
+ * ```
+ *
+ * @summary Hierarchical page navigation.
+ */
 export function EvoBreadcrumbs({
   a11yHeadingText = "Page navigation",
   a11yHeadingTag: HeadingTag = "h2",

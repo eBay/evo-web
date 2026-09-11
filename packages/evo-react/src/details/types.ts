@@ -9,9 +9,9 @@ export type Size = "regular" | "small";
 export type Alignment = "regular" | "center";
 
 export type EvoDetailsProps = Omit<ComponentProps<"details">, "onToggle"> & {
-  /** Size of the summary. */
+  /** Selects the regular or small summary treatment. Defaults to `"regular"`. */
   size?: Size;
-  /** Alignment of the summary. */
+  /** Controls summary alignment. Defaults to `"regular"`. */
   alignment?: Alignment;
   /** Fired on toggle with `(event, { open })` arguments. */
   onToggle?: (
@@ -27,6 +27,8 @@ export type EvoDetailsLeadingProps = ComponentProps<"span">;
 export type EvoDetailsLabelProps = ComponentProps<"span">;
 
 export type EvoDetailsContentProps = ComponentProps<"div"> & {
+  /** Element used for the content region. Defaults to `div`. */
   as?: ElementType;
+  /** Information revealed when the details section is open. */
   children?: ReactNode;
 };

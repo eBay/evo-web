@@ -4,6 +4,13 @@ import { EvoIconTick16 } from "../icon/icons/tick-16";
 import { useFakeMenuContext } from "./context";
 import type { EvoFakeMenuItemProps } from "./types";
 
+/**
+ * Represents one destination or command in a fake menu. It renders an `<a>` when
+ * `type` is omitted and a `<button>` for `type="button"` or `"submit"`;
+ * `current` identifies the current location or selection.
+ *
+ * @summary Fake menu destination or command.
+ */
 export function EvoFakeMenuItem({
   className,
   current = false,

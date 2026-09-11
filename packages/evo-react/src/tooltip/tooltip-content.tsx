@@ -3,6 +3,12 @@ import { useTooltipContext } from "./context";
 import type { EvoTooltipContentProps } from "./types";
 import { useRefTee } from "../utils/use-ref-tee";
 
+/**
+ * Contains the tooltip information. It renders the positioned overlay with
+ * `role="tooltip"` and is automatically associated with `EvoTooltipHost`.
+ *
+ * @summary Tooltip information overlay.
+ */
 export function EvoTooltipContent({
   className,
   style,

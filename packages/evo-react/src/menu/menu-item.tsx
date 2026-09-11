@@ -114,6 +114,12 @@ function MenuItemBase({
   );
 }
 
+/**
+ * Performs one command without maintaining a selection value. Its `onSelect`
+ * callback receives activation from click, `Enter`, or `Space`.
+ *
+ * @summary Menu command item.
+ */
 export function EvoMenuItem({ children, ...rest }: EvoMenuItemProps) {
   const { variant } = useMenuContext();
 
@@ -125,6 +131,12 @@ export function EvoMenuItem({ children, ...rest }: EvoMenuItemProps) {
   );
 }
 
+/**
+ * Selects one value in an `EvoMenuRadioGroup`. Give each item a distinct
+ * `value`.
+ *
+ * @summary Single-selection menu item.
+ */
 export function EvoMenuRadioItem<Value extends MenuValue>({
   value,
   children,
@@ -157,6 +169,12 @@ export function EvoMenuRadioItem<Value extends MenuValue>({
   );
 }
 
+/**
+ * Selects multiple values in an `EvoMenuCheckboxGroup`. Give each item a
+ * distinct `value`.
+ *
+ * @summary Multi-selection menu item.
+ */
 export function EvoMenuCheckboxItem<Value extends MenuValue>({
   value,
   children,

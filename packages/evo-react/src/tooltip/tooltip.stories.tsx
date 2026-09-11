@@ -11,32 +11,12 @@ import { EvoTooltipHost } from "./tooltip-host";
 import type { TooltipPlacement } from "./types";
 
 const meta: Meta<typeof EvoTooltip> = {
-  title: "notices & tips/evo-tooltip",
+  title: "Notices & Tips/EvoTooltip",
   component: EvoTooltip,
   subcomponents: {
     EvoTooltipHost,
     EvoTooltipContent,
     EvoTooltipHeading,
-  },
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-A tooltip provides brief, supplementary information when its host is hovered or focused.
-
-## Usage
-
-\`\`\`tsx
-import {
-  EvoTooltip,
-  EvoTooltipContent,
-  EvoTooltipHost,
-} from "@evo-web/react/tooltip";
-\`\`\`
-        `,
-      },
-    },
   },
   argTypes: {
     open: {
@@ -90,6 +70,7 @@ import {
 export default meta;
 type Story = StoryObj<typeof EvoTooltip>;
 
+/** The default tooltip opens when its button is hovered or focused. */
 export const Default: Story = {
   render: (args) => (
     <EvoTooltip {...args}>
@@ -101,6 +82,7 @@ export const Default: Story = {
   ),
 };
 
+/** An icon button can provide the tooltip host. */
 export const IconButtonHost: Story = {
   render: (args) => (
     <EvoTooltip {...args} placement="right">
@@ -127,6 +109,7 @@ const placements: TooltipPlacement[] = [
   "left-end",
 ];
 
+/** Placement options position the tooltip around its host. */
 export const Placements: Story = {
   render: (args) => (
     <div
@@ -187,6 +170,57 @@ function CustomEvoButton({ ref, href, ...rest }: CustomEvoButtonProps) {
   );
 }
 
+/**
+ * A custom router-aware button can provide the tooltip host.
+ *
+ * The custom host must forward its `ref` and DOM attributes so the tooltip
+ * relationship reaches the rendered element.
+ *
+ * ```tsx
+ * import { Link } from "react-router";
+ * import {
+ *   EvoTooltip,
+ *   EvoTooltipContent,
+ *   EvoTooltipHost,
+ * } from "@evo-web/react/tooltip";
+ * import {
+ *   EvoButton,
+ *   type AnchorButtonProps,
+ * } from "@evo-web/react/button";
+ *
+ * type RouterButtonProps = Omit<AnchorButtonProps, "as">;
+ *
+ * function RouterButton({
+ *   ref,
+ *   href,
+ *   ...rest
+ * }: RouterButtonProps) {
+ *   return (
+ *     <EvoButton
+ *       {...rest}
+ *       ref={ref}
+ *       href={href}
+ *       as={({ href, ...linkProps }) => (
+ *         <Link {...linkProps} to={href ?? ""} />
+ *       )}
+ *     />
+ *   );
+ * }
+ *
+ * <EvoTooltip>
+ *   <EvoTooltipHost
+ *     as={RouterButton}
+ *     href="/delivery"
+ *     priority="secondary"
+ *   >
+ *     View delivery details
+ *   </EvoTooltipHost>
+ *   <EvoTooltipContent>
+ *     Delivery details and timing.
+ *   </EvoTooltipContent>
+ * </EvoTooltip>
+ * ```
+ */
 export const CustomHost: Story = {
   render: (args) => (
     <EvoTooltip {...args}>

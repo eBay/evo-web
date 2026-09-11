@@ -3,25 +3,10 @@ import { EvoAvatar } from "./avatar";
 import { EvoAvatarImage } from "./avatar-image";
 
 const meta: Meta<typeof EvoAvatar> = {
-  title: "graphics & icons/evo-avatar",
+  title: "Graphics & Icons/EvoAvatar",
   component: EvoAvatar,
   subcomponents: { EvoAvatarImage },
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-An avatar component that displays a user's profile picture, initials, or a signed-out placeholder icon.
 
-## Usage
-
-\`\`\`tsx
-import { EvoAvatar, EvoAvatarImage } from "@evo-web/react/avatar";
-\`\`\`
-        `,
-      },
-    },
-  },
   argTypes: {
     size: {
       control: "select",
@@ -40,8 +25,6 @@ import { EvoAvatar, EvoAvatarImage } from "@evo-web/react/avatar";
         "magenta",
         "pink",
       ],
-      description:
-        "Background color override for the initials variant. When omitted, color is derived from the username hash.",
     },
     username: {
       control: "text",
@@ -62,6 +45,7 @@ import { EvoAvatar, EvoAvatarImage } from "@evo-web/react/avatar";
 export default meta;
 type Story = StoryObj<typeof EvoAvatar>;
 
+/** Initials identify the avatar when a profile image is unavailable. */
 export const Default: Story = {
   args: {
     username: "Elizabeth",
@@ -69,6 +53,7 @@ export const Default: Story = {
   },
 };
 
+/** A profile image supplies the avatar's visual identity. */
 export const WithImage: Story = {
   args: {
     username: "Elizabeth",
@@ -81,13 +66,15 @@ export const WithImage: Story = {
   ),
 };
 
+/** The signed-out fallback represents an avatar without a signed-in identity. */
 export const SignedOut: Story = {
   args: {
     a11yText: "Signed out",
   },
 };
 
-export const WithCustomBody: Story = {
+/** Custom content takes precedence over initials and an image. */
+export const CustomContent: Story = {
   args: {
     username: "Elizabeth",
     a11yText: "Signed in as Elizabeth",
@@ -111,7 +98,8 @@ export const WithCustomBody: Story = {
   ),
 };
 
-export const WithAutoPlacement: Story = {
+/** Image dimensions determine `"fit"` or `"cover"` placement after loading. */
+export const AutomaticPlacement: Story = {
   args: {
     a11yText: "Signed in as Doggy",
   },

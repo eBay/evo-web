@@ -4,24 +4,9 @@ import { EvoCalendar } from "./calendar";
 import type { EvoCalendarProps } from "./types";
 
 const meta: Meta<EvoCalendarProps> = {
-  title: "building blocks/evo-calendar",
+  title: "Building Blocks/EvoCalendar",
   component: EvoCalendar as ComponentType<EvoCalendarProps>,
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-A calendar component for displaying and selecting dates or date ranges.
 
-## Usage
-
-\`\`\`tsx
-import { EvoCalendar } from "@evo-web/react/calendar";
-\`\`\`
-        `,
-      },
-    },
-  },
   argTypes: {
     selectMode: {
       control: "select",
@@ -109,4 +94,5 @@ import { EvoCalendar } from "@evo-web/react/calendar";
 export default meta;
 type Story = StoryObj<EvoCalendarProps>;
 
+/** Day selection includes localized month navigation and range labels. */
 export const Default: Story = {};

@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { EvoButton } from "./button";
 import { EvoButtonCell } from "./button-cell";
+import { EvoIconDownload16 } from "../icon/icons/download-16";
 import type { AnchorButtonProps } from "./types";
 import { ComponentProps } from "react";
 
@@ -67,7 +68,7 @@ export default meta;
 
 type Story = StoryObj<typeof EvoButton>;
 
-/** Start with a standard button for common actions such as saving or continuing. */
+/** A standard button handles an in-page action such as saving or continuing. */
 export const Default: Story = {
   args: {
     children: "Button",
@@ -95,8 +96,8 @@ function Link({
 }
 
 /**
- * When a client-side router handles navigation, use `as` to connect its link
- * component while keeping the button's appearance.
+ * A client-side router can supply the link component through `as` while the
+ * button appearance is preserved.
  *
  * ```tsx
  * <EvoButton
@@ -107,7 +108,7 @@ function Link({
  * </EvoButton>
  * ```
  */
-export const WithCustomLinkComponent: Story = {
+export const CustomLink: Story = {
   render: (args) => {
     return (
       <EvoButton
@@ -122,13 +123,13 @@ export const WithCustomLinkComponent: Story = {
   },
 };
 
-/** Use a button cell to align a label with an icon or secondary value. */
+/** A button cell aligns a decorative icon with the button's action label. */
 export const WithButtonCell: Story = {
   render: (args) => (
     <EvoButton {...args}>
-      <EvoButtonCell style={{ justifyContent: "space-between" }}>
-        <span>Select</span>
-        <span>Any</span>
+      <EvoButtonCell>
+        <EvoIconDownload16 />
+        <span>Download invoice</span>
       </EvoButtonCell>
     </EvoButton>
   ),

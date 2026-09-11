@@ -23,12 +23,12 @@ type BaseIconButtonProps = {
 
 export type AnchorIconButtonProps = Omit<ComponentProps<"a">, "ref"> &
   BaseIconButtonProps & {
-    /** Renders as an anchor element when provided. */
+    /** Renders as an anchor element when `href` is provided. */
     href: string;
     /** Custom component used in place of the native anchor. Only applies when `href` is provided. */
     as?: ComponentType<ComponentProps<"a">>;
     ref?: Ref<HTMLAnchorElement>;
-    /** Triggered on Escape key press. */
+    /** Triggered on `Escape` key press. */
     onEscape?: (e: KeyboardEvent<HTMLAnchorElement>) => void;
     /** Fully disabled. */
     disabled?: boolean;
@@ -39,7 +39,7 @@ export type NativeIconButtonProps = Omit<ComponentProps<"button">, "ref"> &
     href?: never;
     as?: never;
     ref?: Ref<HTMLButtonElement>;
-    /** Triggered on Escape key press. */
+    /** Triggered on `Escape` key press. */
     onEscape?: (e: KeyboardEvent<HTMLButtonElement>) => void;
   };
 

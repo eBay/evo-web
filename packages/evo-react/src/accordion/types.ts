@@ -21,20 +21,20 @@ type BaseAccordionProps = Omit<ComponentProps<"ul">, "aria-roledescription"> & {
 };
 
 export type SingleAccordionProps = BaseAccordionProps & {
-  /** Controlled id or ids of the open items. Use a string for single-open mode or a string array for multi-open mode. */
+  /** Controlled `open` value. Use a `string` for single-open mode or a `string[]` for multi-open mode. */
   open?: SingleOpenValue;
-  /** Initial uncontrolled id or ids of the open items. Use an empty string array for uncontrolled multi-open mode. */
+  /** Initial uncontrolled `defaultOpen` value. Use an empty `string[]` for uncontrolled multi-open mode. */
   defaultOpen?: SingleOpenValue;
-  /** Fired when the open item id or ids change. */
+  /** Fired when the open item `id` or ids change. */
   onOpenChange?: (open: SingleOpenValue) => void;
 };
 
 export type MultipleAccordionProps = BaseAccordionProps & {
-  /** Controlled id or ids of the open items. Use a string for single-open mode or a string array for multi-open mode. */
+  /** Controlled `open` value. Use a `string` for single-open mode or a `string[]` for multi-open mode. */
   open?: MultipleOpenValue;
-  /** Initial uncontrolled id or ids of the open items. Use an empty string array for uncontrolled multi-open mode. */
+  /** Initial uncontrolled `defaultOpen` value. Use an empty `string[]` for uncontrolled multi-open mode. */
   defaultOpen?: MultipleOpenValue;
-  /** Fired when the open item id or ids change. */
+  /** Fired when the open item `id` or ids change. */
   onOpenChange?: (open: MultipleOpenValue) => void;
 };
 
@@ -44,8 +44,11 @@ export type EvoAccordionItemProps = Omit<
   ComponentProps<"details">,
   "id" | "open" | "defaultOpen" | "onToggle"
 > & {
+  /** Unique `id` used by the parent to track this item's `open` state. */
   id: AccordionId;
+  /** Summary and content composition for the section. */
   children?: ReactNode;
+  /** Called when this item changes `open` state. */
   onOpenChange?: (open: boolean) => void;
 };
 

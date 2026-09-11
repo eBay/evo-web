@@ -1,6 +1,11 @@
 import classNames from "classnames";
 import type { EvoFakeTabListProps } from "./types";
 
+/**
+ * Contains the links in a fake tab strip.
+ *
+ * @summary Fake tab link list.
+ */
 export function EvoFakeTabList({
   className,
   children,

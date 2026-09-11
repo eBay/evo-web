@@ -17,7 +17,7 @@ function createRoot(): SVGSVGElement {
 
 export type EvoIconProps = SVGProps<SVGSVGElement> & {
   /**
-   * Internal use only - icon name (camelCase). Use __name to avoid conflict with SVG name attribute.
+   * Internal use only - icon name (`camelCase`). Use `__name` to avoid conflict with the SVG `name` attribute.
    * @internal
    */
   __name: string;
@@ -36,6 +36,14 @@ export type EvoIconProps = SVGProps<SVGSVGElement> & {
 
 const fallbackLookup = new Set<string>();
 
+/**
+ * The base icon component supplies the shared SVG behavior used by generated
+ * `EvoIcon*` components. Consumers should normally import a named generated
+ * icon from `@evo-web/react/icons/...` instead of passing the internal symbol
+ * props directly.
+ *
+ * @summary Base implementation for Evo icons.
+ */
 export function EvoIcon({
   __name,
   className: extraClass,

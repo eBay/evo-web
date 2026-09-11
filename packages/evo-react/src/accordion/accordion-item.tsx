@@ -2,6 +2,12 @@ import { EvoDetails } from "../details/details";
 import type { EvoAccordionItemProps } from "./types";
 import { useAccordionContext } from "./context";
 
+/**
+ * An accordion item contains a summary and its associated content. Its `id`
+ * lets `EvoAccordion` track the item's open state.
+ *
+ * @summary Accordion section.
+ */
 export function EvoAccordionItem({
   id,
   children,

@@ -16,6 +16,23 @@ function joinIds(...values: Array<string | undefined>) {
   return [...new Set(ids)].filter(Boolean).join(" ") || undefined;
 }
 
+/**
+ * Text fields let users enter and submit text.
+ *
+ * `EvoInput` supports the `floatingLabel`, `prefix`, and `postfix` props, plus
+ * an actionable postfix icon through `buttonProps`. Native `<input>` props are
+ * also supported.
+ *
+ * ## Usage
+ *
+ * ```tsx
+ * import { EvoInput } from "@evo-web/react/input";
+ *
+ * <EvoInput floatingLabel="Email address" type="email" />
+ * ```
+ *
+ * @summary Single-line text input.
+ */
 export function EvoInput({
   "aria-describedby": ariaDescribedBy,
   "aria-invalid": ariaInvalid,
