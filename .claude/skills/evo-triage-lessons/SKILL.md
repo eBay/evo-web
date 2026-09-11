@@ -33,6 +33,15 @@ job.
 
 Report the count first. If zero, say so and stop — there is nothing to triage.
 
+Before classifying, run [`review-agent-lessons`](../review-agent-lessons/SKILL.md) over
+this same list — an open entry is still self-attested by the session that filed it, and
+nothing before this point has adversarially checked it. This session becomes that skill's
+"main agent": it dispatches the review subagent per that skill's Step 2 and reconciles the
+verdicts per its Step 4, then returns here to classify. Only classify entries that come
+back PASS or (once fixed) FLAG; treat REJECT the way that skill directs — corrected and
+re-filed, or resolved as a duplicate — rather than proposing a hook/permission/CLAUDE.md
+change built on an unverified claim.
+
 ## Step 2 — Classify each open entry
 
 For every open entry, decide which bucket it falls into. Use the same

@@ -73,6 +73,7 @@ When migrating a listed component, read the linked file completely and apply the
 - `ebay-combobox`: [evo-combobox.md](components/evo-combobox.md)
 - `ebay-confirm-dialog`: [evo-confirm-dialog.md](components/evo-confirm-dialog.md)
 - `ebay-cta-button`: [evo-cta-button.md](components/evo-cta-button.md)
+- `ebay-date-textbox`: [evo-date-input.md](components/evo-date-input.md)
 - `ebay-details`: [evo-details.md](components/evo-details.md)
 - `ebay-eek`: [evo-eek.md](components/evo-eek.md)
 - `ebay-fake-menu`: [evo-fake-menu.md](components/evo-fake-menu.md)
@@ -84,10 +85,12 @@ When migrating a listed component, read the linked file completely and apply the
 - `ebay-lightbox-dialog`: [evo-dialog.md](components/evo-dialog.md)
 - `ebay-menu`: [evo-menu.md](components/evo-menu.md)
 - `ebay-progress-bar-expressive`: [evo-progress-bar-expressive.md](components/evo-progress-bar-expressive.md)
+- `ebay-progress-bar`: [evo-progress-bar.md](components/evo-progress-bar.md)
 - `ebay-progress-spinner`: [evo-progress-spinner.md](components/evo-progress-spinner.md)
 - `ebay-radio`: [evo-radio.md](components/evo-radio.md)
 - `ebay-tabs`: [evo-tabs.md](components/evo-tabs.md)
 - `ebay-textbox`: [evo-input.md](components/evo-input.md) / [evo-textarea.md](components/evo-textarea.md)
+- `ebay-tooltip`: [evo-tooltip.md](components/evo-tooltip.md)
 
 ---
 

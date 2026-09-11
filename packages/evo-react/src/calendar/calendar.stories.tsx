@@ -58,6 +58,9 @@ import { EvoCalendar } from "@evo-web/react/calendar";
     disable: {
       control: "object",
     },
+    readOnly: {
+      control: "boolean",
+    },
     getDayHref: {
       control: false,
     },

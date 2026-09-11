@@ -2104,15 +2104,6 @@
         "height": "24",
         "width": "24"
       },
-      { "name": "live-bag-16", "size": "16", "height": "16", "width": "16" },
-      { "name": "live-bag-20", "size": "20", "height": "20", "width": "20" },
-      { "name": "live-bag-24", "size": "24", "height": "24", "width": "24" },
-      {
-        "name": "live-bag-filled-24",
-        "size": "24",
-        "height": "24",
-        "width": "24"
-      },
       {
         "name": "live-bag-play-filled-16-colored",
         "size": "16-colored",
@@ -2130,12 +2121,6 @@
         "size": "64-colored",
         "height": "64",
         "width": "64"
-      },
-      {
-        "name": "live-bag-thin-16",
-        "size": "16",
-        "height": "16",
-        "width": "16"
       },
       {
         "name": "live-broadcast-16",
@@ -3848,7 +3833,12 @@
       "psa-vault-16",
       "psa-vault-16-colored",
       "the-ebay-vault-16",
-      "the-ebay-vault-24"
+      "the-ebay-vault-24",
+      "live-bag-thin-16",
+      "live-bag-16",
+      "live-bag-20",
+      "live-bag-24",
+      "live-bag-filled-24"
     ],
     "deprecated": [
       {
@@ -3883,6 +3873,21 @@
       },
       {
         "name": "the-ebay-vault-24",
+        "size": "24",
+        "height": "24",
+        "width": "24"
+      },
+      {
+        "name": "live-bag-thin-16",
+        "size": "16",
+        "height": "16",
+        "width": "16"
+      },
+      { "name": "live-bag-16", "size": "16", "height": "16", "width": "16" },
+      { "name": "live-bag-20", "size": "20", "height": "20", "width": "20" },
+      { "name": "live-bag-24", "size": "24", "height": "24", "width": "24" },
+      {
+        "name": "live-bag-filled-24",
         "size": "24",
         "height": "24",
         "width": "24"

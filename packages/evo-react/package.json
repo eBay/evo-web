@@ -36,6 +36,7 @@
     "build:storybook": "storybook build -o ./_site",
     "deploy": "npm run build:storybook",
     "format": "eslint . --fix && prettier . --write --log-level=warn",
+    "generate-locale-info": "node scripts/generate-locale-info.js && prettier --write src/utils/locale-info.ts",
     "lint": "eslint . && prettier . --check --log-level=warn",
     "release": "npm run build",
     "start": "storybook dev -p 9001",

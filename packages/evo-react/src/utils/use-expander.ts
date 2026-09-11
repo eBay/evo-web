@@ -23,6 +23,7 @@ type UseExpanderOptions = {
   inline?: boolean;
   /** Closes uncontrolled state when the owning component is disabled. */
   resetOnDisabled?: boolean;
+  referenceElement?: Element | null;
 };
 
 export function useExpander({
@@ -36,6 +37,7 @@ export function useExpander({
   shift = true,
   inline = true,
   resetOnDisabled = false,
+  referenceElement,
 }: UseExpanderOptions = {}) {
   const isControlled = open !== undefined;
   const [uncontrolledOpen, setUncontrolledOpen] = useState(defaultOpen);
@@ -56,6 +58,14 @@ export function useExpander({
       onOpenChange?.(nextOpen);
     },
     [isControlled, onOpenChange],
+  );
+
+  const elements = useMemo(
+    () =>
+      referenceElement === undefined
+        ? undefined
+        : { reference: referenceElement },
+    [referenceElement],
   );
 
   const middleware = useMemo(() => {
@@ -92,6 +102,7 @@ export function useExpander({
     placement,
     strategy,
     middleware,
+    elements,
     whileElementsMounted: autoUpdate,
   });
 
