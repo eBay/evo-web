@@ -36,7 +36,6 @@ export default {
             options: ["default", "large"],
         },
         href: {
-            control: false,
             description: "link target",
             table: {
                 defaultValue: {

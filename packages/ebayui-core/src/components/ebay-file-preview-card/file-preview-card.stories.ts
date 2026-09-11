@@ -35,7 +35,7 @@ export default {
             description: "HTML tag to use for the card container",
         },
         href: {
-            control: false,
+            control: { type: "text" },
             description: "URL for the file preview link",
         },
         a11yExternalLinkText: {

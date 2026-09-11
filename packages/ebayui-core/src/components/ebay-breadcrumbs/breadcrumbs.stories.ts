@@ -47,7 +47,6 @@ export default {
             description: "Localized, a11y text for the collapsed menu button",
         },
         href: {
-            control: false,
             name: "href",
             table: {
                 category: "@item attribute tags",

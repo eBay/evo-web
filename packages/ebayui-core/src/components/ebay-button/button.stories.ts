@@ -27,7 +27,6 @@ export default {
     argTypes: {
         renderBody: {},
         href: {
-            control: false,
             description: "url for link behaviour (switches to anchor tag)",
         },
         size: {

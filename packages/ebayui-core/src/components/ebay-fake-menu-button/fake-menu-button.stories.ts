@@ -118,7 +118,7 @@ export default {
             },
         },
         href: {
-            control: false,
+            control: { type: "text" },
             table: {
                 category: "@item attribute tags",
             },

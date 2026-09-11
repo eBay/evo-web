@@ -28,7 +28,7 @@ export default {
                 "The layout of the item-tile. The default is gallery. The list layout takes more horizontal space and is better for displaying more information.",
         },
         href: {
-            control: false,
+            control: { type: "text" },
             description:
                 "The URL to navigate to when the item-tile is clicked. If not provided, the item will not be clickable.",
         },

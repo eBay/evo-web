@@ -45,8 +45,8 @@ export default {
         'A menu item. Can be a link (`href`) or a button (`type="button"`).',
       "@": {
         href: {
-          control: false,
           type: "string",
+          control: "text",
           description: "URL for the link item. Omit for button items.",
         },
         type: {

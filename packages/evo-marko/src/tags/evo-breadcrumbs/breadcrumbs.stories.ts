@@ -41,7 +41,6 @@ export default {
         "A breadcrumb item. Renders as `<a>` if `href` is provided, otherwise `<button>`.",
       "@": {
         href: {
-          control: false,
           description:
             "Link URL. If omitted, the item renders as a `<button>`.",
         },

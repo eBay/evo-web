@@ -26,8 +26,8 @@ export default {
       },
     },
     href: {
-      control: false,
       type: "string",
+      control: "text",
       description: "URL for link behavior (switches to `<a>` tag)",
     },
     transparent: {

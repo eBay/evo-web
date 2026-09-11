@@ -22,7 +22,6 @@ export default {
     },
     argTypes: {
         href: {
-            control: false,
             description: "url for link behaviour (switches to anchor tag)",
         },
         disabled: {

@@ -36,8 +36,8 @@ export default {
         "Truncate overflowing text to a single line with an ellipsis",
     },
     href: {
-      control: false,
       type: "string",
+      control: "text",
       description:
         "The URL. If not present, the button inherits disabled styles",
     },

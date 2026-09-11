@@ -33,8 +33,8 @@ export default {
         "The layout of the card. The default is vertical. The horizontal option takes up more horizontal space and is better for displaying more information.",
     },
     href: {
-      control: false,
       type: "string",
+      control: "text",
       description:
         "The URL to navigate to when the card is clicked. This can only be used _without_ an action element",
     },
