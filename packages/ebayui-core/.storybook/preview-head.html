@@ -1,0 +1,39 @@
+<!--
+  Security: Storybook's postMessage channel accepts any message tagged
+  `storybook-channel` regardless of where it came from (and replies with a `*`
+  target origin), so any page on the internet can drive this preview — e.g. an
+  `updateStoryArgs` message that injects a `javascript:` URL into an `href` arg
+  and waits for the viewer to click. See storybook/internal/channels
+  PostMessageTransport#handleEvent, which never compares `event.origin`.
+
+  This listener drops channel messages from other origins before the channel
+  sees them. It is registered from preview-head.html so that it runs as a
+  classic script during head parsing, i.e. before the deferred module script
+  that boots the preview runtime — ordering matters, because only the
+  first-registered listener can stopImmediatePropagation the rest.
+
+  The manager needs no equivalent guard: it resolves an event's source by
+  matching it against its own preview iframes and drops anything it can't match.
+-->
+<script>
+  (function () {
+    window.addEventListener(
+      "message",
+      function (event) {
+        if (event.origin === window.location.origin) {
+          return;
+        }
+        var data = event.data;
+        if (typeof data === "string") {
+          if (data.indexOf("storybook-channel") === -1) {
+            return;
+          }
+        } else if (!data || data.key !== "storybook-channel") {
+          return;
+        }
+        event.stopImmediatePropagation();
+      },
+      true,
+    );
+  })();
+</script>
