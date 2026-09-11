@@ -1,0 +1,42 @@
+diff --git a/node_modules/storybook/dist/channels/index.js b/node_modules/storybook/dist/channels/index.js
+index 64b1437..a13aa11 100644
+--- a/node_modules/storybook/dist/channels/index.js
++++ b/node_modules/storybook/dist/channels/index.js
+@@ -117,7 +117,7 @@ var { document: document2, location } = globalThis, KEY = "storybook-channel", C
+     );
+     return frames.length ? (this.buffer.length && this.flush(), frames.forEach((f) => {
+       try {
+-        f.postMessage(data, "*");
++        f.postMessage(data, location.origin);
+       } catch {
+         logger2.error("sending over postmessage fail");
+       }
+@@ -157,6 +157,7 @@ var { document: document2, location } = globalThis, KEY = "storybook-channel", C
+     ).flatMap((e) => e.contentWindow ? [e.contentWindow] : []) : globalThis.parent ? [globalThis.parent] : [];
+   }
+   handleEvent(rawEvent) {
++    if (rawEvent.origin && rawEvent.origin !== location.origin) return;
+     try {
+       let { data } = rawEvent, { key, event, refId } = typeof data == "string" && isJSON(data) ? parse(data, CHANNEL_OPTIONS) : data;
+       if (key === KEY) {
+diff --git a/node_modules/storybook/dist/preview/runtime.js b/node_modules/storybook/dist/preview/runtime.js
+index 3cad961..fbe59d3 100644
+--- a/node_modules/storybook/dist/preview/runtime.js
++++ b/node_modules/storybook/dist/preview/runtime.js
+@@ -12746,7 +12746,7 @@ var { document: document2, location } = globalThis, KEY = "storybook-channel", C
+     );
+     return frames.length ? (this.buffer.length && this.flush(), frames.forEach((f6) => {
+       try {
+-        f6.postMessage(data, "*");
++        f6.postMessage(data, location.origin);
+       } catch {
+         logger.error("sending over postmessage fail");
+       }
+@@ -12786,6 +12786,7 @@ var { document: document2, location } = globalThis, KEY = "storybook-channel", C
+     ).flatMap((e2) => e2.contentWindow ? [e2.contentWindow] : []) : globalThis.parent ? [globalThis.parent] : [];
+   }
+   handleEvent(rawEvent) {
++    if (rawEvent.origin && rawEvent.origin !== location.origin) return;
+     try {
+       let { data } = rawEvent, { key, event, refId } = typeof data == "string" && isJSON(data) ? parse(data, CHANNEL_OPTIONS) : data;
+       if (key === KEY) {
