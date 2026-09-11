@@ -6,45 +6,24 @@ import { ComponentProps } from "react";
 
 // Use AnchorButtonProps so `as` (anchor-only prop) is a valid argType key.
 const meta: Meta<AnchorButtonProps> = {
-  title: "buttons/evo-button",
+  title: "Buttons/EvoButton",
   component: EvoButton,
   subcomponents: { EvoButtonCell },
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-A flexible button component that can render as either a \`<button>\` or \`<a>\` element based on the \`href\` prop.
-
-## Usage
-
-\`\`\`tsx
-import { EvoButton } from "@evo-web/react/button";
-\`\`\`
-        `,
-      },
-    },
-  },
   argTypes: {
     priority: {
       control: "select",
-      options: ["primary", "secondary", "tertiary", "none"],
     },
     variant: {
       control: "select",
-      options: ["standard", "destructive", "form"],
     },
     size: {
       control: "select",
-      options: ["small", "large"],
     },
     bodyState: {
       control: "select",
-      options: ["loading", "expand", "reset", "none"],
     },
     split: {
       control: "select",
-      options: ["start", "end"],
     },
     fluid: {
       control: "boolean",
@@ -69,14 +48,12 @@ import { EvoButton } from "@evo-web/react/button";
     },
     href: {
       control: "text",
-      description: "Link URL (renders as anchor)",
     },
     as: {
       control: false,
     },
     children: {
       control: "text",
-      description: "Button text content",
     },
   },
   args: {
@@ -90,6 +67,7 @@ export default meta;
 
 type Story = StoryObj<typeof EvoButton>;
 
+/** Start with a standard button for common actions such as saving or continuing. */
 export const Default: Story = {
   args: {
     children: "Button",
@@ -116,6 +94,19 @@ function Link({
   );
 }
 
+/**
+ * When a client-side router handles navigation, use `as` to connect its link
+ * component while keeping the button's appearance.
+ *
+ * ```tsx
+ * <EvoButton
+ *   href="/home"
+ *   as={({ href, ...rest }) => <Link {...rest} to={href} />}
+ * >
+ *   Home
+ * </EvoButton>
+ * ```
+ */
 export const WithCustomLinkComponent: Story = {
   render: (args) => {
     return (
@@ -129,25 +120,9 @@ export const WithCustomLinkComponent: Story = {
       </EvoButton>
     );
   },
-  parameters: {
-    docs: {
-      description: {
-        story: `
-Pass a custom component via the \`as\` prop to replace the native \`<a>\`. Only applies when \`href\` is set. Here we simulate React Router's \`<Link to="/home">\`
-
-\`\`\`tsx
-import { Link, href } from "react-router";
-
-<EvoButton
-  href={href("/home")}
-  as=(({ href, ...rest }) => <Link {...rest} to={href} />)
-\`\`\`
-`,
-      },
-    },
-  },
 };
 
+/** Use a button cell to align a label with an icon or secondary value. */
 export const WithButtonCell: Story = {
   render: (args) => (
     <EvoButton {...args}>

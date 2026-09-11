@@ -7,6 +7,10 @@ export default {
         allowSyntheticDefaultImports: true,
         esModuleInterop: true,
       },
+      shouldExtractLiteralValuesFromEnum: true,
+      shouldRemoveUndefinedFromOptional: true,
+      propFilter: (prop) =>
+        prop.parent ? !/node_modules/.test(prop.parent.fileName) : true,
     },
   },
   addons: [

@@ -1,6 +1,14 @@
 import classNames from "classnames";
 import type { EvoDialogBannerProps } from "./types";
 
+/**
+ * A banner adds visual context to an expressive dialog. Use a background image
+ * or provide custom content when it helps set the tone for the task.
+ *
+ * Pass the banner to `EvoDialog` through its `banner` prop.
+ *
+ * @summary Expressive banner region for a dialog.
+ */
 export function EvoDialogBanner({
   src,
   position,
