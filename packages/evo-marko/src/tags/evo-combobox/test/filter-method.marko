@@ -1,0 +1,24 @@
+export interface Input {
+  filterMethod?: "auto" | "manual" | "none";
+  value?: string;
+}
+
+<let/value=input.value ?? "">
+<let/options=["New York", "C++", "C#"] as string[]>
+
+<button onClick() {
+  options = [...options, "London"];
+}>
+  Load more suggestions
+</button>
+
+<evo-combobox
+  ...input
+  filterMethod=input.filterMethod ?? "manual"
+  value:=value
+  aria-label="City"
+>
+  <for|text| of=options>
+    <@option text=text/>
+  </for>
+</evo-combobox>

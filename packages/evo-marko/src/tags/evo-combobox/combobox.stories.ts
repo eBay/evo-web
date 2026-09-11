@@ -18,12 +18,12 @@ export default {
     },
   },
   argTypes: {
-    autocomplete: {
+    filterMethod: {
       type: "string",
-      options: ["none", "list"],
+      options: ["auto", "manual", "none"],
       control: "inline-radio",
       description:
-        "`list` filters displayed options to those matching the typed text. `none` always shows all options.",
+        "`auto` filters options by typed text, `manual` leaves filtering to the application, and `none` always shows all options.",
     },
     listSelection: {
       type: "string",
@@ -84,11 +84,6 @@ export default {
           control: "text",
           description: "Optional value; defaults to `text`.",
         },
-        sticky: {
-          type: "boolean",
-          control: "boolean",
-          description: "Always shown regardless of `autocomplete` filter.",
-        },
         ["<div> attributes" as any]: {
           description:
             "All attributes and event handlers from [the native HTML `<div>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div) will be passed through to `<@option>`.",
@@ -126,5 +121,5 @@ export const Controllable = buildExtensionTemplate(
 export const AsyncFiltering = buildExtensionTemplate(
   AsyncFilteringTemplate,
   AsyncFilteringCode,
-  { placeholder: "Type a country name..." },
+  { placeholder: "Type a country name...", filterMethod: "manual" },
 );

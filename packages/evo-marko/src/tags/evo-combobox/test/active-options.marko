@@ -1,0 +1,29 @@
+<let/options=["First", "Second", "Third"] as string[]>
+<let/value="">
+
+<button
+  onMouseDown(e) {
+    e.preventDefault();
+  }
+  onClick() {
+    options = ["Second", "Third"];
+  }
+>
+  Remove active suggestion
+</button>
+<button
+  onMouseDown(e) {
+    e.preventDefault();
+  }
+  onClick() {
+    options = ["Third", "First", "Second"];
+  }
+>
+  Restore and reorder suggestions
+</button>
+
+<evo-combobox filterMethod="manual" value:=value aria-label="Dynamic options">
+  <for|text| of=options>
+    <@option text=text/>
+  </for>
+</evo-combobox>
