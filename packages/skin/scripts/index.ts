@@ -2,12 +2,7 @@ import { listBundles, runCSSBuild } from "./generate-bundle";
 import { runGenerate } from "./generate-images";
 import { verifyBuild } from "./verify-build";
 import { generateTopLevel, cleanTopLevel } from "./generate-imports";
-import {
-    copyOriginGuard,
-    copySVGIcons,
-    copyCustomStyles,
-    copySVGFlags,
-} from "./storybook/copy";
+import { copySVGIcons, copyCustomStyles, copySVGFlags } from "./storybook/copy";
 import { tokens } from "./tokens";
 import { copyMasterIcons } from "./copy-master-icons";
 import yargs from "yargs";
@@ -103,7 +98,6 @@ yargs(hideBin(process.argv))
             });
         },
         (yargs) => {
-            copyOriginGuard();
             if (yargs.noSvg) {
                 copySVGIcons();
                 copySVGFlags();

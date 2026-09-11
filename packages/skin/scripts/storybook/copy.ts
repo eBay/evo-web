@@ -18,14 +18,6 @@ const SVG_FLAGS_FILE = path.join(
     "svg",
     "flags.svg",
 );
-const ORIGIN_GUARD_FILE = path.join(
-    __dirname,
-    "..",
-    "..",
-    "docs",
-    "origin-guard.html",
-);
-
 const CUSTOM_STYLES_FILE = path.join(
     __dirname,
     "..",
@@ -42,12 +34,6 @@ const STORYBOOK_HEADER_FILE = path.join(
     "preview-head.html",
 );
 
-// Must run first: it (re)creates preview-head.html, everything else appends.
-function copyOriginGuard() {
-    const originGuardContent = fs.readFileSync(ORIGIN_GUARD_FILE, "utf8");
-    fs.writeFileSync(STORYBOOK_HEADER_FILE, originGuardContent, "utf8");
-}
-
 function copySVGIcons() {
     const svgIconsContent = fs.readFileSync(SVG_ICONS_FILE, "utf8");
     const storyBookSvgIconsContent = `
@@ -55,7 +41,7 @@ function copySVGIcons() {
     ${rawSvgToHtml(svgIconsContent)}
     `;
 
-    fs.appendFileSync(STORYBOOK_HEADER_FILE, storyBookSvgIconsContent, "utf8");
+    fs.writeFileSync(STORYBOOK_HEADER_FILE, storyBookSvgIconsContent, "utf8");
 }
 
 function copySVGFlags() {
@@ -73,4 +59,4 @@ function copyCustomStyles() {
     fs.appendFileSync(STORYBOOK_HEADER_FILE, customStylesContent, "utf8");
 }
 
-export { copyOriginGuard, copySVGIcons, copySVGFlags, copyCustomStyles };
+export { copySVGIcons, copySVGFlags, copyCustomStyles };
