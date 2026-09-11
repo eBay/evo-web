@@ -38,7 +38,7 @@ const meta: Meta<typeof EvoAvatar> = {
     },
   },
   args: {
-    a11yText: "avatar",
+    a11yText: "Account avatar",
   },
 };
 
@@ -76,8 +76,8 @@ export const SignedOut: Story = {
 /** Custom content takes precedence over initials and an image. */
 export const CustomContent: Story = {
   args: {
-    username: "Elizabeth",
-    a11yText: "Signed in as Elizabeth",
+    username: "Tech Corner",
+    a11yText: "Tech Corner store",
   },
   render: (args) => (
     <EvoAvatar {...args}>
@@ -92,7 +92,7 @@ export const CustomContent: Story = {
           backgroundColor: "black",
         }}
       >
-        <span>EB</span>
+        <span>TC</span>
       </div>
     </EvoAvatar>
   ),
@@ -101,7 +101,7 @@ export const CustomContent: Story = {
 /** Image dimensions determine `"fit"` or `"cover"` placement after loading. */
 export const AutomaticPlacement: Story = {
   args: {
-    a11yText: "Signed in as Doggy",
+    a11yText: "Paws and Finds store",
   },
   render: (args) => (
     <>

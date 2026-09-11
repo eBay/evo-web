@@ -22,7 +22,7 @@ const meta: Meta<typeof EvoProgressBar> = {
     },
   },
   args: {
-    a11yText: "Task progress",
+    a11yText: "Photo upload progress",
     value: 50,
     max: 100,
     fluid: false,

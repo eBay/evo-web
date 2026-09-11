@@ -458,6 +458,11 @@ describe("EvoButton SSR", () => {
 - Keep the ebayui-core-react Storybook category, convert its words to title case, and use the PascalCase `Evo*` component name after the slash (for example, `Buttons/EvoButton`).
 - Component descriptions and import examples come from JSDoc on the component export. Do not duplicate them in `parameters.docs.description.component`.
 - Describe each story as a useful scenario or choice for the consumer. Do not narrate the JSX or begin with implementation-focused language such as “Renders” or “Demonstrates.”
+- Use credible e-commerce scenarios when the component has a marketplace use case.
+- Avoid placeholder copy such as “Button,” “Option,” “Heading,” “Content,” “Example,” and `Lorem ipsum`.
+- Ensure visible labels, accessible names, icons, destinations, and supporting text describe one coherent scenario.
+- Keep technical labels when they are necessary to explain a technical gallery or behavior.
+- Do not invent product policy, delivery, warranty, or marketplace guarantees.
 - Put prop descriptions in type JSDoc, not `argTypes.description`. Storybook `argTypes` should normally contain only controls, options, event actions, table metadata, and docgen fallbacks described in **API documentation**.
 - Autodocs is enabled globally. Do not add a redundant `tags: ["autodocs"]` to new story metadata.
 - **`subcomponents`**: If the component has sub-components (e.g. `EvoAvatarImage` alongside `EvoAvatar`), declare them in the meta using the `subcomponents` field. This causes Storybook's autodocs to render a props table for each sub-component as a separate tab.
@@ -536,6 +541,7 @@ Keep component entries concise. App owners read these files, not component autho
 - [ ] Stories in `{name}.stories.tsx` co-located with source
 - [ ] Story title follows the `"Title Case Category/EvoName"` pattern
 - [ ] Story export names follow the semantic naming convention and avoid redundant `WithCustomX` constructions
+- [ ] Story content uses coherent, realistic examples instead of placeholder copy.
 - [ ] App migration skill has a linked `components/evo-{name}.md` file and no inline component details in `SKILL.md`
 - [ ] `npm run build -w packages/evo-react` passes
 - [ ] Changeset added in `.changeset/` with `patch` bump for `@evo-web/react` (`@evo-web/react` is still experimental, so all additions use `patch`). Keep the description to one short line — e.g. `Add EvoFoo component.` — no bullet points or implementation details.

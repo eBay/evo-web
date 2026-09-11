@@ -42,9 +42,12 @@ type Story = StoryObj<typeof EvoRadio>;
 export const Default: Story = {
   render: (args) => (
     <span className="field">
-      <EvoRadio {...args} className="field__control" id="radio" />
-      <label className="field__label field__label--end" htmlFor="radio">
-        Option
+      <EvoRadio {...args} className="field__control" id="standard-shipping" />
+      <label
+        className="field__label field__label--end"
+        htmlFor="standard-shipping"
+      >
+        Standard shipping
       </label>
     </span>
   ),
@@ -53,7 +56,7 @@ export const Default: Story = {
 /** An accessible name labels the radio without visible text. */
 export const Isolated: Story = {
   args: {
-    "aria-label": "Option",
+    "aria-label": "Select standard shipping",
   },
 };
 
@@ -61,9 +64,12 @@ export const Isolated: Story = {
 export const Group: Story = {
   render: (args) => (
     <fieldset>
-      <legend>Choose an option</legend>
-      {[1, 2, 3].map((option) => {
-        const id = `radio-${option}`;
+      <legend>Choose a shipping service</legend>
+      {[
+        { id: "standard", label: "Standard shipping" },
+        { id: "expedited", label: "Expedited shipping" },
+        { id: "local-pickup", label: "Local pickup" },
+      ].map(({ id, label }) => {
         return (
           <span className="field" key={id}>
             <EvoRadio
@@ -71,10 +77,10 @@ export const Group: Story = {
               className="field__control"
               id={id}
               name="radio-group"
-              value={option}
+              value={id}
             />
             <label className="field__label field__label--end" htmlFor={id}>
-              Option {option}
+              {label}
             </label>
           </span>
         );

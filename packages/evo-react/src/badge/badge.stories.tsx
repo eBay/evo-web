@@ -19,7 +19,7 @@ const meta: Meta<typeof EvoBadge> = {
   },
   args: {
     number: 5,
-    a11yText: "5 unread items",
+    a11yText: "5 unread messages",
   },
 };
 
@@ -34,6 +34,6 @@ export const Default: Story = {};
 export const Empty: Story = {
   args: {
     number: undefined,
-    a11yText: "new",
+    a11yText: "New offer received",
   },
 };

@@ -36,7 +36,8 @@ type Story = StoryObj<typeof EvoTextarea>;
 /** A standard multi-line input has an accessible name. */
 export const Default: Story = {
   args: {
-    "aria-label": "Example textarea",
+    "aria-label": "Message to seller",
+    placeholder: "Ask about item condition or delivery",
   },
 };
 
@@ -47,12 +48,13 @@ function ControlledExample(args: Story["args"]) {
     <>
       <EvoTextarea
         {...args}
-        aria-label="Controlled textarea"
+        aria-label="Listing description"
+        placeholder="Describe the item’s condition and included accessories."
         value={value}
         onChange={(event) => setValue(event.currentTarget.value)}
       />
       <pre>{value}</pre>
-      <EvoButton onClick={() => setValue("")}>Clear</EvoButton>
+      <EvoButton onClick={() => setValue("")}>Clear description</EvoButton>
     </>
   );
 }

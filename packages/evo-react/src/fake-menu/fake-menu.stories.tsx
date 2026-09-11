@@ -56,21 +56,24 @@ const meta: Meta<typeof EvoFakeMenu> = {
     return (
       <EvoFakeMenu {...args}>
         <EvoFakeMenuItems>
-          <EvoFakeMenuItem href="#" onClick={(event) => event.preventDefault()}>
+          <EvoFakeMenuItem
+            href="/messages"
+            onClick={(event) => event.preventDefault()}
+          >
             Messages
             <EvoFakeMenuItemBadge number={5} a11yText="5 unread messages" />
           </EvoFakeMenuItem>
           <EvoFakeMenuItem
-            href="#"
+            href="/purchase-history"
             current
             onClick={(event) => event.preventDefault()}
           >
-            Current page
+            Purchase history
           </EvoFakeMenuItem>
           <EvoFakeMenuSeparator />
-          <EvoFakeMenuItem type="button">Button item</EvoFakeMenuItem>
-          <EvoFakeMenuItem href="#" disabled>
-            Disabled link
+          <EvoFakeMenuItem type="button">Sign out</EvoFakeMenuItem>
+          <EvoFakeMenuItem href="/seller-hub" disabled>
+            Seller Hub unavailable
           </EvoFakeMenuItem>
         </EvoFakeMenuItems>
       </EvoFakeMenu>

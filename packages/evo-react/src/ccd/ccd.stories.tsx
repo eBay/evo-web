@@ -30,9 +30,9 @@ const meta: Meta<typeof EvoCCD> = {
     },
   },
   args: {
-    max: "2000",
-    min: "1000",
-    a11yText: "Charger included. 1000 - 2000 Watts. USB PD",
+    max: "65",
+    min: "15",
+    a11yText: "Charger included. 15 to 65 watts. USB Power Delivery.",
   },
 };
 

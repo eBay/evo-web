@@ -22,7 +22,7 @@ type Story = StoryObj<typeof EvoChip>;
 export const Default: Story = {
   render: (args) => (
     <EvoChip {...args}>
-      <EvoChipText>Football</EvoChipText>
+      <EvoChipText>Free shipping</EvoChipText>
     </EvoChip>
   ),
 };
@@ -31,8 +31,8 @@ export const Default: Story = {
 export const WithDeleteButton: Story = {
   render: (args) => (
     <EvoChip {...args}>
-      <EvoChipText>Football</EvoChipText>
-      <EvoChipDeleteButton a11yText="Delete Football" />
+      <EvoChipText>Free shipping</EvoChipText>
+      <EvoChipDeleteButton a11yText="Remove Free shipping filter" />
     </EvoChip>
   ),
 };

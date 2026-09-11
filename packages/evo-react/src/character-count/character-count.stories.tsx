@@ -30,8 +30,8 @@ const meta: Meta<typeof EvoCharacterCount> = {
     },
   },
   args: {
-    text: "Hello world",
-    max: 120,
+    text: "Vintage leather messenger bag",
+    max: 80,
     a11yText: "characters used",
   },
 };
@@ -59,7 +59,7 @@ export const InField: Story = {
           className="field__label field__label--stacked"
           htmlFor="character-count-input"
         >
-          Field Label
+          Item description
         </label>
         <span className="field__control">
           <EvoInput
@@ -72,7 +72,9 @@ export const InField: Story = {
           />
         </span>
         <div className="field__description field__description--group">
-          <span id="character-count-description">Brief description</span>
+          <span id="character-count-description">
+            Describe the condition, defects, and included accessories.
+          </span>
           <EvoCharacterCount
             text={text}
             max={max}
@@ -86,7 +88,7 @@ export const InField: Story = {
   },
 };
 
-const customText = "Custom";
+const customText = "Refurbished headphones with charging case and USB-C cable";
 const customCount = countCharacters(customText);
 
 /** Custom content replaces the default count wording. */
