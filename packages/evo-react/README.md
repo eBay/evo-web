@@ -37,8 +37,10 @@ import "@ebay/skin/global.css";
 
 ## Usage
 
+Import each component from its package subpath:
+
 ```tsx
-import { EvoButton } from "@evo-web/react";
+import { EvoButton } from "@evo-web/react/button";
 ```
 
 ## Component Naming
@@ -47,15 +49,15 @@ All components use the `Evo*` prefix (e.g., `EvoButton`, `EvoAccordion`).
 
 ## Key Differences from @ebay/ui-core-react
 
-| Feature          | @ebay/ui-core-react    | @evo-web/react    |
-| ---------------- | ---------------------- | ----------------- |
-| Output Format    | CommonJS               | ESM               |
-| Tree-shaking     | component path imports | Optimal           |
-| Component Naming | `Ebay*`                | `Evo*`            |
-| React Version    | 16.8+, 18+, 19+        | 19+               |
-| Ref Handling     | `forwardRef`           | Native (React 19) |
-| TypeScript       | Partial strict mode    | Full strict mode  |
-| Makeup.js        | External               | Bundled           |
+| Feature          | @ebay/ui-core-react    | @evo-web/react     |
+| ---------------- | ---------------------- | ------------------ |
+| Output Format    | CommonJS               | ESM                |
+| Tree-shaking     | component path imports | Component subpaths |
+| Component Naming | `Ebay*`                | `Evo*`             |
+| React Version    | 16.8+, 18+, 19+        | 19+                |
+| Ref Handling     | `forwardRef`           | Native (React 19)  |
+| TypeScript       | Partial strict mode    | Full strict mode   |
+| Makeup.js        | External               | Bundled            |
 
 ## Migration Guide
 
@@ -65,7 +67,7 @@ Documentation will be provided when components are available. Migration will inv
 - Removing `forwardRef` wrappers (React 19 native ref support)
 - Icon provider rename: `EbayIconProvider` → `EvoIconProvider`
 - Flag icons: Use Skin class-based sprites instead of SVG components
-- Import paths: Single entry point with optimal tree-shaking
+- Import paths: Use component subpaths such as `@evo-web/react/button`
 
 ## Development
 
