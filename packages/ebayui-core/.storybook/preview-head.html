@@ -16,24 +16,24 @@
   matching it against its own preview iframes and drops anything it can't match.
 -->
 <script>
-  (function () {
-    window.addEventListener(
-      "message",
-      function (event) {
-        if (event.origin === window.location.origin) {
-          return;
-        }
-        var data = event.data;
-        if (typeof data === "string") {
-          if (data.indexOf("storybook-channel") === -1) {
-            return;
-          }
-        } else if (!data || data.key !== "storybook-channel") {
-          return;
-        }
-        event.stopImmediatePropagation();
-      },
-      true,
-    );
-  })();
+    (function () {
+        window.addEventListener(
+            "message",
+            function (event) {
+                if (event.origin === window.location.origin) {
+                    return;
+                }
+                var data = event.data;
+                if (typeof data === "string") {
+                    if (data.indexOf("storybook-channel") === -1) {
+                        return;
+                    }
+                } else if (!data || data.key !== "storybook-channel") {
+                    return;
+                }
+                event.stopImmediatePropagation();
+            },
+            true,
+        );
+    })();
 </script>
