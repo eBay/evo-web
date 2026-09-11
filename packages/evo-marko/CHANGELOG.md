@@ -1,5 +1,15 @@
 # @evo-web/marko
 
+## 0.8.1
+
+### Patch Changes
+
+- [#901](https://github.com/eBay/evo-web/pull/901) [`6a1f225`](https://github.com/eBay/evo-web/commit/6a1f225d6a450925779308bdc0e54c7ff539241e) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoTooltip component with an EvoButton host by default, and default EvoButton to `type="button"`. Evo Tooltip now uses one hover-and-focus trigger model in both experimental packages, so the `noHover` option is removed.
+
+- [#944](https://github.com/eBay/evo-web/pull/944) [`61fc03f`](https://github.com/eBay/evo-web/commit/61fc03f79a990e09899d11b52c7964b5d39844bd) Thanks [@ArtBlue](https://github.com/ArtBlue)! - Deprecate `live-bag-thin-16`, `live-bag-16`, `live-bag-20`, `live-bag-24`, and `live-bag-filled-24`; use the equivalent `live-broadcast-*` icons instead. To stop live usage immediately without breaking existing consumers, the underlying artwork for these 5 icons has been swapped to match their `live-broadcast-*` counterparts — `EvoIconLiveBag16` (and its Marko/legacy equivalents) now render the broadcast icon under the existing name, with no code changes required. Consumers should still migrate to `live-broadcast-*` directly, since the deprecated names will be removed in a future major version.
+  
+  The 3 colored `live-bag-play-filled-*-colored` variants are untouched pending a follow-up decision (no `live-broadcast` colored equivalent currently exists).
+
 ## 0.8.0
 
 ### Minor Changes

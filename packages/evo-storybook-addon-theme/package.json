@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@ebay/design-tokens": "^2.4.3",
-    "@ebay/skin": "^19",
+    "@ebay/skin": "^19.35.0",
     "@storybook/addon-docs": "^10",
     "@storybook/icons": "^2.0.1",
     "react": "^19",
