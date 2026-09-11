@@ -2105,24 +2105,6 @@
         "width": "24"
       },
       {
-        "name": "live-bag-play-filled-16-colored",
-        "size": "16-colored",
-        "height": "16",
-        "width": "16"
-      },
-      {
-        "name": "live-bag-play-filled-24-colored",
-        "size": "24-colored",
-        "height": "24",
-        "width": "24"
-      },
-      {
-        "name": "live-bag-play-filled-64-colored",
-        "size": "64-colored",
-        "height": "64",
-        "width": "64"
-      },
-      {
         "name": "live-broadcast-16",
         "size": "16",
         "height": "16",
@@ -3838,7 +3820,10 @@
       "live-bag-16",
       "live-bag-20",
       "live-bag-24",
-      "live-bag-filled-24"
+      "live-bag-filled-24",
+      "live-bag-play-filled-16-colored",
+      "live-bag-play-filled-24-colored",
+      "live-bag-play-filled-64-colored"
     ],
     "deprecated": [
       {
@@ -3891,6 +3876,24 @@
         "size": "24",
         "height": "24",
         "width": "24"
+      },
+      {
+        "name": "live-bag-play-filled-16-colored",
+        "size": "16-colored",
+        "height": "16",
+        "width": "16"
+      },
+      {
+        "name": "live-bag-play-filled-24-colored",
+        "size": "24-colored",
+        "height": "24",
+        "width": "24"
+      },
+      {
+        "name": "live-bag-play-filled-64-colored",
+        "size": "64-colored",
+        "height": "64",
+        "width": "64"
       },
       {
         "name": "authenticity-guarantee-filled-16-colored",
