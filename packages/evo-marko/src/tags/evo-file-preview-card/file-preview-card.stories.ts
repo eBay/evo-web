@@ -37,8 +37,8 @@ export default {
       description: 'Status of the file, can be `"uploading"` or `undefined`',
     },
     href: {
+      control: false,
       type: "string",
-      control: "text",
       description: "If present, wrap the card in an `<a>` tag",
     },
     infoText: {

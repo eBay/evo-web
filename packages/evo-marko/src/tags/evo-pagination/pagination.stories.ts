@@ -44,8 +44,8 @@ export default {
           description: "Indicates that this item is the current page",
         },
         href: {
+          control: false,
           type: "string",
-          control: "string",
           description: "When present, switch to `<a>` instead of `<button>`",
         },
         ["<button> attributes" as any]: {

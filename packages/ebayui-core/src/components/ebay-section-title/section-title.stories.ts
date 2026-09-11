@@ -25,7 +25,7 @@ export default {
 
     argTypes: {
         href: {
-            control: { type: "text" },
+            control: false,
             description:
                 "RL. Title content and optional CTA content will link to this",
         },

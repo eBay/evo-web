@@ -22,7 +22,7 @@ export default {
 
     argTypes: {
         href: {
-            control: { type: "text" },
+            control: false,
             description: "for link that looks like a button",
         },
         disabled: {

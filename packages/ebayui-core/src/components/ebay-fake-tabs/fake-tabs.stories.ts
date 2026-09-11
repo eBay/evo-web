@@ -46,7 +46,7 @@ export default {
             description: "The size of the tabs",
         },
         href: {
-            control: { type: "text" },
+            control: false,
             description: "The link to take the user to for each tab",
             table: {
                 category: "@tag attributes",

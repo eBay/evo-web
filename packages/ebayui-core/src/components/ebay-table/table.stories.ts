@@ -91,8 +91,8 @@ export default {
             },
         },
         href: {
+            control: false,
             name: "href",
-            control: { type: "text" },
             description: "If set, column sorting will be a link to this href",
             table: {
                 category: "@header attribute tags",

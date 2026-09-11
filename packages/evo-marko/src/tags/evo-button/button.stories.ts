@@ -19,6 +19,7 @@ export default {
   },
   argTypes: {
     href: {
+      control: false,
       description: "URL for link behavior (switches to anchor tag)",
     },
     size: {

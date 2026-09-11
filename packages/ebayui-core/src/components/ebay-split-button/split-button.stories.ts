@@ -31,8 +31,8 @@ export default {
     argTypes: {
         renderBody: "Button",
         href: {
+            control: false,
             description: "url for link behaviour (switches to anchor tag)",
-            control: { type: "text" },
         },
         size: {
             options: ["large", "regular"],

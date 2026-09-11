@@ -66,6 +66,7 @@ export default {
             description: "Previous/next button is disabled or not",
         },
         href: {
+            control: false,
             name: "href",
             table: {
                 category: "@item attribute tags",
