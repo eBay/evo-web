@@ -21,6 +21,7 @@ type UseExpanderOptions = {
   flip?: boolean;
   shift?: boolean;
   inline?: boolean;
+  referenceElement?: Element | null;
 };
 
 export function useExpander({
@@ -33,6 +34,7 @@ export function useExpander({
   flip = true,
   shift = true,
   inline = true,
+  referenceElement,
 }: UseExpanderOptions = {}) {
   const isControlled = open !== undefined;
   const [uncontrolledOpen, setUncontrolledOpen] = useState(defaultOpen);
@@ -47,6 +49,14 @@ export function useExpander({
       onOpenChange?.(nextOpen);
     },
     [isControlled, onOpenChange],
+  );
+
+  const elements = useMemo(
+    () =>
+      referenceElement === undefined
+        ? undefined
+        : { reference: referenceElement },
+    [referenceElement],
   );
 
   const middleware = useMemo(() => {
@@ -83,6 +93,7 @@ export function useExpander({
     placement,
     strategy,
     middleware,
+    elements,
     whileElementsMounted: autoUpdate,
   });
 

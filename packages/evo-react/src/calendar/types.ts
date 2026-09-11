@@ -54,6 +54,8 @@ type BaseCalendarProps = Omit<ComponentProps<"div">, "onSelect"> & {
   today?: DayISO;
   /** Config for disabling dates: `{ before?: DayISO, after?: DayISO, weekdays?: number[], list?: DayISO[], callback?: (iso) => boolean }`. Weekdays: 0=Sun … 6=Sat. */
   disable?: Disable;
+  /** Prevents selection changes without disabling date controls. */
+  readOnly?: boolean;
   /** Controlled first displayed month (`YYYY-MM`). Defaults to the month containing `today`. */
   visibleMonth?: MonthISO;
   /** Initial uncontrolled first displayed month (`YYYY-MM`). */

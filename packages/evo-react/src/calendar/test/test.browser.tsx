@@ -113,6 +113,25 @@ describe("evo-calendar", () => {
       await expect.element(day).toHaveAttribute("aria-pressed", "true");
     });
 
+    it("does not change selection in read-only mode", async () => {
+      const onSelectedChange = vi.fn();
+      const screen = await render(
+        <EvoCalendar
+          selectMode="day"
+          today="2025-01-15"
+          readOnly
+          onSelectedChange={onSelectedChange}
+        />,
+      );
+
+      const day = screen.getByRole("button", { name: "10" });
+      await user.click(day);
+
+      expect(onSelectedChange).not.toHaveBeenCalled();
+      await expect.element(day).not.toHaveAttribute("aria-pressed");
+      await expect.element(day).not.toBeDisabled();
+    });
+
     it("moves focus with arrow keys", async () => {
       const screen = await render(
         <EvoCalendar selectMode="day" today="2025-01-15" />,
@@ -225,6 +244,29 @@ describe("evo-calendar", () => {
       await expect
         .element(screen.getByRole("button", { name: /^12 - end of range$/ }))
         .toHaveAttribute("aria-pressed", "true");
+    });
+    it("does not change range selection in read-only mode", async () => {
+      const onSelectedChange = vi.fn();
+      const screen = await render(
+        <EvoCalendar
+          selectMode="range"
+          today="2025-01-15"
+          readOnly
+          a11yRangeText={a11yRangeText}
+          onSelectedChange={onSelectedChange}
+        />,
+      );
+
+      const start = screen.getByRole("button", { name: /^5$/ });
+      const end = screen.getByRole("button", { name: /^12$/ });
+      await user.click(start);
+      await user.click(end);
+
+      expect(onSelectedChange).not.toHaveBeenCalled();
+      await expect.element(start).not.toHaveAttribute("aria-pressed");
+      await expect.element(end).not.toHaveAttribute("aria-pressed");
+      await expect.element(start).not.toBeDisabled();
+      await expect.element(end).not.toBeDisabled();
     });
   });
 
