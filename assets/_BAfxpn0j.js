@@ -1,0 +1,2 @@
+import{t as e}from"./_CGDmBjR1.js";var t=`<div class=a11y-pattern-content><h1>Known Issues</h1><ul><li><a href=https://issues.chromium.org/issues/40260928>https://issues.chromium.org/issues/40260928</a></li><li><a href=https://issues.chromium.org/issues/40945405>https://issues.chromium.org/issues/40945405</a></li></ul></div>`,n=`b`,r=()=>{},i=e(`NY2EEb8`,t,`b`);export{r as $setup,t as $template,n as $walks,i as default};
+//# sourceMappingURL=_BAfxpn0j.js.map

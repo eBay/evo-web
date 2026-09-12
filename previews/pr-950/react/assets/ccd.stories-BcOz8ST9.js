@@ -1,0 +1,23 @@
+import{a as e,n as t}from"./rolldown-runtime-DkW27tQK.js";import{t as n}from"./jsx-runtime-DeHZSEgm.js";import{t as r}from"./classnames-D09xBJOL.js";import{a as i,i as a,n as o,o as s,r as c,t as l}from"./ccd-top-BBdES73W.js";function u(){return(u=t((()=>{})))()}function d({max:e,min:t,chargerIcon:n,units:r=`W`,secondaryType:a,a11yText:o,className:s,...u}){return(0,p.jsxs)(`div`,{...u,role:`img`,"aria-label":o??void 0,className:(0,f.default)(`ccd`,s),children:[n===`included`&&(0,p.jsx)(i,{className:`ccd__charger-icon`}),n===`not-included`&&(0,p.jsx)(c,{className:`ccd__charger-icon`}),(t||e)&&(0,p.jsxs)(`div`,{className:`ccd__description-figure`,children:[(0,p.jsx)(l,{className:`ccd__top-icon`}),(0,p.jsxs)(`div`,{className:`ccd__body`,children:[(0,p.jsxs)(`div`,{children:[t,` - `,e]}),(0,p.jsx)(`div`,{children:r}),a===`usbpd`&&(0,p.jsx)(`div`,{children:`USB PD`})]})]})]})}var f,p;function m(){return(m=t((()=>{f=e(r(),1),s(),a(),o(),u(),p=n();try{d.displayName=`EvoCCD`,d.__docgenInfo={description:`The common charger directive (CCD) figure communicates whether a charger is
+included and shows the power range required by a device.
+
+\`a11yText\` describes the complete figure. \`min\` and \`max\` control the visible
+range, and \`secondaryType="usbpd"\` adds the USB Power Delivery label.
+
+## Usage
+
+\`\`\`tsx
+import { EvoCCD } from "@evo-web/react/ccd";
+
+<EvoCCD
+  min="1000"
+  max="2000"
+  chargerIcon="included"
+  a11yText="Charger included. 1000 - 2000 Watts"
+/>
+\`\`\``,displayName:`EvoCCD`,filePath:`/home/runner/work/evo-web/evo-web/packages/evo-react/src/ccd/ccd.tsx`,methods:[],props:{max:{defaultValue:null,declarations:[{fileName:`evo-react/src/ccd/types.ts`,name:`TypeLiteral`}],description:"Maximum power range value. When both `min` and `max` are unset, the description figure is hidden.",name:`max`,required:!1,tags:{},type:{name:`string`}},min:{defaultValue:null,declarations:[{fileName:`evo-react/src/ccd/types.ts`,name:`TypeLiteral`}],description:"Minimum power range value. When both `min` and `max` are unset, the description figure is hidden.",name:`min`,required:!1,tags:{},type:{name:`string`}},chargerIcon:{defaultValue:null,declarations:[{fileName:`evo-react/src/ccd/types.ts`,name:`TypeLiteral`}],description:`Shows whether a charger is included.`,name:`chargerIcon`,required:!1,tags:{},type:{name:`enum`,raw:`ChargerIcon`,value:[{value:`"included"`},{value:`"not-included"`}]}},units:{defaultValue:{value:`W`},declarations:[{fileName:`evo-react/src/ccd/types.ts`,name:`TypeLiteral`}],description:`Unit label displayed beneath the power range.`,name:`units`,required:!1,tags:{},type:{name:`string`}},secondaryType:{defaultValue:null,declarations:[{fileName:`evo-react/src/ccd/types.ts`,name:`TypeLiteral`}],description:'Displays the `"USB PD"` secondary label when set to `"usbpd"`.',name:`secondaryType`,required:!1,tags:{},type:{name:`enum`,raw:`"usbpd"`,value:[{value:`"usbpd"`}]}},a11yText:{defaultValue:null,declarations:[{fileName:`evo-react/src/ccd/types.ts`,name:`TypeLiteral`}],description:'Accessible label for the figure. English default to be overridden is\n`"Charger included. {min} - {max} Watts. USB PD"`. Pass `null` explicitly\n_only_ if alternative accessibility information is present.',name:`a11yText`,required:!0,tags:{},type:{name:`string | null`}}},tags:{summary:`Charger capability summary.`}}}catch{}})))()}var h,g,_;function v(){return(v=t((()=>{m(),h={title:`Graphics & Icons/EvoCCD`,component:d,argTypes:{max:{control:`text`},min:{control:`text`},chargerIcon:{control:`select`,options:[`included`,`not-included`]},units:{control:`text`,table:{defaultValue:{summary:`W`}}},secondaryType:{control:`select`,options:[`usbpd`]},a11yText:{control:`text`,type:{name:`string`,required:!0}}},args:{max:`2000`,min:`1000`,a11yText:`Charger included. 1000 - 2000 Watts. USB PD`}},g={args:{chargerIcon:`included`,secondaryType:`usbpd`}},_=[`Default`],g.parameters={...g.parameters,docs:{...g.parameters?.docs,source:{originalSource:`{
+  args: {
+    chargerIcon: "included",
+    secondaryType: "usbpd"
+  }
+}`,...g.parameters?.docs?.source},description:{story:`The figure combines charger inclusion with a product's power range.`,...g.parameters?.docs?.description}}}})))()}v();export{g as Default,_ as __namedExportsOrder,h as default};

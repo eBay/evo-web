@@ -1,0 +1,32 @@
+import{a as e,n as t}from"./rolldown-runtime-DkW27tQK.js";import{t as n}from"./react-CK-NQdWx.js";import{t as r}from"./jsx-runtime-DeHZSEgm.js";import{t as i}from"./classnames-D09xBJOL.js";import{n as a,t as o}from"./upload-24-ChZ2yyDo.js";function s(){let e=(0,l.use)(d);if(!e)throw Error(`EvoFileInputCTA must be used within an EvoFileInput component`);return e}function c({inputId:e,children:t}){let n=(0,l.useMemo)(()=>({inputId:e}),[e]);return(0,u.jsx)(d,{value:n,children:t})}var l,u,d;function f(){return(f=t((()=>{l=n(),u=r(),d=(0,l.createContext)(null);try{c.displayName=`FileInputProvider`,c.__docgenInfo={description:``,displayName:`FileInputProvider`,filePath:`/home/runner/work/evo-web/evo-web/packages/evo-react/src/file-input/context.tsx`,methods:[],props:{inputId:{defaultValue:null,declarations:[{fileName:`evo-react/src/file-input/context.tsx`,name:`TypeLiteral`}],description:``,name:`inputId`,required:!0,tags:{},type:{name:`string`}}},tags:{}}}catch{}})))()}function p(){return(p=t((()=>{})))()}function m({children:e,className:t,id:n,ref:r,onDragEnter:i,onDragOver:a,onDragLeave:s,onDrop:l,style:u,...d}){let f=(0,h.useId)(),p=n??f,[m,v]=(0,h.useState)(!1),y=e=>{v(!0),i?.(e)},b=e=>{v(!0),a?.(e)},x=e=>{v(!1),s?.(e)},S=e=>{v(!1),l?.(e)};return(0,_.jsx)(c,{inputId:p,children:(0,_.jsxs)(`div`,{className:(0,g.default)(`file-input`,t),style:u,children:[(0,_.jsxs)(`div`,{className:(0,g.default)(`file-input__container`,m&&`file-input___container--dragged-over`),children:[(0,_.jsx)(`div`,{className:`file-input__upload-icon`,children:(0,_.jsx)(o,{})}),(0,_.jsx)(`div`,{className:`file-input__content`,children:e})]}),(0,_.jsx)(`input`,{...d,ref:r,id:p,type:`file`,className:`file-input__input`,onDragEnter:y,onDragOver:b,onDragLeave:x,onDrop:S})]})})}var h,g,_;function v(){return(v=t((()=>{h=n(),g=e(i(),1),f(),a(),p(),_=r();try{m.displayName=`EvoFileInput`,m.__docgenInfo={description:`File upload allows users to upload one or more files.
+
+\`EvoFileInput\` wraps the native file input and supplies its heading, guidance,
+picker label, and drag-over styling. The \`<input type="file">\` remains
+responsible for selection and form behavior, while input attributes and the
+ref are forwarded to that control.
+
+## Usage
+
+\`\`\`tsx
+import {
+  EvoFileInput,
+  EvoFileInputCTA,
+  EvoFileInputDescription,
+  EvoFileInputHeader,
+} from "@evo-web/react/file-input";
+
+<EvoFileInput accept="image/*">
+  <EvoFileInputHeader>Upload a photo</EvoFileInputHeader>
+  <EvoFileInputDescription>PNG or JPG</EvoFileInputDescription>
+  <EvoFileInputCTA>Choose file</EvoFileInputCTA>
+</EvoFileInput>
+\`\`\``,displayName:`EvoFileInput`,filePath:`/home/runner/work/evo-web/evo-web/packages/evo-react/src/file-input/file-input.tsx`,methods:[],props:{},tags:{summary:`Styled file selection control.`}}}catch{}})))()}function y({as:e=`span`,className:t,children:n,...r}){return(0,x.jsx)(e,{...r,className:(0,b.default)(`file-input__content-header`,t),children:n})}var b,x;function S(){return(S=t((()=>{b=e(i(),1),x=r();try{y.displayName=`EvoFileInputHeader`,y.__docgenInfo={description:"Names the upload task. The `as` prop changes the heading element when the\nupload is a distinct section in the page's heading hierarchy.",displayName:`EvoFileInputHeader`,filePath:`/home/runner/work/evo-web/evo-web/packages/evo-react/src/file-input/file-input-header.tsx`,methods:[],props:{as:{defaultValue:{value:`span`},declarations:[{fileName:`evo-react/src/file-input/types.ts`,name:`TypeLiteral`}],description:'HTML element to render as the header. Defaults to `<span>`.\nUse a heading element (e.g. `"h2"`) for semantic heading hierarchy.',name:`as`,required:!1,tags:{},type:{name:`ElementType`}}},tags:{summary:`File input heading.`}}}catch{}})))()}function C({className:e,children:t,...n}){return(0,T.jsx)(`span`,{...n,className:(0,w.default)(`file-input__content-subheader`,e),children:t})}var w,T;function E(){return(E=t((()=>{w=e(i(),1),T=r();try{C.displayName=`EvoFileInputDescription`,C.__docgenInfo={description:`States accepted formats or upload limits for the file input. It belongs
+between the header and picker action.`,displayName:`EvoFileInputDescription`,filePath:`/home/runner/work/evo-web/evo-web/packages/evo-react/src/file-input/file-input-description.tsx`,methods:[],props:{},tags:{summary:`Supporting file input guidance.`}}}catch{}})))()}function D({className:e,children:t,...n}){let{inputId:r}=s();return(0,O.jsx)(`label`,{...n,htmlFor:r,className:e,children:(0,O.jsx)(`span`,{className:`file-input__content-cta`,children:t})})}var O;function k(){return(k=t((()=>{f(),O=r();try{D.displayName=`EvoFileInputCTA`,D.__docgenInfo={description:'Labels the native file picker action. It belongs inside `EvoFileInput`, which\nmanages its association with the `<input type="file">` automatically.',displayName:`EvoFileInputCTA`,filePath:`/home/runner/work/evo-web/evo-web/packages/evo-react/src/file-input/file-input-cta.tsx`,methods:[],props:{},tags:{summary:`File picker action label.`}}}catch{}})))()}var A,j,M,N;function P(){return(P=t((()=>{v(),S(),E(),k(),A=r(),j={title:`Form Input/EvoFileInput`,component:m,subcomponents:{EvoFileInputHeader:y,EvoFileInputDescription:C,EvoFileInputCTA:D},argTypes:{multiple:{control:`boolean`,description:`Whether multiple files can be selected.`},disabled:{control:`boolean`},accept:{control:`text`},onChange:{action:`change`,table:{category:`Events`}}}},M={render:e=>(0,A.jsxs)(m,{...e,children:[(0,A.jsx)(y,{children:`Drag and drop files`}),(0,A.jsx)(C,{children:`Accepted formats: JPG and PNG. Maximum size: 10 MB.`}),(0,A.jsx)(D,{children:`Browse files`})]})},N=[`Default`],M.parameters={...M.parameters,docs:{...M.parameters?.docs,source:{originalSource:`{
+  render: args => <EvoFileInput {...args}>
+      <EvoFileInputHeader>Drag and drop files</EvoFileInputHeader>
+      <EvoFileInputDescription>
+        Accepted formats: JPG and PNG. Maximum size: 10 MB.
+      </EvoFileInputDescription>
+      <EvoFileInputCTA>Browse files</EvoFileInputCTA>
+    </EvoFileInput>
+}`,...M.parameters?.docs?.source},description:{story:`The upload affordance combines guidance with a file-picker action.`,...M.parameters?.docs?.description}}}})))()}P();export{M as Default,N as __namedExportsOrder,j as default};

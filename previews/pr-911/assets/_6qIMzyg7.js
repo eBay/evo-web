@@ -1,0 +1,10 @@
+import{t as e}from"./_CGDmBjR1.js";var t=`<div class=a11y-pattern-content><h1>Background Icon Accessibility</h1><p><strong>NOTE</strong> : we strongly encourage the use of the SVG tag over this background icon technique.</p><p>Background icons are placed in their own element. Whilst they can be placed in pseudo content (i.e. <code>::before</code> and <code>::after</code> ) having its own element allows us the the ability to apply ARIA attributes to the icon.</p><p>All background icons will either be deemed critical or non-critical.</p><h2>Non-Critical Background Icons</h2><p>An icon is deemed non-critical if it is purely presentational, or if the information can be found in nearby or adjacent text.</p><pre><code class=language-html>&lt;p&gt;
+  &lt;span class=&quot;”icon&quot; icon--warning”&gt;&lt;/span&gt;
+  &lt;span&gt;Warning: this item is about to expire&lt;/span&gt;
+&lt;/p&gt;
+</code></pre><p>The adjacent text clearly contains the word “Warning” and so the icon does not need to be discoverable for screen readers.</p><h2>Critical Background Icons</h2><p>Critical icons are icons with no supplementary text.</p><pre><code class=language-html>&lt;span class=&quot;”icon&quot; icon--hamburger” role=&quot;img&quot; aria-label=&quot;Options&quot;&gt;&lt;/span&gt;
+</code></pre><p>An aria-label is required to convey the meaning of the icon.</p><p>Critical icons are most common in buttons:</p><pre><code class=language-html>&lt;button class=&quot;”hamburger”&quot; aria-label=&quot;”Options”&quot;&gt;
+  &lt;span class=&quot;”icon&quot; icon--hamburger”&gt;&lt;/span&gt;
+&lt;/button&gt;
+</code></pre><p>Note that this time the label is added to the button instead of the icon element.</p></div>`,n=`b`,r=()=>{},i=e(`oe`,t,`b`);export{r as $setup,t as $template,n as $walks,i as default};
+//# sourceMappingURL=_6qIMzyg7.js.map

@@ -1,0 +1,41 @@
+import{a as e,n as t}from"./rolldown-runtime-DkW27tQK.js";import{t as n}from"./react-CK-NQdWx.js";import{t as r}from"./jsx-runtime-DeHZSEgm.js";import{t as i}from"./classnames-D09xBJOL.js";function a(){if(!(typeof window>`u`||!window.matchMedia))return window.matchMedia(u)}function o(){return a()?.matches??!1}function s(e){let t=a();if(!t)return()=>{};let n=()=>e();return t.addEventListener?(t.addEventListener(`change`,n),()=>t.removeEventListener(`change`,n)):(t.addListener(n),()=>t.removeListener(n))}function c(){return(0,l.useSyncExternalStore)(s,o,()=>!1)}var l,u;function d(){return(d=t((()=>{l=n(),u=`(prefers-reduced-motion: reduce)`})))()}function f(){return(f=t((()=>{})))()}function p({a11yText:e=`Loading...`,messages:t,size:n,className:r,ref:i,...a}){let o=(0,h.useId)(),s=c(),l=t??S,u=(0,h.useRef)(l);u.current=l;let[d,f]=(0,h.useState)(()=>n===`medium`||s?0:-1),[p,v]=(0,h.useState)(!1),[y,C]=(0,h.useState)(!0),w=(0,h.useRef)(d),T=(0,h.useRef)({});w.current=d;let E=n===`medium`||s?0:-1,D=l.length,O=d>=0&&D>0?Math.min(d,D-1):-1,k=O<0||O===D-1?0:O+1,A=l[O],j=l[k],M=p;return(0,h.useEffect)(()=>{let e=()=>{clearTimeout(T.current.fadeIn),clearTimeout(T.current.showMessage),T.current={}};if(e(),D===0)return w.current=-1,f(-1),v(!1),e;let t=w.current<0?E:Math.min(w.current,D-1);w.current=t,f(t),v(!1);let n=e=>{let t=u.current.length;if(t===0)return;let n=e>=t-1?0:Math.min(e+1,t-1);w.current=n,f(n),v(!1),r(n)},r=e=>{if(e<0){T.current.fadeIn=setTimeout(()=>{v(!0),T.current.showMessage=setTimeout(()=>{w.current=0,f(0),v(!1),u.current.length>1&&r(0)},m(u.current[0],s))},b);return}if(!(D<2)){if(s){T.current.showMessage=setTimeout(()=>n(e),m(u.current[e],!0));return}T.current.fadeIn=setTimeout(()=>{v(!0),T.current.showMessage=setTimeout(()=>n(e),b)},m(u.current[e],!1))}};return r(t),e},[E,s,D,n]),(0,h.useEffect)(()=>{if(D===0)return;C(!0);let e=setTimeout(()=>{C(!1)},b);return()=>clearTimeout(e)},[s,D,n]),(0,_.jsxs)(`div`,{...a,ref:i,className:(0,g.default)(`progress-bar-expressive`,r),children:[D>0?(0,_.jsxs)(`div`,{className:(0,g.default)(`progress-bar-expressive__messages`,n===`medium`&&`progress-bar-expressive__messages--medium`),children:[!s&&D>1&&j?(0,_.jsx)(`div`,{"aria-hidden":`true`,className:(0,g.default)(`progress-bar-expressive__message`,M&&`progress-bar-expressive__message--in`),children:j.content}):null,(0,_.jsx)(`div`,{role:`status`,id:o,className:(0,g.default)(`progress-bar-expressive__message`,M&&`progress-bar-expressive__message--out`,D===1&&`progress-bar-expressive__message--in`,y&&`progress-bar-expressive__message--initial`),children:A?.content})]}):null,(0,_.jsx)(`div`,{role:`progressbar`,"aria-label":e,"aria-describedby":D>0?o:void 0,className:`progress-bar-expressive__progress`,children:(0,_.jsx)(`div`,{className:`progress-bar-expressive__lines`,children:Array.from({length:x},(e,t)=>(0,_.jsx)(`div`,{className:`progress-bar-expressive__line`},t))})})]})}function m(e,t){return(e?.duration??v)*(t?y:1)}var h,g,_,v,y,b,x,S;function C(){return(C=t((()=>{h=n(),g=e(i(),1),d(),f(),_=r(),v=1500,y=1.5,b=833,x=12,S=[];try{p.displayName=`EvoProgressBarExpressive`,p.__docgenInfo={description:`Expressive progress informs users during longer-than-normal wait times and
+can add a branded moment.
+
+\`EvoProgressBarExpressive\` presents indeterminate progress and can rotate
+through the entries in \`messages\`. Each message may specify its own
+\`duration\`; the active message is exposed as a status and describes the
+progress bar. Reduced-motion preferences avoid the staged message
+animation.
+
+## Usage
+
+\`\`\`tsx
+import { EvoProgressBarExpressive } from "@evo-web/react/progress-bar-expressive";
+
+<EvoProgressBarExpressive
+  a11yText="Processing your order"
+  messages={[
+    { content: "Checking inventory" },
+    { content: "Confirming delivery" },
+  ]}
+/>
+\`\`\``,displayName:`EvoProgressBarExpressive`,filePath:`/home/runner/work/evo-web/evo-web/packages/evo-react/src/progress-bar-expressive/progress-bar-expressive.tsx`,methods:[],props:{a11yText:{defaultValue:{value:`Loading...`},declarations:[{fileName:`evo-react/src/progress-bar-expressive/types.ts`,name:`TypeLiteral`}],description:'Localized accessible label for the progress bar.\nEnglish default to be overridden is `"Loading..."`.',name:`a11yText`,required:!1,tags:{},type:{name:`string`}},messages:{defaultValue:null,declarations:[{fileName:`evo-react/src/progress-bar-expressive/types.ts`,name:`TypeLiteral`}],description:"Entries in `messages` are displayed in order and repeat while progress continues.",name:`messages`,required:!1,tags:{},type:{name:`readonly ProgressBarExpressiveMessage[]`}},size:{defaultValue:null,declarations:[{fileName:`evo-react/src/progress-bar-expressive/types.ts`,name:`TypeLiteral`}],description:'Controls message presentation size. Defaults to `"large"`.',name:`size`,required:!1,tags:{},type:{name:`enum`,raw:`ProgressBarExpressiveSize`,value:[{value:`"large"`},{value:`"medium"`}]}}},tags:{summary:`Branded progress for longer wait times.`}}}catch{}})))()}var w,T,E,D,O;function k(){return(k=t((()=>{C(),w={title:`Progress/EvoProgressBarExpressive`,component:p,argTypes:{a11yText:{type:{name:`string`,required:!0},control:`text`},size:{control:`select`,options:[`medium`,`large`]},messages:{control:`object`}},args:{a11yText:`Loading...`,messages:[{content:`Hang tight`},{content:`We're processing your order`},{content:`Just a moment longer`}]}},T={},E={args:{messages:[{content:`We're processing your order`}]}},D={args:{messages:[{content:`Display for 2 seconds`,duration:2e3},{content:`Display for 3 seconds`,duration:3e3},{content:`Display for 4 seconds`,duration:4e3}]}},O=[`Default`,`SingleMessage`,`CustomTiming`],T.parameters={...T.parameters,docs:{...T.parameters?.docs,source:{originalSource:`{}`,...T.parameters?.docs?.source},description:{story:`The default expressive progress bar rotates through several status messages.`,...T.parameters?.docs?.description}}},E.parameters={...E.parameters,docs:{...E.parameters?.docs,source:{originalSource:`{
+  args: {
+    messages: [{
+      content: "We're processing your order"
+    }]
+  }
+}`,...E.parameters?.docs?.source},description:{story:`A single message remains visible while progress continues.`,...E.parameters?.docs?.description}}},D.parameters={...D.parameters,docs:{...D.parameters?.docs,source:{originalSource:`{
+  args: {
+    messages: [{
+      content: "Display for 2 seconds",
+      duration: 2000
+    }, {
+      content: "Display for 3 seconds",
+      duration: 3000
+    }, {
+      content: "Display for 4 seconds",
+      duration: 4000
+    }]
+  }
+}`,...D.parameters?.docs?.source},description:{story:`Custom durations control how long each message remains visible.`,...D.parameters?.docs?.description}}}})))()}k();export{D as CustomTiming,T as Default,E as SingleMessage,O as __namedExportsOrder,w as default};

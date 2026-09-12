@@ -1,0 +1,6 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{n as t,t as n}from"./badge-CjF4LHpu.js";var r,i,a,o;function s(){return(s=e((()=>{t(),r={title:`Graphics & Icons/EvoBadge`,component:n,argTypes:{number:{control:`number`},type:{control:`inline-radio`,options:[`menu`,`icon`]},a11yText:{type:{name:`string`,required:!0},control:`text`}},args:{number:5,a11yText:`5 unread items`}},i={},a={args:{number:void 0,a11yText:`new`}},o=[`Default`,`Empty`],i.parameters={...i.parameters,docs:{...i.parameters?.docs,source:{originalSource:`{}`,...i.parameters?.docs?.source},description:{story:`Use a count when it helps people understand how many items need attention.`,...i.parameters?.docs?.description}}},a.parameters={...a.parameters,docs:{...a.parameters?.docs,source:{originalSource:`{
+  args: {
+    number: undefined,
+    a11yText: "new"
+  }
+}`,...a.parameters?.docs?.source},description:{story:`Use an empty badge to signal new activity when a count is not useful.`,...a.parameters?.docs?.description}}}})))()}s();export{i as Default,a as Empty,o as __namedExportsOrder,r as default};

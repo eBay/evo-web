@@ -1,0 +1,9 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{n as t,t as n}from"./calendar-DQSfCk8r.js";var r,i,a;function o(){return(o=e((()=>{t(),r={title:`building blocks/evo-calendar`,component:n,tags:[`autodocs`],parameters:{docs:{description:{component:`
+A calendar component for displaying and selecting dates or date ranges.
+
+## Usage
+
+\`\`\`tsx
+import { EvoCalendar } from "@evo-web/react/calendar";
+\`\`\`
+        `}}},argTypes:{selectMode:{control:`select`,options:[`day`,`range`]},locale:{type:`string`,control:`text`,table:{defaultValue:{summary:`navigator.language || 'en-US'`}}},today:{type:`string`,control:`text`},selected:{control:`object`},defaultSelected:{control:`object`},visibleMonthCount:{type:`number`,control:`number`,table:{defaultValue:{summary:`1`}}},visibleMonth:{type:`string`,control:`text`},defaultVisibleMonth:{type:`string`,control:`text`},disable:{control:`object`},readOnly:{control:`boolean`},getDayHref:{control:!1},dayLinkAs:{control:!1},a11yNavigateText:{control:!1},a11yTodayText:{type:`string`,control:`text`},a11yDisabledText:{type:`string`,control:`text`},a11ySelectedText:{type:`string`,control:`text`},a11yRangeText:{control:`object`},onSelectedChange:{action:`onSelectedChange`,table:{category:`Events`}},onVisibleMonthChange:{action:`onVisibleMonthChange`,table:{category:`Events`}}},args:{selectMode:`day`,a11yNavigateText:(e,t)=>`${t===`prev`?`Previous`:`Next`}: ${e}`,a11yRangeText:{start:`start of range`,end:`end of range`,in:`in range`}}},i={},a=[`Default`],i.parameters={...i.parameters,docs:{...i.parameters?.docs,source:{originalSource:`{}`,...i.parameters?.docs?.source}}}})))()}o();export{i as Default,a as __namedExportsOrder,r as default};

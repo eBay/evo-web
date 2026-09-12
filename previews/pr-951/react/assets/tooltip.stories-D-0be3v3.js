@@ -1,0 +1,117 @@
+import{a as e,n as t}from"./rolldown-runtime-DkW27tQK.js";import{t as n}from"./react-CK-NQdWx.js";import{t as r}from"./jsx-runtime-DeHZSEgm.js";import{t as i}from"./classnames-D09xBJOL.js";import{n as a,t as o}from"./use-ref-tee-D2-WpPlp.js";import{n as s,t as c}from"./button-wdHlpOf3.js";import{n as l,t as u}from"./icon-button-DE-W2DMa.js";import{n as d,t as f}from"./use-expander-CoJQpb9M.js";import{n as p,t as m}from"./settings-24-Cn1OZKy3.js";function h(){let e=(0,_.use)(y);if(!e)throw Error(`EvoTooltip sub-components must be used within an EvoTooltip component`);return e}function g({open:e,tooltipId:t,setReference:n,setFloating:r,arrowRef:i,floatingStyles:a,arrowStyles:o,children:s}){let c=(0,_.useMemo)(()=>({open:e,tooltipId:t,setReference:n,setFloating:r,arrowRef:i,floatingStyles:a,arrowStyles:o}),[e,t,n,r,i,a,o]);return(0,v.jsx)(y,{value:c,children:s})}var _,v,y;function b(){return(b=t((()=>{_=n(),v=r(),y=(0,_.createContext)(null);try{g.displayName=`TooltipProvider`,g.__docgenInfo={description:``,displayName:`TooltipProvider`,filePath:`/home/runner/work/evo-web/evo-web/packages/evo-react/src/tooltip/context.tsx`,methods:[],props:{open:{defaultValue:null,declarations:[{fileName:`evo-react/src/tooltip/context.tsx`,name:`TypeLiteral`}],description:``,name:`open`,required:!0,tags:{},type:{name:`boolean`}},tooltipId:{defaultValue:null,declarations:[{fileName:`evo-react/src/tooltip/context.tsx`,name:`TypeLiteral`}],description:``,name:`tooltipId`,required:!0,tags:{},type:{name:`string`}},setReference:{defaultValue:null,declarations:[{fileName:`evo-react/src/tooltip/context.tsx`,name:`TypeLiteral`}],description:``,name:`setReference`,required:!0,tags:{},type:{name:`(node: Element | null) => void`}},setFloating:{defaultValue:null,declarations:[{fileName:`evo-react/src/tooltip/context.tsx`,name:`TypeLiteral`}],description:``,name:`setFloating`,required:!0,tags:{},type:{name:`(node: HTMLElement | null) => void`}},arrowRef:{defaultValue:null,declarations:[{fileName:`evo-react/src/tooltip/context.tsx`,name:`TypeLiteral`}],description:``,name:`arrowRef`,required:!0,tags:{},type:{name:`RefObject<HTMLElement | null>`}},floatingStyles:{defaultValue:null,declarations:[{fileName:`evo-react/src/tooltip/context.tsx`,name:`TypeLiteral`}],description:``,name:`floatingStyles`,required:!0,tags:{},type:{name:`CSSProperties`}},arrowStyles:{defaultValue:null,declarations:[{fileName:`evo-react/src/tooltip/context.tsx`,name:`TypeLiteral`}],description:``,name:`arrowStyles`,required:!0,tags:{},type:{name:`CSSProperties`}}},tags:{}}}catch{}})))()}function x(){return(x=t((()=>{})))()}function S({open:e,defaultOpen:t=!1,onOpenChange:n,placement:r=`bottom`,offset:i=8,flip:o=!0,shift:s=!0,inline:c=!0,className:l,children:u,onMouseEnter:f,onMouseLeave:p,onFocus:m,onBlur:h,ref:_,...v}){let y=(0,C.useId)(),b=(0,C.useRef)(null),x=d({open:e,defaultOpen:t,onOpenChange:n,placement:r,strategy:`absolute`,offset:i,flip:o,shift:s,inline:c}),S=(0,C.useCallback)(()=>{b.current!==null&&(clearTimeout(b.current),b.current=null)},[]),E=(0,C.useCallback)(e=>{f?.(e),S(),x.setOpen(!0)},[S,x.setOpen,f]),D=(0,C.useCallback)(e=>{p?.(e),S(),b.current=setTimeout(()=>{x.setOpen(!1)},300)},[S,x.setOpen,p]),O=(0,C.useCallback)(e=>{m?.(e),S(),x.setOpen(!0)},[S,x.setOpen,m]),k=(0,C.useCallback)(e=>{h?.(e),e.currentTarget.contains(e.relatedTarget)||(S(),x.setOpen(!1))},[S,x.setOpen,h]),[A]=a(_,null),j=(0,C.useCallback)(e=>{if(A(e),!e)return;let t=e.ownerDocument,n=e=>{x.open&&(e.key===`Escape`||e.key===`Esc`)&&(S(),x.setOpen(!1))};return t.addEventListener(`keydown`,n),()=>{t.removeEventListener(`keydown`,n),S(),A(null)}},[S,x.open,x.setOpen,A]);return(0,T.jsx)(g,{open:x.open,tooltipId:y,setReference:x.refs.setReference,setFloating:x.refs.setFloating,arrowRef:x.refs.arrow,floatingStyles:x.floatingStyles,arrowStyles:x.arrowStyles,children:(0,T.jsx)(`span`,{...v,ref:j,className:(0,w.default)(`tooltip`,x.open&&`tooltip--expanded`,l),onMouseEnter:E,onMouseLeave:D,onFocus:O,onBlur:k,children:u})})}var C,w,T;function E(){return(E=t((()=>{C=n(),w=e(i(),1),b(),f(),o(),x(),T=r();try{S.displayName=`EvoTooltip`,S.__docgenInfo={description:`Tooltips reveal a label or additional information when a user interacts with
+a UI element.
+
+\`EvoTooltip\` is composed from \`EvoTooltipHost\` and \`EvoTooltipContent\`, with
+an optional \`EvoTooltipHeading\`. It opens from hover or focus and closes when
+the pointer or focus leaves, or when the user presses \`Escape\`. Use \`open\`
+with \`onOpenChange\` for controlled state or \`defaultOpen\` for state managed
+by the tooltip.
+
+## Usage
+
+\`\`\`tsx
+import {
+  EvoTooltip,
+  EvoTooltipContent,
+  EvoTooltipHeading,
+  EvoTooltipHost,
+} from "@evo-web/react/tooltip";
+
+<EvoTooltip>
+  <EvoTooltipHost>Delivery estimate</EvoTooltipHost>
+  <EvoTooltipContent>
+    <EvoTooltipHeading>Estimated delivery</EvoTooltipHeading>
+    Arrives within three business days.
+  </EvoTooltipContent>
+</EvoTooltip>
+\`\`\``,displayName:`EvoTooltip`,filePath:`/home/runner/work/evo-web/evo-web/packages/evo-react/src/tooltip/tooltip.tsx`,methods:[],props:{open:{defaultValue:null,declarations:[{fileName:`evo-react/src/tooltip/types.ts`,name:`TypeLiteral`}],description:"Controlled `open` state. When provided, the consumer manages it via `onOpenChange`.",name:`open`,required:!1,tags:{},type:{name:`boolean`}},defaultOpen:{defaultValue:{value:`false`},declarations:[{fileName:`evo-react/src/tooltip/types.ts`,name:`TypeLiteral`}],description:"Initial open state for uncontrolled usage. Ignored when `open` is provided.",name:`defaultOpen`,required:!1,tags:{},type:{name:`boolean`}},onOpenChange:{defaultValue:null,declarations:[{fileName:`evo-react/src/tooltip/types.ts`,name:`TypeLiteral`}],description:"Callback fired when the tooltip requests to change its `open` state.",name:`onOpenChange`,required:!1,tags:{},type:{name:`((open: boolean) => void)`}},placement:{defaultValue:{value:`bottom`},declarations:[{fileName:`evo-react/src/tooltip/types.ts`,name:`TypeLiteral`}],description:'Position of the overlay relative to the host. Defaults to `"bottom"`.',name:`placement`,required:!1,tags:{},type:{name:`enum`,raw:`Placement`,value:[{value:`"top"`},{value:`"right"`},{value:`"bottom"`},{value:`"left"`},{value:`"top-start"`},{value:`"top-end"`},{value:`"right-start"`},{value:`"right-end"`},{value:`"bottom-start"`},{value:`"bottom-end"`},{value:`"left-start"`},{value:`"left-end"`}]}},offset:{defaultValue:{value:`8`},declarations:[{fileName:`evo-react/src/tooltip/types.ts`,name:`TypeLiteral`}],description:"Distance between the host and overlay in pixels. Defaults to `8`.",name:`offset`,required:!1,tags:{},type:{name:`number`}},flip:{defaultValue:{value:`true`},declarations:[{fileName:`evo-react/src/tooltip/types.ts`,name:`TypeLiteral`}],description:"Flips the tooltip when there is insufficient space. Defaults to `true`.",name:`flip`,required:!1,tags:{},type:{name:`boolean`}},shift:{defaultValue:{value:`true`},declarations:[{fileName:`evo-react/src/tooltip/types.ts`,name:`TypeLiteral`}],description:"Shifts the tooltip to keep it within the viewport. Defaults to `true`.",name:`shift`,required:!1,tags:{},type:{name:`boolean`}},inline:{defaultValue:{value:`true`},declarations:[{fileName:`evo-react/src/tooltip/types.ts`,name:`TypeLiteral`}],description:"Uses inline positioning for hosts that wrap across multiple lines. Defaults to `true`.",name:`inline`,required:!1,tags:{},type:{name:`boolean`}}},tags:{summary:`Contextual information anchored to a host.`}}}catch{}})))()}function D({className:e,style:t,ref:n,children:r,...i}){let{open:o,tooltipId:s,setFloating:c,arrowRef:l,floatingStyles:u,arrowStyles:d}=h(),[f]=a([c,n],null);return(0,k.jsxs)(`span`,{...i,id:s,ref:f,className:(0,O.default)(`tooltip__overlay`,e),style:{...t,...u},role:`tooltip`,tabIndex:o?-1:void 0,children:[(0,k.jsx)(`span`,{ref:l,className:`tooltip__pointer`,style:d}),(0,k.jsx)(`span`,{className:`tooltip__mask`,children:(0,k.jsx)(`span`,{className:`tooltip__cell`,children:(0,k.jsx)(`span`,{className:`tooltip__content`,children:r})})})]})}var O,k;function A(){return(A=t((()=>{O=e(i(),1),b(),o(),k=r();try{D.displayName=`EvoTooltipContent`,D.__docgenInfo={description:'Contains the tooltip information. It renders the positioned overlay with\n`role="tooltip"` and is automatically associated with `EvoTooltipHost`.',displayName:`EvoTooltipContent`,filePath:`/home/runner/work/evo-web/evo-web/packages/evo-react/src/tooltip/tooltip-content.tsx`,methods:[],props:{},tags:{summary:`Tooltip information overlay.`}}}catch{}})))()}function j({as:e,className:t,children:n,...r}){return(0,N.jsx)(e??`span`,{...r,className:(0,M.default)(`tooltip__heading`,t),children:n})}var M,N;function P(){return(P=t((()=>{M=e(i(),1),N=r();try{j.displayName=`EvoTooltipHeading`,j.__docgenInfo={description:"Styles an optional heading within `EvoTooltipContent`. It defaults to a\n`<span>`; use `as` to select an appropriate semantic element. The heading is\nvisual and semantic content only and does not create an `aria-labelledby`\nrelationship.",displayName:`EvoTooltipHeading`,filePath:`/home/runner/work/evo-web/evo-web/packages/evo-react/src/tooltip/tooltip-heading.tsx`,methods:[],props:{as:{defaultValue:null,declarations:[{fileName:`evo-react/src/tooltip/types.ts`,name:`TypeLiteral`}],description:"Element or component used for the heading. Defaults to `<span>`.",name:`as`,required:!1,tags:{},type:{name:`ElementType`}},children:{defaultValue:null,declarations:[{fileName:`evo-react/src/tooltip/types.ts`,name:`TypeLiteral`}],description:`Content rendered inside the tooltip heading.`,name:`children`,required:!1,tags:{},type:{name:`ReactNode`}},className:{defaultValue:null,declarations:[{fileName:`evo-react/src/tooltip/types.ts`,name:`TypeLiteral`}],description:`Additional class name merged with the Skin heading class.`,name:`className`,required:!1,tags:{},type:{name:`string`}},ref:{defaultValue:null,declarations:[{fileName:`evo-react/src/tooltip/types.ts`,name:`TypeLiteral`}],description:`Ref forwarded to the rendered heading.`,name:`ref`,required:!1,tags:{},type:{name:`any`}}},tags:{summary:`Optional tooltip heading.`}}}catch{}})))()}function F({as:e,children:t,className:n,ref:r,...i}){let{open:o,tooltipId:s,setReference:l}=h(),[u]=a([l,r],null);return(0,L.jsx)(e??c,{...i,ref:u,className:(0,I.default)(`tooltip__host`,n),"aria-expanded":o,"aria-describedby":s,children:t})}var I,L;function R(){return(R=t((()=>{I=e(i(),1),b(),s(),o(),L=r();try{F.displayName=`EvoTooltipHost`,F.__docgenInfo={description:"Provides the element that opens and anchors the tooltip. It defaults to\n`EvoButton`; use `as` for another element or component.\n\nCustom components must forward the supplied `ref` and DOM attributes to the\nrendered host. The tooltip automatically applies `aria-expanded` and\n`aria-describedby`.",displayName:`EvoTooltipHost`,filePath:`/home/runner/work/evo-web/evo-web/packages/evo-react/src/tooltip/tooltip-host.tsx`,methods:[],props:{as:{defaultValue:null,declarations:[{fileName:`evo-react/src/tooltip/types.ts`,name:`TypeLiteral`}],description:"Element or component rendered as the tooltip host. Defaults to `EvoButton`.",name:`as`,required:!1,tags:{},type:{name:`ElementType`}},children:{defaultValue:null,declarations:[{fileName:`evo-react/src/tooltip/types.ts`,name:`TypeLiteral`}],description:`Content rendered inside the tooltip host.`,name:`children`,required:!1,tags:{},type:{name:`ReactNode`}},className:{defaultValue:null,declarations:[{fileName:`evo-react/src/tooltip/types.ts`,name:`TypeLiteral`}],description:`Additional class name merged with the Skin host class.`,name:`className`,required:!1,tags:{},type:{name:`string`}},ref:{defaultValue:null,declarations:[{fileName:`evo-react/src/tooltip/types.ts`,name:`TypeLiteral`}],description:"Ref forwarded to the rendered host. Custom components must pass it and\nforwarded DOM attributes to their DOM element so `aria-expanded` and\n`aria-describedby` reach the rendered host.",name:`ref`,required:!1,tags:{},type:{name:`any`}}},tags:{summary:`Tooltip trigger and anchor.`}}}catch{}})))()}function z({to:e,ref:t,children:n,...r}){return(0,V.jsx)(`a`,{...r,ref:t,href:e,"data-custom-link":`true`,children:n})}function B({ref:e,href:t,...n}){return(0,V.jsx)(c,{...n,ref:e,href:t,as:({href:e,...t})=>(0,V.jsx)(z,{...t,to:e??``})})}var V,H,U,W,G,K,q,J,Y;function X(){return(X=t((()=>{s(),l(),p(),E(),A(),P(),R(),V=r(),H=n(),U={title:`Notices & Tips/EvoTooltip`,component:S,subcomponents:{EvoTooltipHost:F,EvoTooltipContent:D,EvoTooltipHeading:j},argTypes:{open:{control:`boolean`},defaultOpen:{control:`boolean`,table:{defaultValue:{summary:`false`}}},onOpenChange:{action:`onOpenChange`,table:{category:`Events`}},placement:{control:`select`,options:[`top`,`top-start`,`top-end`,`right`,`right-start`,`right-end`,`bottom`,`bottom-start`,`bottom-end`,`left`,`left-start`,`left-end`],table:{defaultValue:{summary:`bottom`}}},offset:{control:`number`,table:{defaultValue:{summary:`8`}}},flip:{control:`boolean`,table:{defaultValue:{summary:`true`}}},shift:{control:`boolean`,table:{defaultValue:{summary:`true`}}},inline:{control:`boolean`,table:{defaultValue:{summary:`true`}}}}},W={render:e=>(0,V.jsxs)(S,{...e,children:[(0,V.jsx)(F,{children:`Estimated delivery`}),(0,V.jsx)(D,{children:`Get it within 3–5 business days.`})]})},G={render:e=>(0,V.jsxs)(S,{...e,placement:`right`,children:[(0,V.jsx)(F,{as:u,a11yText:`Seller settings`,children:(0,V.jsx)(m,{})}),(0,V.jsx)(D,{children:`Manage payment, shipping, and return preferences.`})]})},K=[`top-start`,`top`,`top-end`,`right-start`,`right`,`right-end`,`bottom-start`,`bottom`,`bottom-end`,`left-start`,`left`,`left-end`],q={render:e=>(0,V.jsx)(`div`,{style:{display:`grid`,gridTemplateColumns:`repeat(3, 1fr)`,gap:`4rem`,justifyItems:`center`},children:K.map(t=>(0,H.createElement)(S,{...e,key:t,placement:t,flip:!1},(0,V.jsx)(F,{children:t}),(0,V.jsx)(D,{children:(0,V.jsx)(`span`,{style:{display:`block`},children:`Estimated delivery: 3–5 business days.`})})))})},J={render:e=>(0,V.jsxs)(S,{...e,children:[(0,V.jsx)(F,{as:B,href:`/delivery`,priority:`secondary`,children:`View delivery details`}),(0,V.jsxs)(D,{children:[(0,V.jsx)(j,{children:`Delivery options`}),`Compare standard and expedited shipping.`]})]})},Y=[`Default`,`IconButtonHost`,`Placements`,`CustomHost`],W.parameters={...W.parameters,docs:{...W.parameters?.docs,source:{originalSource:`{
+  render: args => <EvoTooltip {...args}>
+      <EvoTooltipHost>Estimated delivery</EvoTooltipHost>
+      <EvoTooltipContent>Get it within 3–5 business days.</EvoTooltipContent>
+    </EvoTooltip>
+}`,...W.parameters?.docs?.source},description:{story:`The default tooltip opens when its button is hovered or focused.`,...W.parameters?.docs?.description}}},G.parameters={...G.parameters,docs:{...G.parameters?.docs,source:{originalSource:`{
+  render: args => <EvoTooltip {...args} placement="right">
+      <EvoTooltipHost as={EvoIconButton} a11yText="Seller settings">
+        <EvoIconSettings24 />
+      </EvoTooltipHost>
+      <EvoTooltipContent>
+        Manage payment, shipping, and return preferences.
+      </EvoTooltipContent>
+    </EvoTooltip>
+}`,...G.parameters?.docs?.source},description:{story:`An icon button can provide the tooltip host.`,...G.parameters?.docs?.description}}},q.parameters={...q.parameters,docs:{...q.parameters?.docs,source:{originalSource:`{
+  render: args => <div style={{
+    display: "grid",
+    gridTemplateColumns: "repeat(3, 1fr)",
+    gap: "4rem",
+    justifyItems: "center"
+  }}>
+      {placements.map(placement => <EvoTooltip {...args} key={placement} placement={placement} flip={false}>
+          <EvoTooltipHost>{placement}</EvoTooltipHost>
+          <EvoTooltipContent>
+            <span style={{
+          display: "block"
+        }}>
+              Estimated delivery: 3–5 business days.
+            </span>
+          </EvoTooltipContent>
+        </EvoTooltip>)}
+    </div>
+}`,...q.parameters?.docs?.source},description:{story:`Placement options position the tooltip around its host.`,...q.parameters?.docs?.description}}},J.parameters={...J.parameters,docs:{...J.parameters?.docs,source:{originalSource:`{
+  render: args => <EvoTooltip {...args}>
+      <EvoTooltipHost as={CustomEvoButton} href="/delivery" priority="secondary">
+        View delivery details
+      </EvoTooltipHost>
+      <EvoTooltipContent>
+        <EvoTooltipHeading>Delivery options</EvoTooltipHeading>
+        Compare standard and expedited shipping.
+      </EvoTooltipContent>
+    </EvoTooltip>
+}`,...J.parameters?.docs?.source},description:{story:`A custom router-aware button can provide the tooltip host.
+
+The custom host must forward its \`ref\` and DOM attributes so the tooltip
+relationship reaches the rendered element.
+
+\`\`\`tsx
+import { Link } from "react-router";
+import {
+  EvoTooltip,
+  EvoTooltipContent,
+  EvoTooltipHost,
+} from "@evo-web/react/tooltip";
+import {
+  EvoButton,
+  type AnchorButtonProps,
+} from "@evo-web/react/button";
+
+type RouterButtonProps = Omit<AnchorButtonProps, "as">;
+
+function RouterButton({
+  ref,
+  href,
+  ...rest
+}: RouterButtonProps) {
+  return (
+    <EvoButton
+      {...rest}
+      ref={ref}
+      href={href}
+      as={({ href, ...linkProps }) => (
+        <Link {...linkProps} to={href ?? ""} />
+      )}
+    />
+  );
+}
+
+<EvoTooltip>
+  <EvoTooltipHost
+    as={RouterButton}
+    href="/delivery"
+    priority="secondary"
+  >
+    View delivery details
+  </EvoTooltipHost>
+  <EvoTooltipContent>
+    Delivery details and timing.
+  </EvoTooltipContent>
+</EvoTooltip>
+\`\`\``,...J.parameters?.docs?.description}}}})))()}X();export{J as CustomHost,W as Default,G as IconButtonHost,q as Placements,Y as __namedExportsOrder,U as default};

@@ -1,0 +1,2 @@
+import{a as e,c as t,y as n}from"./_XkvwCyHu.js";var{header:r,link:i}={header:`_header_11d83c4`,link:`_link_7008c56`};t(`s0`,`<!> Component`,`%`,e(7,e=>n(e.a,e._.g)));
+//# sourceMappingURL=_CSINuWPc.js.map

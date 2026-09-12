@@ -1,0 +1,15 @@
+import{a as e,n as t}from"./rolldown-runtime-DkW27tQK.js";import{t as n}from"./jsx-runtime-DeHZSEgm.js";import{t as r}from"./classnames-D09xBJOL.js";function i(){return(i=t((()=>{})))()}function a({number:e,type:t,a11yText:n=e?`${e} notifications`:`notification`,className:r,...i}){let a=t!==`menu`&&t!==`icon`?`img`:void 0,c=n??void 0;return e==null?(0,s.jsx)(`span`,{...i,className:(0,o.default)(`badge`,r),"aria-label":c,role:a}):+e>99?(0,s.jsx)(`span`,{...i,className:(0,o.default)(`badge`,r),"aria-label":c,role:a,children:`99+`}):+e>0?(0,s.jsx)(`span`,{...i,className:(0,o.default)(`badge`,`badge--circle`,r),"aria-label":c,role:a,children:e}):null}var o,s;function c(){return(c=t((()=>{o=e(r(),1),i(),s=n();try{a.displayName=`EvoBadge`,a.__docgenInfo={description:`Badges draw attention to new or important information, such as unread
+messages or an item count. Place a badge next to the label or control it
+describes.
+
+Use \`number\` to show a count, or omit it for a simple indicator. Counts above
+99 appear as \`99+\`; zero and negative values hide the badge. Make sure the
+badge's accessible label explains what the count or indicator means.
+
+## Usage
+
+\`\`\`tsx
+import { EvoBadge } from "@evo-web/react/badge";
+
+<EvoBadge number={5} a11yText="5 unread messages" />
+\`\`\``,displayName:`EvoBadge`,filePath:`/home/runner/work/evo-web/evo-web/packages/evo-react/src/badge/badge.tsx`,methods:[],props:{number:{defaultValue:null,declarations:[{fileName:`evo-react/src/badge/types.ts`,name:`TypeLiteral`}],description:"Count displayed in the badge. Values greater than 99 display as `99+`;\nzero and negative values render nothing. Omit to show an empty indicator.",name:`number`,required:!1,tags:{},type:{name:`string | number`}},type:{defaultValue:null,declarations:[{fileName:`evo-react/src/badge/types.ts`,name:`TypeLiteral`}],description:"Removes the default `img` role when the badge labels a menu or icon\ncontrol whose accessible name already conveys the badge's meaning.",name:`type`,required:!1,tags:{},type:{name:`enum`,raw:`BadgeType`,value:[{value:`"menu"`},{value:`"icon"`}]}},a11yText:{defaultValue:{value:'number ? `${number} notifications` : "notification"'},declarations:[{fileName:`evo-react/src/badge/types.ts`,name:`TypeLiteral`}],description:'Descriptive label for what the badge represents, such as `"5 unread items"`.\nEnglish default to be overridden is `"notification"` when `number` is omitted,\nor `"{number} notifications"` otherwise. Pass `null` explicitly _only_ if\nalternative accessibility information is present.',name:`a11yText`,required:!1,tags:{},type:{name:`string | null`}}},tags:{summary:`Count or status indicator.`}}}catch{}})))()}export{c as n,a as t};
