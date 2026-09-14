@@ -1,5 +1,7 @@
 import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { useArgs } from "storybook/preview-api";
+import { EvoButton } from "../button";
 import { EvoIconClear16 } from "../icon/icons/clear-16";
 import { EvoCombobox } from "./combobox";
 import { EvoComboboxOption } from "./combobox-option";
@@ -80,6 +82,7 @@ import {
 
 export default meta;
 type Story = StoryObj<typeof EvoCombobox>;
+type StoryArgs = NonNullable<Story["args"]>;
 
 export const Default: Story = {
   render: (args) => (
@@ -95,13 +98,42 @@ export const Controlled: Story = {
   args: {
     value: "August Campaign",
   },
-  render: (args) => (
-    <EvoCombobox {...args}>
-      <EvoComboboxOption text="August Campaign" />
-      <EvoComboboxOption text="4th of July Sale (paused)" />
-      <EvoComboboxOption text="Basic Offer" />
-    </EvoCombobox>
-  ),
+  render: () => {
+    const [args, updateArgs] = useArgs<StoryArgs>();
+    const setValue = (value: string) => updateArgs({ value });
+    const handleValueChange = (nextValue: string) => {
+      args.onValueChange?.(nextValue);
+      setValue(nextValue);
+    };
+
+    return (
+      <div
+        style={{
+          alignItems: "flex-start",
+          display: "flex",
+          flexDirection: "column",
+          gap: 16,
+        }}
+      >
+        <EvoCombobox {...args} onValueChange={handleValueChange}>
+          <EvoComboboxOption text="August Campaign" />
+          <EvoComboboxOption text="4th of July Sale (paused)" />
+          <EvoComboboxOption text="Basic Offer" />
+        </EvoCombobox>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+          <EvoButton type="button" onClick={() => setValue("August Campaign")}>
+            Set August Campaign
+          </EvoButton>
+          <EvoButton type="button" onClick={() => setValue("Basic Offer")}>
+            Set Basic Offer
+          </EvoButton>
+          <EvoButton type="button" onClick={() => setValue("")}>
+            Clear
+          </EvoButton>
+        </div>
+      </div>
+    );
+  },
 };
 
 export const ManualFiltering: Story = {
