@@ -17,7 +17,7 @@ static async function searchCountries(query: string, signal: AbortSignal) {
   if (results) options = results;
 </script>
 
-<evo-combobox ...input value:=value>
+<evo-combobox ...input filterMethod="manual" value:=value>
   <for|country| of=options>
     <@option data-code=country.code text=country.name/>
   </for>

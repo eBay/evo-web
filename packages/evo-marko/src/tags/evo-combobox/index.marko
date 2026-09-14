@@ -1,7 +1,6 @@
 import { type Input as EvoIconButtonInput } from "<evo-icon-button>";
 export interface ComboboxOption extends Marko.HTML.Div {
   text: string;
-  sticky?: boolean;
 }
 export interface Input extends Omit<
   Marko.HTML.Input,
@@ -12,8 +11,9 @@ export interface Input extends Omit<
   | "aria-expanded"
   | "aria-owns"
   | "aria-controls"
+  | "autocomplete"
 > {
-  autocomplete?: "list" | "none";
+  filterMethod?: "auto" | "manual" | "none";
   listSelection?: "manual" | "automatic";
   floatingLabel?: string;
   borderless?: boolean;
@@ -31,7 +31,7 @@ export interface Input extends Omit<
   disabled,
   style,
   borderless,
-  autocomplete = "none",
+  filterMethod = "auto",
   listSelection = "automatic",
   floatingLabel,
   strategy,
@@ -51,18 +51,30 @@ export interface Input extends Omit<
 
 <id/inputId=id>
 <let/open:=input.open>
-<let/activeIndex=-1>
+<let/activeText=null as string | null>
 
 <let/rawValue:=input.value>
 <let/tempValue=null as null | string>
-<let/value=tempValue || rawValue
+<const/visibleOptions=filterOptions(options, filterMethod, rawValue)>
+<const/activeIndex=(
+  activeText === null
+    ? -1
+    : visibleOptions.findIndex((option) => option.text === activeText)
+)>
+
+<script>
+  if (activeText !== null && activeIndex === -1) {
+    activeText = null;
+    tempValue = null;
+  }
+</script>
+
+<let/value=activeIndex >= 0 && tempValue ? tempValue : rawValue
   valueChange(v: string) {
     tempValue = null;
     rawValue = v;
   }
 >
-
-<const/visibleOptions=filterOptions(options, autocomplete, rawValue)>
 
 <id/listboxId>
 
@@ -86,7 +98,8 @@ export interface Input extends Omit<
     onFocusOut(e: FocusEvent, el: HTMLElement) {
       if (!el.contains(e.relatedTarget as Node)) {
         open = false;
-        activeIndex = -1;
+        activeText = null;
+        tempValue = null;
       }
     }
   >
@@ -106,7 +119,7 @@ export interface Input extends Omit<
         autocomplete="off"
         aria-owns=listboxId
         aria-controls=listboxId
-        aria-autocomplete=autocomplete
+        aria-autocomplete=filterMethod === "none" ? "none" : "list"
         aria-haspopup="listbox"
         aria-expanded=open ? "true" : "false"
         aria-activedescendant=(
@@ -129,7 +142,8 @@ export interface Input extends Omit<
           onBlur && onBlur(e, el);
         }
         onInput(e, el) {
-          activeIndex = -1;
+          activeText = null;
+          tempValue = null;
           open = true;
           onInput && onInput(e, el);
         }
@@ -138,28 +152,46 @@ export interface Input extends Omit<
             e.preventDefault();
             if (!open) {
               open = true;
-              activeIndex = -1;
+              activeText = null;
+              tempValue = null;
             } else if (visibleOptions.length > 0) {
               const size = visibleOptions.length;
               const direction = e.key === "ArrowDown" ? 1 : -1;
-              activeIndex =
+              const nextIndex =
                 ((activeIndex + 1 + direction + size + 1) % (size + 1)) - 1;
-              if (listSelection === "automatic" && activeIndex >= 0) {
-                tempValue = visibleOptions[activeIndex].text;
+              const nextOption =
+                nextIndex >= 0 && nextIndex < visibleOptions.length
+                  ? visibleOptions[nextIndex]
+                  : undefined;
+
+              activeText = nextOption?.text ?? null;
+              if (nextOption && listSelection === "automatic") {
+                tempValue = nextOption.text;
+              } else {
+                tempValue = null;
               }
-              document
-                .getElementById(`${inputId}-option-${activeIndex}`)
-                ?.scrollIntoView({ block: "nearest" });
+
+              if (nextOption) {
+                document
+                  .getElementById(`${inputId}-option-${nextIndex}`)
+                  ?.scrollIntoView({ block: "nearest" });
+              }
             }
           } else if (e.key === "Enter") {
-            if (open && activeIndex >= 0) {
+            const activeOption =
+              activeIndex >= 0 && activeIndex < visibleOptions.length
+                ? visibleOptions[activeIndex]
+                : undefined;
+            if (open && activeOption) {
               e.preventDefault();
-              value = visibleOptions[activeIndex].text;
+              value = activeOption.text;
+              activeText = null;
+              tempValue = null;
             }
             open = false;
           } else if (e.key === "Escape") {
             open = false;
-            activeIndex = -1;
+            activeText = null;
             tempValue = null;
           }
           onKeyDown && onKeyDown(e, el);
@@ -211,7 +243,8 @@ export interface Input extends Omit<
           }
           onClick(e, el) {
             value = text;
-            activeIndex = i;
+            activeText = text;
+            tempValue = null;
             open = false;
             onClick && onClick(e, el);
           }
@@ -223,20 +256,20 @@ export interface Input extends Omit<
   </>
 </evo-floating-label>
 static {
-  function filterOptions<T extends { text: string; sticky?: boolean }>(
+  function filterOptions<T extends { text: string }>(
     options: Iterable<T>,
-    autocomplete: NonNullable<Input["autocomplete"]>,
+    filterMethod: NonNullable<Input["filterMethod"]>,
     value: unknown,
   ) {
     const list = [...options];
-    if (autocomplete === "list") {
+    if (filterMethod === "auto") {
       const reg = new RegExp(
         String(value ?? "")
           .trim()
           .replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&"),
         "i",
       );
-      return list.filter((o) => reg.test(o.text || "") || o.sticky);
+      return list.filter((o) => reg.test(o.text || ""));
     }
     return list;
   }
