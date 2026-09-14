@@ -2,4 +2,4 @@
 
 ## Documentation
 
-[Storybook](https://opensource.ebay.com/evo-web/react/main/?path=/docs/dialogs-evoalertdialog--documentation)
+[Storybook](https://opensource.ebay.com/evo-web/react/?path=/docs/dialogs-evoalertdialog--documentation)
