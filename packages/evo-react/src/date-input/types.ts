@@ -12,6 +12,7 @@ export type { A11yRangeText, DateRange, DayISO };
 /** Committed date value. Use `""` for a controlled empty field. */
 export type DateInputValue = DayISO | "";
 
+/** Controlled or committed start and end date values. */
 export type DateInputRange = {
   /** Start of the selected range. Use `""` when that side is empty. */
   from?: DateInputValue;
@@ -19,6 +20,7 @@ export type DateInputRange = {
   to?: DateInputValue;
 };
 
+/** Details supplied when typed text cannot be parsed as a date. */
 export type InvalidDateEvent = {
   /** Unparsed input text. */
   value: string;
@@ -61,6 +63,7 @@ type DateInputBaseProps = Omit<
   ComponentProps<"div">,
   "onChange" | "defaultValue" | keyof EvoDateFieldProps
 > & {
+  /** Associated content, normally an `EvoDateInputCalendarPopover`. */
   children: ReactNode;
   /** Class name applied to the root `.date-textbox` element. */
   className?: string;

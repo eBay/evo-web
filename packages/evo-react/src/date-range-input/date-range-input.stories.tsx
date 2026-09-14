@@ -20,33 +20,16 @@ type DateRangeInputStoryArgs = EvoDateRangeInputGroupProps & {
 };
 
 const meta: Meta<DateRangeInputStoryArgs> = {
-  title: "form input/evo-date-range-input",
+  title: "Form Input/EvoDateRangeInputGroup",
   component: EvoDateRangeInputGroup,
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-A start and end date field that formats typed values by locale and opens a range calendar popover.
-
-The children must be ordered as start field, end field, and calendar popover.
-
-## Usage
-
-\`\`\`tsx
-import {
-  EvoDateRangeInput,
-  EvoDateRangeInputCalendarPopover,
-  EvoDateRangeInputGroup,
-} from "@evo-web/react/date-range-input";
-\`\`\`
-        `,
-      },
-    },
+  subcomponents: {
+    EvoDateRangeInput,
+    EvoDateRangeInputCalendarPopover,
   },
   argTypes: {
     locale: {
       control: "text",
+      table: { defaultValue: { summary: 'navigator.language || "en-US"' } },
     },
     collapseOnSelect: {
       control: "boolean",
@@ -60,7 +43,10 @@ import {
     popoverStrategy: {
       control: "select",
       options: ["absolute", "fixed"],
-      table: { category: "Calendar popover" },
+      table: {
+        category: "Calendar popover",
+        defaultValue: { summary: "absolute" },
+      },
     },
     disabled: {
       control: "boolean",
@@ -69,6 +55,7 @@ import {
       control: "boolean",
     },
     a11yOpenPopoverText: {
+      type: { name: "string", required: true },
       control: "text",
     },
     startFloatingLabel: {
@@ -96,9 +83,9 @@ import {
   },
   args: {
     locale: "en-US",
-    a11yOpenPopoverText: "Open calendar",
-    startFloatingLabel: "Start date",
-    endFloatingLabel: "End date",
+    a11yOpenPopoverText: "Choose purchase date range",
+    startFloatingLabel: "Purchase date from",
+    endFloatingLabel: "Purchase date to",
     calendarPopover: {
       today: "2024-01-05",
     },
@@ -109,6 +96,7 @@ import {
 export default meta;
 type Story = StoryObj<DateRangeInputStoryArgs>;
 
+/** Coordinates localized start and end fields with a shared range calendar. */
 export const Default: Story = {
   render: ({
     startFloatingLabel,
@@ -127,9 +115,9 @@ export const Default: Story = {
           `${direction === "prev" ? "Previous" : "Next"} ${month}`
         }
         a11yRangeText={{
-          start: "Start of range",
-          in: "In range",
-          end: "End of range",
+          start: "Start of purchase date range",
+          in: "Within purchase date range",
+          end: "End of purchase date range",
         }}
       />
     </EvoDateRangeInputGroup>

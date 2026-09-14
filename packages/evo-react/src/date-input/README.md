@@ -2,4 +2,4 @@
 
 ## Documentation
 
-[Storybook](https://opensource.ebay.com/evo-web/react/?path=/docs/form-input-evo-date-input--documentation)
+[Storybook](https://opensource.ebay.com/evo-web/react/?path=/docs/form-input-evodateinput--documentation)

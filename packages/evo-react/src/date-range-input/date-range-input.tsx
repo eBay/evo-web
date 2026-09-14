@@ -3,6 +3,15 @@ import { DateField } from "../date-input/date-field";
 import { useDateRangeInputContext } from "./context";
 import type { EvoDateRangeInputProps } from "./types";
 
+/**
+ * Renders one field within `EvoDateRangeInputGroup`.
+ *
+ * `type="start"` edits the beginning of the range. `type="end"` edits the
+ * end and owns the shared calendar trigger. This component must be nested in
+ * `EvoDateRangeInputGroup`.
+ *
+ * @summary Start or end field in `EvoDateRangeInputGroup`.
+ */
 export function EvoDateRangeInput({
   type,
   className,

@@ -10,6 +10,14 @@ function matchesFilter(text: string, filterValue: string) {
   return text.toLowerCase().includes(filterValue.trim().toLowerCase());
 }
 
+/**
+ * Represents a selectable value within `EvoCombobox`.
+ *
+ * `text` is displayed in the listbox and written into the input when
+ * selected. This component must be nested in `EvoCombobox`.
+ *
+ * @summary Selectable option in an `EvoCombobox`.
+ */
 export function EvoComboboxOption({
   className,
   onClick,

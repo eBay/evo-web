@@ -15,7 +15,7 @@ export type ComboboxStrategy = Strategy;
 export type EvoComboboxPostfixProps = {
   /** Icon displayed after the input. */
   icon: ReactNode;
-  /** Makes the icon actionable using an EvoIconButton. */
+  /** Makes the icon actionable using an `EvoIconButton`. */
   buttonProps?: Omit<NativeIconButtonProps, "children">;
 };
 
@@ -46,7 +46,7 @@ export type EvoComboboxProps = Omit<
   filterMethod?: ComboboxFilterMethod;
   /** Removes the input border. */
   borderless?: boolean;
-  /** EvoComboboxOption children rendered in the component's listbox. */
+  /** `EvoComboboxOption` children rendered in the component's listbox. */
   children?: ReactNode;
   /** Class name applied to the combobox wrapper. */
   className?: string;

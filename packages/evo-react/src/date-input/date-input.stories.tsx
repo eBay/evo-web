@@ -14,30 +14,15 @@ type DateInputStoryArgs = EvoDateInputProps & {
 };
 
 const meta: Meta<DateInputStoryArgs> = {
-  title: "form input/evo-date-input",
+  title: "Form Input/EvoDateInput",
   component: EvoDateInput,
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-A date field that formats typed values by locale and opens a calendar popover.
-
-## Usage
-
-\`\`\`tsx
-import {
-  EvoDateInput,
-  EvoDateInputCalendarPopover,
-} from "@evo-web/react/date-input";
-\`\`\`
-        `,
-      },
-    },
+  subcomponents: {
+    EvoDateInputCalendarPopover,
   },
   argTypes: {
     locale: {
       control: "text",
+      table: { defaultValue: { summary: 'navigator.language || "en-US"' } },
     },
     collapseOnSelect: {
       control: "boolean",
@@ -51,7 +36,10 @@ import {
     popoverStrategy: {
       control: "select",
       options: ["absolute", "fixed"],
-      table: { category: "Calendar popover" },
+      table: {
+        category: "Calendar popover",
+        defaultValue: { summary: "absolute" },
+      },
     },
     disabled: {
       control: "boolean",
@@ -60,6 +48,7 @@ import {
       control: "boolean",
     },
     a11yOpenPopoverText: {
+      type: { name: "string", required: true },
       control: "text",
     },
     floatingLabel: {
@@ -84,8 +73,8 @@ import {
   },
   args: {
     locale: "en-US",
-    a11yOpenPopoverText: "Open calendar",
-    floatingLabel: "Date",
+    a11yOpenPopoverText: "Choose purchase date",
+    floatingLabel: "Purchase date",
     calendarPopover: {
       today: "2024-01-05",
     },
@@ -96,6 +85,7 @@ import {
 export default meta;
 type Story = StoryObj<DateInputStoryArgs>;
 
+/** Accepts localized date entry and synchronizes calendar selection. */
 export const Default: Story = {
   render: ({ calendarPopover, popoverStrategy, ...args }) => (
     <EvoDateInput {...args}>

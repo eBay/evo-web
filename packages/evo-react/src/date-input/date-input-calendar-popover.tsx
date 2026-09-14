@@ -10,6 +10,14 @@ const DISABLE_ALL_DATES = {
   callback: () => true,
 } satisfies Disable;
 
+/**
+ * Renders the calendar associated with the parent `EvoDateInput`.
+ *
+ * Reads and commits the parent date selection. This component must be nested
+ * in `EvoDateInput`.
+ *
+ * @summary Calendar popover for `EvoDateInput`.
+ */
 export function EvoDateInputCalendarPopover({
   strategy = "absolute",
   ...calendar

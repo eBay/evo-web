@@ -7,46 +7,32 @@ import { EvoCombobox } from "./combobox";
 import { EvoComboboxOption } from "./combobox-option";
 
 const meta: Meta<typeof EvoCombobox> = {
-  title: "form input/evo-combobox",
+  title: "Form Input/EvoCombobox",
   component: EvoCombobox,
   subcomponents: { EvoComboboxOption },
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-A text input with a filtered listbox of selectable options.
-
-## Usage
-
-\`\`\`tsx
-import {
-  EvoCombobox,
-  EvoComboboxOption,
-} from "@evo-web/react/combobox";
-\`\`\`
-        `,
-      },
-    },
-  },
   argTypes: {
     filterMethod: {
       control: "select",
       options: ["auto", "manual", "none"],
+      table: { defaultValue: { summary: "auto" } },
     },
     listSelection: {
       control: "select",
       options: ["automatic", "manual"],
+      table: { defaultValue: { summary: "automatic" } },
     },
     strategy: {
       control: "select",
       options: ["absolute", "fixed"],
+      table: { defaultValue: { summary: "absolute" } },
     },
     borderless: {
       control: "boolean",
+      table: { defaultValue: { summary: "false" } },
     },
     defaultOpen: {
       control: "boolean",
+      table: { defaultValue: { summary: "false" } },
     },
     disabled: {
       control: "boolean",
@@ -56,6 +42,7 @@ import {
     },
     fluid: {
       control: "boolean",
+      table: { defaultValue: { summary: "false" } },
     },
     open: {
       control: "boolean",
@@ -73,7 +60,7 @@ import {
     },
   },
   args: {
-    floatingLabel: "Campaign",
+    floatingLabel: "Advertising campaign",
     filterMethod: "auto",
     listSelection: "automatic",
     placeholder: "Choose a campaign",
@@ -84,19 +71,21 @@ export default meta;
 type Story = StoryObj<typeof EvoCombobox>;
 type StoryArgs = NonNullable<Story["args"]>;
 
+/** Filters options automatically as the input value changes. */
 export const Default: Story = {
   render: (args) => (
     <EvoCombobox {...args}>
-      <EvoComboboxOption text="August Campaign" />
-      <EvoComboboxOption text="4th of July Sale (paused)" />
-      <EvoComboboxOption text="Basic Offer" />
+      <EvoComboboxOption text="Back-to-school promotion" />
+      <EvoComboboxOption text="Fourth of July sale (paused)" />
+      <EvoComboboxOption text="Store subscriber coupon" />
     </EvoCombobox>
   ),
 };
 
+/** Synchronizes the input value with externally controlled state. */
 export const Controlled: Story = {
   args: {
-    value: "August Campaign",
+    value: "Back-to-school promotion",
   },
   render: () => {
     const [args, updateArgs] = useArgs<StoryArgs>();
@@ -116,19 +105,25 @@ export const Controlled: Story = {
         }}
       >
         <EvoCombobox {...args} onValueChange={handleValueChange}>
-          <EvoComboboxOption text="August Campaign" />
-          <EvoComboboxOption text="4th of July Sale (paused)" />
-          <EvoComboboxOption text="Basic Offer" />
+          <EvoComboboxOption text="Back-to-school promotion" />
+          <EvoComboboxOption text="Fourth of July sale (paused)" />
+          <EvoComboboxOption text="Store subscriber coupon" />
         </EvoCombobox>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-          <EvoButton type="button" onClick={() => setValue("August Campaign")}>
-            Set August Campaign
+          <EvoButton
+            type="button"
+            onClick={() => setValue("Back-to-school promotion")}
+          >
+            Select back-to-school promotion
           </EvoButton>
-          <EvoButton type="button" onClick={() => setValue("Basic Offer")}>
-            Set Basic Offer
+          <EvoButton
+            type="button"
+            onClick={() => setValue("Store subscriber coupon")}
+          >
+            Select store subscriber coupon
           </EvoButton>
           <EvoButton type="button" onClick={() => setValue("")}>
-            Clear
+            Clear campaign
           </EvoButton>
         </div>
       </div>
@@ -136,6 +131,7 @@ export const Controlled: Story = {
   },
 };
 
+/** Delegates option filtering to the application while retaining listbox interaction. */
 export const ManualFiltering: Story = {
   render: (args) => {
     const [value, setValue] = useState("");
@@ -154,6 +150,8 @@ export const ManualFiltering: Story = {
     return (
       <EvoCombobox
         {...args}
+        floatingLabel="Item location"
+        placeholder="Search cities"
         filterMethod="manual"
         value={value}
         onValueChange={setValue}
@@ -166,9 +164,10 @@ export const ManualFiltering: Story = {
   },
 };
 
+/** Adds an actionable postfix that clears the current input value. */
 export const Postfix: Story = {
   render: (args) => {
-    const [value, setValue] = useState("August Campaign");
+    const [value, setValue] = useState("Back-to-school promotion");
 
     return (
       <EvoCombobox
@@ -178,14 +177,14 @@ export const Postfix: Story = {
         postfix={{
           icon: <EvoIconClear16 />,
           buttonProps: {
-            a11yText: "Clear",
+            a11yText: "Clear campaign",
             onClick: () => setValue(""),
           },
         }}
       >
-        <EvoComboboxOption text="August Campaign" />
-        <EvoComboboxOption text="4th of July Sale (paused)" />
-        <EvoComboboxOption text="Basic Offer" />
+        <EvoComboboxOption text="Back-to-school promotion" />
+        <EvoComboboxOption text="Fourth of July sale (paused)" />
+        <EvoComboboxOption text="Store subscriber coupon" />
       </EvoCombobox>
     );
   },

@@ -9,6 +9,41 @@ import type {
 import { useDatePopover } from "../date-input/use-date-popover";
 import "@ebay/skin/date-textbox.mjs";
 
+/**
+ * Date-range inputs let users enter or choose a start and end date.
+ *
+ * The group owns the shared range value, `locale`, `disabled`/`readOnly` state,
+ * and popover state. Children must be ordered as the start field, end field,
+ * and calendar popover. `value` and `onChange` support controlled usage, while
+ * `defaultValue` supports uncontrolled usage.
+ *
+ * ## Usage
+ *
+ * ```tsx
+ * import {
+ *   EvoDateRangeInput,
+ *   EvoDateRangeInputCalendarPopover,
+ *   EvoDateRangeInputGroup,
+ * } from "@evo-web/react/date-range-input";
+ *
+ * <EvoDateRangeInputGroup a11yOpenPopoverText="Choose purchase date range">
+ *   <EvoDateRangeInput type="start" floatingLabel="Purchase date from" />
+ *   <EvoDateRangeInput type="end" floatingLabel="Purchase date to" />
+ *   <EvoDateRangeInputCalendarPopover
+ *     a11yNavigateText={(month, direction) =>
+ *       `${direction === "prev" ? "Previous" : "Next"} ${month}`
+ *     }
+ *     a11yRangeText={{
+ *       start: "Start of purchase date range",
+ *       in: "Within purchase date range",
+ *       end: "End of purchase date range",
+ *     }}
+ *   />
+ * </EvoDateRangeInputGroup>;
+ * ```
+ *
+ * @summary Locale-aware start and end date inputs with a shared calendar.
+ */
 export function EvoDateRangeInputGroup({
   children,
   className,

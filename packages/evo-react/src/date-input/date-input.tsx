@@ -7,6 +7,36 @@ import type { EvoDateInputProps, DateInputValue } from "./types";
 import { useDatePopover } from "./use-date-popover";
 import "@ebay/skin/date-textbox.mjs";
 
+/**
+ * Date inputs let users enter a date manually or choose one from a calendar.
+ *
+ * Typed dates are parsed and displayed according to `locale`. `value` and
+ * `onChange` support controlled usage, while `defaultValue` supports
+ * uncontrolled usage. Nest `EvoDateInputCalendarPopover` as its child to
+ * render the calendar controlled by the input.
+ *
+ * ## Usage
+ *
+ * ```tsx
+ * import {
+ *   EvoDateInput,
+ *   EvoDateInputCalendarPopover,
+ * } from "@evo-web/react/date-input";
+ *
+ * <EvoDateInput
+ *   floatingLabel="Purchase date"
+ *   a11yOpenPopoverText="Choose purchase date"
+ * >
+ *   <EvoDateInputCalendarPopover
+ *     a11yNavigateText={(month, direction) =>
+ *       `${direction === "prev" ? "Previous" : "Next"} ${month}`
+ *     }
+ *   />
+ * </EvoDateInput>;
+ * ```
+ *
+ * @summary Locale-aware date input with a calendar popover.
+ */
 export function EvoDateInput({
   children,
   className,

@@ -457,7 +457,7 @@ describe("EvoButton SSR", () => {
 
 - Keep the ebayui-core-react Storybook category, convert its words to title case, and use the PascalCase `Evo*` component name after the slash (for example, `Buttons/EvoButton`).
 - Component descriptions and import examples come from JSDoc on the component export. Do not duplicate them in `parameters.docs.description.component`.
-- Describe each story as a useful scenario or choice for the consumer. Do not narrate the JSX or begin with implementation-focused language such as “Renders” or “Demonstrates.”
+- Describe the component behavior or API choice each story demonstrates. Keep marketplace scenarios in the rendered canvas content, not the story description. Do not narrate the JSX or begin with implementation-focused language such as “Renders” or “Demonstrates.”
 - Use credible e-commerce scenarios when the component has a marketplace use case.
 - Avoid placeholder copy such as “Button,” “Option,” “Heading,” “Content,” “Example,” and `Lorem ipsum`.
 - Ensure visible labels, accessible names, icons, destinations, and supporting text describe one coherent scenario.
