@@ -368,9 +368,9 @@ describe("evo-video", () => {
       // to false mid-test; a real source resolves it
       vi.spyOn(HTMLMediaElement.prototype, "play").mockResolvedValue();
       const video = component.container.querySelector("video")!;
-      const root = component.container.querySelector(".video")!;
       await startPlayback();
-      expect(root.classList.contains("video--controls-hidden")).toBe(true);
+      const controls = component.container.querySelector(".video__controls")!;
+      expect(controls.classList.contains("video__controls--hidden")).toBe(true);
 
       const click = async () => {
         await fireEvent(video, new PointerEvent("pointerdown"));
@@ -378,7 +378,9 @@ describe("evo-video", () => {
       };
 
       await click();
-      expect(root.classList.contains("video--controls-hidden")).toBe(false);
+      expect(controls.classList.contains("video__controls--hidden")).toBe(
+        false,
+      );
       expect(component.getByLabelText("Pause")).toBeTruthy(); // still playing
 
       await click();
@@ -440,7 +442,7 @@ describe("evo-video", () => {
     it("never hides the controls", async () => {
       await startPlayback();
       expect(
-        component.container.querySelector(".video--controls-hidden"),
+        component.container.querySelector(".video__controls--hidden"),
       ).toBeNull();
     });
   });
