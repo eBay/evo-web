@@ -1,0 +1,1 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{t}from"./react-CK-NQdWx.js";function n(e,t){let n=(0,r.useRef)(t);return[(0,r.useCallback)(t=>{n.current=t,e&&(typeof e==`function`?e(t):e.current=t)},[e]),n]}var r;function i(){return(i=e((()=>{r=t()})))()}export{n,i as t};
