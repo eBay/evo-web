@@ -1,0 +1,21 @@
+import{a as e,n as t}from"./rolldown-runtime-DkW27tQK.js";import{n}from"./utils-C7m-hPxw.js";import{c as r,h as i,l as a,n as o,p as s,r as c,s as l,t as u,u as d}from"./registry-95LfxIAE.js";import{t as f}from"./render-tag-hXgrwudm.js";import{a as p,i as m,n as h,o as g,r as _,t as v}from"./ebay-ccd-top-icon-Di0Al62f.js";var y;function b(){return(b=t((()=>{y=`<h1 style="display: flex; justify-content: space-between; align-items: center;">
+    <span>
+        ebayccd-
+    </span>
+    <span style="font-weight: normal; font-size: medium; margin-bottom: -15px;">
+        DS v1.0.0
+    </span>
+</h1>
+
+EU energy label
+
+## Examples and Documentation
+
+- [Storybook](https://ebay.github.io/evo-web/ebayui-core/?path=/story/graphics-icons-ebay-ccd)
+- [Storybook Docs](https://ebay.github.io/evo-web/ebayui-core/?path=/docs/graphics-icons-ebay-ccd)
+- [Code Examples](https://github.com/eBay/evo-web/tree/main/packages/ebayui-core/src/components/ebay-ccd/examples)
+`})))()}function x(){return(x=t((()=>{})))()}function S(){return(S=t((()=>{x()})))()}function C(){}var w,T,E,D,O,k,A,j,M,N,P;function F(){return(F=t((()=>{w=d(),S(),r(),g(),T=e(f()),m(),h(),E=e(s()),D=e(i()),O=e(l()),k=e(o()),A=u(),j=e(c()),M=`t`,N=(0,w.t)(M),(0,A.r)(M,()=>N),P={},N._=(0,k.default)(function(e,t,n,r,i,o){let{class:s,style:c,a11yText:l,chargerIcon:u,units:d=`W`,a11yUnits:f=`watts`,max:m,min:h,secondaryType:g=`none`,secondaryText:y=`USB PD`,...b}=e;e.toJSON=C;let x=g===`usbpd`,S=`${`${u?`Charger ${u===`included`?``:`not `}included.`:``} `.trim()} ${h||m?`${h} - ${m} ${f}. ${x?y:``}`:``}`.trim();t.be(`div`,(0,O.default)(a(b),{role:`img`,style:(0,E.default)(c),"aria-label":l||S,class:(0,D.default)([`ccd`,s])}),`0`,r,null,4),u===`included`?(0,T.default)(p,{class:`ccd__charger-icon`},t,n,`1`):u===`not-included`&&(0,T.default)(_,{class:`ccd__charger-icon`},t,n,`2`),(h||m)&&(t.be(`div`,{class:`ccd__description-figure`},`3`,r,null,1),(0,T.default)(v,{class:`ccd__top-icon`},t,n,`4`),t.be(`div`,{class:`ccd__body`},`5`,r,null,1),t.be(`div`,null,`6`,r,null,0),t.t(h,r),t.t(` - `,r),t.t(m,r),t.ee(),t.be(`div`,null,`7`,r,null,0),t.t(d,r),t.ee(),x&&(t.be(`div`,null,`8`,r,null,0),t.t(y,r),t.ee()),t.ee(),t.ee()),t.ee()},{t:M,i:!0},P),N.Component=(0,j.default)(P,N._)})))()}var I,L,R,z,B,V,H,U;function W(){return(W=t((()=>{I=d(),F(),L=e(f()),R=e(o()),z=u(),B=e(c()),V=`cSrPN0$`,H=(0,I.t)(V),(0,z.r)(V,()=>H),U={},H._=(0,R.default)(function(e,t,n,r,i,a){(0,L.default)(N,{min:`1000`,max:`2000`,...e},t,n,`0`)},{t:V,i:!0},U),H.Component=(0,B.default)(U,H._)})))()}var G;function K(){return(K=t((()=>{G=`<ebay-ccd min="1000" max="2000" ...input/>
+`})))()}var q,J,Y;function X(){return(X=t((()=>{b(),F(),W(),K(),q={title:`graphics & icons/ebay-ccd`,component:N,parameters:{docs:{description:{component:y}}},argTypes:{max:{control:{type:`text`},description:`The maximum range. If min and max are both not set, then will not show the charger label.`},min:{control:{type:`text`},description:`The minimum range. If min and max are both not set, then will not show the charger label.`},chargerIcon:{control:{type:`select`},options:[`none`,`included`,`not-included`],description:`Toggles the charger icon visible or if its included or not`,table:{defaultValue:{summary:`none`}}},units:{control:{type:`text`},description:`The units of the rating.`,table:{defaultValue:{summary:`w`}}},secondaryType:{control:{type:`select`},options:[`none`,`usbpd`],description:`Toggles the usbpd secondary text`,table:{defaultValue:{summary:`none`}}},secondaryText:{control:{type:`text`},description:`The text used for secodnary text. Will also be used in aria-label`,table:{defaultValue:{summary:`usbpd`}}},a11yUnits:{control:{type:`text`},description:`Localized, the units for the rating used for a11y`,table:{defaultValue:{summary:`watts`}}},a11yText:{control:{type:`text`},description:`Localized, overrides the default aria-label text`}}},J=n(H,G,{max:`2000`,min:`1000`}),Y=[`Default`],J.parameters={...J.parameters,docs:{...J.parameters?.docs,source:{originalSource:`buildExtensionTemplate(DefaultTemplate, DefaultTemplateCode, {
+  max: "2000",
+  min: "1000"
+})`,...J.parameters?.docs?.source}}}})))()}X();export{J as Default,Y as __namedExportsOrder,q as default};
