@@ -439,6 +439,14 @@ describe("evo-video", () => {
       expect(anchor!.getAttribute("href")).toBe("https://www.ebay.com");
     });
 
+    it("covers the media with the nav link", () => {
+      const root = component.container.querySelector(".video")!;
+      const anchor = component.container.querySelector("a.video__nav")!;
+      expect(anchor.getBoundingClientRect()).toEqual(
+        root.getBoundingClientRect(),
+      );
+    });
+
     it("never hides the controls", async () => {
       await startPlayback();
       expect(
