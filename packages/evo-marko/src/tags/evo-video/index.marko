@@ -189,11 +189,7 @@ static interface DashLikeMedia extends MediaElement {
 <const/controlsHidden=Boolean(!nav && !failed && playing && !lastActive)>
 <const/audioOff=muted || volume === 0>
 <div/$root
-  class=[
-    "video",
-    nav && "video--with-nav",
-    controlsHidden && "video--controls-hidden",
-  ]
+  class="video"
   onMouseMove() {
     lastActive++;
   }
@@ -305,7 +301,10 @@ static interface DashLikeMedia extends MediaElement {
     </else>
 
     <show=started>
-      <div class="video__controls">
+      <div class=[
+        "video__controls",
+        controlsHidden && "video__controls--hidden",
+      ]>
         <if=!a11ySeekText>
           <span class="video__timestamp video__timestamp--remaining">
             -${formatTime(Math.max(0, duration - currentTime))}
