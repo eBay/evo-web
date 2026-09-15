@@ -6,6 +6,11 @@ import { useRovingTabIndex } from "../utils/use-roving-tab-index";
 import { TabListProvider, useTabsContext } from "./context";
 import type { EvoTabListProps, TabId } from "./types";
 
+/**
+ * Owns tab keyboard navigation and contains the tab triggers.
+ *
+ * @summary Tab trigger list.
+ */
 export function EvoTabList({
   className,
   children,

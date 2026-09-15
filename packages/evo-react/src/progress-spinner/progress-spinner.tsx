@@ -5,6 +5,22 @@ import { EvoIconSpinner30 } from "../icon/icons/spinner-30";
 import type { EvoProgressSpinnerProps } from "./types";
 import "@ebay/skin/progress-spinner.mjs";
 
+/**
+ * A progress spinner indicates that an operation is still in progress.
+ *
+ * The spinner is indeterminate and does not communicate a percentage. `a11yText`
+ * must describe what is loading.
+ *
+ * ## Usage
+ *
+ * ```tsx
+ * import { EvoProgressSpinner } from "@evo-web/react/progress-spinner";
+ *
+ * <EvoProgressSpinner a11yText="Loading results" />
+ * ```
+ *
+ * @summary Indeterminate loading indicator.
+ */
 export function EvoProgressSpinner({
   a11yText = "Loading",
   size,

@@ -3,6 +3,45 @@ import { countCharacters } from "./count-characters";
 import type { EvoCharacterCountProps } from "./types";
 import "@ebay/skin/utility.mjs";
 
+/**
+ * A character count shows how much text has been entered against a set limit.
+ *
+ * `text` is counted as grapheme characters. Pass `count` when the value is
+ * calculated elsewhere, or provide custom children to replace the default
+ * count. `inputRef` sets `aria-live="polite"` on the `<input>` or `<textarea>`
+ * only when the count exceeds `max`.
+ *
+ * ## Usage
+ *
+ * ```tsx
+ * import { useRef, useState } from "react";
+ * import { EvoCharacterCount } from "@evo-web/react/character-count";
+ * import { EvoInput } from "@evo-web/react/input";
+ *
+ * function Example() {
+ *   const [value, setValue] = useState("");
+ *   const inputRef = useRef<HTMLInputElement>(null);
+ *
+ *   return (
+ *     <>
+ *       <EvoInput
+ *         ref={inputRef}
+ *         value={value}
+ *         onChange={(event) => setValue(event.currentTarget.value)}
+ *         aria-label="Message"
+ *       />
+ *       <EvoCharacterCount
+ *         text={value}
+ *         max={120}
+ *         inputRef={inputRef}
+ *       />
+ *     </>
+ *   );
+ * }
+ * ```
+ *
+ * @summary Tracks text length against a maximum.
+ */
 export function EvoCharacterCount({
   text,
   count: inputCount,

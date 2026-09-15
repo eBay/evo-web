@@ -2,24 +2,9 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { EvoProgressSpinner } from "./progress-spinner";
 
 const meta: Meta<typeof EvoProgressSpinner> = {
-  title: "progress/evo-progress-spinner",
+  title: "Progress/EvoProgressSpinner",
   component: EvoProgressSpinner,
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-A progress spinner that communicates an ongoing operation.
 
-## Usage
-
-\`\`\`tsx
-import { EvoProgressSpinner } from "@evo-web/react/progress-spinner";
-\`\`\`
-        `,
-      },
-    },
-  },
   argTypes: {
     size: {
       control: "select",
@@ -39,4 +24,5 @@ export default meta;
 
 type Story = StoryObj<typeof EvoProgressSpinner>;
 
+/** An indeterminate spinner marks content or an action that is pending. */
 export const Default: Story = {};

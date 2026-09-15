@@ -4,6 +4,12 @@ import { useConfirmDialogContext } from "./context";
 import { EvoButton } from "../button";
 import type { NativeButtonProps } from "../button/types";
 
+/**
+ * Declines the decision and closes the dialog. It belongs in
+ * `EvoConfirmDialogFooter`.
+ *
+ * @summary Confirm dialog rejection action.
+ */
 export function EvoConfirmDialogReject({
   onClick,
   children,

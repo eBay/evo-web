@@ -1,6 +1,12 @@
 import { useFileInputContext } from "./context";
 import type { EvoFileInputCTAProps } from "./types";
 
+/**
+ * Labels the native file picker action. It belongs inside `EvoFileInput`, which
+ * manages its association with the `<input type="file">` automatically.
+ *
+ * @summary File picker action label.
+ */
 export function EvoFileInputCTA({
   className,
   children,

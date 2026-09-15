@@ -13,6 +13,27 @@ import "@ebay/skin/icon-button.mjs";
 import "@ebay/skin/button.mjs";
 import "@ebay/skin/link.mjs";
 
+/**
+ * Icon buttons trigger an action using only an icon, with no visible text
+ * label.
+ *
+ * `a11yText` supplies the required accessible label. Without `href`, the
+ * component renders a `<button>`; with `href`, it renders an `<a>`. Use `as` for
+ * a router link, and prefer a text button when the icon is ambiguous.
+ *
+ * ## Usage
+ *
+ * ```tsx
+ * import { EvoIconButton } from "@evo-web/react/icon-button";
+ * import { EvoIconSearch24 } from "@evo-web/react/icons/search-24";
+ *
+ * <EvoIconButton a11yText="Search" onClick={openSearch}>
+ *   <EvoIconSearch24 />
+ * </EvoIconButton>
+ * ```
+ *
+ * @summary Icon-only action or link.
+ */
 export function EvoIconButton(props: AnchorIconButtonProps): React.JSX.Element;
 export function EvoIconButton(props: NativeIconButtonProps): React.JSX.Element;
 export function EvoIconButton({

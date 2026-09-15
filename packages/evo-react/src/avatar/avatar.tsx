@@ -6,6 +6,25 @@ import { getColorForText, isFit } from "./utils";
 import { EvoIconAvatarSignedOut } from "../icon/icons/avatar-signed-out";
 import "@ebay/skin/avatar.mjs";
 
+/**
+ * Avatars are visual representations of users and stores.
+ *
+ * `EvoAvatar` can render an `EvoAvatarImage`, a `username` initial, or a
+ * signed-out fallback. Custom `children` take precedence over those choices,
+ * and the parent supplies the accessible image label through `a11yText`.
+ *
+ * ## Usage
+ *
+ * ```tsx
+ * import { EvoAvatar, EvoAvatarImage } from "@evo-web/react/avatar";
+ *
+ * <EvoAvatar a11yText="Signed in as Alex">
+ *   <EvoAvatarImage src="/profiles/alex.jpg" />
+ * </EvoAvatar>
+ * ```
+ *
+ * @summary Profile identity indicator.
+ */
 export function EvoAvatar({
   size,
   color,

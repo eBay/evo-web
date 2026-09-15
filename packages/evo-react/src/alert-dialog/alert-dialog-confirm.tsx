@@ -4,6 +4,12 @@ import { useRefTee } from "../utils/use-ref-tee";
 import { EvoButton, type NativeButtonProps } from "../button";
 import { useCallback } from "react";
 
+/**
+ * Acknowledges the alert and closes the dialog. It receives initial focus and
+ * belongs in `EvoAlertDialogFooter`.
+ *
+ * @summary Alert acknowledgement action.
+ */
 export function EvoAlertDialogConfirm({
   ref,
   onClick,

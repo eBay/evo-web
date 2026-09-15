@@ -4,38 +4,14 @@ import { EvoFakeTabList } from "./fake-tab-list";
 import { EvoFakeTabPanel } from "./fake-tab-panel";
 import { EvoFakeTabs } from "./fake-tabs";
 const meta: Meta<typeof EvoFakeTabs> = {
-  title: "navigation & disclosure/evo-fake-tabs",
+  title: "Navigation & Disclosure/EvoFakeTabs",
   component: EvoFakeTabs,
   subcomponents: {
     EvoFakeTabList,
     EvoFakeTab,
     EvoFakeTabPanel,
   },
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-A navigation-based tab strip where each tab is an anchor link. Unlike the interactive \`EvoTabs\` widget,
-fake tabs use \`aria-current\` on the selected link rather than ARIA tab roles.
 
-**Fake tabs are appropriate when each tab navigates to a distinct URL.** The selected tab reflects
-the current page, not client-side state managed by JavaScript. Omit a tab's \`href\` to render it disabled.
-
-## Usage
-
-\`\`\`tsx
-import {
-  EvoFakeTabs,
-  EvoFakeTabList,
-  EvoFakeTab,
-  EvoFakeTabPanel,
-} from "@evo-web/react/fake-tabs";
-\`\`\`
-        `,
-      },
-    },
-  },
   argTypes: {
     selected: {
       control: "select",
@@ -86,9 +62,11 @@ import {
 export default meta;
 type Story = StoryObj<typeof EvoFakeTabs>;
 
+/** The selected link reflects the current URL beside an unavailable tab. */
 export const Default: Story = {};
 
-export const CustomLinkAdapter: Story = {
+/** Fake tab navigation adapts to a router link component through `as`. */
+export const CustomLink: Story = {
   parameters: {
     docs: {
       description: {

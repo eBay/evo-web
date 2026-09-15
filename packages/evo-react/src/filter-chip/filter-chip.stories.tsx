@@ -5,24 +5,9 @@ import { EvoFilterChip } from "./filter-chip";
 import type { EvoFilterChipProps } from "./types";
 
 const meta: Meta<EvoFilterChipProps> = {
-  title: "form input/evo-filter-chip",
+  title: "Form Input/EvoFilterChip",
   component: EvoFilterChip as ComponentType<EvoFilterChipProps>,
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-A filter control that supports toggle-button, menu-button, expressive, and anchor variants.
 
-## Usage
-
-\`\`\`tsx
-import { EvoFilterChip } from "@evo-web/react/filter-chip";
-\`\`\`
-        `,
-      },
-    },
-  },
   argTypes: {
     variant: {
       control: "select",
@@ -36,19 +21,15 @@ import { EvoFilterChip } from "@evo-web/react/filter-chip";
     },
     open: {
       control: "boolean",
-      description: "Controlled open state for the menu variant.",
     },
     defaultOpen: {
       control: "boolean",
-      description: "Initial open state for an uncontrolled menu variant.",
     },
     disabled: {
       control: "boolean",
     },
     href: {
       control: "text",
-      description:
-        "Link destination. Requires a11ySelectedText and is unavailable for the menu variant.",
     },
     a11ySelectedText: {
       type: "string",
@@ -66,7 +47,6 @@ import { EvoFilterChip } from "@evo-web/react/filter-chip";
     },
     children: {
       control: "text",
-      description: "Filter label.",
     },
   },
   args: {
@@ -86,4 +66,5 @@ import { EvoFilterChip } from "@evo-web/react/filter-chip";
 export default meta;
 type Story = StoryObj<EvoFilterChipProps>;
 
+/** The default filter button toggles its `selected` state. */
 export const Default: Story = {};

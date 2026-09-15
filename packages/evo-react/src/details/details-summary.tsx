@@ -3,6 +3,12 @@ import type { EvoDetailsSummaryProps } from "./types";
 import { useDetailsContext } from "./context";
 import { EvoIconChevronDown16 } from "../icon/icons/chevron-down-16";
 
+/**
+ * Acts as the disclosure control for `EvoDetails`. It belongs inside
+ * `EvoDetails` and should identify the content it reveals.
+ *
+ * @summary Disclosure trigger.
+ */
 export function EvoDetailsSummary({
   children,
   className,

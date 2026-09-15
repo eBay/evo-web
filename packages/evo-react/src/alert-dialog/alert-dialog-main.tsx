@@ -2,6 +2,12 @@ import classNames from "classnames";
 import type { EvoAlertDialogMainProps } from "./types";
 import { useAlertDialogContext } from "./context";
 
+/**
+ * Contains the message the user must acknowledge. Its `id` is referenced by
+ * the confirmation button through `aria-describedby`.
+ *
+ * @summary Alert dialog message region.
+ */
 export function EvoAlertDialogMain({
   id,
   className,

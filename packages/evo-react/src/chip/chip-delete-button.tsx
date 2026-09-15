@@ -3,6 +3,13 @@ import { EvoIconClose12 } from "../icon/icons/close-12";
 import { useChipContext } from "./context";
 import type { EvoChipDeleteButtonProps } from "./types";
 
+/**
+ * Removes the chip value when the application handles its click. Use it inside
+ * `EvoChip` and provide the required action-specific `a11yText`; the chip text
+ * is linked through `aria-describedby`.
+ *
+ * @summary Chip removal action.
+ */
 export function EvoChipDeleteButton({
   a11yText = "delete",
   className,

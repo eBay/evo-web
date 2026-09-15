@@ -6,6 +6,33 @@ import { EvoIconRadioUnchecked24 } from "../icon/icons/radio-unchecked-24";
 import type { EvoRadioProps } from "./types";
 import "@ebay/skin/radio.mjs";
 
+/**
+ * Radio buttons allow the user to select one option from a set.
+ *
+ * Options in a group share a `name`, and the group needs a visible `<legend>`.
+ * `EvoRadio` accepts native radio props and supports `size="large"`. The native
+ * control is an `<input type="radio">`.
+ *
+ * ## Usage
+ *
+ * ```tsx
+ * import { EvoRadio } from "@evo-web/react/radio";
+ *
+ * <fieldset>
+ *   <legend>Delivery method</legend>
+ *   <label>
+ *     <EvoRadio name="delivery" value="standard" />
+ *     Standard
+ *   </label>
+ *   <label>
+ *     <EvoRadio name="delivery" value="express" />
+ *     Express
+ *   </label>
+ * </fieldset>
+ * ```
+ *
+ * @summary Native radio button with Skin styling.
+ */
 export function EvoRadio({
   className,
   ref,

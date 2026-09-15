@@ -7,36 +7,19 @@ import type { AnchorIconButtonProps } from "./types";
 import { EvoIconMenu20 } from "../icon/icons/menu-20";
 import { EvoIconSettings16 } from "../icon/icons/settings-16";
 import { EvoIconCart16 } from "../icon/icons/cart-16";
-import { EvoIconChat16 } from "../icon/icons/chat-16";
 
 // Use AnchorIconButtonProps so `href` is a valid argType key without overload conflicts.
 const meta: Meta<AnchorIconButtonProps> = {
-  title: "buttons/evo-icon-button",
+  title: "Buttons/EvoIconButton",
   component: EvoIconButton,
   subcomponents: { EvoIconButtonBadge },
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-A circular button that contains an icon only. Renders as \`<button>\` or \`<a>\` based on the \`href\` prop.
 
-## Usage
-
-\`\`\`tsx
-import { EvoIconButton } from "@evo-web/react/icon-button";
-\`\`\`
-        `,
-      },
-    },
-  },
   argTypes: {
     a11yText: {
       type: { name: "string", required: true },
       control: "text",
     },
     href: {
-      description: "Renders as an anchor element when provided",
       control: "text",
     },
     as: {
@@ -60,7 +43,6 @@ import { EvoIconButton } from "@evo-web/react/icon-button";
       control: "boolean",
     },
     onClick: {
-      description: "Triggered on click",
       action: "onClick",
       table: {
         category: "Events",
@@ -75,7 +57,6 @@ import { EvoIconButton } from "@evo-web/react/icon-button";
       },
     },
     onFocus: {
-      description: "Triggered on keyboard focus",
       action: "onFocus",
       table: {
         category: "Events",
@@ -83,7 +64,6 @@ import { EvoIconButton } from "@evo-web/react/icon-button";
       },
     },
     onBlur: {
-      description: "Triggered on focus lost",
       action: "onBlur",
       table: {
         category: "Events",
@@ -100,6 +80,7 @@ import { EvoIconButton } from "@evo-web/react/icon-button";
 export default meta;
 type Story = StoryObj<typeof EvoIconButton>; // keep component-level Story type for render inference
 
+/** An icon-only action uses a clear, familiar icon meaning. */
 export const Default: Story = {
   render: (args) => (
     <EvoIconButton
@@ -114,6 +95,7 @@ export const Default: Story = {
   ),
 };
 
+/** A count badge identifies pending items or notifications. */
 export const WithBadge: Story = {
   render: (args) => (
     <EvoIconButton {...args} a11yText="Cart">
@@ -123,6 +105,7 @@ export const WithBadge: Story = {
   ),
 };
 
+/** An anchor icon button navigates to another location. */
 export const AsLink: Story = {
   render: (args) => (
     <EvoIconButton
@@ -156,7 +139,8 @@ function Link({
   );
 }
 
-export const WithCustomLinkComponent: Story = {
+/** The `as` prop connects navigation to a client-side link component. */
+export const CustomLink: Story = {
   render: (args) => (
     <EvoIconButton
       {...(args as unknown as AnchorIconButtonProps)}
@@ -188,18 +172,4 @@ import { Link, href } from "react-router";
       },
     },
   },
-};
-
-export const WithChat: Story = {
-  render: (args) => (
-    <EvoIconButton
-      {...(args as unknown as AnchorIconButtonProps)}
-      href="https://ebay.com"
-      a11yText="Chat"
-      onClick={(e) => e.preventDefault()}
-    >
-      <EvoIconChat16 />
-      <EvoIconButtonBadge number={99} />
-    </EvoIconButton>
-  ),
 };

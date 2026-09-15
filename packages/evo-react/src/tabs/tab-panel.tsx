@@ -2,6 +2,12 @@ import classNames from "classnames";
 import { getTabId, getTabPanelId, useTabsContext } from "./context";
 import type { EvoTabPanelProps, TabId } from "./types";
 
+/**
+ * Contains the content for one tab. Its `id` must match the associated
+ * `EvoTab` so their accessibility relationship remains connected.
+ *
+ * @summary Content panel for one tab.
+ */
 export function EvoTabPanel<Id extends TabId>({
   id,
   className,

@@ -4,6 +4,23 @@ import { useFloatingLabel } from "../utils/use-floating-label";
 import type { EvoTextareaProps } from "./types";
 import "@ebay/skin/textbox.mjs";
 
+/**
+ * Text areas allow users to enter text across multiple lines.
+ *
+ * `EvoTextarea` supports the `floatingLabel`, `invalid`, and `fluid` props. It
+ * accepts native controlled and uncontrolled `value` and `defaultValue` patterns
+ * and native `<textarea>` props.
+ *
+ * ## Usage
+ *
+ * ```tsx
+ * import { EvoTextarea } from "@evo-web/react/textarea";
+ *
+ * <EvoTextarea floatingLabel="Description" rows={4} />
+ * ```
+ *
+ * @summary Multi-line text input.
+ */
 export function EvoTextarea({
   "aria-invalid": ariaInvalid,
   className,

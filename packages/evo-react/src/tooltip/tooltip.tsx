@@ -7,6 +7,37 @@ import { useExpander } from "../utils/use-expander";
 import { useRefTee } from "../utils/use-ref-tee";
 import "@ebay/skin/tooltip.mjs";
 
+/**
+ * Tooltips reveal a label or additional information when a user interacts with
+ * a UI element.
+ *
+ * `EvoTooltip` is composed from `EvoTooltipHost` and `EvoTooltipContent`, with
+ * an optional `EvoTooltipHeading`. It opens from hover or focus and closes when
+ * the pointer or focus leaves, or when the user presses `Escape`. Use `open`
+ * with `onOpenChange` for controlled state or `defaultOpen` for state managed
+ * by the tooltip.
+ *
+ * ## Usage
+ *
+ * ```tsx
+ * import {
+ *   EvoTooltip,
+ *   EvoTooltipContent,
+ *   EvoTooltipHeading,
+ *   EvoTooltipHost,
+ * } from "@evo-web/react/tooltip";
+ *
+ * <EvoTooltip>
+ *   <EvoTooltipHost>Delivery estimate</EvoTooltipHost>
+ *   <EvoTooltipContent>
+ *     <EvoTooltipHeading>Estimated delivery</EvoTooltipHeading>
+ *     Arrives within three business days.
+ *   </EvoTooltipContent>
+ * </EvoTooltip>
+ * ```
+ *
+ * @summary Contextual information anchored to a host.
+ */
 export function EvoTooltip({
   open,
   defaultOpen = false,

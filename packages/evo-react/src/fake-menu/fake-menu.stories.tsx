@@ -24,7 +24,7 @@ function Link({
 }
 
 const meta: Meta<typeof EvoFakeMenu> = {
-  title: "building blocks/evo-fake-menu",
+  title: "Building Blocks/EvoFakeMenu",
   component: EvoFakeMenu,
   subcomponents: {
     EvoFakeMenuItems,
@@ -32,26 +32,7 @@ const meta: Meta<typeof EvoFakeMenu> = {
     EvoFakeMenuItemBadge,
     EvoFakeMenuSeparator,
   },
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-A compound navigation menu containing links, buttons, badges, and separators.
 
-## Usage
-
-\`\`\`tsx
-import {
-  EvoFakeMenu,
-  EvoFakeMenuItem,
-  EvoFakeMenuItems,
-} from "@evo-web/react/fake-menu";
-\`\`\`
-        `,
-      },
-    },
-  },
   argTypes: {
     classPrefix: {
       control: "text",
@@ -100,9 +81,11 @@ import {
 export default meta;
 type Story = StoryObj<typeof EvoFakeMenu>;
 
+/** Navigation items include current, disabled, and grouped entries. */
 export const Default: Story = {};
 
-export const WithCustomLinkComponent: Story = {
+/** A fake menu link adapts to a client-side router component. */
+export const CustomLink: Story = {
   render: (args) => (
     <EvoFakeMenu {...args}>
       <EvoFakeMenuItems>
@@ -119,7 +102,8 @@ export const WithCustomLinkComponent: Story = {
     docs: {
       description: {
         story: `
-Pass a custom component through the \`as\` prop to replace the native anchor. This example adapts React Router's \`Link\`, which uses \`to\` instead of \`href\`.
+A custom component through the \`as\` prop can replace the native anchor.
+React Router's \`Link\` uses \`to\` instead of \`href\`.
 
 \`\`\`tsx
 import { Link } from "react-router";

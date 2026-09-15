@@ -3,24 +3,8 @@ import { EvoCheckbox } from "./index";
 import "@ebay/skin/field.mjs";
 
 const meta: Meta<typeof EvoCheckbox> = {
-  title: "form input/evo-checkbox",
+  title: "Form Input/EvoCheckbox",
   component: EvoCheckbox,
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-A native checkbox control styled with eBay Skin.
-
-## Usage
-
-\`\`\`tsx
-import { EvoCheckbox } from "@evo-web/react/checkbox";
-\`\`\`
-        `,
-      },
-    },
-  },
   argTypes: {
     size: {
       control: "select",
@@ -53,6 +37,7 @@ import { EvoCheckbox } from "@evo-web/react/checkbox";
 export default meta;
 type Story = StoryObj<typeof EvoCheckbox>;
 
+/** A visible label names the checkbox in a standard form. */
 export const Default: Story = {
   render: (args) => (
     <span className="field">
@@ -64,12 +49,14 @@ export const Default: Story = {
   ),
 };
 
+/** An accessible name labels the checkbox without visible text. */
 export const Isolated: Story = {
   args: {
     "aria-label": "Option",
   },
 };
 
+/** A fieldset groups independent choices under a shared legend. */
 export const Group: Story = {
   render: (args) => (
     <fieldset>
