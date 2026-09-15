@@ -3,7 +3,7 @@
 exports[`ebay-page-notice rendering > renders attention message story correctly 1`] = `
 <svg
   aria-label="Attention"
-  class="icon icon--16 icon--attention-filled"
+  class="icon icon--16"
   focusable="false"
   role="img"
   xmlns="http://www.w3.org/2000/svg"
@@ -17,7 +17,7 @@ exports[`ebay-page-notice rendering > renders attention message story correctly 
 exports[`ebay-page-notice rendering > renders confirmation message story correctly 1`] = `
 <svg
   aria-label="Success"
-  class="icon icon--16 icon--confirmation-filled"
+  class="icon icon--16"
   focusable="false"
   role="img"
   xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +31,7 @@ exports[`ebay-page-notice rendering > renders confirmation message story correct
 exports[`ebay-page-notice rendering > renders dismissible message with cta story correctly 1`] = `
 <svg
   aria-label="Congratulations"
-  class="icon icon--16 icon--information-filled"
+  class="icon icon--16"
   focusable="false"
   role="img"
   xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +58,7 @@ exports[`ebay-page-notice rendering > renders dismissible message with cta story
 exports[`ebay-page-notice rendering > renders dismissible notice story correctly 1`] = `
 <svg
   aria-label="Information"
-  class="icon icon--16 icon--information-filled"
+  class="icon icon--16"
   focusable="false"
   role="img"
   xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +72,7 @@ exports[`ebay-page-notice rendering > renders dismissible notice story correctly
 exports[`ebay-page-notice rendering > renders information message story correctly 1`] = `
 <svg
   aria-label="Information"
-  class="icon icon--16 icon--information-filled"
+  class="icon icon--16"
   focusable="false"
   role="img"
   xmlns="http://www.w3.org/2000/svg"
@@ -86,7 +86,7 @@ exports[`ebay-page-notice rendering > renders information message story correctl
 exports[`ebay-page-notice rendering > renders message with footer story correctly 1`] = `
 <svg
   aria-label="Congratulations"
-  class="icon icon--16 icon--confirmation-filled"
+  class="icon icon--16"
   focusable="false"
   role="img"
   xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +100,7 @@ exports[`ebay-page-notice rendering > renders message with footer story correctl
 exports[`ebay-page-notice rendering > renders simple usage with id story correctly 1`] = `
 <svg
   aria-label="Success"
-  class="icon icon--16 icon--confirmation-filled"
+  class="icon icon--16"
   focusable="false"
   role="img"
   xmlns="http://www.w3.org/2000/svg"

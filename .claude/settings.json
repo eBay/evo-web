@@ -6,6 +6,10 @@
           {
             "type": "command",
             "command": "node .claude/hooks/check-pipeline-stop.js"
+          },
+          {
+            "type": "command",
+            "command": "node .claude/hooks/remind-agent-lessons.js"
           }
         ]
       }
