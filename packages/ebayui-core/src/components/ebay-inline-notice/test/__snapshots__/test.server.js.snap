@@ -14,7 +14,7 @@ exports[`inline-notice > passes through additional html attributes 1`] = `
   >
     <svg
       aria-label="Heading Text"
-      class="icon--attention-filled icon icon--16 icon--attention-filled"
+      class="icon icon--16"
       focusable="false"
       role="img"
     >
@@ -57,7 +57,7 @@ exports[`inline-notice > passes through additional html attributes 2`] = `
   >
     <svg
       aria-label="Heading Text"
-      class="icon--attention-filled icon icon--16 icon--attention-filled"
+      class="icon icon--16"
       focusable="false"
       role="img"
     >
@@ -96,7 +96,7 @@ exports[`inline-notice > renders with custom status type 1`] = `
   >
     <svg
       aria-label="Heading Text"
-      class="icon--confirmation-filled icon icon--16 icon--confirmation-filled"
+      class="icon icon--16"
       focusable="false"
       role="img"
     >
@@ -134,7 +134,7 @@ exports[`inline-notice > renders with defaults 1`] = `
 >
   <svg
     aria-label="Heading Text"
-    class="icon--attention-filled icon icon--16 icon--attention-filled"
+    class="icon icon--16"
     focusable="false"
     role="img"
   >
@@ -165,7 +165,7 @@ exports[`inline-notice > renders with defaults 2`] = `
   >
     <svg
       aria-label="Heading Text"
-      class="icon--attention-filled icon icon--16 icon--attention-filled"
+      class="icon icon--16"
       focusable="false"
       role="img"
     >

@@ -133,15 +133,9 @@ export function EvoIcon({
   const kebabName = kebabCased(__name);
   const size = getIconSize(kebabName) || kebabName;
 
-  const className = classNames(
-    `icon`,
-    `icon--${size}`,
-    getFilledIconName(kebabName),
-    extraClass,
-    {
-      "icon--prominent": prominent,
-    },
-  );
+  const className = classNames(`icon`, `icon--${size}`, extraClass, {
+    "icon--prominent": prominent,
+  });
 
   return (
     <svg
@@ -185,17 +179,6 @@ function getIconSize(iconName: string): string {
   }
 
   return size;
-}
-
-function getFilledIconName(iconName: string): string {
-  const iconNameArray = iconName.split("-");
-  const filledIndex = iconNameArray.indexOf("filled");
-
-  if (filledIndex === -1) {
-    return "";
-  }
-
-  return `icon--${iconNameArray.slice(0, filledIndex + 1).join("-")}`;
 }
 
 export function kebabCased(str: string): string {
