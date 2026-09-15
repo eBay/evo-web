@@ -76,18 +76,6 @@ span[role="region"].section-notice {
     vertical-align: top;
 }
 
-.section-notice--attention .section-notice__header svg {
-    color: var(--color-foreground-attention);
-}
-
-.section-notice--confirmation .section-notice__header svg {
-    color: var(--color-foreground-success);
-}
-
-.section-notice--information .section-notice__header svg {
-    color: var(--color-foreground-accent);
-}
-
 .section-notice__header {
     grid-column: 1;
     grid-row: 1;

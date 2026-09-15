@@ -173,12 +173,12 @@ describe("evo-icon", () => {
       expect(icon?.classList.contains("icon--24")).toBe(true);
     });
 
-    it("renders filled icons with no color modifier class", async () => {
+    it("handles filled icons with modifier class", async () => {
       const screen = await render(<EvoIconAttentionFilled16 />);
 
       const icon = screen.container.querySelector("svg");
       expect(icon?.classList.contains("icon--16")).toBe(true);
-      expect(icon?.classList.contains("icon--attention-filled")).toBe(false);
+      expect(icon?.classList.contains("icon--attention-filled")).toBe(true);
     });
   });
 
