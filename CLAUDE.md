@@ -110,7 +110,6 @@ Declare `<const/>`, `<let/>`, `<id/>`, and other tag variables close to where th
 **Marko 6 AttrTag content:** When already spreading an AttrTag onto a native element with no other body content, use self-closing — `<button ...button/>`. Never `<button ...button><${button.content}/></button>`.
 
 **Marko 6 AttrTag slot types — pick the right generic:**
-
 - ✅ Body-only slot: `action?: Marko.AttrTag<{ content?: Marko.Body }>` — accepts arbitrary child content
 - ❌ Empty generic: `action?: Marko.AttrTag<{}>` — rejects children at compile time (TS2353)
 - ✅ Typed-props slot: `image?: Marko.AttrTag<Omit<Marko.HTML.Img, "alt">>` — slot has specific props
@@ -290,13 +289,7 @@ Anything actionable but out of scope for the current task (suspected bug, a11y g
 
 ## Agent Lessons
 
-Before finishing any task, check the session itself for lesson-worthy moments — not just the code
-for feedback-worthy ones. A correction about how you should work — not the code — belongs in
-[`agent-lessons/`](agent-lessons/README.md): a correction you shouldn't need twice, a wrong turn
-that cost real rework (including one you caught and fixed yourself, e.g. via your own review
-pass), or a guardrail that fired. This must be filed before finishing, same as `agent-feedback`.
-Never drop it silently just because it was self-corrected before the user noticed. If the rule is
-mechanically checkable, it belongs in a hook or permission instead, not here.
+A correction about how you should work — not the code — belongs in [`agent-lessons/`](agent-lessons/README.md): a correction you shouldn't need twice, a wrong turn that cost real rework, or a guardrail that fired. If the rule is mechanically checkable, it belongs in a hook or permission instead, not here.
 
 ---
 

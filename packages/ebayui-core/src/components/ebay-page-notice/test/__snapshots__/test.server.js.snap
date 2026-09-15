@@ -16,7 +16,7 @@ exports[`page-notice > passes through additional html attributes 1`] = `
   >
     <svg
       aria-label="Heading Text"
-      class="icon icon--16"
+      class="icon--attention-filled icon icon--16 icon--attention-filled"
       focusable="false"
       role="img"
     >
@@ -61,7 +61,7 @@ exports[`page-notice > passes through additional html attributes 2`] = `
   >
     <svg
       aria-label="Heading Text"
-      class="icon icon--16"
+      class="icon--attention-filled icon icon--16 icon--attention-filled"
       focusable="false"
       role="img"
     >
@@ -162,7 +162,7 @@ exports[`page-notice > renders with custom CTA 1`] = `
     [36m>[39m
       [36m<svg[39m
         [33maria-label[39m=[32m"information"[39m
-        [33mclass[39m=[32m"icon icon--16"[39m
+        [33mclass[39m=[32m"icon--information-filled icon icon--16 icon--information-filled"[39m
         [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
@@ -283,7 +283,7 @@ exports[`page-notice > renders with custom status type 1`] = `
   >
     <svg
       aria-label="Heading Text"
-      class="icon icon--16"
+      class="icon--confirmation-filled icon icon--16 icon--confirmation-filled"
       focusable="false"
       role="img"
     >
@@ -321,7 +321,7 @@ exports[`page-notice > renders with defaults 1`] = `
 >
   <svg
     aria-label="Heading Text"
-    class="icon icon--16"
+    class="icon--attention-filled icon icon--16 icon--attention-filled"
     focusable="false"
     role="img"
   >
@@ -354,7 +354,7 @@ exports[`page-notice > renders with defaults 2`] = `
   >
     <svg
       aria-label="Heading Text"
-      class="icon icon--16"
+      class="icon--attention-filled icon icon--16 icon--attention-filled"
       focusable="false"
       role="img"
     >
@@ -415,7 +415,7 @@ exports[`page-notice > renders with footer button 2`] = `
   >
     <svg
       aria-label="Heading Text"
-      class="icon icon--16"
+      class="icon--attention-filled icon icon--16 icon--attention-filled"
       focusable="false"
       role="img"
     >

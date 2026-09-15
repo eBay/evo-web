@@ -19,18 +19,6 @@ span.inline-notice {
     margin-top: var(--spacing-50);
 }
 
-.inline-notice--attention .inline-notice__header svg {
-    @include token-mixins.color-token(color-foreground-attention);
-}
-
-.inline-notice--confirmation .inline-notice__header svg {
-    @include token-mixins.color-token(color-foreground-success);
-}
-
-.inline-notice--information .inline-notice__header svg {
-    @include token-mixins.color-token(color-foreground-accent);
-}
-
 .inline-notice p {
     margin: 3px 0;
 }

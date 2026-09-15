@@ -10,27 +10,28 @@ static const basePath = import.meta.env.BASE_URL;
   <section
     class="section-notice section-notice--attention"
     role="region"
-    aria-label="Information"
-  >
+    aria-label="Information">
     <div class="section-notice__header">
       <svg
-        class="icon icon--16"
+        class="icon icon--attention-filled-16"
         height="16"
         width="16"
         role="img"
-        aria-label="Attention"
-      >
+        aria-label="Attention">
         <icon-symbol name="attention-filled-16"/>
       </svg>
     </div>
     <div class="section-notice__main">
-      <h3 class="section-notice__title">Intended Use of Toggle Button Group</h3>
+      <h3 class="section-notice__title">
+        Intended Use of Toggle Button Group
+      </h3>
       <p>
         Toggle Buttons inside Toggle Button Group are intended to be input
         controls. They are ment to be used for users to make selection(s) that
         can be used for additional actions. For example, they can be used to
-        storing the selection(s) and using <code>JavaScript</code> to include
-        the information in a form submission.
+        storing the selection(s) and using
+        <code>JavaScript</code>
+        to include the information in a form submission.
       </p>
 
       <p>Toggle Buttons are NOT to be used for the purposes of navigation.</p>
@@ -40,21 +41,27 @@ static const basePath = import.meta.env.BASE_URL;
   <p>
     The component allows for single or multiple selections based on need.
     However, when using Skin by itself you will need to have your own
-    <code>JavaScript</code> to establish those rules based on the specific needs
-    for each implementation context.
+    <code>JavaScript</code>
+    to establish those rules based on the specific needs for each
+    implementation context.
   </p>
 
   <p>
     Effort was taken in these docs to provide a good amount of helpful
     information. Since this component has an atomic piece (
-    <a href=`${urls.components}/toggle-button`>Toggle Button</a> ), there may be
-    some information crossover. Though efforts were taken to isolate the
-    documentation for this parent component, at various touchpoints between the
-    two components, there may be some redundancy. In other portions, where
-    immediate information appears to be missing here, that information may
-    reside in its child component. Please refer to
-    <a href=`${urls.components}/toggle-button`>Toggle Button</a> docs in these
-    situations.
+
+    <a href=`${urls.components}/toggle-button`>
+      Toggle Button
+    </a>
+    ), there may be some information crossover. Though efforts were taken
+    to isolate the documentation for this parent component, at various
+    touchpoints between the two components, there may be some redundancy. In
+    other portions, where immediate information appears to be missing here, that
+    information may reside in its child component. Please refer to
+    <a href=`${urls.components}/toggle-button`>
+      Toggle Button
+    </a>
+    docs in these situations.
   </p>
 
   <h3>Accessibility</h3>
@@ -69,20 +76,26 @@ static const basePath = import.meta.env.BASE_URL;
   <h4>On-screen Heading with Associated List (a - preferred)</h4>
   <div class="demo">
     <div class="demo__inner">
-      <h5 id="toggle-button-group-a">Select Shoe Size</h5>
+      <h5 id="toggle-button-group-a">
+        Select Shoe Size
+      </h5>
       <div class="toggle-button-group">
         <ul aria-labelledby="toggle-button-group-a">
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">8</span>
+                <span class="toggle-button__title">
+                  8
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">8.5</span>
+                <span class="toggle-button__title">
+                  8.5
+                </span>
               </span>
             </button>
           </li>
@@ -92,20 +105,26 @@ static const basePath = import.meta.env.BASE_URL;
   </div>
 
   <highlight-code type="html">
-    <h5 id="toggle-button-group-a">Select Shoe Size</h5>
+    <h5 id="toggle-button-group-a">
+      Select Shoe Size
+    </h5>
     <div class="toggle-button-group">
       <ul aria-labelledby="toggle-button-group-a">
         <li>
           <button type="button" class="toggle-button" aria-pressed="false">
             <span class="toggle-button__content">
-              <span class="toggle-button__title">8</span>
+              <span class="toggle-button__title">
+                8
+              </span>
             </span>
           </button>
         </li>
         <li>
           <button type="button" class="toggle-button" aria-pressed="false">
             <span class="toggle-button__content">
-              <span class="toggle-button__title">8.5</span>
+              <span class="toggle-button__title">
+                8.5
+              </span>
             </span>
           </button>
         </li>
@@ -116,24 +135,32 @@ static const basePath = import.meta.env.BASE_URL;
   <h4>Off-screen Heading with Associated List (b)</h4>
   <p>
     This implementation is identical to option (a), except the heading is
-    off-screen using the <code>clipped</code> class.
+    off-screen using the
+    <code>clipped</code>
+    class.
   </p>
   <div class="demo">
     <div class="demo__inner">
-      <h5 id="toggle-button-group-b" class="clipped">Select Shoe Size</h5>
+      <h5 id="toggle-button-group-b" class="clipped">
+        Select Shoe Size
+      </h5>
       <div class="toggle-button-group">
         <ul aria-labelledby="toggle-button-group-b">
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">8</span>
+                <span class="toggle-button__title">
+                  8
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">8.5</span>
+                <span class="toggle-button__title">
+                  8.5
+                </span>
               </span>
             </button>
           </li>
@@ -143,20 +170,26 @@ static const basePath = import.meta.env.BASE_URL;
   </div>
 
   <highlight-code type="html">
-    <h5 id="toggle-button-group-b" class="clipped">Select Shoe Size</h5>
+    <h5 id="toggle-button-group-b" class="clipped">
+      Select Shoe Size
+    </h5>
     <div class="toggle-button-group">
       <ul aria-labelledby="toggle-button-group-b">
         <li>
           <button type="button" class="toggle-button" aria-pressed="false">
             <span class="toggle-button__content">
-              <span class="toggle-button__title">8</span>
+              <span class="toggle-button__title">
+                8
+              </span>
             </span>
           </button>
         </li>
         <li>
           <button type="button" class="toggle-button" aria-pressed="false">
             <span class="toggle-button__content">
-              <span class="toggle-button__title">8.5</span>
+              <span class="toggle-button__title">
+                8.5
+              </span>
             </span>
           </button>
         </li>
@@ -187,9 +220,11 @@ static const basePath = import.meta.env.BASE_URL;
   </ol>
 
   <p>
-    If you're using Skin outside of a <code>JavaScript</code> framework, you
-    will need to write your own <code>js</code> code to accomplish these
-    interactivity cases.
+    If you're using Skin outside of a
+    <code>JavaScript</code>
+    framework, you will need to write your own
+    <code>js</code>
+    code to accomplish these interactivity cases.
   </p>
 
   <p>
@@ -197,11 +232,16 @@ static const basePath = import.meta.env.BASE_URL;
     to set up a a single event handler for the group of buttons instead of on
     every button.
   </p>
-  The following examples use an HTML attribute to disitnguish the interaction
-  variations. Using <code>data-selection-type</code> . For the associated
-  <code>js</code> please see <code>/docs/src/js/main.js</code>
-  (TOGGLE-BUTTON-GROUP section) for an example on how the implementation may be
-  accomplished.
+  The following examples use an HTML attribute to disitnguish the
+  interaction variations. Using
+  <code>data-selection-type</code>
+  . For the associated
+  <code>js</code>
+  please see
+  <code>/docs/src/js/main.js</code>
+  (TOGGLE-BUTTON-GROUP section) for an example on how the implementation
+  may be accomplished.
+
   <h4>Multi-select</h4>
   <p>
     The Multi-select variation is the default so nothing additional needs to be
@@ -210,27 +250,35 @@ static const basePath = import.meta.env.BASE_URL;
 
   <div class="demo">
     <div class="demo__inner">
-      <h5 id="toggle-button-group-x1">Select Multiple Sizes</h5>
+      <h5 id="toggle-button-group-x1">
+        Select Multiple Sizes
+      </h5>
       <div class="toggle-button-group">
         <ul aria-labelledby="toggle-button-group-x1">
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">4.5</span>
+                <span class="toggle-button__title">
+                  4.5
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">5</span>
+                <span class="toggle-button__title">
+                  5
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">5.5</span>
+                <span class="toggle-button__title">
+                  5.5
+                </span>
               </span>
             </button>
           </li>
@@ -240,27 +288,35 @@ static const basePath = import.meta.env.BASE_URL;
   </div>
 
   <highlight-code type="html">
-    <h5 id="toggle-button-group-x1">Select Multiple Sizes</h5>
+    <h5 id="toggle-button-group-x1">
+      Select Multiple Sizes
+    </h5>
     <div class="toggle-button-group">
       <ul aria-labelledby="toggle-button-group-x1">
         <li>
           <button type="button" class="toggle-button" aria-pressed="false">
             <span class="toggle-button__content">
-              <span class="toggle-button__title">4.5</span>
+              <span class="toggle-button__title">
+                4.5
+              </span>
             </span>
           </button>
         </li>
         <li>
           <button type="button" class="toggle-button" aria-pressed="false">
             <span class="toggle-button__content">
-              <span class="toggle-button__title">5</span>
+              <span class="toggle-button__title">
+                5
+              </span>
             </span>
           </button>
         </li>
         <li>
           <button type="button" class="toggle-button" aria-pressed="false">
             <span class="toggle-button__content">
-              <span class="toggle-button__title">5.5</span>
+              <span class="toggle-button__title">
+                5.5
+              </span>
             </span>
           </button>
         </li>
@@ -271,34 +327,42 @@ static const basePath = import.meta.env.BASE_URL;
   <h4>Single-select Optional</h4>
   <p>
     In this example of the Single-select Optional variation,
-    <code>data-selection-type="single-optional"</code> is used to split off the
-    variation interactivity. This option allows for only one selection, so
-    toggling additional buttons will simply switch the toggled button and retain
-    only one toggled button.
+    <code>data-selection-type="single-optional"</code>
+    is used to split off the variation interactivity. This option allows
+    for only one selection, so toggling additional buttons will simply switch
+    the toggled button and retain only one toggled button.
   </p>
   <div class="demo">
     <div class="demo__inner">
-      <h5 id="toggle-button-group-x2">Select Sizes</h5>
+      <h5 id="toggle-button-group-x2">
+        Select Sizes
+      </h5>
       <div class="toggle-button-group" data-selection-type="single-optional">
         <ul aria-labelledby="toggle-button-group-x2">
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">4.5</span>
+                <span class="toggle-button__title">
+                  4.5
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">5</span>
+                <span class="toggle-button__title">
+                  5
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">5.5</span>
+                <span class="toggle-button__title">
+                  5.5
+                </span>
               </span>
             </button>
           </li>
@@ -308,27 +372,35 @@ static const basePath = import.meta.env.BASE_URL;
   </div>
 
   <highlight-code type="html">
-    <h5 id="toggle-button-group-x2">Select Sizes</h5>
+    <h5 id="toggle-button-group-x2">
+      Select Sizes
+    </h5>
     <div class="toggle-button-group" data-selection-type="single-optional">
       <ul aria-labelledby="toggle-button-group-x2">
         <li>
           <button type="button" class="toggle-button" aria-pressed="false">
             <span class="toggle-button__content">
-              <span class="toggle-button__title">4.5</span>
+              <span class="toggle-button__title">
+                4.5
+              </span>
             </span>
           </button>
         </li>
         <li>
           <button type="button" class="toggle-button" aria-pressed="false">
             <span class="toggle-button__content">
-              <span class="toggle-button__title">5</span>
+              <span class="toggle-button__title">
+                5
+              </span>
             </span>
           </button>
         </li>
         <li>
           <button type="button" class="toggle-button" aria-pressed="false">
             <span class="toggle-button__content">
-              <span class="toggle-button__title">5.5</span>
+              <span class="toggle-button__title">
+                5.5
+              </span>
             </span>
           </button>
         </li>
@@ -339,35 +411,44 @@ static const basePath = import.meta.env.BASE_URL;
   <h4>Single-select Required</h4>
   <p>
     In this example of the Single-select Optional variation,
-    <code>data-selection-type="single-required"</code> is used to split off the
-    variation interactivity. This option allows for only one selection. However,
-    unlike the single-select optional variation, this variation enforces the
-    required single selection so the toggled button cannot be untoggled.
+    <code>data-selection-type="single-required"</code>
+    is used to split off the variation interactivity. This option allows
+    for only one selection. However, unlike the single-select optional
+    variation, this variation enforces the required single selection so the
+    toggled button cannot be untoggled.
   </p>
 
   <div class="demo">
     <div class="demo__inner">
-      <h5 id="toggle-button-group-x3">Select Sizes</h5>
+      <h5 id="toggle-button-group-x3">
+        Select Sizes
+      </h5>
       <div class="toggle-button-group" data-selection-type="single-required">
         <ul aria-labelledby="toggle-button-group-x3">
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">4.5</span>
+                <span class="toggle-button__title">
+                  4.5
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">5</span>
+                <span class="toggle-button__title">
+                  5
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">5.5</span>
+                <span class="toggle-button__title">
+                  5.5
+                </span>
               </span>
             </button>
           </li>
@@ -377,27 +458,35 @@ static const basePath = import.meta.env.BASE_URL;
   </div>
 
   <highlight-code type="html">
-    <h5 id="toggle-button-group-x3">Select a size</h5>
+    <h5 id="toggle-button-group-x3">
+      Select a size
+    </h5>
     <div class="toggle-button-group" data-selection-type="single-required">
       <ul aria-labelledby="toggle-button-group-x3">
         <li>
           <button type="button" class="toggle-button" aria-pressed="false">
             <span class="toggle-button__content">
-              <span class="toggle-button__title">4.5</span>
+              <span class="toggle-button__title">
+                4.5
+              </span>
             </span>
           </button>
         </li>
         <li>
           <button type="button" class="toggle-button" aria-pressed="false">
             <span class="toggle-button__content">
-              <span class="toggle-button__title">5</span>
+              <span class="toggle-button__title">
+                5
+              </span>
             </span>
           </button>
         </li>
         <li>
           <button type="button" class="toggle-button" aria-pressed="false">
             <span class="toggle-button__content">
-              <span class="toggle-button__title">5.5</span>
+              <span class="toggle-button__title">
+                5.5
+              </span>
             </span>
           </button>
         </li>
@@ -415,11 +504,13 @@ static const basePath = import.meta.env.BASE_URL;
   </p>
 
   <p>
-    We use <code>display: grid</code> to create a predefined allotted number of
-    button slots per breakpoint. We also use container queries to modify how
-    many slots should be available per breakpoint. This allows buttons to
-    shrink/stretch the predefined number of buttons at each breakpoint with a
-    fallback to media queries for unsupported browsers.
+    We use
+    <code>display: grid</code>
+    to create a predefined allotted number of button slots per breakpoint.
+    We also use container queries to modify how many slots should be available
+    per breakpoint. This allows buttons to shrink/stretch the predefined number
+    of buttons at each breakpoint with a fallback to media queries for
+    unsupported browsers.
   </p>
 
   <p>
@@ -439,8 +530,7 @@ static const basePath = import.meta.env.BASE_URL;
       <p>
         <label
           for="toggle-button-group-breakpoints-range-1"
-          style="font-weight: bold;"
-        >
+          style="font-weight: bold;">
           Modify Container Width
         </label>
         <div style="display: inline-flex; gap: 8px; align-items: center; border: 1px solid var(--color-border-medium); padding: 8px; border-radius: 8px;">
@@ -451,85 +541,102 @@ static const basePath = import.meta.env.BASE_URL;
             name="breakpoints"
             min="320"
             max="1280"
-            value="320"
-          >
+            value="320">
           <output
             id="toggle-button-group-breakpoints-display-1"
             class="toggle-button-group-breakpoints-output"
-            style="font-weight: bold;"
-          >
+            style="font-weight: bold;">
             320
           </output>
         </div>
       </p>
-      <h5 id="toggle-button-group-c">Select Sizes</h5>
+      <h5 id="toggle-button-group-c">
+        Select Sizes
+      </h5>
       <div
         id="toggle-button-group-breakpoints-container-1"
         class="toggle-button-group-breakpoints-container"
-        style="width: 320px; border: 1px dashed orange;"
-      >
+        style="width: 320px; border: 1px dashed orange;">
         <div class="toggle-button-group">
           <ul aria-labelledby="toggle-button-group-c">
             <li>
               <button type="button" class="toggle-button" aria-pressed="false">
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">4.5</span>
+                  <span class="toggle-button__title">
+                    4.5
+                  </span>
                 </span>
               </button>
             </li>
             <li>
               <button type="button" class="toggle-button" aria-pressed="true">
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">5</span>
+                  <span class="toggle-button__title">
+                    5
+                  </span>
                 </span>
               </button>
             </li>
             <li>
               <button type="button" class="toggle-button" aria-pressed="false">
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">5.5</span>
+                  <span class="toggle-button__title">
+                    5.5
+                  </span>
                 </span>
               </button>
             </li>
             <li>
               <button type="button" class="toggle-button" aria-pressed="false">
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">6</span>
+                  <span class="toggle-button__title">
+                    6
+                  </span>
                 </span>
               </button>
             </li>
             <li>
               <button type="button" class="toggle-button" aria-pressed="false">
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">6.5</span>
+                  <span class="toggle-button__title">
+                    6.5
+                  </span>
                 </span>
               </button>
             </li>
             <li>
               <button type="button" class="toggle-button" aria-pressed="false">
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">7</span>
+                  <span class="toggle-button__title">
+                    7
+                  </span>
                 </span>
               </button>
             </li>
             <li>
               <button type="button" class="toggle-button" aria-pressed="false">
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">7.5</span>
+                  <span class="toggle-button__title">
+                    7.5
+                  </span>
                 </span>
               </button>
             </li>
             <li>
               <button type="button" class="toggle-button" aria-pressed="false">
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">8</span>
+                  <span class="toggle-button__title">
+                    8
+                  </span>
                 </span>
               </button>
             </li>
             <li>
               <button type="button" class="toggle-button" aria-pressed="false">
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">8.5</span>
+                  <span class="toggle-button__title">
+                    8.5
+                  </span>
                 </span>
               </button>
             </li>
@@ -540,70 +647,90 @@ static const basePath = import.meta.env.BASE_URL;
   </div>
 
   <highlight-code type="html">
-    <h5 id="toggle-button-group-c1">Select Sizes</h5>
+    <h5 id="toggle-button-group-c1">
+      Select Sizes
+    </h5>
     <div style="border: 1px dashed orange;">
       <div class="toggle-button-group">
         <ul aria-labelledby="toggle-button-group-c1">
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">4.5</span>
+                <span class="toggle-button__title">
+                  4.5
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="true">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">5</span>
+                <span class="toggle-button__title">
+                  5
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">5.5</span>
+                <span class="toggle-button__title">
+                  5.5
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">6</span>
+                <span class="toggle-button__title">
+                  6
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">6.5</span>
+                <span class="toggle-button__title">
+                  6.5
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">7</span>
+                <span class="toggle-button__title">
+                  7
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">7.5</span>
+                <span class="toggle-button__title">
+                  7.5
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">8</span>
+                <span class="toggle-button__title">
+                  8
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">8.5</span>
+                <span class="toggle-button__title">
+                  8.5
+                </span>
               </span>
             </button>
           </li>
@@ -629,28 +756,45 @@ static const basePath = import.meta.env.BASE_URL;
   <p>
     Here's a specific example. Suppose we know we're going to have 6 buttons
     total and we'd like to have perfect visual balance in the UI. We may add the
-    following html attributes/modifiers to <code>.toggle-button-group</code> to
-    achieve that:
+    following html attributes/modifiers to
+    <code>.toggle-button-group</code>
+    to achieve that:
   </p>
 
   <ul>
     <li>
-      <code>data-columns-xs="2"</code> to force 2 toggle buttons on the same
-      line so we'd have 3 balanced lines of buttons at the <code>XS</code>
-      breakpoint or at <code>320px</code> + width.
+      <code>data-columns-xs="2"</code>
+      to force 2 toggle buttons on the same line so we'd have 3 balanced
+      lines of buttons at the
+      <code>XS</code>
+      breakpoint or at
+      <code>320px</code>
+      + width.
     </li>
     <li>
-      <code>data-columns-sm="3"</code> to force 3 toggle buttons on the same
-      line so we'd have 2 balanced lines of buttons at the <code>SM</code>
-      breakpoint or at <code>512px</code> + width.
+      <code>data-columns-sm="3"</code>
+      to force 3 toggle buttons on the same line so we'd have 2 balanced
+      lines of buttons at the
+      <code>SM</code>
+      breakpoint or at
+      <code>512px</code>
+      + width.
     </li>
     <li>
-      <code>data-columns-md="6"</code> to force all 6 toggle buttons on the same
-      line at the <code>MD</code> breakpoint or at <code>768px</code> + width.
+      <code>data-columns-md="6"</code>
+      to force all 6 toggle buttons on the same line at the
+      <code>MD</code>
+      breakpoint or at
+      <code>768px</code>
+      + width.
     </li>
     <li>
-      <code>data-columns-xl="8"</code> to force all 8 toggle buttons on the same
-      line at the <code>XL</code> breakpoint or at <code>1280px</code> + width.
+      <code>data-columns-xl="8"</code>
+      to force all 8 toggle buttons on the same line at the
+      <code>XL</code>
+      breakpoint or at
+      <code>1280px</code>
+      + width.
     </li>
   </ul>
 
@@ -664,8 +808,7 @@ static const basePath = import.meta.env.BASE_URL;
       <p>
         <label
           for="toggle-button-group-breakpoints-range-2"
-          style="font-weight: bold;"
-        >
+          style="font-weight: bold;">
           Modify Container Width
         </label>
         <div style="display: inline-flex; gap: 8px; align-items: center; border: 1px solid var(--color-border-medium); padding: 8px; border-radius: 8px;">
@@ -676,70 +819,80 @@ static const basePath = import.meta.env.BASE_URL;
             name="breakpoints2"
             min="320"
             max="1280"
-            value="320"
-          >
+            value="320">
           <output
             id="toggle-button-group-breakpoints-display-2"
             class="toggle-button-group-breakpoints-output"
-            style="font-weight: bold;"
-          >
+            style="font-weight: bold;">
             320
           </output>
         </div>
       </p>
-      <h5 id="toggle-button-group-c">Select Sizes</h5>
+      <h5 id="toggle-button-group-c">
+        Select Sizes
+      </h5>
       <div
         id="toggle-button-group-breakpoints-container-2"
         class="toggle-button-group-breakpoints-container"
-        style="width: 320px; border: 1px dashed orange;"
-      >
+        style="width: 320px; border: 1px dashed orange;">
         <div
           class="toggle-button-group"
           data-columns-xs="2"
           data-columns-sm="3"
           data-columns-md="6"
-          data-columns-xl="8"
-        >
+          data-columns-xl="8">
           <ul aria-labelledby="toggle-button-group-c">
             <li>
               <button type="button" class="toggle-button" aria-pressed="false">
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">4.5</span>
+                  <span class="toggle-button__title">
+                    4.5
+                  </span>
                 </span>
               </button>
             </li>
             <li>
               <button type="button" class="toggle-button" aria-pressed="false">
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">5</span>
+                  <span class="toggle-button__title">
+                    5
+                  </span>
                 </span>
               </button>
             </li>
             <li>
               <button type="button" class="toggle-button" aria-pressed="false">
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">5.5</span>
+                  <span class="toggle-button__title">
+                    5.5
+                  </span>
                 </span>
               </button>
             </li>
             <li>
               <button type="button" class="toggle-button" aria-pressed="false">
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">6</span>
+                  <span class="toggle-button__title">
+                    6
+                  </span>
                 </span>
               </button>
             </li>
             <li>
               <button type="button" class="toggle-button" aria-pressed="false">
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">6.5</span>
+                  <span class="toggle-button__title">
+                    6.5
+                  </span>
                 </span>
               </button>
             </li>
             <li>
               <button type="button" class="toggle-button" aria-pressed="false">
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">7</span>
+                  <span class="toggle-button__title">
+                    7
+                  </span>
                 </span>
               </button>
             </li>
@@ -750,55 +903,68 @@ static const basePath = import.meta.env.BASE_URL;
   </div>
 
   <highlight-code type="html">
-    <h5 id="toggle-button-group-c">Select Sizes</h5>
+    <h5 id="toggle-button-group-c">
+      Select Sizes
+    </h5>
     <div style="border: 1px dashed orange;">
       <div
         class="toggle-button-group"
         data-columns-xs="2"
         data-columns-sm="3"
         data-columns-md="6"
-        data-columns-xl="8"
-      >
+        data-columns-xl="8">
         <ul aria-labelledby="toggle-button-group-c">
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">4.5</span>
+                <span class="toggle-button__title">
+                  4.5
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="true">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">5</span>
+                <span class="toggle-button__title">
+                  5
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">5.5</span>
+                <span class="toggle-button__title">
+                  5.5
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">6</span>
+                <span class="toggle-button__title">
+                  6
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">6.5</span>
+                <span class="toggle-button__title">
+                  6.5
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">7</span>
+                <span class="toggle-button__title">
+                  7
+                </span>
               </span>
             </button>
           </li>
@@ -813,8 +979,10 @@ static const basePath = import.meta.env.BASE_URL;
     There are various layouts that can be used based on the specific needs at
     implementation. The implied theme (needs no modifier), is the minimal
     layout. For more information about types of layouts, refer to the
-    <a href=`${urls.components}/toggle-button`>Toggle Button</a> component. The
-    examples below will highlight various layouts.
+    <a href=`${urls.components}/toggle-button`>
+      Toggle Button
+    </a>
+    component. The examples below will highlight various layouts.
   </p>
 
   <p>
@@ -825,21 +993,21 @@ static const basePath = import.meta.env.BASE_URL;
   <section
     class="section-notice section-notice--information"
     role="region"
-    aria-label="Information"
-  >
+    aria-label="Information">
     <div class="section-notice__header">
       <svg
         class="icon icon--16"
         height="16"
         width="16"
         role="img"
-        aria-label="Information"
-      >
+        aria-label="Information">
         <icon-symbol name="information-filled-16"/>
       </svg>
     </div>
     <div class="section-notice__main">
-      <h3 class="section-notice__title">Layout Modifiers</h3>
+      <h3 class="section-notice__title">
+        Layout Modifiers
+      </h3>
       <p>
         Toggle Button Group has top-level modifiers that will apply to the
         Toggle Buttons inside. When using Toggle Buttons inside Toggle Button
@@ -860,84 +1028,107 @@ static const basePath = import.meta.env.BASE_URL;
   </p>
 
   <p>
-    <strong>NOTE:</strong> All toggle button examples utilize JavaScript to
-    toggle the <code>aria-pressed</code> state of the button.
+    <strong>NOTE:</strong>
+    All toggle button examples utilize JavaScript to toggle the
+    <code>aria-pressed</code>
+    state of the button.
   </p>
 
   <p>
     In this example, the container housing the Toggle Button Group is
-    artificially limited to <code>500px</code> to demonstrate how the buttons
-    will wrap after the specific columns (in this case, 3). Feel free to
-    reduce/expand the container width in dev console to see how the columns will
-    react.
+    artificially limited to
+    <code>500px</code>
+    to demonstrate how the buttons will wrap after the specific columns
+    (in this case, 3). Feel free to reduce/expand the container width in dev
+    console to see how the columns will react.
   </p>
 
   <div class="demo">
     <div class="demo__inner">
-      <h5 id="toggle-button-group-e">Select Sizes</h5>
+      <h5 id="toggle-button-group-e">
+        Select Sizes
+      </h5>
       <div style="border: 1px dashed orange;">
         <div class="toggle-button-group">
           <ul aria-labelledby="toggle-button-group-e">
             <li>
               <button type="button" class="toggle-button" aria-pressed="false">
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">4.5</span>
+                  <span class="toggle-button__title">
+                    4.5
+                  </span>
                 </span>
               </button>
             </li>
             <li>
               <button type="button" class="toggle-button" aria-pressed="true">
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">5</span>
+                  <span class="toggle-button__title">
+                    5
+                  </span>
                 </span>
               </button>
             </li>
             <li>
               <button type="button" class="toggle-button" aria-pressed="false">
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">5.5</span>
+                  <span class="toggle-button__title">
+                    5.5
+                  </span>
                 </span>
               </button>
             </li>
             <li>
               <button type="button" class="toggle-button" aria-pressed="false">
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">6</span>
+                  <span class="toggle-button__title">
+                    6
+                  </span>
                 </span>
               </button>
             </li>
             <li>
               <button type="button" class="toggle-button" aria-pressed="false">
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">6.5</span>
+                  <span class="toggle-button__title">
+                    6.5
+                  </span>
                 </span>
               </button>
             </li>
             <li>
               <button type="button" class="toggle-button" aria-pressed="false">
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">7</span>
+                  <span class="toggle-button__title">
+                    7
+                  </span>
                 </span>
               </button>
             </li>
             <li>
               <button type="button" class="toggle-button" aria-pressed="false">
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">7.5</span>
+                  <span class="toggle-button__title">
+                    7.5
+                  </span>
                 </span>
               </button>
             </li>
             <li>
               <button type="button" class="toggle-button" aria-pressed="false">
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">8</span>
+                  <span class="toggle-button__title">
+                    8
+                  </span>
                 </span>
               </button>
             </li>
             <li>
               <button type="button" class="toggle-button" aria-pressed="false">
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">8.5</span>
+                  <span class="toggle-button__title">
+                    8.5
+                  </span>
                 </span>
               </button>
             </li>
@@ -948,70 +1139,90 @@ static const basePath = import.meta.env.BASE_URL;
   </div>
 
   <highlight-code type="html">
-    <h5 id="toggle-button-group-e">Select Sizes</h5>
+    <h5 id="toggle-button-group-e">
+      Select Sizes
+    </h5>
     <div style="border: 1px dashed orange;">
       <div class="toggle-button-group">
         <ul aria-labelledby="toggle-button-group-e">
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">4.5</span>
+                <span class="toggle-button__title">
+                  4.5
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="true">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">5</span>
+                <span class="toggle-button__title">
+                  5
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">5.5</span>
+                <span class="toggle-button__title">
+                  5.5
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">6</span>
+                <span class="toggle-button__title">
+                  6
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">6.5</span>
+                <span class="toggle-button__title">
+                  6.5
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">7</span>
+                <span class="toggle-button__title">
+                  7
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">7.5</span>
+                <span class="toggle-button__title">
+                  7.5
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">8</span>
+                <span class="toggle-button__title">
+                  8
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">8.5</span>
+                <span class="toggle-button__title">
+                  8.5
+                </span>
               </span>
             </button>
           </li>
@@ -1029,36 +1240,44 @@ static const basePath = import.meta.env.BASE_URL;
 
   <p>
     You may use this layout by adding the
-    <code>toggle-button-group--list-layout</code> modifier to the toggle button
-    group.
+    <code>toggle-button-group--list-layout</code>
+    modifier to the toggle button group.
   </p>
 
   <h4>List Layout Toggle Button Group with Title</h4>
 
   <div class="demo">
     <div class="demo__inner">
-      <h5 id="toggle-button-group-f">Text Options</h5>
+      <h5 id="toggle-button-group-f">
+        Text Options
+      </h5>
       <div style="border: 1px dashed orange;">
         <div class="toggle-button-group toggle-button-group--list-layout">
           <ul aria-labelledby="toggle-button-group-f">
             <li>
               <button type="button" class="toggle-button" aria-pressed="false">
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">Text Button 1</span>
+                  <span class="toggle-button__title">
+                    Text Button 1
+                  </span>
                 </span>
               </button>
             </li>
             <li>
               <button type="button" class="toggle-button" aria-pressed="true">
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">Text Button 2</span>
+                  <span class="toggle-button__title">
+                    Text Button 2
+                  </span>
                 </span>
               </button>
             </li>
             <li>
               <button type="button" class="toggle-button" aria-pressed="false">
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">Text Button 3</span>
+                  <span class="toggle-button__title">
+                    Text Button 3
+                  </span>
                 </span>
               </button>
             </li>
@@ -1069,31 +1288,38 @@ static const basePath = import.meta.env.BASE_URL;
   </div>
 
   <highlight-code type="html">
-    <h5 id="toggle-button-group-f">Text Options</h5>
+    <h5 id="toggle-button-group-f">
+      Text Options
+    </h5>
     <div style="border: 1px dashed orange;">
       <div
         aria-labelledby="toggle-button-group-f"
-        class="toggle-button-group toggle-button-group--list-layout"
-      >
+        class="toggle-button-group toggle-button-group--list-layout">
         <ul aria-labelledby="toggle-button-group-f">
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">Text Button 1</span>
+                <span class="toggle-button__title">
+                  Text Button 1
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="true">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">Text Button 2</span>
+                <span class="toggle-button__title">
+                  Text Button 2
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">Text Button 3</span>
+                <span class="toggle-button__title">
+                  Text Button 3
+                </span>
               </span>
             </button>
           </li>
@@ -1108,31 +1334,45 @@ static const basePath = import.meta.env.BASE_URL;
 
   <div class="demo">
     <div class="demo__inner">
-      <h5 id="toggle-button-group-g">Text Options</h5>
+      <h5 id="toggle-button-group-g">
+        Text Options
+      </h5>
       <div style="border: 1px dashed orange;">
         <div class="toggle-button-group toggle-button-group--list-layout">
           <ul aria-labelledby="toggle-button-group-g">
             <li>
               <button type="button" class="toggle-button" aria-pressed="false">
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">Text Title 1</span>
-                  <span class="toggle-button__subtitle">Text Subtitle 1</span>
+                  <span class="toggle-button__title">
+                    Text Title 1
+                  </span>
+                  <span class="toggle-button__subtitle">
+                    Text Subtitle 1
+                  </span>
                 </span>
               </button>
             </li>
             <li>
               <button type="button" class="toggle-button" aria-pressed="true">
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">Text Title 2</span>
-                  <span class="toggle-button__subtitle">Text Subtitle 2</span>
+                  <span class="toggle-button__title">
+                    Text Title 2
+                  </span>
+                  <span class="toggle-button__subtitle">
+                    Text Subtitle 2
+                  </span>
                 </span>
               </button>
             </li>
             <li>
               <button type="button" class="toggle-button" aria-pressed="true">
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">Text Title 3</span>
-                  <span class="toggle-button__subtitle">Text Subtitle 3</span>
+                  <span class="toggle-button__title">
+                    Text Title 3
+                  </span>
+                  <span class="toggle-button__subtitle">
+                    Text Subtitle 3
+                  </span>
                 </span>
               </button>
             </li>
@@ -1143,31 +1383,45 @@ static const basePath = import.meta.env.BASE_URL;
   </div>
 
   <highlight-code type="html">
-    <h5 id="toggle-button-group-g">Text Options</h5>
+    <h5 id="toggle-button-group-g">
+      Text Options
+    </h5>
     <div style="border: 1px dashed orange;">
       <div class="toggle-button-group toggle-button-group--list-layout">
         <ul aria-labelledby="toggle-button-group-g">
           <li>
             <button type="button" class="toggle-button" aria-pressed="false">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">Text Title 1</span>
-                <span class="toggle-button__subtitle">Text Subtitle 1</span>
+                <span class="toggle-button__title">
+                  Text Title 1
+                </span>
+                <span class="toggle-button__subtitle">
+                  Text Subtitle 1
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="true">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">Text Title 2</span>
-                <span class="toggle-button__subtitle">Text Subtitle 2</span>
+                <span class="toggle-button__title">
+                  Text Title 2
+                </span>
+                <span class="toggle-button__subtitle">
+                  Text Subtitle 2
+                </span>
               </span>
             </button>
           </li>
           <li>
             <button type="button" class="toggle-button" aria-pressed="true">
               <span class="toggle-button__content">
-                <span class="toggle-button__title">Text Title 3</span>
-                <span class="toggle-button__subtitle">Text Subtitle 3</span>
+                <span class="toggle-button__title">
+                  Text Title 3
+                </span>
+                <span class="toggle-button__subtitle">
+                  Text Subtitle 3
+                </span>
               </span>
             </button>
           </li>
@@ -1180,7 +1434,9 @@ static const basePath = import.meta.env.BASE_URL;
 
   <div class="demo">
     <div class="demo__inner">
-      <h5 id="toggle-button-group-h">Select Payment Option</h5>
+      <h5 id="toggle-button-group-h">
+        Select Payment Option
+      </h5>
       <div style="border: 1px dashed orange;">
         <div class="toggle-button-group toggle-button-group--list-layout">
           <ul aria-labelledby="toggle-button-group-h">
@@ -1191,13 +1447,14 @@ static const basePath = import.meta.env.BASE_URL;
                     aria-hidden="true"
                     class="icon icon--visa-32-colored"
                     height="3"
-                    width="3"
-                  >
+                    width="3">
                     <icon-symbol name="visa-32-colored" prefix="icon"/>
                   </svg>
                 </span>
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">Image Button Title 1</span>
+                  <span class="toggle-button__title">
+                    Image Button Title 1
+                  </span>
                   <span class="toggle-button__subtitle">
                     Image Button Subtitle 1
                   </span>
@@ -1211,13 +1468,14 @@ static const basePath = import.meta.env.BASE_URL;
                     aria-hidden="true"
                     class="icon icon--paypal-32-colored"
                     height="3"
-                    width="3"
-                  >
+                    width="3">
                     <icon-symbol name="paypal-32-colored" prefix="icon"/>
                   </svg>
                 </span>
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">Image Button Title 2</span>
+                  <span class="toggle-button__title">
+                    Image Button Title 2
+                  </span>
                   <span class="toggle-button__subtitle">
                     Image Button Subtitle 2
                   </span>
@@ -1231,13 +1489,14 @@ static const basePath = import.meta.env.BASE_URL;
                     aria-hidden="true"
                     class="icon icon--mastercard-32-colored"
                     height="3"
-                    width="3"
-                  >
+                    width="3">
                     <icon-symbol name="mastercard-32-colored" prefix="icon"/>
                   </svg>
                 </span>
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">Image Button Title 3</span>
+                  <span class="toggle-button__title">
+                    Image Button Title 3
+                  </span>
                   <span class="toggle-button__subtitle">
                     Image Button Subtitle 3
                   </span>
@@ -1251,7 +1510,9 @@ static const basePath = import.meta.env.BASE_URL;
   </div>
 
   <highlight-code type="html">
-    <h5 id="toggle-button-group-h">Select Payment Option</h5>
+    <h5 id="toggle-button-group-h">
+      Select Payment Option
+    </h5>
     <div style="border: 1px dashed orange;">
       <div class="toggle-button-group toggle-button-group--list-layout">
         <ul aria-labelledby="toggle-button-group-h">
@@ -1262,13 +1523,14 @@ static const basePath = import.meta.env.BASE_URL;
                   aria-hidden="true"
                   class="icon icon--visa-32-colored"
                   height="3"
-                  width="3"
-                >
+                  width="3">
                   <use href=`#icon-visa-32-colored`/>
                 </svg>
               </span>
               <span class="toggle-button__content">
-                <span class="toggle-button__title">Image Button Title 1</span>
+                <span class="toggle-button__title">
+                  Image Button Title 1
+                </span>
                 <span class="toggle-button__subtitle">
                   Image Button Subtitle 1
                 </span>
@@ -1282,13 +1544,14 @@ static const basePath = import.meta.env.BASE_URL;
                   aria-hidden="true"
                   class="icon icon--paypal-32-colored"
                   height="3"
-                  width="3"
-                >
+                  width="3">
                   <use href=`#icon-paypal-32-colored`/>
                 </svg>
               </span>
               <span class="toggle-button__content">
-                <span class="toggle-button__title">Image Button Title 2</span>
+                <span class="toggle-button__title">
+                  Image Button Title 2
+                </span>
                 <span class="toggle-button__subtitle">
                   Image Button Subtitle 2
                 </span>
@@ -1302,13 +1565,14 @@ static const basePath = import.meta.env.BASE_URL;
                   aria-hidden="true"
                   class="icon icon--mastercard-32-colored"
                   height="3"
-                  width="3"
-                >
+                  width="3">
                   <use href=`#icon-mastercard-32-colored`/>
                 </svg>
               </span>
               <span class="toggle-button__content">
-                <span class="toggle-button__title">Image Button Title 3</span>
+                <span class="toggle-button__title">
+                  Image Button Title 3
+                </span>
                 <span class="toggle-button__subtitle">
                   Image Button Subtitle 3
                 </span>
@@ -1324,11 +1588,17 @@ static const basePath = import.meta.env.BASE_URL;
 
   <p>
     To add an image to a toggle button, you can use the
-    <code>toggle-button__image-container</code> block using an
-    <code>&lt;img&gt;</code> or as a <code>css</code> background image.
+    <code>toggle-button__image-container</code>
+    block using an
+    <code>&lt;img&gt;</code>
+    or as a
+    <code>css</code>
+    background image.
   </p>
 
-  <h5 id="toggle-button-group-i">Select Payment Option</h5>
+  <h5 id="toggle-button-group-i">
+    Select Payment Option
+  </h5>
   <div style="border: 1px dashed orange;">
     <div class="toggle-button-group toggle-button-group--list-layout">
       <ul aria-labelledby="toggle-button-group-i">
@@ -1336,16 +1606,19 @@ static const basePath = import.meta.env.BASE_URL;
           <button
             type="button"
             class="toggle-button toggle-button--list-layout"
-            aria-pressed="false"
-          >
+            aria-pressed="false">
             <span class="toggle-button__image-container">
               <span class="toggle-button__image">
                 <img src=imgProfilePic alt="">
               </span>
             </span>
             <span class="toggle-button__content">
-              <span class="toggle-button__title">Title</span>
-              <span class="toggle-button__subtitle">Subtitle</span>
+              <span class="toggle-button__title">
+                Title
+              </span>
+              <span class="toggle-button__subtitle">
+                Subtitle
+              </span>
             </span>
           </button>
         </li>
@@ -1354,16 +1627,19 @@ static const basePath = import.meta.env.BASE_URL;
           <button
             type="button"
             class="toggle-button toggle-button--list-layout"
-            aria-pressed="false"
-          >
+            aria-pressed="false">
             <span class="toggle-button__image-container">
               <span class="toggle-button__image">
                 <img src=imgProfilePic alt="">
               </span>
             </span>
             <span class="toggle-button__content">
-              <span class="toggle-button__title">Title</span>
-              <span class="toggle-button__subtitle">Subtitle</span>
+              <span class="toggle-button__title">
+                Title
+              </span>
+              <span class="toggle-button__subtitle">
+                Subtitle
+              </span>
             </span>
           </button>
         </li>
@@ -1372,16 +1648,19 @@ static const basePath = import.meta.env.BASE_URL;
           <button
             type="button"
             class="toggle-button toggle-button--list-layout"
-            aria-pressed="false"
-          >
+            aria-pressed="false">
             <span class="toggle-button__image-container">
               <span class="toggle-button__image">
                 <img src=imgProfilePic alt="">
               </span>
             </span>
             <span class="toggle-button__content">
-              <span class="toggle-button__title">Title</span>
-              <span class="toggle-button__subtitle">Subtitle</span>
+              <span class="toggle-button__title">
+                Title
+              </span>
+              <span class="toggle-button__subtitle">
+                Subtitle
+              </span>
             </span>
           </button>
         </li>
@@ -1390,7 +1669,9 @@ static const basePath = import.meta.env.BASE_URL;
   </div>
 
   <highlight-code type="html">
-    <h5 id="toggle-button-group-i">Select Payment Option</h5>
+    <h5 id="toggle-button-group-i">
+      Select Payment Option
+    </h5>
     <div style="border: 1px dashed orange;">
       <div class="toggle-button-group toggle-button-group--list-layout">
         <ul aria-labelledby="toggle-button-group-i">
@@ -1398,16 +1679,19 @@ static const basePath = import.meta.env.BASE_URL;
             <button
               type="button"
               class="toggle-button toggle-button--list-layout"
-              aria-pressed="false"
-            >
+              aria-pressed="false">
               <span class="toggle-button__image-container">
                 <span class="toggle-button__image">
                   <img src="imageprofile">
                 </span>
               </span>
               <span class="toggle-button__content">
-                <span class="toggle-button__title">Title</span>
-                <span class="toggle-button__subtitle">Subtitle</span>
+                <span class="toggle-button__title">
+                  Title
+                </span>
+                <span class="toggle-button__subtitle">
+                  Subtitle
+                </span>
               </span>
             </button>
           </li>
@@ -1416,16 +1700,19 @@ static const basePath = import.meta.env.BASE_URL;
             <button
               type="button"
               class="toggle-button toggle-button--list-layout"
-              aria-pressed="false"
-            >
+              aria-pressed="false">
               <span class="toggle-button__image-container">
                 <span class="toggle-button__image">
                   <img src="imageprofile">
                 </span>
               </span>
               <span class="toggle-button__content">
-                <span class="toggle-button__title">Title</span>
-                <span class="toggle-button__subtitle">Subtitle</span>
+                <span class="toggle-button__title">
+                  Title
+                </span>
+                <span class="toggle-button__subtitle">
+                  Subtitle
+                </span>
               </span>
             </button>
           </li>
@@ -1434,16 +1721,19 @@ static const basePath = import.meta.env.BASE_URL;
             <button
               type="button"
               class="toggle-button toggle-button--list-layout"
-              aria-pressed="false"
-            >
+              aria-pressed="false">
               <span class="toggle-button__image-container">
                 <span class="toggle-button__image">
                   <img src="ImageProfilePic">
                 </span>
               </span>
               <span class="toggle-button__content">
-                <span class="toggle-button__title">Title</span>
-                <span class="toggle-button__subtitle">Subtitle</span>
+                <span class="toggle-button__title">
+                  Title
+                </span>
+                <span class="toggle-button__subtitle">
+                  Subtitle
+                </span>
               </span>
             </button>
           </li>
@@ -1454,7 +1744,9 @@ static const basePath = import.meta.env.BASE_URL;
 
   <h4>List Layout Toggle Button Group with CSS Images</h4>
 
-  <h5 id="toggle-button-group-j">Select Payment Option</h5>
+  <h5 id="toggle-button-group-j">
+    Select Payment Option
+  </h5>
   <div style="border: 1px dashed orange;">
     <div class="toggle-button-group toggle-button-group--list-layout">
       <ul aria-labelledby="toggle-button-group-j">
@@ -1462,8 +1754,7 @@ static const basePath = import.meta.env.BASE_URL;
           <button
             type="button"
             class="toggle-button toggle-button--list-layout"
-            aria-pressed="false"
-          >
+            aria-pressed="false">
             <span class="toggle-button__image-container">
               <span
                 class="toggle-button__image"
@@ -1472,12 +1763,15 @@ static const basePath = import.meta.env.BASE_URL;
                   "background-repeat": "no-repeat",
                   "background-position": "center",
                   "background-size": "contain",
-                }
-              />
+                }/>
             </span>
             <span class="toggle-button__content">
-              <span class="toggle-button__title">CSS Image</span>
-              <span class="toggle-button__subtitle">Background: Contain</span>
+              <span class="toggle-button__title">
+                CSS Image
+              </span>
+              <span class="toggle-button__subtitle">
+                Background: Contain
+              </span>
             </span>
           </button>
         </li>
@@ -1486,8 +1780,7 @@ static const basePath = import.meta.env.BASE_URL;
           <button
             type="button"
             class="toggle-button toggle-button--list-layout"
-            aria-pressed="false"
-          >
+            aria-pressed="false">
             <span class="toggle-button__image-container">
               <span
                 class="toggle-button__image"
@@ -1496,12 +1789,15 @@ static const basePath = import.meta.env.BASE_URL;
                   "background-repeat": "no-repeat",
                   "background-position": "center",
                   "background-size": "cover",
-                }
-              />
+                }/>
             </span>
             <span class="toggle-button__content">
-              <span class="toggle-button__title">CSS Image</span>
-              <span class="toggle-button__subtitle">Background: Cover</span>
+              <span class="toggle-button__title">
+                CSS Image
+              </span>
+              <span class="toggle-button__subtitle">
+                Background: Cover
+              </span>
             </span>
           </button>
         </li>
@@ -1510,7 +1806,9 @@ static const basePath = import.meta.env.BASE_URL;
   </div>
 
   <highlight-code type="html">
-    <h5 id="toggle-button-group-j">Select Payment Option</h5>
+    <h5 id="toggle-button-group-j">
+      Select Payment Option
+    </h5>
     <div style="border: 1px dashed orange;">
       <div class="toggle-button-group toggle-button-group--list-layout">
         <ul aria-labelledby="toggle-button-group-j">
@@ -1518,17 +1816,19 @@ static const basePath = import.meta.env.BASE_URL;
             <button
               type="button"
               class="toggle-button toggle-button--list-layout"
-              aria-pressed="false"
-            >
+              aria-pressed="false">
               <span class="toggle-button__image-container">
                 <span
                   class="toggle-button__image"
-                  style="background-image: url('/img/tb-profile-pic.jpg'); background-repeat: no-repeat; background-position: center; background-size: contain;"
-                />
+                  style="background-image: url('/img/tb-profile-pic.jpg'); background-repeat: no-repeat; background-position: center; background-size: contain;"/>
               </span>
               <span class="toggle-button__content">
-                <span class="toggle-button__title">CSS Image</span>
-                <span class="toggle-button__subtitle">Background: Contain</span>
+                <span class="toggle-button__title">
+                  CSS Image
+                </span>
+                <span class="toggle-button__subtitle">
+                  Background: Contain
+                </span>
               </span>
             </button>
           </li>
@@ -1537,17 +1837,19 @@ static const basePath = import.meta.env.BASE_URL;
             <button
               type="button"
               class="toggle-button toggle-button--list-layout"
-              aria-pressed="false"
-            >
+              aria-pressed="false">
               <span class="toggle-button__image-container">
                 <span
                   class="toggle-button__image"
-                  style="background-image: url('/img/tb-profile-pic.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;"
-                />
+                  style="background-image: url('/img/tb-profile-pic.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;"/>
               </span>
               <span class="toggle-button__content">
-                <span class="toggle-button__title">CSS Image</span>
-                <span class="toggle-button__subtitle">Background: Cover</span>
+                <span class="toggle-button__title">
+                  CSS Image
+                </span>
+                <span class="toggle-button__subtitle">
+                  Background: Cover
+                </span>
               </span>
             </button>
           </li>
@@ -1569,8 +1871,8 @@ static const basePath = import.meta.env.BASE_URL;
 
   <p>
     You may use this layout by adding the
-    <code>toggle-button-group--gallery-layout</code> modifier to the toggle
-    button group.
+    <code>toggle-button-group--gallery-layout</code>
+    modifier to the toggle button group.
   </p>
 
   <h4>Gallery Layout Toggle Button Group with Images</h4>
@@ -1584,7 +1886,9 @@ static const basePath = import.meta.env.BASE_URL;
 
   <div class="demo">
     <div class="demo__inner">
-      <h5 id="toggle-button-group-k">Selection Options</h5>
+      <h5 id="toggle-button-group-k">
+        Selection Options
+      </h5>
       <div style="border: 1px dashed orange;">
         <div class="toggle-button-group toggle-button-group--gallery-layout">
           <ul aria-labelledby="toggle-button-group-k">
@@ -1599,7 +1903,9 @@ static const basePath = import.meta.env.BASE_URL;
                   <span class="toggle-button__title">
                     <span>Image Button</span>
                   </span>
-                  <span class="toggle-button__subtitle">Subtitle</span>
+                  <span class="toggle-button__subtitle">
+                    Subtitle
+                  </span>
                 </span>
               </button>
             </li>
@@ -1614,7 +1920,9 @@ static const basePath = import.meta.env.BASE_URL;
                   <span class="toggle-button__title">
                     <span>Image Button</span>
                   </span>
-                  <span class="toggle-button__subtitle">Subtitle</span>
+                  <span class="toggle-button__subtitle">
+                    Subtitle
+                  </span>
                 </span>
               </button>
             </li>
@@ -1629,7 +1937,9 @@ static const basePath = import.meta.env.BASE_URL;
                   <span class="toggle-button__title">
                     <span>Image Button</span>
                   </span>
-                  <span class="toggle-button__subtitle">Subtitle</span>
+                  <span class="toggle-button__subtitle">
+                    Subtitle
+                  </span>
                 </span>
               </button>
             </li>
@@ -1640,7 +1950,9 @@ static const basePath = import.meta.env.BASE_URL;
   </div>
 
   <highlight-code type="html">
-    <h5 id="toggle-button-group-k">Selection Options</h5>
+    <h5 id="toggle-button-group-k">
+      Selection Options
+    </h5>
     <div style="border: 1px dashed orange;">
       <div class="toggle-button-group toggle-button-group--gallery-layout">
         <ul aria-labelledby="toggle-button-group-k">
@@ -1655,7 +1967,9 @@ static const basePath = import.meta.env.BASE_URL;
                 <span class="toggle-button__title">
                   <span>Image Button</span>
                 </span>
-                <span class="toggle-button__subtitle">Subtitle</span>
+                <span class="toggle-button__subtitle">
+                  Subtitle
+                </span>
               </span>
             </button>
           </li>
@@ -1670,7 +1984,9 @@ static const basePath = import.meta.env.BASE_URL;
                 <span class="toggle-button__title">
                   <span>Image Button</span>
                 </span>
-                <span class="toggle-button__subtitle">Subtitle</span>
+                <span class="toggle-button__subtitle">
+                  Subtitle
+                </span>
               </span>
             </button>
           </li>
@@ -1685,7 +2001,9 @@ static const basePath = import.meta.env.BASE_URL;
                 <span class="toggle-button__title">
                   <span>Image Button</span>
                 </span>
-                <span class="toggle-button__subtitle">Subtitle</span>
+                <span class="toggle-button__subtitle">
+                  Subtitle
+                </span>
               </span>
             </button>
           </li>
@@ -1697,9 +2015,10 @@ static const basePath = import.meta.env.BASE_URL;
   <h4>Gallery Layout Toggle Button Group with CSS Images</h4>
 
   <p>
-    Besides using an <code>&lt;img&gt;</code> , you may also use CSS images that
-    can provide more flexibility in filling more of the space reserved for
-    images.
+    Besides using an
+    <code>&lt;img&gt;</code>
+    , you may also use CSS images that can provide more flexibility in
+    filling more of the space reserved for images.
   </p>
 
   <p>
@@ -1713,18 +2032,22 @@ static const basePath = import.meta.env.BASE_URL;
     first is a CSS Profile Image button with background-size: contain that will
     display the image as is and fit the entire image in the container. The
     second is a CSS Profile Image button with
-    <code>background-size: cover</code> that will display the image to fill as
-    much of the space of the container as possible clipping out the remaining
-    portions of the image that fall outside. With that method, you can also
-    provide guidance for fine-tuning the image positioning to move the focal
-    point into the center of the container. In that example,
-    <code>background-position: center 15%;</code> is used to move the focal
-    point (person with camera) into the center of the frame.
+    <code>background-size: cover</code>
+    that will display the image to fill as much of the space of the
+    container as possible clipping out the remaining portions of the image that
+    fall outside. With that method, you can also provide guidance for
+    fine-tuning the image positioning to move the focal point into the center of
+    the container. In that example,
+    <code>background-position: center 15%;</code>
+    is used to move the focal point (person with camera) into the center
+    of the frame.
   </p>
 
   <div class="demo">
     <div class="demo__inner">
-      <h5 id="toggle-button-group-l">Selection Options</h5>
+      <h5 id="toggle-button-group-l">
+        Selection Options
+      </h5>
       <div style="border: 1px dashed orange;">
         <div class="toggle-button-group toggle-button-group--gallery-layout">
           <ul aria-labelledby="toggle-button-group-l">
@@ -1738,11 +2061,12 @@ static const basePath = import.meta.env.BASE_URL;
                       "background-repeat": "no-repeat",
                       "background-position": "center",
                       "background-size": "contain",
-                    }
-                  />
+                    }/>
                 </span>
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">CSS Profile Image</span>
+                  <span class="toggle-button__title">
+                    CSS Profile Image
+                  </span>
                   <span class="toggle-button__subtitle">
                     Background: Contain
                   </span>
@@ -1759,12 +2083,15 @@ static const basePath = import.meta.env.BASE_URL;
                       "background-repeat": "no-repeat",
                       "background-size": "cover",
                       "background-position": "center 15%",
-                    }
-                  />
+                    }/>
                 </span>
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">CSS Profile Image</span>
-                  <span class="toggle-button__subtitle">Background: Cover</span>
+                  <span class="toggle-button__title">
+                    CSS Profile Image
+                  </span>
+                  <span class="toggle-button__subtitle">
+                    Background: Cover
+                  </span>
                 </span>
               </button>
             </li>
@@ -1778,12 +2105,15 @@ static const basePath = import.meta.env.BASE_URL;
                       "background-repeat": "no-repeat",
                       "background-position": "center",
                       "background-size": "cover",
-                    }
-                  />
+                    }/>
                 </span>
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">CSS Landscape Image</span>
-                  <span class="toggle-button__subtitle">Background: Cover</span>
+                  <span class="toggle-button__title">
+                    CSS Landscape Image
+                  </span>
+                  <span class="toggle-button__subtitle">
+                    Background: Cover
+                  </span>
                 </span>
               </button>
             </li>
@@ -1794,7 +2124,9 @@ static const basePath = import.meta.env.BASE_URL;
   </div>
 
   <highlight-code type="html">
-    <h5 id="toggle-button-group-l">Selection Options</h5>
+    <h5 id="toggle-button-group-l">
+      Selection Options
+    </h5>
     <div style="border: 1px dashed orange;">
       <div class="toggle-button-group toggle-button-group--gallery-layout">
         <ul aria-labelledby="toggle-button-group-l">
@@ -1803,12 +2135,15 @@ static const basePath = import.meta.env.BASE_URL;
               <span class="toggle-button__image-container">
                 <span
                   class="toggle-button__image"
-                  style="background-image: url('src/tb-profile-pic.jpg'); background-repeat: no-repeat; background-position: center; background-size: contain;"
-                />
+                  style="background-image: url('src/tb-profile-pic.jpg'); background-repeat: no-repeat; background-position: center; background-size: contain;"/>
               </span>
               <span class="toggle-button__content">
-                <span class="toggle-button__title">CSS Profile Image</span>
-                <span class="toggle-button__subtitle">Background: Contain</span>
+                <span class="toggle-button__title">
+                  CSS Profile Image
+                </span>
+                <span class="toggle-button__subtitle">
+                  Background: Contain
+                </span>
               </span>
             </button>
           </li>
@@ -1817,12 +2152,15 @@ static const basePath = import.meta.env.BASE_URL;
               <span class="toggle-button__image-container">
                 <span
                   class="toggle-button__image"
-                  style="background-image: url('src/tb-profile-pic.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;"
-                />
+                  style="background-image: url('src/tb-profile-pic.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;"/>
               </span>
               <span class="toggle-button__content">
-                <span class="toggle-button__title">CSS Profile Image</span>
-                <span class="toggle-button__subtitle">Background: Cover</span>
+                <span class="toggle-button__title">
+                  CSS Profile Image
+                </span>
+                <span class="toggle-button__subtitle">
+                  Background: Cover
+                </span>
               </span>
             </button>
           </li>
@@ -1831,12 +2169,15 @@ static const basePath = import.meta.env.BASE_URL;
               <span class="toggle-button__image-container">
                 <span
                   class="toggle-button__image"
-                  style="background-image: url('src/tb-landscape-pic.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;"
-                />
+                  style="background-image: url('src/tb-landscape-pic.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;"/>
               </span>
               <span class="toggle-button__content">
-                <span class="toggle-button__title">CSS Landscape Image</span>
-                <span class="toggle-button__subtitle">Background: Cover</span>
+                <span class="toggle-button__title">
+                  CSS Landscape Image
+                </span>
+                <span class="toggle-button__subtitle">
+                  Background: Cover
+                </span>
               </span>
             </button>
           </li>
@@ -1853,12 +2194,15 @@ static const basePath = import.meta.env.BASE_URL;
   </p>
   <p>
     To add an icon to a toggle button, you can use the
-    <code>toggle-button__icon</code> block.
+    <code>toggle-button__icon</code>
+    block.
   </p>
 
   <div class="demo">
     <div class="demo__inner">
-      <h5 id="toggle-button-group-m">Selection Options</h5>
+      <h5 id="toggle-button-group-m">
+        Selection Options
+      </h5>
       <div style="border: 1px dashed orange;">
         <div class="toggle-button-group toggle-button-group--gallery-layout">
           <ul aria-labelledby="toggle-button-group-m">
@@ -1869,13 +2213,14 @@ static const basePath = import.meta.env.BASE_URL;
                     aria-hidden="true"
                     class="icon icon--image-64"
                     height="64"
-                    width="64"
-                  >
+                    width="64">
                     <icon-symbol name="image-64" prefix="icon"/>
                   </svg>
                 </span>
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">Gallery Title 1</span>
+                  <span class="toggle-button__title">
+                    Gallery Title 1
+                  </span>
                   <span class="toggle-button__subtitle">
                     Gallery Subtitle 1
                   </span>
@@ -1889,13 +2234,14 @@ static const basePath = import.meta.env.BASE_URL;
                     aria-hidden="true"
                     class="icon icon--credit-card-64"
                     height="64"
-                    width="64"
-                  >
+                    width="64">
                     <icon-symbol name="credit-card-64" prefix="icon"/>
                   </svg>
                 </span>
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">Gallery Title 2</span>
+                  <span class="toggle-button__title">
+                    Gallery Title 2
+                  </span>
                   <span class="toggle-button__subtitle">
                     Gallery Subtitle 2
                   </span>
@@ -1909,13 +2255,14 @@ static const basePath = import.meta.env.BASE_URL;
                     aria-hidden="true"
                     class="icon icon--bank-64"
                     height="64"
-                    width="64"
-                  >
+                    width="64">
                     <icon-symbol name="bank-64" prefix="icon"/>
                   </svg>
                 </span>
                 <span class="toggle-button__content">
-                  <span class="toggle-button__title">Gallery Title 3</span>
+                  <span class="toggle-button__title">
+                    Gallery Title 3
+                  </span>
                   <span class="toggle-button__subtitle">
                     Gallery Subtitle 3
                   </span>
@@ -1929,7 +2276,9 @@ static const basePath = import.meta.env.BASE_URL;
   </div>
 
   <highlight-code type="html">
-    <h5 id="toggle-button-group-m">Selection Options</h5>
+    <h5 id="toggle-button-group-m">
+      Selection Options
+    </h5>
     <div style="border: 1px dashed orange;">
       <div class="toggle-button-group toggle-button-group--gallery-layout">
         <ul aria-labelledby="toggle-button-group-m">
@@ -1940,14 +2289,17 @@ static const basePath = import.meta.env.BASE_URL;
                   aria-hidden="true"
                   class="icon icon--image-64"
                   height="64"
-                  width="64"
-                >
+                  width="64">
                   <use href=`#icon-image-64`/>
                 </svg>
               </span>
               <span class="toggle-button__content">
-                <span class="toggle-button__title">Gallery Title 1</span>
-                <span class="toggle-button__subtitle">Gallery Subtitle 1</span>
+                <span class="toggle-button__title">
+                  Gallery Title 1
+                </span>
+                <span class="toggle-button__subtitle">
+                  Gallery Subtitle 1
+                </span>
               </span>
             </button>
           </li>
@@ -1958,14 +2310,17 @@ static const basePath = import.meta.env.BASE_URL;
                   aria-hidden="true"
                   class="icon icon--credit-card-64"
                   height="64"
-                  width="64"
-                >
+                  width="64">
                   <use href=`#icon-credit-card-64`/>
                 </svg>
               </span>
               <span class="toggle-button__content">
-                <span class="toggle-button__title">Gallery Title 2</span>
-                <span class="toggle-button__subtitle">Gallery Subtitle 2</span>
+                <span class="toggle-button__title">
+                  Gallery Title 2
+                </span>
+                <span class="toggle-button__subtitle">
+                  Gallery Subtitle 2
+                </span>
               </span>
             </button>
           </li>
@@ -1976,14 +2331,17 @@ static const basePath = import.meta.env.BASE_URL;
                   aria-hidden="true"
                   class="icon icon--bank-64"
                   height="64"
-                  width="64"
-                >
+                  width="64">
                   <use href=`#icon-bank-64`/>
                 </svg>
               </span>
               <span class="toggle-button__content">
-                <span class="toggle-button__title">Gallery Title 3</span>
-                <span class="toggle-button__subtitle">Gallery Subtitle 3</span>
+                <span class="toggle-button__title">
+                  Gallery Title 3
+                </span>
+                <span class="toggle-button__subtitle">
+                  Gallery Subtitle 3
+                </span>
               </span>
             </button>
           </li>

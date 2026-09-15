@@ -15,7 +15,7 @@ exports[`notice-icon > passes through additional html attributes 1`] = `
   >
     <svg
       aria-label="default label"
-      class="icon icon--16"
+      class="icon--attention-filled icon icon--16 icon--attention-filled"
       focusable="false"
       role="img"
     >
@@ -59,7 +59,7 @@ exports[`notice-icon > passes through additional html attributes 2`] = `
   >
     <svg
       aria-label="default label"
-      class="icon icon--16"
+      class="icon--attention-filled icon icon--16 icon--attention-filled"
       focusable="false"
       role="img"
     >
@@ -95,7 +95,7 @@ exports[`notice-icon > renders basic version 1`] = `
 >
   <svg
     aria-label="default label"
-    class="icon icon--16"
+    class="icon--attention-filled icon icon--16 icon--attention-filled"
     focusable="false"
     role="img"
   >
@@ -127,7 +127,7 @@ exports[`notice-icon > renders basic version 2`] = `
   >
     <svg
       aria-label="default label"
-      class="icon icon--16"
+      class="icon--attention-filled icon icon--16 icon--attention-filled"
       focusable="false"
       role="img"
     >
@@ -169,7 +169,7 @@ exports[`notice-icon > renders basic version 3`] = `
 exports[`notice-icon > renders basic version 4`] = `
 <svg
   aria-label="default label"
-  class="icon icon--16"
+  class="icon--attention-filled icon icon--16 icon--attention-filled"
   focusable="false"
   role="img"
 >
@@ -297,7 +297,7 @@ exports[`notice-icon > renders inline version 1`] = `
   >
     <svg
       aria-label="default label"
-      class="notice-class icon icon--16"
+      class="notice-class icon--information-filled icon icon--16 icon--information-filled"
       focusable="false"
       role="img"
     >
@@ -329,7 +329,7 @@ exports[`notice-icon > renders inline version 1`] = `
 exports[`notice-icon > renders inline version 2`] = `
 <svg
   aria-label="default label"
-  class="notice-class icon icon--16"
+  class="notice-class icon--information-filled icon icon--16 icon--information-filled"
   focusable="false"
   role="img"
 >
@@ -360,7 +360,7 @@ exports[`notice-icon > renders title and footer version 1`] = `
   >
     <svg
       aria-label="default label"
-      class="icon icon--16"
+      class="icon--attention-filled icon icon--16 icon--attention-filled"
       focusable="false"
       role="img"
     >

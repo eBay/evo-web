@@ -5,10 +5,12 @@ import { urls } from "../../../../data";
   <section-header/>
 
   <h3>Base Icons Only</h3>
-  Only base icons should be used. No state-based icons, such as disabled icons
-  or even possibly an icon relaying an error state (likely red), should be used.
-  Those state modifications on icons should be handled downstream using
-  <code>css</code> modifiers to allow for those variations.
+  Only base icons should be used. No state-based icons, such as disabled
+  icons or even possibly an icon relaying an error state (likely red), should be
+  used. Those state modifications on icons should be handled downstream using
+  <code>css</code>
+  modifiers to allow for those variations.
+
   <h3>General Markup Approach</h3>
   <p>
     To avoid gigantic icons when in a non-CSS state, we use the SVG width and
@@ -22,8 +24,7 @@ import { urls } from "../../../../data";
         class="icon icon--24"
         height="24"
         width="24"
-        role="img"
-      >
+        role="img">
         <icon-symbol name="information-24"/>
       </svg>
     </div>
@@ -36,10 +37,11 @@ import { urls } from "../../../../data";
   </highlight-code>
 
   <p>
-    <strong>NOTE:</strong> Skin removes all pointer events on icons (via
-    <code>pointer-events: none</code> ) due to a bug in IE. To add events to
-    these icons you should wrap them in another element and attach your events
-    there.
+    <strong>NOTE:</strong>
+    Skin removes all pointer events on icons (via
+    <code>pointer-events: none</code>
+    ) due to a bug in IE. To add events to these icons you should wrap
+    them in another element and attach your events there.
   </p>
 
   <h3>Including an Icon</h3>
@@ -49,8 +51,11 @@ import { urls } from "../../../../data";
       symbol
     </a>
     declaration can be referenced from the same file or an
-    <a href=`${urls.components}/svg`>external SVG</a> file. If in the same file,
-    the symbol must be stamped on the page inside of an SVG block.
+    <a href=`${urls.components}/svg`>
+      external SVG
+    </a>
+    file. If in the same file, the symbol must be stamped on the page
+    inside of an SVG block.
   </p>
   <p>
     We also provide individual icons as SVGs located in this
@@ -71,7 +76,9 @@ import { urls } from "../../../../data";
   </highlight-code>
 
   <p>
-    <strong>NOTE:</strong> the SVG tag does not support the <code>hidden</code>
+    <strong>NOTE:</strong>
+    the SVG tag does not support the
+    <code>hidden</code>
     attribute, hence a hidden wrapper element is needed.
   </p>
 
@@ -81,8 +88,9 @@ import { urls } from "../../../../data";
     to a page, section or widget.
   </p>
   <p>
-    Presentational icons require <code>aria-hidden="true"</code> , in order to
-    hide them from assistive technology.
+    Presentational icons require
+    <code>aria-hidden="true"</code>
+    , in order to hide them from assistive technology.
   </p>
 
   <highlight-code type="html">
@@ -98,8 +106,11 @@ import { urls } from "../../../../data";
   </p>
 
   <p>
-    Non-presentational icons require both <code>role="img"</code> and an
-    <code>aria-label</code> for assistive technology.
+    Non-presentational icons require both
+    <code>role="img"</code>
+    and an
+    <code>aria-label</code>
+    for assistive technology.
   </p>
 
   <highlight-code type="html">
@@ -108,8 +119,7 @@ import { urls } from "../../../../data";
       height="24"
       width="24"
       role="img"
-      aria-label="Information"
-    >
+      aria-label="Information">
       <use href="#icon-information-24"/>
     </svg>
   </highlight-code>
@@ -117,12 +127,15 @@ import { urls } from "../../../../data";
   <h3>Icon Classes</h3>
   <p>
     Each icon can have a class that corresponds to its width. For example,
-    <code>icon--24</code> corresponds to the 24px width icon. These correspond
-    with the size associated with each icon.
+    <code>icon--24</code>
+    corresponds to the 24px width icon. These correspond with the size
+    associated with each icon.
   </p>
   <p>
-    For colored icons use <code>icon--24-colored</code> These will set the
-    height, and the width will align with the aspect ratio
+    For colored icons use
+    <code>icon--24-colored</code>
+    These will set the height, and the width will align with the aspect
+    ratio
   </p>
 
   <p>
@@ -130,19 +143,23 @@ import { urls } from "../../../../data";
     example, "icon-information-24" corresponds to the information icon of the
     24px width. Heights may differ depending on the icon.
   </p>
-  <icon-list icons=iconJSON.icons list=iconJSON.icons.list/>
+  <icon-list icons=iconJSON.icons list=(iconJSON.icons.list)/>
 
-  <h3 id="icon-disabled">Disabled Icons</h3>
+  <h3 id="icon-disabled">
+    Disabled Icons
+  </h3>
   <p>
     Most icons can be given a disabled appearance by adding the
-    <code>icon--disabled</code> modifier.
+    <code>icon--disabled</code>
+    modifier.
   </p>
 
   <h4>Simple Icons</h4>
   <p>
     Icons that are simple and have only a stroke/fill of a single color simply
-    inherit <code>color</code> and are disabled by inheriting that color as the
-    stroke/fill.
+    inherit
+    <code>color</code>
+    and are disabled by inheriting that color as the stroke/fill.
   </p>
 
   <div class="demo">
@@ -152,8 +169,7 @@ import { urls } from "../../../../data";
         class="icon icon--24 icon--disabled"
         height="24"
         width="24"
-        role="img"
-      >
+        role="img">
         <icon-symbol name="chevron-right-24"/>
       </svg>
     </div>
@@ -167,56 +183,49 @@ import { urls } from "../../../../data";
 
   <h4>Filled Icons</h4>
   <p>
-    Filled icons such as <code>confirmation-filled</code> ,
-    <code>attention-filled</code> , and <code>information-filled</code> render
-    black by default via <code>currentColor</code> , the same as any other icon.
-    They carry no color modifier of their own. If a specific usage needs one of
-    these icons to render in a particular color (for example, a status icon
-    inside a notice component), that coloring should be applied by the consuming
-    component's own CSS, scoped to its own context — not by adding a class to
-    the icon itself.
+    There are certain filled icons that show up black by default. In order to
+    color these icons, apply the
+    <code>icon--{name}-filled</code>
+    modifier.
   </p>
 
   <div class="demo">
     <div class="demo__inner">
       <svg
         aria-label="Filled Icons"
-        class="icon icon--16"
+        class="icon icon--16 icon--confirmation-filled"
         height="16"
         width="16"
-        role="img"
-      >
+        role="img">
         <icon-symbol name="confirmation-filled-16"/>
       </svg>
       <svg
         aria-label="Filled Icons"
-        class="icon icon--16"
+        class="icon icon--16 icon--attention-filled"
         height="16"
         width="16"
-        role="img"
-      >
+        role="img">
         <icon-symbol name="attention-filled-16"/>
       </svg>
       <svg
         aria-label="Filled Icons"
-        class="icon icon--16"
+        class="icon icon--16 icon--information-filled"
         height="16"
         width="16"
-        role="img"
-      >
+        role="img">
         <icon-symbol name="information-filled-16"/>
       </svg>
     </div>
   </div>
 
   <highlight-code type="html">
-    <svg class="icon icon--16" height="16" width="16">
+    <svg class="icon icon--16 icon--confirmation-filled" height="16" width="16">
       <use href="#icon-confirmation-filled-16"/>
     </svg>
-    <svg class="icon icon--16" height="16" width="16">
+    <svg class="icon icon--16 icon--attention-filled" height="16" width="16">
       <use href="#icon-attention-filled-16"/>
     </svg>
-    <svg class="icon icon--16" height="16" width="16">
+    <svg class="icon icon--16 icon--information-filled" height="16" width="16">
       <use href="#icon-information-filled-16"/>
     </svg>
   </highlight-code>
@@ -224,7 +233,8 @@ import { urls } from "../../../../data";
   <h4>Complex Icons</h4>
   <p>
     Icons that are more complex and have multiple colors with a suffix of
-    <code>-colored</code> are grayscaled with an opacity.
+    <code>-colored</code>
+    are grayscaled with an opacity.
   </p>
 
   <div class="demo">
@@ -234,8 +244,7 @@ import { urls } from "../../../../data";
         class="icon icon--24-colored icon--disabled"
         height="24"
         width="24"
-        role="img"
-      >
+        role="img">
         <icon-symbol name="mastercard-24-colored"/>
       </svg>
     </div>
@@ -246,7 +255,7 @@ import { urls } from "../../../../data";
       <use href="#icon-mastercard-24-colored"/>
     </svg>
   </highlight-code>
-  <const/deprecatedIcons=iconJSON.icons?.deprecated || []>
+  <const/deprecatedIcons=(iconJSON.icons?.deprecated || [])>
 
   <if=deprecatedIcons.length>
     0>
@@ -263,20 +272,20 @@ import { urls } from "../../../../data";
       class="section-notice section-notice--attention"
       role="region"
       aria-label="Attention"
-      aria-roledescription="Notice"
-    >
+      aria-roledescription="Notice">
       <div class="section-notice__header" id="section-notice-attention">
         <svg
           class="icon icon--16"
           height="16"
           width="16"
-          aria-label="Attention"
-        >
+          aria-label="Attention">
           <icon-symbol name="attention-filled-16"/>
         </svg>
       </div>
       <div class="section-notice__main">
-        <h3 class="section-notice__title">Do NOT Use These!</h3>
+        <h3 class="section-notice__title">
+          Do NOT Use These!
+        </h3>
         <p>
           The following icons have been deprecated. They will be deleted in the
           next major Skin version. To transition usage to the new icons, please

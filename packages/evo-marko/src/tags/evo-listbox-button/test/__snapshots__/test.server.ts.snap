@@ -703,7 +703,7 @@ exports[`listbox button > renders with error 1`] = `
   >
     <svg
       aria-hidden="true"
-      class="icon icon--16"
+      class="icon icon--16 icon--attention-filled"
     >
       <symbol
         id="GENERATED-5"

@@ -5,7 +5,7 @@ exports[`section-notice > renders basic 1`] = `
   [36m<section[39m
     [33maria-labelledby[39m=[32m"s0-0-status"[39m
     [33maria-roledescription[39m=[32m"Notice"[39m
-    [33mclass[39m=[32m"section-notice section-notice--attention"[39m
+    [33mclass[39m=[32m"section-notice"[39m
     [33mrole[39m=[32m"region"[39m
   [36m>[39m
     [36m<div[39m
@@ -14,7 +14,7 @@ exports[`section-notice > renders basic 1`] = `
     [36m>[39m
       [36m<svg[39m
         [33maria-label[39m=[32m"attention"[39m
-        [33mclass[39m=[32m"icon icon--16"[39m
+        [33mclass[39m=[32m"icon--attention-filled icon icon--16 icon--attention-filled"[39m
         [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
@@ -49,7 +49,7 @@ exports[`section-notice > renders with custom CTA 1`] = `
   [36m<section[39m
     [33maria-labelledby[39m=[32m"s0-0-0-status"[39m
     [33maria-roledescription[39m=[32m"Notice"[39m
-    [33mclass[39m=[32m"section-notice section-notice--information"[39m
+    [33mclass[39m=[32m"section-notice"[39m
     [33mrole[39m=[32m"region"[39m
   [36m>[39m
     [36m<div[39m
@@ -58,7 +58,7 @@ exports[`section-notice > renders with custom CTA 1`] = `
     [36m>[39m
       [36m<svg[39m
         [33maria-label[39m=[32m"information"[39m
-        [33mclass[39m=[32m"icon icon--16"[39m
+        [33mclass[39m=[32m"icon--information-filled icon icon--16 icon--information-filled"[39m
         [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
@@ -201,7 +201,7 @@ exports[`section-notice > renders with status 1`] = `
 >
   <svg
     aria-label="Heading Text"
-    class="icon icon--16"
+    class="icon--information-filled icon icon--16 icon--information-filled"
     focusable="false"
     role="img"
   >
@@ -226,7 +226,7 @@ exports[`section-notice > renders with status 2`] = `
 <section
   aria-labelledby="s0-0-status"
   aria-roledescription="Notice"
-  class="section-notice section-notice--information"
+  class="section-notice"
   role="region"
 >
   <div
@@ -235,7 +235,7 @@ exports[`section-notice > renders with status 2`] = `
   >
     <svg
       aria-label="Heading Text"
-      class="icon icon--16"
+      class="icon--information-filled icon icon--16 icon--information-filled"
       focusable="false"
       role="img"
     >
@@ -278,7 +278,7 @@ exports[`section-notice > renders with status 4`] = `
 <section
   aria-labelledby="s0-0-status"
   aria-roledescription="Notice"
-  class="section-notice section-notice--information"
+  class="section-notice"
   role="region"
 >
   <div
@@ -287,7 +287,7 @@ exports[`section-notice > renders with status 4`] = `
   >
     <svg
       aria-label="Heading Text"
-      class="icon icon--16"
+      class="icon--information-filled icon icon--16 icon--information-filled"
       focusable="false"
       role="img"
     >
