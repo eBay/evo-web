@@ -60,29 +60,31 @@ const meta: Meta<typeof EvoMenu> = {
   render(args) {
     return (
       <EvoMenu {...args}>
-        <EvoMenuItems a11yText="Example menu">
+        <EvoMenuItems a11yText="Search result options">
           <EvoMenuItem>
-            Messages
-            <EvoMenuItemBadge number={5} a11yText="5 unread messages" />
+            Offers
+            <EvoMenuItemBadge number={5} a11yText="5 new offers" />
           </EvoMenuItem>
-          <EvoMenuItem disabled>Disabled command</EvoMenuItem>
+          <EvoMenuItem disabled>Relist item</EvoMenuItem>
           <EvoMenuSeparator />
-          <EvoMenuRadioGroup defaultSelected="price">
-            <EvoMenuRadioItem value="price">Price</EvoMenuRadioItem>
-            <EvoMenuRadioItem value="distance">Distance</EvoMenuRadioItem>
+          <EvoMenuRadioGroup defaultSelected="best-match">
+            <EvoMenuRadioItem value="best-match">Best Match</EvoMenuRadioItem>
+            <EvoMenuRadioItem value="lowest-price">
+              Price + shipping: lowest first
+            </EvoMenuRadioItem>
           </EvoMenuRadioGroup>
           <EvoMenuSeparator />
-          <EvoMenuCheckboxGroup defaultSelected={["shipping"]}>
-            <EvoMenuCheckboxItem value="shipping">
+          <EvoMenuCheckboxGroup defaultSelected={["free-shipping"]}>
+            <EvoMenuCheckboxItem value="free-shipping">
               Free shipping
             </EvoMenuCheckboxItem>
-            <EvoMenuCheckboxItem value="returns">
-              Free returns
+            <EvoMenuCheckboxItem value="returns-accepted">
+              Returns accepted
             </EvoMenuCheckboxItem>
           </EvoMenuCheckboxGroup>
         </EvoMenuItems>
         <EvoMenuFooter>
-          <EvoButton priority="tertiary">Apply</EvoButton>
+          <EvoButton priority="tertiary">Apply filters</EvoButton>
         </EvoMenuFooter>
       </EvoMenu>
     );

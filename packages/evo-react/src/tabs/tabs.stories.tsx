@@ -49,24 +49,30 @@ const meta: Meta<typeof EvoTabs> = {
     const children = (
       <>
         <EvoTabList>
-          <EvoTab id="overview">Overview</EvoTab>
+          <EvoTab id="overview">About this item</EvoTab>
           <EvoTab id="shipping" disabled>
-            Shipping
+            Shipping and returns
           </EvoTab>
-          <EvoTab id="returns">Returns</EvoTab>
+          <EvoTab id="returns">Seller feedback</EvoTab>
         </EvoTabList>
         <EvoTabPanels>
           <EvoTabPanel id="overview">
-            <h3>Overview</h3>
-            <p>Product overview content.</p>
+            <h3>About this item</h3>
+            <p>
+              Seller refurbished · Bluetooth connectivity · Charging cable
+              included
+            </p>
           </EvoTabPanel>
           <EvoTabPanel id="shipping">
-            <h3>Shipping</h3>
-            <p>Shipping content.</p>
+            <h3>Shipping and returns</h3>
+            <p>
+              Free delivery in 3–5 business days. Returns accepted within 30
+              days.
+            </p>
           </EvoTabPanel>
           <EvoTabPanel id="returns">
-            <h3>Returns</h3>
-            <p>Returns content.</p>
+            <h3>Seller feedback</h3>
+            <p>98.9% positive feedback · More than 2,000 items sold</p>
           </EvoTabPanel>
         </EvoTabPanels>
       </>

@@ -37,21 +37,21 @@ const meta: Meta<typeof EvoFakeTabs> = {
       <EvoFakeTabs selected={selected} {...args}>
         <EvoFakeTabList>
           <EvoFakeTab id="overview" href="/overview">
-            Overview
+            About this item
           </EvoFakeTab>
           <EvoFakeTab id="shipping" href="/shipping">
-            Shipping
+            Shipping and returns
           </EvoFakeTab>
           <EvoFakeTab id="returns" href="/returns">
-            Returns
+            Seller feedback
           </EvoFakeTab>
-          <EvoFakeTab id="contact">Contact (disabled)</EvoFakeTab>
+          <EvoFakeTab id="contact">Warranty unavailable</EvoFakeTab>
         </EvoFakeTabList>
         <EvoFakeTabPanel>
-          <h3>Page content</h3>
+          <h3>About this item</h3>
           <p>
-            In a server-rendered app this area contains the page content for the
-            selected tab URL.
+            Seller refurbished · Bluetooth connectivity · Charging cable
+            included
           </p>
         </EvoFakeTabPanel>
       </EvoFakeTabs>
@@ -81,7 +81,9 @@ function RouterTab({ href, ...props }: React.ComponentProps<"a">) {
   return href === undefined ? null : <Link to={href} {...props} />;
 }
 
-<EvoFakeTab id="overview" href="/overview" as={RouterTab}>Overview</EvoFakeTab>
+<EvoFakeTab id="overview" href="/overview" as={RouterTab}>
+  About this item
+</EvoFakeTab>
 \`\`\`
 `,
       },
@@ -99,14 +101,14 @@ function RouterTab({ href, ...props }: React.ComponentProps<"a">) {
       <EvoFakeTabs {...args}>
         <EvoFakeTabList>
           <EvoFakeTab id="overview" href="/overview" as={CustomLink}>
-            Overview
+            About this item
           </EvoFakeTab>
           <EvoFakeTab id="shipping" href="/shipping" as={CustomLink}>
-            Shipping
+            Shipping and returns
           </EvoFakeTab>
         </EvoFakeTabList>
         <EvoFakeTabPanel>
-          <p>Content rendered by the router.</p>
+          <p>Product details loaded for the selected route.</p>
         </EvoFakeTabPanel>
       </EvoFakeTabs>
     );

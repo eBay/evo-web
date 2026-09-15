@@ -60,7 +60,7 @@ const meta: Meta<AnchorButtonProps> = {
   args: {
     priority: "primary",
     variant: "standard",
-    children: "Button",
+    children: "Save changes",
   },
 };
 
@@ -71,7 +71,7 @@ type Story = StoryObj<typeof EvoButton>;
 /** A standard button handles an in-page action such as saving or continuing. */
 export const Default: Story = {
   args: {
-    children: "Button",
+    children: "Save changes",
   },
 };
 
@@ -101,10 +101,10 @@ function Link({
  *
  * ```tsx
  * <EvoButton
- *   href="/home"
+ *   href="/orders"
  *   as={({ href, ...rest }) => <Link {...rest} to={href} />}
  * >
- *   Home
+ *   View orders
  * </EvoButton>
  * ```
  */
@@ -113,11 +113,11 @@ export const CustomLink: Story = {
     return (
       <EvoButton
         {...(args as unknown as AnchorButtonProps)}
-        href="/home"
+        href="/orders"
         as={({ href, ...rest }) => <Link {...rest} to={href} />}
         priority="primary"
       >
-        Click me
+        View orders
       </EvoButton>
     );
   },

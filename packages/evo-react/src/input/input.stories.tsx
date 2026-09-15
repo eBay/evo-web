@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { action } from "storybook/actions";
 import { EvoIconClear24 } from "../icon/icons/clear-24";
+import { EvoIconInformation24 } from "../icon/icons/information-24";
+import { EvoIconMoneyStack24 } from "../icon/icons/money-stack-24";
 import { EvoIconMail24 } from "../icon/icons/mail-24";
 import { EvoIconProfile24 } from "../icon/icons/profile-24";
 import { EvoInput } from "./input";
@@ -42,7 +44,8 @@ type Story = StoryObj<typeof EvoInput>;
 /** A standard single-line input has an accessible name. */
 export const Default: Story = {
   args: {
-    "aria-label": "Example input",
+    "aria-label": "Search products",
+    placeholder: "Search by keyword",
   },
 };
 
@@ -53,7 +56,7 @@ export const WithLabel: Story = {
       <label className="field__label field__label--start" htmlFor="textbox">
         Email address
       </label>
-      <EvoInput {...args} id="textbox" value="test" />
+      <EvoInput {...args} id="textbox" value="buyer@example.com" />
     </span>
   ),
 };
@@ -68,7 +71,12 @@ export const Disabled: Story = {
       >
         Email address
       </label>
-      <EvoInput {...args} disabled id="disabled-textbox" value="test" />
+      <EvoInput
+        {...args}
+        disabled
+        id="disabled-textbox"
+        value="seller@example.com"
+      />
     </span>
   ),
 };
@@ -87,18 +95,18 @@ export const FloatingLabelAutocomplete: Story = {
       <EvoInput
         {...args}
         autoComplete="given-name"
-        floatingLabel="First Name"
+        floatingLabel="First name"
       />
       <EvoInput
         {...args}
         autoComplete="family-name"
-        floatingLabel="Last Name"
+        floatingLabel="Last name"
       />
       <EvoInput
         {...args}
         autoComplete="email"
         floatingLabel="Email address"
-        placeholder="valid email address"
+        placeholder="name@example.com"
       />
     </>
   ),
@@ -107,8 +115,8 @@ export const FloatingLabelAutocomplete: Story = {
 /** A decorative icon appears before the value. */
 export const WithPrefixIcon: Story = {
   args: {
-    "aria-label": "Email",
-    placeholder: "email",
+    "aria-label": "Email address",
+    placeholder: "name@example.com",
     prefix: {
       icon: <EvoIconMail24 />,
     },
@@ -118,8 +126,8 @@ export const WithPrefixIcon: Story = {
 /** A decorative icon appears after the value. */
 export const WithPostfixIcon: Story = {
   args: {
-    "aria-label": "Name",
-    placeholder: "name",
+    "aria-label": "eBay username",
+    placeholder: "Enter username",
     postfix: {
       icon: <EvoIconProfile24 />,
     },
@@ -129,15 +137,15 @@ export const WithPostfixIcon: Story = {
 /** Leading context combines with an actionable postfix icon. */
 export const WithBothIcons: Story = {
   args: {
-    "aria-label": "Name",
-    placeholder: "name",
+    "aria-label": "Search sellers",
+    placeholder: "Seller username",
     prefix: {
       icon: <EvoIconProfile24 />,
     },
     postfix: {
       icon: <EvoIconClear24 />,
       buttonProps: {
-        a11yText: "Clear",
+        a11yText: "Clear seller search",
         onClick: action("clear"),
       },
     },
@@ -147,15 +155,15 @@ export const WithBothIcons: Story = {
 /** Text and icons on both sides format the value. */
 export const FullyDecorated: Story = {
   args: {
-    "aria-label": "Monthly price",
+    "aria-label": "Monthly payment",
     placeholder: "0.00",
     prefix: {
       content: "$",
-      icon: <EvoIconMail24 />,
+      icon: <EvoIconMoneyStack24 />,
     },
     postfix: {
       content: "/mo",
-      icon: <EvoIconClear24 />,
+      icon: <EvoIconInformation24 />,
     },
   },
 };

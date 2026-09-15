@@ -35,6 +35,14 @@ function toCalendarRange(
   return { from, to };
 }
 
+/**
+ * Renders the range calendar controlled by the parent group.
+ *
+ * Commits the selected start and end dates to `EvoDateRangeInputGroup`. This
+ * component must be nested in that group.
+ *
+ * @summary Shared range calendar for `EvoDateRangeInputGroup`.
+ */
 export function EvoDateRangeInputCalendarPopover({
   strategy = "absolute",
   ...calendar

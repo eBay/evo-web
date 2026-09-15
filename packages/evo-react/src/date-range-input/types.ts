@@ -18,6 +18,7 @@ export type EvoDateRangeInputGroupProps = Omit<
   ComponentProps<"span">,
   "children" | "onChange" | "defaultValue"
 > & {
+  /** Start field, end field, and shared calendar popover, in that order. */
   children: ReactNode;
   /** Controlled selected range (`{ from?, to? }` as `YYYY-MM-DD` or `""`). */
   value?: DateInputRange;

@@ -26,6 +26,35 @@ const activeDescendantScrollIntoView: ScrollIntoViewOptions = {
   block: "nearest",
 };
 
+/**
+ * A combobox combines a text input with a list of suggested values.
+ *
+ * Users can filter and select one option with pointer or keyboard interaction.
+ * `filterMethod="auto"` filters supplied options, `filterMethod="manual"`
+ * leaves filtering to the application, and `filterMethod="none"` displays
+ * options independently of the input. `value` with `onValueChange` supports
+ * controlled usage, while `defaultValue` supports uncontrolled usage.
+ *
+ * ## Usage
+ *
+ * ```tsx
+ * import {
+ *   EvoCombobox,
+ *   EvoComboboxOption,
+ * } from "@evo-web/react/combobox";
+ *
+ * <EvoCombobox
+ *   floatingLabel="Advertising campaign"
+ *   placeholder="Choose a campaign"
+ * >
+ *   <EvoComboboxOption text="Back-to-school promotion" />
+ *   <EvoComboboxOption text="Fourth of July sale (paused)" />
+ *   <EvoComboboxOption text="Store subscriber coupon" />
+ * </EvoCombobox>;
+ * ```
+ *
+ * @summary Filterable single-selection text input.
+ */
 export function EvoCombobox({
   filterMethod = "auto",
   borderless = false,
