@@ -15,6 +15,10 @@ $ const {
         main-root="span"
         a11yRoleDescription=a11yRoleDescription
         class=[
+            (status === "attention" ||
+                status === "confirmation" ||
+                status === "information") &&
+                `section-notice--${status}`,
             status === "education" && "section-notice--large-icon",
             inputClass,
         ]

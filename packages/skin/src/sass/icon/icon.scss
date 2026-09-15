@@ -113,13 +113,4 @@ svg {
     &.icon--disabled {
         filter: var(--color-media-disabled-filter);
     }
-    &.icon--attention-filled {
-        @include token-mixins.color-token(color-foreground-attention);
-    }
-    &.icon--confirmation-filled {
-        @include token-mixins.color-token(color-foreground-success);
-    }
-    &.icon--information-filled {
-        @include token-mixins.color-token(color-foreground-accent);
-    }
 }
