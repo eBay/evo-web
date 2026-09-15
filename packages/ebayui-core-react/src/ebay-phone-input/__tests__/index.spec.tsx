@@ -186,7 +186,7 @@ describe("<EbayPhoneInput />", () => {
         await user.click(option);
 
         const input = container.querySelector('input[type="tel"]') as HTMLInputElement;
-        await user.type(input, "48999216078");
+        fireEvent.input(input, { target: { value: "48999216078" } });
 
         expect(onInputChange).toHaveBeenCalledWith(expect.any(Object), {
             value: "(48) 99921-6078",
