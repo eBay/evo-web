@@ -1,6 +1,11 @@
 import classNames from "classnames";
 import type { EvoDialogMainProps } from "./types";
 
+/**
+ * The main region holds the information or task at the center of a dialog.
+ *
+ * @summary Main content region for a dialog.
+ */
 export function EvoDialogMain({
   className,
   children,

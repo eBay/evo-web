@@ -6,9 +6,15 @@ export type EvoBadgeProps = Omit<
   ComponentProps<"span">,
   "role" | "aria-label" | "children"
 > & {
-  /** Number displayed in the badge. */
+  /**
+   * Count displayed in the badge. Values greater than 99 display as `99+`;
+   * zero and negative values render nothing. Omit to show an empty indicator.
+   */
   number?: number | string;
-  /** Badge type. Omit for the default image badge (`role="img"`). */
+  /**
+   * Removes the default `img` role when the badge labels a menu or icon
+   * control whose accessible name already conveys the badge's meaning.
+   */
   type?: BadgeType;
   /**
    * Descriptive label for what the badge represents, such as `"5 unread items"`.

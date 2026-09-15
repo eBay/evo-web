@@ -7,46 +7,59 @@ export type BodyState = "loading" | "expand" | "reset" | "none";
 export type Split = "start" | "end";
 
 type BaseButtonProps = {
-  /** Full-width button. */
+  /** Stretches the button to the width of its containing block. */
   fluid?: boolean;
-  /** Partially disabled state (`aria-disabled`). */
+  /**
+   * Exposes `aria-disabled` while leaving a native button focusable and
+   * interactive. The consumer must prevent the associated action.
+   */
   partiallyDisabled?: boolean;
-  /** Truncates text with an ellipsis. */
+  /** Truncates overflowing button text with an ellipsis. */
   truncate?: boolean;
-  /** Button priority level. */
+  /** Sets the visual emphasis of the button. Defaults to `"secondary"`. */
   priority?: Priority;
-  /** Button variant style. */
+  /**
+   * Selects the standard, destructive, or form-specific presentation. Defaults
+   * to `"standard"`.
+   */
   variant?: Variant;
-  /** Button size. */
+  /** Sets a supported compact or enlarged button size. */
   size?: Size;
-  /** Button body state. */
+  /** Replaces or decorates the button body for loading and expand states. */
   bodyState?: BodyState;
-  /** Split button position. */
+  /** Styles the button as the start or end segment of a split control. */
   split?: Split;
-  /** Transparent background. */
+  /** Removes the opaque background while retaining the button border. */
   transparent?: boolean;
-  /** Removes the border. */
+  /** Removes the button border and its associated priority styling. */
   borderless?: boolean;
-  /** Applies a fixed height. */
+  /** Applies Skin's fixed-height treatment for the selected size. */
   fixedHeight?: boolean;
 };
 
 export type AnchorButtonProps = ComponentProps<"a"> &
   BaseButtonProps & {
-    /** Link URL. Its presence renders the button as an anchor. */
+    /** Destination URL. Its presence renders the button as an anchor. */
     href: string;
-    /** Custom component used in place of the native anchor. Only applies when `href` is provided. */
+    /**
+     * Component used instead of the native anchor, typically to integrate with
+     * a client-side router. Only applies when `href` is provided.
+     */
     as?: ComponentType<ComponentProps<"a">>;
-    onEscape?: (e: KeyboardEvent<HTMLAnchorElement>) => void;
-    /** Disabled state. */
+    /** Called after `onKeyDown` when the enabled anchor receives Escape. */
+    onEscape?: (event: KeyboardEvent<HTMLAnchorElement>) => void;
+    /** Removes `href` from the rendered anchor to prevent navigation. */
     disabled?: boolean;
   };
 
 export type NativeButtonProps = ComponentProps<"button"> &
   BaseButtonProps & {
+    /** Anchor-only prop. Provide `href` to use the anchor variant. */
     href?: never;
+    /** Anchor-only prop. Provide `href` to use a custom link component. */
     as?: never;
-    onEscape?: (e: KeyboardEvent<HTMLButtonElement>) => void;
+    /** Called after `onKeyDown` when the enabled button receives Escape. */
+    onEscape?: (event: KeyboardEvent<HTMLButtonElement>) => void;
   };
 
 export type EvoButtonProps = AnchorButtonProps | NativeButtonProps;

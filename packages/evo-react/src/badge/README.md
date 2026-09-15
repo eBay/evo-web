@@ -2,4 +2,4 @@
 
 ## Documentation
 
-[Storybook](https://opensource.ebay.com/evo-web/react/?path=/docs/graphics-icons-evo-badge--documentation)
+[Storybook](https://opensource.ebay.com/evo-web/react/?path=/docs/graphics-icons-evobadge--documentation)

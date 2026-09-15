@@ -27,10 +27,10 @@ You are migrating `$ARGUMENTS` from `packages/ebayui-core-react/src/$ARGUMENTS/`
 | `EbayButton` (component) | `EvoButton` (component) |
 | `EbayButtonProps` (type) | `EvoButtonProps` (type) |
 
-Story title mirrors the ebayui-core-react story title with `ebay` replaced by `evo`:
+Keep the existing Storybook category, but write category words in title case and use the PascalCase React component name for the story title:
 
-- `"buttons/ebay-button"` → `"buttons/evo-button"`
-- `"graphics & icons/ebay-avatar"` → `"graphics & icons/evo-avatar"`
+- `"buttons/ebay-button"` → `"Buttons/EvoButton"`
+- `"graphics & icons/ebay-avatar"` → `"Graphics & Icons/EvoAvatar"`
 
 ---
 
@@ -39,8 +39,8 @@ Story title mirrors the ebayui-core-react story title with `ebay` replaced by `e
 ```
 packages/evo-react/src/{name}/
   index.ts                  ← named re-exports only (no default exports)
-  {name}.tsx                ← main component
-  {subcomponent-name}.tsx   ← sub-components if present (named after actual sub-component, e.g. button-cell.tsx)
+  {name}.tsx                ← main component + component JSDoc description
+  {subcomponent-name}.tsx   ← sub-components + component JSDoc descriptions
   types.ts                  ← all exported types + prop JSDoc descriptions
   context.ts                ← React context + accessor hook (only if component uses context)
   README.md                 ← component name + Documentation section with Storybook link only
@@ -59,7 +59,7 @@ packages/evo-react/src/{name}/
 
 ## Documentation
 
-[Storybook](https://opensource.ebay.com/evo-web/react/?path=/docs/buttons-evo-button--documentation)
+[Storybook](https://opensource.ebay.com/evo-web/react/?path=/docs/buttons-evobutton--documentation)
 ```
 
 ---
@@ -260,28 +260,30 @@ Do not guess — get alignment before migrating this pattern.
 
 ---
 
-## Types
+## API documentation
+
+Source JSDoc is the source of truth for generated declarations and Storybook Autodocs.
+
+Place a JSDoc comment immediately above every exported `Evo*` component function. For overloads, place it above the first overload. Write for someone choosing and using the component, not someone reading its implementation. Start with the user need in plain language, then explain when to use the component. Put native elements, BEM structure, state mechanics, and other implementation details later, and only when they help consumers use the API correctly. Avoid mechanical openings such as “Renders,” “Displays,” or “Wraps.” Cover composition rules and accessibility work left to the consumer when they apply. Each component needs a non-empty `@summary`. The primary component description also needs a concise `## Usage` code block using the public subpath so it renders directly in Autodocs and survives in published declarations. Prettier does not format fenced code inside TypeScript JSDoc; format each example manually as clean, idiomatic TSX, including indentation and line breaks.
 
 Keep all custom types in `types.ts`. Export them from `index.ts`. Do not inline complex types inside the component file.
 
-Add JSDoc directly above every custom public prop and every field of a public object type. Prop descriptions in `types.ts` are the source of truth: they are included in generated declarations and Storybook reads them through `react-docgen-typescript`. Migrate existing Storybook `argTypes.description` text into JSDoc, then remove the duplicate story description.
-
-Describe behavior, constraints, relationships to other props, and defaults when relevant. For union props declared in multiple branches, repeat the complete consumer-facing description on every usable declaration so docgen does not expose incomplete branch-specific prose.
+Add JSDoc directly above every custom public prop and every field of a public object type. Prop descriptions in `types.ts` are included in generated declarations and Storybook reads them through `react-docgen-typescript`. Describe behavior, constraints, related props, callback timing, consumer responsibilities, and runtime defaults when relevant. For union props declared in multiple branches, repeat the complete consumer-facing description on every usable declaration so docgen does not expose incomplete branch-specific prose. Migrate useful `argTypes.description` text into JSDoc, then remove the duplicate story metadata.
 
 ```ts
 // types.ts
 export type Priority = "primary" | "secondary" | "tertiary" | "none";
 
 type BaseButtonProps = {
-  /** Button priority level. */
+  /** Sets the visual emphasis of the button. Defaults to `"secondary"`. */
   priority?: Priority;
-  /** Full-width button. */
+  /** Stretches the button to the width of its containing block. */
   fluid?: boolean;
 };
 
 export type AnchorButtonProps = ComponentProps<"a"> &
   BaseButtonProps & {
-    /** Link URL. Its presence renders the button as an anchor. */
+    /** Destination URL. Its presence renders the button as an anchor. */
     href: string;
   };
 
@@ -432,9 +434,11 @@ describe("EvoButton SSR", () => {
   }
   ```
 
-- `title` must mirror the ebayui-core-react story title with `ebay` replaced by `evo`.
-- Component description format: one-sentence summary followed by a `## Usage` section with the import snippet.
-- Put prop descriptions in type JSDoc, not `argTypes.description`. Storybook `argTypes` should normally contain only controls, options, event actions, table metadata, and docgen fallbacks described in **Types**.
+- Keep the ebayui-core-react Storybook category, convert its words to title case, and use the PascalCase `Evo*` component name after the slash (for example, `Buttons/EvoButton`).
+- Component descriptions and import examples come from JSDoc on the component export. Do not duplicate them in `parameters.docs.description.component`.
+- Describe each story as a useful scenario or choice for the consumer. Do not narrate the JSX or begin with implementation-focused language such as “Renders” or “Demonstrates.”
+- Put prop descriptions in type JSDoc, not `argTypes.description`. Storybook `argTypes` should normally contain only controls, options, event actions, table metadata, and docgen fallbacks described in **API documentation**.
+- Autodocs is enabled globally. Do not add a redundant `tags: ["autodocs"]` to new story metadata.
 - **`subcomponents`**: If the component has sub-components (e.g. `EvoAvatarImage` alongside `EvoAvatar`), declare them in the meta using the `subcomponents` field. This causes Storybook's autodocs to render a props table for each sub-component as a separate tab.
 
 ```tsx
@@ -442,26 +446,10 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { EvoButton } from "./button";
 
 const meta: Meta<typeof EvoButton> = {
-  title: "buttons/evo-button",
+  title: "Buttons/EvoButton",
   component: EvoButton,
   // Include any exported sub-components so autodocs generates their prop tables:
   // subcomponents: { EvoButtonCell },
-  tags: ["autodocs"],
-  parameters: {
-    docs: {
-      description: {
-        component: `
-A flexible button component that renders as \`<button>\` or \`<a>\` based on the \`href\` prop.
-
-## Usage
-
-\`\`\`tsx
-import { EvoButton } from "@evo-web/react/button";
-\`\`\`
-        `,
-      },
-    },
-  },
   argTypes: {
     // controls/options/table metadata only; descriptions come from type JSDoc
   },
@@ -514,16 +502,17 @@ Keep component entries concise. App owners read these files, not component autho
 - [ ] Individual `EvoIcon*` components used (no `<EbayIcon name="..." />`)
 - [ ] Optional callbacks use `?.` (no `= () => {}` defaults)
 - [ ] Props cross-checked against evo-marko — missing props added, unnecessary props removed or queried
+- [ ] Every exported `Evo*` component has a JSDoc description and non-empty `@summary`; the primary component also has a public-import `## Usage` example
 - [ ] Every custom public prop and public object field has a JSDoc description in `types.ts`
-- [ ] Duplicate `argTypes.description` entries removed; only verified docgen fallbacks remain
-- [ ] Production Storybook build confirms JSDoc descriptions appear in generated prop tables
+- [ ] Duplicate `parameters.docs.description.component` and `argTypes.description` entries removed; only verified docgen fallbacks remain
+- [ ] Production Storybook build confirms JSDoc descriptions appear in generated descriptions and prop tables
 - [ ] `aria-label` prop replaced with `a11yText` if evo-marko uses it (mapped internally to `aria-label`); asked if naming is unclear
 - [ ] No `React.Children`, `findComponent`, or child-scanning — asked if encountered
 - [ ] `test/test.browser.tsx` uses `vitest-browser-react`
 - [ ] `test/test.server.tsx` uses `renderToString` + snapshots
 - [ ] `README.md` created with component name and Storybook documentation link only
 - [ ] Stories in `{name}.stories.tsx` co-located with source
-- [ ] Story title follows `"category/evo-{name}"` pattern
+- [ ] Story title follows the `"Title Case Category/EvoName"` pattern
 - [ ] App migration skill has a linked `components/evo-{name}.md` file and no inline component details in `SKILL.md`
 - [ ] `npm run build -w packages/evo-react` passes
 - [ ] Changeset added in `.changeset/` with `patch` bump for `@evo-web/react` (`@evo-web/react` is still experimental, so all additions use `patch`). Keep the description to one short line — e.g. `Add EvoFoo component.` — no bullet points or implementation details.

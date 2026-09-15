@@ -20,6 +20,38 @@ function supportsClosedBy() {
   );
 }
 
+/**
+ * Dialogs focus attention on information or a task without taking people away
+ * from the current page. Use them for short, self-contained interactions that
+ * need an immediate response.
+ *
+ * Use `open` with `onOpenChange` when the parent owns the dialog state, or
+ * `defaultOpen` when the dialog manages its own state. Build the dialog with
+ * its title and region components to keep the content and accessible label
+ * connected.
+ *
+ * ## Usage
+ *
+ * ```tsx
+ * import {
+ *   EvoDialog,
+ *   EvoDialogClose,
+ *   EvoDialogHeader,
+ *   EvoDialogMain,
+ *   EvoDialogTitle,
+ * } from "@evo-web/react/dialog";
+ *
+ * <EvoDialog open={isOpen} onOpenChange={setIsOpen}>
+ *   <EvoDialogHeader>
+ *     <EvoDialogTitle>Order details</EvoDialogTitle>
+ *     <EvoDialogClose a11yText="Close order details" />
+ *   </EvoDialogHeader>
+ *   <EvoDialogMain>Review the items in your order.</EvoDialogMain>
+ * </EvoDialog>
+ * ```
+ *
+ * @summary Modal window for focused tasks or information.
+ */
 export function EvoDialog({
   open,
   defaultOpen = false,
