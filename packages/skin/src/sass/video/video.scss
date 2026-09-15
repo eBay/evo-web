@@ -11,8 +11,7 @@
     background-color: #000;
     position: relative;
 
-    > video,
-    > a > video {
+    > video {
         display: block;
         height: 100%;
         object-fit: contain;
@@ -41,12 +40,12 @@
     transition: opacity 0.6s cubic-bezier(0.4, 0, 0.6, 1);
 }
 
-.video--controls-hidden .video__controls {
+.video__controls--hidden {
     opacity: 0;
     pointer-events: none;
 }
 
-.video--controls-hidden .video__controls:focus-within {
+.video__controls--hidden:focus-within {
     opacity: 1;
     pointer-events: auto;
 }
@@ -89,7 +88,8 @@
     width: auto;
 }
 
-.video input[type="range"] {
+.video__scrubber,
+.video__volume {
     appearance: none;
     background: transparent;
     height: var(--dimension-icon-large);
@@ -180,7 +180,7 @@
     overflow: visible;
 }
 
-.video input[type="range"].video__volume {
+.video__volume {
     direction: rtl;
     height: var(--dimension-800);
     padding: var(--spacing-100) var(--spacing-150);
@@ -268,7 +268,7 @@
     }
 }
 
-.video--with-nav > a {
+.video__nav {
     display: block;
     height: 100%;
 }
