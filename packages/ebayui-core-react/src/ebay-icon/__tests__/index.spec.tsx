@@ -3,6 +3,7 @@ import { render } from "@testing-library/react";
 import { composeStories } from "@storybook/react-vite";
 import * as stories from "./index.stories";
 import { EbayIconAdd12 } from "../icons/ebay-icon-add-12";
+import { EbayIconAttentionFilled16 } from "../icons/ebay-icon-attention-filled-16";
 
 const { CustomColor, NonDecorative } = composeStories(stories);
 
@@ -27,6 +28,15 @@ describe("ebay-icon rendering", () => {
             const [, iconClass, iconStyle] = container.querySelectorAll("svg");
             expect(iconClass).toHaveClass("icon demo3");
             expect(iconStyle).toHaveAttribute("style", "color: green;");
+        });
+    });
+
+    describe("filled status icon", () => {
+        it("renders with no color modifier class", () => {
+            const { container } = render(<EbayIconAttentionFilled16 />);
+            const [icon] = container.querySelectorAll("svg");
+            expect(icon).toHaveClass("icon icon--16");
+            expect(icon.classList.contains("icon--attention-filled")).toBe(false);
         });
     });
 
