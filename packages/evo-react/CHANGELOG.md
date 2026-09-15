@@ -1,5 +1,28 @@
 # @evo-web/react
 
+## 0.4.6
+
+### Patch Changes
+
+- [#901](https://github.com/eBay/evo-web/pull/901) [`6a1f225`](https://github.com/eBay/evo-web/commit/6a1f225d6a450925779308bdc0e54c7ff539241e) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoTooltip component with an EvoButton host by default, and default EvoButton to `type="button"`. Evo Tooltip now uses one hover-and-focus trigger model in both experimental packages, so the `noHover` option is removed.
+
+- [#950](https://github.com/eBay/evo-web/pull/950) [`bb369ab`](https://github.com/eBay/evo-web/commit/bb369abfee4fc9a38d2cb9b2f4937dfad7ad2eb6) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Improve generated API documentation across evo-react components.
+
+- [#934](https://github.com/eBay/evo-web/pull/934) [`5e60a8d`](https://github.com/eBay/evo-web/commit/5e60a8d02205452e4d36646ceef96267d80f1585) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoProgressBarExpressive component.
+  Add EvoProgressBar component.
+
+- [#911](https://github.com/eBay/evo-web/pull/911) [`a8fc130`](https://github.com/eBay/evo-web/commit/a8fc1308318def9334d9a4be3a39f49821b16d51) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Introduce the React EvoCombobox filtering API with `filterMethod="auto"` as the default. The experimental component exposes automatic, application-managed, and input-independent filtering modes while keeping native browser autocomplete disabled.
+
+- [#917](https://github.com/eBay/evo-web/pull/917) [`eadfe2c`](https://github.com/eBay/evo-web/commit/eadfe2c36b7a626cbc9b229277b5c41201a36442) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoProgressBar component
+
+- [#908](https://github.com/eBay/evo-web/pull/908) [`0baf545`](https://github.com/eBay/evo-web/commit/0baf545da60540d6e2eb03e175a7004bdfe276ac) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add compound EvoDateInput and EvoDateRangeInputGroup components with child calendar popovers, and add read-only selection support to EvoCalendar.
+
+- [#949](https://github.com/eBay/evo-web/pull/949) [`b0cf7db`](https://github.com/eBay/evo-web/commit/b0cf7dba933893713b1fc784c1cba9dc6ee87fc4) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Improve generated API documentation for EvoBadge, EvoButton, and EvoDialog.
+
+- [#944](https://github.com/eBay/evo-web/pull/944) [`61fc03f`](https://github.com/eBay/evo-web/commit/61fc03f79a990e09899d11b52c7964b5d39844bd) Thanks [@ArtBlue](https://github.com/ArtBlue)! - Deprecate `live-bag-thin-16`, `live-bag-16`, `live-bag-20`, `live-bag-24`, and `live-bag-filled-24`; use the equivalent `live-broadcast-*` icons instead. To stop live usage immediately without breaking existing consumers, the underlying artwork for these 5 icons has been swapped to match their `live-broadcast-*` counterparts — `EvoIconLiveBag16` (and its Marko/legacy equivalents) now render the broadcast icon under the existing name, with no code changes required. Consumers should still migrate to `live-broadcast-*` directly, since the deprecated names will be removed in a future major version.
+  
+  The 3 colored `live-bag-play-filled-*-colored` variants are untouched pending a follow-up decision (no `live-broadcast` colored equivalent currently exists).
+
 ## 0.4.5
 
 ### Patch Changes
