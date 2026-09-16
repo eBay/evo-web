@@ -65,6 +65,11 @@ $ var config = data.config;
                         class=item.class
                         style=item.style
                         aria-hidden=!item.fullyVisible && "true"
+                        inert=(
+                            data.itemsPerSlide === 1 &&
+                            data.peek === 0 &&
+                            !item.fullyVisible
+                        )
                         no-update-body-if(!!config.preserveItems)
                     >
                         <${item.renderBody}/>
