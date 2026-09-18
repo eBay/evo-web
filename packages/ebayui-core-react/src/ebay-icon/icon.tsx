@@ -139,11 +139,7 @@ const EbayIcon: FC<EbayIconProps> = ({
     const isColored = kebabName.endsWith("-colored");
 
     const classNamePrefix = __type === "flag" ? "flag" : "icon";
-    const skinClassName = [
-        `${classNamePrefix}`,
-        `${classNamePrefix}--${size}${isColored ? "-colored" : ""}`,
-        getFilledIconName(kebabName),
-    ]
+    const skinClassName = [`${classNamePrefix}`, `${classNamePrefix}--${size}${isColored ? "-colored" : ""}`]
         .filter(Boolean)
         .join(" ");
     const className = classNames(extraClass, {
@@ -192,17 +188,6 @@ function getIconSize(iconName: string) {
     }
 
     return size;
-}
-
-function getFilledIconName(iconName: string) {
-    const iconNameArray = iconName.split("-");
-    const filledIndex = iconNameArray.indexOf("filled");
-
-    if (filledIndex === -1) {
-        return "";
-    }
-
-    return `icon--${iconNameArray.slice(0, filledIndex + 1).join("-")}`;
 }
 
 export function kebabCased(str: string): string {

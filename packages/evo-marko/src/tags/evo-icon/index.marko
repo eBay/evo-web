@@ -21,24 +21,13 @@ export interface Input extends Marko.SVG.SVG {
   ...htmlInput
 }=input>
 static function getIconClass(type: string, name: string, size?: string) {
-  const colorMap: { [index: string]: string } = {
-    "confirmation-filled-16": "confirmation-filled",
-    "confirmation-filled-24": "confirmation-filled",
-    "information-filled-16": "information-filled",
-    "information-filled-24": "information-filled",
-    "attention-filled-16": "attention-filled",
-    "attention-filled-24": "attention-filled",
-  };
-
-  const extraClass = !!colorMap[name] ? ` icon--${colorMap[name]}` : "";
-
   if (size) {
-    return `icon icon--${size}${extraClass}`;
+    return `icon icon--${size}`;
   } else if (type === "icon") {
-    return `icon icon--${name}${extraClass}`;
+    return `icon icon--${name}`;
   } else {
     const dashedName = name.replace(type, `${type}-`);
-    return `${type} ${dashedName}${extraClass}`;
+    return `${type} ${dashedName}`;
   }
 }
 static const isBrowser = typeof document === "object";

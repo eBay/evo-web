@@ -7,7 +7,8 @@
         class="section-notice"
         role="region"
         aria-label="Notice"
-        aria-roledescription="Notice">
+        aria-roledescription="Notice"
+      >
         <div class="section-notice__main">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
@@ -20,35 +21,43 @@
       class="section-notice"
       role="region"
       aria-label="Notice"
-      aria-roledescription="Notice">
+      aria-roledescription="Notice"
+    >
       <div class="section-notice__main">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </div>
     </section>
   </highlight-code>
 
-  <h3 id="section-notice-status">
-    Status Section Notice
-  </h3>
+  <h3 id="section-notice-status">Status Section Notice</h3>
   <p>
     A status-based section notice has a 16x16 icon representing confirmation,
     attention or information.
   </p>
 
+  <p>
+    Add the <code>section-notice--confirmation</code>, <code>
+      section-notice--attention
+    </code>, or <code>section-notice--information</code> modifier to the section
+    notice to apply the corresponding status color to its icon.
+  </p>
+
   <div class="demo">
     <div class="demo__inner">
       <section
-        class="section-notice"
+        class="section-notice section-notice--confirmation"
         role="region"
         aria-label="Confirmation"
-        aria-roledescription="Notice">
+        aria-roledescription="Notice"
+      >
         <div class="section-notice__header" id="section-notice-confirmation">
           <svg
-            class="icon icon--16 icon--confirmation-filled"
+            class="icon icon--16"
             height="16"
             width="16"
             role="img"
-            aria-label="Confirmation">
+            aria-label="Confirmation"
+          >
             <icon-symbol name="confirmation-filled-16"/>
           </svg>
         </div>
@@ -58,16 +67,18 @@
       </section>
 
       <section
-        class="section-notice"
+        class="section-notice section-notice--attention"
         role="region"
         aria-label="Attention"
-        aria-roledescription="Notice">
+        aria-roledescription="Notice"
+      >
         <div class="section-notice__header" id="section-notice-attention">
           <svg
-            class="icon icon--16 icon--attention-filled"
+            class="icon icon--16"
             height="16"
             width="16"
-            aria-label="Attention">
+            aria-label="Attention"
+          >
             <icon-symbol name="attention-filled-16"/>
           </svg>
         </div>
@@ -77,16 +88,18 @@
       </section>
 
       <section
-        class="section-notice"
+        class="section-notice section-notice--information"
         role="region"
         aria-label="Information"
-        aria-roledescription="Notice">
+        aria-roledescription="Notice"
+      >
         <div class="section-notice__header" id="section-notice-information">
           <svg
-            class="icon icon--16 icon--information-filled"
+            class="icon icon--16"
             height="16"
             width="16"
-            aria-label="Information">
+            aria-label="Information"
+          >
             <icon-symbol name="information-filled-16"/>
           </svg>
         </div>
@@ -99,17 +112,19 @@
 
   <highlight-code type="html">
     <section
-      class="section-notice"
+      class="section-notice section-notice--confirmation"
       role="region"
       aria-label="Confirmation"
-      aria-roledescription="Notice">
+      aria-roledescription="Notice"
+    >
       <div class="section-notice__header" id="section-notice-confirmation">
         <svg
           class="icon icon--16"
           height="16"
           width="16"
           role="img"
-          aria-label="Confirmation">
+          aria-label="Confirmation"
+        >
           <use href="#icon-confirmation-filled-16"/>
         </svg>
       </div>
@@ -119,16 +134,18 @@
     </section>
 
     <section
-      class="section-notice"
+      class="section-notice section-notice--attention"
       role="region"
       aria-label="Attention"
-      aria-roledescription="Notice">
+      aria-roledescription="Notice"
+    >
       <div class="section-notice__header" id="section-notice-attention">
         <svg
-          class="icon icon--16 icon--attention-filled"
+          class="icon icon--16"
           height="16"
           width="16"
-          aria-label="Attention">
+          aria-label="Attention"
+        >
           <use href="#icon-attention-filled-16"/>
         </svg>
       </div>
@@ -138,16 +155,18 @@
     </section>
 
     <section
-      class="section-notice"
+      class="section-notice section-notice--information"
       role="region"
       aria-label="Information"
-      aria-roledescription="Notice">
+      aria-roledescription="Notice"
+    >
       <div class="section-notice__header" id="section-notice-information">
         <svg
-          class="icon icon--16 icon--information-filled"
+          class="icon icon--16"
           height="16"
           width="16"
-          aria-label="Information">
+          aria-label="Information"
+        >
           <use href="#icon-information-filled-16"/>
         </svg>
       </div>
@@ -157,32 +176,30 @@
     </section>
   </highlight-code>
 
-  <h3 id="section-notice-titled">
-    Titled Section Notice
-  </h3>
+  <h3 id="section-notice-titled">Titled Section Notice</h3>
   <p>Use a heading element to create a titled section notice.</p>
 
   <div class="demo">
     <div class="demo__inner">
       <section
-        class="section-notice"
+        class="section-notice section-notice--confirmation"
         role="region"
         aria-label="Confirmation"
-        aria-roledescription="Notice">
+        aria-roledescription="Notice"
+      >
         <div class="section-notice__header" id="section-notice-confirmation">
           <svg
-            class="icon icon--16 icon--confirmation-filled"
+            class="icon icon--16"
             height="16"
             width="16"
             role="img"
-            aria-label="Confirmation">
+            aria-label="Confirmation"
+          >
             <icon-symbol name="confirmation-filled-16"/>
           </svg>
         </div>
         <div class="section-notice__main">
-          <h3 class="section-notice__title">
-            Notification title
-          </h3>
+          <h3 class="section-notice__title">Notification title</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
       </section>
@@ -191,70 +208,69 @@
 
   <highlight-code type="html">
     <section
-      class="section-notice"
+      class="section-notice section-notice--confirmation"
       role="region"
       aria-label="Confirmation"
-      aria-roledescription="Notice">
+      aria-roledescription="Notice"
+    >
       <div class="section-notice__header" id="section-notice-confirmation">
         <svg
-          class="icon icon--16 icon--confirmation-filled"
+          class="icon icon--16"
           height="16"
           width="16"
           role="img"
-          aria-label="Confirmation">
+          aria-label="Confirmation"
+        >
           <use href="#icon-confirmation-filled-16"/>
         </svg>
       </div>
       <div class="section-notice__main">
-        <h3 class="section-notice__title">
-          Notification title
-        </h3>
+        <h3 class="section-notice__title">Notification title</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </div>
     </section>
   </highlight-code>
 
-  <h3 id="section-notice-dismissable">
-    Dismissable Section Notice
-  </h3>
+  <h3 id="section-notice-dismissable">Dismissable Section Notice</h3>
   <p>
-    A close button can be placed in a
-    <code>section-notice__footer</code>
+    A close button can be placed in a <code>section-notice__footer</code>
     element.
   </p>
 
   <div class="demo">
     <div class="demo__inner">
       <section
-        class="section-notice"
+        class="section-notice section-notice--confirmation"
         role="region"
         aria-label="Confirmation"
-        aria-roledescription="Notice">
+        aria-roledescription="Notice"
+      >
         <div class="section-notice__header" id="section-notice-confirmation">
           <svg
-            class="icon icon--16 icon--confirmation-filled"
+            class="icon icon--16"
             height="16"
             width="16"
             role="img"
-            aria-label="Confirmation">
+            aria-label="Confirmation"
+          >
             <icon-symbol name="confirmation-filled-16"/>
           </svg>
         </div>
         <div class="section-notice__main">
-          <h3 class="section-notice__title">
-            Notification title
-          </h3>
+          <h3 class="section-notice__title">Notification title</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
         <div class="section-notice__footer">
           <button
             aria-label="Close notice"
-            class="fake-link section-notice__dismiss">
+            class="fake-link section-notice__dismiss"
+          >
             <svg
               aria-hidden="true"
               class="icon icon--16"
               height="16"
-              width="16">
+              width="16"
+            >
               <icon-symbol name="close-16"/>
             </svg>
           </button>
@@ -265,30 +281,31 @@
 
   <highlight-code type="html">
     <section
-      class="section-notice"
+      class="section-notice section-notice--confirmation"
       role="region"
       aria-label="Confirmation"
-      aria-roledescription="Notice">
+      aria-roledescription="Notice"
+    >
       <div class="section-notice__header" id="section-notice-confirmation">
         <svg
-          class="icon icon--16 icon--confirmation-filled"
+          class="icon icon--16"
           height="16"
           width="16"
           role="img"
-          aria-label="Confirmation">
+          aria-label="Confirmation"
+        >
           <use href="#icon-confirmation-filled-16"/>
         </svg>
       </div>
       <div class="section-notice__main">
-        <h3 class="section-notice__title">
-          Notification title
-        </h3>
+        <h3 class="section-notice__title">Notification title</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </div>
       <div class="section-notice__footer">
         <button
           aria-label="Close notice"
-          class="fake-link section-notice__dismiss">
+          class="fake-link section-notice__dismiss"
+        >
           <svg aria-hidden="true" class="icon icon--16" height="16" width="16">
             <use href="#icon-close-16"/>
           </svg>
@@ -297,40 +314,37 @@
     </section>
   </highlight-code>
 
-  <h3 id="section-notice-actionable">
-    Actionable Section Notice
-  </h3>
+  <h3 id="section-notice-actionable">Actionable Section Notice</h3>
   <p>
-    Link or button actions can be placed in a
-    <code>section-notice__cta</code>
+    Link or button actions can be placed in a <code>section-notice__cta</code>
     element.
   </p>
-  <section class="section-notice" role="region" aria-label="Confirmation">
+  <section
+    class="section-notice section-notice--confirmation"
+    role="region"
+    aria-label="Confirmation"
+  >
     <div class="section-notice__header">
       <svg
-        class="icon icon--16 icon--confirmation-filled"
+        class="icon icon--16"
         height="16"
         width="16"
         role="img"
-        aria-label="Confirmation">
+        aria-label="Confirmation"
+      >
         <icon-symbol name="confirmation-filled-16"/>
       </svg>
     </div>
     <div class="section-notice__main">
-      <h3 class="section-notice__title">
-        Notification title
-      </h3>
+      <h3 class="section-notice__title">Notification title</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </div>
-    <p class="section-notice__cta">
-      <a href="https://www.ebay.com">
-        Action
-      </a>
-    </p>
+    <p class="section-notice__cta"><a href="https://www.ebay.com">Action</a></p>
     <div class="section-notice__footer">
       <button
         aria-label="Close notice"
-        class="fake-link section-notice__dismiss">
+        class="fake-link section-notice__dismiss"
+      >
         <svg aria-hidden="true" class="icon icon--16" height="16" width="16">
           <icon-symbol name="close-16"/>
         </svg>
@@ -340,35 +354,34 @@
 
   <highlight-code type="html">
     <section
-      class="section-notice"
+      class="section-notice section-notice--confirmation"
       role="region"
       aria-label="Confirmation"
-      aria-roledescription="Notice">
+      aria-roledescription="Notice"
+    >
       <div class="section-notice__header">
         <svg
-          class="icon icon--16 icon--confirmation-filled"
+          class="icon icon--16"
           height="16"
           width="16"
           role="img"
-          aria-label="Confirmation">
+          aria-label="Confirmation"
+        >
           <use href="#icon-confirmation-filled-16"/>
         </svg>
       </div>
       <div class="section-notice__main">
-        <h3 class="section-notice__title">
-          Notification title
-        </h3>
+        <h3 class="section-notice__title">Notification title</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </div>
       <p class="section-notice__cta">
-        <a href="https://www.ebay.com">
-          Action
-        </a>
+        <a href="https://www.ebay.com">Action</a>
       </p>
       <div class="section-notice__footer">
         <button
           aria-label="Close notice"
-          class="fake-link section-notice__dismiss">
+          class="fake-link section-notice__dismiss"
+        >
           <svg aria-hidden="true" class="icon icon--16" height="16" width="16">
             <use href="#icon-close-16"/>
           </svg>
