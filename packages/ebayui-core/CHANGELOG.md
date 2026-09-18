@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 16.17.0
+
+### Minor Changes
+
+- [#961](https://github.com/eBay/evo-web/pull/961) [`12d3548`](https://github.com/eBay/evo-web/commit/12d35488539dd00cc3c6273328e9c63ab60ea647) Thanks [@ArtBlue](https://github.com/ArtBlue)! - Fix `confirmation-filled`, `attention-filled`, and `information-filled` icons rendering with a hardcoded color instead of `currentColor` when used outside of a notice component. The icon components no longer auto-apply an `icon--{status}-filled` color class; `inline-notice` and `section-notice` now cascade the status color onto their own icon via CSS instead (`section-notice`'s Marko component also now applies the `section-notice--{status}` root class needed for this, matching its React counterpart). `page-notice` already colored its status icon this way and is unaffected. Bare/standalone usage of these icons (outside any notice component) now correctly renders black via `currentColor`, matching Skin's own icon documentation.
+
 ## 16.16.0
 
 ### Minor Changes
