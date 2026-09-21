@@ -11,9 +11,7 @@ import type { Input as EvoInputInput } from "<evo-input>";
 export type DateInputValue = DayISO | "";
 
 export interface InvalidDateEvent {
-  /** Unparsed input text. */
   value: string;
-  /** Field index: `0` for the start or single field, `1` for the end field. */
   index: number;
 }
 
@@ -39,7 +37,6 @@ export interface Input {
   disabled?: boolean;
   readonly?: boolean;
   field?: DateFieldAttrs;
-  /** Present only on the field that hosts the calendar trigger button. */
   trigger?: {
     a11yText: string;
     open: boolean;

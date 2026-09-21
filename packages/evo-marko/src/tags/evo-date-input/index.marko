@@ -14,41 +14,25 @@ export interface DateInputCalendarAttrs extends Omit<
   CalendarDayInput,
   "selectMode" | "selected" | "selectedChange" | "locale"
 > {
-  /** Positioning strategy for the calendar popover. */
   strategy?: "absolute" | "fixed";
 }
 
 export interface Input extends Omit<Marko.HTML.Span, "value"> {
-  /**
-   * Committed date (`YYYY-MM-DD`); `""` when the field is empty. Two-way
-   * bindable with `value:=`.
-   */
   value?: DateInputValue;
   valueChange?: (value: DateInputValue) => void;
-  /**
-   * [BCP 47 language tag](https://developer.mozilla.org/en-US/docs/Glossary/BCP_47_language_tag)
-   * used to parse, format, and label dates. Defaults to `navigator.language`.
-   */
   locale?: string;
   /**
    * Accessible label for the button that opens the calendar popover, mapped
    * to `aria-label`.
    */
   a11yOpenPopoverText: string;
-  /** Closes the calendar after a selection. */
   collapseOnSelect?: boolean;
-  /** Popover visibility. Two-way bindable with `open:=`. */
   open?: boolean;
   openChange?: (open: boolean) => void;
-  /** Disables the input and the calendar button. */
   disabled?: boolean;
-  /** Prevents typing and calendar selection. */
   readonly?: boolean;
-  /** Called when the field blurs with text that cannot be parsed as a date. */
   onInvalidDate?: (event: InvalidDateEvent) => void;
-  /** Attributes forwarded to the internal `evo-input` field. */
   input?: Marko.AttrTag<DateFieldAttrs>;
-  /** Attributes forwarded to the internal `evo-calendar`. */
   calendar?: Marko.AttrTag<DateInputCalendarAttrs>;
 }
 
