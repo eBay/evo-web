@@ -99,6 +99,8 @@ HTML Semantic Structure → @ebay/skin (CSS/BEM) → Framework Components → In
 
 **Marko 6 top-level type statements:** In `.marko` files, keep an `interface`/`type` declaration's header on one line up to the opening `{` (e.g. `export interface X extends Omit<A, "b" | "c"> {`). Splitting the `extends` clause or a `type X = Omit<...>` across lines before the `{` breaks the Marko statement parser with cascading TS1005 errors.
 
+**Marko 6 tag variables in `<const>` bodies:** The extractor types a custom-tag variable as `never` when it is referenced from a `<const>` declared earlier in the template (runtime hoisting works; typing does not). Declare such helper `<const>`s after the tag that binds the variable, and annotate custom-tag variables explicitly (`<evo-menu/$menu: MenuRef>`) — their types do not infer across templates.
+
 **Marko 6 Tag Variable Locality:**
 
 Declare `<const/>`, `<let/>`, `<id/>`, and other tag variables close to where they are first used, not grouped at the top. Exception is variables needed in multiple distant locations.
