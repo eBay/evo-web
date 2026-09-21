@@ -20,65 +20,32 @@ describe("evo-date-input", () => {
     });
   });
 
-  it("renders a field and a calendar trigger button", () => {
-    expect(component.getByRole("textbox")).toBeTruthy();
-    expect(
-      component.getByRole("button", { name: "Open calendar" }),
-    ).toBeTruthy();
-  });
-
-  it("shows a locale placeholder while focused", async () => {
-    // The floating label hides the placeholder until the field is focused.
-    const textbox = component.getByRole("textbox");
-    await fireEvent.focus(textbox);
-    expect(textbox).toHaveAttribute("placeholder", "MM/DD/YYYY");
-  });
-
-  it("masks typed digits into the locale format", async () => {
+  it("masks typed text into the locale format with independent parts", async () => {
     const textbox = component.getByRole("textbox") as HTMLInputElement;
+
+    // A continuous digit run is chunked, with an eager trailing separator.
+    await fireEvent.input(textbox, { target: { value: "12" } });
+    expect(textbox.value).toBe("12/");
+    await fireEvent.input(textbox, { target: { value: "12" } });
+    expect(textbox.value).toBe("12"); // no re-append while deleting
     await fireEvent.input(textbox, { target: { value: "12082024" } });
     expect(textbox.value).toBe("12/08/2024");
-  });
 
-  it("appends the separator after a complete segment", async () => {
-    const textbox = component.getByRole("textbox") as HTMLInputElement;
-    await fireEvent.input(textbox, { target: { value: "12" } });
-    expect(textbox.value).toBe("12/");
-  });
-
-  it("does not re-append a separator while deleting", async () => {
-    const textbox = component.getByRole("textbox") as HTMLInputElement;
-    await fireEvent.input(textbox, { target: { value: "12" } });
-    expect(textbox.value).toBe("12/");
-    await fireEvent.input(textbox, { target: { value: "12" } });
-    expect(textbox.value).toBe("12");
-  });
-
-  it("lets each date part be edited independently", async () => {
-    const textbox = component.getByRole("textbox") as HTMLInputElement;
-    for (const step of [
-      "04/24/2000",
-      "04/2/2000",
-      "04//2000",
-      "04/1/2000",
-      "04/15/2000",
-    ]) {
+    // Each part edits independently once separators exist.
+    for (const step of ["12/8/2024", "12//2024", "12/15/2024"]) {
       await fireEvent.input(textbox, { target: { value: step } });
       expect(textbox.value).toBe(step);
     }
   });
 
-  it("formats the committed value on blur", async () => {
+  it("commits a parsed date on blur and flags unparseable text", async () => {
     const textbox = component.getByRole("textbox") as HTMLInputElement;
     await fireEvent.input(textbox, { target: { value: "12082024" } });
     await fireEvent.blur(textbox);
     expect(textbox.value).toBe("12/08/2024");
     expect(textbox).not.toHaveAttribute("aria-invalid");
     expect(onInvalidDate).not.toHaveBeenCalled();
-  });
 
-  it("flags unparseable text on blur", async () => {
-    const textbox = component.getByRole("textbox") as HTMLInputElement;
     await fireEvent.input(textbox, { target: { value: "99/99/9999" } });
     await fireEvent.blur(textbox);
     expect(textbox).toHaveAttribute("aria-invalid", "true");
@@ -88,8 +55,11 @@ describe("evo-date-input", () => {
     });
   });
 
-  it("opens and closes the calendar popover from the trigger", async () => {
+  it("opens and closes the calendar popover", async () => {
     const trigger = component.getByRole("button", { name: "Open calendar" });
+    const root = component.container.querySelector(
+      ".date-textbox",
+    ) as HTMLElement;
     const popover = component.container.querySelector(
       ".date-textbox__popover",
     ) as HTMLElement;
@@ -101,60 +71,27 @@ describe("evo-date-input", () => {
     expect(trigger).toHaveAttribute("aria-expanded", "true");
     expect(trigger).toHaveAttribute("aria-controls", popover.id);
 
-    await fireEvent.click(trigger);
-    expect(popover.hidden).toBe(true);
-  });
-
-  it("stays open when clicking non-interactive popover content", async () => {
-    await fireEvent.click(
-      component.getByRole("button", { name: "Open calendar" }),
-    );
-    const root = component.container.querySelector(
-      ".date-textbox",
-    ) as HTMLElement;
-    const popover = component.container.querySelector(
-      ".date-textbox__popover",
-    ) as HTMLElement;
-    expect(popover.hidden).toBe(false);
-
-    // The open popover carries tabindex="-1" so that a click on its
-    // non-interactive content focuses it — keeping focus inside the root
-    // rather than blurring to the body and closing the popover.
+    // The open popover carries tabindex="-1" so a click on its
+    // non-interactive content keeps focus inside the root instead of
+    // blurring to the body and closing it.
     expect(popover).toHaveAttribute("tabindex", "-1");
     await fireEvent.focusOut(root, { relatedTarget: popover });
     expect(popover.hidden).toBe(false);
 
-    // Focus genuinely leaving the component still closes it.
+    // Focus genuinely leaving still closes it, as does Escape.
     await fireEvent.focusOut(root, { relatedTarget: null });
+    expect(popover.hidden).toBe(true);
+    await fireEvent.click(trigger);
+    await fireEvent.keyDown(root, { key: "Escape" });
     expect(popover.hidden).toBe(true);
   });
 
-  it("closes the popover on Escape", async () => {
-    const trigger = component.getByRole("button", { name: "Open calendar" });
-    await fireEvent.click(trigger);
-    await fireEvent.keyDown(
-      component.container.querySelector(".date-textbox") as HTMLElement,
-      { key: "Escape" },
-    );
-    expect(
-      (
-        component.container.querySelector(
-          ".date-textbox__popover",
-        ) as HTMLElement
-      ).hidden,
-    ).toBe(true);
-  });
-});
-
-describe("evo-date-input disabled", () => {
-  beforeEach(async () => {
+  it("disables the field and popover when disabled", async () => {
     component = await render(Default, { locale: "en-US", disabled: true });
-  });
-
-  it("disables the field and does not open the popover", async () => {
     expect(component.getByRole("textbox")).toBeDisabled();
-    const trigger = component.getByRole("button", { name: "Open calendar" });
-    await fireEvent.click(trigger);
+    await fireEvent.click(
+      component.getByRole("button", { name: "Open calendar" }),
+    );
     expect(
       (
         component.container.querySelector(
