@@ -1,0 +1,119 @@
+import { type DayISO } from "../../../common/dates/date-utils";
+import {
+  format,
+  maskDate,
+  parse,
+  placeholder as localePlaceholder,
+} from "../../../common/dates/format";
+import type { Input as EvoInputInput } from "<evo-input>";
+
+// Committed date value; "" for an empty field.
+export type DateInputValue = DayISO | "";
+
+export interface InvalidDateEvent {
+  /** Unparsed input text. */
+  value: string;
+  /** Field index: `0` for the start or single field, `1` for the end field. */
+  index: number;
+}
+
+// evo-input attributes callers may customize on a date field. The date field
+// owns the value, type, disabled/readonly state, and the postfix icon slot.
+export type DateFieldAttrs = Omit<
+  EvoInputInput,
+  | "value"
+  | "valueChange"
+  | "type"
+  | "disabled"
+  | "readonly"
+  | "prefixIcon"
+  | "postfixIcon"
+  | "prefixText"
+  | "postfixText"
+>;
+
+export interface Input {
+  iso: DateInputValue;
+  locale?: string;
+  index: 0 | 1;
+  disabled?: boolean;
+  readonly?: boolean;
+  field?: DateFieldAttrs;
+  /** Present only on the field that hosts the calendar trigger button. */
+  trigger?: {
+    a11yText: string;
+    open: boolean;
+    popoverId: string;
+    toggle: () => void;
+  };
+  commit: (iso: DateInputValue) => void;
+  onInvalidDate?: (event: InvalidDateEvent) => void;
+}
+
+<const/{ iso, locale, index, disabled, readonly, trigger, commit }=input>
+<const/{
+  placeholder,
+  invalid: fieldInvalid,
+  onBlur,
+  ...field
+}=input.field ?? ({} as DateFieldAttrs)>
+
+// `draft` holds in-progress typed text; the committed `iso` renders otherwise.
+<let/draft=null as string | null>
+<let/invalid=false>
+<let/prevIso=iso>
+<script>
+  // An external change to the committed value discards any in-progress draft.
+  if (iso !== prevIso) {
+    prevIso = iso;
+    draft = null;
+    invalid = false;
+  }
+</script>
+<const/display=draft ?? (iso ? format(iso, locale) : "")>
+
+<evo-input
+  ...field
+  disabled=disabled
+  readonly=readonly
+  invalid=fieldInvalid || invalid
+  placeholder=placeholder ?? localePlaceholder(locale)
+  value=display
+  valueChange(next) {
+    draft = maskDate(next, locale, next.length > display.length);
+    invalid = false;
+  }
+  onBlur(e, el) {
+    const text = (e.target as HTMLInputElement).value;
+    if (text.trim() === "") {
+      draft = null;
+      invalid = false;
+      commit("");
+    } else {
+      const parsed = parse(text, locale);
+      if (parsed === null) {
+        invalid = true;
+        input.onInvalidDate &&
+          input.onInvalidDate({ value: text, index: index });
+      } else {
+        draft = null;
+        invalid = false;
+        commit(parsed);
+      }
+    }
+    onBlur && onBlur(e, el);
+  }
+>
+  <if=trigger>
+    <@postfixIcon
+      a11yText=trigger.a11yText
+      aria-expanded=trigger.open ? "true" : "false"
+      aria-controls=trigger.popoverId
+      onClick() {
+        trigger.toggle();
+      }
+    >
+      <evo-icon-calendar-24/>
+    </@postfixIcon>
+  </if>
+</evo-input>

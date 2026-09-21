@@ -1,0 +1,14 @@
+<evo-date-range-input ...input a11yOpenPopoverText="Open calendar">
+  <@input floatingLabel="Purchase date from"/>
+  <@input floatingLabel="Purchase date to"/>
+  <@calendar
+    a11yNavigateText(month, dir) {
+      return `Go to ${month} (${dir === "prev" ? "Previous" : "Next"} month)`;
+    }
+    a11yRangeText={
+      start: "Start of purchase date range",
+      in: "Within purchase date range",
+      end: "End of purchase date range",
+    }
+  />
+</evo-date-range-input>

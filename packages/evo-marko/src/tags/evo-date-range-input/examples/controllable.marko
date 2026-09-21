@@ -1,0 +1,25 @@
+import type { DateInputRange } from "<evo-date-range-input>";
+
+<let/range={} as DateInputRange>
+
+<p>Selected: ${range.from || "none"} – ${range.to || "none"}</p>
+
+<evo-date-range-input
+  ...input
+  value:=range
+  a11yOpenPopoverText="Open calendar"
+  collapseOnSelect
+>
+  <@input floatingLabel="Purchase date from"/>
+  <@input floatingLabel="Purchase date to"/>
+  <@calendar
+    a11yNavigateText(month, dir) {
+      return `Go to ${month} (${dir === "prev" ? "Previous" : "Next"} month)`;
+    }
+    a11yRangeText={
+      start: "Start of purchase date range",
+      in: "Within purchase date range",
+      end: "End of purchase date range",
+    }
+  />
+</evo-date-range-input>

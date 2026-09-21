@@ -1,0 +1,17 @@
+import type { DateInputValue } from "<evo-date-input>";
+
+<let/date="" as DateInputValue>
+
+<p>Selected: ${date || "none"}</p>
+
+<evo-date-input
+  ...input
+  value:=date
+  a11yOpenPopoverText="Open calendar"
+  collapseOnSelect
+>
+  <@input floatingLabel="Purchase date"/>
+  <@calendar a11yNavigateText(month, dir) {
+    return `Go to ${month} (${dir === "prev" ? "Previous" : "Next"} month)`;
+  }/>
+</evo-date-input>
