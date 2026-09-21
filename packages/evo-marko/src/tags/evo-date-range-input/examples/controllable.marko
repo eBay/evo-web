@@ -1,15 +1,14 @@
-import type { DateInputRange } from "<evo-date-range-input>";
+import type {
+  DateInputRange,
+  Input as DateRangeInputInput,
+} from "<evo-date-range-input>";
+export interface Input extends DateRangeInputInput {}
 
 <let/range={} as DateInputRange>
 
 <p>Selected: ${range.from || "none"} – ${range.to || "none"}</p>
 
-<evo-date-range-input
-  ...input
-  value:=range
-  a11yOpenPopoverText="Open calendar"
-  collapseOnSelect
->
+<evo-date-range-input ...input value:=range>
   <@input floatingLabel="Purchase date from"/>
   <@input floatingLabel="Purchase date to"/>
   <@calendar

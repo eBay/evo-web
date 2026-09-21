@@ -83,4 +83,7 @@ export const Default = buildExtensionTemplate(DefaultTemplate, DefaultCode);
 export const Controllable = buildExtensionTemplate(
   ControllableTemplate,
   ControllableCode,
+  {
+    a11yOpenPopoverText: "Open calendar",
+  },
 );
