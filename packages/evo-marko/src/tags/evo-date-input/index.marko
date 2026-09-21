@@ -8,8 +8,6 @@ import type {
 export type { FieldInput, DateInputValue };
 export type { DayISO } from "../../common/dates/date-utils";
 
-// Calendar attributes callers may customize. The date input owns the
-// selection, locale, and select mode.
 export interface CalendarInput extends Omit<
   CalendarDayInput,
   "selectMode" | "selected" | "selectedChange" | "locale"
@@ -68,9 +66,7 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
 <let/open:=input.open>
 <id/popoverId>
 
-// While closed, the calendar follows the committed date's month.
 <let/visibleMonth=value ? (value.slice(0, 7) as MonthISO) : undefined>
-// Show two month panes on wide viewports unless the caller overrides.
 <let/paneCount=1>
 <script>
   const media = window.matchMedia("(min-width: 600px)");

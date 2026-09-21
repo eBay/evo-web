@@ -13,8 +13,6 @@ export interface DateInputRange {
   to?: DateInputValue;
 }
 
-// Calendar attributes callers may customize. The date range input owns the
-// selection, locale, and select mode.
 export interface CalendarInput extends Omit<
   CalendarRangeInput,
   "selectMode" | "selected" | "selectedChange" | "locale"
@@ -74,16 +72,12 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
 <let/open:=input.open>
 <id/popoverId>
 
-// While closed, the calendar follows the committed range's month.
 <const/monthOf=(range?: DateInputRange) => {
   const iso = range?.from || range?.to;
   return iso ? (iso.slice(0, 7) as MonthISO) : undefined;
 }>
 <let/visibleMonth=monthOf(value)>
-// ISO dates compare lexicographically, so a committed start after the
-// committed end puts both fields in the error state.
 <const/inverted=(!!value?.from && !!value?.to && value.from > value.to)>
-// Show two month panes on wide viewports unless the caller overrides.
 <let/paneCount=1>
 <script>
   const media = window.matchMedia("(min-width: 600px)");

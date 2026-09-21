@@ -7,11 +7,8 @@ import {
 } from "../../../common/dates/format";
 import type { Input as TextboxInput } from "<evo-input>";
 
-// Committed date value; "" for an empty field.
 export type DateInputValue = DayISO | "";
 
-// evo-input attributes callers may customize on a date field. The date field
-// owns the value, type, disabled/readonly state, and the postfix icon slot.
 export type FieldInput = Omit<
   TextboxInput,
   | "value"
@@ -56,7 +53,6 @@ export interface Input {
   ...field
 }=input.field ?? ({} as FieldInput)>
 
-// `draft` holds in-progress typed text; the committed `value` renders otherwise.
 <let/draft=null as string | null>
 <let/invalid=false>
 <let/prevValue=value>
