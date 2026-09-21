@@ -58,18 +58,9 @@ export interface Input {
   ...field
 }=input.field ?? ({} as FieldInput)>
 
-<let/draft=null as string | null>
+<let/draft="">
 <let/invalid=false>
-<let/prevValue=value>
-<script>
-  // An external change to the committed value discards any in-progress draft.
-  if (value !== prevValue) {
-    prevValue = value;
-    draft = null;
-    invalid = false;
-  }
-</script>
-<const/display=draft ?? (value ? format(value, locale) : "")>
+<const/display=draft || (value ? format(value, locale) : "")>
 
 <evo-input/control: FieldRef
   ...field
@@ -79,13 +70,20 @@ export interface Input {
   placeholder=placeholder ?? localePlaceholder(locale)
   value=display
   valueChange(next) {
-    draft = maskDate(next, locale, next.length > display.length);
     invalid = false;
+    if (next === "") {
+      // An empty draft falls back to the committed value, so clearing the
+      // text must clear the committed value too.
+      draft = "";
+      valueChange("");
+    } else {
+      draft = maskDate(next, locale, next.length > display.length);
+    }
   }
   onBlur(e, el) {
     const text = (e.target as HTMLInputElement).value;
     if (text.trim() === "") {
-      draft = null;
+      draft = "";
       invalid = false;
       valueChange("");
     } else {
@@ -94,7 +92,7 @@ export interface Input {
         invalid = true;
         input.onInvalidDate && input.onInvalidDate(e, el, text, index);
       } else {
-        draft = null;
+        draft = "";
         invalid = false;
         valueChange(parsed);
       }
