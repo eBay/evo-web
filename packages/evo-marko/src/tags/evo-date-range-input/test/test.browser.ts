@@ -45,8 +45,6 @@ describe("evo-date-range-input", () => {
   });
 
   it("marks both fields invalid when the start date is after the end", async () => {
-    // Uncontrolled render — a valueChange prop would make the range
-    // fully controlled and freeze the internal value.
     component = await render(Default, { locale: "en-US" });
     const [start, end] = component.getAllByRole(
       "textbox",

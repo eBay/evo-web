@@ -72,8 +72,6 @@ export interface Input {
   valueChange(next) {
     invalid = false;
     if (next === "") {
-      // An empty draft falls back to the committed value, so clearing the
-      // text must clear the committed value too.
       draft = "";
       valueChange("");
     } else {

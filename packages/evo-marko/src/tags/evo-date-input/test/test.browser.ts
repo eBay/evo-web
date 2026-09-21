@@ -23,15 +23,13 @@ describe("evo-date-input", () => {
   it("masks typed text into the locale format with independent parts", async () => {
     const textbox = component.getByRole("textbox") as HTMLInputElement;
 
-    // A continuous digit run is chunked, with an eager trailing separator.
     await fireEvent.input(textbox, { target: { value: "12" } });
     expect(textbox.value).toBe("12/");
     await fireEvent.input(textbox, { target: { value: "12" } });
-    expect(textbox.value).toBe("12"); // no re-append while deleting
+    expect(textbox.value).toBe("12");
     await fireEvent.input(textbox, { target: { value: "12082024" } });
     expect(textbox.value).toBe("12/08/2024");
 
-    // Each part edits independently once separators exist.
     for (const step of ["12/8/2024", "12//2024", "12/15/2024"]) {
       await fireEvent.input(textbox, { target: { value: step } });
       expect(textbox.value).toBe(step);
@@ -73,8 +71,6 @@ describe("evo-date-input", () => {
     expect(trigger).toHaveAttribute("aria-expanded", "true");
     expect(trigger).toHaveAttribute("aria-controls", popover.id);
 
-    // Pointerdown on non-interactive popover content keeps it open;
-    // pointerdown outside the component closes it, as does Escape.
     await fireEvent.pointerDown(popover.querySelector("caption") as Element);
     expect(popover.hidden).toBe(false);
     await fireEvent.pointerDown(document.body);

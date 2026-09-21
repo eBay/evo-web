@@ -103,8 +103,6 @@ export function maskDate(raw: string, locale?: string, eager = true): string {
   const { o: order, s: sep } = getLocale(locale);
   const max = (i: number) => (order[i] === "y" ? 4 : 2);
 
-  // Split on each individual separator (falling back to any other non-digit
-  // character), keeping empty parts so "04//2000" retains its empty middle.
   const uniqueSeps = [...new Set(sep.filter(Boolean))];
   const splitter = new RegExp(
     uniqueSeps
@@ -120,7 +118,6 @@ export function maskDate(raw: string, locale?: string, eager = true): string {
         parts.push(rest.slice(0, max(parts.length)));
         rest = rest.slice(max(parts.length - 1));
       } else {
-        // Extra digits or separators beyond three parts fold into the last.
         parts[2] = (parts[2] + rest).slice(0, max(2));
         rest = "";
       }
