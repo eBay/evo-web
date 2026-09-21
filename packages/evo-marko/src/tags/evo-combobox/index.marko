@@ -11,6 +11,7 @@ export interface Input extends Omit<
   | "aria-expanded"
   | "aria-owns"
   | "aria-controls"
+  | "aria-invalid"
   | "autocomplete"
 > {
   filterMethod?: "auto" | "manual" | "none";
@@ -19,6 +20,7 @@ export interface Input extends Omit<
   borderless?: boolean;
   fluid?: boolean;
   strategy?: "fixed" | "absolute";
+  invalid?: boolean;
   open?: boolean;
   openChange?: (open: boolean) => void;
   option?: Marko.AttrTag<ComboboxOption>;
@@ -34,6 +36,7 @@ export interface Input extends Omit<
   filterMethod = "auto",
   listSelection = "automatic",
   floatingLabel,
+  invalid,
   strategy,
   option: options = [],
   button,
@@ -83,6 +86,7 @@ export interface Input extends Omit<
   fluid=fluid
   disabled=disabled
   htmlFor=inputId
+  invalid=invalid
   value=value
   focused=open
 >
@@ -115,6 +119,7 @@ export interface Input extends Omit<
         role="combobox"
         disabled=disabled
         value:=value
+        aria-invalid=invalid && "true"
         placeholder=showPlaceholder && placeholder
         autocomplete="off"
         aria-owns=listboxId
