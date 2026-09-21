@@ -50,7 +50,8 @@ export interface Input {
   ) => void;
 }
 
-<const/{ value, locale, index, disabled, readonly, trigger, valueChange }=input>
+<const/{ locale, index, disabled, readonly, trigger }=input>
+<let/value:=input.value>
 <const/{
   placeholder,
   invalid: fieldInvalid,
@@ -73,7 +74,7 @@ export interface Input {
     invalid = false;
     if (next === "") {
       draft = "";
-      valueChange("");
+      value = "";
     } else {
       draft = maskDate(next, locale, next.length > display.length);
     }
@@ -83,7 +84,7 @@ export interface Input {
     if (text.trim() === "") {
       draft = "";
       invalid = false;
-      valueChange("");
+      value = "";
     } else {
       const parsed = parse(text, locale);
       if (parsed === null) {
@@ -92,7 +93,7 @@ export interface Input {
       } else {
         draft = "";
         invalid = false;
-        valueChange(parsed);
+        value = parsed;
       }
     }
     onBlur && onBlur(e, el);
