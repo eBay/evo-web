@@ -105,6 +105,30 @@ describe("evo-date-input", () => {
     expect(popover.hidden).toBe(true);
   });
 
+  it("stays open when clicking non-interactive popover content", async () => {
+    await fireEvent.click(
+      component.getByRole("button", { name: "Open calendar" }),
+    );
+    const root = component.container.querySelector(
+      ".date-textbox",
+    ) as HTMLElement;
+    const popover = component.container.querySelector(
+      ".date-textbox__popover",
+    ) as HTMLElement;
+    expect(popover.hidden).toBe(false);
+
+    // The open popover carries tabindex="-1" so that a click on its
+    // non-interactive content focuses it — keeping focus inside the root
+    // rather than blurring to the body and closing the popover.
+    expect(popover).toHaveAttribute("tabindex", "-1");
+    await fireEvent.focusOut(root, { relatedTarget: popover });
+    expect(popover.hidden).toBe(false);
+
+    // Focus genuinely leaving the component still closes it.
+    await fireEvent.focusOut(root, { relatedTarget: null });
+    expect(popover.hidden).toBe(true);
+  });
+
   it("closes the popover on Escape", async () => {
     const trigger = component.getByRole("button", { name: "Open calendar" });
     await fireEvent.click(trigger);

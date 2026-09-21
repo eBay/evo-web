@@ -138,6 +138,9 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
   <div/$popover
     id=popoverId
     hidden=!open
+    tabindex=(
+      open && -1 // keeps focus inside the root on popover clicks, so onFocusOut does not close it
+    )
     class=[
       "date-textbox__popover",
       strategy === "fixed" && "date-textbox__popover--fixed",
