@@ -55,7 +55,6 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
   open: _open,
   openChange: _openChange,
   onKeyDown,
-  onFocusOut,
   ...htmlInput
 }=input>
 <const/locale=localeDefault(input.locale)>
@@ -87,6 +86,19 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
   update();
   media.addEventListener("change", update, { signal: $signal });
 </script>
+<script>
+  if (open) {
+    document.addEventListener(
+      "pointerdown",
+      (e) => {
+        if (!$root().contains(e.target as Node)) {
+          open = false;
+        }
+      },
+      { signal: $signal },
+    );
+  }
+</script>
 
 <const/focusTrigger() {
   $root().querySelector<HTMLElement>(`[aria-controls="${popoverId}"]`)?.focus();
@@ -117,12 +129,6 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
       focusTrigger();
     }
     onKeyDown && onKeyDown(e, el);
-  }
-  onFocusOut(e, el) {
-    if (!el.contains(e.relatedTarget as Node)) {
-      open = false;
-    }
-    onFocusOut && onFocusOut(e, el);
   }
 >
   <evo-date-field
@@ -160,9 +166,6 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
   <div/$popover
     id=popoverId
     hidden=!open
-    tabindex=(
-      open && -1 // keeps focus inside the root on popover clicks, so onFocusOut does not close it
-    )
     class=[
       "date-textbox__popover",
       strategy === "fixed" && "date-textbox__popover--fixed",

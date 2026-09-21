@@ -73,16 +73,13 @@ describe("evo-date-input", () => {
     expect(trigger).toHaveAttribute("aria-expanded", "true");
     expect(trigger).toHaveAttribute("aria-controls", popover.id);
 
-    // The open popover carries tabindex="-1" so a click on its
-    // non-interactive content keeps focus inside the root instead of
-    // blurring to the body and closing it.
-    expect(popover).toHaveAttribute("tabindex", "-1");
-    await fireEvent.focusOut(root, { relatedTarget: popover });
+    // Pointerdown on non-interactive popover content keeps it open;
+    // pointerdown outside the component closes it, as does Escape.
+    await fireEvent.pointerDown(popover.querySelector("caption") as Element);
     expect(popover.hidden).toBe(false);
-
-    // Focus genuinely leaving still closes it, as does Escape.
-    await fireEvent.focusOut(root, { relatedTarget: null });
+    await fireEvent.pointerDown(document.body);
     expect(popover.hidden).toBe(true);
+
     await fireEvent.click(trigger);
     await fireEvent.keyDown(root, { key: "Escape" });
     expect(popover.hidden).toBe(true);
