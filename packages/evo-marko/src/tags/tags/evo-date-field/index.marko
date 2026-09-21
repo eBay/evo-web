@@ -5,7 +5,7 @@ import {
   parse,
   placeholder as localePlaceholder,
 } from "../../../common/dates/format";
-import type { Input as EvoInputInput } from "<evo-input>";
+import type { Input as TextboxInput } from "<evo-input>";
 
 // Committed date value; "" for an empty field.
 export type DateInputValue = DayISO | "";
@@ -17,8 +17,8 @@ export interface InvalidDateEvent {
 
 // evo-input attributes callers may customize on a date field. The date field
 // owns the value, type, disabled/readonly state, and the postfix icon slot.
-export type DateFieldAttrs = Omit<
-  EvoInputInput,
+export type FieldInput = Omit<
+  TextboxInput,
   | "value"
   | "valueChange"
   | "type"
@@ -31,44 +31,44 @@ export type DateFieldAttrs = Omit<
 >;
 
 export interface Input {
-  iso: DateInputValue;
+  value: DateInputValue;
   locale?: string;
   index: 0 | 1;
   disabled?: boolean;
   readonly?: boolean;
   invalid?: boolean;
-  field?: DateFieldAttrs;
+  field?: FieldInput;
   trigger?: {
     a11yText: string;
     open: boolean;
     popoverId: string;
     toggle: () => void;
   };
-  commit: (iso: DateInputValue) => void;
+  valueChange: (value: DateInputValue) => void;
   onInvalidDate?: (event: InvalidDateEvent) => void;
 }
 
-<const/{ iso, locale, index, disabled, readonly, trigger, commit }=input>
+<const/{ value, locale, index, disabled, readonly, trigger, valueChange }=input>
 <const/{
   placeholder,
   invalid: fieldInvalid,
   onBlur,
   ...field
-}=input.field ?? ({} as DateFieldAttrs)>
+}=input.field ?? ({} as FieldInput)>
 
-// `draft` holds in-progress typed text; the committed `iso` renders otherwise.
+// `draft` holds in-progress typed text; the committed `value` renders otherwise.
 <let/draft=null as string | null>
 <let/invalid=false>
-<let/prevIso=iso>
+<let/prevValue=value>
 <script>
   // An external change to the committed value discards any in-progress draft.
-  if (iso !== prevIso) {
-    prevIso = iso;
+  if (value !== prevValue) {
+    prevValue = value;
     draft = null;
     invalid = false;
   }
 </script>
-<const/display=draft ?? (iso ? format(iso, locale) : "")>
+<const/display=draft ?? (value ? format(value, locale) : "")>
 
 <evo-input
   ...field
@@ -86,7 +86,7 @@ export interface Input {
     if (text.trim() === "") {
       draft = null;
       invalid = false;
-      commit("");
+      valueChange("");
     } else {
       const parsed = parse(text, locale);
       if (parsed === null) {
@@ -96,7 +96,7 @@ export interface Input {
       } else {
         draft = null;
         invalid = false;
-        commit(parsed);
+        valueChange(parsed);
       }
     }
     onBlur && onBlur(e, el);

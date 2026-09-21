@@ -1,11 +1,11 @@
 import { localeDefault, type MonthISO } from "../../common/dates/date-utils";
 import type { RangeInput as CalendarRangeInput } from "<evo-calendar>";
 import type {
-  DateFieldAttrs,
+  FieldInput,
   DateInputValue,
   InvalidDateEvent,
 } from "<evo-date-field>";
-export type { DateFieldAttrs, DateInputValue, InvalidDateEvent };
+export type { FieldInput, DateInputValue, InvalidDateEvent };
 export type { DayISO } from "../../common/dates/date-utils";
 
 export interface DateInputRange {
@@ -15,7 +15,7 @@ export interface DateInputRange {
 
 // Calendar attributes callers may customize. The date range input owns the
 // selection, locale, and select mode.
-export interface DateRangeInputCalendarAttrs extends Omit<
+export interface CalendarInput extends Omit<
   CalendarRangeInput,
   "selectMode" | "selected" | "selectedChange" | "locale"
 > {
@@ -37,8 +37,8 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
   disabled?: boolean;
   readonly?: boolean;
   onInvalidDate?: (event: InvalidDateEvent) => void;
-  input?: Marko.AttrTag<DateFieldAttrs>;
-  calendar?: Marko.AttrTag<DateRangeInputCalendarAttrs>;
+  input?: Marko.AttrTag<FieldInput>;
+  calendar?: Marko.AttrTag<CalendarInput>;
 }
 
 <const/{
@@ -67,7 +67,7 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
   visibleMonthCount,
   disable,
   ...calendarRest
-}=calendar ?? ({} as DateRangeInputCalendarAttrs)>
+}=calendar ?? ({} as CalendarInput)>
 
 <let/value:=input.value>
 <let/open:=input.open>
@@ -131,20 +131,20 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
   }
 >
   <evo-date-field
-    iso=value?.from ?? ""
+    value=value?.from ?? ""
     locale=locale
     index=0
     disabled=disabled
     readonly=readonly
     invalid=inverted
     field=startField
-    commit(next) {
+    valueChange(next) {
       value = { from: next, to: value?.to };
     }
     onInvalidDate=onInvalidDate
   />
   <evo-date-field
-    iso=value?.to ?? ""
+    value=value?.to ?? ""
     locale=locale
     index=1
     disabled=disabled
@@ -157,7 +157,7 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
       popoverId,
       toggle,
     }
-    commit(next) {
+    valueChange(next) {
       value = { from: value?.from, to: next };
     }
     onInvalidDate=onInvalidDate
