@@ -36,10 +36,12 @@ describe("evo-date-range-input", () => {
 
     await fireEvent.input(end, { target: { value: "99/99/9999" } });
     await fireEvent.blur(end);
-    expect(onInvalidDate).toHaveBeenCalledWith({
-      value: "99/99/9999",
-      index: 1,
-    });
+    expect(onInvalidDate).toHaveBeenCalledWith(
+      expect.anything(),
+      expect.anything(),
+      "99/99/9999",
+      1,
+    );
   });
 
   it("marks both fields invalid when the start date is after the end", async () => {

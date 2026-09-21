@@ -3,9 +3,9 @@ import type { DayInput as CalendarDayInput } from "<evo-calendar>";
 import type {
   FieldInput,
   DateInputValue,
-  InvalidDateEvent,
+  Input as DateFieldInput,
 } from "<evo-date-field>";
-export type { FieldInput, DateInputValue, InvalidDateEvent };
+export type { FieldInput, DateInputValue };
 export type { DayISO } from "../../common/dates/date-utils";
 
 // Calendar attributes callers may customize. The date input owns the
@@ -13,9 +13,7 @@ export type { DayISO } from "../../common/dates/date-utils";
 export interface CalendarInput extends Omit<
   CalendarDayInput,
   "selectMode" | "selected" | "selectedChange" | "locale"
-> {
-  strategy?: "absolute" | "fixed";
-}
+> {}
 
 export interface Input extends Omit<Marko.HTML.Span, "value"> {
   value?: DateInputValue;
@@ -31,7 +29,9 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
   openChange?: (open: boolean) => void;
   disabled?: boolean;
   readonly?: boolean;
-  onInvalidDate?: (event: InvalidDateEvent) => void;
+  invalid?: boolean;
+  strategy?: "absolute" | "fixed";
+  onInvalidDate?: DateFieldInput["onInvalidDate"];
   input?: Marko.AttrTag<FieldInput>;
   calendar?: Marko.AttrTag<CalendarInput>;
 }
@@ -42,6 +42,8 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
   collapseOnSelect,
   disabled,
   readonly,
+  invalid,
+  strategy,
   onInvalidDate,
   input: field,
   calendar,
@@ -55,7 +57,6 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
 }=input>
 <const/locale=localeDefault(input.locale)>
 <const/{
-  strategy,
   visibleMonth: controlledVisibleMonth,
   visibleMonthChange,
   visibleMonthCount,
@@ -123,6 +124,7 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
     index=0
     disabled=disabled
     readonly=readonly
+    invalid=invalid
     field=field
     trigger={
       a11yText: a11yOpenPopoverText,

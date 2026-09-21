@@ -59,17 +59,27 @@ export default {
       control: "boolean",
       description: "Prevents typing and calendar selection",
     },
+    invalid: {
+      type: "boolean",
+      control: "boolean",
+      description: "Indicates a field-level error with red border",
+    },
+    strategy: {
+      type: "string",
+      options: ["absolute (default)", "fixed"],
+      control: "inline-radio",
+      description: "Positioning strategy for the calendar popover",
+    },
     onInvalidDate: {
       description:
-        "Called with `{ value, index }` when the field blurs with text that cannot be parsed as a date",
+        "Called with `(event, target, value, index)` when the field blurs with text that cannot be parsed as a date",
     },
     input: {
       description: "Attributes forwarded to the internal `evo-input` field",
       "@": {},
     },
     calendar: {
-      description:
-        "Attributes forwarded to the internal `evo-calendar`, plus `strategy` (`absolute` | `fixed`) for popover positioning",
+      description: "Attributes forwarded to the internal `evo-calendar`",
       "@": {},
     },
     ["<span> attributes" as any]: {

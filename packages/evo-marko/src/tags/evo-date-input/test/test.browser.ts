@@ -49,10 +49,12 @@ describe("evo-date-input", () => {
     await fireEvent.input(textbox, { target: { value: "99/99/9999" } });
     await fireEvent.blur(textbox);
     expect(textbox).toHaveAttribute("aria-invalid", "true");
-    expect(onInvalidDate).toHaveBeenCalledWith({
-      value: "99/99/9999",
-      index: 0,
-    });
+    expect(onInvalidDate).toHaveBeenCalledWith(
+      expect.anything(),
+      expect.anything(),
+      "99/99/9999",
+      0,
+    );
   });
 
   it("opens and closes the calendar popover", async () => {

@@ -3,9 +3,9 @@ import type { RangeInput as CalendarRangeInput } from "<evo-calendar>";
 import type {
   FieldInput,
   DateInputValue,
-  InvalidDateEvent,
+  Input as DateFieldInput,
 } from "<evo-date-field>";
-export type { FieldInput, DateInputValue, InvalidDateEvent };
+export type { FieldInput, DateInputValue };
 export type { DayISO } from "../../common/dates/date-utils";
 
 export interface DateInputRange {
@@ -18,9 +18,7 @@ export interface DateInputRange {
 export interface CalendarInput extends Omit<
   CalendarRangeInput,
   "selectMode" | "selected" | "selectedChange" | "locale"
-> {
-  strategy?: "absolute" | "fixed";
-}
+> {}
 
 export interface Input extends Omit<Marko.HTML.Span, "value"> {
   value?: DateInputRange;
@@ -36,7 +34,9 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
   openChange?: (open: boolean) => void;
   disabled?: boolean;
   readonly?: boolean;
-  onInvalidDate?: (event: InvalidDateEvent) => void;
+  invalid?: boolean;
+  strategy?: "absolute" | "fixed";
+  onInvalidDate?: DateFieldInput["onInvalidDate"];
   input?: Marko.AttrTag<FieldInput>;
   calendar?: Marko.AttrTag<CalendarInput>;
 }
@@ -47,6 +47,8 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
   collapseOnSelect,
   disabled,
   readonly,
+  invalid,
+  strategy,
   onInvalidDate,
   input: fields,
   calendar,
@@ -61,7 +63,6 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
 <const/locale=localeDefault(input.locale)>
 <const/[startField, endField]=[...(fields ?? [])]>
 <const/{
-  strategy,
   visibleMonth: controlledVisibleMonth,
   visibleMonthChange,
   visibleMonthCount,
@@ -136,7 +137,7 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
     index=0
     disabled=disabled
     readonly=readonly
-    invalid=inverted
+    invalid=invalid || inverted
     field=startField
     valueChange(next) {
       value = { from: next, to: value?.to };
@@ -149,7 +150,7 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
     index=1
     disabled=disabled
     readonly=readonly
-    invalid=inverted
+    invalid=invalid || inverted
     field=endField
     trigger={
       a11yText: a11yOpenPopoverText,
