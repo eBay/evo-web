@@ -2,6 +2,7 @@ import { localeDefault, type MonthISO } from "../../common/dates/date-utils";
 import type { RangeInput as CalendarRangeInput } from "<evo-calendar>";
 import type {
   FieldInput,
+  FieldRef,
   DateInputValue,
   Input as DateFieldInput,
 } from "<evo-date-field>";
@@ -100,9 +101,6 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
   }
 </script>
 
-<const/focusField() {
-  endFieldControl().focus();
-}>
 <const/toggle() {
   if (disabled || readonly) return;
   if (!open) {
@@ -126,7 +124,7 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
   onKeyDown(e, el) {
     if (e.key === "Escape" && open) {
       open = false;
-      focusField();
+      focusTrigger();
     }
     onKeyDown && onKeyDown(e, el);
   }
@@ -144,7 +142,7 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
     }
     onInvalidDate=onInvalidDate
   />
-  <evo-date-field/endFieldControl
+  <evo-date-field/endFieldControl: FieldRef
     value=value?.to ?? ""
     locale=locale
     index=1
@@ -163,6 +161,9 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
     }
     onInvalidDate=onInvalidDate
   />
+  <const/focusTrigger() {
+    endFieldControl.postfixButton?.()?.focus();
+  }>
   <div/$popover
     id=popoverId
     hidden=!open
@@ -194,7 +195,7 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
         value = { from: next.from ?? "", to: next.to ?? "" };
         if (collapseOnSelect && next.from && next.to) {
           open = false;
-          focusField();
+          focusTrigger();
         }
       }
     />

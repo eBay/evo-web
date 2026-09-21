@@ -9,6 +9,11 @@ import type { Input as TextboxInput } from "<evo-input>";
 
 export type DateInputValue = DayISO | "";
 
+export interface FieldRef {
+  control: () => HTMLInputElement;
+  postfixButton?: () => HTMLButtonElement;
+}
+
 export type FieldInput = Omit<
   TextboxInput,
   | "value"
@@ -66,7 +71,7 @@ export interface Input {
 </script>
 <const/display=draft ?? (value ? format(value, locale) : "")>
 
-<evo-input/control
+<evo-input/control: FieldRef
   ...field
   disabled=disabled
   readonly=readonly
