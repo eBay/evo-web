@@ -21,6 +21,8 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
   /**
    * Accessible label for the button that opens the calendar popover, mapped
    * to `aria-label`.
+   *
+   * English default to be overridden is `"open calendar"`
    */
   a11yOpenPopoverText: string;
   collapseOnSelect?: boolean;
@@ -37,7 +39,7 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
 
 <const/{
   class: inputClass,
-  a11yOpenPopoverText,
+  a11yOpenPopoverText = "open calendar",
   collapseOnSelect,
   disabled,
   readonly,

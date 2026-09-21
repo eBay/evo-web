@@ -1,3 +1,8 @@
+export interface InputRef {
+  control: () => HTMLInputElement;
+  postfixButton?: () => HTMLButtonElement;
+}
+
 export interface Input extends Marko.HTML.Input {
   inputSize?: "regular" | "large";
   fluid?: boolean;
@@ -109,6 +114,5 @@ export interface Input extends Marko.HTML.Input {
 
 <return={
   control: $control,
-  postfixButton: $postfixButton as unknown as
-    (() => HTMLButtonElement) | undefined,
+  postfixButton: $postfixButton as unknown as InputRef["postfixButton"],
 }>

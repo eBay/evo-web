@@ -43,6 +43,7 @@ export default {
       control: "text",
       description:
         "Accessible label for the button that opens the calendar popover",
+      table: { defaultValue: { summary: "open calendar" } },
     },
     collapseOnSelect: {
       type: "boolean",
