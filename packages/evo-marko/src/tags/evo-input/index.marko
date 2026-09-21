@@ -94,7 +94,7 @@ export interface Input extends Marko.HTML.Input {
     <if=postfixText><span ...postfixText id=postfixId/></if>
     <if=postfixIcon>
       <const/{ a11yText, ...postfixIconInput }=postfixIcon>
-      <${a11yText && "button"}/$postfixButton
+      <${a11yText && "button"}
         ...postfixIconInput
         aria-label=a11yText
         class=["icon-btn", "icon-btn--transparent", postfixIcon.class]
@@ -107,8 +107,4 @@ export interface Input extends Marko.HTML.Input {
   </>
 </evo-floating-label>
 
-<return={
-  control: $control,
-  postfixButton: $postfixButton as unknown as
-    (() => HTMLButtonElement) | undefined,
-}>
+<return=$control>
