@@ -5,11 +5,14 @@ import {
   parse,
   placeholder as localePlaceholder,
 } from "../../../common/dates/format";
-import type { Input as TextboxInput, InputRef } from "<evo-input>";
+import type { Input as TextboxInput } from "<evo-input>";
 
 export type DateInputValue = DayISO | "";
 
-export type FieldRef = InputRef;
+export interface FieldRef {
+  control: () => HTMLInputElement;
+  postfixButton?: () => HTMLButtonElement;
+}
 
 export type FieldInput = Omit<
   TextboxInput,
