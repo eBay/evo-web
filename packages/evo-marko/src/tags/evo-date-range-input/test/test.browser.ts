@@ -42,6 +42,26 @@ describe("evo-date-range-input", () => {
     });
   });
 
+  it("marks both fields invalid when the start date is after the end", async () => {
+    // Uncontrolled render — a valueChange prop would make the range
+    // fully controlled and freeze the internal value.
+    component = await render(Default, { locale: "en-US" });
+    const [start, end] = component.getAllByRole(
+      "textbox",
+    ) as HTMLInputElement[];
+    await fireEvent.input(start, { target: { value: "12/08/2024" } });
+    await fireEvent.blur(start);
+    await fireEvent.input(end, { target: { value: "12/01/2024" } });
+    await fireEvent.blur(end);
+    expect(start).toHaveAttribute("aria-invalid", "true");
+    expect(end).toHaveAttribute("aria-invalid", "true");
+
+    await fireEvent.input(end, { target: { value: "12/25/2024" } });
+    await fireEvent.blur(end);
+    expect(start).not.toHaveAttribute("aria-invalid");
+    expect(end).not.toHaveAttribute("aria-invalid");
+  });
+
   it("opens the shared calendar popover from the single trigger", async () => {
     const [trigger] = component.getAllByRole("button", {
       name: "Open calendar",

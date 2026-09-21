@@ -79,6 +79,9 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
   return iso ? (iso.slice(0, 7) as MonthISO) : undefined;
 }>
 <let/visibleMonth=monthOf(value)>
+// ISO dates compare lexicographically, so a committed start after the
+// committed end puts both fields in the error state.
+<const/inverted=(!!value?.from && !!value?.to && value.from > value.to)>
 // Show two month panes on wide viewports unless the caller overrides.
 <let/paneCount=1>
 <script>
@@ -133,6 +136,7 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
     index=0
     disabled=disabled
     readonly=readonly
+    invalid=inverted
     field=startField
     commit(next) {
       value = { from: next, to: value?.to };
@@ -145,6 +149,7 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
     index=1
     disabled=disabled
     readonly=readonly
+    invalid=inverted
     field=endField
     trigger={
       a11yText: a11yOpenPopoverText,

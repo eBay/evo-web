@@ -36,6 +36,7 @@ export interface Input {
   index: 0 | 1;
   disabled?: boolean;
   readonly?: boolean;
+  invalid?: boolean;
   field?: DateFieldAttrs;
   trigger?: {
     a11yText: string;
@@ -73,7 +74,7 @@ export interface Input {
   ...field
   disabled=disabled
   readonly=readonly
-  invalid=fieldInvalid || invalid
+  invalid=fieldInvalid || invalid || input.invalid
   placeholder=placeholder ?? localePlaceholder(locale)
   value=display
   valueChange(next) {
