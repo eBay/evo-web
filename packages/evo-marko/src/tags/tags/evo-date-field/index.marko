@@ -34,7 +34,7 @@ export interface Input {
   disabled?: boolean;
   readonly?: boolean;
   invalid?: boolean;
-  field?: FieldInput;
+  field?: Marko.AttrTag<FieldInput>;
   trigger?: {
     a11yText: string;
     open: boolean;

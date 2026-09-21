@@ -61,7 +61,9 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
   ...htmlInput
 }=input>
 <const/locale=localeDefault(input.locale)>
-<const/[startField, endField]=[...(fields ?? [])]>
+<const/[startField, endField]=[
+  ...(fields ?? []),
+] as Marko.AttrTag<FieldInput>[]>
 <const/{
   visibleMonth: controlledVisibleMonth,
   visibleMonthChange,
