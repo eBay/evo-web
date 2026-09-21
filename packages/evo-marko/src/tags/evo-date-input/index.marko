@@ -2,6 +2,7 @@ import { localeDefault, type MonthISO } from "../../common/dates/date-utils";
 import type { DayInput as CalendarDayInput } from "<evo-calendar>";
 import type {
   FieldInput,
+  FieldRef,
   DateInputValue,
   Input as DateFieldInput,
 } from "<evo-date-field>";
@@ -89,9 +90,6 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
   }
 </script>
 
-<const/focusField() {
-  fieldControl().focus();
-}>
 <const/toggle() {
   if (disabled || readonly) return;
   if (!open && value) {
@@ -115,12 +113,12 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
   onKeyDown(e, el) {
     if (e.key === "Escape" && open) {
       open = false;
-      focusField();
+      focusTrigger();
     }
     onKeyDown && onKeyDown(e, el);
   }
 >
-  <evo-date-field/fieldControl
+  <evo-date-field/fieldControl: FieldRef
     value=value ?? ""
     locale=locale
     index=0
@@ -139,6 +137,9 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
     }
     onInvalidDate=onInvalidDate
   />
+  <const/focusTrigger() {
+    fieldControl.postfixButton?.()?.focus();
+  }>
   <div/$popover
     id=popoverId
     hidden=!open
@@ -167,7 +168,7 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
         value = next;
         if (collapseOnSelect) {
           open = false;
-          focusField();
+          focusTrigger();
         }
       }
     />

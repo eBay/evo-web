@@ -83,6 +83,7 @@ describe("evo-date-input", () => {
     await fireEvent.click(trigger);
     await fireEvent.keyDown(root, { key: "Escape" });
     expect(popover.hidden).toBe(true);
+    expect(document.activeElement).toBe(trigger);
   });
 
   it("disables the field and popover when disabled", async () => {
