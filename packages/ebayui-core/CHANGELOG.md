@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 16.17.1
+
+### Patch Changes
+
+- [#970](https://github.com/eBay/evo-web/pull/970) [`62b5266`](https://github.com/eBay/evo-web/commit/62b52660226eddbb06d75cba6be6b773f6bee127) Thanks [@LuLaValva](https://github.com/LuLaValva)! - restore CommonJS dist output, unintentionally switched to ESM in the toolchain update
+
 ## 16.17.0
 
 ### Minor Changes
