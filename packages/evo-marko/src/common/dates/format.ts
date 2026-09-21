@@ -86,31 +86,64 @@ export function placeholder(locale?: string) {
 }
 
 /**
- * Reformat freeform typed text into the locale's date layout, chunking the
- * digits and inserting the locale's separators (e.g. "12082024" ->
- * "12/08/2024" for en-US).
+ * Reformat freeform typed text into the locale's date layout (e.g.
+ * "12082024" -> "12/08/2024" for en-US).
+ *
+ * Typed separators are treated as structure, so each date part can be edited
+ * independently — "04//2000" keeps its empty middle part instead of pulling
+ * digits across from the year. Only a continuous digit run overflowing a
+ * part's length flows into the following part, and separators are normalized
+ * to the locale's.
  *
  * When `eager` is true a separator is also appended the moment the final typed
- * segment is complete; pass `false` while the user is deleting so a
- * just-removed separator is not immediately re-added.
+ * part is complete; pass `false` while the user is deleting so a just-removed
+ * separator is not immediately re-added.
  */
 export function maskDate(raw: string, locale?: string, eager = true): string {
   const { o: order, s: sep } = getLocale(locale);
-  const digits = raw.replace(/\D/g, "");
+  const max = (i: number) => (order[i] === "y" ? 4 : 2);
+
+  // Split on each individual separator (falling back to any other non-digit
+  // character), keeping empty parts so "04//2000" retains its empty middle.
+  const uniqueSeps = [...new Set(sep.filter(Boolean))];
+  const splitter = new RegExp(
+    uniqueSeps
+      .map((s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+      .concat("\\D")
+      .join("|"),
+  );
+  const parts: string[] = [];
+  for (const segment of raw.split(splitter)) {
+    let rest = segment;
+    do {
+      if (parts.length < 3) {
+        parts.push(rest.slice(0, max(parts.length)));
+        rest = rest.slice(max(parts.length - 1));
+      } else {
+        // Extra digits or separators beyond three parts fold into the last.
+        parts[2] = (parts[2] + rest).slice(0, max(2));
+        rest = "";
+      }
+    } while (rest);
+  }
+
   let result = "";
-  let consumed = 0;
-  for (let i = 0; i < 3 && consumed < digits.length; i++) {
-    const length = order[i] === "y" ? 4 : 2;
-    const segment = digits.slice(consumed, consumed + length);
-    consumed += segment.length;
-    result += segment;
-    if (
-      sep[i] &&
-      segment.length === length &&
-      (consumed < digits.length || eager)
-    ) {
-      result += sep[i];
+  for (let i = 0; i < parts.length; i++) {
+    result += parts[i];
+    if (i < parts.length - 1) {
+      result += sep[i] ?? "";
     }
+  }
+
+  const last = parts.length - 1;
+  if (
+    eager &&
+    parts.length < 3 &&
+    parts[last] &&
+    parts[last].length === max(last) &&
+    sep[last]
+  ) {
+    result += sep[last];
   }
   return result;
 }

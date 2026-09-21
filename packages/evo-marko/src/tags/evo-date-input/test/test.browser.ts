@@ -54,6 +54,20 @@ describe("evo-date-input", () => {
     expect(textbox.value).toBe("12");
   });
 
+  it("lets each date part be edited independently", async () => {
+    const textbox = component.getByRole("textbox") as HTMLInputElement;
+    for (const step of [
+      "04/24/2000",
+      "04/2/2000",
+      "04//2000",
+      "04/1/2000",
+      "04/15/2000",
+    ]) {
+      await fireEvent.input(textbox, { target: { value: step } });
+      expect(textbox.value).toBe(step);
+    }
+  });
+
   it("formats the committed value on blur", async () => {
     const textbox = component.getByRole("textbox") as HTMLInputElement;
     await fireEvent.input(textbox, { target: { value: "12082024" } });
