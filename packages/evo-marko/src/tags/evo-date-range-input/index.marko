@@ -100,8 +100,8 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
   }
 </script>
 
-<const/focusTrigger() {
-  $root().querySelector<HTMLElement>(`[aria-controls="${popoverId}"]`)?.focus();
+<const/focusField() {
+  endFieldControl().focus();
 }>
 <const/toggle() {
   if (disabled || readonly) return;
@@ -126,7 +126,7 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
   onKeyDown(e, el) {
     if (e.key === "Escape" && open) {
       open = false;
-      focusTrigger();
+      focusField();
     }
     onKeyDown && onKeyDown(e, el);
   }
@@ -144,7 +144,7 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
     }
     onInvalidDate=onInvalidDate
   />
-  <evo-date-field
+  <evo-date-field/endFieldControl
     value=value?.to ?? ""
     locale=locale
     index=1
@@ -194,7 +194,7 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
         value = { from: next.from ?? "", to: next.to ?? "" };
         if (collapseOnSelect && next.from && next.to) {
           open = false;
-          focusTrigger();
+          focusField();
         }
       }
     />

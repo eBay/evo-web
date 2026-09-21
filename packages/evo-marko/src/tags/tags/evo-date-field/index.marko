@@ -66,7 +66,7 @@ export interface Input {
 </script>
 <const/display=draft ?? (value ? format(value, locale) : "")>
 
-<evo-input
+<evo-input/control
   ...field
   disabled=disabled
   readonly=readonly
@@ -110,3 +110,5 @@ export interface Input {
     </@postfixIcon>
   </if>
 </evo-input>
+
+<return=control>
