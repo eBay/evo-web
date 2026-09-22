@@ -115,6 +115,61 @@ describe("evo-video", () => {
     await expect.element(seek).toHaveAttribute("aria-valuetext", "0:30");
   });
 
+  it("updates the timeline with arrow keys", async () => {
+    const screen = await render(
+      <EvoVideo
+        {...defaultProps}
+        controls={{ timeline: { a11yText: "Seek" } }}
+      />,
+    );
+    await startPlayback(screen.container);
+
+    const video = getVideo(screen.container);
+    Object.defineProperty(video, "duration", {
+      configurable: true,
+      value: 120,
+    });
+    video.currentTime = 30;
+    video.dispatchEvent(new Event("timeupdate"));
+
+    const seek = screen.getByLabelText("Seek");
+    await user.tab();
+    await user.tab();
+    await expect.element(seek).toHaveFocus();
+    await user.keyboard("{ArrowRight}");
+
+    expect(video.currentTime).toBeGreaterThan(30);
+    expect(Number((seek.element() as HTMLInputElement).value)).toBeGreaterThan(
+      0.25,
+    );
+  });
+
+  it("clamps the timeline when the timestamp exceeds the duration", async () => {
+    const screen = await render(
+      <EvoVideo
+        {...defaultProps}
+        currentTime={180}
+        controls={{ timeline: { a11yText: "Seek" } }}
+      />,
+    );
+    await startPlayback(screen.container);
+
+    const video = getVideo(screen.container);
+    Object.defineProperty(video, "duration", {
+      configurable: true,
+      value: 120,
+    });
+    video.dispatchEvent(new Event("durationchange"));
+
+    const seek = screen.getByLabelText("Seek");
+    await expect.element(seek).toHaveValue("1");
+    expect(
+      (seek.element() as HTMLInputElement).style.getPropertyValue(
+        "--value-percent",
+      ),
+    ).toBe("100%");
+  });
+
   it("manages captions menu focus within the control", async () => {
     const screen = await render(
       <>
