@@ -18,4 +18,10 @@ describe("accordion", () => {
       a11yRoleDescription: "Akkordeon",
     });
   });
+
+  it("renders accordion headers with a custom heading tag", async () => {
+    await snapshotHTML(Default, {
+      a11yHeadingTag: "h3",
+    });
+  });
 });

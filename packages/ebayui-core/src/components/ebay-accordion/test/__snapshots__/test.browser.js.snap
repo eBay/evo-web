@@ -87,10 +87,14 @@ exports[`accordion > given the accordion in the default state > then it matches 
             }
             &::marker {font-size: 0px}
           }}</style>
-          <span style="
+          <h2 style="
             animation-duration: 0ms;
             flex-basis: 0%;
             flex-grow: 1;
+            font-size: inherit;
+            font-weight: inherit;
+            margin-bottom: 0px;
+            margin-top: 0px;
             transition-delay: 0ms;
             transition-duration: 0ms
           ">
@@ -98,7 +102,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
               &::marker {font-size: 0px}
             }}</style>
             Item 1
-          </span>
+          </h2>
           <span
             hidden
             style="
@@ -243,10 +247,14 @@ exports[`accordion > given the accordion in the default state > then it matches 
             }
             &::marker {font-size: 0px}
           }}</style>
-          <span style="
+          <h2 style="
             animation-duration: 0ms;
             flex-basis: 0%;
             flex-grow: 1;
+            font-size: inherit;
+            font-weight: inherit;
+            margin-bottom: 0px;
+            margin-top: 0px;
             transition-delay: 0ms;
             transition-duration: 0ms
           ">
@@ -254,7 +262,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
               &::marker {font-size: 0px}
             }}</style>
             Item 2
-          </span>
+          </h2>
           <span
             hidden
             style="
@@ -398,10 +406,14 @@ exports[`accordion > given the accordion in the default state > then it matches 
             }
             &::marker {font-size: 0px}
           }}</style>
-          <span style="
+          <h2 style="
             animation-duration: 0ms;
             flex-basis: 0%;
             flex-grow: 1;
+            font-size: inherit;
+            font-weight: inherit;
+            margin-bottom: 0px;
+            margin-top: 0px;
             transition-delay: 0ms;
             transition-duration: 0ms
           ">
@@ -409,7 +421,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
               &::marker {font-size: 0px}
             }}</style>
             Item 3
-          </span>
+          </h2>
           <span
             hidden
             style="
@@ -525,7 +537,7 @@ exports[`accordion > given the accordion in the default state > when first secti
                bottom: 0px;
                content: "";
                left: 0px;
-@@ -101,6 +104,7 @@
+@@ -105,6 +108,7 @@
              style="
                animation-duration: 0ms;
                display: inline-flex;
@@ -533,7 +545,7 @@ exports[`accordion > given the accordion in the default state > when first secti
                transition-delay: 0ms;
                transition-duration: 0ms
              "
-@@ -112,8 +116,10 @@
+@@ -116,8 +120,10 @@
                focusable="false"
                style="
                  animation-duration: 0ms;
@@ -545,7 +557,7 @@ exports[`accordion > given the accordion in the default state > when first secti
                  height: 16px;
                  pointer-events: none;
                  stroke-width: 0;
-@@ -268,6 +274,8 @@
+@@ -276,6 +282,8 @@
                focusable="false"
                style="
                  animation-duration: 0ms;
@@ -554,7 +566,7 @@ exports[`accordion > given the accordion in the default state > when first secti
                  display: inline-block;
                  fill: var(--color-foreground-secondary);
                  height: 16px;
-@@ -423,6 +431,8 @@
+@@ -435,6 +443,8 @@
                focusable="false"
                style="
                  animation-duration: 0ms;
@@ -576,7 +588,7 @@ exports[`accordion > given the accordion in the default state > when first secti
                bottom: 0px;
                content: "";
                left: 0px;
-@@ -112,6 +112,8 @@
+@@ -116,6 +116,8 @@
                focusable="false"
                style="
                  animation-duration: 0ms;
@@ -585,7 +597,7 @@ exports[`accordion > given the accordion in the default state > when first secti
                  display: inline-block;
                  fill: var(--color-foreground-secondary);
                  height: 16px;
-@@ -268,6 +270,8 @@
+@@ -276,6 +278,8 @@
                focusable="false"
                style="
                  animation-duration: 0ms;
@@ -594,7 +606,7 @@ exports[`accordion > given the accordion in the default state > when first secti
                  display: inline-block;
                  fill: var(--color-foreground-secondary);
                  height: 16px;
-@@ -423,6 +427,8 @@
+@@ -435,6 +439,8 @@
                focusable="false"
                style="
                  animation-duration: 0ms;
@@ -645,7 +657,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
                bottom: 0px;
                content: "";
                left: 0px;
-@@ -101,6 +104,7 @@
+@@ -105,6 +108,7 @@
              style="
                animation-duration: 0ms;
                display: inline-flex;
@@ -653,7 +665,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
                transition-delay: 0ms;
                transition-duration: 0ms
              "
-@@ -112,8 +116,10 @@
+@@ -116,8 +120,10 @@
                focusable="false"
                style="
                  animation-duration: 0ms;
@@ -665,7 +677,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
                  height: 16px;
                  pointer-events: none;
                  stroke-width: 0;
-@@ -268,6 +274,8 @@
+@@ -276,6 +282,8 @@
                focusable="false"
                style="
                  animation-duration: 0ms;
@@ -674,7 +686,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
                  display: inline-block;
                  fill: var(--color-foreground-secondary);
                  height: 16px;
-@@ -423,6 +431,8 @@
+@@ -435,6 +443,8 @@
                focusable="false"
                style="
                  animation-duration: 0ms;
@@ -696,7 +708,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
                bottom: 0px;
                content: "";
                left: 0px;
-@@ -112,6 +112,8 @@
+@@ -116,6 +116,8 @@
                focusable="false"
                style="
                  animation-duration: 0ms;
@@ -705,7 +717,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
                  display: inline-block;
                  fill: var(--color-foreground-secondary);
                  height: 16px;
-@@ -177,17 +179,20 @@
+@@ -181,17 +183,20 @@
        <style>@scope{:scope{
          &::marker {font-size: 0px}
        }}</style>
@@ -734,7 +746,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
              overflow-x: clip;
              overflow-y: clip;
              transition-delay: 0ms;
-@@ -257,6 +262,7 @@
+@@ -265,6 +270,7 @@
              style="
                animation-duration: 0ms;
                display: inline-flex;
@@ -742,7 +754,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
                transition-delay: 0ms;
                transition-duration: 0ms
              "
-@@ -268,8 +274,10 @@
+@@ -276,8 +282,10 @@
                focusable="false"
                style="
                  animation-duration: 0ms;
@@ -754,7 +766,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
                  height: 16px;
                  pointer-events: none;
                  stroke-width: 0;
-@@ -423,6 +431,8 @@
+@@ -435,6 +443,8 @@
                focusable="false"
                style="
                  animation-duration: 0ms;

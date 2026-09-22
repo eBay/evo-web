@@ -55,6 +55,17 @@ export default {
                 },
             },
         },
+        a11yHeadingTag: {
+            type: "string",
+            control: { type: "text" },
+            description:
+                "Heading tag for each accordion header (default: `h2`)",
+            table: {
+                defaultValue: {
+                    summary: "h2",
+                },
+            },
+        },
         details: {
             name: "@details",
             description:
