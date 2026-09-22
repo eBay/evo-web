@@ -1,5 +1,5 @@
 import { useCallback, useId, useMemo, useRef, useState } from "react";
-import type { ChangeEvent, MouseEvent } from "react";
+import type { ChangeEvent } from "react";
 import classNames from "classnames";
 import { EvoIconAdd24 } from "../icon/icons/add-24";
 import { EvoIconDelete24 } from "../icon/icons/delete-24";
@@ -43,9 +43,7 @@ export function EvoNumberInput({
   max,
   min,
   onChange,
-  onDecrement,
   onDelete,
-  onIncrement,
   ref,
   value,
   ...rest
@@ -95,51 +93,45 @@ export function EvoNumberInput({
     inputRef.current?.focus();
   }, [inputRef]);
 
-  const handleIncrement = useCallback(
-    (event: MouseEvent<HTMLButtonElement>) => {
-      const nextValue = checkBoundary(displayValue + 1);
-      handleAnimation(
-        nextValue >= resolvedMax ? "increment-disabled" : "increment",
-      );
-      if (value === undefined) {
-        setUncontrolledValue(nextValue);
-      }
-      onIncrement?.(event, nextValue);
-      focusInput();
-    },
-    [
-      checkBoundary,
-      displayValue,
-      focusInput,
-      handleAnimation,
-      onIncrement,
-      resolvedMax,
-      value,
-    ],
-  );
+  const handleIncrement = useCallback(() => {
+    const nextValue = checkBoundary(displayValue + 1);
+    handleAnimation(
+      nextValue >= resolvedMax ? "increment-disabled" : "increment",
+    );
+    if (value === undefined) {
+      setUncontrolledValue(nextValue);
+    }
+    onChange?.(nextValue);
+    focusInput();
+  }, [
+    checkBoundary,
+    displayValue,
+    focusInput,
+    handleAnimation,
+    onChange,
+    resolvedMax,
+    value,
+  ]);
 
-  const handleDecrement = useCallback(
-    (event: MouseEvent<HTMLButtonElement>) => {
-      const nextValue = checkBoundary(displayValue - 1);
-      handleAnimation(
-        nextValue <= resolvedMin ? "decrement-disabled" : "decrement",
-      );
-      if (value === undefined) {
-        setUncontrolledValue(nextValue);
-      }
-      onDecrement?.(event, nextValue);
-      focusInput();
-    },
-    [
-      checkBoundary,
-      displayValue,
-      focusInput,
-      handleAnimation,
-      onDecrement,
-      resolvedMin,
-      value,
-    ],
-  );
+  const handleDecrement = useCallback(() => {
+    const nextValue = checkBoundary(displayValue - 1);
+    handleAnimation(
+      nextValue <= resolvedMin ? "decrement-disabled" : "decrement",
+    );
+    if (value === undefined) {
+      setUncontrolledValue(nextValue);
+    }
+    onChange?.(nextValue);
+    focusInput();
+  }, [
+    checkBoundary,
+    displayValue,
+    focusInput,
+    handleAnimation,
+    onChange,
+    resolvedMin,
+    value,
+  ]);
 
   const handleInputChange = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
@@ -149,7 +141,7 @@ export function EvoNumberInput({
       if (value === undefined) {
         setUncontrolledValue(nextValue);
       }
-      onChange?.(event);
+      onChange?.(nextValue);
     },
     [checkBoundary, onChange, value],
   );

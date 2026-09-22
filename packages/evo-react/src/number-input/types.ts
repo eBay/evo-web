@@ -1,4 +1,4 @@
-import type { ChangeEventHandler, MouseEvent } from "react";
+import type { MouseEvent } from "react";
 import type { EvoInputProps } from "../input";
 
 type NumberInputAccessibilityProps =
@@ -35,12 +35,8 @@ type NumberInputBehaviorProps = {
   min?: number;
   /** Maximum numeric value. Defaults to `Infinity`. */
   max?: number;
-  /** Called when the native input value changes directly. */
-  onChange?: ChangeEventHandler<HTMLInputElement>;
-  /** Called after an increment click with the proposed numeric value. */
-  onIncrement?: (event: MouseEvent<HTMLButtonElement>, value: number) => void;
-  /** Called after a decrement click with the proposed numeric value. */
-  onDecrement?: (event: MouseEvent<HTMLButtonElement>, value: number) => void;
+  /** Called with the next value after direct input or a paddle click. */
+  onChange?: (value: number) => void;
   /** Called when the delete button is clicked. */
   onDelete?: (event: MouseEvent<HTMLButtonElement>) => void;
 };

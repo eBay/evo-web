@@ -24,8 +24,6 @@ const meta: Meta<typeof EvoNumberInput> = {
     },
     invalid: { control: "boolean" },
     onChange: { action: "onChange", table: { category: "Events" } },
-    onIncrement: { action: "onIncrement", table: { category: "Events" } },
-    onDecrement: { action: "onDecrement", table: { category: "Events" } },
     onDelete: { action: "onDelete", table: { category: "Events" } },
   },
   args: {
@@ -77,17 +75,9 @@ export const Controlled: Story = {
         <EvoNumberInput
           {...args}
           value={value}
-          onChange={(event) => {
-            setValue(Number(event.currentTarget.value));
-            args.onChange?.(event);
-          }}
-          onIncrement={(event, nextValue) => {
+          onChange={(nextValue) => {
             setValue(nextValue);
-            args.onIncrement?.(event, nextValue);
-          }}
-          onDecrement={(event, nextValue) => {
-            setValue(nextValue);
-            args.onDecrement?.(event, nextValue);
+            args.onChange?.(nextValue);
           }}
         />
 

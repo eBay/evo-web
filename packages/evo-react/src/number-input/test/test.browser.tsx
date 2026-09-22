@@ -60,7 +60,7 @@ describe("evo-number-input", () => {
       .toHaveAttribute("for", "item-quantity");
   });
 
-  it("updates an uncontrolled value from direct input and passes the native event", async () => {
+  it("updates an uncontrolled value from direct input and calls onChange", async () => {
     const onChange = vi.fn();
     const screen = await render(
       <EvoNumberInput a11yText="Item quantity" onChange={onChange} />,
@@ -71,19 +71,16 @@ describe("evo-number-input", () => {
     await user.type(input, "4");
 
     await expect.element(input).toHaveValue(4);
-    expect(onChange).toHaveBeenCalled();
-    const lastCall = onChange.mock.calls[onChange.mock.calls.length - 1];
-    expect(lastCall).toHaveLength(1);
-    expect(lastCall[0].nativeEvent).toBeInstanceOf(Event);
+    expect(onChange).toHaveBeenLastCalledWith(4);
   });
 
   it("passes the clamped displayed value to direct input callbacks", async () => {
-    const displayedValues: string[] = [];
+    const displayedValues: number[] = [];
     const screen = await render(
       <EvoNumberInput
         a11yText="Item quantity"
         max={5}
-        onChange={(event) => displayedValues.push(event.currentTarget.value)}
+        onChange={(nextValue) => displayedValues.push(nextValue)}
       />,
     );
     const input = screen.getByRole("spinbutton", { name: "Item quantity" });
@@ -92,46 +89,10 @@ describe("evo-number-input", () => {
     await user.type(input, "8");
 
     await expect.element(input).toHaveValue(5);
-    expect(displayedValues[displayedValues.length - 1]).toBe("5");
+    expect(displayedValues[displayedValues.length - 1]).toBe(5);
   });
 
-  it("updates an uncontrolled value and calls onIncrement", async () => {
-    const onIncrement = vi.fn();
-    const screen = await render(
-      <EvoNumberInput
-        a11yText="Item quantity"
-        defaultValue={2}
-        onIncrement={onIncrement}
-      />,
-    );
-
-    await user.click(getPaddle(screen, "increment"));
-
-    await expect
-      .element(screen.getByRole("spinbutton", { name: "Item quantity" }))
-      .toHaveValue(3);
-    expect(onIncrement).toHaveBeenCalledWith(expect.any(Object), 3);
-  });
-
-  it("updates an uncontrolled value and calls onDecrement", async () => {
-    const onDecrement = vi.fn();
-    const screen = await render(
-      <EvoNumberInput
-        a11yText="Item quantity"
-        defaultValue={2}
-        onDecrement={onDecrement}
-      />,
-    );
-
-    await user.click(getPaddle(screen, "decrement"));
-
-    await expect
-      .element(screen.getByRole("spinbutton", { name: "Item quantity" }))
-      .toHaveValue(1);
-    expect(onDecrement).toHaveBeenCalledWith(expect.any(Object), 1);
-  });
-
-  it("does not call onChange for paddle clicks", async () => {
+  it("updates an uncontrolled value and calls onChange after incrementing", async () => {
     const onChange = vi.fn();
     const screen = await render(
       <EvoNumberInput
@@ -143,17 +104,34 @@ describe("evo-number-input", () => {
 
     await user.click(getPaddle(screen, "increment"));
 
-    expect(onChange).not.toHaveBeenCalled();
+    await expect
+      .element(screen.getByRole("spinbutton", { name: "Item quantity" }))
+      .toHaveValue(3);
+    expect(onChange).toHaveBeenCalledWith(3);
   });
 
-  it("does not retain a controlled value until the parent updates it", async () => {
-    const onIncrement = vi.fn();
+  it("updates an uncontrolled value and calls onChange after decrementing", async () => {
+    const onChange = vi.fn();
     const screen = await render(
       <EvoNumberInput
         a11yText="Item quantity"
-        value={2}
-        onIncrement={onIncrement}
+        defaultValue={2}
+        onChange={onChange}
       />,
+    );
+
+    await user.click(getPaddle(screen, "decrement"));
+
+    await expect
+      .element(screen.getByRole("spinbutton", { name: "Item quantity" }))
+      .toHaveValue(1);
+    expect(onChange).toHaveBeenCalledWith(1);
+  });
+
+  it("does not retain a controlled value until the parent updates it", async () => {
+    const onChange = vi.fn();
+    const screen = await render(
+      <EvoNumberInput a11yText="Item quantity" value={2} onChange={onChange} />,
     );
 
     await user.click(getPaddle(screen, "increment"));
@@ -161,7 +139,7 @@ describe("evo-number-input", () => {
     await expect
       .element(screen.getByRole("spinbutton", { name: "Item quantity" }))
       .toHaveValue(2);
-    expect(onIncrement).toHaveBeenCalledWith(expect.any(Object), 3);
+    expect(onChange).toHaveBeenCalledWith(3);
   });
 
   it("does not retain controlled direct input until the parent updates it", async () => {
@@ -171,14 +149,11 @@ describe("evo-number-input", () => {
     );
     const input = screen.getByRole("spinbutton", { name: "Item quantity" });
 
-    await user.clear(input);
+    (input.element() as HTMLInputElement).select();
     await user.type(input, "4");
 
     await expect.element(input).toHaveValue(2);
-    expect(onChange).toHaveBeenCalled();
-    const lastCall = onChange.mock.calls[onChange.mock.calls.length - 1];
-    expect(lastCall).toHaveLength(1);
-    expect(lastCall[0].nativeEvent).toBeInstanceOf(Event);
+    expect(onChange).toHaveBeenLastCalledWith(4);
   });
 
   it("does not enable deletion for an empty accessible label", async () => {
@@ -282,9 +257,7 @@ describe("evo-number-input", () => {
         <EvoNumberInput
           a11yText="Item quantity"
           value={value}
-          onChange={(event) => setValue(Number(event.currentTarget.value))}
-          onIncrement={(_event, nextValue) => setValue(nextValue)}
-          onDecrement={(_event, nextValue) => setValue(nextValue)}
+          onChange={setValue}
         />
       );
     }

@@ -63,14 +63,10 @@ export default {
       description:
         "All attributes and event handlers from [the `<evo-input>` tag](?path=/docs/form-input-evo-input--docs) will be passed through",
     },
-    onIncrement: {
-      action: "onIncrement",
-      description: "Triggered when increment button is clicked",
-      table: { category: "Events" },
-    },
-    onDecrement: {
-      action: "onDecrement",
-      description: "Triggered when decrement button is clicked",
+    valueChange: {
+      action: "valueChange",
+      description:
+        "Triggered with the next value after input or a paddle click",
       table: { category: "Events" },
     },
     onDelete: {

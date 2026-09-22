@@ -7,10 +7,9 @@ Use `EvoNumberInput` for numeric inputs with increment and decrement controls.
 - `EbayNumberInput` becomes `EvoNumberInput` from `@evo-web/react/number-input`.
 - `aria-label` becomes `a11yText`; `label` remains a string.
 - `onDeleteClick` becomes `onDelete`, which receives only the click event.
-- `onInputChange` is removed. Use native `onChange`, which fires only for direct input changes.
-- `onChange(event, { value })` becomes `onChange(event)`; read the value from `event.currentTarget.value`.
-- `onIncrement(event, { value })` becomes `onIncrement(event, value)`.
-- `onDecrement(event, { value })` becomes `onDecrement(event, value)`.
+- `onInputChange` is removed.
+- `onChange(event, { value })` becomes `onChange(value)`.
+- `onIncrement` and `onDecrement` are removed; direct input and paddle changes all call `onChange(value)`.
 - Focus, blur, invalid, and keyboard callbacks now use native React event signatures.
 - `value` is controlled; use `defaultValue` for uncontrolled initialization.
 - The default value changes from legacy `1` to the resolved minimum.
@@ -39,9 +38,7 @@ import { EvoNumberInput } from "@evo-web/react/number-input";
 <EvoNumberInput
   a11yText="Item quantity"
   value={quantity}
-  onChange={(event) => setQuantity(Number(event.currentTarget.value))}
-  onIncrement={(_event, nextValue) => setQuantity(nextValue)}
-  onDecrement={(_event, nextValue) => setQuantity(nextValue)}
+  onChange={setQuantity}
   onDelete={handleDelete}
 />;
 ```
@@ -50,21 +47,12 @@ For uncontrolled initialization, replace `value` with `defaultValue`.
 
 ## Controlled migration
 
-Paddle callbacks provide the proposed value directly, and paddle clicks do not
-fire `onChange`:
+Use the same value callback for direct input and paddle changes:
 
 ```tsx
 <EvoNumberInput
   a11yText="Item quantity"
   value={quantity}
-  onChange={(event) => {
-    setQuantity(Number(event.currentTarget.value));
-  }}
-  onIncrement={(_event, nextValue) => {
-    setQuantity(nextValue);
-  }}
-  onDecrement={(_event, nextValue) => {
-    setQuantity(nextValue);
-  }}
+  onChange={setQuantity}
 />
 ```
