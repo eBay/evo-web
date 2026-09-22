@@ -86,18 +86,10 @@ export function placeholder(locale?: string) {
 }
 
 /**
- * Reformat freeform typed text into the locale's date layout (e.g.
- * "12082024" -> "12/08/2024" for en-US).
- *
- * Typed separators are treated as structure, so each date part can be edited
- * independently — "04//2000" keeps its empty middle part instead of pulling
- * digits across from the year. Only a continuous digit run overflowing a
- * part's length flows into the following part, and separators are normalized
- * to the locale's.
- *
- * When `eager` is true a separator is also appended the moment the final typed
- * part is complete; pass `false` while the user is deleting so a just-removed
- * separator is not immediately re-added.
+ * Reformat typed text into the locale's date layout ("12082024" ->
+ * "12/08/2024"), preserving empty parts so each part edits independently.
+ * `eager` appends a separator when the final part completes; pass `false`
+ * while deleting.
  */
 export function maskDate(raw: string, locale?: string, eager = true): string {
   const { o: order, s: sep } = getLocale(locale);

@@ -59,14 +59,6 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
 <const/[startField, endField]=[...(fields ?? [])] as NonNullable<
   DateFieldInput["field"]
 >[]>
-<const/{
-  visibleMonth: controlledVisibleMonth,
-  visibleMonthChange,
-  visibleMonthCount,
-  disable,
-  ...calendarRest
-}=calendar ?? ({} as CalendarInput)>
-
 <let/value:=input.value>
 <let/open:=input.open>
 <id/popoverId>
@@ -173,18 +165,12 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
     style=expander.floatingStyles
   >
     <evo-calendar
-      ...calendarRest
+      visibleMonthCount=paneCount
+      visibleMonth:=visibleMonth
+      ...calendar
       selectMode="range"
       locale=locale
-      disable=disabled ? { callback: () => true } : disable
-      visibleMonthCount=visibleMonthCount ?? paneCount
-      visibleMonth=controlledVisibleMonth ?? visibleMonth
-      visibleMonthChange(month) {
-        if (controlledVisibleMonth === undefined) {
-          visibleMonth = month;
-        }
-        visibleMonthChange && visibleMonthChange(month);
-      }
+      disable=disabled ? { callback: () => true } : calendar?.disable
       selected={
         from: value?.from || undefined,
         to: value?.to || undefined,
