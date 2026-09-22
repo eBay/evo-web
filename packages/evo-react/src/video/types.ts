@@ -122,9 +122,9 @@ export type EvoVideoProps = NativeVideoProps & {
   onVolumeValueChange?: (volume: number) => void;
   /** Reports whether the video is muted. */
   onMutedChange?: (muted: boolean) => void;
-  /** Selected captions language, or null when captions are off. */
+  /** Controls the captions language, or disables captions when null. Omit to let the component manage selection. */
   language?: string | null;
-  /** Reports the selected captions language. */
+  /** Reports captions selection requests in controlled and uncontrolled modes. */
   onLanguageChange?: (language: string | null) => void;
   /** Requests fullscreen when true and exits fullscreen when false. */
   fullscreen?: boolean;
