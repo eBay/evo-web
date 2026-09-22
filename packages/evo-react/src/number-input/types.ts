@@ -23,8 +23,6 @@ type NumberInputAccessibilityProps =
     };
 
 type NumberInputBehaviorProps = {
-  /** Class name applied to the outer `.number-input` element. */
-  className?: string;
   /** Accessible name for the delete button, which enables the quantity-input variant. */
   a11yDeleteText?: string;
   /** Controlled numeric value. */
@@ -45,7 +43,6 @@ export type EvoNumberInputProps = Omit<
   EvoInputProps,
   | "aria-label"
   | "children"
-  | "className"
   | "defaultValue"
   | "floatingLabel"
   | "floatingLabelStatic"
