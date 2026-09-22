@@ -1,5 +1,8 @@
 import classNames from "classnames";
+import { createElement } from "react";
+import type { ElementType } from "react";
 import type { EvoDetailsLabelProps } from "./types";
+import { useDetailsContext } from "./context";
 
 /**
  * Names the content revealed by `EvoDetailsSummary`. It belongs inside the
@@ -12,9 +15,15 @@ export function EvoDetailsLabel({
   className,
   ...rest
 }: EvoDetailsLabelProps) {
-  return (
-    <span className={classNames("details__label", className)} {...rest}>
-      {children}
-    </span>
+  const { a11yHeadingTag = "span" } = useDetailsContext();
+  const LabelTag: ElementType = a11yHeadingTag;
+
+  return createElement(
+    LabelTag,
+    {
+      ...rest,
+      className: classNames("details__label", className),
+    },
+    children,
   );
 }

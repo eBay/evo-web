@@ -1,10 +1,11 @@
 import { createContext, use, useMemo } from "react";
 import type { ReactNode } from "react";
-import type { AccordionId, OpenValue } from "./types";
+import type { AccordionId, EvoAccordionProps, OpenValue } from "./types";
 
 export type AccordionContextValue = {
   open: OpenValue;
   isControlled: boolean;
+  a11yHeadingTag: EvoAccordionProps["a11yHeadingTag"];
   onItemToggle: (id: AccordionId, open: boolean) => void;
 };
 
@@ -31,12 +32,13 @@ type AccordionProviderProps = AccordionContextValue & {
 export function AccordionProvider({
   open,
   isControlled,
+  a11yHeadingTag,
   onItemToggle,
   children,
 }: AccordionProviderProps) {
   const value = useMemo(
-    () => ({ open, isControlled, onItemToggle }),
-    [open, isControlled, onItemToggle],
+    () => ({ open, isControlled, a11yHeadingTag, onItemToggle }),
+    [open, isControlled, a11yHeadingTag, onItemToggle],
   );
   return <AccordionContext value={value}>{children}</AccordionContext>;
 }

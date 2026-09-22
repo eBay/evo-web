@@ -76,6 +76,7 @@ export function EvoAccordion(props: EvoAccordionProps) {
   const {
     size,
     a11yText = "accordion",
+    a11yHeadingTag = "h2",
     open,
     defaultOpen,
     onOpenChange,
@@ -120,6 +121,7 @@ export function EvoAccordion(props: EvoAccordionProps) {
     <AccordionProvider
       open={currentOpen}
       isControlled={isControlled}
+      a11yHeadingTag={a11yHeadingTag}
       onItemToggle={onItemToggle}
     >
       <ul

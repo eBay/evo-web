@@ -34,6 +34,10 @@ const meta: Meta<typeof EvoAccordion> = {
       control: "text",
       table: { defaultValue: { summary: "accordion" } },
     },
+    a11yHeadingTag: {
+      control: "text",
+      table: { defaultValue: { summary: "h2" } },
+    },
     open: {
       control: "object",
       table: { type: { summary: "string | string[]" } },
@@ -93,7 +97,11 @@ export default meta;
 type Story = StoryObj<typeof EvoAccordion>;
 
 /** The default accordion keeps one section open at a time. */
-export const Default: Story = {};
+export const Default: Story = {
+  args: {
+    a11yHeadingTag: "h3",
+  },
+};
 
 /** Multiple selection allows several sections to remain open. */
 export const MultipleSelection: Story = {
