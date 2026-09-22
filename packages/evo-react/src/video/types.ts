@@ -8,10 +8,7 @@ import type {
 export type EvoVideoEngine = "hls" | "dash";
 export type EvoVideoPlayView = "inline" | "fullscreen";
 
-export type EvoVideoSource = Omit<
-  ComponentProps<"source">,
-  "children" | "src"
-> & {
+export type EvoVideoSource = {
   /** URL of the video, DASH manifest, or HLS playlist. */
   src: string;
   /** Forces a streaming engine when it cannot be inferred from the URL. */
