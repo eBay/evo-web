@@ -178,7 +178,7 @@ function useFullscreenState(
  * <EvoVideo
  *   sources={[
  *     { src: "/listing-video.m3u8", type: "application/x-mpegURL", engine: "hls" },
- *     { src: "/listing-video.mp4", type: "video/mp4" },
+ *     { src: "/listing-video.mp4" },
  *   ]}
  *   poster="/listing-video-poster.jpg"
  *   controls={{

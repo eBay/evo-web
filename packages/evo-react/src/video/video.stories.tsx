@@ -180,7 +180,6 @@ export const WithTrack: Story = {
     sources: [
       {
         src: "https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/video.mp4",
-        type: "video/mp4",
       },
     ],
     tracks: [
