@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState, useSyncExternalStore } from "react";
+import { useCallback, useRef, useState } from "react";
 import type { CSSProperties, Ref, RefObject } from "react";
 import { EvoIconAudioHigh16 } from "../icon/icons/audio-high-16";
 import { EvoIconAudioLow16 } from "../icon/icons/audio-low-16";
@@ -34,63 +34,6 @@ function formatTime(value: number) {
 
 type VideoElementRef = RefObject<HTMLVideoElement | null | undefined>;
 
-type VideoTimeSnapshot = {
-  currentTime: number;
-  duration: number;
-};
-
-const EMPTY_VIDEO_TIME: VideoTimeSnapshot = { currentTime: 0, duration: 0 };
-const videoTimeSnapshots = new WeakMap<HTMLVideoElement, VideoTimeSnapshot>();
-
-function getEmptyVideoTimeSnapshot() {
-  return EMPTY_VIDEO_TIME;
-}
-
-function getVideoTimeSnapshot(video: HTMLVideoElement) {
-  const currentTime = video.currentTime || 0;
-  const duration = Number.isFinite(video.duration) ? video.duration : 0;
-  const previous = videoTimeSnapshots.get(video);
-
-  if (previous?.currentTime === currentTime && previous.duration === duration) {
-    return previous;
-  }
-
-  const snapshot = { currentTime, duration };
-  videoTimeSnapshots.set(video, snapshot);
-  return snapshot;
-}
-
-function useVideoTime(videoRef: VideoElementRef) {
-  const subscribe = useCallback(
-    (onStoreChange: () => void) => {
-      const video = videoRef.current;
-      if (!video) {
-        return () => undefined;
-      }
-
-      video.addEventListener("durationchange", onStoreChange);
-      video.addEventListener("loadedmetadata", onStoreChange);
-      video.addEventListener("timeupdate", onStoreChange);
-      return () => {
-        video.removeEventListener("durationchange", onStoreChange);
-        video.removeEventListener("loadedmetadata", onStoreChange);
-        video.removeEventListener("timeupdate", onStoreChange);
-      };
-    },
-    [videoRef],
-  );
-  const getSnapshot = useCallback(() => {
-    const video = videoRef.current;
-    return video ? getVideoTimeSnapshot(video) : EMPTY_VIDEO_TIME;
-  }, [videoRef]);
-
-  return useSyncExternalStore(
-    subscribe,
-    getSnapshot,
-    getEmptyVideoTimeSnapshot,
-  );
-}
-
 export function VideoPlayControl({
   playing,
   a11yPlayText,
@@ -118,14 +61,18 @@ export function VideoPlayControl({
 }
 
 export function VideoTimelineControl({
-  videoRef,
   control,
+  currentTime,
+  duration,
+  onSeek,
 }: {
-  videoRef: VideoElementRef;
   control: EvoVideoTimelineControl;
+  currentTime: number;
+  duration: number;
+  onSeek: (currentTime: number) => void;
 }) {
-  const { currentTime, duration } = useVideoTime(videoRef);
-  const scrubberPercent = duration > 0 ? currentTime / duration : 0;
+  const scrubberPercent =
+    duration > 0 ? Math.min(1, Math.max(0, currentTime / duration)) : 0;
 
   return (
     <>
@@ -148,8 +95,8 @@ export function VideoTimelineControl({
         aria-valuetext={formatTime(currentTime)}
         onChange={(event) => {
           const nextTime = Number(event.currentTarget.value) * duration;
-          if (videoRef.current && Number.isFinite(nextTime)) {
-            videoRef.current.currentTime = nextTime;
+          if (Number.isFinite(nextTime)) {
+            onSeek(nextTime);
           }
         }}
       />
@@ -159,12 +106,12 @@ export function VideoTimelineControl({
 }
 
 export function VideoRemainingControl({
-  videoRef,
+  currentTime,
+  duration,
 }: {
-  videoRef: VideoElementRef;
+  currentTime: number;
+  duration: number;
 }) {
-  const { currentTime, duration } = useVideoTime(videoRef);
-
   return (
     <>
       <span className="video__timestamp video__timestamp--remaining">

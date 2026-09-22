@@ -228,6 +228,7 @@ export function EvoVideo({
   onPlaying,
   onPause,
   onLoadedMetadata,
+  onDurationChange,
   onTimeUpdate,
   onVolumeChange,
   onWaiting,
@@ -271,6 +272,10 @@ export function EvoVideo({
   const [controlsActive, setControlsActive] = useState(false);
   const [volume, setVolume] = useState(requestedVolume);
   const [muted, setMuted] = useState(requestedMuted);
+  const [videoTime, setVideoTime] = useState({
+    currentTime: requestedCurrentTime ?? 0,
+    duration: 0,
+  });
   const [uncontrolledLanguage, setUncontrolledLanguage] = useState<
     string | null
   >(null);
@@ -293,6 +298,30 @@ export function EvoVideo({
 
   languageRef.current = language;
   textTracksRef.current = textTracks;
+
+  const syncVideoTime = useCallback((video: HTMLVideoElement) => {
+    const nextVideoTime = {
+      currentTime: video.currentTime || 0,
+      duration: Number.isFinite(video.duration) ? video.duration : 0,
+    };
+    setVideoTime((previousVideoTime) =>
+      previousVideoTime.currentTime === nextVideoTime.currentTime &&
+      previousVideoTime.duration === nextVideoTime.duration
+        ? previousVideoTime
+        : nextVideoTime,
+    );
+  }, []);
+
+  const seek = useCallback(
+    (currentTime: number) => {
+      const video = videoRef.current;
+      if (video) {
+        video.currentTime = currentTime;
+        syncVideoTime(video);
+      }
+    },
+    [syncVideoTime, videoRef],
+  );
 
   const endLoading = useCallback(() => {
     if (loadingTimerRef.current !== null) {
@@ -504,8 +533,9 @@ export function EvoVideo({
       Math.abs(video.currentTime - requestedCurrentTime) > 0.25
     ) {
       video.currentTime = requestedCurrentTime;
+      syncVideoTime(video);
     }
-  }, [requestedCurrentTime, videoRef]);
+  }, [requestedCurrentTime, syncVideoTime, videoRef]);
 
   useEffect(() => {
     applyLanguage(mediaRef.current, textTracks, language);
@@ -614,8 +644,16 @@ export function EvoVideo({
         updatePlaying(false);
         onPause?.(event);
       }}
-      onLoadedMetadata={onLoadedMetadata}
+      onLoadedMetadata={(event) => {
+        syncVideoTime(event.currentTarget);
+        onLoadedMetadata?.(event);
+      }}
+      onDurationChange={(event) => {
+        syncVideoTime(event.currentTarget);
+        onDurationChange?.(event);
+      }}
       onTimeUpdate={(event) => {
+        syncVideoTime(event.currentTarget);
         onCurrentTimeChange?.(event.currentTarget.currentTime);
         onTimeUpdate?.(event);
       }}
@@ -741,7 +779,10 @@ export function EvoVideo({
               )}
             >
               {!controls.timeline && (
-                <VideoRemainingControl videoRef={videoRef} />
+                <VideoRemainingControl
+                  currentTime={videoTime.currentTime}
+                  duration={videoTime.duration}
+                />
               )}
               <VideoPlayControl
                 buttonRef={setPlayButton}
@@ -758,8 +799,10 @@ export function EvoVideo({
               />
               {controls.timeline && (
                 <VideoTimelineControl
-                  videoRef={videoRef}
                   control={controls.timeline}
+                  currentTime={videoTime.currentTime}
+                  duration={videoTime.duration}
+                  onSeek={seek}
                 />
               )}
               {controls.captions && (
