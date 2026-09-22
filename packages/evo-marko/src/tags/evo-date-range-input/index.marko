@@ -2,7 +2,6 @@ import { localeDefault, type MonthISO } from "../../common/dates/date-utils";
 import type { RangeInput as CalendarRangeInput } from "<evo-calendar>";
 import type {
   FieldInput,
-  FieldRef,
   DateInputValue,
   Input as DateFieldInput,
 } from "<evo-date-field>";
@@ -146,7 +145,7 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
     }
     onInvalidDate=onInvalidDate
   />
-  <evo-date-field/endFieldControl: FieldRef
+  <evo-date-field/endFieldControl
     value=value?.to ?? ""
     locale=locale
     index=1

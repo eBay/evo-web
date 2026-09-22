@@ -2,7 +2,6 @@ import { localeDefault, type MonthISO } from "../../common/dates/date-utils";
 import type { DayInput as CalendarDayInput } from "<evo-calendar>";
 import type {
   FieldInput,
-  FieldRef,
   DateInputValue,
   Input as DateFieldInput,
 } from "<evo-date-field>";
@@ -120,7 +119,7 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
     onKeyDown && onKeyDown(e, el);
   }
 >
-  <evo-date-field/fieldControl: FieldRef
+  <evo-date-field/fieldControl
     value=value ?? ""
     locale=locale
     index=0
