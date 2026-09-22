@@ -93,6 +93,157 @@ describe("evo-video", () => {
     expect(controls?.children[2]).toBe(seek.element());
   });
 
+  it("updates the timeline from media time events", async () => {
+    const screen = await render(
+      <EvoVideo
+        {...defaultProps}
+        controls={{ timeline: { a11yText: "Seek" } }}
+      />,
+    );
+    await startPlayback(screen.container);
+
+    const video = getVideo(screen.container);
+    Object.defineProperty(video, "duration", {
+      configurable: true,
+      value: 120,
+    });
+    video.currentTime = 30;
+    video.dispatchEvent(new Event("timeupdate"));
+
+    const seek = screen.getByLabelText("Seek");
+    await expect.element(seek).toHaveValue("0.25");
+    await expect.element(seek).toHaveAttribute("aria-valuetext", "0:30");
+  });
+
+  it("manages captions menu focus within the control", async () => {
+    const screen = await render(
+      <>
+        <button type="button">Outside control</button>
+        <EvoVideo
+          {...defaultProps}
+          tracks={[
+            {
+              src: "https://example.com/captions.vtt",
+              srcLang: "en",
+              kind: "captions",
+              label: "English",
+            },
+          ]}
+          controls={{
+            captions: {
+              a11yText: "Closed captions",
+              captionsOffText: "Off",
+            },
+          }}
+        />
+      </>,
+    );
+    await startPlayback(screen.container);
+    await user.hover(getVideo(screen.container));
+
+    const captions = screen.getByRole("button", { name: "Closed captions" });
+    await user.click(captions);
+    await expect
+      .element(screen.getByRole("menuitemradio", { name: "Off" }))
+      .toHaveFocus();
+
+    await user.keyboard("{Escape}");
+    await expect.element(captions).toHaveFocus();
+    await expect.element(captions).toHaveAttribute("aria-expanded", "false");
+
+    await user.click(captions);
+    await user.click(screen.getByRole("button", { name: "Outside control" }));
+    await expect.element(captions).toHaveAttribute("aria-expanded", "false");
+  });
+
+  it("owns captions language when uncontrolled", async () => {
+    const onLanguageChange = vi.fn();
+    const screen = await render(
+      <EvoVideo
+        {...defaultProps}
+        tracks={[
+          {
+            src: "https://example.com/captions.vtt",
+            srcLang: "en",
+            kind: "captions",
+            label: "English",
+          },
+        ]}
+        controls={{
+          captions: {
+            a11yText: "Closed captions",
+            captionsOffText: "Off",
+          },
+        }}
+        onLanguageChange={onLanguageChange}
+      />,
+    );
+    await startPlayback(screen.container);
+    await user.hover(getVideo(screen.container));
+
+    const captions = screen.getByRole("button", { name: "Closed captions" });
+    await user.click(captions);
+    await user.click(screen.getByRole("menuitemradio", { name: "English" }));
+
+    expect(onLanguageChange).toHaveBeenCalledWith("en");
+    await vi.waitFor(() =>
+      expect(getVideo(screen.container).textTracks[0]?.mode).toBe("showing"),
+    );
+    await user.click(captions);
+    await expect
+      .element(screen.getByRole("menuitemradio", { name: "English" }))
+      .toHaveAttribute("aria-checked", "true");
+  });
+
+  it("leaves captions language under parent control", async () => {
+    const onLanguageChange = vi.fn();
+    const createPlayer = (language: string | null) => (
+      <EvoVideo
+        {...defaultProps}
+        language={language}
+        tracks={[
+          {
+            src: "https://example.com/captions.vtt",
+            srcLang: "en",
+            kind: "captions",
+            label: "English",
+          },
+        ]}
+        controls={{
+          captions: {
+            a11yText: "Closed captions",
+            captionsOffText: "Off",
+          },
+        }}
+        onLanguageChange={onLanguageChange}
+      />
+    );
+    const screen = await render(createPlayer("en"));
+    await startPlayback(screen.container);
+    await user.hover(getVideo(screen.container));
+
+    const video = getVideo(screen.container);
+    const captions = screen.getByRole("button", { name: "Closed captions" });
+    await vi.waitFor(() => expect(video.textTracks[0]?.mode).toBe("showing"));
+    await user.click(captions);
+    await user.click(screen.getByRole("menuitemradio", { name: "Off" }));
+
+    expect(onLanguageChange).toHaveBeenCalledWith(null);
+    expect(video.textTracks[0]?.mode).toBe("showing");
+    await user.click(captions);
+    await expect
+      .element(screen.getByRole("menuitemradio", { name: "English" }))
+      .toHaveAttribute("aria-checked", "true");
+
+    await user.keyboard("{Escape}");
+    await screen.rerender(createPlayer(null));
+    await vi.waitFor(() => expect(video.textTracks[0]?.mode).toBe("disabled"));
+    await user.click(captions);
+    await expect
+      .element(screen.getByRole("menuitemradio", { name: "Off" }))
+      .toHaveAttribute("aria-checked", "true");
+  });
+
   it("moves focus from the initial overlay to the play control", async () => {
     const screen = await render(<EvoVideo {...defaultProps} />);
     await user.click(screen.getByRole("button", { name: "Play" }));
@@ -167,6 +318,41 @@ describe("evo-video", () => {
     );
   });
 
+  it("tracks browser fullscreen state", async () => {
+    const onFullscreenChange = vi.fn();
+    const screen = await render(
+      <EvoVideo
+        {...defaultProps}
+        controls={{
+          fullscreen: {
+            a11yEnterText: "Enter fullscreen",
+            a11yExitText: "Exit fullscreen",
+          },
+        }}
+        onFullscreenChange={onFullscreenChange}
+      />,
+    );
+    await startPlayback(screen.container);
+    await user.hover(getVideo(screen.container));
+
+    const root = screen.container.querySelector(".video") as HTMLDivElement;
+    let fullscreenElement: Element | null = null;
+    vi.spyOn(document, "fullscreenElement", "get").mockImplementation(
+      () => fullscreenElement,
+    );
+    vi.spyOn(root, "requestFullscreen").mockImplementation(async () => {
+      fullscreenElement = root;
+      document.dispatchEvent(new Event("fullscreenchange"));
+    });
+
+    await user.click(screen.getByRole("button", { name: "Enter fullscreen" }));
+
+    await expect
+      .element(screen.getByRole("button", { name: "Exit fullscreen" }))
+      .toBeInTheDocument();
+    expect(onFullscreenChange).toHaveBeenCalledWith(true);
+  });
+
   it("tries the next source before reporting a load error", async () => {
     const onLoadError = vi.fn();
     const screen = await render(
@@ -192,6 +378,26 @@ describe("evo-video", () => {
     expect(onLoadError).toHaveBeenCalledWith(
       expect.objectContaining({ sourceIndex: 1 }),
     );
+  });
+
+  it("restarts fallback selection when sources change", async () => {
+    const createPlayer = (prefix: string) => (
+      <EvoVideo
+        {...defaultProps}
+        sources={[
+          { src: `https://example.com/${prefix}-first.mp4` },
+          { src: `https://example.com/${prefix}-second.mp4` },
+        ]}
+      />
+    );
+    const screen = await render(createPlayer("old"));
+    const video = getVideo(screen.container);
+
+    video.dispatchEvent(new Event("error"));
+    await vi.waitFor(() => expect(video.src).toContain("old-second.mp4"));
+
+    await screen.rerender(createPlayer("new"));
+    await vi.waitFor(() => expect(video.src).toContain("new-first.mp4"));
   });
 
   it("does not reload an equivalent inline source after rerender", async () => {

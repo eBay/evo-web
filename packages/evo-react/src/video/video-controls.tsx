@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import type { CSSProperties, RefObject } from "react";
+import { useCallback, useRef, useState, useSyncExternalStore } from "react";
+import type { CSSProperties, Ref, RefObject } from "react";
 import { EvoIconAudioHigh16 } from "../icon/icons/audio-high-16";
 import { EvoIconAudioLow16 } from "../icon/icons/audio-low-16";
 import { EvoIconAudioOff16 } from "../icon/icons/audio-off-16";
@@ -32,33 +32,63 @@ function formatTime(value: number) {
     : `${minutes}:${seconds}`;
 }
 
-function useVideoTime(video: HTMLVideoElement | null) {
-  const [time, setTime] = useState({ currentTime: 0, duration: 0 });
+type VideoElementRef = RefObject<HTMLVideoElement | null | undefined>;
 
-  useEffect(() => {
-    if (!video) {
-      return;
-    }
+type VideoTimeSnapshot = {
+  currentTime: number;
+  duration: number;
+};
 
-    const update = () => {
-      setTime({
-        currentTime: video.currentTime || 0,
-        duration: Number.isFinite(video.duration) ? video.duration : 0,
-      });
-    };
+const EMPTY_VIDEO_TIME: VideoTimeSnapshot = { currentTime: 0, duration: 0 };
+const videoTimeSnapshots = new WeakMap<HTMLVideoElement, VideoTimeSnapshot>();
 
-    update();
-    video.addEventListener("durationchange", update);
-    video.addEventListener("loadedmetadata", update);
-    video.addEventListener("timeupdate", update);
-    return () => {
-      video.removeEventListener("durationchange", update);
-      video.removeEventListener("loadedmetadata", update);
-      video.removeEventListener("timeupdate", update);
-    };
-  }, [video]);
+function getEmptyVideoTimeSnapshot() {
+  return EMPTY_VIDEO_TIME;
+}
 
-  return time;
+function getVideoTimeSnapshot(video: HTMLVideoElement) {
+  const currentTime = video.currentTime || 0;
+  const duration = Number.isFinite(video.duration) ? video.duration : 0;
+  const previous = videoTimeSnapshots.get(video);
+
+  if (previous?.currentTime === currentTime && previous.duration === duration) {
+    return previous;
+  }
+
+  const snapshot = { currentTime, duration };
+  videoTimeSnapshots.set(video, snapshot);
+  return snapshot;
+}
+
+function useVideoTime(videoRef: VideoElementRef) {
+  const subscribe = useCallback(
+    (onStoreChange: () => void) => {
+      const video = videoRef.current;
+      if (!video) {
+        return () => undefined;
+      }
+
+      video.addEventListener("durationchange", onStoreChange);
+      video.addEventListener("loadedmetadata", onStoreChange);
+      video.addEventListener("timeupdate", onStoreChange);
+      return () => {
+        video.removeEventListener("durationchange", onStoreChange);
+        video.removeEventListener("loadedmetadata", onStoreChange);
+        video.removeEventListener("timeupdate", onStoreChange);
+      };
+    },
+    [videoRef],
+  );
+  const getSnapshot = useCallback(() => {
+    const video = videoRef.current;
+    return video ? getVideoTimeSnapshot(video) : EMPTY_VIDEO_TIME;
+  }, [videoRef]);
+
+  return useSyncExternalStore(
+    subscribe,
+    getSnapshot,
+    getEmptyVideoTimeSnapshot,
+  );
 }
 
 export function VideoPlayControl({
@@ -72,7 +102,7 @@ export function VideoPlayControl({
   a11yPlayText: string;
   a11yPauseText: string;
   onToggle: () => void;
-  buttonRef: RefObject<HTMLButtonElement | null>;
+  buttonRef: Ref<HTMLButtonElement>;
 }) {
   return (
     <button
@@ -88,13 +118,13 @@ export function VideoPlayControl({
 }
 
 export function VideoTimelineControl({
-  video,
+  videoRef,
   control,
 }: {
-  video: HTMLVideoElement | null;
+  videoRef: VideoElementRef;
   control: EvoVideoTimelineControl;
 }) {
-  const { currentTime, duration } = useVideoTime(video);
+  const { currentTime, duration } = useVideoTime(videoRef);
   const scrubberPercent = duration > 0 ? currentTime / duration : 0;
 
   return (
@@ -117,12 +147,9 @@ export function VideoTimelineControl({
         aria-label={control.a11yText}
         aria-valuetext={formatTime(currentTime)}
         onChange={(event) => {
-          if (!video) {
-            return;
-          }
           const nextTime = Number(event.currentTarget.value) * duration;
-          if (Number.isFinite(nextTime)) {
-            video.currentTime = nextTime;
+          if (videoRef.current && Number.isFinite(nextTime)) {
+            videoRef.current.currentTime = nextTime;
           }
         }}
       />
@@ -132,11 +159,11 @@ export function VideoTimelineControl({
 }
 
 export function VideoRemainingControl({
-  video,
+  videoRef,
 }: {
-  video: HTMLVideoElement | null;
+  videoRef: VideoElementRef;
 }) {
-  const { currentTime, duration } = useVideoTime(video);
+  const { currentTime, duration } = useVideoTime(videoRef);
 
   return (
     <>
@@ -171,36 +198,15 @@ export function VideoCaptionsControl({
   onLanguageChange: (language: string | null) => void;
 }) {
   const [open, setOpen] = useState(false);
-  const containerRef = useRef<HTMLSpanElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const menuRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!open) {
-      return;
-    }
-
-    menuRef.current?.querySelector<HTMLElement>("[role^='menuitem']")?.focus();
-
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setOpen(false);
-        buttonRef.current?.focus();
+  const focusMenu = useCallback(
+    (menu: HTMLDivElement | null) => {
+      if (open) {
+        menu?.querySelector<HTMLElement>("[role^='menuitem']")?.focus();
       }
-    };
-    const handleFocusIn = (event: FocusEvent) => {
-      if (!containerRef.current?.contains(event.target as Node)) {
-        setOpen(false);
-      }
-    };
-
-    document.addEventListener("keydown", handleKeyDown);
-    document.addEventListener("focusin", handleFocusIn);
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-      document.removeEventListener("focusin", handleFocusIn);
-    };
-  }, [open]);
+    },
+    [open],
+  );
 
   if (!textTracks.length) {
     return null;
@@ -212,7 +218,14 @@ export function VideoCaptionsControl({
   };
 
   return (
-    <span ref={containerRef} className="video__popover-container">
+    <span
+      className="video__popover-container"
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) {
+          setOpen(false);
+        }
+      }}
+    >
       <button
         ref={buttonRef}
         className="video__control"
@@ -230,7 +243,15 @@ export function VideoCaptionsControl({
       </button>
       <span className="video__popover">
         <EvoMenu>
-          <EvoMenuItems ref={menuRef}>
+          <EvoMenuItems
+            ref={focusMenu}
+            onKeyDown={(event) => {
+              if (event.key === "Escape") {
+                setOpen(false);
+                buttonRef.current?.focus();
+              }
+            }}
+          >
             <EvoMenuRadioGroup
               selected={language ?? "off"}
               onSelectedChange={(value) => {
@@ -261,12 +282,12 @@ export function VideoCaptionsControl({
 }
 
 export function VideoAudioControl({
-  video,
+  videoRef,
   control,
   muted,
   volume,
 }: {
-  video: HTMLVideoElement | null;
+  videoRef: VideoElementRef;
   control: EvoVideoAudioControl;
   muted: boolean;
   volume: number;
@@ -287,6 +308,7 @@ export function VideoAudioControl({
         aria-label={audioOff ? control.a11yUnmuteText : control.a11yMuteText}
         aria-pressed={audioOff}
         onClick={() => {
+          const video = videoRef.current;
           if (!video) {
             return;
           }
@@ -325,6 +347,7 @@ export function VideoAudioControl({
             aria-label={control.a11yVolumeText}
             aria-valuetext={`${Math.round((audioOff ? 0 : volume) * 100)}%`}
             onChange={(event) => {
+              const video = videoRef.current;
               if (!video) {
                 return;
               }

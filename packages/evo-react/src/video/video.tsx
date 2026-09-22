@@ -1,4 +1,11 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from "react";
+import type { RefObject } from "react";
 import classNames from "classnames";
 import { EvoIconAttention24 } from "../icon/icons/attention-24";
 import { EvoIconPlayFilled64Colored } from "../icon/icons/play-filled-64-colored";
@@ -20,6 +27,10 @@ import "@ebay/skin/video.mjs";
 
 const DEFAULT_SPINNER_TIMEOUT = 2000;
 const EMPTY_TRACKS: NonNullable<EvoVideoProps["tracks"]> = [];
+const EMPTY_TEXT_TRACKS: readonly TextTrack[] = [];
+
+type VideoElementRef = RefObject<HTMLVideoElement | null | undefined>;
+type SourceCursor = { sourceKey: string; index: number };
 
 type DashLikeMedia = VideoMedia & {
   engine: {
@@ -33,6 +44,120 @@ function isDashLikeMedia(media: VideoMedia): media is DashLikeMedia {
     "engine" in media &&
     typeof (media as DashLikeMedia).engine?.getTracksFor === "function"
   );
+}
+
+function applyLanguage(
+  media: VideoMedia | null,
+  textTracks: readonly TextTrack[],
+  language: string | null,
+) {
+  if (media && isDashLikeMedia(media)) {
+    media.engine.setTextTrack(
+      media.engine
+        .getTracksFor("text")
+        .findIndex(({ lang }) => lang === language),
+    );
+  } else {
+    for (const track of textTracks) {
+      track.mode = track.language === language ? "showing" : "disabled";
+    }
+  }
+}
+
+const textTrackSnapshots = new WeakMap<TextTrackList, readonly TextTrack[]>();
+
+function getTextTrackSnapshot(videoRef: VideoElementRef) {
+  const list = videoRef.current?.textTracks;
+  if (!list) {
+    return EMPTY_TEXT_TRACKS;
+  }
+
+  const previous = textTrackSnapshots.get(list);
+  if (
+    previous?.length === list.length &&
+    previous.every((track, index) => track === list[index])
+  ) {
+    return previous;
+  }
+
+  const snapshot = Array.from(list);
+  textTrackSnapshots.set(list, snapshot);
+  return snapshot;
+}
+
+function getServerTextTrackSnapshot() {
+  return EMPTY_TEXT_TRACKS;
+}
+
+function useVideoTextTracks(videoRef: VideoElementRef) {
+  const subscribe = useCallback(
+    (onStoreChange: () => void) => {
+      const video = videoRef.current;
+      if (!video) {
+        return () => undefined;
+      }
+
+      const list = video.textTracks;
+      list.addEventListener("addtrack", onStoreChange);
+      list.addEventListener("change", onStoreChange);
+      list.addEventListener("removetrack", onStoreChange);
+      video.addEventListener("loadedmetadata", onStoreChange);
+      return () => {
+        list.removeEventListener("addtrack", onStoreChange);
+        list.removeEventListener("change", onStoreChange);
+        list.removeEventListener("removetrack", onStoreChange);
+        video.removeEventListener("loadedmetadata", onStoreChange);
+      };
+    },
+    [videoRef],
+  );
+  const getSnapshot = useCallback(
+    () => getTextTrackSnapshot(videoRef),
+    [videoRef],
+  );
+
+  return useSyncExternalStore(
+    subscribe,
+    getSnapshot,
+    getServerTextTrackSnapshot,
+  );
+}
+
+function useFullscreenState(
+  rootRef: RefObject<HTMLDivElement | null>,
+  onFullscreenChangeRef: RefObject<
+    EvoVideoProps["onFullscreenChange"] | undefined
+  >,
+) {
+  const getSnapshot = useCallback(() => {
+    const root = rootRef.current;
+    return Boolean(root && root.ownerDocument.fullscreenElement === root);
+  }, [rootRef]);
+  const subscribe = useCallback(
+    (onStoreChange: () => void) => {
+      const ownerDocument = rootRef.current?.ownerDocument;
+      if (!ownerDocument) {
+        return () => undefined;
+      }
+
+      const handleFullscreenChange = () => {
+        onStoreChange();
+        onFullscreenChangeRef.current?.(getSnapshot());
+      };
+      ownerDocument.addEventListener(
+        "fullscreenchange",
+        handleFullscreenChange,
+      );
+      return () =>
+        ownerDocument.removeEventListener(
+          "fullscreenchange",
+          handleFullscreenChange,
+        );
+    },
+    [getSnapshot, onFullscreenChangeRef, rootRef],
+  );
+
+  return useSyncExternalStore(subscribe, getSnapshot, () => false);
 }
 
 /**
@@ -115,22 +240,30 @@ export function EvoVideo({
 }: EvoVideoProps) {
   const rootRef = useRef<HTMLDivElement>(null);
   const [videoTeeRef, videoRef] = useRefTee<HTMLVideoElement | null>(ref, null);
-  const playButtonRef = useRef<HTMLButtonElement>(null);
   const mediaRef = useRef<VideoMedia | null>(null);
   const generationRef = useRef(0);
   const sourcesRef = useRef(sources);
   const onLoadErrorRef = useRef(onLoadError);
   const onPlayingChangeRef = useRef(onPlayingChange);
   const onFullscreenChangeRef = useRef(onFullscreenChange);
+  const languageRef = useRef<string | null>(requestedLanguage ?? null);
+  const textTracksRef = useRef<readonly TextTrack[]>(EMPTY_TEXT_TRACKS);
   const userPausedRef = useRef(false);
   const autoPauseRef = useRef(false);
   const focusControlsRef = useRef(false);
   const clickOnHiddenControlsRef = useRef(false);
   const focusFromClickRef = useRef(false);
   const playingRef = useRef(false);
+  const loadingTimerRef = useRef<number | null>(null);
+  const controlsTimerRef = useRef<number | null>(null);
 
-  const [video, setVideo] = useState<HTMLVideoElement | null>(null);
-  const [sourceIndex, setSourceIndex] = useState(0);
+  const sourceKey = sources
+    .map(({ src, engine }) => `${engine ?? "native"}:${src}`)
+    .join("\n");
+  const [sourceCursor, setSourceCursor] = useState<SourceCursor>({
+    sourceKey,
+    index: 0,
+  });
   const [playing, setPlaying] = useState(requestedPlaying ?? false);
   const [played, setPlayed] = useState(requestedPlaying ?? false);
   const [failed, setFailed] = useState(false);
@@ -138,11 +271,9 @@ export function EvoVideo({
   const [controlsActive, setControlsActive] = useState(false);
   const [volume, setVolume] = useState(requestedVolume);
   const [muted, setMuted] = useState(requestedMuted);
-  const [language, setLanguage] = useState<string | null>(
-    requestedLanguage ?? null,
-  );
-  const [fullscreen, setFullscreen] = useState(requestedFullscreen ?? false);
-  const [textTracks, setTextTracks] = useState<TextTrack[]>([]);
+  const [uncontrolledLanguage, setUncontrolledLanguage] = useState<
+    string | null
+  >(null);
 
   sourcesRef.current = sources;
   onLoadErrorRef.current = onLoadError;
@@ -150,34 +281,90 @@ export function EvoVideo({
   onFullscreenChangeRef.current = onFullscreenChange;
   playingRef.current = playing;
 
-  const sourceKey = useMemo(
-    () =>
-      sources
-        .map(({ src, engine }) => `${engine ?? "native"}:${src}`)
-        .join("\n"),
-    [sources],
-  );
+  const sourceIndex =
+    sourceCursor.sourceKey === sourceKey ? sourceCursor.index : 0;
   const source = sources[sourceIndex];
   const sourceSrc = source?.src;
   const sourceEngine = source?.engine;
+  const language =
+    requestedLanguage !== undefined ? requestedLanguage : uncontrolledLanguage;
+  const textTracks = useVideoTextTracks(videoRef);
+  const fullscreen = useFullscreenState(rootRef, onFullscreenChangeRef);
 
-  const setVideoElement = useCallback(
-    (element: HTMLVideoElement | null) => {
-      videoTeeRef(element);
-      setVideo(element);
-    },
-    [videoTeeRef],
-  );
+  languageRef.current = language;
+  textTracksRef.current = textTracks;
+
+  const endLoading = useCallback(() => {
+    if (loadingTimerRef.current !== null) {
+      window.clearTimeout(loadingTimerRef.current);
+      loadingTimerRef.current = null;
+    }
+    setLoading(false);
+  }, []);
+
+  const beginLoading = useCallback(() => {
+    if (loadingTimerRef.current !== null) {
+      window.clearTimeout(loadingTimerRef.current);
+    }
+    setLoading(true);
+    loadingTimerRef.current = window.setTimeout(() => {
+      loadingTimerRef.current = null;
+      setLoading(false);
+    }, spinnerTimeout);
+  }, [spinnerTimeout]);
+
+  const hideControls = useCallback(() => {
+    if (controlsTimerRef.current !== null) {
+      window.clearTimeout(controlsTimerRef.current);
+      controlsTimerRef.current = null;
+    }
+    setControlsActive(false);
+  }, []);
+
+  const showControls = useCallback(() => {
+    if (controlsTimerRef.current !== null) {
+      window.clearTimeout(controlsTimerRef.current);
+    }
+    setControlsActive(true);
+    controlsTimerRef.current = window.setTimeout(() => {
+      controlsTimerRef.current = null;
+      setControlsActive(false);
+    }, 3000);
+  }, []);
+
+  const setRootElement = useCallback((element: HTMLDivElement | null) => {
+    rootRef.current = element;
+    if (!element) {
+      return;
+    }
+
+    return () => {
+      rootRef.current = null;
+      if (loadingTimerRef.current !== null) {
+        window.clearTimeout(loadingTimerRef.current);
+      }
+      if (controlsTimerRef.current !== null) {
+        window.clearTimeout(controlsTimerRef.current);
+      }
+    };
+  }, []);
+
+  const setPlayButton = useCallback((button: HTMLButtonElement | null) => {
+    if (button && focusControlsRef.current) {
+      focusControlsRef.current = false;
+      button.focus();
+    }
+  }, []);
 
   const reportSourceFailure = useCallback(
     (cause: unknown, failedIndex: number, failedSource: EvoVideoSource) => {
       if (failedIndex < sourcesRef.current.length - 1) {
-        setSourceIndex(failedIndex + 1);
+        setSourceCursor({ sourceKey, index: failedIndex + 1 });
         return;
       }
 
       setFailed(true);
-      setLoading(false);
+      endLoading();
       const error: EvoVideoLoadError = {
         cause,
         engine: inferEngine(failedSource),
@@ -186,7 +373,7 @@ export function EvoVideo({
       };
       onLoadErrorRef.current?.(error);
     },
-    [],
+    [endLoading, sourceKey],
   );
 
   const updatePlaying = useCallback((nextPlaying: boolean) => {
@@ -219,7 +406,6 @@ export function EvoVideo({
     try {
       await root.requestFullscreen();
     } catch {
-      setFullscreen(false);
       onFullscreenChangeRef.current?.(false);
     }
   }, [fullscreenEnabled]);
@@ -231,15 +417,12 @@ export function EvoVideo({
   }, []);
 
   useEffect(() => {
-    setSourceIndex(0);
-  }, [sourceKey]);
-
-  useEffect(() => {
+    const video = videoRef.current;
     const currentSource = sourcesRef.current[sourceIndex];
     if (!video || !currentSource) {
       if (video && !currentSource) {
         setFailed(true);
-        setLoading(false);
+        endLoading();
         onLoadErrorRef.current?.({
           cause: new Error("No video source provided"),
           sourceIndex: 0,
@@ -261,6 +444,7 @@ export function EvoVideo({
         }
         media.attach(video);
         mediaRef.current = media;
+        applyLanguage(media, textTracksRef.current, languageRef.current);
         setFailed(false);
       })
       .catch((error: unknown) => {
@@ -277,9 +461,17 @@ export function EvoVideo({
       media?.detach?.();
       media?.destroy?.();
     };
-  }, [reportSourceFailure, sourceEngine, sourceIndex, sourceSrc, video]);
+  }, [
+    endLoading,
+    reportSourceFailure,
+    sourceEngine,
+    sourceIndex,
+    sourceSrc,
+    videoRef,
+  ]);
 
   useEffect(() => {
+    const video = videoRef.current;
     if (!video || requestedPlaying === undefined) {
       return;
     }
@@ -288,21 +480,24 @@ export function EvoVideo({
     } else if (!requestedPlaying && !video.paused) {
       requestPause();
     }
-  }, [requestedPlaying, requestPause, requestPlay, video]);
+  }, [requestedPlaying, requestPause, requestPlay, videoRef]);
 
   useEffect(() => {
+    const video = videoRef.current;
     if (video) {
       video.volume = Math.min(1, Math.max(0, requestedVolume));
     }
-  }, [requestedVolume, video]);
+  }, [requestedVolume, videoRef]);
 
   useEffect(() => {
+    const video = videoRef.current;
     if (video) {
       video.muted = requestedMuted;
     }
-  }, [requestedMuted, video]);
+  }, [requestedMuted, videoRef]);
 
   useEffect(() => {
+    const video = videoRef.current;
     if (
       video &&
       requestedCurrentTime !== undefined &&
@@ -310,28 +505,11 @@ export function EvoVideo({
     ) {
       video.currentTime = requestedCurrentTime;
     }
-  }, [requestedCurrentTime, video]);
+  }, [requestedCurrentTime, videoRef]);
 
   useEffect(() => {
-    if (requestedLanguage === undefined) {
-      return;
-    }
-
-    const media = mediaRef.current;
-    if (media && isDashLikeMedia(media)) {
-      media.engine.setTextTrack(
-        media.engine
-          .getTracksFor("text")
-          .findIndex(({ lang }) => lang === requestedLanguage),
-      );
-    } else {
-      for (const track of textTracks) {
-        track.mode =
-          track.language === requestedLanguage ? "showing" : "disabled";
-      }
-    }
-    setLanguage(requestedLanguage);
-  }, [requestedLanguage, textTracks]);
+    applyLanguage(mediaRef.current, textTracks, language);
+  }, [language, textTracks]);
 
   useEffect(() => {
     if (requestedFullscreen === undefined || !fullscreenEnabled) {
@@ -348,51 +526,6 @@ export function EvoVideo({
     requestFullscreen,
     requestedFullscreen,
   ]);
-
-  useEffect(() => {
-    const handleFullscreenChange = () => {
-      const nextFullscreen = document.fullscreenElement === rootRef.current;
-      setFullscreen(nextFullscreen);
-      onFullscreenChange?.(nextFullscreen);
-    };
-    document.addEventListener("fullscreenchange", handleFullscreenChange);
-    return () =>
-      document.removeEventListener("fullscreenchange", handleFullscreenChange);
-  }, [onFullscreenChange]);
-
-  useEffect(() => {
-    if (!loading) {
-      return;
-    }
-    const timeout = window.setTimeout(() => setLoading(false), spinnerTimeout);
-    return () => window.clearTimeout(timeout);
-  }, [loading, spinnerTimeout]);
-
-  useEffect(() => {
-    if (!controlsActive) {
-      return;
-    }
-    const timeout = window.setTimeout(() => setControlsActive(false), 3000);
-    return () => window.clearTimeout(timeout);
-  }, [controlsActive]);
-
-  useEffect(() => {
-    if (!video) {
-      return;
-    }
-    const updateTextTracks = () => {
-      setTextTracks(Array.from(video.textTracks));
-    };
-    updateTextTracks();
-    video.textTracks.addEventListener("addtrack", updateTextTracks);
-    video.textTracks.addEventListener("change", updateTextTracks);
-    video.textTracks.addEventListener("removetrack", updateTextTracks);
-    return () => {
-      video.textTracks.removeEventListener("addtrack", updateTextTracks);
-      video.textTracks.removeEventListener("change", updateTextTracks);
-      video.textTracks.removeEventListener("removetrack", updateTextTracks);
-    };
-  }, [video, tracks]);
 
   useEffect(() => {
     const root = rootRef.current;
@@ -450,14 +583,7 @@ export function EvoVideo({
       window.removeEventListener("focus", handleFocus);
       window.removeEventListener("blur", handleBlur);
     };
-  }, [autoPlay, offscreenPause, requestPause, requestPlay, video]);
-
-  useEffect(() => {
-    if (played && focusControlsRef.current) {
-      focusControlsRef.current = false;
-      playButtonRef.current?.focus();
-    }
-  }, [played]);
+  }, [autoPlay, offscreenPause, requestPause, requestPlay]);
 
   const controlsHidden = Boolean(!nav && !failed && playing && !controlsActive);
   const started = played || playing;
@@ -467,13 +593,13 @@ export function EvoVideo({
     // eslint-disable-next-line jsx-a11y/media-has-caption
     <video
       {...videoProps}
-      ref={setVideoElement}
+      ref={videoTeeRef}
       playsInline
       autoPlay={autoPlay && !offscreenPause}
       onPlaying={(event) => {
         updatePlaying(true);
         setPlayed(true);
-        setLoading(false);
+        endLoading();
         userPausedRef.current = false;
         if (playView === "fullscreen" && fullscreenEnabled) {
           void requestFullscreen();
@@ -488,10 +614,7 @@ export function EvoVideo({
         updatePlaying(false);
         onPause?.(event);
       }}
-      onLoadedMetadata={(event) => {
-        setTextTracks(Array.from(event.currentTarget.textTracks));
-        onLoadedMetadata?.(event);
-      }}
+      onLoadedMetadata={onLoadedMetadata}
       onTimeUpdate={(event) => {
         onCurrentTimeChange?.(event.currentTarget.currentTime);
         onTimeUpdate?.(event);
@@ -506,11 +629,11 @@ export function EvoVideo({
         onVolumeChange?.(event);
       }}
       onWaiting={(event) => {
-        setLoading(true);
+        beginLoading();
         onWaiting?.(event);
       }}
       onCanPlay={(event) => {
-        setLoading(false);
+        endLoading();
         onCanPlay?.(event);
       }}
       onError={(event) => {
@@ -531,7 +654,7 @@ export function EvoVideo({
         if (!nav) {
           if (clickOnHiddenControlsRef.current) {
             clickOnHiddenControlsRef.current = false;
-            setControlsActive(true);
+            showControls();
           } else if (playingRef.current) {
             requestPause();
           } else {
@@ -577,10 +700,10 @@ export function EvoVideo({
 
   return (
     <div
-      ref={rootRef}
+      ref={setRootElement}
       className="video"
-      onMouseMove={() => setControlsActive(true)}
-      onMouseLeave={() => setControlsActive(false)}
+      onMouseMove={showControls}
+      onMouseLeave={hideControls}
     >
       {videoElement}
       {navElement}
@@ -617,9 +740,11 @@ export function EvoVideo({
                 controlsHidden && "video__controls--hidden",
               )}
             >
-              {!controls.timeline && <VideoRemainingControl video={video} />}
+              {!controls.timeline && (
+                <VideoRemainingControl videoRef={videoRef} />
+              )}
               <VideoPlayControl
-                buttonRef={playButtonRef}
+                buttonRef={setPlayButton}
                 playing={playing}
                 a11yPlayText={a11yPlayText}
                 a11yPauseText={a11yPauseText}
@@ -633,7 +758,7 @@ export function EvoVideo({
               />
               {controls.timeline && (
                 <VideoTimelineControl
-                  video={video}
+                  videoRef={videoRef}
                   control={controls.timeline}
                 />
               )}
@@ -643,21 +768,8 @@ export function EvoVideo({
                   language={language}
                   textTracks={textTracks}
                   onLanguageChange={(nextLanguage) => {
-                    setLanguage(nextLanguage);
-                    const media = mediaRef.current;
-                    if (media && isDashLikeMedia(media)) {
-                      media.engine.setTextTrack(
-                        media.engine
-                          .getTracksFor("text")
-                          .findIndex(({ lang }) => lang === nextLanguage),
-                      );
-                    } else {
-                      for (const track of textTracks) {
-                        track.mode =
-                          track.language === nextLanguage
-                            ? "showing"
-                            : "disabled";
-                      }
+                    if (requestedLanguage === undefined) {
+                      setUncontrolledLanguage(nextLanguage);
                     }
                     onLanguageChange?.(nextLanguage);
                   }}
@@ -665,7 +777,7 @@ export function EvoVideo({
               )}
               {controls.audio && (
                 <VideoAudioControl
-                  video={video}
+                  videoRef={videoRef}
                   control={controls.audio}
                   muted={muted}
                   volume={volume}
