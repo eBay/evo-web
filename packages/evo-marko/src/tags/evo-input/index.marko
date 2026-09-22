@@ -41,6 +41,11 @@ export interface Input extends Marko.HTML.Input {
 <let/focused=false>
 <let/value:=input.value>
 
+// Must stay outside the <evo-floating-label> body: rest destructures spread
+// onto a dynamic tag inside a custom tag body crash the Marko html translator
+<const/{ a11yText, ...postfixIconInput }=(postfixIcon ??
+    ({} as NonNullable<typeof postfixIcon>))>
+
 <evo-floating-label|{ showPlaceholder }|
     floatingLabel=floatingLabel
     size=inputSize
@@ -94,9 +99,8 @@ export interface Input extends Marko.HTML.Input {
         <if=postfixText>
             <span ...postfixText id=postfixId/>
         </if>
-        <if=postfixIcon>
-            <const/{ a11yText, ...postfixIconInput }=postfixIcon>
-            <${a11yText && "button"}/$postfixButton
+        <if=postfixIcon && a11yText>
+            <button/$postfixButton
                 ...postfixIconInput
                 aria-label=a11yText
                 class=[
@@ -107,15 +111,15 @@ export interface Input extends Marko.HTML.Input {
                 type="button"
                 disabled=disabled>
                 <${postfixIcon}/>
-            </>
+            </button>
         </if>
+        <else if=postfixIcon>
+            <${postfixIcon}/>
+        </else>
     </>
 </evo-floating-label>
 
 <return={
     control: $control,
-    // Remove the cast once the language server types dynamic tag variables
-    postfixButton: $postfixButton as unknown as
-        | (() => HTMLButtonElement)
-        | undefined,
+    postfixButton: $postfixButton,
 }>

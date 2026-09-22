@@ -1,22 +1,38 @@
 ---
 type: dx
-impact: high
+impact: med
 effort: med
-site: packages/evo-marko/src/tags/evo-input/index.marko › <input value:=value>
+site: packages/evo-marko/src/tags/evo-input/index.marko › postfix icon block
 ---
 
-# Fix SSR-mode Marko compile crash blocking all server tests that render evo-input
+# Report upstream: two Marko html-translator/runtime bugs hit by evo-input
 
-With the locked `marko@6.3.48`, the vitest `|server|` project fails to compile
-`evo-input/index.marko` with `TypeError: Cannot read properties of null
-(reading 'isExpressionStatement')` in the translator's `translateVar` (via
-`marko-vite:pre`). The same template compiles fine for the browser project, so
-this looks like an html-output translator regression around the native
-`<input value:=value>` two-way binding. Every server test that renders
-`evo-input` directly or indirectly (`evo-date-input`, `evo-date-range-input`)
-fails at compile time before any assertion runs. Likely fixes: bump/pin marko
-to a version without the regression, or report upstream and patch. Only
-`evo-marko` is affected; `evo-react` and `ebayui-core` were not checked for
-this and use different pipelines.
+Verified on `marko@6.3.48` and latest `6.3.52` (html output only; dom output is
+fine). evo-input has been restructured to avoid both, so SSR tests now run;
+these still need upstream reports so the workarounds can be removed.
 
-Check: `npx vitest run --browser.headless src/tags/evo-input/test/test.server.ts` in `packages/evo-marko` crashes with the TypeError above on an unmodified checkout.
+1. Compile crash `TypeError: Cannot read properties of null (reading
+'isExpressionStatement')` in `translateVar`. Not related to `value:=`
+   two-way binding as first suspected. Minimal repro:
+
+   ```marko
+   <const/{ a }=input>
+   <my-tag>
+     <const/{ b, ...rest }=a>
+     <${"button"} ...rest/>
+   </my-tag>
+   ```
+
+   Requires all of: a rest destructure inside a custom tag's body, whose
+   source is itself destructured from `input`, spread onto a dynamic tag.
+   Worked around by hoisting the destructure out of the custom tag body.
+
+2. SSR runtime error `Hoisted values must be functions, received type
+"undefined"` when rendering `<${falsy && "button"}/$tagVar>` with an
+   AttrTag rendered in its body and `$tagVar` referenced in `<return>`.
+   Worked around with explicit `<if>`/`<else>` branches on a concrete
+   `<button>` tag.
+
+Check: `npx vitest run --browser.headless src/tags/evo-input/test/test.server.ts`
+in `packages/evo-marko` passes; reintroducing either pattern reproduces the
+corresponding failure.

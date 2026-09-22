@@ -6,7 +6,6 @@ exports[`evo-number-input > renders default number input 1`] = `
 >
   <span
     class="textbox"
-    placeholder=""
   >
     <button
       aria-hidden="true"
@@ -33,7 +32,6 @@ exports[`evo-number-input > renders default number input 1`] = `
       </svg>
     </button>
     <input
-      aria-describedby="MARKO-ID-0 MARKO-ID-1"
       aria-label="Enter a number"
       class="textbox__control"
       id="GENERATED-1"
@@ -75,7 +73,6 @@ exports[`evo-number-input > renders number input with label 1`] = `
 >
   <span
     class="textbox"
-    placeholder=""
   >
     <label
       for="GENERATED-1"
@@ -106,7 +103,6 @@ exports[`evo-number-input > renders number input with label 1`] = `
       </svg>
     </button>
     <input
-      aria-describedby="MARKO-ID-0 MARKO-ID-1"
       class="textbox__control"
       id="GENERATED-1"
       max="100"

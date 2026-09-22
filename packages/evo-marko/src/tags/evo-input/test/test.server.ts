@@ -4,26 +4,26 @@ import { snapshotHTML } from "../../../common/test-utils/snapshots";
 import * as stories from "../input.stories";
 
 const {
-  Isolated,
+  Default,
   WithLabel,
   FloatingLabel,
   Disabled,
-  PrefixIcon,
-  BothIcons,
-  PostfixIcon,
+  WithPrefixIcon,
+  WithBothIcons,
+  WithPostfixIcon,
 } = composeStories(stories);
 
 describe("evo-input", () => {
   it("renders default input", async () => {
-    await snapshotHTML(Isolated);
+    await snapshotHTML(Default);
   });
 
   it("renders default input with an id", async () => {
-    await snapshotHTML(Isolated, { id: "textbox-id" });
+    await snapshotHTML(Default, { id: "textbox-id" });
   });
 
   it("renders fluid input", async () => {
-    await snapshotHTML(Isolated, { fluid: true });
+    await snapshotHTML(Default, { fluid: true });
   });
 
   it("renders a disabled input", async () => {
@@ -31,7 +31,7 @@ describe("evo-input", () => {
   });
 
   it("renders an input with invalid/error state", async () => {
-    await snapshotHTML(Isolated, { invalid: true });
+    await snapshotHTML(Default, { invalid: true });
   });
 
   it("renders an input with external label", async () => {
@@ -39,19 +39,19 @@ describe("evo-input", () => {
   });
 
   it("renders an input with prefix icon", async () => {
-    await snapshotHTML(PrefixIcon);
+    await snapshotHTML(WithPrefixIcon);
   });
 
   it("renders an input with floating label and without prefix icon", async () => {
-    await snapshotHTML(PrefixIcon, { floatingLabel: "test label" });
+    await snapshotHTML(WithPrefixIcon, { floatingLabel: "test label" });
   });
 
   it("renders an input with postfix icon", async () => {
-    await snapshotHTML(PostfixIcon);
+    await snapshotHTML(WithPostfixIcon);
   });
 
   it("renders an input with postfix icon button", async () => {
-    await snapshotHTML(BothIcons);
+    await snapshotHTML(WithBothIcons);
   });
 
   it("renders an input with inline floating label", async () => {
