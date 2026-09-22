@@ -1,5 +1,8 @@
-import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { useState } from "react";
+import { EvoIconGraph24 } from "../icon/icons/graph-24";
+import { EvoIconPencil24 } from "../icon/icons/pencil-24";
+import { EvoIconTruck24 } from "../icon/icons/truck-24";
 import { EvoAccordion } from "./accordion";
 import { EvoAccordionItem } from "./accordion-item";
 import {
@@ -8,9 +11,6 @@ import {
   EvoAccordionLeading,
   EvoAccordionSummary,
 } from "./index";
-import { EvoIconGraph24 } from "../icon/icons/graph-24";
-import { EvoIconTruck24 } from "../icon/icons/truck-24";
-import { EvoIconPencil24 } from "../icon/icons/pencil-24";
 
 const meta: Meta<typeof EvoAccordion> = {
   title: "Navigation & Disclosure/EvoAccordion",
@@ -97,11 +97,7 @@ export default meta;
 type Story = StoryObj<typeof EvoAccordion>;
 
 /** The default accordion keeps one section open at a time. */
-export const Default: Story = {
-  args: {
-    a11yHeadingTag: "h3",
-  },
-};
+export const Default: Story = {};
 
 /** Multiple selection allows several sections to remain open. */
 export const MultipleSelection: Story = {
