@@ -17,7 +17,9 @@ Use `EvoNumberInput` for numeric inputs with increment and decrement controls.
 - Legacy textbox-only props such as `multiline`, `opaqueLabel`, `onFloatingLabelInit`, `onButtonClick`, `forwardedRef`, and `inputRef` are unsupported.
 - React 19 `ref` targets the native input.
 
-## Before
+## Basic migration
+
+### Before
 
 ```tsx
 import { EbayNumberInput } from "@ebay/ui-core-react/ebay-number-input";
@@ -30,7 +32,7 @@ import { EbayNumberInput } from "@ebay/ui-core-react/ebay-number-input";
 />;
 ```
 
-## After
+### After
 
 ```tsx
 import { EvoNumberInput } from "@evo-web/react/number-input";
@@ -45,14 +47,49 @@ import { EvoNumberInput } from "@evo-web/react/number-input";
 
 For uncontrolled initialization, replace `value` with `defaultValue`.
 
-## Controlled migration
+## Replacing `onIncrement` and `onDecrement`
 
-Use the same value callback for direct input and paddle changes:
+When the directional callbacks only synchronized state, replace both with the
+single `onChange` callback shown above. When they performed direction-specific
+work, compare the next value with the current controlled value.
+
+### Before
+
+```tsx
+<EbayNumberInput
+  aria-label="Item quantity"
+  value={quantity}
+  onInputChange={(_, { value }) => setQuantity(value)}
+  onIncrement={(_, { value }) => {
+    reportQuantityIncrease(value);
+    setQuantity(value);
+  }}
+  onDecrement={(_, { value }) => {
+    reportQuantityDecrease(value);
+    setQuantity(value);
+  }}
+/>
+```
+
+### After
 
 ```tsx
 <EvoNumberInput
   a11yText="Item quantity"
   value={quantity}
-  onChange={setQuantity}
+  onChange={(nextQuantity) => {
+    if (nextQuantity > quantity) {
+      reportQuantityIncrease(nextQuantity);
+    } else if (nextQuantity < quantity) {
+      reportQuantityDecrease(nextQuantity);
+    }
+
+    setQuantity(nextQuantity);
+  }}
 />
 ```
+
+This detects the direction of any value change, including direct text entry. It
+does not identify whether the increment or decrement paddle caused the change.
+There is no paddle-specific replacement callback; migrate paddle analytics or
+business logic to value-change semantics rather than inferring the input source.
