@@ -115,7 +115,6 @@ export interface Input extends Marko.HTML.Input {
 <return={
     control: $control,
     // Remove the cast once the language server types dynamic tag variables
-    // (language-server agent-feedback: dynamic-tag-var-union-never).
     postfixButton: $postfixButton as unknown as
         | (() => HTMLButtonElement)
         | undefined,
