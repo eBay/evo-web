@@ -8,9 +8,9 @@ export const closed = () => `
     <li>
         <details class="details">
             <summary class="details__summary">
-                <span class="details__label">
+                <h2 class="details__label">
                     Shipping and returns
-                </span>
+                </h2>
                 <span class="details__icon" hidden>
                     <svg class="icon icon--16 details__expand" height="16" width="16" aria-hidden="true">
                         <use href="#icon-add-16"/>
@@ -30,9 +30,9 @@ export const closed = () => `
     <li>
         <details class="details">
             <summary class="details__summary">
-                <span class="details__label">
+                <h2 class="details__label">
                     Text wraps on small screen with this long text
-                </span>
+                </h2>
                 <span class="details__icon" hidden>
                     <svg class="icon icon--16 details__expand" height="16" width="16" aria-hidden="true">
                         <use href="#icon-add-16"/>
@@ -52,9 +52,9 @@ export const closed = () => `
     <li>
         <details class="details">
             <summary class="details__summary">
-                <span class="details__label">
+                <h2 class="details__label">
                     Specifications
-                </span>
+                </h2>
                 <span class="details__icon" hidden>
                     <svg class="icon icon--16 details__expand" height="16" width="16" aria-hidden="true">
                         <use href="#icon-add-16"/>
@@ -82,9 +82,9 @@ export const open = () => `
     <li>
         <details class="details" open>
             <summary class="details__summary">
-                <span class="details__label">
+                <h2 class="details__label">
                     Shipping and returns
-                </span>
+                </h2>
                 <span class="details__icon" hidden>
                     <svg class="icon icon--16 details__expand" height="16" width="16" aria-hidden="true">
                         <use href="#icon-add-16"/>
@@ -104,9 +104,9 @@ export const open = () => `
     <li>
         <details class="details">
             <summary class="details__summary">
-                <span class="details__label">
+                <h2 class="details__label">
                     Text wraps on small screen with this long text
-                </span>
+                </h2>
                 <span class="details__icon" hidden>
                     <svg class="icon icon--16 details__expand" height="16" width="16" aria-hidden="true">
                         <use href="#icon-add-16"/>
@@ -126,9 +126,9 @@ export const open = () => `
     <li>
         <details class="details">
             <summary class="details__summary">
-                <span class="details__label">
+                <h2 class="details__label">
                     Specifications
-                </span>
+                </h2>
                 <span class="details__icon" hidden>
                     <svg class="icon icon--16 details__expand" height="16" width="16" aria-hidden="true">
                         <use href="#icon-add-16"/>
