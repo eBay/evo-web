@@ -61,9 +61,9 @@ $ var disablePrefix = !!floatingLabel && !floatingLabelStatic;
         class=[
             "textbox" /** start remove after `:has` support */,
             disabled && "textbox--disabled",
-            invalid && "textbox--invalid",
+            invalid && "textbox--invalid" /** end remove after `:has` support */,
             readonly &&
-                "textbox--readonly" /** end remove after `:has` support */,
+                "textbox--readonly" /** :has() fallback — still needed for focus-ring suppression in textbox.scss, do not remove */,
             isLarge && "textbox--large",
             fluid && "textbox--fluid",
             inputClass,

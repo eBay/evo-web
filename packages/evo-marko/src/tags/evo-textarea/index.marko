@@ -46,8 +46,9 @@ export interface Input extends Marko.HTML.TextArea {
     class=[
       "textbox" /** start remove after `:has` support */,
       disabled && "textbox--disabled",
-      invalid && "textbox--invalid",
-      readonly && "textbox--readonly" /** end remove after `:has` support */,
+      invalid && "textbox--invalid" /** end remove after `:has` support */,
+      readonly &&
+        "textbox--readonly" /** :has() fallback — still needed for focus-ring suppression in textbox.scss, do not remove */,
       inputSize === "large" && "textbox--large",
       fluid && "textbox--fluid",
       inputClass,
