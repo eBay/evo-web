@@ -9,19 +9,6 @@ import type { Input as TextboxInput } from "<evo-input>";
 
 export type DateInputValue = DayISO | "";
 
-export type FieldInput = Omit<
-  TextboxInput,
-  | "value"
-  | "valueChange"
-  | "type"
-  | "disabled"
-  | "readonly"
-  | "prefixIcon"
-  | "postfixIcon"
-  | "prefixText"
-  | "postfixText"
->;
-
 export interface Input {
   value: DateInputValue;
   locale?: string;
@@ -29,7 +16,20 @@ export interface Input {
   disabled?: boolean;
   readonly?: boolean;
   invalid?: boolean;
-  field?: Marko.AttrTag<FieldInput>;
+  field?: Marko.AttrTag<
+    Omit<
+      TextboxInput,
+      | "value"
+      | "valueChange"
+      | "type"
+      | "disabled"
+      | "readonly"
+      | "prefixIcon"
+      | "postfixIcon"
+      | "prefixText"
+      | "postfixText"
+    >
+  >;
   trigger?: {
     a11yText: string;
     open: boolean;
@@ -52,7 +52,7 @@ export interface Input {
   invalid: fieldInvalid,
   onBlur,
   ...field
-}=input.field ?? ({} as FieldInput)>
+}=input.field ?? ({} as NonNullable<Input["field"]>)>
 
 <let/draft="">
 <let/invalid=false>

@@ -1,11 +1,7 @@
 import { localeDefault, type MonthISO } from "../../common/dates/date-utils";
 import type { DayInput as CalendarDayInput } from "<evo-calendar>";
-import type {
-  FieldInput,
-  DateInputValue,
-  Input as DateFieldInput,
-} from "<evo-date-field>";
-export type { FieldInput, DateInputValue };
+import type { DateInputValue, Input as DateFieldInput } from "<evo-date-field>";
+export type { DateInputValue };
 export type { DayISO } from "../../common/dates/date-utils";
 
 export interface CalendarInput extends Omit<
@@ -32,7 +28,7 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
   invalid?: boolean;
   strategy?: "absolute" | "fixed";
   onInvalidDate?: DateFieldInput["onInvalidDate"];
-  input?: Marko.AttrTag<FieldInput>;
+  input?: DateFieldInput["field"];
   calendar?: Marko.AttrTag<CalendarInput>;
 }
 
