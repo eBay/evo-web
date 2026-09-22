@@ -41,8 +41,6 @@ export interface Input extends Marko.HTML.Input {
 <let/focused=false>
 <let/value:=input.value>
 
-// Must stay outside the <evo-floating-label> body: rest destructures spread
-// onto a dynamic tag inside a custom tag body crash the Marko html translator
 <const/{ a11yText, ...postfixIconInput }=(postfixIcon ??
     ({} as NonNullable<typeof postfixIcon>))>
 
