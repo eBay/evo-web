@@ -131,4 +131,15 @@ describe("<EbayAccordion />", () => {
 
         expect(container.querySelector(".accordion")).toHaveAttribute("aria-roledescription", "my-accordion");
     });
+
+    it("should render headers with a custom heading tag", () => {
+        const { getAllByRole } = render(
+            <EbayAccordion a11yHeadingTag="h3">
+                <EbayDetails text="Summary 1">Details 1</EbayDetails>
+                <EbayDetails text="Summary 2">Details 2</EbayDetails>
+            </EbayAccordion>,
+        );
+
+        expect(getAllByRole("heading", { level: 3 })).toHaveLength(2);
+    });
 });

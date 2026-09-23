@@ -17,6 +17,8 @@ type BaseAccordionProps = Omit<ComponentProps<"ul">, "aria-roledescription"> & {
   size?: Size;
   /** Localized role description announced to a11y users. English default to be overridden is `"accordion"`. */
   a11yText?: string;
+  /** Heading tag used for each accordion header. Defaults to `"h2"`. */
+  a11yHeadingTag?: keyof HTMLElementTagNameMap;
   children?: ReactNode;
 };
 

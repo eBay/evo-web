@@ -11,6 +11,7 @@
     "@size": {
         "enum": ["regular", "small"]
     },
+    "@a11y-heading-tag": "string",
     "@summary": {
         "@*": {
             "targetProperty": null,

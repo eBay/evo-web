@@ -1,10 +1,11 @@
 import { createContext, use, useMemo } from "react";
 import type { ReactNode } from "react";
-import type { Size, Alignment } from "./types";
+import type { EvoDetailsProps, Size, Alignment } from "./types";
 
 export type DetailsContextValue = {
   size?: Size;
   alignment?: Alignment;
+  a11yHeadingTag?: EvoDetailsProps["a11yHeadingTag"];
 };
 
 export const DetailsContext = createContext<DetailsContextValue>({});
@@ -20,8 +21,12 @@ type DetailsProviderProps = DetailsContextValue & {
 export function DetailsProvider({
   size,
   alignment,
+  a11yHeadingTag,
   children,
 }: DetailsProviderProps) {
-  const value = useMemo(() => ({ size, alignment }), [size, alignment]);
+  const value = useMemo(
+    () => ({ size, alignment, a11yHeadingTag }),
+    [size, alignment, a11yHeadingTag],
+  );
   return <DetailsContext value={value}>{children}</DetailsContext>;
 }

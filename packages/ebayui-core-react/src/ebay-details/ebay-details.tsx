@@ -1,7 +1,7 @@
-import React, { ComponentProps, ElementType, FC, ReactElement } from "react";
 import classnames from "classnames";
-import { EbayEventHandler } from "../events";
+import React, { ComponentProps, ElementType, FC, JSX, ReactElement } from "react";
 import { EbayIconChevronDown16 } from "../ebay-icon/icons/ebay-icon-chevron-down-16";
+import { EbayEventHandler } from "../events";
 type ToggleProps = {
     open: boolean;
 };
@@ -12,6 +12,7 @@ export type EbayDetailsProps = Omit<ComponentProps<"details">, "onToggle"> & {
     className?: string;
     size?: "regular" | "small";
     alignment?: "regular" | "center";
+    a11yHeadingTag?: keyof JSX.IntrinsicElements;
     as?: ElementType;
     onToggle?: EbayEventHandler<HTMLDetailsElement, ToggleProps>;
 };
@@ -21,6 +22,7 @@ const EbayDetails: FC<EbayDetailsProps> = ({
     alignment,
     text,
     leading,
+    a11yHeadingTag: LabelTag = "span",
     as: Component = "div",
     className,
     open,
@@ -43,7 +45,7 @@ const EbayDetails: FC<EbayDetailsProps> = ({
                 })}
             >
                 {leading && <span className="details__leading">{leading}</span>}
-                <span className="details__label">{text}</span>
+                <LabelTag className="details__label">{text}</LabelTag>
                 <span className="details__icon" hidden>
                     <EbayIconChevronDown16 />
                 </span>

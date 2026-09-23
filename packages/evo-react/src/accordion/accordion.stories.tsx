@@ -1,5 +1,8 @@
-import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { useState } from "react";
+import { EvoIconGraph24 } from "../icon/icons/graph-24";
+import { EvoIconPencil24 } from "../icon/icons/pencil-24";
+import { EvoIconTruck24 } from "../icon/icons/truck-24";
 import { EvoAccordion } from "./accordion";
 import { EvoAccordionItem } from "./accordion-item";
 import {
@@ -8,9 +11,6 @@ import {
   EvoAccordionLeading,
   EvoAccordionSummary,
 } from "./index";
-import { EvoIconGraph24 } from "../icon/icons/graph-24";
-import { EvoIconTruck24 } from "../icon/icons/truck-24";
-import { EvoIconPencil24 } from "../icon/icons/pencil-24";
 
 const meta: Meta<typeof EvoAccordion> = {
   title: "Navigation & Disclosure/EvoAccordion",
@@ -33,6 +33,10 @@ const meta: Meta<typeof EvoAccordion> = {
       type: { name: "string", required: true },
       control: "text",
       table: { defaultValue: { summary: "accordion" } },
+    },
+    a11yHeadingTag: {
+      control: "text",
+      table: { defaultValue: { summary: "h2" } },
     },
     open: {
       control: "object",

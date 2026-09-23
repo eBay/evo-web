@@ -10,9 +10,9 @@ export const RTL = () => `
       <li>
           <details class="details">
               <summary class="details__summary">
-                  <span class="details__label">
+                  <h2 class="details__label">
                       Shipping and returns
-                  </span>
+                  </h2>
                   <span class="details__icon" hidden>
                     <svg class="icon icon--16" aria-hidden="true">
                         <use href="#icon-chevron-down-16"/>
@@ -29,9 +29,9 @@ export const RTL = () => `
       <li>
           <details class="details">
               <summary class="details__summary">
-                  <span class="details__label">
+                  <h2 class="details__label">
                       Text wraps on small screen with this long text
-                  </span>
+                  </h2>
                   <span class="details__icon" hidden>
                     <svg class="icon icon--16" aria-hidden="true">
                         <use href="#icon-chevron-down-16"/>
@@ -48,9 +48,9 @@ export const RTL = () => `
       <li>
           <details class="details">
               <summary class="details__summary">
-                  <span class="details__label">
+                  <h2 class="details__label">
                       Specifications
-                  </span>
+                  </h2>
                   <span class="details__icon" hidden>
                     <svg class="icon icon--16" aria-hidden="true">
                         <use href="#icon-chevron-down-16"/>
@@ -78,9 +78,9 @@ export const colour = () => `
       <li>
           <details class="details">
               <summary class="details__summary">
-                  <span class="details__label">
+                  <h2 class="details__label">
                       Shipping and returns
-                  </span>
+                  </h2>
                   <span class="details__icon" hidden>
                     <svg class="icon icon--16" aria-hidden="true">
                         <use href="#icon-chevron-down-16"/>
@@ -97,9 +97,9 @@ export const colour = () => `
       <li>
           <details class="details">
               <summary class="details__summary">
-                  <span class="details__label">
+                  <h2 class="details__label">
                       Text wraps on small screen with this long text
-                  </span>
+                  </h2>
                   <span class="details__icon" hidden>
                     <svg class="icon icon--16" aria-hidden="true">
                         <use href="#icon-chevron-down-16"/>
@@ -116,9 +116,9 @@ export const colour = () => `
       <li>
           <details class="details">
               <summary class="details__summary">
-                  <span class="details__label">
+                  <h2 class="details__label">
                       Specifications
-                  </span>
+                  </h2>
                   <span class="details__icon" hidden>
                     <svg class="icon icon--16" aria-hidden="true">
                         <use href="#icon-chevron-down-16"/>
@@ -146,9 +146,9 @@ export const fontSize = () => `
       <li>
           <details class="details">
               <summary class="details__summary">
-                  <span class="details__label">
+                  <h2 class="details__label">
                       Shipping and returns
-                  </span>
+                  </h2>
                   <span class="details__icon" hidden>
                     <svg class="icon icon--16" aria-hidden="true">
                         <use href="#icon-chevron-down-16"/>
@@ -165,9 +165,9 @@ export const fontSize = () => `
       <li>
           <details class="details">
               <summary class="details__summary">
-                  <span class="details__label">
+                  <h2 class="details__label">
                       Text wraps on small screen with this long text
-                  </span>
+                  </h2>
                   <span class="details__icon" hidden>
                     <svg class="icon icon--16" aria-hidden="true">
                         <use href="#icon-chevron-down-16"/>
@@ -184,9 +184,9 @@ export const fontSize = () => `
       <li>
           <details class="details">
               <summary class="details__summary">
-                  <span class="details__label">
+                  <h2 class="details__label">
                       Specifications
-                  </span>
+                  </h2>
                   <span class="details__icon" hidden>
                     <svg class="icon icon--16" aria-hidden="true">
                         <use href="#icon-chevron-down-16"/>

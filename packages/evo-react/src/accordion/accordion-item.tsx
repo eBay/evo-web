@@ -14,13 +14,15 @@ export function EvoAccordionItem({
   onOpenChange,
   ...rest
 }: EvoAccordionItemProps) {
-  const { open, isControlled, onItemToggle } = useAccordionContext();
+  const { open, isControlled, a11yHeadingTag, onItemToggle } =
+    useAccordionContext();
   const isOpen = Array.isArray(open) ? open.includes(id) : open === id;
 
   return (
     <li>
       <EvoDetails
         {...rest}
+        a11yHeadingTag={a11yHeadingTag}
         open={isOpen}
         onToggle={(event, data) => {
           onItemToggle(id, data.open);

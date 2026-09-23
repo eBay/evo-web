@@ -5,8 +5,12 @@ export interface AccordionInput extends Omit<Marko.Input<"ul">, `on${string}`> {
     size?: "regular" | "large";
     "auto-collapse"?: boolean;
     "a11y-role-description"?: Marko.HTMLAttributes["aria-label"];
+    "a11y-heading-tag"?: keyof Marko.NativeTags;
     details?: Marko.AttrTag<
-        Omit<DetailsInput, "size" | "alignment" | `on${string}`>
+        Omit<
+            DetailsInput,
+            "size" | "alignment" | "a11yHeadingTag" | `on${string}`
+        >
     >;
     "on-toggle"?: (event: { originalEvent: Event; open: boolean }) => void;
     "on-click"?: (event: { originalEvent: MouseEvent }) => void;

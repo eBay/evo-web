@@ -107,6 +107,21 @@ describe("evo-accordion", () => {
       .toHaveAttribute("aria-roledescription", "Akkordeon");
   });
 
+  it("renders headers with a custom heading tag", async () => {
+    const screen = await render(
+      <EvoAccordion a11yHeadingTag="h3">
+        <AccordionItems />
+      </EvoAccordion>,
+    );
+
+    await expect
+      .element(screen.getByRole("heading", { name: "Item 1", level: 3 }))
+      .toBeVisible();
+    await expect
+      .element(screen.getByRole("heading", { name: "Item 2", level: 3 }))
+      .toBeVisible();
+  });
+
   it("opens one uncontrolled item by id", async () => {
     const onOpenChange = vi.fn();
     const screen = await render(<TestAccordion onOpenChange={onOpenChange} />);

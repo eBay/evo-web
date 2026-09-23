@@ -8,9 +8,9 @@ export const closed = () => `
     <li>
         <details class="details">
             <summary class="details__summary">
-                <span class="details__label">
+                <h2 class="details__label">
                     Shipping and returns
-                </span>
+                </h2>
                 <span class="details__icon" hidden>
                     <svg class="icon icon--16" aria-hidden="true">
                         <use href="#icon-chevron-down-16"/>
@@ -27,9 +27,9 @@ export const closed = () => `
     <li>
         <details class="details">
             <summary class="details__summary">
-                <span class="details__label">
+                <h2 class="details__label">
                     Text wraps on small screen with this long text
-                </span>
+                </h2>
                 <span class="details__icon" hidden>
                     <svg class="icon icon--16" aria-hidden="true">
                         <use href="#icon-chevron-down-16"/>
@@ -46,9 +46,9 @@ export const closed = () => `
     <li>
         <details class="details">
             <summary class="details__summary">
-                <span class="details__label">
+                <h2 class="details__label">
                     Specifications
-                </span>
+                </h2>
                 <span class="details__icon" hidden>
                     <svg class="icon icon--16" aria-hidden="true">
                         <use href="#icon-chevron-down-16"/>
@@ -73,9 +73,9 @@ export const open = () => `
     <li>
         <details class="details" open>
             <summary class="details__summary">
-                <span class="details__label">
+                <h2 class="details__label">
                     Shipping and returns
-                </span>
+                </h2>
                 <span class="details__icon" hidden>
                     <svg class="icon icon--16" aria-hidden="true">
                         <use href="#icon-chevron-down-16"/>
@@ -92,9 +92,9 @@ export const open = () => `
     <li>
         <details class="details">
             <summary class="details__summary">
-                <span class="details__label">
+                <h2 class="details__label">
                     Text wraps on small screen with this long text
-                </span>
+                </h2>
                 <span class="details__icon" hidden>
                     <svg class="icon icon--16" aria-hidden="true">
                         <use href="#icon-chevron-down-16"/>
@@ -111,9 +111,9 @@ export const open = () => `
     <li>
         <details class="details">
             <summary class="details__summary">
-                <span class="details__label">
+                <h2 class="details__label">
                     Specifications
-                </span>
+                </h2>
                 <span class="details__icon" hidden>
                     <svg class="icon icon--16" aria-hidden="true">
                         <use href="#icon-chevron-down-16"/>
@@ -138,9 +138,9 @@ export const textSpacing = () => `
     <li>
         <details class="details" open>
             <summary class="details__summary">
-                <span class="details__label">
+                <h2 class="details__label">
                     Shipping and returns
-                </span>
+                </h2>
                 <span class="details__icon" hidden>
                     <svg class="icon icon--16" aria-hidden="true">
                         <use href="#icon-chevron-down-16"/>
@@ -157,9 +157,9 @@ export const textSpacing = () => `
     <li>
         <details class="details">
             <summary class="details__summary">
-                <span class="details__label">
+                <h2 class="details__label">
                     Text wraps on small screen with this long text
-                </span>
+                </h2>
                 <span class="details__icon" hidden>
                     <svg class="icon icon--16" aria-hidden="true">
                         <use href="#icon-chevron-down-16"/>
@@ -176,9 +176,9 @@ export const textSpacing = () => `
     <li>
         <details class="details">
             <summary class="details__summary">
-                <span class="details__label">
+                <h2 class="details__label">
                     Specifications
-                </span>
+                </h2>
                 <span class="details__icon" hidden>
                     <svg class="icon icon--16" aria-hidden="true">
                         <use href="#icon-chevron-down-16"/>
@@ -203,9 +203,9 @@ export const large = () => `
   <li>
       <details class="details">
           <summary class="details__summary">
-              <span class="details__label">
+              <h2 class="details__label">
                   Shipping and returns
-              </span>
+              </h2>
               <span class="details__icon" hidden>
                 <svg class="icon icon--16" aria-hidden="true">
                     <use href="#icon-chevron-down-16"/>
@@ -222,9 +222,9 @@ export const large = () => `
   <li>
       <details class="details">
           <summary class="details__summary">
-              <span class="details__label">
+              <h2 class="details__label">
                   Description
-              </span>
+              </h2>
               <span class="details__icon" hidden>
                 <svg class="icon icon--16" aria-hidden="true">
                     <use href="#icon-chevron-down-16"/>
@@ -241,9 +241,9 @@ export const large = () => `
   <li>
       <details class="details">
           <summary class="details__summary">
-              <span class="details__label">
+              <h2 class="details__label">
                   Specifications
-              </span>
+              </h2>
               <span class="details__icon" hidden>
                 <svg class="icon icon--16" aria-hidden="true">
                     <use href="#icon-chevron-down-16"/>
@@ -268,9 +268,9 @@ export const autoCollapse = () => `
   <li>
       <details class="details" name="accordion-1">
           <summary class="details__summary">
-              <span class="details__label">
+              <h2 class="details__label">
                   Shipping and returns
-              </span>
+              </h2>
               <span class="details__icon" hidden>
                 <svg class="icon icon--16" aria-hidden="true">
                     <use href="#icon-chevron-down-16"/>
@@ -287,9 +287,9 @@ export const autoCollapse = () => `
   <li>
       <details class="details" name="accordion-1">
           <summary class="details__summary">
-              <span class="details__label">
+              <h2 class="details__label">
                   Text wraps on small screen with this long text
-              </span>
+              </h2>
               <span class="details__icon" hidden>
                 <svg class="icon icon--16" aria-hidden="true">
                     <use href="#icon-chevron-down-16"/>
@@ -306,9 +306,9 @@ export const autoCollapse = () => `
   <li>
       <details class="details" name="accordion-1">
           <summary class="details__summary">
-              <span class="details__label">
+              <h2 class="details__label">
                   Specifications
-              </span>
+              </h2>
               <span class="details__icon" hidden>
                 <svg class="icon icon--16" aria-hidden="true">
                     <use href="#icon-chevron-down-16"/>
@@ -338,9 +338,9 @@ export const leadingIconClosed = () => `
                         <use href="#icon-lightbulb-16"/>
                     </svg>
                 </span>
-                <span class="details__label">
+                <h2 class="details__label">
                     Shipping and returns
-                </span>
+                </h2>
                 <span class="details__icon" hidden>
                     <svg class="icon icon--16" aria-hidden="true">
                         <use href="#icon-chevron-down-16"/>
@@ -362,9 +362,9 @@ export const leadingIconClosed = () => `
                         <use href="#icon-pencil-16"/>
                     </svg>
                 </span>
-                <span class="details__label">
+                <h2 class="details__label">
                     Text wraps on small screen with this long text
-                </span>
+                </h2>
                 <span class="details__icon" hidden>
                     <svg class="icon icon--16" aria-hidden="true">
                         <use href="#icon-chevron-down-16"/>
@@ -386,9 +386,9 @@ export const leadingIconClosed = () => `
                         <use href="#icon-graph-16"/>
                     </svg>
                 </span>
-                <span class="details__label">
+                <h2 class="details__label">
                     Specifications
-                </span>
+                </h2>
                 <span class="details__icon" hidden>
                     <svg class="icon icon--16" aria-hidden="true">
                         <use href="#icon-chevron-down-16"/>
