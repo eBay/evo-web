@@ -87,7 +87,6 @@ export function EvoTextarea({
           "textbox",
           disabled && "textbox--disabled",
           invalid && "textbox--invalid",
-          /** :has() fallback — still needed for focus-ring suppression in textbox.scss, do not remove */
           readOnly && "textbox--readonly",
           inputSize === "large" && "textbox--large",
           fluid && "textbox--fluid",

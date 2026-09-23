@@ -166,9 +166,8 @@ const EbayTextbox: FC<EbayTextboxProps> = ({
         /** start remove after `:has` support */
         "textbox--disabled": rest.disabled,
         "textbox--invalid": invalid,
-        /** end remove after `:has` support */
-        /** :has() fallback — still needed for focus-ring suppression in textbox.scss, do not remove */
         "textbox--readonly": rest.readOnly,
+        /** end remove after `:has` support */
     });
 
     return (
