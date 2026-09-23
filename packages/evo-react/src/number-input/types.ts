@@ -19,7 +19,7 @@ type NumberInputAccessibilityProps =
        * default to be overridden is `"Number input"`. Pass `null` explicitly
        * _only_ if alternative accessibility information is present.
        */
-      a11yText?: string;
+      a11yText?: string | null;
     };
 
 type NumberInputBehaviorProps = {

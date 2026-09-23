@@ -7,33 +7,52 @@ export type Input = Omit<TextboxInput, "value" | "valueChange"> & {
   a11yDeleteText?: string;
   onDelete?: (event: Event, target: HTMLElement) => void;
 } & (
-    | { label: Marko.AttrTag<Marko.HTML.Label>; a11yText?: never }
-    | { a11yText: string; label?: never }
+    | {
+        label: Marko.AttrTag<Marko.HTML.Label>;
+        /**
+         * Accessible name used when no visible `label` is supplied. English
+         * default to be overridden is `"Number input"`. Pass `null` explicitly
+         * _only_ if alternative accessibility information is present.
+         */
+        a11yText?: null;
+      }
+    | {
+        /**
+         * Accessible name used when no visible `label` is supplied. English
+         * default to be overridden is `"Number input"`. Pass `null` explicitly
+         * _only_ if alternative accessibility information is present.
+         */
+        a11yText?: string | null;
+        label?: never;
+      }
   );
 
 <const/defaultMin=input.a11yDeleteText ? 1 : 0>
 
 <const/{
   label,
-  a11yText,
+  a11yText = "Number input",
   a11yDeleteText,
   class: inputClass,
+  disabled,
   min = defaultMin,
   max = Infinity,
   id,
   onDelete,
+  readonly,
   ...htmlInput
 }=input>
 
 <id/numberInput=id>
 <let/value:=input.value>
 
-<const/displayValue=value || defaultMin>
+<const/displayValue=value === undefined ? min : value>
+<const/controlsDisabled=Boolean(disabled || readonly)>
 
 <const/checkBoundary(value: number, inc: number = 0) {
   let newValue = value + inc;
   if (isNaN(newValue)) {
-    newValue = defaultMin;
+    newValue = min;
   } else if (newValue > max) {
     newValue = max;
   } else if (newValue < min) {
@@ -44,19 +63,21 @@ export type Input = Omit<TextboxInput, "value" | "valueChange"> & {
 
 <span class=[
   "number-input",
-  a11yDeleteText && value === 1 && "number-input--show-delete",
+  a11yDeleteText && displayValue === min && "number-input--show-delete",
   inputClass,
 ]>
   <evo-input
     ...htmlInput
-    aria-label=!a11yText && !label ? "Number Input" : a11yText
+    aria-label=label ? undefined : a11yText
+    disabled=disabled
+    readonly=readonly
     min=min
     max=max
     id=numberInput
     type="number"
     value=displayValue
     valueChange(newValue) {
-      value = checkBoundary(parseInt(newValue, 10) || defaultMin, 0);
+      value = checkBoundary(parseInt(newValue, 10), 0);
     }
   >
     <@prefixIcon>
@@ -64,7 +85,7 @@ export type Input = Omit<TextboxInput, "value" | "valueChange"> & {
       <evo-icon-button
         aria-hidden="true"
         a11yText=null
-        disabled=displayValue <= min
+        disabled=controlsDisabled || displayValue <= min
         size="small"
         class="number-input__decrement"
         transparent
@@ -83,6 +104,7 @@ export type Input = Omit<TextboxInput, "value" | "valueChange"> & {
           size="small"
           transparent
           a11yText=a11yDeleteText
+          disabled=controlsDisabled
           onClick(event, target) {
             (onDelete || null)?.(event, target);
           }
@@ -94,7 +116,7 @@ export type Input = Omit<TextboxInput, "value" | "valueChange"> & {
       <evo-icon-button
         aria-hidden="true"
         a11yText=null
-        disabled=displayValue >= max
+        disabled=controlsDisabled || displayValue >= max
         class="number-input__increment"
         size="small"
         transparent

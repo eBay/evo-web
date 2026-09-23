@@ -33,6 +33,19 @@ describe("evo-number-input", () => {
       .toBeInTheDocument();
   });
 
+  it("supports aria-labelledby as alternative accessibility information", async () => {
+    const screen = await render(
+      <>
+        <span id="quantity-label">Item quantity</span>
+        <EvoNumberInput aria-labelledby="quantity-label" a11yText={null} />
+      </>,
+    );
+
+    await expect
+      .element(screen.getByRole("spinbutton", { name: "Item quantity" }))
+      .not.toHaveAttribute("aria-label");
+  });
+
   it("associates a generated ID with a visible label", async () => {
     const screen = await render(
       <EvoNumberInput label="Item quantity" a11yText={null} />,
@@ -169,6 +182,23 @@ describe("evo-number-input", () => {
     expect(root).not.toHaveClass("number-input--show-delete");
   });
 
+  it("shows delete at a configured minimum", async () => {
+    const screen = await render(
+      <EvoNumberInput
+        a11yDeleteText="Remove item"
+        a11yText="Item quantity"
+        defaultValue={2}
+        min={2}
+      />,
+    );
+    const root = screen.container.querySelector(".number-input")!;
+
+    expect(root).toHaveClass("number-input--show-delete");
+    await expect
+      .element(screen.getByRole("button", { name: "Remove item" }))
+      .toBeVisible();
+  });
+
   it("disables paddles at their boundaries", async () => {
     const screen = await render(
       <EvoNumberInput a11yText="Item quantity" value={5} min={1} max={5} />,
@@ -177,6 +207,43 @@ describe("evo-number-input", () => {
     expect(getPaddle(screen, "increment")).toBeDisabled();
     expect(getPaddle(screen, "decrement")).not.toBeDisabled();
   });
+
+  it.each([
+    ["disabled", { disabled: true }, "disabled"],
+    ["readOnly", { readOnly: true }, "readonly"],
+  ] as const)(
+    "disables internal controls when the input is %s",
+    async (_state, stateProps, inputAttribute) => {
+      const onChange = vi.fn();
+      const onDelete = vi.fn();
+      const screen = await render(
+        <EvoNumberInput
+          {...stateProps}
+          a11yDeleteText="Remove item"
+          a11yText="Item quantity"
+          defaultValue={1}
+          onChange={onChange}
+          onDelete={onDelete}
+        />,
+      );
+      const input = screen.getByRole("spinbutton", { name: "Item quantity" });
+      const deleteButton = screen.container.querySelector<HTMLButtonElement>(
+        ".number-input__delete",
+      )!;
+      const decrement = getPaddle(screen, "decrement");
+      const increment = getPaddle(screen, "increment");
+
+      await expect.element(input).toHaveAttribute(inputAttribute);
+      expect(decrement).toBeDisabled();
+      expect(increment).toBeDisabled();
+      expect(deleteButton).toBeDisabled();
+
+      increment.click();
+      deleteButton.click();
+      expect(onChange).not.toHaveBeenCalled();
+      expect(onDelete).not.toHaveBeenCalled();
+    },
+  );
 
   it("returns focus to the input after paddle clicks", async () => {
     const screen = await render(

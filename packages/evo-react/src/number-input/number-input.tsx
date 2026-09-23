@@ -38,12 +38,14 @@ export function EvoNumberInput({
   a11yText = "Number input",
   className,
   defaultValue,
+  disabled,
   id,
   label,
   max,
   min,
   onChange,
   onDelete,
+  readOnly,
   ref,
   value,
   ...rest
@@ -53,6 +55,7 @@ export function EvoNumberInput({
   const hasDelete = Boolean(a11yDeleteText);
   const resolvedMin = min ?? (hasDelete ? 1 : 0);
   const resolvedMax = max ?? Infinity;
+  const controlsDisabled = Boolean(disabled || readOnly);
   const [uncontrolledValue, setUncontrolledValue] = useState(
     defaultValue ?? resolvedMin,
   );
@@ -155,7 +158,7 @@ export function EvoNumberInput({
             aria-hidden="true"
             a11yText={null}
             className="number-input__decrement"
-            disabled={displayValue <= resolvedMin}
+            disabled={controlsDisabled || displayValue <= resolvedMin}
             onClick={handleDecrement}
             size="small"
             tabIndex={-1}
@@ -166,7 +169,14 @@ export function EvoNumberInput({
         </>
       ),
     }),
-    [displayValue, handleDecrement, inputId, label, resolvedMin],
+    [
+      controlsDisabled,
+      displayValue,
+      handleDecrement,
+      inputId,
+      label,
+      resolvedMin,
+    ],
   );
 
   const postfix = useMemo(
@@ -177,6 +187,7 @@ export function EvoNumberInput({
             <EvoIconButton
               a11yText={a11yDeleteText ?? null}
               className="number-input__delete"
+              disabled={controlsDisabled}
               onClick={onDelete}
               size="small"
               transparent
@@ -188,7 +199,7 @@ export function EvoNumberInput({
             aria-hidden="true"
             a11yText={null}
             className="number-input__increment"
-            disabled={displayValue >= resolvedMax}
+            disabled={controlsDisabled || displayValue >= resolvedMax}
             onClick={handleIncrement}
             size="small"
             tabIndex={-1}
@@ -201,6 +212,7 @@ export function EvoNumberInput({
     }),
     [
       a11yDeleteText,
+      controlsDisabled,
       displayValue,
       handleIncrement,
       hasDelete,
@@ -211,7 +223,7 @@ export function EvoNumberInput({
 
   const numberInputClasses = classNames(
     "number-input",
-    hasDelete && displayValue === 1 && "number-input--show-delete",
+    hasDelete && displayValue === resolvedMin && "number-input--show-delete",
     className,
   );
 
@@ -220,7 +232,9 @@ export function EvoNumberInput({
       <EvoInput
         {...rest}
         aria-label={label ? undefined : (a11yText ?? undefined)}
+        disabled={disabled}
         id={inputId}
+        readOnly={readOnly}
         ref={mergedInputRef}
         type="number"
         value={displayValue}
