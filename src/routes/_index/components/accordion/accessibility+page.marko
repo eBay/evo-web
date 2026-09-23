@@ -8,7 +8,9 @@ import "../../../../sass/accessibility.scss";
   </p>
   <p>
     Each header must use a nested heading level appropriate for its place in the
-    page hierarchy.
+    page hierarchy. The component defaults to <code>h4</code> because it cannot
+    determine the surrounding heading level. Pass the appropriate heading tag
+    for the page context and must not skip heading levels.
   </p>
   <p>By default, all panels can be in an open, expanded state.</p>
   <p>

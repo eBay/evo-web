@@ -36,7 +36,7 @@ const meta: Meta<typeof EvoAccordion> = {
     },
     a11yHeadingTag: {
       control: "text",
-      table: { defaultValue: { summary: "h2" } },
+      table: { defaultValue: { summary: "h4" } },
     },
     open: {
       control: "object",

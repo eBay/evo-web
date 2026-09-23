@@ -39,10 +39,10 @@ export default {
     },
     a11yHeadingTag: {
       control: "text",
-      description: "Heading tag for each accordion header (default: `h2`)",
+      description: "Heading tag for each accordion header (default: `h4`)",
       table: {
         defaultValue: {
-          summary: "h2",
+          summary: "h4",
         },
       },
     },

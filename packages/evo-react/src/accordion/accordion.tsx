@@ -76,7 +76,7 @@ export function EvoAccordion(props: EvoAccordionProps) {
   const {
     size,
     a11yText = "accordion",
-    a11yHeadingTag = "h2",
+    a11yHeadingTag = "h4",
     open,
     defaultOpen,
     onOpenChange,

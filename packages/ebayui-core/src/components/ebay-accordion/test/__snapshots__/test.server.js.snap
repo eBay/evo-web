@@ -141,11 +141,11 @@ exports[`accordion > renders accordion with auto-collapse true 1`] = `
         [36m<summary[39m
           [33mclass[39m=[32m"details__summary"[39m
         [36m>[39m
-          [36m<h2[39m
+          [36m<h4[39m
             [33mclass[39m=[32m"details__label"[39m
           [36m>[39m
             [0mItem 1[0m
-          [36m</h2>[39m
+          [36m</h4>[39m
           [36m<span[39m
             [33mclass[39m=[32m"details__icon"[39m
             [33mhidden[39m=[32m""[39m
@@ -187,11 +187,11 @@ exports[`accordion > renders accordion with auto-collapse true 1`] = `
         [36m<summary[39m
           [33mclass[39m=[32m"details__summary"[39m
         [36m>[39m
-          [36m<h2[39m
+          [36m<h4[39m
             [33mclass[39m=[32m"details__label"[39m
           [36m>[39m
             [0mItem 2[0m
-          [36m</h2>[39m
+          [36m</h4>[39m
           [36m<span[39m
             [33mclass[39m=[32m"details__icon"[39m
             [33mhidden[39m=[32m""[39m
@@ -223,11 +223,11 @@ exports[`accordion > renders accordion with auto-collapse true 1`] = `
         [36m<summary[39m
           [33mclass[39m=[32m"details__summary"[39m
         [36m>[39m
-          [36m<h2[39m
+          [36m<h4[39m
             [33mclass[39m=[32m"details__label"[39m
           [36m>[39m
             [0mItem 3[0m
-          [36m</h2>[39m
+          [36m</h4>[39m
           [36m<span[39m
             [33mclass[39m=[32m"details__icon"[39m
             [33mhidden[39m=[32m""[39m
@@ -297,11 +297,11 @@ exports[`accordion > renders accordion with icons 1`] = `
               [36m/>[39m
             [36m</svg>[39m
           [36m</span>[39m
-          [36m<h2[39m
+          [36m<h4[39m
             [33mclass[39m=[32m"details__label"[39m
           [36m>[39m
             [0mItem 1[0m
-          [36m</h2>[39m
+          [36m</h4>[39m
           [36m<span[39m
             [33mclass[39m=[32m"details__icon"[39m
             [33mhidden[39m=[32m""[39m
@@ -371,11 +371,11 @@ exports[`accordion > renders accordion with icons 1`] = `
               [36m/>[39m
             [36m</svg>[39m
           [36m</span>[39m
-          [36m<h2[39m
+          [36m<h4[39m
             [33mclass[39m=[32m"details__label"[39m
           [36m>[39m
             [0mItem 2[0m
-          [36m</h2>[39m
+          [36m</h4>[39m
           [36m<span[39m
             [33mclass[39m=[32m"details__icon"[39m
             [33mhidden[39m=[32m""[39m
@@ -433,11 +433,11 @@ exports[`accordion > renders accordion with icons 1`] = `
               [36m/>[39m
             [36m</svg>[39m
           [36m</span>[39m
-          [36m<h2[39m
+          [36m<h4[39m
             [33mclass[39m=[32m"details__label"[39m
           [36m>[39m
             [0mItem 3[0m
-          [36m</h2>[39m
+          [36m</h4>[39m
           [36m<span[39m
             [33mclass[39m=[32m"details__icon"[39m
             [33mhidden[39m=[32m""[39m
@@ -479,11 +479,11 @@ exports[`accordion > renders accordion with large size 1`] = `
         [36m<summary[39m
           [33mclass[39m=[32m"details__summary"[39m
         [36m>[39m
-          [36m<h2[39m
+          [36m<h4[39m
             [33mclass[39m=[32m"details__label"[39m
           [36m>[39m
             [0mItem 1[0m
-          [36m</h2>[39m
+          [36m</h4>[39m
           [36m<span[39m
             [33mclass[39m=[32m"details__icon"[39m
             [33mhidden[39m=[32m""[39m
@@ -525,11 +525,11 @@ exports[`accordion > renders accordion with large size 1`] = `
         [36m<summary[39m
           [33mclass[39m=[32m"details__summary"[39m
         [36m>[39m
-          [36m<h2[39m
+          [36m<h4[39m
             [33mclass[39m=[32m"details__label"[39m
           [36m>[39m
             [0mItem 2[0m
-          [36m</h2>[39m
+          [36m</h4>[39m
           [36m<span[39m
             [33mclass[39m=[32m"details__icon"[39m
             [33mhidden[39m=[32m""[39m
@@ -561,11 +561,11 @@ exports[`accordion > renders accordion with large size 1`] = `
         [36m<summary[39m
           [33mclass[39m=[32m"details__summary"[39m
         [36m>[39m
-          [36m<h2[39m
+          [36m<h4[39m
             [33mclass[39m=[32m"details__label"[39m
           [36m>[39m
             [0mItem 3[0m
-          [36m</h2>[39m
+          [36m</h4>[39m
           [36m<span[39m
             [33mclass[39m=[32m"details__icon"[39m
             [33mhidden[39m=[32m""[39m
@@ -607,11 +607,11 @@ exports[`accordion > renders accordion with localized role description 1`] = `
         [36m<summary[39m
           [33mclass[39m=[32m"details__summary"[39m
         [36m>[39m
-          [36m<h2[39m
+          [36m<h4[39m
             [33mclass[39m=[32m"details__label"[39m
           [36m>[39m
             [0mItem 1[0m
-          [36m</h2>[39m
+          [36m</h4>[39m
           [36m<span[39m
             [33mclass[39m=[32m"details__icon"[39m
             [33mhidden[39m=[32m""[39m
@@ -653,11 +653,11 @@ exports[`accordion > renders accordion with localized role description 1`] = `
         [36m<summary[39m
           [33mclass[39m=[32m"details__summary"[39m
         [36m>[39m
-          [36m<h2[39m
+          [36m<h4[39m
             [33mclass[39m=[32m"details__label"[39m
           [36m>[39m
             [0mItem 2[0m
-          [36m</h2>[39m
+          [36m</h4>[39m
           [36m<span[39m
             [33mclass[39m=[32m"details__icon"[39m
             [33mhidden[39m=[32m""[39m
@@ -689,11 +689,11 @@ exports[`accordion > renders accordion with localized role description 1`] = `
         [36m<summary[39m
           [33mclass[39m=[32m"details__summary"[39m
         [36m>[39m
-          [36m<h2[39m
+          [36m<h4[39m
             [33mclass[39m=[32m"details__label"[39m
           [36m>[39m
             [0mItem 3[0m
-          [36m</h2>[39m
+          [36m</h4>[39m
           [36m<span[39m
             [33mclass[39m=[32m"details__icon"[39m
             [33mhidden[39m=[32m""[39m
@@ -735,11 +735,11 @@ exports[`accordion > renders default accordion 1`] = `
         [36m<summary[39m
           [33mclass[39m=[32m"details__summary"[39m
         [36m>[39m
-          [36m<h2[39m
+          [36m<h4[39m
             [33mclass[39m=[32m"details__label"[39m
           [36m>[39m
             [0mItem 1[0m
-          [36m</h2>[39m
+          [36m</h4>[39m
           [36m<span[39m
             [33mclass[39m=[32m"details__icon"[39m
             [33mhidden[39m=[32m""[39m
@@ -781,11 +781,11 @@ exports[`accordion > renders default accordion 1`] = `
         [36m<summary[39m
           [33mclass[39m=[32m"details__summary"[39m
         [36m>[39m
-          [36m<h2[39m
+          [36m<h4[39m
             [33mclass[39m=[32m"details__label"[39m
           [36m>[39m
             [0mItem 2[0m
-          [36m</h2>[39m
+          [36m</h4>[39m
           [36m<span[39m
             [33mclass[39m=[32m"details__icon"[39m
             [33mhidden[39m=[32m""[39m
@@ -817,11 +817,11 @@ exports[`accordion > renders default accordion 1`] = `
         [36m<summary[39m
           [33mclass[39m=[32m"details__summary"[39m
         [36m>[39m
-          [36m<h2[39m
+          [36m<h4[39m
             [33mclass[39m=[32m"details__label"[39m
           [36m>[39m
             [0mItem 3[0m
-          [36m</h2>[39m
+          [36m</h4>[39m
           [36m<span[39m
             [33mclass[39m=[32m"details__icon"[39m
             [33mhidden[39m=[32m""[39m

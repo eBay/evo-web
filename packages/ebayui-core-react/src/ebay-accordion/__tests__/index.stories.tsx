@@ -30,9 +30,9 @@ const meta: Meta<typeof EbayAccordion> = {
             },
         },
         a11yHeadingTag: {
-            description: "Heading tag for each accordion header (default: `h2`)",
+            description: "Heading tag for each accordion header (default: `h4`)",
             control: "text",
-            table: { defaultValue: { summary: "h2" } },
+            table: { defaultValue: { summary: "h4" } },
         },
         onToggle: {
             action: "onToggle",
