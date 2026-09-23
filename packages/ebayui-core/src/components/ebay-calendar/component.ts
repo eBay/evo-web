@@ -153,9 +153,11 @@ class Calendar extends Marko.Component<Input, State> {
         }
         while (
             this.state.disableAfter &&
-            this.getMonthDate(
-                this.state.offset + (input.numMonths || 1) - 1,
-            ).toISOString() > this.state.disableAfter
+            toISO(
+                this.getMonthDate(
+                    this.state.offset + (input.numMonths || 1) - 1,
+                ),
+            ) > this.state.disableAfter
         ) {
             this.state.offset--;
         }
