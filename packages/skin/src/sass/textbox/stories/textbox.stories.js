@@ -58,6 +58,30 @@ export const errorWithValue = () => `
 </span>
 `;
 
+export const readonly = () => `
+<span class="textbox textbox--readonly">
+    <input aria-label="Username" class="textbox__control" type="text" readonly placeholder="placeholder text" />
+</span>
+`;
+
+export const readonlyWithValue = () => `
+<span class="textbox textbox--readonly">
+    <input aria-label="Username" class="textbox__control" type="text" readonly value="blueladybug463" />
+</span>
+`;
+
+export const disabled = () => `
+<span class="textbox textbox--disabled">
+    <input class="textbox__control" type="text" disabled placeholder="placeholder text" />
+</span>
+`;
+
+export const disabledWithValue = () => `
+<span class="textbox textbox--disabled">
+    <input class="textbox__control" type="text" disabled value="value" />
+</span>
+`;
+
 export const fluid = () => `
 <div class="textbox textbox--fluid">
     <input class="textbox__control" type="text" placeholder="placeholder text" />

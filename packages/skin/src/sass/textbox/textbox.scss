@@ -58,13 +58,6 @@
     );
 }
 
-/* `.textbox--readonly` should be removed after full browser support for `:has` */
-.textbox--readonly,
-.textbox:has(> .textbox__control[readonly]) {
-    background-color: transparent;
-    border: none;
-}
-
 /* `.textbox--disabled` should be removed after full browser support for `:has` */
 .textbox--disabled,
 .textbox:has(> .textbox__control[disabled]) {
@@ -110,11 +103,11 @@ input.textbox__control {
     vertical-align: middle;
 }
 
-input.textbox__control:first-child:not([readonly]) {
+input.textbox__control:first-child {
     padding-inline-start: var(--spacing-200);
 }
 
-input.textbox__control:last-child:not([readonly]) {
+input.textbox__control:last-child {
     padding-inline-end: var(--spacing-200);
 }
 
@@ -245,11 +238,6 @@ input.textbox__control {
 
 .textbox .icon-btn:first-child {
     margin-inline-end: calc(var(--spacing-100) * -1);
-}
-
-input.textbox__control[readonly]:focus,
-textarea.textbox__control[readonly]:focus {
-    text-decoration: underline;
 }
 
 .textbox--fluid,
