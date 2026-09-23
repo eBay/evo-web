@@ -33,7 +33,6 @@ import "@ebay/skin/details.mjs";
 export function EvoDetails({
   size,
   alignment,
-  a11yHeadingTag,
   open,
   onToggle,
   children,
@@ -47,11 +46,7 @@ export function EvoDetails({
     });
 
   return (
-    <DetailsProvider
-      size={size}
-      alignment={alignment}
-      a11yHeadingTag={a11yHeadingTag}
-    >
+    <DetailsProvider size={size} alignment={alignment}>
       <details
         open={open}
         onToggle={handleToggle}

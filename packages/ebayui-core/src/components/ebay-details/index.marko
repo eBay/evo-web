@@ -7,7 +7,6 @@ $ const {
     size,
     summary,
     leading,
-    a11yHeadingTag,
     renderBody,
     as: inputAs,
     ...htmlInput
@@ -33,9 +32,9 @@ $ (input as any).toJSON = noop;
                     <${leading}/>
                 </span>
             </if>
-            <${a11yHeadingTag || "span"} class="details__label">
+            <span class="details__label">
                 <${summary.renderBody}/>
-            </>
+            </span>
             <span class="details__icon" hidden>
                 <ebay-chevron-down-16-icon/>
             </span>

@@ -8,7 +8,6 @@ export interface DetailsInput extends Omit<
     leading?: Marko.AttrTag<Marko.Input<"span">>;
     size?: "regular" | "small";
     alignment?: "regular" | "center";
-    "a11y-heading-tag"?: keyof Marko.NativeTags;
     as?: keyof Marko.NativeTags;
     "on-toggle"?: (event: { originalEvent: Event; open: boolean }) => void;
     "on-click"?: (event: { originalEvent: MouseEvent }) => void;

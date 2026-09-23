@@ -37,15 +37,6 @@ export default {
         },
       },
     },
-    a11yHeadingTag: {
-      control: "text",
-      description: "Heading tag for each accordion header (default: `h2`)",
-      table: {
-        defaultValue: {
-          summary: "h2",
-        },
-      },
-    },
     item: {
       description:
         "Represents an [`<evo-details>` tag](?path=/story/navigation-disclosure-evo-details--default) to be used as part of the group.",

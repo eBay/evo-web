@@ -1,8 +1,8 @@
 import classnames from "classnames";
-import React, { ComponentProps, FC, JSX, ReactElement, useRef, useState } from "react";
+import React, { ComponentProps, FC, ReactElement, useRef, useState } from "react";
 import { EbayDetails, EbayDetailsProps } from "../ebay-details";
-import { EbayEventHandler } from "../events";
 import { filterByType } from "../utils";
+import { EbayEventHandler } from "../events";
 
 type ToggleProps = {
     open: boolean;
@@ -12,7 +12,6 @@ type ToggleProps = {
 export type EbayAccordionProps = ComponentProps<"ul"> & {
     size?: "regular" | "large";
     autoCollapse?: boolean;
-    a11yHeadingTag?: keyof JSX.IntrinsicElements;
     children: ReactElement<EbayDetailsProps> | ReactElement<EbayDetailsProps>[];
     onToggle?: EbayEventHandler<HTMLDetailsElement, ToggleProps>;
 };
@@ -20,7 +19,6 @@ export type EbayAccordionProps = ComponentProps<"ul"> & {
 const EbayAccordion: FC<EbayAccordionProps> = ({
     size,
     autoCollapse,
-    a11yHeadingTag = "h2",
     className,
     children,
     onToggle,
@@ -38,7 +36,6 @@ const EbayAccordion: FC<EbayAccordionProps> = ({
 
     const detailsWithAccordionProps = details.map((detailComponent, detailsIndex) =>
         React.cloneElement(detailComponent as ReactElement<EbayDetailsProps>, {
-            a11yHeadingTag,
             onToggle: (event, { open }) => {
                 setInteracted(true);
                 if (autoCollapse && open) {

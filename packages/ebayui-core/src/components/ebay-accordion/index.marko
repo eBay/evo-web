@@ -5,7 +5,6 @@ $ const {
     details: items = [],
     autoCollapse,
     a11yRoleDescription,
-    a11yHeadingTag = "h2",
     ...htmlInput
 } = input;
 
@@ -24,7 +23,6 @@ $ const {
         <li>
             <ebay-details
                 ...item
-                a11yHeadingTag=a11yHeadingTag
                 open=item.open || (autoCollapse && index === state.index)
                 on-toggle("handleToggle", index)
                 on-click("emit", "click")

@@ -13,8 +13,6 @@ export type EvoDetailsProps = Omit<ComponentProps<"details">, "onToggle"> & {
   size?: Size;
   /** Controls summary alignment. Defaults to `"regular"`. */
   alignment?: Alignment;
-  /** Element used for the summary label when heading semantics are needed. */
-  a11yHeadingTag?: keyof HTMLElementTagNameMap;
   /** Fired on toggle with `(event, { open })` arguments. */
   onToggle?: (
     event: SyntheticEvent<HTMLDetailsElement>,

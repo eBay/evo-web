@@ -16,14 +16,12 @@ function TestAccordion({
   open,
   defaultOpen,
   a11yText,
-  a11yHeadingTag,
   className,
 }: {
   size?: Size;
   open?: SingleOpenValue;
   defaultOpen?: SingleOpenValue;
   a11yText?: string;
-  a11yHeadingTag?: keyof HTMLElementTagNameMap;
   className?: string;
 }) {
   const items = (
@@ -49,7 +47,6 @@ function TestAccordion({
         size={size}
         open={open}
         a11yText={a11yText}
-        a11yHeadingTag={a11yHeadingTag}
         className={className}
       >
         {items}
@@ -62,7 +59,6 @@ function TestAccordion({
       size={size}
       defaultOpen={defaultOpen}
       a11yText={a11yText}
-      a11yHeadingTag={a11yHeadingTag}
       className={className}
     >
       {items}
@@ -113,12 +109,6 @@ describe("EvoAccordion SSR", () => {
   it("should render with localized a11yText", () => {
     expect(
       renderToString(<TestAccordion a11yText="Akkordeon" />),
-    ).toMatchSnapshot();
-  });
-
-  it("should render with a custom heading tag", () => {
-    expect(
-      renderToString(<TestAccordion a11yHeadingTag="h3" />),
     ).toMatchSnapshot();
   });
 

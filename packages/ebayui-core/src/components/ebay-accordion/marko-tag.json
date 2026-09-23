@@ -11,7 +11,6 @@
     "@as": "string",
     "@auto-collapse": "boolean",
     "@a11y-role-description": "string",
-    "@a11y-heading-tag": "string",
     "@details <details>[]": {
         "attribute-groups": ["html-attributes"],
         "@*": {
