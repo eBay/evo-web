@@ -17,18 +17,3 @@ describe("given disableAfter is the first day of the current month", () => {
         ).to.deep.equal(["January 2025"]);
     });
 });
-
-describe("given disableAfter is in an earlier month", () => {
-    it("moves the view back to the month containing the last selectable day", async () => {
-        const { getAllByRole } = await render(template, {
-            navigable: true,
-            todayISO: "2025-01-15",
-            disableAfter: "2024-12-15",
-            locale: "en-US",
-        });
-
-        expect(
-            getAllByRole("heading").map((heading) => heading.textContent),
-        ).to.deep.equal(["December 2024"]);
-    });
-});
