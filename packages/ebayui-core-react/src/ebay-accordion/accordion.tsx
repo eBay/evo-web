@@ -20,7 +20,7 @@ export type EbayAccordionProps = ComponentProps<"ul"> & {
 const EbayAccordion: FC<EbayAccordionProps> = ({
     size,
     autoCollapse,
-    a11yHeadingTag = "h2",
+    a11yHeadingTag = "h4",
     className,
     children,
     onToggle,

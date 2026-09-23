@@ -13,11 +13,11 @@ exports[`<EbayAccordion /> rendering > renders autoCollapse story correctly 1`] 
         <summary
           class="details__summary"
         >
-          <h2
+          <h4
             class="details__label"
           >
             Item 1
-          </h2>
+          </h4>
           <span
             class="details__icon"
             hidden=""
@@ -50,11 +50,11 @@ exports[`<EbayAccordion /> rendering > renders autoCollapse story correctly 1`] 
         <summary
           class="details__summary"
         >
-          <h2
+          <h4
             class="details__label"
           >
             Item 2
-          </h2>
+          </h4>
           <span
             class="details__icon"
             hidden=""
@@ -87,11 +87,11 @@ exports[`<EbayAccordion /> rendering > renders autoCollapse story correctly 1`] 
         <summary
           class="details__summary"
         >
-          <h2
+          <h4
             class="details__label"
           >
             Item 3
-          </h2>
+          </h4>
           <span
             class="details__icon"
             hidden=""
@@ -134,11 +134,11 @@ exports[`<EbayAccordion /> rendering > renders default story correctly 1`] = `
         <summary
           class="details__summary"
         >
-          <h2
+          <h4
             class="details__label"
           >
             Item 1
-          </h2>
+          </h4>
           <span
             class="details__icon"
             hidden=""
@@ -171,11 +171,11 @@ exports[`<EbayAccordion /> rendering > renders default story correctly 1`] = `
         <summary
           class="details__summary"
         >
-          <h2
+          <h4
             class="details__label"
           >
             Item 2
-          </h2>
+          </h4>
           <span
             class="details__icon"
             hidden=""
@@ -208,11 +208,11 @@ exports[`<EbayAccordion /> rendering > renders default story correctly 1`] = `
         <summary
           class="details__summary"
         >
-          <h2
+          <h4
             class="details__label"
           >
             Item 3
-          </h2>
+          </h4>
           <span
             class="details__icon"
             hidden=""
@@ -255,11 +255,11 @@ exports[`<EbayAccordion /> rendering > renders large size story correctly 1`] = 
         <summary
           class="details__summary"
         >
-          <h2
+          <h4
             class="details__label"
           >
             Item 1
-          </h2>
+          </h4>
           <span
             class="details__icon"
             hidden=""
@@ -292,11 +292,11 @@ exports[`<EbayAccordion /> rendering > renders large size story correctly 1`] = 
         <summary
           class="details__summary"
         >
-          <h2
+          <h4
             class="details__label"
           >
             Item 2
-          </h2>
+          </h4>
           <span
             class="details__icon"
             hidden=""
@@ -329,11 +329,11 @@ exports[`<EbayAccordion /> rendering > renders large size story correctly 1`] = 
         <summary
           class="details__summary"
         >
-          <h2
+          <h4
             class="details__label"
           >
             Item 3
-          </h2>
+          </h4>
           <span
             class="details__icon"
             hidden=""
@@ -377,11 +377,11 @@ exports[`<EbayAccordion /> rendering > renders open story correctly 1`] = `
         <summary
           class="details__summary"
         >
-          <h2
+          <h4
             class="details__label"
           >
             Item 1
-          </h2>
+          </h4>
           <span
             class="details__icon"
             hidden=""
@@ -414,11 +414,11 @@ exports[`<EbayAccordion /> rendering > renders open story correctly 1`] = `
         <summary
           class="details__summary"
         >
-          <h2
+          <h4
             class="details__label"
           >
             Item 2
-          </h2>
+          </h4>
           <span
             class="details__icon"
             hidden=""
@@ -451,11 +451,11 @@ exports[`<EbayAccordion /> rendering > renders open story correctly 1`] = `
         <summary
           class="details__summary"
         >
-          <h2
+          <h4
             class="details__label"
           >
             Item 3
-          </h2>
+          </h4>
           <span
             class="details__icon"
             hidden=""
@@ -512,11 +512,11 @@ exports[`<EbayAccordion /> rendering > renders with icon story correctly 1`] = `
               />
             </svg>
           </span>
-          <h2
+          <h4
             class="details__label"
           >
             Item 1
-          </h2>
+          </h4>
           <span
             class="details__icon"
             hidden=""
@@ -563,11 +563,11 @@ exports[`<EbayAccordion /> rendering > renders with icon story correctly 1`] = `
               />
             </svg>
           </span>
-          <h2
+          <h4
             class="details__label"
           >
             Item 2
-          </h2>
+          </h4>
           <span
             class="details__icon"
             hidden=""
@@ -614,11 +614,11 @@ exports[`<EbayAccordion /> rendering > renders with icon story correctly 1`] = `
               />
             </svg>
           </span>
-          <h2
+          <h4
             class="details__label"
           >
             Item 3
-          </h2>
+          </h4>
           <span
             class="details__icon"
             hidden=""

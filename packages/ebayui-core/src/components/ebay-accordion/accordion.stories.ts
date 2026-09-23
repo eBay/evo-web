@@ -59,10 +59,10 @@ export default {
             type: "string",
             control: { type: "text" },
             description:
-                "Heading tag for each accordion header (default: `h2`)",
+                "Heading tag for each accordion header (default: `h4`)",
             table: {
                 defaultValue: {
-                    summary: "h2",
+                    summary: "h4",
                 },
             },
         },

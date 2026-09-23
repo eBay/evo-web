@@ -87,7 +87,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
             }
             &::marker {font-size: 0px}
           }}</style>
-          <h2 style="
+          <h4 style="
             animation-duration: 0ms;
             flex-basis: 0%;
             flex-grow: 1;
@@ -102,7 +102,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
               &::marker {font-size: 0px}
             }}</style>
             Item 1
-          </h2>
+          </h4>
           <span
             hidden
             style="
@@ -247,7 +247,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
             }
             &::marker {font-size: 0px}
           }}</style>
-          <h2 style="
+          <h4 style="
             animation-duration: 0ms;
             flex-basis: 0%;
             flex-grow: 1;
@@ -262,7 +262,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
               &::marker {font-size: 0px}
             }}</style>
             Item 2
-          </h2>
+          </h4>
           <span
             hidden
             style="
@@ -406,7 +406,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
             }
             &::marker {font-size: 0px}
           }}</style>
-          <h2 style="
+          <h4 style="
             animation-duration: 0ms;
             flex-basis: 0%;
             flex-grow: 1;
@@ -421,7 +421,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
               &::marker {font-size: 0px}
             }}</style>
             Item 3
-          </h2>
+          </h4>
           <span
             hidden
             style="

@@ -133,11 +133,11 @@ exports[`accordion > renders accordion with large size 1`] = `
       <summary
         class="details__summary"
       >
-        <h2
+        <h4
           class="details__label"
         >
           Item 1
-        </h2>
+        </h4>
         <span
           class="details__icon"
           hidden=""
@@ -176,11 +176,11 @@ exports[`accordion > renders accordion with large size 1`] = `
       <summary
         class="details__summary"
       >
-        <h2
+        <h4
           class="details__label"
         >
           Item 2
-        </h2>
+        </h4>
         <span
           class="details__icon"
           hidden=""
@@ -211,11 +211,11 @@ exports[`accordion > renders accordion with large size 1`] = `
       <summary
         class="details__summary"
       >
-        <h2
+        <h4
           class="details__label"
         >
           Item 3
-        </h2>
+        </h4>
         <span
           class="details__icon"
           hidden=""
@@ -255,11 +255,11 @@ exports[`accordion > renders accordion with localized role description 1`] = `
       <summary
         class="details__summary"
       >
-        <h2
+        <h4
           class="details__label"
         >
           Item 1
-        </h2>
+        </h4>
         <span
           class="details__icon"
           hidden=""
@@ -298,11 +298,11 @@ exports[`accordion > renders accordion with localized role description 1`] = `
       <summary
         class="details__summary"
       >
-        <h2
+        <h4
           class="details__label"
         >
           Item 2
-        </h2>
+        </h4>
         <span
           class="details__icon"
           hidden=""
@@ -333,11 +333,11 @@ exports[`accordion > renders accordion with localized role description 1`] = `
       <summary
         class="details__summary"
       >
-        <h2
+        <h4
           class="details__label"
         >
           Item 3
-        </h2>
+        </h4>
         <span
           class="details__icon"
           hidden=""
@@ -376,11 +376,11 @@ exports[`accordion > renders default accordion 1`] = `
       <summary
         class="details__summary"
       >
-        <h2
+        <h4
           class="details__label"
         >
           Item 1
-        </h2>
+        </h4>
         <span
           class="details__icon"
           hidden=""
@@ -419,11 +419,11 @@ exports[`accordion > renders default accordion 1`] = `
       <summary
         class="details__summary"
       >
-        <h2
+        <h4
           class="details__label"
         >
           Item 2
-        </h2>
+        </h4>
         <span
           class="details__icon"
           hidden=""
@@ -454,11 +454,11 @@ exports[`accordion > renders default accordion 1`] = `
       <summary
         class="details__summary"
       >
-        <h2
+        <h4
           class="details__label"
         >
           Item 3
-        </h2>
+        </h4>
         <span
           class="details__icon"
           hidden=""
