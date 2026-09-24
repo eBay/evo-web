@@ -1,0 +1,5 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`EvoFakeLink SSR > renders a standalone disabled button 1`] = `"<button disabled="" class="fake-link standalone-link custom-link" type="button">View seller details</button>"`;
+
+exports[`EvoFakeLink SSR > renders an inline button by default 1`] = `"<button class="fake-link" type="button">View seller details</button>"`;
