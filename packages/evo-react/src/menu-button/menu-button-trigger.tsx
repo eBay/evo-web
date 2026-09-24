@@ -47,6 +47,7 @@ export function EvoMenuButtonTrigger({
     "aria-expanded": menuButton.open,
     "aria-controls": menuButton.menuId,
     "aria-haspopup": "true" as const,
+    "aria-disabled": menuButton.partiallyDisabled || undefined,
     "aria-labelledby": menuButton.prefixId
       ? menuButton.variant === "icon"
         ? menuButton.prefixId
@@ -61,6 +62,7 @@ export function EvoMenuButtonTrigger({
       <EvoIconButton
         {...commonProps}
         a11yText={menuButton.a11yText ?? "Menu"}
+        partiallyDisabled={menuButton.partiallyDisabled}
         transparent={menuButton.transparent}
         size={menuButton.size}
       >
@@ -92,6 +94,7 @@ export function EvoMenuButtonTrigger({
       priority={menuButton.priority}
       size={menuButton.size}
       borderless={menuButton.borderless}
+      transparent={menuButton.transparent}
       variant={menuButton.variant === "form" ? "form" : "standard"}
       bodyState={menuButton.noToggleIcon ? undefined : "expand"}
       split={menuButton.split}

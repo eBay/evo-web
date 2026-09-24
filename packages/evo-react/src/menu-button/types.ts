@@ -27,7 +27,7 @@ export type EvoMenuButtonProps = Omit<ComponentProps<"span">, "onChange"> & {
   priority?: Priority;
   /** Supported trigger size. */
   size?: Size;
-  /** Transparent background for the icon trigger. */
+  /** Transparent background for the button or icon trigger. */
   transparent?: boolean;
   /** Disables the trigger and closes an uncontrolled popup. */
   disabled?: boolean;
