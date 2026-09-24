@@ -32,17 +32,17 @@ export interface Input extends ComboboxInput {
 
 <const/focusAfterDelete(i: number) {
   setTimeout(() => {
-    const chips = [...$li];
-    const chip = chips[i] ?? chips.at(-1);
-    if (chip) {
-      chip.querySelector<HTMLElement>(".chip__button")?.focus();
+    const deleteButtons = [...chips];
+    const deleteButton = deleteButtons[i] ?? deleteButtons.at(-1);
+    if (deleteButton) {
+      deleteButton.focus();
     } else {
-      $root().querySelector<HTMLElement>("input")?.focus();
+      combobox().focus();
     }
   });
 }>
 
-<span/$root
+<span
   class=[
     "chips-combobox",
     fluid && "chips-combobox--fluid",
@@ -54,8 +54,8 @@ export interface Input extends ComboboxInput {
   <if=selectedList.length>
     <ul class="chips-combobox__items">
       <for|chip, i| of=selectedList by=(chip) => chip>
-        <li/$li>
-          <evo-chip>
+        <li>
+          <evo-chip/chips>
             <@delete
               a11yText=`${a11yDeleteButtonText} ${chip}`
               disabled=disabled
@@ -73,7 +73,7 @@ export interface Input extends ComboboxInput {
       </for>
     </ul>
   </if>
-  <evo-combobox
+  <evo-combobox/combobox
     ...comboboxInput
     class="chips-combobox__combobox"
     disabled=disabled
