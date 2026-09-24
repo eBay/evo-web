@@ -1,0 +1,5 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`EvoSnackbarDialog SSR > renders an open column layout with action 1`] = `"<aside role="dialog" aria-label="Watchlist update" aria-modal="false" aria-live="polite" class="snackbar-dialog snackbar-dialog--transition snackbar-dialog--show"><div class="snackbar-dialog__window snackbar-dialog__window--column"><div class="snackbar-dialog__main"><p>Item removed from your watchlist.</p></div><div class="snackbar-dialog__actions"><button accessKey="u" type="button" class="fake-link">Undo<span class="clipped"> - Access Key: <!-- -->u</span></button></div></div></aside>"`;
+
+exports[`EvoSnackbarDialog SSR > renders the closed structure 1`] = `"<aside role="dialog" aria-label="Notification" aria-modal="false" aria-live="polite" hidden="" aria-hidden="true" class="snackbar-dialog snackbar-dialog--transition"><div class="snackbar-dialog__window"><div class="snackbar-dialog__main">Item removed.</div></div></aside>"`;
