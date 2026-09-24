@@ -1,0 +1,5 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`EvoItemTile SSR > renders list layout with text only 1`] = `"<div class="item-tile item-tile--list-view"><div class="item-tile__body"><div class="item-tile__section-secondary"><a href="/listing" class="item-tile__title">Phone</a></div><div class="item-tile__section-tertiary"><div>New condition</div></div></div></div>"`;
+
+exports[`EvoItemTile SSR > renders media and every information section 1`] = `"<link rel="preload" as="image" href="/phone.jpg"/><div class="item-tile"><div class="item-tile__header"><div class="file-preview-card"><div class="file-preview-card__body"><a href="/listing"><img class="file-preview-card__asset" src="/phone.jpg" alt="phone.jpg"/></a></div></div></div><div class="item-tile__body"><div class="item-tile__section-primary">Time sensitive</div><div class="item-tile__section-secondary"><a href="/listing" class="item-tile__title">Phone</a><div class="item-tile__subtitle">Gray</div></div><div class="item-tile__section-tertiary"><p>$29.99</p></div></div></div>"`;

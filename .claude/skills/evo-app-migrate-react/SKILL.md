@@ -84,6 +84,7 @@ When migrating a listed component, read the linked file completely and apply the
 - `ebay-icon-button`: [evo-icon-button.md](components/evo-icon-button.md)
 - `ebay-infotip`: [evo-infotip.md](components/evo-infotip.md)
 - `ebay-lightbox-dialog`: [evo-dialog.md](components/evo-dialog.md)
+- `ebay-item-tile`: [evo-item-tile.md](components/evo-item-tile.md)
 - `ebay-menu`: [evo-menu.md](components/evo-menu.md)
 - `ebay-menu-button`: [evo-menu-button.md](components/evo-menu-button.md)
 - `ebay-number-input`: [evo-number-input.md](components/evo-number-input.md)
