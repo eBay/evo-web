@@ -2,7 +2,6 @@ import IconButton from "<evo-icon-button>";
 import FilterChip from "<evo-filter-chip>";
 import Button, { type Input as ButtonInput } from "<evo-button>";
 import { type Input as MenuInput } from "<evo-menu>";
-export type MenuRef = () => { $menu: () => HTMLSpanElement };
 export interface Input<Index extends number | string | (number | string)[]>
   extends
     Omit<MenuInput<Index>, "a11yLabelId" | "a11yText" | "variant">,
@@ -109,14 +108,14 @@ export interface Input<Index extends number | string | (number | string)[]>
   placement=reverse ? "bottom-end" : "bottom-start"
   strategy=strategy
   host=$root
-  overlay=() => $menu().$menu()
+  overlay=(): HTMLSpanElement => $menuEls().$root()
 />
 // The menu only becomes focusable once the expander has positioned, and so
 // made visible, it.
 <script>
   if (open && focusOnOpen && expander.positioned) {
-    const item = $menu()
-      .$menu()
+    const item = $menuEls()
+      .$root()
       .querySelector(`[role^="menuitem"]:not([aria-disabled="true"])`);
     if (item instanceof HTMLElement) item.focus();
   }
@@ -175,7 +174,7 @@ export interface Input<Index extends number | string | (number | string)[]>
       </if>
     </else>
   </>
-  <evo-menu/$menu: MenuRef
+  <evo-menu/$menuEls
     style=expander.floatingStyles
     selected:=input.selected
     classPrefix="menu-button"

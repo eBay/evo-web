@@ -44,7 +44,7 @@ export interface Input<Index extends number | string> extends Marko.HTML.Div {
   timeoutLength=typeaheadTimeoutLength
 />
 
-<div/$listbox
+<div/$root
   ...htmlInput
   role="listbox"
   onKeyDown(e, target) {
@@ -115,4 +115,4 @@ export interface Input<Index extends number | string> extends Marko.HTML.Div {
   </for>
 </select>
 
-<return=() => ({ $listbox })>
+<return=() => ({ $root })>

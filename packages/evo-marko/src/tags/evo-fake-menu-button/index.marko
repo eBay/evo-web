@@ -1,7 +1,6 @@
 import IconButton from "<evo-icon-button>";
 import Button, { type Input as ButtonInput } from "<evo-button>";
 import { type Item as FakeMenuItem } from "<evo-fake-menu>";
-export type MenuRef = () => { $menu: () => HTMLSpanElement };
 export interface Input extends Marko.HTML.Span {
   open?: boolean;
   openChange?: (open: boolean) => void;
@@ -73,7 +72,7 @@ evo-expander/expander
   ,strategy=strategy
   ,flip=flip
   ,host=$root
-  ,overlay=() => $menu().$menu()
+  ,overlay=(): HTMLSpanElement => $fakeMenuEls().$root()
 
 span/$root
   ,...htmlInput
@@ -110,7 +109,7 @@ span/$root
         ${input.content}
       if=!noToggleIcon
         evo-icon-chevron-down-12
-  evo-fake-menu/$menu: MenuRef
+  evo-fake-menu/$fakeMenuEls
     ,style=expander.floatingStyles
     ,classPrefix="fake-menu-button"
     ,reverse=reverse

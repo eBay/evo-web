@@ -80,7 +80,7 @@ static function nextSelected(
   Array.isArray(selected) ? selected.length > 0 : selected != null,
 )?.selected ?? undefined>
 <id/menu>
-<span/$menu
+<span/$root
   ...htmlInput
   class=[
     classPrefix ? `${baseClass}__menu` : "menu",
@@ -214,4 +214,4 @@ static function nextSelected(
   </if>
 </span>
 
-<return=() => ({ $menu })>
+<return=() => ({ $root })>
