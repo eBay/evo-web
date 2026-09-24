@@ -84,6 +84,7 @@ When migrating a listed component, read the linked file completely and apply the
 - `ebay-field`: [evo-field.md](components/evo-field.md)
 - `ebay-file-input`: [evo-file-input.md](components/evo-file-input.md)
 - `ebay-file-preview-card`: [evo-file-preview-card.md](components/evo-file-preview-card.md)
+- `ebay-file-preview-card-group`: [evo-file-preview-card-group.md](components/evo-file-preview-card-group.md)
 - `ebay-filter-chip`: [evo-filter-chip.md](components/evo-filter-chip.md)
 - `ebay-icon-button`: [evo-icon-button.md](components/evo-icon-button.md)
 - `ebay-image-placeholder`: [evo-image-placeholder.md](components/evo-image-placeholder.md)
