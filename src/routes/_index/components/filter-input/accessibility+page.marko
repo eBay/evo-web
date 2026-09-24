@@ -1,1 +1,127 @@
-<p>Accessibility guidelines coming soon.</p>
+import "../../../../sass/accessibility.scss";
+import { urls } from "../../../../data";
+
+<div class="a11y-pattern-content">
+  <h1>Filter Input Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    A filter input is a plain textbox, not a
+    <a href=`${urls.components}/combobox`>combobox</a> . Its results are
+    <strong>not</strong> intended to appear in a popup listbox, so combobox ARIA
+    ( <code>role="combobox"</code> , <code>aria-expanded</code> ,
+    <code>aria-activedescendant</code> ) does not apply. If you need a popup of
+    suggestions, use combobox instead.
+  </p>
+  <p>
+    The input typically relies on placeholder text (e.g. "Filter") rather than a
+    visible <code>&lt;label&gt;</code> . Placeholder text is not a substitute
+    for a label — always provide an accessible name via <code>aria-label</code>
+    that describes what is being filtered (e.g. "Filter results").
+  </p>
+  <p>
+    The input <strong>must</strong> use <code>aria-controls</code> to reference
+    the <code>id</code> of the content it filters, so assistive technology can
+    discover the relationship even though that content isn't a popup the input
+    expands or collapses.
+  </p>
+  <p>
+    If filtering updates a count or list of results elsewhere on the page, that
+    update <strong>must</strong> be announced without moving focus from the
+    input. Use a
+    <a href=`${urls.accessibility}/techniques/live-region`>live region</a> for
+    this, and keep the announcement short (e.g. "12 results") rather than
+    reading back the entire filtered list.
+  </p>
+  <p>
+    The clear button, when present, has no visible text and
+    <strong>must</strong> have an <code>aria-label</code> describing its action
+    (e.g. "Clear filter input"). The search icon is decorative and
+    <strong>must</strong> use <code>aria-hidden="true"</code> .
+  </p>
+  <h2>Interaction Design</h2>
+  <p>
+    This section provides detailed instructions for how different input types
+    should navigate and operate the pattern.
+  </p>
+  <h3>Keyboard</h3>
+  <p>
+    Pressing <strong>TAB</strong> key <strong>must</strong> move focus to the
+    input. Typing filters the associated content live, without requiring
+    <strong>ENTER</strong>.
+  </p>
+  <p>
+    When a clear button is rendered, <strong>TAB</strong> key
+    <strong>must</strong> move focus to it next, and pressing
+    <strong>ENTER</strong> or <strong>SPACEBAR</strong><strong>must</strong>
+    activate it, clearing the input's value.
+  </p>
+  <p>
+    Unlike combobox or listbox patterns, arrow keys have no special behavior
+    here — they move the text cursor within the input as normal.
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    A screen reader announces the input's accessible name, its role ("search"
+    text field, due to the underlying <code>type="search"</code> ), and its
+    current value.
+  </p>
+  <p>When focus moves to the clear button, its label is announced.</p>
+  <p>
+    Typing into the input does <strong>not</strong> automatically announce the
+    filtered results — this must be wired up separately via a live region on the
+    element referenced by <code>aria-controls</code> .
+  </p>
+  <h3>Pointer</h3>
+  <p>
+    Clicking or tapping the input <strong>must</strong> place focus in it.
+    Clicking or tapping the clear button <strong>must</strong> clear the input's
+    value.
+  </p>
+  <h2>ARIA Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>type="search"</strong></td>
+        <td>
+          Changes the input's role to "searchbox" and gives mobile browsers a
+          reason to show a search-optimized virtual keyboard.
+        </td>
+      </tr>
+      <tr>
+        <td><strong>aria-label</strong></td>
+        <td>
+          Provides the accessible name for the input, since a visible label is
+          typically not used. Also provides the clear button with an accessible
+          name, since it has no visible text.
+        </td>
+      </tr>
+      <tr>
+        <td><strong>aria-controls</strong></td>
+        <td>
+          References the <code>id</code> of the content that this input filters.
+        </td>
+      </tr>
+      <tr>
+        <td><strong>aria-hidden="true"</strong></td>
+        <td>
+          Applied to the decorative search icon inside the input to hide it from
+          assistive technology.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Further Reading</h2>
+  <ul>
+    <li>
+      <a href=`${urls.accessibility}/techniques/live-region`>Live Region</a>
+    </li>
+    <li><a href=`${urls.components}/textbox`>Textbox</a></li>
+    <li><a href=`${urls.components}/combobox`>Combobox</a></li>
+  </ul>
+</div>
