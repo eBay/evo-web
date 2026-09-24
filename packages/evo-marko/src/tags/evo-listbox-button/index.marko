@@ -86,7 +86,7 @@ export interface Input<Index extends number | string> extends Marko.HTML.Div {
   open=open
   strategy=strategy
   host=$root
-  overlay=$listbox
+  overlay=() => $listbox().$listbox()
 />
 
 <${truncate && !fluid ? "div" : "span"}

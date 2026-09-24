@@ -35,9 +35,9 @@ export interface Input extends ComboboxInput {
     const chipEls = [...chips];
     const chip = chipEls[i] ?? chipEls.at(-1);
     if (chip) {
-      chip.deleteBtn().focus();
+      chip.$delete().focus();
     } else {
-      combobox().input().focus();
+      combobox().$textbox().focus();
     }
   });
 }>

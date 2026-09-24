@@ -39,7 +39,7 @@ export interface Input extends Marko.HTML.Span {
   </else>
 </define>
 
-<span/$el
+<span/$menu
   ...htmlInput
   class=[
     classPrefix ? `${baseClass}__menu` : "fake-menu",
@@ -95,4 +95,4 @@ export interface Input extends Marko.HTML.Span {
   </ul>
 </span>
 
-<return=$el>
+<return=() => ({ $menu })>
