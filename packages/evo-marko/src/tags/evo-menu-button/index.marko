@@ -108,7 +108,7 @@ export interface Input<Index extends number | string | (number | string)[]>
   placement=reverse ? "bottom-end" : "bottom-start"
   strategy=strategy
   host=$root
-  overlay=(): HTMLSpanElement => $menuEls().$root()
+  overlay=(): HTMLElement => $menuEls().$root()
 />
 // The menu only becomes focusable once the expander has positioned, and so
 // made visible, it.

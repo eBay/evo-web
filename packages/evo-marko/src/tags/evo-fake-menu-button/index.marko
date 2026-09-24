@@ -72,7 +72,7 @@ evo-expander/expander
   ,strategy=strategy
   ,flip=flip
   ,host=$root
-  ,overlay=(): HTMLSpanElement => $fakeMenuEls().$root()
+  ,overlay=(): HTMLElement => $fakeMenuEls().$root()
 
 span/$root
   ,...htmlInput
