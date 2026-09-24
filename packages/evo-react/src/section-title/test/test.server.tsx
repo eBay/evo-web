@@ -8,16 +8,9 @@ import {
   EvoSectionTitleInfo,
   EvoSectionTitleOverflow,
   EvoSectionTitleSubtitle,
-  EvoSectionTitleTitle,
-  EvoSectionTitleTitleContainer,
 } from "../index";
 
 describe("EvoSectionTitle SSR", () => {
-  it("keeps the former component names as aliases", () => {
-    expect(EvoSectionTitleTitle).toBe(EvoSectionTitleHeading);
-    expect(EvoSectionTitleTitleContainer).toBe(EvoSectionTitleContent);
-  });
-
   it("renders the basic heading structure", () => {
     expect(
       renderToString(

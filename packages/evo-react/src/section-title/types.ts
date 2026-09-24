@@ -2,8 +2,6 @@ import type { ComponentProps, ComponentType } from "react";
 
 export type EvoSectionTitleProps = ComponentProps<"div">;
 export type EvoSectionTitleContentProps = ComponentProps<"div">;
-/** @deprecated Use `EvoSectionTitleContentProps`. */
-export type EvoSectionTitleTitleContainerProps = EvoSectionTitleContentProps;
 
 export type SectionTitleHeading = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
@@ -11,8 +9,6 @@ export type EvoSectionTitleHeadingProps = ComponentProps<"h2"> & {
   /** Sets the heading level to match the surrounding page hierarchy. Defaults to `"h2"`. */
   as?: SectionTitleHeading;
 };
-/** @deprecated Use `EvoSectionTitleHeadingProps`. */
-export type EvoSectionTitleTitleProps = EvoSectionTitleHeadingProps;
 
 export type EvoSectionTitleSubtitleProps = ComponentProps<"span">;
 export type EvoSectionTitleInfoProps = ComponentProps<"div">;
