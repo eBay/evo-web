@@ -79,7 +79,7 @@
 }
 
 .video__timestamp {
-    padding-inline: var(--spacing-75);
+    margin-inline: var(--spacing-75);
     width: 4ch;
 }
 
@@ -96,7 +96,7 @@
 }
 
 .video__scrubber + .video__timestamp {
-    padding-right: var(--spacing-125);
+    margin-right: var(--spacing-125);
     width: auto;
 }
 
@@ -193,7 +193,7 @@
 .video__volume {
     direction: rtl;
     height: var(--dimension-800);
-    padding: var(--spacing-100) var(--spacing-150);
+    margin: var(--spacing-100) var(--spacing-150);
     width: var(--dimension-icon-small);
     writing-mode: vertical-lr;
 }
