@@ -35,34 +35,23 @@ describe("evo-fake-link", () => {
     expect(onSubmit).not.toHaveBeenCalled();
   });
 
-  it("calls click and Escape handlers for an enabled button", async () => {
+  it("calls the click handler for an enabled button", async () => {
     const onClick = vi.fn();
-    const onKeyDown = vi.fn();
-    const onEscape = vi.fn();
     const screen = await render(
-      <EvoFakeLink onClick={onClick} onKeyDown={onKeyDown} onEscape={onEscape}>
-        View seller details
-      </EvoFakeLink>,
+      <EvoFakeLink onClick={onClick}>View seller details</EvoFakeLink>,
     );
     const button = screen.getByRole("button", { name: "View seller details" });
 
     await user.click(button);
-    await user.keyboard("{Escape}");
 
     expect(onClick).toHaveBeenCalledTimes(1);
-    expect(onKeyDown).toHaveBeenCalledTimes(1);
-    expect(onEscape).toHaveBeenCalledTimes(1);
-    expect(onKeyDown.mock.invocationCallOrder[0]).toBeLessThan(
-      onEscape.mock.invocationCallOrder[0],
-    );
   });
 
   it("keeps a disabled button inactive", async () => {
     const onClick = vi.fn();
-    const onEscape = vi.fn();
     const ref = createRef<HTMLButtonElement>();
     const screen = await render(
-      <EvoFakeLink disabled onClick={onClick} onEscape={onEscape} ref={ref}>
+      <EvoFakeLink disabled onClick={onClick} ref={ref}>
         View seller details
       </EvoFakeLink>,
     );
@@ -70,8 +59,6 @@ describe("evo-fake-link", () => {
 
     await expect.element(button).toBeDisabled();
     ref.current?.click();
-    await user.keyboard("{Escape}");
-    expect(onEscape).not.toHaveBeenCalled();
     expect(onClick).not.toHaveBeenCalled();
   });
 

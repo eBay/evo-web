@@ -1,4 +1,3 @@
-import type { KeyboardEvent } from "react";
 import classNames from "classnames";
 import type { EvoFakeLinkProps } from "./types";
 import "@ebay/skin/link.mjs";
@@ -8,7 +7,7 @@ import "@ebay/skin/link.mjs";
  *
  * `EvoFakeLink` keeps native button behavior and defaults to `type="button"`
  * so it does not submit a surrounding form. It forwards native button props
- * and a React 19 `ref`, and calls `onEscape` after `onKeyDown` on Escape.
+ * and a React 19 `ref`.
  *
  * ## Usage
  *
@@ -26,17 +25,8 @@ export function EvoFakeLink({
   variant,
   type = "button",
   className,
-  onKeyDown,
-  onEscape,
   ...rest
 }: EvoFakeLinkProps) {
-  function handleKeyDown(event: KeyboardEvent<HTMLButtonElement>) {
-    onKeyDown?.(event);
-    if (event.key === "Escape" || event.key === "Esc") {
-      onEscape?.(event);
-    }
-  }
-
   return (
     <button
       {...rest}
@@ -45,7 +35,6 @@ export function EvoFakeLink({
         variant === "standalone" && "standalone-link",
         className,
       )}
-      onKeyDown={handleKeyDown}
       type={type}
     />
   );
