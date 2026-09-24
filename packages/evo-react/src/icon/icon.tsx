@@ -32,6 +32,8 @@ export type EvoIconProps = SVGProps<SVGSVGElement> & {
    * @internal
    */
   __symbol?: string;
+  /** Exact symbol ID for assets whose Skin ID does not use the `icon-` prefix. @internal */
+  __symbolId?: string;
 };
 
 const fallbackLookup = new Set<string>();
@@ -51,6 +53,7 @@ export function EvoIcon({
   a11yVariant,
   prominent,
   __symbol,
+  __symbolId,
   ...rest
 }: EvoIconProps) {
   const id = useId();
@@ -146,7 +149,7 @@ export function EvoIcon({
       {...a11yProps}
     >
       {a11yText && !withAriaLabel && <title id={a11yTextId}>{a11yText}</title>}
-      <use xlinkHref={`#icon-${kebabName}`} />
+      <use xlinkHref={`#${__symbolId ?? `icon-${kebabName}`}`} />
 
       {!hideDefsElement && inlineSvg ? (
         <defs
