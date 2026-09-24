@@ -1,20 +1,21 @@
+import type { ComponentProps } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { EvoInfotip } from "../infotip/infotip";
 import { EvoInfotipHeading } from "../infotip/infotip-heading";
 import { EvoSectionTitle } from "./section-title";
+import { EvoSectionTitleContent } from "./section-title-content";
 import { EvoSectionTitleCta } from "./section-title-cta";
+import { EvoSectionTitleHeading } from "./section-title-heading";
 import { EvoSectionTitleInfo } from "./section-title-info";
 import { EvoSectionTitleOverflow } from "./section-title-overflow";
 import { EvoSectionTitleSubtitle } from "./section-title-subtitle";
-import { EvoSectionTitleTitle } from "./section-title-title";
-import { EvoSectionTitleTitleContainer } from "./section-title-title-container";
 
 const meta: Meta<typeof EvoSectionTitle> = {
   title: "Navigation & Disclosure/EvoSectionTitle",
   component: EvoSectionTitle,
   subcomponents: {
-    EvoSectionTitleTitleContainer,
-    EvoSectionTitleTitle,
+    EvoSectionTitleContent,
+    EvoSectionTitleHeading,
     EvoSectionTitleSubtitle,
     EvoSectionTitleCta,
     EvoSectionTitleInfo,
@@ -29,9 +30,9 @@ type Story = StoryObj<typeof EvoSectionTitle>;
 export const Default: Story = {
   render: (args) => (
     <EvoSectionTitle {...args}>
-      <EvoSectionTitleTitleContainer>
-        <EvoSectionTitleTitle>Recently viewed</EvoSectionTitleTitle>
-      </EvoSectionTitleTitleContainer>
+      <EvoSectionTitleContent>
+        <EvoSectionTitleHeading>Recently viewed</EvoSectionTitleHeading>
+      </EvoSectionTitleContent>
     </EvoSectionTitle>
   ),
 };
@@ -40,12 +41,12 @@ export const Default: Story = {
 export const WithSubtitle: Story = {
   render: (args) => (
     <EvoSectionTitle {...args}>
-      <EvoSectionTitleTitleContainer>
-        <EvoSectionTitleTitle as="h3">Saved searches</EvoSectionTitleTitle>
+      <EvoSectionTitleContent>
+        <EvoSectionTitleHeading as="h3">Saved searches</EvoSectionTitleHeading>
         <EvoSectionTitleSubtitle>
           New listings matching your searches
         </EvoSectionTitleSubtitle>
-      </EvoSectionTitleTitleContainer>
+      </EvoSectionTitleContent>
     </EvoSectionTitle>
   ),
 };
@@ -54,9 +55,9 @@ export const WithSubtitle: Story = {
 export const WithCta: Story = {
   render: (args) => (
     <EvoSectionTitle {...args}>
-      <EvoSectionTitleTitleContainer>
-        <EvoSectionTitleTitle>Recently viewed</EvoSectionTitleTitle>
-      </EvoSectionTitleTitleContainer>
+      <EvoSectionTitleContent>
+        <EvoSectionTitleHeading>Recently viewed</EvoSectionTitleHeading>
+      </EvoSectionTitleContent>
       <EvoSectionTitleCta href="/my/recently-viewed">
         See all recently viewed items
       </EvoSectionTitleCta>
@@ -64,13 +65,67 @@ export const WithCta: Story = {
   ),
 };
 
+function Link({
+  to,
+  children,
+  ...rest
+}: ComponentProps<"a"> & { to?: string }) {
+  return (
+    <a data-custom-link="true" {...rest} href={to}>
+      {children}
+    </a>
+  );
+}
+
+/** The `as` prop connects the section action to a client-side link component. */
+export const CustomLink: Story = {
+  render: (args) => (
+    <EvoSectionTitle {...args}>
+      <EvoSectionTitleContent>
+        <EvoSectionTitleHeading>Recently viewed</EvoSectionTitleHeading>
+      </EvoSectionTitleContent>
+      <EvoSectionTitleCta
+        href="/my/recently-viewed"
+        as={({ href, ...rest }) => <Link {...rest} to={href} />}
+      >
+        See all recently viewed items
+      </EvoSectionTitleCta>
+    </EvoSectionTitle>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: `
+Pass a custom component via the \`as\` prop to replace the native \`<a>\`. React Router's \`Link\` uses \`to\` instead of \`href\`.
+
+\`\`\`tsx
+import { Link } from "react-router";
+
+<EvoSectionTitle>
+  <EvoSectionTitleContent>
+    <EvoSectionTitleHeading>Recently viewed</EvoSectionTitleHeading>
+  </EvoSectionTitleContent>
+  <EvoSectionTitleCta
+    href="/my/recently-viewed"
+    as={({ href, ...rest }) => <Link {...rest} to={href} />}
+  >
+    See all recently viewed items
+  </EvoSectionTitleCta>
+</EvoSectionTitle>
+\`\`\`
+        `,
+      },
+    },
+  },
+};
+
 /** An infotip gives extra context without putting a control inside the heading. */
 export const WithInfo: Story = {
   render: (args) => (
     <EvoSectionTitle {...args}>
-      <EvoSectionTitleTitleContainer>
-        <EvoSectionTitleTitle>Seller feedback</EvoSectionTitleTitle>
-      </EvoSectionTitleTitleContainer>
+      <EvoSectionTitleContent>
+        <EvoSectionTitleHeading>Seller feedback</EvoSectionTitleHeading>
+      </EvoSectionTitleContent>
       <EvoSectionTitleInfo>
         <EvoInfotip
           a11yIconText="About seller feedback"

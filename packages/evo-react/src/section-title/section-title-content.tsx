@@ -1,16 +1,16 @@
 import classNames from "classnames";
-import type { EvoSectionTitleTitleContainerProps } from "./types";
+import type { EvoSectionTitleContentProps } from "./types";
 
 /**
  * Groups the section heading and optional subtitle in the Skin title wrapper.
  *
  * @summary Section heading wrapper.
  */
-export function EvoSectionTitleTitleContainer({
+export function EvoSectionTitleContent({
   className,
   children,
   ...rest
-}: EvoSectionTitleTitleContainerProps) {
+}: EvoSectionTitleContentProps) {
   return (
     <div
       {...rest}

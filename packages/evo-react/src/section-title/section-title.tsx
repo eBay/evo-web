@@ -5,7 +5,7 @@ import "@ebay/skin/section-title.mjs";
 /**
  * Section titles identify a group of elements on a page.
  *
- * Compose `EvoSectionTitleTitleContainer` around the heading and optional
+ * Compose `EvoSectionTitleContent` around the heading and optional
  * subtitle, then place an action, info, or overflow part after it. The heading
  * level must match the page hierarchy. Give icon-only actions accessible names.
  *
@@ -14,15 +14,15 @@ import "@ebay/skin/section-title.mjs";
  * ```tsx
  * import {
  *   EvoSectionTitle,
+ *   EvoSectionTitleContent,
  *   EvoSectionTitleCta,
- *   EvoSectionTitleTitle,
- *   EvoSectionTitleTitleContainer,
+ *   EvoSectionTitleHeading,
  * } from "@evo-web/react/section-title";
  *
  * <EvoSectionTitle>
- *   <EvoSectionTitleTitleContainer>
- *     <EvoSectionTitleTitle>Recently viewed</EvoSectionTitleTitle>
- *   </EvoSectionTitleTitleContainer>
+ *   <EvoSectionTitleContent>
+ *     <EvoSectionTitleHeading>Recently viewed</EvoSectionTitleHeading>
+ *   </EvoSectionTitleContent>
  *   <EvoSectionTitleCta href="/my/recently-viewed">
  *     See all recently viewed items
  *   </EvoSectionTitleCta>

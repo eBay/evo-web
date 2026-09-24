@@ -2,7 +2,7 @@ import classNames from "classnames";
 import type { EvoSectionTitleSubtitleProps } from "./types";
 
 /**
- * Adds supporting text after `EvoSectionTitleTitle` within the title wrapper.
+ * Adds supporting text after `EvoSectionTitleHeading` within the title wrapper.
  *
  * @summary Section subtitle.
  */

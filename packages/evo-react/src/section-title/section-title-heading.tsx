@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import type { EvoSectionTitleTitleProps } from "./types";
+import type { EvoSectionTitleHeadingProps } from "./types";
 
 /**
  * Names the section with a semantic heading. Set `as` to the heading level that
@@ -7,12 +7,12 @@ import type { EvoSectionTitleTitleProps } from "./types";
  *
  * @summary Section heading.
  */
-export function EvoSectionTitleTitle({
+export function EvoSectionTitleHeading({
   as: Heading = "h2",
   className,
   children,
   ...rest
-}: EvoSectionTitleTitleProps) {
+}: EvoSectionTitleHeadingProps) {
   return (
     <Heading
       {...rest}

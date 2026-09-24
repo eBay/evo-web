@@ -3,6 +3,8 @@ import { renderToString } from "react-dom/server";
 import {
   EvoSectionTitle,
   EvoSectionTitleCta,
+  EvoSectionTitleContent,
+  EvoSectionTitleHeading,
   EvoSectionTitleInfo,
   EvoSectionTitleOverflow,
   EvoSectionTitleSubtitle,
@@ -11,13 +13,18 @@ import {
 } from "../index";
 
 describe("EvoSectionTitle SSR", () => {
+  it("keeps the former component names as aliases", () => {
+    expect(EvoSectionTitleTitle).toBe(EvoSectionTitleHeading);
+    expect(EvoSectionTitleTitleContainer).toBe(EvoSectionTitleContent);
+  });
+
   it("renders the basic heading structure", () => {
     expect(
       renderToString(
         <EvoSectionTitle>
-          <EvoSectionTitleTitleContainer>
-            <EvoSectionTitleTitle>Recently viewed</EvoSectionTitleTitle>
-          </EvoSectionTitleTitleContainer>
+          <EvoSectionTitleContent>
+            <EvoSectionTitleHeading>Recently viewed</EvoSectionTitleHeading>
+          </EvoSectionTitleContent>
         </EvoSectionTitle>,
       ),
     ).toMatchSnapshot();
@@ -27,10 +34,12 @@ describe("EvoSectionTitle SSR", () => {
     expect(
       renderToString(
         <EvoSectionTitle dir="rtl">
-          <EvoSectionTitleTitleContainer>
-            <EvoSectionTitleTitle as="h3">Saved searches</EvoSectionTitleTitle>
+          <EvoSectionTitleContent>
+            <EvoSectionTitleHeading as="h3">
+              Saved searches
+            </EvoSectionTitleHeading>
             <EvoSectionTitleSubtitle>New listings</EvoSectionTitleSubtitle>
-          </EvoSectionTitleTitleContainer>
+          </EvoSectionTitleContent>
           <EvoSectionTitleInfo>Updated today</EvoSectionTitleInfo>
           <EvoSectionTitleCta href="/saved-searches">
             See all saved searches

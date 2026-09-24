@@ -1,15 +1,15 @@
-import { createRef } from "react";
+import { createRef, type ComponentProps } from "react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { userEvent } from "vitest/browser";
 import { render } from "vitest-browser-react";
 import {
   EvoSectionTitle,
+  EvoSectionTitleContent,
   EvoSectionTitleCta,
+  EvoSectionTitleHeading,
   EvoSectionTitleInfo,
   EvoSectionTitleOverflow,
   EvoSectionTitleSubtitle,
-  EvoSectionTitleTitle,
-  EvoSectionTitleTitleContainer,
 } from "../index";
 
 describe("evo-section-title", () => {
@@ -33,12 +33,12 @@ describe("evo-section-title", () => {
         className="custom-section"
         dir="rtl"
       >
-        <EvoSectionTitleTitleContainer data-testid="title-wrapper">
-          <EvoSectionTitleTitle as="h3" ref={headingRef} id="search-heading">
+        <EvoSectionTitleContent data-testid="title-wrapper">
+          <EvoSectionTitleHeading as="h3" ref={headingRef} id="search-heading">
             Saved searches
-          </EvoSectionTitleTitle>
+          </EvoSectionTitleHeading>
           <EvoSectionTitleSubtitle>New listings</EvoSectionTitleSubtitle>
-        </EvoSectionTitleTitleContainer>
+        </EvoSectionTitleContent>
       </EvoSectionTitle>,
     );
 
@@ -71,9 +71,9 @@ describe("evo-section-title", () => {
     });
     const screen = await render(
       <EvoSectionTitle>
-        <EvoSectionTitleTitleContainer>
-          <EvoSectionTitleTitle>Recently viewed</EvoSectionTitleTitle>
-        </EvoSectionTitleTitleContainer>
+        <EvoSectionTitleContent>
+          <EvoSectionTitleHeading>Recently viewed</EvoSectionTitleHeading>
+        </EvoSectionTitleContent>
         <EvoSectionTitleCta href="/recent" onClick={onClick}>
           See all recently viewed items
         </EvoSectionTitleCta>
@@ -91,12 +91,35 @@ describe("evo-section-title", () => {
     expect(onClick).toHaveBeenCalledTimes(1);
   });
 
+  it("renders an anchor-compatible router link through as", async () => {
+    function RouterLink({ href, children, ...rest }: ComponentProps<"a">) {
+      return (
+        <a {...rest} href={href} data-router-link="true">
+          {children}
+        </a>
+      );
+    }
+
+    const screen = await render(
+      <EvoSectionTitleCta as={RouterLink} href="/recent">
+        See all recently viewed items
+      </EvoSectionTitleCta>,
+    );
+
+    const link = screen.getByRole("link", {
+      name: "See all recently viewed items",
+    });
+    await expect.element(link).toHaveAttribute("href", "/recent");
+    await expect.element(link).toHaveAttribute("data-router-link", "true");
+    await expect.element(link).toHaveClass("section-title__cta");
+  });
+
   it("keeps info and overflow in their Skin wrappers", async () => {
     const screen = await render(
       <EvoSectionTitle>
-        <EvoSectionTitleTitleContainer>
-          <EvoSectionTitleTitle>Seller feedback</EvoSectionTitleTitle>
-        </EvoSectionTitleTitleContainer>
+        <EvoSectionTitleContent>
+          <EvoSectionTitleHeading>Seller feedback</EvoSectionTitleHeading>
+        </EvoSectionTitleContent>
         <EvoSectionTitleInfo>
           <span>Updated today</span>
         </EvoSectionTitleInfo>
