@@ -6,4 +6,7 @@
 "@ebay/skin": patch
 ---
 
+pr: 973
+author: ArtBlue
+
 fix(skin): correct readonly textbox styling to match default
