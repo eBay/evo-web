@@ -115,6 +115,19 @@ describe("evo-filter-menu-button", () => {
     await expect.element(trigger).toHaveAttribute("aria-expanded", "false");
   });
 
+  it("accepts an accessible trigger name without visible text", async () => {
+    const screen = await render(
+      <EvoFilterMenuButton a11yText="Delivery filters">
+        <EvoFilterMenuItems>
+          <EvoFilterMenuItem value="free">Free shipping</EvoFilterMenuItem>
+        </EvoFilterMenuItems>
+      </EvoFilterMenuButton>,
+    );
+    await expect
+      .element(screen.getByRole("button", { name: "Delivery filters" }))
+      .toBeInTheDocument();
+  });
+
   it("closes after the named footer action", async () => {
     const onFooterClick = vi.fn();
     const screen = await render(

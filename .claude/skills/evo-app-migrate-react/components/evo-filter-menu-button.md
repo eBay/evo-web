@@ -5,7 +5,7 @@ Import `EvoFilterMenuButton`, `EvoFilterMenuItems`, `EvoFilterMenuItem`, and `Ev
 - Wrap choices in `EvoFilterMenuItems`. Each choice needs a distinct, stable `value`; the parent no longer scans children or uses child indices for selection.
 - Move item `checked` values into parent `defaultSelected` or controlled `selected`. Checkbox mode uses `string[]`; radio mode uses a single `string | null`. Replace `onChange` with `onSelectedChange`.
 - Legacy `selected?: boolean` controlled trigger styling. Use `hasSelection` for that override; `selected` now owns item values, matching `EvoFilterMenu`.
-- Keep visible `text` for the trigger. `countText` remains optional. Rename root `aria-label` to `a11yText`.
+- Use visible `text` or `a11yText` to name the trigger. `countText` remains optional. Rename root `aria-label` to `a11yText`.
 - Replace `onExpand` and `onCollapse` with `onOpenChange`; use `open` or `defaultOpen` for visibility. Marko's `disabled` trigger prop is available.
 - `onFooterClick` and `onFormSubmit` receive `{ selected: string[] }` and dismiss the menu. Use `footerText` and optional `a11yFooterText` for a simple action, or compose `EvoFilterMenuFooterButton` for custom content.
 - Rename `searchHeaderValue` to `searchValue`. `onSearchChange` receives the search string. `defaultSearchValue` supplies initial uncontrolled text.

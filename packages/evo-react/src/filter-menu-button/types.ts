@@ -5,11 +5,11 @@ import type {
 } from "../filter-menu/types";
 
 type FilterMenuButtonBaseProps = Omit<ComponentProps<"span">, "onChange"> & {
-  /** Visible trigger text, which names the button when `a11yText` is absent. */
-  text: string;
+  /** Visible trigger text. Supply this or `a11yText` to name the button. */
+  text?: string;
   /** Optional formatted count displayed after `text`. */
   countText?: string;
-  /** Accessible trigger name when the visible text does not convey enough context. */
+  /** Accessible trigger name when visible text is absent or needs more context. */
   a11yText?: string;
   /** Overrides whether the trigger looks selected, independently of item selection. */
   hasSelection?: boolean;
