@@ -137,4 +137,20 @@ describe("EvoMenuButton", () => {
       .element(screen.getByRole("button", { name: "Actions" }))
       .toBeDisabled();
   });
+
+  it("applies transparent styling and blocks a partially disabled trigger", async () => {
+    const screen = await render(
+      <EvoMenuButton transparent partiallyDisabled>
+        <EvoMenuButtonTrigger>Actions</EvoMenuButtonTrigger>
+        <EvoMenuButtonMenu>
+          <EvoMenuButtonItem>Edit</EvoMenuButtonItem>
+        </EvoMenuButtonMenu>
+      </EvoMenuButton>,
+    );
+    const trigger = screen.getByRole("button", { name: "Actions" });
+    await expect.element(trigger).toHaveClass("btn--transparent");
+    await expect.element(trigger).toHaveAttribute("aria-disabled", "true");
+    trigger.element().click();
+    await expect.element(trigger).toHaveAttribute("aria-expanded", "false");
+  });
 });
