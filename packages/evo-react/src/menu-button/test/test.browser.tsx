@@ -66,6 +66,25 @@ describe("EvoMenuButton", () => {
     await expect.element(trigger).toHaveFocus();
   });
 
+  it("collapses after keyboard selection", async () => {
+    const screen = await render(
+      <EvoMenuButton collapseOnSelect>
+        <EvoMenuButtonTrigger>Actions</EvoMenuButtonTrigger>
+        <EvoMenuButtonMenu>
+          <EvoMenuButtonItem>Edit</EvoMenuButtonItem>
+        </EvoMenuButtonMenu>
+      </EvoMenuButton>,
+    );
+    const trigger = screen.getByRole("button", { name: "Actions" });
+    await user.click(trigger);
+    await expect
+      .element(screen.getByRole("menuitem", { name: "Edit" }))
+      .toHaveFocus();
+    await user.keyboard("{Enter}");
+    await expect.element(trigger).toHaveAttribute("aria-expanded", "false");
+    await expect.element(trigger).toHaveFocus();
+  });
+
   it("keeps the popup open when collapseOnSelect is omitted", async () => {
     const screen = await render(
       <EvoMenuButton>

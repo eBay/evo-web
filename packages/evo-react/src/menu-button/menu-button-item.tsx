@@ -27,7 +27,7 @@ export function EvoMenuButtonItem({
       {...rest}
       onSelect={(event) => {
         onSelect?.(event);
-        if (!event.defaultPrevented) menuButton.select();
+        menuButton.select();
       }}
     />
   );
@@ -49,7 +49,7 @@ export function EvoMenuButtonRadioItem<Value extends MenuValue>({
       {...rest}
       onSelect={(event) => {
         onSelect?.(event);
-        if (!event.defaultPrevented) menuButton.select();
+        menuButton.select();
       }}
     />
   );
@@ -71,7 +71,7 @@ export function EvoMenuButtonCheckboxItem<Value extends MenuValue>({
       {...rest}
       onSelect={(event) => {
         onSelect?.(event);
-        if (!event.defaultPrevented) menuButton.select();
+        menuButton.select();
       }}
     />
   );
