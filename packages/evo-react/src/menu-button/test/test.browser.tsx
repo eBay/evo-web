@@ -150,7 +150,7 @@ describe("EvoMenuButton", () => {
     const trigger = screen.getByRole("button", { name: "Actions" });
     await expect.element(trigger).toHaveClass("btn--transparent");
     await expect.element(trigger).toHaveAttribute("aria-disabled", "true");
-    trigger.element().click();
+    (trigger.element() as HTMLButtonElement).click();
     await expect.element(trigger).toHaveAttribute("aria-expanded", "false");
   });
 });
