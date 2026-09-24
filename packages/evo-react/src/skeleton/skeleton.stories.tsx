@@ -26,6 +26,14 @@ const meta: Meta<typeof EvoSkeleton> = {
   args: {
     a11yText: "Loading listing details",
   },
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "Place placeholder parts inside EvoSkeleton, size the group and image to the content they replace, and provide a loading description with a11yText. Multiline text draws its second line outside the element's height, so leave space below it before the next block. Replace the whole group when the content loads.",
+      },
+    },
+  },
 };
 
 export default meta;
@@ -38,10 +46,21 @@ export const Default: Story = {
     <EvoSkeleton {...args} style={{ width: 220 }}>
       <EvoSkeletonImage style={{ width: 220, height: 220 }} />
       <EvoSkeletonText size="large" />
-      <EvoSkeletonText multiline />
+      <EvoSkeletonText
+        multiline
+        style={{ marginBlockEnd: "var(--spacing-600)" }}
+      />
       <EvoSkeletonButton size="small" />
     </EvoSkeleton>
   ),
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "The group and image reserve the listing card's width. The multiline text leaves room for its second line before the button placeholder.",
+      },
+    },
+  },
 };
 
 /** The placeholder parts also cover an avatar, button, and textbox layout. */
@@ -49,9 +68,20 @@ export const WithProfileLayout: Story = {
   render: (args) => (
     <EvoSkeleton {...args} style={{ width: 300 }}>
       <EvoSkeletonAvatar />
-      <EvoSkeletonText multiline />
+      <EvoSkeletonText
+        multiline
+        style={{ marginBlockEnd: "var(--spacing-600)" }}
+      />
       <EvoSkeletonTextbox />
       <EvoSkeletonButton />
     </EvoSkeleton>
   ),
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "Compose avatar, text, textbox, and button placeholders in content order. Leave space after multiline text so its second line clears the textbox.",
+      },
+    },
+  },
 };
