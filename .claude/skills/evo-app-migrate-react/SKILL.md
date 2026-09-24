@@ -89,6 +89,7 @@ When migrating a listed component, read the linked file completely and apply the
 - `ebay-progress-bar`: [evo-progress-bar.md](components/evo-progress-bar.md)
 - `ebay-progress-spinner`: [evo-progress-spinner.md](components/evo-progress-spinner.md)
 - `ebay-radio`: [evo-radio.md](components/evo-radio.md)
+- `ebay-select`: [evo-select.md](components/evo-select.md)
 - `ebay-tabs`: [evo-tabs.md](components/evo-tabs.md)
 - `ebay-textbox`: [evo-input.md](components/evo-input.md) / [evo-textarea.md](components/evo-textarea.md)
 - `ebay-tooltip`: [evo-tooltip.md](components/evo-tooltip.md)
