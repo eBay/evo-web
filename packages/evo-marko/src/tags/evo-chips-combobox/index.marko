@@ -32,12 +32,12 @@ export interface Input extends ComboboxInput {
 
 <const/focusAfterDelete(i: number) {
   setTimeout(() => {
-    const deleteButtons = [...chips];
-    const deleteButton = deleteButtons[i] ?? deleteButtons.at(-1);
-    if (deleteButton) {
-      deleteButton.focus();
+    const chipEls = [...chips];
+    const chip = chipEls[i] ?? chipEls.at(-1);
+    if (chip) {
+      chip.deleteBtn().focus();
     } else {
-      combobox().focus();
+      combobox().input().focus();
     }
   });
 }>

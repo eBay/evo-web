@@ -112,7 +112,7 @@ export interface Input extends Omit<
       button && "combobox__control--actionable",
       borderless && "combobox__control--borderless",
     ]>
-      <input/$inputEl
+      <input/inputEl
         ...htmlInput
         id=inputId
         type="text"
@@ -261,7 +261,7 @@ export interface Input extends Omit<
   </>
 </evo-floating-label>
 
-<return=$inputEl>
+<return=() => ({ input: inputEl })>
 static {
   function filterOptions<T extends { text: string }>(
     options: Iterable<T>,
