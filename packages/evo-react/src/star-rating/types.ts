@@ -11,5 +11,5 @@ export type EvoStarRatingProps = Omit<
    * `"Rating: {value} out of 5"`. Pass `null` explicitly _only_ if alternative
    * accessibility information is present, such as `aria-labelledby`.
    */
-  a11yText?: string | null;
+  a11yText: string | null;
 };

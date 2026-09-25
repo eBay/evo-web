@@ -6,6 +6,10 @@ const meta: Meta<typeof EvoStarRating> = {
   component: EvoStarRating,
   argTypes: {
     value: { control: { type: "range", min: 0, max: 5, step: 0.5 } },
+    a11yText: {
+      type: { name: "string", required: true },
+      control: "text",
+    },
   },
   args: {
     value: 4.5,

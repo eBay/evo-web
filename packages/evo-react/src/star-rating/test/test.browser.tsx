@@ -10,12 +10,15 @@ describe("evo-star-rating", () => {
       <EvoStarRating
         ref={ref}
         value={3.5}
+        a11yText="Seller rating: 3.5 out of 5"
         className="seller-rating"
         dir="rtl"
         data-testid="seller-rating"
       />,
     );
-    const rating = screen.getByRole("img", { name: "Rating: 3.5 out of 5" });
+    const rating = screen.getByRole("img", {
+      name: "Seller rating: 3.5 out of 5",
+    });
 
     await expect.element(rating).toHaveAttribute("data-stars", "3-5");
     await expect.element(rating).toHaveClass("star-rating", "seller-rating");
@@ -32,9 +35,13 @@ describe("evo-star-rating", () => {
   it("clamps and rounds values to supported half-star visuals", async () => {
     const screen = await render(
       <>
-        <EvoStarRating value={-1} data-testid="low-rating" />
-        <EvoStarRating value={2.74} data-testid="middle-rating" />
-        <EvoStarRating value={7} data-testid="high-rating" />
+        <EvoStarRating value={-1} a11yText="0 stars" data-testid="low-rating" />
+        <EvoStarRating
+          value={2.74}
+          a11yText="2.5 stars"
+          data-testid="middle-rating"
+        />
+        <EvoStarRating value={7} a11yText="5 stars" data-testid="high-rating" />
       </>,
     );
 

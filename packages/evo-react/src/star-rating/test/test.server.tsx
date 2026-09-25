@@ -4,7 +4,11 @@ import { EvoStarRating } from "../star-rating";
 
 describe("EvoStarRating SSR", () => {
   it.each([0, 0.5, 2.5, 5])("renders value %s", (value) => {
-    expect(renderToString(<EvoStarRating value={value} />)).toMatchSnapshot();
+    expect(
+      renderToString(
+        <EvoStarRating value={value} a11yText={`${value} stars`} />,
+      ),
+    ).toMatchSnapshot();
   });
 
   it("renders an external accessible label", () => {
