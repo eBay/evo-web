@@ -13,7 +13,11 @@ export type EvoToggleButtonProps = Omit<
   pressed?: boolean;
   /** Initial pressed state for an uncontrolled button. Defaults to `false`. */
   defaultPressed?: boolean;
-  /** Visual arrangement. Defaults to `"minimal"`; use `"list"` or `"gallery"` with media. */
+  /**
+   * Visual arrangement. Omit it for Skin's default minimal layout; use
+   * `"list"` or `"gallery"` with media. When set, adds the matching
+   * `toggle-button--<layoutType>-layout` class.
+   */
   layoutType?: ToggleButtonLayout;
   /** Fired with the requested pressed state after a click that is not prevented. */
   onPressedChange?: (pressed: boolean) => void;

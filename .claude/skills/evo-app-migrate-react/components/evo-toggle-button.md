@@ -47,5 +47,6 @@
 - Replace `onToggle(event, { pressed })` with `onPressedChange(pressed)`. Use `onClick` when the event is needed; it runs first, and `preventDefault()` cancels the toggle.
 - `pressed` remains controlled. Use `defaultPressed` when the button should manage its own pressed state.
 - The button defaults to `type="button"`.
+- Omit `layoutType` for the minimal layout. `EvoToggleButton` no longer adds `toggle-button--minimal-layout` by default; the class is only added when `layoutType="minimal"` is passed.
 - `title` on `EvoToggleButton` is now the native HTML attribute, not the visible label.
 - Content, title, subtitle, and icon wrappers render `<span>` elements, following Skin. Update selectors that target the legacy `<p>` or `<div>` wrappers.

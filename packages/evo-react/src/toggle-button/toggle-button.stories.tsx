@@ -31,7 +31,6 @@ const meta: Meta<typeof EvoToggleButton> = {
   args: {
     defaultPressed: false,
     disabled: false,
-    layoutType: "minimal",
   },
 };
 

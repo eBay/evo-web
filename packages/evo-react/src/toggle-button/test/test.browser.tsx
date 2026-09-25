@@ -42,9 +42,7 @@ describe("evo-toggle-button", () => {
 
     await expect.element(button).toHaveAttribute("type", "button");
     await expect.element(button).toHaveAttribute("aria-pressed", "false");
-    await expect
-      .element(button)
-      .toHaveClass("toggle-button", "toggle-button--minimal-layout");
+    await expect.element(button).toHaveClass("toggle-button", { exact: true });
     expect(ref.current).toBe(button.element());
 
     await user.click(button);

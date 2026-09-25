@@ -40,7 +40,7 @@ export function EvoToggleButton({
   defaultPressed = false,
   children,
   className,
-  layoutType = "minimal",
+  layoutType,
   onPressedChange,
   onClick,
   type = "button",
@@ -57,7 +57,7 @@ export function EvoToggleButton({
       type={type}
       className={classNames(
         "toggle-button",
-        `toggle-button--${layoutType}-layout`,
+        layoutType && `toggle-button--${layoutType}-layout`,
         className,
       )}
       aria-pressed={isPressed}
