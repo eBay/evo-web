@@ -82,7 +82,7 @@ const meta: Meta<EvoCalendarProps> = {
   args: {
     selectMode: "day",
     a11yNavigateText: (month, dir) =>
-      `${dir === "prev" ? "Previous" : "Next"}: ${month}`,
+      `${dir === "prev" ? "Previous" : "Next"} month, ${month}`,
     a11yRangeText: {
       start: "start of range",
       end: "end of range",

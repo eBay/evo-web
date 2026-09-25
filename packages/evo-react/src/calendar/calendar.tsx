@@ -54,7 +54,7 @@ const DAY_UPDATE_KB = {
  *   selected={selectedDate}
  *   onSelectedChange={setSelectedDate}
  *   a11yNavigateText={(month, direction) =>
- *     `${direction === "prev" ? "Previous" : "Next"}: ${month}`
+ *     `${direction === "prev" ? "Previous" : "Next"} month, ${month}`
  *   }
  * />
  * ```

@@ -158,10 +158,11 @@ export default {
             type: "callback",
             control: { type: "callback" },
             description:
-                "Function used to get the text for showing previous and next months",
+                "Function used to get the accessible label for the previous and next month buttons",
             table: {
                 defaultValue: {
-                    summary: "(monthName) => `Show ${monthName}`",
+                    summary:
+                        "(monthName, dir) => `${dir === 'prev' ? 'Previous' : 'Next'} month, ${monthName}`",
                 },
             },
         },

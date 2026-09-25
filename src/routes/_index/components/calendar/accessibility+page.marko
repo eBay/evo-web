@@ -1,4 +1,161 @@
+import "../../../../sass/accessibility.scss";
+import { urls } from "../../../../data";
+
 <div class="a11y-pattern-content">
   <h1>Calendar Accessibility</h1>
-  <p>The content is not yet available.</p>
+  <h2>Best Practices</h2>
+  <p>
+    The calendar <strong>must</strong> be structured as a data table. Use
+    <code>&lt;caption&gt;</code> for the month and year, and column headers (
+    <code>&lt;th&gt;</code> ) for the days of the week. This gives assistive
+    technology the same table navigation commands available on any other data
+    table.
+  </p>
+  <p>
+    Only use the <em>interactive</em> calendar (date buttons) when the user is
+    actually selecting a date. A read-only calendar — one used purely to display
+    a date or range — <strong>should not</strong> expose its dates as buttons;
+    use plain text, or a link if the date itself is actionable (e.g. "view
+    orders placed on this date").
+  </p>
+  <p>
+    Date state (today, selected, start of range, in range, end of range,
+    disabled) <strong>must not</strong> be conveyed by color or border alone.
+    Pair every visual state with a programmatic equivalent: the interactive
+    calendar uses <code>aria-current="date"</code> for today,
+    <code>aria-pressed="true"</code> for a selected date, the native
+    <code>disabled</code> attribute for unavailable dates, and composes only the
+    range text (start, in, end of range) into each date button's
+    <code>aria-label</code>. The read-only calendar appends visually-hidden text alongside
+    the visible day number.
+  </p>
+  <p>
+    When focused, the previous/next month buttons <strong>must</strong> have an
+    accessible label and <strong>should</strong> name the direction and the
+    month being navigated to, such as "Previous month, August 2026" and "Next
+    month, September 2026".
+  </p>
+  <h2>Interaction Design</h2>
+  <p>
+    This section provides detailed instructions for how different input types
+    should navigate and operate the pattern.
+  </p>
+  <h3>Keyboard</h3>
+  <p>
+    For the <em>interactive</em> calendar, date buttons use a
+    <a href=`${urls.accessibility}/techniques/roving-tabindex`>
+      roving tabindex
+    </a>
+    . Only one date (the current or most recently focused date) is in the page's
+    <strong>TAB</strong> sequence at a time; every other date button has
+    <code>tabindex="-1"</code>.
+  </p>
+  <p>
+    With focus on a date, <strong>RIGHT-ARROW</strong> and
+    <strong>LEFT-ARROW</strong> keys <strong>must</strong> move focus one day
+    forward/backward. <strong>DOWN-ARROW</strong> and <strong>UP-ARROW</strong>
+    keys <strong>must</strong> move focus one week forward/backward. Disabled
+    dates <strong>must</strong> be skipped over, never landed on.
+  </p>
+  <p>
+    <strong>HOME</strong> and <strong>END</strong> keys move focus to the first
+    and last enabled date currently visible. <strong>PAGE-UP</strong> and
+    <strong>PAGE-DOWN</strong> keys move focus to the same weekday in the
+    previous/next month; for a <em>navigable</em> calendar this also changes the
+    visible month.
+  </p>
+  <p>
+    If arrow, Home, End, Page Up, or Page Down navigation would move focus
+    outside the currently visible month(s) of a <em>navigable</em> calendar, the
+    calendar <strong>must</strong> advance to the adjacent month and move focus
+    to the corresponding date there.
+  </p>
+  <p>
+    <strong>SPACEBAR</strong> or <strong>ENTER</strong> key on a focused date
+    <strong>must</strong> select that date. When the calendar supports a range,
+    selecting a second date after a first <strong>must</strong> create a range
+    between them.
+  </p>
+  <p>
+    The previous/next month buttons, when present, sit in the normal document
+    tab order — <em>outside</em> of the date grid's roving tabindex — and behave
+    like any other <a href=`${urls.components}/icon-button`>icon button</a> .
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    The month and year <strong>must</strong> be announced via the table's
+    <code>&lt;caption&gt;</code> when the calendar is discovered, or when the
+    virtual cursor enters the table.
+  </p>
+  <p>
+    Each day of the week <strong>must</strong> be announced as a column header
+    when a screen reader moves between date cells, per standard data table
+    semantics.
+  </p>
+  <p>
+    For the interactive calendar, a focused date button announces its day
+    number, its selected state (via <code>aria-pressed</code>) and whether it is today
+    (via <code>aria-current</code>), plus any range text ("start of range", "in
+    range", "end of range") composed into the button's <code>aria-label</code> .
+  </p>
+  <p>
+    For the read-only calendar, the same state text is appended as
+    visually-hidden text alongside the visible day number, rather than via
+    <code>aria-label</code> , since these dates may also be links.
+  </p>
+  <h3>Pointer</h3>
+  <p>
+    Clicking or tapping a date button <strong>must</strong> select that date.
+    Clicking or tapping a disabled date <strong>must</strong> have no effect.
+  </p>
+  <p>
+    Clicking or tapping a previous/next month button <strong>must</strong>
+    navigate the calendar by one month.
+  </p>
+  <h2>ARIA Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>aria-label</strong></td>
+        <td>
+          Applied to the previous/next month buttons to announce which month
+          they navigate to. Applied to an interactive date button, in place of
+          its visible day number, when that date is part of a range, to append
+          the range state text (start, in, end of range).
+        </td>
+      </tr>
+      <tr>
+        <td><strong>aria-current="date"</strong></td>
+        <td>Applied to today's date button, when interactive.</td>
+      </tr>
+      <tr>
+        <td><strong>aria-pressed</strong></td>
+        <td>
+          Applied to an interactive date button to convey its selected state.
+        </td>
+      </tr>
+      <tr>
+        <td><strong>tabindex</strong></td>
+        <td>
+          Set to <code>0</code> on exactly one interactive date button (the
+          roving tabindex) and <code>-1</code> on all others.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Further Reading</h2>
+  <ul>
+    <li>
+      <a href=`${urls.accessibility}/techniques/roving-tabindex`>
+        Roving Tabindex
+      </a>
+    </li>
+    <li><a href=`${urls.components}/date-textbox`>Date Textbox</a></li>
+  </ul>
 </div>
