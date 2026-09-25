@@ -31,7 +31,7 @@ import "@ebay/skin/date-textbox.mjs";
  *   <EvoDateRangeInput type="end" floatingLabel="Purchase date to" />
  *   <EvoDateRangeInputCalendarPopover
  *     a11yNavigateText={(month, direction) =>
- *       `${direction === "prev" ? "Previous" : "Next"} ${month}`
+ *       `${direction === "prev" ? "Previous" : "Next"} month, ${month}`
  *     }
  *     a11yRangeText={{
  *       start: "Start of purchase date range",
