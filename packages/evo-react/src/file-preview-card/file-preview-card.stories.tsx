@@ -5,8 +5,9 @@ import { EvoIconHeart16 } from "../icon/icons/heart-16";
 import {
   EvoFilePreviewCard,
   EvoFilePreviewCardAction,
+  EvoFilePreviewCardCancelAction,
   EvoFilePreviewCardMenu,
-  EvoFilePreviewCardSeeMoreAction,
+  EvoPreviewCardSeeMore,
   EvoMenuButtonItem,
 } from "./index";
 
@@ -21,11 +22,12 @@ const meta: Meta<typeof EvoFilePreviewCard> = {
   component: EvoFilePreviewCard,
   subcomponents: {
     EvoFilePreviewCardAction,
+    EvoFilePreviewCardCancelAction,
     EvoFilePreviewCardMenu,
-    EvoFilePreviewCardSeeMoreAction,
+    EvoPreviewCardSeeMore,
   },
   argTypes: {
-    status: { control: "select", options: [undefined, "uploading"] },
+    status: { control: "select", options: ["uploading"] },
     as: { control: "select", options: ["div", "span"] },
   },
 };
@@ -40,12 +42,11 @@ export const Image: Story = {
       file={photo}
       footerTitle={photo.name}
       footerSubtitle="JPEG image"
-      deleteAction={
-        <EvoFilePreviewCardAction a11yText="Delete photo">
-          <EvoIconDelete16 />
-        </EvoFilePreviewCardAction>
-      }
-    />
+    >
+      <EvoFilePreviewCardAction a11yText="Delete photo">
+        <EvoIconDelete16 />
+      </EvoFilePreviewCardAction>
+    </EvoFilePreviewCard>
   ),
 };
 
@@ -57,12 +58,11 @@ export const Uploading: Story = {
       file={{ name: "video.mp4", type: "video/mp4" }}
       status="uploading"
       a11yUploadingText="Uploading video"
-      cancelAction={
-        <EvoFilePreviewCardAction a11yText="Cancel upload">
-          <EvoIconClose16 />
-        </EvoFilePreviewCardAction>
-      }
-    />
+    >
+      <EvoFilePreviewCardCancelAction a11yText="Cancel upload">
+        <EvoIconClose16 />
+      </EvoFilePreviewCardCancelAction>
+    </EvoFilePreviewCard>
   ),
 };
 
@@ -76,12 +76,11 @@ export const Video: Story = {
         type: "video/mp4",
         src: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
       }}
-      action={
-        <EvoFilePreviewCardAction a11yText="Favorite video">
-          <EvoIconHeart16 />
-        </EvoFilePreviewCardAction>
-      }
-    />
+    >
+      <EvoFilePreviewCardAction a11yText="Favorite video">
+        <EvoIconHeart16 />
+      </EvoFilePreviewCardAction>
+    </EvoFilePreviewCard>
   ),
 };
 
@@ -92,42 +91,31 @@ export const DocumentMenu: Story = {
       {...args}
       file={{ name: "report.csv", type: "text/csv" }}
       footerTitle="report.csv"
-      menu={
-        <EvoFilePreviewCardMenu a11yText="More file actions">
-          <EvoMenuButtonItem>Edit</EvoMenuButtonItem>
-          <EvoMenuButtonItem>Download</EvoMenuButtonItem>
-          <EvoMenuButtonItem>Delete</EvoMenuButtonItem>
-        </EvoFilePreviewCardMenu>
-      }
-    />
+    >
+      <EvoFilePreviewCardMenu a11yText="More file actions">
+        <EvoMenuButtonItem>Edit</EvoMenuButtonItem>
+        <EvoMenuButtonItem>Download</EvoMenuButtonItem>
+        <EvoMenuButtonItem>Delete</EvoMenuButtonItem>
+      </EvoFilePreviewCardMenu>
+    </EvoFilePreviewCard>
   ),
 };
 
 /** The overlay can show the number of additional files. */
 export const SeeMore: Story = {
   render: (args) => (
-    <EvoFilePreviewCard
-      {...args}
-      file={photo}
-      seeMore={12}
-      a11ySeeMoreText="See 12 more photos"
-    />
+    <EvoFilePreviewCard {...args} file={photo}>
+      <EvoPreviewCardSeeMore count={12} a11yText="See 12 more photos" />
+    </EvoFilePreviewCard>
   ),
 };
 
-/** A named slot can customize the see-more button. */
+/** The see-more child owns its accessible label and click action. */
 export const CustomSeeMore: Story = {
   render: (args) => (
-    <EvoFilePreviewCard
-      {...args}
-      file={photo}
-      seeMoreAction={
-        <EvoFilePreviewCardSeeMoreAction
-          count={5}
-          a11yText="See 5 more photos"
-        />
-      }
-    />
+    <EvoFilePreviewCard {...args} file={photo}>
+      <EvoPreviewCardSeeMore count={5} a11yText="See 5 more photos" />
+    </EvoFilePreviewCard>
   ),
 };
 

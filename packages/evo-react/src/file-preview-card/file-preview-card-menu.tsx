@@ -2,6 +2,7 @@ import classNames from "classnames";
 import { EvoMenuButton } from "../menu-button/menu-button";
 import { EvoMenuButtonTrigger } from "../menu-button/menu-button-trigger";
 import { EvoMenuButtonMenu } from "../menu-button/menu-button-menu";
+import { useFilePreviewCardContext } from "./context";
 import type { EvoFilePreviewCardMenuProps } from "./types";
 
 /**
@@ -15,6 +16,8 @@ export function EvoFilePreviewCardMenu({
   className,
   ...rest
 }: EvoFilePreviewCardMenuProps) {
+  const { status } = useFilePreviewCardContext();
+  if (status === "uploading") return null;
   return (
     <EvoMenuButton
       {...rest}

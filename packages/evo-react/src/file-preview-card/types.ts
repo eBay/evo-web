@@ -15,7 +15,7 @@ import type { ComponentProps, ElementType, ReactNode } from "react";
 import type { NativeIconButtonProps } from "../icon-button/types";
 import type { EvoMenuButtonProps } from "../menu-button/types";
 
-/** Props for a file preview with optional action and footer slots. */
+/** Props for a file preview with composable action children. */
 export type EvoFilePreviewCardProps = ComponentProps<"div"> & {
   /** Native element used for the outer wrapper; defaults to `div`. */
   as?: ElementType;
@@ -31,22 +31,6 @@ export type EvoFilePreviewCardProps = ComponentProps<"div"> & {
   a11yExternalLinkText?: string;
   /** Override for the nonimage file type badge. */
   infoText?: string;
-  /** Ordinary top-corner action, usually an `EvoFilePreviewCardAction`. */
-  action?: ReactNode;
-  /** Delete action when `action` and `menu` are absent. */
-  deleteAction?: ReactNode;
-  /** Cancel action shown while `status="uploading"`. */
-  cancelAction?: ReactNode;
-  /** Menu of commands, usually an `EvoFilePreviewCardMenu`. */
-  menu?: ReactNode;
-  /** Number of additional files displayed in the built-in see-more overlay. */
-  seeMore?: number;
-  /** Custom see-more overlay, usually an `EvoFilePreviewCardSeeMoreAction`. */
-  seeMoreAction?: ReactNode;
-  /** Accessible label of the built-in see-more overlay. Defaults to `"See more files"`. */
-  a11ySeeMoreText?: string;
-  /** Called when the built-in see-more overlay is activated. */
-  onSeeMore?: ComponentProps<"button">["onClick"];
   /** Primary footer text, usually the filename. */
   footerTitle?: string;
   /** Secondary footer text, rendered only with `footerTitle`. */
@@ -54,8 +38,9 @@ export type EvoFilePreviewCardProps = ComponentProps<"div"> & {
 };
 
 export type EvoFilePreviewCardActionProps = NativeIconButtonProps;
+export type EvoFilePreviewCardCancelActionProps = NativeIconButtonProps;
 
-export type EvoFilePreviewCardSeeMoreActionProps = Omit<
+export type EvoPreviewCardSeeMoreProps = Omit<
   ComponentProps<"button">,
   "children" | "aria-label"
 > & {

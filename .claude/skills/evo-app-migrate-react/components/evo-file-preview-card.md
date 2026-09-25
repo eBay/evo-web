@@ -1,22 +1,6 @@
 # ebay-file-preview-card → evo-file-preview-card
 
-EvoFilePreviewCard keeps the legacy preview body, asset, optional link, info badge, and footer. Use named action slots. Each slot receives an already configured component, avoiding child scanning and index-based menu callbacks.
-
-**Before:**
-
-```tsx
-import {
-  EbayFilePreviewCard,
-  EbayFilePreviewCardAction,
-} from "@ebay/ui-core-react/ebay-file-preview-card";
-import { EbayIconHeart16 } from "@ebay/ui-core-react/ebay-icon/icons/ebay-icon-heart-16";
-
-<EbayFilePreviewCard file={file} onAction={favorite}>
-  <EbayFilePreviewCardAction icon={<EbayIconHeart16 />} aria-label="Favorite" />
-</EbayFilePreviewCard>;
-```
-
-**After:**
+`EvoFilePreviewCard` keeps the legacy preview body, asset, optional link, info badge, and footer. Place one named action child in the card body. The card shares its upload state with action children through context; no child scanning is needed.
 
 ```tsx
 import {
@@ -25,18 +9,17 @@ import {
 } from "@evo-web/react/file-preview-card";
 import { EvoIconHeart16 } from "@evo-web/react/icons/heart-16";
 
-<EvoFilePreviewCard
-  file={file}
-  action={
-    <EvoFilePreviewCardAction a11yText="Favorite" onClick={favorite}>
-      <EvoIconHeart16 />
-    </EvoFilePreviewCardAction>
-  }
-/>;
+<EvoFilePreviewCard file={file}>
+  <EvoFilePreviewCardAction a11yText="Favorite" onClick={favorite}>
+    <EvoIconHeart16 />
+  </EvoFilePreviewCardAction>
+</EvoFilePreviewCard>;
 ```
 
-Use `deleteAction` or `cancelAction` with the same `EvoFilePreviewCardAction` wrapper and the appropriate icon. `cancelAction` appears while `status="uploading"`; `menu`, `action`, and `deleteAction` apply otherwise, in that order. `a11yUploadingText` localizes the progress spinner.
+Replace legacy `onAction`, `onDelete`, and `deleteText` with an `EvoFilePreviewCardAction` child, its `onClick`, accessible `a11yText`, and an icon child. `EvoFilePreviewCardCancelAction` appears only while `status="uploading"`; it replaces `onCancel` and `a11yCancelUploadText` and defaults to the close icon. `a11yUploadingText` localizes the progress spinner.
 
-For multiple actions, pass `menu={<EvoFilePreviewCardMenu a11yText="More file actions">...</EvoFilePreviewCardMenu>}` and put `EvoMenuButtonItem` children inside. Each item gets its own `onSelect`, consistent with EvoMenuButton. This replaces the legacy `menuActions` array and index-based `onMenuAction` callback.
+For multiple commands, use an `EvoFilePreviewCardMenu` child with `EvoMenuButtonItem` children and item-level `onSelect` callbacks. This replaces `menuActions`, `onMenuAction`, and `a11yMenuButtonText`.
 
-For an additional-file overlay, use `seeMore={count}` with `a11ySeeMoreText` and `onSeeMore`, or supply `seeMoreAction={<EvoFilePreviewCardSeeMoreAction count={count} a11yText="See more" onClick={openGallery} />}`. `footerTitle`, `footerSubtitle`, `href`, `a11yExternalLinkText`, `infoText`, and `as` remain available.
+Replace numeric `seeMore`, `a11ySeeMoreText`, and `onSeeMore` with an `EvoPreviewCardSeeMore` child. Its `count`, `a11yText`, and `onClick` produce the same +N overlay. Skin fades the image when this child is present.
+
+`footerTitle`, `footerSubtitle`, `href`, `a11yExternalLinkText`, `infoText`, and `as` remain available.
