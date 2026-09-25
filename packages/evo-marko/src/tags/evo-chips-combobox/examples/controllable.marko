@@ -1,0 +1,7 @@
+<let/selected=["Option 1", "Custom Option"]>
+<p>Selected: ${selected.join(", ") || "(none)"}</p>
+<evo-chips-combobox ...input selected:=selected>
+  <@option text="Option 1"/>
+  <@option text="Option 2"/>
+  <@option text="Option 3"/>
+</evo-chips-combobox>

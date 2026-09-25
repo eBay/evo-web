@@ -59,17 +59,22 @@ export default {
       control: "boolean",
       description: "Disables the input.",
     },
+    invalid: {
+      type: "boolean",
+      control: "boolean",
+      description: "Indicates a field-level error with red border.",
+    },
     value: {
       controllable: true,
       type: "string",
       control: "text",
-      description: "Current input value. Two-way bindable via `:=`.",
+      description: "Current input value.",
     },
     open: {
       controllable: true,
       type: "boolean",
       control: "boolean",
-      description: "Controls listbox visibility. Two-way bindable via `:=`.",
+      description: "Whether the listbox is visible.",
     },
     option: {
       description: "Repeatable `@option` attribute tag.",
