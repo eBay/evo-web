@@ -1,5 +1,17 @@
 # @evo-web/marko
 
+## 0.8.3
+
+### Patch Changes
+
+- [#974](https://github.com/eBay/evo-web/pull/974) [`a1a62f3`](https://github.com/eBay/evo-web/commit/a1a62f352e2f676182692f9e55ad90ebdd1650e5) Thanks [@saiponnada](https://github.com/saiponnada)! - fix(accordion): wrap each header label in a configurable heading
+
+- [#969](https://github.com/eBay/evo-web/pull/969) [`ccd1607`](https://github.com/eBay/evo-web/commit/ccd1607915c780b0c15de60b35d10f0c2f5afc17) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Add `<evo-chips-combobox>`, migrated from ebayui-core, and add an `invalid` prop to `<evo-combobox>`
+
+- [#972](https://github.com/eBay/evo-web/pull/972) [`fab432e`](https://github.com/eBay/evo-web/commit/fab432e690382dfb9c99b4ee91fb40aea5ed6334) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoNumberInput for React and unify number input value callbacks across React and Marko.
+
+- [#973](https://github.com/eBay/evo-web/pull/973) [`948d6b8`](https://github.com/eBay/evo-web/commit/948d6b88f9b59568f735d332378c59160137469a) Thanks [@ArtBlue](https://github.com/ArtBlue)! - fix(skin): correct readonly textbox styling to match default
+
 ## 0.8.2
 
 ### Patch Changes

@@ -1,5 +1,23 @@
 # @evo-web/react
 
+## 0.4.8
+
+### Patch Changes
+
+- [#974](https://github.com/eBay/evo-web/pull/974) [`a1a62f3`](https://github.com/eBay/evo-web/commit/a1a62f352e2f676182692f9e55ad90ebdd1650e5) Thanks [@saiponnada](https://github.com/saiponnada)! - fix(accordion): wrap each header label in a configurable heading
+
+- [#984](https://github.com/eBay/evo-web/pull/984) [`e49124f`](https://github.com/eBay/evo-web/commit/e49124fcc16fb562f102b37ddbe2a425d1cb7371) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoFakeLink component.
+
+- [#980](https://github.com/eBay/evo-web/pull/980) [`f32c5d6`](https://github.com/eBay/evo-web/commit/f32c5d63cb2e10b342fabe9048adbce45a210016) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoImagePlaceholder component.
+
+- [#972](https://github.com/eBay/evo-web/pull/972) [`fab432e`](https://github.com/eBay/evo-web/commit/fab432e690382dfb9c99b4ee91fb40aea5ed6334) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoNumberInput for React and unify number input value callbacks across React and Marko.
+
+- [#973](https://github.com/eBay/evo-web/pull/973) [`948d6b8`](https://github.com/eBay/evo-web/commit/948d6b88f9b59568f735d332378c59160137469a) Thanks [@ArtBlue](https://github.com/ArtBlue)! - fix(skin): correct readonly textbox styling to match default
+
+- [#984](https://github.com/eBay/evo-web/pull/984) [`e49124f`](https://github.com/eBay/evo-web/commit/e49124fcc16fb562f102b37ddbe2a425d1cb7371) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoSectionTitle component.
+
+- [#984](https://github.com/eBay/evo-web/pull/984) [`e49124f`](https://github.com/eBay/evo-web/commit/e49124fcc16fb562f102b37ddbe2a425d1cb7371) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoSignal component.
+
 ## 0.4.7
 
 ### Patch Changes
