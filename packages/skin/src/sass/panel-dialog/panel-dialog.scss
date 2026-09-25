@@ -12,6 +12,97 @@
     @include dialog-mixins.base;
 }
 
+dialog.dialog.panel-dialog {
+    border: 0;
+    border-radius: 0;
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    max-height: none;
+    max-width: none;
+    min-height: 0;
+    min-width: 0;
+    padding: 0;
+    width: 100%;
+}
+
+dialog.dialog.panel-dialog:not([open]) {
+    display: none;
+}
+
+dialog.dialog.panel-dialog::backdrop {
+    animation: none;
+    background: transparent;
+}
+
+@keyframes panel-dialog-close-root {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes panel-dialog-slide-in-start {
+    from {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes panel-dialog-slide-in-end {
+    from {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes panel-dialog-slide-out-start {
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes panel-dialog-slide-out-end {
+    to {
+        transform: translateX(100%);
+    }
+}
+
+dialog.dialog.panel-dialog[open] {
+    animation: none;
+}
+
+dialog.dialog.panel-dialog[open].dialog--close {
+    animation: panel-dialog-close-root 0.32s;
+}
+
+dialog.dialog.panel-dialog[open]:not(.dialog--close)
+    .panel-dialog__window--slide {
+    animation: panel-dialog-slide-in-start 0.32s ease-out;
+}
+
+dialog.dialog.panel-dialog[open]:not(.dialog--close)
+    .panel-dialog__window--end {
+    animation-name: panel-dialog-slide-in-end;
+}
+
+dialog.dialog.panel-dialog[open].dialog--close .panel-dialog__window--slide {
+    animation: panel-dialog-slide-out-start 0.32s ease-out;
+}
+
+dialog.dialog.panel-dialog[open].dialog--close .panel-dialog__window--end {
+    animation-name: panel-dialog-slide-out-end;
+}
+
+dialog.dialog.panel-dialog--no-animation[open].dialog--close {
+    animation-duration: 1ms;
+}
+
+dialog.dialog.panel-dialog--no-animation[open] .panel-dialog__window--slide {
+    animation: none;
+}
+
 .panel-dialog__window {
     @include dialog-mixins.window;
 
@@ -27,6 +118,10 @@
 
 .panel-dialog__header {
     @include dialog-mixins.header-content;
+}
+
+.panel-dialog__header.dialog__header {
+    padding: 0;
 }
 
 .panel-dialog__header .fake-link {
