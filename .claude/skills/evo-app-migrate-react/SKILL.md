@@ -75,6 +75,7 @@ When migrating a listed component, read the linked file completely and apply the
 - `ebay-cta-button`: [evo-cta-button.md](components/evo-cta-button.md)
 - `ebay-date-textbox`: [evo-date-input.md](components/evo-date-input.md)
 - `ebay-details`: [evo-details.md](components/evo-details.md)
+- `ebay-education-notice`: [evo-education-notice.md](components/evo-education-notice.md)
 - `ebay-eek`: [evo-eek.md](components/evo-eek.md)
 - `ebay-fake-menu`: [evo-fake-menu.md](components/evo-fake-menu.md)
 - `ebay-fake-link`: [evo-fake-link.md](components/evo-fake-link.md)
