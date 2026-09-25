@@ -27,7 +27,12 @@ const DEFAULT_STAR_TEXT: readonly [string, string, string, string, string] = [
  * ```tsx
  * import { EvoStarRatingSelect } from "@evo-web/react/star-rating-select";
  *
- * <EvoStarRatingSelect name="purchase-rating" a11yText="Rate your purchase" />
+ * <EvoStarRatingSelect
+ *   name="purchase-rating"
+ *   a11yText="Rate your purchase"
+ *   a11yStarText={["1 star", "2 stars", "3 stars", "4 stars", "5 stars"]}
+ *   onValueChange={(value) => setRating(value)}
+ * />
  * ```
  *
  * @summary Interactive five-star rating with native radios.
@@ -39,9 +44,7 @@ export function EvoStarRatingSelect({
   a11yStarText = DEFAULT_STAR_TEXT,
   disabled,
   name,
-  onChange,
-  onFocus,
-  onKeyDown,
+  onValueChange,
   className,
   ...rest
 }: EvoStarRatingSelectProps) {
@@ -70,14 +73,12 @@ export function EvoStarRatingSelect({
             value={starValue}
             disabled={disabled}
             checked={selectedValue === starValue}
-            onChange={(event) => {
+            onChange={() => {
               if (!isControlled) {
                 setUncontrolledValue(starValue);
               }
-              onChange?.(event, { value: starValue });
+              onValueChange?.(starValue);
             }}
-            onFocus={(event) => onFocus?.(event, { value: starValue })}
-            onKeyDown={(event) => onKeyDown?.(event, { value: starValue })}
           />
           <span className="star-rating-select__radio-icon">
             <EvoIconStarDynamic className="star-rating__icon" />

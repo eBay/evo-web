@@ -7,12 +7,11 @@ const meta: Meta<typeof EvoStarRatingSelect> = {
   argTypes: {
     value: { control: { type: "range", min: 0, max: 5, step: 1 } },
     defaultValue: { control: { type: "range", min: 0, max: 5, step: 1 } },
-    onChange: { action: "onChange", table: { category: "Events" } },
-    onFocus: { action: "onFocus", table: { category: "Events" } },
-    onKeyDown: { action: "onKeyDown", table: { category: "Events" } },
+    onValueChange: { action: "onValueChange", table: { category: "Events" } },
   },
   args: {
     a11yText: "Rate your purchase",
+    a11yStarText: ["1 star", "2 stars", "3 stars", "4 stars", "5 stars"],
     defaultValue: 0,
     disabled: false,
     name: "purchase-rating",

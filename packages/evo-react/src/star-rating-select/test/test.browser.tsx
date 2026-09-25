@@ -3,6 +3,14 @@ import { userEvent } from "vitest/browser";
 import { render } from "vitest-browser-react";
 import { EvoStarRatingSelect } from "../star-rating-select";
 
+const STAR_TEXT = [
+  "1 star",
+  "2 stars",
+  "3 stars",
+  "4 stars",
+  "5 stars",
+] as const;
+
 describe("evo-star-rating-select", () => {
   let user: ReturnType<typeof userEvent.setup>;
 
@@ -15,12 +23,13 @@ describe("evo-star-rating-select", () => {
   });
 
   it("selects native radios and updates filled icons by pointer", async () => {
-    const onChange = vi.fn();
+    const onValueChange = vi.fn();
     const screen = await render(
       <EvoStarRatingSelect
+        a11yStarText={STAR_TEXT}
         a11yText="Rate your purchase"
         name="purchase-rating"
-        onChange={onChange}
+        onValueChange={onValueChange}
       />,
     );
 
@@ -35,28 +44,29 @@ describe("evo-star-rating-select", () => {
     await expect
       .element(twoStars)
       .toHaveClass("star-rating-select__control--filled");
-    expect(onChange).toHaveBeenLastCalledWith(expect.anything(), { value: 2 });
+    expect(onValueChange).toHaveBeenLastCalledWith(2);
 
     await user.click(fourStars);
     await expect.element(fourStars).toBeChecked();
     await expect
       .element(twoStars)
       .toHaveClass("star-rating-select__control--filled");
-    expect(onChange).toHaveBeenLastCalledWith(expect.anything(), { value: 4 });
-    expect(onChange).toHaveBeenCalledTimes(2);
+    expect(onValueChange).toHaveBeenLastCalledWith(4);
+    expect(onValueChange).toHaveBeenCalledTimes(2);
   });
 
-  it("keeps focus separate from selection and follows native arrow navigation", async () => {
+  it("keeps focus separate from selection and bubbles native focus and keydown to the root", async () => {
     const onFocus = vi.fn();
     const onKeyDown = vi.fn();
-    const onChange = vi.fn();
+    const onValueChange = vi.fn();
     const screen = await render(
       <EvoStarRatingSelect
+        a11yStarText={STAR_TEXT}
         a11yText="Rate the seller"
         defaultValue={2}
         onFocus={onFocus}
         onKeyDown={onKeyDown}
-        onChange={onChange}
+        onValueChange={onValueChange}
       />,
     );
     const twoStars = screen.getByRole("radio", { name: "2 stars" });
@@ -65,23 +75,31 @@ describe("evo-star-rating-select", () => {
     await user.tab();
     await expect.element(twoStars).toHaveFocus();
     await expect.element(twoStars).toBeChecked();
-    expect(onFocus).toHaveBeenCalledWith(expect.anything(), { value: 2 });
-    expect(onChange).not.toHaveBeenCalled();
+    expect(onFocus).toHaveBeenCalledWith(
+      expect.objectContaining({ target: twoStars.element() }),
+    );
+    expect(onValueChange).not.toHaveBeenCalled();
 
     await user.keyboard("{ArrowRight}");
     await expect.element(threeStars).toHaveFocus();
     await expect.element(threeStars).toBeChecked();
-    expect(onKeyDown).toHaveBeenCalledWith(expect.anything(), { value: 2 });
-    expect(onChange).toHaveBeenCalledWith(expect.anything(), { value: 3 });
+    expect(onKeyDown).toHaveBeenCalledWith(
+      expect.objectContaining({
+        key: "ArrowRight",
+        target: twoStars.element(),
+      }),
+    );
+    expect(onValueChange).toHaveBeenCalledWith(3);
   });
 
   it("leaves controlled selection with the owner", async () => {
-    const onChange = vi.fn();
+    const onValueChange = vi.fn();
     const screen = await render(
       <EvoStarRatingSelect
+        a11yStarText={STAR_TEXT}
         a11yText="Rate your purchase"
         value={2}
-        onChange={onChange}
+        onValueChange={onValueChange}
       />,
     );
 
@@ -89,13 +107,17 @@ describe("evo-star-rating-select", () => {
     await expect
       .element(screen.getByRole("radio", { name: "2 stars" }))
       .toBeChecked();
-    expect(onChange).toHaveBeenCalledWith(expect.anything(), { value: 4 });
+    expect(onValueChange).toHaveBeenCalledWith(4);
   });
 
   it("uses the shared name as a native form value", async () => {
     const screen = await render(
       <form aria-label="Purchase review">
-        <EvoStarRatingSelect a11yText="Rate your purchase" name="rating" />
+        <EvoStarRatingSelect
+          a11yText="Rate your purchase"
+          a11yStarText={STAR_TEXT}
+          name="rating"
+        />
       </form>,
     );
     await user.click(screen.getByRole("radio", { name: "3 stars" }));
@@ -107,12 +129,13 @@ describe("evo-star-rating-select", () => {
   });
 
   it("disables all choices without changing selection", async () => {
-    const onChange = vi.fn();
+    const onValueChange = vi.fn();
     const screen = await render(
       <EvoStarRatingSelect
+        a11yStarText={STAR_TEXT}
         a11yText="Rate your purchase"
         disabled
-        onChange={onChange}
+        onValueChange={onValueChange}
       />,
     );
 
@@ -123,6 +146,6 @@ describe("evo-star-rating-select", () => {
     await expect
       .element(screen.getByRole("radio", { name: "1 star" }))
       .not.toHaveFocus();
-    expect(onChange).not.toHaveBeenCalled();
+    expect(onValueChange).not.toHaveBeenCalled();
   });
 });
