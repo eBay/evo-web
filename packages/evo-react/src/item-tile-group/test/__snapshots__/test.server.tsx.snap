@@ -1,0 +1,5 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`EvoItemTileGroup SSR > renders a gallery list 1`] = `"<div class="layout-grid item-tile-group"><ul><li><div class="item-tile"><div class="item-tile__body"><div class="item-tile__section-secondary"><a href="/one" class="item-tile__title">One</a></div></div></div></li><li><div class="item-tile"><div class="item-tile__body"><div class="item-tile__section-secondary"><a href="/two" class="item-tile__title">Two</a></div></div></div></li></ul></div>"`;
+
+exports[`EvoItemTileGroup SSR > renders list layout on the group and items 1`] = `"<div class="layout-grid item-tile-group item-tile-group--list-view"><ul><li><div class="item-tile item-tile--list-view"><div class="item-tile__body"><div class="item-tile__section-secondary"><a href="/one" class="item-tile__title">One</a></div></div></div></li><li><div class="item-tile item-tile--list-view"><div class="item-tile__body"><div class="item-tile__section-secondary"><a href="/two" class="item-tile__title">Two</a></div></div></div></li></ul></div>"`;
