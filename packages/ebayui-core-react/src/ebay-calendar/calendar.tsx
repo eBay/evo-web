@@ -18,7 +18,7 @@ export type EbayCalendarProps = {
     disableAfter?: DayISO;
     disableWeekdays?: number[];
     disableList?: DayISO[];
-    getA11yShowMonthText?: (monthTitle: string) => string;
+    getA11yShowMonthText?: (monthTitle: string, dir: "prev" | "next") => string;
     a11ySelectedText?: string;
     a11yRangeStartText?: string;
     a11yInRangeText?: string;
@@ -57,7 +57,7 @@ const EbayCalendar: FC<EbayCalendarProps> = ({
     a11ySeparator = "-",
     a11yTodayText = "today",
     a11yDisabledText = "inactive",
-    getA11yShowMonthText = (monthTitle) => `Show ${monthTitle}`,
+    getA11yShowMonthText = (monthTitle, dir) => `${dir === "prev" ? "Previous" : "Next"} month, ${monthTitle}`,
     linkBuilder,
     onMonthChange = () => {},
     onFocus = () => {},
@@ -302,7 +302,7 @@ const EbayCalendar: FC<EbayCalendarProps> = ({
                             size="small"
                             icon={<EbayIconChevronLeft24 />}
                             disabled={disableBefore && getFirstVisibleISO() <= disableBefore}
-                            aria-label={getA11yShowMonthText(monthTitle(getMonthDate(offset - 1)))}
+                            aria-label={getA11yShowMonthText(monthTitle(getMonthDate(offset - 1)), "prev")}
                             onClick={() => prevMonth()}
                         />
 
@@ -315,7 +315,7 @@ const EbayCalendar: FC<EbayCalendarProps> = ({
                             size="small"
                             icon={<EbayIconChevronRight24 />}
                             disabled={disableAfter && getLastVisibleISO() >= disableAfter}
-                            aria-label={getA11yShowMonthText(monthTitle(getMonthDate(offset + numMonths)))}
+                            aria-label={getA11yShowMonthText(monthTitle(getMonthDate(offset + numMonths)), "next")}
                             onClick={() => nextMonth()}
                         />
                     </div>

@@ -59,7 +59,7 @@ describe("ebay-date-textbox", () => {
                     component.getByLabelText("open calendar"),
                 );
                 await fireEvent.click(
-                    component.getByLabelText("Show December 2023"),
+                    component.getByLabelText("Previous month, December 2023"),
                 );
                 await fireEvent.click(component.getAllByText("16")[0]);
             });
@@ -82,7 +82,7 @@ describe("ebay-date-textbox", () => {
                     component.getByLabelText("open calendar"),
                 );
                 await fireEvent.click(
-                    component.getByLabelText("Show March 2024"),
+                    component.getByLabelText("Next month, March 2024"),
                 );
                 await fireEvent.click(component.getAllByText("16")[1]);
             });
