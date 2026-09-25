@@ -4,7 +4,8 @@ import { EvoIconDelete16 } from "../../icon/icons/delete-16";
 import {
   EvoFilePreviewCard,
   EvoFilePreviewCardAction,
-  EvoFilePreviewCardSeeMoreAction,
+  EvoFilePreviewCardCancelAction,
+  EvoPreviewCardSeeMore,
 } from "../index";
 
 describe("EvoFilePreviewCard SSR", () => {
@@ -17,12 +18,11 @@ describe("EvoFilePreviewCard SSR", () => {
           a11yExternalLinkText="opens in a new tab"
           footerTitle="photo.jpg"
           footerSubtitle="JPEG image"
-          deleteAction={
-            <EvoFilePreviewCardAction a11yText="Delete photo">
-              <EvoIconDelete16 />
-            </EvoFilePreviewCardAction>
-          }
-        />,
+        >
+          <EvoFilePreviewCardAction a11yText="Delete photo">
+            <EvoIconDelete16 />
+          </EvoFilePreviewCardAction>
+        </EvoFilePreviewCard>,
       ),
     ).toMatchSnapshot();
   });
@@ -34,12 +34,9 @@ describe("EvoFilePreviewCard SSR", () => {
           file={{ name: "report.csv", type: "text/csv" }}
           status="uploading"
           a11yUploadingText="Uploading report"
-          cancelAction={
-            <EvoFilePreviewCardAction a11yText="Cancel">
-              <EvoIconDelete16 />
-            </EvoFilePreviewCardAction>
-          }
-        />,
+        >
+          <EvoFilePreviewCardCancelAction a11yText="Cancel" />
+        </EvoFilePreviewCard>,
       ),
     ).toMatchSnapshot();
   });
@@ -49,13 +46,9 @@ describe("EvoFilePreviewCard SSR", () => {
       renderToString(
         <EvoFilePreviewCard
           file={{ name: "photo.jpg", type: "image/jpeg", src: "/photo.jpg" }}
-          seeMoreAction={
-            <EvoFilePreviewCardSeeMoreAction
-              count={8}
-              a11yText="See 8 more photos"
-            />
-          }
-        />,
+        >
+          <EvoPreviewCardSeeMore count={8} a11yText="See 8 more photos" />
+        </EvoFilePreviewCard>,
       ),
     ).toMatchSnapshot();
   });

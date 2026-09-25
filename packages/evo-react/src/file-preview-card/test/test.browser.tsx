@@ -7,8 +7,9 @@ import { EvoIconDelete16 } from "../../icon/icons/delete-16";
 import {
   EvoFilePreviewCard,
   EvoFilePreviewCardAction,
+  EvoFilePreviewCardCancelAction,
   EvoFilePreviewCardMenu,
-  EvoFilePreviewCardSeeMoreAction,
+  EvoPreviewCardSeeMore,
   EvoMenuButtonItem,
 } from "../index";
 
@@ -34,12 +35,11 @@ describe("EvoFilePreviewCard", () => {
         a11yExternalLinkText="opens in a new tab"
         footerTitle="photo.jpg"
         footerSubtitle="JPEG image"
-        deleteAction={
-          <EvoFilePreviewCardAction a11yText="Delete photo" onClick={onDelete}>
-            <EvoIconDelete16 />
-          </EvoFilePreviewCardAction>
-        }
-      />,
+      >
+        <EvoFilePreviewCardAction a11yText="Delete photo" onClick={onDelete}>
+          <EvoIconDelete16 />
+        </EvoFilePreviewCardAction>
+      </EvoFilePreviewCard>,
     );
     expect(ref.current).toBe(screen.getByTestId("card").element());
     const body = screen.container.querySelector(
@@ -66,17 +66,17 @@ describe("EvoFilePreviewCard", () => {
       <EvoFilePreviewCard
         status="uploading"
         a11yUploadingText="Uploading photo"
-        cancelAction={
-          <EvoFilePreviewCardAction a11yText="Cancel upload" onClick={onCancel}>
-            <EvoIconClose16 />
-          </EvoFilePreviewCardAction>
-        }
-        deleteAction={
-          <EvoFilePreviewCardAction a11yText="Delete">
-            <EvoIconDelete16 />
-          </EvoFilePreviewCardAction>
-        }
-      />,
+      >
+        <EvoFilePreviewCardCancelAction
+          a11yText="Cancel upload"
+          onClick={onCancel}
+        >
+          <EvoIconClose16 />
+        </EvoFilePreviewCardCancelAction>
+        <EvoFilePreviewCardAction a11yText="Delete">
+          <EvoIconDelete16 />
+        </EvoFilePreviewCardAction>
+      </EvoFilePreviewCard>,
     );
     await expect
       .element(screen.getByRole("img", { name: "Uploading photo" }))
@@ -89,42 +89,46 @@ describe("EvoFilePreviewCard", () => {
     expect(onCancel).toHaveBeenCalledOnce();
   });
 
-  it("fades the image and prioritizes the see-more overlay", async () => {
+  it("renders a see-more child in the position targeted by Skin", async () => {
     const onSeeMore = vi.fn();
     const screen = await render(
       <EvoFilePreviewCard
         file={{ name: "photo.jpg", type: "image/jpeg", src: "/photo.jpg" }}
-        seeMore={12}
-        a11ySeeMoreText="See 12 more photos"
-        onSeeMore={onSeeMore}
-        deleteAction={
-          <EvoFilePreviewCardAction a11yText="Delete">
-            <EvoIconDelete16 />
-          </EvoFilePreviewCardAction>
-        }
-      />,
+      >
+        <EvoPreviewCardSeeMore
+          count={12}
+          a11yText="See 12 more photos"
+          onClick={onSeeMore}
+        />
+      </EvoFilePreviewCard>,
     );
     await expect
       .element(screen.getByRole("img", { name: "photo.jpg" }))
-      .toHaveClass("file-preview-card__asset--fade");
+      .toHaveClass("file-preview-card__asset");
+    expect(
+      screen
+        .getByRole("img", { name: "photo.jpg" })
+        .element()
+        .closest(
+          ".file-preview-card__body:has(> .file-preview-card__see-more)",
+        ),
+    ).not.toBeNull();
     await expect
       .element(screen.getByRole("button", { name: "See 12 more photos" }))
       .toHaveTextContent("+12");
-    expect(screen.container.querySelector('[aria-label="Delete"]')).toBeNull();
     await user.click(
       screen.getByRole("button", { name: "See 12 more photos" }),
     );
     expect(onSeeMore).toHaveBeenCalledOnce();
   });
 
-  it("accepts a named see-more action slot", async () => {
+  it("accepts a named see-more child", async () => {
     const screen = await render(
       <EvoFilePreviewCard
         file={{ name: "photo.jpg", type: "image/jpeg", src: "/photo.jpg" }}
-        seeMoreAction={
-          <EvoFilePreviewCardSeeMoreAction count={5} a11yText="See more" />
-        }
-      />,
+      >
+        <EvoPreviewCardSeeMore count={5} a11yText="See more" />
+      </EvoFilePreviewCard>,
     );
     await expect
       .element(screen.getByRole("button", { name: "See more" }))
@@ -134,14 +138,11 @@ describe("EvoFilePreviewCard", () => {
   it("uses EvoMenuButton's keyboard selection for menu actions", async () => {
     const onEdit = vi.fn();
     const screen = await render(
-      <EvoFilePreviewCard
-        file={{ name: "report.csv", type: "text/csv" }}
-        menu={
-          <EvoFilePreviewCardMenu a11yText="File actions">
-            <EvoMenuButtonItem onSelect={onEdit}>Edit</EvoMenuButtonItem>
-          </EvoFilePreviewCardMenu>
-        }
-      />,
+      <EvoFilePreviewCard file={{ name: "report.csv", type: "text/csv" }}>
+        <EvoFilePreviewCardMenu a11yText="File actions">
+          <EvoMenuButtonItem onSelect={onEdit}>Edit</EvoMenuButtonItem>
+        </EvoFilePreviewCardMenu>
+      </EvoFilePreviewCard>,
     );
     await expect.element(screen.getByText("CSV")).toBeInTheDocument();
     const trigger = screen.getByRole("button", { name: "File actions" });
