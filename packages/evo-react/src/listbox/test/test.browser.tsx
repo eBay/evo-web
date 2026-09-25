@@ -150,4 +150,21 @@ describe("EvoListbox", () => {
       .element(screen.getByRole("listbox"))
       .toHaveAttribute("tabindex", "-1");
   });
+
+  it("uses an embedding component's Skin class prefix", async () => {
+    const screen = await render(
+      <EvoListbox
+        a11yText="Shipping destination"
+        a11ySelectedText="selected"
+        options={options}
+        classPrefix="listbox-button"
+      />,
+    );
+    await expect
+      .element(screen.getByRole("listbox"))
+      .toHaveClass("listbox-button__options");
+    await expect
+      .element(screen.getByRole("option", { name: "United States" }))
+      .toHaveClass("listbox-button__option");
+  });
 });

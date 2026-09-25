@@ -35,6 +35,7 @@ export function EvoListbox<Value extends ListboxValue = ListboxValue>({
   a11yText,
   a11ySelectedText,
   className,
+  classPrefix = "listbox",
   defaultSelected = null,
   disabled = false,
   listSelection = "manual",
@@ -173,7 +174,7 @@ export function EvoListbox<Value extends ListboxValue = ListboxValue>({
         }
         aria-disabled={disabled || undefined}
         tabIndex={disabled ? -1 : tabIndex}
-        className={classNames("listbox__options", className)}
+        className={classNames(`${classPrefix}__options`, className)}
         onFocus={(event) => {
           if (effectiveActive === null) {
             const initial = availableOptions.find(
@@ -207,8 +208,8 @@ export function EvoListbox<Value extends ListboxValue = ListboxValue>({
               aria-disabled={optionDisabled || undefined}
               aria-selected={isSelected}
               className={classNames(
-                "listbox__option",
-                effectiveActive === value && "listbox__option--active",
+                `${classPrefix}__option`,
+                effectiveActive === value && `${classPrefix}__option--active`,
                 optionClassName,
               )}
               data-value={value}
@@ -223,7 +224,7 @@ export function EvoListbox<Value extends ListboxValue = ListboxValue>({
                 handleKeyDown(event);
               }}
             >
-              <span className="listbox__value">
+              <span className={`${classPrefix}__value`}>
                 {icon}
                 {icon ? <span>{text}</span> : text}
                 {isSelected && (
@@ -231,7 +232,9 @@ export function EvoListbox<Value extends ListboxValue = ListboxValue>({
                 )}
               </span>
               {description && (
-                <div className="listbox__description">{description}</div>
+                <div className={`${classPrefix}__description`}>
+                  {description}
+                </div>
               )}
               <EvoIconTick16 />
             </div>
@@ -240,7 +243,7 @@ export function EvoListbox<Value extends ListboxValue = ListboxValue>({
       </div>
       <select
         hidden
-        className="listbox__native"
+        className={`${classPrefix}__native`}
         name={name}
         disabled={disabled}
         value={String(currentSelected ?? options[0]?.value ?? "")}

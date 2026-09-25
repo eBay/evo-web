@@ -41,6 +41,8 @@ export type EvoListboxProps<Value extends ListboxValue = ListboxValue> = Omit<
   (ControlledSelection<Value> | UncontrolledSelection<Value>) & {
     /** Options rendered in the listbox and its hidden native `<select>`. */
     options: readonly EvoListboxOption<Value>[];
+    /** Skin class prefix when embedded in another control. Defaults to `"listbox"`. */
+    classPrefix?: string;
     /** Name submitted by the hidden native `<select>`. */
     name?: string;
     /** Disables interaction and the hidden native `<select>`. */
