@@ -3,7 +3,9 @@ import type { EvoSwitchProps } from "./types";
 import "@ebay/skin/switch.mjs";
 
 /**
- * A switch controls an on or off setting, usually taking effect immediately.
+ * A switch turns a setting on or off. Use it for changes that apply as soon as
+ * it is toggled, typically handled by client-side JavaScript, rather than for
+ * values collected and submitted with a form.
  *
  * `EvoSwitch` uses a native checkbox input with `role="switch"`. Its `checked`,
  * `defaultChecked`, and `onChange` props follow native React input behavior.
