@@ -1,7 +1,6 @@
 export { EvoFilePreviewCardGroup } from "./file-preview-card-group";
-export { EvoFilePreviewCardGroupSeeMoreAction } from "./file-preview-card-group-see-more-action";
+export { EvoFilePreviewCardGroupItem } from "./file-preview-card-group-item";
 export type {
-  FilePreviewCardGroupCard,
   EvoFilePreviewCardGroupProps,
-  EvoFilePreviewCardGroupSeeMoreActionProps,
+  EvoFilePreviewCardGroupItemProps,
 } from "./types";

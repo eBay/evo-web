@@ -1,5 +1,6 @@
 ---
 "@evo-web/react": patch
+"@ebay/skin": patch
 ---
 
-Add EvoFilePreviewCardGroup component.
+Add a composable EvoFilePreviewCardGroup list and its Skin grid layout.
