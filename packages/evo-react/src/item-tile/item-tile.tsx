@@ -55,8 +55,9 @@ export function EvoItemTile({
               file={file}
               href={href}
               a11yExternalLinkText={a11yExternalLinkText}
-              action={action}
-            />
+            >
+              {action}
+            </EvoFilePreviewCard>
           </div>
         )}
         <div className="item-tile__body">
