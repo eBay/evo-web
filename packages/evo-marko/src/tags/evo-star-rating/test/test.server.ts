@@ -13,4 +13,11 @@ describe("evo-star-rating SSR", () => {
   it("renders all values", async () => {
     await snapshotHTML(AllValues);
   });
+
+  it("renders an external accessible label", async () => {
+    await snapshotHTML(Default, {
+      a11yText: null,
+      "aria-labelledby": "rating",
+    });
+  });
 });
