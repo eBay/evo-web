@@ -38,9 +38,14 @@ describe("EvoFilePreviewCardGroup", () => {
     await expect
       .element(screen.getByRole("button", { name: "See more photos" }))
       .toHaveTextContent("+5");
-    await expect
-      .element(screen.getByRole("img", { name: "photo-16.jpg" }))
-      .toHaveClass("file-preview-card__asset--fade");
+    expect(
+      screen
+        .getByRole("img", { name: "photo-16.jpg" })
+        .element()
+        .closest(
+          ".file-preview-card__body:has(> .file-preview-card__see-more)",
+        ),
+    ).not.toBeNull();
     await user.click(screen.getByRole("button", { name: "See more photos" }));
     expect(
       screen.container.querySelectorAll("li.file-preview-card"),

@@ -60,17 +60,13 @@ export function EvoFilePreviewCardGroup({
             <EvoFilePreviewCard key={index} {...card} as="li" />
           ))}
           {remaining > 0 && (
-            <EvoFilePreviewCard
-              as="li"
-              file={cards[showing]?.file}
-              seeMoreAction={
-                seeMoreAction ?? (
-                  <EvoFilePreviewCardGroupSeeMoreAction
-                    a11yText={a11ySeeMoreText}
-                  />
-                )
-              }
-            />
+            <EvoFilePreviewCard as="li" file={cards[showing]?.file}>
+              {seeMoreAction ?? (
+                <EvoFilePreviewCardGroupSeeMoreAction
+                  a11yText={a11ySeeMoreText}
+                />
+              )}
+            </EvoFilePreviewCard>
           )}
         </ul>
       </div>

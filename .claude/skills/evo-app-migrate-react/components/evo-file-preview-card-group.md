@@ -29,7 +29,7 @@ import { EvoIconDelete16 } from "@evo-web/react/icons/delete-16";
   a11ySeeMoreText="See more photos"
   cards={files.map((file) => ({
     file,
-    deleteAction: (
+    children: (
       <EvoFilePreviewCardAction
         a11yText="Delete photo"
         onClick={() => handleDelete(file)}
@@ -41,4 +41,4 @@ import { EvoIconDelete16 } from "@evo-web/react/icons/delete-16";
 />;
 ```
 
-The group shows 15 cards initially and uses the next card as a `+N` preview. `visibleCardCount` / `onVisibleCardCountChange` control how many cards are shown. Use `defaultVisibleCardCount` to set an initial uncontrolled count. For a custom overlay, pass `seeMoreAction={<EvoFilePreviewCardGroupSeeMoreAction a11yText="Show more" />}`; the named action reads the remaining count and expands the group through context. Card callbacks belong to each card's action slots rather than an index-based group callback.
+The group shows 15 cards initially and uses the next card as a `+N` preview. `visibleCardCount` / `onVisibleCardCountChange` control how many cards are shown. Use `defaultVisibleCardCount` to set an initial uncontrolled count. For a custom overlay, pass `seeMoreAction={<EvoFilePreviewCardGroupSeeMoreAction a11yText="Show more" />}`; the named action reads the remaining count and expands the group through context. Card callbacks belong to each card's action child rather than an index-based group callback.
