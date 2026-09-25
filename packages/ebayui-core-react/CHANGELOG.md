@@ -1,5 +1,15 @@
 # @ebay/ui-core-react
 
+## 9.16.0
+
+### Minor Changes
+
+- [#974](https://github.com/eBay/evo-web/pull/974) [`a1a62f3`](https://github.com/eBay/evo-web/commit/a1a62f352e2f676182692f9e55ad90ebdd1650e5) Thanks [@saiponnada](https://github.com/saiponnada)! - fix(accordion): wrap each header label in a configurable heading
+
+### Patch Changes
+
+- [#973](https://github.com/eBay/evo-web/pull/973) [`948d6b8`](https://github.com/eBay/evo-web/commit/948d6b88f9b59568f735d332378c59160137469a) Thanks [@ArtBlue](https://github.com/ArtBlue)! - fix(skin): correct readonly textbox styling to match default
+
 ## 9.15.0
 
 ### Minor Changes
