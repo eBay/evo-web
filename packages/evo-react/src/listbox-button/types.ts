@@ -1,4 +1,4 @@
-import type { ComponentProps } from "react";
+import type { ComponentProps, FocusEventHandler, Ref } from "react";
 import type { Strategy } from "@floating-ui/react";
 import type { EvoListboxOption, ListboxValue } from "../listbox/types";
 
@@ -17,8 +17,15 @@ type UncontrolledSelection<Value extends ListboxValue> = {
 };
 
 export type EvoListboxButtonProps<Value extends ListboxValue = ListboxValue> =
-  Omit<ComponentProps<"span">, "children" | "defaultValue" | "onChange"> &
+  Omit<
+    ComponentProps<"span">,
+    "children" | "defaultValue" | "onChange" | "ref" | "onBlurCapture"
+  > &
     (ControlledSelection<Value> | UncontrolledSelection<Value>) & {
+      /** Native reference to the root `<span>` or truncated `<div>`. */
+      ref?: Ref<HTMLSpanElement | HTMLDivElement>;
+      /** Native blur event from the root wrapper. */
+      onBlurCapture?: FocusEventHandler<HTMLSpanElement | HTMLDivElement>;
       /** Options rendered in the popup and hidden native `<select>`. */
       options: readonly EvoListboxOption<Value>[];
       /** Name submitted by the hidden native `<select>`. */

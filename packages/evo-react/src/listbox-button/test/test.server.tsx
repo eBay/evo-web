@@ -35,4 +35,17 @@ describe("EvoListboxButton SSR", () => {
       ),
     ).toMatchSnapshot();
   });
+
+  it("renders a div wrapper when truncated and not fluid", () => {
+    expect(
+      renderToString(
+        <EvoListboxButton
+          a11yText="Shipping region"
+          a11ySelectedText="selected"
+          options={[{ value: "US", text: "United States" }]}
+          truncate
+        />,
+      ),
+    ).toMatchSnapshot();
+  });
 });

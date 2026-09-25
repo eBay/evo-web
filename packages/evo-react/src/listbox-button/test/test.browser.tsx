@@ -175,4 +175,19 @@ describe("EvoListboxButton", () => {
     await expect.element(trigger).toHaveAttribute("aria-expanded", "false");
     expect(trigger.element().closest(".listbox-button--error")).not.toBeNull();
   });
+
+  it("uses a div wrapper for truncated nonfluid buttons", async () => {
+    const screen = await render(
+      <EvoListboxButton
+        a11yText="Shipping region"
+        a11ySelectedText="selected"
+        options={options}
+        truncate
+      />,
+    );
+    expect(screen.container.querySelector("div.listbox-button")).not.toBeNull();
+    expect(
+      screen.container.querySelector("button.btn--truncated"),
+    ).not.toBeNull();
+  });
 });

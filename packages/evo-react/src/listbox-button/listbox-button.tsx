@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/role-supports-aria-props -- Skin styles aria-invalid on the native trigger, as Evo Marko does. */
 import { useEffect, useId, useRef, useState } from "react";
-import type { FocusEvent, KeyboardEvent, MouseEvent } from "react";
+import type { FocusEvent, KeyboardEvent, MouseEvent, Ref } from "react";
 import classNames from "classnames";
 import { EvoIconChevronDown16 } from "../icon/icons/chevron-down-16";
 import { EvoListbox } from "../listbox/listbox";
@@ -156,7 +156,7 @@ export function EvoListboxButton<Value extends ListboxValue = ListboxValue>({
     }
   }
 
-  function handleBlur(event: FocusEvent<HTMLSpanElement>) {
+  function handleBlur(event: FocusEvent<HTMLDivElement | HTMLSpanElement>) {
     onBlurCapture?.(event);
     if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
       requestOpen(false);
@@ -168,11 +168,12 @@ export function EvoListboxButton<Value extends ListboxValue = ListboxValue>({
     floatingLabel ??
     prefixLabel ??
     (prefixId ? undefined : selectedOption?.text);
+  const Root = truncate && !fluid ? "div" : "span";
 
   return (
-    <span
+    <Root
       {...rest}
-      ref={ref}
+      ref={ref as Ref<HTMLDivElement>}
       className={classNames(
         "listbox-button",
         fluid && "listbox-button--fluid",
@@ -273,6 +274,6 @@ export function EvoListboxButton<Value extends ListboxValue = ListboxValue>({
           onClick={handleListboxClick}
         />
       </div>
-    </span>
+    </Root>
   );
 }
