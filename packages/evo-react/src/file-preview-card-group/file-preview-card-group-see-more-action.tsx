@@ -1,4 +1,4 @@
-import { EvoFilePreviewCardSeeMoreAction } from "../file-preview-card/file-preview-card-see-more-action";
+import { EvoPreviewCardSeeMore } from "../file-preview-card/file-preview-card-see-more";
 import { useFilePreviewCardGroup } from "./context";
 import type { EvoFilePreviewCardGroupSeeMoreActionProps } from "./types";
 
@@ -15,7 +15,7 @@ export function EvoFilePreviewCardGroupSeeMoreAction({
 }: EvoFilePreviewCardGroupSeeMoreActionProps) {
   const { remaining, showMore } = useFilePreviewCardGroup();
   return (
-    <EvoFilePreviewCardSeeMoreAction
+    <EvoPreviewCardSeeMore
       {...rest}
       count={remaining}
       a11yText={a11yText}
