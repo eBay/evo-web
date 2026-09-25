@@ -65,6 +65,8 @@ export type EvoComboboxProps = Omit<
   listSelection?: ComboboxListSelection;
   /** Called with the displayed input value after typing or option selection. */
   onValueChange?: (value: string) => void;
+  /** Called when an option is chosen by pointer or keyboard. */
+  onOptionSelect?: (text: string) => void;
   /** Called when the listbox requests to open or close. */
   onOpenChange?: (open: boolean) => void;
   /** Controlled listbox visibility. Manage changes with `onOpenChange`. */

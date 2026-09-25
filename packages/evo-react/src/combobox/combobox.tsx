@@ -73,6 +73,7 @@ export function EvoCombobox({
   onFocus,
   onKeyDown,
   onOpenChange,
+  onOptionSelect,
   onValueChange,
   open,
   placeholder,
@@ -189,10 +190,17 @@ export function EvoCombobox({
       }
 
       updateValue(text);
+      onOptionSelect?.(text);
       activeDescendant.reset();
       requestOpen(false);
     },
-    [activeDescendant.reset, disabled, requestOpen, updateValue],
+    [
+      activeDescendant.reset,
+      disabled,
+      onOptionSelect,
+      requestOpen,
+      updateValue,
+    ],
   );
 
   const handleFocusOut = useCallback(
