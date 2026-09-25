@@ -1,122 +1,69 @@
 import { createRef } from "react";
-import { beforeEach, afterEach, describe, expect, it, vi } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { userEvent } from "vitest/browser";
 import { render } from "vitest-browser-react";
-import {
-  EvoFilePreviewCardGroup,
-  EvoFilePreviewCardGroupSeeMoreAction,
-} from "../index";
+import { EvoPreviewCardSeeMore } from "../../file-preview-card";
+import { EvoFilePreviewCardGroup, EvoFilePreviewCardGroupItem } from "../index";
 
-const cards = Array.from({ length: 20 }, (_, index) => ({
-  file: {
-    name: `photo-${index + 1}.jpg`,
-    type: "image/jpeg",
-    src: `/photo-${index + 1}.jpg`,
-  },
-}));
+const file = { name: "photo.jpg", type: "image/jpeg", src: "/photo.jpg" };
 
 describe("EvoFilePreviewCardGroup", () => {
-  let user: ReturnType<typeof userEvent.setup>;
-  beforeEach(() => {
-    user = userEvent.setup();
-  });
-  afterEach(() => {
-    user.cleanup();
-  });
-
-  it("renders cards as list items and reveals 15 more at a time", async () => {
+  it("renders a native list with caller-selected items and attributes", async () => {
+    const ref = createRef<HTMLUListElement>();
     const screen = await render(
-      <EvoFilePreviewCardGroup
-        cards={cards}
-        a11ySeeMoreText="See more photos"
-      />,
-    );
-    await expect.element(screen.getByRole("list")).toBeInTheDocument();
-    expect(
-      screen.container.querySelectorAll("li.file-preview-card"),
-    ).toHaveLength(16);
-    await expect
-      .element(screen.getByRole("button", { name: "See more photos" }))
-      .toHaveTextContent("+5");
-    expect(
-      screen
-        .getByRole("img", { name: "photo-16.jpg" })
-        .element()
-        .closest(
-          ".file-preview-card__body:has(> .file-preview-card__see-more)",
-        ),
-    ).not.toBeNull();
-    await user.click(screen.getByRole("button", { name: "See more photos" }));
-    expect(
-      screen.container.querySelectorAll("li.file-preview-card"),
-    ).toHaveLength(20);
-    expect(
-      screen.container.querySelector(".file-preview-card__see-more"),
-    ).toBeNull();
-    await expect
-      .element(screen.getByRole("img", { name: "photo-20.jpg" }))
-      .toBeInTheDocument();
-  });
-
-  it("reports a controlled visible count without changing it internally", async () => {
-    const onVisibleCardCountChange = vi.fn();
-    const screen = await render(
-      <EvoFilePreviewCardGroup
-        cards={cards}
-        visibleCardCount={5}
-        onVisibleCardCountChange={onVisibleCardCountChange}
-      />,
-    );
-    expect(
-      screen.container.querySelectorAll("li.file-preview-card"),
-    ).toHaveLength(6);
-    await expect
-      .element(screen.getByRole("button", { name: "See more files" }))
-      .toHaveTextContent("+15");
-    await user.click(screen.getByRole("button", { name: "See more files" }));
-    expect(onVisibleCardCountChange).toHaveBeenCalledWith(20);
-    expect(
-      screen.container.querySelectorAll("li.file-preview-card"),
-    ).toHaveLength(6);
-  });
-
-  it("uses the named see-more action and preserves root attributes and ref", async () => {
-    const ref = createRef<HTMLDivElement>();
-    const onClick = vi.fn();
-    const screen = await render(
-      <EvoFilePreviewCardGroup
-        cards={cards}
-        ref={ref}
-        data-testid="gallery"
-        defaultVisibleCardCount={18}
-        seeMoreAction={
-          <EvoFilePreviewCardGroupSeeMoreAction
-            a11yText="Show remaining"
-            onClick={onClick}
-          />
-        }
-      />,
+      <EvoFilePreviewCardGroup ref={ref} data-testid="gallery">
+        <EvoFilePreviewCardGroupItem file={file} footerTitle="Photo" />
+      </EvoFilePreviewCardGroup>,
     );
     expect(ref.current).toBe(screen.getByTestId("gallery").element());
-    await expect
-      .element(screen.getByRole("button", { name: "Show remaining" }))
-      .toHaveTextContent("+2");
-    await user.click(screen.getByRole("button", { name: "Show remaining" }));
-    expect(onClick).toHaveBeenCalledOnce();
+    await expect.element(screen.getByRole("list")).toBeInTheDocument();
+    expect(
+      screen.container.querySelector("ul.file-preview-card-group"),
+    ).not.toBeNull();
     expect(
       screen.container.querySelectorAll("li.file-preview-card"),
-    ).toHaveLength(20);
+    ).toHaveLength(1);
+    await expect
+      .element(screen.getByRole("img", { name: "photo.jpg" }))
+      .toBeInTheDocument();
+    await expect.element(screen.getByText("Photo")).toBeInTheDocument();
   });
 
-  it("omits the overlay when all cards fit", async () => {
+  it("renders only the items passed by the application", async () => {
     const screen = await render(
-      <EvoFilePreviewCardGroup cards={cards.slice(0, 3)} />,
+      <EvoFilePreviewCardGroup>
+        {[0, 1].map((index) => (
+          <EvoFilePreviewCardGroupItem
+            key={index}
+            file={{ name: `photo-${index}.jpg` }}
+          />
+        ))}
+      </EvoFilePreviewCardGroup>,
     );
     expect(
       screen.container.querySelectorAll("li.file-preview-card"),
-    ).toHaveLength(3);
+    ).toHaveLength(2);
     expect(
       screen.container.querySelector(".file-preview-card__see-more"),
     ).toBeNull();
+  });
+
+  it("lets the application place a see-more action on an item", async () => {
+    const onClick = vi.fn();
+    const screen = await render(
+      <EvoFilePreviewCardGroup>
+        <EvoFilePreviewCardGroupItem file={file}>
+          <EvoPreviewCardSeeMore
+            count={5}
+            a11yText="See more photos"
+            onClick={onClick}
+          />
+        </EvoFilePreviewCardGroupItem>
+      </EvoFilePreviewCardGroup>,
+    );
+    const more = screen.getByRole("button", { name: "See more photos" });
+    await expect.element(more).toHaveTextContent("+5");
+    await userEvent.click(more);
+    expect(onClick).toHaveBeenCalledOnce();
   });
 });

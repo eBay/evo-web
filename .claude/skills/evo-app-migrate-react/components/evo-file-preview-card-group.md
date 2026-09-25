@@ -1,44 +1,43 @@
 # ebay-file-preview-card-group → evo-file-preview-card-group
 
-The group takes card data and renders each card as an `<li>` inside the Skin grid. This follows Evo Marko's `card` collection and avoids scanning or cloning child elements.
+The group renders a `<ul>` grid. Each `EvoFilePreviewCardGroupItem` renders an `EvoFilePreviewCard` as `<li>`. The application chooses which items to show and handles pagination or see-more actions.
 
 **Before:**
 
 ```tsx
-import { EbayFilePreviewCardGroup } from "@ebay/ui-core-react/ebay-file-preview-card-group";
-import { EbayFilePreviewCard } from "@ebay/ui-core-react/ebay-file-preview-card";
-
 <EbayFilePreviewCardGroup
   a11ySeeMoreText="See more photos"
   onDelete={handleDelete}
 >
   {files.map((file) => (
-    <EbayFilePreviewCard key={file.name} file={file} deleteText="Delete" />
+    <EbayFilePreviewCard key={file.name} file={file} />
   ))}
-</EbayFilePreviewCardGroup>;
+</EbayFilePreviewCardGroup>
 ```
 
 **After:**
 
 ```tsx
-import { EvoFilePreviewCardGroup } from "@evo-web/react/file-preview-card-group";
-import { EvoFilePreviewCardAction } from "@evo-web/react/file-preview-card";
-import { EvoIconDelete16 } from "@evo-web/react/icons/delete-16";
+import {
+  EvoFilePreviewCardGroup,
+  EvoFilePreviewCardGroupItem,
+} from "@evo-web/react/file-preview-card-group";
+import { EvoPreviewCardSeeMore } from "@evo-web/react/file-preview-card";
 
-<EvoFilePreviewCardGroup
-  a11ySeeMoreText="See more photos"
-  cards={files.map((file) => ({
-    file,
-    children: (
-      <EvoFilePreviewCardAction
-        a11yText="Delete photo"
-        onClick={() => handleDelete(file)}
-      >
-        <EvoIconDelete16 />
-      </EvoFilePreviewCardAction>
-    ),
-  }))}
-/>;
+<EvoFilePreviewCardGroup aria-label="Photos">
+  {files.slice(0, visibleCount).map((file) => (
+    <EvoFilePreviewCardGroupItem key={file.name} file={file} />
+  ))}
+  {files.length > visibleCount && (
+    <EvoFilePreviewCardGroupItem file={files[visibleCount]}>
+      <EvoPreviewCardSeeMore
+        count={files.length - visibleCount}
+        a11yText="See more photos"
+        onClick={() => setVisibleCount(files.length)}
+      />
+    </EvoFilePreviewCardGroupItem>
+  )}
+</EvoFilePreviewCardGroup>;
 ```
 
-The group shows 15 cards initially and uses the next card as a `+N` preview. `visibleCardCount` / `onVisibleCardCountChange` control how many cards are shown. Use `defaultVisibleCardCount` to set an initial uncontrolled count. For a custom overlay, pass `seeMoreAction={<EvoFilePreviewCardGroupSeeMoreAction a11yText="Show more" />}`; the named action reads the remaining count and expands the group through context. Card callbacks belong to each card's action child rather than an index-based group callback.
+The group does not own a visible count or clone cards. Place card action components in each item's children.

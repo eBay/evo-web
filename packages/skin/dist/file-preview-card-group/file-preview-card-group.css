@@ -1,8 +1,4 @@
-div.file-preview-card-group {
-    container: file-preview-cards-container/inline-size;
-}
-
-div.file-preview-card-group ul {
+ul.file-preview-card-group {
     display: grid;
     gap: var(--spacing-100);
     grid-template-columns: repeat(2, 1fr);
@@ -12,93 +8,43 @@ div.file-preview-card-group ul {
     width: 100%;
 }
 
-div.file-preview-card-group ul li {
+ul.file-preview-card-group > li {
     height: max-content;
 }
 
-@supports not (contain: inline-size) {
-    @media (min-width: 512px) {
-        div.file-preview-card-group ul {
-            gap: var(--spacing-100);
-            grid-template-columns: repeat(4, 1fr);
-        }
-    }
-    @media (min-width: 768px) {
-        div.file-preview-card-group ul {
-            gap: var(--spacing-200);
-            grid-template-columns: repeat(5, 1fr);
-        }
-    }
-    @media (min-width: 1024px) {
-        div.file-preview-card-group ul {
-            gap: var(--spacing-200);
-            grid-template-columns: repeat(7, 1fr);
-        }
-    }
-    @media (min-width: 1280px) {
-        div.file-preview-card-group ul {
-            gap: var(--spacing-200);
-            grid-template-columns: repeat(9, 1fr);
-        }
-    }
-    @media (min-width: 1440px) {
-        div.file-preview-card-group ul {
-            gap: var(--spacing-200);
-            grid-template-columns: repeat(10, 1fr);
-        }
-    }
-    @media (min-width: 1680px) {
-        div.file-preview-card-group ul {
-            gap: var(--spacing-200);
-            grid-template-columns: repeat(12, 1fr);
-        }
-    }
-    @media (min-width: 1920px) {
-        div.file-preview-card-group ul {
-            gap: var(--spacing-200);
-            grid-template-columns: repeat(14, 1fr);
-        }
-    }
-}
-@container file-preview-cards-container (inline-size >= 512px) {
-    div.file-preview-card-group ul {
-        gap: var(--spacing-100);
+@media (min-width: 512px) {
+    ul.file-preview-card-group {
         grid-template-columns: repeat(4, 1fr);
     }
 }
-@container file-preview-cards-container (inline-size >= 768px) {
-    div.file-preview-card-group ul {
+@media (min-width: 768px) {
+    ul.file-preview-card-group {
         gap: var(--spacing-200);
         grid-template-columns: repeat(5, 1fr);
     }
 }
-@container file-preview-cards-container (inline-size >= 1024px) {
-    div.file-preview-card-group ul {
-        gap: var(--spacing-200);
+@media (min-width: 1024px) {
+    ul.file-preview-card-group {
         grid-template-columns: repeat(7, 1fr);
     }
 }
-@container file-preview-cards-container (inline-size >= 1280px) {
-    div.file-preview-card-group ul {
-        gap: var(--spacing-200);
+@media (min-width: 1280px) {
+    ul.file-preview-card-group {
         grid-template-columns: repeat(9, 1fr);
     }
 }
-@container file-preview-cards-container (inline-size >= 1440px) {
-    div.file-preview-card-group ul {
-        gap: var(--spacing-200);
+@media (min-width: 1440px) {
+    ul.file-preview-card-group {
         grid-template-columns: repeat(10, 1fr);
     }
 }
-@container file-preview-cards-container (inline-size >= 1680px) {
-    div.file-preview-card-group ul {
-        gap: var(--spacing-200);
+@media (min-width: 1680px) {
+    ul.file-preview-card-group {
         grid-template-columns: repeat(12, 1fr);
     }
 }
-@container file-preview-cards-container (inline-size >= 1920px) {
-    div.file-preview-card-group ul {
-        gap: var(--spacing-200);
+@media (min-width: 1920px) {
+    ul.file-preview-card-group {
         grid-template-columns: repeat(14, 1fr);
     }
 }

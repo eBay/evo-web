@@ -1,24 +1,16 @@
 import { describe, expect, it } from "vitest";
 import { renderToString } from "react-dom/server";
-import { EvoFilePreviewCardGroup } from "../index";
-
-const cards = Array.from({ length: 17 }, (_, index) => ({
-  file: { name: `file-${index + 1}.csv`, type: "text/csv" },
-}));
+import { EvoFilePreviewCardGroup, EvoFilePreviewCardGroupItem } from "../index";
 
 describe("EvoFilePreviewCardGroup SSR", () => {
-  it("renders the first 15 cards and a see-more preview", () => {
+  it("renders a native list and its supplied items", () => {
     expect(
       renderToString(
-        <EvoFilePreviewCardGroup cards={cards} a11ySeeMoreText="More files" />,
-      ),
-    ).toMatchSnapshot();
-  });
-
-  it("renders a controlled subset and its remaining count", () => {
-    expect(
-      renderToString(
-        <EvoFilePreviewCardGroup cards={cards} visibleCardCount={2} />,
+        <EvoFilePreviewCardGroup aria-label="Photos">
+          <EvoFilePreviewCardGroupItem
+            file={{ name: "photo.jpg", type: "image/jpeg", src: "/photo.jpg" }}
+          />
+        </EvoFilePreviewCardGroup>,
       ),
     ).toMatchSnapshot();
   });
