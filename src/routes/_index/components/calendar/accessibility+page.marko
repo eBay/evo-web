@@ -21,16 +21,19 @@ import { urls } from "../../../../data";
   <p>
     Date state (today, selected, start of range, in range, end of range,
     disabled) <strong>must not</strong> be conveyed by color or border alone.
-    Pair every visual state with text: the interactive calendar composes this
-    state into each date button's <code>aria-label</code>; the read-only calendar
-    appends visually-hidden text alongside the visible day number.
+    Pair every visual state with a programmatic equivalent: the interactive
+    calendar uses <code>aria-current="date"</code> for today,
+    <code>aria-pressed="true"</code> for a selected date, the native
+    <code>disabled</code> attribute for unavailable dates, and composes only the
+    range text (start, in, end of range) into each date button's
+    <code>aria-label</code>. The read-only calendar appends visually-hidden text alongside
+    the visible day number.
   </p>
   <p>
-    When <em>navigable</em>, the previous/next month buttons <strong>
-      must
-    </strong> have an accessible label that names the month being navigated to (e.g.
-    "Show November"), not just "Previous" or "Next" — otherwise a screen reader user
-    has no way to confirm which month they landed on until they re-read the caption.
+    When focused, the previous/next month buttons <strong>must</strong> have an
+    accessible label and <strong>should</strong> use clear wording such as
+    "Previous month" and "Next month" so a screen reader user knows the
+    direction of navigation.
   </p>
   <h2>Interaction Design</h2>
   <p>
@@ -91,9 +94,9 @@ import { urls } from "../../../../data";
   </p>
   <p>
     For the interactive calendar, a focused date button announces its day
-    number, followed by any applicable state text — "today", "selected", "start
-    of range", "in range", "end of range" — composed into the button's
-    <code>aria-label</code> .
+    number, its selected state (via <code>aria-pressed</code>) and whether it is today
+    (via <code>aria-current</code>), plus any range text ("start of range", "in
+    range", "end of range") composed into the button's <code>aria-label</code> .
   </p>
   <p>
     For the read-only calendar, the same state text is appended as
@@ -123,8 +126,8 @@ import { urls } from "../../../../data";
         <td>
           Applied to the previous/next month buttons to announce which month
           they navigate to. Applied to an interactive date button, in place of
-          its visible day number, when that date has additional state to
-          announce (today, selected, range).
+          its visible day number, when that date is part of a range, to append
+          the range state text (start, in, end of range).
         </td>
       </tr>
       <tr>

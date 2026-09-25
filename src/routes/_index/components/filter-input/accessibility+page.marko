@@ -13,10 +13,11 @@ import { urls } from "../../../../data";
     suggestions, use combobox instead.
   </p>
   <p>
-    The input typically relies on placeholder text (e.g. "Filter") rather than a
-    visible <code>&lt;label&gt;</code> . Placeholder text is not a substitute
-    for a label — always provide an accessible name via <code>aria-label</code>
-    that describes what is being filtered (e.g. "Filter results").
+    The input <strong>must</strong> have an accessible name that describes what
+    is being filtered (e.g. "Filter results"). Prefer a visible, associated
+    <code>&lt;label&gt;</code> ; when the design relies on placeholder text
+    (e.g. "Filter") instead, provide the name via <code>aria-label</code> .
+    Placeholder text is not a substitute for a label.
   </p>
   <p>
     The input <strong>must</strong> use <code>aria-controls</code> to reference
@@ -96,9 +97,9 @@ import { urls } from "../../../../data";
       <tr>
         <td><strong>aria-label</strong></td>
         <td>
-          Provides the accessible name for the input, since a visible label is
-          typically not used. Also provides the clear button with an accessible
-          name, since it has no visible text.
+          Provides the accessible name for the input when no visible
+          <code>&lt;label&gt;</code> is associated. Also provides the clear
+          button with an accessible name, since it has no visible text.
         </td>
       </tr>
       <tr>
