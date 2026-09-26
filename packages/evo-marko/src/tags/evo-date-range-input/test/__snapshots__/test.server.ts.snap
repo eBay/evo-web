@@ -370,8 +370,8 @@ exports[`evo-date-range-input SSR > renders default 1`] = `
                 </td>
                 <td>
                   <button
-                    aria-current="date"
                     aria-label="22"
+                    tabindex="-1"
                     type="button"
                   >
                     22
@@ -406,8 +406,8 @@ exports[`evo-date-range-input SSR > renders default 1`] = `
                 </td>
                 <td>
                   <button
+                    aria-current="date"
                     aria-label="26"
-                    tabindex="-1"
                     type="button"
                   >
                     26
