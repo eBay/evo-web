@@ -81,6 +81,7 @@ When migrating a listed component, read the linked file completely and apply the
 - `ebay-fake-tabs`: [evo-fake-tabs.md](components/evo-fake-tabs.md)
 - `ebay-file-input`: [evo-file-input.md](components/evo-file-input.md)
 - `ebay-filter-chip`: [evo-filter-chip.md](components/evo-filter-chip.md)
+- `ebay-filter-input`: [evo-filter-input.md](components/evo-filter-input.md)
 - `ebay-icon-button`: [evo-icon-button.md](components/evo-icon-button.md)
 - `ebay-image-placeholder`: [evo-image-placeholder.md](components/evo-image-placeholder.md)
 - `ebay-infotip`: [evo-infotip.md](components/evo-infotip.md)
