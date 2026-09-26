@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`EvoFilter SSR > renders a disabled link without a destination 1`] = `"<a aria-disabled="true" class="filter-link filter-link--unselected"><span class="filter-link__cell"><span>Free shipping</span></span></a>"`;
+
+exports[`EvoFilter SSR > renders a selected link with clipped text 1`] = `"<a href="/search" class="filter-link filter-link--selected"><span class="filter-link__cell"><span>Free shipping</span><span class="clipped">- <!-- -->Ausgewählt</span></span></a>"`;
+
+exports[`EvoFilter SSR > renders selected and disabled buttons 1`] = `"<button type="button" disabled="" aria-pressed="true" class="filter-button filter-button--selected"><span class="filter-button__cell"><span>Sold listings</span></span></button>"`;
+
+exports[`EvoFilter SSR > renders the default button markup 1`] = `"<button type="button" class="filter-button filter-button--unselected"><span class="filter-button__cell"><span>Free shipping</span></span></button>"`;
