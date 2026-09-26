@@ -80,6 +80,12 @@ HTML Semantic Structure → @ebay/skin (CSS/BEM) → Framework Components → In
 
 **Style Conventions:** See `./packages/skin/STYLEGUIDE.md`
 
+**Never add a class to move a style closer to its element.** Replacing a parent
+modifier, a sibling combinator or a `:has()` with a new class buys locality by
+making every consumer write more markup, which is a worse trade. Such a rewrite
+is only worth it when the replacement needs no new class — the element already
+carries one, or the selector was dead.
+
 </css_methodology>
 
 ---
