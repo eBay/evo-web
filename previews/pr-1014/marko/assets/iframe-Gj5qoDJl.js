@@ -1,0 +1,1 @@
+import{t as e}from"./iframe-DiEZ__24.js";e();

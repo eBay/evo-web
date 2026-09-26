@@ -1,0 +1,24 @@
+import{a as e,n as t}from"./rolldown-runtime-DkW27tQK.js";import{t as n}from"./react-CK-NQdWx.js";import{t as r}from"./jsx-runtime-DeHZSEgm.js";import{t as i}from"./classnames-D09xBJOL.js";function a(){return(a=t((()=>{})))()}function o({a11ySelectedText:e=`Selected`,children:t,className:n,defaultSelected:r=!1,disabled:i=!1,href:a,onClick:o,ref:u,selected:d,useAriaPressed:f=!0,...p}){let[m,h]=(0,s.useState)(r),g=d===void 0?m:d,_=a?`filter-link`:`filter-button`,v=(0,c.default)(_,`${_}--${g?`selected`:`unselected`}`,n),y=(0,l.jsxs)(`span`,{className:`${_}__cell`,children:[(0,l.jsx)(`span`,{children:t}),a&&g&&(0,l.jsxs)(`span`,{className:`clipped`,children:[`- `,e]})]});if(a){let e=e=>{if(i){e.preventDefault();return}let t=!g;d===void 0&&h(t),o?.(e,{selected:t})};return(0,l.jsx)(`a`,{...p,ref:u,href:i?void 0:a,"aria-disabled":i||void 0,className:v,onClick:e,children:y})}let b=e=>{if(i)return;let t=!g;d===void 0&&h(t),o?.(e,{selected:t})};return(0,l.jsx)(`button`,{...p,ref:u,type:`button`,disabled:i,"aria-pressed":f&&g?`true`:void 0,className:v,onClick:b,children:y})}var s,c,l;function u(){return(u=t((()=>{s=n(),c=e(i(),1),a(),l=r();try{o.displayName=`EvoFilter`,o.__docgenInfo={description:`Filters let users select values to narrow a set of results.
+
+\`EvoFilter\` renders a toggle button, or a link when \`href\` is supplied. The
+\`selected\` state can be controlled or managed internally with
+\`defaultSelected\`. \`onClick\` receives the next selection state. A selected
+link includes clipped selected text; translate \`a11ySelectedText\` for the
+locale.
+
+## Usage
+
+\`\`\`tsx
+import { EvoFilter } from "@evo-web/react/filter";
+
+<EvoFilter
+  selected={isSelected}
+  onClick={(event, data) => setSelected(data.selected)}
+>
+  Free shipping
+</EvoFilter>
+\`\`\``,displayName:`EvoFilter`,filePath:`/home/runner/work/evo-web/evo-web/packages/evo-react/src/filter/filter.tsx`,methods:[],props:{selected:{defaultValue:null,declarations:[{fileName:`evo-react/src/filter/types.ts`,name:`TypeLiteral`}],description:`Controlled selection state.`,name:`selected`,required:!1,tags:{},type:{name:`boolean`}},defaultSelected:{defaultValue:{value:`false`},declarations:[{fileName:`evo-react/src/filter/types.ts`,name:`TypeLiteral`}],description:"Initial selection state when `selected` is omitted. Defaults to `false`.",name:`defaultSelected`,required:!1,tags:{},type:{name:`boolean`}},a11ySelectedText:{defaultValue:{value:`Selected`},declarations:[{fileName:`evo-react/src/filter/types.ts`,name:`TypeLiteral`}],description:'Localized clipped text announced after a selected link. English default to be overridden is `"Selected"`.',name:`a11ySelectedText`,required:!1,tags:{},type:{name:`string`}},useAriaPressed:{defaultValue:{value:`true`},declarations:[{fileName:`evo-react/src/filter/types.ts`,name:`TypeLiteral`}],description:"Omits `aria-pressed` from a selected button when set to `false`. Defaults to `true`.",name:`useAriaPressed`,required:!1,tags:{},type:{name:`boolean`}},disabled:{defaultValue:{value:`false`},declarations:[{fileName:`evo-react/src/filter/types.ts`,name:`TypeLiteral`}],description:`Disables selection; a disabled link cannot navigate.`,name:`disabled`,required:!1,tags:{},type:{name:`boolean`}},onClick:{defaultValue:null,declarations:[{fileName:`evo-react/src/filter/types.ts`,name:`TypeLiteral`}],description:`Called with the next selection state when an enabled link is clicked.`,name:`onClick`,required:!1,tags:{},type:{name:`((event: MouseEvent<HTMLAnchorElement, MouseEvent>, data: FilterSelectionEvent) => void)`}}},tags:{summary:`Selectable filter button or link.`}}}catch{}})))()}var d,f,p,m,h;function g(){return(g=t((()=>{u(),d=r(),f={title:`Building Blocks/EvoFilter`,component:o,argTypes:{href:{control:`text`,description:`Destination URL that renders the filter as a link.`},selected:{control:`boolean`},defaultSelected:{control:`boolean`},disabled:{control:`boolean`},useAriaPressed:{control:`boolean`}},args:{children:`Free shipping`}},p={},m={render:()=>(0,d.jsx)(o,{href:`/search?freeShipping=true`,selected:!0,a11ySelectedText:`Selected`,children:`Free shipping`})},h=[`Default`,`AsLink`],p.parameters={...p.parameters,docs:{...p.parameters?.docs,source:{originalSource:`{}`,...p.parameters?.docs?.source},description:{story:`A filter button selects a value to narrow search results.`,...p.parameters?.docs?.description}}},m.parameters={...m.parameters,docs:{...m.parameters?.docs,source:{originalSource:`{
+  render: () => <EvoFilter href="/search?freeShipping=true" selected a11ySelectedText="Selected">
+      Free shipping
+    </EvoFilter>
+}`,...m.parameters?.docs?.source},description:{story:`A link filter navigates to a filtered result set and announces selection.`,...m.parameters?.docs?.description}}}})))()}g();export{m as AsLink,p as Default,h as __namedExportsOrder,f as default};

@@ -1,0 +1,9 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{t}from"./jsx-runtime-DeHZSEgm.js";import{a as n,c as r,i,n as a,o,r as s,s as c,t as l}from"./filter-menu-item-BOXPgJ-x.js";var u,d,f,p,m,h;function g(){return(g=e((()=>{r(),i(),a(),o(),u=t(),d={title:`Building Blocks/EvoFilterMenu`,component:c,subcomponents:{EvoFilterMenuItems:s,EvoFilterMenuItem:l,EvoFilterMenuFooterButton:n},argTypes:{type:{control:`select`,options:[`checkbox`,`radio`]},variant:{control:`select`,options:[`form`]}},args:{type:`checkbox`,a11yText:`Delivery filters`},render(e){return(0,u.jsxs)(c,{...e,children:[(0,u.jsxs)(s,{children:[(0,u.jsx)(l,{value:`free-shipping`,children:`Free shipping`}),(0,u.jsx)(l,{value:`local-pickup`,children:`Local pickup`}),(0,u.jsx)(l,{value:`returns-accepted`,disabled:!0,children:`Returns accepted`})]}),(0,u.jsx)(n,{children:`Apply filters`})]})}},f={},p={args:{variant:`form`}},m={args:{searchHeaderPlaceholderText:`Search delivery options`}},h=[`Default`,`Form`,`WithSearch`],f.parameters={...f.parameters,docs:{...f.parameters?.docs,source:{originalSource:`{}`,...f.parameters?.docs?.source},description:{story:`Select delivery filters with arrow keys, typeahead, or pointer input.`,...f.parameters?.docs?.description}}},p.parameters={...p.parameters,docs:{...p.parameters?.docs,source:{originalSource:`{
+  args: {
+    variant: "form"
+  }
+}`,...p.parameters?.docs?.source},description:{story:`Native inputs keep their selection available to a form submit action.`,...p.parameters?.docs?.description}}},m.parameters={...m.parameters,docs:{...m.parameters?.docs,source:{originalSource:`{
+  args: {
+    searchHeaderPlaceholderText: "Search delivery options"
+  }
+}`,...m.parameters?.docs?.source},description:{story:`The search field reports text changes so the consumer can narrow the items.`,...m.parameters?.docs?.description}}}})))()}g();export{f as Default,p as Form,m as WithSearch,h as __namedExportsOrder,d as default};
