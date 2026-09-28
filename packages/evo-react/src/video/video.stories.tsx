@@ -7,10 +7,6 @@ import type { EvoVideoControls, EvoVideoProps } from "./types";
 
 const defaultControls = {
   timeline: { a11yText: "Seek" },
-  captions: {
-    a11yText: "Closed captions",
-    captionsOffText: "Off",
-  },
   audio: {
     a11yMuteText: "Mute",
     a11yUnmuteText: "Unmute",
@@ -19,6 +15,14 @@ const defaultControls = {
   fullscreen: {
     a11yEnterText: "Enter fullscreen",
     a11yExitText: "Exit fullscreen",
+  },
+} satisfies EvoVideoControls;
+
+const captionsControls = {
+  ...defaultControls,
+  captions: {
+    a11yText: "Closed captions",
+    captionsOffText: "Off",
   },
 } satisfies EvoVideoControls;
 
@@ -145,7 +149,7 @@ const meta: Meta<typeof EvoVideo> = {
 export default meta;
 type Story = StoryObj<typeof EvoVideo>;
 
-/** A video player provides playback, timeline, captions, audio, and fullscreen controls. */
+/** A video player provides playback, timeline, audio, and fullscreen controls. */
 export const Default: Story = {};
 
 /** A DASH stream exposes its embedded captions through the captions menu. */
@@ -157,6 +161,7 @@ export const Captions: Story = {
         engine: "dash",
       },
     ],
+    controls: captionsControls,
   },
 };
 
@@ -190,6 +195,7 @@ export const WithTrack: Story = {
         label: "English",
       },
     ],
+    controls: captionsControls,
   },
 };
 
