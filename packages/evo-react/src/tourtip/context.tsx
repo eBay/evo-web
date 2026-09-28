@@ -6,6 +6,8 @@ type TourtipContextValue = {
   close: () => void;
   a11yCloseText: string;
   overlayId: string;
+  headingId: string;
+  setHeadingId: (id: string) => void;
   hostRef: RefObject<HTMLElement | null>;
   setReference: (node: Element | null) => void;
   setFloating: (node: HTMLElement | null) => void;
@@ -30,6 +32,8 @@ export function TourtipProvider({
   close,
   a11yCloseText,
   overlayId,
+  headingId,
+  setHeadingId,
   hostRef,
   setReference,
   setFloating,
@@ -43,6 +47,8 @@ export function TourtipProvider({
       close,
       a11yCloseText,
       overlayId,
+      headingId,
+      setHeadingId,
       hostRef,
       setReference,
       setFloating,
@@ -55,6 +61,8 @@ export function TourtipProvider({
       close,
       a11yCloseText,
       overlayId,
+      headingId,
+      setHeadingId,
       hostRef,
       setReference,
       setFloating,
@@ -64,33 +72,4 @@ export function TourtipProvider({
     ],
   );
   return <TourtipContext value={value}>{children}</TourtipContext>;
-}
-
-type HeadingContextValue = {
-  headingId: string;
-  setHeadingId: (id: string) => void;
-};
-
-const HeadingContext = createContext<HeadingContextValue | null>(null);
-
-export function useTourtipHeading() {
-  const context = use(HeadingContext);
-  if (!context) {
-    throw new Error(
-      "EvoTourtipHeading must be inside EvoTourtipContent.heading",
-    );
-  }
-  return context;
-}
-
-export function TourtipHeadingProvider({
-  children,
-  headingId,
-  setHeadingId,
-}: HeadingContextValue & { children: ReactNode }) {
-  const value = useMemo(
-    () => ({ headingId, setHeadingId }),
-    [headingId, setHeadingId],
-  );
-  return <HeadingContext value={value}>{children}</HeadingContext>;
 }

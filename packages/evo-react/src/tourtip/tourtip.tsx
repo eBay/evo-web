@@ -4,18 +4,19 @@ import type { KeyboardEvent } from "react";
 import classNames from "classnames";
 import { TourtipProvider } from "./context";
 import type { EvoTourtipProps } from "./types";
+import { useControllableId } from "../utils/use-controllable-id";
 import { useExpander } from "../utils/use-expander";
-import "@ebay/skin/icon-button.mjs";
 import "@ebay/skin/tourtip.mjs";
 
 /**
  * A tourtip highlights a feature or guides users through an experience.
  *
  * `EvoTourtip` starts open by default. Use `open` and `onOpenChange` for
- * controlled visibility. Compose a host and content in DOM order; supply a
- * heading and footer as named content slots. The host defaults to a `<span>`;
- * choose an interactive `as` element when the host is an action. Closing the
- * tourtip restores focus when the host is focusable.
+ * controlled visibility. Compose a host and an overlay in DOM order. The
+ * overlay contains the content, which starts with an optional heading, and an
+ * optional footer. The host defaults to a `<span>`; choose an interactive `as`
+ * element when the host is an action. Closing the tourtip restores focus when
+ * the host is focusable.
  *
  * ## Usage
  *
@@ -26,21 +27,21 @@ import "@ebay/skin/tourtip.mjs";
  *   EvoTourtipFooter,
  *   EvoTourtipHeading,
  *   EvoTourtipHost,
+ *   EvoTourtipOverlay,
  * } from "@evo-web/react/tourtip";
  * import { EvoButton } from "@evo-web/react/button";
  *
  * <EvoTourtip a11yCloseText="Dismiss guide">
  *   <EvoTourtipHost as={EvoButton}>Seller tools</EvoTourtipHost>
- *   <EvoTourtipContent
- *     heading={<EvoTourtipHeading>Manage your listings</EvoTourtipHeading>}
- *     footer={
- *       <EvoTourtipFooter index="1 of 3">
- *         <EvoButton>Next</EvoButton>
- *       </EvoTourtipFooter>
- *     }
- *   >
- *     <p>Find your listing tools here.</p>
- *   </EvoTourtipContent>
+ *   <EvoTourtipOverlay>
+ *     <EvoTourtipContent>
+ *       <EvoTourtipHeading>Manage your listings</EvoTourtipHeading>
+ *       <p>Find your listing tools here.</p>
+ *     </EvoTourtipContent>
+ *     <EvoTourtipFooter index="1 of 3">
+ *       <EvoButton>Next</EvoButton>
+ *     </EvoTourtipFooter>
+ *   </EvoTourtipOverlay>
  * </EvoTourtip>
  * ```
  *
@@ -63,6 +64,7 @@ export function EvoTourtip({
   ...rest
 }: EvoTourtipProps) {
   const overlayId = useId();
+  const [headingId, setHeadingId] = useControllableId();
   const hostRef = useRef<HTMLElement>(null);
   const expander = useExpander({
     open,
@@ -95,6 +97,8 @@ export function EvoTourtip({
       close={close}
       a11yCloseText={a11yCloseText}
       overlayId={overlayId}
+      headingId={headingId}
+      setHeadingId={setHeadingId}
       hostRef={hostRef}
       setReference={expander.refs.setReference}
       setFloating={expander.refs.setFloating}

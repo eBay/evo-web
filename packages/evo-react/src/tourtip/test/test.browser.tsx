@@ -9,22 +9,22 @@ import {
   EvoTourtipFooter,
   EvoTourtipHeading,
   EvoTourtipHost,
+  EvoTourtipOverlay,
 } from "../index";
 
 function Tourtip() {
   return (
     <EvoTourtip a11yCloseText="Dismiss guide">
       <EvoTourtipHost as={EvoButton}>Seller tools</EvoTourtipHost>
-      <EvoTourtipContent
-        heading={<EvoTourtipHeading>Manage listings</EvoTourtipHeading>}
-        footer={
-          <EvoTourtipFooter index="1 of 3">
-            <EvoButton>Next</EvoButton>
-          </EvoTourtipFooter>
-        }
-      >
-        <p>Find your listing tools here.</p>
-      </EvoTourtipContent>
+      <EvoTourtipOverlay>
+        <EvoTourtipContent>
+          <EvoTourtipHeading>Manage listings</EvoTourtipHeading>
+          <p>Find your listing tools here.</p>
+        </EvoTourtipContent>
+        <EvoTourtipFooter index="1 of 3">
+          <EvoButton>Next</EvoButton>
+        </EvoTourtipFooter>
+      </EvoTourtipOverlay>
     </EvoTourtip>
   );
 }
@@ -82,9 +82,11 @@ describe("evo-tourtip", () => {
           }}
         >
           <EvoTourtipHost as={EvoButton}>Seller tools</EvoTourtipHost>
-          <EvoTourtipContent aria-label="Seller tools guide">
-            <p>Find your listing tools here.</p>
-          </EvoTourtipContent>
+          <EvoTourtipOverlay aria-label="Seller tools guide">
+            <EvoTourtipContent>
+              <p>Find your listing tools here.</p>
+            </EvoTourtipContent>
+          </EvoTourtipOverlay>
         </EvoTourtip>
       );
     }
@@ -103,32 +105,30 @@ describe("evo-tourtip", () => {
     const screen = await render(
       <EvoTourtip a11yCloseText="Dismiss guide" ref={ref} data-guide="listings">
         <EvoTourtipHost ref={hostRef}>Seller tools</EvoTourtipHost>
-        <EvoTourtipContent aria-label="Seller tools guide">
-          Find your listing tools here.
-        </EvoTourtipContent>
+        <EvoTourtipOverlay aria-label="Seller tools guide">
+          <EvoTourtipContent>Find your listing tools here.</EvoTourtipContent>
+        </EvoTourtipOverlay>
       </EvoTourtip>,
     );
     expect(ref.current).toHaveAttribute("data-guide", "listings");
     expect(hostRef.current?.tagName).toBe("SPAN");
-    await expect
-      .element(screen.getByRole("region", { name: "Seller tools guide" }))
-      .toBeInTheDocument();
+    const region = screen.getByRole("region", { name: "Seller tools guide" });
+    await expect.element(region).toBeInTheDocument();
+    expect(region.element()).not.toHaveAttribute("aria-labelledby");
   });
 
   it("uses a supplied heading ID to name the region", async () => {
     const screen = await render(
       <EvoTourtip a11yCloseText="Dismiss guide">
         <EvoTourtipHost as={EvoButton}>Seller tools</EvoTourtipHost>
-        <EvoTourtipContent
-          aria-labelledby="listing-guide-heading"
-          heading={
+        <EvoTourtipOverlay aria-labelledby="listing-guide-heading">
+          <EvoTourtipContent>
             <EvoTourtipHeading id="listing-guide-heading">
               Manage listings
             </EvoTourtipHeading>
-          }
-        >
-          Find your listing tools here.
-        </EvoTourtipContent>
+            Find your listing tools here.
+          </EvoTourtipContent>
+        </EvoTourtipOverlay>
       </EvoTourtip>,
     );
     const region = screen.getByRole("region", { name: "Manage listings" });

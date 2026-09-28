@@ -1,13 +1,13 @@
 import classNames from "classnames";
 import type { ElementType } from "react";
-import { useTourtipHeading } from "./context";
+import { useTourtip } from "./context";
 import type { EvoTourtipHeadingProps } from "./types";
 
 /**
- * Optional heading for `EvoTourtipContent.heading`. It automatically labels
- * the tourtip region. Use `as` to match the page heading hierarchy. When
- * providing a custom `id`, pass it as `aria-labelledby` to
- * `EvoTourtipContent` as well.
+ * Optional heading, placed first inside `EvoTourtipContent`. It automatically
+ * labels the tourtip region. Use `as` to match the page heading hierarchy.
+ * When providing a custom `id`, pass it as `aria-labelledby` to
+ * `EvoTourtipOverlay` as well.
  *
  * @summary Heading that names a tourtip region.
  */
@@ -18,7 +18,7 @@ export function EvoTourtipHeading<T extends ElementType = "h2">({
   children,
   ...rest
 }: EvoTourtipHeadingProps<T>) {
-  const { headingId, setHeadingId } = useTourtipHeading();
+  const { headingId, setHeadingId } = useTourtip();
   if (id) {
     setHeadingId(id);
   }

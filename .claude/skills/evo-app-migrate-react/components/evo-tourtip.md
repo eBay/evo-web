@@ -1,20 +1,21 @@
 # ebay-tourtip → evo-tourtip
 
-Import `EvoTourtip`, `EvoTourtipHost`, `EvoTourtipContent`, `EvoTourtipHeading`, and `EvoTourtipFooter` from `@evo-web/react/tourtip`.
+Import `EvoTourtip`, `EvoTourtipHost`, `EvoTourtipOverlay`, `EvoTourtipContent`, `EvoTourtipHeading`, and `EvoTourtipFooter` from `@evo-web/react/tourtip`.
 
 ## Composition
 
 `EvoTourtipHost` renders its element through `as` instead of cloning a child. It defaults to a `<span>`, matching evo-marko. Choose a button or link when users need to interact with the host. The component supplied through `as` must forward its React 19 `ref` and DOM attributes.
 
-The tourtip content stays in `EvoTourtipContent`. Pass a named `EvoTourtipHeading` in its `heading` prop and a named `EvoTourtipFooter` in its `footer` prop. The heading labels the tourtip region. If there is no heading, set `aria-label` on `EvoTourtipContent` to name the region. `EvoTourtipFooter` now renders a `<span>` instead of the legacy `<div>`.
+`EvoTourtipOverlay` is the positioned region. Inside it, place `EvoTourtipContent` first, then an optional `EvoTourtipFooter`. `EvoTourtipContent` renders the body and the close button. Put `EvoTourtipHeading` first inside `EvoTourtipContent`; it labels the tourtip region. If there is no heading, set `aria-label` on `EvoTourtipOverlay` to name the region. `EvoTourtipFooter` now renders a `<span>` instead of the legacy `<div>`.
 
-If the heading has a custom `id`, set the matching `aria-labelledby` on `EvoTourtipContent` so server-rendered HTML has the correct label.
+If the heading has a custom `id`, set the matching `aria-labelledby` on `EvoTourtipOverlay` so server-rendered HTML has the correct label.
 
 ```tsx
 import { EvoButton } from "@evo-web/react/button";
 import {
   EvoTourtip,
   EvoTourtipHost,
+  EvoTourtipOverlay,
   EvoTourtipContent,
   EvoTourtipHeading,
   EvoTourtipFooter,
@@ -22,12 +23,13 @@ import {
 
 <EvoTourtip a11yCloseText="Dismiss seller tools guide">
   <EvoTourtipHost as={EvoButton}>Seller tools</EvoTourtipHost>
-  <EvoTourtipContent
-    heading={<EvoTourtipHeading>Manage your listings</EvoTourtipHeading>}
-    footer={<EvoTourtipFooter index="1 of 3">Next</EvoTourtipFooter>}
-  >
-    <p>Find your listing tools here.</p>
-  </EvoTourtipContent>
+  <EvoTourtipOverlay>
+    <EvoTourtipContent>
+      <EvoTourtipHeading>Manage your listings</EvoTourtipHeading>
+      <p>Find your listing tools here.</p>
+    </EvoTourtipContent>
+    <EvoTourtipFooter index="1 of 3">Next</EvoTourtipFooter>
+  </EvoTourtipOverlay>
 </EvoTourtip>;
 ```
 
@@ -40,8 +42,8 @@ import {
 | `noFlip`                      | `flip`                              | Invert the boolean.                                                                                                                                                                                                                                                 |
 | `noShift`                     | `shift`                             | Invert the boolean.                                                                                                                                                                                                                                                 |
 | `notInline`                   | `inline`                            | Invert the boolean.                                                                                                                                                                                                                                                 |
-| `overlayStyle`                | `style` on `EvoTourtipContent`      | Custom styling stays on the overlay. Positioning is calculated by Floating UI.                                                                                                                                                                                      |
-| `aria-label` on `EbayTourtip` | `aria-label` on `EvoTourtipContent` | Labels a headingless region instead of the host.                                                                                                                                                                                                                    |
+| `overlayStyle`                | `style` on `EvoTourtipOverlay`      | Custom styling stays on the overlay. Positioning is calculated by Floating UI.                                                                                                                                                                                      |
+| `aria-label` on `EbayTourtip` | `aria-label` on `EvoTourtipOverlay` | Labels a headingless region instead of the host.                                                                                                                                                                                                                    |
 | `open`                        | `open`                              | Controlled usage also uses `onOpenChange`.                                                                                                                                                                                                                          |
 | No equivalent                 | `defaultOpen`                       | Sets initial uncontrolled visibility. Defaults to `true`.                                                                                                                                                                                                           |
 

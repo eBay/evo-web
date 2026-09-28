@@ -47,12 +47,9 @@ export type EvoTourtipHostProps<T extends ElementType = "span"> =
       keyof TourtipHostOwnProps<T> | "aria-expanded" | "aria-controls"
     >;
 
-export type EvoTourtipContentProps = Omit<ComponentProps<"span">, "role"> & {
-  /** Optional named heading, rendered before body content and used to label the region. */
-  heading?: ReactNode;
-  /** Optional named footer, rendered after the close button. */
-  footer?: ReactNode;
-};
+export type EvoTourtipOverlayProps = Omit<ComponentProps<"span">, "role">;
+
+export type EvoTourtipContentProps = ComponentProps<"span">;
 
 type TourtipHeadingOwnProps<T extends ElementType> = {
   /** Heading element or component. Defaults to `<h2>`. */

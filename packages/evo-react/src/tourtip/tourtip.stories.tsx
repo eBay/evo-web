@@ -6,6 +6,7 @@ import {
   EvoTourtipFooter,
   EvoTourtipHeading,
   EvoTourtipHost,
+  EvoTourtipOverlay,
 } from "./index";
 
 const meta: Meta<typeof EvoTourtip> = {
@@ -13,6 +14,7 @@ const meta: Meta<typeof EvoTourtip> = {
   component: EvoTourtip,
   subcomponents: {
     EvoTourtipHost,
+    EvoTourtipOverlay,
     EvoTourtipContent,
     EvoTourtipHeading,
     EvoTourtipFooter,
@@ -58,11 +60,12 @@ export const Default: Story = {
     <div style={{ padding: "10rem" }}>
       <EvoTourtip {...args}>
         <EvoTourtipHost as={EvoButton}>Seller tools</EvoTourtipHost>
-        <EvoTourtipContent
-          heading={<EvoTourtipHeading>Manage your listings</EvoTourtipHeading>}
-        >
-          <p>Find your listing tools here.</p>
-        </EvoTourtipContent>
+        <EvoTourtipOverlay>
+          <EvoTourtipContent>
+            <EvoTourtipHeading>Manage your listings</EvoTourtipHeading>
+            <p>Find your listing tools here.</p>
+          </EvoTourtipContent>
+        </EvoTourtipOverlay>
       </EvoTourtip>
     </div>
   ),
@@ -74,16 +77,15 @@ export const WithFooter: Story = {
     <div style={{ padding: "10rem" }}>
       <EvoTourtip {...args}>
         <EvoTourtipHost as={EvoButton}>Seller tools</EvoTourtipHost>
-        <EvoTourtipContent
-          heading={<EvoTourtipHeading>Manage your listings</EvoTourtipHeading>}
-          footer={
-            <EvoTourtipFooter index="1 of 3">
-              <EvoButton priority="primary">Next</EvoButton>
-            </EvoTourtipFooter>
-          }
-        >
-          <p>Find your listing tools here.</p>
-        </EvoTourtipContent>
+        <EvoTourtipOverlay>
+          <EvoTourtipContent>
+            <EvoTourtipHeading>Manage your listings</EvoTourtipHeading>
+            <p>Find your listing tools here.</p>
+          </EvoTourtipContent>
+          <EvoTourtipFooter index="1 of 3">
+            <EvoButton priority="primary">Next</EvoButton>
+          </EvoTourtipFooter>
+        </EvoTourtipOverlay>
       </EvoTourtip>
     </div>
   ),
