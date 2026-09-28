@@ -1,0 +1,159 @@
+import { localeDefault, type MonthISO } from "../../common/dates/date-utils";
+import type { DayInput as CalendarDayInput } from "<evo-calendar>";
+import type { DateInputValue, Input as DateFieldInput } from "<evo-date-field>";
+export type { DateInputValue };
+export type { DayISO } from "../../common/dates/date-utils";
+
+export interface CalendarInput extends Omit<
+  CalendarDayInput,
+  "selectMode" | "selected" | "selectedChange" | "locale"
+> {}
+
+export interface Input extends Omit<Marko.HTML.Span, "value"> {
+  value?: DateInputValue;
+  valueChange?: (value: DateInputValue) => void;
+  locale?: string;
+  /**
+   * Accessible label for the button that opens the calendar popover, mapped
+   * to `aria-label`.
+   *
+   * English default to be overridden is `"open calendar"`
+   */
+  a11yOpenPopoverText: string;
+  collapseOnSelect?: boolean;
+  open?: boolean;
+  openChange?: (open: boolean) => void;
+  disabled?: boolean;
+  readonly?: boolean;
+  invalid?: boolean;
+  strategy?: "absolute" | "fixed";
+  onInvalidDate?: DateFieldInput["onInvalidDate"];
+  input?: DateFieldInput["field"];
+  calendar?: Marko.AttrTag<CalendarInput>;
+}
+
+<const/{
+  class: inputClass,
+  a11yOpenPopoverText = "open calendar",
+  collapseOnSelect,
+  disabled,
+  readonly,
+  invalid,
+  strategy,
+  onInvalidDate,
+  input: field,
+  calendar,
+  value: _value,
+  valueChange: _valueChange,
+  open: _open,
+  openChange: _openChange,
+  onKeyDown,
+  ...htmlInput
+}=input>
+<const/locale=localeDefault(input.locale)>
+<let/value:=input.value>
+<let/open:=input.open>
+<id/popoverId>
+
+<let/visibleMonth=value ? (value.slice(0, 7) as MonthISO) : undefined>
+<let/paneCount=1>
+<script>
+  const media = window.matchMedia("(min-width: 600px)");
+  const update = () => {
+    paneCount = media.matches ? 2 : 1;
+  };
+  update();
+  media.addEventListener("change", update, { signal: $signal });
+</script>
+<script>
+  if (open) {
+    document.addEventListener(
+      "pointerdown",
+      (e) => {
+        if (!$root().contains(e.target as Node)) {
+          open = false;
+        }
+      },
+      { signal: $signal },
+    );
+  }
+</script>
+
+<const/toggle() {
+  if (disabled || readonly) return;
+  if (!open && value) {
+    visibleMonth = value.slice(0, 7) as MonthISO;
+  }
+  open = !open;
+}>
+
+<evo-expander/expander
+  open=open
+  placement="bottom-start"
+  strategy=strategy
+  inline=false
+  host=$root
+  overlay=$popover
+/>
+
+<span/$root
+  ...htmlInput
+  class=["date-textbox", inputClass]
+  onKeyDown(e, el) {
+    if (e.key === "Escape" && open) {
+      open = false;
+      focusTrigger();
+    }
+    onKeyDown && onKeyDown(e, el);
+  }
+>
+  <evo-date-field/fieldControl
+    value=value ?? ""
+    locale=locale
+    index=0
+    disabled=disabled
+    readonly=readonly
+    invalid=invalid
+    field=field
+    trigger={
+      a11yText: a11yOpenPopoverText,
+      open: open ?? false,
+      popoverId,
+      toggle,
+    }
+    valueChange(next) {
+      value = next;
+    }
+    onInvalidDate=onInvalidDate
+  />
+  <const/focusTrigger() {
+    fieldControl().$postfixButton?.()?.focus();
+  }>
+  <div/$popover
+    id=popoverId
+    hidden=!open
+    class=[
+      "date-textbox__popover",
+      strategy === "fixed" && "date-textbox__popover--fixed",
+    ]
+    style=expander.floatingStyles
+  >
+    <evo-calendar
+      visibleMonthCount=paneCount
+      visibleMonth:=visibleMonth
+      ...calendar
+      selectMode="day"
+      locale=locale
+      disable=disabled ? { callback: () => true } : calendar?.disable
+      selected=value || undefined
+      selectedChange(next) {
+        if (disabled || readonly) return;
+        value = next;
+        if (collapseOnSelect) {
+          open = false;
+          focusTrigger();
+        }
+      }
+    />
+  </div>
+</span>
