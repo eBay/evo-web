@@ -1,6 +1,5 @@
 import classNames from "classnames";
 import type { EvoLabelProps } from "./types";
-import "@ebay/skin/field.mjs";
 
 /**
  * Names a field control. Set `htmlFor` to the control's `id`; `required` adds

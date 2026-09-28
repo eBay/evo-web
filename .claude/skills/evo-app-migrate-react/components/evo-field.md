@@ -1,5 +1,7 @@
 # EvoField
 
+> **Interim guidance.** Combined field components such as `EvoTextField` and `EvoCheckboxField` are planned but **not available yet** ([#1031](https://github.com/eBay/evo-web/issues/1031)). Do not import them. Until they ship, compose `EvoField`, `EvoLabel`, and the control as shown below.
+
 Replace `EbayField`, `EbayLabel`, and `EbayFieldDescription` imports with `EvoField`, `EvoLabel`, and `EvoFieldDescription` from `@evo-web/react/field`.
 
 No prop changes. Global renames from Step 2 are sufficient. Native React 19 refs and pass-through attributes are now available on the field and description wrappers. The field supplies layout only: connect `EvoLabel` with `htmlFor` and the control's `id`, and connect `EvoFieldDescription` with `aria-describedby`.
@@ -9,7 +11,7 @@ No prop changes. Global renames from Step 2 are sufficient. Native React 19 refs
   <EvoLabel htmlFor="listing-title" stacked required>
     Listing title
   </EvoLabel>
-  <input id="listing-title" required aria-describedby="title-help" />
+  <EvoInput id="listing-title" required aria-describedby="title-help" />
   <EvoFieldDescription id="title-help">
     Include the brand and model.
   </EvoFieldDescription>

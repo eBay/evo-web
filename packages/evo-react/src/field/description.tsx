@@ -1,7 +1,6 @@
 import type { ComponentProps } from "react";
 import classNames from "classnames";
 import type { EvoFieldDescriptionProps } from "./types";
-import "@ebay/skin/field.mjs";
 
 /**
  * Adds supporting or status text to a field. Give it an `id` and reference that

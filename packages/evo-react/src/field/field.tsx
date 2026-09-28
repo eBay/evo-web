@@ -15,12 +15,13 @@ import "@ebay/skin/field.mjs";
  *
  * ```tsx
  * import { EvoField, EvoFieldDescription, EvoLabel } from "@evo-web/react/field";
+ * import { EvoInput } from "@evo-web/react/input";
  *
  * <EvoField layout="block">
  *   <EvoLabel htmlFor="listing-title" stacked required>
  *     Listing title
  *   </EvoLabel>
- *   <input id="listing-title" required aria-describedby="title-help" />
+ *   <EvoInput id="listing-title" required aria-describedby="title-help" />
  *   <EvoFieldDescription id="title-help">
  *     Include the item's brand and model.
  *   </EvoFieldDescription>
