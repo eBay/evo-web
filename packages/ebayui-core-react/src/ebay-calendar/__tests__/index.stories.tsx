@@ -78,7 +78,7 @@ or import styles using SCSS/CSS
         },
         getA11yShowMonthText: {
             description:
-                "Function used to get the text for showing previous and next months, defaults to `Show ${monthName}`",
+                "Function used to get the accessible label for the previous and next month buttons, defaults to ``(monthName, dir) => `${dir === 'prev' ? 'Previous' : 'Next'} month, ${monthName}` ``",
             action: "getA11yShowMonthText",
             table: { category: "Events" },
         },
