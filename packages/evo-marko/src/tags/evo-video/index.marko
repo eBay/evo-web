@@ -358,6 +358,7 @@ static interface DashLikeMedia extends MediaElement {
           <script>
             if (languageOpen) {
               $languageMenu()
+                .$root()
                 .querySelector<HTMLElement>(`[role^="menuitem"]`)
                 ?.focus();
             }
