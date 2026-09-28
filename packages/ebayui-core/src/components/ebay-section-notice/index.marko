@@ -17,7 +17,8 @@ $ const {
         class=[
             (status === "attention" ||
                 status === "confirmation" ||
-                status === "information") &&
+                status === "information" ||
+                status === "warning") &&
                 `section-notice--${status}`,
             status === "education" && "section-notice--large-icon",
             inputClass,

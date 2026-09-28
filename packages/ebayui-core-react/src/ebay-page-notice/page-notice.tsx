@@ -9,8 +9,9 @@ import { EbayIconComponent } from "../ebay-icon/icons/types";
 import { EbayIconAttentionFilled16 } from "../ebay-icon/icons/ebay-icon-attention-filled-16";
 import { EbayIconConfirmationFilled16 } from "../ebay-icon/icons/ebay-icon-confirmation-filled-16";
 import { EbayIconInformationFilled16 } from "../ebay-icon/icons/ebay-icon-information-filled-16";
+import { EbayIconAttentionTriangleFilled16 } from "../ebay-icon/icons/ebay-icon-attention-triangle-filled-16";
 
-export type PageNoticeStatus = "general" | "attention" | "confirmation" | "information";
+export type PageNoticeStatus = "general" | "attention" | "confirmation" | "information" | "warning";
 export type Props = ComponentProps<"section"> & {
     status?: PageNoticeStatus;
     "aria-label"?: string;
@@ -22,6 +23,7 @@ const icons: Record<Exclude<PageNoticeStatus, "general">, EbayIconComponent> = {
     attention: EbayIconAttentionFilled16,
     confirmation: EbayIconConfirmationFilled16,
     information: EbayIconInformationFilled16,
+    warning: EbayIconAttentionTriangleFilled16,
 };
 
 const EbayPageNotice: FC<Props> = ({

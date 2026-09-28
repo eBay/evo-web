@@ -120,6 +120,20 @@ export const AttentionMessage = {
     name: "Attention message",
 };
 
+export const WarningMessage = {
+    render: (args) => (
+        <>
+            <EbayInlineNotice {...args} status="warning" aria-label="Warning">
+                <EbayNoticeContent>
+                    <p>Your draft will expire soon.</p>
+                </EbayNoticeContent>
+            </EbayInlineNotice>
+        </>
+    ),
+
+    name: "Warning message",
+};
+
 export const NoticeToggle = {
     render: (args) => (
         <>

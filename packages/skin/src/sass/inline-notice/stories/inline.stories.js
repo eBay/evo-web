@@ -54,6 +54,19 @@ export const information = () => `
 </div>
 `;
 
+export const warning = () => `
+<div class="inline-notice inline-notice--warning">
+    <span class="inline-notice__header">
+        <svg class="icon icon--16" role="img">
+            <use href="#icon-attention-triangle-filled-16"></use>
+        </svg>
+    </span>
+    <span class="inline-notice__main">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </span>
+</div>
+`;
+
 export const general = () => `
 <div class="inline-notice">
     <span class="inline-notice__main">

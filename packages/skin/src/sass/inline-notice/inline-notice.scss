@@ -31,6 +31,10 @@ span.inline-notice {
     @include token-mixins.color-token(color-foreground-accent);
 }
 
+.inline-notice--warning .inline-notice__header svg {
+    @include token-mixins.color-token(color-foreground-warning);
+}
+
 .inline-notice p {
     margin: 3px 0;
 }

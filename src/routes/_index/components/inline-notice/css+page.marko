@@ -5,8 +5,10 @@
     An inline notice may optionally show a status icon. Add the
     <code>inline-notice--confirmation</code>, <code>
       inline-notice--attention
-    </code>, or <code>inline-notice--information</code> modifier to the inline
-    notice to apply the corresponding status color to its icon.
+    </code>, <code>inline-notice--information</code>, or <code>
+      inline-notice--warning
+    </code> modifier to the inline notice to apply the corresponding status
+    color to its icon.
   </p>
 
   <div class="demo">
@@ -75,6 +77,23 @@
           </p>
         </span>
       </div>
+
+      <div class="inline-notice inline-notice--warning">
+        <span class="inline-notice__header">
+          <svg
+            class="icon icon--16"
+            height="16"
+            width="16"
+            role="img"
+            aria-label="Warning"
+          >
+            <icon-symbol name="attention-triangle-filled-16"/>
+          </svg>
+        </span>
+        <span class="inline-notice__main">
+          <p>Your draft will expire soon.</p>
+        </span>
+      </div>
     </div>
   </div>
   <highlight-code type="html">
@@ -140,6 +159,23 @@
           <a href="https://www.ebay.com">Add required aspects</a> to keep item
           alive.
         </p>
+      </span>
+    </div>
+
+    <div class="inline-notice inline-notice--warning">
+      <span class="inline-notice__header">
+        <svg
+          class="icon icon--16"
+          height="16"
+          width="16"
+          role="img"
+          aria-label="Warning"
+        >
+          <use href="#icon-attention-triangle-filled-16"/>
+        </svg>
+      </span>
+      <span class="inline-notice__main">
+        <p>Your draft will expire soon.</p>
       </span>
     </div>
   </highlight-code>

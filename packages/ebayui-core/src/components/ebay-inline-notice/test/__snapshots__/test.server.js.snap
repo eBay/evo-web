@@ -36,7 +36,7 @@ exports[`inline-notice > passes through additional html attributes 1`] = `
   <span
     class="inline-notice__main"
   >
-    <!--F#13-->
+    <!--F#14-->
     Content
     <!--F/-->
   </span>
@@ -79,7 +79,7 @@ exports[`inline-notice > passes through additional html attributes 2`] = `
   <span
     class="inline-notice__main"
   >
-    <!--F#13-->
+    <!--F#14-->
     Content
     <!--F/-->
   </span>
@@ -120,7 +120,7 @@ exports[`inline-notice > renders with custom status type 1`] = `
   <span
     class="inline-notice__main"
   >
-    <!--F#13-->
+    <!--F#14-->
     Content
     <!--F/-->
   </span>
@@ -187,7 +187,7 @@ exports[`inline-notice > renders with defaults 2`] = `
   <span
     class="inline-notice__main"
   >
-    <!--F#13-->
+    <!--F#14-->
     Content
     <!--F/-->
   </span>
@@ -198,8 +198,47 @@ exports[`inline-notice > renders with defaults 3`] = `
 <span
   class="inline-notice__main"
 >
-  <!--F#13-->
+  <!--F#14-->
   Content
   <!--F/-->
 </span>
+`;
+
+exports[`inline-notice > renders with warning status type 1`] = `
+<div
+  class="inline-notice inline-notice--warning"
+>
+  <span
+    class="inline-notice__header"
+    id="s0-0-status"
+  >
+    <svg
+      aria-label="Heading Text"
+      class="icon icon--16"
+      focusable="false"
+      role="img"
+    >
+      <defs>
+        <symbol
+          id="icon-attention-triangle-filled-16"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M5.156 1.668c1.239-2.223 4.436-2.224 5.677-.003l4.75 8.503c1.21 2.166-.356 4.835-2.837 4.836h-9.49c-2.48 0-4.048-2.666-2.84-4.832l4.74-8.504ZM7.999 10a1 1 0 1 0 0 2.001 1 1 0 0 0 0-2.001Zm0-5a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V6a1 1 0 0 0-1-1Z"
+          />
+        </symbol>
+      </defs>
+      <use
+        href="#icon-attention-triangle-filled-16"
+      />
+    </svg>
+  </span>
+  <span
+    class="inline-notice__main"
+  >
+    <!--F#14-->
+    Content
+    <!--F/-->
+  </span>
+</div>
 `;

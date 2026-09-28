@@ -24,6 +24,13 @@ describe("inline-notice", () => {
         expect(status.parentElement).toMatchSnapshot();
     });
 
+    it("renders with warning status type", async () => {
+        const input = mock.inlineWarningStatus;
+        const { getByLabelText } = await render(template, input);
+        const status = getByLabelText(input.a11yText).parentElement;
+        expect(status.parentElement).toMatchSnapshot();
+    });
+
     testPassThroughAttributes(template, {
         input: mock.Inline,
     });

@@ -19,6 +19,14 @@ export const inlineNotice = {
     renderBody: createRenderBody("body"),
 };
 
+export const warningNotice = {
+    prefixClass: "page-notice",
+    status: "warning",
+    a11yText: "default label",
+    class: "page-notice--warning",
+    renderBody: createRenderBody("body"),
+};
+
 export const titleFooterNotice = {
     prefixClass: "other-notice",
     status: "attention",
