@@ -14,13 +14,11 @@ const DEFAULT_STAR_TEXT: readonly [string, string, string, string, string] = [
 ];
 
 /**
- * Star rating select lets users set a rating through five native radio
- * buttons. Without CSS, the radios remain usable.
+ * Lets users pick a rating from 1 to 5 with five native radio buttons.
  *
- * `EvoStarRatingSelect` keeps native pointer, Tab, and arrow key behavior.
- * `value` controls the rating; `defaultValue` initializes an uncontrolled
- * rating. Use `a11yText` for the group name and `a11yStarText` to translate
- * each choice. For a non-interactive score, use `EvoStarRating`.
+ * Use `value` to control the rating or `defaultValue` to set a starting
+ * rating. `a11yText` names the group and `a11yStarText` names each star. For a
+ * read-only score, use `EvoStarRating`.
  *
  * ## Usage
  *

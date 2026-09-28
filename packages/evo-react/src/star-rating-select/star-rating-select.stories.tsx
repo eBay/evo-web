@@ -21,7 +21,7 @@ const meta: Meta<typeof EvoStarRatingSelect> = {
 export default meta;
 type Story = StoryObj<typeof EvoStarRatingSelect>;
 
-/** The isolated group supplies its own accessible name and each star names its value. */
+/** The rating starts empty. Click a star or use the arrow keys to select one. */
 export const Default: Story = {};
 
 /** A visible legend can name the group through `aria-labelledby`. */
