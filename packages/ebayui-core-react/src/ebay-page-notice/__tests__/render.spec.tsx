@@ -7,6 +7,7 @@ const {
     SimpleUsage,
     SimpleUsageWithId,
     AttentionMessage,
+    WarningMessage,
     ConfirmationMessage,
     DismissibleMessageWithCta,
     MessageWithFooter,
@@ -59,6 +60,28 @@ describe("ebay-page-notice rendering", () => {
         expect(header).toHaveTextContent("Error.");
         expect(main.querySelector("p")).toHaveTextContent(
             "Please take another look at the following:Card number, Expiration date & Security code.",
+        );
+    });
+
+    it("renders warning message story correctly", () => {
+        render(<WarningMessage />);
+
+        const pageNotice = screen.getByRole("region");
+        expect(pageNotice).toHaveClass("page-notice page-notice--warning");
+        expect(pageNotice).toHaveAttribute("aria-labelledby", "warning-status");
+
+        const pageNoticeHeader = pageNotice.querySelector(".page-notice__header");
+        expect(pageNoticeHeader).toHaveAttribute("id", "warning-status");
+
+        const svg = pageNoticeHeader.querySelector("svg");
+        expect(svg).toMatchSnapshot();
+
+        const main: HTMLElement = pageNotice.querySelector(".page-notice__main");
+        const header = within(main).getByRole("heading", { level: 2 });
+        expect(header).toHaveClass("page-notice__title");
+        expect(header).toHaveTextContent("Your listing may expire soon.");
+        expect(main.querySelector("p")).toHaveTextContent(
+            "Save your draft before it expires to avoid losing your changes. Learn more.",
         );
     });
 

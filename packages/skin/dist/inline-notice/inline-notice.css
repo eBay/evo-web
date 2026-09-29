@@ -28,6 +28,10 @@ span.inline-notice {
     color: var(--color-foreground-accent);
 }
 
+.inline-notice--warning .inline-notice__header svg {
+    color: var(--color-foreground-warning);
+}
+
 .inline-notice p {
     margin: 3px 0;
 }

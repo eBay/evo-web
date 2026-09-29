@@ -158,7 +158,7 @@
     "makeup-switch": "~0.3.7",
     "makeup-toast-dialog": "0.4.0",
     "markdown-it": "^15.0.1",
-    "marko": "^6.3.48",
+    "marko": "^6.3.56",
     "native-copyfiles": "^2.0.4",
     "patch-package": "^8.0.1",
     "playwright": "^1.62.1",

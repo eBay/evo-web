@@ -1,0 +1,111 @@
+import { type Input as ComboboxInput } from "<evo-combobox>";
+export interface Input extends ComboboxInput {
+  selected?: string[];
+  selectedChange?: (selected: string[]) => void;
+  /**
+   * Prefix for the `aria-label` of each chip's delete button; the chip text
+   * is appended to it.
+   *
+   * English default to be overridden is `"Remove"`
+   */
+  a11yDeleteButtonText?: string;
+}
+
+<const/{
+  class: inputClass,
+  fluid,
+  invalid,
+  disabled,
+  option: options = [],
+  selected: _selected,
+  selectedChange: _selectedChange,
+  a11yDeleteButtonText = "Remove",
+  onKeyDown,
+  value: _value,
+  valueChange: _valueChange,
+  ...comboboxInput
+}=input>
+
+<let/selected:=input.selected>
+<let/value:=input.value>
+<const/selectedList=selected ?? []>
+
+<const/focusAfterDelete(i: number) {
+  setTimeout(() => {
+    const chips = [...$chipEls];
+    const chip = chips[i] ?? chips.at(-1);
+    if (chip) {
+      chip.$delete().focus();
+    } else {
+      $comboboxEls().$input().focus();
+    }
+  });
+}>
+
+<span
+  class=[
+    "chips-combobox",
+    fluid && "chips-combobox--fluid",
+    invalid && "chips-combobox--error",
+    inputClass,
+  ]
+  aria-disabled=disabled && "true"
+>
+  <if=selectedList.length>
+    <ul class="chips-combobox__items">
+      <for|chip, i| of=selectedList by=(chip) => chip>
+        <li>
+          <evo-chip/$chipEls>
+            <@delete
+              a11yText=`${a11yDeleteButtonText} ${chip}`
+              disabled=disabled
+              onClick() {
+                selected = [
+                  ...selectedList.slice(0, i),
+                  ...selectedList.slice(i + 1),
+                ];
+                focusAfterDelete(i);
+              }
+            />
+            ${chip}
+          </evo-chip>
+        </li>
+      </for>
+    </ul>
+  </if>
+  <evo-combobox/$comboboxEls
+    ...comboboxInput
+    class="chips-combobox__combobox"
+    disabled=disabled
+    invalid=invalid
+    value:=value
+    onKeyDown(e, el) {
+      if (e.key === "Enter") {
+        const text = el.value;
+        if (text) {
+          e.preventDefault();
+          if (!selectedList.includes(text)) {
+            selected = [...selectedList, text];
+          }
+          value = "";
+        }
+      }
+      onKeyDown && onKeyDown(e, el);
+    }
+  >
+    <for|option| of=options>
+      <if=!selectedList.includes(option.text)>
+        <@option
+          ...option
+          onClick(e, el) {
+            if (!selectedList.includes(option.text)) {
+              selected = [...selectedList, option.text];
+            }
+            value = "";
+            option.onClick && option.onClick(e, el);
+          }
+        />
+      </if>
+    </for>
+  </evo-combobox>
+</span>

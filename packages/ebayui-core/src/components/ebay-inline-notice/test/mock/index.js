@@ -8,3 +8,7 @@ export const Inline = {
 export const inlineCustomStatus = Object.assign({}, Inline, {
     status: "confirmation",
 });
+
+export const inlineWarningStatus = Object.assign({}, Inline, {
+    status: "warning",
+});

@@ -110,6 +110,10 @@ span[role="region"].section-notice {
     @include token-mixins.color-token(color-foreground-accent);
 }
 
+.section-notice--warning .section-notice__header svg {
+    @include token-mixins.color-token(color-foreground-warning);
+}
+
 .section-notice__header {
     grid-column: 1;
     grid-row: 1;
