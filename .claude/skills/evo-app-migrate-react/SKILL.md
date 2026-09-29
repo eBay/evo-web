@@ -93,6 +93,7 @@ When migrating a listed component, read the linked file completely and apply the
 - `ebay-radio`: [evo-radio.md](components/evo-radio.md)
 - `ebay-signal`: [evo-signal.md](components/evo-signal.md)
 - `ebay-section-title`: [evo-section-title.md](components/evo-section-title.md)
+- `ebay-star-rating`: [evo-star-rating.md](components/evo-star-rating.md) 
 - `ebay-tabs`: [evo-tabs.md](components/evo-tabs.md)
 - `ebay-toggle-button`: [evo-toggle-button.md](components/evo-toggle-button.md)
 - `ebay-textbox`: [evo-input.md](components/evo-input.md) / [evo-textarea.md](components/evo-textarea.md)
