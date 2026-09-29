@@ -1,0 +1,5 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`EvoSectionTitle SSR > renders subtitle, action, info, and overflow in consumer order 1`] = `"<div dir="rtl" class="section-title"><div class="section-title__title-container"><h3 class="section-title__title">Saved searches</h3><span class="section-title__subtitle">New listings</span></div><div class="section-title__info">Updated today</div><a href="/saved-searches" class="section-title__cta">See all saved searches</a><div class="section-title__overflow">More actions</div></div>"`;
+
+exports[`EvoSectionTitle SSR > renders the basic heading structure 1`] = `"<div class="section-title"><div class="section-title__title-container"><h2 class="section-title__title">Recently viewed</h2></div></div>"`;

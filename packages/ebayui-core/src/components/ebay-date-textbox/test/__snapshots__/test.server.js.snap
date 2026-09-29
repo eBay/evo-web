@@ -57,7 +57,7 @@ exports[`date-textbox > renders defaults 1`] = `
             [33mclass[39m=[32m"calendar__header--inner"[39m
           [36m>[39m
             [36m<button[39m
-              [33maria-label[39m=[32m"Show December 2023"[39m
+              [33maria-label[39m=[32m"Previous month, December 2023"[39m
               [33mclass[39m=[32m"icon-btn icon-btn--transparent icon-btn--small"[39m
               [33mdata-ebayui[39m=[32m""[39m
               [33mtype[39m=[32m"button"[39m
@@ -86,7 +86,7 @@ exports[`date-textbox > renders defaults 1`] = `
               [0mJanuary 2024[0m
             [36m</h3>[39m
             [36m<button[39m
-              [33maria-label[39m=[32m"Show February 2024"[39m
+              [33maria-label[39m=[32m"Next month, February 2024"[39m
               [33mclass[39m=[32m"icon-btn icon-btn--transparent icon-btn--small"[39m
               [33mdata-ebayui[39m=[32m""[39m
               [33mtype[39m=[32m"button"[39m
@@ -933,7 +933,7 @@ exports[`date-textbox > renders with clear 1`] = `
             [33mclass[39m=[32m"calendar__header--inner"[39m
           [36m>[39m
             [36m<button[39m
-              [33maria-label[39m=[32m"Show December 2023"[39m
+              [33maria-label[39m=[32m"Previous month, December 2023"[39m
               [33mclass[39m=[32m"icon-btn icon-btn--transparent icon-btn--small"[39m
               [33mdata-ebayui[39m=[32m""[39m
               [33mtype[39m=[32m"button"[39m
@@ -962,7 +962,7 @@ exports[`date-textbox > renders with clear 1`] = `
               [0mJanuary 2024[0m
             [36m</h3>[39m
             [36m<button[39m
-              [33maria-label[39m=[32m"Show February 2024"[39m
+              [33maria-label[39m=[32m"Next month, February 2024"[39m
               [33mclass[39m=[32m"icon-btn icon-btn--transparent icon-btn--small"[39m
               [33mdata-ebayui[39m=[32m""[39m
               [33mtype[39m=[32m"button"[39m
@@ -1362,7 +1362,7 @@ exports[`date-textbox > renders with custom today 1`] = `
             [33mclass[39m=[32m"calendar__header--inner"[39m
           [36m>[39m
             [36m<button[39m
-              [33maria-label[39m=[32m"Show December 2023"[39m
+              [33maria-label[39m=[32m"Previous month, December 2023"[39m
               [33mclass[39m=[32m"icon-btn icon-btn--transparent icon-btn--small"[39m
               [33mdata-ebayui[39m=[32m""[39m
               [33mtype[39m=[32m"button"[39m
@@ -1391,7 +1391,7 @@ exports[`date-textbox > renders with custom today 1`] = `
               [0mJanuary 2024[0m
             [36m</h3>[39m
             [36m<button[39m
-              [33maria-label[39m=[32m"Show February 2024"[39m
+              [33maria-label[39m=[32m"Next month, February 2024"[39m
               [33mclass[39m=[32m"icon-btn icon-btn--transparent icon-btn--small"[39m
               [33mdata-ebayui[39m=[32m""[39m
               [33mtype[39m=[32m"button"[39m
@@ -1782,7 +1782,7 @@ exports[`date-textbox > renders with floating label 1`] = `
             [33mclass[39m=[32m"calendar__header--inner"[39m
           [36m>[39m
             [36m<button[39m
-              [33maria-label[39m=[32m"Show December 2023"[39m
+              [33maria-label[39m=[32m"Previous month, December 2023"[39m
               [33mclass[39m=[32m"icon-btn icon-btn--transparent icon-btn--small"[39m
               [33mdata-ebayui[39m=[32m""[39m
               [33mtype[39m=[32m"button"[39m
@@ -1811,7 +1811,7 @@ exports[`date-textbox > renders with floating label 1`] = `
               [0mJanuary 2024[0m
             [36m</h3>[39m
             [36m<button[39m
-              [33maria-label[39m=[32m"Show February 2024"[39m
+              [33maria-label[39m=[32m"Next month, February 2024"[39m
               [33mclass[39m=[32m"icon-btn icon-btn--transparent icon-btn--small"[39m
               [33mdata-ebayui[39m=[32m""[39m
               [33mtype[39m=[32m"button"[39m
@@ -2204,7 +2204,7 @@ exports[`date-textbox > renders with floating label array with ranged 1`] = `
             [33mclass[39m=[32m"calendar__header--inner"[39m
           [36m>[39m
             [36m<button[39m
-              [33maria-label[39m=[32m"Show December 2023"[39m
+              [33maria-label[39m=[32m"Previous month, December 2023"[39m
               [33mclass[39m=[32m"icon-btn icon-btn--transparent icon-btn--small"[39m
               [33mdata-ebayui[39m=[32m""[39m
               [33mtype[39m=[32m"button"[39m
@@ -2233,7 +2233,7 @@ exports[`date-textbox > renders with floating label array with ranged 1`] = `
               [0mJanuary 2024[0m
             [36m</h3>[39m
             [36m<button[39m
-              [33maria-label[39m=[32m"Show February 2024"[39m
+              [33maria-label[39m=[32m"Next month, February 2024"[39m
               [33mclass[39m=[32m"icon-btn icon-btn--transparent icon-btn--small"[39m
               [33mdata-ebayui[39m=[32m""[39m
               [33mtype[39m=[32m"button"[39m
@@ -2626,7 +2626,7 @@ exports[`date-textbox > renders with floating label array without ranged 1`] = `
             [33mclass[39m=[32m"calendar__header--inner"[39m
           [36m>[39m
             [36m<button[39m
-              [33maria-label[39m=[32m"Show December 2023"[39m
+              [33maria-label[39m=[32m"Previous month, December 2023"[39m
               [33mclass[39m=[32m"icon-btn icon-btn--transparent icon-btn--small"[39m
               [33mdata-ebayui[39m=[32m""[39m
               [33mtype[39m=[32m"button"[39m
@@ -2655,7 +2655,7 @@ exports[`date-textbox > renders with floating label array without ranged 1`] = `
               [0mJanuary 2024[0m
             [36m</h3>[39m
             [36m<button[39m
-              [33maria-label[39m=[32m"Show February 2024"[39m
+              [33maria-label[39m=[32m"Next month, February 2024"[39m
               [33mclass[39m=[32m"icon-btn icon-btn--transparent icon-btn--small"[39m
               [33mdata-ebayui[39m=[32m""[39m
               [33mtype[39m=[32m"button"[39m
@@ -3048,7 +3048,7 @@ exports[`date-textbox > renders with placeholder 1`] = `
             [33mclass[39m=[32m"calendar__header--inner"[39m
           [36m>[39m
             [36m<button[39m
-              [33maria-label[39m=[32m"Show December 2023"[39m
+              [33maria-label[39m=[32m"Previous month, December 2023"[39m
               [33mclass[39m=[32m"icon-btn icon-btn--transparent icon-btn--small"[39m
               [33mdata-ebayui[39m=[32m""[39m
               [33mtype[39m=[32m"button"[39m
@@ -3077,7 +3077,7 @@ exports[`date-textbox > renders with placeholder 1`] = `
               [0mJanuary 2024[0m
             [36m</h3>[39m
             [36m<button[39m
-              [33maria-label[39m=[32m"Show February 2024"[39m
+              [33maria-label[39m=[32m"Next month, February 2024"[39m
               [33mclass[39m=[32m"icon-btn icon-btn--transparent icon-btn--small"[39m
               [33mdata-ebayui[39m=[32m""[39m
               [33mtype[39m=[32m"button"[39m
@@ -3470,7 +3470,7 @@ exports[`date-textbox > renders with placeholder array with ranged 1`] = `
             [33mclass[39m=[32m"calendar__header--inner"[39m
           [36m>[39m
             [36m<button[39m
-              [33maria-label[39m=[32m"Show December 2023"[39m
+              [33maria-label[39m=[32m"Previous month, December 2023"[39m
               [33mclass[39m=[32m"icon-btn icon-btn--transparent icon-btn--small"[39m
               [33mdata-ebayui[39m=[32m""[39m
               [33mtype[39m=[32m"button"[39m
@@ -3499,7 +3499,7 @@ exports[`date-textbox > renders with placeholder array with ranged 1`] = `
               [0mJanuary 2024[0m
             [36m</h3>[39m
             [36m<button[39m
-              [33maria-label[39m=[32m"Show February 2024"[39m
+              [33maria-label[39m=[32m"Next month, February 2024"[39m
               [33mclass[39m=[32m"icon-btn icon-btn--transparent icon-btn--small"[39m
               [33mdata-ebayui[39m=[32m""[39m
               [33mtype[39m=[32m"button"[39m
@@ -3892,7 +3892,7 @@ exports[`date-textbox > renders with placeholder array without ranged 1`] = `
             [33mclass[39m=[32m"calendar__header--inner"[39m
           [36m>[39m
             [36m<button[39m
-              [33maria-label[39m=[32m"Show December 2023"[39m
+              [33maria-label[39m=[32m"Previous month, December 2023"[39m
               [33mclass[39m=[32m"icon-btn icon-btn--transparent icon-btn--small"[39m
               [33mdata-ebayui[39m=[32m""[39m
               [33mtype[39m=[32m"button"[39m
@@ -3921,7 +3921,7 @@ exports[`date-textbox > renders with placeholder array without ranged 1`] = `
               [0mJanuary 2024[0m
             [36m</h3>[39m
             [36m<button[39m
-              [33maria-label[39m=[32m"Show February 2024"[39m
+              [33maria-label[39m=[32m"Next month, February 2024"[39m
               [33mclass[39m=[32m"icon-btn icon-btn--transparent icon-btn--small"[39m
               [33mdata-ebayui[39m=[32m""[39m
               [33mtype[39m=[32m"button"[39m
