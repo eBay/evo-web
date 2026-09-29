@@ -99,6 +99,7 @@ When migrating a listed component, read the linked file completely and apply the
 - `ebay-toggle-button`: [evo-toggle-button.md](components/evo-toggle-button.md)
 - `ebay-textbox`: [evo-input.md](components/evo-input.md) / [evo-textarea.md](components/evo-textarea.md)
 - `ebay-tooltip`: [evo-tooltip.md](components/evo-tooltip.md)
+- `ebay-toast-dialog`: [evo-toast-dialog.md](components/evo-toast-dialog.md)
 
 ---
 
