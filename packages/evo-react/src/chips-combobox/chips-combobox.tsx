@@ -62,21 +62,24 @@ export function EvoChipsCombobox({
     onSelectedChange?.(next);
   }
 
-  function addValue(text: string) {
-    const value = text.trim();
-    if (value && !currentSelected.includes(value)) {
-      updateSelected([...currentSelected, value]);
+  function addChip(text: string) {
+    if (!currentSelected.includes(text)) {
+      updateSelected([...currentSelected, text]);
     }
     setInputValue("");
   }
 
+  // EvoCombobox commits a highlighted option on Enter and prevents the default
+  // before calling this handler, so this path only adds typed text. Like the
+  // legacy component, Enter never submits a surrounding form, and a duplicate
+  // value stays in the input.
   function handleKeyDown(event: KeyboardEvent<HTMLInputElement>) {
     onKeyDown?.(event);
     if (event.defaultPrevented || event.key !== "Enter") return;
+    event.preventDefault();
     const value = event.currentTarget.value.trim();
-    if (value) {
-      event.preventDefault();
-      addValue(value);
+    if (value && !currentSelected.includes(value)) {
+      addChip(value);
     }
   }
 
@@ -117,12 +120,11 @@ export function EvoChipsCombobox({
         <EvoCombobox
           {...comboboxProps}
           className="chips-combobox__combobox"
-          fluid={fluid}
           disabled={disabled}
           aria-invalid={ariaInvalid}
           value={inputValue}
           onValueChange={setInputValue}
-          onOptionSelect={addValue}
+          onOptionSelect={addChip}
           onKeyDown={handleKeyDown}
         >
           {children}

@@ -132,6 +132,64 @@ describe("evo-combobox", () => {
       await expect.element(input).toHaveAttribute("aria-expanded", "false");
     });
 
+    it("calls onOptionSelect after onValueChange for pointer selection", async () => {
+      const onOptionSelect = vi.fn();
+      const onValueChange = vi.fn();
+      const screen = await render(
+        <ComboboxFixture
+          onOptionSelect={onOptionSelect}
+          onValueChange={onValueChange}
+        />,
+      );
+
+      await user.click(screen.getByRole("combobox"));
+      await user.click(screen.getByRole("option", { name: "Basic Offer" }));
+
+      expect(onOptionSelect).toHaveBeenCalledTimes(1);
+      expect(onOptionSelect).toHaveBeenCalledWith("Basic Offer");
+      expect(onValueChange.mock.invocationCallOrder[0]).toBeLessThan(
+        onOptionSelect.mock.invocationCallOrder[0],
+      );
+    });
+
+    it.each(["automatic", "manual"] as const)(
+      "calls onOptionSelect for keyboard selection in %s mode",
+      async (listSelection) => {
+        const onOptionSelect = vi.fn();
+        const screen = await render(
+          <ComboboxFixture
+            listSelection={listSelection}
+            onOptionSelect={onOptionSelect}
+          />,
+        );
+
+        await user.click(screen.getByRole("combobox"));
+        await user.keyboard("{ArrowDown}{Enter}");
+
+        expect(onOptionSelect).toHaveBeenCalledTimes(1);
+        expect(onOptionSelect).toHaveBeenCalledWith("August Campaign");
+      },
+    );
+
+    it("does not call onOptionSelect while typing or when focus out commits a preview", async () => {
+      const onOptionSelect = vi.fn();
+      const onValueChange = vi.fn();
+      const screen = await render(
+        <ComboboxFixture
+          onOptionSelect={onOptionSelect}
+          onValueChange={onValueChange}
+        />,
+      );
+      const input = screen.getByRole("combobox");
+
+      await user.type(input, "Basic");
+      await user.keyboard("{ArrowDown}");
+      await user.tab();
+
+      expect(onValueChange).toHaveBeenLastCalledWith("Basic Offer");
+      expect(onOptionSelect).not.toHaveBeenCalled();
+    });
+
     it("supports controlled values for typing and selection", async () => {
       function ControlledCombobox() {
         const [value, setValue] = useState("");
