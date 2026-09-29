@@ -23,7 +23,6 @@ export const jsTemplate = import.meta.glob(
   { eager: true },
 );
 
-
 export const a11yTemplate = import.meta.glob(
   "../routes/_index/components/*/accessibility+page.marko",
   { eager: true },
@@ -46,6 +45,7 @@ export interface ComponentMap {
       accessibility: string;
       css: string;
       js: string;
+      cssStorybook?: string;
       marko?: string;
       react?: string;
       dsUrl?: string;
@@ -76,8 +76,6 @@ export const jsPages = Object.keys(jsTemplate).reduce<Set<string>>(
   },
   new Set<string>(),
 );
-
-
 
 /**
  * List of all components. This takes all components and creates a url lookup for them
@@ -170,6 +168,10 @@ function getComponentUrls(
     accessibility: `${componentUrl}/accessibility`,
     css: `${componentUrl}/css`,
     js: `${componentUrl}/js`,
+    cssStorybook:
+      (metadata?.cssStorybookPath ?? false)
+        ? `${urls.skinStorybook}/?path=${metadata?.cssStorybookPath}`
+        : "",
     marko:
       (metadata?.markoStorybookPath ?? false)
         ? `${basePath}ebayui-core/?path=${metadata?.markoStorybookPath}`
