@@ -122,7 +122,10 @@ a.fake-btn__cell--fixed-height svg.icon {
 button.btn--primary,
 a.fake-btn--primary {
     background-color: var(--color-background-accent);
-    border-color: var(--color-border-accent);
+    border-color: var(
+        --btn-primary-border-color,
+        var(--color-background-accent)
+    );
     color: var(--color-foreground-on-accent);
     font-weight: bold;
 
@@ -517,7 +520,7 @@ button.btn--floating-label .btn__floating-label--inline {
     a.fake-btn.fake-btn--primary.fake-btn--split-end {
         @include token-mixins.border-left-color-token(
             btn-primary-border-color,
-            color-border-accent
+            color-background-accent
         );
         @include token-mixins.border-right-color-token(
             primary-border-split-color,
@@ -528,7 +531,7 @@ button.btn--floating-label .btn__floating-label--inline {
         &:focus {
             @include token-mixins.border-left-color-token(
                 btn-primary-border-color,
-                color-border-accent
+                color-background-accent
             );
             @include token-mixins.border-right-color-token(
                 primary-border-split-color,

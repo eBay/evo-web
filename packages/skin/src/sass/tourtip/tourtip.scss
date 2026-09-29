@@ -144,10 +144,11 @@ span.tourtip__heading {
 }
 
 .tourtip__footer > button.btn--primary {
-    @include token-mixins.background-color-token(
-        tourtip-background-color,
-        color-foreground-on-inverse
+    --color-background-accent: var(
+        --tourtip-background-color,
+        var(--color-foreground-on-inverse)
     );
+
     @include token-mixins.color-token(
         tourtip-foreground-color,
         color-background-inverse
