@@ -47,7 +47,7 @@ export type EvoTourtipHostProps<T extends ElementType = "span"> =
       keyof TourtipHostOwnProps<T> | "aria-expanded" | "aria-controls"
     >;
 
-export type EvoTourtipOverlayProps = Omit<ComponentProps<"span">, "role">;
+export type EvoTourtipOverlayProps = Omit<ComponentProps<"span">, "id" | "role">;
 
 export type EvoTourtipContentProps = ComponentProps<"span">;
 
