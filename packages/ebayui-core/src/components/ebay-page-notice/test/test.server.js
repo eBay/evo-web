@@ -44,6 +44,16 @@ describe("page-notice", () => {
         expect(containerUsingLabel).toMatchSnapshot();
     });
 
+    it("renders with warning status type", async () => {
+        const input = mock.Page_Warning_Status;
+        const { getByLabelText } = await render(template, input);
+        const status = getByLabelText(input.a11yText).parentElement;
+        const containerUsingLabel = status.closest(
+            `[aria-labelledby="${status.id}"]`,
+        );
+        expect(containerUsingLabel).toMatchSnapshot();
+    });
+
     it("renders with no icon", async () => {
         const input = mock.Page_Icon_Hidden;
         const { queryByLabelText } = await render(template, input);

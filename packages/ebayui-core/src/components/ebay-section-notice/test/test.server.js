@@ -28,6 +28,24 @@ describe("section-notice", () => {
         expect(container).toMatchSnapshot();
     });
 
+    it("renders with warning status", async () => {
+        const input = mock.SectionWarning;
+        const { getByLabelText, getByText } = await render(template, input);
+        const status = getByLabelText(input.a11yText).parentElement;
+        expect(status).toMatchSnapshot();
+
+        const containerUsingLabel = status.closest(
+            `[aria-labelledby="${status.id}"]`,
+        );
+        expect(containerUsingLabel).toMatchSnapshot();
+
+        const content = getByText(input.renderBody.text);
+        expect(content).toMatchSnapshot();
+
+        const container = content.parentElement;
+        expect(container).toMatchSnapshot();
+    });
+
     it("renders with light", async () => {
         const input = mock.SectionLight;
         const { getByText } = await render(template, input);

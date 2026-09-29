@@ -128,6 +128,10 @@ Declare `<const/>`, `<let/>`, `<id/>`, and other tag variables close to where th
 - Modifier: `.btn--primary` (double dash, NOT single)
 - ❌ Modifiers or Children Never: `.btn-primary` or `.btn_cell`
 
+**When a GitHub issue links more than one Figma URL, treat them as competing candidates, not a single source:**
+
+DS/dev issues often carry a `/branch/` URL (a design-in-progress branch) alongside a separate plain Figma link with no `/branch/` segment (the main file). These can point at different, contradictory states of the same component — a branch can be superseded once its design is finalized and merged, while the issue text referencing it is never edited to remove the stale link. Never assume the first Figma link you notice, or the one embedded in prose (e.g. under a "Design Specs:" line), is authoritative just because it's more prominent or was read first. Before treating any single Figma reference as ground truth: enumerate every Figma URL in the issue, note which are branches (`/design/:fileKey/branch/:branchKey/...`) vs. main files (`/design/:fileKey/...`), and if more than one exists, ask which is current rather than picking one. A branch and its main file can render the same node ID differently or move it to a different node ID entirely — matching file keys or node names is not enough to confirm they agree.
+
 </correctness_guards>
 
 ---

@@ -36,7 +36,7 @@ export default {
             },
 
             description: "The icon used and status of the notice",
-            options: ["attention", "confirmation", "information"],
+            options: ["attention", "confirmation", "information", "warning"],
             type: "select",
         },
         icon: {

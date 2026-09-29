@@ -88,6 +88,10 @@ span[role="region"].section-notice {
     color: var(--color-foreground-accent);
 }
 
+.section-notice--warning .section-notice__header svg {
+    color: var(--color-foreground-warning);
+}
+
 .section-notice__header {
     grid-column: 1;
     grid-row: 1;

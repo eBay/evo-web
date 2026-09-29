@@ -4,7 +4,8 @@ interface NoticeBaseInput extends Omit<
     Marko.HTML.Section,
     "title" | `on${string}`
 > {
-    status?: "confirmation" | "attention" | "information" | "education";
+    status?:
+        "confirmation" | "attention" | "information" | "warning" | "education";
     type?: "section";
     "prefix-class"?: string;
     root?: Marko.Renderable;

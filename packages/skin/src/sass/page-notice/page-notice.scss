@@ -113,6 +113,47 @@ span[role="region"].page-notice {
     }
 }
 
+.page-notice--warning {
+    @include token-mixins.background-color-token(
+        page-notice-warning-background-color,
+        color-background-warning
+    );
+
+    @include token-mixins.border-color-token(
+        page-notice-warning-border-color,
+        color-background-warning
+    );
+
+    .page-notice__header svg {
+        @include token-mixins.color-token(
+            page-notice-warning-icon-color,
+            color-foreground-on-warning
+        );
+    }
+
+    &,
+    a,
+    button.fake-link {
+        @include token-mixins.color-token(
+            page-notice-warning-color,
+            color-foreground-on-warning
+        );
+    }
+
+    a:hover,
+    button.fake-link:hover {
+        @include token-mixins.color-token(
+            page-notice-warning-color,
+            color-foreground-on-warning
+        );
+    }
+
+    a:focus-visible,
+    button.fake-link:focus-visible {
+        outline-color: var(--color-foreground-on-warning);
+    }
+}
+
 .page-notice--confirmation {
     @include token-mixins.background-color-token(
         page-notice-confirmation-background-color,
