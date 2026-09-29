@@ -30,7 +30,10 @@ interface CalendarInput {
     "disable-weekdays"?: number[];
     "disable-list"?: (Date | number | string)[];
     "link-builder"?: (iso: string) => string | false | null | undefined;
-    "get-a11y-show-month-text"?: (monthName: string) => string;
+    "get-a11y-show-month-text"?: (
+        monthName: string,
+        dir: "prev" | "next",
+    ) => string;
     "a11y-selected-text"?: Marko.HTMLAttributes["aria-label"];
     "a11y-range-start-text"?: Marko.HTMLAttributes["aria-label"];
     "a11y-in-range-text"?: Marko.HTMLAttributes["aria-label"];
