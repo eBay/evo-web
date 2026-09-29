@@ -3,7 +3,6 @@
 exports[`evo-date-range-input SSR > renders default 1`] = `
 "<span
   class="date-textbox"
-  locale="en-US"
 >
   <span
     class="floating-label"
@@ -464,7 +463,6 @@ exports[`evo-date-range-input SSR > renders default 1`] = `
 exports[`evo-date-range-input SSR > renders with a value 1`] = `
 "<span
   class="date-textbox"
-  locale="en-US"
 >
   <span
     class="floating-label"

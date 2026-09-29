@@ -97,6 +97,7 @@ export interface Input {
   <if=trigger>
     <@postfixIcon
       a11yText=trigger.a11yText
+      disabled=disabled || readonly
       aria-expanded=trigger.open ? "true" : "false"
       aria-controls=trigger.popoverId
       onClick() {

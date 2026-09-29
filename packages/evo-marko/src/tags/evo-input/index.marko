@@ -95,11 +95,11 @@ export interface Input extends Marko.HTML.Input {
     <if=postfixIcon>
       <const/{ a11yText, ...postfixIconInput }=postfixIcon>
       <${a11yText && "button"}/$postfixButton
+        disabled=disabled
         ...postfixIconInput
         aria-label=a11yText
         class=["icon-btn", "icon-btn--transparent", postfixIcon.class]
         type="button"
-        disabled=disabled
       >
         <${postfixIcon}/>
       </>

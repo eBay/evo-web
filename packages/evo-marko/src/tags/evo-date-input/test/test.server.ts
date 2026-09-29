@@ -24,4 +24,8 @@ describe("evo-date-input SSR", () => {
   it("renders with a value", async () => {
     await snapshotHTML(Default, { locale: "en-US", value: "2024-05-06" });
   });
+
+  it("renders readonly with a disabled calendar trigger", async () => {
+    await snapshotHTML(Default, { locale: "en-US", readonly: true });
+  });
 });
