@@ -96,6 +96,7 @@ When migrating a listed component, read the linked file completely and apply the
 - `ebay-skeleton`: [evo-skeleton.md](components/evo-skeleton.md)
 - `ebay-star-rating`: [evo-star-rating.md](components/evo-star-rating.md) 
 - `ebay-star-rating-select`: [evo-star-rating-select.md](components/evo-star-rating-select.md)
+- `ebay-switch`: [evo-switch.md](components/evo-switch.md)
 - `ebay-tabs`: [evo-tabs.md](components/evo-tabs.md)
 - `ebay-toggle-button`: [evo-toggle-button.md](components/evo-toggle-button.md)
 - `ebay-textbox`: [evo-input.md](components/evo-input.md) / [evo-textarea.md](components/evo-textarea.md)

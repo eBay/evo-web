@@ -1,0 +1,5 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`EvoSwitch SSR > renders a disabled switch with its native state 1`] = `"<span class="switch"><input disabled="" readOnly="" id="alerts" type="checkbox" role="switch" class="switch__control" checked=""/><span class="switch__button"></span></span>"`;
+
+exports[`EvoSwitch SSR > renders a labeled switch 1`] = `"<div><span class="switch"><input id="alerts" type="checkbox" role="switch" class="switch__control" name="alerts" checked=""/><span class="switch__button"></span></span><label for="alerts">Saved search alerts</label></div>"`;
