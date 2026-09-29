@@ -1,5 +1,5 @@
 ---
-"@ebay/skin": patch
+"@ebay/skin": minor
 "@evo-web/marko": patch
 ---
 
