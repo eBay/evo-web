@@ -1,5 +1,5 @@
-export interface Input extends Marko.HTML.Video {
-  source: Marko.AttrTag<
+export interface Input extends Omit<Marko.HTML.Video, "src"> {
+  source?: Marko.AttrTag<
     Marko.HTML.Source & { src: string; engine?: "hls" | "dash" }
   >;
   track?: Marko.AttrTag<Marko.HTML.Track>;
@@ -176,7 +176,7 @@ static interface DashLikeMedia extends MediaElement {
 }>
 <const/fullscreenEnabled=Boolean(a11yFullscreenText && a11yExitFullscreenText)>
 <const/failSource=(error: unknown) => {
-  if (sourceIndex < [...source].length - 1) {
+  if (sourceIndex < [...(source ?? [])].length - 1) {
     sourceIndex++;
   } else {
     failed = true;
@@ -702,7 +702,7 @@ static interface DashLikeMedia extends MediaElement {
 </script>
 
 <const/attachMedia=async (state: { src?: string }) => {
-  const currentSource = [...source][sourceIndex];
+  const currentSource = [...(source ?? [])][sourceIndex];
   if (!currentSource) {
     failSource(new Error("No video source provided"));
     return;
@@ -775,7 +775,10 @@ static async function createHlsMediaElement() {
   return new HlsJsAdapter();
 }
 static function isDashMedia(media: MediaElement): media is DashLikeMedia {
-  return "engine" in media && "getTracksFor" in (media as DashLikeMedia).engine;
+  const { engine } = media as DashLikeMedia;
+  return (
+    typeof engine === "object" && engine !== null && "getTracksFor" in engine
+  );
 }
 static function languageLabel(language: string) {
   // `TextTrack.language` is not guaranteed to be a valid BCP-47 tag
