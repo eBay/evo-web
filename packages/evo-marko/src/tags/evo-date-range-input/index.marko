@@ -120,6 +120,11 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
     }
     onKeyDown && onKeyDown(e, el);
   }
+  onFocusOut(e, el) {
+    if (open && e.relatedTarget && !el.contains(e.relatedTarget as Node)) {
+      open = false;
+    }
+  }
 >
   <evo-date-field
     value=value?.from ?? ""

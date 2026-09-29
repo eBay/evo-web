@@ -82,6 +82,29 @@ describe("evo-date-input", () => {
     expect(document.activeElement).toBe(trigger);
   });
 
+  it("closes the calendar popover when focus leaves the component", async () => {
+    const trigger = component.getByRole("button", { name: "Open calendar" });
+    const textbox = component.getByRole("textbox") as HTMLInputElement;
+    const popover = component.container.querySelector(
+      ".date-textbox__popover",
+    ) as HTMLElement;
+
+    await fireEvent.click(trigger);
+    expect(popover.hidden).toBe(false);
+
+    await fireEvent.focusOut(trigger, { relatedTarget: textbox });
+    expect(popover.hidden).toBe(false);
+
+    const outside = document.createElement("button");
+    document.body.appendChild(outside);
+    try {
+      await fireEvent.focusOut(trigger, { relatedTarget: outside });
+      expect(popover.hidden).toBe(true);
+    } finally {
+      outside.remove();
+    }
+  });
+
   it("disables the field and popover when disabled", async () => {
     component = await render(Default, { locale: "en-US", disabled: true });
     expect(component.getByRole("textbox")).toBeDisabled();
