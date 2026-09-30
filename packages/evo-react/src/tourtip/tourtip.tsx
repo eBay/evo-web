@@ -56,7 +56,7 @@ export function EvoTourtip({
   flip = true,
   shift = false,
   inline = true,
-a11yCloseText = "Dismiss tourtip",
+  a11yCloseText = "Dismiss tourtip",
   className,
   children,
   onKeyDown,
