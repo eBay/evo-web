@@ -398,6 +398,9 @@
     .video-player--compact .shaka-controls-button-panel {
         height: 48px;
     }
+    .video-player--compact
+        .shaka-controls-button-panel
+        span.shaka-remaining-time,
     .video-player--compact .shaka-remaining-time {
         display: none;
     }
