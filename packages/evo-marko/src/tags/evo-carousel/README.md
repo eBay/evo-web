@@ -7,7 +7,7 @@
     </span>
 </h1>
 
-A horizontally scrolling list of items with previous and next controls. Continuous by default, where each item sizes itself; discrete with `itemsPerSlide`, where a set number fill the view; and a rotator with `autoplay`, which advances on a timer and loops round at the end.
+A horizontally scrolling list of items with previous and next controls. Continuous by default, where each item sizes itself; discrete with `itemsPerSlide`, where a set number fill the view; and a rotator with `autoplay`, which advances on a timer and goes back to the start after the last slide.
 
 ## Examples and Documentation
 

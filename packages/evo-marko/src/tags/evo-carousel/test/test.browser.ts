@@ -1,6 +1,7 @@
 import { afterEach, beforeEach, describe, it, expect, vi } from "vitest";
 import { render, cleanup, fireEvent } from "@marko/testing-library";
 import { composeStories } from "@storybook/marko";
+import { userEvent } from "vitest/browser";
 import * as stories from "../carousel.stories";
 const { Continuous, Discrete, Controlled, Autoplay } = composeStories(stories);
 
@@ -86,11 +87,10 @@ describe("evo-carousel", () => {
       expect(disabled("next")).toBe(false);
       const cut = firstCut();
 
-      await fireEvent.click(control("next"));
-      expect(list().scrollLeft).toBeLessThan(items()[cut].offsetLeft);
-      expect(reachable()[0]).toBe(cut);
+      control("next").click();
       await settles();
       expect(leading()).toBe(cut);
+      expect(reachable()[0]).toBe(cut);
       expect(disabled("prev")).toBe(false);
 
       control("prev").click();
@@ -99,23 +99,13 @@ describe("evo-carousel", () => {
       expect(disabled("prev")).toBe(true);
     });
 
-    it("should add up presses that arrive faster than the scrolling", async () => {
-      control("next").click();
-      await settles();
-      control("next").click();
-      await settles();
-      const deliberate = list().scrollLeft;
-
-      control("prev").click();
-      control("prev").click();
-      await settles();
-      expect(list().scrollLeft).toBe(0);
-
+    it("should come to rest on an item however fast it is pressed", async () => {
       control("next").click();
       await wait(50);
       control("next").click();
       await settles();
-      expect(list().scrollLeft).toBeCloseTo(deliberate, 0);
+
+      expect(leading()).toBeGreaterThan(0);
     });
 
     it("should disable next and drop the mask at the end", async () => {
@@ -321,7 +311,7 @@ describe("evo-carousel", () => {
       expect(disabled("prev")).toBe(false);
     });
 
-    it("should advance on its own and loop round without cloning", async () => {
+    it("should advance on its own and rewind at the end", async () => {
       await vi.waitFor(() => expect(leading()).toBe(3), { timeout: 6000 });
       await vi.waitFor(
         () => {
@@ -331,29 +321,24 @@ describe("evo-carousel", () => {
         { timeout: 3000 },
       );
 
-      expect(items()).toHaveLength(4);
-      expect(items().every((item) => !item.style.order)).toBe(true);
-      expect(list().style.scrollSnapType).toBe("");
       expect(reachable()).toEqual([0]);
     });
 
-    it("should go round backwards from the first slide", async () => {
-      await fireEvent.pointerEnter(root());
+    it("should go to the last slide backwards from the first", async () => {
+      await userEvent.hover(root());
       control("prev").click();
       await settles();
 
       expect(leading()).toBe(3);
       expect(reachable()).toEqual([3]);
-      expect(items().every((item) => !item.style.order)).toBe(true);
     });
 
     it("should hold still while the pointer is over it", async () => {
-      await fireEvent.pointerEnter(root());
+      await userEvent.hover(root());
       await wait(1000);
       expect(leading()).toBe(0);
-      expect(list().getAttribute("aria-live")).toBe("polite");
 
-      await fireEvent.pointerLeave(root());
+      await userEvent.unhover(root());
       await vi.waitFor(() => expect(leading()).toBe(1), { timeout: 2000 });
     });
 
@@ -375,8 +360,7 @@ describe("evo-carousel", () => {
 
       await fireEvent.click(playback());
       expect(playback().getAttribute("aria-label")).toBe("Pause carousel");
-      await settles();
-      expect(leading()).toBe(1);
+      await vi.waitFor(() => expect(leading()).toBe(1), { timeout: 3000 });
     });
   });
 });

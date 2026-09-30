@@ -318,24 +318,34 @@ span.carousel__container {
 .carousel--hidden-scrollbar .carousel__control--next {
     right: 0;
 }
-.carousel__list--gap {
+
+.carousel__list--snap {
     gap: var(--carousel-gap, 16px);
 }
+
+.carousel:not(.carousel__autoplay) .carousel__list--snap {
+    scroll-snap-type: x mandatory;
+}
+@media (prefers-reduced-motion: reduce) {
+    .carousel:not(.carousel__autoplay) .carousel__list--snap {
+        scroll-behavior: auto;
+    }
+}
+
 .carousel__list--slides > li {
     flex-basis: calc(
         (
-                100% - (var(--carousel-items-in-view, 1) - 1) *
+                100% - (-1 + var(--carousel-items-in-view, 1)) *
                     var(--carousel-gap, 16px)
             ) /
             var(--carousel-items-in-view, 1)
     );
 }
-.carousel:not(.carousel__autoplay) .carousel__list--slides {
-    scroll-snap-type: x mandatory;
-}
+
 .carousel__item--snap {
     scroll-snap-align: start;
 }
+
 [dir="rtl"] .carousel__control svg {
     transform: rotate(180deg);
 }
