@@ -1,16 +1,31 @@
-import {
-  createScroller,
-  getScrollIndex,
-  getScrollOffset,
-} from "../../common/dom";
-/** Quiet time that counts as "the scrolling has stopped". */
-static const SETTLE_DELAY = 100;
+import { observe, page, scrollToIndex } from "../../common/carousel";
 export interface Control extends Omit<
   Marko.HTML.Button,
-  "aria-label" | "aria-disabled" | "type"
+  "type" | "aria-label" | "aria-disabled" | "aria-controls"
 > {
-  /** The `aria-label` of the control */
-  a11yText: string;
+  /**
+   * The `aria-label` of the control
+   *
+   * English default to be overridden is `"Previous slide"` or `"Next slide"`
+   */
+  a11yText?: string;
+}
+export interface Playback extends Omit<
+  Marko.HTML.Button,
+  "type" | "aria-label"
+> {
+  /**
+   * The `aria-label` of the playback control while paused
+   *
+   * English default to be overridden is `"Play carousel"`
+   */
+  a11yPlayText?: string;
+  /**
+   * The `aria-label` of the playback control while playing
+   *
+   * English default to be overridden is `"Pause carousel"`
+   */
+  a11yPauseText?: string;
 }
 export interface Input extends Omit<Marko.HTML.Div, "role" | "aria-label"> {
   /**
@@ -20,23 +35,29 @@ export interface Input extends Omit<Marko.HTML.Div, "role" | "aria-label"> {
    */
   a11yText: string | null;
   item?: Marko.AttrTag<Marko.HTML.LI>;
-  previous: Marko.AttrTag<Control>;
-  next: Marko.AttrTag<Control>;
-  /**
-   * Items to fit in the visible area, and to move by. Fractions leave the next
-   * one peeking. Unset lets each item size itself.
-   */
+  previous?: Marko.AttrTag<Control>;
+  next?: Marko.AttrTag<Control>;
+  playback?: Marko.AttrTag<Playback>;
   itemsPerSlide?: number;
-  /** Space between items: a number of pixels, or any CSS length */
+  noPeek?: boolean;
   gap?: number | string;
   imageTreatment?: "none" | "matte" | "large";
-  /** Show a thin scrollbar under the items while hovered */
-  scrollbar?: boolean;
-  /** Fade the trailing edge while there is more to scroll to */
-  mask?: boolean;
-  /** The item leading the visible area. Reported once the scrolling settles. */
+  hiddenScrollbar?: boolean;
+  autoplay?: boolean | number;
+  paused?: boolean;
+  pausedChange?: (paused: boolean) => void;
   index?: number;
   indexChange?: (index: number) => void;
+}
+static function getLayout(
+  itemsPerSlide: number | undefined,
+  noPeek: boolean | undefined,
+  interval: number,
+) {
+  if (!itemsPerSlide && !interval) return { perSlide: 0, inView: 0 };
+  const perSlide = Math.max(Math.floor(itemsPerSlide || 1), 1);
+  const peek = (itemsPerSlide || 1) % 1 || (noPeek || interval ? 0 : 0.1);
+  return { perSlide, inView: perSlide + peek };
 }
 
 <const/{
@@ -46,147 +67,94 @@ export interface Input extends Omit<Marko.HTML.Div, "role" | "aria-label"> {
   item: items,
   previous,
   next,
+  playback,
   itemsPerSlide,
+  noPeek,
   gap,
   imageTreatment = "none",
-  scrollbar,
-  mask,
+  hiddenScrollbar,
+  autoplay,
+  paused: inputPaused,
+  pausedChange,
   index: inputIndex,
   indexChange,
   "aria-roledescription": ariaRoledescription = "carousel",
+  onPointerEnter,
+  onPointerLeave,
+  onFocusIn,
+  onFocusOut,
   ...htmlInput
 }=input>
 
 <const/itemList=[...(items || [])]>
+<const/interval=(autoplay === true ? 4000 : autoplay || 0)>
+<const/{ perSlide, inView }=getLayout(itemsPerSlide, noPeek, interval)>
 
 <let/index:=input.index>
 <let/atStart=true>
 <let/atEnd=false>
-/** Item the last move was sent to. Not reactive. */
-<const/parked={
-  item: -1,
-  scroller: null as null | ReturnType<typeof createScroller>,
-}>
-/** Lazy: a `<const>` the client reads must serialize, and a closure cannot. */
-<const/scroller() {
-  return (parked.scroller ||= createScroller($list));
-}>
-<const/seat(item: number, animate: boolean) {
-  parked.item = item;
-  scroller().to(() => getScrollOffset($list(), item), animate);
-}>
-/**
- * A scrollport along, landed on the nearest item. Measured rather than scrolled
- * by a scrollport and left to snapping, so it lands exactly and reads the same
- * both ways — a press back undoes a press forward.
- */
-<const/pageTarget(from: number, direction: 1 | -1) {
-  const listEl = $list();
-  const last = listEl.children.length - 1;
-  const wanted = getScrollOffset(listEl, from) + direction * listEl.clientWidth;
-
-  let best = from;
-  let bestDistance = Infinity;
-  for (let i = 0; i <= last; i++) {
-    const distance = Math.abs(getScrollOffset(listEl, i) - wanted);
-    if (distance < bestDistance) {
-      bestDistance = distance;
-      best = i;
-    }
-  }
-
-  // An item wider than the scrollport has nothing a scrollport away.
-  return best === from ? Math.min(Math.max(from + direction, 0), last) : best;
-}>
-
-<const/scrollByPage(direction: 1 | -1) {
-  // Mid-move, count from where it was heading so presses add up.
-  const from = scroller().running ? parked.item : getScrollIndex($list());
-
-  seat(pageTarget(from, direction), true);
-}>
+<let/visible=null as boolean[] | null>
+<let/moving=false>
 
 <script>
-  const listEl = $list();
-  let settleTimer: ReturnType<typeof setTimeout>;
-
-  // `scrollLeft` runs 0..max in LTR and 0..-max in RTL, so take its magnitude.
-  // Reading `itemList` re-seeds the controls when items change, which alters
-  // `scrollWidth` without resizing the list itself.
-  const updateEdges = () => {
-    const distance = Math.abs(listEl.scrollLeft);
-    atStart = distance <= 1;
-    atEnd =
-      !itemList.length ||
-      distance >= listEl.scrollWidth - listEl.clientWidth - 1;
-  };
-  listEl.addEventListener(
-    "scroll",
-    () => {
-      updateEdges();
-      clearTimeout(settleTimer);
-      settleTimer = setTimeout(() => {
-        parked.item = getScrollIndex(listEl);
-        index = parked.item;
-      }, SETTLE_DELAY);
-    },
-    {
-      passive: true,
-      signal: $signal,
-    },
-  );
-
-  // Fires once on observe, seeding the initial control state.
-  const resizeObserver = new ResizeObserver(updateEdges);
-  resizeObserver.observe(listEl);
-  $signal.onabort = () => {
-    resizeObserver.disconnect();
-    clearTimeout(settleTimer);
-    parked.scroller?.stop();
-  };
+  $signal.onabort = observe($list(), (changes) => {
+    if (changes.atStart !== undefined) atStart = changes.atStart;
+    if (changes.atEnd !== undefined) atEnd = changes.atEnd;
+    if (changes.visible) visible = changes.visible;
+    if (changes.moving !== undefined) moving = changes.moving;
+    if (changes.index !== undefined) index = changes.index;
+  });
 </script>
 
 <script>
-  // Only the caller can disagree with the settle, so this is a controlled set.
-  if (parked.item < 0) {
-    // The page should open on its starting item, not travel to it.
-    parked.item = getScrollIndex($list());
-    if (index != null && parked.item !== index) {
-      seat(index, false);
-    }
-  } else if (index != null) {
-    const at = scroller().running ? parked.item : getScrollIndex($list());
-    if (at !== index) {
-      seat(index, true);
-    }
+  if (index !== undefined) {
+    const landing = scrollToIndex($list(), index);
+    if (landing !== index) index = landing;
   }
 </script>
-/** Both knobs are custom properties, so sizing stays in CSS. */
-<const/styleVars=(
-  [
-    gap != null &&
-      `--carousel-gap: ${typeof gap === "number" ? `${gap}px` : gap}`,
-    itemsPerSlide && `--carousel-items-per-slide: ${itemsPerSlide}`,
-  ]
-    .filter(Boolean)
-    .join(";")
-)>
 
-<define/Control|
+<let/paused:=input.paused>
+<let/hovering=false>
+<let/focused=false>
+<const/playing=!!interval && !paused && !hovering && !focused>
+
+<script>
+  if (interval && matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    paused = true;
+  }
+</script>
+
+<script>
+  void index; // restarts the wait after scrolling by hand
+  if (playing && !moving && !(atStart && atEnd)) {
+    const timer = setTimeout(() => page($list(), 1, true), interval);
+    $signal.onabort = () => clearTimeout(timer);
+  }
+</script>
+
+<id/listId>
+
+<define/Paddle|
   {
-    input,
+    control,
     direction,
   }: {
-    input: Marko.AttrTag<Control>;
+    control: Marko.AttrTag<Control> | undefined;
     direction: 1 | -1;
   },
 |>
-  <const/{ a11yText: controlText, class: controlClass, ...buttonInput }=input>
-  <const/disabled=(direction === 1 ? atEnd : atStart)>
+  <const/{
+    a11yText: controlText = direction === 1 ? "Next slide" : "Previous slide",
+    class: controlClass,
+    onClick,
+    ...buttonInput
+  }=control || ({} as Control)>
+  <const/disabled=!interval && (direction === 1 ? atEnd : atStart)>
   <button
     ...buttonInput
     type="button"
     aria-label=controlText
+    aria-controls=listId
     aria-disabled=disabled && "true"
     class=[
       "carousel__control",
@@ -194,10 +162,8 @@ export interface Input extends Omit<Marko.HTML.Div, "role" | "aria-label"> {
       controlClass,
     ]
     onClick(e, el) {
-      if (!disabled) {
-        scrollByPage(direction);
-      }
-      input.onClick && input.onClick(e, el);
+      if (!disabled) page($list(), direction, !!interval);
+      onClick && onClick(e, el);
     }>
     <if=direction === 1>
       <evo-icon-chevron-right-16/>
@@ -213,29 +179,93 @@ export interface Input extends Omit<Marko.HTML.Div, "role" | "aria-label"> {
   role="group"
   aria-roledescription=ariaRoledescription
   aria-label=a11yText
-  class=["carousel", !scrollbar && "carousel--hidden-scrollbar", inputClass]
-  style=[inputStyle, styleVars]>
+  class=[
+    "carousel",
+    hiddenScrollbar && "carousel--hidden-scrollbar",
+    !!perSlide && "carousel--slides",
+    !!(inView % 1) && "carousel--peek",
+    inputClass,
+  ]
+  style=[
+    inputStyle,
+    gap != null &&
+      `--carousel-gap: ${typeof gap === "number" ? `${gap}px` : gap}`,
+    !!inView && `--carousel-items-in-view: ${inView}`,
+  ]
+  onPointerEnter(e, el) {
+    hovering = true;
+    onPointerEnter && onPointerEnter(e, el);
+  }
+  onPointerLeave(e, el) {
+    hovering = false;
+    onPointerLeave && onPointerLeave(e, el);
+  }
+  onFocusIn(e, el) {
+    focused = !(e.target as Element).classList.contains("carousel__playback");
+    onFocusIn && onFocusIn(e, el);
+  }
+  onFocusOut(e, el) {
+    if (!el.contains(e.relatedTarget as Node | null)) focused = false;
+    onFocusOut && onFocusOut(e, el);
+  }>
+  <if=interval && !(atStart && atEnd)>
+    <const/{
+      a11yPlayText = "Play carousel",
+      a11yPauseText = "Pause carousel",
+      class: playbackClass,
+      onClick: onPlaybackClick,
+      ...playbackInput
+    }=playback || ({} as Playback)>
+    <button
+      ...playbackInput
+      type="button"
+      aria-label=(paused ? a11yPlayText : a11yPauseText)
+      class=["carousel__playback", playbackClass]
+      onClick(e, el) {
+        const wasPaused = paused;
+        paused = !wasPaused;
+        if (wasPaused) page($list(), 1, true);
+        onPlaybackClick && onPlaybackClick(e, el);
+      }>
+      <if=paused>
+        <evo-icon-play-24/>
+      </if>
+      <else>
+        <evo-icon-pause-24/>
+      </else>
+    </button>
+  </if>
   <div class=[
     "carousel__container",
     atStart && atEnd && "carousel__container--controls-disabled",
   ]>
-    <Control input=previous direction=-1/>
+    <Paddle control=previous direction=-1/>
     <div class=[
       "carousel__viewport",
-      mask && !atEnd && "carousel__viewport--mask",
+      !perSlide && !atEnd && "carousel__viewport--mask",
     ]>
-      <ul/$list class=[
-        "carousel__list",
-        "carousel__list--gap",
-        !!itemsPerSlide && "carousel__list--slides",
-        imageTreatment === "matte" && "carousel__list--image-treatment",
-        imageTreatment === "large" && "carousel__list--image-treatment-large",
-      ]>
-        <for|item| of=itemList>
-          <li ...item class=["carousel__item", item.class]/>
+      <ul/$list
+        id=listId
+        aria-live=(interval ? (playing ? "off" : "polite") : undefined)
+        class=[
+          "carousel__list",
+          "carousel__list--gap",
+          !!perSlide && "carousel__list--slides",
+          imageTreatment === "matte" && "carousel__list--image-treatment",
+          imageTreatment === "large" && "carousel__list--image-treatment-large",
+        ]>
+        <for|item, i| of=itemList>
+          <li
+            ...item
+            class=[
+              "carousel__item",
+              (!perSlide || i % perSlide === 0) && "carousel__item--snap",
+              item.class,
+            ]
+            inert=!!visible && !visible[i]/>
         </for>
       </ul>
     </div>
-    <Control input=next direction=1/>
+    <Paddle control=next direction=1/>
   </div>
 </div>

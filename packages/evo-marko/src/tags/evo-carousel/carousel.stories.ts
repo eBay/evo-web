@@ -4,12 +4,14 @@ import Readme from "./README.md";
 import Carousel, { type Input } from "./index.marko";
 import ContinuousTemplate from "./examples/continuous.marko";
 import ContinuousTemplateCode from "./examples/continuous.marko?raw";
-import SlidesTemplate from "./examples/slides.marko";
-import SlidesTemplateCode from "./examples/slides.marko?raw";
+import DiscreteTemplate from "./examples/discrete.marko";
+import DiscreteTemplateCode from "./examples/discrete.marko?raw";
 import ControlledTemplate from "./examples/controlled.marko";
 import ControlledTemplateCode from "./examples/controlled.marko?raw";
 import ImageTreatmentTemplate from "./examples/image-treatment.marko";
 import ImageTreatmentTemplateCode from "./examples/image-treatment.marko?raw";
+import AutoplayTemplate from "./examples/autoplay.marko";
+import AutoplayTemplateCode from "./examples/autoplay.marko?raw";
 
 export default {
   title: "navigation & disclosure/evo-carousel",
@@ -34,7 +36,13 @@ export default {
       type: "number",
       control: "number",
       description:
-        "Fit exactly this many items into the visible area, and move by that many when a control is pressed. Fractional values leave part of the next item showing. Leave unset to let each item size itself",
+        "Makes the carousel discrete: this many items fill the view and each press moves by that many. A fraction sets how much of the next item peeks in; a whole number peeks a tenth of one unless `noPeek` is set. Leave unset for a continuous carousel where each item sizes itself",
+    },
+    noPeek: {
+      type: "boolean",
+      description:
+        "With a whole `itemsPerSlide`, fill the view exactly instead of peeking a tenth of the next item",
+      table: { defaultValue: { summary: "false" } },
     },
     gap: {
       control: "text",
@@ -50,14 +58,20 @@ export default {
         "Applies the image treatment styles, at the default or the large corner radius",
       table: { defaultValue: { summary: "none" } },
     },
-    scrollbar: {
+    hiddenScrollbar: {
       type: "boolean",
-      description: "Show a thin scrollbar underneath the items while hovered",
+      description: "Hide the scrollbar that otherwise shows on hover",
       table: { defaultValue: { summary: "false" } },
     },
-    mask: {
+    autoplay: {
+      control: "number",
+      description:
+        "Advance on a timer of this many milliseconds (`true` for 4000), looping round at the end. Implies one item per slide unless `itemsPerSlide` says otherwise. Holds still while hovered or focused, and starts paused for users who prefer reduced motion",
+    },
+    paused: {
+      controllable: true,
       type: "boolean",
-      description: "Fade the trailing edge while there is more to scroll to",
+      description: "Whether autoplay is paused",
       table: { defaultValue: { summary: "false" } },
     },
     index: {
@@ -65,7 +79,7 @@ export default {
       type: "number",
       control: "number",
       description:
-        "Zero-based index of the item leading the visible area, reported once the scrolling comes to rest. Setting it scrolls that item to the start",
+        "Zero-based index of the item at the leading edge. A press reports where it is headed straight away; scrolling by hand reports once it comes to rest. Setting it scrolls there, to the start of the slide for a discrete carousel",
     },
     item: {
       description: "An item in the carousel",
@@ -77,12 +91,12 @@ export default {
       },
     },
     previous: {
-      description:
-        "The control that scrolls backwards (required). Pass `a11yText` for the accessible label",
+      description: "The control that scrolls backwards",
       "@": {
         a11yText: {
-          type: { name: "string", required: true },
+          type: "string",
           description: "Accessible label for the previous control",
+          table: { defaultValue: { summary: "Previous slide" } },
         },
         ["<button> attributes" as any]: {
           description:
@@ -91,12 +105,31 @@ export default {
       },
     },
     next: {
-      description:
-        "The control that scrolls forwards (required). Pass `a11yText` for the accessible label",
+      description: "The control that scrolls forwards",
       "@": {
         a11yText: {
-          type: { name: "string", required: true },
+          type: "string",
           description: "Accessible label for the next control",
+          table: { defaultValue: { summary: "Next slide" } },
+        },
+        ["<button> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the native HTML `<button>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button) will be passed through",
+        },
+      },
+    },
+    playback: {
+      description: "The control that pauses and plays autoplay",
+      "@": {
+        a11yPlayText: {
+          type: "string",
+          description: "Accessible label while paused",
+          table: { defaultValue: { summary: "Play carousel" } },
+        },
+        a11yPauseText: {
+          type: "string",
+          description: "Accessible label while playing",
+          table: { defaultValue: { summary: "Pause carousel" } },
         },
         ["<button> attributes" as any]: {
           description:
@@ -124,9 +157,9 @@ export const Continuous = buildExtensionTemplate(
   ContinuousTemplateCode,
 );
 
-export const Slides = buildExtensionTemplate(
-  SlidesTemplate,
-  SlidesTemplateCode,
+export const Discrete = buildExtensionTemplate(
+  DiscreteTemplate,
+  DiscreteTemplateCode,
 );
 
 export const Controlled = buildExtensionTemplate(
@@ -137,4 +170,9 @@ export const Controlled = buildExtensionTemplate(
 export const ImageTreatment = buildExtensionTemplate(
   ImageTreatmentTemplate,
   ImageTreatmentTemplateCode,
+);
+
+export const Autoplay = buildExtensionTemplate(
+  AutoplayTemplate,
+  AutoplayTemplateCode,
 );

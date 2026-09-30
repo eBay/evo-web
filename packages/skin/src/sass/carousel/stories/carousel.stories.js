@@ -343,25 +343,27 @@ export const hiddenScrollbarWithPaddlesVisible = () => `
 </div>
 `;
 
-export const evoAdditionsSlides = () => `
-<div class="carousel carousel--hidden-scrollbar" style="--carousel-items-per-slide: 4">
+export const customPropertySlides = () => `
+<div class="carousel carousel--slides carousel--peek" style="--carousel-items-in-view: 3.1">
     <div class="carousel__container">
-        <button class="carousel__control carousel__control--prev" aria-label="Previous slide" aria-disabled="true">
+        <button class="carousel__control carousel__control--prev" aria-label="Previous Slide - Top Products" aria-disabled="true">
             <svg aria-hidden="true" class="icon icon--16">
                 <use href="#icon-chevron-left-16"></use>
             </svg>
         </button>
         <div class="carousel__viewport">
-            <ul class="carousel__list carousel__list--gap carousel__list--slides demo-carousel-items">
-                <li class="carousel__item">Card 1</li>
+            <ul class="carousel__list carousel__list--gap carousel__list--slides carousel__list--custom-property-demo">
+                <li class="carousel__item carousel__item--snap">Card 1</li>
                 <li class="carousel__item">Card 2</li>
                 <li class="carousel__item">Card 3</li>
-                <li class="carousel__item">Card 4</li>
+                <li class="carousel__item carousel__item--snap">Card 4</li>
                 <li class="carousel__item">Card 5</li>
                 <li class="carousel__item">Card 6</li>
+                <li class="carousel__item carousel__item--snap">Card 7</li>
+                <li class="carousel__item">Card 8</li>
             </ul>
         </div>
-        <button class="carousel__control carousel__control--next" aria-label="Next slide">
+        <button class="carousel__control carousel__control--next" aria-label="Next Slide - Top Products">
             <svg aria-hidden="true" class="icon icon--16">
                 <use href="#icon-chevron-right-16"></use>
             </svg>
@@ -370,6 +372,6 @@ export const evoAdditionsSlides = () => `
 </div>
 `;
 
-export const evoAdditionsSlidesRtl = () => `
-<div dir="rtl">${evoAdditionsSlides()}</div>
+export const customPropertySlidesRTL = () => `
+<div dir="rtl">${customPropertySlides()}</div>
 `;

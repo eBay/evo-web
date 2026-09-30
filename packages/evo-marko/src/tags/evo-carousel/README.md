@@ -7,10 +7,18 @@
     </span>
 </h1>
 
-A horizontally scrolling list of items with previous/next controls. For a rotator that advances on a timer, use [`evo-carousel-autoplay`](../evo-carousel-autoplay/README.md).
+A horizontally scrolling list of items with previous and next controls. Continuous by default, where each item sizes itself; discrete with `itemsPerSlide`, where a set number fill the view; and a rotator with `autoplay`, which advances on a timer and loops round at the end.
 
 ## Examples and Documentation
 
 - [Storybook](https://ebay.github.io/evo-web/ebayui-core/?path=/story/navigation-disclosure-evo-carousel)
 - [Storybook Docs](https://ebay.github.io/evo-web/ebayui-core/?path=/docs/navigation-disclosure-evo-carousel)
 - [Code Examples](https://github.com/eBay/evo-web/tree/main/packages/evo-marko/src/tags/evo-carousel/examples)
+
+## Items out of view
+
+Items not wholly in view, peeks included, are `inert`: out of the tab order and the accessibility tree, and not clickable. Unlike `ebay-carousel`, tab indexes inside items are left alone, so there is no `data-carousel-tabindex`.
+
+## Reduced motion
+
+Presses jump rather than scroll, and autoplay starts paused, for users who prefer reduced motion.
