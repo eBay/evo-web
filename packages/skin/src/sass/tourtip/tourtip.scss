@@ -144,7 +144,7 @@ span.tourtip__heading {
 }
 
 .tourtip__footer > button.btn--primary {
-    --color-background-accent: var(
+    --btn-primary-background-color: var(
         --tourtip-background-color,
         var(--color-foreground-on-inverse)
     );
