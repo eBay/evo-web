@@ -1,0 +1,128 @@
+export interface Message {
+  content?: Marko.Body;
+  /**
+   * Time in milliseconds that the message remains visible. Defaults to `1500`.
+   */
+  duration?: number;
+}
+
+export interface Input extends Omit<Marko.HTML.Div, "content"> {
+  /**
+   * Localized accessible label for the progress bar
+   *
+   * English default to be overridden is `"Loading..."`
+   */
+  a11yText: string;
+  message?: Marko.AttrTag<Message>;
+  size?: "medium" | "large";
+}
+
+static const messageDuration = 1500;
+static const reducedMotionMultiplier = 1.5;
+static const fadeInDuration = 833;
+
+<const/{
+  class: inputClass,
+  a11yText = "Loading...",
+  message,
+  size,
+  ...htmlInput
+}=input>
+
+<const/messages=[...(message || [])]>
+<const/count=messages.length>
+// -1 until the first message is shown; medium text shows it immediately
+<let/index=size === "medium" ? 0 : -1>
+<let/fadingIn=false>
+<let/initial=true>
+<const/current=Math.min(index, count - 1)>
+<const/next=(current + 1) % count>
+<const/duration=messages[current]?.duration ?? messageDuration>
+
+<script>
+  // Each state change re-runs this script, which schedules the next step
+  if (count) {
+    const reducedMotion = matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    let step: (() => void) | undefined;
+    let delay = fadeInDuration;
+
+    if (fadingIn) {
+      step = () => {
+        index = next;
+        fadingIn = false;
+      };
+    } else if (current < 0) {
+      if (reducedMotion) {
+        index = 0;
+      } else {
+        step = () => (fadingIn = true);
+        delay = count === 1 ? messageDuration / 2 : messageDuration;
+      }
+    } else if (count > 1) {
+      if (reducedMotion) {
+        step = () => (index = next);
+        delay = duration * reducedMotionMultiplier;
+      } else {
+        step = () => (fadingIn = true);
+        delay = duration;
+      }
+    }
+
+    if (step) {
+      const timeout = setTimeout(() => {
+        initial = false;
+        step();
+      }, delay);
+      $signal.onabort = () => clearTimeout(timeout);
+    }
+  }
+</script>
+
+<id/messageId>
+
+<div ...htmlInput class=["progress-bar-expressive", inputClass]>
+  <if=count>
+    <div class=[
+      "progress-bar-expressive__messages",
+      size === "medium" && "progress-bar-expressive__messages--medium",
+    ]>
+      <if=(count > 1)>
+        <div
+          aria-hidden="true"
+          class=[
+            "progress-bar-expressive__message",
+            fadingIn && "progress-bar-expressive__message--in",
+          ]
+        >
+          <${messages[next].content}/>
+        </div>
+      </if>
+      <div
+        role="status"
+        id=messageId
+        class=[
+          "progress-bar-expressive__message",
+          fadingIn && "progress-bar-expressive__message--out",
+          count === 1 && "progress-bar-expressive__message--in",
+          initial && "progress-bar-expressive__message--initial",
+        ]
+      >
+        <${messages[current]?.content}/>
+      </div>
+    </div>
+  </if>
+  <div
+    role="progressbar"
+    aria-label=a11yText
+    aria-describedby=(count > 0 && messageId)
+    class="progress-bar-expressive__progress"
+  >
+    <div class="progress-bar-expressive__lines">
+      <for until=12>
+        <div class="progress-bar-expressive__line"/>
+      </for>
+    </div>
+  </div>
+</div>
