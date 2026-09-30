@@ -14,7 +14,9 @@ suite green. Root cause is not established — there is no obvious fixed-delay
 race in the test itself, so it may be a genuinely slow close/animation path
 that only misses the deadline when CPU-starved. Time the close interaction
 under artificial load before deciding between raising `testTimeout` and fixing
-the underlying wait.
+the underlying wait. The uncontrolled-close tests in `src/alert-dialog` and
+`src/confirm-dialog` fail the same way under the root build, with no
+`alertdialog` in the tree, and pass run on their own.
 
 Check: `npm run build` from the repo root (concurrent) versus
 `npm test -w packages/evo-react -- src/dialog` (isolated).
