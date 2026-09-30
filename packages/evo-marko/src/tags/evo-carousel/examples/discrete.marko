@@ -9,9 +9,7 @@
   }
 </style>
 
-<evo-carousel ...input a11yText="Top products" itemsPerSlide=4>
-  <@previous a11yText="Previous slide"/>
-  <@next a11yText="Next slide"/>
+<evo-carousel a11yText="Top products" itemsPerSlide=3 ...input>
   <for|i| from=1 to=12>
     <@item>
       <div class="demo-carousel-slide">
