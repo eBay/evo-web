@@ -108,6 +108,23 @@ describe("evo-carousel", () => {
       expect(leading()).toBeGreaterThan(0);
     });
 
+    it("should page without scrolling the page", async () => {
+      document.body.style.paddingTop = `${window.innerHeight - 50}px`;
+      window.scrollTo(0, 0);
+      try {
+        component = await render(Continuous);
+        await settles();
+        const cut = firstCut();
+
+        control("next").click();
+        await settles();
+        expect(leading()).toBe(cut);
+        expect(window.scrollY).toBe(0);
+      } finally {
+        document.body.style.paddingTop = "";
+      }
+    });
+
     it("should disable next and drop the mask at the end", async () => {
       expect(
         component.container.querySelector(".carousel__viewport--mask"),
@@ -234,6 +251,18 @@ describe("evo-carousel", () => {
 
       expect(leading()).toBe(2);
       expect(component.getByText("Showing card 3")).toBeTruthy();
+    });
+
+    it("should open on a starting index without scrolling the page to it", async () => {
+      document.body.style.paddingTop = "3000px";
+      window.scrollTo(0, 0);
+      try {
+        component = await render(Discrete, { index: 6 });
+        expect(leading()).toBe(6);
+        expect(window.scrollY).toBe(0);
+      } finally {
+        document.body.style.paddingTop = "";
+      }
     });
 
     it("should open on a starting index without travelling to it", async () => {
