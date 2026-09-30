@@ -1,0 +1,216 @@
+<div id="static-cta-button">
+  <h1>CTA Button CSS Component</h1>
+
+  <h3 id="cta-button-default">
+    Default CTA Button
+  </h3>
+  <p>
+    Use the
+    <code>cta-btn</code>
+    class on an
+    <code>&lt;a&gt;</code>
+    tag to create a CTA button.
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <a class="cta-btn" href="https://www.ebay.com">
+        <span class="cta-btn__cell">
+          <span>Link</span>
+          <svg class="icon icon--24" height="8" width="8" aria-hidden="true">
+            <icon-symbol name="arrow-right-24"/>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <a class="cta-btn" href="https://www.ebay.com">
+      <span class="cta-btn__cell">
+        <span>Link</span>
+        <svg class="icon icon--24" height="8" width="8" aria-hidden="true">
+          <use href="#icon-arrow-right-24"/>
+        </svg>
+      </span>
+    </a>
+  </highlight-code>
+
+  <h3 id="cta-button-large">
+    Large CTA Button
+  </h3>
+  <p>
+    Use the
+    <code>large</code>
+    modifier to increase the size of the CTA button.
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <a class="cta-btn cta-btn--large" href="https://www.ebay.com">
+        <span class="cta-btn__cell">
+          <span>Link</span>
+          <svg class="icon icon--24" height="8" width="8" aria-hidden="true">
+            <icon-symbol name="arrow-right-24"/>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <a class="cta-btn cta-btn--large" href="https://www.ebay.com">
+      <span class="cta-btn__cell">
+        <span>Link</span>
+        <svg class="icon icon--24" height="8" width="8" aria-hidden="true">
+          <use href="#icon-arrow-right-24"/>
+        </svg>
+      </span>
+    </a>
+  </highlight-code>
+
+  <h3 id="cta-button-fluid">
+    Fluid CTA Button
+  </h3>
+  <p>
+    Use the
+    <code>fluid</code>
+    modifier to make the CTA button grow to fill the width of its container.
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <a class="cta-btn cta-btn--fluid" href="https://www.ebay.com">
+        <span class="cta-btn__cell">
+          <span>Link</span>
+          <svg class="icon icon--24" height="8" width="8" aria-hidden="true">
+            <icon-symbol name="arrow-right-24"/>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <a class="cta-btn cta-btn--fluid" href="https://www.ebay.com">
+      <span class="cta-btn__cell">
+        <span>Link</span>
+        <svg class="icon icon--24" height="8" width="8" aria-hidden="true">
+          <use href="#icon-arrow-right-24"/>
+        </svg>
+      </span>
+    </a>
+  </highlight-code>
+
+  <h3 id="cta-button-truncated">
+    Fixed Width Truncated CTA Button
+  </h3>
+  <p>
+    CTA buttons naturally grow wider with their text. Apply a fixed width and
+    the
+    <code>truncated</code>
+    modifier to truncate overflowing text instead of wrapping.
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <a
+        class="cta-btn cta-btn--large cta-btn--truncated"
+        href="https://www.ebay.com"
+        style="width: 200px;">
+        <span class="cta-btn__cell">
+          <span>Link with a lot of text that should wrap</span>
+          <svg class="icon icon--24" height="8" width="8" aria-hidden="true">
+            <icon-symbol name="arrow-right-24"/>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <a
+      class="cta-btn cta-btn--large cta-btn--truncated"
+      href="https://www.ebay.com"
+      style="width: 200px;">
+      <span class="cta-btn__cell">
+        <span>Link with a lot of text that should wrap</span>
+        <svg class="icon icon--24" height="8" width="8" aria-hidden="true">
+          <use href="#icon-arrow-right-24"/>
+        </svg>
+      </span>
+    </a>
+  </highlight-code>
+
+  <h3 id="cta-button-disabled">
+    Disabled CTA Button
+  </h3>
+  <p>
+    Remove the
+    <code>href</code>
+    attribute to fully disable a CTA button.
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <a class="cta-btn">
+        <span class="cta-btn__cell">
+          <span>Link</span>
+          <svg class="icon icon--24" height="8" width="8" aria-hidden="true">
+            <icon-symbol name="arrow-right-24"/>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <a class="cta-btn">
+      <span class="cta-btn__cell">
+        <span>Link</span>
+        <svg class="icon icon--24" height="8" width="8" aria-hidden="true">
+          <use href="#icon-arrow-right-24"/>
+        </svg>
+      </span>
+    </a>
+  </highlight-code>
+
+  <h3 id="cta-button-partially-disabled">
+    Partially Disabled CTA Button
+  </h3>
+  <p>
+    A partially disabled CTA button retains keyboard focus while communicating
+    a disabled state, via
+    <code>aria-disabled="true"</code>
+    . This helps prevent keyboard focus being moved back to the start of the
+    page when focus is lost. Unlike removing
+    <code>href</code>
+    , this variant must also be prevented from navigating via JavaScript.
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <a class="cta-btn" href="https://www.ebay.com" aria-disabled="true">
+        <span class="cta-btn__cell">
+          <span>Link</span>
+          <svg class="icon icon--24" height="8" width="8" aria-hidden="true">
+            <icon-symbol name="arrow-right-24"/>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <a class="cta-btn" href="https://www.ebay.com" aria-disabled="true">
+      <span class="cta-btn__cell">
+        <span>Link</span>
+        <svg class="icon icon--24" height="8" width="8" aria-hidden="true">
+          <use href="#icon-arrow-right-24"/>
+        </svg>
+      </span>
+    </a>
+  </highlight-code>
+</div>
+export const metadata = {
+  component: "cta-button",
+  "ds-component": {
+    name: "cta-button",
+    version: 1.6,
+    url: "https://playbook.ebay.com/design-system/components/cta-button",
+  },
+};
