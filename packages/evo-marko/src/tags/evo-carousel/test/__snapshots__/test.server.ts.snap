@@ -38,7 +38,7 @@ exports[`evo-carousel > renders a continuous carousel 1`] = `
       class="carousel__viewport carousel__viewport--mask"
     >
       <ul
-        class="carousel__list carousel__list--gap"
+        class="carousel__list carousel__list--snap"
         id="GENERATED-1"
       >
         <li
@@ -199,7 +199,7 @@ exports[`evo-carousel > renders a discrete carousel 1`] = `
       class="carousel__viewport"
     >
       <ul
-        class="carousel__list carousel__list--gap carousel__list--slides"
+        class="carousel__list carousel__list--snap carousel__list--slides"
         id="GENERATED-1"
       >
         <li
@@ -403,7 +403,7 @@ exports[`evo-carousel > renders an autoplaying carousel 1`] = `
     >
       <ul
         aria-live="off"
-        class="carousel__list carousel__list--gap carousel__list--slides"
+        class="carousel__list carousel__list--snap carousel__list--slides"
         id="GENERATED-2"
       >
         <li

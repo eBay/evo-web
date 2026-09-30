@@ -352,7 +352,7 @@ export const customPropertySlides = () => `
             </svg>
         </button>
         <div class="carousel__viewport">
-            <ul class="carousel__list carousel__list--gap carousel__list--slides carousel__list--custom-property-demo">
+            <ul class="carousel__list carousel__list--snap carousel__list--slides carousel__list--custom-property-demo">
                 <li class="carousel__item carousel__item--snap">Card 1</li>
                 <li class="carousel__item">Card 2</li>
                 <li class="carousel__item">Card 3</li>

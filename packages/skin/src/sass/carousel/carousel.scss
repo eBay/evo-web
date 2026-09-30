@@ -326,8 +326,16 @@ span.carousel__container {
     right: 0;
 }
 
-.carousel__list--gap {
+.carousel__list--snap {
     gap: var(--carousel-gap, 16px);
+}
+
+.carousel:not(.carousel__autoplay) .carousel__list--snap {
+    scroll-snap-type: x mandatory;
+
+    @media (prefers-reduced-motion: reduce) {
+        scroll-behavior: auto;
+    }
 }
 
 .carousel__list--slides > li {
@@ -338,10 +346,6 @@ span.carousel__container {
             ) /
             var(--carousel-items-in-view, 1)
     );
-}
-
-.carousel:not(.carousel__autoplay) .carousel__list--slides {
-    scroll-snap-type: x mandatory;
 }
 
 .carousel__item--snap {

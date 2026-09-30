@@ -66,7 +66,7 @@ export default {
     autoplay: {
       control: "number",
       description:
-        "Advance on a timer of this many milliseconds (`true` for 4000), looping round at the end. Implies one item per slide unless `itemsPerSlide` says otherwise. Holds still while hovered or focused, and starts paused for users who prefer reduced motion",
+        "Advance on a timer of this many milliseconds (`true` for 4000), going back to the start after the last slide. Implies one item per slide unless `itemsPerSlide` says otherwise. Holds still while hovered or focused, and starts paused for users who prefer reduced motion",
     },
     paused: {
       controllable: true,

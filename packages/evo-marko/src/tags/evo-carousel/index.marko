@@ -1,4 +1,3 @@
-import { observe, page, scrollToIndex } from "../../common/carousel";
 export interface Control extends Omit<
   Marko.HTML.Button,
   "type" | "aria-label" | "aria-disabled" | "aria-controls"
@@ -79,44 +78,129 @@ static function getLayout(
   index: inputIndex,
   indexChange,
   "aria-roledescription": ariaRoledescription = "carousel",
-  onPointerEnter,
-  onPointerLeave,
-  onFocusIn,
-  onFocusOut,
   ...htmlInput
 }=input>
 
 <const/itemList=[...(items || [])]>
-<const/interval=(autoplay === true ? 4000 : autoplay || 0)>
+<const/interval=autoplay === true ? 4000 : autoplay || 0>
 <const/{ perSlide, inView }=getLayout(itemsPerSlide, noPeek, interval)>
 
 <let/index:=input.index>
 <let/atStart=true>
 <let/atEnd=false>
 <let/visible=null as boolean[] | null>
-<let/moving=false>
 
 <script>
-  $signal.onabort = observe($list(), (changes) => {
-    if (changes.atStart !== undefined) atStart = changes.atStart;
-    if (changes.atEnd !== undefined) atEnd = changes.atEnd;
-    if (changes.visible) visible = changes.visible;
-    if (changes.moving !== undefined) moving = changes.moving;
-    if (changes.index !== undefined) index = changes.index;
+  const list = $list();
+  let shown: boolean[] = [];
+  let timer: ReturnType<typeof setTimeout>;
+  const update = () => {
+    const box = list.getBoundingClientRect();
+    const next = Array.from(list.children, (item) => {
+      const { left, right } = item.getBoundingClientRect();
+      return (
+        (left > box.left - 1 && right < box.right + 1) ||
+        (left < box.left + 1 && right > box.right - 1)
+      );
+    });
+    if (next.join() !== shown.join()) visible = shown = next;
+    const scrolled = Math.abs(list.scrollLeft);
+    atStart = scrolled < 1;
+    atEnd = scrolled > list.scrollWidth - list.clientWidth - 1;
+  };
+  const settle = () => {
+    const leading = shown.indexOf(true);
+    if (leading !== -1 && leading !== index) index = leading;
+  };
+  list.addEventListener("scroll", update, {
+    passive: true,
+    signal: $signal,
   });
+  if ("onscrollend" in window) {
+    list.addEventListener("scrollend", settle, {
+      signal: $signal,
+    });
+  } else {
+    // NOTE: Only required until Safari supports scrollend
+    list.addEventListener(
+      "scroll",
+      () => {
+        clearTimeout(timer);
+        timer = setTimeout(settle, 100);
+      },
+      {
+        passive: true,
+        signal: $signal,
+      },
+    );
+  }
+  const observer = new ResizeObserver(update);
+  observer.observe(list);
+  itemList.forEach((_, i) => observer.observe(list.children[i]));
+  $signal.onabort = () => {
+    observer.disconnect();
+    clearTimeout(timer);
+  };
 </script>
 
-<script>
-  if (index !== undefined) {
-    const landing = scrollToIndex($list(), index);
-    if (landing !== index) index = landing;
+<const/scrollToItem(i: number, behavior?: ScrollBehavior) {
+  const list = $list();
+  const item = list.children[perSlide ? i - (i % perSlide) : i];
+  if (!item) return;
+  const box = list.getBoundingClientRect();
+  const rect = item.getBoundingClientRect();
+  const offset =
+    getComputedStyle(list).direction === "rtl"
+      ? rect.right - box.right
+      : rect.left - box.left;
+  if (Math.abs(offset) >= 1) list.scrollBy({ left: offset, behavior });
+}>
+
+<lifecycle
+  onMount() {
+    if (index) scrollToItem(index, "instant");
   }
-</script>
+  onUpdate() {
+    if (index !== undefined) scrollToItem(index);
+  }
+>
+
+<const/page(direction: 1 | -1) {
+  const list = $list();
+  const rtl = getComputedStyle(list).direction === "rtl";
+  const width = list.clientWidth;
+  const scrolled = Math.abs(list.scrollLeft);
+  const last =
+    direction === 1 ? scrolled > list.scrollWidth - width - 1 : scrolled < 1;
+  if (interval && last) {
+    list.scrollBy({ left: (rtl ? direction : -direction) * list.scrollWidth });
+    return;
+  }
+
+  const box = list.getBoundingClientRect();
+  const extents = Array.from(list.children, (item) => {
+    const rect = item.getBoundingClientRect();
+    const start = rtl ? box.right - rect.right : rect.left - box.left;
+    return { start, end: start + rect.width };
+  });
+
+  let offset: number;
+  if (direction === 1) {
+    offset =
+      extents.find((item) => item.start > 1 && item.end > width + 1)?.start ??
+      width;
+  } else {
+    const cut = extents.findLast((item) => item.start < -1);
+    const aim = cut ? cut.end - width : -width;
+    offset =
+      extents.find((item) => item.start > aim - 1 && item.start < -1)?.start ??
+      cut?.start ??
+      -width;
+  }
+  list.scrollBy({ left: rtl ? -offset : offset });
+}>
 
 <let/paused:=input.paused>
-<let/hovering=false>
-<let/focused=false>
-<const/playing=!!interval && !paused && !hovering && !focused>
 
 <script>
   if (interval && matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -125,24 +209,35 @@ static function getLayout(
 </script>
 
 <script>
-  void index; // restarts the wait after scrolling by hand
-  if (playing && !moving && !(atStart && atEnd)) {
-    const timer = setTimeout(() => page($list(), 1, true), interval);
+  void index; // restarts the wait after each landing
+  if (interval && !paused) {
+    const carousel = $carousel();
+    const held = () => {
+      const focused = document.activeElement;
+      return (
+        carousel.matches(":hover") ||
+        (carousel.contains(focused) &&
+          !focused!.classList.contains("carousel__playback"))
+      );
+    };
+    const tick = () => {
+      if (held()) timer = setTimeout(tick, interval);
+      else page(1);
+    };
+    let timer = setTimeout(tick, interval);
     $signal.onabort = () => clearTimeout(timer);
   }
 </script>
 
 <id/listId>
 
-<define/Paddle|
-  {
-    control,
-    direction,
-  }: {
-    control: Marko.AttrTag<Control> | undefined;
-    direction: 1 | -1;
-  },
-|>
+<define/Paddle|{
+  control,
+  direction,
+}: {
+  control: (Marko.AttrTag<Control> | undefined);
+  direction: (1 | -1);
+}|>
   <const/{
     a11yText: controlText = direction === 1 ? "Next slide" : "Previous slide",
     class: controlClass,
@@ -162,9 +257,10 @@ static function getLayout(
       controlClass,
     ]
     onClick(e, el) {
-      if (!disabled) page($list(), direction, !!interval);
+      if (!disabled) page(direction);
       onClick && onClick(e, el);
-    }>
+    }
+  >
     <if=direction === 1>
       <evo-icon-chevron-right-16/>
     </if>
@@ -174,7 +270,7 @@ static function getLayout(
   </button>
 </define>
 
-<div
+<div/$carousel
   ...htmlInput
   role="group"
   aria-roledescription=ariaRoledescription
@@ -192,22 +288,7 @@ static function getLayout(
       `--carousel-gap: ${typeof gap === "number" ? `${gap}px` : gap}`,
     !!inView && `--carousel-items-in-view: ${inView}`,
   ]
-  onPointerEnter(e, el) {
-    hovering = true;
-    onPointerEnter && onPointerEnter(e, el);
-  }
-  onPointerLeave(e, el) {
-    hovering = false;
-    onPointerLeave && onPointerLeave(e, el);
-  }
-  onFocusIn(e, el) {
-    focused = !(e.target as Element).classList.contains("carousel__playback");
-    onFocusIn && onFocusIn(e, el);
-  }
-  onFocusOut(e, el) {
-    if (!el.contains(e.relatedTarget as Node | null)) focused = false;
-    onFocusOut && onFocusOut(e, el);
-  }>
+>
   <if=interval && !(atStart && atEnd)>
     <const/{
       a11yPlayText = "Play carousel",
@@ -219,14 +300,13 @@ static function getLayout(
     <button
       ...playbackInput
       type="button"
-      aria-label=(paused ? a11yPlayText : a11yPauseText)
+      aria-label=paused ? a11yPlayText : a11yPauseText
       class=["carousel__playback", playbackClass]
       onClick(e, el) {
-        const wasPaused = paused;
-        paused = !wasPaused;
-        if (wasPaused) page($list(), 1, true);
+        paused = !paused;
         onPlaybackClick && onPlaybackClick(e, el);
-      }>
+      }
+    >
       <if=paused>
         <evo-icon-play-24/>
       </if>
@@ -246,14 +326,15 @@ static function getLayout(
     ]>
       <ul/$list
         id=listId
-        aria-live=(interval ? (playing ? "off" : "polite") : undefined)
+        aria-live=interval ? (paused ? "polite" : "off") : undefined
         class=[
           "carousel__list",
-          "carousel__list--gap",
+          "carousel__list--snap",
           !!perSlide && "carousel__list--slides",
           imageTreatment === "matte" && "carousel__list--image-treatment",
           imageTreatment === "large" && "carousel__list--image-treatment-large",
-        ]>
+        ]
+      >
         <for|item, i| of=itemList>
           <li
             ...item
@@ -262,7 +343,8 @@ static function getLayout(
               (!perSlide || i % perSlide === 0) && "carousel__item--snap",
               item.class,
             ]
-            inert=!!visible && !visible[i]/>
+            inert=!!visible && !visible[i]
+          />
         </for>
       </ul>
     </div>
