@@ -143,61 +143,49 @@ static function getLayout(
   };
 </script>
 
-<const/scrollToItem(i: number, behavior?: ScrollBehavior) {
+// NOTE: `scrollIntoView({ container: "nearest" })` replaces this once Firefox
+// and Safari support it; without it, the page scrolls too.
+<const/scrollToItem(
+  item: Element | null | undefined,
+  edge: "start" | "end",
+  behavior?: ScrollBehavior,
+) {
+  if (!(item instanceof HTMLElement)) return;
   const list = $list();
-  const item = list.children[perSlide ? i - (i % perSlide) : i];
-  if (!item) return;
-  const box = list.getBoundingClientRect();
-  const rect = item.getBoundingClientRect();
-  const offset =
-    getComputedStyle(list).direction === "rtl"
-      ? rect.right - box.right
-      : rect.left - box.left;
-  if (Math.abs(offset) >= 1) list.scrollBy({ left: offset, behavior });
+  const rtl = getComputedStyle(list).direction === "rtl";
+  list.scrollTo({
+    left:
+      rtl === (edge === "start")
+        ? item.offsetLeft + item.offsetWidth - list.clientWidth
+        : item.offsetLeft,
+    behavior,
+  });
+}>
+
+<const/itemAt(i: number) {
+  return $list().children[perSlide ? i - (i % perSlide) : i];
 }>
 
 <lifecycle
   onMount() {
-    if (index) scrollToItem(index, "instant");
+    if (index) scrollToItem(itemAt(index), "start", "instant");
   }
   onUpdate() {
-    if (index !== undefined) scrollToItem(index);
+    if (index !== undefined) scrollToItem(itemAt(index), "start");
   }
 >
 
 <const/page(direction: 1 | -1) {
   const list = $list();
-  const rtl = getComputedStyle(list).direction === "rtl";
-  const width = list.clientWidth;
-  const scrolled = Math.abs(list.scrollLeft);
-  const last =
-    direction === 1 ? scrolled > list.scrollWidth - width - 1 : scrolled < 1;
-  if (interval && last) {
-    list.scrollBy({ left: (rtl ? direction : -direction) * list.scrollWidth });
-    return;
-  }
-
-  const box = list.getBoundingClientRect();
-  const extents = Array.from(list.children, (item) => {
-    const rect = item.getBoundingClientRect();
-    const start = rtl ? box.right - rect.right : rect.left - box.left;
-    return { start, end: start + rect.width };
-  });
-
-  let offset: number;
-  if (direction === 1) {
-    offset =
-      extents.find((item) => item.start > 1 && item.end > width + 1)?.start ??
-      width;
-  } else {
-    const cut = extents.findLast((item) => item.start < -1);
-    const aim = cut ? cut.end - width : -width;
-    offset =
-      extents.find((item) => item.start > aim - 1 && item.start < -1)?.start ??
-      cut?.start ??
-      -width;
-  }
-  list.scrollBy({ left: rtl ? -offset : offset });
+  const shown = list.querySelectorAll(":scope > :not([inert])");
+  if (!shown.length) return;
+  const target =
+    direction === 1
+      ? (shown[shown.length - 1].nextElementSibling ??
+        (interval ? list.firstElementChild : null))
+      : (shown[0].previousElementSibling ??
+        (interval ? list.lastElementChild : null));
+  scrollToItem(target, direction === 1 ? "start" : "end");
 }>
 
 <let/paused:=input.paused>
