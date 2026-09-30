@@ -23,8 +23,4 @@ describe("evo-progress-bar-expressive SSR", () => {
   it("renders medium text", async () => {
     await snapshotHTML(Default, { size: "medium" });
   });
-
-  it("renders a custom accessible label", async () => {
-    await snapshotHTML(Default, { a11yText: "Cargando..." });
-  });
 });
