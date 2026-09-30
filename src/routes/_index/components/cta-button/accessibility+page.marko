@@ -1,0 +1,85 @@
+import "../../../../sass/accessibility.scss";
+<div class="a11y-pattern-content">
+  <h1>CTA Button Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>This section is not yet available.</p>
+  <h2>Interaction Design</h2>
+  <h3>Pointer</h3>
+  <p>
+    A CTA button should have a pointer cursor, consistent with standard link
+    behavior.
+  </p>
+  <h3>Keyboard</h3>
+  <p>
+    If the CTA button has focus, the
+    <code>ENTER</code>
+    key should activate it.
+  </p>
+  <p>
+    If the CTA button has focus,
+    <code>TAB</code>
+    and
+    <code>SHIFT-TAB</code>
+    keys should move to the next or previous focusable page element
+    respectively.
+  </p>
+  <h3>Screenreader</h3>
+  <p>
+    If virtual cursor is on the CTA button, it must be invokable by virtual
+    cursor (e.g. VO+SPACE in VoiceOver).
+  </p>
+  <p>
+    Role of ‘link’
+    <strong>must</strong>
+    be announced.
+  </p>
+  <p>
+    Label
+    <strong>must</strong>
+    be announced.
+  </p>
+  <p>
+    Any disabled state
+    <strong>must</strong>
+    be announced (via
+    <code>aria-disabled</code>
+    ).
+  </p>
+  <h2>ARIA Reference</h2>
+  <p>
+    This section lists all relevant ARIA roles, states and properties for a
+    CTA button.
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>aria-disabled</strong>
+        </td>
+        <td>
+          Informs AT that the CTA button is disabled, while keeping it
+          focusable. Use this instead of removing
+          <code>href</code>
+          when focus must be retained (e.g. to avoid focus jumping back to the
+          start of the page).
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-label</strong>
+        </td>
+        <td>
+          Creates a label for the CTA button.
+          <strong>Warning!</strong>
+          This label will override any inner text that may be present.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

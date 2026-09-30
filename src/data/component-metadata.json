@@ -69,8 +69,8 @@
   "button": {
     "component": "button",
     "ds-component": {
-      "name": "cta-button",
-      "url": "https://playbook.ebay.com/design-system/components/cta-button",
+      "name": "button",
+      "url": "https://playbook.ebay.com/design-system/components/button",
       "version": "1.6"
     },
     "markoStorybookPath": "/docs/buttons-ebay-button--documentation",
@@ -195,6 +195,18 @@
     "markoStorybookPath": "/docs/dialogs-ebay-confirm-dialog--documentation",
     "reactStorybookPath": "/docs/dialogs-ebay-confirm-dialog--documentation",
     "description": "A lightbox dialog that prompts user to confirm or cancel an action."
+  },
+  "cta-button": {
+    "component": "cta-button",
+    "ds-component": {
+      "name": "cta-button",
+      "url": "https://playbook.ebay.com/design-system/components/cta-button",
+      "version": "1.6"
+    },
+    "cssStorybookPath": "/story/skin-cta-button--base",
+    "markoStorybookPath": "/docs/buttons-ebay-cta-button--documentation",
+    "reactStorybookPath": "/docs/buttons-ebay-cta-button--documentation",
+    "description": "An action link styled to trigger a call to action."
   },
   "date-textbox": {
     "component": "date-textbox",
