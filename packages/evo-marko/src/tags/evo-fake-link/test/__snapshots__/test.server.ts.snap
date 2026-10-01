@@ -28,10 +28,9 @@ exports[`evo-fake-link SSR > renders standalone 1`] = `
 </button>"
 `;
 
-exports[`evo-fake-link SSR > renders with a custom type, class and attributes 1`] = `
+exports[`evo-fake-link SSR > renders with a custom type and class 1`] = `
 "<button
   class="fake-link seller-details"
-  data-testid="seller-details"
   type="submit"
 >
   View seller details

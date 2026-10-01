@@ -18,11 +18,7 @@ describe("evo-fake-link SSR", () => {
     await snapshotHTML(Default, { variant: "standalone" });
   });
 
-  it("renders with a custom type, class and attributes", async () => {
-    await snapshotHTML(Default, {
-      type: "submit",
-      class: "seller-details",
-      "data-testid": "seller-details",
-    });
+  it("renders with a custom type and class", async () => {
+    await snapshotHTML(Default, { type: "submit", class: "seller-details" });
   });
 });

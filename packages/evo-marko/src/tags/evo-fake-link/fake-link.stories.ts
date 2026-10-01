@@ -19,22 +19,23 @@ export default {
     variant: {
       type: "string",
       options: ["inline", "standalone"],
-      control: "select",
+      control: "inline-radio",
       description:
-        "Should only be standalone when it is clear contextually that this is a link, regardless of styles",
+        "Adds the `standalone-link` class when `standalone`. Only use `standalone` where it is clear from context that this is a link",
       table: { defaultValue: { summary: "inline" } },
     },
     type: {
       type: "string",
       options: ["button", "submit", "reset"],
-      control: "select",
+      control: "inline-radio",
       description: "The button type",
       table: { defaultValue: { summary: "button" } },
     },
     disabled: {
       type: "boolean",
       control: "boolean",
-      description: "Whether the fake link is disabled",
+      description: "Disabled state",
+      table: { defaultValue: { summary: "false" } },
     },
     ["<button> attributes" as any]: {
       description:
