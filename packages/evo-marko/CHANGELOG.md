@@ -1,5 +1,40 @@
 # @evo-web/marko
 
+## 0.9.0
+
+### Minor Changes
+
+- [#1033](https://github.com/eBay/evo-web/pull/1033) [`bbf9eff`](https://github.com/eBay/evo-web/commit/bbf9eff899a2ec961534e351706d16f7f60ff63d) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Add `evo-date-input` and `evo-date-range-input`, the Marko 6 migration of `ebay-date-textbox`. The single component is split in two, matching the evo-react API: a controllable `value` (`YYYY-MM-DD`, or `{ from, to }` for the range), a controllable `open` popover state, `@input` (repeated for range fields) and `@calendar` attribute tags for customization, a required `a11yOpenPopoverText`, `onInvalidDate`, and locale-aware format-as-you-type masking in place of the old keyup separator behavior. `evo-input` now also returns `{ $control, $postfixButton }` element refs, like `evo-menu`'s returned root ref.
+
+- [#1041](https://github.com/eBay/evo-web/pull/1041) [`a3c0ced`](https://github.com/eBay/evo-web/commit/a3c0ced14080afb64a3912f2a2ccab61ec8b9859) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Add `evo-progress-bar-expressive`, migrated from `ebay-progress-bar-expressive`. `a11yText` is now required (English default `"Loading..."`), and `<@message>` accepts only its body and `duration`. When the user prefers reduced motion, each message now shows for 1.5 times its duration with no hidden fade phase, matching evo-react. The progress bar only references the message region with `aria-describedby` when messages exist.
+
+### Patch Changes
+
+- [#916](https://github.com/eBay/evo-web/pull/916) [`0f77259`](https://github.com/eBay/evo-web/commit/0f772591a346725c1dbedf11c44db155ceb5735f) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Add `video`, a CSS shell and Marko component for an accessible video player built on a native `<video>` element with a composable `video__controls` bar, replacing the previous `shaka-player` based approach. DASH and HLS sources load their media engine on demand, with fallback across multiple `@source` entries. Includes poster, loading and error states; mute, volume, captions, fullscreen and report controls; controllable `playing`/`volume`/`muted`/`language` inputs with change callbacks; side-loaded `@track` captions; localizable `a11y*Text` labels that also gate their optional controls (captions, audio, volume slider, fullscreen, seek) plus a fully consumer-controlled `@report` icon button; `offscreen-pause`, autoplay coordination and `play-view="fullscreen"` behaviors; and an overlay `@nav` link variant. In `evo-select`, spread HTML input is now applied before explicit attributes so `disabled`, `id` and the `value` binding are no longer overridden by it.
+
+- [#974](https://github.com/eBay/evo-web/pull/974) [`a1a62f3`](https://github.com/eBay/evo-web/commit/a1a62f352e2f676182692f9e55ad90ebdd1650e5) Thanks [@saiponnada](https://github.com/saiponnada)! - fix(accordion): wrap each header label in a configurable heading
+
+- [#969](https://github.com/eBay/evo-web/pull/969) [`ccd1607`](https://github.com/eBay/evo-web/commit/ccd1607915c780b0c15de60b35d10f0c2f5afc17) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Add `<evo-chips-combobox>`, migrated from ebayui-core, and add an `invalid` prop to `<evo-combobox>`
+
+- [#1040](https://github.com/eBay/evo-web/pull/1040) [`f83b863`](https://github.com/eBay/evo-web/commit/f83b863e4e72648df32b453b6b914f3b30286968) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Add `evo-progress-bar`, the Marko 6 migration of `ebay-progress-bar`, matching the evo-react API: a required `a11yText` (default `"Progress"`, `null` only when another label is supplied) sets the accessible name, a `fluid` prop fills the container width, and `max` defaults to `100`. Unlike `ebay-progress-bar`, omitting `value` now renders an indeterminate progress bar instead of defaulting to `0`.
+
+- [#916](https://github.com/eBay/evo-web/pull/916) [`0f77259`](https://github.com/eBay/evo-web/commit/0f772591a346725c1dbedf11c44db155ceb5735f) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Make `evo-video`'s `@source` attribute tag optional and guard the places that
+  spread it, so a consumer building sources with `<for>` type-checks (a
+  `<for>`-generated attribute tag is always `AttrTag<…> | undefined`) and a player
+  with no sources reports "No video source provided" instead of throwing on the
+  spread. Drop `src` from the input as well, since the component assigns the
+  `<video>` element's `src` itself from the resolved `@source`. Also fix
+  `isDashMedia` throwing `TypeError: Cannot use 'in' operator to search for
+  'getTracksFor' in null` when a media engine is present but null.
+
+- [#974](https://github.com/eBay/evo-web/pull/974) [`a1a62f3`](https://github.com/eBay/evo-web/commit/a1a62f352e2f676182692f9e55ad90ebdd1650e5) Thanks [@saiponnada](https://github.com/saiponnada)! - fix(calendar): clarify previous and next month navigation labels
+
+- [#972](https://github.com/eBay/evo-web/pull/972) [`fab432e`](https://github.com/eBay/evo-web/commit/fab432e690382dfb9c99b4ee91fb40aea5ed6334) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoNumberInput for React and unify number input value callbacks across React and Marko.
+
+- [#973](https://github.com/eBay/evo-web/pull/973) [`948d6b8`](https://github.com/eBay/evo-web/commit/948d6b88f9b59568f735d332378c59160137469a) Thanks [@ArtBlue](https://github.com/ArtBlue)! - fix(skin): correct readonly textbox styling to match default
+
+- [#989](https://github.com/eBay/evo-web/pull/989) [`dee2ef4`](https://github.com/eBay/evo-web/commit/dee2ef43e6ce3e17cef29fdc1a3b0b6848d82b7e) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - feat(star-rating): allow `a11yText={null}` when alternative accessibility information such as `aria-labelledby` is present
+
 ## 0.8.2
 
 ### Patch Changes

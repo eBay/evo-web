@@ -1,5 +1,19 @@
 # @ebay/ui-core-react
 
+## 9.16.0
+
+### Minor Changes
+
+- [#974](https://github.com/eBay/evo-web/pull/974) [`a1a62f3`](https://github.com/eBay/evo-web/commit/a1a62f352e2f676182692f9e55ad90ebdd1650e5) Thanks [@saiponnada](https://github.com/saiponnada)! - fix(accordion): wrap each header label in a configurable heading
+
+- [#1032](https://github.com/eBay/evo-web/pull/1032) [`184d67b`](https://github.com/eBay/evo-web/commit/184d67bc7703aa39b9c1a4ff2cb8066daf8d9366) Thanks [@ArtBlue](https://github.com/ArtBlue)! - feat(notice): add warning variant to page notice, section notice, and inline notice
+
+### Patch Changes
+
+- [#974](https://github.com/eBay/evo-web/pull/974) [`a1a62f3`](https://github.com/eBay/evo-web/commit/a1a62f352e2f676182692f9e55ad90ebdd1650e5) Thanks [@saiponnada](https://github.com/saiponnada)! - fix(calendar): clarify previous and next month navigation labels
+
+- [#973](https://github.com/eBay/evo-web/pull/973) [`948d6b8`](https://github.com/eBay/evo-web/commit/948d6b88f9b59568f735d332378c59160137469a) Thanks [@ArtBlue](https://github.com/ArtBlue)! - fix(skin): correct readonly textbox styling to match default
+
 ## 9.15.0
 
 ### Minor Changes
