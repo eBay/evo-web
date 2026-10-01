@@ -1,0 +1,39 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`evo-fake-link SSR > renders default 1`] = `
+"<button
+  class="fake-link"
+  type="button"
+>
+  View seller details
+</button>"
+`;
+
+exports[`evo-fake-link SSR > renders disabled 1`] = `
+"<button
+  class="fake-link"
+  disabled=""
+  type="button"
+>
+  View seller details
+</button>"
+`;
+
+exports[`evo-fake-link SSR > renders standalone 1`] = `
+"<button
+  class="fake-link standalone-link"
+  type="button"
+>
+  View seller details
+</button>"
+`;
+
+exports[`evo-fake-link SSR > renders with a custom type, class and attributes 1`] = `
+"<button
+  class="fake-link seller-details"
+  data-testid="seller-details"
+  type="submit"
+>
+  View seller details
+</button>"
+`;
