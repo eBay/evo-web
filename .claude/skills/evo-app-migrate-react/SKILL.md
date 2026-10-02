@@ -85,6 +85,7 @@ When migrating a listed component, read the linked file completely and apply the
 - `ebay-image-placeholder`: [evo-image-placeholder.md](components/evo-image-placeholder.md)
 - `ebay-infotip`: [evo-infotip.md](components/evo-infotip.md)
 - `ebay-lightbox-dialog`: [evo-dialog.md](components/evo-dialog.md)
+- `ebay-listbox`: [evo-listbox.md](components/evo-listbox.md)
 - `ebay-menu`: [evo-menu.md](components/evo-menu.md)
 - `ebay-number-input`: [evo-number-input.md](components/evo-number-input.md)
 - `ebay-progress-bar-expressive`: [evo-progress-bar-expressive.md](components/evo-progress-bar-expressive.md)
