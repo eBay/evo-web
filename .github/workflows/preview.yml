@@ -90,6 +90,9 @@ jobs:
             rm -rf "previews/pr-${PR}"
             mkdir -p "previews/pr-${PR}"
             cp -R ../_site/public/. "previews/pr-${PR}/"
+            # Deploy timestamp, read by enforce-preview-budget.sh to evict the
+            # least-recently-deployed previews first when previews/ grows too large.
+            date -u +%Y-%m-%dT%H:%M:%SZ > "previews/pr-${PR}/.deployed-at"
             touch .nojekyll
             git add -A .nojekyll "previews/pr-${PR}"
             git commit -m "preview: pr-${PR} @ ${{ github.sha }}"
@@ -140,6 +143,11 @@ jobs:
             sleep 10
           done
           echo "GitHub Pages deployment did not confirm within 5 minutes; posting the link anyway."
+
+      - name: Enforce preview size budget
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: .github/scripts/enforce-preview-budget.sh
 
       - name: Post preview URL to PR
         uses: actions/github-script@v7
