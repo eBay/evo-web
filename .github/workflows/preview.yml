@@ -90,9 +90,14 @@ jobs:
             rm -rf "previews/pr-${PR}"
             mkdir -p "previews/pr-${PR}"
             cp -R ../_site/public/. "previews/pr-${PR}/"
-            # Deploy timestamp, read by enforce-preview-budget.sh to evict the
-            # least-recently-deployed previews first when previews/ grows too large.
+            # Deploy timestamp and byte size, read by enforce-preview-budget.sh
+            # to evict the least-recently-deployed previews first when
+            # previews/ grows too large. Measured here (not derived from the
+            # gh-pages tree later) so that script can stay off blob content
+            # entirely — it reads these two tiny marker files instead of
+            # sizing the actual preview, which would defeat its blobless clone.
             date -u +%Y-%m-%dT%H:%M:%SZ > "previews/pr-${PR}/.deployed-at"
+            du -sb "previews/pr-${PR}" | cut -f1 > "previews/pr-${PR}/.size-bytes"
             touch .nojekyll
             git add -A .nojekyll "previews/pr-${PR}"
             git commit -m "preview: pr-${PR} @ ${{ github.sha }}"
@@ -106,6 +111,17 @@ jobs:
           cd ..
           $pushed || { echo "Failed to deploy preview after 3 attempts."; exit 1; }
           echo "sha=$(git ls-remote "$repo_url" gh-pages | cut -f1)" >> "$GITHUB_OUTPUT"
+
+      # Runs right after our own push, not after the Pages wait below: that
+      # wait is expected to fail exactly when gh-pages has grown past the
+      # Pages size limit, which is precisely when this needs to run. A step
+      # here would otherwise be skipped in that case (steps default to
+      # running only on success), silently disabling the one thing that
+      # fixes it.
+      - name: Enforce preview size budget
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: .github/scripts/enforce-preview-budget.sh
 
       - name: Wait for GitHub Pages deployment
         run: |
@@ -143,11 +159,6 @@ jobs:
             sleep 10
           done
           echo "GitHub Pages deployment did not confirm within 5 minutes; posting the link anyway."
-
-      - name: Enforce preview size budget
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: .github/scripts/enforce-preview-budget.sh
 
       - name: Post preview URL to PR
         uses: actions/github-script@v7

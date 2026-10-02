@@ -9,6 +9,11 @@
 # push, or by re-running the "PR Preview" workflow. When one is evicted, its
 # PR's preview comment is edited so the (now 404ing) links aren't clickable.
 #
+# Sizes come from a .size-bytes marker each preview writes at deploy time,
+# not from the gh-pages tree: asking git for a blob's size on this blobless
+# clone fetches the whole (possibly multi-GB) blob to measure it, which would
+# make every budget check as expensive as the thing it's trying to avoid.
+#
 # Requires: GITHUB_TOKEN, GITHUB_REPOSITORY in the environment.
 # Optional: PREVIEW_BUDGET_BYTES (default 8 GiB).
 
@@ -42,8 +47,12 @@ decommission_comment() {
 work_dir="$(mktemp -d)"
 trap 'rm -rf "$work_dir"' EXIT
 
-# Blobless clone: tree listings and file sizes come from commit metadata, and
-# the only blob contents we ever fetch are the small .deployed-at markers.
+# Blobless clone: tree listings come from commit metadata, and the only blob
+# contents we ever fetch are the small .deployed-at/.size-bytes markers —
+# never the previews themselves. (A blob's size isn't tree/commit metadata;
+# asking git for it on a missing blob fetches the whole blob to measure it,
+# so sizes are read from a marker written at deploy time instead of from
+# `git ls-tree -l`, which would otherwise silently download every preview.)
 git clone --filter=blob:none --no-checkout --depth 1 --branch gh-pages "$repo_url" "$work_dir"
 cd "$work_dir"
 
@@ -55,8 +64,16 @@ for attempt in 1 2 3; do
   declare -A size_of=()
   declare -A time_of=()
   total=0
+  # Previews with no (or an unreadable/non-numeric) size marker predate this
+  # script, or had a corrupted deploy — we can't vouch for their size, so they
+  # go regardless of budget rather than risk undercounting the real total.
+  untrusted=()
   for dir in $(git ls-tree --name-only origin/gh-pages previews/ 2>/dev/null | grep -E '^previews/pr-[0-9]+$' || true); do
-    bytes=$(git ls-tree -r -l origin/gh-pages "$dir" | awk '{sum+=$4} END {print sum+0}')
+    bytes=$(git cat-file -p "origin/gh-pages:$dir/.size-bytes" 2>/dev/null || echo "")
+    if ! [[ "$bytes" =~ ^[0-9]+$ ]]; then
+      untrusted+=("$dir")
+      continue
+    fi
     # Missing/unreadable timestamp sorts first (oldest), so previews deployed
     # before this script existed are evicted ahead of anything timestamped.
     ts=$(git cat-file -p "origin/gh-pages:$dir/.deployed-at" 2>/dev/null || echo "1970-01-01T00:00:00Z")
@@ -65,12 +82,13 @@ for attempt in 1 2 3; do
     total=$((total + bytes))
   done
 
-  if [ "$total" -le "$budget_bytes" ]; then
+  if [ "${#untrusted[@]}" -eq 0 ] && [ "$total" -le "$budget_bytes" ]; then
     echo "previews/ total ${total} bytes is within the ${budget_bytes} byte budget. Nothing to evict."
     exit 0
   fi
 
-  evict=()
+  trusted_total="$total"
+  evict=("${untrusted[@]}")
   while IFS=' ' read -r _ dir; do
     [ "$total" -le "$budget_bytes" ] && break
     [ -z "$dir" ] && continue
@@ -83,7 +101,13 @@ for attempt in 1 2 3; do
     exit 1
   fi
 
-  echo "previews/ exceeds the ${budget_bytes} byte budget; evicting oldest-deployed: ${evict[*]}"
+  if [ "${#untrusted[@]}" -gt 0 ]; then
+    echo "Evicting previews with no trustworthy size marker: ${untrusted[*]}"
+  fi
+  if [ "$trusted_total" -gt "$budget_bytes" ]; then
+    echo "Known previews total ${trusted_total} bytes, over the ${budget_bytes} byte budget; evicting oldest-deployed until under budget."
+  fi
+  echo "Evicting: ${evict[*]}"
   git rm -r -q --cached --ignore-unmatch "${evict[@]}"
   git commit -q -m "cleanup: evict oldest previews to stay under the gh-pages size budget (${evict[*]#previews/})"
   if git push origin HEAD:gh-pages; then
