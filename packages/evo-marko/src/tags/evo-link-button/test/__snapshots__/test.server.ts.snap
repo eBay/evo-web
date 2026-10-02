@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`evo-fake-link SSR > renders default 1`] = `
+exports[`evo-link-button SSR > renders default 1`] = `
 "<button
   class="fake-link"
   type="button"
@@ -9,7 +9,7 @@ exports[`evo-fake-link SSR > renders default 1`] = `
 </button>"
 `;
 
-exports[`evo-fake-link SSR > renders disabled 1`] = `
+exports[`evo-link-button SSR > renders disabled 1`] = `
 "<button
   class="fake-link"
   disabled=""
@@ -19,7 +19,7 @@ exports[`evo-fake-link SSR > renders disabled 1`] = `
 </button>"
 `;
 
-exports[`evo-fake-link SSR > renders standalone 1`] = `
+exports[`evo-link-button SSR > renders standalone 1`] = `
 "<button
   class="fake-link standalone-link"
   type="button"
@@ -28,7 +28,7 @@ exports[`evo-fake-link SSR > renders standalone 1`] = `
 </button>"
 `;
 
-exports[`evo-fake-link SSR > renders with a custom type and class 1`] = `
+exports[`evo-link-button SSR > renders with a custom type and class 1`] = `
 "<button
   class="fake-link seller-details"
   type="submit"

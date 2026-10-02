@@ -1,11 +1,11 @@
 import { describe, it } from "vitest";
 import { composeStories } from "@storybook/marko";
 import { snapshotHTML } from "../../../common/test-utils/snapshots";
-import * as stories from "../fake-link.stories";
+import * as stories from "../link-button.stories";
 
 const { Default } = composeStories(stories);
 
-describe("evo-fake-link SSR", () => {
+describe("evo-link-button SSR", () => {
   it("renders default", async () => {
     await snapshotHTML(Default);
   });

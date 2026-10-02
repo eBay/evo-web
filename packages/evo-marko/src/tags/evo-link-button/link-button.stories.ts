@@ -6,7 +6,7 @@ import DefaultTemplate from "./examples/default.marko";
 import DefaultCode from "./examples/default.marko?raw";
 
 export default {
-  title: "buttons/evo-fake-link",
+  title: "buttons/evo-link-button",
   component: Component,
   parameters: {
     docs: {
