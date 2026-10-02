@@ -1,17 +1,8 @@
 name: Squash gh-pages History
 
-# previews/ no longer needs explicit cleanup on PR close or a nightly
-# stale-PR sweep: enforce-preview-budget.sh (run after every preview deploy
-# in preview.yml) evicts the least-recently-deployed previews whenever
-# previews/ grows past budget, regardless of whether the PR is still open.
-# A side effect: a recently-merged PR's preview stays live until something
-# else needs the space, instead of disappearing the moment it merges.
-#
-# What's still needed nightly: gh-pages' commit history grows by one commit
-# per deploy/eviction forever, which ci.yml's production deploy pays for on
-# every push to main (a full, non-shallow fetch of the branch). Squashing to
-# a single root commit keeps that fetch cheap no matter how old the branch
-# gets.
+# gh-pages' history grows by a commit per deploy/eviction forever, which
+# ci.yml's production deploy pays for via a full, non-shallow fetch. Squash
+# to a single root commit nightly to keep that fetch cheap.
 
 on:
   schedule:

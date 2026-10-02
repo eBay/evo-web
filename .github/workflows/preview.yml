@@ -90,12 +90,7 @@ jobs:
             rm -rf "previews/pr-${PR}"
             mkdir -p "previews/pr-${PR}"
             cp -R ../_site/public/. "previews/pr-${PR}/"
-            # Deploy timestamp and byte size, read by enforce-preview-budget.sh
-            # to evict the least-recently-deployed previews first when
-            # previews/ grows too large. Measured here (not derived from the
-            # gh-pages tree later) so that script can stay off blob content
-            # entirely — it reads these two tiny marker files instead of
-            # sizing the actual preview, which would defeat its blobless clone.
+            # Read by enforce-preview-budget.sh for LRU eviction.
             date -u +%Y-%m-%dT%H:%M:%SZ > "previews/pr-${PR}/.deployed-at"
             du -sb "previews/pr-${PR}" | cut -f1 > "previews/pr-${PR}/.size-bytes"
             touch .nojekyll
@@ -112,12 +107,8 @@ jobs:
           $pushed || { echo "Failed to deploy preview after 3 attempts."; exit 1; }
           echo "sha=$(git ls-remote "$repo_url" gh-pages | cut -f1)" >> "$GITHUB_OUTPUT"
 
-      # Runs right after our own push, not after the Pages wait below: that
-      # wait is expected to fail exactly when gh-pages has grown past the
-      # Pages size limit, which is precisely when this needs to run. A step
-      # here would otherwise be skipped in that case (steps default to
-      # running only on success), silently disabling the one thing that
-      # fixes it.
+      # Before the Pages wait below, which fails on an oversized deploy —
+      # exactly when this needs to run, and steps skip by default on failure.
       - name: Enforce preview size budget
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -176,9 +167,8 @@ jobs:
               `###### commit ${sha}`,
             ].join('\n');
 
-            // Find and overwrite an existing bot comment (clearing any stale
-            // "deploying" or "evicted" state left by an earlier run), or
-            // create a new one.
+            // Overwrite any existing bot comment outright, so stale
+            // "deploying"/"evicted" state never lingers.
             const { data: comments } = await github.rest.issues.listComments({
               owner: context.repo.owner,
               repo: context.repo.repo,
