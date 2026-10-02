@@ -45,6 +45,7 @@ a.fake-btn[aria-disabled="true"] {
 button.btn--borderless,
 a.fake-btn--borderless {
     border-color: transparent;
+    font-weight: bold;
     min-width: auto;
     padding-left: 0;
     vertical-align: initial;

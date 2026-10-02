@@ -63,6 +63,7 @@ a.fake-btn[aria-disabled="true"] {
 a.fake-btn--borderless,
 button.btn--borderless {
     border-color: transparent;
+    font-weight: 700;
     min-width: auto;
     padding-left: 0;
     vertical-align: initial;
