@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`EvoFilePreviewCardGroup SSR > renders a native list and its supplied items 1`] = `"<link rel="preload" as="image" href="/photo.jpg"/><ul aria-label="Photos" class="file-preview-card-group"><li class="file-preview-card"><div class="file-preview-card__body"><img class="file-preview-card__asset" src="/photo.jpg" alt="photo.jpg"/></div></li></ul>"`;
