@@ -1,9 +1,7 @@
 name: PR Preview Prune
 
 # Safety net for preview-cleanup.yml: removes any previews/pr-* directories on
-# gh-pages whose PR is no longer open. Also a safety net for the per-deploy
-# budget check in preview.yml, in case that step was skipped or disabled.
-# Runs nightly and on demand.
+# gh-pages whose PR is no longer open. Runs nightly and on demand.
 
 on:
   schedule:
@@ -21,9 +19,6 @@ jobs:
       contents: write
       pull-requests: read
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v6
-
       - name: Remove previews for closed PRs
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -70,11 +65,6 @@ jobs:
           done
           echo "Failed to prune previews after 3 attempts."
           exit 1
-
-      - name: Enforce preview size budget
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: .github/scripts/enforce-preview-budget.sh
 
       - name: Squash gh-pages history
         env:

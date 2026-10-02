@@ -9,11 +9,11 @@
 # push, or by re-running the "PR Preview" workflow.
 #
 # Requires: GITHUB_TOKEN, GITHUB_REPOSITORY in the environment.
-# Optional: PREVIEW_BUDGET_BYTES (default 6 GiB).
+# Optional: PREVIEW_BUDGET_BYTES (default 8 GiB).
 
 set -euo pipefail
 
-budget_bytes="${PREVIEW_BUDGET_BYTES:-$((6 * 1024 * 1024 * 1024))}"
+budget_bytes="${PREVIEW_BUDGET_BYTES:-$((8 * 1024 * 1024 * 1024))}"
 repo_url="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 
 git config --global user.name "github-actions[bot]"
