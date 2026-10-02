@@ -90,6 +90,9 @@ jobs:
             rm -rf "previews/pr-${PR}"
             mkdir -p "previews/pr-${PR}"
             cp -R ../_site/public/. "previews/pr-${PR}/"
+            # Read by enforce-preview-budget.sh for LRU eviction.
+            date -u +%Y-%m-%dT%H:%M:%SZ > "previews/pr-${PR}/.deployed-at"
+            du -sb "previews/pr-${PR}" | cut -f1 > "previews/pr-${PR}/.size-bytes"
             touch .nojekyll
             git add -A .nojekyll "previews/pr-${PR}"
             git commit -m "preview: pr-${PR} @ ${{ github.sha }}"
@@ -103,6 +106,13 @@ jobs:
           cd ..
           $pushed || { echo "Failed to deploy preview after 3 attempts."; exit 1; }
           echo "sha=$(git ls-remote "$repo_url" gh-pages | cut -f1)" >> "$GITHUB_OUTPUT"
+
+      # Before the Pages wait below, which fails on an oversized deploy —
+      # exactly when this needs to run, and steps skip by default on failure.
+      - name: Enforce preview size budget
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: .github/scripts/enforce-preview-budget.sh
 
       - name: Wait for GitHub Pages deployment
         run: |
@@ -149,8 +159,16 @@ jobs:
             const pr = context.payload.pull_request.number;
             const sha = context.payload.pull_request.head.sha.slice(0, 7);
             const url = `https://opensource.ebay.com/evo-web/previews/pr-${pr}/`;
+            const body = [
+              `### PR Preview Deployed`,
+              ``,
+              `[Website](${url}) • [\`evo-marko\`](${url}marko/) • [\`evo-react\`](${url}react/) • [\`ebayui-core\`](${url}ebayui-core/) • [\`ebayui-core-react\`](${url}ebayui-core-react/) • [\`skin\`](${url}skin-storybook/)`,
+              ``,
+              `###### commit ${sha}`,
+            ].join('\n');
 
-            // Find and update an existing bot comment, or create a new one
+            // Overwrite any existing bot comment outright, so stale
+            // "deploying"/"evicted" state never lingers.
             const { data: comments } = await github.rest.issues.listComments({
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -164,19 +182,9 @@ jobs:
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 comment_id: existing.id,
-                body: existing.body
-                  .replace('### PR Preview Deployed _(removed)_', '### PR Preview Deployed')
-                  .replace(/ _\(deploying .+?\)_$/, '')
-                  .replace(/###### commit .+$/, `###### commit ${sha}`),
+                body,
               });
             } else {
-              const body = [
-                `### PR Preview Deployed`,
-                ``,
-                `[Website](${url}) • [\`evo-marko\`](${url}marko/) • [\`evo-react\`](${url}react/) • [\`ebayui-core\`](${url}ebayui-core/) • [\`ebayui-core-react\`](${url}ebayui-core-react/) • [\`skin\`](${url}skin-storybook/)`,
-                ``,
-                `###### commit ${sha}`,
-              ].join('\n');
               await github.rest.issues.createComment({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
