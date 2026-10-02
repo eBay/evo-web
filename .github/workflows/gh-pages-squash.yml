@@ -1,0 +1,66 @@
+name: Squash gh-pages History
+
+# previews/ no longer needs explicit cleanup on PR close or a nightly
+# stale-PR sweep: enforce-preview-budget.sh (run after every preview deploy
+# in preview.yml) evicts the least-recently-deployed previews whenever
+# previews/ grows past budget, regardless of whether the PR is still open.
+# A side effect: a recently-merged PR's preview stays live until something
+# else needs the space, instead of disappearing the moment it merges.
+#
+# What's still needed nightly: gh-pages' commit history grows by one commit
+# per deploy/eviction forever, which ci.yml's production deploy pays for on
+# every push to main (a full, non-shallow fetch of the branch). Squashing to
+# a single root commit keeps that fetch cheap no matter how old the branch
+# gets.
+
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: "gh-pages-squash"
+  cancel-in-progress: false
+
+jobs:
+  squash:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Squash gh-pages history
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          repo_url="https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Pages only serves the branch tip, but the branch history keeps every
+          # old build's blobs forever. Rewrite gh-pages to a single root commit
+          # holding the current tree. A treeless clone suffices: commit-tree
+          # never needs blob contents.
+          git clone --filter=tree:0 --no-checkout --depth 1 --branch gh-pages "$repo_url" gh-pages-squash
+          cd gh-pages-squash
+          for attempt in 1 2 3; do
+            git fetch --depth 1 origin gh-pages
+            tip=$(git rev-parse origin/gh-pages)
+            # The clone is shallow, so inspect the raw commit object for parent
+            # lines rather than walking history.
+            if ! git cat-file -p "$tip" | grep -q '^parent '; then
+              echo "gh-pages is already a single commit; nothing to squash."
+              exit 0
+            fi
+            squashed=$(git commit-tree "${tip}^{tree}" -m "site @ $(git log -1 --format=%cI "$tip")")
+            # force-with-lease against the tip we read, so a concurrent preview
+            # deploy that lands mid-squash is never clobbered — we just retry.
+            if git push --force-with-lease="refs/heads/gh-pages:${tip}" origin "${squashed}:refs/heads/gh-pages"; then
+              echo "Squashed gh-pages history to ${squashed}."
+              exit 0
+            fi
+            echo "Push rejected (attempt ${attempt}); gh-pages moved, retrying."
+            sleep $((attempt * 5))
+          done
+          echo "Failed to squash gh-pages history after 3 attempts."
+          exit 1

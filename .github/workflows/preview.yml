@@ -173,7 +173,6 @@ jobs:
                 repo: context.repo.repo,
                 comment_id: existing.id,
                 body: existing.body
-                  .replace('### PR Preview Deployed _(removed)_', '### PR Preview Deployed')
                   .replace(/ _\(deploying .+?\)_$/, '')
                   .replace(/###### commit .+$/, `###### commit ${sha}`),
               });
