@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`EvoPhoneInput SSR > renders a country selector, prefix, and masked input 1`] = `
+{
+  "button": "<button type="button" value="US" class="listbox-button__control btn btn--form btn--split-start" aria-label="Country calling code: United States +1" aria-haspopup="listbox" aria-expanded="false" aria-controls="_R_3_-listbox">",
+  "flags": 246,
+  "input": "<input type="tel" id="_R_5_" class="textbox__control" aria-describedby="_R_0_" value="(555) 123-4567"/>",
+  "prefix": "<span id="_R_0_">+ 1</span>",
+  "wrapper": "<span class="phone-input"",
+}
+`;
