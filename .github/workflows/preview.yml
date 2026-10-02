@@ -157,8 +157,17 @@ jobs:
             const pr = context.payload.pull_request.number;
             const sha = context.payload.pull_request.head.sha.slice(0, 7);
             const url = `https://opensource.ebay.com/evo-web/previews/pr-${pr}/`;
+            const body = [
+              `### PR Preview Deployed`,
+              ``,
+              `[Website](${url}) • [\`evo-marko\`](${url}marko/) • [\`evo-react\`](${url}react/) • [\`ebayui-core\`](${url}ebayui-core/) • [\`ebayui-core-react\`](${url}ebayui-core-react/) • [\`skin\`](${url}skin-storybook/)`,
+              ``,
+              `###### commit ${sha}`,
+            ].join('\n');
 
-            // Find and update an existing bot comment, or create a new one
+            // Find and overwrite an existing bot comment (clearing any stale
+            // "deploying" or "evicted" state left by an earlier run), or
+            // create a new one.
             const { data: comments } = await github.rest.issues.listComments({
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -172,18 +181,9 @@ jobs:
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 comment_id: existing.id,
-                body: existing.body
-                  .replace(/ _\(deploying .+?\)_$/, '')
-                  .replace(/###### commit .+$/, `###### commit ${sha}`),
+                body,
               });
             } else {
-              const body = [
-                `### PR Preview Deployed`,
-                ``,
-                `[Website](${url}) • [\`evo-marko\`](${url}marko/) • [\`evo-react\`](${url}react/) • [\`ebayui-core\`](${url}ebayui-core/) • [\`ebayui-core-react\`](${url}ebayui-core-react/) • [\`skin\`](${url}skin-storybook/)`,
-                ``,
-                `###### commit ${sha}`,
-              ].join('\n');
               await github.rest.issues.createComment({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
