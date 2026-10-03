@@ -1,0 +1,35 @@
+export interface Input extends Omit<
+  Marko.HTML.Span,
+  "role" | "aria-label" | "aria-hidden"
+> {
+  /** Country code of the flag to display, e.g. `"us"` */
+  country: string;
+  size?: "small" | "medium" | "large" | "x-large";
+  /**
+   * Localized name of the country, used as the flag's accessible name.
+   * The flag is decorative when omitted.
+   */
+  a11yText?: string;
+}
+
+static const sizeClasses = {
+  small: "ff-sm",
+  medium: "ff-md",
+  large: "ff-lg",
+  "x-large": "ff-xl",
+};
+
+<const/{ class: inputClass, country, size, a11yText, ...htmlInput }=input>
+
+<span
+  ...htmlInput
+  class=[
+    "fflag",
+    `fflag--${country.toLowerCase()}`,
+    size && sizeClasses[size],
+    inputClass,
+  ]
+  role=!!a11yText && "img"
+  aria-label=a11yText
+  aria-hidden=!a11yText && "true"
+/>
