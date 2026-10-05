@@ -109,7 +109,7 @@ import { urls } from "../../../../data";
         <a class="legal-link" href="https://www.ebay.com">Terms & Conditions</a>
       </div>
       <div>
-        <button class="fake-link legal-link" type="button">
+        <button class="btn btn--link legal-link" type="button">
           Privacy Policy
         </button>
       </div>
@@ -121,24 +121,32 @@ import { urls } from "../../../../data";
       <a class="legal-link" href="https://www.ebay.com">Terms & Conditions</a>
     </div>
     <div>
-      <button class="fake-link legal-link" type="button">Privacy Policy</button>
+      <button class="btn btn--link legal-link" type="button">
+        Privacy Policy
+      </button>
     </div>
   </highlight-code>
 
-  <h3 id="link-fake">Fake Link</h3>
+  <h3 id="link-fake">Link Button</h3>
   <p>
-    To style a button to look like a link, use the <code>fake-link</code> class.
+    To style a button to look like a link, use the <code>btn</code> class with
+    the <code>btn--link</code> modifier from the button module.
   </p>
 
   <div class="demo">
     <div class="demo__inner">
-      <button class="fake-link" type="button">Button</button>
+      <button class="btn btn--link" type="button">Button</button>
     </div>
   </div>
 
   <highlight-code type="html">
-    <button class="fake-link" type="button">Button</button>
+    <button class="btn btn--link" type="button">Button</button>
   </highlight-code>
+
+  <p>
+    The <code>fake-link</code> class is deprecated and will be removed in the
+    next major version. Use <code>btn btn--link</code> in its place.
+  </p>
   <!--
         <p>To style a button to look like an <em>action</em> link, use the <code>fake-link--action</code> modifier.</p>
 

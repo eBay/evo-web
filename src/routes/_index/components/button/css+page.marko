@@ -4,20 +4,26 @@ import { urls } from "../../../../data";
 
   <h3 id="button-default">Default Button</h3>
   <p>
-    Use the <code>btn</code> or <code>fake-btn</code> class respectively, to
-    create a minimal, default button. This default button is the foundation for
-    all other button types.
+    Use the <code>btn</code> class on a <code>&lt;button&gt;</code> or an
+    <code>&lt;a&gt;</code> to create a minimal, default button. This default
+    button is the foundation for all other button types, and every
+    <code>btn</code> modifier works on both tags.
+  </p>
+  <p>
+    The <code>fake-btn</code> class and its modifiers are deprecated and will be
+    removed in the next major version. Replace them with <code>btn</code> and
+    the matching <code>btn--</code> modifiers.
   </p>
   <div class="demo">
     <div class="demo__inner">
       <button class="btn">Button</button>
-      <a class="fake-btn" href="https://www.ebay.com">Link</a>
+      <a class="btn" href="https://www.ebay.com">Link</a>
     </div>
   </div>
 
   <highlight-code type="html">
     <button class="btn">Button</button>
-    <a class="fake-btn" href="https://www.ebay.com">Link</a>
+    <a class="btn" href="https://www.ebay.com">Link</a>
   </highlight-code>
 
   <p>Use the <code>large</code> modifier to increase the size of the button.</p>
@@ -25,17 +31,13 @@ import { urls } from "../../../../data";
   <div class="demo">
     <div class="demo__inner">
       <button class="btn btn--large">Large Button</button>
-      <a class="fake-btn fake-btn--large" href="https://www.ebay.com">
-        Large Link
-      </a>
+      <a class="btn btn--large" href="https://www.ebay.com">Large Link</a>
     </div>
   </div>
 
   <highlight-code type="html">
     <button class="btn btn--large">Button</button>
-    <a class="fake-btn fake-btn--large" href="https://www.ebay.com">
-      Large Link
-    </a>
+    <a class="btn btn--large" href="https://www.ebay.com">Large Link</a>
   </highlight-code>
 
   <p>Use the <code>small</code> modifier to decrease the size of the button.</p>
@@ -43,17 +45,13 @@ import { urls } from "../../../../data";
   <div class="demo">
     <div class="demo__inner">
       <button class="btn btn--small">Small Button</button>
-      <a class="fake-btn fake-btn--small" href="https://www.ebay.com">
-        Small Link
-      </a>
+      <a class="btn btn--small" href="https://www.ebay.com">Small Link</a>
     </div>
   </div>
 
   <highlight-code type="html">
     <button class="btn btn--small">Button</button>
-    <a class="fake-btn fake-btn--small" href="https://www.ebay.com">
-      Small Link
-    </a>
+    <a class="btn btn--small" href="https://www.ebay.com">Small Link</a>
   </highlight-code>
 
   <h3 id="button-primary">Primary Button</h3>
@@ -61,13 +59,13 @@ import { urls } from "../../../../data";
   <div class="demo">
     <div class="demo__inner">
       <button class="btn btn--primary">Button</button>
-      <a class="fake-btn fake-btn--primary" href="https://www.ebay.com">Link</a>
+      <a class="btn btn--primary" href="https://www.ebay.com">Link</a>
     </div>
   </div>
 
   <highlight-code type="html">
     <button class="btn btn--primary">Button</button>
-    <a class="fake-btn fake-btn--primary" href="https://www.ebay.com">Link</a>
+    <a class="btn btn--primary" href="https://www.ebay.com">Link</a>
   </highlight-code>
 
   <h3 id="button-secondary">Secondary Button</h3>
@@ -77,15 +75,13 @@ import { urls } from "../../../../data";
   <div class="demo">
     <div class="demo__inner">
       <button class="btn btn--secondary">Button</button>
-      <a class="fake-btn fake-btn--secondary" href="https://www.ebay.com">
-        Link
-      </a>
+      <a class="btn btn--secondary" href="https://www.ebay.com">Link</a>
     </div>
   </div>
 
   <highlight-code type="html">
     <button class="btn btn--secondary">Button</button>
-    <a class="fake-btn fake-btn--secondary" href="https://www.ebay.com">Link</a>
+    <a class="btn btn--secondary" href="https://www.ebay.com">Link</a>
   </highlight-code>
 
   <h3 id="button-tertiary">Tertiary Button</h3>
@@ -95,15 +91,13 @@ import { urls } from "../../../../data";
   <div class="demo">
     <div class="demo__inner">
       <button class="btn btn--tertiary">Button</button>
-      <a class="fake-btn fake-btn--tertiary" href="https://www.ebay.com">
-        Link
-      </a>
+      <a class="btn btn--tertiary" href="https://www.ebay.com">Link</a>
     </div>
   </div>
 
   <highlight-code type="html">
     <button class="btn btn--tertiary">Button</button>
-    <a class="fake-btn fake-btn--tertiary" href="https://www.ebay.com">Link</a>
+    <a class="btn btn--tertiary" href="https://www.ebay.com">Link</a>
   </highlight-code>
 
   <h3 id="button-disabled">Disabled Button</h3>
@@ -140,15 +134,15 @@ import { urls } from "../../../../data";
   <p>Remove the <code>href</code> attribute to fully disable an anchor tag.</p>
   <div class="demo">
     <div class="demo__inner">
-      <a class="fake-btn fake-btn--primary">Primary Link</a>
-      <a class="fake-btn fake-btn--secondary">Secondary Link</a>
-      <a class="fake-btn fake-btn--tertiary">Tertiary Link</a>
+      <a class="btn btn--primary">Primary Link</a>
+      <a class="btn btn--secondary">Secondary Link</a>
+      <a class="btn btn--tertiary">Tertiary Link</a>
     </div>
   </div>
   <highlight-code type="html">
-    <a class="fake-btn fake-btn--primary">Primary Link</a>
-    <a class="fake-btn fake-btn--secondary">Secondary Link</a>
-    <a class="fake-btn fake-btn--tertiary">Tertiary Link</a>
+    <a class="btn btn--primary">Primary Link</a>
+    <a class="btn btn--secondary">Secondary Link</a>
+    <a class="btn btn--tertiary">Tertiary Link</a>
   </highlight-code>
 
   <h3 id="button-partially-disabled">Partially Disabled Button</h3>
@@ -188,10 +182,7 @@ import { urls } from "../../../../data";
   <div class="demo">
     <div class="demo__inner">
       <button class="btn btn--primary btn--destructive">Primary Button</button>
-      <a
-        class="fake-btn fake-btn--primary fake-btn--destructive"
-        href="https://www.ebay.com"
-      >
+      <a class="btn btn--primary btn--destructive" href="https://www.ebay.com">
         Primary Link
       </a>
     </div>
@@ -199,10 +190,7 @@ import { urls } from "../../../../data";
 
   <highlight-code type="html">
     <button class="btn btn--destructive">Destructive Button</button>
-    <a
-      class="fake-btn fake-btn--primary fake-btn--destructive"
-      href="https://www.ebay.com"
-    >
+    <a class="btn btn--primary btn--destructive" href="https://www.ebay.com">
       Destructive Link
     </a>
   </highlight-code>
@@ -214,7 +202,7 @@ import { urls } from "../../../../data";
         Secondary Button
       </button>
       <a
-        class="fake-btn fake-btn--secondary fake-btn--destructive"
+        class="btn btn--secondary btn--destructive"
         href="https://www.ebay.com"
       >
         Secondary Link
@@ -226,10 +214,7 @@ import { urls } from "../../../../data";
     <button class="btn btn--secondary btn--destructive">
       Secondary Button
     </button>
-    <a
-      class="fake-btn fake-btn--secondary fake-btn--destructive"
-      href="https://www.ebay.com"
-    >
+    <a class="btn btn--secondary btn--destructive" href="https://www.ebay.com">
       Secondary Link
     </a>
   </highlight-code>
@@ -240,10 +225,7 @@ import { urls } from "../../../../data";
       <button class="btn btn--tertiary btn--destructive">
         Tertiary Button
       </button>
-      <a
-        class="fake-btn fake-btn--tertiary fake-btn--destructive"
-        href="https://www.ebay.com"
-      >
+      <a class="btn btn--tertiary btn--destructive" href="https://www.ebay.com">
         Tertiary Link
       </a>
     </div>
@@ -251,10 +233,7 @@ import { urls } from "../../../../data";
 
   <highlight-code type="html">
     <button class="btn btn--tertiary btn--destructive">Tertiary Button</button>
-    <a
-      class="fake-btn fake-btn--tertiary fake-btn--destructive"
-      href="https://www.ebay.com"
-    >
+    <a class="btn btn--tertiary btn--destructive" href="https://www.ebay.com">
       Tertiary Link
     </a>
   </highlight-code>
