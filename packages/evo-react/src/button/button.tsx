@@ -56,39 +56,40 @@ export function EvoButton({
   fixedHeight,
   ...rest
 }: EvoButtonProps) {
-  const classPrefix = href ? "fake-btn" : "btn";
   const priorityStyles: { [key in Priority]: string } = {
-    primary: `${classPrefix}--primary`,
-    secondary: `${classPrefix}--secondary`,
-    tertiary: `${classPrefix}--tertiary`,
+    primary: "btn--primary",
+    secondary: "btn--secondary",
+    tertiary: "btn--tertiary",
     none: "",
   };
   const sizeStyles: { [key in Size]: string } = {
-    large: `${classPrefix}--large`,
-    small: `${classPrefix}--small`,
+    large: "btn--large",
+    small: "btn--small",
   };
   const splitStyles: { [key in Split]: string } = {
-    start: `${classPrefix}--split-start`,
-    end: `${classPrefix}--split-end`,
+    start: "btn--split-start",
+    end: "btn--split-end",
   };
   const isDestructive = variant === "destructive";
   const isForm = variant === "form";
+  const isLink = variant === "link";
   const className = classNames(
-    classPrefix,
+    "btn",
     extraClasses,
-    priorityStyles[isForm || borderless ? "none" : priority],
+    priorityStyles[isForm || isLink || borderless ? "none" : priority],
     size && sizeStyles[size],
     split && splitStyles[split],
-    isDestructive && `${classPrefix}--destructive`,
-    isForm && `${classPrefix}--form`,
-    transparent && `${classPrefix}--transparent`,
-    fluid && `${classPrefix}--fluid`,
-    truncate && `${classPrefix}--truncated`,
-    borderless && `${classPrefix}--borderless`,
+    isDestructive && "btn--destructive",
+    isForm && "btn--form",
+    isLink && "btn--link",
+    transparent && "btn--transparent",
+    fluid && "btn--fluid",
+    truncate && "btn--truncated",
+    borderless && "btn--borderless",
     fixedHeight &&
       (size && sizeStyles[size]
         ? `${sizeStyles[size]}-fixed-height`
-        : `${classPrefix}--fixed-height`),
+        : "btn--fixed-height"),
   );
 
   const bodyContent = (() => {
