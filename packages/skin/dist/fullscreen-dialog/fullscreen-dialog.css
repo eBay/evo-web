@@ -55,6 +55,7 @@
     margin-inline-start: var(--spacing-200);
 }
 
+.fullscreen-dialog__header .btn--link,
 .fullscreen-dialog__header .fake-link {
     align-self: flex-start;
     outline-offset: 4px;

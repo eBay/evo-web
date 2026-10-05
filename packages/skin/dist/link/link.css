@@ -31,7 +31,6 @@ a.standalone-link[aria-disabled="true"] {
     );
     text-decoration: none;
 }
-
 button.fake-link {
     background-color: initial;
     border: 0;
@@ -59,12 +58,16 @@ button.fake-link[disabled] {
 }
 
 a.legal-link,
+button.btn--link.legal-link,
 button.legal-link {
     text-decoration: underline;
 }
 a.legal-link,
 a.legal-link:hover,
 a.legal-link:visited,
+button.btn--link.legal-link,
+button.btn--link.legal-link:hover,
+button.btn--link.legal-link:visited,
 button.legal-link,
 button.legal-link:hover,
 button.legal-link:visited {

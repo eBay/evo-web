@@ -37,6 +37,7 @@ a.standalone-link {
     }
 }
 
+/* DEPRECATED: use `button.btn.btn--link`. Remove next major */
 button.fake-link {
     background-color: transparent;
     border: 0;
@@ -66,7 +67,8 @@ button.fake-link {
 }
 
 a.legal-link,
-button.legal-link {
+button.legal-link,
+button.btn--link.legal-link {
     @include token-mixins.color-token(
         legal-link-foreground-color,
         color-foreground-link-legal

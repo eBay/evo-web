@@ -23,6 +23,7 @@
     @include dialog-mixins.header-content;
 }
 
+.fullscreen-dialog__header .btn--link,
 .fullscreen-dialog__header .fake-link {
     align-self: flex-start;
     outline-offset: 4px;

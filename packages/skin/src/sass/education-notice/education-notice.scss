@@ -64,6 +64,7 @@
     white-space: nowrap; /* force links with text having more than one word to remain on same line */
 }
 
+.education-notice__footer button.btn--link,
 .education-notice__footer button.fake-link {
     font-size: var(--font-size-body);
     font-weight: bold;
@@ -78,7 +79,9 @@
     margin-top: var(--spacing-200);
 }
 
+.education-notice__header button.btn--link,
 .education-notice__header button.fake-link,
+.education-notice__header button.btn--link:hover,
 .education-notice__header button.fake-link:hover {
     @include token-mixins.color-token(
         education-notice-foreground-color,
