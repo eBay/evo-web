@@ -531,6 +531,13 @@ a.btn--link:visited {
     );
 }
 
+/* Use the browser's focus ring, like a text link, instead of the button's */
+button.btn--link:focus-visible,
+a.btn--link:focus-visible {
+    outline: revert;
+    outline-offset: revert;
+}
+
 button.btn--link:hover,
 a.btn--link:hover {
     @include token-mixins.color-token(

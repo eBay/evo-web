@@ -23,7 +23,9 @@
     @include dialog-mixins.header-content;
 }
 
+/* :focus-visible outranks the btn--link focus reset */
 .fullscreen-dialog__header .btn--link,
+.fullscreen-dialog__header .btn--link:focus-visible,
 .fullscreen-dialog__header .fake-link {
     align-self: flex-start;
     outline-offset: 4px;

@@ -29,7 +29,9 @@
     @include dialog-mixins.header-content;
 }
 
+/* :focus-visible outranks the btn--link focus reset */
 .panel-dialog__header .btn--link,
+.panel-dialog__header .btn--link:focus-visible,
 .panel-dialog__header .fake-link {
     align-self: flex-start;
     outline-offset: 4px;

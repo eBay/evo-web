@@ -813,6 +813,11 @@ button.btn--link {
         var(--color-foreground-link-primary)
     );
 }
+a.btn--link:focus-visible,
+button.btn--link:focus-visible {
+    outline: revert;
+    outline-offset: revert;
+}
 
 a.btn--link:hover,
 button.btn--link:hover {
