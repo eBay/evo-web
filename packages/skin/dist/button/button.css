@@ -31,13 +31,7 @@ button.btn--truncated {
 }
 a.fake-btn:focus-visible,
 button.btn:focus-visible {
-    outline-offset: var(--spacing-25);
-    outline-style: solid;
-    outline-width: var(--spacing-25);
-}
-a.fake-btn:focus:not(:focus-visible),
-button.btn:focus:not(:focus-visible) {
-    outline: none;
+    outline-offset: var(--spacing-50);
 }
 
 button.btn[aria-disabled="true"],
@@ -213,10 +207,6 @@ a.fake-btn--primary[href]:active:after,
 button.btn--primary:not([disabled], [aria-disabled="true"]):active:after,
 button.btn--primary[href]:active:after {
     background-color: var(--color-state-layer-pressed);
-}
-
-a.fake-btn--primary {
-    outline-color: var(--color-foreground-primary);
 }
 
 a.fake-btn--primary:hover,

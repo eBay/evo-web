@@ -291,11 +291,6 @@ button.filter-menu-button__footer {
     }
 }
 
-/* https://developer.paciellogroup.com/blog/2018/03/focus-visible-and-backwards-compatibility/ */
-div.filter-menu-button__item[role^="menuitem"]:focus:not(:focus-visible) {
-    outline: none;
-}
-
 [dir="rtl"] {
     .filter-menu-button__checkbox {
         margin-left: 8px;

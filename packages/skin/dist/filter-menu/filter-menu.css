@@ -169,10 +169,6 @@ span.filter-menu__item[role^="menuitem"] {
     width: var(--spacing-250);
 }
 
-.filter-menu__header button:focus-visible {
-    outline-style: solid;
-}
-
 button.filter-menu-form__footer[type="submit"],
 button.filter-menu__footer {
     border: none;
@@ -279,7 +275,4 @@ button.filter-menu__footer[aria-disabled="true"]:hover {
 .filter-menu__item[role="menuitemradio"][aria-checked="true"]
     svg.icon--checked {
     display: block;
-}
-div.filter-menu__item[role^="menuitem"]:focus:not(:focus-visible) {
-    outline: none;
 }

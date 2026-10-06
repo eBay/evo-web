@@ -83,11 +83,6 @@ nav.breadcrumbs > ul > li > button {
     }
 }
 
-nav.breadcrumbs > ul > li > a:focus:not(:focus-visible),
-nav.breadcrumbs > ul > li > button:focus:not(:focus-visible) {
-    outline: none;
-}
-
 /* Deprecated in 15.2.0; kept it in to support deprecated implementations; @TODO remove in 16.0.0 */
 nav.breadcrumbs::-webkit-scrollbar {
     display: none;

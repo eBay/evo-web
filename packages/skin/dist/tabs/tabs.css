@@ -67,10 +67,6 @@ div.tabs__item[role="tab"][aria-selected="true"]:after,
 li.fake-tabs__item > a[aria-current]:after {
     background-color: currentColor;
 }
-div.tabs__item[role="tab"]:focus:not(:focus-visible),
-li.fake-tabs__item a:focus:not(:focus-visible) {
-    outline: none;
-}
 
 div.tabs__item[role="tab"]:not([aria-selected="true"])[aria-disabled="true"],
 div.tabs__item[role="tab"]:not(

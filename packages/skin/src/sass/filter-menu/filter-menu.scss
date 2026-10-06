@@ -106,10 +106,6 @@ span.filter-menu-form__item {
     width: var(--spacing-250);
 }
 
-.filter-menu__header button:focus-visible {
-    outline-style: solid;
-}
-
 button.filter-menu__footer,
 button.filter-menu-form__footer[type="submit"] {
     border: none;
@@ -151,9 +147,4 @@ button.filter-menu-form__footer[type="submit"] {
 .filter-menu__item[role="menuitemradio"][aria-checked="true"]
     svg.icon--checked {
     display: block;
-}
-
-/* https://developer.paciellogroup.com/blog/2018/03/focus-visible-and-backwards-compatibility/ */
-div.filter-menu__item[role^="menuitem"]:focus:not(:focus-visible) {
-    outline: none;
 }

@@ -147,6 +147,3 @@ div.listbox__options[role="listbox"]:focus
 div.listbox__option[aria-selected="true"] svg.icon {
     opacity: 1;
 }
-.listbox__options:focus:not(:focus-visible) {
-    outline: none;
-}
