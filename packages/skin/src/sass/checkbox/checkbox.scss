@@ -26,7 +26,6 @@ $dimensions-checkbox-large: 24px;
 span.checkbox__icon {
     display: inline-flex;
     height: $dimensions-checkbox;
-    outline-offset: 1px;
 }
 
 .checkbox--large span.checkbox__icon {
@@ -108,17 +107,9 @@ input.checkbox__control[type="checkbox"][disabled] + span.checkbox__icon {
     }
 }
 
-/* https://developer.paciellogroup.com/blog/2018/03/focus-visible-and-backwards-compatibility/ */
-input.checkbox__control[type="checkbox"]:focus + span.checkbox__icon {
-    outline: 1px auto;
+input.checkbox__control[type="checkbox"]:focus-visible + span.checkbox__icon {
+    border-radius: 4px;
+    outline: auto;
+    outline-color: -webkit-focus-ring-color;
     outline-offset: 2px;
-    @include token-mixins.outline-color-token(
-        checkbox-outline,
-        color-foreground-secondary
-    );
-}
-
-input.checkbox__control[type="checkbox"]:focus:not(:focus-visible)
-    + span.checkbox__icon {
-    outline: none;
 }

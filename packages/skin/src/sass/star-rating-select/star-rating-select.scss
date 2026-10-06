@@ -26,7 +26,6 @@ span.star-rating-select__radio svg {
 
 span.star-rating-select__radio-icon {
     display: inline-flex;
-    outline-offset: 1px;
 }
 
 span.star-rating-select__radio-icon svg {
@@ -46,17 +45,12 @@ span.star-rating-select__radio input.star-rating-select__control[type="radio"] {
     width: 16px;
     z-index: 1;
 
-    &:focus + span.star-rating-select__radio-icon {
-        outline: 1px auto;
+    &:focus-visible + span.star-rating-select__radio-icon {
+        outline: auto;
+        outline-color: -webkit-focus-ring-color;
         outline-offset: 2px;
-        @include token-mixins.outline-color-token(
-            radio-outline,
-            color-foreground-secondary
-        );
-    }
-
-    &:focus:not(:focus-visible) + span.star-rating-select__radio-icon {
-        outline: none;
+        position: relative;
+        z-index: 1; /* keep the ring above neighbouring stars */
     }
 }
 
