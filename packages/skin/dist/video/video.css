@@ -346,7 +346,10 @@
     padding: 0;
 }
 
-.video-player--with-nav .shaka-controls-container {
+.video-player--with-nav .shaka-controls-container,
+.video-player--with-nav.video-player--compact
+    .shaka-controls-container
+    .shaka-bottom-controls {
     pointer-events: none;
 }
 
