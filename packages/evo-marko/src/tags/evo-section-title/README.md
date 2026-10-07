@@ -7,7 +7,7 @@
     </span>
 </h1>
 
-A title for a section of content, with an optional subtitle, info, call to action and overflow menu.
+A title for a section of content, with an optional subtitle, call to action and overflow menu.
 
 ## Examples and Documentation
 

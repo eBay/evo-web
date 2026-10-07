@@ -4,8 +4,8 @@ import Readme from "./README.md";
 import Component, { type Input } from "./index.marko";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultCode from "./examples/default.marko?raw";
-import SaveSeeAllTemplate from "./examples/save-see-all.marko";
-import SaveSeeAllCode from "./examples/save-see-all.marko?raw";
+import WithCtaTemplate from "./examples/with-cta.marko";
+import WithCtaCode from "./examples/with-cta.marko?raw";
 import OverflowTemplate from "./examples/overflow.marko";
 import OverflowCode from "./examples/overflow.marko?raw";
 
@@ -55,16 +55,6 @@ export default {
         },
       },
     },
-    info: {
-      description:
-        "Optional info content, such as an `<evo-infotip>` or `<evo-icon-button>`",
-      "@": {
-        ["<div> attributes" as any]: {
-          description:
-            "All attributes and event handlers from [the native HTML `<div>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/div) will be passed through to `<@info>`",
-        },
-      },
-    },
     overflow: {
       description: "Optional overflow content, such as an `<evo-menu-button>`",
       "@": {
@@ -82,10 +72,7 @@ export default {
 } satisfies Meta<Input>;
 
 export const Default = buildExtensionTemplate(DefaultTemplate, DefaultCode);
-export const IconAndSeeAll = buildExtensionTemplate(
-  SaveSeeAllTemplate,
-  SaveSeeAllCode,
-);
+export const WithCta = buildExtensionTemplate(WithCtaTemplate, WithCtaCode);
 export const WithOverflow = buildExtensionTemplate(
   OverflowTemplate,
   OverflowCode,

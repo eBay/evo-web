@@ -4,7 +4,7 @@ import { snapshotHTML } from "../../../common/test-utils/snapshots";
 import HeadingLevel from "./heading-level.marko";
 import * as stories from "../section-title.stories";
 
-const { Default, IconAndSeeAll, WithOverflow } = composeStories(stories);
+const { Default, WithCta, WithOverflow } = composeStories(stories);
 
 describe("evo-section-title SSR", () => {
   it("renders defaults", async () => {
@@ -15,8 +15,8 @@ describe("evo-section-title SSR", () => {
     await snapshotHTML(HeadingLevel);
   });
 
-  it("renders icon and see all", async () => {
-    await snapshotHTML(IconAndSeeAll);
+  it("renders with cta", async () => {
+    await snapshotHTML(WithCta);
   });
 
   it("renders with overflow", async () => {

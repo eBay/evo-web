@@ -2,7 +2,6 @@ export interface Input extends Omit<Marko.HTML.Div, "title"> {
   title: Marko.AttrTag<Marko.HTML.H2 & { as?: keyof Marko.NativeTags }>;
   cta?: Marko.AttrTag<Marko.HTML.A>;
   subtitle?: Marko.AttrTag<Marko.HTML.Span>;
-  info?: Marko.AttrTag<Marko.HTML.Div>;
   overflow?: Marko.AttrTag<Marko.HTML.Div>;
 }
 
@@ -11,7 +10,6 @@ export interface Input extends Omit<Marko.HTML.Div, "title"> {
   cta,
   title,
   subtitle,
-  info,
   overflow,
   ...htmlInput
 }=input>
@@ -24,9 +22,6 @@ export interface Input extends Omit<Marko.HTML.Div, "title"> {
       <span ...subtitle class=["section-title__subtitle", subtitle.class]/>
     </if>
   </div>
-  <if=info>
-    <div ...info class=["section-title__info", info.class]/>
-  </if>
   <if=cta><a ...cta class=["section-title__cta", cta.class]/></if>
   <if=overflow>
     <div ...overflow class=["section-title__overflow", overflow.class]/>
