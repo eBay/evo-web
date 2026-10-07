@@ -359,7 +359,8 @@
 }
 
 .video-player--with-nav .shaka-controls-container .shaka-bottom-controls,
-.video-player--with-nav .shaka-controls-container .shaka-play-button-container {
+.video-player--with-nav .shaka-controls-container .shaka-play-button-container,
+.video-player--with-nav .shaka-controls-container button {
     pointer-events: auto;
 }
 
