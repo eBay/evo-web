@@ -1,0 +1,25 @@
+import { getStoryMarkup, getStorybookUrl } from "../../data";
+
+export interface Input {
+  component: string;
+  variant: string;
+}
+
+<const/html=getStoryMarkup(input.component)[input.variant]>
+
+<div class="demo__storybook-link-wrapper">
+  <a
+    class="demo__storybook-link"
+    href=getStorybookUrl(input.component, input.variant)
+    target="_blank"
+    rel="noopener"
+  >
+    View in Storybook ↗
+  </a>
+</div>
+<div class="demo">
+  <div class="demo__inner">
+    $!{html}
+  </div>
+</div>
+<highlight-code type="html" code=html/>
