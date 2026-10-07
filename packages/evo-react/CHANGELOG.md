@@ -1,5 +1,11 @@
 # @evo-web/react
 
+## 0.4.9
+
+### Patch Changes
+
+- [#1055](https://github.com/eBay/evo-web/pull/1055) [`9bb8a65`](https://github.com/eBay/evo-web/commit/9bb8a658f2b04efb50bbabd36d51ac80279fd73e) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Remove `EvoSectionTitleInfo` from `EvoSectionTitle`
+
 ## 0.4.8
 
 ### Patch Changes
