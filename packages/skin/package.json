@@ -39,7 +39,7 @@
         "build:css": "rimraf dist && npm run bundle && npm run postcss && tsx scripts/add-y-comments && prettier dist --write && npm run lint:css",
         "build:icons": "tsx scripts genSVG && prettier ../../src/data/icons.json --write",
         "build:story-markup": "tsx scripts extract-story-markup && prettier ../../src/data/story-markup.json --write",
-        "watch:story-markup": "tsx watch scripts extract-story-markup",
+        "watch:story-markup": "tsx watch --include \"src/sass/**/*.stories.js\" scripts extract-story-markup",
         "build:storybook": "npm run copy:assetsToStorybook && storybook build -o ./_site/public/storybook",
         "bundle": "sass src/sass:dist src/tokens:dist/tokens --no-source-map -I \"../../node_modules\"",
         "clean": "rimraf _cdn _site .cache .tmp .jekyll npm-debug.log.* .DS_Store",
@@ -64,7 +64,7 @@
         "snapshots:all:dry": "percy storybook:start --dry-run --include '.*'",
         "snapshots:dry": "percy storybook:start --dry-run --include \"$(echo $STORIES)\"",
         "start": "npm run storybook",
-        "storybook": "npm run copy:assetsToStorybook && npm run build:story-markup && concurrently \"npm run watch:story-markup\" \"storybook dev -c .storybook -p 6007 --no-open\"",
+        "storybook": "npm run copy:assetsToStorybook && npm run build:story-markup && concurrently --kill-others-on-fail \"npm run watch:story-markup\" \"storybook dev -c .storybook -p 6007 --no-open\"",
         "test": "npm run build",
         "test:scripts": "vitest run scripts",
         "verify": "tsx scripts verify"

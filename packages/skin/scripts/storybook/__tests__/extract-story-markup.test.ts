@@ -92,6 +92,15 @@ describe("extractStoryMarkup", () => {
 });
 
 describe("extractStoryMarkup edge cases", () => {
+    it("strips <script> tags from extracted HTML, since a script written for Storybook's single-story preview (e.g. Dialog's showModal() on load) executes verbatim when rendered into a docs page via raw HTML interpolation, which can run before its own preceding sibling element exists", async () => {
+        const result = await extractStoryMarkup(path.join(__dirname, "fixtures-script-tag"));
+
+        expect(result["dialog-like"]["base"].html).not.toContain("<script>");
+        expect(result["dialog-like"]["base"].html).toContain(
+            `<dialog class="dialog-like">content</dialog>`,
+        );
+    });
+
     it("throws a clear error when a stories file has no title", async () => {
         await expect(
             extractStoryMarkup(path.join(__dirname, "fixtures-no-title")),
@@ -147,6 +156,12 @@ describe("extractStoryMarkup edge cases", () => {
         await expect(
             extractStoryMarkup(path.join(__dirname, "fixtures-duplicate-title")),
         ).rejects.toThrow(/duplicate title "Skin\/Dup"/);
+    });
+
+    it("throws a clear error when two DIFFERENT titles strip down to the same variant key within one component (e.g. a mistitled file landing under the wrong component folder), rather than silently overwriting one story's data with another's", async () => {
+        await expect(
+            extractStoryMarkup(path.join(__dirname, "fixtures-cross-title-collision")),
+        ).rejects.toThrow(/variant key "primary\/base" for component="button" collides/);
     });
 
     it("merges a nested subfolder into the top-level directory's component key by default (e.g. Destructive variant of Button), stripping the component key off each file's title so same-named exports never collide", async () => {

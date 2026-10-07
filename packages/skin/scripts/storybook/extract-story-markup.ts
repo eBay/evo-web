@@ -53,6 +53,29 @@ export function deriveStorybookId(title: string, exportName: string): string {
     return `${slugify(title)}--${slugify(toStartCaseStr(exportName))}`;
 }
 
+/**
+ * Removes <script> tags from extracted story HTML before it's stored.
+ *
+ * A story written for Storybook's own preview (e.g. Dialog's stories call
+ * `.showModal()` in an inline <script> immediately after the markup loads, since
+ * Storybook shows one story at a time and wants it open right away) is rendered
+ * verbatim into a docs page via raw HTML interpolation, which DOES execute
+ * <script> tags exactly like a normal page load (confirmed empirically — this is
+ * unlike assigning to `.innerHTML` from JS, which does not execute embedded
+ * scripts). A script written assuming "the dialog is already in the DOM by the
+ * time this runs" breaks on a docs page where several of these demos are stacked
+ * in sequence, or where the script runs during HTML parsing before its own
+ * preceding sibling element exists. Stripping scripts here, once, keeps both the
+ * rendered demo and its copyable code sample consistent with each other, and
+ * keeps `<component-demo>` itself free of any component-specific special-casing —
+ * a docs page that needs the stripped behavior back (e.g. Dialog opening on
+ * click) adds its own trigger explicitly, same as it already did before this
+ * project existed.
+ */
+function stripScriptTags(html: string): string {
+    return html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
+}
+
 interface DiscoveredStoryFile {
     filePath: string;
     /** Directory directly under the stories root, i.e. <X> in <X>/stories/[...]/file.stories.js. */
@@ -164,6 +187,15 @@ export async function extractStoryMarkup(
     // itself would have colliding story IDs) fails loudly instead of silently
     // overwriting one file's stories with another's.
     const fileByTitle = new Map<string, string>();
+    // Tracks which (title, exportName) produced each variant key already assigned
+    // within a component, so two DIFFERENT titles that happen to strip down to the
+    // same key (e.g. "Skin/Button/Primary" and a stray "Skin/Primary" both filed
+    // under componentKey "button") fail loudly instead of silently overwriting one
+    // story's data with another's.
+    const sourceByVariantKey: Record<
+        string,
+        Record<string, { title: string; exportName: string }>
+    > = {};
 
     for (const file of files) {
         const mod = await import(file.filePath);
@@ -186,14 +218,27 @@ export async function extractStoryMarkup(
 
         const componentKey = componentKeyByFile.get(file.filePath)!;
         result[componentKey] ??= {};
+        sourceByVariantKey[componentKey] ??= {};
 
         for (const [exportName, exportValue] of Object.entries(mod)) {
             if (exportName === "default" || typeof exportValue !== "function") {
                 continue;
             }
 
-            const html = (exportValue as () => string)();
+            const html = stripScriptTags((exportValue as () => string)());
             const key = variantKey(title, exportName, componentKey);
+
+            const existingSource = sourceByVariantKey[componentKey][key];
+            if (existingSource !== undefined) {
+                throw new Error(
+                    `${file.filePath}: variant key "${key}" for component="${componentKey}" ` +
+                        `collides with an entry already produced by title "${existingSource.title}" ` +
+                        `(export "${existingSource.exportName}"). Two different titles stripped down ` +
+                        `to the same key here — rename this story's title or export so it's unique ` +
+                        `within the "${componentKey}" component.`,
+                );
+            }
+            sourceByVariantKey[componentKey][key] = { title, exportName };
 
             result[componentKey][key] = {
                 html,

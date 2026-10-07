@@ -135,6 +135,14 @@ main {
   outline-offset: 2px;
 }
 
+.demo__dialog-wrapper {
+  margin-bottom: var(--spacing-200);
+}
+
+.demo__dialog-trigger {
+  margin-bottom: var(--spacing-100);
+}
+
 .nav-link[aria-current] {
   font-weight: var(--font-weight-bold);
 }
