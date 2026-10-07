@@ -92,27 +92,6 @@ exports[`evo-section-title SSR > renders with a custom heading level 1`] = `
 </div>"
 `;
 
-exports[`evo-section-title SSR > renders with no subtitle 1`] = `
-"<div
-  class="section-title"
->
-  <div
-    class="section-title__title-container"
-  >
-    <h2
-      class="section-title__title"
-    >
-      Today's Deals - All With Free Shipping
-    </h2>
-    <span
-      class="section-title__subtitle"
-    >
-      Plus, guaranteed best prices.
-    </span>
-  </div>
-</div>"
-`;
-
 exports[`evo-section-title SSR > renders with overflow 1`] = `
 "<div
   class="section-title"

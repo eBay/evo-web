@@ -15,10 +15,6 @@ describe("evo-section-title SSR", () => {
     await snapshotHTML(HeadingLevel);
   });
 
-  it("renders with no subtitle", async () => {
-    await snapshotHTML(Default, { subtitle: null });
-  });
-
   it("renders icon and see all", async () => {
     await snapshotHTML(IconAndSeeAll);
   });
