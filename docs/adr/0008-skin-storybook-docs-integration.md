@@ -25,8 +25,7 @@ reduction in actual engineering work, reintroducing the same drift problem, loss
 curation, reversing an already-established stories-first contribution workflow, a much larger
 unscoped site-architecture change, or unjustified build cost and fragility). The detailed case
 against each is in
-[`skin-storybook-docs-integration-alternatives.md`](./skin-storybook-docs-integration-alternatives.md)
-in this same folder.
+[`supporting-docs/0008-skin-storybook-docs-integration-alternatives.md`](./supporting-docs/0008-skin-storybook-docs-integration-alternatives.md).
 
 ## Decision
 

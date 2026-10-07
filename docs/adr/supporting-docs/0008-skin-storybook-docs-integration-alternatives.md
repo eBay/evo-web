@@ -2,9 +2,8 @@
 
 **Date:** 2026-10-06
 **Status:** Reference document for anticipated review pushback
-**Related:** [GitHub issue #1051](https://github.com/eBay/evo-web/issues/1051) (pain points),
-`2026-09-29-skin-storybook-docs-integration-design.md` (chosen design),
-`DECISIONS-2026-09-29-storybook-docs-integration.md` (implementation decision log)
+**Related:** [ADR 0008](../0008-skin-storybook-docs-integration.md) (the accepted decision this
+document supports), [GitHub issue #1051](https://github.com/eBay/evo-web/issues/1051) (pain points)
 
 ## Purpose
 
