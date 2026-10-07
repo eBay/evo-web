@@ -21,12 +21,16 @@ export default {
   },
   argTypes: {
     cta: {
-      description:
-        "The call to action, rendered as an `<a>`. All attributes of [the native HTML `<a>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a) are passed through",
-      "@": {},
+      description: 'A call to action link, such as "See all"',
+      "@": {
+        ["<a> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the native HTML `<a>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a) will be passed through to `<@cta>`",
+        },
+      },
     },
     title: {
-      description: "The main title content, rendered in an `<h2>` by default",
+      description: "The main title content, `<h2>` by default",
       "@": {
         as: {
           type: "string",
@@ -43,16 +47,32 @@ export default {
       },
     },
     subtitle: {
-      description: "The subtitle content to be displayed",
-      "@": {},
+      description: "Optional subtitle content, displayed below the title",
+      "@": {
+        ["<span> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the native HTML `<span>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/span) will be passed through to `<@subtitle>`",
+        },
+      },
     },
     info: {
-      description: "Placeholder for an `<evo-infotip>` or `<evo-icon-button>`",
-      "@": {},
+      description:
+        "Optional info content, such as an `<evo-infotip>` or `<evo-icon-button>`",
+      "@": {
+        ["<div> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the native HTML `<div>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/div) will be passed through to `<@info>`",
+        },
+      },
     },
     overflow: {
-      description: "Placeholder for the `<evo-menu-button>` component",
-      "@": {},
+      description: "Optional overflow content, such as an `<evo-menu-button>`",
+      "@": {
+        ["<div> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the native HTML `<div>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/div) will be passed through to `<@overflow>`",
+        },
+      },
     },
     ["<div> attributes" as any]: {
       description:
