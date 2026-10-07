@@ -3,7 +3,7 @@ import { composeStories } from "@storybook/marko";
 import { snapshotHTML } from "../../../common/test-utils/snapshots";
 import * as stories from "../section-title.stories";
 
-const { Default, IconAndSeeAll, WithOverflow, WithInfotip } =
+const { Default, WithCta, IconAndSeeAll, WithOverflow, WithInfotip } =
   composeStories(stories);
 
 describe("evo-section-title SSR", () => {
@@ -11,11 +11,8 @@ describe("evo-section-title SSR", () => {
     await snapshotHTML(Default);
   });
 
-  it("renders with cta custom text", async () => {
-    await snapshotHTML(Default, {
-      href: "https://www.ebay.com",
-      ctaText: "Custom Text",
-    });
+  it("renders with cta", async () => {
+    await snapshotHTML(WithCta);
   });
 
   it("renders with no subtitle", async () => {

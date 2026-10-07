@@ -73,17 +73,13 @@ exports[`evo-section-title SSR > renders icon and see all 1`] = `
     <a
       href="https://www.ebay.com"
     >
-      <span
-        class="section-title__cta-text"
-      >
-        See All
-      </span>
+      See All
     </a>
   </div>
 </div>"
 `;
 
-exports[`evo-section-title SSR > renders with cta custom text 1`] = `
+exports[`evo-section-title SSR > renders with cta 1`] = `
 "<div
   class="section-title"
 >
@@ -107,11 +103,7 @@ exports[`evo-section-title SSR > renders with cta custom text 1`] = `
     <a
       href="https://www.ebay.com"
     >
-      <span
-        class="section-title__cta-text"
-      >
-        Custom Text
-      </span>
+      See All
     </a>
   </div>
 </div>"

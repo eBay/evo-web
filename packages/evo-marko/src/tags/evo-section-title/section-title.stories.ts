@@ -4,6 +4,8 @@ import Readme from "./README.md";
 import Component, { type Input } from "./index.marko";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultCode from "./examples/default.marko?raw";
+import WithCtaTemplate from "./examples/with-cta.marko";
+import WithCtaCode from "./examples/with-cta.marko?raw";
 import SaveSeeAllTemplate from "./examples/save-see-all.marko";
 import SaveSeeAllCode from "./examples/save-see-all.marko?raw";
 import OverflowTemplate from "./examples/overflow.marko";
@@ -22,17 +24,10 @@ export default {
     },
   },
   argTypes: {
-    href: {
-      type: "string",
-      control: "text",
+    cta: {
       description:
-        "URL. Optional CTA content will link to this, the CTA is only rendered when set",
-    },
-    ctaText: {
-      type: "string",
-      control: "text",
-      description: "The text for the CTA. Only used when `href` is set",
-      table: { defaultValue: { summary: "See All" } },
+        "The call to action, rendered as an `<a>`. All attributes of [the native HTML `<a>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a) are passed through",
+      "@": {},
     },
     title: {
       description:
@@ -59,6 +54,7 @@ export default {
 } satisfies Meta<Input>;
 
 export const Default = buildExtensionTemplate(DefaultTemplate, DefaultCode);
+export const WithCta = buildExtensionTemplate(WithCtaTemplate, WithCtaCode);
 export const IconAndSeeAll = buildExtensionTemplate(
   SaveSeeAllTemplate,
   SaveSeeAllCode,
