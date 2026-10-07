@@ -4,16 +4,10 @@ import Readme from "./README.md";
 import Component, { type Input } from "./index.marko";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultCode from "./examples/default.marko?raw";
-import WithCtaTemplate from "./examples/with-cta.marko";
-import WithCtaCode from "./examples/with-cta.marko?raw";
-import HeadingLevelTemplate from "./examples/heading-level.marko";
-import HeadingLevelCode from "./examples/heading-level.marko?raw";
 import SaveSeeAllTemplate from "./examples/save-see-all.marko";
 import SaveSeeAllCode from "./examples/save-see-all.marko?raw";
 import OverflowTemplate from "./examples/overflow.marko";
 import OverflowCode from "./examples/overflow.marko?raw";
-import InfotipTemplate from "./examples/infotip.marko";
-import InfotipCode from "./examples/infotip.marko?raw";
 
 export default {
   title: "navigation & disclosure/evo-section-title",
@@ -53,7 +47,7 @@ export default {
       "@": {},
     },
     info: {
-      description: "Placeholder for the `<evo-infotip>` component",
+      description: "Placeholder for an `<evo-infotip>` or `<evo-icon-button>`",
       "@": {},
     },
     overflow: {
@@ -68,7 +62,6 @@ export default {
 } satisfies Meta<Input>;
 
 export const Default = buildExtensionTemplate(DefaultTemplate, DefaultCode);
-export const WithCta = buildExtensionTemplate(WithCtaTemplate, WithCtaCode);
 export const IconAndSeeAll = buildExtensionTemplate(
   SaveSeeAllTemplate,
   SaveSeeAllCode,
@@ -76,9 +69,4 @@ export const IconAndSeeAll = buildExtensionTemplate(
 export const WithOverflow = buildExtensionTemplate(
   OverflowTemplate,
   OverflowCode,
-);
-export const WithInfotip = buildExtensionTemplate(InfotipTemplate, InfotipCode);
-export const HeadingLevel = buildExtensionTemplate(
-  HeadingLevelTemplate,
-  HeadingLevelCode,
 );
