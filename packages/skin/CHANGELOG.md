@@ -1,5 +1,24 @@
 # Skin Changelog
 
+## 19.37.0
+
+### Minor Changes
+
+- [#916](https://github.com/eBay/evo-web/pull/916) [`0f77259`](https://github.com/eBay/evo-web/commit/0f772591a346725c1dbedf11c44db155ceb5735f) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Add `video`, a CSS shell and Marko component for an accessible video player built on a native `<video>` element with a composable `video__controls` bar, replacing the previous `shaka-player` based approach. DASH and HLS sources load their media engine on demand, with fallback across multiple `@source` entries. Includes poster, loading and error states; mute, volume, captions, fullscreen and report controls; controllable `playing`/`volume`/`muted`/`language` inputs with change callbacks; side-loaded `@track` captions; localizable `a11y*Text` labels that also gate their optional controls (captions, audio, volume slider, fullscreen, seek) plus a fully consumer-controlled `@report` icon button; `offscreen-pause`, autoplay coordination and `play-view="fullscreen"` behaviors; and an overlay `@nav` link variant. In `evo-select`, spread HTML input is now applied before explicit attributes so `disabled`, `id` and the `value` binding are no longer overridden by it.
+
+- [#974](https://github.com/eBay/evo-web/pull/974) [`a1a62f3`](https://github.com/eBay/evo-web/commit/a1a62f352e2f676182692f9e55ad90ebdd1650e5) Thanks [@saiponnada](https://github.com/saiponnada)! - fix(accordion): wrap each header label in a configurable heading
+
+- [#1032](https://github.com/eBay/evo-web/pull/1032) [`184d67b`](https://github.com/eBay/evo-web/commit/184d67bc7703aa39b9c1a4ff2cb8066daf8d9366) Thanks [@ArtBlue](https://github.com/ArtBlue)! - feat(notice): add warning variant to page notice, section notice, and inline notice
+
+### Patch Changes
+
+- [#973](https://github.com/eBay/evo-web/pull/973) [`948d6b8`](https://github.com/eBay/evo-web/commit/948d6b88f9b59568f735d332378c59160137469a) Thanks [@ArtBlue](https://github.com/ArtBlue)! - fix(skin): correct readonly textbox styling to match default
+
+- [#1039](https://github.com/eBay/evo-web/pull/1039) [`d9c5166`](https://github.com/eBay/evo-web/commit/d9c5166bbe79de76ae5dc409e9fc59e925dc0986) Thanks [@LuLaValva](https://github.com/LuLaValva)! - fix(button,tourtip): primary button border defaults to transparent (overridable with `--btn-primary-border-color`) and its background reads `--btn-primary-background-color`, which the tourtip footer sets, removing its blue outline
+
+- [#1043](https://github.com/eBay/evo-web/pull/1043) [`526d0e5`](https://github.com/eBay/evo-web/commit/526d0e5f1ca54b66362e3fd3a473a5adac87ebc9) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Hide the compact video layout's remaining-time display again when the player is
+  narrower than 320px.
+
 ## 19.36.0
 
 ### Minor Changes

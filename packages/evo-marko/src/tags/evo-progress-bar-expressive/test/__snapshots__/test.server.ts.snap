@@ -1,0 +1,257 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`evo-progress-bar-expressive SSR > renders a single message 1`] = `
+"<div
+  class="progress-bar-expressive"
+>
+  <div
+    class="progress-bar-expressive__messages"
+  >
+    <div
+      class="progress-bar-expressive__message progress-bar-expressive__message--in progress-bar-expressive__message--initial"
+      id="GENERATED-0"
+      role="status"
+    />
+  </div>
+  <div
+    aria-describedby="GENERATED-0"
+    aria-label="Loading..."
+    class="progress-bar-expressive__progress"
+    role="progressbar"
+  >
+    <div
+      class="progress-bar-expressive__lines"
+    >
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`evo-progress-bar-expressive SSR > renders medium text 1`] = `
+"<div
+  class="progress-bar-expressive"
+>
+  <div
+    class="progress-bar-expressive__messages progress-bar-expressive__messages--medium"
+  >
+    <div
+      aria-hidden="true"
+      class="progress-bar-expressive__message"
+    >
+      We're processing your order
+    </div>
+    <div
+      class="progress-bar-expressive__message progress-bar-expressive__message--initial"
+      id="GENERATED-0"
+      role="status"
+    >
+      Hang tight
+    </div>
+  </div>
+  <div
+    aria-describedby="GENERATED-0"
+    aria-label="Loading..."
+    class="progress-bar-expressive__progress"
+    role="progressbar"
+  >
+    <div
+      class="progress-bar-expressive__lines"
+    >
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`evo-progress-bar-expressive SSR > renders messages 1`] = `
+"<div
+  class="progress-bar-expressive"
+>
+  <div
+    class="progress-bar-expressive__messages"
+  >
+    <div
+      aria-hidden="true"
+      class="progress-bar-expressive__message"
+    >
+      Hang tight
+    </div>
+    <div
+      class="progress-bar-expressive__message progress-bar-expressive__message--initial"
+      id="GENERATED-0"
+      role="status"
+    />
+  </div>
+  <div
+    aria-describedby="GENERATED-0"
+    aria-label="Loading..."
+    class="progress-bar-expressive__progress"
+    role="progressbar"
+  >
+    <div
+      class="progress-bar-expressive__lines"
+    >
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`evo-progress-bar-expressive SSR > renders without messages 1`] = `
+"<div
+  class="progress-bar-expressive"
+>
+  <div
+    aria-label="Loading..."
+    class="progress-bar-expressive__progress"
+    role="progressbar"
+  >
+    <div
+      class="progress-bar-expressive__lines"
+    >
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+      <div
+        class="progress-bar-expressive__line"
+      />
+    </div>
+  </div>
+</div>"
+`;

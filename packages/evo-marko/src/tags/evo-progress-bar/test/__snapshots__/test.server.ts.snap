@@ -1,0 +1,45 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`evo-progress-bar SSR > renders default 1`] = `
+"<progress
+  aria-label="Upload progress"
+  class="progress-bar"
+  max="100"
+  value="50"
+/>"
+`;
+
+exports[`evo-progress-bar SSR > renders fluid 1`] = `
+"<progress
+  aria-label="Upload progress"
+  class="progress-bar progress-bar--fluid"
+  max="100"
+  value="50"
+/>"
+`;
+
+exports[`evo-progress-bar SSR > renders indeterminate 1`] = `
+"<progress
+  aria-label="Loading results"
+  class="progress-bar"
+  max="100"
+/>"
+`;
+
+exports[`evo-progress-bar SSR > renders the default a11yText 1`] = `
+"<progress
+  aria-label="Progress"
+  class="progress-bar"
+  max="100"
+  value="50"
+/>"
+`;
+
+exports[`evo-progress-bar SSR > renders without aria-label when a11yText is null 1`] = `
+"<progress
+  aria-labelledby="upload-progress-label"
+  class="progress-bar"
+  max="100"
+  value="50"
+/>"
+`;

@@ -169,8 +169,11 @@ button.btn__cell--fixed-height svg.icon {
 
 a.fake-btn--primary,
 button.btn--primary {
-    background-color: var(--color-background-accent);
-    border-color: var(--color-border-accent);
+    background-color: var(
+        --btn-primary-background-color,
+        var(--color-background-accent)
+    );
+    border-color: var(--btn-primary-border-color, transparent);
     color: var(--color-foreground-on-accent);
     font-weight: 700;
     transition: all var(--motion-duration-short-3)
@@ -740,10 +743,7 @@ button.btn--floating-label .btn__floating-label--inline {
 [dir="rtl"] button.btn.btn--primary.btn--split-end,
 [dir="rtl"] button.btn.btn--primary.btn--split-end:focus,
 [dir="rtl"] button.btn.btn--primary.btn--split-end:hover {
-    border-left-color: var(
-        --btn-primary-border-color,
-        var(--color-border-accent)
-    );
+    border-left-color: var(--btn-primary-border-color, transparent);
     border-right-color: var(
         --primary-border-split-color,
         var(--color-border-subtle)
