@@ -76,6 +76,22 @@ exports[`evo-section-title SSR > renders icon and see all 1`] = `
 </div>"
 `;
 
+exports[`evo-section-title SSR > renders with a custom heading level 1`] = `
+"<div
+  class="section-title"
+>
+  <div
+    class="section-title__title-container"
+  >
+    <h3
+      class="section-title__title"
+    >
+      Today's Deals - All With Free Shipping
+    </h3>
+  </div>
+</div>"
+`;
+
 exports[`evo-section-title SSR > renders with cta 1`] = `
 "<div
   class="section-title"

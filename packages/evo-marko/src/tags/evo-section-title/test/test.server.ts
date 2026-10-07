@@ -3,12 +3,22 @@ import { composeStories } from "@storybook/marko";
 import { snapshotHTML } from "../../../common/test-utils/snapshots";
 import * as stories from "../section-title.stories";
 
-const { Default, WithCta, IconAndSeeAll, WithOverflow, WithInfotip } =
-  composeStories(stories);
+const {
+  Default,
+  HeadingLevel,
+  WithCta,
+  IconAndSeeAll,
+  WithOverflow,
+  WithInfotip,
+} = composeStories(stories);
 
 describe("evo-section-title SSR", () => {
   it("renders defaults", async () => {
     await snapshotHTML(Default);
+  });
+
+  it("renders with a custom heading level", async () => {
+    await snapshotHTML(HeadingLevel);
   });
 
   it("renders with cta", async () => {
