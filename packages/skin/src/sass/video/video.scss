@@ -351,12 +351,16 @@
     padding: 0;
 }
 
-.video-player--with-nav .shaka-controls-container {
+.video-player--with-nav .shaka-controls-container,
+.video-player--with-nav.video-player--compact
+    .shaka-controls-container
+    .shaka-bottom-controls {
     pointer-events: none;
 }
 
 .video-player--with-nav .shaka-controls-container .shaka-bottom-controls,
-.video-player--with-nav .shaka-controls-container .shaka-play-button-container {
+.video-player--with-nav .shaka-controls-container .shaka-play-button-container,
+.video-player--with-nav .shaka-controls-container button {
     pointer-events: auto;
 }
 
