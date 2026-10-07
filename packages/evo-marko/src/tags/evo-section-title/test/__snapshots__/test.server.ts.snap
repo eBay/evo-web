@@ -67,15 +67,12 @@ exports[`evo-section-title SSR > renders icon and see all 1`] = `
       </svg>
     </button>
   </div>
-  <div
+  <a
     class="section-title__cta"
+    href="https://www.ebay.com"
   >
-    <a
-      href="https://www.ebay.com"
-    >
-      See All
-    </a>
-  </div>
+    See All
+  </a>
 </div>"
 `;
 
@@ -97,15 +94,12 @@ exports[`evo-section-title SSR > renders with cta 1`] = `
       Plus, guaranteed best prices.
     </span>
   </div>
-  <div
+  <a
     class="section-title__cta"
+    href="https://www.ebay.com"
   >
-    <a
-      href="https://www.ebay.com"
-    >
-      See All
-    </a>
-  </div>
+    See All
+  </a>
 </div>"
 `;
 

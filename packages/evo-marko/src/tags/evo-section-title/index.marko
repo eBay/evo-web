@@ -26,9 +26,7 @@ export interface Input extends Omit<Marko.HTML.Div, "title"> {
   <if=info>
     <div ...info class=["section-title__info", info.class]/>
   </if>
-  <if=cta>
-    <div class="section-title__cta"><a ...cta/></div>
-  </if>
+  <if=cta><a ...cta class=["section-title__cta", cta.class]/></if>
   <if=overflow>
     <div ...overflow class=["section-title__overflow", overflow.class]/>
   </if>
