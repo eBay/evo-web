@@ -40,7 +40,11 @@ video.file-preview-card__asset {
     width: 100%;
 }
 
-.file-preview-card__asset--fade {
+.file-preview-card__body:has(> .file-preview-card__see-more)
+    > a
+    > img.file-preview-card__asset,
+.file-preview-card__body:has(> .file-preview-card__see-more)
+    > img.file-preview-card__asset {
     background-color: inherit;
     opacity: 0.5;
 }
