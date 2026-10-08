@@ -39,9 +39,14 @@
     padding: var(--spacing-75) 0;
     width: calc(100% - var(--spacing-200));
 }
-
 .chips-combobox .combobox__control > input:focus {
     outline: none;
+}
+
+.chips-combobox:has(.combobox__control > input:focus-visible) {
+    outline: auto;
+    outline-color: -webkit-focus-ring-color;
+    outline-offset: 2px;
 }
 
 .chips-combobox .combobox {

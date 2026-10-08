@@ -106,8 +106,11 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox {
 }
 .listbox-button button.btn--borderless:focus,
 .listbox-button button.expand-btn--borderless:focus {
-    outline: none;
     text-decoration: underline;
+}
+.listbox-button button.btn--borderless:focus-visible,
+.listbox-button button.expand-btn--borderless:focus-visible {
+    border-radius: 4px;
 }
 .listbox-button
     button.btn--borderless[aria-expanded="true"]
