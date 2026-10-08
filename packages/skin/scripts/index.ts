@@ -3,12 +3,10 @@ import { runGenerate } from "./generate-images";
 import { verifyBuild } from "./verify-build";
 import { generateTopLevel, cleanTopLevel } from "./generate-imports";
 import { copySVGIcons, copyCustomStyles, copySVGFlags } from "./storybook/copy";
-import { writeStoryMarkup } from "./storybook/extract-story-markup";
 import { tokens } from "./tokens";
 import { copyMasterIcons } from "./copy-master-icons";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
-import path from "path";
 
 yargs(hideBin(process.argv))
     .usage("Usage: $0 <command> [options]")
@@ -107,17 +105,6 @@ yargs(hideBin(process.argv))
             if (yargs.noStyles) {
                 copyCustomStyles();
             }
-        },
-    )
-    .command(
-        "extract-story-markup",
-        "Extracts rendered HTML + Storybook IDs from all stories files",
-        () => {},
-        async () => {
-            await writeStoryMarkup(
-                path.join(__dirname, "..", "src", "sass"),
-                path.join(__dirname, "..", "..", "..", "src", "data", "story-markup.json"),
-            );
         },
     )
     .command(

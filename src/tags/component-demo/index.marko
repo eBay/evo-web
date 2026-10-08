@@ -1,11 +1,11 @@
-import { getStoryMarkup, getStorybookUrl } from "../../data";
+import { getStoryHtml, getStorybookUrl } from "../../data";
 
 export interface Input {
   component: string;
   variant: string;
 }
 
-<const/html=getStoryMarkup(input.component)[input.variant]>
+<const/html=getStoryHtml(input.component, input.variant)>
 
 <div class="demo__storybook-link-wrapper">
   <a

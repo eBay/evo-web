@@ -1,3 +1,8 @@
+// Makes this a module rather than a script, so its top-level `closeDialog`
+// gets its own file scope instead of colliding with ./dialog.ts's same-named
+// function (every script-scope .ts file sharing one global namespace).
+export {};
+
 function closeDialog(dialog: HTMLDialogElement) {
   dialog.classList.add("dialog--close");
   dialog.addEventListener(
@@ -12,19 +17,13 @@ function closeDialog(dialog: HTMLDialogElement) {
   );
 }
 
-// Every Dialog story hardcodes id="dialog-title" on its own heading (each story
-// is normally viewed alone in Storybook), so IDs collide once several variants
-// are rendered on one docs page — a trigger can't rely on a global id lookup, and
-// `nextElementSibling` isn't reliable either, since <component-demo> renders
-// several sibling top-level elements (a storybook-link wrapper, the .demo box,
-// then <highlight-code>). Instead, each trigger + its <component-demo> are wrapped
-// together in one `.demo__dialog-wrapper` container (see css+page.marko), and we
-// search for the dialog within that container specifically.
+// Each demo's trigger button and dialog come from the same Storybook story markup,
+// so wire them up within their own .demo box (dialog IDs collide across variants).
 for (const trigger of document.querySelectorAll<HTMLButtonElement>(
-  ".demo__dialog-trigger",
+  ".dialog-trigger",
 )) {
   const dialog = trigger
-    .closest(".demo__dialog-wrapper")
+    .closest(".demo")
     ?.querySelector("dialog.dialog") as HTMLDialogElement | null;
 
   if (!dialog) {

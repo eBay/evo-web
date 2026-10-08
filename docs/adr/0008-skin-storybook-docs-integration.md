@@ -16,25 +16,27 @@ regression-tested (Percy), and a docs-page reader had no way to discover that a 
 Storybook (Controls, a11y panel, backgrounds, viewport) existed for that component at all. See
 [GitHub issue #1051](https://github.com/eBay/evo-web/issues/1051) for the full pain-point writeup.
 
-Several other approaches were considered — an iframe embed, importing `.stories.js` files directly
-at build/request time, a CI drift-detection lint rule instead of removing the duplication,
-auto-generating the whole docs page from Storybook, reversing direction to generate stories from
-docs pages, adopting Storybook's own Docs addon, and a browser-automation static-snapshot export.
-Each was rejected for a concrete reason (broken theming/a11y across an iframe boundary, no
-reduction in actual engineering work, reintroducing the same drift problem, loss of editorial
+Several other approaches were considered — an iframe embed, a CI drift-detection lint rule instead
+of removing the duplication, auto-generating the whole docs page from Storybook, reversing
+direction to generate stories from docs pages, adopting Storybook's own Docs addon, and a
+browser-automation static-snapshot export. Each was rejected for a concrete reason (broken
+theming/a11y across an iframe boundary, reintroducing the same drift problem, loss of editorial
 curation, reversing an already-established stories-first contribution workflow, a much larger
 unscoped site-architecture change, or unjustified build cost and fragility). The detailed case
 against each is in
 [`supporting-docs/0008-skin-storybook-docs-integration-alternatives.md`](./supporting-docs/0008-skin-storybook-docs-integration-alternatives.md).
 
+A committed, generated JSON intermediary between the `.stories.js` files and the docs site was also
+tried and found unnecessary — see
+[`supporting-docs/0008-skin-storybook-docs-integration-alternatives.md`, section 2](./supporting-docs/0008-skin-storybook-docs-integration-alternatives.md#2-generated-committed-json-intermediary).
+
 ## Decision
 
-Storybook story markup is the single source of truth for Skin docs-page demos. A build-time
-extraction script (`packages/skin/scripts/storybook/extract-story-markup.ts`) reads every Skin
-`.stories.js` file and writes a committed JSON artifact (`src/data/story-markup.json`, regenerated
-via `npm run build:story-markup -w packages/skin` and kept current automatically while
-`npm run storybook -w packages/skin` is running), the same "package generates, site consumes a
-committed file" pattern already established by `src/data/icons.json`.
+Storybook story markup is the single source of truth for Skin docs-page demos. `src/data/story-markup.ts`
+reads every Skin `.stories.js` file directly at build time via Vite's `import.meta.glob(..., { eager: true })`
+— the same mechanism `src/data/components.ts` already uses to eagerly import route templates. There
+is no generated file: editing a story picks up through Vite's own dev-server reload, and in a
+deployed build the data is computed once, during that build.
 
 A single reusable Marko tag, `<component-demo component="x" variant="y"/>`, reads that data to
 render the story's live markup, a matching code sample, and a "View in Storybook ↗" link to that
@@ -47,5 +49,7 @@ reached via that link-out, not reimplemented on the docs site.
 Docs pages can no longer silently drift from Storybook — a stale or mistyped `component`/`variant`
 reference fails the site build immediately instead of rendering quietly-wrong markup. Adding a demo
 to a docs page is now a one-line tag rather than a hand-authored markup block plus a separate
-code-sample block. Only the Badge docs page has been converted so far; converting the remaining
-Skin components is deferred, ongoing work, tracked incrementally rather than as a single cutover.
+code-sample block. There is no generated artifact to keep in sync or regenerate — the data is
+always current with whatever `.stories.js` files exist on disk. Only the Badge, Signal, and Dialog
+docs pages have been converted so far; converting the remaining Skin components is deferred,
+ongoing work, tracked incrementally rather than as a single cutover.

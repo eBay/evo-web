@@ -316,7 +316,7 @@ Each story must be isolated to a single test. This allows us to easily run visua
 
 ## Storybook → Docs Site Integration
 
-Skin component docs pages (`src/routes/_index/components/*/css+page.marko`) render live Storybook markup instead of hand-duplicated HTML, so a demo can never drift out of sync with its story. This is driven by `packages/skin/scripts/storybook/extract-story-markup.ts`, which reads every `.stories.js` file and writes `src/data/story-markup.json` — a generated file that's committed to the repo (same pattern as `src/data/icons.json`), not something you hand-edit.
+Skin component docs pages (`src/routes/_index/components/*/css+page.marko`) render live Storybook markup instead of hand-duplicated HTML, so a demo can never drift out of sync with its story. `src/data/story-markup.ts` reads every `.stories.js` file directly at build time via Vite's `import.meta.glob` (the same mechanism `src/data/components.ts` uses to eagerly import route templates) — there's no generated file and nothing to regenerate. Editing a story picks up instantly through Vite's own dev-server reload, and in a deployed build the data is computed once as part of that build, since the site itself is a static build with no per-request server.
 
 ### Adding a demo to a docs page
 
@@ -329,25 +329,15 @@ Use the `<component-demo>` tag, giving it the component's directory name and the
 
 This renders the story's actual HTML, a code sample of that markup, and a "View in Storybook ↗" link to the exact story — no imports, no manual markup, no separate Storybook URL to maintain.
 
-### Keeping `story-markup.json` up to date
-
-`npm run storybook -w packages/skin` regenerates `story-markup.json` before Storybook opens and keeps watching `.stories.js` files for the rest of the session, so new/edited stories are picked up automatically while you work.
-
-If you only need a one-off regeneration (e.g. you edited a story without running Storybook), run:
-
-```bash
-npm run build:story-markup -w packages/skin
-```
-
-If a docs page references a `component`/`variant` pair that doesn't exist in `story-markup.json`, the site build fails immediately with a message telling you to regenerate or fix the typo — this is intentional, so a stale reference is caught at build time rather than rendering a silently blank demo.
+If a docs page references a `component`/`variant` pair that doesn't exist in any `.stories.js` file, the site build fails immediately with a message naming the problem — this is intentional, so a stale reference is caught at build time rather than rendering a silently blank demo.
 
 ### Variant keys
 
-A variant's key in `story-markup.json` is derived from its story file's title with the component name stripped off the front, plus its export name — e.g. a single-file component like Badge (`Skin/Badge`) keeps bare keys (`empty`, `threeDigits`), while a component whose stories are split across multiple files (e.g. Breadcrumbs) gets keys that include the distinguishing part of the title (e.g. `links-cascade/textSpacing`, `buttons-overflow/textSpacing`) so that two different files exporting the same story name never collide.
+A variant's key is derived from its story file's title with the component name stripped off the front, plus its export name — e.g. a single-file component like Badge (`Skin/Badge`) keeps bare keys (`empty`, `threeDigits`), while a component whose stories are split across multiple files (e.g. Breadcrumbs) gets keys that include the distinguishing part of the title (e.g. `links-cascade/textSpacing`, `buttons-overflow/textSpacing`) so that two different files exporting the same story name never collide.
 
 ### Known temporary exception
 
-`fake-button` and `fake-tabs` (nested under `button/stories/fake-button/` and `tabs/stories/fake-tabs/`) are carved out into their own component keys via `TEMPORARY_COMPONENT_KEY_OVERRIDES` in `extract-story-markup.ts`, even though their stories physically live inside Button's and Tabs' own `stories/` folders. This is a deliberate, short-term stand-in — these components are slated for a structural reorganization (see [GitHub issue #1045](https://github.com/eBay/evo-web/issues/1045)) whose exact shape hasn't been decided yet. Once that reorganization lands, update or remove this override to match the real structure — don't treat it as a permanent design decision.
+`fake-button` and `fake-tabs` (nested under `button/stories/fake-button/` and `tabs/stories/fake-tabs/`) are carved out into their own component keys via `TEMPORARY_COMPONENT_KEY_OVERRIDES` in `src/data/story-markup.ts`, even though their stories physically live inside Button's and Tabs' own `stories/` folders. This is a deliberate, short-term stand-in — these components are slated for a structural reorganization (see [GitHub issue #1045](https://github.com/eBay/evo-web/issues/1045)) whose exact shape hasn't been decided yet. Once that reorganization lands, update or remove this override to match the real structure — don't treat it as a permanent design decision.
 
 ## Visual Regression Testing
 

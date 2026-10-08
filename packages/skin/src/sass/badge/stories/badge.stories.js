@@ -12,6 +12,10 @@ export const twoDigits = () => `
 <span class="badge" role="img" aria-label="10 notifications">10</span>
 `;
 
+export const twoDigitsCircle = () => `
+<span class="badge badge--circle" role="img" aria-label="10 notifications">10</span>
+`;
+
 export const threeDigits = () => `
 <span class="badge" role="img" aria-label="99+ notifications">99+</span>
 `;

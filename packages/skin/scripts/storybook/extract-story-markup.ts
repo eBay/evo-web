@@ -1,10 +1,20 @@
-import fs from "fs";
-import path from "path";
-
 export type StoryMarkupMap = Record<
     string,
     Record<string, { html: string; storybookId: string }>
 >;
+
+/**
+ * One already-imported story module, keyed by its path relative to the stories
+ * root (e.g. "button/stories/fake-button/base.stories.js"). This function is
+ * deliberately agnostic about HOW the module was loaded — the CLI/test suite
+ * loads it via Node's fs + dynamic `import()`, the live site loads it via Vite's
+ * `import.meta.glob(..., { eager: true })` — both hand it the same shape so the
+ * extraction logic below never needs to know which one it's running under.
+ */
+export interface DiscoveredStoryModule {
+    relativePath: string;
+    mod: Record<string, unknown>;
+}
 
 function slugify(value: string): string {
     return value
@@ -31,9 +41,7 @@ function slugify(value: string): string {
  *
  * Verified against real `storybook build` output across all 1035 real story
  * variants in the repo, including every acronym case (RTL, CSS, CTA) and every
- * leading-digit case (e.g. "_1024container") — see
- * docs/superpowers/plans/DECISIONS-2026-09-29-storybook-docs-integration.md,
- * Decision 4.
+ * leading-digit case (e.g. "_1024container").
  */
 function toStartCaseStr(value: string): string {
     return value
@@ -76,35 +84,6 @@ function stripScriptTags(html: string): string {
     return html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
 }
 
-interface DiscoveredStoryFile {
-    filePath: string;
-    /** Directory directly under the stories root, i.e. <X> in <X>/stories/[...]/file.stories.js. */
-    topLevelDir: string;
-    /** Immediate subfolder of stories/, if any, e.g. "fake-button" in
-     *  button/stories/fake-button/base.stories.js. Empty string when the file sits
-     *  directly in <X>/stories/ with no further nesting. Only consulted by
-     *  TEMPORARY_COMPONENT_KEY_OVERRIDES below. */
-    nestedSubfolder: string;
-}
-
-function findStoryFiles(root: string): DiscoveredStoryFile[] {
-    const entries = fs.readdirSync(root, { recursive: true }) as string[];
-
-    return entries
-        .filter((entry) => entry.endsWith(".stories.js"))
-        .map((entry) => {
-            const filePath = path.join(root, entry);
-            // entry is relative to `root` (== .../src/sass), e.g.
-            // "button/stories/fake-button/base.stories.js" (nested) or
-            // "cta-button/stories/cta-button.stories.js" (direct).
-            const segments = entry.split(path.sep);
-            const topLevelDir = segments[0];
-            const nestedSubfolder = segments.length > 3 ? segments[2] : "";
-
-            return { filePath, topLevelDir, nestedSubfolder };
-        });
-}
-
 /**
  * TEMPORARY. The component folder (the directory directly under src/sass) is the
  * component key for every story file inside it, no exceptions — this is the
@@ -127,21 +106,24 @@ const TEMPORARY_COMPONENT_KEY_OVERRIDES: Record<string, string> = {
     "tabs/fake-tabs": "fake-tabs",
 };
 
-function resolveComponentKeys(files: DiscoveredStoryFile[]): Map<string, string> {
-    const componentKeyByFile = new Map<string, string>();
+/**
+ * Derives a module's component key from its relative path, e.g.
+ * "button/stories/fake-button/base.stories.js" -> topLevelDir "button",
+ * nestedSubfolder "fake-button" (only consulted by TEMPORARY_COMPONENT_KEY_OVERRIDES
+ * above). "cta-button/stories/cta-button.stories.js" (no further nesting) -> just
+ * topLevelDir "cta-button", nestedSubfolder "".
+ */
+function resolveComponentKey(relativePath: string): string {
+    const segments = relativePath.split("/");
+    const topLevelDir = segments[0];
+    const nestedSubfolder = segments.length > 3 ? segments[2] : "";
 
-    for (const file of files) {
-        const overrideKey =
-            file.nestedSubfolder === ""
-                ? undefined
-                : TEMPORARY_COMPONENT_KEY_OVERRIDES[
-                      `${file.topLevelDir}/${file.nestedSubfolder}`
-                  ];
+    const overrideKey =
+        nestedSubfolder === ""
+            ? undefined
+            : TEMPORARY_COMPONENT_KEY_OVERRIDES[`${topLevelDir}/${nestedSubfolder}`];
 
-        componentKeyByFile.set(file.filePath, overrideKey ?? slugify(file.topLevelDir));
-    }
-
-    return componentKeyByFile;
+    return overrideKey ?? slugify(topLevelDir);
 }
 
 /**
@@ -177,11 +159,14 @@ function variantKey(title: string, exportName: string, componentKey: string): st
     return subPath === "" ? exportName : `${subPath}/${exportName}`;
 }
 
-export async function extractStoryMarkup(
-    storiesGlobRoot: string,
-): Promise<StoryMarkupMap> {
-    const files = findStoryFiles(storiesGlobRoot);
-    const componentKeyByFile = resolveComponentKeys(files);
+/**
+ * Builds the full component -> variant -> {html, storybookId} map from a list of
+ * already-imported story modules. Pure/synchronous — no filesystem or module
+ * loading of its own — so it works identically whether the caller gathered
+ * modules via Node's fs + dynamic `import()` (CLI/tests) or Vite's
+ * `import.meta.glob(..., { eager: true })` (the live site, see src/data/story-markup.ts).
+ */
+export function buildStoryMarkup(modules: DiscoveredStoryModule[]): StoryMarkupMap {
     const result: StoryMarkupMap = {};
     // Tracks which file declared each title, so a genuine duplicate title (Storybook
     // itself would have colliding story IDs) fails loudly instead of silently
@@ -197,26 +182,25 @@ export async function extractStoryMarkup(
         Record<string, { title: string; exportName: string }>
     > = {};
 
-    for (const file of files) {
-        const mod = await import(file.filePath);
-        const title: unknown = mod.default?.title;
+    for (const { relativePath, mod } of modules) {
+        const title: unknown = (mod.default as { title?: unknown } | undefined)?.title;
 
         if (typeof title !== "string" || title.trim() === "") {
             throw new Error(
-                `${file.filePath}: default export must have a non-empty string "title" (e.g. "Skin/CTA Button")`,
+                `${relativePath}: default export must have a non-empty string "title" (e.g. "Skin/CTA Button")`,
             );
         }
 
         const existingTitleOwner = fileByTitle.get(title);
         if (existingTitleOwner !== undefined) {
             throw new Error(
-                `${file.filePath}: duplicate title "${title}" (already declared by ${existingTitleOwner}). ` +
+                `${relativePath}: duplicate title "${title}" (already declared by ${existingTitleOwner}). ` +
                     `Every story file must have a unique title — Storybook itself would have colliding story IDs otherwise.`,
             );
         }
-        fileByTitle.set(title, file.filePath);
+        fileByTitle.set(title, relativePath);
 
-        const componentKey = componentKeyByFile.get(file.filePath)!;
+        const componentKey = resolveComponentKey(relativePath);
         result[componentKey] ??= {};
         sourceByVariantKey[componentKey] ??= {};
 
@@ -231,7 +215,7 @@ export async function extractStoryMarkup(
             const existingSource = sourceByVariantKey[componentKey][key];
             if (existingSource !== undefined) {
                 throw new Error(
-                    `${file.filePath}: variant key "${key}" for component="${componentKey}" ` +
+                    `${relativePath}: variant key "${key}" for component="${componentKey}" ` +
                         `collides with an entry already produced by title "${existingSource.title}" ` +
                         `(export "${existingSource.exportName}"). Two different titles stripped down ` +
                         `to the same key here — rename this story's title or export so it's unique ` +
@@ -250,11 +234,34 @@ export async function extractStoryMarkup(
     return result;
 }
 
-export async function writeStoryMarkup(
+/**
+ * Node/fs-based discovery used by the CLI and the test suite: walks every
+ * `.stories.js` file under `storiesGlobRoot` and dynamically imports it. Not used
+ * by the live site (see src/data/story-markup.ts, which uses Vite's
+ * `import.meta.glob` instead — Vite cannot statically analyze a
+ * runtime-constructed import path, which is exactly why this function exists only
+ * for contexts that run under plain Node, e.g. Vitest).
+ */
+export async function extractStoryMarkup(
     storiesGlobRoot: string,
-    outputPath: string,
-): Promise<void> {
-    const markup = await extractStoryMarkup(storiesGlobRoot);
-    fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-    fs.writeFileSync(outputPath, JSON.stringify(markup, null, 2), "utf8");
+): Promise<StoryMarkupMap> {
+    const fs = await import("fs");
+    const path = await import("path");
+    const { pathToFileURL } = await import("url");
+
+    const entries = fs.readdirSync(storiesGlobRoot, { recursive: true }) as string[];
+    const relativePaths = entries
+        .filter((entry) => entry.endsWith(".stories.js"))
+        .map((entry) => entry.split(path.sep).join("/"));
+
+    const modules: DiscoveredStoryModule[] = [];
+    for (const relativePath of relativePaths) {
+        // A bare OS-native path fails dynamic import() on Windows
+        // (ERR_UNSUPPORTED_ESM_URL_SCHEME for a backslash-separated absolute
+        // path); pathToFileURL makes this work on every platform.
+        const mod = await import(pathToFileURL(path.join(storiesGlobRoot, relativePath)).href);
+        modules.push({ relativePath, mod });
+    }
+
+    return buildStoryMarkup(modules);
 }
