@@ -224,8 +224,3 @@ hr.menu-button__separator {
 .menu-button--filter div.menu-button__item[role^="menuitem"] {
     justify-content: flex-start;
 }
-
-/* https://developer.paciellogroup.com/blog/2018/03/focus-visible-and-backwards-compatibility/ */
-div.menu-button__item[role^="menuitem"]:focus:not(:focus-visible) {
-    outline: none;
-}

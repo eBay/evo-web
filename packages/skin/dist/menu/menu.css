@@ -275,6 +275,3 @@ hr.menu__separator {
 .menu--filter div.menu__item[role^="menuitem"] {
     justify-content: flex-start;
 }
-div.menu__item[role^="menuitem"]:focus:not(:focus-visible) {
-    outline: none;
-}

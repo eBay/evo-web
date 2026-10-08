@@ -340,9 +340,6 @@ span.listbox-button__value {
     flex: 1 0 auto;
     white-space: nowrap;
 }
-.listbox-button__options:focus:not(:focus-visible) {
-    outline: none;
-}
 [dir="rtl"] .listbox-button .btn__label {
     margin-left: 3px;
     margin-right: 0;
