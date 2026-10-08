@@ -2,6 +2,8 @@ import type { ComponentProps, CSSProperties, ReactNode } from "react";
 import type { Strategy } from "@floating-ui/react";
 import type { NativeIconButtonProps } from "../icon-button";
 
+export type InputSize = "regular" | "large";
+
 /** How the combobox filters its options. */
 export type ComboboxFilterMethod = "auto" | "manual" | "none";
 
@@ -63,6 +65,8 @@ export type EvoComboboxProps = Omit<
    * input. Defaults to `"automatic"`.
    */
   listSelection?: ComboboxListSelection;
+  /** Selects the regular or large Skin input treatment. Defaults to `"regular"`. */
+  inputSize?: InputSize;
   /** Called with the displayed input value after typing or option selection. */
   onValueChange?: (value: string) => void;
   /**

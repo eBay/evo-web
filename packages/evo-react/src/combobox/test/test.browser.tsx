@@ -854,6 +854,48 @@ describe("evo-combobox", () => {
   });
 
   describe("listbox layout", () => {
+    it("uses the large Skin treatment for the input and floating label", async () => {
+      const screen = await render(<ComboboxFixture inputSize="large" />);
+      const input = screen
+        .getByRole("combobox", { name: "Campaign" })
+        .element();
+
+      expect(input.closest(".combobox")).toHaveClass("combobox--large");
+      expect(input.closest(".floating-label")).toHaveClass(
+        "floating-label--large",
+      );
+      expect(input.getBoundingClientRect().height).toBe(48);
+    });
+
+    it("uses regular Skin treatment by default", async () => {
+      const screen = await render(<ComboboxFixture />);
+      const input = screen
+        .getByRole("combobox", { name: "Campaign" })
+        .element();
+
+      expect(input.closest(".combobox")).not.toHaveClass("combobox--large");
+      expect(input.closest(".floating-label")).not.toHaveClass(
+        "floating-label--large",
+      );
+      expect(input.getBoundingClientRect().height).toBe(40);
+    });
+
+    it("positions the listbox relative to the input, not the padded wrapper", async () => {
+      const screen = await render(
+        <ComboboxFixture style={{ paddingLeft: 24 }} />,
+      );
+      const input = screen.getByRole("combobox");
+
+      await user.click(input);
+
+      const inputLeft = input.element().getBoundingClientRect().left;
+      const listboxLeft = screen
+        .getByRole("listbox")
+        .element()
+        .getBoundingClientRect().left;
+      expect(listboxLeft).toBeCloseTo(inputLeft, 0);
+    });
+
     it("makes the open listbox at least as wide as the combobox", async () => {
       const screen = await render(
         <div style={{ width: 320 }}>

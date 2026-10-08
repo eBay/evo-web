@@ -7,10 +7,18 @@ const meta: Meta<typeof EvoChipsCombobox> = {
   title: "Form Input/EvoChipsCombobox",
   component: EvoChipsCombobox,
   subcomponents: { EvoChipsComboboxOption },
+  argTypes: {
+    a11ySelectedItemsText: {
+      type: { name: "string", required: true },
+      control: "text",
+      table: { defaultValue: { summary: "Selected items" } },
+    },
+  },
   args: {
     "aria-label": "Item features",
     placeholder: "Add an item feature",
     a11yDeleteButtonText: "Remove",
+    a11ySelectedItemsText: "Selected items",
     children: (
       <>
         <EvoChipsComboboxOption text="Free shipping" />

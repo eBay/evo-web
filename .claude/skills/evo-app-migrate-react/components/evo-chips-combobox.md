@@ -22,4 +22,5 @@ import {
 - Replace `EbayComboboxOption` with `EvoChipsComboboxOption`.
 - Replace legacy `onChange(event, { selected })` with `onSelectedChange(selected)`.
 - Replace `error` with native `aria-invalid` for both input validity and Skin error styling.
-- `ref` points to the native input. The outer `<span>` retains the selected chip list and combobox.
+- `ref` points to the native input. The outer `<div>` contains the selected chip list and combobox.
+- Native `required` is not supported because chips are not the input's value. Validate `selected` in the form and set `aria-invalid` to show the error state.

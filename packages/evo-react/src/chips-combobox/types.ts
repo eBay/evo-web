@@ -23,8 +23,10 @@ export type EvoChipsComboboxProps = Omit<
   | "children"
   | "className"
   | "defaultValue"
+  | "inputSize"
   | "onOptionSelect"
   | "onValueChange"
+  | "required"
   | "style"
   | "value"
 > &
@@ -34,13 +36,19 @@ export type EvoChipsComboboxProps = Omit<
     /** Called when a chip is added or removed. */
     onSelectedChange?: (selected: string[]) => void;
     /**
-     * Accessible action prefix for each chip's removal button. English
-     * default to be overridden is `"Remove"`.
+     * Accessible action label for each chip's removal button. The chip text
+     * is linked as its description. English default to be overridden is
+     * `"Remove"`.
      */
     a11yDeleteButtonText?: string;
-    /** Skin class on the outer `<span>`. */
+    /**
+     * Accessible name for the list of selected chips. English default to be
+     * overridden is `"Selected items"`.
+     */
+    a11ySelectedItemsText?: string;
+    /** Skin class on the outer `<div>`. */
     className?: string;
-    /** Style on the outer `<span>`. */
+    /** Style on the outer `<div>`. */
     style?: CSSProperties;
   };
 
