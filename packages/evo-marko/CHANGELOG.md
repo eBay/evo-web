@@ -1,5 +1,13 @@
 # @evo-web/marko
 
+## 0.9.1
+
+### Patch Changes
+
+- [#1042](https://github.com/eBay/evo-web/pull/1042) [`5f74e44`](https://github.com/eBay/evo-web/commit/5f74e44855f498e214f92da25eda392983cbbef1) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Add `<evo-flag>`, migrated from ebayui-core's `<ebay-flag>`
+
+- [#1055](https://github.com/eBay/evo-web/pull/1055) [`9bb8a65`](https://github.com/eBay/evo-web/commit/9bb8a658f2b04efb50bbabd36d51ac80279fd73e) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Add `<evo-section-title>`, migrated from ebayui-core's `<ebay-section-title>`, without an info slot. The title must now be provided with `<@title>`, and the `href` and `ctaText` attributes are replaced by a `<@cta>` attribute tag that renders an `<a>`.
+
 ## 0.9.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # Skin Changelog
 
+## 19.37.1
+
+### Patch Changes
+
+- [#1050](https://github.com/eBay/evo-web/pull/1050) [`5abb77a`](https://github.com/eBay/evo-web/commit/5abb77abb565cfdfca712f4e32a192f7cbe4d77f) Thanks [@patrickufer](https://github.com/patrickufer)! - Fix compact video links beneath the control bar while keeping playback controls clickable.
+
 ## 19.37.0
 
 ### Minor Changes
