@@ -1,138 +1,58 @@
 @use "../variables/variables";
 
-// Naming Convention:
-// prefixes ($row-[prefix]):
-//    card = card variation
-// suffixes map with breakpoints:
-//    - "min" indicates default (smallest screen)
-//    - custom ones are called out
-//    - all lowercase (i.e. "min")
-//    - pixel values
-
-// Minimal Layout (default)
-$row-preview-cards-min: 2;
-$row-preview-cards-sm: 4;
-$row-preview-cards-md: 5;
-$row-preview-cards-lg: 7;
-$row-preview-cards-xl: 9;
-$row-preview-cards-xl2: 10;
-$row-preview-cards-xl3: 12;
-$row-preview-cards-xl4: 14;
-
-div.file-preview-card-group {
-    container: file-preview-cards-container / inline-size;
-}
-
-div.file-preview-card-group ul {
+ul.file-preview-card-group {
     display: grid;
     gap: var(--spacing-100);
-    grid-template-columns: repeat($row-preview-cards-min, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     list-style: none;
     margin: 0;
     padding: 0;
     width: 100%;
 }
 
-div.file-preview-card-group ul li {
+ul.file-preview-card-group > li {
     height: max-content;
 }
 
-@supports not (contain: inline-size) {
-    @media (min-width: variables.$screen-size-SM) {
-        div.file-preview-card-group ul {
-            gap: var(--spacing-100);
-            grid-template-columns: repeat($row-preview-cards-sm, 1fr);
-        }
-    }
-
-    @media (min-width: variables.$screen-size-MD) {
-        div.file-preview-card-group ul {
-            gap: var(--spacing-200);
-            grid-template-columns: repeat($row-preview-cards-md, 1fr);
-        }
-    }
-
-    @media (min-width: variables.$screen-size-LG) {
-        div.file-preview-card-group ul {
-            gap: var(--spacing-200);
-            grid-template-columns: repeat($row-preview-cards-lg, 1fr);
-        }
-    }
-
-    @media (min-width: variables.$screen-size-XL) {
-        div.file-preview-card-group ul {
-            gap: var(--spacing-200);
-            grid-template-columns: repeat($row-preview-cards-xl, 1fr);
-        }
-    }
-
-    @media (min-width: variables.$screen-size-XL2) {
-        div.file-preview-card-group ul {
-            gap: var(--spacing-200);
-            grid-template-columns: repeat($row-preview-cards-xl2, 1fr);
-        }
-    }
-
-    @media (min-width: variables.$screen-size-XL3) {
-        div.file-preview-card-group ul {
-            gap: var(--spacing-200);
-            grid-template-columns: repeat($row-preview-cards-xl3, 1fr);
-        }
-    }
-
-    @media (min-width: variables.$screen-size-XL4) {
-        div.file-preview-card-group ul {
-            gap: var(--spacing-200);
-            grid-template-columns: repeat($row-preview-cards-xl4, 1fr);
-        }
+@media (min-width: variables.$screen-size-SM) {
+    ul.file-preview-card-group {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
-@container file-preview-cards-container (inline-size >= #{variables.$screen-size-SM}) {
-    div.file-preview-card-group ul {
-        gap: var(--spacing-100);
-        grid-template-columns: repeat($row-preview-cards-sm, 1fr);
-    }
-}
-
-@container file-preview-cards-container (inline-size >= #{variables.$screen-size-MD}) {
-    div.file-preview-card-group ul {
+@media (min-width: variables.$screen-size-MD) {
+    ul.file-preview-card-group {
         gap: var(--spacing-200);
-        grid-template-columns: repeat($row-preview-cards-md, 1fr);
+        grid-template-columns: repeat(5, 1fr);
     }
 }
 
-@container file-preview-cards-container (inline-size >= #{variables.$screen-size-LG}) {
-    div.file-preview-card-group ul {
-        gap: var(--spacing-200);
-        grid-template-columns: repeat($row-preview-cards-lg, 1fr);
+@media (min-width: variables.$screen-size-LG) {
+    ul.file-preview-card-group {
+        grid-template-columns: repeat(7, 1fr);
     }
 }
 
-@container file-preview-cards-container (inline-size >= #{variables.$screen-size-XL}) {
-    div.file-preview-card-group ul {
-        gap: var(--spacing-200);
-        grid-template-columns: repeat($row-preview-cards-xl, 1fr);
+@media (min-width: variables.$screen-size-XL) {
+    ul.file-preview-card-group {
+        grid-template-columns: repeat(9, 1fr);
     }
 }
 
-@container file-preview-cards-container (inline-size >= #{variables.$screen-size-XL2}) {
-    div.file-preview-card-group ul {
-        gap: var(--spacing-200);
-        grid-template-columns: repeat($row-preview-cards-xl2, 1fr);
+@media (min-width: variables.$screen-size-XL2) {
+    ul.file-preview-card-group {
+        grid-template-columns: repeat(10, 1fr);
     }
 }
 
-@container file-preview-cards-container (inline-size >= #{variables.$screen-size-XL3}) {
-    div.file-preview-card-group ul {
-        gap: var(--spacing-200);
-        grid-template-columns: repeat($row-preview-cards-xl3, 1fr);
+@media (min-width: variables.$screen-size-XL3) {
+    ul.file-preview-card-group {
+        grid-template-columns: repeat(12, 1fr);
     }
 }
 
-@container file-preview-cards-container (inline-size >= #{variables.$screen-size-XL4}) {
-    div.file-preview-card-group ul {
-        gap: var(--spacing-200);
-        grid-template-columns: repeat($row-preview-cards-xl4, 1fr);
+@media (min-width: variables.$screen-size-XL4) {
+    ul.file-preview-card-group {
+        grid-template-columns: repeat(14, 1fr);
     }
 }
