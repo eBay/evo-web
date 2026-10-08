@@ -21,6 +21,10 @@
     margin-inline-start: var(--spacing-50);
 }
 
+.phone-input .listbox-button__control .btn__text {
+    display: none;
+}
+
 .phone-input .listbox-button span.fflag,
 .phone-input .listbox-button svg.flag {
     height: 18px;
