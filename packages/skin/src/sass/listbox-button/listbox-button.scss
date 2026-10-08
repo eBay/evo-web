@@ -73,8 +73,11 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox,
     vertical-align: initial;
 
     &:focus {
-        outline: none;
         text-decoration: underline;
+    }
+
+    &:focus-visible {
+        border-radius: 4px;
     }
 
     &[aria-expanded="true"] ~ .listbox-button__listbox {

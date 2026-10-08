@@ -141,8 +141,11 @@ div.menu__item[role^="menuitem"] span.badge {
     vertical-align: initial;
 
     &:focus {
-        outline: none;
         text-decoration: underline;
+    }
+
+    &:focus-visible {
+        border-radius: 4px;
     }
 }
 

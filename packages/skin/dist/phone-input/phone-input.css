@@ -9,11 +9,7 @@
     min-width: 64px;
     padding-inline: var(--spacing-200) var(--spacing-100);
 }
-
 .phone-input button.btn:focus-visible {
-    border-right-style: solid;
-    box-shadow: 0 0 0 1px var(--color-border-strong);
-    outline: none;
     z-index: 1;
 }
 

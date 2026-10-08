@@ -52,8 +52,11 @@ a.fake-btn--borderless {
     &:focus,
     &:hover {
         background-color: transparent;
-        outline: none;
         text-decoration: underline;
+    }
+
+    &:focus-visible {
+        border-radius: 4px;
     }
 }
 

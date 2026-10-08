@@ -13,10 +13,8 @@
     padding-inline: var(--spacing-200) var(--spacing-100);
 }
 
+/* keep the native ring above the adjoining textbox */
 .phone-input button.btn:focus-visible {
-    border-right-style: solid;
-    box-shadow: 0 0 0 1px var(--color-border-strong);
-    outline: none;
     z-index: 1;
 }
 
