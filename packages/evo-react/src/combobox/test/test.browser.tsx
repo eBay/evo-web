@@ -132,6 +132,64 @@ describe("evo-combobox", () => {
       await expect.element(input).toHaveAttribute("aria-expanded", "false");
     });
 
+    it("calls onOptionSelect after onValueChange for pointer selection", async () => {
+      const onOptionSelect = vi.fn();
+      const onValueChange = vi.fn();
+      const screen = await render(
+        <ComboboxFixture
+          onOptionSelect={onOptionSelect}
+          onValueChange={onValueChange}
+        />,
+      );
+
+      await user.click(screen.getByRole("combobox"));
+      await user.click(screen.getByRole("option", { name: "Basic Offer" }));
+
+      expect(onOptionSelect).toHaveBeenCalledTimes(1);
+      expect(onOptionSelect).toHaveBeenCalledWith("Basic Offer");
+      expect(onValueChange.mock.invocationCallOrder[0]).toBeLessThan(
+        onOptionSelect.mock.invocationCallOrder[0],
+      );
+    });
+
+    it.each(["automatic", "manual"] as const)(
+      "calls onOptionSelect for keyboard selection in %s mode",
+      async (listSelection) => {
+        const onOptionSelect = vi.fn();
+        const screen = await render(
+          <ComboboxFixture
+            listSelection={listSelection}
+            onOptionSelect={onOptionSelect}
+          />,
+        );
+
+        await user.click(screen.getByRole("combobox"));
+        await user.keyboard("{ArrowDown}{Enter}");
+
+        expect(onOptionSelect).toHaveBeenCalledTimes(1);
+        expect(onOptionSelect).toHaveBeenCalledWith("August Campaign");
+      },
+    );
+
+    it("does not call onOptionSelect while typing or when focus out commits a preview", async () => {
+      const onOptionSelect = vi.fn();
+      const onValueChange = vi.fn();
+      const screen = await render(
+        <ComboboxFixture
+          onOptionSelect={onOptionSelect}
+          onValueChange={onValueChange}
+        />,
+      );
+      const input = screen.getByRole("combobox");
+
+      await user.type(input, "Basic");
+      await user.keyboard("{ArrowDown}");
+      await user.tab();
+
+      expect(onValueChange).toHaveBeenLastCalledWith("Basic Offer");
+      expect(onOptionSelect).not.toHaveBeenCalled();
+    });
+
     it("supports controlled values for typing and selection", async () => {
       function ControlledCombobox() {
         const [value, setValue] = useState("");
@@ -796,6 +854,48 @@ describe("evo-combobox", () => {
   });
 
   describe("listbox layout", () => {
+    it("uses the large Skin treatment for the input and floating label", async () => {
+      const screen = await render(<ComboboxFixture inputSize="large" />);
+      const input = screen
+        .getByRole("combobox", { name: "Campaign" })
+        .element();
+
+      expect(input.closest(".combobox")).toHaveClass("combobox--large");
+      expect(input.closest(".floating-label")).toHaveClass(
+        "floating-label--large",
+      );
+      expect(input.getBoundingClientRect().height).toBe(48);
+    });
+
+    it("uses regular Skin treatment by default", async () => {
+      const screen = await render(<ComboboxFixture />);
+      const input = screen
+        .getByRole("combobox", { name: "Campaign" })
+        .element();
+
+      expect(input.closest(".combobox")).not.toHaveClass("combobox--large");
+      expect(input.closest(".floating-label")).not.toHaveClass(
+        "floating-label--large",
+      );
+      expect(input.getBoundingClientRect().height).toBe(40);
+    });
+
+    it("positions the listbox relative to the input, not the padded wrapper", async () => {
+      const screen = await render(
+        <ComboboxFixture style={{ paddingLeft: 24 }} />,
+      );
+      const input = screen.getByRole("combobox");
+
+      await user.click(input);
+
+      const inputLeft = input.element().getBoundingClientRect().left;
+      const listboxLeft = screen
+        .getByRole("listbox")
+        .element()
+        .getBoundingClientRect().left;
+      expect(listboxLeft).toBeCloseTo(inputLeft, 0);
+    });
+
     it("makes the open listbox at least as wide as the combobox", async () => {
       const screen = await render(
         <div style={{ width: 320 }}>
