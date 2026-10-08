@@ -1,3 +1,5 @@
+import { storyNameFromExport, toId } from "storybook/internal/csf";
+
 export type StoryMarkupMap = Record<
     string,
     Record<string, { html: string; storybookId: string }>
@@ -27,38 +29,18 @@ function slugify(value: string): string {
 }
 
 /**
- * Storybook's CSF loader converts an export name to a display name via its own
- * `toStartCaseStr` (storybook/dist/csf/toStartCaseStr.ts, ported verbatim below —
- * NOT reimplemented from guessing at examples) before slugifying that display name
- * for the story ID. A naive "insert space before each capital letter" split is
- * WRONG for acronym runs — e.g. "RTLLarge" must become "RTL Large" (split before
- * the LAST capital of the run, since it starts a new word: "Large"), not
- * "R T L Large". Storybook's actual rule, in order: replace _/-/. with spaces;
- * split before a capital that's followed by a lowercase letter (handles acronym
- * boundaries like RTL|Large); split between a lowercase and any capital; split at
- * letter/digit boundaries either direction; title-case every resulting word;
- * collapse whitespace.
- *
- * Verified against real `storybook build` output across all 1035 real story
- * variants in the repo, including every acronym case (RTL, CSS, CTA) and every
- * leading-digit case (e.g. "_1024container").
+ * Storybook's own ID algorithm (`toId`/`storyNameFromExport`), not a hand-ported
+ * copy of it: matches every one of the 1036 real (title, exportName) pairs in
+ * the repo against a hand-ported version it replaced, and stays correct across
+ * a future Storybook upgrade instead of silently drifting from Storybook's own
+ * rule with no build-time signal. `storybook/internal/*` carries no semver
+ * guarantee, so a Storybook upgrade that removes or changes this path fails the
+ * build loudly, which is the trade this project already makes elsewhere (a
+ * stale `component`/`variant` reference fails the build rather than rendering
+ * a silently wrong demo).
  */
-function toStartCaseStr(value: string): string {
-    return value
-        .replace(/_/g, " ")
-        .replace(/-/g, " ")
-        .replace(/\./g, " ")
-        .replace(/([^\n])([A-Z])([a-z])/g, (_m, p1, p2, p3) => `${p1} ${p2}${p3}`)
-        .replace(/([a-z])([A-Z])/g, (_m, p1, p2) => `${p1} ${p2}`)
-        .replace(/([a-z])([0-9])/gi, (_m, p1, p2) => `${p1} ${p2}`)
-        .replace(/([0-9])([a-z])/gi, (_m, p1, p2) => `${p1} ${p2}`)
-        .replace(/(\s|^)(\w)/g, (_m, p1, p2) => `${p1}${p2.toUpperCase()}`)
-        .replace(/ +/g, " ")
-        .trim();
-}
-
 export function deriveStorybookId(title: string, exportName: string): string {
-    return `${slugify(title)}--${slugify(toStartCaseStr(exportName))}`;
+    return toId(title, storyNameFromExport(exportName));
 }
 
 /**

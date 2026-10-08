@@ -331,6 +331,14 @@ This renders the story's actual HTML, a code sample of that markup, and a "View 
 
 If a docs page references a `component`/`variant` pair that doesn't exist in any `.stories.js` file, the site build fails immediately with a message naming the problem — this is intentional, so a stale reference is caught at build time rather than rendering a silently blank demo.
 
+### What a story needs to work on a docs page
+
+Stories are written to render alone in Storybook, but a docs page renders several of them side by side, with `<script>` tags stripped. Only reference variants that work in that setting:
+
+- Every `id` (and any `aria-labelledby`/`for` pointing at it) must be unique across the stories used on the same page.
+- Skip test-only variants such as `textSpacing`, which rely on Storybook-only helpers like `demo-a11y-text-spacing`.
+- Avoid root-relative asset paths such as `/img/...`. The docs site is served under a base path, so they break once deployed.
+
 ### Variant keys
 
 A variant's key is derived from its story file's title with the component name stripped off the front, plus its export name — e.g. a single-file component like Badge (`Skin/Badge`) keeps bare keys (`empty`, `threeDigits`), while a component whose stories are split across multiple files (e.g. Breadcrumbs) gets keys that include the distinguishing part of the title (e.g. `links-cascade/textSpacing`, `buttons-overflow/textSpacing`) so that two different files exporting the same story name never collide.
