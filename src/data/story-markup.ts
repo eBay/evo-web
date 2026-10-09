@@ -1,3 +1,5 @@
+import { storyNameFromExport, toId } from "storybook/internal/csf";
+
 import { urls } from "./common";
 
 /**
@@ -43,33 +45,19 @@ function slugify(value: string): string {
 }
 
 /**
- * Storybook's CSF loader converts an export name to a display name via its own
- * `toStartCaseStr` before slugifying that display name for the story ID. Ported
- * verbatim from Storybook's own source (storybook/dist/csf/toStartCaseStr.ts),
- * not reimplemented from guessing at examples — a naive "insert space before
- * each capital letter" split is wrong for acronym runs (e.g. "RTLLarge" must
- * become "RTL Large", not "R T L Large"). Verified against real `storybook
- * build` output across all 1035 real story variants in the repo. Kept in sync
- * with the identical copy in
- * `packages/skin/scripts/storybook/extract-story-markup.ts` (duplicated rather
- * than imported — see the module-level comment on `storyModules` above for why).
+ * Storybook's own ID algorithm, not a hand-ported copy of it: the identical
+ * import `packages/skin/scripts/storybook/extract-story-markup.ts` uses, so
+ * the two files can't drift from each other the way their hand-ported
+ * predecessors could (and once did, within this same change, before this
+ * file's copy was brought in line with that one's).
  */
-function toStartCaseStr(value: string): string {
-  return value
-    .replace(/_/g, " ")
-    .replace(/-/g, " ")
-    .replace(/\./g, " ")
-    .replace(/([^\n])([A-Z])([a-z])/g, (_m, p1, p2, p3) => `${p1} ${p2}${p3}`)
-    .replace(/([a-z])([A-Z])/g, (_m, p1, p2) => `${p1} ${p2}`)
-    .replace(/([a-z])([0-9])/gi, (_m, p1, p2) => `${p1} ${p2}`)
-    .replace(/([0-9])([a-z])/gi, (_m, p1, p2) => `${p1} ${p2}`)
-    .replace(/(\s|^)(\w)/g, (_m, p1, p2) => `${p1}${p2.toUpperCase()}`)
-    .replace(/ +/g, " ")
-    .trim();
-}
-
-function deriveStorybookId(title: string, exportName: string): string {
-  return `${slugify(title)}--${slugify(toStartCaseStr(exportName))}`;
+/**
+ * Exported only so `packages/skin/scripts/storybook/__tests__/cross-package-
+ * consistency.test.ts` can assert this stays identical to the copy in
+ * `extract-story-markup.ts`; not meant for use outside this module otherwise.
+ */
+export function deriveStorybookId(title: string, exportName: string): string {
+  return toId(title, storyNameFromExport(exportName));
 }
 
 /**

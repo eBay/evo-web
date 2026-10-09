@@ -343,10 +343,6 @@ Stories are written to render alone in Storybook, but a docs page renders severa
 
 A variant's key is derived from its story file's title with the component name stripped off the front, plus its export name — e.g. a single-file component like Badge (`Skin/Badge`) keeps bare keys (`empty`, `threeDigits`), while a component whose stories are split across multiple files (e.g. Breadcrumbs) gets keys that include the distinguishing part of the title (e.g. `links-cascade/textSpacing`, `buttons-overflow/textSpacing`) so that two different files exporting the same story name never collide.
 
-### Known temporary exception
-
-`fake-button` and `fake-tabs` (nested under `button/stories/fake-button/` and `tabs/stories/fake-tabs/`) are carved out into their own component keys via `TEMPORARY_COMPONENT_KEY_OVERRIDES` in `src/data/story-markup.ts`, even though their stories physically live inside Button's and Tabs' own `stories/` folders. This is a deliberate, short-term stand-in — these components are slated for a structural reorganization (see [GitHub issue #1045](https://github.com/eBay/evo-web/issues/1045)) whose exact shape hasn't been decided yet. Once that reorganization lands, update or remove this override to match the real structure — don't treat it as a permanent design decision.
-
 ## Visual Regression Testing
 
 We use Percy for automated visual regression testing. Percy runs automatically in CI/CD for all pull requests to ensure visual changes are reviewed before merging.
