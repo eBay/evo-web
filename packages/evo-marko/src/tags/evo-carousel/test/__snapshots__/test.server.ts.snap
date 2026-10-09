@@ -1,0 +1,472 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`evo-carousel > renders a continuous carousel 1`] = `
+"<div
+  aria-label="Top products"
+  aria-roledescription="carousel"
+  class="carousel"
+  role="group"
+>
+  <div
+    class="carousel__container"
+  >
+    <button
+      aria-controls="GENERATED-1"
+      aria-disabled="true"
+      aria-label="Previous slide"
+      class="carousel__control carousel__control--prev"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="icon icon--16"
+      >
+        <symbol
+          id="GENERATED-0"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M3.293 8.708a1 1 0 0 1 0-1.415l6-6a1 1 0 0 1 1.414 1.414L5.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414l-6-6Z"
+          />
+        </symbol>
+        <use
+          href="#icon-chevron-left-16"
+        />
+      </svg>
+    </button>
+    <div
+      class="carousel__viewport carousel__viewport--mask"
+    >
+      <ul
+        class="carousel__list carousel__list--snap"
+        id="GENERATED-1"
+      >
+        <li
+          class="carousel__item carousel__item--snap"
+        >
+          <div
+            class="demo-carousel-card"
+          >
+            Card 1
+          </div>
+        </li>
+        <li
+          class="carousel__item carousel__item--snap"
+        >
+          <div
+            class="demo-carousel-card"
+          >
+            Card 2
+          </div>
+        </li>
+        <li
+          class="carousel__item carousel__item--snap"
+        >
+          <div
+            class="demo-carousel-card"
+          >
+            Card 3
+          </div>
+        </li>
+        <li
+          class="carousel__item carousel__item--snap"
+        >
+          <div
+            class="demo-carousel-card"
+          >
+            Card 4
+          </div>
+        </li>
+        <li
+          class="carousel__item carousel__item--snap"
+        >
+          <div
+            class="demo-carousel-card"
+          >
+            Card 5
+          </div>
+        </li>
+        <li
+          class="carousel__item carousel__item--snap"
+        >
+          <div
+            class="demo-carousel-card"
+          >
+            Card 6
+          </div>
+        </li>
+        <li
+          class="carousel__item carousel__item--snap"
+        >
+          <div
+            class="demo-carousel-card"
+          >
+            Card 7
+          </div>
+        </li>
+        <li
+          class="carousel__item carousel__item--snap"
+        >
+          <div
+            class="demo-carousel-card"
+          >
+            Card 8
+          </div>
+        </li>
+        <li
+          class="carousel__item carousel__item--snap"
+        >
+          <div
+            class="demo-carousel-card"
+          >
+            Card 9
+          </div>
+        </li>
+        <li
+          class="carousel__item carousel__item--snap"
+        >
+          <div
+            class="demo-carousel-card"
+          >
+            Card 10
+          </div>
+        </li>
+      </ul>
+    </div>
+    <button
+      aria-controls="GENERATED-1"
+      aria-label="Next slide"
+      class="carousel__control carousel__control--next"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="icon icon--16"
+      >
+        <symbol
+          id="GENERATED-2"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="m12.707 8.707-6 6a1 1 0 0 1-1.414-1.414L10.586 8 5.293 2.707a1 1 0 0 1 1.414-1.414l6 6a1 1 0 0 1 0 1.414Z"
+          />
+        </symbol>
+        <use
+          href="#icon-chevron-right-16"
+        />
+      </svg>
+    </button>
+  </div>
+</div>"
+`;
+
+exports[`evo-carousel > renders a discrete carousel 1`] = `
+"<div
+  aria-label="Top products"
+  aria-roledescription="carousel"
+  class="carousel carousel--slides carousel--peek"
+  role="group"
+  style="--carousel-items-in-view: 3.1"
+>
+  <div
+    class="carousel__container"
+  >
+    <button
+      aria-controls="GENERATED-1"
+      aria-disabled="true"
+      aria-label="Previous slide"
+      class="carousel__control carousel__control--prev"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="icon icon--16"
+      >
+        <symbol
+          id="GENERATED-0"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M3.293 8.708a1 1 0 0 1 0-1.415l6-6a1 1 0 0 1 1.414 1.414L5.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414l-6-6Z"
+          />
+        </symbol>
+        <use
+          href="#icon-chevron-left-16"
+        />
+      </svg>
+    </button>
+    <div
+      class="carousel__viewport"
+    >
+      <ul
+        class="carousel__list carousel__list--snap carousel__list--slides"
+        id="GENERATED-1"
+      >
+        <li
+          class="carousel__item carousel__item--snap"
+        >
+          <div
+            class="demo-carousel-slide"
+          >
+            Card 1
+          </div>
+        </li>
+        <li
+          class="carousel__item"
+        >
+          <div
+            class="demo-carousel-slide"
+          >
+            Card 2
+          </div>
+        </li>
+        <li
+          class="carousel__item"
+        >
+          <div
+            class="demo-carousel-slide"
+          >
+            Card 3
+          </div>
+        </li>
+        <li
+          class="carousel__item carousel__item--snap"
+        >
+          <div
+            class="demo-carousel-slide"
+          >
+            Card 4
+          </div>
+        </li>
+        <li
+          class="carousel__item"
+        >
+          <div
+            class="demo-carousel-slide"
+          >
+            Card 5
+          </div>
+        </li>
+        <li
+          class="carousel__item"
+        >
+          <div
+            class="demo-carousel-slide"
+          >
+            Card 6
+          </div>
+        </li>
+        <li
+          class="carousel__item carousel__item--snap"
+        >
+          <div
+            class="demo-carousel-slide"
+          >
+            Card 7
+          </div>
+        </li>
+        <li
+          class="carousel__item"
+        >
+          <div
+            class="demo-carousel-slide"
+          >
+            Card 8
+          </div>
+        </li>
+        <li
+          class="carousel__item"
+        >
+          <div
+            class="demo-carousel-slide"
+          >
+            Card 9
+          </div>
+        </li>
+        <li
+          class="carousel__item carousel__item--snap"
+        >
+          <div
+            class="demo-carousel-slide"
+          >
+            Card 10
+          </div>
+        </li>
+        <li
+          class="carousel__item"
+        >
+          <div
+            class="demo-carousel-slide"
+          >
+            Card 11
+          </div>
+        </li>
+        <li
+          class="carousel__item"
+        >
+          <div
+            class="demo-carousel-slide"
+          >
+            Card 12
+          </div>
+        </li>
+      </ul>
+    </div>
+    <button
+      aria-controls="GENERATED-1"
+      aria-label="Next slide"
+      class="carousel__control carousel__control--next"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="icon icon--16"
+      >
+        <symbol
+          id="GENERATED-2"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="m12.707 8.707-6 6a1 1 0 0 1-1.414-1.414L10.586 8 5.293 2.707a1 1 0 0 1 1.414-1.414l6 6a1 1 0 0 1 0 1.414Z"
+          />
+        </symbol>
+        <use
+          href="#icon-chevron-right-16"
+        />
+      </svg>
+    </button>
+  </div>
+</div>"
+`;
+
+exports[`evo-carousel > renders an autoplaying carousel 1`] = `
+"<p>
+  The carousel is playing.
+</p>
+<div
+  aria-label="Featured deals"
+  aria-roledescription="carousel"
+  class="carousel carousel--slides"
+  role="group"
+  style="--carousel-items-in-view: 1"
+>
+  <button
+    aria-label="Pause carousel"
+    class="carousel__playback"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--24"
+    >
+      <symbol
+        id="GENERATED-0"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M9 5a2 2 0 1 0-4 0v14a2 2 0 1 0 4 0V5Zm10 0a2 2 0 1 0-4 0v14a2 2 0 1 0 4 0V5Z"
+        />
+      </symbol>
+      <use
+        href="#icon-pause-24"
+      />
+    </svg>
+  </button>
+  <div
+    class="carousel__container"
+  >
+    <button
+      aria-controls="GENERATED-2"
+      aria-label="Previous slide"
+      class="carousel__control carousel__control--prev"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="icon icon--16"
+      >
+        <symbol
+          id="GENERATED-1"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M3.293 8.708a1 1 0 0 1 0-1.415l6-6a1 1 0 0 1 1.414 1.414L5.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414l-6-6Z"
+          />
+        </symbol>
+        <use
+          href="#icon-chevron-left-16"
+        />
+      </svg>
+    </button>
+    <div
+      class="carousel__viewport"
+    >
+      <ul
+        aria-live="off"
+        class="carousel__list carousel__list--snap carousel__list--slides"
+        id="GENERATED-2"
+      >
+        <li
+          class="carousel__item carousel__item--snap"
+        >
+          <div
+            class="demo-carousel-banner"
+          >
+            Slide 1
+          </div>
+        </li>
+        <li
+          class="carousel__item carousel__item--snap"
+        >
+          <div
+            class="demo-carousel-banner"
+          >
+            Slide 2
+          </div>
+        </li>
+        <li
+          class="carousel__item carousel__item--snap"
+        >
+          <div
+            class="demo-carousel-banner"
+          >
+            Slide 3
+          </div>
+        </li>
+        <li
+          class="carousel__item carousel__item--snap"
+        >
+          <div
+            class="demo-carousel-banner"
+          >
+            Slide 4
+          </div>
+        </li>
+      </ul>
+    </div>
+    <button
+      aria-controls="GENERATED-2"
+      aria-label="Next slide"
+      class="carousel__control carousel__control--next"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="icon icon--16"
+      >
+        <symbol
+          id="GENERATED-3"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="m12.707 8.707-6 6a1 1 0 0 1-1.414-1.414L10.586 8 5.293 2.707a1 1 0 0 1 1.414-1.414l6 6a1 1 0 0 1 0 1.414Z"
+          />
+        </symbol>
+        <use
+          href="#icon-chevron-right-16"
+        />
+      </svg>
+    </button>
+  </div>
+</div>"
+`;
