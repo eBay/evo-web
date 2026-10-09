@@ -9,7 +9,7 @@
     "sourceMap": true,
     "resolveJsonModule": true,
     "outDir": "./dist",
-    "rootDir": ".",
+    "rootDir": "./src",
     "declaration": true,
     "declarationMap": true,
     "strict": true,
@@ -28,8 +28,7 @@
   "include": [
     "./src",
     "./src/**/*.json",
-    "./src/**/*.d.ts",
-    "./packages/skin/scripts/storybook/story-markup-core.ts"
+    "./src/**/*.d.ts"
   ],
   "exclude": ["node_modules", "dist"]
 }

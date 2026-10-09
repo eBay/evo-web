@@ -109,7 +109,7 @@ structurally, via some HTML-aware comparison).
 - **This still requires building the exact same extraction mechanism we already built — it just
   uses it to police a duplicate instead of eliminating the duplicate.** Any such lint rule needs
   the same ability to read a story's real markup and its real Storybook ID that
-  `extract-story-markup.ts` already provides. All of the actual engineering work is identical; this
+  `src/data/story-markup.ts` already provides. All of the actual engineering work is identical; this
   alternative just adds a second copy of the markup back into the system and spends extra effort
   keeping them in forced lockstep, rather than spending that same effort once to delete the second
   copy outright.
@@ -249,8 +249,8 @@ that file instead of calling an extraction function directly.
   per variant to capture what is ultimately a static string literal is enormous overhead to recover
   information that's already sitting in the source file, retrievable with a plain `import()`.
 - **Introduces a new, heavy dependency chain (headless browser automation) into a build step that
-  today has none.** The chosen design's extraction script needs nothing beyond Node's own dynamic
-  `import()` — no browser, no server, no network round-trip. A browser-automation-based snapshot
+  today has none.** The chosen design's extraction needs nothing beyond Vite's static
+  `import.meta.glob` import — no browser, no server, no network round-trip. A browser-automation-based snapshot
   step adds real CI time, flakiness risk (headless browser timing issues, port conflicts — the kind
   of real-world problem we already hit once this session with Storybook's own dev server port
   assignment), and a whole new class of "why did the build fail" failure modes for a problem that

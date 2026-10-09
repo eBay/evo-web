@@ -35,7 +35,7 @@
     ],
     "scripts": {
         "prebuild": "npm run clean",
-        "build": "npm run lint:sass && npm run build:css && npm run lint:js && npm run test:scripts && npm run build:icons && npm run copy && tsx scripts gen-build",
+        "build": "npm run lint:sass && npm run build:css && npm run lint:js && npm run build:icons && npm run copy && tsx scripts gen-build",
         "build:css": "rimraf dist && npm run bundle && npm run postcss && tsx scripts/add-y-comments && prettier dist --write && npm run lint:css",
         "build:icons": "tsx scripts genSVG && prettier ../../src/data/icons.json --write",
         "build:storybook": "npm run copy:assetsToStorybook && storybook build -o ./_site/public/storybook",
@@ -64,7 +64,6 @@
         "start": "npm run storybook",
         "storybook": "npm run copy:assetsToStorybook && storybook dev -c .storybook -p 6007 --no-open",
         "test": "npm run build",
-        "test:scripts": "vitest run scripts",
         "verify": "tsx scripts verify"
     },
     "commitlint": {

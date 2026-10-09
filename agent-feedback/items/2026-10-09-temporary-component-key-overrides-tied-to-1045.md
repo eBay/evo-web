@@ -12,11 +12,11 @@ under `button/stories/fake-button/` and `tabs/stories/fake-tabs/`) into their ow
 component keys, even though their stories physically live inside Button's and Tabs'
 own `stories/` folders. It's a deliberate, short-term stand-in pending a structural
 reorganization tracked in [GitHub issue #1045](https://github.com/eBay/evo-web/issues/1045),
-whose exact end-state isn't decided yet. The map is duplicated identically in both
-`src/data/story-markup.ts` and `packages/skin/scripts/storybook/extract-story-markup.ts`
-(same deliberate duplication as the rest of those two files). Once #1045 lands, both
-copies need to be updated or removed to match the real structure; don't treat the
-current override as a permanent design decision.
+whose exact end-state isn't decided yet. Once #1045 lands, the map in
+`src/data/story-markup.ts` needs to be updated or removed to match the real
+structure, along with the `fake-button` case in
+`src/data/__tests__/story-markup.test.ts`; don't treat the current override as a
+permanent design decision.
 
 This used to be documented in `packages/skin/CONTRIBUTING.md` under a "Known
 temporary exception" section, removed as part of PR #1056 at a reviewer's request:
@@ -25,4 +25,4 @@ section's removal to the override actually being deleted from code, so it would
 have gone stale. The override's own inline code comment already explains it
 adequately without a parallel copy in CONTRIBUTING.md.
 
-Check: `grep -n "TEMPORARY_COMPONENT_KEY_OVERRIDES" src/data/story-markup.ts packages/skin/scripts/storybook/extract-story-markup.ts`
+Check: `grep -rn "TEMPORARY_COMPONENT_KEY_OVERRIDES" src/`
