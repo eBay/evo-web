@@ -1,6 +1,6 @@
 ---
 name: context-auditor
-description: Audits and refactors AI configuration files (like CLAUDE.md) to optimize for fidelity, cache efficiency, and task success rate. Based on 28 primary sources including research from Stanford, UC Berkeley, and Anthropic. Supports single-file or repo-wide multi-file audits.
+description: Audits and refactors AI configuration files (like AGENTS.md) to optimize for fidelity, cache efficiency, and task success rate. Based on 28 primary sources including research from Stanford, UC Berkeley, and Anthropic. Supports single-file or repo-wide multi-file audits.
 ---
 
 # Context Auditor Instructions
@@ -11,17 +11,17 @@ You are a Principal Context Architect. Your goal is to ensure AI configuration f
 
 ### Single-File Mode (Default)
 
-Audit the root `/CLAUDE.md` file only.
+Audit the root `/AGENTS.md` file only.
 
 ### Repo-Wide Mode
 
-Audit all CLAUDE.md files in the repository (root + nested in subfolders). Use this when:
+Audit all AGENTS.md files in the repository (root + nested in subfolders). Use this when:
 
-- User requests "audit all CLAUDE.md files"
-- User mentions "nested" or "subfolder" CLAUDE.md files
+- User requests "audit all AGENTS.md files"
+- User mentions "nested" or "subfolder" AGENTS.md files
 - User asks about combined token budget
 
-**Combined Token Budget:** All CLAUDE.md files together must stay under 2,000 tokens for optimal caching.
+**Combined Token Budget:** All AGENTS.md files together must stay under 2,000 tokens for optimal caching.
 
 ## Core Principle
 
@@ -47,7 +47,7 @@ Will this stay static and cacheable?
 
 - ✅ **Layer 1 (Anchor) is stable** - System prompt content should be prefix-anchored and rarely change
 - ✅ **Under 2,000 tokens for cache activation** - This is the threshold for Anthropic's prompt caching, not a compression target
-- ❌ **Frequent churn invalidates cache** - Don't put session-specific or rapidly-changing data in CLAUDE.md
+- ❌ **Frequent churn invalidates cache** - Don't put session-specific or rapidly-changing data in AGENTS.md
 - ❌ **Dynamic references break caching** - Importing frequently-updated files kills cache benefits
 
 ### 3. **Attention Architecture** (Priority 3)
@@ -56,7 +56,7 @@ Where do instructions land in the context hierarchy?
 
 **The Stratified Stack:**
 
-- **Layer 1 (Anchor / System Prompt):** Identity, safety rails, core project standards → CLAUDE.md (primacy zone)
+- **Layer 1 (Anchor / System Prompt):** Identity, safety rails, core project standards → AGENTS.md (primacy zone)
 - **Layer 2 (Skills):** Specialized procedures invoked occasionally (e.g., "Security Audit", release workflow) → .claude/skills/ (dynamic injection)
 - **Layer 3 (MCP Tools):** Live data connections (Jira, GitHub) → Tool outputs (filtered/distilled)
 - **Layer 4 (Use-Time Prompts):** Ad-hoc session-specific instructions → User messages (recency bias)
@@ -186,7 +186,7 @@ LLMs have powerful file exploration tools (Glob, Grep, Read). Optimize for signa
 
 #### 1. Read the Target File
 
-Use Read tool to examine the current CLAUDE.md or config file.
+Use Read tool to examine the current AGENTS.md or config file.
 
 #### 2. Calculate Metrics
 
@@ -201,12 +201,12 @@ Provide:
 
 ### Repo-Wide Mode
 
-#### 1. Discover All CLAUDE.md Files
+#### 1. Discover All AGENTS.md Files
 
-Use Glob to find all CLAUDE.md files:
+Use Glob to find all AGENTS.md files:
 
 ```
-**/CLAUDE.md
+**/AGENTS.md
 ```
 
 #### 2. Read All Files
@@ -293,7 +293,7 @@ Provide:
 
 **Token Budget Strategy (Repo-Wide):**
 
-- Root CLAUDE.md: ~1,200-1,500 tokens (core rules, architecture, identity)
+- Root AGENTS.md: ~1,200-1,500 tokens (core rules, architecture, identity)
 - Package-level nested files: ~100-300 tokens each (domain-specific extensions)
 - Combined total: <2,000 tokens for cache activation
 - Headroom target: 30-40% under threshold for future growth

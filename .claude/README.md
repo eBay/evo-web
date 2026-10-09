@@ -12,7 +12,7 @@ This directory contains the AI configuration for the Evo Web components monorepo
 
 ## Structure
 
-- **`CLAUDE.md`** - Main system prompt (optimized for fidelity and caching)
+- **`AGENTS.md`** - Main system prompt (optimized for fidelity and caching)
 - **`.claude/skills/`** - Specialized workflows invoked on-demand
 - **`memory/`** - Cross-session learning and patterns
 - **`mcp/`** - Model Context Protocol integrations
@@ -20,7 +20,7 @@ This directory contains the AI configuration for the Evo Web components monorepo
 
 ---
 
-## CLAUDE.md Design Principles
+## AGENTS.md Design Principles
 
 ### Core Philosophy
 
@@ -38,7 +38,7 @@ This directory contains the AI configuration for the Evo Web components monorepo
 
 ### Context Architecture (Stratified Stack)
 
-**Layer 1 - Anchor (System Prompt / CLAUDE.md)**
+**Layer 1 - Anchor (System Prompt / AGENTS.md)**
 
 - Identity, safety rails, core project standards
 - Static, prefix-anchored, 90% cached
@@ -73,7 +73,7 @@ This directory contains the AI configuration for the Evo Web components monorepo
 
 ## Maintenance Guidelines
 
-### What to Keep Inline (CLAUDE.md)
+### What to Keep Inline (AGENTS.md)
 
 - Core architecture rules (non-negotiable constraints)
 - Version-specific syntax (Correctness Guards)
@@ -92,7 +92,7 @@ This directory contains the AI configuration for the Evo Web components monorepo
 ### Anti-Patterns to Avoid
 
 - ❌ Extracting frequently-used commands to skills (creates indirection)
-- ❌ Compressing CLAUDE.md for "cleanliness" (fidelity > aesthetics)
+- ❌ Compressing AGENTS.md for "cleanliness" (fidelity > aesthetics)
 - ❌ Adding external links with high noise ratios (73%+ irrelevant content)
 - ❌ Using AGENTS.md pattern (reduces task success per research)
 - ❌ Mixing temporal/session data with static rules (breaks caching)
@@ -100,7 +100,7 @@ This directory contains the AI configuration for the Evo Web components monorepo
 
 ### Optimization Rules
 
-1. **Keep CLAUDE.md under cache threshold**
+1. **Keep AGENTS.md under cache threshold**
    - <2,000 tokens (~1,500 words, ~8,000 characters, ~150-200 lines)
 2. **Inline frequently-referenced material** (>50% of sessions)
 3. **Use skills for specialized tasks** (<10% of sessions)
@@ -116,15 +116,15 @@ This directory contains the AI configuration for the Evo Web components monorepo
 
 ```bash
 # In Claude Code
-Run a context audit on the current CLAUDE.md file.
+Run a context audit on the current AGENTS.md file.
 ```
 
 **Check current size:**
 
 ```bash
-wc -w CLAUDE.md  # Words (target: <1,500)
-wc -l CLAUDE.md  # Lines (target: <200)
-wc -c CLAUDE.md  # Characters (target: <8,000)
+wc -w AGENTS.md  # Words (target: <1,500)
+wc -l AGENTS.md  # Lines (target: <200)
+wc -c AGENTS.md  # Characters (target: <8,000)
 # Multiply words by ~1.35 for estimated tokens
 ```
 
@@ -137,7 +137,7 @@ wc -c CLAUDE.md  # Characters (target: <8,000)
 
 ```bash
 # Only if invoked <10% of sessions
-# Otherwise, inline into CLAUDE.md
+# Otherwise, inline into AGENTS.md
 ```
 
 ---
@@ -176,7 +176,7 @@ Invoke from within Claude Code. The skill-creator will guide you through:
 - Other non-Claude agents/models can invoke skills by referencing them by name and location
 - Keep skills under 500 lines; use bundled `references/` files for deeper content
 - Prefer TypeScript (`.ts`) over Python (when possible) for any bundled scripts
-- Skills complement `CLAUDE.md` — never duplicate content already there
+- Skills complement `AGENTS.md` — never duplicate content already there
 
 ---
 

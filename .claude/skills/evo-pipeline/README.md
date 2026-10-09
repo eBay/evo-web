@@ -200,7 +200,7 @@ is where to look.
 1. Review the generated files — open the key files and sanity-check the output
 2. Resolve any 🟡 warnings listed in the final summary
 3. Add a changeset: `/evo-release-workflow`
-4. File a PR following the checklist in `CLAUDE.md`
+4. File a PR following the checklist in `AGENTS.md`
 
 ---
 

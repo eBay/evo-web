@@ -125,5 +125,5 @@ future triage pass) needs to know it happened.
 
 It does not fix `agent-feedback` items (that's normal task work, done when someone's
 already in that area of the code) and it does not resolve `agent-lessons` items into
-hooks/permissions/CLAUDE.md changes — that's [`/evo-triage-lessons`](../evo-triage-lessons/SKILL.md),
+hooks/permissions/AGENTS.md changes — that's [`/evo-triage-lessons`](../evo-triage-lessons/SKILL.md),
 run on request, separately.

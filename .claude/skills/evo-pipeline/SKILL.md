@@ -741,7 +741,7 @@ Present the full summary in a clear, scannable format:
   1. Review the generated files above — open key files to verify
   2. Check any 🟡 warnings and resolve if needed
   [3. Fill storybook paths in component-metadata.json after first deploy]
-  4. File a PR: follow CLAUDE.md checklist
+  4. File a PR: follow AGENTS.md checklist
   5. Add a changeset: /evo-release-workflow
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
