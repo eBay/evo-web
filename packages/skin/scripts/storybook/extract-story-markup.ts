@@ -191,7 +191,14 @@ export function buildStoryMarkup(modules: DiscoveredStoryModule[]): StoryMarkupM
                 continue;
             }
 
-            const html = stripScriptTags((exportValue as () => string)());
+            const render = exportValue as () => string;
+            const html = stripScriptTags(render());
+            if (stripScriptTags(render()) !== html) {
+                throw new Error(
+                    `${relativePath}: export "${exportName}" renders different HTML on each call ` +
+                        `(e.g. Math.random()), so the extracted markup would change on every build.`,
+                );
+            }
             const key = variantKey(title, exportName, componentKey);
 
             const existingSource = sourceByVariantKey[componentKey][key];
