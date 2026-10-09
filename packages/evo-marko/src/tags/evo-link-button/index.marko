@@ -1,0 +1,11 @@
+export interface Input extends Marko.HTML.Button {
+  variant?: "inline" | "standalone";
+}
+
+<const/{ class: inputClass, type = "button", variant, ...htmlInput }=input>
+
+<button
+  ...htmlInput
+  class=["fake-link", variant === "standalone" && "standalone-link", inputClass]
+  type=type
+/>
