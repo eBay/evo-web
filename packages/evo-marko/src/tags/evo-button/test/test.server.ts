@@ -45,13 +45,17 @@ it("does not apply priority class for unsupported value", async () => {
   await snapshotHTML(Default, { priority: "none" });
 });
 
-it("renders fake version", async () => {
+it("renders anchor version", async () => {
   await snapshotHTML(Default, {
     href: "#",
     size: "large",
     priority: "primary",
-    ariaLabel: "fake button",
+    ariaLabel: "anchor button",
   });
+});
+
+it("renders link variant without priority", async () => {
+  await snapshotHTML(Default, { variant: "link", priority: "primary" });
 });
 
 it("renders disabled version", async () => {

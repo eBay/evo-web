@@ -7,7 +7,7 @@ export interface Input
   href?: string;
   size?: (typeof validSizes)[number];
   priority?: "primary" | "secondary" | "tertiary" | "none";
-  variant?: "standard" | "destructive" | "form";
+  variant?: "standard" | "destructive" | "form" | "link";
   bodyState?: "loading" | "expand" | "reset" | "none";
   fluid?: boolean;
   borderless?: boolean;
@@ -46,20 +46,22 @@ export interface Input
   ...htmlInput
 }=input>
 
-<const/priority=borderless || variant === "form" ? "none" : inputPriority>
+<const/priority=(
+  borderless || variant === "form" || variant === "link"
+    ? "none"
+    : inputPriority
+)>
 <const/size=inputSize && validSizes.includes(inputSize) ? inputSize : null>
 
-<const/baseClass=href ? "fake-btn" : "btn">
-<const/sizeClass=size && baseClass + "--" + size>
+<const/sizeClass=size && "btn--" + size>
 <const/truncateClass=(
-  truncate && (sizeClass ? sizeClass + "-truncated" : baseClass + "--truncated")
+  truncate && (sizeClass ? sizeClass + "-truncated" : "btn--truncated")
 )>
-<const/transparentClass=transparent && baseClass + "--transparent">
+<const/transparentClass=transparent && "btn--transparent">
 <const/fixedHeightClass=(
-  fixedHeight &&
-  (sizeClass ? sizeClass + "-fixed-height" : baseClass + "--fixed-height")
+  fixedHeight && (sizeClass ? sizeClass + "-fixed-height" : "btn--fixed-height")
 )>
-<const/variantClass=variant !== "standard" && `${baseClass}--${variant}`>
+<const/variantClass=variant !== "standard" && `btn--${variant}`>
 
 <define/Root|input: RootInput|>
   <if=href><a ...input as Marko.HTML.A href=href/></if>
@@ -77,16 +79,16 @@ export interface Input
   }
   class=[
     inputClass,
-    baseClass,
-    fluid && `${baseClass}--fluid`,
+    "btn",
+    fluid && "btn--fluid",
     truncateClass,
     fixedHeightClass,
     transparentClass,
     variantClass,
     !truncateClass && !fixedHeightClass && sizeClass,
-    validSplit.includes(split!) && `${baseClass}--split-${split}`,
-    borderless && `${baseClass}--borderless`,
-    validPriorities.includes(priority) && `${baseClass}--${priority}`,
+    validSplit.includes(split!) && `btn--split-${split}`,
+    borderless && "btn--borderless",
+    validPriorities.includes(priority) && `btn--${priority}`,
   ]
   aria-disabled=partiallyDisabled && "true"
   aria-label=bodyState === "loading" ? a11yLoadingText : input["aria-label"]

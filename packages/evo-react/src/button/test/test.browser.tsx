@@ -182,8 +182,8 @@ describe("evo-button", () => {
       );
 
       const link = screen.getByRole("link");
-      await expect.element(link).toHaveClass("fake-btn");
-      await expect.element(link).toHaveClass("fake-btn--primary");
+      await expect.element(link).toHaveClass("btn");
+      await expect.element(link).toHaveClass("btn--primary");
     });
   });
 
