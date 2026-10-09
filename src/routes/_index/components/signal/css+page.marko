@@ -1,36 +1,10 @@
 <div id="signal">
   <section-header/>
 
-  <div class="demo">
-    <div class="demo__inner">
-      <span class="signal signal--trustworthy">
-        Trustworthy
-      </span>
-      <span class="signal signal--recent">
-        Recent
-      </span>
-      <span class="signal signal--time-sensitive">
-        Time Sensitive
-      </span>
-      <span class="signal signal--neutral">
-        Neutral
-      </span>
-    </div>
-  </div>
-  <highlight-code type="html">
-    <span class="signal signal--trustworthy">
-      Trustworthy
-    </span>
-    <span class="signal signal--recent">
-      Recent
-    </span>
-    <span class="signal signal--time-sensitive">
-      Time Sensitive
-    </span>
-    <span class="signal signal--neutral">
-      Neutral
-    </span>
-  </highlight-code>
+  <component-demo component="signal" variant="trustWorthy"/>
+  <component-demo component="signal" variant="recent"/>
+  <component-demo component="signal" variant="timeSensitive"/>
+  <component-demo component="signal" variant="neutral"/>
 </div>
 export const metadata = {
   component: "signal",

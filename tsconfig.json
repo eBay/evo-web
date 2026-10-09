@@ -25,6 +25,10 @@
     "esModuleInterop": true,
     "skipLibCheck": true
   },
-  "include": ["./src", "./src/**/*.json", "./src/**/*.d.ts"],
+  "include": [
+    "./src",
+    "./src/**/*.json",
+    "./src/**/*.d.ts"
+  ],
   "exclude": ["node_modules", "dist"]
 }
