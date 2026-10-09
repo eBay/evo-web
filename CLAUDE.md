@@ -151,7 +151,7 @@ Default to writing no comment. A comment usually means the code failed to say so
 - **Keep comments to 1–2 lines.** A longer comment is either padded (cut it down) or compensating for a structural problem (split the function, extract a well-named helper, simplify the design).
 - **Comment only the non-obvious _why_:** a hidden constraint, a browser/AT quirk, a link to a spec or issue. Never narrate _what_ or _how_.
 - **Internal JSDoc gets the same scrutiny.** Don't add JSDoc to internal functions, types, or helpers that just repeats the name and type signature.
-- **Don't add or rewrite comments in code you aren't changing,** and don't leave comments about the change itself (`// added for #123`, `// removed X`); that belongs in the commit or PR.
+- **Don't add or rewrite comments in code you aren't changing,** and don't leave comments about the change itself or what used to be there (`// added for #123`, `// removed X`, `// previously used Y`); that belongs in the commit or PR.
 
 **Exception — external documentation:** JSDoc that is consumed by users of a published API (e.g. `evo-react` component props, `evo-marko` `Input` types) is documentation, not a code comment, and should stay thorough.
 
