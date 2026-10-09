@@ -2,50 +2,23 @@ import path from "path";
 
 import { describe, expect, it } from "vitest";
 
-import {
-  deriveStorybookId as cliDeriveStorybookId,
-  extractStoryMarkup,
-} from "../extract-story-markup";
+import { extractStoryMarkup } from "../extract-story-markup";
 
 /**
- * `extract-story-markup.ts` (this package's own, used by the CLI and this
- * test suite) and `src/data/story-markup.ts` (the root site's, used by the
- * live site via Vite's `import.meta.glob`) are two independently-maintained
- * copies of the same extraction logic — `slugify`, `resolveComponentKey`,
- * `variantKey`, `deriveStorybookId`, `stripScriptTags`, the duplicate-title
- * and colliding-variant-key guards, the nondeterministic-render guard — all
- * duplicated, not shared, because the site's tsconfig can't import from a
- * sibling workspace package. See the module-level comments on both files for
- * the full reason it has to be this way.
+ * `extract-story-markup.ts` (Node/fs discovery) and `src/data/story-markup.ts`
+ * (the live site's Vite-glob discovery) both feed the one shared
+ * `buildStoryMarkup` in `story-markup-core.ts` — the extraction logic itself
+ * can no longer drift between them, since there is only one copy of it.
  *
- * This file is the enforcement for the half of that situation that isn't
- * self-checking: that the two copies keep behaving identically. Without it,
- * one copy can be fixed or changed and the other silently left behind, which
- * is exactly what happened here once already, before this file existed.
+ * What each file still owns independently is its own *discovery* step: walking
+ * the filesystem versus Vite's static glob, and (for the site) the
+ * `relativePathFromGlobKey` adaptation that turns a glob key into the same
+ * `relativePath` shape the fs-based walk produces. That adaptation has no test
+ * of its own anywhere else, so this test drives both discovery mechanisms
+ * against the same real story files and asserts they agree, catching a bug in
+ * either one's adaptation logic rather than in the (now-shared) logic beyond it.
  */
-describe("extraction logic cross-package consistency", () => {
-  it("deriveStorybookId matches the independently-maintained copy in src/data/story-markup.ts", async () => {
-    const site = await import("../../../../../src/data/story-markup");
-
-    const cases: Array<[string, string]> = [
-      ["Skin/Badge", "empty"],
-      ["Skin/Badge", "threeDigits"],
-      ["Skin/CTA Button", "base"],
-      ["Skin/Accordion", "closed"],
-      ["Skin/Accordion", "autoCollapse"],
-      ["Skin/Dialog", "baseWithLongHeader"],
-      ["Skin/Dialog", "expressiveScrolling"],
-      ["Skin/RTL Large", "base"],
-      ["Skin/_1024 Container", "base"],
-    ];
-
-    for (const [title, exportName] of cases) {
-      expect(site.deriveStorybookId(title, exportName)).toBe(
-        cliDeriveStorybookId(title, exportName),
-      );
-    }
-  });
-
+describe("story discovery cross-package consistency", () => {
   it("produces identical html and storybookId for every real story in the repo", async () => {
     const site = await import("../../../../../src/data/story-markup");
     const cli = await extractStoryMarkup(
