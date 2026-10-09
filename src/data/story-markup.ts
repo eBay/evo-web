@@ -119,7 +119,11 @@ function resolveComponentKey(relativePath: string): string {
  * another's. Verified collision-free against all 1035 real (title, exportName)
  * pairs in the repo.
  */
-function variantKey(title: string, exportName: string, componentKey: string): string {
+function variantKey(
+  title: string,
+  exportName: string,
+  componentKey: string,
+): string {
   const slug = slugify(title).replace(/^skin-/, "");
   let subPath = slug;
 
@@ -211,7 +215,13 @@ function buildStoryMarkup(): StoryMarkupMap {
   return result;
 }
 
-const storyMarkup = buildStoryMarkup();
+/**
+ * Exported only so `packages/skin/scripts/storybook/__tests__/cross-package-
+ * consistency.test.ts` can assert this stays identical to what the Node/fs
+ * copy of this extraction logic (`extract-story-markup.ts`) produces for the
+ * same real story files; not meant for use outside this module otherwise.
+ */
+export const storyMarkup = buildStoryMarkup();
 
 /**
  * Looks up a component's variant map, throwing if no story file produced an
