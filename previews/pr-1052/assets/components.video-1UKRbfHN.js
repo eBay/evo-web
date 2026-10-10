@@ -1,0 +1,2 @@
+import"./_C1BBLuLm.js";import{C as e,h as t,v as n}from"./_BvufeqKM.js";import"./_g6xbWloc.js";import"./_DGfxpxHs.js";n(`nj0`,e=>t(e.f,`click`,function(e,t){t.ariaExpanded=t.ariaExpanded===`true`?`false`:`true`})),e();
+//# sourceMappingURL=components.video-1UKRbfHN.js.map

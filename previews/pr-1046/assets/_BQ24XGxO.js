@@ -1,0 +1,2 @@
+import{s as e}from"./_BvufeqKM.js";import{n as t,t as n}from"./_SWxuR3qw.js";import{a as r,i,n as a,o,r as s}from"./_DWGCDKwB.js";var c=r,l=(e=>`/${e}&`)(o),u=e(`Md0`,`Anti-Patterns`),d=e(`Md1`,`This section documents common accessibility anti-patterns that should be avoided when building web applications.`);function f(e){s(e.a,t({content:u(e)})),a(e.a,d(e)),i(e.a,`anti-patterns`)}var p=n(`Md`,c,l,f);export{f as $setup,c as $template,l as $walks,p as default};
+//# sourceMappingURL=_BQ24XGxO.js.map

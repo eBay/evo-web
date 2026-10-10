@@ -1,0 +1,1 @@
+import{t as e}from"./rolldown-runtime-Dh6celcD.js";var t,n,r;function i(){return(i=e((()=>{t={title:`Skin/Button/Destructive/Borderless`},n=()=>`<button class="btn btn--borderless btn--destructive">Destructive Borderless Button</button>`,r=[`base`]})))()}i();export{r as __namedExportsOrder,n as base,t as default};
