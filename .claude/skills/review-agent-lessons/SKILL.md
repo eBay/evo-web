@@ -26,7 +26,7 @@ subagent in Step 2 and reconciles in Step 4. There is no third party.
 ## What this does not do
 
 - Does not touch `agent-feedback/`.
-- Does not classify entries into hook/permission/CLAUDE.md/declined proposals, and does not apply
+- Does not classify entries into hook/permission/AGENTS.md/declined proposals, and does not apply
   anything — that's [`evo-triage-lessons`](../evo-triage-lessons/SKILL.md)'s job, run after this
   one, on whatever survives it.
 - Does not promote a lesson to a stronger tier by itself. Passing this check does not mean the
@@ -99,7 +99,7 @@ entry says "the process was unclear" where the more direct read is "the agent sk
 step," that gap is the finding.
 
 **Failure scenario this catches:** a session narrates its own mistake in the most flattering
-available framing, and that framing is what gets carried into a future hook or CLAUDE.md line
+available framing, and that framing is what gets carried into a future hook or AGENTS.md line
 instead of the actual failure.
 
 ### Disposition-follows-from-content

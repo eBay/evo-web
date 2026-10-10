@@ -52,7 +52,7 @@ a person's judgment, not a switch that can be flipped for them.
 
 ## The Four Layers
 
-### 1. Written instructions (`CLAUDE.md`)
+### 1. Written instructions (`AGENTS.md`)
 
 This is the plainest layer: a standing set of instructions the agent reads at the start of every
 session. Think of it as a policy document: it's always there, but following it still depends on

@@ -26,7 +26,7 @@ exists, not as a substitute for building the check.
 
 No entry stays open indefinitely. Exactly one of:
 
-- **Applied** — the correction now lives somewhere a session actually reads: a CLAUDE.md line, a
+- **Applied** — the correction now lives somewhere a session actually reads: an AGENTS.md line, a
   hook, a permission, or a skill. **Delete the entry file once that surface exists and carries the
   rule** — nothing in `agent-lessons/` is delivered to a session automatically (see
   `.claude/hooks/session-start-context.js`; it reports an open-item _count_, never content), so a

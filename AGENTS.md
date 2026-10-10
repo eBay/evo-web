@@ -1,1 +1,321 @@
-CLAUDE.md
+# AGENTS.md
+
+AI configuration for eBay's evo-web components monorepo.
+
+---
+
+<agent_constraints>
+
+- Never auto-commit or push without explicit user request
+- Always run `npm run build` before marking component work complete
+- Prefer reading existing patterns over introducing new ones
+- Never manually edit auto-generated files (they should typically have a comment indicating they are generated)
+- Never widen a task's diff with out-of-scope fixes — record them in `agent-feedback/` instead (see below)
+  </agent_constraints>
+
+## <architecture_rules>
+
+### Layered Architecture (Non-Negotiable)
+
+```
+HTML Semantic Structure → @ebay/skin (CSS/BEM) → Framework Components → Interactive Behaviors
+```
+
+**CSS is the single source of truth.** All components wrap Skin CSS modules.
+
+### Package Structure
+
+- `@ebay/skin` - Pure CSS/SCSS (foundation layer)
+- `@ebay/ebayui-core` - Marko 5 (legacy)
+- `@evo-web/marko` - Marko 6 (new, under migration)
+- `@ebay/ui-core-react` - React CJS (legacy)
+- `@evo-web/react` - React 19 ESM (new, under migration)
+
+### Component Development Flow (MANDATORY)
+
+1. Create/modify Skin component in `packages/skin/src/` (HTML + SCSS)
+2. Write semantic HTML following BEM + a11y guidelines
+3. Build framework wrapper (Marko/React) importing Skin CSS
+4. Add JS interaction layer (keyboard nav, ARIA) if needed
+5. Support pass-through HTML attributes to root/control elements
+
+</architecture_rules>
+
+---
+
+## <accessibility_guardrails>
+
+**All components MUST meet WCAG 2.2 AA standards:**
+
+- Follow eBay accessibility standards and patterns
+- Prefer native HTML over custom controls
+- If ARIA needed: follow "Five Rules of ARIA" (minimal/correct usage)
+- Ensure keyboard operability, focus states, sufficient contrast
+- Test in light/dark modes
+- Test zoom up to 400% and with assistive technologies (screen readers, keyboard-only)
+- Support RTL (right-to-left) layouts
+
+**`a11yText` prop convention (evo-marko / evo-react):**
+
+- Use `string | null` when alternative a11y info may exist; JSDoc must include: `Pass \`null\` explicitly _only_ if alternative accessibility information is present`
+- Use `string` when the label is always required
+- JSDoc must state the English default: `English default to be overridden is \`"{default}"\``
+- Provide a default in destructuring: `a11yText = "{default}"`
+- Storybook: `type: { name: "string", required: true }`, `control: "text"`
+- Reference: `evo-badge` (`string | null`), `evo-chip` (`string`)
+
+</accessibility_guardrails>
+
+---
+
+## <css_methodology>
+
+**BEM Strict Enforcement:**
+
+- Block: `.btn` or `.chips-combobox` (for multi-word)
+- Element: `.btn__cell`
+- Modifier: `.btn--primary`
+
+**Build Pipeline:** Sass → PostCSS → Autoprefixer → cssnano → `dist/`
+
+**Style Conventions:** See `./packages/skin/STYLEGUIDE.md`
+
+**Never add a class to move a style closer to its element.** Replacing a parent
+modifier, a sibling combinator or a `:has()` with a new class buys locality by
+making every consumer write more markup, which is a worse trade. Such a rewrite
+is only worth it when the replacement needs no new class — the element already
+carries one, or the selector was dead.
+
+</css_methodology>
+
+---
+
+## <correctness_guards>
+
+**Version-Specific Syntax (Prevent Hallucination):**
+
+**Marko 6 Syntax:**
+
+- ✅ Use: `<let/x=0>` or `<const/y=x*2>`
+- ❌ Never: `$ let x = 0;` (Marko 5 deprecated)
+- ✅ Events: `onClick() { /* code */ }` or `onClick=handler`
+- ❌ Never: `onClick("handleClick")` (Marko 5 deprecated)
+- ✅ Attribute values containing `>` MUST be wrapped in parentheses: `<const/x=(a > b ? 1 : 0)>`
+- ❌ Never: `<const/x=a > b ? 1 : 0>` (the `>` is parsed as the tag close)
+
+**Marko 6 Tag Variable Locality:**
+
+Declare `<const/>`, `<let/>`, `<id/>`, and other tag variables close to where they are first used, not grouped at the top. Exception is variables needed in multiple distant locations.
+
+**Marko 6 extractor scope bug:** `value?.toString() ?? ""` (optional chain + nullish coalesce) inside a native-tag event handler confuses the Marko language tools extractor and causes all `<let>` assignments in that handler to be flagged as TS2588 "cannot assign to const". Use `String(value ?? "")` instead.
+
+**Marko 6 pass-through event handlers:** Call destructured handlers with `onFoo && onFoo(e, el)`. Do NOT use `(onFoo || null)?.(e, el)` — Marko handler types are not plain functions so optional-call syntax fails type checking.
+
+**Marko 6 event handler types:** Don't annotate `e`/`el` on native HTML tags — types are inferred. `onClick(e) {}` not `onClick(e: MouseEvent) {}`. Exception: dynamic tags (`<${tag}>`) have no type info and require explicit annotations.
+
+**Marko 6 AttrTag content:** When already spreading an AttrTag onto a native element with no other body content, use self-closing — `<button ...button/>`. Never `<button ...button><${button.content}/></button>`.
+
+**Marko 6 AttrTag slot types — pick the right generic:**
+
+- ✅ Body-only slot: `action?: Marko.AttrTag<{ content?: Marko.Body }>` — accepts arbitrary child content
+- ❌ Empty generic: `action?: Marko.AttrTag<{}>` — rejects children at compile time (TS2353)
+- ✅ Typed-props slot: `image?: Marko.AttrTag<Omit<Marko.HTML.Img, "alt">>` — slot has specific props
+- Use `Marko.AttrTag<{ content?: Marko.Body }>` for any named slot whose sole purpose is to wrap caller-provided HTML (links, buttons, icons, text).
+
+**React Package Differences:**
+
+- `ebayui-core-react`: Requires `React.forwardRef` wrapper
+- `evo-react`: Use native `ref` (React 19, no forwardRef needed)
+
+**BEM Syntax:**
+
+- Block: `.btn` or `.chips-combobox` (for multi-word)
+- Element: `.btn__cell` (double underscore, NOT single)
+- Modifier: `.btn--primary` (double dash, NOT single)
+- ❌ Modifiers or Children Never: `.btn-primary` or `.btn_cell`
+
+**When a GitHub issue links more than one Figma URL, treat them as competing candidates, not a single source:**
+
+DS/dev issues often carry a `/branch/` URL (a design-in-progress branch) alongside a separate plain Figma link with no `/branch/` segment (the main file). These can point at different, contradictory states of the same component — a branch can be superseded once its design is finalized and merged, while the issue text referencing it is never edited to remove the stale link. Never assume the first Figma link you notice, or the one embedded in prose (e.g. under a "Design Specs:" line), is authoritative just because it's more prominent or was read first. Before treating any single Figma reference as ground truth: enumerate every Figma URL in the issue, note which are branches (`/design/:fileKey/branch/:branchKey/...`) vs. main files (`/design/:fileKey/...`), and if more than one exists, ask which is current rather than picking one. A branch and its main file can render the same node ID differently or move it to a different node ID entirely — matching file keys or node names is not enough to confirm they agree.
+
+</correctness_guards>
+
+---
+
+## Component Patterns
+
+Follow existing component structures:
+
+- **Skin components:** Follow `packages/skin/src/components/ebay-button/` structure
+- **Marko components:** Follow `packages/ebayui-core/src/components/ebay-button/` structure
+- **React components:** Follow `packages/ebayui-core-react/src/ebay-button/` structure
+
+### Component Storybooks
+
+### Skin Components
+
+**Non-obvious conventions:**
+
+- BEM naming strictly enforced
+- SCSS modules imported in component files
+- Tests in `test/` directory: `test.browser.js` (Playwright) and `test.server.js` (SSR)
+
+### Marko Components
+
+**Non-obvious conventions:**
+
+- Event naming: kebab-case (`on-click`, `on-expand`)
+- Tests in `test/` directory: `test.browser.js` (Playwright) and `test.server.js` (SSR)
+- `browser.json` for build remapping (client-only code)
+
+**Marko 5→6 Syntax (CRITICAL - prevents hallucination):**
+
+- Tag variables: Use `<let/x=0>` or `<const/y=x*2>` (NOT `$ let x = 0;`)
+- Style tags: Use `<style>` with standard CSS (NOT `style { ... }` blocks)
+- Events: Use `onClick() { /* code */ }` or `onClick=handler` (NOT `onClick("handleClick")`)
+- `<script>` tags: Similar to React effects, use sparingly (NOT for state/functions)
+
+### React Components
+
+**Non-obvious conventions:**
+
+- Tests in `__tests__/` directory (not `test/`)
+- Stories colocated with tests (`*.stories.tsx` in `__tests__/`)
+- Multi-file components split into `-cell.tsx`, `-text.tsx`, etc.
+
+**CRITICAL package differences:**
+
+- `@ebay/ui-core-react`:
+  - Requires `React.forwardRef` wrapper for ref forwarding
+  - CommonJS build target
+  - External MakeupJS dependency
+  - Assumes global `@ebay/skin` SCSS/CSS
+
+- `@evo-web/react`:
+  - Use native `ref` prop (React 19, no forwardRef needed)
+  - ESM-only build target
+  - Bundled MakeupJS utilities
+  - Imports Skin CSS directly in component files
+
+---
+
+## Testing Requirements
+
+**Mandatory for all components:**
+
+- Adequate test coverage for new/modified code
+- Browser tests (Marko via Playwright) or jsdom tests (React)
+- Visual regression via Percy (CSS changes)
+
+**Storybook requirements:**
+
+- Skin storybook is required to include all the visual permutations of the component
+- Skin storybook is required to include RTL + Text Spacing stories (unless excluded)
+- Marko/React storybooks should have the high-level permutations only since they include interactive options that allow users to see the component in different states without needing separate stories for each permutation.
+
+---
+
+## PR Checklist
+
+**All PRs:**
+
+- ✅ Build must be green
+- ✅ Changes within scope of linked issue
+- ✅ Reference issue: `Fixes #[number]`
+- ✅ Include changeset (unless docs-only, in `/src/routes/`)
+
+**CSS/SCSS changes:**
+
+- Regenerate `dist/` folder via `npm run build`
+- Test in all supported browsers
+- Percy visual regression approved
+- Verify dark mode + RTL support
+- Check responsive breakpoints: 320px, 512px, 768px, 1024px, 1280px, 1440px, 1680px, 1920px
+
+**Breaking changes:**
+
+- Only in major version releases
+- Must be documented in changeset
+
+**Release PRs (`ci: release` from `changeset-release/main` → `main`):**
+
+- Treat these as metadata-only PRs (version bumps + changelog + deleting `.changeset` files).
+- When green, merge them using **Squash and merge** in GitHub.
+- Never rebase or manually edit these PRs; adjust `main` and let Changesets regenerate if needed.
+
+---
+
+## Common Development Commands
+
+**Root-level (frequently used):**
+
+```bash
+npm run build    # Build all packages + run tests
+npm test         # Test (for individual packages only)
+npm start        # Start local dev site (Marko-Run)
+npm run lint     # Lint CSS/SCSS
+```
+
+**Testing patterns:**
+
+- Marko: `test/test.browser.js` (Playwright) + `test/test.server.js` (SSR)
+- React: `__tests__/index.spec.tsx` (Vitest + @testing-library/react)
+
+**Run specific test:**
+
+```bash
+npx vitest run packages/ebayui-core/src/components/ebay-button/test/test.browser.js
+```
+
+---
+
+## Repository Metadata
+
+**Site Architecture:**
+
+- Root site: Marko-Run (file-based routing at `/src/routes/`)
+- `/src/routes/_index/components/` - Component docs
+- `/src/routes/_index/accessibility/` - A11y guides
+- `/src/data/component-metadata.json` - Component registry
+- Deploys to `_site/` with nested Storybook builds
+- New components need documentation in `/src/routes/_index/components/` with Overview, Accessibility, CSS tabs.
+- New components also need tab links to Marko and React components storybooks as well as the Design System Playbook page for the component.
+
+**Versioning:**
+
+- Changesets workflow (packages version independently) - see `/evo-release-workflow` skill
+- No monorepo version linking
+
+**Browser Support:**
+
+- Defined by `@ebay/browserslist-config` (no IE10 or below)
+
+---
+
+## Agent Feedback
+
+Anything actionable but out of scope for the current task (suspected bug, a11y gap, cleanup, perf or size win, tooling friction, confusing code) must be filed in [`agent-feedback/`](agent-feedback/README.md) before finishing. Never drop it silently. Never fix it inside an unrelated diff.
+
+---
+
+## Agent Lessons
+
+Before finishing any task, check the session itself for lesson-worthy moments — not just the code
+for feedback-worthy ones. A correction about how you should work — not the code — belongs in
+[`agent-lessons/`](agent-lessons/README.md): a correction you shouldn't need twice, a wrong turn
+that cost real rework (including one you caught and fixed yourself, e.g. via your own review
+pass), or a guardrail that fired. This must be filed before finishing, same as `agent-feedback`.
+Never drop it silently just because it was self-corrected before the user noticed. If the rule is
+mechanically checkable, it belongs in a hook or permission instead, not here.
+
+---
+
+## Skills
+
+For specialized workflows:
+
+- `/evo-release-workflow` - Changesets versioning and release procedure (invoke when creating releases)
+
+For comprehensive command reference (less frequently used commands):
+
+- `/evo-commands` - Full npm scripts reference, package-specific builds, Storybook setup

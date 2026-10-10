@@ -2,7 +2,7 @@
 name: evo-triage-lessons
 description: >
   On-request review of open agent-lessons/ entries. For each disposition: open item,
-  proposes whether it should become a hook, a permission, a CLAUDE.md line, or be
+  proposes whether it should become a hook, a permission, an AGENTS.md line, or be
   declined — and requires human confirmation before applying anything. Scoped to
   agent-lessons/ only (agent-behavior corrections), not agent-feedback/ (code
   findings, which get fixed as part of normal task work). Invoke with
@@ -39,7 +39,7 @@ nothing before this point has adversarially checked it. This session becomes tha
 "main agent": it dispatches the review subagent per that skill's Step 2 and reconciles the
 verdicts per its Step 4, then returns here to classify. Only classify entries that come
 back PASS or (once fixed) FLAG; treat REJECT the way that skill directs — corrected and
-re-filed, or resolved as a duplicate — rather than proposing a hook/permission/CLAUDE.md
+re-filed, or resolved as a duplicate — rather than proposing a hook/permission/AGENTS.md
 change built on an unverified claim.
 
 ## Step 2 — Classify each open entry
@@ -56,16 +56,16 @@ mechanism-vs-judgment split behind every hook and permission already in this rep
   deny rule. Point to the existing `permissions.deny` block in `.claude/settings.json`
   as the pattern.
 - **A standing fact or convention with no way to check it mechanically** → propose a
-  **CLAUDE.md** line, in whichever existing section it actually belongs
+  **AGENTS.md** line, in whichever existing section it actually belongs
   (`<agent_constraints>`, `<correctness_guards>`, etc.). Never invent a new top-level
-  CLAUDE.md section without asking first — adding sections changes the file's
+  AGENTS.md section without asking first — adding sections changes the file's
   structure and is worth a deliberate decision, not something to do inline mid-triage.
 - **Not worth fixing, or already covered by an existing hook/permission/rule** →
   propose **declined**, with the one-sentence reason.
 
 State the proposed bucket and a concrete sketch of the change for every entry before
 moving to confirmation — don't just name the bucket, show what the hook/permission/
-CLAUDE.md line would actually say.
+AGENTS.md line would actually say.
 
 ## Step 3 — Confirm before applying anything
 
@@ -79,7 +79,7 @@ it is its own follow-up task — write the file, test it against real and edge-c
 scenarios the way the existing hooks were tested, don't just describe it and mark the
 lesson `applied` before the actual mechanism exists.
 
-If a proposal is approved and it's a **CLAUDE.md** line, make the smallest addition
+If a proposal is approved and it's an **AGENTS.md** line, make the smallest addition
 that states the rule — do not restate something already covered elsewhere in the
 file (check `<correctness_guards>`, `<agent_constraints>`, and any other relevant
 section first).
@@ -87,7 +87,7 @@ section first).
 ## Step 4 — Resolve the entry: delete on apply, keep on decline
 
 `agent-lessons/` is a staging area, not a permanent home. A lesson's job is to exist
-just long enough to get promoted into a real enforcement surface — CLAUDE.md, a skill,
+just long enough to get promoted into a real enforcement surface — AGENTS.md, a skill,
 a hook, or a permission. Once that surface exists and actually carries the rule,
 leaving the original lesson file in place too is exactly the same "wasteful,
 copy-pasted duplication" flagged elsewhere in this repo's own guidance — the same
@@ -100,7 +100,7 @@ saying the rule, and it is not being read by anyone or anything. This mirrors
 history is the archive."**
 
 - **Applied** — once the change actually lands (the hook is written and tested, the
-  permission is added, or the CLAUDE.md line is written), **delete the entry file.**
+  permission is added, or the AGENTS.md line is written), **delete the entry file.**
   Do not mark it `applied` and leave it in place — an `applied` file sitting in
   `agent-lessons/items/` forever is not a record, it's an inert second copy of a rule
   that now lives somewhere a session actually reads. If the promotion is a multi-step
@@ -120,5 +120,5 @@ named to answer it is the exact failure mode the queue's design exists to preven
 
 - Does not run on a schedule — there is no mechanism for that here, by design.
 - Does not touch `agent-feedback/`.
-- Does not write hooks, permissions, or CLAUDE.md changes without a human confirming
+- Does not write hooks, permissions, or AGENTS.md changes without a human confirming
   each one individually.
