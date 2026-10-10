@@ -2,7 +2,7 @@
 name: evo-triage-lessons
 description: >
   On-request review of open agent-lessons/ entries. For each disposition: open item,
-  proposes whether it should become a hook, a permission, a AGENTS.md line, or be
+  proposes whether it should become a hook, a permission, an AGENTS.md line, or be
   declined — and requires human confirmation before applying anything. Scoped to
   agent-lessons/ only (agent-behavior corrections), not agent-feedback/ (code
   findings, which get fixed as part of normal task work). Invoke with
@@ -79,7 +79,7 @@ it is its own follow-up task — write the file, test it against real and edge-c
 scenarios the way the existing hooks were tested, don't just describe it and mark the
 lesson `applied` before the actual mechanism exists.
 
-If a proposal is approved and it's a **AGENTS.md** line, make the smallest addition
+If a proposal is approved and it's an **AGENTS.md** line, make the smallest addition
 that states the rule — do not restate something already covered elsewhere in the
 file (check `<correctness_guards>`, `<agent_constraints>`, and any other relevant
 section first).

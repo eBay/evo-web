@@ -94,7 +94,6 @@ This directory contains the AI configuration for the Evo Web components monorepo
 - ❌ Extracting frequently-used commands to skills (creates indirection)
 - ❌ Compressing AGENTS.md for "cleanliness" (fidelity > aesthetics)
 - ❌ Adding external links with high noise ratios (73%+ irrelevant content)
-- ❌ Using AGENTS.md pattern (reduces task success per research)
 - ❌ Mixing temporal/session data with static rules (breaks caching)
 - ❌ Vague commands like "be thorough" (triggers tool loops)
 
