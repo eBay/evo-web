@@ -30,7 +30,7 @@ See [`.claude/README.md`](./.claude/README.md) for full details on the skills ar
 
 ## Code Comments
 
-Treat comments as a code smell: prefer self-documenting code, fix workarounds instead of annotating them, and keep any comment to 1–2 lines explaining a non-obvious _why_. JSDoc on published APIs (`evo-react` props, `evo-marko` `Input`) is exempt; internal JSDoc is not. See [Comments Are a Code Smell](./CLAUDE.md#comments-are-a-code-smell) for details.
+Treat comments as a code smell: prefer self-documenting code, fix problems instead of annotating them (unavoidable or deliberate workarounds keep a short why), and keep any comment to 1–2 lines explaining a non-obvious _why_. JSDoc on published APIs (`evo-react` props, `evo-marko` `Input`) is exempt; internal JSDoc is not. See [Comments Are a Code Smell](./CLAUDE.md#comments-are-a-code-smell) for details.
 
 ## Releases
 
