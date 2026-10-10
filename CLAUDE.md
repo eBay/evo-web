@@ -147,9 +147,9 @@ DS/dev issues often carry a `/branch/` URL (a design-in-progress branch) alongsi
 Default to writing no comment. A comment usually means the code failed to say something, and the fix belongs in the code.
 
 - **Don't restate the code.** `// loop over items` above a loop adds noise. If a comment is needed to explain what code does, rename or restructure until it isn't.
-- **Don't use a comment in place of a fix.** `// HACK`, `// temporary`, `// should be fixed properly` flag a real problem: fix the root cause or refactor, or if that is out of scope record it in `agent-feedback/` and leave no comment. A workaround that is unavoidable (e.g. an upstream bug) or deliberately kept is different: keep a line or two saying why, with an issue link if there is one, so it isn't re-filed or reintroduced.
+- **Don't use a comment in place of a fix.** `// HACK`, `// temporary`, `// should be fixed properly` flag a real problem: fix the root cause or refactor, or if that is out of scope record it in `agent-feedback/` and leave no comment. A workaround that is unavoidable (e.g. an upstream bug) or deliberately kept is different: keep a line or two saying why, with a **public** issue link if one already exists (never file one yourself), so it isn't re-filed or reintroduced.
 - **Keep comments to 1–2 lines.** A longer comment is either padded (cut it down) or compensating for a structural problem (split the function, extract a well-named helper, simplify the design).
-- **Comment only the non-obvious _why_:** a hidden constraint, a browser/AT quirk, a link to a spec or issue. Never narrate _what_ or _how_.
+- **Comment only the non-obvious _why_:** a hidden constraint, a browser/AT quirk, a link to a public spec or existing issue. Never narrate _what_ or _how_.
 - **Internal JSDoc gets the same scrutiny.** Don't add JSDoc to internal functions, types, or helpers that just repeats the name and type signature.
 - **Don't add or rewrite comments in code you aren't changing,** and don't leave comments about the change itself or what used to be there (`// added for #123`, `// removed X`, `// previously used Y`); that belongs in the commit or PR.
 
