@@ -93,7 +93,6 @@ textarea.textbox__control {
     font-size: 1em;
     height: 40px;
     margin: 0;
-    outline: none;
 }
 input.textbox__control[disabled],
 textarea.textbox__control[disabled] {

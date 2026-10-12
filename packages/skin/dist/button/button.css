@@ -66,8 +66,11 @@ a.fake-btn--borderless:hover,
 button.btn--borderless:focus,
 button.btn--borderless:hover {
     background-color: initial;
-    outline: none;
     text-decoration: underline;
+}
+a.fake-btn--borderless:focus-visible,
+button.btn--borderless:focus-visible {
+    border-radius: 4px;
 }
 
 a.fake-btn--borderless[aria-disabled="true"],

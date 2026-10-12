@@ -42,8 +42,15 @@
     width: calc(100% - var(--spacing-200));
 }
 
+/* the wrapper draws the border and focus state, so the native ring goes there */
 .chips-combobox .combobox__control > input:focus {
     outline: none;
+}
+
+.chips-combobox:has(.combobox__control > input:focus-visible) {
+    outline: auto;
+    outline-color: -webkit-focus-ring-color;
+    outline-offset: 2px;
 }
 
 .chips-combobox .combobox {
