@@ -10,6 +10,7 @@ AI configuration for eBay's evo-web components monorepo.
 - Always run `npm run build` before marking component work complete
 - Prefer reading existing patterns over introducing new ones
 - Never manually edit auto-generated files (they should typically have a comment indicating they are generated)
+- Default to no code comments; follow `<comment_policy>`
 - Never widen a task's diff with out-of-scope fixes — record them in `agent-feedback/` instead (see below)
   </agent_constraints>
 
@@ -142,18 +143,24 @@ DS/dev issues often carry a `/branch/` URL (a design-in-progress branch) alongsi
 
 ---
 
-## Comments Are a Code Smell
+## Code Comments Policy
 
-Default to writing no comment. A comment usually means the code failed to say something, and the fix belongs in the code.
+<comment_policy>
 
-- **Don't restate the code.** `// loop over items` above a loop adds noise. If a comment is needed to explain what code does, rename or restructure until it isn't.
-- **Don't use a comment in place of a fix.** `// HACK`, `// temporary`, `// should be fixed properly` flag a real problem: fix the root cause or refactor, or if that is out of scope record it in `agent-feedback/` and leave no comment. A workaround that is unavoidable (e.g. an upstream bug) or deliberately kept is different: keep a line or two saying why, with a **public** issue link if one already exists (never file one yourself), so it isn't re-filed or reintroduced.
-- **Keep comments to 1–2 lines.** A longer comment is either padded (cut it down) or compensating for a structural problem (split the function, extract a well-named helper, simplify the design).
-- **Comment only the non-obvious _why_:** a hidden constraint, a browser/AT quirk, a link to a public spec or existing issue. Never narrate _what_ or _how_.
-- **Internal JSDoc gets the same scrutiny.** Don't add JSDoc to internal functions, types, or helpers that just repeats the name and type signature.
-- **Don't add or rewrite comments in code you aren't changing,** and don't leave comments about the change itself or what used to be there (`// added for #123`, `// removed X`, `// previously used Y`); that belongs in the commit or PR.
+Default to no comment. Before adding one, try renaming, extracting or simplifying the code instead.
 
-**Exception — external documentation:** JSDoc that is consumed by users of a published API (e.g. `evo-react` component props, `evo-marko` `Input` types) is documentation, not a code comment, and should stay thorough.
+**Don't write comments that:**
+
+- restate the code or an internal signature (`// loop over items`, JSDoc repeating names and types)
+- mark a fixable hack (`// HACK`, `// temporary`): fix it, or log it in `agent-feedback/` and leave no comment
+- narrate the change or removed code (`// added for #123`, `// previously used Y`)
+- run past 2 lines: shorten them or fix the structure
+
+**Write one only for** a non-obvious why the code can't express: a hidden constraint, a browser/AT quirk, or an unavoidable or deliberately kept workaround. Max 2 lines. Link only to a **public** issue that already exists; never file one.
+
+**Exempt:** JSDoc for consumers of a published API (`evo-react` props, `evo-marko` `Input`).
+
+</comment_policy>
 
 ---
 
