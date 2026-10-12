@@ -27,6 +27,7 @@ This page contains instructions and guidelines for anybody contributing code to 
         - [Component Tokens](#component-tokens)
     - [Dark Mode](#dark-mode)
     - [Storybook](#storybook)
+    - [Storybook → Docs Site Integration](#storybook--docs-site-integration)
     - [Visual Regression Testing](#visual-regression-testing)
         - [External Contributors](#external-contributors)
         - [Internal Contributors](#internal-contributors)
@@ -312,6 +313,35 @@ Every module requires a page in storybook. In addition to the main use cases, tr
 - Color inheritance (to a certain degree)
 
 Each story must be isolated to a single test. This allows us to easily run visual regression testing.
+
+## Storybook → Docs Site Integration
+
+Skin component docs pages (`src/routes/_index/components/*/css+page.marko`) render live Storybook markup instead of hand-duplicated HTML, so a demo can never drift out of sync with its story. `src/data/story-markup.ts` reads every `.stories.js` file directly at build time via Vite's `import.meta.glob` (the same mechanism `src/data/components.ts` uses to eagerly import route templates) — there's no generated file and nothing to regenerate. Editing a story picks up instantly through Vite's own dev-server reload, and in a deployed build the data is computed once as part of that build, since the site itself is a static build with no per-request server.
+
+### Adding a demo to a docs page
+
+Use the `<component-demo>` tag, giving it the component's directory name and the story's export name:
+
+```marko
+<component-demo component="badge" variant="empty"/>
+<component-demo component="badge" variant="threeDigits"/>
+```
+
+This renders the story's actual HTML, a code sample of that markup, and a "View in Storybook ↗" link to the exact story — no imports, no manual markup, no separate Storybook URL to maintain.
+
+If a docs page references a `component`/`variant` pair that doesn't exist in any `.stories.js` file, the site build fails immediately with a message naming the problem — this is intentional, so a stale reference is caught at build time rather than rendering a silently blank demo.
+
+### What a story needs to work on a docs page
+
+Stories are written to render alone in Storybook, but a docs page renders several of them side by side, with `<script>` tags stripped. Only reference variants that work in that setting:
+
+- Every `id` (and any `aria-labelledby`/`for` pointing at it) must be unique across the stories used on the same page.
+- Skip test-only variants such as `textSpacing`, which rely on Storybook-only helpers like `demo-a11y-text-spacing`.
+- Avoid root-relative asset paths such as `/img/...`. The docs site is served under a base path, so they break once deployed.
+
+### Variant keys
+
+A variant's key is derived from its story file's title with the component name stripped off the front, plus its export name — e.g. a single-file component like Badge (`Skin/Badge`) keeps bare keys (`empty`, `threeDigits`), while a component whose stories are split across multiple files (e.g. Breadcrumbs) gets keys that include the distinguishing part of the title (e.g. `links-cascade/textSpacing`, `buttons-overflow/textSpacing`) so that two different files exporting the same story name never collide.
 
 ## Visual Regression Testing
 
