@@ -21,6 +21,11 @@ const meta: Meta<typeof EvoCombobox> = {
       options: ["automatic", "manual"],
       table: { defaultValue: { summary: "automatic" } },
     },
+    inputSize: {
+      control: "select",
+      options: ["regular", "large"],
+      table: { defaultValue: { summary: "regular" } },
+    },
     strategy: {
       control: "select",
       options: ["absolute", "fixed"],
