@@ -1,40 +1,46 @@
 import type { ComponentProps, MouseEventHandler, ReactElement } from "react";
 
-export type EducationNoticeStatus =
-  "attention" | "confirmation" | "information";
 export type EducationNoticeVariant = "none" | "prominent";
 
 export type EvoEducationNoticeProps = Omit<
   ComponentProps<"section">,
-  "aria-label" | "aria-labelledby"
+  "aria-label" | "aria-labelledby" | "aria-roledescription" | "role"
 > & {
-  /** Selects a status icon; omitting it uses the education lightbulb. */
-  status?: EducationNoticeStatus;
-  /** Accessible notice name. English default to be overridden is `"Education notice"`. */
-  a11yText?: string;
-  /** Overrides the icon's accessible label while `a11yText` names the notice. */
-  a11yIconText?: string;
+  /**
+   * Accessible name of the notice region.
+   * English default to be overridden is `"Education notice"`.
+   */
+  a11yText: string;
   /** Describes the region role in the page language. English default to be overridden is `"Notice"`. */
   a11yRoleDescription?: string;
-  /** Hides the icon while retaining the header and title. */
-  icon?: "none";
-  /** Custom Evo icon in place of the education lightbulb when `status` is omitted. Supply its accessible label and prominent styling directly. */
-  educationIcon?: ReactElement;
   /** Makes the notice background more prominent. Defaults to `"none"`. */
   variant?: EducationNoticeVariant;
-  /** Makes the default or status icon prominent. Defaults to `"none"`. */
-  iconVariant?: EducationNoticeVariant;
   /** Adds a dismiss button with this accessible name. */
   a11yDismissText?: string;
-  /** Controls whether the notice is omitted from the DOM. Defaults to `false`. */
+  /**
+   * Omit to start visible and let the dismiss button remove the notice.
+   * Passing `false` makes the notice controlled: it stays rendered until the
+   * parent sets `true` from `onDismiss`.
+   */
   dismissed?: boolean;
-  /** Called after the user activates the dismiss button. */
+  /**
+   * Called when the user activates the dismiss button, before the notice
+   * unmounts. The dismiss button had focus and leaves the DOM with the
+   * notice, so move focus here to an element that stays on the page.
+   */
   onDismiss?: MouseEventHandler<HTMLButtonElement>;
-  /** Called when an action inside `EvoEducationNoticeCTA` is clicked. */
-  onCtaClick?: MouseEventHandler<HTMLParagraphElement>;
 };
 
-export type EvoEducationNoticeHeaderProps = Omit<ComponentProps<"div">, "id">;
+export type EvoEducationNoticeIconProps = {
+  /** Custom Evo icon. Configure its accessible label and prominent style on the icon itself. */
+  icon?: ReactElement;
+  /** Accessible label for the default lightbulb. Defaults to the notice's `a11yText`; the English default to be overridden is `"Education notice"`. */
+  a11yText?: string;
+  /** Makes the default lightbulb prominent. */
+  prominent?: boolean;
+};
+
+export type EvoEducationNoticeHeaderProps = ComponentProps<"div">;
 
 export type EvoEducationNoticeTitleProps = ComponentProps<"h2"> & {
   /** Heading level used for the notice title. Defaults to `"h2"`. */
@@ -44,5 +50,3 @@ export type EvoEducationNoticeTitleProps = ComponentProps<"h2"> & {
 export type EvoEducationNoticeMainProps = ComponentProps<"div">;
 
 export type EvoEducationNoticeFooterProps = ComponentProps<"div">;
-
-export type EvoEducationNoticeCTAProps = ComponentProps<"p">;

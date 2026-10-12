@@ -1,4 +1,4 @@
-import { useId, useState } from "react";
+import { useState } from "react";
 import classNames from "classnames";
 import { EducationNoticeProvider } from "./context";
 import type { EvoEducationNoticeProps } from "./types";
@@ -7,29 +7,33 @@ import "@ebay/skin/education-notice.mjs";
 /**
  * Education notices explain a concept or feature within a page.
  *
- * Place `EvoEducationNoticeTitle` inside `EvoEducationNoticeHeader`, followed
- * by `EvoEducationNoticeMain` and an optional `EvoEducationNoticeFooter` or
- * `EvoEducationNoticeCTA`. The header supplies the default lightbulb, an
- * optional status icon, and an optional dismiss control. When using the
- * controlled `dismissed` prop, update it in `onDismiss` to hide the notice.
+ * `a11yText` names the notice region. Compose
+ * `EvoEducationNoticeHeader` with `EvoEducationNoticeTitle`, followed by
+ * `EvoEducationNoticeMain` and an optional `EvoEducationNoticeFooter`.
+ * Include `EvoEducationNoticeIcon` in the header to show an icon. The header
+ * can also contain the optional dismiss button.
  *
  * ## Usage
  *
  * ```tsx
  * import {
  *   EvoEducationNotice,
+ *   EvoEducationNoticeFooter,
  *   EvoEducationNoticeHeader,
+ *   EvoEducationNoticeIcon,
  *   EvoEducationNoticeMain,
  *   EvoEducationNoticeTitle,
  * } from "@evo-web/react/education-notice";
  *
  * <EvoEducationNotice a11yText="Listing guidance">
  *   <EvoEducationNoticeHeader>
+ *     <EvoEducationNoticeIcon />
  *     <EvoEducationNoticeTitle>Write a clear title</EvoEducationNoticeTitle>
  *   </EvoEducationNoticeHeader>
- *   <EvoEducationNoticeMain>
- *     Describe the item and include its condition.
- *   </EvoEducationNoticeMain>
+ *   <EvoEducationNoticeMain>Describe the condition.</EvoEducationNoticeMain>
+ *   <EvoEducationNoticeFooter>
+ *     <a href="/seller-center">Read listing tips</a>
+ *   </EvoEducationNoticeFooter>
  * </EvoEducationNotice>
  * ```
  *
@@ -37,28 +41,18 @@ import "@ebay/skin/education-notice.mjs";
  */
 export function EvoEducationNotice({
   a11yDismissText,
-  a11yIconText,
   a11yRoleDescription = "Notice",
-  a11yText,
+  a11yText = "Education notice",
   children,
   className,
   dismissed,
-  educationIcon,
-  icon,
-  iconVariant = "none",
-  onCtaClick,
   onDismiss,
   ref,
-  status,
   variant = "none",
   ...rest
 }: EvoEducationNoticeProps) {
-  const headerId = useId();
   const [internalDismissed, setInternalDismissed] = useState(false);
   const isDismissed = dismissed !== undefined ? dismissed : internalDismissed;
-  const label = a11yText ?? "Education notice";
-  const labelsFromHeader =
-    icon !== "none" && !(educationIcon && !status) && !a11yIconText;
 
   if (isDismissed) {
     return null;
@@ -66,27 +60,19 @@ export function EvoEducationNotice({
 
   return (
     <EducationNoticeProvider
-      headerId={headerId}
-      status={status}
-      a11yText={label}
-      a11yIconText={a11yIconText}
+      a11yText={a11yText}
       a11yDismissText={a11yDismissText}
-      icon={icon}
-      educationIcon={educationIcon}
-      iconVariant={iconVariant}
       dismiss={(event) => {
         if (dismissed === undefined) {
           setInternalDismissed(true);
         }
         onDismiss?.(event);
       }}
-      onCtaClick={onCtaClick}
     >
       <section
         {...rest}
         ref={ref}
-        aria-label={labelsFromHeader ? undefined : label}
-        aria-labelledby={labelsFromHeader ? headerId : undefined}
+        aria-label={a11yText}
         aria-roledescription={a11yRoleDescription}
         className={classNames(
           "education-notice",

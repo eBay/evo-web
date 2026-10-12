@@ -1,18 +1,10 @@
 import { createContext, use, useMemo } from "react";
-import type { MouseEventHandler, ReactElement, ReactNode } from "react";
-import type { EducationNoticeStatus, EducationNoticeVariant } from "./types";
+import type { MouseEventHandler, ReactNode } from "react";
 
 type EducationNoticeContextValue = {
-  headerId: string;
-  status?: EducationNoticeStatus;
   a11yText: string;
-  a11yIconText?: string;
   a11yDismissText?: string;
-  icon?: "none";
-  educationIcon?: ReactElement;
-  iconVariant: EducationNoticeVariant;
   dismiss: MouseEventHandler<HTMLButtonElement>;
-  onCtaClick?: MouseEventHandler<HTMLParagraphElement>;
 };
 
 const EducationNoticeContext =
@@ -20,42 +12,17 @@ const EducationNoticeContext =
 
 export function EducationNoticeProvider({
   children,
-  headerId,
-  status,
   a11yText,
-  a11yIconText,
   a11yDismissText,
-  icon,
-  educationIcon,
-  iconVariant,
   dismiss,
-  onCtaClick,
 }: EducationNoticeContextValue & { children: ReactNode }) {
   const value = useMemo(
     () => ({
-      headerId,
-      status,
       a11yText,
-      a11yIconText,
       a11yDismissText,
-      icon,
-      educationIcon,
-      iconVariant,
       dismiss,
-      onCtaClick,
     }),
-    [
-      headerId,
-      status,
-      a11yText,
-      a11yIconText,
-      a11yDismissText,
-      icon,
-      educationIcon,
-      iconVariant,
-      dismiss,
-      onCtaClick,
-    ],
+    [a11yText, a11yDismissText, dismiss],
   );
   return (
     <EducationNoticeContext value={value}>{children}</EducationNoticeContext>

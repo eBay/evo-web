@@ -1,8 +1,10 @@
 import classNames from "classnames";
 import type { EvoEducationNoticeFooterProps } from "./types";
+import "@ebay/skin/link.mjs";
 
 /**
- * Optional footer `div` for additional links or actions.
+ * Optional footer `div` for additional links or actions. Skin styles links
+ * here; give a `button` action `className="fake-link"` for Skin link styling.
  *
  * @summary Footer for an education notice.
  */

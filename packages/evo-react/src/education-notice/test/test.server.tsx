@@ -3,21 +3,23 @@ import { renderToString } from "react-dom/server";
 import { EvoIconLightningBolt24 } from "../../icon/icons/lightning-bolt-24";
 import {
   EvoEducationNotice,
-  EvoEducationNoticeCTA,
   EvoEducationNoticeFooter,
   EvoEducationNoticeHeader,
+  EvoEducationNoticeIcon,
   EvoEducationNoticeMain,
   EvoEducationNoticeTitle,
 } from "../index";
-import type { EducationNoticeStatus } from "../types";
 
 describe("EvoEducationNotice SSR", () => {
-  it("renders default structure", () => {
+  it("renders default structure with an explicit icon component", () => {
     expect(
       renderToString(
-        <EvoEducationNotice>
+        <EvoEducationNotice a11yText="Listing guidance">
           <EvoEducationNoticeHeader>
-            <EvoEducationNoticeTitle>Listing guidance</EvoEducationNoticeTitle>
+            <EvoEducationNoticeIcon />
+            <EvoEducationNoticeTitle>
+              Write a clear title
+            </EvoEducationNoticeTitle>
           </EvoEducationNoticeHeader>
           <EvoEducationNoticeMain>
             Describe the item condition.
@@ -28,50 +30,46 @@ describe("EvoEducationNotice SSR", () => {
     ).toMatchSnapshot();
   });
 
-  it.each<EducationNoticeStatus>(["attention", "confirmation", "information"])(
-    "renders %s status",
-    (status) => {
-      expect(
-        renderToString(
-          <EvoEducationNotice status={status} variant="prominent">
-            <EvoEducationNoticeHeader>
-              <EvoEducationNoticeTitle>Seller update</EvoEducationNoticeTitle>
-            </EvoEducationNoticeHeader>
-            <EvoEducationNoticeMain>Review the update.</EvoEducationNoticeMain>
-          </EvoEducationNotice>,
-        ),
-      ).toMatchSnapshot();
-    },
-  );
-
-  it("renders custom icon and CTA", () => {
+  it("renders nothing when dismissed", () => {
     expect(
       renderToString(
-        <EvoEducationNotice
-          educationIcon={
-            <EvoIconLightningBolt24
-              a11yText="Listing insight"
-              a11yVariant="label"
-            />
-          }
-        >
+        <EvoEducationNotice a11yText="Listing guidance" dismissed>
+          <EvoEducationNoticeMain>Describe the item.</EvoEducationNoticeMain>
+        </EvoEducationNotice>,
+      ),
+    ).toBe("");
+  });
+
+  it("renders a custom icon supplied through the icon component", () => {
+    expect(
+      renderToString(
+        <EvoEducationNotice a11yText="Listing guidance">
           <EvoEducationNoticeHeader>
+            <EvoEducationNoticeIcon
+              icon={
+                <EvoIconLightningBolt24
+                  a11yText="Listing insight"
+                  a11yVariant="label"
+                  prominent
+                />
+              }
+            />
             <EvoEducationNoticeTitle>
               Improve your listing
             </EvoEducationNoticeTitle>
           </EvoEducationNoticeHeader>
-          <EvoEducationNoticeCTA>
-            <a href="/seller-center">Read listing tips</a>
-          </EvoEducationNoticeCTA>
         </EvoEducationNotice>,
       ),
     ).toMatchSnapshot();
   });
 
-  it("renders iconless notice with a dismiss button", () => {
+  it("renders no icon when the icon component is omitted", () => {
     expect(
       renderToString(
-        <EvoEducationNotice icon="none" a11yDismissText="Dismiss guidance">
+        <EvoEducationNotice
+          a11yText="Seller notice"
+          a11yDismissText="Dismiss guidance"
+        >
           <EvoEducationNoticeHeader>
             <EvoEducationNoticeTitle>Seller update</EvoEducationNoticeTitle>
           </EvoEducationNoticeHeader>
