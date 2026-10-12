@@ -143,9 +143,7 @@ DS/dev issues often carry a `/branch/` URL (a design-in-progress branch) alongsi
 
 ---
 
-## Code Comments Policy
-
-<comment_policy>
+## <comment_policy>
 
 Default to no comment. Before adding one, try renaming, extracting or simplifying the code instead.
 

@@ -30,7 +30,7 @@ See [`.claude/README.md`](./.claude/README.md) for full details on the skills ar
 
 ## Code Comments
 
-Comments are fine when they explain a non-obvious _why_. Avoid ones that restate the code, annotate fixable workarounds, or run long. JSDoc on published APIs (`evo-react` props, `evo-marko` `Input`) is exempt. See the [Code Comments Policy](./CLAUDE.md#code-comments-policy).
+Comments are fine when they explain a non-obvious _why_. Avoid ones that restate the code, annotate fixable workarounds, or run long. JSDoc on published APIs (`evo-react` props, `evo-marko` `Input`) is exempt. See `<comment_policy>` in [CLAUDE.md](./CLAUDE.md).
 
 ## Releases
 
