@@ -1,0 +1,340 @@
+import { chatDialogStates } from "./chat-dialog-states";
+
+<style>
+  /* Stand-in styles for classes that do not exist in Skin yet. Scoped so they cannot leak. */
+  .poc-chat-dialog .chat-dialog {
+    background: var(--color-background-primary);
+    border: 1px solid var(--color-border-medium);
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgb(0 0 0 / 0.2);
+    color: var(--color-foreground-primary);
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    inset: auto;
+    margin: 0;
+    max-width: 100%;
+    min-height: 560px;
+    padding: 0;
+    position: static;
+    width: 360px;
+  }
+
+  .poc-chat-dialog .chat-dialog:not([open]) {
+    display: none;
+  }
+
+  .poc-chat-dialog .chat-dialog--fullscreen {
+    border-radius: 0;
+    width: 100%;
+  }
+
+  .poc-chat-dialog .chat-dialog__header {
+    align-items: center;
+    border-bottom: 1px solid var(--color-border-medium);
+    display: flex;
+    gap: 8px;
+    padding: 12px 16px;
+  }
+
+  .poc-chat-dialog .chat-dialog__heading {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .poc-chat-dialog .chat-dialog__title {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .poc-chat-dialog .chat-dialog__subtitle {
+    color: var(--color-foreground-secondary);
+    font-size: 0.75rem;
+    margin: 0;
+  }
+
+  .poc-chat-dialog .chat-dialog__notice {
+    padding: 8px 16px 0;
+  }
+
+  /* The demo lets the log grow so every message is visible. A real window caps its height and the log scrolls. */
+  .poc-chat-dialog .chat-dialog__log {
+    flex: 1;
+    min-height: 0;
+    overflow-y: visible;
+    padding: 16px;
+    position: relative;
+  }
+
+  .poc-chat-dialog .chat-dialog__log:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: -2px;
+  }
+
+  .poc-chat-dialog .chat-dialog__messages {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .poc-chat-dialog .chat-dialog__separator {
+    color: var(--color-foreground-secondary);
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  .poc-chat-dialog .chat-dialog__suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    margin: 12px 0 0;
+    padding: 0;
+  }
+
+  .poc-chat-dialog .chat-dialog__suggestion {
+    background: transparent;
+    border: 1px solid var(--color-border-medium);
+    border-radius: 9999px;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.875rem;
+    min-height: 32px;
+    padding: 4px 12px;
+  }
+
+  .poc-chat-dialog .chat-dialog__suggestion:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+
+  .poc-chat-dialog .chat-dialog__scroll-latest {
+    float: inline-end;
+    inset-block-end: 8px;
+    inset-inline-end: 16px;
+    position: sticky;
+  }
+
+  .poc-chat-dialog .chat-dialog__status {
+    color: var(--color-foreground-secondary);
+    font-size: 0.75rem;
+    margin: 0;
+    min-height: 20px;
+    padding: 0 16px;
+  }
+
+  .poc-chat-dialog .chat-dialog__composer {
+    border-top: 1px solid var(--color-border-medium);
+    display: grid;
+    gap: 8px;
+    padding: 12px 16px;
+  }
+
+  .poc-chat-dialog .chat-dialog__attachments {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .poc-chat-dialog .chat-dialog__attachment {
+    align-items: center;
+    border: 1px solid var(--color-border-medium);
+    border-radius: 8px;
+    display: inline-flex;
+    font-size: 0.875rem;
+    gap: 4px;
+    padding: 4px 4px 4px 8px;
+  }
+
+  .poc-chat-dialog .chat-dialog__row {
+    align-items: flex-end;
+    display: flex;
+    gap: 8px;
+  }
+
+  .poc-chat-dialog .chat-dialog__row .textbox {
+    align-self: stretch;
+    display: flex;
+    flex: 1;
+    max-height: 120px;
+  }
+
+  .poc-chat-dialog .chat-dialog__row textarea {
+    height: 40px;
+    min-height: 40px;
+    resize: none;
+  }
+
+  .poc-chat-dialog .chat-dialog__hint {
+    color: var(--color-foreground-secondary);
+    font-size: 0.75rem;
+    margin: 0;
+  }
+
+  .poc-chat-dialog .chat-dialog__ended {
+    border-top: 1px solid var(--color-border-medium);
+    padding: 12px 16px;
+    text-align: center;
+  }
+
+  .poc-chat-dialog .chat-launcher {
+    align-items: center;
+    display: inline-flex;
+    gap: 8px;
+  }
+
+  .poc-chat-dialog .chat-message {
+    align-items: flex-end;
+    display: flex;
+    gap: 8px;
+    max-width: 100%;
+  }
+
+  .poc-chat-dialog .chat-message--outgoing {
+    flex-direction: row-reverse;
+  }
+
+  .poc-chat-dialog .chat-message__body {
+    display: grid;
+    gap: 4px;
+    max-width: 80%;
+    min-width: 0;
+  }
+
+  .poc-chat-dialog .chat-message__sender {
+    color: var(--color-foreground-secondary);
+    font-size: 0.75rem;
+  }
+
+  .poc-chat-dialog .chat-message__text {
+    background: var(--color-background-secondary);
+    border-radius: 16px;
+    margin: 0;
+    overflow-wrap: anywhere;
+    padding: 8px 12px;
+  }
+
+  .poc-chat-dialog .chat-message__text p,
+  .poc-chat-dialog .chat-message__text ul {
+    margin: 0 0 8px;
+  }
+
+  .poc-chat-dialog .chat-message__text ul {
+    margin: 0;
+    padding-inline-start: 20px;
+  }
+
+  .poc-chat-dialog .chat-message--outgoing .chat-message__text {
+    background: var(--color-background-accent);
+    color: var(--color-foreground-on-accent);
+  }
+
+  .poc-chat-dialog .chat-message--error .chat-message__text {
+    border: 1px solid var(--color-foreground-attention);
+  }
+
+  .poc-chat-dialog .chat-message__meta {
+    color: var(--color-foreground-secondary);
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.75rem;
+    gap: 8px;
+  }
+
+  .poc-chat-dialog .chat-message--outgoing .chat-message__meta {
+    justify-content: flex-end;
+  }
+
+  .poc-chat-dialog .chat-message__actions {
+    display: flex;
+    gap: 4px;
+  }
+</style>
+
+<script>
+  // The demos are static, so keep the Send buttons from reloading the page.
+  document.addEventListener("submit", (event) => {
+    if (
+      event.target instanceof Element &&
+      event.target.closest(".poc-chat-dialog")
+    ) {
+      event.preventDefault();
+    }
+  });
+</script>
+
+<div class="poc-chat-dialog">
+  <h1>Chat Dialog</h1>
+  <p>
+    A chat window with a launcher, a conversation log, a composer and the states
+    around them. This page shows the markup for each state, what changes from
+    the default, and the accessibility decision behind each change.
+  </p>
+
+  <h2 id="poc-chat-dialog-status">Status</h2>
+  <p>
+    Draft. There is no contract, design spec or Skin SCSS yet. The
+    <code>chat-dialog</code> and <code>chat-message</code> classes are proposed
+    names, and the styles on this page are temporary stand-ins.
+  </p>
+  <p>
+    Three icons are placeholders until they are added to the Skin sprite: attach
+    uses <code>icon-add-16</code>, send uses <code>icon-arrow-up-16</code>, and
+    minimize uses <code>icon-chevron-down-16</code>.
+  </p>
+
+  <h2 id="poc-chat-dialog-decisions">Open decisions</h2>
+  <ol>
+    <li>
+      Block split: <code>chat-dialog</code> plus <code>chat-message</code> (used
+      here), or one block with message elements.
+    </li>
+    <li>
+      Suggested replies: a plain button styled like a chip (used here), because
+      <code>filter-chip</code> has toggle semantics.
+    </li>
+    <li>
+      Enter key: Enter sends and Shift+Enter adds a line (used here), or Enter
+      always adds a line.
+    </li>
+    <li>
+      Empty send: <code>aria-disabled="true"</code> keeps the button focusable
+      (used here).
+    </li>
+    <li>
+      Narrow viewports: switch to a modal full-screen dialog (state 8), or let
+      the caller choose one mode per instance.
+    </li>
+    <li>
+      Whether the subtitle must say the other party is automated, and the exact
+      wording.
+    </li>
+  </ol>
+
+  <h2 id="poc-chat-dialog-states">States</h2>
+  <p>
+    A non-modal <code>&lt;dialog&gt;</code> does not close on Escape by itself,
+    so the framework layers will need their own handler. The conversation is a
+    <code>role="log"</code> region.
+  </p>
+
+  <for|state| of=chatDialogStates>
+    <h3 id=state.id>${state.title}</h3>
+    <ul>
+      <for|change| of=state.changes>
+        <li>$!{change}</li>
+      </for>
+    </ul>
+    <div class="demo">
+      <div class="demo__inner">$!{state.html}</div>
+    </div>
+    <highlight-code type="html" code=state.html/>
+  </for>
+</div>
