@@ -1,24 +1,16 @@
 import { useEffect } from "react";
-import { EvoMenu } from "../menu/menu";
-import { EvoMenuItems } from "../menu/menu-items";
+import { EvoMenu as BaseEvoMenu } from "../menu/menu";
 import { useRefTee } from "../utils/use-ref-tee";
 import { useMenuButton } from "./context";
-import type { EvoMenuButtonMenuProps } from "./types";
+import type { EvoMenuProps } from "./types";
 
 /**
- * Positioned popup for `EvoMenuButton`. Place command items, separators, or
- * radio and checkbox groups inside. A `footer` slot follows the items region.
+ * Positions and conditionally mounts the menu-button popup. Compose explicit
+ * `EvoMenuItems` and optional `EvoMenuFooter` children inside it.
  *
- * @summary Menu popup and keyboard navigation region.
+ * @summary Popup menu for a menu button.
  */
-export function EvoMenuButtonMenu({
-  children,
-  footer,
-  onClick,
-  ref,
-  style,
-  ...rest
-}: EvoMenuButtonMenuProps) {
+export function EvoMenu({ children, ref, style, ...rest }: EvoMenuProps) {
   const menuButton = useMenuButton();
   const [menuRef, menuElementRef] = useRefTee<HTMLSpanElement>([
     ref,
@@ -51,21 +43,19 @@ export function EvoMenuButtonMenu({
   if (!menuButton.open) return null;
 
   return (
-    <EvoMenu
+    <BaseEvoMenu
       {...rest}
+      variant={menuButton.variant === "filter" ? "filter" : "none"}
       ref={menuRef}
       id={menuButton.menuId}
       tabIndex={-1}
       classPrefix="menu-button"
-      variant={menuButton.variant === "filter" ? "filter" : "none"}
       reverse={menuButton.reverse}
       fixed={menuButton.strategy === "fixed"}
       fixWidth={menuButton.fixWidth}
       style={{ ...style, ...menuButton.floatingStyles }}
-      onClick={onClick}
     >
-      <EvoMenuItems a11yLabelId={menuButton.triggerId}>{children}</EvoMenuItems>
-      {footer}
-    </EvoMenu>
+      {children}
+    </BaseEvoMenu>
   );
 }

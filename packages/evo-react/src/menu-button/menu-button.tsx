@@ -10,58 +10,21 @@ import "@ebay/skin/filter-chip.mjs";
 
 /**
  * Menu buttons reveal a temporary menu of commands or choices from a trigger.
- *
- * Compose `EvoMenuButtonTrigger` and `EvoMenuButtonMenu` inside this wrapper.
- * The menu accepts `EvoMenuButtonItem`, radio and checkbox items within their
- * corresponding `EvoMenu*Group`, and separators. Use `open` and
- * `onOpenChange` for controlled visibility; otherwise the wrapper manages
- * opening and dismissal. `collapseOnSelect` returns focus to the trigger.
- *
- * ## Usage
- *
- * ```tsx
- * import {
- *   EvoMenuButton,
- *   EvoMenuButtonItem,
- *   EvoMenuButtonMenu,
- *   EvoMenuButtonTrigger,
- * } from "@evo-web/react/menu-button";
- *
- * <EvoMenuButton>
- *   <EvoMenuButtonTrigger>Listing actions</EvoMenuButtonTrigger>
- *   <EvoMenuButtonMenu>
- *     <EvoMenuButtonItem onSelect={editListing}>Edit listing</EvoMenuButtonItem>
- *   </EvoMenuButtonMenu>
- * </EvoMenuButton>
- * ```
- *
- * @summary Button that expands a menu of actions or choices.
  */
 export function EvoMenuButton({
-  a11ySelectedText = "Filter Applied",
-  a11yText,
-  borderless = false,
   children,
   className,
   collapseOnSelect = false,
   defaultOpen = false,
   disabled = false,
   fixWidth = false,
-  hasSelection = false,
-  noToggleIcon = false,
   onBlur,
   onKeyDown,
   onOpenChange,
   open,
-  partiallyDisabled = false,
-  prefixId,
-  priority,
   ref,
   reverse = false,
-  size,
-  split,
   strategy = "absolute",
-  transparent = false,
   variant = "button",
   ...rest
 }: EvoMenuButtonProps) {
@@ -76,7 +39,6 @@ export function EvoMenuButton({
     onOpenChange,
     placement: reverse ? "bottom-end" : "bottom-start",
     strategy,
-    offset: 0,
     resetOnDisabled: disabled,
   });
   const effectiveOpen = !disabled && expander.open;
@@ -116,22 +78,11 @@ export function EvoMenuButton({
       floatingStyles={expander.floatingStyles}
       menuId={menuId}
       triggerId={triggerId}
-      variant={variant}
-      borderless={borderless}
-      priority={priority}
-      size={size}
-      transparent={transparent}
       disabled={disabled}
-      partiallyDisabled={partiallyDisabled}
-      noToggleIcon={noToggleIcon}
-      a11yText={a11yText}
-      hasSelection={hasSelection}
-      a11ySelectedText={a11ySelectedText}
       reverse={reverse}
       strategy={strategy}
       fixWidth={fixWidth}
-      split={split}
-      prefixId={prefixId}
+      variant={variant}
     >
       <span
         {...rest}

@@ -1,20 +1,36 @@
 export { EvoMenuButton } from "./menu-button";
 export { EvoMenuButtonTrigger } from "./menu-button-trigger";
-export { EvoMenuButtonMenu } from "./menu-button-menu";
+export { EvoMenu } from "./menu-button-menu";
+export { EvoMenuItems } from "./menu-button-items";
 export {
-  EvoMenuButtonItem,
-  EvoMenuButtonRadioItem,
-  EvoMenuButtonCheckboxItem,
+  EvoMenuItem,
+  EvoMenuRadioItem,
+  EvoMenuCheckboxItem,
 } from "./menu-button-item";
-export { EvoMenuButtonSeparator } from "./menu-button-separator";
-export { EvoMenuButtonLabel } from "./menu-button-label";
-export { EvoMenuRadioGroup, EvoMenuCheckboxGroup } from "../menu";
+export {
+  EvoMenuRadioGroup,
+  EvoMenuCheckboxGroup,
+  EvoMenuItemBadge,
+  EvoMenuSeparator,
+  EvoMenuFooter,
+} from "../menu/index";
 export type {
   EvoMenuButtonProps,
   EvoMenuButtonTriggerProps,
-  EvoMenuButtonMenuProps,
-  EvoMenuButtonItemProps,
-  EvoMenuButtonRadioItemProps,
-  EvoMenuButtonCheckboxItemProps,
+  EvoMenuProps,
   MenuButtonVariant,
 } from "./types";
+export type {
+  EvoMenuItemsProps,
+  EvoMenuItemProps,
+  EvoMenuRadioItemProps,
+  EvoMenuCheckboxItemProps,
+  EvoMenuRadioGroupProps,
+  EvoMenuCheckboxGroupProps,
+  EvoMenuItemBadgeProps,
+  EvoMenuSeparatorProps,
+  EvoMenuFooterProps,
+  EvoMenuItemSelectEvent,
+  EvoMenuVariant,
+  MenuValue,
+} from "../menu/index";

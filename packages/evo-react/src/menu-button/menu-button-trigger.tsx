@@ -9,97 +9,137 @@ import { useMenuButton } from "./context";
 import type { EvoMenuButtonTriggerProps } from "./types";
 
 /**
- * Toggles the attached menu. Supply visible text for button and form variants,
- * or an `EvoIcon*` child and localized `a11yText` on the parent for icon mode.
+ * Toggles the attached menu using the presentation configured on its root.
  *
  * @summary Trigger for a menu button.
  */
-export function EvoMenuButtonTrigger({
-  children,
-  className,
-  onClick,
-  ref,
-  ...rest
-}: EvoMenuButtonTriggerProps) {
+export function EvoMenuButtonTrigger(props: EvoMenuButtonTriggerProps) {
   const menuButton = useMenuButton();
+  const {
+    a11ySelectedText = "Filter Applied",
+    hasSelection = false,
+    noToggleIcon = false,
+    ...triggerProps
+  } = props;
   const [buttonRef] = useRefTee<HTMLButtonElement>([
-    ref,
+    props.ref,
     menuButton.triggerRef,
     menuButton.setReference,
   ]);
   const labelId = `${menuButton.triggerId}-label`;
-  const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
-    onClick?.(event);
-    if (
-      !event.defaultPrevented &&
-      !menuButton.disabled &&
-      !menuButton.partiallyDisabled
-    ) {
+  const toggleMenu = (
+    event: MouseEvent<HTMLButtonElement>,
+    partiallyDisabled: boolean,
+  ) => {
+    if (!event.defaultPrevented && !menuButton.disabled && !partiallyDisabled) {
       menuButton.focusOnOpen.current = true;
       menuButton.setOpen(!menuButton.open);
     }
   };
-  const commonProps = {
-    ...rest,
-    id: menuButton.triggerId,
-    ref: buttonRef,
-    className: classNames("menu-button__button", className),
-    "aria-expanded": menuButton.open,
-    "aria-controls": menuButton.menuId,
-    "aria-haspopup": "true" as const,
-    "aria-disabled": menuButton.partiallyDisabled || undefined,
-    "aria-labelledby": menuButton.prefixId
-      ? menuButton.variant === "icon"
-        ? menuButton.prefixId
-        : `${menuButton.prefixId} ${labelId}`
-      : undefined,
-    disabled: menuButton.disabled,
-    onClick: handleClick,
-  };
+
+  if (menuButton.variant === "filter") {
+    const {
+      a11yText,
+      children,
+      className,
+      onClick,
+      partiallyDisabled = false,
+      prefixId,
+      ...rest
+    } = triggerProps;
+
+    return (
+      <EvoFilterChip
+        {...rest}
+        ref={buttonRef}
+        id={menuButton.triggerId}
+        className={classNames("menu-button__button", className)}
+        aria-expanded={menuButton.open}
+        aria-controls={menuButton.menuId}
+        aria-haspopup="true"
+        aria-disabled={partiallyDisabled || undefined}
+        aria-labelledby={prefixId ? `${prefixId} ${labelId}` : undefined}
+        disabled={menuButton.disabled}
+        variant="menu"
+        open={menuButton.open}
+        selected={hasSelection}
+        a11ySelectedText={a11ySelectedText}
+        aria-label={a11yText ?? undefined}
+        onClick={(event: MouseEvent<HTMLButtonElement>) => {
+          onClick?.(event);
+          toggleMenu(event, partiallyDisabled);
+        }}
+      >
+        {prefixId ? <span id={labelId}>{children}</span> : children}
+      </EvoFilterChip>
+    );
+  }
 
   if (menuButton.variant === "icon") {
+    const {
+      a11yText = "Menu",
+      children,
+      className,
+      onClick,
+      partiallyDisabled = false,
+      prefixId,
+      ...rest
+    } = triggerProps;
+
     return (
       <EvoIconButton
-        {...commonProps}
-        a11yText={menuButton.a11yText ?? "Menu"}
-        partiallyDisabled={menuButton.partiallyDisabled}
-        transparent={menuButton.transparent}
-        size={menuButton.size}
+        {...rest}
+        ref={buttonRef}
+        id={menuButton.triggerId}
+        className={classNames("menu-button__button", className)}
+        aria-expanded={menuButton.open}
+        aria-controls={menuButton.menuId}
+        aria-haspopup="true"
+        aria-labelledby={prefixId || undefined}
+        disabled={menuButton.disabled}
+        a11yText={a11yText}
+        partiallyDisabled={partiallyDisabled}
+        onClick={(event: MouseEvent<HTMLButtonElement>) => {
+          onClick?.(event);
+          toggleMenu(event, partiallyDisabled);
+        }}
       >
         {children ?? <EvoIconOverflowVertical16 />}
       </EvoIconButton>
     );
   }
 
-  if (menuButton.variant === "filter") {
-    return (
-      <EvoFilterChip
-        {...commonProps}
-        variant="menu"
-        open={menuButton.open}
-        selected={menuButton.hasSelection}
-        a11ySelectedText={menuButton.a11ySelectedText}
-        aria-label={menuButton.a11yText}
-      >
-        {children}
-      </EvoFilterChip>
-    );
-  }
+  const {
+    a11yText,
+    children,
+    className,
+    onClick,
+    partiallyDisabled = false,
+    prefixId,
+    ...rest
+  } = triggerProps;
 
   return (
     <EvoButton
-      {...commonProps}
-      aria-label={menuButton.a11yText}
-      partiallyDisabled={menuButton.partiallyDisabled}
-      priority={menuButton.priority}
-      size={menuButton.size}
-      borderless={menuButton.borderless}
-      transparent={menuButton.transparent}
+      {...rest}
+      ref={buttonRef}
+      id={menuButton.triggerId}
+      className={classNames("menu-button__button", className)}
+      aria-expanded={menuButton.open}
+      aria-controls={menuButton.menuId}
+      aria-haspopup="true"
+      aria-labelledby={prefixId ? `${prefixId} ${labelId}` : undefined}
+      aria-label={a11yText ?? undefined}
+      disabled={menuButton.disabled}
+      partiallyDisabled={partiallyDisabled}
       variant={menuButton.variant === "form" ? "form" : "standard"}
-      bodyState={menuButton.noToggleIcon ? undefined : "expand"}
-      split={menuButton.split}
+      bodyState={noToggleIcon ? undefined : "expand"}
+      onClick={(event: MouseEvent<HTMLButtonElement>) => {
+        onClick?.(event);
+        toggleMenu(event, partiallyDisabled);
+      }}
     >
-      {menuButton.prefixId ? <span id={labelId}>{children}</span> : children}
+      {prefixId ? <span id={labelId}>{children}</span> : children}
     </EvoButton>
   );
 }
