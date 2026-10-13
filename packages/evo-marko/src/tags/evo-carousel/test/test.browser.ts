@@ -346,11 +346,10 @@ describe("evo-carousel", () => {
         () => {
           expect(leading()).toBe(0);
           expect(list().scrollLeft).toBe(0);
+          expect(reachable()).toEqual([0]);
         },
         { timeout: 3000 },
       );
-
-      expect(reachable()).toEqual([0]);
     });
 
     it("should go to the last slide backwards from the first", async () => {
