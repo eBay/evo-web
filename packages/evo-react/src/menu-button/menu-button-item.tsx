@@ -1,29 +1,26 @@
 import {
-  EvoMenuItem,
-  EvoMenuRadioItem,
-  EvoMenuCheckboxItem,
+  EvoMenuCheckboxItem as BaseEvoMenuCheckboxItem,
+  EvoMenuItem as BaseEvoMenuItem,
+  EvoMenuRadioItem as BaseEvoMenuRadioItem,
 } from "../menu/menu-item";
-import type { MenuValue } from "../menu/types";
-import { useMenuButton } from "./context";
 import type {
-  EvoMenuButtonCheckboxItemProps,
-  EvoMenuButtonItemProps,
-  EvoMenuButtonRadioItemProps,
-} from "./types";
+  EvoMenuCheckboxItemProps,
+  EvoMenuItemProps,
+  EvoMenuRadioItemProps,
+  MenuValue,
+} from "../menu/types";
+import { useMenuButton } from "./context";
 
 /**
- * Runs a menu command and, when requested on the parent, closes the popup.
- * Its `onSelect` callback runs before dismissal.
+ * Performs one command. Its `onSelect` callback runs before optional popup
+ * dismissal through the parent `collapseOnSelect` setting.
  *
  * @summary Command item for a menu button.
  */
-export function EvoMenuButtonItem({
-  onSelect,
-  ...rest
-}: EvoMenuButtonItemProps) {
+export function EvoMenuItem({ onSelect, ...rest }: EvoMenuItemProps) {
   const menuButton = useMenuButton();
   return (
-    <EvoMenuItem
+    <BaseEvoMenuItem
       {...rest}
       onSelect={(event) => {
         onSelect?.(event);
@@ -34,18 +31,18 @@ export function EvoMenuButtonItem({
 }
 
 /**
- * Selects one value inside an `EvoMenuRadioGroup` and optionally dismisses the
- * menu button. Give each radio item a distinct `value`.
+ * Selects one value in an `EvoMenuRadioGroup` and optionally dismisses the
+ * popup. Give each radio item a distinct `value`.
  *
- * @summary Radio choice for a menu button.
+ * @summary Single-selection item for a menu button.
  */
-export function EvoMenuButtonRadioItem<Value extends MenuValue>({
+export function EvoMenuRadioItem<Value extends MenuValue>({
   onSelect,
   ...rest
-}: EvoMenuButtonRadioItemProps<Value>) {
+}: EvoMenuRadioItemProps<Value>) {
   const menuButton = useMenuButton();
   return (
-    <EvoMenuRadioItem
+    <BaseEvoMenuRadioItem
       {...rest}
       onSelect={(event) => {
         onSelect?.(event);
@@ -56,18 +53,18 @@ export function EvoMenuButtonRadioItem<Value extends MenuValue>({
 }
 
 /**
- * Toggles one value inside an `EvoMenuCheckboxGroup` and optionally dismisses
- * the menu button. Give each checkbox item a distinct `value`.
+ * Toggles one value in an `EvoMenuCheckboxGroup` and optionally dismisses the
+ * popup. Give each checkbox item a distinct `value`.
  *
- * @summary Checkbox choice for a menu button.
+ * @summary Multi-selection item for a menu button.
  */
-export function EvoMenuButtonCheckboxItem<Value extends MenuValue>({
+export function EvoMenuCheckboxItem<Value extends MenuValue>({
   onSelect,
   ...rest
-}: EvoMenuButtonCheckboxItemProps<Value>) {
+}: EvoMenuCheckboxItemProps<Value>) {
   const menuButton = useMenuButton();
   return (
-    <EvoMenuCheckboxItem
+    <BaseEvoMenuCheckboxItem
       {...rest}
       onSelect={(event) => {
         onSelect?.(event);

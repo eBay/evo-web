@@ -1,6 +1,5 @@
 import { createContext, use, useMemo } from "react";
 import type { CSSProperties, ReactNode, RefObject } from "react";
-import type { Priority, Size, Split } from "../button/types";
 import type { MenuButtonVariant } from "./types";
 
 type MenuButtonContextValue = {
@@ -14,22 +13,11 @@ type MenuButtonContextValue = {
   floatingStyles: CSSProperties;
   menuId: string;
   triggerId: string;
-  variant: MenuButtonVariant;
-  borderless: boolean;
-  priority?: Priority;
-  size?: Size;
-  transparent: boolean;
   disabled: boolean;
-  partiallyDisabled: boolean;
-  noToggleIcon: boolean;
-  a11yText?: string;
-  hasSelection: boolean;
-  a11ySelectedText: string;
   reverse: boolean;
   strategy: "absolute" | "fixed";
   fixWidth: boolean;
-  split?: Split;
-  prefixId?: string;
+  variant: MenuButtonVariant;
 };
 
 const MenuButtonContext = createContext<MenuButtonContextValue | null>(null);
@@ -54,22 +42,11 @@ export function MenuButtonProvider({
   floatingStyles,
   menuId,
   triggerId,
-  variant,
-  borderless,
-  priority,
-  size,
-  transparent,
   disabled,
-  partiallyDisabled,
-  noToggleIcon,
-  a11yText,
-  hasSelection,
-  a11ySelectedText,
   reverse,
   strategy,
   fixWidth,
-  split,
-  prefixId,
+  variant,
 }: MenuButtonContextValue & { children: ReactNode }) {
   const value = useMemo(
     () => ({
@@ -83,22 +60,11 @@ export function MenuButtonProvider({
       floatingStyles,
       menuId,
       triggerId,
-      variant,
-      borderless,
-      priority,
-      size,
-      transparent,
       disabled,
-      partiallyDisabled,
-      noToggleIcon,
-      a11yText,
-      hasSelection,
-      a11ySelectedText,
       reverse,
       strategy,
       fixWidth,
-      split,
-      prefixId,
+      variant,
     }),
     [
       open,
@@ -111,22 +77,11 @@ export function MenuButtonProvider({
       floatingStyles,
       menuId,
       triggerId,
-      variant,
-      borderless,
-      priority,
-      size,
-      transparent,
       disabled,
-      partiallyDisabled,
-      noToggleIcon,
-      a11yText,
-      hasSelection,
-      a11ySelectedText,
       reverse,
       strategy,
       fixWidth,
-      split,
-      prefixId,
+      variant,
     ],
   );
   return <MenuButtonContext value={value}>{children}</MenuButtonContext>;
