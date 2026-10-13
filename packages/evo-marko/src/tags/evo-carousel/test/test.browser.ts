@@ -43,6 +43,14 @@ const firstCut = () =>
       list().clientWidth + 1,
   );
 const reachable = () => items().flatMap((item, i) => (item.inert ? [] : [i]));
+const inView = () => {
+  const box = list().getBoundingClientRect();
+  return items().flatMap((item, i) => {
+    const rect = item.getBoundingClientRect();
+    return rect.right > box.left + 1 && rect.left < box.right - 1 ? [i] : [];
+  });
+};
+const reordered = () => items().some((item) => item.style.order);
 
 const settles = () =>
   vi.waitFor(
@@ -99,13 +107,34 @@ describe("evo-carousel", () => {
       expect(disabled("prev")).toBe(true);
     });
 
-    it("should come to rest on an item however fast it is pressed", async () => {
+    it("should add up presses that arrive mid-scroll", async () => {
+      control("next").click();
+      await settles();
+      control("next").click();
+      await settles();
+      const twice = list().scrollLeft;
+
+      control("prev").click();
+      control("prev").click();
+      await settles();
+      expect(list().scrollLeft).toBe(0);
+
       control("next").click();
       await wait(50);
       control("next").click();
       await settles();
+      expect(list().scrollLeft).toBeCloseTo(twice, 0);
+    });
 
-      expect(leading()).toBeGreaterThan(0);
+    it("should page from wherever scrolling by hand leaves it", async () => {
+      list().scrollTo({ left: items()[2].offsetLeft, behavior: "instant" });
+      await settles();
+      list().scrollTo({ left: items()[5].offsetLeft, behavior: "instant" });
+      await settles();
+
+      control("next").click();
+      await settles();
+      expect(leading()).toBe(6);
     });
 
     it("should page without scrolling the page", async () => {
@@ -396,25 +425,53 @@ describe("evo-carousel", () => {
       expect(disabled("prev")).toBe(false);
     });
 
-    it("should advance on its own and rewind at the end", async () => {
+    it("should wrap round to the first slide without passing the others", async () => {
       await vi.waitFor(() => expect(leading()).toBe(3), { timeout: 6000 });
+      const passed = new Set<number>();
+      list().addEventListener("scroll", () =>
+        inView().forEach((i) => passed.add(i)),
+      );
+
       await vi.waitFor(
         () => {
           expect(leading()).toBe(0);
-          expect(list().scrollLeft).toBe(0);
           expect(reachable()).toEqual([0]);
+          expect(reordered()).toBe(false);
+          expect(list().scrollLeft).toBe(0);
         },
         { timeout: 3000 },
       );
+      expect([...passed].sort()).toEqual([0, 3]);
     });
 
-    it("should go to the last slide backwards from the first", async () => {
+    it("should wrap round to the last slide going back from the first", async () => {
       await userEvent.hover(root());
+      const passed = new Set<number>();
+      list().addEventListener("scroll", () =>
+        inView().forEach((i) => passed.add(i)),
+      );
+
       control("prev").click();
       await settles();
-
       expect(leading()).toBe(3);
       expect(reachable()).toEqual([3]);
+      expect(reordered()).toBe(false);
+      expect([...passed].sort()).toEqual([0, 3]);
+    });
+
+    it("should rewind when there is too little to wrap onto", async () => {
+      component = await render(Autoplay, { autoplay: 600, itemsPerSlide: 3 });
+      await settles();
+      await userEvent.hover(root());
+
+      control("next").click();
+      await settles();
+      expect(reachable()).toEqual([1, 2, 3]);
+
+      control("next").click();
+      await settles();
+      expect(reachable()).toEqual([0, 1, 2]);
+      expect(reordered()).toBe(false);
     });
 
     it("should hold still while the pointer is over it", async () => {

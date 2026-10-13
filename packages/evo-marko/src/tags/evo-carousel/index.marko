@@ -48,6 +48,7 @@ export interface Input extends Omit<Marko.HTML.Div, "role" | "aria-label"> {
   index?: number;
   indexChange?: (index: number) => void;
 }
+static const targets = new WeakMap<HTMLElement, number>();
 static function getItemsInView(
   itemsPerSlide: number | undefined,
   noPeek: boolean | undefined,
@@ -89,6 +90,38 @@ static function getItemsInView(
 <let/atEnd=false>
 <let/visible=null as boolean[] | null>
 
+<const/measure() {
+  const list = $list();
+  const rtl = getComputedStyle(list).direction === "rtl";
+  const box = list.getBoundingClientRect();
+  const position = Math.abs(list.scrollLeft);
+  return Array.from(list.children as HTMLCollectionOf<HTMLElement>, (el) => {
+    const rect = el.getBoundingClientRect();
+    const start =
+      position + (rtl ? box.right - rect.right : rect.left - box.left);
+    return { el, start, end: start + rect.width };
+  }).sort((a, b) => a.start - b.start);
+}>
+
+<const/scrollToPosition(position: number, behavior?: ScrollBehavior) {
+  const list = $list();
+  const left = Math.max(
+    Math.min(position, list.scrollWidth - list.clientWidth),
+    0,
+  );
+  if (Math.abs(left - Math.abs(list.scrollLeft)) < 1) targets.delete(list);
+  else targets.set(list, left);
+  list.scrollTo({
+    left: getComputedStyle(list).direction === "rtl" ? -left : left,
+    behavior,
+  });
+}>
+
+<const/scrollToIndex(i: number, behavior?: ScrollBehavior) {
+  const item = measure().find(({ el }) => el === $list().children[i]);
+  if (item) scrollToPosition(item.start, behavior);
+}>
+
 <script>
   const list = $list();
   let shown: boolean[] = [];
@@ -108,13 +141,36 @@ static function getItemsInView(
     atEnd = scrolled > list.scrollWidth - list.clientWidth - 1;
   };
   const settle = () => {
+    // The jump that starts a wrap ends before the scroll onto it does.
+    const target = targets.get(list);
+    if (
+      target !== undefined &&
+      Math.abs(target - Math.abs(list.scrollLeft)) > 1
+    ) {
+      return;
+    }
+    targets.delete(list);
+
     const leading = shown.indexOf(true);
+    const wrapped = Array.from(
+      list.children as HTMLCollectionOf<HTMLElement>,
+    ).filter((item) => item.style.order);
+    if (wrapped.length) {
+      wrapped.forEach((item) => (item.style.order = ""));
+      scrollToIndex(leading, "instant");
+    }
     if (leading !== -1 && leading !== index) index = leading;
   };
   list.addEventListener("scroll", update, {
     passive: true,
     signal: $signal,
   });
+  for (const type of ["pointerdown", "wheel", "keydown"]) {
+    list.addEventListener(type, () => targets.delete(list), {
+      passive: true,
+      signal: $signal,
+    });
+  }
   if ("onscrollend" in window) {
     list.addEventListener("scrollend", settle, {
       signal: $signal,
@@ -142,51 +198,60 @@ static function getItemsInView(
   };
 </script>
 
-// NOTE: `scrollIntoView({ container: "nearest" })` replaces this once Firefox
-// and Safari support it; without it, the page scrolls too.
-<const/scrollToItem(item: Element | undefined, behavior?: ScrollBehavior) {
-  if (!(item instanceof HTMLElement)) return;
-  const list = $list();
-  list.scrollTo({
-    left:
-      getComputedStyle(list).direction === "rtl"
-        ? item.offsetLeft + item.offsetWidth - list.clientWidth
-        : item.offsetLeft,
-    behavior,
-  });
-}>
-
 <lifecycle
   onMount() {
-    if (index) scrollToItem($list().children[index], "instant");
+    if (index) scrollToIndex(index, "instant");
   }
   onUpdate() {
-    if (index !== undefined) scrollToItem($list().children[index]);
+    const list = $list();
+    if (
+      index !== undefined &&
+      list.children[index] !== list.querySelector(":scope > :not([inert])")
+    ) {
+      scrollToIndex(index);
+    }
   }
 >
 
 <const/page(direction: 1 | -1) {
   const list = $list();
-  const items = Array.from(list.children) as HTMLElement[];
-  const shown = items.filter((item) => !item.inert);
-  if (!shown.length) return;
-  let i = items.indexOf(shown.at(direction === 1 ? -1 : 0)!) + direction;
-  if (!items[i]) {
-    if (!interval) return;
-    i = direction === 1 ? 0 : items.length - 1;
-  } else if (direction === -1) {
-    const width = list.getBoundingClientRect().width;
-    const last = items[i].getBoundingClientRect();
-    const fits = (item: HTMLElement) => {
-      const rect = item.getBoundingClientRect();
-      return (
-        Math.max(rect.right, last.right) - Math.min(rect.left, last.left) <
-        width + 1
-      );
-    };
-    while (i && fits(items[i - 1])) i--;
+  const width = list.clientWidth;
+  const target = targets.get(list);
+  const moving =
+    target !== undefined && Math.abs(target - Math.abs(list.scrollLeft)) > 1;
+  let from = moving ? target : Math.abs(list.scrollLeft);
+  let items = measure();
+  const beyond = () =>
+    direction === 1
+      ? items.find((item) => item.end > from + width + 1)
+      : items.findLast((item) => item.start < from - 1);
+
+  if (interval && !beyond()) {
+    const view = items.filter(
+      (item) => item.start > from - 1 && item.end < from + width + 1,
+    );
+    const rest = items.filter((item) => !view.includes(item));
+    if (moving || !view.length || !rest.length) return;
+    if (rest.at(-1)!.end - rest[0].start < width - 1) {
+      scrollToPosition(direction === 1 ? 0 : Infinity);
+      return;
+    }
+
+    // Moves what is out of view to the far side, so there is more to scroll onto.
+    rest.forEach(({ el }) => (el.style.order = `${direction}`));
+    items = measure();
+    from = items.find(({ el }) => el === view[0].el)!.start;
+    scrollToPosition(from, "instant");
   }
-  scrollToItem(items[i]);
+
+  const item = beyond();
+  if (item) {
+    scrollToPosition(
+      direction === 1
+        ? item.start
+        : items.find(({ start }) => start > item.end - width - 1)!.start,
+    );
+  }
 }>
 
 <let/paused:=input.paused>
