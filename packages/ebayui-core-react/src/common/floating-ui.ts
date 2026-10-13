@@ -58,6 +58,10 @@ const POINTER_TO_PLACEMENT: Record<PointerDirection, Placement> = {
     "bottom-right": "top-end",
 };
 
+const PLACEMENT_TO_POINTER = Object.fromEntries(
+    Object.entries(POINTER_TO_PLACEMENT).map(([pointer, placement]) => [placement, pointer]),
+) as Record<Placement, PointerDirection>;
+
 export type FloatingTooltipHookArgs = {
     open?: boolean;
     hostRef?: React.RefObject<HTMLElement>;
@@ -77,6 +81,7 @@ export type FloatingTooltipHookOptions = {
 export type FloatingTooltipHookReturn = {
     overlayStyles: ReturnType<typeof useFloating>["floatingStyles"];
     arrowStyles: React.CSSProperties;
+    pointer: PointerDirection;
     refs: {
         host: ReturnType<typeof useFloating>["refs"]["reference"];
         overlay: ReturnType<typeof useFloating>["refs"]["floating"];
@@ -134,6 +139,7 @@ export function useFloatingTooltip({ open, hostRef, options }: FloatingTooltipHo
     return {
         overlayStyles: floatingStyles,
         arrowStyles,
+        pointer: PLACEMENT_TO_POINTER[finalPlacement],
         refs: {
             host: refs.reference,
             overlay: refs.floating,
