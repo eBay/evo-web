@@ -50,7 +50,12 @@ const EbayTooltip: FC<Props> = ({
     const { isExpanded, expandTooltip, collapseTooltip } = useTooltip({ onCollapse, onExpand, expanded: open });
     const timeoutRef = useRef<ReturnType<typeof setTimeout>>(null);
 
-    const { overlayStyles, arrowStyles, refs } = useFloatingTooltip({
+    const {
+        overlayStyles,
+        arrowStyles,
+        pointer: resolvedPointer,
+        refs,
+    } = useFloatingTooltip({
         open: isExpanded,
         hostRef,
         options: {
@@ -131,7 +136,7 @@ const EbayTooltip: FC<Props> = ({
                 {...content.props}
                 type="tooltip"
                 style={{ ...overlayStyles, ...overlayStyle }}
-                pointer={pointer}
+                pointer={resolvedPointer}
                 arrowStyle={arrowStyles}
                 overlayRef={refs.setOverlay}
                 arrowRef={refs.arrow}
