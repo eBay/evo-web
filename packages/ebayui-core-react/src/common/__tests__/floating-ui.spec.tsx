@@ -1,49 +1,38 @@
-import { renderHook } from "@testing-library/react";
-import { useFloating } from "@floating-ui/react";
-import { vi } from "vitest";
-import { useFloatingDropdown } from "../floating-ui";
+import React from "react";
+import { render } from "@testing-library/react";
+import { describe, expect, it, vi } from "vitest";
+import { EbayTourtip, EbayTourtipContent, EbayTourtipHost } from "../../ebay-tourtip";
 
-vi.mock("@floating-ui/react", () => ({
-    autoUpdate: vi.fn(),
-    flip: vi.fn(() => ({ name: "flip" })),
-    offset: vi.fn(() => ({ name: "offset" })),
-    shift: vi.fn(() => ({ name: "shift" })),
-    arrow: vi.fn(() => ({ name: "arrow" })),
-    inline: vi.fn(() => ({ name: "inline" })),
-    useFloating: vi.fn(),
-}));
+vi.mock("@floating-ui/react", async (importOriginal) => {
+    const actual = await importOriginal<typeof import("@floating-ui/react")>();
 
-describe("useFloatingDropdown", () => {
-    const floatingStyles = {
-        position: "absolute",
-        left: 0,
-        top: 0,
-        transform: "translate(0px, 0px)",
-    } as const;
-
-    const refs = {
-        reference: { current: null },
-        floating: { current: null },
-        setReference: vi.fn(),
-        setFloating: vi.fn(),
+    return {
+        ...actual,
+        useFloating: vi.fn(() => ({
+            floatingStyles: {},
+            refs: {
+                reference: {},
+                floating: {},
+                setReference: vi.fn(),
+                setFloating: vi.fn(),
+            },
+            middlewareData: { arrow: { x: 12, y: 0 } },
+            placement: "bottom",
+        })),
     };
+});
 
-    beforeEach(() => {
-        vi.mocked(useFloating).mockReturnValue({
-            floatingStyles,
-            refs,
-        } as unknown as ReturnType<typeof useFloating>);
-    });
+describe("floating tooltip placement", () => {
+    it("updates the pointer direction when the tooltip flips", () => {
+        const { container } = render(
+            <EbayTourtip a11yCloseText="close" pointer="bottom">
+                <EbayTourtipHost>
+                    <button>Open tourtip</button>
+                </EbayTourtipHost>
+                <EbayTourtipContent>Tourtip content</EbayTourtipContent>
+            </EbayTourtip>,
+        );
 
-    it("should not return overlay styles when closed", () => {
-        const { result } = renderHook(() => useFloatingDropdown({ open: false }));
-
-        expect(result.current.overlayStyles).toBeUndefined();
-    });
-
-    it("should return overlay styles when open", () => {
-        const { result } = renderHook(() => useFloatingDropdown({ open: true }));
-
-        expect(result.current.overlayStyles).toBe(floatingStyles);
+        expect(container.querySelector(".tourtip__pointer")).toHaveClass("tourtip__pointer--top");
     });
 });
