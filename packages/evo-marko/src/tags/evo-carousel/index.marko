@@ -48,15 +48,14 @@ export interface Input extends Omit<Marko.HTML.Div, "role" | "aria-label"> {
   index?: number;
   indexChange?: (index: number) => void;
 }
-static function getLayout(
+static function getItemsInView(
   itemsPerSlide: number | undefined,
   noPeek: boolean | undefined,
   interval: number,
 ) {
-  if (!itemsPerSlide && !interval) return { perSlide: 0, inView: 0 };
-  const perSlide = Math.max(Math.floor(itemsPerSlide || 1), 1);
+  if (!itemsPerSlide && !interval) return 0;
   const peek = (itemsPerSlide || 1) % 1 || (noPeek || interval ? 0 : 0.1);
-  return { perSlide, inView: perSlide + peek };
+  return Math.max(Math.floor(itemsPerSlide || 1), 1) + peek;
 }
 
 <const/{
@@ -83,7 +82,7 @@ static function getLayout(
 
 <const/itemList=[...(items || [])]>
 <const/interval=autoplay === true ? 4000 : autoplay || 0>
-<const/{ perSlide, inView }=getLayout(itemsPerSlide, noPeek, interval)>
+<const/inView=getItemsInView(itemsPerSlide, noPeek, interval)>
 
 <let/index:=input.index>
 <let/atStart=true>
@@ -145,47 +144,49 @@ static function getLayout(
 
 // NOTE: `scrollIntoView({ container: "nearest" })` replaces this once Firefox
 // and Safari support it; without it, the page scrolls too.
-<const/scrollToItem(
-  item: Element | null | undefined,
-  edge: "start" | "end",
-  behavior?: ScrollBehavior,
-) {
+<const/scrollToItem(item: Element | undefined, behavior?: ScrollBehavior) {
   if (!(item instanceof HTMLElement)) return;
   const list = $list();
-  const rtl = getComputedStyle(list).direction === "rtl";
   list.scrollTo({
     left:
-      rtl === (edge === "start")
+      getComputedStyle(list).direction === "rtl"
         ? item.offsetLeft + item.offsetWidth - list.clientWidth
         : item.offsetLeft,
     behavior,
   });
 }>
 
-<const/itemAt(i: number) {
-  return $list().children[perSlide ? i - (i % perSlide) : i];
-}>
-
 <lifecycle
   onMount() {
-    if (index) scrollToItem(itemAt(index), "start", "instant");
+    if (index) scrollToItem($list().children[index], "instant");
   }
   onUpdate() {
-    if (index !== undefined) scrollToItem(itemAt(index), "start");
+    if (index !== undefined) scrollToItem($list().children[index]);
   }
 >
 
 <const/page(direction: 1 | -1) {
   const list = $list();
-  const shown = list.querySelectorAll(":scope > :not([inert])");
+  const items = Array.from(list.children) as HTMLElement[];
+  const shown = items.filter((item) => !item.inert);
   if (!shown.length) return;
-  const target =
-    direction === 1
-      ? (shown[shown.length - 1].nextElementSibling ??
-        (interval ? list.firstElementChild : null))
-      : (shown[0].previousElementSibling ??
-        (interval ? list.lastElementChild : null));
-  scrollToItem(target, direction === 1 ? "start" : "end");
+  let i = items.indexOf(shown.at(direction === 1 ? -1 : 0)!) + direction;
+  if (!items[i]) {
+    if (!interval) return;
+    i = direction === 1 ? 0 : items.length - 1;
+  } else if (direction === -1) {
+    const width = list.getBoundingClientRect().width;
+    const last = items[i].getBoundingClientRect();
+    const fits = (item: HTMLElement) => {
+      const rect = item.getBoundingClientRect();
+      return (
+        Math.max(rect.right, last.right) - Math.min(rect.left, last.left) <
+        width + 1
+      );
+    };
+    while (i && fits(items[i - 1])) i--;
+  }
+  scrollToItem(items[i]);
 }>
 
 <let/paused:=input.paused>
@@ -266,7 +267,7 @@ static function getLayout(
   class=[
     "carousel",
     hiddenScrollbar && "carousel--hidden-scrollbar",
-    !!perSlide && "carousel--slides",
+    !!inView && "carousel--slides",
     !!(inView % 1) && "carousel--peek",
     inputClass,
   ]
@@ -310,7 +311,7 @@ static function getLayout(
     <Paddle control=previous direction=-1/>
     <div class=[
       "carousel__viewport",
-      !perSlide && !atEnd && "carousel__viewport--mask",
+      !inView && !atEnd && "carousel__viewport--mask",
     ]>
       <ul/$list
         id=listId
@@ -318,21 +319,13 @@ static function getLayout(
         class=[
           "carousel__list",
           "carousel__list--snap",
-          !!perSlide && "carousel__list--slides",
+          !!inView && "carousel__list--slides",
           imageTreatment === "matte" && "carousel__list--image-treatment",
           imageTreatment === "large" && "carousel__list--image-treatment-large",
         ]
       >
         <for|item, i| of=itemList>
-          <li
-            ...item
-            class=[
-              "carousel__item",
-              (!perSlide || i % perSlide === 0) && "carousel__item--snap",
-              item.class,
-            ]
-            inert=!!visible && !visible[i]
-          />
+          <li ...item inert=!!visible && !visible[i]/>
         </for>
       </ul>
     </div>

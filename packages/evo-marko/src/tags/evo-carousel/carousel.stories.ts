@@ -79,7 +79,7 @@ export default {
       type: "number",
       control: "number",
       description:
-        "Zero-based index of the item at the leading edge. A press reports where it is headed straight away; scrolling by hand reports once it comes to rest. Setting it scrolls there, to the start of the slide for a discrete carousel",
+        "Zero-based index of the first item wholly in view, reported once scrolling comes to rest. Setting it scrolls that item to the leading edge",
     },
     item: {
       description: "An item in the carousel",

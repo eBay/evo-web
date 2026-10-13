@@ -125,6 +125,25 @@ describe("evo-carousel", () => {
       }
     });
 
+    it("should bring every item wholly into view on the way back", async () => {
+      component = await render(Continuous, { style: "width: 840px" });
+      await settles();
+
+      for (let i = 0; i < 10 && !disabled("next"); i++) {
+        control("next").click();
+        await settles();
+      }
+
+      const seen = new Set(reachable());
+      for (let i = 0; i < 10 && !disabled("prev"); i++) {
+        control("prev").click();
+        await settles();
+        reachable().forEach((item) => seen.add(item));
+      }
+
+      expect([...seen].sort((a, b) => a - b)).toEqual(items().map((_, i) => i));
+    });
+
     it("should disable next and drop the mask at the end", async () => {
       expect(
         component.container.querySelector(".carousel__viewport--mask"),
@@ -182,12 +201,49 @@ describe("evo-carousel", () => {
       expect(reachable()).toEqual([0, 1, 2]);
     });
 
-    it("should only rest on the first item of each slide", () => {
-      expect(
-        items().flatMap((item, i) =>
-          item.classList.contains("carousel__item--snap") ? [i] : [],
-        ),
-      ).toEqual([0, 3, 6, 9]);
+    it("should rest on any item and page by a view from there", async () => {
+      list().scrollTo({
+        left: items()[1].offsetLeft + 20,
+        behavior: "instant",
+      });
+      await settles();
+      expect(leading()).toBe(1);
+      expect(reachable()).toEqual([1, 2, 3]);
+
+      control("next").click();
+      await settles();
+      expect(leading()).toBe(4);
+
+      control("prev").click();
+      await settles();
+      expect(leading()).toBe(1);
+    });
+
+    it("should go back as far as it came with a wide peek", async () => {
+      component = await render(Discrete, {
+        style: "width: 800px",
+        itemsPerSlide: 2.7,
+      });
+      await settles();
+
+      control("next").click();
+      await settles();
+      control("next").click();
+      await settles();
+      expect(leading()).toBe(4);
+
+      control("prev").click();
+      await settles();
+      expect(leading()).toBe(2);
+
+      control("prev").click();
+      await settles();
+      expect(leading()).toBe(0);
+    });
+
+    it("should open on any item it is given", async () => {
+      component = await render(Discrete, { style: "width: 800px", index: 4 });
+      expect(leading()).toBe(4);
     });
 
     it("should move a slide per press, reporting each once", async () => {

@@ -353,14 +353,14 @@ export const customPropertySlides = () => `
         </button>
         <div class="carousel__viewport">
             <ul class="carousel__list carousel__list--snap carousel__list--slides carousel__list--custom-property-demo">
-                <li class="carousel__item carousel__item--snap">Card 1</li>
-                <li class="carousel__item">Card 2</li>
-                <li class="carousel__item">Card 3</li>
-                <li class="carousel__item carousel__item--snap">Card 4</li>
-                <li class="carousel__item">Card 5</li>
-                <li class="carousel__item">Card 6</li>
-                <li class="carousel__item carousel__item--snap">Card 7</li>
-                <li class="carousel__item">Card 8</li>
+                <li>Card 1</li>
+                <li>Card 2</li>
+                <li>Card 3</li>
+                <li>Card 4</li>
+                <li>Card 5</li>
+                <li>Card 6</li>
+                <li>Card 7</li>
+                <li>Card 8</li>
             </ul>
         </div>
         <button class="carousel__control carousel__control--next" aria-label="Next Slide - Top Products">

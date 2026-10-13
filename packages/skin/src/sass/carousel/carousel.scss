@@ -348,7 +348,7 @@ span.carousel__container {
     );
 }
 
-.carousel__item--snap {
+.carousel__list--snap > li {
     scroll-snap-align: start;
 }
 

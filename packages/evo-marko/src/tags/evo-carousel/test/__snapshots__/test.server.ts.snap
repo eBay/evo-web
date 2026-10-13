@@ -41,90 +41,70 @@ exports[`evo-carousel > renders a continuous carousel 1`] = `
         class="carousel__list carousel__list--snap"
         id="GENERATED-1"
       >
-        <li
-          class="carousel__item carousel__item--snap"
-        >
+        <li>
           <div
             class="demo-carousel-card"
           >
             Card 1
           </div>
         </li>
-        <li
-          class="carousel__item carousel__item--snap"
-        >
+        <li>
           <div
             class="demo-carousel-card"
           >
             Card 2
           </div>
         </li>
-        <li
-          class="carousel__item carousel__item--snap"
-        >
+        <li>
           <div
             class="demo-carousel-card"
           >
             Card 3
           </div>
         </li>
-        <li
-          class="carousel__item carousel__item--snap"
-        >
+        <li>
           <div
             class="demo-carousel-card"
           >
             Card 4
           </div>
         </li>
-        <li
-          class="carousel__item carousel__item--snap"
-        >
+        <li>
           <div
             class="demo-carousel-card"
           >
             Card 5
           </div>
         </li>
-        <li
-          class="carousel__item carousel__item--snap"
-        >
+        <li>
           <div
             class="demo-carousel-card"
           >
             Card 6
           </div>
         </li>
-        <li
-          class="carousel__item carousel__item--snap"
-        >
+        <li>
           <div
             class="demo-carousel-card"
           >
             Card 7
           </div>
         </li>
-        <li
-          class="carousel__item carousel__item--snap"
-        >
+        <li>
           <div
             class="demo-carousel-card"
           >
             Card 8
           </div>
         </li>
-        <li
-          class="carousel__item carousel__item--snap"
-        >
+        <li>
           <div
             class="demo-carousel-card"
           >
             Card 9
           </div>
         </li>
-        <li
-          class="carousel__item carousel__item--snap"
-        >
+        <li>
           <div
             class="demo-carousel-card"
           >
@@ -202,108 +182,84 @@ exports[`evo-carousel > renders a discrete carousel 1`] = `
         class="carousel__list carousel__list--snap carousel__list--slides"
         id="GENERATED-1"
       >
-        <li
-          class="carousel__item carousel__item--snap"
-        >
+        <li>
           <div
             class="demo-carousel-slide"
           >
             Card 1
           </div>
         </li>
-        <li
-          class="carousel__item"
-        >
+        <li>
           <div
             class="demo-carousel-slide"
           >
             Card 2
           </div>
         </li>
-        <li
-          class="carousel__item"
-        >
+        <li>
           <div
             class="demo-carousel-slide"
           >
             Card 3
           </div>
         </li>
-        <li
-          class="carousel__item carousel__item--snap"
-        >
+        <li>
           <div
             class="demo-carousel-slide"
           >
             Card 4
           </div>
         </li>
-        <li
-          class="carousel__item"
-        >
+        <li>
           <div
             class="demo-carousel-slide"
           >
             Card 5
           </div>
         </li>
-        <li
-          class="carousel__item"
-        >
+        <li>
           <div
             class="demo-carousel-slide"
           >
             Card 6
           </div>
         </li>
-        <li
-          class="carousel__item carousel__item--snap"
-        >
+        <li>
           <div
             class="demo-carousel-slide"
           >
             Card 7
           </div>
         </li>
-        <li
-          class="carousel__item"
-        >
+        <li>
           <div
             class="demo-carousel-slide"
           >
             Card 8
           </div>
         </li>
-        <li
-          class="carousel__item"
-        >
+        <li>
           <div
             class="demo-carousel-slide"
           >
             Card 9
           </div>
         </li>
-        <li
-          class="carousel__item carousel__item--snap"
-        >
+        <li>
           <div
             class="demo-carousel-slide"
           >
             Card 10
           </div>
         </li>
-        <li
-          class="carousel__item"
-        >
+        <li>
           <div
             class="demo-carousel-slide"
           >
             Card 11
           </div>
         </li>
-        <li
-          class="carousel__item"
-        >
+        <li>
           <div
             class="demo-carousel-slide"
           >
@@ -406,36 +362,28 @@ exports[`evo-carousel > renders an autoplaying carousel 1`] = `
         class="carousel__list carousel__list--snap carousel__list--slides"
         id="GENERATED-2"
       >
-        <li
-          class="carousel__item carousel__item--snap"
-        >
+        <li>
           <div
             class="demo-carousel-banner"
           >
             Slide 1
           </div>
         </li>
-        <li
-          class="carousel__item carousel__item--snap"
-        >
+        <li>
           <div
             class="demo-carousel-banner"
           >
             Slide 2
           </div>
         </li>
-        <li
-          class="carousel__item carousel__item--snap"
-        >
+        <li>
           <div
             class="demo-carousel-banner"
           >
             Slide 3
           </div>
         </li>
-        <li
-          class="carousel__item carousel__item--snap"
-        >
+        <li>
           <div
             class="demo-carousel-banner"
           >
