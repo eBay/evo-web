@@ -126,6 +126,58 @@ describe("evo-carousel", () => {
       expect(list().scrollLeft).toBeCloseTo(twice, 0);
     });
 
+    it("should keep its speed when pressed again mid-scroll", async () => {
+      component = await render(Continuous, { style: "width: 700px" });
+      await settles();
+
+      const samples: [number, number][] = [];
+      let sampling = true;
+      requestAnimationFrame(function sample(time) {
+        samples.push([time, list().scrollLeft]);
+        if (sampling) requestAnimationFrame(sample);
+      });
+
+      control("next").click();
+      await wait(150);
+      const pressed = performance.now();
+      control("next").click();
+      await settles();
+      sampling = false;
+
+      const speeds = samples
+        .slice(1)
+        .map(([time, left], i) => [
+          time,
+          (left - samples[i][1]) / (time - samples[i][0]),
+        ]);
+      const before = speeds.filter(([time]) => time < pressed).slice(-3);
+      const after = speeds.filter(([time]) => time > pressed).slice(1, 6);
+      expect(Math.min(...after.map(([, speed]) => speed))).toBeGreaterThan(
+        Math.max(...before.map(([, speed]) => speed)) * 0.4,
+      );
+    });
+
+    it("should finish its move when an item is pressed on the way", async () => {
+      const cut = firstCut();
+
+      control("next").click();
+      await wait(60);
+      await fireEvent.pointerDown(list());
+      await settles();
+      expect(leading()).toBe(cut);
+    });
+
+    it("should give way when something else scrolls it mid-move", async () => {
+      const cut = firstCut();
+
+      control("next").click();
+      await wait(60);
+      list().scrollBy({ left: 600, behavior: "instant" });
+      await settles();
+      expect(list().scrollLeft).toBeGreaterThan(items()[cut].offsetLeft + 100);
+      expect(list().style.scrollSnapType).toBe("");
+    });
+
     it("should page from wherever scrolling by hand leaves it", async () => {
       list().scrollTo({ left: items()[2].offsetLeft, behavior: "instant" });
       await settles();
