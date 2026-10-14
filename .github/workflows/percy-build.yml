@@ -26,9 +26,11 @@ jobs:
           fetch-depth: 0
 
       - name: Fetch base branch
+        env:
+          BASE_REF: ${{ github.base_ref }}
         run: |
           git remote add upstream https://github.com/${{ github.repository }}.git
-          git fetch upstream main:main
+          git fetch upstream "$BASE_REF:$BASE_REF"
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -43,7 +45,7 @@ jobs:
         uses: ./.github/actions/detect-changed-components
         with:
           sass-dir: 'packages/skin/src/sass'
-          base-branch: 'main'
+          base-branch: ${{ github.base_ref }}
 
       - name: Build Storybook
         run: npm run build:storybook -w packages/skin

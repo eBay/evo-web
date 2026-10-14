@@ -2,7 +2,7 @@
 
 /**
  * Detect which Skin components have changed in the current PR/branch
- * and output a comma-separated list for Percy partial snapshots.
+ * and output a Percy --include pattern for partial snapshots.
  *
  * Detects changes to compiled CSS files in packages/skin/dist/ and uses
  * component-metadata.json to find dependent components via reverse lookup
@@ -16,20 +16,22 @@
  *
  * Outputs (via @actions/core):
  *   - components: "all" if global files changed (run all snapshots)
- *   - components: "Component1,Component2" for specific components
+ *   - components: "^Skin/(?:Badge|Button)(?:/|: )" for specific components
  *   - components: "" (empty) if no relevant changes
  */
 
-import { execSync } from "child_process";
+import { execFileSync } from "child_process";
 import path from "path";
 import fs from "fs/promises";
 import * as core from "@actions/core";
 
+// Sass variables and mixins are absent: CI keeps dist/ in sync with src/, so
+// their effect shows up as dist CSS changes for exactly the components they touch.
 const GLOBAL_PATHS = [
   "packages/skin/src/sass/global/",
-  "packages/skin/src/sass/variables/",
-  "packages/skin/src/sass/mixins/",
+  "packages/skin/dist/global/",
   "packages/skin/src/tokens/",
+  "packages/skin/dist/tokens/",
   "packages/skin/src/sass/bundles/",
   "packages/skin/.storybook/",
   ".github/workflows/percy.yml",
@@ -56,8 +58,11 @@ type StoryModule = {
  */
 function getChangedFiles(baseBranch: string): string[] {
   try {
-    const command = `git diff ${baseBranch}...HEAD --name-only`;
-    const output = execSync(command, { encoding: "utf-8" });
+    const output = execFileSync(
+      "git",
+      ["diff", `${baseBranch}...HEAD`, "--name-only"],
+      { encoding: "utf-8" },
+    );
     return output.trim().split("\n").filter(Boolean);
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : String(error);
@@ -150,6 +155,10 @@ function extractComponentFromPath(filePath: string): string | null {
 
   core.debug(`[extractComponentFromPath] Returning: ${componentDir}`);
   return componentDir; // Return raw directory name (e.g., 'alert-dialog')
+}
+
+function escapeRegExp(text: string): string {
+  return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 /**
@@ -349,10 +358,11 @@ async function main(): Promise<void> {
       return;
     }
 
-    // Output comma-separated story titles (e.g., "Alert Dialog,Button,Badge")
-    const titleList = Array.from(allStoryTitles).sort().join("|");
-    core.setOutput("components", titleList);
-    core.info(`\n✓ Output set: ${titleList}`);
+    // Percy tests --include against "<title>: <story name>"; anchoring the
+    // title keeps "Button" from also matching "Skin/Toggle Button".
+    const titlePattern = `^Skin/(?:${Array.from(allStoryTitles).sort().map(escapeRegExp).join("|")})(?:/|: )`;
+    core.setOutput("components", titlePattern);
+    core.info(`\n✓ Output set: ${titlePattern}`);
     core.endGroup();
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : String(error);
