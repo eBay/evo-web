@@ -6,7 +6,7 @@ on:
     paths:
       - 'packages/skin/dist/**'
       - 'packages/skin/.storybook/**'
-      - 'packages/skin/src/sass/**/*.stories.js'
+      - 'packages/skin/src/**'
       - '.github/workflows/percy-build.yml'
       - '.github/workflows/percy.yml'
       - 'packages/skin/.percy.yml'
@@ -40,6 +40,16 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Check Skin dist is up to date
+        run: |
+          npm run build -w packages/skin
+          changes=$(git status --porcelain -- packages/skin/dist)
+          if [ -n "$changes" ]; then
+            echo "$changes"
+            echo "::error::packages/skin/dist is out of date. Run npm run build and commit the result."
+            exit 1
+          fi
 
       - name: Detect changed components
         id: detect
