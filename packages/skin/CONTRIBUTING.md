@@ -345,7 +345,7 @@ A variant's key is derived from its story file's title with the component name s
 
 ## Visual Regression Testing
 
-We use Percy for automated visual regression testing. Percy runs automatically in CI/CD for all pull requests to ensure visual changes are reviewed before merging.
+We use Percy for automated visual regression testing. Percy runs automatically in CI/CD for pull requests that are ready for review to ensure visual changes are reviewed before merging.
 
 ### How It Works
 
@@ -362,12 +362,13 @@ We use Percy for automated visual regression testing. Percy runs automatically i
 
 - Percy intelligently detects which components changed in your PR
 - Only changed components are snapshot tested (faster builds)
-- Global changes (tokens, variables, mixins) trigger the full snapshot suite
+- Global changes (tokens, variables, mixins, global styles, Storybook configuration) trigger the full snapshot suite
 - No manual setup required
 
 **CI/CD Behavior:**
 
-- **Pull Requests**: Percy runs automatically and blocks merge until approved by a maintainer
+- **Pull Requests**: Percy runs automatically once the PR is ready for review and blocks merge until approved by a maintainer
+- **Out-of-date dist**: Percy fails without taking snapshots if `packages/skin/dist` doesn't match the source
 - **Main Branch**: Percy runs after merge and auto-approves to update the baseline
 
 ### Manual Percy Runs (Local Development)

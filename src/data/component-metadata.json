@@ -311,6 +311,7 @@
       "alpha": true,
       "version": "0.1"
     },
+    "submodules": ["file-preview-card"],
     "cssStorybookPath": "/story/skin-file-preview-card-group--base",
     "markoStorybookPath": "/docs/media-ebay-file-preview-card-group--documentation",
     "reactStorybookPath": "/docs/media-ebay-file-preview-card-group--documentation",
@@ -449,6 +450,7 @@
       "url": "https://playbook.ebay.com/design-system/components/item-tile",
       "version": "0.1"
     },
+    "submodules": ["item-tile"],
     "cssStorybookPath": "/story/skin-item-tile-group--gallery-view",
     "markoStorybookPath": "/docs/layout-ebay-item-tile-group--documentation",
     "reactStorybookPath": "/docs/layout-ebay-item-tile-group--documentation",
@@ -514,7 +516,7 @@
       "url": "https://playbook.ebay.com/design-system/components/dropdown",
       "version": "2.2"
     },
-    "submodules": ["button", "icon"],
+    "submodules": ["button", "icon", "listbox"],
     "markoStorybookPath": "/docs/buttons-ebay-listbox-button--documentation",
     "reactStorybookPath": "/docs/buttons-ebay-listbox-button--documentation",
     "description": "A button that expands to reveal a listbox in a popover."
