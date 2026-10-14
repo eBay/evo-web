@@ -11,8 +11,9 @@ site: packages/skin/src/sass/carousel/carousel.scss › .carousel__viewport--mas
 direction, so in RTL it fades the leading (right) edge, over the first items,
 and leaves the side with more to scroll to hard-edged. It needs a `[dir="rtl"]`
 counterpart with `to left`, matching how the file already flips the paddles.
-Reaches every package that wraps the Skin carousel (ebayui-core applies the mask
-to continuous carousels by default); checked skin and ebayui-core.
+Reaches ebayui-core, which applies the mask to continuous carousels by default,
+and ebayui-core-react; evo-carousel does not use the mask. Checked skin and
+ebayui-core.
 
 Check: set `dir="rtl"` on `#storybook-root` in
 `navigation-disclosure-ebay-carousel--continuous`; the viewport's computed
