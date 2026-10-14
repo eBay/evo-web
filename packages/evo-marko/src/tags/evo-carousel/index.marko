@@ -49,8 +49,9 @@ export interface Input extends Omit<Marko.HTML.Div, "role" | "aria-label"> {
   indexChange?: (index: number) => void;
 }
 static const moves = new WeakMap<HTMLElement, Record<string, number>>();
-// A critically damped spring that settles in 450ms, as Skin's transitions do.
-static const SPRING = 6.64 / 0.45;
+static const TRANSITION_SECONDS = 0.45;
+// A critically damped spring is within 1% of its target once ω·t reaches 6.64.
+static const STIFFNESS = 6.64 / TRANSITION_SECONDS;
 static function getItemsInView(
   itemsPerSlide: number | undefined,
   noPeek: boolean | undefined,
@@ -114,13 +115,16 @@ static function getItemsInView(
   );
   const at = Math.abs(list.scrollLeft);
   const moving = moves.get(list);
+  const stop = () => {
+    moves.delete(list);
+    list.style.scrollSnapType = "";
+  };
   if (
     behavior === "instant" ||
     (!moving && Math.abs(to - at) < 1) ||
     matchMedia("(prefers-reduced-motion: reduce)").matches
   ) {
-    moves.delete(list);
-    list.style.scrollSnapType = "";
+    stop();
     list.scrollTo({ left: sign * to, behavior: "instant" });
   } else if (moving) {
     moving.to = to;
@@ -131,25 +135,19 @@ static function getItemsInView(
     list.style.scrollSnapType = "none";
     requestAnimationFrame(function step(now) {
       if (moves.get(list) !== move) return;
-      if (Math.abs(Math.abs(list.scrollLeft) - move.at) > 2) {
-        // Something else scrolled it, so the user has taken over.
-        moves.delete(list);
-        list.style.scrollSnapType = "";
-        return;
-      }
+      const scrolledElsewhere =
+        Math.abs(Math.abs(list.scrollLeft) - move.at) > 2;
+      if (scrolledElsewhere) return stop();
       const elapsed = Math.max(Math.min(now - move.time, 50), 0) / 1000;
       const left = move.to - move.at;
-      const pull = SPRING * left - move.speed;
-      const decay = Math.exp(-SPRING * elapsed);
+      const pull = STIFFNESS * left - move.speed;
+      const decay = Math.exp(-STIFFNESS * elapsed);
       const remaining = (left + pull * elapsed) * decay;
       const arrived = Math.abs(remaining) < 0.5 && Math.abs(move.speed) < 60;
-      move.speed = (SPRING * (left + pull * elapsed) - pull) * decay;
+      move.speed = (STIFFNESS * (left + pull * elapsed) - pull) * decay;
       move.at = arrived ? move.to : move.to - remaining;
       move.time = now;
-      if (arrived) {
-        moves.delete(list);
-        list.style.scrollSnapType = "";
-      }
+      if (arrived) stop();
       list.scrollTo({ left: sign * move.at, behavior: "instant" });
       if (arrived) list.dispatchEvent(new Event("scrollend"));
       else requestAnimationFrame(step);
@@ -210,7 +208,10 @@ static function getItemsInView(
       "scroll",
       () => {
         clearTimeout(timer);
-        timer = setTimeout(settle, 100);
+        timer = setTimeout(
+          () => list.dispatchEvent(new Event("scrollend")),
+          100,
+        );
       },
       {
         passive: true,
@@ -242,6 +243,32 @@ static function getItemsInView(
   }
 >
 
+<const/moveToFarEnd(items: HTMLElement[], direction: 1 | -1) {
+  const orders = Array.from(
+    $list().children as HTMLCollectionOf<HTMLElement>,
+    (item) => Number(item.style.order),
+  );
+  const edge = direction === 1 ? Math.max(...orders) : Math.min(...orders);
+  (direction === 1 ? items : [...items].reverse()).forEach(
+    (item, i) => (item.style.order = `${edge + direction * (i + 1)}`),
+  );
+}>
+
+<const/shiftView(distance: number) {
+  const list = $list();
+  const move = moves.get(list);
+  if (move) {
+    move.at += distance;
+    move.to += distance;
+  }
+  list.scrollTo({
+    left:
+      (getComputedStyle(list).direction === "rtl" ? -1 : 1) *
+      (Math.abs(list.scrollLeft) + distance),
+    behavior: "instant",
+  });
+}>
+
 <const/page(direction: 1 | -1) {
   const list = $list();
   const width = list.clientWidth;
@@ -260,32 +287,22 @@ static function getItemsInView(
         ? item.end < position + 1
         : item.start > position + width - 1,
     );
-    if (!behind.length || behind.at(-1)!.end - behind[0].start < width - 1) {
+    const canWrap =
+      behind.length > 0 && behind.at(-1)!.end - behind[0].start > width - 1;
+    if (!canWrap) {
       scrollToPosition(direction === 1 ? 0 : Infinity);
       return;
     }
 
-    // Moves what is out of view behind to the far side, so there is more to
-    // scroll onto, then shifts the view and any move with it so nothing jumps.
-    const orders = items.map(({ el }) => Number(el.style.order));
-    const edge = direction === 1 ? Math.max(...orders) : Math.min(...orders);
-    (direction === 1 ? behind : [...behind].reverse()).forEach(
-      ({ el }, i) => (el.style.order = `${edge + direction * (i + 1)}`),
+    const firstInView = items.find((item) => item.end > position + 1)!;
+    moveToFarEnd(
+      behind.map(({ el }) => el),
+      direction,
     );
-    const anchor = items.find((item) => item.end > position + 1)!;
     items = measure();
     const shift =
-      items.find(({ el }) => el === anchor.el)!.start - anchor.start;
-    if (move) {
-      move.at += shift;
-      move.to += shift;
-    }
-    list.scrollTo({
-      left:
-        (getComputedStyle(list).direction === "rtl" ? -1 : 1) *
-        (position + shift),
-      behavior: "instant",
-    });
+      items.find(({ el }) => el === firstInView.el)!.start - firstInView.start;
+    shiftView(shift);
     from += shift;
   }
 
@@ -308,7 +325,6 @@ static function getItemsInView(
 </script>
 
 <script>
-  void index; // restarts the wait after each landing
   if (interval && !paused) {
     const carousel = $carousel();
     const held = () => {
@@ -319,11 +335,13 @@ static function getItemsInView(
           !focused!.classList.contains("carousel__playback"))
       );
     };
-    const tick = () => {
-      if (held()) timer = setTimeout(tick, interval);
-      else page(1);
+    let timer: ReturnType<typeof setTimeout>;
+    const wait = () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => (held() ? wait() : page(1)), interval);
     };
-    let timer = setTimeout(tick, interval);
+    $list().addEventListener("scrollend", wait, { signal: $signal });
+    wait();
     $signal.onabort = () => clearTimeout(timer);
   }
 </script>
