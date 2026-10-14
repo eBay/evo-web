@@ -362,8 +362,7 @@ We use Percy for automated visual regression testing. Percy runs automatically i
 
 - Percy intelligently detects which components changed in your PR
 - Only changed components are snapshot tested (faster builds)
-- Global changes (tokens, global styles, Storybook configuration) trigger the full snapshot suite
-- Mixin and variable changes only test the components whose compiled CSS changes
+- Global changes (tokens, variables, mixins, global styles, Storybook configuration) trigger the full snapshot suite
 - No manual setup required
 
 **CI/CD Behavior:**

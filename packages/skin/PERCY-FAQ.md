@@ -15,8 +15,7 @@ Percy fails without taking any snapshots if `packages/skin/dist` doesn't match t
 We map all the modules dependencies in the [component-metadata.json](../../src/data/component-metadata.json) file and based on the files that changes we build the stories that needs snapshots.
 
 - **Component-specific changes**: Only tests the components you modified (e.g., if you change `button.scss`, only Button stories are tested)
-- **Global changes**: If you modify tokens, global styles, or Storybook configuration, all components are tested
-- **Mixin and variable changes**: Only the components whose compiled CSS changes are tested
+- **Global changes**: If you modify tokens, variables, mixins, global styles, or Storybook configuration, all components are tested
 - **Non-component changes**: If you only change documentation or non-Skin files, Percy is skipped entirely
 
 ## How long does Percy take?
@@ -71,13 +70,15 @@ If you're making changes that shouldn't require visual testing (like internal re
 
 - Changes to `packages/skin/src/tokens/`
 - Changes to `packages/skin/src/sass/global/`
+- Changes to `packages/skin/src/sass/variables/`
+- Changes to `packages/skin/src/sass/mixins/`
 - Changes to `packages/skin/src/sass/bundles/`
 - Changes to `packages/skin/.storybook/`
 - Changes to the compiled global, token, utility, or Market Sans CSS in `packages/skin/dist/`
 
 **Partial run (only affected components)**:
 
-- Changes to a component's compiled CSS in `packages/skin/dist/`, including changes caused by mixins or variables
+- Changes to specific component directories like `packages/skin/src/sass/button/`
 - Changes to component stories
 
 ## How are baselines updated?

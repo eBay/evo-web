@@ -27,6 +27,8 @@ import * as core from "@actions/core";
 
 const GLOBAL_PATHS = [
   "packages/skin/src/sass/global/",
+  "packages/skin/src/sass/variables/",
+  "packages/skin/src/sass/mixins/",
   "packages/skin/dist/global/",
   "packages/skin/src/tokens/",
   "packages/skin/dist/tokens/",
