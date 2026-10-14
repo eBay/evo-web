@@ -25,8 +25,6 @@ import path from "path";
 import fs from "fs/promises";
 import * as core from "@actions/core";
 
-// Sass variables and mixins are absent: CI keeps dist/ in sync with src/, so
-// their effect shows up as dist CSS changes for exactly the components they touch.
 const GLOBAL_PATHS = [
   "packages/skin/src/sass/global/",
   "packages/skin/dist/global/",
