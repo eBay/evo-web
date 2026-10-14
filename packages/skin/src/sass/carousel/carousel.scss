@@ -268,8 +268,8 @@ span.carousel__container {
                     $ebay-carousel-transition-function;
 
             &:hover {
-                border-color: rgb(0 0 0 / 0.4);
-                scrollbar-color: rgb(0 0 0 / 0.4) rgb(0 0 0 / 0);
+                border-color: var(--color-border-medium);
+                scrollbar-color: var(--color-border-medium) rgb(0 0 0 / 0);
             }
 
             &::-webkit-scrollbar {
