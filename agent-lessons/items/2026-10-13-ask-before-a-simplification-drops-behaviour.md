@@ -5,18 +5,8 @@ disposition: open
 
 # Ask before a simplification drops behaviour people can see
 
-Asked to "remove as much JS as you possibly can" from a carousel, the agent
-deleted the code behind two visible behaviours: autoplay wrapping from the last
-slide to the first, and paddle presses adding up during a scroll. It listed
-both under "behaviour changes to review" at the end of a long summary and moved
-on. Two weeks later the reviewer rediscovered them as regressions ("when you
-simplified the component earlier you also lost wrap-around"), and restoring
-them cost another round of implementation and cross-browser testing. Even
-then the two came back one at a time and their combination was missed: a press
-made while heading to the last slide still could not go round, which the
-reviewer had to find as well. A request
-to cut code is not a request to cut features: when a simplification would
-remove something a user can see, stop and ask for that trade explicitly, with
-the cost of keeping it, before making the change.
+A request to cut code is not a request to cut features. Ask for the trade,
+with the cost of keeping the behaviour, before making the change; a line in a
+closing summary is not asking.
 
 Disposition: open — repo maintainers, raised 2026-10-13
