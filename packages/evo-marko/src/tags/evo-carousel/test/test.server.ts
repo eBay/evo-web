@@ -54,6 +54,5 @@ describe("evo-carousel", () => {
     expect(container.querySelector(".carousel__list")?.className).toContain(
       "carousel__list--image-treatment-large",
     );
-    expect(container.querySelector(".carousel__viewport--mask")).not.toBeNull();
   });
 });

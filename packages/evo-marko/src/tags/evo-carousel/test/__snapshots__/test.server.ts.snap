@@ -35,7 +35,7 @@ exports[`evo-carousel > renders a continuous carousel 1`] = `
       </svg>
     </button>
     <div
-      class="carousel__viewport carousel__viewport--mask"
+      class="carousel__viewport"
     >
       <ul
         class="carousel__list carousel__list--snap"

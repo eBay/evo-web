@@ -225,11 +225,7 @@ describe("evo-carousel", () => {
       expect([...seen].sort((a, b) => a - b)).toEqual(items().map((_, i) => i));
     });
 
-    it("should disable next and drop the mask at the end", async () => {
-      expect(
-        component.container.querySelector(".carousel__viewport--mask"),
-      ).not.toBeNull();
-
+    it("should disable next at the end", async () => {
       for (let i = 0; i < 10 && !disabled("next"); i++) {
         control("next").click();
         await settles();
@@ -237,9 +233,6 @@ describe("evo-carousel", () => {
 
       expect(disabled("next")).toBe(true);
       expect(items().at(-1)!.inert).toBe(false);
-      expect(
-        component.container.querySelector(".carousel__viewport--mask"),
-      ).toBeNull();
     });
 
     it("should follow scrolling by hand once it comes to rest", async () => {

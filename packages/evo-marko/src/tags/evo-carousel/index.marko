@@ -419,10 +419,7 @@ static function getItemsInView(
     atStart && atEnd && "carousel__container--controls-disabled",
   ]>
     <Paddle control=previous direction=-1/>
-    <div class=[
-      "carousel__viewport",
-      !inView && !atEnd && "carousel__viewport--mask",
-    ]>
+    <div class="carousel__viewport">
       <ul/$list
         id=listId
         aria-live=interval ? (paused ? "polite" : "off") : undefined
