@@ -84,6 +84,22 @@ describe("evo-carousel", () => {
       expect(control("next").getAttribute("aria-controls")).toBe(list().id);
     });
 
+    it("should let taps through its paddles until they show", () => {
+      const next = control("next");
+      const { left, top, width, height } = next.getBoundingClientRect();
+      const tapped = () =>
+        document.elementFromPoint(left + width / 2, top + height / 2);
+      expect(getComputedStyle(next).opacity).toBe("0");
+      expect(tapped()).not.toBe(next);
+
+      next.focus();
+      expect(tapped()).toBe(next);
+    });
+
+    it("should let text in its items wrap", () => {
+      expect(getComputedStyle(items()[0]).whiteSpace).toBe("normal");
+    });
+
     it("should keep everything not wholly in view out of reach", () => {
       const cut = firstCut();
       expect(cut).toBeGreaterThan(0);
@@ -461,6 +477,13 @@ describe("evo-carousel", () => {
     beforeEach(async () => {
       component = await render(Autoplay, { autoplay: 600 });
       await settles();
+    });
+
+    it("should put its playback control at the trailing corner", async () => {
+      component = await render(Autoplay, { autoplay: 600, dir: "rtl" });
+      const box = root().getBoundingClientRect();
+      const rect = playback().getBoundingClientRect();
+      expect(rect.left - box.left).toBeLessThan(box.right - rect.right);
     });
 
     it("should put its playback control first", () => {

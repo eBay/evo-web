@@ -8,6 +8,7 @@ $ebay-carousel-transition-function: ease-in-out;
 
 @mixin show-control() {
     opacity: 0.92;
+    pointer-events: auto;
 
     &[aria-disabled="true"] {
         opacity: 0.3;
@@ -33,6 +34,7 @@ $ebay-carousel-transition-function: ease-in-out;
     justify-content: center;
     opacity: 0;
     padding: 0; /* override browser default */
+    pointer-events: none;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -133,11 +135,11 @@ $ebay-carousel-transition-function: ease-in-out;
         bottom: 16px; /* accounts for padding. */
         box-sizing: border-box;
         height: 40px;
+        inset-inline-end: 0;
+        margin-inline-end: 19px;
         margin-bottom: 19px;
-        margin-right: 19px;
         padding: 0;
         position: absolute;
-        right: 0;
         text-align: center;
         width: 40px;
         z-index: 2;
@@ -350,6 +352,7 @@ span.carousel__container {
 
 .carousel__list--snap > li {
     scroll-snap-align: start;
+    white-space: normal;
 }
 
 [dir="rtl"] .carousel__control svg {
