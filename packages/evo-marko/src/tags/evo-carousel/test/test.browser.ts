@@ -511,6 +511,27 @@ describe("evo-carousel", () => {
       expect([...passed].sort()).toEqual([0, 3]);
     });
 
+    it("should go round on presses that arrive mid-move", async () => {
+      await userEvent.hover(root());
+
+      for (let i = 0; i < 8; i++) {
+        control("next").click();
+        await wait(120);
+      }
+      await settles();
+      expect(leading()).toBe(0);
+      expect(reachable()).toEqual([0]);
+      expect(reordered()).toBe(false);
+
+      for (let i = 0; i < 5; i++) {
+        control("prev").click();
+        await wait(120);
+      }
+      await settles();
+      expect(leading()).toBe(3);
+      expect(reordered()).toBe(false);
+    });
+
     it("should rewind when there is too little to wrap onto", async () => {
       component = await render(Autoplay, { autoplay: 600, itemsPerSlide: 3 });
       await settles();

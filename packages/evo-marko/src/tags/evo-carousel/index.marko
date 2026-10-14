@@ -254,21 +254,39 @@ static function getItemsInView(
       : items.findLast((item) => item.start < from - 1);
 
   if (interval && !beyond()) {
-    const view = items.filter(
-      (item) => item.start > from - 1 && item.end < from + width + 1,
+    const position = Math.abs(list.scrollLeft);
+    const behind = items.filter((item) =>
+      direction === 1
+        ? item.end < position + 1
+        : item.start > position + width - 1,
     );
-    const rest = items.filter((item) => !view.includes(item));
-    if (move || !view.length || !rest.length) return;
-    if (rest.at(-1)!.end - rest[0].start < width - 1) {
+    if (!behind.length || behind.at(-1)!.end - behind[0].start < width - 1) {
       scrollToPosition(direction === 1 ? 0 : Infinity);
       return;
     }
 
-    // Moves what is out of view to the far side, so there is more to scroll onto.
-    rest.forEach(({ el }) => (el.style.order = `${direction}`));
+    // Moves what is out of view behind to the far side, so there is more to
+    // scroll onto, then shifts the view and any move with it so nothing jumps.
+    const orders = items.map(({ el }) => Number(el.style.order));
+    const edge = direction === 1 ? Math.max(...orders) : Math.min(...orders);
+    (direction === 1 ? behind : [...behind].reverse()).forEach(
+      ({ el }, i) => (el.style.order = `${edge + direction * (i + 1)}`),
+    );
+    const anchor = items.find((item) => item.end > position + 1)!;
     items = measure();
-    from = items.find(({ el }) => el === view[0].el)!.start;
-    scrollToPosition(from, "instant");
+    const shift =
+      items.find(({ el }) => el === anchor.el)!.start - anchor.start;
+    if (move) {
+      move.at += shift;
+      move.to += shift;
+    }
+    list.scrollTo({
+      left:
+        (getComputedStyle(list).direction === "rtl" ? -1 : 1) *
+        (position + shift),
+      behavior: "instant",
+    });
+    from += shift;
   }
 
   const item = beyond();
