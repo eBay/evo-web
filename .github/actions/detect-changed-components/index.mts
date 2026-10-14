@@ -30,6 +30,8 @@ const GLOBAL_PATHS = [
   "packages/skin/dist/global/",
   "packages/skin/src/tokens/",
   "packages/skin/dist/tokens/",
+  "packages/skin/dist/marketsans/",
+  "packages/skin/dist/utility/",
   "packages/skin/src/sass/bundles/",
   "packages/skin/.storybook/",
   ".github/workflows/percy.yml",
