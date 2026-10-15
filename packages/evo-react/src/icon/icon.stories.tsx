@@ -149,6 +149,7 @@ import { EvoIconBankOfAmerica18Colored } from "./icons/bank-of-america-18-colore
 import { EvoIconBankOfAmerica24Colored } from "./icons/bank-of-america-24-colored";
 import { EvoIconBankOfAmerica32Colored } from "./icons/bank-of-america-32-colored";
 import { EvoIconBarChart16 } from "./icons/bar-chart-16";
+import { EvoIconBarChart20 } from "./icons/bar-chart-20";
 import { EvoIconBarChart24 } from "./icons/bar-chart-24";
 import { EvoIconBatteryWaste48 } from "./icons/battery-waste-48";
 import { EvoIconBids12 } from "./icons/bids-12";
@@ -256,6 +257,7 @@ import { EvoIconClickToCall16 } from "./icons/click-to-call-16";
 import { EvoIconClickToCall24 } from "./icons/click-to-call-24";
 import { EvoIconClock12 } from "./icons/clock-12";
 import { EvoIconClock16 } from "./icons/clock-16";
+import { EvoIconClock20 } from "./icons/clock-20";
 import { EvoIconClock24 } from "./icons/clock-24";
 import { EvoIconClock64 } from "./icons/clock-64";
 import { EvoIconClockFast16 } from "./icons/clock-fast-16";
@@ -274,6 +276,8 @@ import { EvoIconCollections16 } from "./icons/collections-16";
 import { EvoIconCollections24 } from "./icons/collections-24";
 import { EvoIconCondensedGrid24 } from "./icons/condensed-grid-24";
 import { EvoIconCondensedGridFilled24 } from "./icons/condensed-grid-filled-24";
+import { EvoIconConditionGuarantee16 } from "./icons/condition-guarantee-16";
+import { EvoIconConditionGuarantee24 } from "./icons/condition-guarantee-24";
 import { EvoIconConfirmation16 } from "./icons/confirmation-16";
 import { EvoIconConfirmation24 } from "./icons/confirmation-24";
 import { EvoIconConfirmation64 } from "./icons/confirmation-64";
@@ -328,6 +332,7 @@ import { EvoIconDirectFromBrand16 } from "./icons/direct-from-brand-16";
 import { EvoIconDirectFromBrand24 } from "./icons/direct-from-brand-24";
 import { EvoIconDiscord24 } from "./icons/discord-24";
 import { EvoIconDiscount16 } from "./icons/discount-16";
+import { EvoIconDiscount20 } from "./icons/discount-20";
 import { EvoIconDiscount24 } from "./icons/discount-24";
 import { EvoIconDiscountAuto16 } from "./icons/discount-auto-16";
 import { EvoIconDiscountAuto24 } from "./icons/discount-auto-24";
@@ -499,6 +504,7 @@ import { EvoIconGridViewFilled16 } from "./icons/grid-view-filled-16";
 import { EvoIconGridViewFilled24 } from "./icons/grid-view-filled-24";
 import { EvoIconGuaranteedFitFilled16 } from "./icons/guaranteed-fit-filled-16";
 import { EvoIconGuaranteedFitFilled24 } from "./icons/guaranteed-fit-filled-24";
+import { EvoIconHandSwipe24 } from "./icons/hand-swipe-24";
 import { EvoIconHandSwipe40 } from "./icons/hand-swipe-40";
 import { EvoIconHandbag16 } from "./icons/handbag-16";
 import { EvoIconHandbag24 } from "./icons/handbag-24";
@@ -624,6 +630,8 @@ import { EvoIconLiveBroadcastFilled24 } from "./icons/live-broadcast-filled-24";
 import { EvoIconLiveBroadcastThin16 } from "./icons/live-broadcast-thin-16";
 import { EvoIconLiveEye16 } from "./icons/live-eye-16";
 import { EvoIconLiveEye24 } from "./icons/live-eye-24";
+import { EvoIconLiveRaids16 } from "./icons/live-raids-16";
+import { EvoIconLiveRaids24 } from "./icons/live-raids-24";
 import { EvoIconLocation16 } from "./icons/location-16";
 import { EvoIconLocation24 } from "./icons/location-24";
 import { EvoIconLocation64 } from "./icons/location-64";
@@ -668,6 +676,7 @@ import { EvoIconMastercard32Colored } from "./icons/mastercard-32-colored";
 import { EvoIconMediumBox16 } from "./icons/medium-box-16";
 import { EvoIconMediumBox24 } from "./icons/medium-box-24";
 import { EvoIconMegaphone16 } from "./icons/megaphone-16";
+import { EvoIconMegaphone20 } from "./icons/megaphone-20";
 import { EvoIconMegaphone24 } from "./icons/megaphone-24";
 import { EvoIconMenu16 } from "./icons/menu-16";
 import { EvoIconMenu20 } from "./icons/menu-20";
@@ -722,6 +731,7 @@ import { EvoIconNfcCard32Colored } from "./icons/nfc-card-32-colored";
 import { EvoIconNoChildrenZeroThree48 } from "./icons/no-children-zero-three-48";
 import { EvoIconNote12 } from "./icons/note-12";
 import { EvoIconNote16 } from "./icons/note-16";
+import { EvoIconNote20 } from "./icons/note-20";
 import { EvoIconNote24 } from "./icons/note-24";
 import { EvoIconNotification16 } from "./icons/notification-16";
 import { EvoIconNotification20 } from "./icons/notification-20";
@@ -997,6 +1007,7 @@ import { EvoIconStop16 } from "./icons/stop-16";
 import { EvoIconStop20 } from "./icons/stop-20";
 import { EvoIconStop24 } from "./icons/stop-24";
 import { EvoIconStore16 } from "./icons/store-16";
+import { EvoIconStore20 } from "./icons/store-20";
 import { EvoIconStore24 } from "./icons/store-24";
 import { EvoIconStore64 } from "./icons/store-64";
 import { EvoIconStoreFilled24 } from "./icons/store-filled-24";
@@ -1004,6 +1015,7 @@ import { EvoIconSuitcase24 } from "./icons/suitcase-24";
 import { EvoIconSupport24 } from "./icons/support-24";
 import { EvoIconSwap16 } from "./icons/swap-16";
 import { EvoIconSwap24 } from "./icons/swap-24";
+import { EvoIconSwitchCamera16 } from "./icons/switch-camera-16";
 import { EvoIconSwitchCamera24 } from "./icons/switch-camera-24";
 import { EvoIconTablet16 } from "./icons/tablet-16";
 import { EvoIconTablet20 } from "./icons/tablet-20";
@@ -1064,6 +1076,7 @@ import { EvoIconTranslate20 } from "./icons/translate-20";
 import { EvoIconTranslate24 } from "./icons/translate-24";
 import { EvoIconTrendDown16Fit } from "./icons/trend-down-16-fit";
 import { EvoIconTrendUp16Fit } from "./icons/trend-up-16-fit";
+import { EvoIconTrophy12 } from "./icons/trophy-12";
 import { EvoIconTrophy16 } from "./icons/trophy-16";
 import { EvoIconTrophy24 } from "./icons/trophy-24";
 import { EvoIconTruck16 } from "./icons/truck-16";
@@ -1100,6 +1113,7 @@ import { EvoIconVisa18Colored } from "./icons/visa-18-colored";
 import { EvoIconVisa24Colored } from "./icons/visa-24-colored";
 import { EvoIconVisa32Colored } from "./icons/visa-32-colored";
 import { EvoIconWallet16 } from "./icons/wallet-16";
+import { EvoIconWallet20 } from "./icons/wallet-20";
 import { EvoIconWallet24 } from "./icons/wallet-24";
 import { EvoIconWallet64 } from "./icons/wallet-64";
 import { EvoIconWalletBalance12Colored } from "./icons/wallet-balance-12-colored";
@@ -1664,6 +1678,9 @@ export const AllIcons: Story = {
         <IconExample name="EvoIconBarChart16">
           <EvoIconBarChart16 {...args} />
         </IconExample>
+        <IconExample name="EvoIconBarChart20">
+          <EvoIconBarChart20 {...args} />
+        </IconExample>
         <IconExample name="EvoIconBarChart24">
           <EvoIconBarChart24 {...args} />
         </IconExample>
@@ -1985,6 +2002,9 @@ export const AllIcons: Story = {
         <IconExample name="EvoIconClock16">
           <EvoIconClock16 {...args} />
         </IconExample>
+        <IconExample name="EvoIconClock20">
+          <EvoIconClock20 {...args} />
+        </IconExample>
         <IconExample name="EvoIconClock24">
           <EvoIconClock24 {...args} />
         </IconExample>
@@ -2038,6 +2058,12 @@ export const AllIcons: Story = {
         </IconExample>
         <IconExample name="EvoIconCondensedGridFilled24">
           <EvoIconCondensedGridFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconConditionGuarantee16">
+          <EvoIconConditionGuarantee16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconConditionGuarantee24">
+          <EvoIconConditionGuarantee24 {...args} />
         </IconExample>
         <IconExample name="EvoIconConfirmation16">
           <EvoIconConfirmation16 {...args} />
@@ -2200,6 +2226,9 @@ export const AllIcons: Story = {
         </IconExample>
         <IconExample name="EvoIconDiscount16">
           <EvoIconDiscount16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDiscount20">
+          <EvoIconDiscount20 {...args} />
         </IconExample>
         <IconExample name="EvoIconDiscount24">
           <EvoIconDiscount24 {...args} />
@@ -2714,6 +2743,9 @@ export const AllIcons: Story = {
         <IconExample name="EvoIconGuaranteedFitFilled24">
           <EvoIconGuaranteedFitFilled24 {...args} />
         </IconExample>
+        <IconExample name="EvoIconHandSwipe24">
+          <EvoIconHandSwipe24 {...args} />
+        </IconExample>
         <IconExample name="EvoIconHandSwipe40">
           <EvoIconHandSwipe40 {...args} />
         </IconExample>
@@ -3089,6 +3121,12 @@ export const AllIcons: Story = {
         <IconExample name="EvoIconLiveEye24">
           <EvoIconLiveEye24 {...args} />
         </IconExample>
+        <IconExample name="EvoIconLiveRaids16">
+          <EvoIconLiveRaids16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLiveRaids24">
+          <EvoIconLiveRaids24 {...args} />
+        </IconExample>
         <IconExample name="EvoIconLocation16">
           <EvoIconLocation16 {...args} />
         </IconExample>
@@ -3220,6 +3258,9 @@ export const AllIcons: Story = {
         </IconExample>
         <IconExample name="EvoIconMegaphone16">
           <EvoIconMegaphone16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMegaphone20">
+          <EvoIconMegaphone20 {...args} />
         </IconExample>
         <IconExample name="EvoIconMegaphone24">
           <EvoIconMegaphone24 {...args} />
@@ -3382,6 +3423,9 @@ export const AllIcons: Story = {
         </IconExample>
         <IconExample name="EvoIconNote16">
           <EvoIconNote16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconNote20">
+          <EvoIconNote20 {...args} />
         </IconExample>
         <IconExample name="EvoIconNote24">
           <EvoIconNote24 {...args} />
@@ -4208,6 +4252,9 @@ export const AllIcons: Story = {
         <IconExample name="EvoIconStore16">
           <EvoIconStore16 {...args} />
         </IconExample>
+        <IconExample name="EvoIconStore20">
+          <EvoIconStore20 {...args} />
+        </IconExample>
         <IconExample name="EvoIconStore24">
           <EvoIconStore24 {...args} />
         </IconExample>
@@ -4228,6 +4275,9 @@ export const AllIcons: Story = {
         </IconExample>
         <IconExample name="EvoIconSwap24">
           <EvoIconSwap24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSwitchCamera16">
+          <EvoIconSwitchCamera16 {...args} />
         </IconExample>
         <IconExample name="EvoIconSwitchCamera24">
           <EvoIconSwitchCamera24 {...args} />
@@ -4409,6 +4459,9 @@ export const AllIcons: Story = {
         <IconExample name="EvoIconTrendUp16Fit">
           <EvoIconTrendUp16Fit {...args} />
         </IconExample>
+        <IconExample name="EvoIconTrophy12">
+          <EvoIconTrophy12 {...args} />
+        </IconExample>
         <IconExample name="EvoIconTrophy16">
           <EvoIconTrophy16 {...args} />
         </IconExample>
@@ -4516,6 +4569,9 @@ export const AllIcons: Story = {
         </IconExample>
         <IconExample name="EvoIconWallet16">
           <EvoIconWallet16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconWallet20">
+          <EvoIconWallet20 {...args} />
         </IconExample>
         <IconExample name="EvoIconWallet24">
           <EvoIconWallet24 {...args} />

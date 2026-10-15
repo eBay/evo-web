@@ -145,6 +145,7 @@ export type Icon =
 'bankOfAmerica24Colored' |
 'bankOfAmerica32Colored' |
 'barChart16' |
+'barChart20' |
 'barChart24' |
 'batteryWaste48' |
 'bids12' |
@@ -252,6 +253,7 @@ export type Icon =
 'clickToCall24' |
 'clock12' |
 'clock16' |
+'clock20' |
 'clock24' |
 'clock64' |
 'clockFast16' |
@@ -270,6 +272,8 @@ export type Icon =
 'collections24' |
 'condensedGrid24' |
 'condensedGridFilled24' |
+'conditionGuarantee16' |
+'conditionGuarantee24' |
 'confirmation16' |
 'confirmation24' |
 'confirmation64' |
@@ -324,6 +328,7 @@ export type Icon =
 'directFromBrand24' |
 'discord24' |
 'discount16' |
+'discount20' |
 'discount24' |
 'discountAuto16' |
 'discountAuto24' |
@@ -495,6 +500,7 @@ export type Icon =
 'gridViewFilled24' |
 'guaranteedFitFilled16' |
 'guaranteedFitFilled24' |
+'handSwipe24' |
 'handSwipe40' |
 'handbag16' |
 'handbag24' |
@@ -621,6 +627,8 @@ export type Icon =
 'liveBroadcastThin16' |
 'liveEye16' |
 'liveEye24' |
+'liveRaids16' |
+'liveRaids24' |
 'location16' |
 'location24' |
 'location64' |
@@ -665,6 +673,7 @@ export type Icon =
 'mediumBox16' |
 'mediumBox24' |
 'megaphone16' |
+'megaphone20' |
 'megaphone24' |
 'menu16' |
 'menu20' |
@@ -719,6 +728,7 @@ export type Icon =
 'noChildrenZeroThree48' |
 'note12' |
 'note16' |
+'note20' |
 'note24' |
 'notification16' |
 'notification20' |
@@ -1016,6 +1026,7 @@ export type Icon =
 'stop20' |
 'stop24' |
 'store16' |
+'store20' |
 'store24' |
 'store64' |
 'storeFilled24' |
@@ -1023,6 +1034,7 @@ export type Icon =
 'support24' |
 'swap16' |
 'swap24' |
+'switchCamera16' |
 'switchCamera24' |
 'tablet16' |
 'tablet20' |
@@ -1083,6 +1095,7 @@ export type Icon =
 'translate24' |
 'trendDown16Fit' |
 'trendUp16Fit' |
+'trophy12' |
 'trophy16' |
 'trophy24' |
 'truck16' |
@@ -1119,6 +1132,7 @@ export type Icon =
 'visa24Colored' |
 'visa32Colored' |
 'wallet16' |
+'wallet20' |
 'wallet24' |
 'wallet64' |
 'walletBalance12Colored' |

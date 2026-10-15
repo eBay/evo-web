@@ -147,6 +147,7 @@ import { EbayIconBankOfAmerica18Colored } from "../icons/ebay-icon-bank-of-ameri
 import { EbayIconBankOfAmerica24Colored } from "../icons/ebay-icon-bank-of-america-24-colored";
 import { EbayIconBankOfAmerica32Colored } from "../icons/ebay-icon-bank-of-america-32-colored";
 import { EbayIconBarChart16 } from "../icons/ebay-icon-bar-chart-16";
+import { EbayIconBarChart20 } from "../icons/ebay-icon-bar-chart-20";
 import { EbayIconBarChart24 } from "../icons/ebay-icon-bar-chart-24";
 import { EbayIconBatteryWaste48 } from "../icons/ebay-icon-battery-waste-48";
 import { EbayIconBids12 } from "../icons/ebay-icon-bids-12";
@@ -254,6 +255,7 @@ import { EbayIconClickToCall16 } from "../icons/ebay-icon-click-to-call-16";
 import { EbayIconClickToCall24 } from "../icons/ebay-icon-click-to-call-24";
 import { EbayIconClock12 } from "../icons/ebay-icon-clock-12";
 import { EbayIconClock16 } from "../icons/ebay-icon-clock-16";
+import { EbayIconClock20 } from "../icons/ebay-icon-clock-20";
 import { EbayIconClock24 } from "../icons/ebay-icon-clock-24";
 import { EbayIconClock64 } from "../icons/ebay-icon-clock-64";
 import { EbayIconClockFast16 } from "../icons/ebay-icon-clock-fast-16";
@@ -272,6 +274,8 @@ import { EbayIconCollections16 } from "../icons/ebay-icon-collections-16";
 import { EbayIconCollections24 } from "../icons/ebay-icon-collections-24";
 import { EbayIconCondensedGrid24 } from "../icons/ebay-icon-condensed-grid-24";
 import { EbayIconCondensedGridFilled24 } from "../icons/ebay-icon-condensed-grid-filled-24";
+import { EbayIconConditionGuarantee16 } from "../icons/ebay-icon-condition-guarantee-16";
+import { EbayIconConditionGuarantee24 } from "../icons/ebay-icon-condition-guarantee-24";
 import { EbayIconConfirmation16 } from "../icons/ebay-icon-confirmation-16";
 import { EbayIconConfirmation24 } from "../icons/ebay-icon-confirmation-24";
 import { EbayIconConfirmation64 } from "../icons/ebay-icon-confirmation-64";
@@ -326,6 +330,7 @@ import { EbayIconDirectFromBrand16 } from "../icons/ebay-icon-direct-from-brand-
 import { EbayIconDirectFromBrand24 } from "../icons/ebay-icon-direct-from-brand-24";
 import { EbayIconDiscord24 } from "../icons/ebay-icon-discord-24";
 import { EbayIconDiscount16 } from "../icons/ebay-icon-discount-16";
+import { EbayIconDiscount20 } from "../icons/ebay-icon-discount-20";
 import { EbayIconDiscount24 } from "../icons/ebay-icon-discount-24";
 import { EbayIconDiscountAuto16 } from "../icons/ebay-icon-discount-auto-16";
 import { EbayIconDiscountAuto24 } from "../icons/ebay-icon-discount-auto-24";
@@ -497,6 +502,7 @@ import { EbayIconGridViewFilled16 } from "../icons/ebay-icon-grid-view-filled-16
 import { EbayIconGridViewFilled24 } from "../icons/ebay-icon-grid-view-filled-24";
 import { EbayIconGuaranteedFitFilled16 } from "../icons/ebay-icon-guaranteed-fit-filled-16";
 import { EbayIconGuaranteedFitFilled24 } from "../icons/ebay-icon-guaranteed-fit-filled-24";
+import { EbayIconHandSwipe24 } from "../icons/ebay-icon-hand-swipe-24";
 import { EbayIconHandSwipe40 } from "../icons/ebay-icon-hand-swipe-40";
 import { EbayIconHandbag16 } from "../icons/ebay-icon-handbag-16";
 import { EbayIconHandbag24 } from "../icons/ebay-icon-handbag-24";
@@ -622,6 +628,8 @@ import { EbayIconLiveBroadcastFilled24 } from "../icons/ebay-icon-live-broadcast
 import { EbayIconLiveBroadcastThin16 } from "../icons/ebay-icon-live-broadcast-thin-16";
 import { EbayIconLiveEye16 } from "../icons/ebay-icon-live-eye-16";
 import { EbayIconLiveEye24 } from "../icons/ebay-icon-live-eye-24";
+import { EbayIconLiveRaids16 } from "../icons/ebay-icon-live-raids-16";
+import { EbayIconLiveRaids24 } from "../icons/ebay-icon-live-raids-24";
 import { EbayIconLocation16 } from "../icons/ebay-icon-location-16";
 import { EbayIconLocation24 } from "../icons/ebay-icon-location-24";
 import { EbayIconLocation64 } from "../icons/ebay-icon-location-64";
@@ -666,6 +674,7 @@ import { EbayIconMastercard32Colored } from "../icons/ebay-icon-mastercard-32-co
 import { EbayIconMediumBox16 } from "../icons/ebay-icon-medium-box-16";
 import { EbayIconMediumBox24 } from "../icons/ebay-icon-medium-box-24";
 import { EbayIconMegaphone16 } from "../icons/ebay-icon-megaphone-16";
+import { EbayIconMegaphone20 } from "../icons/ebay-icon-megaphone-20";
 import { EbayIconMegaphone24 } from "../icons/ebay-icon-megaphone-24";
 import { EbayIconMenu16 } from "../icons/ebay-icon-menu-16";
 import { EbayIconMenu20 } from "../icons/ebay-icon-menu-20";
@@ -720,6 +729,7 @@ import { EbayIconNfcCard32Colored } from "../icons/ebay-icon-nfc-card-32-colored
 import { EbayIconNoChildrenZeroThree48 } from "../icons/ebay-icon-no-children-zero-three-48";
 import { EbayIconNote12 } from "../icons/ebay-icon-note-12";
 import { EbayIconNote16 } from "../icons/ebay-icon-note-16";
+import { EbayIconNote20 } from "../icons/ebay-icon-note-20";
 import { EbayIconNote24 } from "../icons/ebay-icon-note-24";
 import { EbayIconNotification16 } from "../icons/ebay-icon-notification-16";
 import { EbayIconNotification20 } from "../icons/ebay-icon-notification-20";
@@ -995,6 +1005,7 @@ import { EbayIconStop16 } from "../icons/ebay-icon-stop-16";
 import { EbayIconStop20 } from "../icons/ebay-icon-stop-20";
 import { EbayIconStop24 } from "../icons/ebay-icon-stop-24";
 import { EbayIconStore16 } from "../icons/ebay-icon-store-16";
+import { EbayIconStore20 } from "../icons/ebay-icon-store-20";
 import { EbayIconStore24 } from "../icons/ebay-icon-store-24";
 import { EbayIconStore64 } from "../icons/ebay-icon-store-64";
 import { EbayIconStoreFilled24 } from "../icons/ebay-icon-store-filled-24";
@@ -1002,6 +1013,7 @@ import { EbayIconSuitcase24 } from "../icons/ebay-icon-suitcase-24";
 import { EbayIconSupport24 } from "../icons/ebay-icon-support-24";
 import { EbayIconSwap16 } from "../icons/ebay-icon-swap-16";
 import { EbayIconSwap24 } from "../icons/ebay-icon-swap-24";
+import { EbayIconSwitchCamera16 } from "../icons/ebay-icon-switch-camera-16";
 import { EbayIconSwitchCamera24 } from "../icons/ebay-icon-switch-camera-24";
 import { EbayIconTablet16 } from "../icons/ebay-icon-tablet-16";
 import { EbayIconTablet20 } from "../icons/ebay-icon-tablet-20";
@@ -1062,6 +1074,7 @@ import { EbayIconTranslate20 } from "../icons/ebay-icon-translate-20";
 import { EbayIconTranslate24 } from "../icons/ebay-icon-translate-24";
 import { EbayIconTrendDown16Fit } from "../icons/ebay-icon-trend-down-16-fit";
 import { EbayIconTrendUp16Fit } from "../icons/ebay-icon-trend-up-16-fit";
+import { EbayIconTrophy12 } from "../icons/ebay-icon-trophy-12";
 import { EbayIconTrophy16 } from "../icons/ebay-icon-trophy-16";
 import { EbayIconTrophy24 } from "../icons/ebay-icon-trophy-24";
 import { EbayIconTruck16 } from "../icons/ebay-icon-truck-16";
@@ -1098,6 +1111,7 @@ import { EbayIconVisa18Colored } from "../icons/ebay-icon-visa-18-colored";
 import { EbayIconVisa24Colored } from "../icons/ebay-icon-visa-24-colored";
 import { EbayIconVisa32Colored } from "../icons/ebay-icon-visa-32-colored";
 import { EbayIconWallet16 } from "../icons/ebay-icon-wallet-16";
+import { EbayIconWallet20 } from "../icons/ebay-icon-wallet-20";
 import { EbayIconWallet24 } from "../icons/ebay-icon-wallet-24";
 import { EbayIconWallet64 } from "../icons/ebay-icon-wallet-64";
 import { EbayIconWalletBalance12Colored } from "../icons/ebay-icon-wallet-balance-12-colored";
@@ -2320,6 +2334,14 @@ export const AllIcons = () => (
             
 
         <tr>
+            <td>ebay-icon-bar-chart-20</td>
+            <td>
+                <EbayIconBarChart20 />
+            </td>
+        </tr>
+            
+
+        <tr>
             <td>ebay-icon-bar-chart-24</td>
             <td>
                 <EbayIconBarChart24 />
@@ -3176,6 +3198,14 @@ export const AllIcons = () => (
             
 
         <tr>
+            <td>ebay-icon-clock-20</td>
+            <td>
+                <EbayIconClock20 />
+            </td>
+        </tr>
+            
+
+        <tr>
             <td>ebay-icon-clock-24</td>
             <td>
                 <EbayIconClock24 />
@@ -3315,6 +3345,22 @@ export const AllIcons = () => (
             <td>ebay-icon-condensed-grid-filled-24</td>
             <td>
                 <EbayIconCondensedGridFilled24 />
+            </td>
+        </tr>
+            
+
+        <tr>
+            <td>ebay-icon-condition-guarantee-16</td>
+            <td>
+                <EbayIconConditionGuarantee16 />
+            </td>
+        </tr>
+            
+
+        <tr>
+            <td>ebay-icon-condition-guarantee-24</td>
+            <td>
+                <EbayIconConditionGuarantee24 />
             </td>
         </tr>
             
@@ -3747,6 +3793,14 @@ export const AllIcons = () => (
             <td>ebay-icon-discount-16</td>
             <td>
                 <EbayIconDiscount16 />
+            </td>
+        </tr>
+            
+
+        <tr>
+            <td>ebay-icon-discount-20</td>
+            <td>
+                <EbayIconDiscount20 />
             </td>
         </tr>
             
@@ -5120,6 +5174,14 @@ export const AllIcons = () => (
             
 
         <tr>
+            <td>ebay-icon-hand-swipe-24</td>
+            <td>
+                <EbayIconHandSwipe24 />
+            </td>
+        </tr>
+            
+
+        <tr>
             <td>ebay-icon-hand-swipe-40</td>
             <td>
                 <EbayIconHandSwipe40 />
@@ -6120,6 +6182,22 @@ export const AllIcons = () => (
             
 
         <tr>
+            <td>ebay-icon-live-raids-16</td>
+            <td>
+                <EbayIconLiveRaids16 />
+            </td>
+        </tr>
+            
+
+        <tr>
+            <td>ebay-icon-live-raids-24</td>
+            <td>
+                <EbayIconLiveRaids24 />
+            </td>
+        </tr>
+            
+
+        <tr>
             <td>ebay-icon-location-16</td>
             <td>
                 <EbayIconLocation16 />
@@ -6467,6 +6545,14 @@ export const AllIcons = () => (
             <td>ebay-icon-megaphone-16</td>
             <td>
                 <EbayIconMegaphone16 />
+            </td>
+        </tr>
+            
+
+        <tr>
+            <td>ebay-icon-megaphone-20</td>
+            <td>
+                <EbayIconMegaphone20 />
             </td>
         </tr>
             
@@ -6899,6 +6985,14 @@ export const AllIcons = () => (
             <td>ebay-icon-note-16</td>
             <td>
                 <EbayIconNote16 />
+            </td>
+        </tr>
+            
+
+        <tr>
+            <td>ebay-icon-note-20</td>
+            <td>
+                <EbayIconNote20 />
             </td>
         </tr>
             
@@ -9104,6 +9198,14 @@ export const AllIcons = () => (
             
 
         <tr>
+            <td>ebay-icon-store-20</td>
+            <td>
+                <EbayIconStore20 />
+            </td>
+        </tr>
+            
+
+        <tr>
             <td>ebay-icon-store-24</td>
             <td>
                 <EbayIconStore24 />
@@ -9155,6 +9257,14 @@ export const AllIcons = () => (
             <td>ebay-icon-swap-24</td>
             <td>
                 <EbayIconSwap24 />
+            </td>
+        </tr>
+            
+
+        <tr>
+            <td>ebay-icon-switch-camera-16</td>
+            <td>
+                <EbayIconSwitchCamera16 />
             </td>
         </tr>
             
@@ -9640,6 +9750,14 @@ export const AllIcons = () => (
             
 
         <tr>
+            <td>ebay-icon-trophy-12</td>
+            <td>
+                <EbayIconTrophy12 />
+            </td>
+        </tr>
+            
+
+        <tr>
             <td>ebay-icon-trophy-16</td>
             <td>
                 <EbayIconTrophy16 />
@@ -9923,6 +10041,14 @@ export const AllIcons = () => (
             <td>ebay-icon-wallet-16</td>
             <td>
                 <EbayIconWallet16 />
+            </td>
+        </tr>
+            
+
+        <tr>
+            <td>ebay-icon-wallet-20</td>
+            <td>
+                <EbayIconWallet20 />
             </td>
         </tr>
             
