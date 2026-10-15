@@ -59,11 +59,6 @@ $ebay-carousel-transition-function: ease-in-out;
         color: var(--color-foreground-primary);
     }
 
-    /* https://developer.paciellogroup.com/blog/2018/03/focus-visible-and-backwards-compatibility/ */
-    &:focus:not(:focus-visible) {
-        outline: none;
-    }
-
     /* progressive enhancement for browsers with support */
     /* :focus-within and :hover cannot be combined as */
     /* IE/Edge will discard the entire rule */
@@ -171,10 +166,6 @@ div.carousel {
 
 .carousel__control {
     @include carousel-paddle-mixin-base;
-}
-
-.carousel__playback:focus:not(:focus-visible) {
-    outline: none;
 }
 
 span.carousel,

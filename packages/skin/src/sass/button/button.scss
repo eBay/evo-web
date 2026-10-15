@@ -133,12 +133,6 @@ a.fake-btn--primary {
     @include state-layer.standard;
 }
 
-a.fake-btn--primary {
-    outline-color: var(
-        --color-foreground-primary
-    ); /* fixes invisible focus outline in Firefox */
-}
-
 a.fake-btn--primary:visited,
 a.fake-btn--primary:hover {
     color: var(--color-foreground-on-accent);
