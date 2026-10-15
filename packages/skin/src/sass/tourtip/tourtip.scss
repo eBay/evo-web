@@ -162,6 +162,7 @@ span.tourtip__heading {
 
 /* stylelint-disable no-descending-specificity */
 /* TODO need to remove this once we update fake-links/links to allow no underline and black text */
+.tourtip__footer > .btn--link,
 .tourtip__footer > .fake-link,
 .tourtip__footer > a {
     color: var(--color-foreground-on-inverse);

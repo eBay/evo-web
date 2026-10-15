@@ -1,7 +1,7 @@
 import type { ComponentProps, ComponentType, KeyboardEvent } from "react";
 
 export type Priority = "primary" | "secondary" | "tertiary" | "none";
-export type Variant = "standard" | "destructive" | "form";
+export type Variant = "standard" | "destructive" | "form" | "link";
 export type Size = "small" | "large";
 export type BodyState = "loading" | "expand" | "reset" | "none";
 export type Split = "start" | "end";
@@ -19,8 +19,8 @@ type BaseButtonProps = {
   /** Sets the visual emphasis of the button. Defaults to `"secondary"`. */
   priority?: Priority;
   /**
-   * Selects the standard, destructive, or form-specific presentation. Defaults
-   * to `"standard"`.
+   * Selects the standard, destructive, form-specific, or text link
+   * presentation. `"link"` ignores `priority`. Defaults to `"standard"`.
    */
   variant?: Variant;
   /** Sets a supported compact or enlarged button size. */

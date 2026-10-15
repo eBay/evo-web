@@ -48,11 +48,14 @@ span[role="region"].section-notice {
     font-weight: 700;
 }
 
+.section-notice button.btn--link,
 .section-notice button.fake-link {
     font-size: var(--font-size-body);
 }
 
 .section-notice a,
+.section-notice button.btn--link,
+.section-notice button.btn--link:hover,
 .section-notice button.fake-link,
 .section-notice button.fake-link:hover {
     color: var(

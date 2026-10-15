@@ -56,7 +56,8 @@
 .panel-dialog__header > :last-child:not(:only-child) {
     margin-inline-start: var(--spacing-200);
 }
-
+.panel-dialog__header .btn--link,
+.panel-dialog__header .btn--link:focus-visible,
 .panel-dialog__header .fake-link {
     align-self: flex-start;
     outline-offset: 4px;

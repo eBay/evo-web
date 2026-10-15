@@ -62,6 +62,7 @@ span[role="region"].section-notice {
     font-weight: bold;
 }
 
+.section-notice button.btn--link,
 .section-notice button.fake-link {
     @include token-mixins.color-token(
         section-notice-foreground-color,
@@ -71,6 +72,7 @@ span[role="region"].section-notice {
     font-size: var(--font-size-body);
 }
 
+.section-notice button.btn--link:hover,
 .section-notice button.fake-link:hover {
     @include token-mixins.color-token(
         section-notice-foreground-color,

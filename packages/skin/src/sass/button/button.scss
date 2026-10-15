@@ -3,7 +3,10 @@
 @use "../mixins/private/token-mixins";
 @use "../mixins/private/state-layer";
 
+/* DEPRECATED: `fake-btn` and its elements and modifiers alias `a.btn`; use `a.btn`. Remove next major */
+
 button.btn,
+a.btn,
 a.fake-btn {
     align-content: center;
     background-color: transparent;
@@ -34,7 +37,9 @@ button.btn[aria-disabled="true"] {
     );
 }
 
+a.btn:not([href]),
 a.fake-btn:not([href]),
+a.btn[aria-disabled="true"],
 a.fake-btn[aria-disabled="true"] {
     @include token-mixins.color-token(
         link-foreground-color-disabled,
@@ -43,6 +48,7 @@ a.fake-btn[aria-disabled="true"] {
 }
 
 button.btn--borderless,
+a.btn--borderless,
 a.fake-btn--borderless {
     border-color: transparent;
     min-width: auto;
@@ -58,13 +64,16 @@ a.fake-btn--borderless {
 }
 
 button.btn--borderless[disabled],
+a.btn--borderless[disabled],
 a.fake-btn--borderless[disabled],
 button.btn--borderless[aria-disabled="true"],
+a.btn--borderless[aria-disabled="true"],
 a.fake-btn--borderless[aria-disabled="true"] {
     border-color: transparent;
 }
 
 button.btn--borderless.btn--destructive,
+a.btn--borderless.btn--destructive,
 a.fake-btn--borderless.btn--destructive {
     @include token-mixins.color-token(
         btn-secondary-destructive-foreground-color,
@@ -73,6 +82,7 @@ a.fake-btn--borderless.btn--destructive {
 }
 
 button.btn--slim,
+a.btn--slim,
 a.fake-btn--slim {
     height: button-mixins.$button-height-regular;
     min-width: auto;
@@ -80,12 +90,15 @@ a.fake-btn--slim {
     padding-right: var(--spacing-100);
 }
 
+a.btn:visited,
 a.fake-btn:visited,
+a.btn:hover,
 a.fake-btn:hover {
     color: inherit;
 }
 
 button.btn--fluid,
+a.btn--fluid,
 a.fake-btn--fluid {
     width: 100%;
 }
@@ -100,18 +113,22 @@ a.fake-btn--fluid {
 }
 
 button.btn--form .btn__cell,
+a.btn--form .btn__cell,
 a.fake-btn--form .fake-btn__cell,
 button.btn--borderless .btn__cell,
+a.btn--borderless .btn__cell,
 a.fake-btn--borderless .fake-btn__cell {
     justify-content: space-between;
 }
 
 button.btn svg.icon,
+a.btn svg.icon,
 a.fake-btn svg.icon {
     @include button-mixins.icon-base;
 }
 
 button.btn__cell--fixed-height svg.icon,
+a.btn__cell--fixed-height svg.icon,
 a.fake-btn__cell--fixed-height svg.icon {
     align-self: center;
     height: 1rem;
@@ -120,6 +137,7 @@ a.fake-btn__cell--fixed-height svg.icon {
 }
 
 button.btn--primary,
+a.btn--primary,
 a.fake-btn--primary {
     background-color: var(
         --btn-primary-background-color,
@@ -133,18 +151,22 @@ a.fake-btn--primary {
     @include state-layer.standard;
 }
 
+a.btn--primary,
 a.fake-btn--primary {
     outline-color: var(
         --color-foreground-primary
     ); /* fixes invisible focus outline in Firefox */
 }
 
+a.btn--primary:visited,
 a.fake-btn--primary:visited,
+a.btn--primary:hover,
 a.fake-btn--primary:hover {
     color: var(--color-foreground-on-accent);
 }
 
 button.btn--primary.btn--destructive,
+a.btn--primary.btn--destructive,
 a.fake-btn--primary.fake-btn--destructive {
     background-color: var(--color-background-attention);
     border-color: var(--color-border-attention);
@@ -182,17 +204,20 @@ button.btn--primary.btn--destructive .progress-spinner {
 }
 
 button.btn[aria-expanded="true"] svg.icon--12,
+a.btn[aria-expanded="true"] svg.icon--12,
 a.fake-btn[aria-expanded="true"] svg.icon--12 {
     transform: rotate(180deg);
 }
 
 button.btn--large svg.icon,
+a.btn--large svg.icon,
 a.fake-btn--large svg.icon {
     max-height: button-mixins.$button-height-large -
         (button-mixins.$button-padding-vertical-large * 2);
 }
 
 button.btn--small svg.icon,
+a.btn--small svg.icon,
 a.fake-btn--small svg.icon {
     max-height: button-mixins.$button-height-small -
         (button-mixins.$button-padding-vertical-small * 2);
@@ -221,7 +246,9 @@ button.btn--primary[aria-disabled="true"] {
     }
 }
 
+a.btn--primary:not([href]),
 a.fake-btn--primary:not([href]),
+a.btn--primary[aria-disabled="true"],
 a.fake-btn--primary[aria-disabled="true"] {
     @include token-mixins.background-color-token(
         btn-primary-disabled-background-color,
@@ -238,6 +265,7 @@ a.fake-btn--primary[aria-disabled="true"] {
 }
 
 button.btn--secondary,
+a.btn--secondary,
 a.fake-btn--secondary {
     background-color: var(--btn-secondary-background-color, transparent);
     border-color: var(--color-border-accent);
@@ -247,7 +275,9 @@ a.fake-btn--secondary {
     @include state-layer.standard;
 }
 
+a.btn--secondary:visited,
 a.fake-btn--secondary:visited,
+a.btn--secondary:hover,
 a.fake-btn--secondary:hover {
     @include token-mixins.color-token(
         btn-secondary-foreground-color,
@@ -256,6 +286,7 @@ a.fake-btn--secondary:hover {
 }
 
 button.btn--secondary.btn--destructive,
+a.btn--secondary.btn--destructive,
 a.fake-btn--secondary.fake-btn--destructive {
     background-color: var(
         --btn-secondary-destructive-background-color,
@@ -299,7 +330,9 @@ button.btn--secondary[aria-disabled="true"] {
     }
 }
 
+a.btn--secondary:not([href]),
 a.fake-btn--secondary:not([href]),
+a.btn--secondary[aria-disabled="true"],
 a.fake-btn--secondary[aria-disabled="true"] {
     @include token-mixins.border-color-token(
         btn-secondary-disabled-border-color,
@@ -312,6 +345,7 @@ a.fake-btn--secondary[aria-disabled="true"] {
 }
 
 button.btn--tertiary,
+a.btn--tertiary,
 a.fake-btn--tertiary {
     @include token-mixins.border-color-token(
         btn-tertiary-border-color,
@@ -326,7 +360,9 @@ button.btn--tertiary[disabled],
 button.btn--tertiary[aria-disabled="true"]:not(
         [aria-live="polite"][aria-disabled="true"]
     ),
+a.btn--tertiary:not([href]),
 a.fake-btn--tertiary:not([href]),
+a.btn--tertiary[aria-disabled="true"],
 a.fake-btn--tertiary[aria-disabled="true"] {
     @include token-mixins.color-token(
         btn-tertiary-disabled-foreground-color,
@@ -339,6 +375,7 @@ a.fake-btn--tertiary[aria-disabled="true"] {
 }
 
 button.btn--tertiary.btn--destructive,
+a.btn--tertiary.btn--destructive,
 a.fake-btn--tertiary.fake-btn--destructive {
     @include token-mixins.border-color-token(
         btn-tertiary-destructive-foreground-color,
@@ -360,11 +397,13 @@ button.btn--tertiary.btn--destructive .progress-spinner {
 }
 
 button.btn--large,
+a.btn--large,
 a.fake-btn--large {
     @include button-mixins.large;
 }
 
 button.btn--small,
+a.btn--small,
 a.fake-btn--small {
     border-radius: var(
         --btn-border-radius,
@@ -377,6 +416,7 @@ a.fake-btn--small {
 }
 
 button.btn--form,
+a.btn--form,
 a.fake-btn--form {
     border-color: inherit;
     max-width: 100%;
@@ -398,6 +438,7 @@ button.btn--form.btn--small {
 }
 
 button.btn--transparent,
+a.btn--transparent,
 a.fake-btn--transparent {
     background-color: transparent;
 
@@ -408,17 +449,20 @@ a.fake-btn--transparent {
 }
 
 button.btn--large-fixed-height,
+a.btn--large-fixed-height,
 a.fake-btn--large-fixed-height {
     height: button-mixins.$button-height-large;
     min-height: button-mixins.$button-height-large;
 }
 
 button.btn--truncated,
+a.btn--truncated,
 a.fake-btn--truncated {
     @include button-mixins.truncate;
 }
 
 button.btn--large-truncated,
+a.btn--large-truncated,
 a.fake-btn--large-truncated {
     font-size: var(--font-size-medium);
     height: button-mixins.$button-height-large;
@@ -430,11 +474,13 @@ a.fake-btn--large-truncated {
 }
 
 button.btn--split-start,
+a.btn--split-start,
 a.fake-btn--split-start {
     border-radius: 24px 0 0 24px;
 }
 
 button.btn--split-end,
+a.btn--split-end,
 a.fake-btn--split-end {
     border-radius: 0 24px 24px 0;
     margin-left: -1px;
@@ -444,6 +490,7 @@ a.fake-btn--split-end {
 }
 
 button.btn.btn--primary.btn--split-end,
+a.btn.btn--primary.btn--split-end,
 a.fake-btn.fake-btn--primary.fake-btn--split-end {
     @include token-mixins.border-left-color-token(
         btn-primary-border-split-color,
@@ -456,6 +503,57 @@ a.fake-btn.fake-btn--primary.fake-btn--split-end {
             color-background-primary
         );
     }
+}
+
+/* Replaces the deprecated `fake-link` */
+button.btn--link,
+a.btn--link {
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    font-size: inherit;
+    min-height: auto;
+    min-width: auto;
+    padding: 0;
+    text-decoration: underline;
+    vertical-align: baseline;
+
+    @include token-mixins.color-token(
+        btn-link-foreground-color,
+        color-foreground-link-primary
+    );
+}
+
+a.btn--link:visited {
+    @include token-mixins.color-token(
+        btn-link-foreground-color,
+        color-foreground-link-primary
+    );
+}
+
+/* Use the browser's focus ring, like a text link, instead of the button's */
+button.btn--link:focus-visible,
+a.btn--link:focus-visible {
+    outline: revert;
+    outline-offset: revert;
+}
+
+button.btn--link:hover,
+a.btn--link:hover {
+    @include token-mixins.color-token(
+        btn-link-hover-foreground-color,
+        color-foreground-secondary
+    );
+}
+
+button.btn--link[disabled],
+button.btn--link[aria-disabled="true"],
+a.btn--link:not([href]),
+a.btn--link[aria-disabled="true"] {
+    @include token-mixins.color-token(
+        btn-link-disabled-foreground-color,
+        color-foreground-disabled
+    );
 }
 
 button.btn--floating-label {
@@ -500,11 +598,13 @@ button.btn--floating-label .btn__floating-label--inline {
 
 [dir="rtl"] {
     button.btn--split-start,
+    a.btn--split-start,
     a.fake-btn--split-start {
         border-radius: 0 24px 24px 0;
     }
 
     button.btn--split-end,
+    a.btn--split-end,
     a.fake-btn--split-end {
         border-radius: 24px 0 0 24px;
         margin-left: inherit;
@@ -512,11 +612,13 @@ button.btn--floating-label .btn__floating-label--inline {
     }
 
     button.btn.btn--tertiary.btn--split-end,
+    a.btn.btn--tertiary.btn--split-end,
     a.fake-btn.fake-btn--tertiary.fake-btn--split-end {
         margin-right: -2px;
     }
 
     button.btn.btn--primary.btn--split-end,
+    a.btn.btn--primary.btn--split-end,
     a.fake-btn.fake-btn--primary.fake-btn--split-end {
         border-left-color: var(--btn-primary-border-color, transparent);
         @include token-mixins.border-right-color-token(

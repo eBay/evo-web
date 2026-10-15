@@ -40,6 +40,7 @@ span.inline-notice {
 }
 
 .inline-notice a,
+.inline-notice button.btn--link,
 .inline-notice button.fake-link {
     @include token-mixins.color-token(color-foreground-primary);
 }

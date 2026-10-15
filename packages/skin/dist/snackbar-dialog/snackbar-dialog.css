@@ -74,6 +74,7 @@
     margin-top: var(--spacing-200);
 }
 
+.snackbar-dialog__actions .btn--link,
 .snackbar-dialog__actions .fake-link {
     color: var(
         --snackbar-dialog-foreground-color,
@@ -81,9 +82,11 @@
     );
     text-decoration: none;
 }
+.snackbar-dialog__actions .btn--link:first-letter,
 .snackbar-dialog__actions .fake-link:first-letter {
     text-decoration: underline;
 }
+.snackbar-dialog__actions button.btn--link:hover:not(:disabled),
 .snackbar-dialog__actions button.fake-link:hover:not(:disabled) {
     color: var(
         --snackbar-dialog-foreground-color,
