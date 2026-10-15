@@ -545,6 +545,7 @@ export type Icon =
 'informationFilled20' |
 'informationFilled24' |
 'inspect16' |
+'inspect20' |
 'inspect24' |
 'inspect64' |
 'instagram24' |

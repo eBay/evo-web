@@ -548,6 +548,7 @@ import { EvoIconInformationFilled16 } from "./icons/information-filled-16";
 import { EvoIconInformationFilled20 } from "./icons/information-filled-20";
 import { EvoIconInformationFilled24 } from "./icons/information-filled-24";
 import { EvoIconInspect16 } from "./icons/inspect-16";
+import { EvoIconInspect20 } from "./icons/inspect-20";
 import { EvoIconInspect24 } from "./icons/inspect-24";
 import { EvoIconInspect64 } from "./icons/inspect-64";
 import { EvoIconInstagram24 } from "./icons/instagram-24";
@@ -2874,6 +2875,9 @@ export const AllIcons: Story = {
         </IconExample>
         <IconExample name="EvoIconInspect16">
           <EvoIconInspect16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconInspect20">
+          <EvoIconInspect20 {...args} />
         </IconExample>
         <IconExample name="EvoIconInspect24">
           <EvoIconInspect24 {...args} />

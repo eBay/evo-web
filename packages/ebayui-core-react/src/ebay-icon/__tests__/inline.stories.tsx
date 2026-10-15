@@ -546,6 +546,7 @@ import { EbayIconInformationFilled16 } from "../icons/ebay-icon-information-fill
 import { EbayIconInformationFilled20 } from "../icons/ebay-icon-information-filled-20";
 import { EbayIconInformationFilled24 } from "../icons/ebay-icon-information-filled-24";
 import { EbayIconInspect16 } from "../icons/ebay-icon-inspect-16";
+import { EbayIconInspect20 } from "../icons/ebay-icon-inspect-20";
 import { EbayIconInspect24 } from "../icons/ebay-icon-inspect-24";
 import { EbayIconInspect64 } from "../icons/ebay-icon-inspect-64";
 import { EbayIconInstagram24 } from "../icons/ebay-icon-instagram-24";
@@ -5521,6 +5522,14 @@ export const AllIcons = () => (
             <td>ebay-icon-inspect-16</td>
             <td>
                 <EbayIconInspect16 />
+            </td>
+        </tr>
+            
+
+        <tr>
+            <td>ebay-icon-inspect-20</td>
+            <td>
+                <EbayIconInspect20 />
             </td>
         </tr>
             

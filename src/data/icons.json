@@ -1848,6 +1848,7 @@
         "width": "24"
       },
       { "name": "inspect-16", "size": "16", "height": "16", "width": "16" },
+      { "name": "inspect-20", "size": "20", "height": "20", "width": "20" },
       { "name": "inspect-24", "size": "24", "height": "24", "width": "24" },
       { "name": "inspect-64", "size": "64", "height": "64", "width": "64" },
       { "name": "instagram-24", "size": "24", "height": "24", "width": "24" },
