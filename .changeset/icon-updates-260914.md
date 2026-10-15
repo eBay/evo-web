@@ -1,7 +1,7 @@
 ---
 "@ebay/skin": minor
-"@evo-web/react": minor
-"@evo-web/marko": minor
+"@evo-web/react": patch
+"@evo-web/marko": patch
 "@ebay/ui-core-react": minor
 "@ebay/ebayui-core": minor
 ---
