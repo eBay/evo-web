@@ -17,6 +17,9 @@ static declare global {
       content=`${$global.meta.pageDescription || "Evo Web contains the latest components built with a11y in mind"}`>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <if=page === "poc">
+      <meta name="robots" content="noindex">
+    </if>
     <meta property="og:title" content=`${$global.meta.pageTitle || "evo web"}`>
     <meta
       property="og:description"
