@@ -3,3 +3,12 @@
     font-size: 200%;
     /* line-height: var(--typography-body-line-height); */
 }
+
+.carousel__list--custom-property-demo li {
+    background-color: grey;
+    font-size: 24px;
+    font-weight: bold;
+    height: 120px;
+    line-height: 120px;
+    text-align: center;
+}

@@ -1,0 +1,459 @@
+export interface Control extends Omit<
+  Marko.HTML.Button,
+  "type" | "aria-label" | "aria-disabled" | "aria-controls"
+> {
+  /**
+   * The `aria-label` of the control
+   *
+   * English default to be overridden is `"Previous slide"` or `"Next slide"`
+   */
+  a11yText?: string;
+}
+export interface Playback extends Omit<
+  Marko.HTML.Button,
+  "type" | "aria-label"
+> {
+  /**
+   * The `aria-label` of the playback control while paused
+   *
+   * English default to be overridden is `"Play carousel"`
+   */
+  a11yPlayText?: string;
+  /**
+   * The `aria-label` of the playback control while playing
+   *
+   * English default to be overridden is `"Pause carousel"`
+   */
+  a11yPauseText?: string;
+}
+export interface Input extends Omit<Marko.HTML.Div, "role" | "aria-label"> {
+  /**
+   * The accessible name for the carousel
+   *
+   * Pass `null` explicitly _only_ if alternative accessibility information is present
+   */
+  a11yText: string | null;
+  item?: Marko.AttrTag<Marko.HTML.LI>;
+  previous?: Marko.AttrTag<Control>;
+  next?: Marko.AttrTag<Control>;
+  playback?: Marko.AttrTag<Playback>;
+  itemsPerSlide?: number;
+  noPeek?: boolean;
+  gap?: number | string;
+  imageTreatment?: "none" | "matte" | "large";
+  hiddenScrollbar?: boolean;
+  autoplay?: boolean | number;
+  paused?: boolean;
+  pausedChange?: (paused: boolean) => void;
+  index?: number;
+  indexChange?: (index: number) => void;
+}
+static const moves = new WeakMap<HTMLElement, Record<string, number>>();
+static const TRANSITION_SECONDS = 0.45;
+// A critically damped spring is within 1% of its target once ω·t reaches 6.64.
+static const STIFFNESS = 6.64 / TRANSITION_SECONDS;
+static function getItemsInView(
+  itemsPerSlide: number | undefined,
+  noPeek: boolean | undefined,
+  interval: number,
+) {
+  if (!itemsPerSlide && !interval) return 0;
+  const peek = (itemsPerSlide || 1) % 1 || (noPeek || interval ? 0 : 0.1);
+  return Math.max(Math.floor(itemsPerSlide || 1), 1) + peek;
+}
+
+<const/{
+  class: inputClass,
+  style: inputStyle,
+  a11yText,
+  item: items,
+  previous,
+  next,
+  playback,
+  itemsPerSlide,
+  noPeek,
+  gap,
+  imageTreatment = "none",
+  hiddenScrollbar,
+  autoplay,
+  paused: inputPaused,
+  pausedChange,
+  index: inputIndex,
+  indexChange,
+  "aria-roledescription": ariaRoledescription = "carousel",
+  ...htmlInput
+}=input>
+
+<const/itemList=[...(items || [])]>
+<const/interval=autoplay === true ? 4000 : autoplay || 0>
+<const/inView=getItemsInView(itemsPerSlide, noPeek, interval)>
+
+<let/index:=input.index>
+<let/atStart=true>
+<let/atEnd=false>
+<let/visible=null as boolean[] | null>
+
+<const/measure() {
+  const list = $list();
+  const rtl = getComputedStyle(list).direction === "rtl";
+  const box = list.getBoundingClientRect();
+  const position = Math.abs(list.scrollLeft);
+  return Array.from(list.children as HTMLCollectionOf<HTMLElement>, (el) => {
+    const rect = el.getBoundingClientRect();
+    const start =
+      position + (rtl ? box.right - rect.right : rect.left - box.left);
+    return { el, start, end: start + rect.width };
+  }).sort((a, b) => a.start - b.start);
+}>
+
+<const/scrollToPosition(position: number, behavior?: ScrollBehavior) {
+  const list = $list();
+  const sign = getComputedStyle(list).direction === "rtl" ? -1 : 1;
+  const to = Math.max(
+    Math.min(position, list.scrollWidth - list.clientWidth),
+    0,
+  );
+  const at = Math.abs(list.scrollLeft);
+  const moving = moves.get(list);
+  const stop = () => {
+    moves.delete(list);
+    list.style.scrollSnapType = "";
+  };
+  if (
+    behavior === "instant" ||
+    (!moving && Math.abs(to - at) < 1) ||
+    matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) {
+    stop();
+    list.scrollTo({ left: sign * to, behavior: "instant" });
+  } else if (moving) {
+    moving.to = to;
+  } else {
+    const move = { to, at, speed: 0, time: performance.now() };
+    moves.set(list, move);
+    // Snapping would pull each frame onto the nearest item.
+    list.style.scrollSnapType = "none";
+    requestAnimationFrame(function step(now) {
+      if (moves.get(list) !== move) return;
+      const scrolledElsewhere =
+        Math.abs(Math.abs(list.scrollLeft) - move.at) > 2;
+      if (scrolledElsewhere) return stop();
+      const elapsed = Math.max(Math.min(now - move.time, 50), 0) / 1000;
+      const left = move.to - move.at;
+      const pull = STIFFNESS * left - move.speed;
+      const decay = Math.exp(-STIFFNESS * elapsed);
+      const remaining = (left + pull * elapsed) * decay;
+      const arrived = Math.abs(remaining) < 0.5 && Math.abs(move.speed) < 60;
+      move.speed = (STIFFNESS * (left + pull * elapsed) - pull) * decay;
+      move.at = arrived ? move.to : move.to - remaining;
+      move.time = now;
+      if (arrived) stop();
+      list.scrollTo({ left: sign * move.at, behavior: "instant" });
+      if (arrived) list.dispatchEvent(new Event("scrollend"));
+      else requestAnimationFrame(step);
+    });
+  }
+}>
+
+<const/scrollToIndex(i: number, behavior?: ScrollBehavior) {
+  const item = measure().find(({ el }) => el === $list().children[i]);
+  if (item) scrollToPosition(item.start, behavior);
+}>
+
+<script>
+  const list = $list();
+  let shown: boolean[] = [];
+  let reported: number | undefined;
+  let timer: ReturnType<typeof setTimeout>;
+  const update = () => {
+    const box = list.getBoundingClientRect();
+    const next = Array.from(list.children, (item) => {
+      const { left, right } = item.getBoundingClientRect();
+      return (
+        (left > box.left - 1 && right < box.right + 1) ||
+        (left < box.left + 1 && right > box.right - 1)
+      );
+    });
+    if (next.join() !== shown.join()) visible = shown = next;
+    const scrolled = Math.abs(list.scrollLeft);
+    atStart = scrolled < 1;
+    atEnd = scrolled > list.scrollWidth - list.clientWidth - 1;
+  };
+  const settle = () => {
+    if (moves.has(list)) return;
+    update();
+
+    const leading = shown.indexOf(true);
+    const wrapped = Array.from(
+      list.children as HTMLCollectionOf<HTMLElement>,
+    ).filter((item) => item.style.order);
+    if (wrapped.length) {
+      wrapped.forEach((item) => (item.style.order = ""));
+      scrollToIndex(leading, "instant");
+    }
+    if (leading !== -1 && leading !== index && leading !== reported) {
+      index = reported = leading;
+    }
+  };
+  list.addEventListener("scroll", update, {
+    passive: true,
+    signal: $signal,
+  });
+  list.addEventListener("scrollend", settle, {
+    signal: $signal,
+  });
+  if (!("onscrollend" in window)) {
+    // NOTE: Only required until Safari supports scrollend
+    list.addEventListener(
+      "scroll",
+      () => {
+        clearTimeout(timer);
+        timer = setTimeout(
+          () => list.dispatchEvent(new Event("scrollend")),
+          100,
+        );
+      },
+      {
+        passive: true,
+        signal: $signal,
+      },
+    );
+  }
+  const observer = new ResizeObserver(update);
+  observer.observe(list);
+  itemList.forEach((_, i) => observer.observe(list.children[i]));
+  $signal.onabort = () => {
+    observer.disconnect();
+    clearTimeout(timer);
+  };
+</script>
+
+<lifecycle
+  onMount() {
+    if (index) scrollToIndex(index, "instant");
+  }
+  onUpdate() {
+    const list = $list();
+    if (
+      index !== undefined &&
+      list.children[index] !== list.querySelector(":scope > :not([inert])")
+    ) {
+      scrollToIndex(index);
+    }
+  }
+>
+
+<const/moveToFarEnd(items: HTMLElement[], direction: 1 | -1) {
+  const orders = Array.from(
+    $list().children as HTMLCollectionOf<HTMLElement>,
+    (item) => Number(item.style.order),
+  );
+  const edge = direction === 1 ? Math.max(...orders) : Math.min(...orders);
+  (direction === 1 ? items : [...items].reverse()).forEach(
+    (item, i) => (item.style.order = `${edge + direction * (i + 1)}`),
+  );
+}>
+
+<const/shiftView(distance: number) {
+  const list = $list();
+  const move = moves.get(list);
+  if (move) {
+    move.at += distance;
+    move.to += distance;
+  }
+  list.scrollTo({
+    left:
+      (getComputedStyle(list).direction === "rtl" ? -1 : 1) *
+      (Math.abs(list.scrollLeft) + distance),
+    behavior: "instant",
+  });
+}>
+
+<const/page(direction: 1 | -1) {
+  const list = $list();
+  const width = list.clientWidth;
+  const move = moves.get(list);
+  let from = move ? move.to : Math.abs(list.scrollLeft);
+  let items = measure();
+  const beyond = () =>
+    direction === 1
+      ? items.find((item) => item.end > from + width + 1)
+      : items.findLast((item) => item.start < from - 1);
+
+  if (interval && !beyond()) {
+    const position = Math.abs(list.scrollLeft);
+    const behind = items.filter((item) =>
+      direction === 1
+        ? item.end < position + 1
+        : item.start > position + width - 1,
+    );
+    const canWrap =
+      behind.length > 0 && behind.at(-1)!.end - behind[0].start > width - 1;
+    if (!canWrap) {
+      scrollToPosition(direction === 1 ? 0 : Infinity);
+      return;
+    }
+
+    const firstInView = items.find((item) => item.end > position + 1)!;
+    moveToFarEnd(
+      behind.map(({ el }) => el),
+      direction,
+    );
+    items = measure();
+    const shift =
+      items.find(({ el }) => el === firstInView.el)!.start - firstInView.start;
+    shiftView(shift);
+    from += shift;
+  }
+
+  const item = beyond();
+  if (item) {
+    scrollToPosition(
+      direction === 1
+        ? item.start
+        : items.find(({ start }) => start > item.end - width - 1)!.start,
+    );
+  }
+}>
+
+<let/paused:=input.paused>
+
+<script>
+  if (interval && matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    paused = true;
+  }
+</script>
+
+<script>
+  if (interval && !paused) {
+    const carousel = $carousel();
+    const held = () => {
+      const focused = document.activeElement;
+      return (
+        carousel.matches(":hover") ||
+        (carousel.contains(focused) &&
+          !focused!.classList.contains("carousel__playback"))
+      );
+    };
+    let timer: ReturnType<typeof setTimeout>;
+    const wait = () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => (held() ? wait() : page(1)), interval);
+    };
+    $list().addEventListener("scrollend", wait, { signal: $signal });
+    wait();
+    $signal.onabort = () => clearTimeout(timer);
+  }
+</script>
+
+<id/listId>
+
+<define/Paddle|{
+  control,
+  direction,
+}: {
+  control: (Marko.AttrTag<Control> | undefined);
+  direction: (1 | -1);
+}|>
+  <const/{
+    a11yText: controlText = direction === 1 ? "Next slide" : "Previous slide",
+    class: controlClass,
+    onClick,
+    ...buttonInput
+  }=control || ({} as Control)>
+  <const/disabled=!interval && (direction === 1 ? atEnd : atStart)>
+  <button
+    ...buttonInput
+    type="button"
+    aria-label=controlText
+    aria-controls=listId
+    aria-disabled=disabled && "true"
+    class=[
+      "carousel__control",
+      direction === 1 ? "carousel__control--next" : "carousel__control--prev",
+      controlClass,
+    ]
+    onClick(e, el) {
+      if (!disabled) page(direction);
+      onClick && onClick(e, el);
+    }
+  >
+    <if=direction === 1>
+      <evo-icon-chevron-right-16/>
+    </if>
+    <else>
+      <evo-icon-chevron-left-16/>
+    </else>
+  </button>
+</define>
+
+<div/$carousel
+  ...htmlInput
+  role="group"
+  aria-roledescription=ariaRoledescription
+  aria-label=a11yText
+  class=[
+    "carousel",
+    hiddenScrollbar && "carousel--hidden-scrollbar",
+    !!inView && "carousel--slides",
+    !!(inView % 1) && "carousel--peek",
+    inputClass,
+  ]
+  style=[
+    inputStyle,
+    gap != null &&
+      `--carousel-gap: ${typeof gap === "number" ? `${gap}px` : gap}`,
+    !!inView && `--carousel-items-in-view: ${inView}`,
+  ]
+>
+  <if=interval && !(atStart && atEnd)>
+    <const/{
+      a11yPlayText = "Play carousel",
+      a11yPauseText = "Pause carousel",
+      class: playbackClass,
+      onClick: onPlaybackClick,
+      ...playbackInput
+    }=playback || ({} as Playback)>
+    <button
+      ...playbackInput
+      type="button"
+      aria-label=paused ? a11yPlayText : a11yPauseText
+      class=["carousel__playback", playbackClass]
+      onClick(e, el) {
+        paused = !paused;
+        onPlaybackClick && onPlaybackClick(e, el);
+      }
+    >
+      <if=paused>
+        <evo-icon-play-24/>
+      </if>
+      <else>
+        <evo-icon-pause-24/>
+      </else>
+    </button>
+  </if>
+  <div class=[
+    "carousel__container",
+    atStart && atEnd && "carousel__container--controls-disabled",
+  ]>
+    <Paddle control=previous direction=-1/>
+    <div class="carousel__viewport">
+      <ul/$list
+        id=listId
+        aria-live=interval ? (paused ? "polite" : "off") : undefined
+        class=[
+          "carousel__list",
+          "carousel__list--snap",
+          !!inView && "carousel__list--slides",
+          imageTreatment === "matte" && "carousel__list--image-treatment",
+          imageTreatment === "large" && "carousel__list--image-treatment-large",
+        ]
+      >
+        <for|item, i| of=itemList>
+          <li ...item inert=!!visible && !visible[i]/>
+        </for>
+      </ul>
+    </div>
+    <Paddle control=next direction=1/>
+  </div>
+</div>
