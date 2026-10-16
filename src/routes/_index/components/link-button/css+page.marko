@@ -1,0 +1,340 @@
+<div id="static-link-button">
+  <h1>Link Button CSS Component</h1>
+
+  <h3 id="link-button-default">Default Link Button</h3>
+  <p>
+    Use the <code>link-button</code> class on an anchor tag to create a minimal,
+    default link-button.
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <a class="link-button" href="https://www.ebay.com">Link</a>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <a class="link-button" href="https://www.ebay.com">Link</a>
+  </highlight-code>
+
+  <p>
+    Use the <code>large</code> modifier to increase the size of the link-button.
+  </p>
+
+  <div class="demo">
+    <div class="demo__inner">
+      <a class="link-button link-button--large" href="https://www.ebay.com">
+        Large Link
+      </a>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <a class="link-button link-button--large" href="https://www.ebay.com">
+      Large Link
+    </a>
+  </highlight-code>
+
+  <p>
+    Use the <code>small</code> modifier to decrease the size of the link-button.
+  </p>
+
+  <div class="demo">
+    <div class="demo__inner">
+      <a class="link-button link-button--small" href="https://www.ebay.com">
+        Small Link
+      </a>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <a class="link-button link-button--small" href="https://www.ebay.com">
+      Small Link
+    </a>
+  </highlight-code>
+
+  <h3 id="link-button-primary">Primary Link Button</h3>
+  <p>
+    Use the <code>primary</code> modifier to create a primary link-button style.
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <a class="link-button link-button--primary" href="https://www.ebay.com">
+        Link
+      </a>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <a class="link-button link-button--primary" href="https://www.ebay.com">
+      Link
+    </a>
+  </highlight-code>
+
+  <h3 id="link-button-secondary">Secondary Link Button</h3>
+  <p>
+    Use the <code>secondary</code> modifier to create a secondary link-button
+    style.
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <a class="link-button link-button--secondary" href="https://www.ebay.com">
+        Link
+      </a>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <a class="link-button link-button--secondary" href="https://www.ebay.com">
+      Link
+    </a>
+  </highlight-code>
+
+  <h3 id="link-button-tertiary">Tertiary Link Button</h3>
+  <p>
+    Use the <code>tertiary</code> modifier to create a tertiary link-button
+    style.
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <a class="link-button link-button--tertiary" href="https://www.ebay.com">
+        Link
+      </a>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <a class="link-button link-button--tertiary" href="https://www.ebay.com">
+      Link
+    </a>
+  </highlight-code>
+
+  <h3 id="link-button-disabled">Disabled Link Button</h3>
+  <p>Remove the <code>href</code> attribute to fully disable a link-button.</p>
+  <div class="demo">
+    <div class="demo__inner">
+      <a class="link-button link-button--primary">Primary Link</a>
+      <a class="link-button link-button--secondary">Secondary Link</a>
+      <a class="link-button link-button--tertiary">Tertiary Link</a>
+    </div>
+  </div>
+  <highlight-code type="html">
+    <a class="link-button link-button--primary">Primary Link</a>
+    <a class="link-button link-button--secondary">Secondary Link</a>
+    <a class="link-button link-button--tertiary">Tertiary Link</a>
+  </highlight-code>
+
+  <h3 id="link-button-partially-disabled">Partially Disabled Link Button</h3>
+  <p>
+    Use <code>aria-disabled="true"</code> to partially disable a link-button.
+    This retains keyboard focus while still communicating a disabled state,
+    preventing keyboard focus from being moved back to the start of the page
+    when focus is lost.
+  </p>
+
+  <div class="demo">
+    <div class="demo__inner">
+      <a
+        class="link-button link-button--primary"
+        href="https://www.ebay.com"
+        aria-disabled="true"
+      >
+        Link
+      </a>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <a
+      class="link-button link-button--primary"
+      href="https://www.ebay.com"
+      aria-disabled="true"
+    >
+      Link
+    </a>
+  </highlight-code>
+
+  <h3 id="link-button-delete">Destructive Link Button</h3>
+  <p>
+    Use the <code>destructive</code> modifier to create a destructive
+    link-button style used for removing data.
+  </p>
+
+  <h4>Primary Destructive Link Button</h4>
+  <div class="demo">
+    <div class="demo__inner">
+      <a
+        class="link-button link-button--primary link-button--destructive"
+        href="https://www.ebay.com"
+      >
+        Primary Link
+      </a>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <a
+      class="link-button link-button--primary link-button--destructive"
+      href="https://www.ebay.com"
+    >
+      Destructive Link
+    </a>
+  </highlight-code>
+
+  <h4>Secondary Destructive Link Button</h4>
+  <div class="demo">
+    <div class="demo__inner">
+      <a
+        class="link-button link-button--secondary link-button--destructive"
+        href="https://www.ebay.com"
+      >
+        Secondary Link
+      </a>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <a
+      class="link-button link-button--secondary link-button--destructive"
+      href="https://www.ebay.com"
+    >
+      Secondary Link
+    </a>
+  </highlight-code>
+
+  <h4>Tertiary Destructive Link Button</h4>
+  <div class="demo">
+    <div class="demo__inner">
+      <a
+        class="link-button link-button--tertiary link-button--destructive"
+        href="https://www.ebay.com"
+      >
+        Tertiary Link
+      </a>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <a
+      class="link-button link-button--tertiary link-button--destructive"
+      href="https://www.ebay.com"
+    >
+      Tertiary Link
+    </a>
+  </highlight-code>
+
+  <h3 id="link-button-icon-adjacent">Adjacent Icon Link Button</h3>
+  <p>
+    Any SVG icon can be placed adjacent to the link-button text. To flip
+    position of text and icon, simply swap the DOM order.
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <a class="link-button link-button--primary" href="https://www.ebay.com">
+        <span class="link-button__cell">
+          <svg aria-hidden="true" class="icon icon--24" height="16" width="16">
+            <icon-symbol name="menu-24"/>
+          </svg>
+          <span>Link</span>
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <a class="link-button link-button--primary" href="https://www.ebay.com">
+      <span class="link-button__cell">
+        <svg aria-hidden="true" class="icon icon--24" height="16" width="16">
+          <use href="#icon-menu-24"/>
+        </svg>
+        <span>Link</span>
+      </span>
+    </a>
+  </highlight-code>
+
+  <h3 id="link-button-fluid">Fluid Link Button</h3>
+  <p>
+    Use the <code>link-button--fluid</code> modifier to make a link-button fill
+    the width of its container.
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <a
+        class="link-button link-button--primary link-button--fluid"
+        href="https://www.ebay.com"
+      >
+        Link
+      </a>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <a
+      class="link-button link-button--primary link-button--fluid"
+      href="https://www.ebay.com"
+    >
+      Link
+    </a>
+  </highlight-code>
+
+  <h3 id="link-button-fixed-width">Fixed Width Link Button</h3>
+
+  <p>
+    Link-buttons naturally grow wider with their text. The text will wrap
+    naturally once the link-button width grows to exceed its constrained width.
+  </p>
+
+  <div class="demo">
+    <a
+      class="link-button link-button--primary"
+      href="https://www.ebay.com"
+      style="width: 200px;"
+    >
+      Link with a lot of text that will wrap
+    </a>
+  </div>
+
+  <highlight-code type="html">
+    <a
+      class="link-button link-button--primary"
+      href="https://www.ebay.com"
+      style="width: 200px;"
+    >
+      Link with a lot of text that will wrap
+    </a>
+  </highlight-code>
+
+  <p>
+    The solution is to apply truncation, via the
+    <code>link-button--truncated</code> or
+    <code>link-button--large-truncated</code> modifiers, combined with a fixed
+    height.
+  </p>
+
+  <div class="demo">
+    <a
+      class="link-button link-button--primary link-button--large-fixed-height link-button--truncated"
+      href="https://www.ebay.com"
+      style="width: 200px;"
+    >
+      Link with a lot of text that will wrap
+    </a>
+  </div>
+
+  <highlight-code type="html">
+    <a
+      class="link-button link-button--primary link-button--large-fixed-height link-button--truncated"
+      href="https://www.ebay.com"
+      style="width: 200px;"
+    >
+      Link with a lot of text that will wrap
+    </a>
+  </highlight-code>
+</div>
+export const metadata = {
+  component: "link-button",
+  "ds-component": {
+    name: "button",
+    version: 1.6,
+    url: "https://playbook.ebay.com/design-system/components/button",
+  },
+};

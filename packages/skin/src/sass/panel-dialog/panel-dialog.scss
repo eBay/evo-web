@@ -29,7 +29,8 @@
     @include dialog-mixins.header-content;
 }
 
-.panel-dialog__header .fake-link {
+.panel-dialog__header .fake-link,
+.panel-dialog__header .button-link {
     align-self: flex-start;
     outline-offset: 4px;
     text-decoration: none;

@@ -2,6 +2,9 @@
 @use "../mixins/private/dropdown-mixins";
 @use "../mixins/private/token-mixins";
 
+// DEPRECATED: the `fake-menu*` selectors in this file are removed in the next
+// major version. Use `navigation-menu` instead.
+
 .menu__items,
 .fake-menu__items {
     @include token-mixins.background-color-token(

@@ -153,7 +153,6 @@ header a {
 .site-nav-mobile
   .tabs__item.tabs__item[role="tab"][aria-selected="true"]
   > span::after,
-.site-nav-mobile li.fake-tabs__item > a[aria-current]::after,
 .site-nav-mobile
   div.tabs__item[role="tab"]:not([aria-selected="true"]):hover
   > span::after {

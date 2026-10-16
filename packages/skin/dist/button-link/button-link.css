@@ -1,0 +1,25 @@
+button.button-link {
+    background-color: initial;
+    border: 0;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0;
+    text-decoration: underline;
+    color: var(
+        --fake-link-foreground-color,
+        var(--color-foreground-link-primary)
+    );
+}
+button.button-link:hover {
+    color: var(
+        --fake-link-foreground-color-hover,
+        var(--color-foreground-secondary)
+    );
+}
+button.button-link[aria-disabled="true"],
+button.button-link[disabled] {
+    color: var(
+        --fake-link-foreground-disabled-color,
+        var(--color-foreground-disabled)
+    );
+}
