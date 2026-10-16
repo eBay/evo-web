@@ -1,0 +1,118 @@
+@use "../mixins/private/menu-mixins";
+@use "../mixins/private/token-mixins";
+
+.navigation-menu__items {
+    @include token-mixins.background-color-token(
+        menu-background-color,
+        color-background-primary
+    );
+
+    cursor: default; /* override text cursor */
+}
+
+span.navigation-menu {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+span.navigation-menu__items {
+    display: inline-block;
+}
+
+.navigation-menu__items {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation-menu__item > svg.icon--16 {
+    @include menu-mixins.status;
+}
+
+.navigation-menu__item > svg.icon--16:last-child,
+.navigation-menu__item .badge {
+    margin-left: var(--spacing-100);
+    margin-right: var(--spacing-100);
+}
+
+a.navigation-menu__item {
+    @include token-mixins.color-token(
+        menu-anchor-color,
+        color-foreground-primary
+    );
+
+    text-decoration: none;
+}
+
+button.navigation-menu__item {
+    font-size: inherit;
+}
+
+button.navigation-menu__item,
+a.navigation-menu__item {
+    @include menu-mixins.base(menu);
+}
+
+a.navigation-menu__item:focus {
+    text-decoration: underline;
+}
+
+a.navigation-menu__item[aria-current="page"] svg.icon--16,
+button.navigation-menu__item[aria-current="page"] svg.icon--16 {
+    opacity: 1;
+}
+
+a.navigation-menu__item:not([href]),
+button.navigation-menu__item[disabled] {
+    @include token-mixins.color-token(
+        menu-menuitem-disabled-foreground-color,
+        color-foreground-disabled
+    );
+
+    background-color: unset;
+    font-weight: unset;
+}
+
+a.navigation-menu__item > span,
+button.navigation-menu__item > span {
+    flex: 0 0 auto;
+    text-align: left;
+    white-space: nowrap;
+}
+
+a.navigation-menu__item--badged,
+button.navigation-menu__item--badged,
+a.navigation-menu__item:has(.badge),
+button.navigation-menu__item:has(.badge) {
+    position: relative;
+}
+
+a.navigation-menu__item--badged span.badge,
+button.navigation-menu__item--badged span.badge,
+a.navigation-menu__item span.badge,
+button.navigation-menu__item span.badge {
+    padding: 1px 5px;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+.navigation-menu__items--fix-width {
+    width: 100%;
+}
+
+.navigation-menu__items--reverse {
+    right: 0;
+}
+
+.navigation-menu button.expand-btn--borderless {
+    background-color: transparent;
+    border-color: transparent;
+    padding-left: 0;
+    vertical-align: initial;
+
+    &:focus {
+        outline: none;
+        text-decoration: underline;
+    }
+}

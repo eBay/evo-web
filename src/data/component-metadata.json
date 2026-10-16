@@ -77,6 +77,16 @@
     "reactStorybookPath": "/docs/buttons-ebay-button--documentation",
     "description": "A control for executing JavaScript or submitting/resetting form values"
   },
+  "button-link": {
+    "component": "button-link",
+    "ds-component": {
+      "name": "text-link",
+      "url": "https://playbook.ebay.com/design-system/components/text-link",
+      "version": "2.0"
+    },
+    "cssStorybookPath": "/story/skin-button-link--base",
+    "description": "A button styled to look like a link, for actions that trigger JavaScript behavior."
+  },
   "calendar": {
     "component": "calendar",
     "ds-component": {
@@ -497,6 +507,16 @@
     "cssStorybookPath": "/story/skin-link--base",
     "description": "Allow users to move from one URL to another or access different resources."
   },
+  "link-button": {
+    "component": "link-button",
+    "ds-component": {
+      "name": "button",
+      "url": "https://playbook.ebay.com/design-system/components/button",
+      "version": "1.6"
+    },
+    "cssStorybookPath": "/story/skin-link-button-base--text-only",
+    "description": "A hyperlink styled to look like a button, for navigating to a URL."
+  },
   "list": {
     "component": "list",
     "ds-component": {
@@ -566,6 +586,25 @@
     "markoStorybookPath": "/docs/building-blocks-ebay-menu--documentation",
     "reactStorybookPath": "/docs/building-blocks-ebay-menu--documentation",
     "description": "Menu items trigger an immediate action within the current page."
+  },
+  "navigation-menu": {
+    "component": "navigation-menu",
+    "ds-component": {
+      "name": "dropdown",
+      "url": "https://playbook.ebay.com/design-system/components/dropdown",
+      "version": "2.3"
+    },
+    "cssStorybookPath": "/story/skin-navigation-menu--links",
+    "description": "A list of links styled to look like menu items, for navigation that performs a full page load."
+  },
+  "navigation-tabs": {
+    "component": "navigation-tabs",
+    "ds-component": {
+      "name": "tab",
+      "version": "2.2"
+    },
+    "cssStorybookPath": "/story/skin-navigation-tabs-block--two",
+    "description": "A set of links styled to look like tabs, for navigation that performs a full page load."
   },
   "number-input": {
     "component": "number-input",

@@ -43,6 +43,7 @@
     margin-inline-start: var(--spacing-200);
 }
 
+.drawer-dialog__header .button-link,
 .drawer-dialog__header .fake-link {
     align-self: flex-start;
     text-decoration: none;

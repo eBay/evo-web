@@ -19,7 +19,8 @@
     @include dialog-mixins.header-content(var(--spacing-250));
 }
 
-.drawer-dialog__header .fake-link {
+.drawer-dialog__header .fake-link,
+.drawer-dialog__header .button-link {
     align-self: flex-start;
     text-decoration: none;
 }

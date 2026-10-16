@@ -1,28 +1,24 @@
+import { urls } from "../../../../data";
 <div id="tabs">
   <section-header/>
 
-  <h3 id="tabs-default">
-    Default Tabs
-  </h3>
+  <h3 id="tabs-default">Default Tabs</h3>
   <p>
-    When a tab is selected, the
-    <code>aria-selected</code>
-    state of all tabs in the list must be updated in order for the CSS to
-    reflect the change. Only one tab can be selected and in the tab order at any
-    moment in time. Likewise, only one tabpanel can be visible at any time, and
-    it must correspond to the currently selected tab.
+    When a tab is selected, the <code>aria-selected</code> state of all tabs in
+    the list must be updated in order for the CSS to reflect the change. Only
+    one tab can be selected and in the tab order at any moment in time.
+    Likewise, only one tabpanel can be visible at any time, and it must
+    correspond to the currently selected tab.
   </p>
 
   <p>
-    Use child element modifier
-    <code>tabs--large</code>
-    to opt into larger font-size for tabs.
+    Use child element modifier <code>tabs--large</code> to opt into larger
+    font-size for tabs.
   </p>
 
   <p>
-    <strong>NOTE:</strong>
-    JavaScript is required to handle tab selection state, panel
-    visibility, focus management and arrow-key navigation. For detailed
+    <strong>NOTE:</strong> JavaScript is required to handle tab selection state,
+    panel visibility, focus management and arrow-key navigation. For detailed
     behaviour requirements, please visit the
     <a href="https://opensource.ebay.com/mindpatterns/disclosure/tabs/index.html">
       eBay MIND Pattern for Tabs
@@ -30,7 +26,8 @@
     .
   </p>
   <p>
-    To disable a tab, add <code>aria-disabled="true"</code> to the tab to disable. Disabled state on the currently selected tab is not valid.
+    To disable a tab, add <code>aria-disabled="true"</code> to the tab to
+    disable. Disabled state on the currently selected tab is not valid.
   </p>
 
   <div class="demo">
@@ -42,7 +39,8 @@
             aria-selected="true"
             class="tabs__item"
             id="default-tab-1"
-            role="tab">
+            role="tab"
+          >
             <span>Tab 1</span>
           </div>
           <div
@@ -50,7 +48,8 @@
             aria-selected="false"
             class="tabs__item"
             id="default-tab-2"
-            role="tab">
+            role="tab"
+          >
             <span>Tab 2</span>
           </div>
           <div
@@ -58,7 +57,8 @@
             aria-selected="false"
             class="tabs__item"
             id="default-tab-3"
-            role="tab">
+            role="tab"
+          >
             <span>Tab 3</span>
           </div>
         </div>
@@ -67,7 +67,8 @@
             aria-labelledby="default-tab-1"
             class="tabs__panel"
             id="default-tabpanel-1"
-            role="tabpanel">
+            role="tabpanel"
+          >
             <div class="tabs__cell">
               <h3>Panel 1 Content</h3>
               <p>
@@ -89,7 +90,8 @@
             class="tabs__panel"
             hidden
             id="default-tabpanel-2"
-            role="tabpanel">
+            role="tabpanel"
+          >
             <div class="tabs__cell">
               <h3>Panel 2 Content</h3>
               <p>
@@ -111,7 +113,8 @@
             class="tabs__panel"
             hidden
             id="default-tabpanel-3"
-            role="tabpanel">
+            role="tabpanel"
+          >
             <div class="tabs__cell">
               <h3>Panel 3 Content</h3>
               <p>
@@ -140,7 +143,8 @@
           aria-selected="true"
           class="tabs__item"
           id="default-tab-1"
-          role="tab">
+          role="tab"
+        >
           <span>Tab 1</span>
         </div>
         <div
@@ -148,7 +152,8 @@
           aria-selected="false"
           class="tabs__item"
           id="default-tab-2"
-          role="tab">
+          role="tab"
+        >
           <span>Tab 2</span>
         </div>
         <div
@@ -156,7 +161,8 @@
           aria-selected="false"
           class="tabs__item"
           id="default-tab-3"
-          role="tab">
+          role="tab"
+        >
           <span>Tab 3</span>
         </div>
       </div>
@@ -165,7 +171,8 @@
           aria-labelledby="default-tab-1"
           class="tabs__panel"
           id="default-tabpanel-1"
-          role="tabpanel">
+          role="tabpanel"
+        >
           <div class="tabs__cell">
             <h3>Panel 1 Content</h3>
             <p>
@@ -181,7 +188,8 @@
           class="tabs__panel"
           hidden
           id="default-tabpanel-2"
-          role="tabpanel">
+          role="tabpanel"
+        >
           <div class="tabs__cell">
             <h3>Panel 2 Content</h3>
             <p>
@@ -197,7 +205,8 @@
           class="tabs__panel"
           hidden
           id="default-tabpanel-3"
-          role="tabpanel">
+          role="tabpanel"
+        >
           <div class="tabs__cell">
             <h3>Panel 3 Content</h3>
             <p>
@@ -212,33 +221,45 @@
     </div>
   </highlight-code>
 
-  <h3 id="tabs-fake">
-    Fake Tabs
-  </h3>
+  <h3 id="tabs-fake">Fake Tabs</h3>
+  <section
+    class="section-notice section-notice--attention"
+    role="region"
+    aria-label="Attention"
+    aria-roledescription="Notice"
+  >
+    <div class="section-notice__header" id="section-notice-attention">
+      <svg class="icon icon--16" height="16" width="16" aria-label="Attention">
+        <icon-symbol name="attention-filled-16"/>
+      </svg>
+    </div>
+    <div class="section-notice__main">
+      <h4 class="section-notice__title">Deprecated</h4>
+      <p>
+        The <code>fake-tabs</code> classes are deprecated and will be removed in
+        the next major version of Skin. Use
+        <a href=`${urls.components}/navigation-tabs`>navigation-tabs</a>
+        instead.
+      </p>
+    </div>
+  </section>
   <p>
-    A fake tab
-    <em>looks</em>
-    like a normal tab, but is actually a hyperlink to a new page.
-    Therefore a set of fake tabs behaves more like a simple navigational widget,
-    rather than a dynamic user interface control.
+    A fake tab <em>looks</em> like a normal tab, but is actually a hyperlink to
+    a new page. Therefore a set of fake tabs behaves more like a simple
+    navigational widget, rather than a dynamic user interface control.
   </p>
   <p>
-    If HREF is not present, then the tab will be in disabled state.
-    A value of "javascript" (or any such variant) is
-    <strong>not</strong>
-    a valid URL!
+    If HREF is not present, then the tab will be in disabled state. A value of
+    "javascript" (or any such variant) is <strong>not</strong> a valid URL!
   </p>
   <p>
-    The
-    <code>aria-current</code>
-    attribute is used to programmatically denote the current page state
-    and current link.
+    The <code>aria-current</code> attribute is used to programmatically denote
+    the current page state and current link.
   </p>
 
   <p>
-    Use child element modifier
-    <code>fake-tabs--large</code>
-    to opt into larger font-size for fake tabs.
+    Use child element modifier <code>fake-tabs--large</code> to opt into larger
+    font-size for fake tabs.
   </p>
 
   <div class="demo">
@@ -246,19 +267,13 @@
       <div class="fake-tabs">
         <ul class="fake-tabs__items">
           <li class="fake-tabs__item">
-            <a aria-current="page" href="https://www.ebay.com">
-              Page 1
-            </a>
+            <a aria-current="page" href="https://www.ebay.com">Page 1</a>
           </li>
           <li class="fake-tabs__item">
-            <a href="https://www.ebay.com">
-              Page 2
-            </a>
+            <a href="https://www.ebay.com">Page 2</a>
           </li>
           <li class="fake-tabs__item">
-            <a href="https://www.ebay.com">
-              Page 3
-            </a>
+            <a href="https://www.ebay.com">Page 3</a>
           </li>
         </ul>
         <div class="fake-tabs__content">
@@ -284,19 +299,13 @@
     <div class="fake-tabs">
       <ul class="fake-tabs__items">
         <li class="fake-tabs__item">
-          <a aria-current="page" href="https://www.ebay.com">
-            Page 1
-          </a>
+          <a aria-current="page" href="https://www.ebay.com">Page 1</a>
         </li>
         <li class="fake-tabs__item">
-          <a href="https://www.ebay.com">
-            Page 2
-          </a>
+          <a href="https://www.ebay.com">Page 2</a>
         </li>
         <li class="fake-tabs__item">
-          <a href="https://www.ebay.com">
-            Page 3
-          </a>
+          <a href="https://www.ebay.com">Page 3</a>
         </li>
       </ul>
       <div class="fake-tabs__content">
