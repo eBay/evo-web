@@ -15,7 +15,7 @@ export type EvoEducationNoticeProps = Omit<
   a11yRoleDescription?: string;
   /** Makes the notice background more prominent. Defaults to `"none"`. */
   variant?: EducationNoticeVariant;
-  /** Adds a dismiss button with this accessible name. */
+  /** Adds a dismiss button with this accessible name to `EvoEducationNoticeHeader`; include that header to make the notice dismissible. */
   a11yDismissText?: string;
   /**
    * Omit to start visible and let the dismiss button remove the notice.

@@ -75,7 +75,7 @@ When migrating a listed component, read the linked file completely and apply the
 - `ebay-cta-button`: [evo-cta-button.md](components/evo-cta-button.md)
 - `ebay-date-textbox`: [evo-date-input.md](components/evo-date-input.md)
 - `ebay-details`: [evo-details.md](components/evo-details.md)
-- `ebay-education-notice`: [evo-education-notice.md](components/evo-education-notice.md). Its icon must be placed explicitly inside `EvoEducationNoticeHeader`; `EvoEducationNoticeIcon` defaults to the lightbulb only when included, accepts a custom Evo icon through `icon`, and must be omitted for an iconless notice.
+- `ebay-education-notice`: [evo-education-notice.md](components/evo-education-notice.md)
 - `ebay-eek`: [evo-eek.md](components/evo-eek.md)
 - `ebay-fake-menu`: [evo-fake-menu.md](components/evo-fake-menu.md)
 - `ebay-fake-tabs`: [evo-fake-tabs.md](components/evo-fake-tabs.md)
