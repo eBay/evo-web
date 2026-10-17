@@ -1,0 +1,1 @@
+import{t as e}from"./iframe-DIL3MQ1-.js";e();

@@ -1,0 +1,1 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";var t,n,r,i;function a(){return(a=e((()=>{t=new Set([` `,`PageUp`,`PageDown`,`End`,`Home`,`ArrowLeft`,`ArrowUp`,`ArrowRight`,`ArrowDown`]),n=e=>{t.has(e.key)&&e.preventDefault()},r=e=>{e.addEventListener(`keydown`,n)},i=e=>{e.removeEventListener(`keydown`,n)}})))()}export{a as n,i as r,r as t};

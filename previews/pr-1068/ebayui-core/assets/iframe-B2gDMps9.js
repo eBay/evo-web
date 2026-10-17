@@ -1,0 +1,1 @@
+import{t as e}from"./iframe-G06-0DBi.js";e();

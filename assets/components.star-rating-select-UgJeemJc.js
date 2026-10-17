@@ -1,0 +1,2 @@
+import"./_01x0t6za.js";import{C as e,v as t}from"./_BvufeqKM.js";import"./_BkWREBex.js";import"./_DHIfvm8L.js";t(`Gi0`,e=>document.querySelectorAll(`.star-rating-select`).forEach(function(e){e.addEventListener(`change`,function(t){let n=parseInt(t.target.value)-1;e.querySelectorAll(`input`).forEach(function(e,t){e.classList.toggle(`star-rating-select__control--filled`,t<n)})})})),e();
+//# sourceMappingURL=components.star-rating-select-UgJeemJc.js.map
