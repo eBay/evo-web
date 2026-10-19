@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 16.19.1
+
+### Patch Changes
+
+- [#1073](https://github.com/eBay/evo-web/pull/1073) [`fc596bc`](https://github.com/eBay/evo-web/commit/fc596bc468edaebc84bc77c03dfcbc7d85b6fd33) Thanks [@LuLaValva](https://github.com/LuLaValva)! - fix(ebay-layout-grid): spread item attributes onto `<li>`
+
 ## 16.19.0
 
 ### Minor Changes
