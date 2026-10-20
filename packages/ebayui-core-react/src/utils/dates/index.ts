@@ -80,7 +80,8 @@ export function parse(value: string, locale?: string): DayISO | null {
     }
 
     const iso = `${padStart(parsed.y, 4)}-${padStart(parsed.m, 2)}-${padStart(parsed.d, 2)}` as DayISO;
-    if (isNaN(new Date(iso).getTime())) {
+    const date = new Date(iso);
+    if (isNaN(date.getTime()) || date.toISOString().slice(0, 10) !== iso) {
         return null;
     }
     return iso;

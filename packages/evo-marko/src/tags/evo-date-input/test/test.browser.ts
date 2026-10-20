@@ -55,6 +55,19 @@ describe("evo-date-input", () => {
     );
   });
 
+  it("flags a day that does not exist in the month", async () => {
+    const textbox = component.getByRole("textbox") as HTMLInputElement;
+    await fireEvent.input(textbox, { target: { value: "02/30/2024" } });
+    await fireEvent.blur(textbox);
+    expect(textbox).toHaveAttribute("aria-invalid", "true");
+    expect(onInvalidDate).toHaveBeenCalledWith(
+      expect.anything(),
+      expect.anything(),
+      "02/30/2024",
+      0,
+    );
+  });
+
   it("opens and closes the calendar popover", async () => {
     const trigger = component.getByRole("button", { name: "Open calendar" });
     const root = component.container.querySelector(
