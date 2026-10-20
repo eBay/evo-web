@@ -269,6 +269,29 @@ describe("evo-date-input", () => {
     });
   });
 
+  it("rejects a typed day that does not exist in the month", async () => {
+    const onChange = vi.fn();
+    const onInvalidDate = vi.fn();
+    const screen = await render(
+      <TestDateInput
+        onChange={onChange}
+        onInvalidDate={onInvalidDate}
+        floatingLabel="Date"
+      />,
+    );
+    const input = screen.getByRole("textbox", { name: "Date" });
+    await user.type(input, "02302024");
+    await user.tab();
+
+    await expect.element(input).toHaveValue("02/30/2024");
+    await expect.element(input).toHaveAttribute("aria-invalid", "true");
+    expect(onChange).not.toHaveBeenCalled();
+    expect(onInvalidDate).toHaveBeenCalledWith({
+      value: "02/30/2024",
+      index: 0,
+    });
+  });
+
   it("does not fail when the provided value is invalid", async () => {
     const screen = await render(
       <TestDateInput

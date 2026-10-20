@@ -33,6 +33,21 @@ describe("ebay-date-textbox", () => {
         });
     });
 
+    describe("when a day that does not exist in the month is typed", () => {
+        beforeEach(async () => {
+            component = await render(Default, { locale: "en-US" });
+            const input = component.getByRole("textbox");
+            input.value = "02/30/2024";
+            await fireEvent.blur(input);
+        });
+
+        it("then it emits invalid-date instead of change", () => {
+            const [[event]] = component.emitted("invalid-date");
+            expect(event).to.deep.equal({ value: "02/30/2024", index: 0 });
+            expect(component.emitted("change")).has.length(0);
+        });
+    });
+
     describe("with fixed strategy", () => {
         beforeEach(async () => {
             component = await render(Default, { strategy: "fixed" });
