@@ -28,6 +28,10 @@ Then invoke it to build a new skill:
 
 See [`.claude/README.md`](./.claude/README.md) for full details on the skills architecture, conventions, and how to contribute new skills.
 
+## Code Comments
+
+Comments are fine when they explain a non-obvious _why_. Avoid ones that restate the code, annotate fixable workarounds, or run long. JSDoc on published APIs (`evo-react` props, `evo-marko` `Input`) is exempt. See `<comment_policy>` in [CLAUDE.md](./CLAUDE.md).
+
 ## Releases
 
 For releases, evo-web uses changesets.

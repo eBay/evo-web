@@ -1,5 +1,53 @@
 # @evo-web/react
 
+## 0.4.10
+
+### Patch Changes
+
+- [#1022](https://github.com/eBay/evo-web/pull/1022) [`4fce07c`](https://github.com/eBay/evo-web/commit/4fce07c2bf139feae5ff710a5a7fbdc3461ba58a) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoChipsCombobox with composable chip options, and add an `onOptionSelect` callback and a large input variant to EvoCombobox.
+
+- [#1068](https://github.com/eBay/evo-web/pull/1068) [`3b01868`](https://github.com/eBay/evo-web/commit/3b0186855bc9da7d38ca96f2b13fb20d7894180b) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Add `bar-chart-20`, `clock-20`, `condition-guarantee-16`, `condition-guarantee-24`, `discount-20`, `hand-swipe-24`, `inspect-20`, `live-raids-16`, `live-raids-24`, `megaphone-20`, `note-20`, `store-20`, `switch-camera-16`, `trophy-12`, and `wallet-20` icons. Update `store-24` and `store-filled-24` artwork.
+
+## 0.4.9
+
+### Patch Changes
+
+- [#1055](https://github.com/eBay/evo-web/pull/1055) [`9bb8a65`](https://github.com/eBay/evo-web/commit/9bb8a658f2b04efb50bbabd36d51ac80279fd73e) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Remove `EvoSectionTitleInfo` from `EvoSectionTitle`
+
+## 0.4.8
+
+### Patch Changes
+
+- [#984](https://github.com/eBay/evo-web/pull/984) [`e49124f`](https://github.com/eBay/evo-web/commit/e49124fcc16fb562f102b37ddbe2a425d1cb7371) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoTourtip component.
+
+- [#974](https://github.com/eBay/evo-web/pull/974) [`a1a62f3`](https://github.com/eBay/evo-web/commit/a1a62f352e2f676182692f9e55ad90ebdd1650e5) Thanks [@saiponnada](https://github.com/saiponnada)! - fix(accordion): wrap each header label in a configurable heading
+
+- [#984](https://github.com/eBay/evo-web/pull/984) [`e49124f`](https://github.com/eBay/evo-web/commit/e49124fcc16fb562f102b37ddbe2a425d1cb7371) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoVideo component.
+
+- [#984](https://github.com/eBay/evo-web/pull/984) [`e49124f`](https://github.com/eBay/evo-web/commit/e49124fcc16fb562f102b37ddbe2a425d1cb7371) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoFakeLink component.
+
+- [#974](https://github.com/eBay/evo-web/pull/974) [`a1a62f3`](https://github.com/eBay/evo-web/commit/a1a62f352e2f676182692f9e55ad90ebdd1650e5) Thanks [@saiponnada](https://github.com/saiponnada)! - fix(calendar): clarify previous and next month navigation labels
+
+- [#980](https://github.com/eBay/evo-web/pull/980) [`f32c5d6`](https://github.com/eBay/evo-web/commit/f32c5d63cb2e10b342fabe9048adbce45a210016) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoImagePlaceholder component.
+
+- [#972](https://github.com/eBay/evo-web/pull/972) [`fab432e`](https://github.com/eBay/evo-web/commit/fab432e690382dfb9c99b4ee91fb40aea5ed6334) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoNumberInput for React and unify number input value callbacks across React and Marko.
+
+- [#973](https://github.com/eBay/evo-web/pull/973) [`948d6b8`](https://github.com/eBay/evo-web/commit/948d6b88f9b59568f735d332378c59160137469a) Thanks [@ArtBlue](https://github.com/ArtBlue)! - fix(skin): correct readonly textbox styling to match default
+
+- [#984](https://github.com/eBay/evo-web/pull/984) [`e49124f`](https://github.com/eBay/evo-web/commit/e49124fcc16fb562f102b37ddbe2a425d1cb7371) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoSectionTitle component.
+
+- [#984](https://github.com/eBay/evo-web/pull/984) [`e49124f`](https://github.com/eBay/evo-web/commit/e49124fcc16fb562f102b37ddbe2a425d1cb7371) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoSignal component.
+
+- [#984](https://github.com/eBay/evo-web/pull/984) [`e49124f`](https://github.com/eBay/evo-web/commit/e49124fcc16fb562f102b37ddbe2a425d1cb7371) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoSkeleton components.
+
+- [#984](https://github.com/eBay/evo-web/pull/984) [`e49124f`](https://github.com/eBay/evo-web/commit/e49124fcc16fb562f102b37ddbe2a425d1cb7371) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoStarRating component.
+
+- [#990](https://github.com/eBay/evo-web/pull/990) [`479d692`](https://github.com/eBay/evo-web/commit/479d6922e74af03b65c9e9db15df14761c172284) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoStarRatingSelect component.
+
+- [#984](https://github.com/eBay/evo-web/pull/984) [`e49124f`](https://github.com/eBay/evo-web/commit/e49124fcc16fb562f102b37ddbe2a425d1cb7371) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoSwitch component.
+
+- [#984](https://github.com/eBay/evo-web/pull/984) [`e49124f`](https://github.com/eBay/evo-web/commit/e49124fcc16fb562f102b37ddbe2a425d1cb7371) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoToggleButton component.
+
 ## 0.4.7
 
 ### Patch Changes

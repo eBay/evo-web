@@ -6,7 +6,7 @@ import "@ebay/skin/section-title.mjs";
  * Section titles identify a group of elements on a page.
  *
  * Compose `EvoSectionTitleContent` around the heading and optional
- * subtitle, then place an action, info, or overflow part after it. The heading
+ * subtitle, then place an action or overflow part after it. The heading
  * level must match the page hierarchy. Give icon-only actions accessible names.
  *
  * ## Usage

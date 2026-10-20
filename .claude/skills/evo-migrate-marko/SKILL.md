@@ -531,15 +531,21 @@ export const Default = buildExtensionTemplate(DefaultTemplate, DefaultCode);
 
 ### Example files
 
-Each example `.marko` file should be a minimal self-contained usage:
+Each example `.marko` file should be a minimal self-contained usage. Declare its `Input` from the tag's own, or spreading `input` fails the `mtc` type-check as soon as the tag has a required prop:
 
 ```marko
 // examples/default.marko
+import type { Input as {Name}Input } from "../index.marko";
+export interface Input extends {Name}Input {}
+
 <evo-{name} ...input/>
 ```
 
 ```marko
 // examples/with-label.marko
+import type { Input as {Name}Input } from "../index.marko";
+export interface Input extends {Name}Input {}
+
 <span class="field">
   <label class="field__label field__label--start" for="my-id">
     Label
