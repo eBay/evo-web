@@ -56,6 +56,16 @@ exports[`renders a11yText when bodyState === loading 1`] = `
 </button>"
 `;
 
+exports[`renders anchor version 1`] = `
+"<a
+  arialabel="anchor button"
+  class="btn btn--large btn--primary"
+  href="#"
+>
+  Button
+</a>"
+`;
+
 exports[`renders button with fluid=false 1`] = `
 "<button
   class="btn btn--secondary"
@@ -162,16 +172,6 @@ exports[`renders expanded button 1`] = `
 </button>"
 `;
 
-exports[`renders fake version 1`] = `
-"<a
-  arialabel="fake button"
-  class="fake-btn fake-btn--large fake-btn--primary"
-  href="#"
->
-  Button
-</a>"
-`;
-
 exports[`renders fixed-height button 1`] = `
 "<button
   class="btn btn--fixed-height btn--secondary"
@@ -193,6 +193,15 @@ exports[`renders large fixed-height button 1`] = `
 exports[`renders large truncated button 1`] = `
 "<button
   class="btn btn--large-truncated btn--secondary"
+  type="button"
+>
+  Button
+</button>"
+`;
+
+exports[`renders link variant without priority 1`] = `
+"<button
+  class="btn btn--link"
   type="button"
 >
   Button

@@ -137,14 +137,14 @@ describe("EvoButton SSR", () => {
     ).toMatchSnapshot();
   });
 
-  it("should render fake version (anchor)", () => {
+  it("should render anchor version", () => {
     expect(
       renderToString(
         <EvoButton
           href="https://ebay.com"
           size="large"
           priority="primary"
-          aria-label="fake button"
+          aria-label="anchor button"
         >
           Link Button
         </EvoButton>,
@@ -204,6 +204,16 @@ describe("EvoButton SSR", () => {
       renderToString(
         <EvoButton variant="form" bodyState="expand">
           Form Expand
+        </EvoButton>,
+      ),
+    ).toMatchSnapshot();
+  });
+
+  it("should render link variant without priority", () => {
+    expect(
+      renderToString(
+        <EvoButton variant="link" priority="primary">
+          View seller details
         </EvoButton>,
       ),
     ).toMatchSnapshot();

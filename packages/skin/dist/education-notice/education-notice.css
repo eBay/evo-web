@@ -58,6 +58,7 @@
 }
 
 .education-notice__footer a,
+.education-notice__footer button.btn--link,
 .education-notice__footer button.fake-link {
     font-size: var(--font-size-body);
     font-weight: 700;
@@ -72,6 +73,8 @@
     margin-top: var(--spacing-200);
 }
 
+.education-notice__header button.btn--link,
+.education-notice__header button.btn--link:hover,
 .education-notice__header button.fake-link,
 .education-notice__header button.fake-link:hover {
     color: var(

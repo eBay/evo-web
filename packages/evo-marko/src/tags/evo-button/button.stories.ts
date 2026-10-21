@@ -67,9 +67,10 @@ export default {
     },
     variant: {
       type: "string",
-      options: ["standard (default)", "destructive", "form"],
+      options: ["standard (default)", "destructive", "form", "link"],
       control: "inline-radio",
-      description: "Additional style transformations beyond `priority`.",
+      description:
+        "Additional style transformations beyond `priority`. `link` styles the button as a text link and ignores `priority`.",
     },
     partiallyDisabled: {
       type: "boolean",

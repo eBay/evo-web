@@ -75,6 +75,7 @@
     margin-top: var(--spacing-200);
 }
 
+.snackbar-dialog__actions .btn--link,
 .snackbar-dialog__actions .fake-link {
     @include token-mixins.color-token(
         snackbar-dialog-foreground-color,
@@ -89,6 +90,7 @@
 }
 
 /* this needs to be super specific to override base fake-link */
+.snackbar-dialog__actions button.btn--link:hover:not(:disabled),
 .snackbar-dialog__actions button.fake-link:hover:not(:disabled) {
     @include token-mixins.color-token(
         snackbar-dialog-foreground-color,

@@ -193,7 +193,7 @@ describe("evo-tooltip", () => {
     const host = screen.getByRole("link", { name: "View options" });
 
     await expect.element(host).toHaveAttribute("data-custom-link", "true");
-    await expect.element(host).toHaveClass("fake-btn");
+    await expect.element(host).toHaveClass("btn");
     await expect.element(host).toHaveClass("tooltip__host");
   });
 

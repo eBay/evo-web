@@ -195,11 +195,13 @@ span.tourtip__heading {
 .tourtip__footer > button:not(:last-child) {
     margin-right: var(--spacing-200);
 }
+.tourtip__footer > .btn--link,
 .tourtip__footer > .fake-link,
 .tourtip__footer > a {
     color: var(--color-foreground-on-inverse);
     text-decoration: none;
 }
+.tourtip__footer > .btn--link:hover:not(:disabled),
 .tourtip__footer > .fake-link:hover:not(:disabled),
 .tourtip__footer > a:hover:not(:disabled) {
     color: var(--color-foreground-on-inverse);
