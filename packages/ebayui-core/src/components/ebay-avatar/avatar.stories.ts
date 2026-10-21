@@ -78,7 +78,7 @@ export default {
 
 export const Default = Template.bind({});
 Default.args = {
-    a11yText: "Signed in - as Elizabeth",
+    a11yText: "Signed in as Elizabeth",
     username: "Elizabeth",
     color: "teal",
 };
@@ -95,7 +95,7 @@ export const WithImage = buildExtensionTemplate(
     imageTemplate,
     imageTemplateCode,
     {
-        a11yText: "Signed in - as Doggy",
+        a11yText: "Signed in as Doggy",
         username: "Doggy",
     },
 );
@@ -104,7 +104,7 @@ export const WithAutoPlacement = buildExtensionTemplate(
     autoImageTemplate,
     autoImageTemplateCode,
     {
-        a11yText: "Signed in - as Doggy",
+        a11yText: "Signed in as Doggy",
         username: "Doggy",
     },
 );
