@@ -164,7 +164,7 @@ export const DismissibleNotice = (args) => (
 
 export const DismissibleMessageWithCta = (args) => (
     <>
-        <EbayPageNotice {...args} status="information" aria-label="Congratulations" a11yDismissText="Close">
+        <EbayPageNotice {...args} status="information" aria-label="Information" a11yDismissText="Close">
             <EbayNoticeContent>
                 <EbayPageNoticeTitle>Your order&apos;s in!</EbayPageNoticeTitle>
                 <p>We&apos;ll email updates to jonsnow@gmail.com. You should get it by Thu, Sept 22.</p>
