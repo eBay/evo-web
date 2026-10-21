@@ -169,7 +169,7 @@ export const InParagraph = {
             </em>
             <p>
                 Some paragraph content{" "}
-                <EbayInfotip {...args} a11yCloseText="Dismiss infotip" aria-label="Important information">
+                <EbayInfotip {...args} a11yCloseText="Dismiss" aria-label="Info">
                     <EbayInfotipHeading>Important</EbayInfotipHeading>
                     <EbayInfotipContent>
                         <span>This is some important info</span>

@@ -148,17 +148,17 @@ export const WithDescription = {
                     Label 1
                 </EbayLabel>
                 <EbayTextbox placeholder="placeholder text" id="field1" />
-                <EbayFieldDescription>Some description Text</EbayFieldDescription>
+                <EbayFieldDescription>Some description text</EbayFieldDescription>
             </EbayField>
             <EbayField {...args} layout="block">
                 <EbayLabel stacked>Label 2</EbayLabel>
                 <EbayTextbox placeholder="placeholder text" />
-                <EbayFieldDescription type="confirmation">Some description Text</EbayFieldDescription>
+                <EbayFieldDescription type="confirmation">Some description text</EbayFieldDescription>
             </EbayField>
             <EbayField {...args} layout="block">
                 <EbayLabel stacked>Label 3</EbayLabel>
                 <EbayTextbox placeholder="placeholder text" invalid />
-                <EbayFieldDescription type="attention">Some description Text</EbayFieldDescription>
+                <EbayFieldDescription type="attention">Some description text</EbayFieldDescription>
             </EbayField>
             <EbayField {...args} layout="block">
                 <EbayLabel stacked htmlFor="field4">
@@ -166,7 +166,7 @@ export const WithDescription = {
                 </EbayLabel>
                 <EbayTextbox placeholder="placeholder text" id="field4" />
                 <EbayFieldDescription type="confirmation" position="below">
-                    Some description Text
+                    Some description text
                 </EbayFieldDescription>
             </EbayField>
         </div>
