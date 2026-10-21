@@ -1,4 +1,4 @@
-static const pages = ["components", "accessibility", "guides"];
+static const pages = ["components", "accessibility", "guides", "poc"];
 import { components, urls } from "../data";
 export interface Input {
     page?: string;
@@ -18,6 +18,8 @@ export interface Input {
                                 return urls.accessibility
                             } else if (input.page === "guides") {
                                 return urls.guides;
+                            } else if (input.page === "poc") {
+                                return urls.poc;
                             }
                         })()>
                         <a href=currentUrl>
@@ -50,6 +52,13 @@ export interface Input {
                             <li>
                                 <a href=`${urls.guides}/theming`>
                                     Theming Guide
+                                </a>
+                            </li>
+                        </else>
+                        <else if=input.page === "poc">
+                            <li>
+                                <a href=`${urls.poc}/chat-dialog`>
+                                    Chat Dialog
                                 </a>
                             </li>
                         </else>
