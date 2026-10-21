@@ -76,8 +76,3 @@ div.listbox__options[role="listbox"]:focus
 div.listbox__option[aria-selected="true"] svg.icon {
     opacity: 1;
 }
-
-/* https://developer.paciellogroup.com/blog/2018/03/focus-visible-and-backwards-compatibility/ */
-.listbox__options:focus:not(:focus-visible) {
-    outline: none;
-}

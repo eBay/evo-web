@@ -75,11 +75,6 @@ nav.breadcrumbs > ul > li > button[aria-current] {
     );
     text-decoration: none;
 }
-
-nav.breadcrumbs > ul > li > a:focus:not(:focus-visible),
-nav.breadcrumbs > ul > li > button:focus:not(:focus-visible) {
-    outline: none;
-}
 nav.breadcrumbs::-webkit-scrollbar {
     display: none;
 }

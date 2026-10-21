@@ -122,11 +122,6 @@ button.pagination__item {
             }
         }
     }
-
-    /* https://developer.paciellogroup.com/blog/2018/03/focus-visible-and-backwards-compatibility/ */
-    &:focus:not(:focus-visible) {
-        outline: none;
-    }
 }
 
 span.pagination__item button.icon-btn--transparent {

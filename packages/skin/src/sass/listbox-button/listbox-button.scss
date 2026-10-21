@@ -219,11 +219,6 @@ span.listbox-button__value {
     white-space: nowrap;
 }
 
-/* https://developer.paciellogroup.com/blog/2018/03/focus-visible-and-backwards-compatibility/ */
-.listbox-button__options:focus:not(:focus-visible) {
-    outline: none;
-}
-
 /* stylelint-disable no-descending-specificity */
 [dir="rtl"] {
     .listbox-button .btn__label {

@@ -166,9 +166,6 @@ div.carousel {
 .carousel__control svg {
     color: var(--color-foreground-primary);
 }
-.carousel__control:focus:not(:focus-visible) {
-    outline: none;
-}
 @media (min-width: 512px) {
     .carousel:focus-within .carousel__control {
         opacity: 0.92;
@@ -195,10 +192,6 @@ div.carousel {
 }
 .carousel__control:hover svg {
     color: var(--color-foreground-primary);
-}
-
-.carousel__playback:focus:not(:focus-visible) {
-    outline: none;
 }
 
 span.carousel,
