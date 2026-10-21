@@ -25,9 +25,12 @@ export interface Input {
   }>
 
   <div class=component>
-    <div class=["fake-tabs", tabs]>
-      <ul class="fake-tabs__items" aria-label="Component implementation tabs">
-        <li class="fake-tabs__item fake-tabs__items--large">
+    <div class=["navigation-tabs", "navigation-tabs--large", tabs]>
+      <ul
+        class="navigation-tabs__items"
+        aria-label="Component implementation tabs"
+      >
+        <li class="navigation-tabs__item">
           <a
             href=componentUrls?.overview
             aria-current=getAriaCurrentValue("overview")
@@ -36,7 +39,7 @@ export interface Input {
           </a>
         </li>
         <if=a11yPage>
-          <li class="fake-tabs__item fake-tabs__items--large">
+          <li class="navigation-tabs__item">
             <a
               href=componentUrls?.accessibility
               aria-current=getAriaCurrentValue("accessibility")
@@ -46,7 +49,7 @@ export interface Input {
           </li>
         </if>
         <if=cssPage>
-          <li class="fake-tabs__item fake-tabs__items--large">
+          <li class="navigation-tabs__item">
             <a href=componentUrls?.css aria-current=getAriaCurrentValue("css")>
               CSS${" "}
               <if=dsComponent?.version>
@@ -62,7 +65,7 @@ export interface Input {
           </li>
         </if>
         <if=jsPage>
-          <li class="fake-tabs__item fake-tabs__items--large">
+          <li class="navigation-tabs__item">
             <a href=componentUrls?.js aria-current=getAriaCurrentValue("js")>
               Javascript${" "}
             </a>
@@ -70,7 +73,7 @@ export interface Input {
         </if>
 
         <if=componentUrls?.cssStorybook>
-          <li class="fake-tabs__item fake-tabs__items--large">
+          <li class="navigation-tabs__item">
             <a href=componentUrls?.cssStorybook target="_blank">
               CSS Storybook${" "}
               <svg
@@ -85,7 +88,7 @@ export interface Input {
           </li>
         </if>
         <if=componentUrls?.marko>
-          <li class="fake-tabs__item fake-tabs__items--large">
+          <li class="navigation-tabs__item">
             <a href=componentUrls?.marko target="_blank">
               Marko Storybook
               <span
@@ -107,7 +110,7 @@ export interface Input {
           </li>
         </if>
         <if=componentUrls?.react>
-          <li class="fake-tabs__item fake-tabs__items--large">
+          <li class="navigation-tabs__item">
             <a href=componentUrls?.react target="_blank">
               React Storybook
               <span
@@ -129,7 +132,7 @@ export interface Input {
           </li>
         </if>
         <if=componentUrls?.dsUrl>
-          <li class="fake-tabs__item fake-tabs__items--large">
+          <li class="navigation-tabs__item">
             <a href=componentUrls?.dsUrl target="_blank">
               Design System${" "}
               <svg
@@ -144,8 +147,8 @@ export interface Input {
           </li>
         </if>
       </ul>
-      <div class="fake-tabs__content" role="tabpanel">
-        <div class="fake-tabs__cell">
+      <div class="navigation-tabs__content" role="tabpanel">
+        <div class="navigation-tabs__cell">
           <${input.content}/>
         </div>
       </div>

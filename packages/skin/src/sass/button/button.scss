@@ -3,6 +3,9 @@
 @use "../mixins/private/token-mixins";
 @use "../mixins/private/state-layer";
 
+// DEPRECATED: the `a.fake-btn*` selectors in this file are removed in the next
+// major version. Use `link-button` instead.
+
 button.btn,
 a.fake-btn {
     align-content: center;

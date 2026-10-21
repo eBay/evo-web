@@ -69,7 +69,8 @@ span[role="region"].page-notice {
     );
 }
 
-.page-notice button.fake-link {
+.page-notice button.fake-link,
+.page-notice button.button-link {
     @include token-mixins.color-token(
         page-notice-color,
         color-foreground-on-inverse
@@ -78,7 +79,8 @@ span[role="region"].page-notice {
     font-size: var(--font-size-body);
 }
 
-.page-notice button.fake-link:hover {
+.page-notice button.fake-link:hover,
+.page-notice button.button-link:hover {
     @include token-mixins.color-token(
         page-notice-color,
         color-foreground-on-inverse
@@ -90,7 +92,8 @@ span[role="region"].page-notice {
 /* For explicit focus only: the `focus-visible` instead of `focus` */
 /* is to exclude the styling on clicks (implied focus). */
 .page-notice a:focus-visible,
-.page-notice button.fake-link:focus-visible {
+.page-notice button.fake-link:focus-visible,
+.page-notice button.button-link:focus-visible {
     outline: 2px solid var(--color-foreground-on-inverse);
     outline-offset: 2px;
 }
@@ -133,7 +136,8 @@ span[role="region"].page-notice {
 
     &,
     a,
-    button.fake-link {
+    button.fake-link,
+    button.button-link {
         @include token-mixins.color-token(
             page-notice-warning-color,
             color-foreground-on-warning
@@ -141,7 +145,8 @@ span[role="region"].page-notice {
     }
 
     a:hover,
-    button.fake-link:hover {
+    button.fake-link:hover,
+    button.button-link:hover {
         @include token-mixins.color-token(
             page-notice-warning-color,
             color-foreground-on-warning
@@ -149,7 +154,8 @@ span[role="region"].page-notice {
     }
 
     a:focus-visible,
-    button.fake-link:focus-visible {
+    button.fake-link:focus-visible,
+    button.button-link:focus-visible {
         outline-color: var(--color-foreground-on-warning);
     }
 }
