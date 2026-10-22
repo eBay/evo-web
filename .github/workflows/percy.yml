@@ -40,10 +40,15 @@ jobs:
                 owner, repo,
                 workflow_id: 'percy-build.yml',
                 event: 'workflow_dispatch',
-                per_page: 50
+                per_page: 100
               });
-              if (data.workflow_runs.some(r => r.run_number > run.run_number && r.display_title === run.display_title)) {
-                core.info('A newer Percy build for the same commit replaced this one');
+              const started = r => new Date(r.run_started_at).getTime();
+              if (data.workflow_runs.some(r =>
+                r.id !== run.id &&
+                r.display_title === run.display_title &&
+                (started(r) > started(run) || (started(r) === started(run) && r.id > run.id))
+              )) {
+                core.info('A Percy build for the same commit started later and replaced this one');
                 return;
               }
             }
