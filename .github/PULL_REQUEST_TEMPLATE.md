@@ -28,3 +28,4 @@
 
 - [ ] I tested the UI in all supported browsers
 - [ ] I tested the UI in dark mode and RTL mode
+- [ ] After the final code change, I commented `/run-percy` on this PR and reviewed the Percy build

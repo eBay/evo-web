@@ -17,29 +17,79 @@ permissions:
   contents: read
   statuses: write
   actions: read
+  pull-requests: read
 
 jobs:
-  percy-pr:
-    name: Percy Snapshots (PR)
-    if: github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success'
+  percy-build-failed:
+    name: Report failed Percy build
+    if: github.event_name == 'workflow_run' && github.event.workflow_run.event == 'workflow_dispatch' && github.event.workflow_run.path == '.github/workflows/percy-build.yml' && github.event.workflow_run.head_branch == 'main' && github.event.workflow_run.conclusion != 'success'
     runs-on: ubuntu-latest
     steps:
-      - name: Post pending status to PR
+      - name: Report failure to pull request
         uses: actions/github-script@v7
-        env:
-          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
+            const { owner, repo } = context.repo;
+            const run = context.payload.workflow_run;
+            const match = run.display_title.match(/^Percy PR #([1-9][0-9]*) @ ([a-f0-9]{40})$/);
+            if (!match) {
+              throw new Error('The failed build has no Percy request in its title');
+            }
+            if (run.conclusion === 'cancelled') {
+              const { data } = await github.rest.actions.listWorkflowRuns({
+                owner, repo,
+                workflow_id: 'percy-build.yml',
+                event: 'workflow_dispatch',
+                per_page: 100
+              });
+              const started = r => new Date(r.run_started_at).getTime();
+              if (data.workflow_runs.some(r =>
+                r.id !== run.id &&
+                r.display_title === run.display_title &&
+                (started(r) > started(run) || (started(r) === started(run) && r.id > run.id))
+              )) {
+                core.info('A Percy build for the same commit started later and replaced this one');
+                return;
+              }
+            }
             await github.rest.repos.createCommitStatus({
+              owner, repo,
+              sha: match[2],
+              state: 'failure',
+              context: 'Percy Visual Regression',
+              description: run.conclusion === 'cancelled'
+                ? 'Percy Storybook build was cancelled'
+                : 'Percy Storybook build failed',
+              target_url: run.html_url
+            });
+
+  percy-pr:
+    name: Percy Snapshots (PR)
+    if: github.event_name == 'workflow_run' && github.event.workflow_run.event == 'workflow_dispatch' && github.event.workflow_run.path == '.github/workflows/percy-build.yml' && github.event.workflow_run.head_branch == 'main' && github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Confirm pull request still has the captured commit
+        id: request
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const match = context.payload.workflow_run.display_title.match(/^Percy PR #([1-9][0-9]*) @ ([a-f0-9]{40})$/);
+            if (!match) {
+              throw new Error('The Percy build has no Percy request in its title');
+            }
+            const number = Number(match[1]);
+            const sha = match[2];
+            core.setOutput('pr', String(number));
+            core.setOutput('commit', sha);
+            const { data: pr } = await github.rest.pulls.get({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              sha: process.env.HEAD_SHA,
-              state: 'pending',
-              context: 'Percy Visual Regression',
-              description: 'Percy snapshots running...',
-              target_url: `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`
+              pull_number: number
             });
+            if (pr.state !== 'open' || pr.draft || pr.base.ref !== 'main' || pr.head.sha !== sha) {
+              throw new Error('The pull request changed after Percy was requested. Comment /run-percy again when ready');
+            }
+            core.setOutput('branch', pr.head.ref);
 
       - name: Checkout base branch
         uses: actions/checkout@v4
@@ -60,16 +110,12 @@ jobs:
           run-id: ${{ github.event.workflow_run.id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Read Percy metadata
+      - name: Read component scope
         id: meta
         run: |
           {
             echo "components<<EOF"
             tr -d '\n' < storybook-static/.percy-components
-            echo ""
-            echo "EOF"
-            echo "pr<<EOF"
-            tr -d '\n' < storybook-static/.percy-pr-number
             echo ""
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
@@ -78,9 +124,9 @@ jobs:
         if: steps.meta.outputs.components != '' && steps.meta.outputs.components != 'all'
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
-          PERCY_COMMIT: ${{ github.event.workflow_run.head_sha }}
-          PERCY_BRANCH: ${{ github.event.workflow_run.head_branch }}
-          PERCY_PULL_REQUEST: ${{ steps.meta.outputs.pr }}
+          PERCY_COMMIT: ${{ steps.request.outputs.commit }}
+          PERCY_BRANCH: ${{ steps.request.outputs.branch }}
+          PERCY_PULL_REQUEST: ${{ steps.request.outputs.pr }}
           # Required: without this, Percy's own missing-snapshot check treats scoped
           # builds as incomplete full builds and fails the PR check with a
           # "missing snapshots" error, even though the scoping is intentional.
@@ -92,16 +138,16 @@ jobs:
         if: steps.meta.outputs.components == 'all'
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
-          PERCY_COMMIT: ${{ github.event.workflow_run.head_sha }}
-          PERCY_BRANCH: ${{ github.event.workflow_run.head_branch }}
-          PERCY_PULL_REQUEST: ${{ steps.meta.outputs.pr }}
+          PERCY_COMMIT: ${{ steps.request.outputs.commit }}
+          PERCY_BRANCH: ${{ steps.request.outputs.branch }}
+          PERCY_PULL_REQUEST: ${{ steps.request.outputs.pr }}
         run: npx percy storybook ./storybook-static -c packages/skin/.percy.yml
 
       - name: Report Percy status to PR
-        if: always()
+        if: always() && steps.request.outputs.commit != ''
         uses: actions/github-script@v7
         env:
-          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+          HEAD_SHA: ${{ steps.request.outputs.commit }}
           JOB_STATUS: ${{ job.status }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
