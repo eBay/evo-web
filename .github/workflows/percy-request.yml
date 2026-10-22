@@ -37,6 +37,21 @@ jobs:
               context: 'Percy Visual Regression',
               target_url: context.payload.comment.html_url
             };
+            const { data: ci } = await github.rest.actions.listWorkflowRuns({
+              owner, repo,
+              workflow_id: 'ci.yml',
+              event: 'pull_request',
+              head_sha: pr.head.sha,
+              per_page: 1
+            });
+            if (ci.workflow_runs[0]?.conclusion !== 'success') {
+              await github.rest.repos.createCommitStatus({
+                ...status,
+                state: 'failure',
+                description: 'evo-web CI must pass before /run-percy'
+              });
+              return;
+            }
             await github.rest.repos.createCommitStatus({
               ...status,
               state: 'pending',
