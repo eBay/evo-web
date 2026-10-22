@@ -1,0 +1,59 @@
+name: Request Percy
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  actions: write
+  contents: read
+  pull-requests: read
+  statuses: write
+
+jobs:
+  request:
+    if: github.event.issue.pull_request && github.event.comment.body == '/run-percy'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Request Percy for this pull request
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const pull_number = context.issue.number;
+            const { data: access } = await github.rest.repos.getCollaboratorPermissionLevel({
+              owner, repo, username: context.actor
+            });
+            if (!['admin', 'maintain', 'write'].includes(access.permission)) {
+              throw new Error('Write access is required to request Percy');
+            }
+            const { data: pr } = await github.rest.pulls.get({ owner, repo, pull_number });
+            if (pr.state !== 'open' || pr.draft || pr.base.ref !== 'main') {
+              throw new Error('Percy requires a ready pull request targeting main');
+            }
+            const status = {
+              owner, repo, sha: pr.head.sha,
+              context: 'Percy Visual Regression',
+              target_url: context.payload.comment.html_url
+            };
+            await github.rest.repos.createCommitStatus({
+              ...status,
+              state: 'pending',
+              description: 'Percy build requested'
+            });
+            try {
+              await github.rest.actions.createWorkflowDispatch({
+                owner, repo,
+                workflow_id: 'percy-build.yml',
+                ref: pr.base.ref,
+                inputs: { pr_number: String(pull_number), head_sha: pr.head.sha }
+              });
+            } catch (error) {
+              await github.rest.repos.createCommitStatus({
+                ...status,
+                state: 'failure',
+                description: 'Percy build could not be started'
+              });
+              throw error;
+            }
