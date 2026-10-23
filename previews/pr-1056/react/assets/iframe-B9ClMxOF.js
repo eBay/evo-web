@@ -1,0 +1,1 @@
+import{t as e}from"./iframe-BTV18e-q.js";e();
