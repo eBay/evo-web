@@ -1,8 +1,10 @@
-import { buildExtensionTemplate } from "../../common/storybook/utils";
 import { type Meta } from "@storybook/marko";
-import IconButton, { type Input } from "./index.marko";
+import { buildExtensionTemplate } from "../../common/storybook/utils";
+import BadgedTemplate from "./examples/badged.marko";
+import BadgedTemplateCode from "./examples/badged.marko?raw";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";
+import IconButton, { type Input } from "./index.marko";
 import Readme from "./README.md";
 
 export default {
@@ -71,4 +73,9 @@ export default {
 export const Default = buildExtensionTemplate(
   DefaultTemplate,
   DefaultTemplateCode,
+);
+
+export const WithBadge = buildExtensionTemplate(
+  BadgedTemplate,
+  BadgedTemplateCode,
 );

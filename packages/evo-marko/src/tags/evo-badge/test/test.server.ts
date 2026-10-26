@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, expect, it } from "vitest";
 
 import { render } from "@marko/testing-library";
 import template from "../index.marko";
@@ -46,6 +46,8 @@ it("truncates when the value is greater than 99", async () => {
 });
 
 it("renders an empty badge when no number is provided", async () => {
-  const { container } = await render(template, { a11yText: "new" });
+  const { container } = await render(template, {
+    a11yText: "new notification",
+  });
   expect(container.querySelector(".badge")).toMatchSnapshot();
 });

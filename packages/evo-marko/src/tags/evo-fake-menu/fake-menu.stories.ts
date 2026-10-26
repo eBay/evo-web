@@ -6,6 +6,8 @@ import DefaultTemplate from "./examples/default.marko";
 import DefaultCode from "./examples/default.marko?raw";
 import SeparatorTemplate from "./examples/separator.marko";
 import SeparatorCode from "./examples/separator.marko?raw";
+import BadgedTemplate from "./examples/badged.marko";
+import BadgedCode from "./examples/badged.marko?raw";
 
 export default {
   title: "building blocks/evo-fake-menu",
@@ -73,6 +75,11 @@ export default {
           control: "number",
           description: "Number to display in a badge",
         },
+        a11yText: {
+          type: "string",
+          control: "text",
+          description: "Accessible label for the badge count.",
+        },
         disabled: {
           type: "boolean",
           control: "boolean",
@@ -102,3 +109,4 @@ export const Separator = buildExtensionTemplate(
   SeparatorTemplate,
   SeparatorCode,
 );
+export const Badged = buildExtensionTemplate(BadgedTemplate, BadgedCode);

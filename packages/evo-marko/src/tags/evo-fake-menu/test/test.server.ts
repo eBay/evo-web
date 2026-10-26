@@ -3,7 +3,7 @@ import { composeStories } from "@storybook/marko";
 import { snapshotHTML } from "../../../common/test-utils/snapshots";
 import * as stories from "../fake-menu.stories";
 
-const { Default, Separator } = composeStories(stories);
+const { Default, Separator, Badged } = composeStories(stories);
 
 describe("evo-fake-menu SSR", () => {
   it("renders default", async () => {
@@ -20,5 +20,9 @@ describe("evo-fake-menu SSR", () => {
 
   it("renders with fixWidth", async () => {
     await snapshotHTML(Default, { fixWidth: true });
+  });
+
+  it("renders with a badge", async () => {
+    await snapshotHTML(Badged);
   });
 });
