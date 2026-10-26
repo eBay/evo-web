@@ -7,5 +7,5 @@ import type { EvoMenuItemBadgeProps } from "./types";
  * @summary Badge attached to a menu item.
  */
 export function EvoMenuItemBadge(props: EvoMenuItemBadgeProps) {
-  return <EvoBadge {...props} type="menu" />;
+  return <EvoBadge {...props} />;
 }

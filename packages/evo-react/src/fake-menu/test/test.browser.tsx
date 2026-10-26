@@ -41,12 +41,15 @@ describe("evo-fake-menu", () => {
       .element(screen.getByRole("link", { name: "Messages 5 unread messages" }))
       .toHaveAttribute("href", "/messages");
     await expect
+      .element(screen.getByRole("link", { name: "Messages 5 unread messages" }))
+      .not.toHaveAttribute("aria-label");
+    await expect
+      .element(screen.getByRole("img", { name: "5 unread messages" }))
+      .toBeInTheDocument();
+    await expect
       .element(screen.getByRole("button", { name: "Action" }))
       .toHaveAttribute("type", "button");
     await expect.element(screen.getByRole("separator")).toBeInTheDocument();
-    await expect
-      .element(screen.getByLabelText("5 unread messages"))
-      .toBeInTheDocument();
   });
 
   it("renders anchor items with a custom link component", async () => {
