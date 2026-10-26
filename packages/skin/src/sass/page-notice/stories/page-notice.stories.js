@@ -94,6 +94,38 @@ export const attentionWithLink = () => `
 </section>
 `;
 
+export const warningWithButton = () => `
+<section class="page-notice page-notice--warning" role="region" aria-label="Warning">
+    <div class="page-notice__header">
+        <svg class="icon icon--16" height="16" width="16" role="img" aria-label="Warning">
+            <use href="#icon-attention-triangle-filled-16"></use>
+        </svg>
+    </div>
+    <div class="page-notice__main">
+        <h2 class="page-notice__title">Your listing may expire before your draft is saved.</h2>
+    </div>
+    <div class="page-notice__footer">
+        <button class="fake-link">Dismiss</button>
+    </div>
+</section>
+`;
+
+export const warningWithLink = () => `
+<section class="page-notice page-notice--warning" role="region" aria-label="Warning">
+    <div class="page-notice__header">
+        <svg class="icon icon--16" height="16" width="16" role="img" aria-label="Warning">
+            <use href="#icon-attention-triangle-filled-16"></use>
+        </svg>
+    </div>
+    <div class="page-notice__main">
+        <h2 class="page-notice__title">Your listing may expire before your draft is saved.</h2>
+    </div>
+    <div class="page-notice__footer">
+        <a href="https://ebay.com">Learn More</a>
+    </div>
+</section>
+`;
+
 export const informationWithButton = () => `
 <section class="page-notice page-notice--information" role="region" aria-label="Information">
     <div class="page-notice__header">

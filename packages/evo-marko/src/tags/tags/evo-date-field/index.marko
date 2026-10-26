@@ -1,0 +1,112 @@
+import { type DayISO } from "../../../common/dates/date-utils";
+import {
+  format,
+  maskDate,
+  parse,
+  placeholder as localePlaceholder,
+} from "../../../common/dates/format";
+import type { Input as TextboxInput } from "<evo-input>";
+
+export type DateInputValue = DayISO | "";
+
+export interface Input {
+  value: DateInputValue;
+  locale?: string;
+  index: 0 | 1;
+  disabled?: boolean;
+  readonly?: boolean;
+  invalid?: boolean;
+  field?: Marko.AttrTag<
+    Omit<
+      TextboxInput,
+      | "value"
+      | "valueChange"
+      | "type"
+      | "disabled"
+      | "readonly"
+      | "prefixIcon"
+      | "postfixIcon"
+      | "prefixText"
+      | "postfixText"
+    >
+  >;
+  trigger?: {
+    a11yText: string;
+    open: boolean;
+    popoverId: string;
+    toggle: () => void;
+  };
+  valueChange: (value: DateInputValue) => void;
+  onInvalidDate?: (
+    event: Event,
+    target: HTMLElement,
+    value: string,
+    index: number,
+  ) => void;
+}
+
+<const/{ locale, index, disabled, readonly, trigger }=input>
+<let/value:=input.value>
+<const/{
+  placeholder,
+  invalid: fieldInvalid,
+  onBlur,
+  ...field
+}=input.field ?? ({} as NonNullable<Input["field"]>)>
+
+<let/draft="">
+<let/invalid=false>
+<const/display=draft || (value ? format(value, locale) : "")>
+
+<evo-input/control
+  ...field
+  disabled=disabled
+  readonly=readonly
+  invalid=fieldInvalid || invalid || input.invalid
+  placeholder=placeholder ?? localePlaceholder(locale)
+  value=display
+  valueChange(next) {
+    invalid = false;
+    if (next === "") {
+      draft = "";
+      value = "";
+    } else {
+      draft = maskDate(next, locale, next.length > display.length);
+    }
+  }
+  onBlur(e, el) {
+    const text = (e.target as HTMLInputElement).value;
+    if (text.trim() === "") {
+      draft = "";
+      invalid = false;
+      value = "";
+    } else {
+      const parsed = parse(text, locale);
+      if (parsed === null) {
+        invalid = true;
+        input.onInvalidDate && input.onInvalidDate(e, el, text, index);
+      } else {
+        draft = "";
+        invalid = false;
+        value = parsed;
+      }
+    }
+    onBlur && onBlur(e, el);
+  }
+>
+  <if=trigger>
+    <@postfixIcon
+      a11yText=trigger.a11yText
+      disabled=disabled || readonly
+      aria-expanded=trigger.open ? "true" : "false"
+      aria-controls=trigger.popoverId
+      onClick() {
+        trigger.toggle();
+      }
+    >
+      <evo-icon-calendar-24/>
+    </@postfixIcon>
+  </if>
+</evo-input>
+
+<return=control>

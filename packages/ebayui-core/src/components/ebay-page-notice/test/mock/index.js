@@ -17,6 +17,10 @@ export const Page_Custom_Status = Object.assign({}, Page, {
     status: "confirmation",
 });
 
+export const Page_Warning_Status = Object.assign({}, Page, {
+    status: "warning",
+});
+
 export const Page_Icon_Hidden = Object.assign({}, Page, {
     icon: "none",
 });

@@ -1,0 +1,7 @@
+import type { Input as VideoInput } from "../index.marko";
+export interface Input extends VideoInput {}
+
+<evo-video ...input muted autoplay offscreenPause>
+  <@source src="https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd"/>
+  <@nav href="https://www.ebay.com" target="_blank"/>
+</evo-video>

@@ -1,6 +1,6 @@
 {
   "name": "@evo-web/marko",
-  "version": "0.8.2",
+  "version": "0.9.2",
   "description": "Collection of core eBay components; considered to be the building blocks for all composite structures, pages & apps.",
   "keywords": [
     "marko-components",
@@ -50,6 +50,9 @@
   "dependencies": {
     "@floating-ui/dom": "^1.7.5",
     "@google/model-viewer": "^4.1.0",
+    "@videojs/dash-video": "10.0.0-rc.1",
+    "@videojs/hlsjs-video": "10.0.0-rc.1",
+    "@videojs/native-hls-video": "10.0.0-rc.1",
     "highcharts": "^12.5.0",
     "makeup-active-descendant": "0.7.11",
     "makeup-expander": "~0.11.10",

@@ -184,6 +184,20 @@ export const AttentionMessage = {
     name: "Attention message",
 };
 
+export const WarningMessage = {
+    render: (args) => (
+        <>
+            <EbaySectionNotice {...args} status="warning">
+                <EbayNoticeContent>
+                    <p>This setting may impact visibility of your listing.</p>
+                </EbayNoticeContent>
+            </EbaySectionNotice>
+        </>
+    ),
+
+    name: "Warning message",
+};
+
 export const SectionWithTitle = {
     render: (args) => (
         <>

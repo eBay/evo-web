@@ -24,7 +24,7 @@ export default {
             },
 
             description: "The icon used and status of the noptice",
-            options: ["attention", "confirmation", "information"],
+            options: ["attention", "confirmation", "information", "warning"],
             type: "select",
         },
         icon: {

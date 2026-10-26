@@ -1,0 +1,39 @@
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { EvoStarRatingSelect } from "./star-rating-select";
+
+const meta: Meta<typeof EvoStarRatingSelect> = {
+  title: "Form Input/EvoStarRatingSelect",
+  component: EvoStarRatingSelect,
+  argTypes: {
+    value: { control: { type: "range", min: 0, max: 5, step: 1 } },
+    defaultValue: { control: { type: "range", min: 0, max: 5, step: 1 } },
+    onValueChange: { action: "onValueChange", table: { category: "Events" } },
+  },
+  args: {
+    a11yText: "Rate your purchase",
+    a11yStarText: ["1 star", "2 stars", "3 stars", "4 stars", "5 stars"],
+    defaultValue: 0,
+    disabled: false,
+    name: "purchase-rating",
+  },
+};
+
+export default meta;
+type Story = StoryObj<typeof EvoStarRatingSelect>;
+
+/** The rating starts empty. Click a star or use the arrow keys to select one. */
+export const Default: Story = {};
+
+/** A visible legend can name the group through `aria-labelledby`. */
+export const InFieldset: Story = {
+  render: (args) => (
+    <fieldset>
+      <legend id="purchase-rating-legend">Rate your purchase</legend>
+      <EvoStarRatingSelect
+        {...args}
+        a11yText={null}
+        aria-labelledby="purchase-rating-legend"
+      />
+    </fieldset>
+  ),
+};

@@ -32,14 +32,16 @@
   <h3 id="section-notice-status">Status Section Notice</h3>
   <p>
     A status-based section notice has a 16x16 icon representing confirmation,
-    attention or information.
+    attention, information or warning.
   </p>
 
   <p>
     Add the <code>section-notice--confirmation</code>, <code>
       section-notice--attention
-    </code>, or <code>section-notice--information</code> modifier to the section
-    notice to apply the corresponding status color to its icon.
+    </code>, <code>section-notice--information</code>, or <code>
+      section-notice--warning
+    </code> modifier to the section notice to apply the corresponding status
+    color to its icon.
   </p>
 
   <div class="demo">
@@ -107,6 +109,27 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
       </section>
+
+      <section
+        class="section-notice section-notice--warning"
+        role="region"
+        aria-label="Warning"
+        aria-roledescription="Notice"
+      >
+        <div class="section-notice__header" id="section-notice-warning">
+          <svg
+            class="icon icon--16"
+            height="16"
+            width="16"
+            aria-label="Warning"
+          >
+            <icon-symbol name="attention-triangle-filled-16"/>
+          </svg>
+        </div>
+        <div class="section-notice__main">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </section>
     </div>
   </div>
 
@@ -168,6 +191,27 @@
           aria-label="Information"
         >
           <use href="#icon-information-filled-16"/>
+        </svg>
+      </div>
+      <div class="section-notice__main">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </section>
+
+    <section
+      class="section-notice section-notice--warning"
+      role="region"
+      aria-label="Warning"
+      aria-roledescription="Notice"
+    >
+      <div class="section-notice__header" id="section-notice-warning">
+        <svg
+          class="icon icon--16"
+          height="16"
+          width="16"
+          aria-label="Warning"
+        >
+          <use href="#icon-attention-triangle-filled-16"/>
         </svg>
       </div>
       <div class="section-notice__main">

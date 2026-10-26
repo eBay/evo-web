@@ -1,0 +1,187 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`evo-chips-combobox SSR > renders default 1`] = `
+"<span
+  class="chips-combobox"
+>
+  <span
+    class="combobox chips-combobox__combobox"
+  >
+    <span
+      class="combobox__control"
+    >
+      <input
+        aria-autocomplete="list"
+        aria-controls="GENERATED-1"
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        aria-label="Items"
+        aria-owns="GENERATED-1"
+        autocomplete="off"
+        id="GENERATED-0"
+        placeholder="Add item"
+        role="combobox"
+        type="text"
+      />
+    </span>
+    <div
+      class="combobox__listbox combobox__listbox--set-position"
+      id="GENERATED-1"
+      role="listbox"
+    >
+      <div
+        aria-selected="false"
+        class="combobox__option"
+        id="GENERATED-2"
+        role="option"
+        tabindex="-1"
+      >
+        Option 1
+      </div>
+      <div
+        aria-selected="false"
+        class="combobox__option"
+        id="GENERATED-3"
+        role="option"
+        tabindex="-1"
+      >
+        Option 2
+      </div>
+      <div
+        aria-selected="false"
+        class="combobox__option"
+        id="GENERATED-4"
+        role="option"
+        tabindex="-1"
+      >
+        Option 3
+      </div>
+    </div>
+  </span>
+</span>"
+`;
+
+exports[`evo-chips-combobox SSR > renders with selected chips, disabled 1`] = `
+"<p>
+  Selected: Option 1, Custom Option
+</p>
+<span
+  aria-disabled="true"
+  class="chips-combobox"
+>
+  <ul
+    class="chips-combobox__items"
+  >
+    <li>
+      <span
+        class="chip"
+      >
+        <span
+          class="chip__text"
+          id="GENERATED-0"
+        >
+          Option 1
+        </span>
+        <button
+          aria-describedby="GENERATED-0"
+          aria-label="Remove Option 1"
+          class="chip__button"
+          disabled=""
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            class="icon icon--12"
+          >
+            <symbol
+              id="GENERATED-1"
+              viewBox="0 0 13 12"
+            >
+              <path
+                d="M2.78033 1.21967C2.48744 0.926777 2.01256 0.926777 1.71967 1.21967C1.42678 1.51256 1.42678 1.98744 1.71967 2.28033L5.43934 6L1.71967 9.71967C1.42678 10.0126 1.42678 10.4874 1.71967 10.7803C2.01256 11.0732 2.48744 11.0732 2.78033 10.7803L6.5 7.06066L10.2197 10.7803C10.5126 11.0732 10.9874 11.0732 11.2803 10.7803C11.5732 10.4874 11.5732 10.0126 11.2803 9.71967L7.56066 6L11.2803 2.28033C11.5732 1.98744 11.5732 1.51256 11.2803 1.21967C10.9874 0.926777 10.5126 0.926777 10.2197 1.21967L6.5 4.93934L2.78033 1.21967Z"
+              />
+            </symbol>
+            <use
+              href="#icon-close-12"
+            />
+          </svg>
+        </button>
+      </span>
+    </li>
+    <li>
+      <span
+        class="chip"
+      >
+        <span
+          class="chip__text"
+          id="GENERATED-2"
+        >
+          Custom Option
+        </span>
+        <button
+          aria-describedby="GENERATED-2"
+          aria-label="Remove Custom Option"
+          class="chip__button"
+          disabled=""
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            class="icon icon--12"
+          >
+            <use
+              href="#icon-close-12"
+            />
+          </svg>
+        </button>
+      </span>
+    </li>
+  </ul>
+  <span
+    class="combobox chips-combobox__combobox"
+  >
+    <span
+      class="combobox__control"
+    >
+      <input
+        aria-autocomplete="list"
+        aria-controls="GENERATED-4"
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        aria-label="Items"
+        aria-owns="GENERATED-4"
+        autocomplete="off"
+        disabled=""
+        id="GENERATED-3"
+        placeholder="Add item"
+        role="combobox"
+        type="text"
+      />
+    </span>
+    <div
+      class="combobox__listbox combobox__listbox--set-position"
+      id="GENERATED-4"
+      role="listbox"
+    >
+      <div
+        aria-selected="false"
+        class="combobox__option"
+        id="GENERATED-5"
+        role="option"
+        tabindex="-1"
+      >
+        Option 2
+      </div>
+      <div
+        aria-selected="false"
+        class="combobox__option"
+        id="GENERATED-6"
+        role="option"
+        tabindex="-1"
+      >
+        Option 3
+      </div>
+    </div>
+  </span>
+</span>"
+`;

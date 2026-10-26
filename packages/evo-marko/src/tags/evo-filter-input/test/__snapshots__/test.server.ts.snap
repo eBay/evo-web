@@ -6,7 +6,6 @@ exports[`evo-filter-input > renders default input 1`] = `
 >
   <div
     class="textbox textbox--fluid"
-    placeholder=""
   >
     <svg
       aria-hidden="true"
@@ -27,10 +26,10 @@ exports[`evo-filter-input > renders default input 1`] = `
     <input
       a11yclearbutton="Clear filter input"
       aria-controls="filter-input-default"
-      aria-describedby="MARKO-ID-0 MARKO-ID-1"
       aria-label="Filter input"
       class="textbox__control"
       id="GENERATED-1"
+      placeholder="Filter"
       type="search"
     />
     <button
@@ -65,7 +64,6 @@ exports[`evo-filter-input > renders large 1`] = `
 >
   <div
     class="textbox textbox--fluid"
-    placeholder=""
   >
     <svg
       aria-hidden="true"
@@ -86,10 +84,10 @@ exports[`evo-filter-input > renders large 1`] = `
     <input
       a11yclearbutton="Clear filter input"
       aria-controls="filter-input-default"
-      aria-describedby="MARKO-ID-0 MARKO-ID-1"
       aria-label="Filter input"
       class="textbox__control"
       id="GENERATED-1"
+      placeholder="Filter"
       type="search"
     />
     <button
@@ -124,7 +122,6 @@ exports[`evo-filter-input > renders small 1`] = `
 >
   <div
     class="textbox textbox--fluid"
-    placeholder=""
   >
     <svg
       aria-hidden="true"
@@ -145,10 +142,10 @@ exports[`evo-filter-input > renders small 1`] = `
     <input
       a11yclearbutton="Clear filter input"
       aria-controls="filter-input-default"
-      aria-describedby="MARKO-ID-0 MARKO-ID-1"
       aria-label="Filter input"
       class="textbox__control"
       id="GENERATED-1"
+      placeholder="Filter"
       type="search"
     />
     <button
@@ -184,7 +181,6 @@ exports[`evo-filter-input > renders with aria-controls 1`] = `
   >
     <div
       class="textbox textbox--fluid"
-      placeholder=""
     >
       <svg
         aria-hidden="true"
@@ -205,10 +201,10 @@ exports[`evo-filter-input > renders with aria-controls 1`] = `
       <input
         a11yclearbutton="Clear filter input"
         aria-controls="filter-input-controls"
-        aria-describedby="MARKO-ID-0 MARKO-ID-1"
         aria-label="Filter input"
         class="textbox__control"
         id="GENERATED-1"
+        placeholder="Filter"
         type="search"
       />
       <button
@@ -249,7 +245,6 @@ exports[`evo-filter-input > renders with custom placeholder and aria label 1`] =
 >
   <div
     class="textbox textbox--fluid"
-    placeholder=""
   >
     <svg
       aria-hidden="true"
@@ -270,10 +265,10 @@ exports[`evo-filter-input > renders with custom placeholder and aria label 1`] =
     <input
       a11yclearbutton="Clear the text"
       aria-controls="filter-input-default"
-      aria-describedby="MARKO-ID-0 MARKO-ID-1"
       aria-label="Filter input"
       class="textbox__control"
       id="GENERATED-1"
+      placeholder="Filter"
       type="search"
     />
     <button
@@ -308,7 +303,6 @@ exports[`evo-filter-input > renders without clear button and no placeholder 1`] 
 >
   <div
     class="textbox textbox--fluid"
-    placeholder=""
   >
     <svg
       aria-hidden="true"
@@ -329,10 +323,10 @@ exports[`evo-filter-input > renders without clear button and no placeholder 1`] 
     <input
       a11yclearbutton=""
       aria-controls="filter-input-default"
-      aria-describedby="MARKO-ID-0 MARKO-ID-1"
       aria-label="Filter input"
       class="textbox__control"
       id="GENERATED-1"
+      placeholder="Filter"
       type="search"
     />
     <button

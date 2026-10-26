@@ -119,6 +119,22 @@ main {
   margin: var(--spacing-100);
 }
 
+.demo__storybook-link-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: var(--spacing-100);
+}
+
+.demo__storybook-link {
+  font-size: var(--font-size-small);
+  text-decoration: underline;
+}
+
+.demo__storybook-link:focus-visible {
+  outline: 2px solid;
+  outline-offset: 2px;
+}
+
 .nav-link[aria-current] {
   font-weight: var(--font-weight-bold);
 }

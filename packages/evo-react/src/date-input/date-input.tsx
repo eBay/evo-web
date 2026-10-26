@@ -29,7 +29,7 @@ import "@ebay/skin/date-textbox.mjs";
  * >
  *   <EvoDateInputCalendarPopover
  *     a11yNavigateText={(month, direction) =>
- *       `${direction === "prev" ? "Previous" : "Next"} ${month}`
+ *       `${direction === "prev" ? "Previous" : "Next"} month, ${month}`
  *     }
  *   />
  * </EvoDateInput>;

@@ -1,0 +1,4 @@
+{
+  "pageTitle": "Video Component",
+  "pageDescription": "The Video component provides a flexible, accessible video player shell with a composable control bar. Built on semantic HTML with BEM CSS, it supports custom controls including play/pause, scrubbing, captions, volume, and fullscreen, with popover-capable control slots anchored to each button."
+}

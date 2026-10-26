@@ -13,7 +13,7 @@ export interface Input extends Marko.HTML.Span {
   delete?: Marko.AttrTag<Delete>;
 }
 
-<const/{ class: inputClass, content, delete: deleteBtn, ...htmlInput }=input>
+<const/{ class: inputClass, content, delete: deleteTag, ...htmlInput }=input>
 
 <id/textId>
 
@@ -21,9 +21,9 @@ export interface Input extends Marko.HTML.Span {
   <span class="chip__text" id=textId>
     <${content}/>
   </span>
-  <if=deleteBtn>
-    <const/{ class: deleteClass, a11yText = "delete", ...htmlDelete }=deleteBtn>
-    <button
+  <if=deleteTag>
+    <const/{ class: deleteClass, a11yText = "delete", ...htmlDelete }=deleteTag>
+    <button/$delete
       ...htmlDelete
       type="button"
       class=["chip__button", deleteClass]
@@ -34,3 +34,5 @@ export interface Input extends Marko.HTML.Span {
     </button>
   </if>
 </span>
+
+<return=() => ({ $delete })>

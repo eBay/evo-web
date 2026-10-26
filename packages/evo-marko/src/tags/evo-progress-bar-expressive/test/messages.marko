@@ -1,0 +1,10 @@
+export interface Input {
+  size?: "medium" | "large";
+  messages?: { text: string; duration?: number }[];
+}
+
+<evo-progress-bar-expressive a11yText="Loading..." size=input.size>
+  <for|{ text, duration }| of=input.messages || []>
+    <@message duration=duration>${text}</@message>
+  </for>
+</evo-progress-bar-expressive>

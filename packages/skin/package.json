@@ -1,6 +1,6 @@
 {
     "name": "@ebay/skin",
-    "version": "19.36.0",
+    "version": "19.38.0",
     "description": "Skin - CSS modules that represent the brand eBay",
     "keywords": [
         "eBay",
@@ -62,7 +62,7 @@
         "snapshots:all:dry": "percy storybook:start --dry-run --include '.*'",
         "snapshots:dry": "percy storybook:start --dry-run --include \"$(echo $STORIES)\"",
         "start": "npm run storybook",
-        "storybook": "npm run copy:assetsToStorybook && storybook dev -c .storybook --no-open",
+        "storybook": "npm run copy:assetsToStorybook && storybook dev -c .storybook -p 6007 --no-open",
         "test": "npm run build",
         "verify": "tsx scripts verify"
     },

@@ -36,7 +36,7 @@ export interface BaseInput {
   /**
    * Must be present to allow navigation between months
    *
-   * Should return a string like `"Show ${month}"`
+   * Should return a string like `"Next month, ${monthName}"` or `"Previous month, ${monthName}"`
    */
   a11yNavigateText?: (monthName: string, dir: "next" | "prev") => string;
   /**

@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`EvoSignal SSR > renders the neutral default 1`] = `"<span class="signal signal--neutral">Price trend is stable</span>"`;
+
+exports[`EvoSignal SSR > renders the recent status 1`] = `"<span class="signal signal--recent listing-signal">Listing signal</span>"`;
+
+exports[`EvoSignal SSR > renders the time-sensitive status 1`] = `"<span class="signal signal--time-sensitive listing-signal">Listing signal</span>"`;
+
+exports[`EvoSignal SSR > renders the trustworthy status 1`] = `"<span class="signal signal--trustworthy listing-signal">Listing signal</span>"`;
