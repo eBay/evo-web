@@ -16,16 +16,16 @@ In a team discussion, cost and repeated builds on each PR commit and push prompt
 
 ## Decision
 
-Keep Percy's component scoping for PRs and automatic full baseline builds on `main`. Run PR visual regression when a developer with write access comments `/run-percy` on an open, ready PR targeting `main`, after CI passes for its current commit.
+Keep Percy's component scoping for PRs and automatic full baseline builds on `main`. Run PR visual regression only on ready PRs that carry the `percy` label. Adding the label requests a build; while the label stays, later pushes rebuild, so a developer who wants a one-off run removes it afterward.
 
-The request starts a build of GitHub's PR merge result. That build uses the committed Skin assets, detects the affected components, builds Storybook, and passes it to Percy. Percy takes scoped snapshots unless a global change calls for a full build. The result is attached to the requested commit; another code change requires another request and review. The PR checklist reminds developers to request Percy after their final code change.
+The label reuses the existing `pull_request` build and `workflow_run` snapshot workflows, so permissions, PR number, commit and fork handling are unchanged. Labeling already requires triage or write access, and the event carries the PR's own head commit.
 
-A PR label is not the trigger. It would require a dedicated label and removing and adding it again for another run. Each `/run-percy` comment instead leaves a separate, dated request in the PR discussion.
+A `/run-percy` comment was considered. `issue_comment` runs in the default branch's context with no PR commit attached, so it needs its own permission check, commit and CI lookups, and a way to pass the request to the build. A label needs none of that.
 
-The workflow change is in [PR #1081](https://github.com/eBay/evo-web/pull/1081). This decision changes the PR trigger in ADR 3; it does not change the choice of Percy or the automatic baseline on `main`.
+This decision changes the PR trigger in ADR 3; it does not change the choice of Percy or the automatic baseline on `main`. The PR checklist reminds developers to add the label after their final code change.
 
 ## Consequences
 
-Developers choose when a PR is ready for visual review, so intermediate commits no longer create Percy builds and snapshots. The PR comment records when the check was requested. The Percy workflow also avoids a second Skin rebuild that CI has already performed.
+Developers choose when a PR is ready for visual review, so intermediate commits no longer create Percy builds and snapshots.
 
-When visual review is needed, the final check depends on a developer remembering to request and review it. A later commit needs another Percy run, and a requested build can still be large when the change affects many components or global styles. The existing PR checklist makes the manual step visible, but the check itself runs only when requested.
+The final check depends on a developer remembering to add the label. A `percy` label must exist in the repository. Pushes after labeling rebuild until the label is removed, and a requested build can still be large when the change affects many components or global styles.
