@@ -11,7 +11,6 @@ export type EvoSectionTitleHeadingProps = ComponentProps<"h2"> & {
 };
 
 export type EvoSectionTitleSubtitleProps = ComponentProps<"span">;
-export type EvoSectionTitleInfoProps = ComponentProps<"div">;
 export type EvoSectionTitleOverflowProps = ComponentProps<"div">;
 
 export type EvoSectionTitleCtaProps = Omit<ComponentProps<"a">, "href"> & {

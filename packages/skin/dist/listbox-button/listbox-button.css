@@ -172,6 +172,7 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox {
 
 .listbox-button .btn__label {
     color: var(--listbox-button-label-color, var(--color-foreground-secondary));
+    font-weight: 400;
     margin-right: 3px;
 }
 

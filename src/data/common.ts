@@ -34,6 +34,20 @@ export function getDirectory(filePath: string) {
     : directoryPath.substring(lastIndexDirectory + 1);
 }
 
+/**
+ * In the deployed site, Skin Storybook's static build is copied to
+ * `skin-storybook/storybook` alongside the site itself (see root package.json's
+ * `deploy:copy-site` script), so a relative path resolves correctly. Locally,
+ * `npm start` (the site) and `npm run storybook -w packages/skin` (pinned to port
+ * 6007, see packages/skin/package.json) are two separate dev servers with no
+ * shared static output — the relative path 404s. `import.meta.env.DEV` is true
+ * only under `vite dev` (never in a production build), so this only takes effect
+ * for local development.
+ */
+const skinStorybookUrl = import.meta.env.DEV
+  ? "http://localhost:6007"
+  : `${basePath}skin-storybook/storybook`;
+
 export const urls = {
   root: basePath,
   sitemap: `${basePath}sitemap`,
@@ -45,6 +59,6 @@ export const urls = {
   reactComponents: `${basePath}evo-react-components`,
   markoStorybook: `${basePath}ebayui-core`,
   reactStorybook: `${basePath}ebayui-core-react/main`,
-  skinStorybook: `${basePath}skin-storybook/storybook`,
+  skinStorybook: skinStorybookUrl,
   guideExamples: `${basePath}guide-examples`,
 };

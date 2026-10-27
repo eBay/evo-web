@@ -5,7 +5,6 @@ import {
   EvoSectionTitleCta,
   EvoSectionTitleContent,
   EvoSectionTitleHeading,
-  EvoSectionTitleInfo,
   EvoSectionTitleOverflow,
   EvoSectionTitleSubtitle,
 } from "../index";
@@ -23,7 +22,7 @@ describe("EvoSectionTitle SSR", () => {
     ).toMatchSnapshot();
   });
 
-  it("renders subtitle, action, info, and overflow in consumer order", () => {
+  it("renders subtitle, action, and overflow in consumer order", () => {
     expect(
       renderToString(
         <EvoSectionTitle dir="rtl">
@@ -33,7 +32,6 @@ describe("EvoSectionTitle SSR", () => {
             </EvoSectionTitleHeading>
             <EvoSectionTitleSubtitle>New listings</EvoSectionTitleSubtitle>
           </EvoSectionTitleContent>
-          <EvoSectionTitleInfo>Updated today</EvoSectionTitleInfo>
           <EvoSectionTitleCta href="/saved-searches">
             See all saved searches
           </EvoSectionTitleCta>

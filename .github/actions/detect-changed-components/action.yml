@@ -13,7 +13,7 @@ inputs:
 
 outputs:
   components:
-    description: 'Comma-separated list of changed components ("all" for global changes, "" for no changes)'
+    description: 'Percy --include pattern matching the changed components'' stories ("all" for global changes, "" for no changes)'
 
 runs:
   using: 'node24'

@@ -452,7 +452,7 @@ export const FloatingLabelWithValue = {
 
 export const FloatingLabelInvalid = {
     render: (args) => (
-        <EbayTextbox {...args} invalid onChange={action("textbox-changed")} floatingLabel="Invalid Floating label" />
+        <EbayTextbox {...args} invalid onChange={action("textbox-changed")} floatingLabel="Invalid floating label" />
     ),
 
     name: "Floating label invalid",

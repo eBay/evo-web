@@ -1,34 +1,117 @@
 name: Percy Build
+run-name: "Percy PR #${{ inputs.pr_number }} @ ${{ inputs.head_sha }}"
 
 on:
-  pull_request:
-    types: [opened, synchronize]
-    paths:
-      - 'packages/skin/dist/**'
-      - 'packages/skin/.storybook/**'
-      - 'packages/skin/src/sass/**/*.stories.js'
-      - '.github/workflows/percy-build.yml'
-      - '.github/workflows/percy.yml'
-      - 'packages/skin/.percy.yml'
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: 'Pull request number to capture'
+        required: true
+        type: string
+      head_sha:
+        description: 'PR head commit to capture'
+        required: true
+        type: string
 
 concurrency:
-  group: "percy-build-${{ github.head_ref }}"
+  group: "percy-build-${{ inputs.pr_number }}"
   cancel-in-progress: true
 
+permissions:
+  contents: read
+
 jobs:
+  resolve:
+    name: Resolve Percy request
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      pull-requests: read
+    outputs:
+      number: ${{ steps.pr.outputs.number }}
+      sha: ${{ steps.pr.outputs.sha }}
+    steps:
+      - name: Resolve pull request
+        id: pr
+        uses: actions/github-script@v7
+        env:
+          PR_NUMBER: ${{ inputs.pr_number }}
+          REQUESTED_SHA: ${{ inputs.head_sha }}
+        with:
+          script: |
+            const number = Number(process.env.PR_NUMBER);
+            if (!Number.isSafeInteger(number) || number < 1) {
+              throw new Error('Enter a valid pull request number');
+            }
+            const { data: pr } = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: number
+            });
+            const requestedSha = process.env.REQUESTED_SHA;
+            if (!/^[a-f0-9]{40}$/.test(requestedSha)) {
+              throw new Error('Enter a valid PR commit SHA');
+            }
+            const { data: ci } = await github.rest.actions.listWorkflowRuns({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'ci.yml',
+              event: 'pull_request',
+              head_sha: requestedSha,
+              per_page: 1
+            });
+            if (ci.workflow_runs[0]?.conclusion !== 'success') {
+              throw new Error('evo-web CI must pass on this commit before Percy runs');
+            }
+            core.setOutput('number', String(number));
+            core.setOutput('sha', requestedSha);
+            core.setOutput('current_sha', pr.head.sha);
+            core.setOutput('state', pr.state);
+            core.setOutput('draft', String(pr.draft));
+            core.setOutput('base', pr.base.ref);
+
+      - name: Validate pull request
+        env:
+          REQUESTED_SHA: ${{ steps.pr.outputs.sha }}
+          CURRENT_SHA: ${{ steps.pr.outputs.current_sha }}
+          PR_STATE: ${{ steps.pr.outputs.state }}
+          PR_DRAFT: ${{ steps.pr.outputs.draft }}
+          BASE_REF: ${{ steps.pr.outputs.base }}
+        run: |
+          if [ "$PR_STATE" != open ] || [ "$PR_DRAFT" != false ] || [ "$BASE_REF" != main ]; then
+            echo '::error::Percy requires a ready pull request targeting main'
+            exit 1
+          fi
+          if [ "$REQUESTED_SHA" != "$CURRENT_SHA" ]; then
+            echo '::error::The PR changed after /run-percy. Comment again when ready'
+            exit 1
+          fi
+
   build:
     name: Build Storybook for Percy
+    needs: resolve
     runs-on: ubuntu-latest
+    cache-mode: read
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
+          ref: refs/pull/${{ needs.resolve.outputs.number }}/merge
           fetch-depth: 0
 
       - name: Fetch base branch
         run: |
-          git remote add upstream https://github.com/${{ github.repository }}.git
-          git fetch upstream main:main
+          git fetch origin main:main
+
+      - name: Confirm merge contains the requested commit
+        env:
+          HEAD_SHA: ${{ needs.resolve.outputs.sha }}
+        run: |
+          if [ "$(git rev-parse HEAD^2)" != "$HEAD_SHA" ] || [ "$(git rev-parse HEAD^1)" != "$(git rev-parse main)" ]; then
+            echo '::error::The PR merge changed after /run-percy. Comment again when ready'
+            exit 1
+          fi
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -51,14 +134,8 @@ jobs:
       - name: Save Percy metadata
         env:
           COMPONENTS: ${{ steps.detect.outputs.components }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
-          HEAD_REF: ${{ github.head_ref }}
         run: |
           echo "$COMPONENTS" > packages/skin/_site/public/storybook/.percy-components
-          echo "$PR_NUMBER" > packages/skin/_site/public/storybook/.percy-pr-number
-          echo "$HEAD_SHA" > packages/skin/_site/public/storybook/.percy-commit
-          echo "$HEAD_REF" > packages/skin/_site/public/storybook/.percy-branch
 
       - name: Upload Storybook artifact
         uses: actions/upload-artifact@v4
