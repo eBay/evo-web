@@ -117,7 +117,7 @@ export const Default: StoryFn<typeof EbayItemTile> = (args) => (
         }}
         {...args}
     >
-        <EbayItemTileAction aria-label="action label" icon={<EbayIconHeart16 />} />
+        <EbayItemTileAction aria-label="Add to watchlist" icon={<EbayIconHeart16 />} />
         <EbayItemTileSupertitle>
             <EbaySignal status="time-sensitive">Time Sensitive</EbaySignal>
         </EbayItemTileSupertitle>
@@ -162,7 +162,7 @@ export const WithoutSecondarySection: StoryFn<typeof EbayItemTile> = (args) => (
         }}
         {...args}
     >
-        <EbayItemTileAction aria-label="action label" icon={<EbayIconHeart16 />} />
+        <EbayItemTileAction aria-label="Add to watchlist" icon={<EbayIconHeart16 />} />
         <EbayItemTileSupertitle>
             <EbaySignal status="time-sensitive">Time Sensitive</EbaySignal>
         </EbayItemTileSupertitle>
@@ -185,7 +185,7 @@ export const ExternalLink: StoryFn<typeof EbayItemTile> = (args) => (
         }}
         {...args}
     >
-        <EbayItemTileAction aria-label="action label" icon={<EbayIconHeart16 />} />
+        <EbayItemTileAction aria-label="Add to watchlist" icon={<EbayIconHeart16 />} />
         <EbayItemTileTitle href="https://ebay.com">Apple iPhone 11 Pro Max</EbayItemTileTitle>
         <EbayItemTileSubtitle>256GB Space Gray</EbayItemTileSubtitle>
         <EbayItemTileDescription className="price">$29.99</EbayItemTileDescription>

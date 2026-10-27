@@ -137,7 +137,7 @@ describe("ebay-textbox rendering", () => {
         expect(textbox).toHaveAttribute("value", "");
         expect(textbox).toHaveAttribute("aria-invalid", "true");
 
-        const label = screen.getByText("Invalid Floating label");
+        const label = screen.getByText("Invalid floating label");
         expect(label).toHaveClass("floating-label__label floating-label__label--invalid");
     });
 
