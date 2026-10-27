@@ -8,7 +8,7 @@ exports[`infotip > renders default infotip 1`] = `
         [33mclass[39m=[32m"infotip"[39m
       [36m>[39m
         [36m<button[39m
-          [33maria-label[39m=[32m"Important information"[39m
+          [33maria-label[39m=[32m"Info"[39m
           [33mclass[39m=[32m"infotip__host icon-btn icon-btn--transparent"[39m
           [33mtype[39m=[32m"button"[39m
         [36m>[39m
@@ -63,7 +63,7 @@ exports[`infotip > renders default infotip 1`] = `
                 [36m</p>[39m
               [36m</span>[39m
               [36m<button[39m
-                [33maria-label[39m=[32m"Dismiss infotip"[39m
+                [33maria-label[39m=[32m"Dismiss"[39m
                 [33mclass[39m=[32m"icon-btn icon-btn--transparent infotip__close"[39m
                 [33mtype[39m=[32m"button"[39m
               [36m>[39m
@@ -104,7 +104,7 @@ exports[`infotip > renders default infotip disabled 1`] = `
         [33mclass[39m=[32m"infotip"[39m
       [36m>[39m
         [36m<button[39m
-          [33maria-label[39m=[32m"Important information"[39m
+          [33maria-label[39m=[32m"Info"[39m
           [33mclass[39m=[32m"infotip__host icon-btn icon-btn--transparent"[39m
           [33mdisabled[39m=[32m""[39m
           [33mtype[39m=[32m"button"[39m
@@ -160,7 +160,7 @@ exports[`infotip > renders default infotip disabled 1`] = `
                 [36m</p>[39m
               [36m</span>[39m
               [36m<button[39m
-                [33maria-label[39m=[32m"Dismiss infotip"[39m
+                [33maria-label[39m=[32m"Dismiss"[39m
                 [33mclass[39m=[32m"icon-btn icon-btn--transparent infotip__close"[39m
                 [33mtype[39m=[32m"button"[39m
               [36m>[39m
@@ -201,7 +201,7 @@ exports[`infotip > renders default infotip open 1`] = `
         [33mclass[39m=[32m"infotip"[39m
       [36m>[39m
         [36m<button[39m
-          [33maria-label[39m=[32m"Important information"[39m
+          [33maria-label[39m=[32m"Info"[39m
           [33mclass[39m=[32m"infotip__host icon-btn icon-btn--transparent"[39m
           [33mtype[39m=[32m"button"[39m
         [36m>[39m
@@ -256,7 +256,7 @@ exports[`infotip > renders default infotip open 1`] = `
                 [36m</p>[39m
               [36m</span>[39m
               [36m<button[39m
-                [33maria-label[39m=[32m"Dismiss infotip"[39m
+                [33maria-label[39m=[32m"Dismiss"[39m
                 [33mclass[39m=[32m"icon-btn icon-btn--transparent infotip__close"[39m
                 [33mtype[39m=[32m"button"[39m
               [36m>[39m
@@ -297,7 +297,7 @@ exports[`infotip modal > renders default 1`] = `
         [33mclass[39m=[32m"infotip dialog--mini"[39m
       [36m>[39m
         [36m<button[39m
-          [33maria-label[39m=[32m"Important information"[39m
+          [33maria-label[39m=[32m"Info"[39m
           [33mclass[39m=[32m"dialog--mini__host icon-btn icon-btn--transparent"[39m
           [33mtype[39m=[32m"button"[39m
         [36m>[39m
@@ -328,7 +328,7 @@ exports[`infotip modal > renders default 1`] = `
     [36m</span>[39m
   [36m</span>[39m
   [36m<div[39m
-    [33maria-label[39m=[32m"Important information"[39m
+    [33maria-label[39m=[32m"Info"[39m
     [33maria-labelledby[39m=[32m"s0-0-5-@dialog-dialog-title"[39m
     [33maria-modal[39m=[32m"true"[39m
     [33mclass[39m=[32m"lightbox-dialog lightbox-dialog--mask-fade"[39m
@@ -348,7 +348,7 @@ exports[`infotip modal > renders default 1`] = `
           [0mImportant[0m
         [36m</h2>[39m
         [36m<button[39m
-          [33maria-label[39m=[32m"Dismiss infotip"[39m
+          [33maria-label[39m=[32m"Dismiss"[39m
           [33mclass[39m=[32m"icon-btn lightbox-dialog__close"[39m
           [33mtype[39m=[32m"button"[39m
         [36m>[39m

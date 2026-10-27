@@ -22,7 +22,7 @@ exports[`avatar > renders defaults 1`] = `
 
 exports[`avatar > renders signed out 1`] = `
 "<div
-  aria-label="Signed out"
+  aria-label="Profile picture - Signed out"
   class="avatar"
   role="img"
 >
@@ -70,7 +70,7 @@ exports[`avatar > renders with doggy as username 1`] = `
 
 exports[`avatar > renders with image 1`] = `
 "<div
-  aria-label="Signed in - as Doggy"
+  aria-label="Profile picture - Doggy"
   class="avatar"
   role="img"
 >
