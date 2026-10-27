@@ -42,7 +42,6 @@ const EbayMenuItem: FC<MenuItemProps> = ({
 
     return (
         <div
-            aria-label={badgeAriaLabel}
             {...rest}
             ref={ref}
             className={classNames(className, `${baseClass}__item`, hasBadge && `${baseClass}__item--badged`)}
@@ -51,9 +50,9 @@ const EbayMenuItem: FC<MenuItemProps> = ({
             aria-disabled={disabled}
             tabIndex={focused ? 0 : tabIndex}
         >
-            <span aria-hidden={hasBadge}>
+            <span>
                 {children}
-                {hasBadge && <EbayBadge type="menu" number={badgeNumber} />}
+                {hasBadge && <EbayBadge type="menu" number={badgeNumber} aria-label={badgeAriaLabel} />}
             </span>
             <EbayIconTick16 />
         </div>

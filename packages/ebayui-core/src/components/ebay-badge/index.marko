@@ -9,7 +9,7 @@ static {
 }
 export interface Input extends WithNormalizedProps<BadgeInput> {}
 $ const { class: inputClass, type, number, ...htmlInput } = input;
-$ const role = type !== "menu" && type !== "icon" && "img";
+$ const role = type !== "icon" && "img";
 
 <if(number == undefined)>
     <span

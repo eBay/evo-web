@@ -9,6 +9,7 @@ static function toJSON(this: any) {
 $ const {
     badgeAriaLabel,
     badgeNumber,
+    ariaLabel,
     href,
     priority = "none",
     partiallyDisabled,
@@ -26,6 +27,10 @@ $ if (href) {
     tagType = "a";
     baseClassName = "icon-link";
 }
+$ var resolvedAriaLabel =
+    ariaLabel ??
+    (htmlInput as Record<string, unknown>)["aria-label"] ??
+    (badgeNumber ? badgeAriaLabel : undefined);
 
 <${tagType}
     ...processHtmlAttributes(htmlInput)
@@ -34,6 +39,7 @@ $ if (href) {
     onFocus("handleFocus")
     onBlur("handleBlur")
     href=href
+    aria-label=resolvedAriaLabel
     class=[
         inputClass,
         baseClassName,
@@ -48,11 +54,6 @@ $ if (href) {
 >
     <${renderBody}/>
     <if(badgeNumber)>
-        <ebay-badge
-            number=badgeNumber
-            type="icon"
-            aria-label=badgeAriaLabel
-            aria-hidden=!!input.ariaLabel && "true"
-        />
+        <ebay-badge number=badgeNumber type="icon" aria-hidden="true"/>
     </if>
 </>
