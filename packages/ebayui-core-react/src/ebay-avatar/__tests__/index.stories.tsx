@@ -88,7 +88,9 @@ export const WithImage: StoryFn<typeof EbayAvatar> = (args) => (
     </EbayAvatar>
 );
 
-export const SignedOut: StoryFn<typeof EbayAvatar> = (args) => <EbayAvatar {...args} aria-label="Profile picture - Signed out" />;
+export const SignedOut: StoryFn<typeof EbayAvatar> = (args) => (
+    <EbayAvatar {...args} aria-label="Profile picture - Signed out" />
+);
 
 export const WithCustomBody: StoryFn<typeof EbayAvatar> = (args) => (
     <EbayAvatar {...args} aria-label="Profile picture - Elizabeth" username={args.username || "Elizabeth"}>
