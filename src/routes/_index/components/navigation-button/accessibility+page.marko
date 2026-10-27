@@ -17,7 +17,9 @@ import "../../../../sass/accessibility.scss";
   <p>
     Removing the <code>href</code> attribute fully disables a navigation-button.
     For a partially disabled, still-focusable state, use
-    <code>aria-disabled="true"</code> instead.
+    <code>aria-disabled="true"</code> instead. <code>aria-disabled</code> only
+    announces the state, so the link must also be prevented from navigating via
+    JavaScript.
   </p>
   <h2>Interaction Design</h2>
   <h3>Pointer</h3>

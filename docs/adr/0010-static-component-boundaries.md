@@ -1,4 +1,4 @@
-# 9. Static Component Boundaries
+# 10. Static Component Boundaries
 
 **Date:** 2026-10-13
 
@@ -10,9 +10,9 @@ Accepted
 
 With visually similar controls there is a general rule to combine the variants as modifiers in a single component. While generally true, sometimes the underlying markup can make it confusing and difficult to maintain. For example, `fake-button`, `fake-tabs`, and `fake-link` render the same visual styling as `button`, `tabs`, and `link`, but using a different native HTML element for behavioral reasons: an `<a>` in place of a `<button>`, or a list of links in place of an ARIA tablist. Today these three live inconsistently inside their visual counterpart's folder: `fake-button` and `fake-tabs` are nested but their Storybook titles do not reflect that nesting, and `fake-link` is not a component at all, only two story exports inside `link`'s own story file. None of the three have the modifier structure (`.btn--fake`) that true nesting would require, and none of them share their parent's root element, which a true modifier would.
 
-A `<button>` and an `<a>` differ at the native element level, not only in appearance. Space activates a button; it scrolls the page when focused on a link, which activates on Enter instead. `disabled` has native meaning on a button, removing it from the tab order; an anchor has no native `disabled`, so a disabled-looking `fake-button` has to fake the state and still requires manual `tabindex` handling to leave the tab order. These differences exist independent of how the components are organized in the static layer.
+A `<button>` and an `<a>` differ at the native element level, not only in appearance. Space activates a button; it scrolls the page when focused on a link, which activates on Enter instead. `disabled` has native meaning on a button, removing it from the tab order; an anchor has no native `disabled`, so a disabled-looking `fake-button` has to fake the state. Removing `href` takes it out of the tab order but also strips its link role; `aria-disabled` keeps it focusable but needs JavaScript to stop it navigating. These differences exist independent of how the components are organized in the static layer.
 
-The static layer was originally organized around semantic and behavioral boundaries defining module boundaries, and has drifted toward merging visually similar controls over time, which have surfaced a tension. That drift has already produced observed cases where accessibility-relevant differences between a real control and its visually-identical counterpart were lost once they were merged into one documented variant.
+Ian McBurnie, the evo-web team lead, describes the static layer as originally organized around semantic and behavioral boundaries, and as having drifted toward grouping visually similar controls together over time. He reports seeing accessibility-relevant differences between a real control and its visually identical counterpart lost once the two were documented as one variant. The fake patterns are where that drift shows. Modules split along behavioral lines over the years (`cta-button`, `expand-button`, `listbox-button` and `menu-button` in v8; dialog, notice and tooltip in v11), but the fakes stayed with the controls they look like. [eBay/skin#712](https://github.com/eBay/skin/issues/712) proposed splitting `fake-menu` out of `menu` in 2019 and was closed with "For now, let's keep the fake things in with the real things." This decision revisits that one.
 
 ## Decision
 
@@ -20,7 +20,7 @@ The static layer was originally organized around semantic and behavioral boundar
 
 Each gets its own SCSS module, its own Storybook entry, and its own documentation page. Shared visual styling across a component and its counterpart is implemented through Sass mixins, not through a shared top-level class or a shared component boundary. `fake-menu` is similarly renamed `navigation-menu` and remains separate from `menu`.
 
-Naming convention: `button` & `navigation-button`, `tabs` & `navigation-tabs`, `menu` & `navigation-menu`, `link` & `text-button`. A `.link` class for plain links is proposed, not decided.
+Naming convention: `button` & `navigation-button`, `tabs` & `navigation-tabs`, `menu` & `navigation-menu`, `link` & `text-button`. Bare `<a>` elements keep their global styling, with no class required.
 
 This decision covers the static layer only. How the Marko and React component APIs expose these patterns (for example, a separate component or a `variant` prop) belongs to their owners.
 
@@ -39,7 +39,7 @@ The `fake-button`, `fake-tabs`, `fake-link`, and `fake-menu` names are deprecate
 This decision generalizes. A visual variant that differs from its parent only in a BEM modifier shares its parent's behavioral contract. A variant that differs in any of the following does not, and the difference is itself the signal that it needs its own module, not a modifier:
 
 - **Keyboard activation.** A `<button>` activates on both Enter and Space. A focused `<a>` activates on Enter; Space scrolls the page instead. A variant that changes the root element to an anchor has changed this contract, regardless of how it's styled.
-- **Disabled semantics.** `disabled` has native meaning on `<button>`: it's removed from the tab order and cannot fire. `<a>` has no native `disabled`. A "disabled" anchor has to fake the state (drop `href`, add `aria-disabled`) and still needs manual `tabindex` handling to actually leave the tab order. A variant that can't inherit native `disabled` behavior from its parent element has changed this contract.
+- **Disabled semantics.** `disabled` has native meaning on `<button>`: it's removed from the tab order and cannot fire. `<a>` has no native `disabled`. A "disabled" anchor has to fake the state: dropping `href` takes it out of the tab order but also strips its link role, and `aria-disabled` keeps it focusable but needs JavaScript to stop it navigating. A variant that can't inherit native `disabled` behavior from its parent element has changed this contract.
 - **Screen reader announcement.** The two elements are announced differently to assistive technology (e.g. "button" vs. "link"), independent of how either is styled. If the announcement a user hears doesn't match the parent's, the variant is a different control for AT purposes, whatever the CSS says.
 
 If a proposed variant trips any of these three, it gets its own static module, sharing visual styling through mixins, not a shared component boundary. Visual similarity alone does not settle this question in either direction.

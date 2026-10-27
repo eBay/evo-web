@@ -100,10 +100,10 @@ export const buttonsDisabled = () => `
 
 export const badged = () => `
 <span class="navigation-menu">
-    <span class="navigation-menu__items" role="menu">
-        <a class="navigation-menu__item" role="menuitem" href="https://www.ebay.com"><span>Button 1<span class="badge">1</span></span></a>
-        <a class="navigation-menu__item" role="menuitem" href="https://www.ebay.com"><span>Button 2<span class="badge">10</span></span></a>
-        <a class="navigation-menu__item" role="menuitem" href="https://www.ebay.com"><span>Button 3<span class="badge">99+</span></span></a>
+    <span class="navigation-menu__items">
+        <a class="navigation-menu__item" href="https://www.ebay.com"><span>Button 1<span class="badge">1</span></span></a>
+        <a class="navigation-menu__item" href="https://www.ebay.com"><span>Button 2<span class="badge">10</span></span></a>
+        <a class="navigation-menu__item" href="https://www.ebay.com"><span>Button 3<span class="badge">99+</span></span></a>
     </span>
 </span>
 `;

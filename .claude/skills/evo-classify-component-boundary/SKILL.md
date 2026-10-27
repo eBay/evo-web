@@ -4,7 +4,7 @@ description: >
   Decides where a new or proposed component or variant belongs in the evo-web
   static (Skin) layer: its own component, a modifier of an existing component,
   or an uncovered case. Applies the rules in
-  docs/adr/0009-static-component-boundaries.md to the facts of the control and
+  docs/adr/0010-static-component-boundaries.md to the facts of the control and
   reports the evidence behind the result. Use this whenever someone asks
   whether something should be its own component or a variant, where a new
   pattern should live, whether to add a modifier or a new module, or shares
@@ -22,7 +22,7 @@ anything. Its output is a verdict with the facts behind it, so an engineer can
 check the reasoning in seconds and so nobody re-argues the question from
 scratch.
 
-The rules live in `docs/adr/0009-static-component-boundaries.md`. Read that
+The rules live in `docs/adr/0010-static-component-boundaries.md`. Read that
 file at the start of every run and apply it as written. This skill does not
 restate the rules because a copy here would drift the first time the ADR is
 revised. If a section the steps below refer to has been renamed or removed,
@@ -63,8 +63,10 @@ Work through the steps in order. The order matters because the final result
    - Keyboard activation. A `button` activates on Enter and Space. An `a`
      with `href` activates on Enter, and Space scrolls the page.
    - Disabled handling. `button` has a native `disabled` that removes it from
-     the tab order. `a` has none, so a disabled-looking anchor needs
-     `aria-disabled` and manual `tabindex` handling.
+     the tab order. `a` has none, so a disabled-looking anchor fakes it:
+     dropping `href` removes it from the tab order and its link role, and
+     `aria-disabled` keeps it focusable but needs JavaScript to stop it
+     navigating.
    - Screen reader announcement, derived from the element and any `role`.
      If a `role` is present and you are not sure of its keyboard model, say
      so and ask.

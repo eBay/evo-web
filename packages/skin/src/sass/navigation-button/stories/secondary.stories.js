@@ -4,9 +4,9 @@ export const textOnly = () =>
     '<a href="http://www.ebay/com" class="navigation-button navigation-button--secondary">Navigation Button</a>';
 
 export const iconOnly = () => `
-<a class="navigation-button navigation-button--secondary" href="http://www.ebay.com">
+<a class="navigation-button navigation-button--secondary" href="http://www.ebay.com" aria-label="Close">
     <span class="navigation-button__cell">
-        <svg class="icon icon--16" width="16" height="16"><use href="#icon-close-16"></use></svg>
+        <svg class="icon icon--16" width="16" height="16" aria-hidden="true"><use href="#icon-close-16"></use></svg>
     </span>
 </a>
 `;
