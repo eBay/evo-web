@@ -16,17 +16,17 @@ The static layer was originally organized around semantic and behavioral boundar
 
 ## Decision
 
-`fake-button`, `fake-tabs`, and `fake-link` are promoted to standalone, top-level static components, renamed `link-button`, `navigation-tabs`, and `button-link`. They are not modifiers or nested variants of `button`, `tabs`, and `link`.
+`fake-button`, `fake-tabs`, and `fake-link` are promoted to standalone, top-level static components, renamed `navigation-button`, `navigation-tabs`, and `text-button`. They are not modifiers or nested variants of `button`, `tabs`, and `link`.
 
 Each gets its own SCSS module, its own Storybook entry, and its own documentation page. Shared visual styling across a component and its counterpart is implemented through Sass mixins, not through a shared top-level class or a shared component boundary. `fake-menu` is similarly renamed `navigation-menu` and remains separate from `menu`.
 
-Naming convention: `btn` & `link-button`, `tabs` & `navigation-tabs`, `menu` & `navigation-menu`, `link` & `button-link`.
+Naming convention: `button` & `navigation-button`, `tabs` & `navigation-tabs`, `menu` & `navigation-menu`, `link` & `text-button`. A `.link` class for plain links is proposed, not decided.
 
 This decision covers the static layer only. How the Marko and React component APIs expose these patterns (for example, a separate component or a `variant` prop) belongs to their owners.
 
 ## Consequences
 
-A change to `button`'s behavior (keyboard handling, disabled state, ARIA attributes) cannot silently affect `link-button`, because the two no longer share an implementation surface. The same applies to the `tabs`/`navigation-tabs` and `link`/`button-link` pairs.
+A change to `button`'s behavior (keyboard handling, disabled state, ARIA attributes) cannot silently affect `navigation-button`, because the two no longer share an implementation surface. The same applies to the `tabs`/`navigation-tabs` and `link`/`text-button` pairs.
 
 Each component gets independent documentation, Storybook discoverability, and accessibility guidance, rather than inheriting a parent's documentation with caveats for the counterpart.
 
@@ -46,18 +46,20 @@ If a proposed variant trips any of these three, it gets its own static module, s
 
 ## Modifier compatibility test
 
-A BEM modifier should combine cleanly with every other modifier on the same block, such as size and priority. A proposed modifier that cannot is a smell: it usually means the variant changes what the control is, not how it looks. A `btn--link` modifier is the case that prompted this rule. It would carry different semantics and behavior, which is not what a modifier expresses, so it would not sit alongside the size and priority modifiers the way `btn--borderless` does. A separate module has no such problem, because nothing in it has to combine with the parent's modifiers.
+A BEM modifier should combine cleanly with every other modifier on the same block, such as size and priority. A proposed modifier that cannot is a smell: it usually means the variant changes what the control is, not how it looks. A `btn--link` modifier is the case that prompted this rule. A link-styled button has no primary or large version, because it replaces the whole look instead of adjusting it, so it would not sit alongside the size and priority modifiers the way `btn--borderless` does. A separate module has no such problem, because nothing in it has to combine with the parent's modifiers.
 
 ## Naming
 
-The last word of a name is the pattern the control looks like. The words before it say what the control is underneath. `link-button` is a button-styled control built as a link, `button-link` is a link-styled control built as a button, and `navigation-tabs` is tab-styled navigation. This follows the existing convention of putting the type last, as in `icon-button`, `split-button`, and `lightbox-dialog`.
+The last word names the family a component belongs to. The words before it say how it differs: what it adds, does or looks like, never the element it's built from. `icon-button` adds an icon, `menu-button` opens a menu, `navigation-button` navigates and `text-button` looks like text. `link-button` broke this, because `link` named the element underneath, so the name read just as well as "a link that looks like a button" or "a button that behaves like a link."
+
+Class names spell out `button`. The abbreviated `.btn`, `.icon-btn`, `.cta-btn` and `.expand-btn` gain `.button`, `.icon-button`, `.cta-button` and `.expand-button` beside them in a minor release, and the abbreviated names are removed in the next major version.
 
 ## Precedent: single-variant modules already exist
 
-A standalone module for a pattern with no modifiers of its own is not unusual in the static layer. `link`, `list`, `confirm-dialog`, `split-button`, `donut-chart`, `chip`, `chart-legend`, `image-placeholder`, `file-preview-card-group`, `layout-grid`, and `star-rating` are all top-level modules with zero BEM modifiers today. `link` is the direct sibling of `button-link` under this decision's naming convention, and it has stood as a single-variant top-level module without controversy. A single-variant shape is not, on its own, evidence that a module is unwarranted.
+A standalone module for a pattern with no modifiers of its own is not unusual in the static layer. `link`, `list`, `confirm-dialog`, `split-button`, `donut-chart`, `chip`, `chart-legend`, `image-placeholder`, `file-preview-card-group`, `layout-grid`, and `star-rating` are all top-level modules with zero BEM modifiers today. `link`, which `text-button` is styled to match, has stood as a single-variant top-level module without controversy. A single-variant shape is not, on its own, evidence that a module is unwarranted.
 
 ## What doesn't settle this question
 
 Some arguments that may come up in this discussion. None of them decides the separation on their own:
 
-- **Visual similarity alone.** Two controls rendering identically is a claim about appearance, not about behavior or semantics. `button` and `button-link` can share every pixel of styling through mixins while remaining different controls for keyboard activation, disabled handling, and AT announcement. "It looks the same" is not evidence the module boundary is wrong. Appearances can be deceiving.
+- **Visual similarity alone.** Two controls rendering identically is a claim about appearance, not about behavior or semantics. `button` and `navigation-button` can share every pixel of styling through mixins while remaining different controls for keyboard activation, disabled handling, and AT announcement. "It looks the same" is not evidence the module boundary is wrong. Appearances can be deceiving.

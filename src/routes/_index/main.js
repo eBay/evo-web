@@ -136,7 +136,7 @@ document.getElementById("busy-button")?.addEventListener("click", function () {
   const button = this;
   button.setAttribute("aria-label", "Busy...");
   button.innerHTML = `
-        <span class="btn__cell">
+        <span class="button__cell">
             <span class="progress-spinner" role="img" aria-label="Busy">
                 <svg class="icon icon--24" height="24" width="24" aria-hidden="true" >
                     <use href="#icon-spinner-24"></use>
@@ -174,7 +174,7 @@ document.querySelectorAll(".breadcrumbs").forEach(function (el) {
 
 // EXPAND BUTTON
 // Potential candidate for makeup-expander, but expander currently requires a wrapper around the "host"
-document.querySelectorAll(".expand-btn").forEach(function (el) {
+document.querySelectorAll(".expand-button").forEach(function (el) {
   el.addEventListener("click", function () {
     const isExpanded = this.getAttribute("aria-expanded") === "true";
     this.setAttribute("aria-expanded", !isExpanded);
@@ -219,11 +219,11 @@ document.querySelectorAll(".fake-menu-button").forEach(function (widgetEl) {
     ".fake-menu-button__menu",
   );
 
-  let hostSelector = ".icon-btn";
-  if (widgetEl.querySelector(".expand-btn")) {
-    hostSelector = ".expand-btn";
-  } else if (widgetEl.querySelector(".btn")) {
-    hostSelector = ".btn";
+  let hostSelector = ".icon-button";
+  if (widgetEl.querySelector(".expand-button")) {
+    hostSelector = ".expand-button";
+  } else if (widgetEl.querySelector(".button")) {
+    hostSelector = ".button";
   }
 
   pageWidgets.push(
@@ -646,10 +646,10 @@ document.querySelectorAll(".listbox-button").forEach(function (widgetEl) {
 
   const options = {
     autoSelect: widgetEl.dataset.makeupAutoSelect === "true",
-    buttonLabelSelector: ".btn__text",
-    floatingLabelSelector: ".btn__floating-label",
-    floatingLabelInline: "btn__floating-label--inline",
-    floatingLabelAnimate: "btn__floating-label--animate",
+    buttonLabelSelector: ".button__text",
+    floatingLabelSelector: ".button__floating-label",
+    floatingLabelInline: "button__floating-label--inline",
+    floatingLabelAnimate: "button__floating-label--animate",
   };
 
   pageWidgets.push(new ListboxButton(widgetEl, options));
@@ -665,7 +665,7 @@ document
   .forEach(function (widgetEl) {
     const options = {
       autoSelect: widgetEl.dataset.makeupAutoSelect === "true",
-      buttonLabelSelector: ".btn__text",
+      buttonLabelSelector: ".button__text",
       buttonValueType: "icon",
       listboxOptionIconSelector: ".fflag",
       listboxOptionAriaLabelSelector: ".listbox-button__value span",
@@ -700,7 +700,7 @@ document.querySelectorAll(".menu-button").forEach(function (widgetEl) {
 
   const widget = new MenuButton(widgetEl, {
     menuSelector: ".menu-button__menu",
-    buttonTextSelector: `.btn__text`,
+    buttonTextSelector: `.button__text`,
   });
 
   popperDropdown.attachEvents();

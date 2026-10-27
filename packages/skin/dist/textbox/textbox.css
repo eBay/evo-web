@@ -22,7 +22,8 @@
     position: relative;
     width: fit-content;
 }
-.textbox button.icon-btn {
+.textbox button.icon-btn,
+.textbox button.icon-button {
     background-color: initial;
     padding: 0;
 }
@@ -150,6 +151,7 @@ input.textbox__control {
 }
 
 .textbox .icon-btn > svg,
+.textbox .icon-button > svg,
 .textbox > svg {
     color: var(--textbox-icon-color, var(--color-foreground-secondary));
     display: inline-flex;
@@ -169,11 +171,13 @@ input.textbox__control {
     margin-inline-end: var(--spacing-200);
 }
 
-.textbox .icon-btn:last-child {
+.textbox .icon-btn:last-child,
+.textbox .icon-button:last-child {
     margin-inline-start: calc(-1 * var(--spacing-100));
 }
 
-.textbox .icon-btn:first-child {
+.textbox .icon-btn:first-child,
+.textbox .icon-button:first-child {
     margin-inline-end: calc(-1 * var(--spacing-100));
 }
 

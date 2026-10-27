@@ -43,8 +43,8 @@
     margin-inline-start: var(--spacing-200);
 }
 
-.drawer-dialog__header .button-link,
-.drawer-dialog__header .fake-link {
+.drawer-dialog__header .fake-link,
+.drawer-dialog__header .text-button {
     align-self: flex-start;
     text-decoration: none;
 }
@@ -97,7 +97,8 @@
 .drawer-dialog__footer > :not(:first-child) {
     margin-left: 8px;
 }
-button.icon-btn.drawer-dialog__close {
+button.icon-btn.drawer-dialog__close,
+button.icon-button.drawer-dialog__close {
     align-self: flex-start;
     border: 0;
     height: 32px;

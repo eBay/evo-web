@@ -1,13 +1,13 @@
 export default { title: "Skin/Split Button/Base" };
 export const primaryCollapsed = () => `
 <span class="split-button">
-    <button class="btn btn--primary btn--split-start" type="button">
-        <span class="btn__cell">
-            <span class="btn__text">Button</span>
+    <button class="button button--primary button--split-start" type="button">
+        <span class="button__cell">
+            <span class="button__text">Button</span>
         </span>
     </button>
     <span class="menu-button">
-        <button class="btn btn--primary btn--split-end" aria-haspopup="true" type="button">
+        <button class="button button--primary button--split-end" aria-haspopup="true" type="button">
             <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -31,13 +31,13 @@ export const primaryCollapsed = () => `
 
 export const primaryExpanded = () => `
 <span class="split-button">
-    <button class="btn btn--primary btn--split-start" type="button">
-        <span class="btn__cell">
-            <span class="btn__text">Button</span>
+    <button class="button button--primary button--split-start" type="button">
+        <span class="button__cell">
+            <span class="button__text">Button</span>
         </span>
     </button>
     <span class="menu-button">
-        <button class="btn btn--primary btn--split-end" aria-haspopup="true" aria-expanded="true" type="button">
+        <button class="button button--primary button--split-end" aria-haspopup="true" aria-expanded="true" type="button">
             <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -61,13 +61,13 @@ export const primaryExpanded = () => `
 
 export const secondaryCollapsed = () => `
 <span class="split-button">
-    <button class="btn btn--secondary btn--split-start" type="button">
-        <span class="btn__cell">
-            <span class="btn__text">Button</span>
+    <button class="button button--secondary button--split-start" type="button">
+        <span class="button__cell">
+            <span class="button__text">Button</span>
         </span>
     </button>
     <span class="menu-button">
-        <button class="btn btn--secondary btn--split-end" aria-haspopup="true" type="button">
+        <button class="button button--secondary button--split-end" aria-haspopup="true" type="button">
             <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -91,13 +91,13 @@ export const secondaryCollapsed = () => `
 
 export const secondaryExpanded = () => `
 <span class="split-button">
-    <button class="btn btn--secondary btn--split-start" type="button">
-        <span class="btn__cell">
-            <span class="btn__text">Button</span>
+    <button class="button button--secondary button--split-start" type="button">
+        <span class="button__cell">
+            <span class="button__text">Button</span>
         </span>
     </button>
     <span class="menu-button">
-        <button class="btn btn--secondary btn--split-end" aria-expanded="true" aria-haspopup="true" type="button">
+        <button class="button button--secondary button--split-end" aria-expanded="true" aria-haspopup="true" type="button">
             <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -121,13 +121,13 @@ export const secondaryExpanded = () => `
 
 export const tertiaryCollapsed = () => `
 <span class="split-button">
-    <button class="btn btn--tertiary btn--split-start" type="button">
-        <span class="btn__cell">
-            <span class="btn__text">Button</span>
+    <button class="button button--tertiary button--split-start" type="button">
+        <span class="button__cell">
+            <span class="button__text">Button</span>
         </span>
     </button>
     <span class="menu-button">
-        <button class="btn btn--tertiary btn--split-end" aria-haspopup="true" type="button">
+        <button class="button button--tertiary button--split-end" aria-haspopup="true" type="button">
             <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -151,13 +151,13 @@ export const tertiaryCollapsed = () => `
 
 export const tertiaryExpanded = () => `
 <span class="split-button">
-    <button class="btn btn--tertiary btn--split-start" type="button">
-        <span class="btn__cell">
-            <span class="btn__text">Button</span>
+    <button class="button button--tertiary button--split-start" type="button">
+        <span class="button__cell">
+            <span class="button__text">Button</span>
         </span>
     </button>
     <span class="menu-button">
-        <button class="btn btn--tertiary btn--split-end" aria-expanded="true" aria-haspopup="true" type="button">
+        <button class="button button--tertiary button--split-end" aria-expanded="true" aria-haspopup="true" type="button">
             <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -181,11 +181,11 @@ export const tertiaryExpanded = () => `
 
 export const fakePrimaryCollapsed = () => `
 <span class="split-button">
-    <a class="fake-btn fake-btn--primary fake-btn--split-start" href="https://ebay.com">
+    <a class="navigation-button navigation-button--primary navigation-button--split-start" href="https://ebay.com">
         Link
     </a>
     <span class="menu-button">
-        <button class="btn btn--primary btn--split-end" aria-haspopup="true" type="button">
+        <button class="button button--primary button--split-end" aria-haspopup="true" type="button">
             <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -209,11 +209,11 @@ export const fakePrimaryCollapsed = () => `
 
 export const fakePrimaryExpanded = () => `
 <span class="split-button">
-    <a class="fake-btn fake-btn--primary fake-btn--split-start" href="https://ebay.com">
+    <a class="navigation-button navigation-button--primary navigation-button--split-start" href="https://ebay.com">
         Link
     </a>
     <span class="menu-button">
-        <button class="btn btn--primary btn--split-end" aria-haspopup="true" aria-expanded="true" type="button">
+        <button class="button button--primary button--split-end" aria-haspopup="true" aria-expanded="true" type="button">
             <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -237,11 +237,11 @@ export const fakePrimaryExpanded = () => `
 
 export const fakeSecondaryCollapsed = () => `
 <span class="split-button">
-    <a class="fake-btn fake-btn--secondary fake-btn--split-start" href="https://ebay.com">
+    <a class="navigation-button navigation-button--secondary navigation-button--split-start" href="https://ebay.com">
         Link
     </a>
     <span class="menu-button">
-        <button class="btn btn--secondary btn--split-end" aria-haspopup="true" type="button">
+        <button class="button button--secondary button--split-end" aria-haspopup="true" type="button">
             <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -265,11 +265,11 @@ export const fakeSecondaryCollapsed = () => `
 
 export const fakeSecondaryExpanded = () => `
 <span class="split-button">
-    <a class="fake-btn fake-btn--secondary fake-btn--split-start" href="https://ebay.com">
+    <a class="navigation-button navigation-button--secondary navigation-button--split-start" href="https://ebay.com">
         Link
     </a>
     <span class="menu-button">
-        <button class="btn btn--secondary btn--split-end" aria-expanded="true" aria-haspopup="true" type="button">
+        <button class="button button--secondary button--split-end" aria-expanded="true" aria-haspopup="true" type="button">
             <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -293,11 +293,11 @@ export const fakeSecondaryExpanded = () => `
 
 export const fakeTertiaryCollapsed = () => `
 <span class="split-button">
-    <a class="fake-btn fake-btn--tertiary fake-btn--split-start" href="https://ebay.com">
+    <a class="navigation-button navigation-button--tertiary navigation-button--split-start" href="https://ebay.com">
         Link
     </a>
     <span class="menu-button">
-        <button class="btn btn--tertiary btn--split-end" aria-haspopup="true" type="button">
+        <button class="button button--tertiary button--split-end" aria-haspopup="true" type="button">
             <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -321,11 +321,11 @@ export const fakeTertiaryCollapsed = () => `
 
 export const fakeTertiaryExpanded = () => `
 <span class="split-button">
-    <a class="fake-btn fake-btn--tertiary fake-btn--split-start" href="https://ebay.com">
+    <a class="navigation-button navigation-button--tertiary navigation-button--split-start" href="https://ebay.com">
         Link
     </a>
     <span class="menu-button">
-        <button class="btn btn--tertiary btn--split-end" aria-expanded="true" aria-haspopup="true" type="button">
+        <button class="button button--tertiary button--split-end" aria-expanded="true" aria-haspopup="true" type="button">
             <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -349,13 +349,13 @@ export const fakeTertiaryExpanded = () => `
 
 export const textSpacing = () => `
 <span class="split-button demo-a11y-text-spacing">
-    <button class="btn btn--primary btn--split-start" type="button">
-        <span class="btn__cell">
-            <span class="btn__text">Button</span>
+    <button class="button button--primary button--split-start" type="button">
+        <span class="button__cell">
+            <span class="button__text">Button</span>
         </span>
     </button>
     <span class="menu-button">
-        <button class="btn btn--primary btn--split-end" aria-haspopup="true" aria-expanded="true" type="button">
+        <button class="button button--primary button--split-end" aria-haspopup="true" aria-expanded="true" type="button">
             <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>

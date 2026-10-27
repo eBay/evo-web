@@ -16,28 +16,36 @@ import { urls } from "../../../../data";
     <div class="section-notice__main">
       <h3 class="section-notice__title">Deprecated</h3>
       <p>
+        The <code>btn</code> and <code>expand-btn</code> classes are deprecated
+        and will be removed in the next major version of Skin. Use the
+        <code>button</code> and <code>expand-button</code> classes instead, for
+        example <code>button--primary</code> in place of
+        <code>btn--primary</code>. Don't combine old and new names on one element.
+      </p>
+      <p>
         The <code>fake-btn</code> classes on this page are deprecated and will
         be removed in the next major version of Skin. Use
-        <a href=`${urls.components}/link-button`>link-button</a> instead.
+        <a href=`${urls.components}/navigation-button`>navigation-button</a>
+        instead.
       </p>
     </div>
   </section>
 
   <h3 id="button-default">Default Button</h3>
   <p>
-    Use the <code>btn</code> or <code>fake-btn</code> class respectively, to
+    Use the <code>button</code> or <code>fake-btn</code> class respectively, to
     create a minimal, default button. This default button is the foundation for
     all other button types.
   </p>
   <div class="demo">
     <div class="demo__inner">
-      <button class="btn">Button</button>
+      <button class="button">Button</button>
       <a class="fake-btn" href="https://www.ebay.com">Link</a>
     </div>
   </div>
 
   <highlight-code type="html">
-    <button class="btn">Button</button>
+    <button class="button">Button</button>
     <a class="fake-btn" href="https://www.ebay.com">Link</a>
   </highlight-code>
 
@@ -45,7 +53,7 @@ import { urls } from "../../../../data";
 
   <div class="demo">
     <div class="demo__inner">
-      <button class="btn btn--large">Large Button</button>
+      <button class="button button--large">Large Button</button>
       <a class="fake-btn fake-btn--large" href="https://www.ebay.com">
         Large Link
       </a>
@@ -53,7 +61,7 @@ import { urls } from "../../../../data";
   </div>
 
   <highlight-code type="html">
-    <button class="btn btn--large">Button</button>
+    <button class="button button--large">Button</button>
     <a class="fake-btn fake-btn--large" href="https://www.ebay.com">
       Large Link
     </a>
@@ -63,7 +71,7 @@ import { urls } from "../../../../data";
 
   <div class="demo">
     <div class="demo__inner">
-      <button class="btn btn--small">Small Button</button>
+      <button class="button button--small">Small Button</button>
       <a class="fake-btn fake-btn--small" href="https://www.ebay.com">
         Small Link
       </a>
@@ -71,7 +79,7 @@ import { urls } from "../../../../data";
   </div>
 
   <highlight-code type="html">
-    <button class="btn btn--small">Button</button>
+    <button class="button button--small">Button</button>
     <a class="fake-btn fake-btn--small" href="https://www.ebay.com">
       Small Link
     </a>
@@ -81,13 +89,13 @@ import { urls } from "../../../../data";
   <p>Use the <code>primary</code> modifier to create a primary button style.</p>
   <div class="demo">
     <div class="demo__inner">
-      <button class="btn btn--primary">Button</button>
+      <button class="button button--primary">Button</button>
       <a class="fake-btn fake-btn--primary" href="https://www.ebay.com">Link</a>
     </div>
   </div>
 
   <highlight-code type="html">
-    <button class="btn btn--primary">Button</button>
+    <button class="button button--primary">Button</button>
     <a class="fake-btn fake-btn--primary" href="https://www.ebay.com">Link</a>
   </highlight-code>
 
@@ -97,7 +105,7 @@ import { urls } from "../../../../data";
   </p>
   <div class="demo">
     <div class="demo__inner">
-      <button class="btn btn--secondary">Button</button>
+      <button class="button button--secondary">Button</button>
       <a class="fake-btn fake-btn--secondary" href="https://www.ebay.com">
         Link
       </a>
@@ -105,7 +113,7 @@ import { urls } from "../../../../data";
   </div>
 
   <highlight-code type="html">
-    <button class="btn btn--secondary">Button</button>
+    <button class="button button--secondary">Button</button>
     <a class="fake-btn fake-btn--secondary" href="https://www.ebay.com">Link</a>
   </highlight-code>
 
@@ -115,7 +123,7 @@ import { urls } from "../../../../data";
   </p>
   <div class="demo">
     <div class="demo__inner">
-      <button class="btn btn--tertiary">Button</button>
+      <button class="button button--tertiary">Button</button>
       <a class="fake-btn fake-btn--tertiary" href="https://www.ebay.com">
         Link
       </a>
@@ -123,7 +131,7 @@ import { urls } from "../../../../data";
   </div>
 
   <highlight-code type="html">
-    <button class="btn btn--tertiary">Button</button>
+    <button class="button button--tertiary">Button</button>
     <a class="fake-btn fake-btn--tertiary" href="https://www.ebay.com">Link</a>
   </highlight-code>
 
@@ -134,26 +142,26 @@ import { urls } from "../../../../data";
   </p>
   <div class="demo">
     <div class="demo__inner">
-      <button class="btn btn--primary" type="button" disabled>
+      <button class="button button--primary" type="button" disabled>
         Primary Button
       </button>
-      <button class="btn btn--secondary" type="button" disabled>
+      <button class="button button--secondary" type="button" disabled>
         Secondary Button
       </button>
-      <button class="btn btn--tertiary" type="button" disabled>
+      <button class="button button--tertiary" type="button" disabled>
         Tertiary Button
       </button>
     </div>
   </div>
 
   <highlight-code type="html">
-    <button class="btn btn--primary" type="button" disabled>
+    <button class="button button--primary" type="button" disabled>
       Primary Button
     </button>
-    <button class="btn btn--secondary" type="button" disabled>
+    <button class="button button--secondary" type="button" disabled>
       Secondary Button
     </button>
-    <button class="btn btn--tertiary" type="button" disabled>
+    <button class="button button--tertiary" type="button" disabled>
       Tertiary Button
     </button>
   </highlight-code>
@@ -181,20 +189,20 @@ import { urls } from "../../../../data";
 
   <div class="demo">
     <div class="demo__inner">
-      <button aria-disabled="true" class="btn btn--primary" type="button">
+      <button aria-disabled="true" class="button button--primary" type="button">
         Prev
       </button>
-      <button aria-disabled="true" class="btn btn--primary" type="button">
+      <button aria-disabled="true" class="button button--primary" type="button">
         Next
       </button>
     </div>
   </div>
 
   <highlight-code type="html">
-    <button aria-disabled="true" class="btn btn--primary" type="button">
+    <button aria-disabled="true" class="button button--primary" type="button">
       Prev
     </button>
-    <button aria-disabled="true" class="btn btn--primary" type="button">
+    <button aria-disabled="true" class="button button--primary" type="button">
       Next
     </button>
   </highlight-code>
@@ -208,7 +216,9 @@ import { urls } from "../../../../data";
   <h4>Primary Destructive Button</h4>
   <div class="demo">
     <div class="demo__inner">
-      <button class="btn btn--primary btn--destructive">Primary Button</button>
+      <button class="button button--primary button--destructive">
+        Primary Button
+      </button>
       <a
         class="fake-btn fake-btn--primary fake-btn--destructive"
         href="https://www.ebay.com"
@@ -219,7 +229,7 @@ import { urls } from "../../../../data";
   </div>
 
   <highlight-code type="html">
-    <button class="btn btn--destructive">Destructive Button</button>
+    <button class="button button--destructive">Destructive Button</button>
     <a
       class="fake-btn fake-btn--primary fake-btn--destructive"
       href="https://www.ebay.com"
@@ -231,7 +241,7 @@ import { urls } from "../../../../data";
   <h4>Secondary Destructive Button</h4>
   <div class="demo">
     <div class="demo__inner">
-      <button class="btn btn--secondary btn--destructive">
+      <button class="button button--secondary button--destructive">
         Secondary Button
       </button>
       <a
@@ -244,7 +254,7 @@ import { urls } from "../../../../data";
   </div>
 
   <highlight-code type="html">
-    <button class="btn btn--secondary btn--destructive">
+    <button class="button button--secondary button--destructive">
       Secondary Button
     </button>
     <a
@@ -258,7 +268,7 @@ import { urls } from "../../../../data";
   <h4>Tertiary Destructive Button</h4>
   <div class="demo">
     <div class="demo__inner">
-      <button class="btn btn--tertiary btn--destructive">
+      <button class="button button--tertiary button--destructive">
         Tertiary Button
       </button>
       <a
@@ -271,7 +281,9 @@ import { urls } from "../../../../data";
   </div>
 
   <highlight-code type="html">
-    <button class="btn btn--tertiary btn--destructive">Tertiary Button</button>
+    <button class="button button--tertiary button--destructive">
+      Tertiary Button
+    </button>
     <a
       class="fake-btn fake-btn--tertiary fake-btn--destructive"
       href="https://www.ebay.com"
@@ -287,16 +299,16 @@ import { urls } from "../../../../data";
   </p>
   <div class="demo">
     <div class="demo__inner">
-      <button class="btn btn--primary">
-        <span class="btn__cell">
+      <button class="button button--primary">
+        <span class="button__cell">
           <svg aria-hidden="true" class="icon icon--24" height="16" width="16">
             <icon-symbol name="menu-24"/>
           </svg>
           <span>Button</span>
         </span>
       </button>
-      <button class="btn btn--primary">
-        <span class="btn__cell">
+      <button class="button button--primary">
+        <span class="button__cell">
           <span>Button</span>
           <svg aria-hidden="true" class="icon icon--24" height="16" width="16">
             <icon-symbol name="menu-24"/>
@@ -307,16 +319,16 @@ import { urls } from "../../../../data";
   </div>
 
   <highlight-code type="html">
-    <button class="btn btn--primary">
-      <span class="btn__cell">
+    <button class="button button--primary">
+      <span class="button__cell">
         <svg aria-hidden="true" class="icon icon--24" height="16" width="16">
           <use href="#icon-menu-24"/>
         </svg>
         <span>Button</span>
       </span>
     </button>
-    <button class="btn btn--primary">
-      <span class="btn__cell">
+    <button class="button button--primary">
+      <span class="button__cell">
         <span>Button</span>
         <svg aria-hidden="true" class="icon icon--24" height="16" width="16">
           <use href="#icon-menu-24"/>
@@ -335,8 +347,8 @@ import { urls } from "../../../../data";
 
   <div class="demo">
     <div class="demo__inner">
-      <button class="btn btn--primary" aria-label="Busy...">
-        <span class="btn__cell">
+      <button class="button button--primary" aria-label="Busy...">
+        <span class="button__cell">
           <span class="progress-spinner">
             <svg
               aria-hidden="true"
@@ -353,8 +365,8 @@ import { urls } from "../../../../data";
   </div>
 
   <highlight-code type="html">
-    <button class="btn btn--primary" aria-label="Busy...">
-      <span class="btn__cell">
+    <button class="button button--primary" aria-label="Busy...">
+      <span class="button__cell">
         <span class="progress-spinner">
           <svg aria-hidden="true" class="icon icon--24" height="24" width="24">
             <use href="#icon-spinner-24"/>
@@ -369,7 +381,7 @@ import { urls } from "../../../../data";
   <div class="demo">
     <div class="demo__inner">
       <button
-        class="btn btn--primary"
+        class="button button--primary"
         id="busy-button"
         style="min-width: 150px"
       >
@@ -395,11 +407,11 @@ import { urls } from "../../../../data";
   <div class="demo">
     <div class="demo__inner">
       <button
-        class="btn btn--primary btn--fluid"
+        class="button button--primary button--fluid"
         type="button"
         style="padding-left: 16px; padding-right: 16px;"
       >
-        <span class="btn__cell" style="justify-content: space-between">
+        <span class="button__cell" style="justify-content: space-between">
           <span>Select</span>
           <span style="display: inline-flex;">
             <span>Any</span>
@@ -414,11 +426,11 @@ import { urls } from "../../../../data";
 
   <highlight-code type="html">
     <button
-      class="btn btn--primary btn--fluid"
+      class="button button--primary button--fluid"
       type="button"
       style="padding-left: 16px; padding-right: 16px;"
     >
-      <span class="btn__cell" style="justify-content: space-between">
+      <span class="button__cell" style="justify-content: space-between">
         <span>Select</span>
         <span style="display: inline-flex;">
           <span>Any</span>
@@ -434,8 +446,8 @@ import { urls } from "../../../../data";
 
   <p>
     To ensure the same height as other controls, apply a fixed height to a
-    button with <code>btn--fixed-height</code> or
-    <code>btn--large-fixed-height</code> .
+    button with <code>button--fixed-height</code> or
+    <code>button--large-fixed-height</code> .
   </p>
 
   <div class="demo">
@@ -448,7 +460,9 @@ import { urls } from "../../../../data";
           placeholder="textbox"
         >
       </span>
-      <button class="btn btn--primary btn--fixed-height">Button</button>
+      <button class="button button--primary button--fixed-height">
+        Button
+      </button>
     </div>
   </div>
 
@@ -461,7 +475,7 @@ import { urls } from "../../../../data";
         placeholder="textbox"
       >
     </span>
-    <button class="btn btn--primary btn--fixed-height">Button</button>
+    <button class="button button--primary button--fixed-height">Button</button>
   </highlight-code>
 
   <h3 id="button-fixed-width">Fixed Width Button</h3>
@@ -472,13 +486,13 @@ import { urls } from "../../../../data";
   </p>
 
   <div class="demo">
-    <button class="btn btn--primary" style="width: 200px;">
+    <button class="button button--primary" style="width: 200px;">
       Button with a lot of text that will wrap
     </button>
   </div>
 
   <highlight-code type="html">
-    <button class="btn btn--primary" style="width: 200px;">
+    <button class="button button--primary" style="width: 200px;">
       Button with a lot of text that will wrap
     </button>
   </highlight-code>
@@ -491,25 +505,8 @@ import { urls } from "../../../../data";
   </p>
 
   <div class="demo">
-    <button class="btn btn--primary btn--fixed-height" style="width: 200px;">
-      Button with a lot of text that will wrap
-    </button>
-  </div>
-
-  <highlight-code type="html">
-    <button class="btn btn--primary btn--fixed-height" style="width: 200px;">
-      Button with a lot of text that will wrap
-    </button>
-  </highlight-code>
-
-  <p>
-    The solution is to apply truncation, via the <code>btn--truncated</code> or
-    <code>btn--large-truncated</code> modifiers.
-  </p>
-
-  <div class="demo">
     <button
-      class="btn btn--primary btn--fixed-height btn--truncated"
+      class="button button--primary button--fixed-height"
       style="width: 200px;"
     >
       Button with a lot of text that will wrap
@@ -518,7 +515,30 @@ import { urls } from "../../../../data";
 
   <highlight-code type="html">
     <button
-      class="btn btn--primary btn--fixed-height btn--truncated"
+      class="button button--primary button--fixed-height"
+      style="width: 200px;"
+    >
+      Button with a lot of text that will wrap
+    </button>
+  </highlight-code>
+
+  <p>
+    The solution is to apply truncation, via the <code>button--truncated</code>
+    or <code>button--large-truncated</code> modifiers.
+  </p>
+
+  <div class="demo">
+    <button
+      class="button button--primary button--fixed-height button--truncated"
+      style="width: 200px;"
+    >
+      Button with a lot of text that will wrap
+    </button>
+  </div>
+
+  <highlight-code type="html">
+    <button
+      class="button button--primary button--fixed-height button--truncated"
       style="width: 200px;"
     >
       Button with a lot of text that will wrap
@@ -533,9 +553,13 @@ import { urls } from "../../../../data";
 
   <div class="demo">
     <div class="demo__inner">
-      <button class="btn btn--primary" aria-expanded="false" type="button">
-        <span class="btn__cell">
-          <span class="btn__text">Button</span>
+      <button
+        class="button button--primary"
+        aria-expanded="false"
+        type="button"
+      >
+        <span class="button__cell">
+          <span class="button__text">Button</span>
           <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
             <icon-symbol name="chevron-down-16"/>
           </svg>
@@ -545,9 +569,9 @@ import { urls } from "../../../../data";
   </div>
 
   <highlight-code type="html">
-    <button class="btn btn--primary" aria-expanded="false" type="button">
-      <span class="btn__cell">
-        <span class="btn__text">Button</span>
+    <button class="button button--primary" aria-expanded="false" type="button">
+      <span class="button__cell">
+        <span class="button__text">Button</span>
         <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
           <use href="#icon-chevron-down-16"/>
         </svg>
@@ -562,9 +586,9 @@ import { urls } from "../../../../data";
 
   <div class="demo">
     <div class="demo__inner">
-      <button class="btn btn--borderless" type="button">
-        <span class="btn__cell">
-          <span class="btn__text">Button</span>
+      <button class="button button--borderless" type="button">
+        <span class="button__cell">
+          <span class="button__text">Button</span>
           <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
             <icon-symbol name="chevron-down-12"/>
           </svg>
@@ -574,9 +598,9 @@ import { urls } from "../../../../data";
   </div>
 
   <highlight-code type="html">
-    <button class="btn btn--borderless" type="button">
-      <span class="btn__cell">
-        <span class="btn__text">Button</span>
+    <button class="button button--borderless" type="button">
+      <span class="button__cell">
+        <span class="button__text">Button</span>
         <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
           <use href="#icon-chevron-down-12"/>
         </svg>
@@ -590,9 +614,9 @@ import { urls } from "../../../../data";
   </p>
   <div class="demo">
     <div class="demo__inner">
-      <button class="btn btn--form" aria-expanded="false" type="button">
-        <span class="btn__cell">
-          <span class="btn__text">Button</span>
+      <button class="button button--form" aria-expanded="false" type="button">
+        <span class="button__cell">
+          <span class="button__text">Button</span>
           <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
             <icon-symbol name="chevron-down-12"/>
           </svg>
@@ -602,9 +626,9 @@ import { urls } from "../../../../data";
   </div>
 
   <highlight-code type="html">
-    <button class="btn btn--form" aria-expanded="false" type="button">
-      <span class="btn__cell">
-        <span class="btn__text">Button</span>
+    <button class="button button--form" aria-expanded="false" type="button">
+      <span class="button__cell">
+        <span class="button__text">Button</span>
         <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
           <use href="#icon-chevron-down-12"/>
         </svg>
@@ -613,14 +637,14 @@ import { urls } from "../../../../data";
   </highlight-code>
 
   <p>
-    Use the <code>btn--slim</code> modifier, in conjunction with
-    <code>btn--form</code> , if displaying an icon only.
+    Use the <code>button--slim</code> modifier, in conjunction with
+    <code>button--form</code> , if displaying an icon only.
   </p>
 
   <div class="demo">
     <div class="demo__inner">
       <button
-        class="btn btn--form btn--slim expand-btn-example"
+        class="button button--form button--slim expand-btn-example"
         type="button"
         aria-expanded="false"
         aria-label="Expand/Collapse"
@@ -634,7 +658,7 @@ import { urls } from "../../../../data";
 
   <highlight-code type="html">
     <button
-      class="btn btn--form btn--slim"
+      class="button button--form button--slim"
       type="button"
       aria-expanded="false"
       aria-label="Expand/Collapse"
@@ -647,19 +671,19 @@ import { urls } from "../../../../data";
 
   <p>
     For a floated "label", which will appear above the value, use the
-    <code>btn--floating-label</code> and <code>btn__floating-label</code>
+    <code>button--floating-label</code> and <code>button__floating-label</code>
     classes.
   </p>
 
   <div class="demo">
     <div class="demo__inner">
       <button
-        class="btn btn--form btn--floating-label"
+        class="button button--form button--floating-label"
         style="min-width: 150px;"
       >
-        <span class="btn__cell">
-          <span class="btn__floating-label">Color</span>
-          <span class="btn__text">Blue</span>
+        <span class="button__cell">
+          <span class="button__floating-label">Color</span>
+          <span class="button__text">Blue</span>
           <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
             <icon-symbol name="chevron-down-12"/>
           </svg>
@@ -669,10 +693,13 @@ import { urls } from "../../../../data";
   </div>
 
   <highlight-code type="html">
-    <button class="btn btn--form btn--floating-label" style="min-width: 150px;">
-      <span class="btn__cell">
-        <span class="btn__floating-label">Color</span>
-        <span class="btn__text">Blue</span>
+    <button
+      class="button button--form button--floating-label"
+      style="min-width: 150px;"
+    >
+      <span class="button__cell">
+        <span class="button__floating-label">Color</span>
+        <span class="button__text">Blue</span>
         <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
           <use href="#icon-chevron-down-12"/>
         </svg>
@@ -682,21 +709,21 @@ import { urls } from "../../../../data";
 
   <p>
     In a resting state, with no value, the
-    <code>btn__floating-label--inline</code> modifier is required. This should
-    be added with JavaScript
+    <code>button__floating-label--inline</code> modifier is required. This
+    should be added with JavaScript
   </p>
 
   <div class="demo">
     <div class="demo__inner">
       <button
-        class="btn btn--form btn--floating-label"
+        class="button button--form button--floating-label"
         style="min-width: 150px;"
       >
-        <span class="btn__cell">
-          <span class="btn__floating-label btn__floating-label--inline">
+        <span class="button__cell">
+          <span class="button__floating-label button__floating-label--inline">
             Color
           </span>
-          <span class="btn__text"/>
+          <span class="button__text"/>
           <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
             <icon-symbol name="chevron-down-12"/>
           </svg>
@@ -706,12 +733,15 @@ import { urls } from "../../../../data";
   </div>
 
   <highlight-code type="html">
-    <button class="btn btn--form btn--floating-label" style="min-width: 150px;">
-      <span class="btn__cell">
-        <span class="btn__floating-label btn__floating-label--inline">
+    <button
+      class="button button--form button--floating-label"
+      style="min-width: 150px;"
+    >
+      <span class="button__cell">
+        <span class="button__floating-label button__floating-label--inline">
           Color
         </span>
-        <span class="btn__text"/>
+        <span class="button__text"/>
         <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
           <use href="#icon-chevron-down-12"/>
         </svg>

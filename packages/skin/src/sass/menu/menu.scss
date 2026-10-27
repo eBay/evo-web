@@ -2,6 +2,9 @@
 @use "../mixins/private/dropdown-mixins";
 @use "../mixins/private/token-mixins";
 
+// DEPRECATED: the `.expand-btn*` selectors in this file are removed in the next
+// major version. Use `.expand-button*` instead.
+
 // DEPRECATED: the `fake-menu*` selectors in this file are removed in the next
 // major version. Use `navigation-menu` instead.
 
@@ -137,7 +140,9 @@ div.menu__item[role^="menuitem"] span.badge {
 }
 
 .menu button.expand-btn--borderless,
-.fake-menu button.expand-btn--borderless {
+.menu button.expand-button--borderless,
+.fake-menu button.expand-btn--borderless,
+.fake-menu button.expand-button--borderless {
     background-color: transparent;
     border-color: transparent;
     padding-left: 0;

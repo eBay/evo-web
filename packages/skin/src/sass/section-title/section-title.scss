@@ -2,6 +2,9 @@
 @use "../mixins/public/typography-mixins";
 @use "../mixins/private/token-mixins";
 
+// DEPRECATED: the `.icon-btn*` selectors in this file are removed in the next
+// major version. Use `.icon-button*` instead.
+
 .section-title {
     align-items: baseline;
     display: flex;
@@ -59,13 +62,16 @@
 }
 
 .section-title button.icon-btn,
-.section-title__overflow button.icon-btn {
+.section-title button.icon-button,
+.section-title__overflow button.icon-btn,
+.section-title__overflow button.icon-button {
     height: var(--spacing-400);
     min-width: var(--spacing-400);
     width: var(--spacing-400);
 }
 
-.section-title__title-container + button.icon-btn {
+.section-title__title-container + button.icon-btn,
+.section-title__title-container + button.icon-button {
     margin-left: var(--spacing-100);
 }
 

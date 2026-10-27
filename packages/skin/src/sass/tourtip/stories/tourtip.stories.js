@@ -11,7 +11,7 @@ export const collapsed = () => `
                     <h2 class="tourtip__heading" id="tourtip-label">Tourtip</h2>
                     <p>Here's something new to help you be successful at your task.</p>
                 </span>
-                <button class="icon-btn tourtip__close" type="button" aria-label="Dismiss tourtip">
+                <button class="icon-button tourtip__close" type="button" aria-label="Dismiss tourtip">
                     <svg class="icon icon--16" height="24" width="24" aria-hidden="true">
                         <use href="#icon-close-16"></use>
                     </svg>
@@ -32,7 +32,7 @@ export const expanded = () => `
                     <h2 class="tourtip__heading" id="tourtip-label">Tourtip</h2>
                     <p>Here's something new to help you be successful at your task.</p>
                 </span>
-                <button class="icon-btn tourtip__close" type="button" aria-label="Dismiss tourtip">
+                <button class="icon-button tourtip__close" type="button" aria-label="Dismiss tourtip">
                     <svg class="icon icon--16" height="24" width="24" aria-hidden="true">
                         <use href="#icon-close-16"></use>
                     </svg>
@@ -53,15 +53,15 @@ export const withActions = () => `
                     <h2 class="tourtip__heading" id="tourtip-label">Tourtip</h2>
                     <p>Here's something new to help you be successful at your task.</p>
                 </span>
-                <button class="icon-btn tourtip__close" type="button" aria-label="Dismiss tourtip">
+                <button class="icon-button tourtip__close" type="button" aria-label="Dismiss tourtip">
                     <svg class="icon icon--16" height="24" width="24" aria-hidden="true">
                         <use href="#icon-close-16"></use>
                     </svg>
                 </button>
                 <div class="tourtip__footer">
                     <span class="tourtip__index">1 of 3</span>
-                    <button class="fake-link">Back</button>
-                    <button class="btn btn--primary">Next</button>
+                    <button class="text-button">Back</button>
+                    <button class="button button--primary">Next</button>
                 </div>
             </div>
         </div>
@@ -79,14 +79,14 @@ export const withOneAction = () => `
                     <h2 class="tourtip__heading" id="tourtip-label">Tourtip</h2>
                     <p>Here's something new to help you be successful at your task.</p>
                 </span>
-                <button class="icon-btn tourtip__close" type="button" aria-label="Dismiss tourtip">
+                <button class="icon-button tourtip__close" type="button" aria-label="Dismiss tourtip">
                     <svg class="icon icon--16" height="24" width="24" aria-hidden="true">
                         <use href="#icon-close-16"></use>
                     </svg>
                 </button>
                 <div class="tourtip__footer">
                     <span class="tourtip__index">2 of 3</span>
-                    <button class="btn btn--primary">Next</button>
+                    <button class="button button--primary">Next</button>
                 </div>
             </div>
         </div>
@@ -104,7 +104,7 @@ export const textSpacing = () => `
                     <h2 class="tourtip__heading" id="tourtip-label">Tourtip</h2>
                     <p>Here's something new to help you be successful at your task.</p>
                 </span>
-                <button class="icon-btn tourtip__close" type="button" aria-label="Dismiss tourtip">
+                <button class="icon-button tourtip__close" type="button" aria-label="Dismiss tourtip">
                     <svg class="icon icon--16" height="24" width="24" aria-hidden="true">
                         <use href="#icon-close-16"></use>
                     </svg>

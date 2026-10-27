@@ -10,7 +10,7 @@ export const base = () => `
             <p id="alert-description-0">You must acknowledge this alert to continue.</p>
         </div>
         <div class="alert-dialog__footer">
-            <button class="btn btn--primary alert-dialog__acknowledge" aria-describedby="alert-description-0">OK</button>
+            <button class="button button--primary alert-dialog__acknowledge" aria-describedby="alert-description-0">OK</button>
         </div>
     </div>
 </div>
@@ -26,7 +26,7 @@ export const textSpacing = () => `
             <p id="alert-description-0">You must acknowledge this alert to continue.</p>
         </div>
         <div class="alert-dialog__footer">
-            <button class="btn btn--primary alert-dialog__acknowledge" aria-describedby="alert-description-0">OK</button>
+            <button class="button button--primary alert-dialog__acknowledge" aria-describedby="alert-description-0">OK</button>
         </div>
     </div>
 </div>
@@ -42,7 +42,7 @@ export const baseWithHeaderOverflow = () => `
             <p id="alert-description-0">You must acknowledge this alert to continue.</p>
         </div>
         <div class="alert-dialog__footer">
-            <button class="btn btn--primary alert-dialog__acknowledge" aria-describedby="alert-description-0">OK</button>
+            <button class="button button--primary alert-dialog__acknowledge" aria-describedby="alert-description-0">OK</button>
         </div>
     </div>
 </div>

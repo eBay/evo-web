@@ -2,10 +2,10 @@ export default { title: "Skin/Listbox Button/With Subtitle" };
 
 export const collapsedUnselected = () => `
 <span class="listbox-button">
-    <button class="btn btn--form" aria-expanded="false" aria-haspopup="listbox">
-        <span class="btn__cell">
-            <span class="btn__label">Color: </span>
-            <span class="btn__text">-</span>
+    <button class="button button--form" aria-expanded="false" aria-haspopup="listbox">
+        <span class="button__cell">
+            <span class="button__label">Color: </span>
+            <span class="button__text">-</span>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -56,10 +56,10 @@ export const collapsedUnselected = () => `
 
 export const expandedUnselected = () => `
 <span class="listbox-button">
-    <button class="btn btn--form" aria-expanded="true" aria-haspopup="listbox">
-        <span class="btn__cell">
-            <span class="btn__label">Color: </span>
-            <span class="btn__text">-</span>
+    <button class="button button--form" aria-expanded="true" aria-haspopup="listbox">
+        <span class="button__cell">
+            <span class="button__label">Color: </span>
+            <span class="button__text">-</span>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -114,10 +114,10 @@ export const expandedUnselected = () => `
 
 export const collapsedSelected = () => `
 <span class="listbox-button">
-    <button class="btn btn--form" aria-expanded="false" aria-haspopup="listbox">
-        <span class="btn__cell">
-            <span class="btn__label">Color: </span>
-            <span class="btn__text">Blue</span>
+    <button class="button button--form" aria-expanded="false" aria-haspopup="listbox">
+        <span class="button__cell">
+            <span class="button__label">Color: </span>
+            <span class="button__text">Blue</span>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -172,10 +172,10 @@ export const collapsedSelected = () => `
 
 export const expandedSelected = () => `
 <span class="listbox-button">
-    <button class="btn btn--form" aria-expanded="true" aria-haspopup="listbox">
-        <span class="btn__cell">
-            <span class="btn__label">Color: </span>
-            <span class="btn__text">Blue</span>
+    <button class="button button--form" aria-expanded="true" aria-haspopup="listbox">
+        <span class="button__cell">
+            <span class="button__label">Color: </span>
+            <span class="button__text">Blue</span>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -230,10 +230,10 @@ export const expandedSelected = () => `
 
 export const disabled = () => `
 <span class="listbox-button">
-    <button class="btn btn--form" aria-expanded="false" aria-haspopup="listbox" disabled>
-        <span class="btn__cell">
-            <span class="btn__label">Color: </span>
-            <span class="btn__text">Blue</span>
+    <button class="button button--form" aria-expanded="false" aria-haspopup="listbox" disabled>
+        <span class="button__cell">
+            <span class="button__label">Color: </span>
+            <span class="button__text">Blue</span>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -288,10 +288,10 @@ export const disabled = () => `
 
 export const invalid = () => `
 <span class="listbox-button">
-    <button class="btn btn--form" aria-expanded="false" aria-haspopup="listbox" aria-invalid="true">
-        <span class="btn__cell">
-            <span class="btn__label">Color: </span>
-            <span class="btn__text">Blue</span>
+    <button class="button button--form" aria-expanded="false" aria-haspopup="listbox" aria-invalid="true">
+        <span class="button__cell">
+            <span class="button__label">Color: </span>
+            <span class="button__text">Blue</span>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -346,10 +346,10 @@ export const invalid = () => `
 
 export const longOption = () => `
 <span class="listbox-button">
-    <button class="btn btn--form" aria-expanded="true" aria-haspopup="listbox">
-        <span class="btn__cell">
-            <span class="btn__label">Color: </span>
-            <span class="btn__text">Red with very very very long text</span>
+    <button class="button button--form" aria-expanded="true" aria-haspopup="listbox">
+        <span class="button__cell">
+            <span class="button__label">Color: </span>
+            <span class="button__text">Red with very very very long text</span>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -394,10 +394,10 @@ export const longOption = () => `
 
 export const longSubtitle = () => `
 <span class="listbox-button">
-    <button class="btn btn--form" aria-expanded="true" aria-haspopup="listbox">
-        <span class="btn__cell">
-            <span class="btn__label">Color: </span>
-            <span class="btn__text">Red</span>
+    <button class="button button--form" aria-expanded="true" aria-haspopup="listbox">
+        <span class="button__cell">
+            <span class="button__label">Color: </span>
+            <span class="button__text">Red</span>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>

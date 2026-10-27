@@ -37,7 +37,7 @@ span.inline-notice {
 }
 
 .inline-notice a,
-.inline-notice button.button-link,
-.inline-notice button.fake-link {
+.inline-notice button.fake-link,
+.inline-notice button.text-button {
     color: var(--color-foreground-primary);
 }

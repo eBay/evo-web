@@ -1,3 +1,5 @@
+// DEPRECATED: the `.icon-btn*` selectors in this file are removed in the next
+// major version. Use `.icon-button*` instead.
 /*! DEPRECATED COMPONENT. Will be removed next major version */
 
 @use "../variables/variables";
@@ -20,7 +22,7 @@
 }
 
 .drawer-dialog__header .fake-link,
-.drawer-dialog__header .button-link {
+.drawer-dialog__header .text-button {
     align-self: flex-start;
     text-decoration: none;
 }
@@ -75,7 +77,8 @@
 
 /* inherits from .icon-btn */
 /* Added icon button selector so it doesn't override fake-link */
-button.icon-btn.drawer-dialog__close {
+button.icon-btn.drawer-dialog__close,
+button.icon-button.drawer-dialog__close {
     align-self: flex-start;
     border: 0;
     height: 32px;

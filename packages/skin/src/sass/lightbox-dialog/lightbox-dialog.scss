@@ -2,6 +2,9 @@
 @use "../mixins/private/dialog-mixins";
 @use "../mixins/private/token-mixins";
 
+// DEPRECATED: the `.icon-btn*` selectors in this file are removed in the next
+// major version. Use `.icon-button*` instead.
+
 :root {
     --dialog-lightbox-wide-max-width: 896px;
     --dialog-lightbox-narrow-max-width: 480px;
@@ -63,7 +66,9 @@
 /* inherits from .icon-btn */
 /* Might need to see if icon-btn can support a small version */
 button.icon-btn.lightbox-dialog__prev,
-button.icon-btn.lightbox-dialog__close {
+button.icon-button.lightbox-dialog__prev,
+button.icon-btn.lightbox-dialog__close,
+button.icon-button.lightbox-dialog__close {
     align-self: flex-start;
     border: 0;
     height: 32px;
@@ -73,17 +78,21 @@ button.icon-btn.lightbox-dialog__close {
     z-index: 1;
 }
 
-button.icon-btn.lightbox-dialog__prev {
+button.icon-btn.lightbox-dialog__prev,
+button.icon-button.lightbox-dialog__prev {
     margin-inline-end: var(--spacing-200);
 }
 
 .lightbox-dialog--expressive button.icon-btn.lightbox-dialog__prev,
-.lightbox-dialog--expressive button.icon-btn.lightbox-dialog__close {
+.lightbox-dialog--expressive button.icon-button.lightbox-dialog__prev,
+.lightbox-dialog--expressive button.icon-btn.lightbox-dialog__close,
+.lightbox-dialog--expressive button.icon-button.lightbox-dialog__close {
     align-self: self-start;
     margin: 0;
 }
 
-.lightbox-dialog--expressive button.icon-btn.lightbox-dialog__prev + * {
+.lightbox-dialog--expressive button.icon-btn.lightbox-dialog__prev + *,
+.lightbox-dialog--expressive button.icon-button.lightbox-dialog__prev + * {
     margin-left: -32px;
 }
 
@@ -124,7 +133,8 @@ button.icon-btn.lightbox-dialog__prev {
 }
 
 [dir="rtl"] {
-    button.icon-btn.lightbox-dialog__prev .icon--16 {
+    button.icon-btn.lightbox-dialog__prev .icon--16,
+    button.icon-button.lightbox-dialog__prev .icon--16 {
         transform: rotate(180deg);
     }
 }

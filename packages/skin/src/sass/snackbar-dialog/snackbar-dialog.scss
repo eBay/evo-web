@@ -76,7 +76,7 @@
 }
 
 .snackbar-dialog__actions .fake-link,
-.snackbar-dialog__actions .button-link {
+.snackbar-dialog__actions .text-button {
     @include token-mixins.color-token(
         snackbar-dialog-foreground-color,
         color-foreground-on-inverse
@@ -91,7 +91,7 @@
 
 /* this needs to be super specific to override base fake-link */
 .snackbar-dialog__actions button.fake-link:hover:not(:disabled),
-.snackbar-dialog__actions button.button-link:hover:not(:disabled) {
+.snackbar-dialog__actions button.text-button:hover:not(:disabled) {
     @include token-mixins.color-token(
         snackbar-dialog-foreground-color,
         color-foreground-on-inverse

@@ -178,13 +178,15 @@ button.navigation-menu__item--badged span.badge {
     right: 0;
 }
 
-.navigation-menu button.expand-btn--borderless {
+.navigation-menu button.expand-btn--borderless,
+.navigation-menu button.expand-button--borderless {
     background-color: initial;
     border-color: transparent;
     padding-left: 0;
     vertical-align: initial;
 }
-.navigation-menu button.expand-btn--borderless:focus {
+.navigation-menu button.expand-btn--borderless:focus,
+.navigation-menu button.expand-button--borderless:focus {
     outline: none;
     text-decoration: underline;
 }

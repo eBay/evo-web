@@ -6,9 +6,10 @@ static const basePath = import.meta.env.BASE_URL;
   <div class="demo">
     <div class="demo__inner">
       <button
-        class="btn btn--primary dialog-button"
+        class="button button--primary dialog-button"
         data-makeup-for="lightbox-dialog-default"
-        type="button">
+        type="button"
+      >
         Open Lightbox
       </button>
       <div
@@ -17,7 +18,8 @@ static const basePath = import.meta.env.BASE_URL;
         class="lightbox-dialog"
         hidden
         id="lightbox-dialog-default"
-        role="dialog">
+        role="dialog"
+      >
         <div class="lightbox-dialog__window">
           <div class="lightbox-dialog__header">
             <h2 id="dialog-title-default" class="large-text-1 bold-text">
@@ -25,13 +27,15 @@ static const basePath = import.meta.env.BASE_URL;
             </h2>
             <button
               aria-label="Close dialog"
-              class="icon-btn lightbox-dialog__close"
-              type="button">
+              class="icon-button lightbox-dialog__close"
+              type="button"
+            >
               <svg
                 aria-hidden="true"
                 class="icon icon--16"
                 height="16"
-                width="16">
+                width="16"
+              >
                 <icon-symbol name="close-16"/>
               </svg>
             </button>
@@ -46,11 +50,7 @@ static const basePath = import.meta.env.BASE_URL;
               nulla pariatur. Excepteur sint occaecat cupidatat non proident,
               sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
-            <p>
-              <a href="https://www.ebay.com">
-                www.ebay.com
-              </a>
-            </p>
+            <p><a href="https://www.ebay.com">www.ebay.com</a></p>
           </div>
         </div>
       </div>
@@ -63,7 +63,8 @@ static const basePath = import.meta.env.BASE_URL;
       aria-modal="true"
       class="lightbox-dialog"
       hidden
-      role="dialog">
+      role="dialog"
+    >
       <div class="lightbox-dialog__window">
         <div class="lightbox-dialog__header">
           <h2 id="lightbox-dialog-title" class="large-text-1 bold-text">
@@ -71,13 +72,15 @@ static const basePath = import.meta.env.BASE_URL;
           </h2>
           <button
             aria-label="Close dialog"
-            class="icon-btn lightbox-dialog__close"
-            type="button">
+            class="icon-button lightbox-dialog__close"
+            type="button"
+          >
             <svg
               aria-hidden="true"
               class="icon icon--16"
               height="16"
-              width="16">
+              width="16"
+            >
               <use href="#icon-close-16"/>
             </svg>
           </button>
@@ -92,19 +95,13 @@ static const basePath = import.meta.env.BASE_URL;
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
-          <p>
-            <a href="https://www.ebay.com">
-              www.ebay.com
-            </a>
-          </p>
+          <p><a href="https://www.ebay.com">www.ebay.com</a></p>
         </div>
       </div>
     </div>
   </highlight-code>
 
-  <h3 id="lightbox-scrolling">
-    Scrolling Lightbox
-  </h3>
+  <h3 id="lightbox-scrolling">Scrolling Lightbox</h3>
   <p>
     The lightbox scales vertically and adds scrollbars when content overflows
     the viewport.
@@ -113,9 +110,10 @@ static const basePath = import.meta.env.BASE_URL;
   <div class="demo">
     <div class="demo__inner">
       <button
-        class="btn btn--primary dialog-button"
+        class="button button--primary dialog-button"
         data-makeup-for="lightbox-dialog-scrolling"
-        type="button">
+        type="button"
+      >
         Open Scrolling Lightbox Dialog
       </button>
       <div
@@ -124,21 +122,22 @@ static const basePath = import.meta.env.BASE_URL;
         class="lightbox-dialog lightbox-dialog--mask-fade"
         hidden
         id="lightbox-dialog-scrolling"
-        role="dialog">
+        role="dialog"
+      >
         <div class="lightbox-dialog__window">
           <div class="lightbox-dialog__header">
-            <h2 id="dialog-title-scrolling">
-              Scrolling Lightbox Dialog
-            </h2>
+            <h2 id="dialog-title-scrolling">Scrolling Lightbox Dialog</h2>
             <button
               aria-label="Close dialog"
-              class="icon-btn lightbox-dialog__close"
-              type="button">
+              class="icon-button lightbox-dialog__close"
+              type="button"
+            >
               <svg
                 aria-hidden="true"
                 class="icon icon--16"
                 height="16"
-                width="16">
+                width="16"
+              >
                 <icon-symbol name="close-16"/>
               </svg>
             </button>
@@ -155,11 +154,7 @@ static const basePath = import.meta.env.BASE_URL;
                 sunt in culpa qui officia deserunt mollit anim id est laborum.
               </p>
             </for>
-            <p>
-              <a href="https://www.ebay.com">
-                www.ebay.com
-              </a>
-            </p>
+            <p><a href="https://www.ebay.com">www.ebay.com</a></p>
           </div>
         </div>
       </div>
@@ -172,21 +167,22 @@ static const basePath = import.meta.env.BASE_URL;
       aria-modal="true"
       class="dialog dialog--no-mask"
       hidden
-      role="dialog">
+      role="dialog"
+    >
       <div class="lightbox-dialog__window lightbox-dialog__window--full">
         <div class="lightbox-dialog__header">
-          <h2 id="dialog-title" class="large-text-1 bold-text">
-            Heading
-          </h2>
+          <h2 id="dialog-title" class="large-text-1 bold-text">Heading</h2>
           <button
             aria-label="Close dialog"
-            class="icon-btn lightbox-dialog__close"
-            type="button">
+            class="icon-button lightbox-dialog__close"
+            type="button"
+          >
             <svg
               aria-hidden="true"
               class="icon icon--16"
               height="16"
-              width="16">
+              width="16"
+            >
               <use href="#icon-close-16"/>
             </svg>
           </button>
@@ -205,19 +201,13 @@ static const basePath = import.meta.env.BASE_URL;
           <p>Lorem ... 2</p>
           <p>(you get the idea)</p>
           <p>Lorem ... n</p>
-          <p>
-            <a href="https://www.ebay.com">
-              www.ebay.com
-            </a>
-          </p>
+          <p><a href="https://www.ebay.com">www.ebay.com</a></p>
         </div>
       </div>
     </div>
   </highlight-code>
 
-  <h3 id="lightbox-prev">
-    Previous button in header Lightbox
-  </h3>
+  <h3 id="lightbox-prev">Previous button in header Lightbox</h3>
   <p>
     If you want to add a previous button to the lightbox, add the icon button
     before the dialog heading tag.
@@ -226,9 +216,10 @@ static const basePath = import.meta.env.BASE_URL;
   <div class="demo">
     <div class="demo__inner">
       <button
-        class="btn btn--primary dialog-button"
+        class="button button--primary dialog-button"
         data-makeup-for="lightbox-dialog-prev-button"
-        type="button">
+        type="button"
+      >
         Open Lightbox
       </button>
       <div
@@ -237,18 +228,21 @@ static const basePath = import.meta.env.BASE_URL;
         class="lightbox-dialog"
         hidden
         id="lightbox-dialog-prev-button"
-        role="dialog">
+        role="dialog"
+      >
         <div class="lightbox-dialog__window">
           <div class="lightbox-dialog__header">
             <button
               aria-label="Go back"
-              class="icon-btn lightbox-dialog__prev"
-              type="button">
+              class="icon-button lightbox-dialog__prev"
+              type="button"
+            >
               <svg
                 aria-hidden="true"
                 class="icon icon--16"
                 height="16"
-                width="16">
+                width="16"
+              >
                 <icon-symbol name="chevron-left-16"/>
               </svg>
             </button>
@@ -257,13 +251,15 @@ static const basePath = import.meta.env.BASE_URL;
             </h2>
             <button
               aria-label="Close dialog"
-              class="icon-btn lightbox-dialog__close"
-              type="button">
+              class="icon-button lightbox-dialog__close"
+              type="button"
+            >
               <svg
                 aria-hidden="true"
                 class="icon icon--16"
                 height="16"
-                width="16">
+                width="16"
+              >
                 <icon-symbol name="close-16"/>
               </svg>
             </button>
@@ -278,11 +274,7 @@ static const basePath = import.meta.env.BASE_URL;
               nulla pariatur. Excepteur sint occaecat cupidatat non proident,
               sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
-            <p>
-              <a href="https://www.ebay.com">
-                www.ebay.com
-              </a>
-            </p>
+            <p><a href="https://www.ebay.com">www.ebay.com</a></p>
           </div>
         </div>
       </div>
@@ -295,18 +287,21 @@ static const basePath = import.meta.env.BASE_URL;
       aria-modal="true"
       class="lightbox-dialog"
       hidden
-      role="dialog">
+      role="dialog"
+    >
       <div class="lightbox-dialog__window">
         <div class="lightbox-dialog__header">
           <button
             aria-label="Go back"
-            class="icon-btn lightbox-dialog__prev"
-            type="button">
+            class="icon-button lightbox-dialog__prev"
+            type="button"
+          >
             <svg
               aria-hidden="true"
               class="icon icon--16"
               height="16"
-              width="16">
+              width="16"
+            >
               <use href="#icon-chevron-left-16"/>
             </svg>
           </button>
@@ -315,13 +310,15 @@ static const basePath = import.meta.env.BASE_URL;
           </h2>
           <button
             aria-label="Close dialog"
-            class="icon-btn lightbox-dialog__close"
-            type="button">
+            class="icon-button lightbox-dialog__close"
+            type="button"
+          >
             <svg
               aria-hidden="true"
               class="icon icon--16"
               height="16"
-              width="16">
+              width="16"
+            >
               <use href="#icon-close-16"/>
             </svg>
           </button>
@@ -336,23 +333,16 @@ static const basePath = import.meta.env.BASE_URL;
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
-          <p>
-            <a href="https://www.ebay.com">
-              www.ebay.com
-            </a>
-          </p>
+          <p><a href="https://www.ebay.com">www.ebay.com</a></p>
         </div>
       </div>
     </div>
   </highlight-code>
 
-  <h3 id="lightbox-wide">
-    Wide Lightbox
-  </h3>
+  <h3 id="lightbox-wide">Wide Lightbox</h3>
   <p>
-    To have a wider lightbox add
-    <code>lightbox-dialog--wide</code>
-    to the dialog
+    To have a wider lightbox add <code>lightbox-dialog--wide</code> to the
+    dialog
   </p>
   <p>
     On small screens, a wide lightbox will span almost the entire screen. This
@@ -362,9 +352,10 @@ static const basePath = import.meta.env.BASE_URL;
   <div class="demo">
     <div class="demo__inner">
       <button
-        class="btn btn--primary dialog-button"
+        class="button button--primary dialog-button"
         data-makeup-for="lightbox-dialog-wide"
-        type="button">
+        type="button"
+      >
         Open Lightbox
       </button>
       <div
@@ -373,18 +364,21 @@ static const basePath = import.meta.env.BASE_URL;
         class="lightbox-dialog lightbox-dialog--wide"
         hidden
         id="lightbox-dialog-wide"
-        role="dialog">
+        role="dialog"
+      >
         <div class="lightbox-dialog__window">
           <div class="lightbox-dialog__header">
             <button
               aria-label="Go back"
-              class="icon-btn lightbox-dialog__prev"
-              type="button">
+              class="icon-button lightbox-dialog__prev"
+              type="button"
+            >
               <svg
                 aria-hidden="true"
                 class="icon icon--16"
                 height="16"
-                width="16">
+                width="16"
+              >
                 <icon-symbol name="chevron-left-16"/>
               </svg>
             </button>
@@ -393,13 +387,15 @@ static const basePath = import.meta.env.BASE_URL;
             </h2>
             <button
               aria-label="Close dialog"
-              class="icon-btn lightbox-dialog__close"
-              type="button">
+              class="icon-button lightbox-dialog__close"
+              type="button"
+            >
               <svg
                 aria-hidden="true"
                 class="icon icon--16"
                 height="16"
-                width="16">
+                width="16"
+              >
                 <icon-symbol name="close-16"/>
               </svg>
             </button>
@@ -414,11 +410,7 @@ static const basePath = import.meta.env.BASE_URL;
               nulla pariatur. Excepteur sint occaecat cupidatat non proident,
               sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
-            <p>
-              <a href="https://www.ebay.com">
-                www.ebay.com
-              </a>
-            </p>
+            <p><a href="https://www.ebay.com">www.ebay.com</a></p>
           </div>
         </div>
       </div>
@@ -431,18 +423,21 @@ static const basePath = import.meta.env.BASE_URL;
       aria-modal="true"
       class="lightbox-dialog lightbox-dialog--wide"
       hidden
-      role="dialog">
+      role="dialog"
+    >
       <div class="lightbox-dialog__window">
         <div class="lightbox-dialog__header">
           <button
             aria-label="Go back"
-            class="icon-btn lightbox-dialog__prev"
-            type="button">
+            class="icon-button lightbox-dialog__prev"
+            type="button"
+          >
             <svg
               aria-hidden="true"
               class="icon icon--16"
               height="16"
-              width="16">
+              width="16"
+            >
               <use href="#icon-chevron-left-16"/>
             </svg>
           </button>
@@ -451,13 +446,15 @@ static const basePath = import.meta.env.BASE_URL;
           </h2>
           <button
             aria-label="Close dialog"
-            class="icon-btn lightbox-dialog__close"
-            type="button">
+            class="icon-button lightbox-dialog__close"
+            type="button"
+          >
             <svg
               aria-hidden="true"
               class="icon icon--16"
               height="16"
-              width="16">
+              width="16"
+            >
               <use href="#icon-close-16"/>
             </svg>
           </button>
@@ -472,31 +469,25 @@ static const basePath = import.meta.env.BASE_URL;
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
-          <p>
-            <a href="https://www.ebay.com">
-              www.ebay.com
-            </a>
-          </p>
+          <p><a href="https://www.ebay.com">www.ebay.com</a></p>
         </div>
       </div>
     </div>
   </highlight-code>
 
-  <h3 id="lightbox-narrow">
-    Narrow Lightbox
-  </h3>
+  <h3 id="lightbox-narrow">Narrow Lightbox</h3>
   <p>
-    To have a thinner lightbox add
-    <code>lightbox-dialog--narrow</code>
-    to the dialog
+    To have a thinner lightbox add <code>lightbox-dialog--narrow</code> to the
+    dialog
   </p>
 
   <div class="demo">
     <div class="demo__inner">
       <button
-        class="btn btn--primary dialog-button"
+        class="button button--primary dialog-button"
         data-makeup-for="lightbox-dialog-narrow"
-        type="button">
+        type="button"
+      >
         Open Lightbox
       </button>
       <div
@@ -505,7 +496,8 @@ static const basePath = import.meta.env.BASE_URL;
         class="lightbox-dialog lightbox-dialog--narrow"
         hidden
         id="lightbox-dialog-narrow"
-        role="dialog">
+        role="dialog"
+      >
         <div class="lightbox-dialog__window">
           <div class="lightbox-dialog__header">
             <h2 id="dialog-title-narrow" class="large-text-1 bold-text">
@@ -513,13 +505,15 @@ static const basePath = import.meta.env.BASE_URL;
             </h2>
             <button
               aria-label="Close dialog"
-              class="icon-btn lightbox-dialog__close"
-              type="button">
+              class="icon-button lightbox-dialog__close"
+              type="button"
+            >
               <svg
                 aria-hidden="true"
                 class="icon icon--16"
                 height="16"
-                width="16">
+                width="16"
+              >
                 <icon-symbol name="close-16"/>
               </svg>
             </button>
@@ -534,11 +528,7 @@ static const basePath = import.meta.env.BASE_URL;
               nulla pariatur. Excepteur sint occaecat cupidatat non proident,
               sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
-            <p>
-              <a href="https://www.ebay.com">
-                www.ebay.com
-              </a>
-            </p>
+            <p><a href="https://www.ebay.com">www.ebay.com</a></p>
           </div>
         </div>
       </div>
@@ -551,7 +541,8 @@ static const basePath = import.meta.env.BASE_URL;
       aria-modal="true"
       class="lightbox-dialog lightbox-dialog--narrow"
       hidden
-      role="dialog">
+      role="dialog"
+    >
       <div class="lightbox-dialog__window">
         <div class="lightbox-dialog__header">
           <h2 id="lightbox-dialog-title" class="large-text-1 bold-text">
@@ -559,13 +550,15 @@ static const basePath = import.meta.env.BASE_URL;
           </h2>
           <button
             aria-label="Close dialog"
-            class="icon-btn lightbox-dialog__close"
-            type="button">
+            class="icon-button lightbox-dialog__close"
+            type="button"
+          >
             <svg
               aria-hidden="true"
               class="icon icon--16"
               height="16"
-              width="16">
+              width="16"
+            >
               <use href="#icon-close-16"/>
             </svg>
           </button>
@@ -580,23 +573,16 @@ static const basePath = import.meta.env.BASE_URL;
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
-          <p>
-            <a href="https://www.ebay.com">
-              www.ebay.com
-            </a>
-          </p>
+          <p><a href="https://www.ebay.com">www.ebay.com</a></p>
         </div>
       </div>
     </div>
   </highlight-code>
 
-  <h3 id="lightbox-wide">
-    Large Lightbox
-  </h3>
+  <h3 id="lightbox-wide">Large Lightbox</h3>
   <p>
-    To have a large lightbox add
-    <code>lightbox-dialog--large</code>
-    to the dialog
+    To have a large lightbox add <code>lightbox-dialog--large</code> to the
+    dialog
   </p>
   <p>
     On small screens, a large lightbox will span almost the entire screen. This
@@ -606,9 +592,10 @@ static const basePath = import.meta.env.BASE_URL;
   <div class="demo">
     <div class="demo__inner">
       <button
-        class="btn btn--primary dialog-button"
+        class="button button--primary dialog-button"
         data-makeup-for="lightbox-dialog-large"
-        type="button">
+        type="button"
+      >
         Open Lightbox
       </button>
       <div
@@ -617,7 +604,8 @@ static const basePath = import.meta.env.BASE_URL;
         class="lightbox-dialog lightbox-dialog--large"
         hidden
         id="lightbox-dialog-large"
-        role="dialog">
+        role="dialog"
+      >
         <div class="lightbox-dialog__window">
           <div class="lightbox-dialog__header">
             <h2 id="dialog-title-large" class="large-text-1 bold-text">
@@ -625,13 +613,15 @@ static const basePath = import.meta.env.BASE_URL;
             </h2>
             <button
               aria-label="Close dialog"
-              class="icon-btn lightbox-dialog__close"
-              type="button">
+              class="icon-button lightbox-dialog__close"
+              type="button"
+            >
               <svg
                 aria-hidden="true"
                 class="icon icon--16"
                 height="16"
-                width="16">
+                width="16"
+              >
                 <icon-symbol name="close-16"/>
               </svg>
             </button>
@@ -646,11 +636,7 @@ static const basePath = import.meta.env.BASE_URL;
               nulla pariatur. Excepteur sint occaecat cupidatat non proident,
               sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
-            <p>
-              <a href="https://www.ebay.com">
-                www.ebay.com
-              </a>
-            </p>
+            <p><a href="https://www.ebay.com">www.ebay.com</a></p>
           </div>
         </div>
       </div>
@@ -663,7 +649,8 @@ static const basePath = import.meta.env.BASE_URL;
       aria-modal="true"
       class="lightbox-dialog lightbox-dialog--large"
       hidden
-      role="dialog">
+      role="dialog"
+    >
       <div class="lightbox-dialog__window">
         <div class="lightbox-dialog__header">
           <h2 id="lightbox-dialog-title" class="large-text-1 bold-text">
@@ -671,13 +658,15 @@ static const basePath = import.meta.env.BASE_URL;
           </h2>
           <button
             aria-label="Close dialog"
-            class="icon-btn lightbox-dialog__close"
-            type="button">
+            class="icon-button lightbox-dialog__close"
+            type="button"
+          >
             <svg
               aria-hidden="true"
               class="icon icon--16"
               height="16"
-              width="16">
+              width="16"
+            >
               <use href="#icon-close-16"/>
             </svg>
           </button>
@@ -692,35 +681,28 @@ static const basePath = import.meta.env.BASE_URL;
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
-          <p>
-            <a href="https://www.ebay.com">
-              www.ebay.com
-            </a>
-          </p>
+          <p><a href="https://www.ebay.com">www.ebay.com</a></p>
         </div>
       </div>
     </div>
   </highlight-code>
 
-  <h3 id="lightbox-transitioned">
-    Transitioned Lightbox
-  </h3>
+  <h3 id="lightbox-transitioned">Transitioned Lightbox</h3>
   <p>
     Any lightbox can be transitioned in and out, using the
-    <code>lightbox-dialog__window--animate</code>
-    and
-    <code>lightbox-dialog--mask-fade</code>
-    modifiers. On large screens, animate will fade in and on small screens
-    the panel will slide in from the bottom.
+    <code>lightbox-dialog__window--animate</code> and
+    <code>lightbox-dialog--mask-fade</code> modifiers. On large screens, animate
+    will fade in and on small screens the panel will slide in from the bottom.
   </p>
   <p>The default fade duration is 16ms.</p>
 
   <div class="demo">
     <div class="demo__inner">
       <button
-        class="btn btn--primary dialog-button"
+        class="button button--primary dialog-button"
         data-makeup-for="lightbox-dialog-fade-0"
-        type="button">
+        type="button"
+      >
         Open Transitioned Lightbox
       </button>
       <div
@@ -729,7 +711,8 @@ static const basePath = import.meta.env.BASE_URL;
         class="lightbox-dialog lightbox-dialog--mask-fade"
         hidden
         id="lightbox-dialog-fade-0"
-        role="dialog">
+        role="dialog"
+      >
         <div class="lightbox-dialog__window lightbox-dialog__window--animate">
           <div class="lightbox-dialog__header">
             <h2 id="lightbox-dialog-fade-title" class="large-text-1 bold-text">
@@ -737,13 +720,15 @@ static const basePath = import.meta.env.BASE_URL;
             </h2>
             <button
               aria-label="Close dialog"
-              class="icon-btn lightbox-dialog__close"
-              type="button">
+              class="icon-button lightbox-dialog__close"
+              type="button"
+            >
               <svg
                 aria-hidden="true"
                 class="icon icon--16"
                 height="16"
-                width="16">
+                width="16"
+              >
                 <icon-symbol name="close-16"/>
               </svg>
             </button>
@@ -758,11 +743,7 @@ static const basePath = import.meta.env.BASE_URL;
               nulla pariatur. Excepteur sint occaecat cupidatat non proident,
               sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
-            <p>
-              <a href="https://www.ebay.com">
-                www.ebay.com
-              </a>
-            </p>
+            <p><a href="https://www.ebay.com">www.ebay.com</a></p>
           </div>
         </div>
       </div>
@@ -775,7 +756,8 @@ static const basePath = import.meta.env.BASE_URL;
       aria-modal="true"
       class="lightbox-dialog lightbox-dialog--mask-fade"
       hidden
-      role="dialog">
+      role="dialog"
+    >
       <div class="lightbox-dialog__window lightbox-dialog__window--animate">
         <div class="lightbox-dialog__header">
           <h2 id="lightbox-dialog-title" class="large-text-1 bold-text">
@@ -783,13 +765,15 @@ static const basePath = import.meta.env.BASE_URL;
           </h2>
           <button
             aria-label="Close dialog"
-            class="icon-btn lightbox-dialog__close"
-            type="button">
+            class="icon-button lightbox-dialog__close"
+            type="button"
+          >
             <svg
               aria-hidden="true"
               class="icon icon--16"
               height="16"
-              width="16">
+              width="16"
+            >
               <use href="#icon-close-16"/>
             </svg>
           </button>
@@ -804,19 +788,13 @@ static const basePath = import.meta.env.BASE_URL;
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
-          <p>
-            <a href="https://www.ebay.com">
-              www.ebay.com
-            </a>
-          </p>
+          <p><a href="https://www.ebay.com">www.ebay.com</a></p>
         </div>
       </div>
     </div>
   </highlight-code>
 
-  <h3 id="lightbox-footer">
-    Footer in Lightbox
-  </h3>
+  <h3 id="lightbox-footer">Footer in Lightbox</h3>
   <p>
     Call to action buttons can be placed in an optional footer section. They
     will be aligned to the end of the horizontal axis by default.
@@ -825,9 +803,10 @@ static const basePath = import.meta.env.BASE_URL;
   <div class="demo">
     <div class="demo__inner">
       <button
-        class="btn btn--primary dialog-button"
+        class="button button--primary dialog-button"
         data-makeup-for="lightbox-dialog-footer"
-        type="button">
+        type="button"
+      >
         Open Lightbox Dialog with Footer
       </button>
       <div
@@ -836,23 +815,27 @@ static const basePath = import.meta.env.BASE_URL;
         class="lightbox-dialog lightbox-dialog--no-mask"
         hidden
         id="lightbox-dialog-footer"
-        role="dialog">
+        role="dialog"
+      >
         <div class="lightbox-dialog__window">
           <div class="lightbox-dialog__header">
             <h2
               id="lightbox-dialog-footer-title"
-              class="large-text-1 bold-text">
+              class="large-text-1 bold-text"
+            >
               Lightbox Dialog
             </h2>
             <button
               aria-label="Close dialog"
-              class="icon-btn lightbox-dialog__close"
-              type="button">
+              class="icon-button lightbox-dialog__close"
+              type="button"
+            >
               <svg
                 aria-hidden="true"
                 class="icon icon--16"
                 height="16"
-                width="16">
+                width="16"
+              >
                 <icon-symbol name="close-16"/>
               </svg>
             </button>
@@ -869,15 +852,9 @@ static const basePath = import.meta.env.BASE_URL;
             </p>
           </div>
           <div class="lightbox-dialog__footer">
-            <button class="btn">
-              Button 1
-            </button>
-            <button class="btn">
-              Button 2
-            </button>
-            <button class="btn">
-              Button 3
-            </button>
+            <button class="button">Button 1</button>
+            <button class="button">Button 2</button>
+            <button class="button">Button 3</button>
           </div>
         </div>
       </div>
@@ -890,7 +867,8 @@ static const basePath = import.meta.env.BASE_URL;
       aria-modal="true"
       class="lightbox-dialog"
       hidden
-      role="dialog">
+      role="dialog"
+    >
       <div class="lightbox-dialog__window">
         <div class="large-text-1 lightbox-dialog__header">
           <h2 class="large-text-1 bold-text" id="lightbox-dialog-title">
@@ -898,13 +876,15 @@ static const basePath = import.meta.env.BASE_URL;
           </h2>
           <button
             aria-label="Close dialog"
-            class="icon-btn lightbox-dialog__close"
-            type="button">
+            class="icon-button lightbox-dialog__close"
+            type="button"
+          >
             <svg
               aria-hidden="true"
               class="icon icon--16"
               height="16"
-              width="16">
+              width="16"
+            >
               <use href="#icon-close-16"/>
             </svg>
           </button>
@@ -921,23 +901,15 @@ static const basePath = import.meta.env.BASE_URL;
           </p>
         </div>
         <div class="lightbox-dialog__footer">
-          <button class="btn">
-            Button 1
-          </button>
-          <button class="btn">
-            Button 2
-          </button>
-          <button class="btn">
-            Button 3
-          </button>
+          <button class="button">Button 1</button>
+          <button class="button">Button 2</button>
+          <button class="button">Button 3</button>
         </div>
       </div>
     </div>
   </highlight-code>
 
-  <h3 id="lightbox-expressive">
-    Expressive Lightbox
-  </h3>
+  <h3 id="lightbox-expressive">Expressive Lightbox</h3>
   <p>
     An image may be added to the lightbox header for a more expressive
     experience. Image will be cropped to a hardcoded height as per design
@@ -947,9 +919,10 @@ static const basePath = import.meta.env.BASE_URL;
   <div class="demo">
     <div class="demo__inner">
       <button
-        class="btn btn--primary dialog-button"
+        class="button button--primary dialog-button"
         data-makeup-for="lightbox-dialog-expressive"
-        type="button">
+        type="button"
+      >
         Open Expressive Lightbox
       </button>
       <div
@@ -958,26 +931,30 @@ static const basePath = import.meta.env.BASE_URL;
         class="lightbox-dialog lightbox-dialog--expressive"
         hidden
         id="lightbox-dialog-expressive"
-        role="dialog">
+        role="dialog"
+      >
         <div class="lightbox-dialog__window">
           <div
             class="lightbox-dialog__image"
             style={
               "background-image": `url('${basePath}/img/tb-landscape-pic.jpg')`,
-            }/>
+            }
+          />
           <div class="lightbox-dialog__header">
             <h2 id="dialog-title-default" class="large-text-1 bold-text">
               Lightbox Dialog
             </h2>
             <button
               aria-label="Close dialog"
-              class="icon-btn lightbox-dialog__close"
-              type="button">
+              class="icon-button lightbox-dialog__close"
+              type="button"
+            >
               <svg
                 aria-hidden="true"
                 class="icon icon--16"
                 height="16"
-                width="16">
+                width="16"
+              >
                 <icon-symbol name="close-16"/>
               </svg>
             </button>
@@ -992,11 +969,7 @@ static const basePath = import.meta.env.BASE_URL;
               nulla pariatur. Excepteur sint occaecat cupidatat non proident,
               sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
-            <p>
-              <a href="https://www.ebay.com">
-                www.ebay.com
-              </a>
-            </p>
+            <p><a href="https://www.ebay.com">www.ebay.com</a></p>
           </div>
         </div>
       </div>
@@ -1009,24 +982,28 @@ static const basePath = import.meta.env.BASE_URL;
       aria-modal="true"
       class="lightbox-dialog lightbox-dialog--expressive"
       hidden
-      role="dialog">
+      role="dialog"
+    >
       <div class="lightbox-dialog__window">
         <div
           class="lightbox-dialog__image"
-          style="background-image:url(/img/tb-landscape-pic.jpg)"/>
+          style="background-image:url(/img/tb-landscape-pic.jpg)"
+        />
         <div class="lightbox-dialog__header">
           <h2 id="lightbox-dialog-title" class="large-text-1 bold-text">
             Heading
           </h2>
           <button
             aria-label="Close dialog"
-            class="icon-btn lightbox-dialog__close"
-            type="button">
+            class="icon-button lightbox-dialog__close"
+            type="button"
+          >
             <svg
               aria-hidden="true"
               class="icon icon--16"
               height="16"
-              width="16">
+              width="16"
+            >
               <use href="#icon-close-16"/>
             </svg>
           </button>
@@ -1041,11 +1018,7 @@ static const basePath = import.meta.env.BASE_URL;
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
-          <p>
-            <a href="https://www.ebay.com">
-              www.ebay.com
-            </a>
-          </p>
+          <p><a href="https://www.ebay.com">www.ebay.com</a></p>
         </div>
       </div>
     </div>

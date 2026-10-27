@@ -1,8 +1,8 @@
 export default { title: "Skin/Button/Dimensions" };
 
 export const large = () => `
-<button type="button" class="btn btn--large">
-    <span class="btn__cell">
+<button type="button" class="button button--large">
+    <span class="button__cell">
         <svg class="icon icon--16" width="16" height="16"><use href="#icon-settings-16"></use></svg>
         <span>Button</span>
     </span>
@@ -10,8 +10,8 @@ export const large = () => `
 `;
 
 export const small = () => `
-<button type="button" class="btn btn--small">
-    <span class="btn__cell">
+<button type="button" class="button button--small">
+    <span class="button__cell">
         <svg class="icon icon--16" width="16" height="16"><use href="#icon-settings-16"></use></svg>
         <span>Button</span>
     </span>
@@ -19,27 +19,28 @@ export const small = () => `
 `;
 
 export const formLarge = () =>
-    '<button class="btn btn--form btn--large">Button</button>';
+    '<button class="button button--form button--large">Button</button>';
 
 export const formSmall = () =>
-    '<button class="btn btn--form btn--small">Button</button>';
+    '<button class="button button--form button--small">Button</button>';
 
-export const fluid = () => '<button class="btn btn--fluid">Button</button>';
+export const fluid = () =>
+    '<button class="button button--fluid">Button</button>';
 
 export const fixedWidth = () => `
-<button class="btn" style="width: 200px;">
+<button class="button" style="width: 200px;">
     Button with a lot of text that should wrap
 </button>
 `;
 
 export const fixedWidthAndHeight = () => `
-<button style="width: 200px;" type="button" class="btn btn--fixed-height">
+<button style="width: 200px;" type="button" class="button button--fixed-height">
     Button with a lot of text that should wrap
 </button>
 `;
 
 export const fixedWidthAndHeightTruncated = () => `
-<button style="width: 200px;" type="button" class="btn btn--fixed-height btn--truncated">
+<button style="width: 200px;" type="button" class="button button--fixed-height button--truncated">
     Button with a lot of text that should wrap
 </button>
 `;

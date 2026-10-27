@@ -77,14 +77,14 @@
     "reactStorybookPath": "/docs/buttons-ebay-button--documentation",
     "description": "A control for executing JavaScript or submitting/resetting form values"
   },
-  "button-link": {
-    "component": "button-link",
+  "text-button": {
+    "component": "text-button",
     "ds-component": {
       "name": "text-link",
       "url": "https://playbook.ebay.com/design-system/components/text-link",
       "version": "2.0"
     },
-    "cssStorybookPath": "/story/skin-button-link--base",
+    "cssStorybookPath": "/story/skin-text-button--base",
     "description": "A button styled to look like a link, for actions that trigger JavaScript behavior."
   },
   "calendar": {
@@ -507,14 +507,14 @@
     "cssStorybookPath": "/story/skin-link--base",
     "description": "Allow users to move from one URL to another or access different resources."
   },
-  "link-button": {
-    "component": "link-button",
+  "navigation-button": {
+    "component": "navigation-button",
     "ds-component": {
       "name": "button",
       "url": "https://playbook.ebay.com/design-system/components/button",
       "version": "1.6"
     },
-    "cssStorybookPath": "/story/skin-link-button-base--text-only",
+    "cssStorybookPath": "/story/skin-navigation-button-base--text-only",
     "description": "A hyperlink styled to look like a button, for navigating to a URL."
   },
   "list": {

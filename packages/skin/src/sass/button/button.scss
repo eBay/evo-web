@@ -3,10 +3,14 @@
 @use "../mixins/private/token-mixins";
 @use "../mixins/private/state-layer";
 
+// DEPRECATED: the `.btn*` selectors in this file are removed in the next
+// major version. Use `.button*` instead.
+
 // DEPRECATED: the `a.fake-btn*` selectors in this file are removed in the next
-// major version. Use `link-button` instead.
+// major version. Use `navigation-button` instead.
 
 button.btn,
+button.button,
 a.fake-btn {
     align-content: center;
     background-color: transparent;
@@ -26,7 +30,9 @@ a.fake-btn {
 }
 
 button.btn[disabled],
-button.btn[aria-disabled="true"] {
+button.button[disabled],
+button.btn[aria-disabled="true"],
+button.button[aria-disabled="true"] {
     @include token-mixins.border-color-token(
         expand-btn-disabled-border-color,
         color-border-disabled
@@ -46,6 +52,7 @@ a.fake-btn[aria-disabled="true"] {
 }
 
 button.btn--borderless,
+button.button--borderless,
 a.fake-btn--borderless {
     border-color: transparent;
     font-weight: bold;
@@ -62,14 +69,18 @@ a.fake-btn--borderless {
 }
 
 button.btn--borderless[disabled],
+button.button--borderless[disabled],
 a.fake-btn--borderless[disabled],
 button.btn--borderless[aria-disabled="true"],
+button.button--borderless[aria-disabled="true"],
 a.fake-btn--borderless[aria-disabled="true"] {
     border-color: transparent;
 }
 
 button.btn--borderless.btn--destructive,
-a.fake-btn--borderless.btn--destructive {
+button.button--borderless.button--destructive,
+a.fake-btn--borderless.btn--destructive,
+a.fake-btn--borderless.button--destructive {
     @include token-mixins.color-token(
         btn-secondary-destructive-foreground-color,
         color-foreground-attention
@@ -77,6 +88,7 @@ a.fake-btn--borderless.btn--destructive {
 }
 
 button.btn--slim,
+button.button--slim,
 a.fake-btn--slim {
     height: button-mixins.$button-height-regular;
     min-width: auto;
@@ -90,11 +102,13 @@ a.fake-btn:hover {
 }
 
 button.btn--fluid,
+button.button--fluid,
 a.fake-btn--fluid {
     width: 100%;
 }
 
 .btn__cell,
+.button__cell,
 .fake-btn__cell {
     justify-content: center;
 
@@ -104,18 +118,22 @@ a.fake-btn--fluid {
 }
 
 button.btn--form .btn__cell,
+button.button--form .button__cell,
 a.fake-btn--form .fake-btn__cell,
 button.btn--borderless .btn__cell,
+button.button--borderless .button__cell,
 a.fake-btn--borderless .fake-btn__cell {
     justify-content: space-between;
 }
 
 button.btn svg.icon,
+button.button svg.icon,
 a.fake-btn svg.icon {
     @include button-mixins.icon-base;
 }
 
 button.btn__cell--fixed-height svg.icon,
+button.button__cell--fixed-height svg.icon,
 a.fake-btn__cell--fixed-height svg.icon {
     align-self: center;
     height: 1rem;
@@ -124,6 +142,7 @@ a.fake-btn__cell--fixed-height svg.icon {
 }
 
 button.btn--primary,
+button.button--primary,
 a.fake-btn--primary {
     background-color: var(
         --btn-primary-background-color,
@@ -149,6 +168,7 @@ a.fake-btn--primary:hover {
 }
 
 button.btn--primary.btn--destructive,
+button.button--primary.button--destructive,
 a.fake-btn--primary.fake-btn--destructive {
     background-color: var(--color-background-attention);
     border-color: var(--color-border-attention);
@@ -159,51 +179,62 @@ a.fake-btn--primary.fake-btn--destructive {
 }
 
 button.btn--primary.btn--destructive[disabled],
-button.btn--primary.btn--destructive[aria-disabled="true"] {
+button.button--primary.button--destructive[disabled],
+button.btn--primary.btn--destructive[aria-disabled="true"],
+button.button--primary.button--destructive[aria-disabled="true"] {
     background-color: var(--color-background-disabled);
     border-color: var(--color-border-disabled);
 }
 
-button.btn .progress-spinner {
+button.btn .progress-spinner,
+button.button .progress-spinner {
     height: 24px;
     margin: -4px 0;
     width: 24px;
 }
 
-button.btn--form .progress-spinner {
+button.btn--form .progress-spinner,
+button.button--form .progress-spinner {
     margin-left: auto;
     margin-right: auto;
 }
 
-button.btn--primary .progress-spinner {
+button.btn--primary .progress-spinner,
+button.button--primary .progress-spinner {
     --color-spinner-icon-background: var(--color-background-primary);
     --color-spinner-icon-foreground: #8fa3f8; /* 40% of white on top of --color-foreground-on-accent */
 }
 
-button.btn--primary.btn--destructive .progress-spinner {
+button.btn--primary.btn--destructive .progress-spinner,
+button.button--primary.button--destructive .progress-spinner {
     --color-spinner-icon-background: var(--color-foreground-on-accent);
     --color-spinner-icon-foreground: #ec7089;
 }
 
 button.btn[aria-expanded="true"] svg.icon--12,
+button.button[aria-expanded="true"] svg.icon--12,
 a.fake-btn[aria-expanded="true"] svg.icon--12 {
     transform: rotate(180deg);
 }
 
 button.btn--large svg.icon,
+button.button--large svg.icon,
 a.fake-btn--large svg.icon {
     max-height: button-mixins.$button-height-large -
         (button-mixins.$button-padding-vertical-large * 2);
 }
 
 button.btn--small svg.icon,
+button.button--small svg.icon,
 a.fake-btn--small svg.icon {
     max-height: button-mixins.$button-height-small -
         (button-mixins.$button-padding-vertical-small * 2);
 }
 
 button.btn--primary[disabled],
-button.btn--primary[aria-disabled="true"] {
+button.button--primary[disabled],
+button.btn--primary[aria-disabled="true"],
+button.button--primary[aria-disabled="true"] {
     @include token-mixins.background-color-token(
         btn-primary-disabled-background-color,
         color-foreground-disabled
@@ -242,6 +273,7 @@ a.fake-btn--primary[aria-disabled="true"] {
 }
 
 button.btn--secondary,
+button.button--secondary,
 a.fake-btn--secondary {
     background-color: var(--btn-secondary-background-color, transparent);
     border-color: var(--color-border-accent);
@@ -260,6 +292,7 @@ a.fake-btn--secondary:hover {
 }
 
 button.btn--secondary.btn--destructive,
+button.button--secondary.button--destructive,
 a.fake-btn--secondary.fake-btn--destructive {
     background-color: var(
         --btn-secondary-destructive-background-color,
@@ -275,13 +308,16 @@ a.fake-btn--secondary.fake-btn--destructive {
     );
 }
 
-button.btn--secondary.btn--destructive .progress-spinner {
+button.btn--secondary.btn--destructive .progress-spinner,
+button.button--secondary.button--destructive .progress-spinner {
     --color-spinner-icon-background: #f39fb0;
     --color-spinner-icon-foreground: #e0103a;
 }
 
 button.btn--secondary[disabled],
-button.btn--secondary[aria-disabled="true"] {
+button.button--secondary[disabled],
+button.btn--secondary[aria-disabled="true"],
+button.button--secondary[aria-disabled="true"] {
     @include token-mixins.background-color-token(
         btn-secondary-disabled-background-color,
         color-background-primary
@@ -316,6 +352,7 @@ a.fake-btn--secondary[aria-disabled="true"] {
 }
 
 button.btn--tertiary,
+button.button--tertiary,
 a.fake-btn--tertiary {
     @include token-mixins.border-color-token(
         btn-tertiary-border-color,
@@ -327,7 +364,11 @@ a.fake-btn--tertiary {
 }
 
 button.btn--tertiary[disabled],
+button.button--tertiary[disabled],
 button.btn--tertiary[aria-disabled="true"]:not(
+        [aria-live="polite"][aria-disabled="true"]
+    ),
+button.button--tertiary[aria-disabled="true"]:not(
         [aria-live="polite"][aria-disabled="true"]
     ),
 a.fake-btn--tertiary:not([href]),
@@ -343,6 +384,7 @@ a.fake-btn--tertiary[aria-disabled="true"] {
 }
 
 button.btn--tertiary.btn--destructive,
+button.button--tertiary.button--destructive,
 a.fake-btn--tertiary.fake-btn--destructive {
     @include token-mixins.border-color-token(
         btn-tertiary-destructive-foreground-color,
@@ -351,24 +393,29 @@ a.fake-btn--tertiary.fake-btn--destructive {
 }
 
 button.btn--tertiary.btn--destructive[disabled],
-button.btn--tertiary.btn--destructive[aria-disabled="true"] {
+button.button--tertiary.button--destructive[disabled],
+button.btn--tertiary.btn--destructive[aria-disabled="true"],
+button.button--tertiary.button--destructive[aria-disabled="true"] {
     @include token-mixins.color-token(
         btn-tertiary-destructive-disabled-foreground-color,
         color-foreground-disabled
     );
 }
 
-button.btn--tertiary.btn--destructive .progress-spinner {
+button.btn--tertiary.btn--destructive .progress-spinner,
+button.button--tertiary.button--destructive .progress-spinner {
     --color-spinner-icon-background: #ee9aab;
     --color-spinner-icon-foreground: #e0103a;
 }
 
 button.btn--large,
+button.button--large,
 a.fake-btn--large {
     @include button-mixins.large;
 }
 
 button.btn--small,
+button.button--small,
 a.fake-btn--small {
     border-radius: var(
         --btn-border-radius,
@@ -381,6 +428,7 @@ a.fake-btn--small {
 }
 
 button.btn--form,
+button.button--form,
 a.fake-btn--form {
     border-color: inherit;
     max-width: 100%;
@@ -391,17 +439,20 @@ a.fake-btn--form {
     @include state-layer.standard;
 }
 
-button.btn--form.btn--large {
+button.btn--form.btn--large,
+button.button--form.button--large {
     padding: button-mixins.$button-padding-vertical-large
         button-mixins.$button-padding-horizontal-large;
 }
 
-button.btn--form.btn--small {
+button.btn--form.btn--small,
+button.button--form.button--small {
     padding: button-mixins.$button-padding-vertical-small
         button-mixins.$button-padding-horizontal-small;
 }
 
 button.btn--transparent,
+button.button--transparent,
 a.fake-btn--transparent {
     background-color: transparent;
 
@@ -412,17 +463,20 @@ a.fake-btn--transparent {
 }
 
 button.btn--large-fixed-height,
+button.button--large-fixed-height,
 a.fake-btn--large-fixed-height {
     height: button-mixins.$button-height-large;
     min-height: button-mixins.$button-height-large;
 }
 
 button.btn--truncated,
+button.button--truncated,
 a.fake-btn--truncated {
     @include button-mixins.truncate;
 }
 
 button.btn--large-truncated,
+button.button--large-truncated,
 a.fake-btn--large-truncated {
     font-size: var(--font-size-medium);
     height: button-mixins.$button-height-large;
@@ -434,11 +488,13 @@ a.fake-btn--large-truncated {
 }
 
 button.btn--split-start,
+button.button--split-start,
 a.fake-btn--split-start {
     border-radius: 24px 0 0 24px;
 }
 
 button.btn--split-end,
+button.button--split-end,
 a.fake-btn--split-end {
     border-radius: 0 24px 24px 0;
     margin-left: -1px;
@@ -448,6 +504,7 @@ a.fake-btn--split-end {
 }
 
 button.btn.btn--primary.btn--split-end,
+button.button.button--primary.button--split-end,
 a.fake-btn.fake-btn--primary.fake-btn--split-end {
     @include token-mixins.border-left-color-token(
         btn-primary-border-split-color,
@@ -462,18 +519,21 @@ a.fake-btn.fake-btn--primary.fake-btn--split-end {
     }
 }
 
-button.btn--floating-label {
+button.btn--floating-label,
+button.button--floating-label {
     padding-bottom: 0;
     padding-top: 0;
 }
 
-button.btn--floating-label .btn__text {
+button.btn--floating-label .btn__text,
+button.button--floating-label .button__text {
     min-height: 19px;
     padding-bottom: 2px;
     padding-top: 17px;
 }
 
-button.btn--floating-label .btn__floating-label {
+button.btn--floating-label .btn__floating-label,
+button.button--floating-label .button__floating-label {
     align-self: flex-start;
     display: inline-block;
     overflow: hidden;
@@ -490,13 +550,15 @@ button.btn--floating-label .btn__floating-label {
     z-index: 1;
 }
 
-button.btn--floating-label .btn__floating-label--animate {
+button.btn--floating-label .btn__floating-label--animate,
+button.button--floating-label .button__floating-label--animate {
     transition:
         transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1),
         bottom 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
-button.btn--floating-label .btn__floating-label--inline {
+button.btn--floating-label .btn__floating-label--inline,
+button.button--floating-label .button__floating-label--inline {
     font-size: 0.875rem;
     position: unset;
     transform: translate(0, -6px);
@@ -504,11 +566,13 @@ button.btn--floating-label .btn__floating-label--inline {
 
 [dir="rtl"] {
     button.btn--split-start,
+    button.button--split-start,
     a.fake-btn--split-start {
         border-radius: 0 24px 24px 0;
     }
 
     button.btn--split-end,
+    button.button--split-end,
     a.fake-btn--split-end {
         border-radius: 24px 0 0 24px;
         margin-left: inherit;
@@ -516,11 +580,13 @@ button.btn--floating-label .btn__floating-label--inline {
     }
 
     button.btn.btn--tertiary.btn--split-end,
+    button.button.button--tertiary.button--split-end,
     a.fake-btn.fake-btn--tertiary.fake-btn--split-end {
         margin-right: -2px;
     }
 
     button.btn.btn--primary.btn--split-end,
+    button.button.button--primary.button--split-end,
     a.fake-btn.fake-btn--primary.fake-btn--split-end {
         border-left-color: var(--btn-primary-border-color, transparent);
         @include token-mixins.border-right-color-token(

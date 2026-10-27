@@ -2,9 +2,9 @@ export default { title: "Skin/Menu Button/Base" };
 
 export const collapsed = () => `
 <span class="menu-button">
-    <button class="btn btn--secondary" aria-haspopup="true" type="button">
-        <span class="btn__cell">
-            <span class="btn__text">Button</span>
+    <button class="button button--secondary" aria-haspopup="true" type="button">
+        <span class="button__cell">
+            <span class="button__text">Button</span>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -28,9 +28,9 @@ export const collapsed = () => `
 
 export const disabled = () => `
 <span class="menu-button">
-    <button class="btn btn--secondary" aria-haspopup="true" type="button" disabled>
-        <span class="btn__cell">
-            <span class="btn__text">Button</span>
+    <button class="button button--secondary" aria-haspopup="true" type="button" disabled>
+        <span class="button__cell">
+            <span class="button__text">Button</span>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -54,9 +54,9 @@ export const disabled = () => `
 
 export const expanded = () => `
 <span class="menu-button">
-    <button class="btn btn--secondary" type="button" aria-expanded="true" aria-haspopup="true">
-        <span class="btn__cell">
-            <span class="btn__text">Button</span>
+    <button class="button button--secondary" type="button" aria-expanded="true" aria-haspopup="true">
+        <span class="button__cell">
+            <span class="button__text">Button</span>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -80,9 +80,9 @@ export const expanded = () => `
 
 export const collapsedForm = () => `
 <span class="menu-button">
-    <button class="btn btn--form" aria-haspopup="true" type="button">
-        <span class="btn__cell">
-            <span class="btn__text">Button</span>
+    <button class="button button--form" aria-haspopup="true" type="button">
+        <span class="button__cell">
+            <span class="button__text">Button</span>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -106,9 +106,9 @@ export const collapsedForm = () => `
 
 export const expandedForm = () => `
 <span class="menu-button">
-    <button class="btn btn--form" type="button" aria-expanded="true" aria-haspopup="true">
-        <span class="btn__cell">
-            <span class="btn__text">Button</span>
+    <button class="button button--form" type="button" aria-expanded="true" aria-haspopup="true">
+        <span class="button__cell">
+            <span class="button__text">Button</span>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -132,9 +132,9 @@ export const expandedForm = () => `
 
 export const badged = () => `
 <span class="menu-button">
-    <button class="btn" type="button" aria-expanded="true" aria-haspopup="true">
-        <span class="btn__cell">
-            <span class="btn__text">Button</span>
+    <button class="button" type="button" aria-expanded="true" aria-haspopup="true">
+        <span class="button__cell">
+            <span class="button__text">Button</span>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -158,9 +158,9 @@ export const badged = () => `
 
 export const expandedDisabledItem = () => `
 <span class="menu-button">
-    <button class="btn" type="button" aria-expanded="true" aria-haspopup="true">
-        <span class="btn__cell">
-            <span class="btn__text">Button</span>
+    <button class="button" type="button" aria-expanded="true" aria-haspopup="true">
+        <span class="button__cell">
+            <span class="button__text">Button</span>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -184,9 +184,9 @@ export const expandedDisabledItem = () => `
 
 export const radioItems = () => `
 <span class="menu-button">
-    <button class="btn" type="button" aria-expanded="true" aria-haspopup="true">
-        <span class="btn__cell">
-            <span class="btn__text">Button</span>
+    <button class="button" type="button" aria-expanded="true" aria-haspopup="true">
+        <span class="button__cell">
+            <span class="button__text">Button</span>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -219,9 +219,9 @@ export const radioItems = () => `
 
 export const radioItemsDisabledItem = () => `
 <span class="menu-button">
-    <button class="btn" type="button" aria-expanded="true" aria-haspopup="true">
-        <span class="btn__cell">
-            <span class="btn__text">Button</span>
+    <button class="button" type="button" aria-expanded="true" aria-haspopup="true">
+        <span class="button__cell">
+            <span class="button__text">Button</span>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -254,9 +254,9 @@ export const radioItemsDisabledItem = () => `
 
 export const checkboxItems = () => `
 <span class="menu-button">
-    <button class="btn" type="button" aria-expanded="true" aria-haspopup="true">
-        <span class="btn__cell">
-            <span class="btn__text">Button</span>
+    <button class="button" type="button" aria-expanded="true" aria-haspopup="true">
+        <span class="button__cell">
+            <span class="button__text">Button</span>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -289,9 +289,9 @@ export const checkboxItems = () => `
 
 export const checkboxItemsDisabledItem = () => `
 <span class="menu-button">
-    <button class="btn" type="button" aria-expanded="true" aria-haspopup="true">
-        <span class="btn__cell">
-            <span class="btn__text">Button</span>
+    <button class="button" type="button" aria-expanded="true" aria-haspopup="true">
+        <span class="button__cell">
+            <span class="button__text">Button</span>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -324,9 +324,9 @@ export const checkboxItemsDisabledItem = () => `
 
 export const longOptionText = () => `
 <span class="menu-button">
-    <button class="btn" type="button" aria-expanded="true" aria-haspopup="true">
-        <span class="btn__cell">
-            <span class="btn__text">Button</span>
+    <button class="button" type="button" aria-expanded="true" aria-haspopup="true">
+        <span class="button__cell">
+            <span class="button__text">Button</span>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -350,9 +350,9 @@ export const longOptionText = () => `
 
 export const menuIcons = () => `
 <span class="menu-button">
-    <button class="btn" aria-expanded="true" aria-haspopup="true" type="button">
-        <span class="btn__cell">
-            <span class="btn__text">Button</span>
+    <button class="button" aria-expanded="true" aria-haspopup="true" type="button">
+        <span class="button__cell">
+            <span class="button__text">Button</span>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -391,9 +391,9 @@ export const menuIcons = () => `
 
 export const separator = () => `
 <span class="menu-button">
-    <button class="btn" type="button" aria-expanded="true" aria-haspopup="true">
-        <span class="btn__cell">
-            <span class="btn__text">Button</span>
+    <button class="button" type="button" aria-expanded="true" aria-haspopup="true">
+        <span class="button__cell">
+            <span class="button__text">Button</span>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -418,9 +418,9 @@ export const separator = () => `
 
 export const textSpacing = () => `
 <span class="menu-button demo-a11y-text-spacing">
-    <button class="btn" type="button" aria-expanded="true" aria-haspopup="true">
-        <span class="btn__cell">
-            <span class="btn__text">Button</span>
+    <button class="button" type="button" aria-expanded="true" aria-haspopup="true">
+        <span class="button__cell">
+            <span class="button__text">Button</span>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>

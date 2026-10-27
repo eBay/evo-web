@@ -14,7 +14,7 @@ export const generalWithButton = () => `
         <h2 class="page-notice__title">We've updated the look and feel of this page. Customize anytime in settings.</h2>
     </div>
     <div class="page-notice__footer">
-        <button class="fake-link">Dismiss</button>
+        <button class="text-button">Dismiss</button>
     </div>
 </section>
 `;
@@ -41,7 +41,7 @@ export const confirmationWithButton = () => `
         <h2 class="page-notice__title">You have opted into eBay Pay</h2>
     </div>
     <div class="page-notice__footer">
-        <button class="fake-link">Dismiss</button>
+        <button class="text-button">Dismiss</button>
     </div>
 </section>
 `;
@@ -73,7 +73,7 @@ export const attentionWithButton = () => `
         <h2 class="page-notice__title">Your selling account has been deactivated.</h2>
     </div>
     <div class="page-notice__footer">
-        <button class="fake-link">Dismiss</button>
+        <button class="text-button">Dismiss</button>
     </div>
 </section>
 `;
@@ -105,7 +105,7 @@ export const warningWithButton = () => `
         <h2 class="page-notice__title">Your listing may expire before your draft is saved.</h2>
     </div>
     <div class="page-notice__footer">
-        <button class="fake-link">Dismiss</button>
+        <button class="text-button">Dismiss</button>
     </div>
 </section>
 `;
@@ -137,7 +137,7 @@ export const informationWithButton = () => `
         <h2 class="page-notice__title">Free shipping on your next pair of shoes.</h2>
     </div>
     <div class="page-notice__footer">
-        <button class="fake-link">Dismiss</button>
+        <button class="text-button">Dismiss</button>
     </div>
 </section>
 `;
@@ -169,7 +169,7 @@ export const InformationWithParagraph = () => `
         <p>You have opted into eBay Pay</p>
     </div>
     <div class="page-notice__footer">
-        <button class="fake-link">Dismiss</button>
+        <button class="text-button">Dismiss</button>
     </div>
 </section>
 `;
@@ -185,7 +185,7 @@ export const fakeLinkCTA = () => `
         <h3 class="page-notice__title">Notice Title</h3>
         <p>Opt into eBay payments before Jan 12th to pay no selling fees.</p>
     </div>
-    <p class="page-notice__cta"><button class="fake-link">Opt in</button></p>
+    <p class="page-notice__cta"><button class="text-button">Opt in</button></p>
 </section>
 `;
 
@@ -202,7 +202,7 @@ export const dismissableWithTitle = () => `
     </div>
     <p class="page-notice__cta"><a href="https://www.ebay.com">Opt in</a></p>
     <div class="page-notice__footer">
-        <button aria-label="Dismiss notification" class="fake-link page-notice__dismiss">
+        <button aria-label="Dismiss notification" class="text-button page-notice__dismiss">
             <svg aria-hidden="true" class="icon icon--16" height="14" width="14">
                 <use href="#icon-close-16"></use>
             </svg>
@@ -223,7 +223,7 @@ export const dismissableWithoutTitle = () => `
     </div>
     <p class="page-notice__cta"><a href="https://www.ebay.com">Opt in</a></p>
     <div class="page-notice__footer">
-        <button aria-label="Dismiss notification" class="fake-link page-notice__dismiss">
+        <button aria-label="Dismiss notification" class="text-button page-notice__dismiss">
             <svg aria-hidden="true" class="icon icon--16" height="14" width="14">
                 <use href="#icon-close-16"></use>
             </svg>
@@ -259,7 +259,7 @@ export const textSpacing = () => `
     </div>
     <p class="page-notice__cta"><a href="https://www.ebay.com">Opt in</a></p>
     <div class="page-notice__footer">
-        <button aria-label="Dismiss notification" class="fake-link page-notice__dismiss">
+        <button aria-label="Dismiss notification" class="text-button page-notice__dismiss">
             <svg aria-hidden="true" class="icon icon--16" height="14" width="14">
                 <use href="#icon-close-16"></use>
             </svg>

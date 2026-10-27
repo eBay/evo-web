@@ -74,20 +74,20 @@
     margin-top: var(--spacing-200);
 }
 
-.snackbar-dialog__actions .button-link,
-.snackbar-dialog__actions .fake-link {
+.snackbar-dialog__actions .fake-link,
+.snackbar-dialog__actions .text-button {
     color: var(
         --snackbar-dialog-foreground-color,
         var(--color-foreground-on-inverse)
     );
     text-decoration: none;
 }
-.snackbar-dialog__actions .button-link:first-letter,
-.snackbar-dialog__actions .fake-link:first-letter {
+.snackbar-dialog__actions .fake-link:first-letter,
+.snackbar-dialog__actions .text-button:first-letter {
     text-decoration: underline;
 }
-.snackbar-dialog__actions button.button-link:hover:not(:disabled),
-.snackbar-dialog__actions button.fake-link:hover:not(:disabled) {
+.snackbar-dialog__actions button.fake-link:hover:not(:disabled),
+.snackbar-dialog__actions button.text-button:hover:not(:disabled) {
     color: var(
         --snackbar-dialog-foreground-color,
         var(--color-foreground-on-inverse)

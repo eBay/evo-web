@@ -5,7 +5,7 @@ export const primaryAction = () => `
     <div class="toast-dialog__window">
         <div class="toast-dialog__header">
             <h2>User Privacy Preferences</h2>
-            <button class="icon-btn icon-btn--transparent toast-dialog__close" type="button" aria-label="Close notification dialog">
+            <button class="icon-button icon-button--transparent toast-dialog__close" type="button" aria-label="Close notification dialog">
                 <svg class="icon icon--16">
                     <use href="#icon-close-16"></use>
                 </svg>
@@ -16,7 +16,7 @@ export const primaryAction = () => `
             To help keep you safe, we recommend you change the password.</p>
         </div>
         <div class="toast-dialog__footer">
-            <button accesskey="a" class="btn btn--primary">Accept</button>
+            <button accesskey="a" class="button button--primary">Accept</button>
         </div>
     </div>
 </aside>
@@ -27,7 +27,7 @@ export const secondaryAction = () => `
     <div class="toast-dialog__window">
         <div class="toast-dialog__header">
             <h2>User Privacy Preferences</h2>
-            <button class="icon-btn icon-btn--transparent toast-dialog__close" type="button" aria-label="Close notification dialog">
+            <button class="icon-button icon-button--transparent toast-dialog__close" type="button" aria-label="Close notification dialog">
                 <svg class="icon icon--16">
                     <use href="#icon-close-16"></use>
                 </svg>
@@ -38,8 +38,8 @@ export const secondaryAction = () => `
             To help keep you safe, we recommend you change the password.</p>
         </div>
         <div class="toast-dialog__footer">
-            <button accesskey="d" class="btn btn--secondary">Dismiss</button>
-            <button accesskey="a" class="btn btn--primary">Accept</button>
+            <button accesskey="d" class="button button--secondary">Dismiss</button>
+            <button accesskey="a" class="button button--primary">Accept</button>
         </div>
     </div>
 </aside>
@@ -51,7 +51,7 @@ export const RTL = () => `
         <div class="toast-dialog__window">
             <div class="toast-dialog__header">
                 <h2>User Privacy Preferences</h2>
-                <button class="icon-btn icon-btn--transparent toast-dialog__close" type="button" aria-label="Close notification dialog">
+                <button class="icon-button icon-button--transparent toast-dialog__close" type="button" aria-label="Close notification dialog">
                     <svg class="icon icon--16">
                         <use href="#icon-close-16"></use>
                     </svg>
@@ -62,8 +62,8 @@ export const RTL = () => `
                 To help keep you safe, we recommend you change the password.</p>
             </div>
             <div class="toast-dialog__footer">
-                <button accesskey="d" class="btn btn--secondary">Dismiss</button>
-                <button accesskey="a" class="btn btn--primary">Accept</button>
+                <button accesskey="d" class="button button--secondary">Dismiss</button>
+                <button accesskey="a" class="button button--primary">Accept</button>
             </div>
         </div>
     </aside>
@@ -75,7 +75,7 @@ export const textSpacing = () => `
     <div class="toast-dialog__window">
         <div class="toast-dialog__header">
             <h2>User Privacy Preferences</h2>
-            <button class="icon-btn icon-btn--transparent toast-dialog__close" type="button" aria-label="Close notification dialog">
+            <button class="icon-button icon-button--transparent toast-dialog__close" type="button" aria-label="Close notification dialog">
                 <svg class="icon icon--16">
                     <use href="#icon-close-16"></use>
                 </svg>
@@ -86,8 +86,8 @@ export const textSpacing = () => `
             To help keep you safe, we recommend you change the password.</p>
         </div>
         <div class="toast-dialog__footer">
-            <button accesskey="d" class="btn btn--secondary">Dismiss</button>
-            <button accesskey="a" class="btn btn--primary">Accept</button>
+            <button accesskey="d" class="button button--secondary">Dismiss</button>
+            <button accesskey="a" class="button button--primary">Accept</button>
         </div>
     </div>
 </aside>
@@ -98,7 +98,7 @@ export const primaryActionWithHeaderOverflow = () => `
     <div class="toast-dialog__window">
         <div class="toast-dialog__header">
             <h2>User Privacy Preferences but with a title that's super long so it wraps to the next line. No dialog header should ever be this long.</h2>
-            <button class="icon-btn icon-btn--transparent toast-dialog__close" type="button" aria-label="Close notification dialog">
+            <button class="icon-button icon-button--transparent toast-dialog__close" type="button" aria-label="Close notification dialog">
                 <svg class="icon icon--16">
                     <use href="#icon-close-16"></use>
                 </svg>
@@ -109,7 +109,7 @@ export const primaryActionWithHeaderOverflow = () => `
             To help keep you safe, we recommend you change the password.</p>
         </div>
         <div class="toast-dialog__footer">
-            <button accesskey="a" class="btn btn--primary">Accept</button>
+            <button accesskey="a" class="button button--primary">Accept</button>
         </div>
     </div>
 </aside>

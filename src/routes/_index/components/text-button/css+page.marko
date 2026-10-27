@@ -1,0 +1,43 @@
+<div id="static-text-button">
+  <h1>Text Button CSS Component</h1>
+
+  <p>
+    To style a button to look like a link, use the <code>text-button</code>
+    class.
+  </p>
+
+  <div class="demo">
+    <div class="demo__inner">
+      <button class="text-button" type="button">Button</button>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <button class="text-button" type="button">Button</button>
+  </highlight-code>
+
+  <h3 id="text-button-legal">Legal Text Button</h3>
+  <p>
+    Combine with <code>legal-link</code> for a text button used in legal text
+    (such as Terms & Conditions).
+  </p>
+
+  <div class="demo">
+    <div class="demo__inner">
+      <button class="text-button legal-link" type="button">
+        Privacy Policy
+      </button>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <button class="text-button legal-link" type="button">Privacy Policy</button>
+  </highlight-code>
+</div>
+export const metadata = {
+  component: "text-button",
+  "ds-component": {
+    name: "text-link",
+    version: 2,
+  },
+};

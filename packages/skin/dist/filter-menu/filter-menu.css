@@ -161,7 +161,8 @@ span.filter-menu__item[role^="menuitem"] {
     font-size: var(--font-size-body);
 }
 
-.filter-menu__header button.btn {
+.filter-menu__header button.btn,
+.filter-menu__header button.button {
     border: none;
     min-height: var(--spacing-250);
     min-width: var(--spacing-250);

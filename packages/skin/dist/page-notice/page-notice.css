@@ -47,23 +47,23 @@ span[role="region"].page-notice {
 }
 
 .page-notice a:hover,
-.page-notice button.button-link,
-.page-notice button.fake-link {
+.page-notice button.fake-link,
+.page-notice button.text-button {
     color: var(--page-notice-color, var(--color-foreground-on-inverse));
 }
 
-.page-notice button.button-link,
-.page-notice button.fake-link {
+.page-notice button.fake-link,
+.page-notice button.text-button {
     font-size: var(--font-size-body);
 }
 
-.page-notice button.button-link:hover,
-.page-notice button.fake-link:hover {
+.page-notice button.fake-link:hover,
+.page-notice button.text-button:hover {
     color: var(--page-notice-color, var(--color-foreground-on-inverse));
 }
 .page-notice a:focus-visible,
-.page-notice button.button-link:focus-visible,
-.page-notice button.fake-link:focus-visible {
+.page-notice button.fake-link:focus-visible,
+.page-notice button.text-button:focus-visible {
     outline: 2px solid var(--color-foreground-on-inverse);
     outline-offset: 2px;
 }
@@ -104,15 +104,15 @@ span[role="region"].page-notice {
 .page-notice--warning,
 .page-notice--warning a,
 .page-notice--warning a:hover,
-.page-notice--warning button.button-link,
-.page-notice--warning button.button-link:hover,
 .page-notice--warning button.fake-link,
-.page-notice--warning button.fake-link:hover {
+.page-notice--warning button.fake-link:hover,
+.page-notice--warning button.text-button,
+.page-notice--warning button.text-button:hover {
     color: var(--page-notice-warning-color, var(--color-foreground-on-warning));
 }
 .page-notice--warning a:focus-visible,
-.page-notice--warning button.button-link:focus-visible,
-.page-notice--warning button.fake-link:focus-visible {
+.page-notice--warning button.fake-link:focus-visible,
+.page-notice--warning button.text-button:focus-visible {
     outline-color: var(--color-foreground-on-warning);
 }
 

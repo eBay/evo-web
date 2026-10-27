@@ -57,8 +57,8 @@
     margin-inline-start: var(--spacing-200);
 }
 
-.panel-dialog__header .button-link,
-.panel-dialog__header .fake-link {
+.panel-dialog__header .fake-link,
+.panel-dialog__header .text-button {
     align-self: flex-start;
     outline-offset: 4px;
     text-decoration: none;
@@ -90,7 +90,9 @@
     margin-top: var(--spacing-200);
 }
 button.icon-btn.panel-dialog__close,
-button.icon-btn.panel-dialog__prev {
+button.icon-btn.panel-dialog__prev,
+button.icon-button.panel-dialog__close,
+button.icon-button.panel-dialog__prev {
     align-self: flex-start;
     border: 0;
     height: 32px;
@@ -101,7 +103,8 @@ button.icon-btn.panel-dialog__prev {
     z-index: 1;
 }
 
-button.icon-btn.panel-dialog__prev {
+button.icon-btn.panel-dialog__prev,
+button.icon-button.panel-dialog__prev {
     margin-inline-end: var(--spacing-200);
 }
 
@@ -171,7 +174,8 @@ button.icon-btn.panel-dialog__prev {
     transform: translateX(0);
 }
 
-[dir="rtl"] button.icon-btn.panel-dialog__prev .icon {
+[dir="rtl"] button.icon-btn.panel-dialog__prev .icon,
+[dir="rtl"] button.icon-button.panel-dialog__prev .icon {
     transform: rotate(180deg);
 }
 @media (min-width: 512px) {

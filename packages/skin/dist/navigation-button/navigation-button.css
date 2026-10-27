@@ -1,0 +1,511 @@
+:root {
+    --state-layer-neutral-on-strong: rgb(var(--color-neutral-900-rgb), 0);
+    --state-layer-neutral: rgb(var(--color-neutral-900-rgb), 0);
+}
+
+a.navigation-button {
+    align-content: center;
+    background-color: initial;
+    border-radius: var(--btn-border-radius, 20px);
+    color: inherit;
+    display: inline-block;
+    font-size: var(--font-size-body);
+    min-height: 40px;
+    min-width: 88px;
+    padding: 0 20px;
+    align-items: center;
+    border: 1px solid;
+    box-sizing: border-box;
+    font-family: inherit;
+    margin: 0;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: bottom;
+}
+a.navigation-button--fixed-height,
+a.navigation-button--truncated {
+    height: 40px;
+}
+a.navigation-button:focus-visible {
+    outline-offset: var(--spacing-25);
+    outline-style: solid;
+    outline-width: var(--spacing-25);
+}
+a.navigation-button:focus:not(:focus-visible) {
+    outline: none;
+}
+
+a.navigation-button:not([href]),
+a.navigation-button[aria-disabled="true"] {
+    color: var(
+        --link-foreground-color-disabled,
+        var(--color-foreground-disabled)
+    );
+}
+
+a.navigation-button--borderless {
+    border-color: transparent;
+    min-width: auto;
+    padding-left: 0;
+    vertical-align: initial;
+}
+a.navigation-button--borderless:focus,
+a.navigation-button--borderless:hover {
+    background-color: initial;
+    outline: none;
+    text-decoration: underline;
+}
+
+a.navigation-button--borderless[aria-disabled="true"],
+a.navigation-button--borderless[disabled] {
+    border-color: transparent;
+}
+
+a.navigation-button--borderless.navigation-button--destructive {
+    color: var(
+        --btn-secondary-destructive-foreground-color,
+        var(--color-foreground-attention)
+    );
+}
+
+a.navigation-button--slim {
+    height: 40px;
+    min-width: auto;
+    padding-left: var(--spacing-100);
+    padding-right: var(--spacing-100);
+}
+
+a.navigation-button:hover,
+a.navigation-button:visited {
+    color: inherit;
+}
+
+a.navigation-button--fluid {
+    width: 100%;
+}
+
+.navigation-button__cell {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
+}
+.navigation-button__cell--fixed-height {
+    display: inline-flex;
+}
+.navigation-button__cell--fixed-height > svg {
+    align-self: baseline;
+    max-width: calc(100% - 32px);
+}
+.navigation-button__cell--truncated {
+    display: inline-flex;
+}
+.navigation-button__cell--truncated > svg {
+    align-self: baseline;
+    max-width: calc(100% - 32px);
+}
+
+a.navigation-button--borderless .navigation-button__cell,
+a.navigation-button--form .navigation-button__cell {
+    justify-content: space-between;
+}
+
+a.navigation-button svg.icon {
+    align-self: center;
+}
+a.navigation-button svg.icon:first-child {
+    margin-inline-end: 8px;
+}
+a.navigation-button svg.icon:last-child {
+    margin-inline-start: 8px;
+}
+a.navigation-button svg.icon:only-child {
+    margin: 0;
+}
+
+a.navigation-button__cell--fixed-height svg.icon {
+    align-self: center;
+    height: 1rem;
+    overflow: visible;
+    width: 1rem;
+}
+
+a.navigation-button--primary {
+    background-color: var(--color-background-accent);
+    border-color: var(--color-border-accent);
+    color: var(--color-foreground-on-accent);
+    font-weight: 700;
+    transition: all var(--motion-duration-short-3)
+        var(--motion-easing-quick-enter);
+}
+a.navigation-button--primary:active {
+    transform: scale(0.97);
+}
+a.navigation-button--primary {
+    overflow: hidden;
+    position: relative;
+}
+a.navigation-button--primary:after {
+    background-color: var(--color-state-layer-neutral);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+a.navigation-button--primary:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):hover:after,
+a.navigation-button--primary[href]:hover:after {
+    background-color: var(--color-state-layer-hover);
+}
+a.navigation-button--primary:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):focus-visible:after,
+a.navigation-button--primary[href]:focus-visible:after {
+    background-color: var(--color-state-layer-focus);
+}
+a.navigation-button--primary:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):active:after,
+a.navigation-button--primary[href]:active:after {
+    background-color: var(--color-state-layer-pressed);
+}
+
+a.navigation-button--primary {
+    outline-color: var(--color-foreground-primary);
+}
+
+a.navigation-button--primary:hover,
+a.navigation-button--primary:visited {
+    color: var(--color-foreground-on-accent);
+}
+
+a.navigation-button--primary.navigation-button--destructive {
+    background-color: var(--color-background-attention);
+    border-color: var(--color-border-attention);
+    color: var(--color-foreground-on-attention);
+    font-weight: 700;
+    overflow: hidden;
+    position: relative;
+}
+a.navigation-button--primary.navigation-button--destructive:after {
+    background-color: var(--color-state-layer-neutral);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+a.navigation-button--primary.navigation-button--destructive:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):hover:after,
+a.navigation-button--primary.navigation-button--destructive[href]:hover:after {
+    background-color: var(--color-state-layer-hover);
+}
+a.navigation-button--primary.navigation-button--destructive:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):focus-visible:after,
+a.navigation-button--primary.navigation-button--destructive[href]:focus-visible:after {
+    background-color: var(--color-state-layer-focus);
+}
+a.navigation-button--primary.navigation-button--destructive:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):active:after,
+a.navigation-button--primary.navigation-button--destructive[href]:active:after {
+    background-color: var(--color-state-layer-pressed);
+}
+
+a.navigation-button[aria-expanded="true"] svg.icon--12 {
+    transform: rotate(180deg);
+}
+
+a.navigation-button--large svg.icon {
+    max-height: 48px;
+}
+
+a.navigation-button--small svg.icon {
+    max-height: 32px;
+}
+
+a.navigation-button--primary:not([href]),
+a.navigation-button--primary[aria-disabled="true"] {
+    background-color: var(
+        --btn-primary-disabled-background-color,
+        var(--color-foreground-disabled)
+    );
+    border-color: var(
+        --btn-primary-disabled-border-color,
+        var(--color-foreground-disabled)
+    );
+    color: var(
+        --btn-primary-foreground-color,
+        var(--color-foreground-on-accent)
+    );
+}
+
+a.navigation-button--secondary {
+    background-color: var(--btn-secondary-background-color, transparent);
+    border-color: var(--color-border-accent);
+    color: var(--color-foreground-accent);
+    transition: all var(--motion-duration-short-3)
+        var(--motion-easing-quick-enter);
+}
+a.navigation-button--secondary:active {
+    transform: scale(0.97);
+}
+a.navigation-button--secondary {
+    overflow: hidden;
+    position: relative;
+}
+a.navigation-button--secondary:after {
+    background-color: var(--color-state-layer-neutral);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+a.navigation-button--secondary:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):hover:after,
+a.navigation-button--secondary[href]:hover:after {
+    background-color: var(--color-state-layer-hover);
+}
+a.navigation-button--secondary:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):focus-visible:after,
+a.navigation-button--secondary[href]:focus-visible:after {
+    background-color: var(--color-state-layer-focus);
+}
+a.navigation-button--secondary:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):active:after,
+a.navigation-button--secondary[href]:active:after {
+    background-color: var(--color-state-layer-pressed);
+}
+
+a.navigation-button--secondary:hover,
+a.navigation-button--secondary:visited {
+    color: var(
+        --btn-secondary-foreground-color,
+        var(--color-foreground-accent)
+    );
+}
+
+a.navigation-button--secondary.navigation-button--destructive {
+    background-color: var(
+        --btn-secondary-destructive-background-color,
+        transparent
+    );
+    border-color: var(
+        --btn-secondary-destructive-border-color,
+        var(--color-border-attention)
+    );
+    color: var(
+        --btn-secondary-destructive-foreground-color,
+        var(--color-foreground-attention)
+    );
+}
+
+a.navigation-button--secondary:not([href]),
+a.navigation-button--secondary[aria-disabled="true"] {
+    border-color: var(
+        --btn-secondary-disabled-border-color,
+        var(--color-background-disabled)
+    );
+    color: var(
+        --btn-secondary-disabled-foreground-color,
+        var(--color-background-disabled)
+    );
+}
+
+a.navigation-button--tertiary {
+    border-color: var(--btn-tertiary-border-color, var(--color-border-medium));
+    transition: all var(--motion-duration-short-3)
+        var(--motion-easing-quick-enter);
+}
+a.navigation-button--tertiary:active {
+    transform: scale(0.97);
+}
+a.navigation-button--tertiary {
+    overflow: hidden;
+    position: relative;
+}
+a.navigation-button--tertiary:after {
+    background-color: var(--color-state-layer-neutral);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+a.navigation-button--tertiary:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):hover:after,
+a.navigation-button--tertiary[href]:hover:after {
+    background-color: var(--color-state-layer-hover);
+}
+a.navigation-button--tertiary:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):focus-visible:after,
+a.navigation-button--tertiary[href]:focus-visible:after {
+    background-color: var(--color-state-layer-focus);
+}
+a.navigation-button--tertiary:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):active:after,
+a.navigation-button--tertiary[href]:active:after {
+    background-color: var(--color-state-layer-pressed);
+}
+
+a.navigation-button--tertiary:not([href]),
+a.navigation-button--tertiary[aria-disabled="true"] {
+    color: var(
+        --btn-tertiary-disabled-foreground-color,
+        var(--color-background-disabled)
+    );
+    border-color: var(
+        --expand-btn-disabled-border-color,
+        var(--color-border-disabled)
+    );
+}
+
+a.navigation-button--tertiary.navigation-button--destructive {
+    border-color: var(
+        --btn-tertiary-destructive-foreground-color,
+        var(--color-border-subtle)
+    );
+}
+
+a.navigation-button--large {
+    border-radius: var(--btn-border-radius, 24px);
+    font-size: var(--font-size-medium);
+    min-height: 48px;
+    padding: 0 20px;
+}
+
+a.navigation-button--small {
+    border-radius: var(--btn-border-radius, 16px);
+    font-size: var(--font-size-body);
+    min-height: 32px;
+    padding: 0 16px;
+}
+
+a.navigation-button--form {
+    border-color: inherit;
+    max-width: 100%;
+    border-radius: var(--expand-btn-border-radius, var(--border-radius-50));
+    overflow: hidden;
+    position: relative;
+}
+a.navigation-button--form:after {
+    background-color: var(--color-state-layer-neutral);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+a.navigation-button--form:not([disabled], [aria-disabled="true"]):hover:after,
+a.navigation-button--form[href]:hover:after {
+    background-color: var(--color-state-layer-hover);
+}
+a.navigation-button--form:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):focus-visible:after,
+a.navigation-button--form[href]:focus-visible:after {
+    background-color: var(--color-state-layer-focus);
+}
+a.navigation-button--form:not([disabled], [aria-disabled="true"]):active:after,
+a.navigation-button--form[href]:active:after {
+    background-color: var(--color-state-layer-pressed);
+}
+a.navigation-button--transparent,
+a.navigation-button--transparent:focus,
+a.navigation-button--transparent:hover {
+    background-color: initial;
+}
+
+a.navigation-button--large-fixed-height {
+    height: 48px;
+    min-height: 48px;
+}
+
+a.navigation-button--truncated,
+a.navigation-button--truncated span {
+    line-height: 1.4em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+a.navigation-button--large-truncated {
+    font-size: var(--font-size-medium);
+    height: 48px;
+    min-height: 48px;
+    padding: 0 20px;
+}
+a.navigation-button--large-truncated,
+a.navigation-button--large-truncated span {
+    line-height: 1.4em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+a.navigation-button--split-start {
+    border-radius: 24px 0 0 24px;
+}
+
+a.navigation-button--split-end {
+    border-radius: 0 24px 24px 0;
+    margin-left: -1px;
+    min-width: 40px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+a.navigation-button.navigation-button--primary.navigation-button--split-end,
+a.navigation-button.navigation-button--primary.navigation-button--split-end:focus,
+a.navigation-button.navigation-button--primary.navigation-button--split-end:hover {
+    border-left-color: var(
+        --btn-primary-border-split-color,
+        var(--color-background-primary)
+    );
+}
+
+[dir="rtl"] a.navigation-button--split-start {
+    border-radius: 0 24px 24px 0;
+}
+[dir="rtl"] a.navigation-button--split-end {
+    border-radius: 24px 0 0 24px;
+    margin-left: inherit;
+    margin-right: -1px;
+}
+[dir="rtl"]
+    a.navigation-button.navigation-button--tertiary.navigation-button--split-end {
+    margin-right: -2px;
+}
+[dir="rtl"]
+    a.navigation-button.navigation-button--primary.navigation-button--split-end,
+[dir="rtl"]
+    a.navigation-button.navigation-button--primary.navigation-button--split-end:focus,
+[dir="rtl"]
+    a.navigation-button.navigation-button--primary.navigation-button--split-end:hover {
+    border-left-color: var(
+        --btn-primary-border-color,
+        var(--color-border-accent)
+    );
+    border-right-color: var(
+        --primary-border-split-color,
+        var(--color-border-subtle)
+    );
+}

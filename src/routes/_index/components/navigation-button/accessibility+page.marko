@@ -1,0 +1,40 @@
+import { urls } from "../../../../data";
+import "../../../../sass/accessibility.scss";
+<div class="a11y-pattern-content">
+  <h1>Navigation Button Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    A navigation-button <strong>must</strong> be a real <code>&lt;a&gt;</code>
+    element with a valid <code>href</code> attribute, never a styled
+    <code>&lt;div&gt;</code> or <code>&lt;span&gt;</code> with a click handler.
+    This preserves native link semantics and keyboard operability.
+  </p>
+  <p>
+    Use a navigation-button only when the action navigates to a URL. If the
+    action triggers JavaScript behaviour instead, use a real
+    <a href=`${urls.components}/button`>button</a> .
+  </p>
+  <p>
+    Removing the <code>href</code> attribute fully disables a navigation-button.
+    For a partially disabled, still-focusable state, use
+    <code>aria-disabled="true"</code> instead.
+  </p>
+  <h2>Interaction Design</h2>
+  <h3>Pointer</h3>
+  <p>
+    Navigation buttons should <strong>not</strong> have a hand cursor. See
+    <a href=`${urls.accessibility}/antipatterns/hand-cursor-on-buttons`>
+      Hand Cursor on Buttons
+    </a>
+    .
+  </p>
+  <h3>Keyboard</h3>
+  <p>
+    A navigation button <strong>must</strong> activate with <code>ENTER</code>
+    key (not <code>SPACEBAR</code> ), consistent with native link behaviour.
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    A navigation button <strong>must</strong> announce with a role of “link”.
+  </p>
+</div>

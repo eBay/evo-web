@@ -112,7 +112,7 @@ export const actionable = () => `
 <span class="combobox combobox--expanded">
     <span class="combobox__control">
         <input placeholder="Combobox" role="combobox" type="text" aria-haspopup="listbox" aria-owns="listbox1" />
-        <button class="icon-btn icon-btn--actionable" type="button" aria-label="Expand Suggestions">
+        <button class="icon-button icon-button--actionable" type="button" aria-label="Expand Suggestions">
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -159,7 +159,7 @@ export const actionableRTL = () => `
     <span class="combobox combobox--expanded">
         <span class="combobox__control combobox__control--actionable">
             <input placeholder="Combobox" role="combobox" type="text" aria-haspopup="listbox" aria-owns="listbox5" />
-            <button class="icon-btn" type="button" aria-label="Expand Suggestions">
+            <button class="icon-button" type="button" aria-label="Expand Suggestions">
                 <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                     <use href="#icon-chevron-down-12"></use>
                 </svg>

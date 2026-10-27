@@ -2,6 +2,9 @@
 @use "../mixins/private/dialog-mixins";
 @use "../mixins/private/token-mixins";
 
+// DEPRECATED: the `.icon-btn*` selectors in this file are removed in the next
+// major version. Use `.icon-button*` instead.
+
 :root {
     --dialog-max-width: 616px;
     --dialog-wide-max-width: 896px;
@@ -152,7 +155,9 @@ body:has(.dialog[open]) {
 
 /* inherits from .icon-btn */
 button.icon-btn.dialog__prev,
-button.icon-btn.dialog__close {
+button.icon-button.dialog__prev,
+button.icon-btn.dialog__close,
+button.icon-button.dialog__close {
     align-self: flex-start;
     border: 0;
     flex-shrink: 0;
@@ -163,16 +168,20 @@ button.icon-btn.dialog__close {
     z-index: 1;
 }
 
-button.icon-btn.dialog__prev {
+button.icon-btn.dialog__prev,
+button.icon-button.dialog__prev {
     margin-inline-end: var(--spacing-200);
 }
 
 .dialog--expressive button.icon-btn.dialog__prev,
-.dialog--expressive button.icon-btn.dialog__close {
+.dialog--expressive button.icon-button.dialog__prev,
+.dialog--expressive button.icon-btn.dialog__close,
+.dialog--expressive button.icon-button.dialog__close {
     margin: 0;
 }
 
-.dialog--expressive button.icon-btn.dialog__prev + * {
+.dialog--expressive button.icon-btn.dialog__prev + *,
+.dialog--expressive button.icon-button.dialog__prev + * {
     margin-inline-start: -32px;
 }
 
@@ -277,7 +286,8 @@ button.icon-btn.dialog__prev {
 }
 
 [dir="rtl"] {
-    button.icon-btn.dialog__prev .icon--16 {
+    button.icon-btn.dialog__prev .icon--16,
+    button.icon-button.dialog__prev .icon--16 {
         transform: rotate(180deg);
     }
 }

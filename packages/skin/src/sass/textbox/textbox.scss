@@ -1,5 +1,8 @@
 @use "../mixins/private/token-mixins";
 
+// DEPRECATED: the `.icon-btn*` selectors in this file are removed in the next
+// major version. Use `.icon-button*` instead.
+
 :root {
     --input-default-height: 40px;
     --input-large-height: 48px;
@@ -36,7 +39,8 @@
     position: relative;
     width: fit-content;
 
-    button.icon-btn {
+    button.icon-btn,
+    button.icon-button {
         background-color: transparent;
         padding: 0;
     }
@@ -206,7 +210,8 @@ input.textbox__control {
 }
 
 .textbox > svg,
-.textbox .icon-btn > svg {
+.textbox .icon-btn > svg,
+.textbox .icon-button > svg {
     @include token-mixins.color-token(
         textbox-icon-color,
         color-foreground-secondary
@@ -232,11 +237,13 @@ input.textbox__control {
     margin-inline-end: var(--spacing-200);
 }
 
-.textbox .icon-btn:last-child {
+.textbox .icon-btn:last-child,
+.textbox .icon-button:last-child {
     margin-inline-start: calc(var(--spacing-100) * -1);
 }
 
-.textbox .icon-btn:first-child {
+.textbox .icon-btn:first-child,
+.textbox .icon-button:first-child {
     margin-inline-end: calc(var(--spacing-100) * -1);
 }
 

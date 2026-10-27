@@ -12,7 +12,7 @@ export const longBody = () => `
     </div>
     <p class="section-notice__cta"><a href="https://www.ebay.com">Action</a></p>
     <div class="section-notice__footer">
-        <button aria-label="Close notice" class="fake-link section-notice__dismiss">
+        <button aria-label="Close notice" class="text-button section-notice__dismiss">
             <svg aria-hidden="true" class="icon icon--16" height="16" width="16">
                 <use href="#icon-close-16"></use>
             </svg>
@@ -34,7 +34,7 @@ export const longTitle = () => `
     </div>
     <p class="section-notice__cta"><a href="https://www.ebay.com">Action</a></p>
     <div class="section-notice__footer">
-        <button aria-label="Close notice" class="fake-link section-notice__dismiss">
+        <button aria-label="Close notice" class="text-button section-notice__dismiss">
             <svg aria-hidden="true" class="icon icon--16" height="16" width="16">
                 <use href="#icon-close-16"></use>
             </svg>

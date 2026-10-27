@@ -36,7 +36,8 @@
     margin: 0;
 }
 
-.calendar__header .icon-btn svg {
+.calendar__header .icon-btn svg,
+.calendar__header .icon-button svg {
     width: var(--spacing-200);
 }
 .calendar__body {
