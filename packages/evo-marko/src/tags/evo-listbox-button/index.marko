@@ -86,7 +86,7 @@ export interface Input<Index extends number | string> extends Marko.HTML.Div {
   open=open
   strategy=strategy
   host=$root
-  overlay=$listbox
+  overlay=() => $listboxEls().$root()
 />
 
 <${truncate && !fluid ? "div" : "span"}
@@ -164,7 +164,7 @@ export interface Input<Index extends number | string> extends Marko.HTML.Div {
       <evo-icon-chevron-down-16/>
     </span>
   </button>
-  <evo-listbox/$listbox
+  <evo-listbox/$listboxEls
     style=expander.floatingStyles
     class=[
       "listbox-button__listbox",

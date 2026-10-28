@@ -81,6 +81,34 @@ span[role="region"].page-notice {
     );
 }
 
+.page-notice--warning {
+    background-color: var(
+        --page-notice-warning-background-color,
+        var(--color-background-warning)
+    );
+    border-color: var(
+        --page-notice-warning-border-color,
+        var(--color-background-warning)
+    );
+}
+.page-notice--warning .page-notice__header svg {
+    color: var(
+        --page-notice-warning-icon-color,
+        var(--color-foreground-on-warning)
+    );
+}
+.page-notice--warning,
+.page-notice--warning a,
+.page-notice--warning a:hover,
+.page-notice--warning button.fake-link,
+.page-notice--warning button.fake-link:hover {
+    color: var(--page-notice-warning-color, var(--color-foreground-on-warning));
+}
+.page-notice--warning a:focus-visible,
+.page-notice--warning button.fake-link:focus-visible {
+    outline-color: var(--color-foreground-on-warning);
+}
+
 .page-notice--confirmation {
     background-color: var(
         --page-notice-confirmation-background-color,

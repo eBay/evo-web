@@ -53,6 +53,23 @@ describe("notice-icon", () => {
         expect(title).toMatchSnapshot();
     });
 
+    it("renders warning version", async () => {
+        const input = mock.warningNotice;
+        const { getByLabelText, getByText } = await render(template, input);
+        const status = getByLabelText(input.a11yText).parentElement;
+        expect(status).toMatchSnapshot();
+
+        const containerUsingLabel = status.closest(
+            `[aria-labelledby="${status.id}"]`,
+        );
+        expect(containerUsingLabel).toMatchSnapshot();
+
+        const content = getByText(input.renderBody.text);
+        expect(content).toMatchSnapshot();
+
+        expect(getByLabelText(input.a11yText)).toMatchSnapshot();
+    });
+
     it("renders education notice", async () => {
         const input = mock.educationSectionNotice;
         const { getByLabelText } = await render(template, input);

@@ -1,0 +1,196 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`evo-section-title SSR > renders defaults 1`] = `
+"<div
+  class="section-title"
+>
+  <div
+    class="section-title__title-container"
+  >
+    <h2
+      class="section-title__title"
+    >
+      Today's Deals - All With Free Shipping
+    </h2>
+    <span
+      class="section-title__subtitle"
+    >
+      Plus, guaranteed best prices.
+    </span>
+  </div>
+</div>"
+`;
+
+exports[`evo-section-title SSR > renders with a custom heading level 1`] = `
+"<div
+  class="section-title"
+>
+  <div
+    class="section-title__title-container"
+  >
+    <h3
+      class="section-title__title"
+    >
+      Today's Deals - All With Free Shipping
+    </h3>
+  </div>
+</div>"
+`;
+
+exports[`evo-section-title SSR > renders with cta 1`] = `
+"<div
+  class="section-title"
+>
+  <div
+    class="section-title__title-container"
+  >
+    <h2
+      class="section-title__title"
+    >
+      Today's Deals - All With Free Shipping
+    </h2>
+    <span
+      class="section-title__subtitle"
+    >
+      Plus, guaranteed best prices.
+    </span>
+  </div>
+  <a
+    class="section-title__cta"
+    href="https://www.ebay.com"
+  >
+    See All
+  </a>
+</div>"
+`;
+
+exports[`evo-section-title SSR > renders with overflow 1`] = `
+"<div
+  class="section-title"
+>
+  <div
+    class="section-title__title-container"
+  >
+    <h2
+      class="section-title__title"
+    >
+      Today's Deals - All With Free Shipping
+    </h2>
+    <span
+      class="section-title__subtitle"
+    >
+      Plus, guaranteed best prices.
+    </span>
+  </div>
+  <div
+    class="section-title__overflow"
+  >
+    <span
+      aria-label="eBay Menu"
+      class="menu-button"
+    >
+      <button
+        aria-expanded="false"
+        aria-haspopup="true"
+        aria-label="button"
+        class="menu-button__button icon-btn"
+        type="button"
+        variant="icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <symbol
+            id="GENERATED-0"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 4.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm0 10a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM9.5 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"
+            />
+          </symbol>
+          <use
+            href="#icon-overflow-vertical-16"
+          />
+        </svg>
+      </button>
+      <span
+        class="menu-button__menu"
+        style="visibility:hidden"
+        tabindex="-1"
+      >
+        <div
+          class="menu-button__items"
+          id="GENERATED-1"
+          role="menu"
+        >
+          <div
+            class="menu-button__item"
+            data-value="0"
+            role="menuitem"
+            tabindex="0"
+          >
+            <span>
+              item 1
+            </span>
+            <svg
+              aria-hidden="true"
+              class="icon icon--16"
+            >
+              <symbol
+                id="GENERATED-2"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+                  fill-rule="evenodd"
+                />
+              </symbol>
+              <use
+                href="#icon-tick-16"
+              />
+            </svg>
+          </div>
+          <div
+            class="menu-button__item"
+            data-value="1"
+            role="menuitem"
+            tabindex="-1"
+          >
+            <span>
+              item 2
+            </span>
+            <svg
+              aria-hidden="true"
+              class="icon icon--16"
+            >
+              <use
+                href="#icon-tick-16"
+              />
+            </svg>
+          </div>
+          <div
+            class="menu-button__item"
+            data-value="2"
+            role="menuitem"
+            tabindex="-1"
+          >
+            <span>
+              item 3
+            </span>
+            <svg
+              aria-hidden="true"
+              class="icon icon--16"
+            >
+              <use
+                href="#icon-tick-16"
+              />
+            </svg>
+          </div>
+        </div>
+      </span>
+    </span>
+  </div>
+</div>"
+`;

@@ -16,6 +16,6 @@ import type { DayISO } from "<evo-calendar>";
   selected:=selected
   ...input
   a11yNavigateText(month, dir) {
-    return `Go to ${month} (${dir === "prev" ? "Previous" : "Next"} month)`;
+    return `${dir === "prev" ? "Previous" : "Next"} month, ${month}`;
   }
 />

@@ -116,6 +116,19 @@ export const AttentionMessage = (args) => (
     </>
 );
 
+export const WarningMessage = (args) => (
+    <>
+        <EbayPageNotice {...args} status="warning" aria-label="Warning">
+            <EbayNoticeContent>
+                <EbayPageNoticeTitle>Your listing may expire soon.</EbayPageNoticeTitle>
+                <p>
+                    Save your draft before it expires to avoid losing your changes. <a href="#link">Learn more</a>.
+                </p>
+            </EbayNoticeContent>
+        </EbayPageNotice>
+    </>
+);
+
 export const MessageWithFooter = (args) => (
     <>
         <EbayPageNotice {...args} status="confirmation" aria-label="Congratulations">
@@ -151,7 +164,7 @@ export const DismissibleNotice = (args) => (
 
 export const DismissibleMessageWithCta = (args) => (
     <>
-        <EbayPageNotice {...args} status="information" aria-label="Congratulations" a11yDismissText="Close">
+        <EbayPageNotice {...args} status="information" aria-label="Information" a11yDismissText="Close">
             <EbayNoticeContent>
                 <EbayPageNoticeTitle>Your order&apos;s in!</EbayPageNoticeTitle>
                 <p>We&apos;ll email updates to jonsnow@gmail.com. You should get it by Thu, Sept 22.</p>

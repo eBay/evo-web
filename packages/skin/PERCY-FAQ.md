@@ -6,14 +6,16 @@ Percy is a visual testing platform that captures screenshots of UI components an
 
 ## Why does my PR have a Percy check?
 
-When you modify Skin components (CSS, tokens, or Storybook configuration), Percy automatically runs to ensure your changes don't introduce unintended visual regressions. This is a required check that must pass before your PR can be merged.
+When you modify Skin components (CSS, tokens, or Storybook configuration), Percy automatically runs once your PR is ready for review to ensure your changes don't introduce unintended visual regressions. This is a required check that must pass before your PR can be merged.
+
+Percy fails without taking any snapshots if `packages/skin/dist` doesn't match the source, so run `npm run build` and commit the result.
 
 ## How does Percy know which components to test?
 
 We map all the modules dependencies in the [component-metadata.json](../../src/data/component-metadata.json) file and based on the files that changes we build the stories that needs snapshots.
 
 - **Component-specific changes**: Only tests the components you modified (e.g., if you change `button.scss`, only Button stories are tested)
-- **Global changes**: If you modify shared files like tokens, variables, or mixins, all components are tested
+- **Global changes**: If you modify tokens, variables, mixins, global styles, or Storybook configuration, all components are tested
 - **Non-component changes**: If you only change documentation or non-Skin files, Percy is skipped entirely
 
 ## How long does Percy take?
@@ -58,19 +60,21 @@ Only maintainers with Percy access can approve builds. As a contributor:
 
 ## Can I skip Percy for my PR?
 
-No, Percy is a required check for PRs that modify Skin components. However, Percy automatically skips if your PR doesn't touch any Skin files.
+No, Percy is a required check for PRs that modify Skin components. However, Percy automatically skips draft PRs and PRs that don't touch any Skin files.
 
 If you're making changes that shouldn't require visual testing (like internal refactoring that doesn't change output), discuss with a maintainer about the best approach.
 
 ## What triggers a full Percy run vs partial?
 
-**Full run (all ~180 stories)**:
+**Full run (all stories)**:
 
 - Changes to `packages/skin/src/tokens/`
 - Changes to `packages/skin/src/sass/global/`
 - Changes to `packages/skin/src/sass/variables/`
 - Changes to `packages/skin/src/sass/mixins/`
+- Changes to `packages/skin/src/sass/bundles/`
 - Changes to `packages/skin/.storybook/`
+- Changes to the compiled global, token, utility, or Market Sans CSS in `packages/skin/dist/`
 
 **Partial run (only affected components)**:
 
@@ -90,6 +94,10 @@ This ensures the baseline always reflects what's in production.
 ## What if Percy keeps failing?
 
 Common issues and solutions:
+
+**"packages/skin/dist is out of date"**
+
+- Run `npm run build` and push the changes to `packages/skin/dist`
 
 **"Percy token not found"**
 

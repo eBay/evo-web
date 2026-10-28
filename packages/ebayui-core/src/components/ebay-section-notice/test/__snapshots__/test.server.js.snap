@@ -170,14 +170,14 @@ exports[`section-notice > renders with light 1`] = `
   <span
     class="section-notice__main"
   >
-    <!--F#13-->
+    <!--F#14-->
     Content
     <!--F/-->
   </span>
   <div
     class="section-notice__footer"
   >
-    <!--F#18-->
+    <!--F#19-->
     Footer
     <!--F/-->
   </div>
@@ -188,7 +188,7 @@ exports[`section-notice > renders with light 2`] = `
 <div
   class="section-notice__footer"
 >
-  <!--F#18-->
+  <!--F#19-->
   Footer
   <!--F/-->
 </div>
@@ -257,7 +257,7 @@ exports[`section-notice > renders with status 2`] = `
   <span
     class="section-notice__main"
   >
-    <!--F#13-->
+    <!--F#14-->
     Content
     <!--F/-->
   </span>
@@ -268,7 +268,7 @@ exports[`section-notice > renders with status 3`] = `
 <span
   class="section-notice__main"
 >
-  <!--F#13-->
+  <!--F#14-->
   Content
   <!--F/-->
 </span>
@@ -309,7 +309,129 @@ exports[`section-notice > renders with status 4`] = `
   <span
     class="section-notice__main"
   >
-    <!--F#13-->
+    <!--F#14-->
+    Content
+    <!--F/-->
+  </span>
+</section>
+`;
+
+exports[`section-notice > renders with warning status 1`] = `
+<div
+  class="section-notice__header"
+  id="s0-0-status"
+>
+  <svg
+    aria-label="Heading Text"
+    class="icon icon--16"
+    focusable="false"
+    role="img"
+  >
+    <defs>
+      <symbol
+        id="icon-attention-triangle-filled-16"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M5.156 1.668c1.239-2.223 4.436-2.224 5.677-.003l4.75 8.503c1.21 2.166-.356 4.835-2.837 4.836h-9.49c-2.48 0-4.048-2.666-2.84-4.832l4.74-8.504ZM7.999 10a1 1 0 1 0 0 2.001 1 1 0 0 0 0-2.001Zm0-5a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V6a1 1 0 0 0-1-1Z"
+        />
+      </symbol>
+    </defs>
+    <use
+      href="#icon-attention-triangle-filled-16"
+    />
+  </svg>
+</div>
+`;
+
+exports[`section-notice > renders with warning status 2`] = `
+<section
+  aria-labelledby="s0-0-status"
+  aria-roledescription="Notice"
+  class="section-notice section-notice--warning"
+  role="region"
+>
+  <div
+    class="section-notice__header"
+    id="s0-0-status"
+  >
+    <svg
+      aria-label="Heading Text"
+      class="icon icon--16"
+      focusable="false"
+      role="img"
+    >
+      <defs>
+        <symbol
+          id="icon-attention-triangle-filled-16"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M5.156 1.668c1.239-2.223 4.436-2.224 5.677-.003l4.75 8.503c1.21 2.166-.356 4.835-2.837 4.836h-9.49c-2.48 0-4.048-2.666-2.84-4.832l4.74-8.504ZM7.999 10a1 1 0 1 0 0 2.001 1 1 0 0 0 0-2.001Zm0-5a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V6a1 1 0 0 0-1-1Z"
+          />
+        </symbol>
+      </defs>
+      <use
+        href="#icon-attention-triangle-filled-16"
+      />
+    </svg>
+  </div>
+  <span
+    class="section-notice__main"
+  >
+    <!--F#14-->
+    Content
+    <!--F/-->
+  </span>
+</section>
+`;
+
+exports[`section-notice > renders with warning status 3`] = `
+<span
+  class="section-notice__main"
+>
+  <!--F#14-->
+  Content
+  <!--F/-->
+</span>
+`;
+
+exports[`section-notice > renders with warning status 4`] = `
+<section
+  aria-labelledby="s0-0-status"
+  aria-roledescription="Notice"
+  class="section-notice section-notice--warning"
+  role="region"
+>
+  <div
+    class="section-notice__header"
+    id="s0-0-status"
+  >
+    <svg
+      aria-label="Heading Text"
+      class="icon icon--16"
+      focusable="false"
+      role="img"
+    >
+      <defs>
+        <symbol
+          id="icon-attention-triangle-filled-16"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M5.156 1.668c1.239-2.223 4.436-2.224 5.677-.003l4.75 8.503c1.21 2.166-.356 4.835-2.837 4.836h-9.49c-2.48 0-4.048-2.666-2.84-4.832l4.74-8.504ZM7.999 10a1 1 0 1 0 0 2.001 1 1 0 0 0 0-2.001Zm0-5a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V6a1 1 0 0 0-1-1Z"
+          />
+        </symbol>
+      </defs>
+      <use
+        href="#icon-attention-triangle-filled-16"
+      />
+    </svg>
+  </div>
+  <span
+    class="section-notice__main"
+  >
+    <!--F#14-->
     Content
     <!--F/-->
   </span>

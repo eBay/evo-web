@@ -1,0 +1,25 @@
+export interface Input extends Omit<Marko.HTML.Progress, "aria-label"> {
+  /**
+   * The `aria-label` for the progress bar
+   *
+   * English default to be overridden is `"Progress"`
+   *
+   * Pass `null` explicitly _only_ if alternative accessibility information is present
+   */
+  a11yText: string | null;
+  fluid?: boolean;
+}
+<const/{
+  class: inputClass,
+  a11yText = "Progress",
+  fluid,
+  max = 100,
+  ...htmlInput
+}=input>
+
+<progress
+  ...htmlInput
+  aria-label=a11yText
+  class=["progress-bar", fluid && "progress-bar--fluid", inputClass]
+  max=max
+/>

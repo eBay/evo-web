@@ -38,9 +38,7 @@ describe("given the default infotip", () => {
     function thenItCanBeOpenAndClosed() {
         describe("when the host element is clicked", () => {
             beforeEach(async () => {
-                await fireEvent.click(
-                    component.getAllByLabelText("Important information")[0],
-                );
+                await fireEvent.click(component.getAllByLabelText("Info")[0]);
             });
 
             it("then it emits the expand event", () => {
@@ -48,16 +46,15 @@ describe("given the default infotip", () => {
             });
 
             it("then it is expanded", () => {
-                expect(
-                    component.getByLabelText("Important information"),
-                ).toHaveAttribute("aria-expanded", "true");
+                expect(component.getByLabelText("Info")).toHaveAttribute(
+                    "aria-expanded",
+                    "true",
+                );
             });
 
             describe("when the host element is clicked a second time to close", () => {
                 beforeEach(async () => {
-                    await fireEvent.click(
-                        component.getByLabelText("Important information"),
-                    );
+                    await fireEvent.click(component.getByLabelText("Info"));
                 });
 
                 it("then it emits the collapse event", async () => {
@@ -68,7 +65,7 @@ describe("given the default infotip", () => {
 
                 it("then it is collapsed", () => {
                     expect(
-                        component.getByLabelText("Important information"),
+                        component.getByLabelText("Info"),
                     ).not.toHaveAttribute("aria-expanded", "true");
                 });
             });
@@ -83,9 +80,7 @@ describe("given the modal infotip", () => {
 
     describe("when the host element is clicked", () => {
         beforeEach(async () => {
-            await fireEvent.click(
-                component.getAllByLabelText("Important information")[0],
-            );
+            await fireEvent.click(component.getAllByLabelText("Info")[0]);
         });
 
         it("then it emits the expand event", async () => {
@@ -111,7 +106,7 @@ describe("given the modal infotip opened", () => {
 
     describe("when the host element is opened and then closed", () => {
         beforeEach(async () => {
-            await fireEvent.click(component.getByLabelText("Dismiss infotip"));
+            await fireEvent.click(component.getByLabelText("Dismiss"));
         });
 
         it("then it emits the collapse event", async () => {

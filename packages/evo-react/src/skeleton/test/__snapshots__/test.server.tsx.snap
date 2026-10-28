@@ -1,0 +1,5 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`EvoSkeleton SSR > renders a listing card placeholder 1`] = `"<div role="img" aria-label="Loading listing details" class="skeleton skeleton--purple"><div style="width:220px;height:220px" class="skeleton__image"></div><div class="skeleton__text skeleton__text--multiline skeleton__text--large"></div><div class="skeleton__button skeleton__button--small"></div></div>"`;
+
+exports[`EvoSkeleton SSR > renders span parts with an alternative label 1`] = `"<span id="loading-label">Loading seller profile</span><div aria-labelledby="loading-label" role="img" class="skeleton"><span class="skeleton__avatar"></span><span class="skeleton__textbox"></span></div>"`;

@@ -1,0 +1,58 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`evo-textarea > renders a disabled textarea 1`] = `
+"<span
+  class="textbox textbox--disabled"
+>
+  <textarea
+    class="textbox__control"
+    disabled=""
+    id="GENERATED-0"
+  />
+</span>"
+`;
+
+exports[`evo-textarea > renders a textarea with invalid/error state 1`] = `
+"<span
+  class="textbox textbox--invalid"
+>
+  <textarea
+    aria-invalid="true"
+    class="textbox__control"
+    id="GENERATED-0"
+  />
+</span>"
+`;
+
+exports[`evo-textarea > renders default textarea 1`] = `
+"<span
+  class="textbox"
+>
+  <textarea
+    class="textbox__control"
+    id="GENERATED-0"
+  />
+</span>"
+`;
+
+exports[`evo-textarea > renders default textarea with an id 1`] = `
+"<span
+  class="textbox"
+>
+  <textarea
+    class="textbox__control"
+    id="textarea-id"
+  />
+</span>"
+`;
+
+exports[`evo-textarea > renders fluid textarea 1`] = `
+"<div
+  class="textbox textbox--fluid"
+>
+  <textarea
+    class="textbox__control"
+    id="GENERATED-0"
+  />
+</div>"
+`;

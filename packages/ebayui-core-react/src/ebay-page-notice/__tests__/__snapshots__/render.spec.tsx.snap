@@ -30,7 +30,7 @@ exports[`ebay-page-notice rendering > renders confirmation message story correct
 
 exports[`ebay-page-notice rendering > renders dismissible message with cta story correctly 1`] = `
 <svg
-  aria-label="Congratulations"
+  aria-label="Information"
   class="icon icon--16"
   focusable="false"
   role="img"
@@ -107,6 +107,20 @@ exports[`ebay-page-notice rendering > renders simple usage with id story correct
 >
   <use
     xlink:href="#icon-confirmation-filled-16"
+  />
+</svg>
+`;
+
+exports[`ebay-page-notice rendering > renders warning message story correctly 1`] = `
+<svg
+  aria-label="Warning"
+  class="icon icon--16"
+  focusable="false"
+  role="img"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <use
+    xlink:href="#icon-attention-triangle-filled-16"
   />
 </svg>
 `;

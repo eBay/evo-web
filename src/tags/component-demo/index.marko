@@ -1,0 +1,25 @@
+import { getStoryHtml, getStorybookUrl } from "../../data";
+
+export interface Input {
+  component: string;
+  variant: string;
+}
+
+<const/html=getStoryHtml(input.component, input.variant)>
+
+<div class="demo__storybook-link-wrapper">
+  <a
+    class="demo__storybook-link"
+    href=getStorybookUrl(input.component, input.variant)
+    target="_blank"
+    rel="noopener"
+  >
+    View in Storybook<span class="clipped">: ${input.variant}</span> <span aria-hidden="true">↗</span>
+  </a>
+</div>
+<div class="demo">
+  <div class="demo__inner">
+    $!{html}
+  </div>
+</div>
+<highlight-code type="html" code=html/>

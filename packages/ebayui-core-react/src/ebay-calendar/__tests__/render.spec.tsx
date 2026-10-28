@@ -36,13 +36,13 @@ describe("ebay-calendar rendering", () => {
         const { container } = render(<NavigableStory />);
         expect(container.querySelector(".calendar")).toBeInTheDocument();
 
-        const buttonPrev = screen.getByLabelText("Show February 2024");
+        const buttonPrev = screen.getByLabelText("Previous month, February 2024");
         expect(buttonPrev).toHaveClass("icon-btn icon-btn--small icon-btn--transparent");
         expect(buttonPrev).toHaveAttribute("type", "button");
         const svgPrev = buttonPrev.querySelector("svg");
         expect(svgPrev).toMatchSnapshot();
 
-        const buttonNext = screen.getByLabelText("Show May 2024");
+        const buttonNext = screen.getByLabelText("Next month, May 2024");
         expect(buttonNext).toHaveClass("icon-btn icon-btn--small icon-btn--transparent");
         expect(buttonNext).toHaveAttribute("type", "button");
         const svgNext = buttonNext.querySelector("svg");

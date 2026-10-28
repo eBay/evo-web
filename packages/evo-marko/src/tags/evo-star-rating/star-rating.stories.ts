@@ -26,7 +26,7 @@ export default {
       type: { name: "string", required: true },
       control: "text",
       description:
-        'Accessible label for the star rating. English default to be overridden is `"Rating: ${value} out of 5"`.',
+        'Accessible label for the star rating. English default to be overridden is `"Rating: ${value} out of 5"`. Pass `null` explicitly _only_ if alternative accessibility information is present, such as `aria-labelledby`.',
     },
     ["<div> attributes" as any]: {
       description:

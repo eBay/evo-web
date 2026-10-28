@@ -6,6 +6,12 @@ export const SectionInfo = {
     renderBody: createRenderBody("Content"),
 };
 
+export const SectionWarning = {
+    a11yText: "Heading Text",
+    status: "warning",
+    renderBody: createRenderBody("Content"),
+};
+
 export const SectionLight = {
     renderBody: createRenderBody("Content"),
     footer: {

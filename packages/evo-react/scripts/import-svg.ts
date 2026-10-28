@@ -44,6 +44,7 @@ function saveIconComponents(svgFile: string): void {
     .filter(({ name }) => name === "symbol")
     .map((symbol) => ({
       id: symbol.attributes.id.replace(/^icon-/, ""),
+      symbolId: symbol.attributes.id,
       content: stringify(symbol),
       type: "icon",
     }));
@@ -63,7 +64,7 @@ function saveIconComponents(svgFile: string): void {
 import type { ComponentProps } from 'react';
 import type { EvoIcon } from '../icon';
 
-export type EvoIconComponentProps = Omit<ComponentProps<typeof EvoIcon>, '__name' | '__symbol'>;
+export type EvoIconComponentProps = Omit<ComponentProps<typeof EvoIcon>, '__name' | '__symbol' | '__symbolId'>;
 `,
   );
 
@@ -88,7 +89,7 @@ import type { EvoIconComponentProps } from "./types";
 const SYMBOL = \`${data.content}\`;
 
 export function ${iconComponentName}(props: EvoIconComponentProps) {
-  return <EvoIcon {...props} __name="${iconNameCamelCase}" __symbol={SYMBOL} />;
+  return <EvoIcon {...props} __name="${iconNameCamelCase}" __symbol={SYMBOL}${data.symbolId === `icon-${data.id}` ? "" : ` __symbolId="${data.symbolId}"`} />;
 }
 `;
 

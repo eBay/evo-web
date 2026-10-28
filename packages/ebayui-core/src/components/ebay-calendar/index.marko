@@ -1,7 +1,8 @@
 import { toISO } from "../../common/dates/date-utils";
 $ const {
     numMonths = 1,
-    getA11yShowMonthText = (month) => `Show ${month}`,
+    getA11yShowMonthText = (month, dir) =>
+        `${dir === "prev" ? "Previous" : "Next"} month, ${month}`,
     a11ySelectedText = "selected",
     a11yRangeStartText = "start of range",
     a11yInRangeText = "in range",
@@ -33,6 +34,7 @@ $ var monthDates = [...Array(numMonths)].map((_, i) =>
                         component.monthTitle(
                             component.getMonthDate(state.offset - 1),
                         ),
+                        "prev",
                     )
                     onClick("prevMonth", false)
                 >
@@ -52,6 +54,7 @@ $ var monthDates = [...Array(numMonths)].map((_, i) =>
                         component.monthTitle(
                             component.getMonthDate(state.offset + numMonths),
                         ),
+                        "next",
                     )
                     onClick("nextMonth", false)
                 >

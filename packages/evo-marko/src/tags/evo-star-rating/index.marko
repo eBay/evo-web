@@ -11,8 +11,10 @@ export interface Input extends Omit<Marko.HTML.Div, "aria-label" | "role"> {
    * Accessible label for the star rating.
    *
    * English default to be overridden is `"Rating: ${value} out of 5"`.
+   *
+   * Pass `null` explicitly _only_ if alternative accessibility information is present, such as `aria-labelledby`.
    */
-  a11yText: string;
+  a11yText: string | null;
 }
 
 <const/{

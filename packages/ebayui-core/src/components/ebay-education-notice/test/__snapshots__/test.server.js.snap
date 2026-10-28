@@ -296,7 +296,7 @@ exports[`education-notice > renders with footer 1`] = `
       [36m<button[39m
         [33mclass[39m=[32m"fake-link"[39m
         [33mdata-ebayui[39m=[32m""[39m
-        [33mdata-marko[39m=[32m"{\\"onclick\\":\\"handleClick s0-0-0-18-2 false\\",\\"onkeydown\\":\\"handleKeydown s0-0-0-18-2 false\\",\\"onfocus\\":\\"handleFocus s0-0-0-18-2 false\\",\\"onblur\\":\\"handleBlur s0-0-0-18-2 false\\"}"[39m
+        [33mdata-marko[39m=[32m"{\\"onclick\\":\\"handleClick s0-0-0-19-2 false\\",\\"onkeydown\\":\\"handleKeydown s0-0-0-19-2 false\\",\\"onfocus\\":\\"handleFocus s0-0-0-19-2 false\\",\\"onblur\\":\\"handleBlur s0-0-0-19-2 false\\"}"[39m
         [33mtype[39m=[32m"button"[39m
       [36m>[39m
         [0mFooter[0m

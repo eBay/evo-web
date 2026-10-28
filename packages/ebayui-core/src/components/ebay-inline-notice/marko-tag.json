@@ -6,7 +6,7 @@
     },
     "@html-attributes": "expression",
     "@status": {
-        "enum": ["attention", "confirmation", "information"]
+        "enum": ["attention", "confirmation", "information", "warning"]
     },
     "@icon": "string",
     "@a11y-text": "string",
