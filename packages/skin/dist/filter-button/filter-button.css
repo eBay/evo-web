@@ -117,7 +117,3 @@ button.filter-button[disabled] {
     );
     font-weight: 400;
 }
-a.filter-link:focus:not(:focus-visible),
-button.filter-button:focus:not(:focus-visible) {
-    outline: none;
-}

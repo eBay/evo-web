@@ -28,8 +28,6 @@
 }
 .toggle-button:focus-visible {
     outline-offset: 1px;
-    outline-style: outset;
-    outline-width: 2px;
 }
 
 .toggle-button[aria-disabled="true"],

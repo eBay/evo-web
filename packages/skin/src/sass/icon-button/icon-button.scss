@@ -33,10 +33,6 @@ a.icon-link {
         max-width: 75%;
         position: relative; /* Safari centering */
     }
-
-    &:not(:focus-visible) {
-        outline: none;
-    }
 }
 
 /* the base variant's border is transparent (reserved space only), but the hover/focus/active

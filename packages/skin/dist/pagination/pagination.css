@@ -128,10 +128,6 @@ button.pagination__item:not([aria-current="page"]):focus:after,
 button.pagination__item:not([aria-current="page"]):hover:after {
     background-color: currentColor;
 }
-a.pagination__item:focus:not(:focus-visible),
-button.pagination__item:focus:not(:focus-visible) {
-    outline: none;
-}
 
 span.pagination__item button.icon-btn--transparent {
     overflow: hidden;
