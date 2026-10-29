@@ -37,6 +37,7 @@ const GLOBAL_PATHS = [
   "packages/skin/src/sass/bundles/",
   "packages/skin/.storybook/",
   ".github/workflows/percy.yml",
+  ".github/workflows/percy-build.yml",
   "packages/skin/.percy.yml",
 ] as const;
 
