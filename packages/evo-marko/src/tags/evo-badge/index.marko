@@ -18,7 +18,7 @@ export interface Input extends Omit<Marko.HTML.Span, "role" | "aria-label"> {
   ...htmlInput
 }=input>
 
-<const/role=type !== "menu" && type !== "icon" && ("img" as const)>
+<const/role=type !== "icon" && ("img" as const)>
 
 <if=number == undefined>
   <span ...htmlInput aria-label=a11yText role=role class=["badge", inputClass]/>

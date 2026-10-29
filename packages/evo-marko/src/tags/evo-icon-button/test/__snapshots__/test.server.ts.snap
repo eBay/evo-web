@@ -27,10 +27,7 @@ exports[`evo-icon-button > Renders defaults 1`] = `
 
 exports[`evo-icon-button > renders badged icon variant 1`] = `
 "<button
-  aria-label="Menu"
-  arialabel="Badged button"
-  badgearialabel="5 Items"
-  badgenumber="5"
+  aria-label="Menu, 3 unread items"
   class="icon-btn"
   type="button"
 >
@@ -50,6 +47,12 @@ exports[`evo-icon-button > renders badged icon variant 1`] = `
       href="#icon-menu-24"
     />
   </svg>
+  <span
+    aria-hidden="true"
+    class="badge badge--circle"
+  >
+    3
+  </span>
 </button>"
 `;
 

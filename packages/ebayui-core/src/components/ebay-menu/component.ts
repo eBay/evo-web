@@ -27,6 +27,7 @@ export interface MenuEvent<T extends Event = Event> {
 
 export interface Item extends MenuItem {
     badgeNumber?: number;
+    badgeAriaLabel?: string;
 }
 
 interface MenuInput

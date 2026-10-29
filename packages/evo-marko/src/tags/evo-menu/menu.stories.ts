@@ -69,6 +69,11 @@ export default {
           description:
             "Displays [an `<evo-badge>` component](?path=/docs/graphics-icons-evo-badge--docs) after the content containing this number.",
         },
+        a11yText: {
+          type: "string",
+          control: "text",
+          description: "Accessible label for the badge count.",
+        },
         disabled: {
           type: "boolean",
           control: "boolean",

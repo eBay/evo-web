@@ -5,20 +5,18 @@ import { urls } from "../../../../data";
   <h1>Badge Accessibility</h1>
   <h2>Best Practices</h2>
   <p>
-    Badges must use
-    <code>role=&quot;img&quot;</code>
-    with
-    <code>aria-label</code>
-    to convey their meaning to assistive technologies.
+    Standalone badges must use <code>role=&quot;img&quot;</code> with
+    <code>aria-label</code> to convey their meaning to assistive technologies.
   </p>
   <p>
-    Badges are typically non-interactive visual indicators. If a badge needs to
-    be interactive, it should be placed within an interactive element (such as a
-    button or link) that has an appropriate accessible name.
+    Badges are non-interactive visual indicators. When a badge appears inside an
+    interactive element, such as a button, link, or menu item, give that element
+    an appropriate accessible name.
   </p>
   <p>
-    Do not rely solely on color to convey the meaning or status of a badge.
-    Ensure that the badge’s purpose is clear through its label and context.
+    Also refer related accessibility guidance for badges in an
+    <a href=`${urls.components}/icon-button/accessibility`>icon button</a> or
+    <a href=`${urls.components}/menu/accessibility`>menu</a>.
   </p>
   <h2>Interaction Design</h2>
   <p>
@@ -33,14 +31,12 @@ import { urls } from "../../../../data";
   <p>
     If a badge is placed within an interactive element (such as a button or
     link), the interactive element must be keyboard accessible via
-    <strong>TAB</strong>
-    key.
+    <strong>TAB</strong> key.
   </p>
   <h3>Screen Reader</h3>
   <p>
-    A screen reader will announce the badge as an image along with its
-    <code>aria-label</code>
-    value (e.g., “2 notifications, image”).
+    A screen reader will announce a standalone badge as an image along with its
+    <code>aria-label</code> value (e.g., “2 notifications, image”).
   </p>
   <h3>Pointer</h3>
   <p>
@@ -61,29 +57,32 @@ import { urls } from "../../../../data";
     </thead>
     <tbody>
       <tr>
+        <td><strong>role=“img”</strong></td>
         <td>
-          <strong>role=“img”</strong>
-        </td>
-        <td>
-          Applied to the badge element to identify it as an image to assistive
+          Applied to a badge to identify it as an image to assistive
           technologies.
         </td>
       </tr>
       <tr>
+        <td><strong>aria-label</strong></td>
         <td>
-          <strong>aria-label</strong>
+          Applied to a badge with <code>role=&quot;img&quot;</code> to provide
+          an accessible name with context (e.g., “2 notifications”).
         </td>
+      </tr>
+      <tr>
+        <td><strong>aria-hidden=“true”</strong></td>
         <td>
-          Applied to the badge with
-          <code>role=&quot;img&quot;</code>
-          to provide an accessible name with context (e.g., “2
-          notifications”).
+          Hides an embedded badge or its wrapper when the containing interactive
+          element’s accessible name includes the badge count and meaning.
         </td>
       </tr>
     </tbody>
   </table>
   <h2>Further Reading</h2>
   <ul>
+    <li><a href=`${urls.components}/icon-button`>Icon Button</a></li>
+    <li><a href=`${urls.components}/menu-button`>Menu Button</a></li>
     <li>
       <a href=`${urls.accessibility}/techniques/background-icon`>
         Background Icon Technique

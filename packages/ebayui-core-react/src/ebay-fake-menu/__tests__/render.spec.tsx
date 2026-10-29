@@ -61,10 +61,9 @@ describe("EbayFakeMenu rendering", () => {
     describe("WithBadges", () => {
         it("should render correctly", () => {
             render(<WithBadgesInstance />);
-            const badge = screen.getByText("item 1");
-            expect(badge).toBeInTheDocument();
-            const badgeNumber = screen.getByText("5");
-            expect(badgeNumber).toBeInTheDocument();
+            const item = screen.getByText("item 1").closest("a");
+            expect(item).not.toHaveAttribute("aria-label");
+            expect(screen.getByRole("img", { name: "item 1 (5 unread items)" })).toBeInTheDocument();
         });
     });
 });

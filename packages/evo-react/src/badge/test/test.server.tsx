@@ -30,7 +30,9 @@ describe("EvoBadge SSR", () => {
 
   it.each<BadgeType>(["menu", "icon"])("renders with type=%s", (type) => {
     expect(
-      renderToString(<EvoBadge number={5} type={type} a11yText={null} />),
+      renderToString(
+        <EvoBadge number={5} type={type} a11yText="5 unread items" />,
+      ),
     ).toMatchSnapshot();
   });
 

@@ -83,12 +83,12 @@ describe("evo-badge", () => {
         .toHaveAttribute("aria-label", "3 unread items");
     });
 
-    it("does not set role='img' for menu type", async () => {
-      const { container } = await render(
-        <EvoBadge number={3} type="menu" a11yText={null} />,
+    it("labels menu badges", async () => {
+      const screen = await render(
+        <EvoBadge number={3} type="menu" a11yText="3 notifications" />,
       );
-      const badge = container.querySelector(".badge");
-      expect(badge?.getAttribute("role")).toBeNull();
+      const badge = screen.getByRole("img", { name: "3 notifications" });
+      await expect.element(badge).not.toHaveAttribute("aria-hidden");
     });
 
     it("does not set role='img' for icon type", async () => {
@@ -97,6 +97,7 @@ describe("evo-badge", () => {
       );
       const badge = container.querySelector(".badge");
       expect(badge?.getAttribute("role")).toBeNull();
+      expect(badge?.getAttribute("aria-hidden")).toBeNull();
     });
 
     it("passes null a11yText as no aria-label", async () => {
@@ -105,6 +106,14 @@ describe("evo-badge", () => {
       );
       const badge = container.querySelector(".badge");
       expect(badge?.getAttribute("aria-label")).toBeNull();
+    });
+
+    it("passes aria-hidden through for icon badges", async () => {
+      const { container } = await render(
+        <EvoBadge number={3} type="icon" a11yText={null} aria-hidden="true" />,
+      );
+      const badge = container.querySelector(".badge");
+      expect(badge?.getAttribute("aria-hidden")).toBe("true");
     });
   });
 

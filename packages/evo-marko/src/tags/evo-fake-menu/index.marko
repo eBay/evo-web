@@ -3,6 +3,8 @@ export interface Item extends Marko.HTML.A {
   current?: boolean;
   itemMatchesUrl?: boolean;
   badgeNumber?: number;
+  /** English default to be overridden is `"{badgeNumber} notifications"`. */
+  a11yText?: string;
   disabled?: boolean;
   separator?: boolean;
 }
@@ -58,6 +60,7 @@ export interface Input extends Marko.HTML.Span {
         current,
         itemMatchesUrl,
         badgeNumber,
+        a11yText,
         separator,
         content,
         ...htmlItem
@@ -85,7 +88,10 @@ export interface Input extends Marko.HTML.Span {
               <${content}/>
             </span>
             <if=badgeNumber>
-              <evo-badge type="menu" number=badgeNumber a11yText=null/>
+              <evo-badge
+                number=badgeNumber
+                a11yText=a11yText ?? `${badgeNumber} notifications`
+              />
             </if>
             <evo-icon-tick-16/>
           </ItemTag>

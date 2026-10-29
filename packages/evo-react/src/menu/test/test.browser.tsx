@@ -48,7 +48,12 @@ describe("evo-menu", () => {
       .toBeInTheDocument();
     await expect.element(screen.getByRole("separator")).toBeInTheDocument();
     await expect
-      .element(screen.getByLabelText("5 unread messages"))
+      .element(
+        screen.getByRole("menuitem", { name: "Messages 5 unread messages" }),
+      )
+      .not.toHaveAttribute("aria-label");
+    await expect
+      .element(screen.getByRole("img", { name: "5 unread messages" }))
       .toBeInTheDocument();
     await expect
       .element(screen.getByRole("button", { name: "Apply" }))
