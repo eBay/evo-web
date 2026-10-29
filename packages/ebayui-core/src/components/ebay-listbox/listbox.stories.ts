@@ -39,8 +39,8 @@ export default {
             },
             description:
                 "If manual then user will need to press enter to select an item using keyboard. Otherwise auto will automatically select as the user presses up/down",
-            option: ["manual", "auto"],
-            type: "select",
+            options: ["manual", "auto"],
+            control: { type: "select" },
         },
         selected: {
             description:
