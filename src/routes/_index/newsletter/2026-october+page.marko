@@ -1,0 +1,54 @@
+<div class="guides-landing-content">
+<h1>October 2026 Evo Web Newsletter</h1>
+<p>October brings new Skin components and button class names, a warning variant for notices, new and updated icons, and accessibility improvements across Evo Web packages. Marko adds date inputs, and both frameworks add a chips combobox. Fixes cover date validation and video controls.</p>
+<h2>Shared improvements</h2>
+<p>Skin adds <code>button-link</code> and <code>link-button</code>, along with <code>navigation-tabs</code> and <code>navigation-menu</code>. The <code>fake-btn</code>, <code>fake-link</code>, <code>fake-tabs</code> and <code>fake-menu</code> classes remain functional and are deprecated. Skin also adds the spelled-out <code>button</code>, <code>icon-button</code>, <code>cta-button</code> and <code>expand-button</code> classes alongside the existing abbreviated names, which are deprecated. (<a href="https://github.com/eBay/evo-web/pull/1070">#1070</a>)</p>
+<p>Page notices, section notices and inline notices now support a warning variant in Skin, legacy Marko and legacy React. (<a href="https://github.com/eBay/evo-web/pull/1032">#1032</a>)</p>
+<p>The icon set adds <code>bar-chart-20</code>, <code>clock-20</code>, <code>discount-20</code>, <code>hand-swipe-24</code>, <code>inspect-20</code>, <code>megaphone-20</code>, <code>note-20</code>, <code>store-20</code>, <code>switch-camera-16</code>, <code>trophy-12</code> and <code>wallet-20</code>, plus two sizes each of <code>condition-guarantee</code> and <code>live-raids</code>. The artwork for <code>store-24</code> and <code>store-filled-24</code> has also changed. The icons are included in Skin and the Marko and React packages. (<a href="https://github.com/eBay/evo-web/pull/1068">#1068</a>)</p>
+<p>Accordion headers now use configurable headings, and calendar navigation labels have been clarified. (<a href="https://github.com/eBay/evo-web/pull/974">#974</a>)</p>
+<h2>Components</h2>
+<p><code>@evo-web/marko</code> adds date and date range inputs, chips combobox, progress bar, expressive progress bar, flag, section title and video components. The date inputs use locale-aware formatting as a date is entered. (<a href="https://github.com/eBay/evo-web/pull/1033">date inputs</a>, <a href="https://github.com/eBay/evo-web/pull/969">chips combobox</a>, <a href="https://github.com/eBay/evo-web/pull/1040">progress bar</a>, <a href="https://github.com/eBay/evo-web/pull/1041">expressive progress bar</a>, <a href="https://github.com/eBay/evo-web/pull/1042">flag</a>, <a href="https://github.com/eBay/evo-web/pull/1055">section title</a>, <a href="https://github.com/eBay/evo-web/pull/916">video</a>)</p>
+<p><code>@evo-web/react</code> adds number input, image placeholder, star rating select, chips combobox, <code>EvoEducationNotice</code> and <code>EvoField</code>. The chips combobox supports composable chip options, and <code>EvoCombobox</code> gains an option-selection callback and a large input variant. (<a href="https://github.com/eBay/evo-web/pull/972">number input</a>, <a href="https://github.com/eBay/evo-web/pull/980">image placeholder</a>, <a href="https://github.com/eBay/evo-web/pull/990">star rating select</a>, <a href="https://github.com/eBay/evo-web/pull/1022">chips combobox</a>, <a href="https://github.com/eBay/evo-web/pull/1005">education notice</a>, <a href="https://github.com/eBay/evo-web/pull/991">field</a>)</p>
+<p>The <code>@evo-web/react</code> 0.4.8 release also lists <code>EvoTourtip</code>, <code>EvoVideo</code>, <code>EvoFakeLink</code>, <code>EvoSectionTitle</code>, <code>EvoSignal</code>, <code>EvoSkeleton</code>, <code>EvoStarRating</code>, <code>EvoSwitch</code> and <code>EvoToggleButton</code>. (<a href="https://github.com/eBay/evo-web/releases/tag/%40evo-web/react%400.4.8">release notes</a>)</p>
+<h2>Fixes</h2>
+<ul>
+<li>Borderless buttons use bold text; listbox button labels stay at normal weight while their values are bold. (<a href="https://github.com/eBay/evo-web/pull/979">#979</a>)</li>
+<li>Date textbox and date input reject typed days that do not exist in the month, across the legacy and Evo Marko and React packages. (<a href="https://github.com/eBay/evo-web/pull/1076">#1076</a>)</li>
+<li>Readonly textboxes now match the default textbox styling. (<a href="https://github.com/eBay/evo-web/pull/973">#973</a>)</li>
+<li>The Marko calendar keeps the current month visible when <code>disableAfter</code> falls on its first day. (<a href="https://github.com/eBay/evo-web/pull/975">#975</a>)</li>
+<li>Compact video links beneath the control bar are clickable while playback controls remain usable. The remaining-time display is hidden again in compact players narrower than 320 pixels. (<a href="https://github.com/eBay/evo-web/pull/1050">#1050</a>, <a href="https://github.com/eBay/evo-web/pull/1043">#1043</a>)</li>
+<li>Primary button borders now default to transparent and can be customized, fixing the blue outline on tourtip buttons. (<a href="https://github.com/eBay/evo-web/pull/1039">#1039</a>)</li>
+<li><code>ebay-layout-grid</code> applies item attributes to each list item. (<a href="https://github.com/eBay/evo-web/pull/1073">#1073</a>)</li>
+</ul>
+<h2>Other updates</h2>
+<ul>
+<li>
+<p><code>evo-combobox</code> adds an <code>invalid</code> prop. (<a href="https://github.com/eBay/evo-web/pull/969">#969</a>)</p>
+</li>
+<li>
+<p>Number input value callbacks are unified across React and Marko. (<a href="https://github.com/eBay/evo-web/pull/972">#972</a>)</p>
+</li>
+<li>
+<p>Marko <code>evo-input</code> returns references to its input control and postfix button as <code>$control</code> and <code>$postfixButton</code>. (<a href="https://github.com/eBay/evo-web/pull/1033">#1033</a>)</p>
+</li>
+<li>
+<p>Marko star rating accepts <code>a11yText=null</code> when another accessible label is provided. (<a href="https://github.com/eBay/evo-web/pull/989">#989</a>)</p>
+</li>
+<li>
+<p>In <code>evo-select</code>, explicitly supplied <code>disabled</code>, <code>id</code> and <code>value</code> take precedence over spread input attributes. (<a href="https://github.com/eBay/evo-web/pull/916">#916</a>)</p>
+</li>
+<li>
+<p>Marko <code>evo-video</code> accepts an optional <code>@source</code> tag and reports when no source is provided. It also handles a null media engine without throwing. (<a href="https://github.com/eBay/evo-web/pull/916">#916</a>)</p>
+</li>
+<li>
+<p>The Signal Storybook title changed from &quot;Hotness Signals&quot; to &quot;Signal&quot;. (<a href="https://github.com/eBay/evo-web/pull/1070">#1070</a>)</p>
+</li>
+</ul>
+<h2>Upgrade notes</h2>
+<p>When migrating to Marko <code>evo-progress-bar</code>, omitting <code>value</code> now renders an indeterminate progress bar instead of defaulting to zero. (<a href="https://github.com/eBay/evo-web/pull/1040">#1040</a>)</p>
+<p>Marko <code>evo-progress-bar-expressive</code> requires <code>a11yText</code>, with an English default of <code>&quot;Loading...&quot;</code>; its <code>&lt;@message&gt;</code> tag accepts only a body and <code>duration</code>. With reduced motion, each message displays for 1.5 times its duration without a hidden fade. (<a href="https://github.com/eBay/evo-web/pull/1041">#1041</a>)</p>
+<p>The old <code>fake-*</code> and abbreviated button classes remain supported for now and are planned for removal in the next major version. Use either the old or the new button names on an element, rather than mixing them; the <code>--btn-*</code> custom properties remain unchanged. (<a href="https://github.com/eBay/evo-web/pull/1070">#1070</a>)</p>
+<p>Marko <code>evo-video</code> no longer accepts <code>src</code> as an input; the component assigns the video source from <code>@source</code>. (<a href="https://github.com/eBay/evo-web/pull/916">#916</a>)</p>
+<p>The Marko <code>&lt;evo-section-title&gt;</code> migration requires a <code>&lt;@title&gt;</code> tag. Its former <code>href</code> and <code>ctaText</code> attributes are replaced by a <code>&lt;@cta&gt;</code> tag, and the info slot is absent. The React <code>EvoSectionTitleInfo</code> component was removed. (<a href="https://github.com/eBay/evo-web/pull/1055">#1055</a>)</p>
+<p>Full package details are available in the <a href="https://github.com/eBay/evo-web/releases">Evo Web GitHub releases</a>.</p>
+</div>

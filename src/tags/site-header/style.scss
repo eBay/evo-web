@@ -166,6 +166,16 @@ header a {
 @media (min-width: 768px) {
   .nav__links {
     display: flex;
+    gap: var(--spacing-100);
+    margin-left: var(--spacing-200);
+  }
+
+  .nav__brand-text {
+    white-space: nowrap;
+  }
+
+  .nav__controls {
+    padding-left: var(--spacing-100);
   }
 
   .nav__mobile-toggle {
@@ -276,5 +286,16 @@ header a {
 @media (min-width: 512px) {
   .site-nav-mobile-panel .panel-dialog__window {
     width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav__links {
+    gap: var(--spacing-400);
+    margin-left: auto;
+  }
+
+  .nav__controls {
+    padding-left: var(--spacing-400);
   }
 }
