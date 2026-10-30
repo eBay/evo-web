@@ -60,7 +60,7 @@ export const withActions = () => `
                 </button>
                 <div class="tourtip__footer">
                     <span class="tourtip__index">1 of 3</span>
-                    <button class="text-button">Back</button>
+                    <button class="link-button">Back</button>
                     <button class="button button--primary">Next</button>
                 </div>
             </div>

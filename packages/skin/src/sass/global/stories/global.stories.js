@@ -64,7 +64,7 @@ export const alignment = () => `
 
 <button class="button button--fixed-height">Button</button>
 
-<a href="http://www.ebay.com" class="navigation-button navigation-button--fixed-height">Link</a>
+<a href="http://www.ebay.com" class="button-link button-link--fixed-height">Link</a>
 
 <span class="combobox">
     <span class="combobox__control">
@@ -117,7 +117,7 @@ export const RTLAlignment = () => `
 
     <button class="button button--fixed-height">Button</button>
 
-    <a href="http://www.ebay.com" class="navigation-button navigation-button--fixed-height">Link</a>
+    <a href="http://www.ebay.com" class="button-link button-link--fixed-height">Link</a>
 
     <span class="combobox">
         <span class="combobox__control">
@@ -170,7 +170,7 @@ export const alignmentLarge = () => `
 
 <button class="button button--large button--large-fixed-height">Button</button>
 
-<a href="http://www.ebay.com" class="navigation-button navigation-button--large navigation-button--large-fixed-height">Link</a>
+<a href="http://www.ebay.com" class="button-link button-link--large button-link--large-fixed-height">Link</a>
 
 <span class="combobox combobox--large">
     <span class="combobox__control">

@@ -56,7 +56,7 @@
 }
 
 .fullscreen-dialog__header .fake-link,
-.fullscreen-dialog__header .text-button {
+.fullscreen-dialog__header .link-button {
     align-self: flex-start;
     outline-offset: 4px;
     text-decoration: none;

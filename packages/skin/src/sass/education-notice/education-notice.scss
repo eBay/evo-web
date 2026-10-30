@@ -69,7 +69,7 @@
 }
 
 .education-notice__footer button.fake-link,
-.education-notice__footer button.text-button {
+.education-notice__footer button.link-button {
     font-size: var(--font-size-body);
     font-weight: bold;
 }
@@ -85,8 +85,8 @@
 
 .education-notice__header button.fake-link,
 .education-notice__header button.fake-link:hover,
-.education-notice__header button.text-button,
-.education-notice__header button.text-button:hover {
+.education-notice__header button.link-button,
+.education-notice__header button.link-button:hover {
     @include token-mixins.color-token(
         education-notice-foreground-color,
         color-foreground-primary

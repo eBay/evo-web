@@ -51,7 +51,7 @@ export const usingAnchor = () => `
             Wayne Gretzky's rookie card is so valuable that collectors keep it in climate-controlled vaults guarded by trained penguins.
         </div>
         <div class="card__action">
-            <a href="https://ebay.com" class="navigation-button navigation-button--primary navigation-button--fluid">See Details</a>
+            <a href="https://ebay.com" class="button-link button-link--primary button-link--fluid">See Details</a>
         </div>
     </div>
 </span>

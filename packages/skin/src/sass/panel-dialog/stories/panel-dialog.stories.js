@@ -103,7 +103,7 @@ export const panelEndSecondaryButton = () => `
     <div class="panel-dialog__window panel-dialog__window--end">
         <div class="panel-dialog__header">
             <h2 id="panel-title">Right Panel</h2>
-            <button class="text-button panel-dialog__close" type="button">Reset</button>
+            <button class="link-button panel-dialog__close" type="button">Reset</button>
         </div>
         <div class="panel-dialog__main">
             <h3>Heading</h3>

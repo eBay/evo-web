@@ -181,7 +181,7 @@ export const tertiaryExpanded = () => `
 
 export const fakePrimaryCollapsed = () => `
 <span class="split-button">
-    <a class="navigation-button navigation-button--primary navigation-button--split-start" href="https://ebay.com">
+    <a class="button-link button-link--primary button-link--split-start" href="https://ebay.com">
         Link
     </a>
     <span class="menu-button">
@@ -209,7 +209,7 @@ export const fakePrimaryCollapsed = () => `
 
 export const fakePrimaryExpanded = () => `
 <span class="split-button">
-    <a class="navigation-button navigation-button--primary navigation-button--split-start" href="https://ebay.com">
+    <a class="button-link button-link--primary button-link--split-start" href="https://ebay.com">
         Link
     </a>
     <span class="menu-button">
@@ -237,7 +237,7 @@ export const fakePrimaryExpanded = () => `
 
 export const fakeSecondaryCollapsed = () => `
 <span class="split-button">
-    <a class="navigation-button navigation-button--secondary navigation-button--split-start" href="https://ebay.com">
+    <a class="button-link button-link--secondary button-link--split-start" href="https://ebay.com">
         Link
     </a>
     <span class="menu-button">
@@ -265,7 +265,7 @@ export const fakeSecondaryCollapsed = () => `
 
 export const fakeSecondaryExpanded = () => `
 <span class="split-button">
-    <a class="navigation-button navigation-button--secondary navigation-button--split-start" href="https://ebay.com">
+    <a class="button-link button-link--secondary button-link--split-start" href="https://ebay.com">
         Link
     </a>
     <span class="menu-button">
@@ -293,7 +293,7 @@ export const fakeSecondaryExpanded = () => `
 
 export const fakeTertiaryCollapsed = () => `
 <span class="split-button">
-    <a class="navigation-button navigation-button--tertiary navigation-button--split-start" href="https://ebay.com">
+    <a class="button-link button-link--tertiary button-link--split-start" href="https://ebay.com">
         Link
     </a>
     <span class="menu-button">
@@ -321,7 +321,7 @@ export const fakeTertiaryCollapsed = () => `
 
 export const fakeTertiaryExpanded = () => `
 <span class="split-button">
-    <a class="navigation-button navigation-button--tertiary navigation-button--split-start" href="https://ebay.com">
+    <a class="button-link button-link--tertiary button-link--split-start" href="https://ebay.com">
         Link
     </a>
     <span class="menu-button">

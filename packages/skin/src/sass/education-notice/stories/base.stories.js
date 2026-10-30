@@ -100,7 +100,7 @@ export const actionableButton = () => `
         <p>You can now use the Vault to store items like this securely.</p>
     </div>
     <div class="education-notice__footer">
-        <button class="text-button">Learn more button</button>
+        <button class="link-button">Learn more button</button>
     </div>
 </section>
 `;
@@ -146,7 +146,7 @@ export const textSpacing = () => `
         <p>You can now use the Vault to store items like this securely.</p>
     </div>
     <div class="education-notice__footer">
-        <button class="text-button">Learn more button</button>
+        <button class="link-button">Learn more button</button>
     </div>
 </section>
 `;

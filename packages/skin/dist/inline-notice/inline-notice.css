@@ -38,6 +38,6 @@ span.inline-notice {
 
 .inline-notice a,
 .inline-notice button.fake-link,
-.inline-notice button.text-button {
+.inline-notice button.link-button {
     color: var(--color-foreground-primary);
 }

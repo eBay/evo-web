@@ -44,7 +44,7 @@
 }
 
 .drawer-dialog__header .fake-link,
-.drawer-dialog__header .text-button {
+.drawer-dialog__header .link-button {
     align-self: flex-start;
     text-decoration: none;
 }

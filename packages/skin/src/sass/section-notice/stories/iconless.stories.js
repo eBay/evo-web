@@ -38,7 +38,7 @@ export const fakeLinkCTA = () => `
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </div>
     <div class="section-notice__footer">
-        <button class="text-button" type="button">Action</button>
+        <button class="link-button" type="button">Action</button>
     </div>
 </div>
 `;
@@ -50,7 +50,7 @@ export const dismiss = () => `
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </div>
     <div class="section-notice__footer">
-    <button aria-label="Close notice" class="text-button section-notice__dismiss">
+    <button aria-label="Close notice" class="link-button section-notice__dismiss">
         <svg aria-hidden="true" class="icon icon--16" height="16" width="16">
             <use href="#icon-close-16"></use>
         </svg>
@@ -67,7 +67,7 @@ export const dismissAndLinkCTA = () => `
     </div>
     <p class="section-notice__cta"><a href="https://www.ebay.com">Action</a></p>
     <div class="section-notice__footer">
-        <button aria-label="Close notice" class="text-button section-notice__dismiss">
+        <button aria-label="Close notice" class="link-button section-notice__dismiss">
             <svg aria-hidden="true" class="icon icon--16" height="16" width="16">
                 <use href="#icon-close-16"></use>
             </svg>
@@ -83,10 +83,10 @@ export const dismissAndFakeLinkCTA = () => `
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </div>
     <p class="section-notice__cta">
-        <button class="text-button" type="button">Action</button>
+        <button class="link-button" type="button">Action</button>
     </p>
     <div class="section-notice__footer">
-        <button aria-label="Close notice" class="text-button section-notice__dismiss">
+        <button aria-label="Close notice" class="link-button section-notice__dismiss">
             <svg aria-hidden="true" class="icon icon--16" height="16" width="16">
                 <use href="#icon-close-16"></use>
             </svg>
@@ -105,7 +105,7 @@ export const RTL = () => `
         </div>
         <p class="section-notice__cta"><a href="https://www.ebay.com">Action</a></p>
         <div class="section-notice__footer">
-            <button aria-label="Close notice" class="text-button section-notice__dismiss">
+            <button aria-label="Close notice" class="link-button section-notice__dismiss">
                 <svg aria-hidden="true" class="icon icon--16" height="16" width="16">
                     <use href="#icon-close-16"></use>
                 </svg>

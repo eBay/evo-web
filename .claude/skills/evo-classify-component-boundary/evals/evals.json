@@ -5,7 +5,7 @@
       "id": 1,
       "name": "decided-anchor-styled-as-button",
       "prompt": "Where should this live in Skin? It's an anchor that has to look exactly like our button. Markup: <a class=\"fake-btn\" href=\"https://www.ebay.com\"><span class=\"fake-btn__cell\"><span>Go</span></span></a>. The disabled version has no href.",
-      "expected_output": "Verdict: own module, not a modifier of button. Facts listed: root element is a (not button), activates on Enter only (Space scrolls), no native disabled so the disabled state is faked (drop href, or aria-disabled plus JavaScript), announced as a link. Rule fired: the accessibility test, all three checks. Proposed name: navigation-button (button family, differs by navigating). Look-alike: button. Mentions shared styling through mixins.",
+      "expected_output": "Verdict: own module, not a modifier of button. Facts listed: root element is a (not button), activates on Enter only (Space scrolls), no native disabled so the disabled state is faked (drop href, or aria-disabled plus JavaScript), announced as a link. Rule fired: the accessibility test, all three checks. Proposed name: button-link (built on an a, looks like a button). Look-alike: button. Mentions shared styling through mixins.",
       "files": []
     },
     {
@@ -21,7 +21,7 @@
       "id": 3,
       "name": "decided-button-styled-as-link",
       "prompt": "I need a control that looks like a text link but triggers an action on the page. Markup: <button class=\"fake-link\" type=\"button\">Button</button>. Does it go inside link as a modifier or somewhere else?",
-      "expected_output": "Verdict: own module, not a modifier of link. Facts: root is button, activates on Enter and Space, native disabled works, announced as a button although it looks like a link. Rule fired: accessibility test (keyboard activation and announcement differ from a link). Proposed name: text-button (button family, differs by looking like text). Look-alike: link. Notes that link already stands as a single-variant top-level module, so a module for one variant is not unusual.",
+      "expected_output": "Verdict: own module, not a modifier of link. Facts: root is button, activates on Enter and Space, native disabled works, announced as a button although it looks like a link. Rule fired: accessibility test (keyboard activation and announcement differ from a link). Proposed name: link-button (built on a button, looks like a link). Look-alike: link. Notes that link already stands as a single-variant top-level module, so a module for one variant is not unusual.",
       "files": []
     },
     {

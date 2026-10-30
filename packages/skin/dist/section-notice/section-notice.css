@@ -49,15 +49,15 @@ span[role="region"].section-notice {
 }
 
 .section-notice button.fake-link,
-.section-notice button.text-button {
+.section-notice button.link-button {
     font-size: var(--font-size-body);
 }
 
 .section-notice a,
 .section-notice button.fake-link,
 .section-notice button.fake-link:hover,
-.section-notice button.text-button,
-.section-notice button.text-button:hover {
+.section-notice button.link-button,
+.section-notice button.link-button:hover {
     color: var(
         --section-notice-foreground-color,
         var(--color-foreground-primary)
