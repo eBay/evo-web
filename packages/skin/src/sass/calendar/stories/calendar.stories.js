@@ -304,7 +304,7 @@ export const header = () => /* HTML */ `
         <div class="calendar__header">
             <div class="calendar__header--inner">
                 <button
-                    class="icon-btn icon-btn--small icon-btn--transparent"
+                    class="icon-button icon-button--small icon-button--transparent"
                     aria-label="Previous Month - July 2019"
                     variant="icon"
                 >
@@ -314,7 +314,7 @@ export const header = () => /* HTML */ `
                 </button>
                 <h3>August 2019</h3>
                 <button
-                    class="icon-btn icon-btn--small icon-btn--transparent"
+                    class="icon-button icon-button--small icon-button--transparent"
                     aria-label="Next Month - September 2019"
                     variant="icon"
                 >
@@ -514,7 +514,7 @@ export const textSpacing = () => `
         <div class="calendar__header">
             <div class="calendar__header--inner">
                 <button
-                    class="icon-btn icon-btn--small icon-btn--transparent"
+                    class="icon-button icon-button--small icon-button--transparent"
                     aria-label="Previous Month - July 2019"
                     variant="icon"
                 >
@@ -524,7 +524,7 @@ export const textSpacing = () => `
                 </button>
                 <h3>August 2019</h3>
                 <button
-                    class="icon-btn icon-btn--small icon-btn--transparent"
+                    class="icon-button icon-button--small icon-button--transparent"
                     aria-label="Next Month - September 2019"
                     variant="icon"
                 >
@@ -1001,7 +1001,7 @@ export const doubleWithHeader = () => /* HTML */ `
         <div class="calendar__header">
             <div class="calendar__header--inner">
                 <button
-                    class="icon-btn icon-btn--small icon-btn--transparent"
+                    class="icon-button icon-button--small icon-button--transparent"
                     aria-label="Previous Month - July 2019"
                     variant="icon"
                 >
@@ -1012,7 +1012,7 @@ export const doubleWithHeader = () => /* HTML */ `
                 <h3>August 2019</h3>
                 <h3>September 2019</h3>
                 <button
-                    class="icon-btn icon-btn--small icon-btn--transparent"
+                    class="icon-button icon-button--small icon-button--transparent"
                     aria-label="Next Month - October 2019"
                     variant="icon"
                 >

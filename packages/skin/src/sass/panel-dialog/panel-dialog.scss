@@ -2,6 +2,9 @@
 @use "../mixins/private/dialog-mixins";
 @use "../mixins/private/token-mixins";
 
+// DEPRECATED: the `.icon-btn*` selectors in this file are removed in the next
+// major version. Use `.icon-button*` instead.
+
 .panel-dialog[role="dialog"] {
     flex-direction: column;
 
@@ -29,7 +32,8 @@
     @include dialog-mixins.header-content;
 }
 
-.panel-dialog__header .fake-link {
+.panel-dialog__header .fake-link,
+.panel-dialog__header .link-button {
     align-self: flex-start;
     outline-offset: 4px;
     text-decoration: none;
@@ -49,7 +53,9 @@
 /* inherits from .icon-btn */
 /* Might need to see to add a small icon btn */
 button.icon-btn.panel-dialog__prev,
-button.icon-btn.panel-dialog__close {
+button.icon-button.panel-dialog__prev,
+button.icon-btn.panel-dialog__close,
+button.icon-button.panel-dialog__close {
     align-self: flex-start;
     border: 0;
     height: 32px;
@@ -60,7 +66,8 @@ button.icon-btn.panel-dialog__close {
     z-index: 1;
 }
 
-button.icon-btn.panel-dialog__prev {
+button.icon-btn.panel-dialog__prev,
+button.icon-button.panel-dialog__prev {
     margin-inline-end: var(--spacing-200);
 }
 
@@ -135,7 +142,8 @@ button.icon-btn.panel-dialog__prev {
 }
 
 [dir="rtl"] {
-    button.icon-btn.panel-dialog__prev .icon {
+    button.icon-btn.panel-dialog__prev .icon,
+    button.icon-button.panel-dialog__prev .icon {
         transform: rotate(180deg);
     }
 }

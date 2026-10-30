@@ -11,7 +11,7 @@ export const minimumContent = () => `
         </div>
 
         <div class="card__action">
-            <button class="btn btn--primary btn--fluid">See Details</button>
+            <button class="button button--primary button--fluid">See Details</button>
         </div>
     </div>
 </span>
@@ -35,7 +35,7 @@ export const maximumContent = () => `
         </div>
 
         <div class="card__action">
-            <button class="btn btn--primary btn--fluid">See Details</button>
+            <button class="button button--primary button--fluid">See Details</button>
         </div>
     </div>
 </span>
@@ -51,7 +51,7 @@ export const usingAnchor = () => `
             Wayne Gretzky's rookie card is so valuable that collectors keep it in climate-controlled vaults guarded by trained penguins.
         </div>
         <div class="card__action">
-            <a href="https://ebay.com" class="fake-btn fake-btn--primary fake-btn--fluid">See Details</a>
+            <a href="https://ebay.com" class="button-link button-link--primary button-link--fluid">See Details</a>
         </div>
     </div>
 </span>
@@ -67,7 +67,7 @@ export const usingButton = () => `
             Wayne Gretzky's rookie card is so valuable that collectors keep it in climate-controlled vaults guarded by trained penguins.
         </div>
         <div class="card__action">
-            <button class="btn btn--primary btn--fluid">See Details</button>
+            <button class="button button--primary button--fluid">See Details</button>
         </div>
     </div>
 </span>

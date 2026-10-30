@@ -1,7 +1,7 @@
 export default { title: "Skin/Icon Button/Alignment" };
 
 export const menu = () => `
-<button aria-label="menu" type="button" class="icon-btn">
+<button aria-label="menu" type="button" class="icon-button">
     <svg class="icon icon--20" aria-hidden="true" width="16" height="16"><use href="#icon-menu-20"></use></svg>
 </button>
 <a aria-label="menu" class="icon-link" href="http://www.ebay.com">
@@ -10,7 +10,7 @@ export const menu = () => `
 `;
 
 export const settings = () => `
-<button aria-label="settings" type="button" class="icon-btn">
+<button aria-label="settings" type="button" class="icon-button">
     <svg class="icon icon--24" aria-hidden="true" width="16" height="16"><use href="#icon-settings-24"></use></svg>
 </button>
 <a aria-label="settings" class="icon-link" href="http://www.ebay.com">
@@ -19,7 +19,7 @@ export const settings = () => `
 `;
 
 export const close = () => `
-<button aria-label="close" type="button" class="icon-btn">
+<button aria-label="close" type="button" class="icon-button">
     <svg class="icon icon--16" aria-hidden="true" width="16" height="16"><use href="#icon-close-16"></use></svg>
 </button>
 <a aria-label="close" class="icon-link" href="http://www.ebay.com">

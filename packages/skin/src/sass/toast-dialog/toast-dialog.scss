@@ -3,6 +3,9 @@
 @use "../mixins/private/token-mixins";
 @use "../mixins/private/state-layer";
 
+// DEPRECATED: the `.btn*`, `.icon-btn*` selectors in this file are removed in the next
+// major version. Use `.button*`, `.icon-button*` instead.
+
 @keyframes toast-dialog-open {
     from {
         opacity: 0;
@@ -107,7 +110,8 @@ dialog.toast-dialog {
 }
 
 /* inherits from .icon-btn */
-button.icon-btn.toast-dialog__close {
+button.icon-btn.toast-dialog__close,
+button.icon-button.toast-dialog__close {
     align-self: flex-start;
     border: 0;
     color: var(--color-foreground-on-success);
@@ -121,7 +125,8 @@ button.icon-btn.toast-dialog__close {
     }
 }
 
-button.icon-btn.toast-dialog__close > svg {
+button.icon-btn.toast-dialog__close > svg,
+button.icon-button.toast-dialog__close > svg {
     fill: currentColor;
 }
 
@@ -134,7 +139,9 @@ button.icon-btn.toast-dialog__close > svg {
     }
 
     button.btn--primary,
-    button.btn--secondary {
+    button.button--primary,
+    button.btn--secondary,
+    button.button--secondary {
         @include state-layer.standard;
 
         border-color: var(--color-foreground-on-accent);
@@ -143,12 +150,14 @@ button.icon-btn.toast-dialog__close > svg {
         outline-offset: 2px;
     }
 
-    button.btn--primary {
+    button.btn--primary,
+    button.button--primary {
         background-color: var(--color-background-primary);
         color: var(--color-foreground-accent);
     }
 
-    button.btn--secondary {
+    button.btn--secondary,
+    button.button--secondary {
         background-color: transparent;
         color: var(--color-background-primary);
         font-weight: 700;
@@ -156,7 +165,9 @@ button.icon-btn.toast-dialog__close > svg {
     }
 
     button.btn--primary:focus,
-    button.btn--secondary:focus {
+    button.button--primary:focus,
+    button.btn--secondary:focus,
+    button.button--secondary:focus {
         outline: 2px solid var(--color-foreground-on-success);
     }
 }

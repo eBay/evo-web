@@ -1,3 +1,5 @@
+// DEPRECATED: the `.icon-btn*` selectors in this file are removed in the next
+// major version. Use `.icon-button*` instead.
 /*! DEPRECATED COMPONENT. Will be removed next major version */
 
 @use "../variables/variables";
@@ -23,7 +25,8 @@
     @include dialog-mixins.header-content;
 }
 
-.fullscreen-dialog__header .fake-link {
+.fullscreen-dialog__header .fake-link,
+.fullscreen-dialog__header .link-button {
     align-self: flex-start;
     outline-offset: 4px;
     text-decoration: none;
@@ -39,7 +42,8 @@
     @include dialog-mixins.footer-content;
 }
 
-button.icon-btn.fullscreen-dialog__close {
+button.icon-btn.fullscreen-dialog__close,
+button.icon-button.fullscreen-dialog__close {
     height: 32px;
     min-width: 32px;
     width: 32px;

@@ -5,7 +5,7 @@ export const base = () => `
     <span aria-live="polite" role="status">
         <h2 class="clipped" id="pagination-heading">Results Pagination - Page 1</h2>
     </span>
-    <button aria-disabled="true" aria-label="Previous Page" class="icon-btn pagination__previous">
+    <button aria-disabled="true" aria-label="Previous Page" class="icon-button pagination__previous">
         <svg class="icon icon--16" height="24" width="24" aria-hidden="true">
             <use href="#icon-arrow-left-16"></use>
         </svg>
@@ -33,7 +33,7 @@ export const base = () => `
             <button class="pagination__item">7</button>
         </li>
     </ol>
-    <button aria-label="Next Page" class="icon-btn pagination__next">
+    <button aria-label="Next Page" class="icon-button pagination__next">
         <svg class="icon icon--16" height="24" width="24" aria-hidden="true">
             <use href="#icon-arrow-right-16"></use>
         </svg>
@@ -46,7 +46,7 @@ export const fluid = () => `
     <span aria-live="polite" role="status">
         <h2 class="clipped" id="pagination-heading">Results Pagination - Page 1</h2>
     </span>
-    <button aria-disabled="true" aria-label="Previous Page" class="icon-btn pagination__previous">
+    <button aria-disabled="true" aria-label="Previous Page" class="icon-button pagination__previous">
         <svg class="icon icon--16" height="24" width="24" aria-hidden="true">
             <use href="#icon-arrow-left-16"></use>
         </svg>
@@ -74,7 +74,7 @@ export const fluid = () => `
             <button class="pagination__item">7</button>
         </li>
     </ol>
-    <button aria-label="Next Page" class="icon-btn pagination__next">
+    <button aria-label="Next Page" class="icon-button pagination__next">
         <svg class="icon icon--16" height="24" width="24" aria-hidden="true">
             <use href="#icon-arrow-right-16"></use>
         </svg>

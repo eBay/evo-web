@@ -89,7 +89,7 @@ export const group = () => `
 </div>
 
 <div class="field">
-    <button class="btn btn--fluid btn--primary" type="submit">Register</button>
+    <button class="button button--fluid button--primary" type="submit">Register</button>
 </div>
 `;
 
@@ -138,10 +138,10 @@ export const descriptions = () => `
     <label class="field__label field__label--stacked" for="field-listbox-button-1">Listbox Button Field - Error</label>
     <div class="field__control textbox">
         <span class="listbox-button listbox-button--form listbox-button--error" data-makeup-auto-select="false">
-            <button class="btn btn--form" style="min-width: 150px" aria-expanded="false" aria-haspopup="listbox" aria-describedby="field-listbox-button-1-description">
-                <span class="btn__cell">
-                    <span class="btn__label">Color: </span>
-                    <span class="btn__text">-</span>
+            <button class="button button--form" style="min-width: 150px" aria-expanded="false" aria-haspopup="listbox" aria-describedby="field-listbox-button-1-description">
+                <span class="button__cell">
+                    <span class="button__label">Color: </span>
+                    <span class="button__text">-</span>
                     <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
                         <use href="#icon-chevron-down-12"></use>
                     </svg>

@@ -16,7 +16,7 @@ export const galleryView = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -65,7 +65,7 @@ export const galleryView = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -114,7 +114,7 @@ export const galleryView = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -163,7 +163,7 @@ export const galleryView = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -212,7 +212,7 @@ export const galleryView = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -261,7 +261,7 @@ export const galleryView = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -310,7 +310,7 @@ export const galleryView = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -359,7 +359,7 @@ export const galleryView = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -408,7 +408,7 @@ export const galleryView = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -457,7 +457,7 @@ export const galleryView = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -506,7 +506,7 @@ export const galleryView = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -555,7 +555,7 @@ export const galleryView = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -611,7 +611,7 @@ export const galleryViewLongBody = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -660,7 +660,7 @@ export const galleryViewLongBody = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -716,7 +716,7 @@ export const galleryViewLongBody = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -770,7 +770,7 @@ export const galleryViewLongBody = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -826,7 +826,7 @@ export const galleryViewLongBody = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -875,7 +875,7 @@ export const galleryViewLongBody = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -924,7 +924,7 @@ export const galleryViewLongBody = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -973,7 +973,7 @@ export const galleryViewLongBody = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -1022,7 +1022,7 @@ export const galleryViewLongBody = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -1071,7 +1071,7 @@ export const galleryViewLongBody = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -1120,7 +1120,7 @@ export const galleryViewLongBody = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -1169,7 +1169,7 @@ export const galleryViewLongBody = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -1225,7 +1225,7 @@ export const listView = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -1274,7 +1274,7 @@ export const listView = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -1323,7 +1323,7 @@ export const listView = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -1372,7 +1372,7 @@ export const listView = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -1421,7 +1421,7 @@ export const listView = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -1470,7 +1470,7 @@ export const listView = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -1519,7 +1519,7 @@ export const listView = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -1568,7 +1568,7 @@ export const listView = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -1617,7 +1617,7 @@ export const listView = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -1666,7 +1666,7 @@ export const listView = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -1715,7 +1715,7 @@ export const listView = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >
@@ -1764,7 +1764,7 @@ export const listView = () => `
                                 />
                             </a>
                             <button
-                                class="icon-btn file-preview-card__action"
+                                class="icon-button file-preview-card__action"
                                 type="button"
                                 aria-label="Open menu"
                             >

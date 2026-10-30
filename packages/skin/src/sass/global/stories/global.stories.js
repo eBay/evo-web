@@ -62,9 +62,9 @@ export const alignment = () => `
     </svg>
 </span>
 
-<button class="btn btn--fixed-height">Button</button>
+<button class="button button--fixed-height">Button</button>
 
-<a href="http://www.ebay.com" class="fake-btn fake-btn--fixed-height">Link</a>
+<a href="http://www.ebay.com" class="button-link button-link--fixed-height">Link</a>
 
 <span class="combobox">
     <span class="combobox__control">
@@ -76,9 +76,9 @@ export const alignment = () => `
 </span>
 
 <span class="listbox-button">
-    <button class="btn btn--form btn--fixed-height" aria-expanded="false" aria-haspopup="listbox">
-        <span class="btn__cell">
-            <span class="btn__text">Options</span>
+    <button class="button button--form button--fixed-height" aria-expanded="false" aria-haspopup="listbox">
+        <span class="button__cell">
+            <span class="button__text">Options</span>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -87,9 +87,9 @@ export const alignment = () => `
 </span>
 
 <span class="menu-button">
-    <button class="btn btn--form btn--fixed-height" aria-haspopup="true" type="button">
-        <span class="btn__cell">
-            <span class="btn__text">Menu</span>
+    <button class="button button--form button--fixed-height" aria-haspopup="true" type="button">
+        <span class="button__cell">
+            <span class="button__text">Menu</span>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -115,9 +115,9 @@ export const RTLAlignment = () => `
         </svg>
     </span>
 
-    <button class="btn btn--fixed-height">Button</button>
+    <button class="button button--fixed-height">Button</button>
 
-    <a href="http://www.ebay.com" class="fake-btn fake-btn--fixed-height">Link</a>
+    <a href="http://www.ebay.com" class="button-link button-link--fixed-height">Link</a>
 
     <span class="combobox">
         <span class="combobox__control">
@@ -129,9 +129,9 @@ export const RTLAlignment = () => `
     </span>
 
     <span class="listbox-button">
-        <button class="btn btn--fixed-height" aria-expanded="false" aria-haspopup="listbox">
-            <span class="btn__cell">
-                <span class="btn__text">Options</span>
+        <button class="button button--fixed-height" aria-expanded="false" aria-haspopup="listbox">
+            <span class="button__cell">
+                <span class="button__text">Options</span>
                 <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                     <use href="#icon-chevron-down-12"></use>
                 </svg>
@@ -140,9 +140,9 @@ export const RTLAlignment = () => `
     </span>
 
     <span class="menu-button">
-        <button class="btn btn--fixed-height" aria-haspopup="true" type="button">
-            <span class="btn__cell">
-                <span class="btn__text">Menu</span>
+        <button class="button button--fixed-height" aria-haspopup="true" type="button">
+            <span class="button__cell">
+                <span class="button__text">Menu</span>
                 <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                     <use href="#icon-chevron-down-12"></use>
                 </svg>
@@ -168,9 +168,9 @@ export const alignmentLarge = () => `
     </svg>
 </span>
 
-<button class="btn btn--large btn--large-fixed-height">Button</button>
+<button class="button button--large button--large-fixed-height">Button</button>
 
-<a href="http://www.ebay.com" class="fake-btn fake-btn--large fake-btn--large-fixed-height">Link</a>
+<a href="http://www.ebay.com" class="button-link button-link--large button-link--large-fixed-height">Link</a>
 
 <span class="combobox combobox--large">
     <span class="combobox__control">
@@ -182,9 +182,9 @@ export const alignmentLarge = () => `
 </span>
 
 <span class="listbox-button">
-    <button class="btn btn--large btn--form btn--large-fixed-height" aria-expanded="false" aria-haspopup="listbox">
-        <span class="btn__cell">
-            <span class="btn__text">Options</span>
+    <button class="button button--large button--form button--large-fixed-height" aria-expanded="false" aria-haspopup="listbox">
+        <span class="button__cell">
+            <span class="button__text">Options</span>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -193,9 +193,9 @@ export const alignmentLarge = () => `
 </span>
 
 <span class="menu-button">
-    <button class="btn btn--large btn--form btn--large-fixed-height" aria-haspopup="true" type="button">
-        <span class="btn__cell">
-            <span class="btn__text">Menu</span>
+    <button class="button button--large button--form button--large-fixed-height" aria-haspopup="true" type="button">
+        <span class="button__cell">
+            <span class="button__text">Menu</span>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>

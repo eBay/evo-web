@@ -18,7 +18,7 @@ export const verticalFilled = () => `
         </div>
 
         <div class="card__action">
-            <button class="btn btn--tertiary btn--fluid">See Details</button>
+            <button class="button button--tertiary button--fluid">See Details</button>
         </div>
     </div>
 </span>
@@ -42,7 +42,7 @@ export const verticalOutlined = () => `
         </div>
 
         <div class="card__action">
-            <button class="btn btn--tertiary btn--fluid">See Details</button>
+            <button class="button button--tertiary button--fluid">See Details</button>
         </div>
     </div>
 </span>
@@ -66,7 +66,7 @@ export const horizontalFilled = () => `
         </div>
 
         <div class="card__action">
-            <button class="btn btn--tertiary">See Details</button>
+            <button class="button button--tertiary">See Details</button>
         </div>
     </div>
 </span>
@@ -90,7 +90,7 @@ export const horizontalOutlined = () => `
         </div>
 
         <div class="card__action">
-            <button class="btn btn--tertiary">See Details</button>
+            <button class="button button--tertiary">See Details</button>
         </div>
     </div>
 </span>

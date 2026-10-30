@@ -5,6 +5,9 @@
 @use "../mixins/private/state-layer";
 @use "../mixins/public/utility-mixins";
 
+// DEPRECATED: the `.btn*`, `.expand-btn*` selectors in this file are removed in the next
+// major version. Use `.button*`, `.expand-button*` instead.
+
 .listbox-button {
     line-height: normal;
     position: relative;
@@ -15,7 +18,8 @@ span.listbox-button {
     display: inline-block;
 }
 
-.listbox-button .btn {
+.listbox-button .btn,
+.listbox-button .button {
     /* these values are used elsewhere in listbox */
     /* in a non-standard manner and don't have variables */
     /* this shares the same value with the horizontal */
@@ -26,7 +30,9 @@ span.listbox-button {
 
 span.listbox-button--fluid,
 span.listbox-button--fluid .expand-btn,
+span.listbox-button--fluid .expand-button,
 span.listbox-button--fluid .btn,
+span.listbox-button--fluid .button,
 span.listbox-button--fluid div.listbox-button__listbox {
     width: 100%;
 }
@@ -36,7 +42,11 @@ div.listbox-button__listbox {
 }
 
 button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox,
-.listbox-button button.btn[aria-expanded="true"] ~ div.listbox-button__listbox {
+button.expand-button[aria-expanded="true"] ~ div.listbox-button__listbox,
+.listbox-button button.btn[aria-expanded="true"] ~ div.listbox-button__listbox,
+.listbox-button
+    button.button[aria-expanded="true"]
+    ~ div.listbox-button__listbox {
     display: block;
 }
 
@@ -52,7 +62,13 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox,
         [disabled],
         [aria-disabled="true"],
         [aria-invalid="true"]
-    ).btn--form {
+    ).btn--form,
+.listbox-button:not(.listbox-button--error)
+    button:not(
+        [disabled],
+        [aria-disabled="true"],
+        [aria-invalid="true"]
+    ).button--form {
     @include token-mixins.border-color-token(
         listbox-button-border-color,
         color-border-medium
@@ -66,7 +82,9 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox,
 }
 
 .listbox-button button.expand-btn--borderless,
-.listbox-button button.btn--borderless {
+.listbox-button button.expand-button--borderless,
+.listbox-button button.btn--borderless,
+.listbox-button button.button--borderless {
     background-color: transparent;
     border-color: transparent;
     padding-left: 0;
@@ -123,7 +141,8 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox,
     );
 }
 
-.listbox-button.listbox-button--error button:not(.btn--borderless) {
+.listbox-button.listbox-button--error
+    button:not(.btn--borderless, .button--borderless) {
     @include token-mixins.background-color-token(
         listbox-button-background-color,
         color-background-secondary
@@ -134,7 +153,8 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox,
     );
 }
 
-.listbox-button .btn__label {
+.listbox-button .btn__label,
+.listbox-button .button__label {
     @include token-mixins.color-token(
         listbox-button-label-color,
         color-foreground-secondary
@@ -144,7 +164,8 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox,
     margin-right: 3px;
 }
 
-.listbox-button--expanded .btn__label {
+.listbox-button--expanded .btn__label,
+.listbox-button--expanded .button__label {
     @include token-mixins.color-token(
         listbox-button-label-color,
         color-foreground-primary
@@ -152,14 +173,17 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox,
 }
 
 .listbox-button.listbox-button--error button .btn__label,
-.listbox-button.listbox-button--error button .btn__floating-label {
+.listbox-button.listbox-button--error button .button__label,
+.listbox-button.listbox-button--error button .btn__floating-label,
+.listbox-button.listbox-button--error button .button__floating-label {
     @include token-mixins.color-token(
         listbox-button-label-color,
         color-foreground-attention
     );
 }
 
-.listbox-button .btn__text {
+.listbox-button .btn__text,
+.listbox-button .button__text {
     font-weight: bold;
     margin-right: auto;
 }
@@ -227,7 +251,8 @@ span.listbox-button__value {
 
 /* stylelint-disable no-descending-specificity */
 [dir="rtl"] {
-    .listbox-button .btn__label {
+    .listbox-button .btn__label,
+    .listbox-button .button__label {
         margin-left: 3px;
         margin-right: 0;
 

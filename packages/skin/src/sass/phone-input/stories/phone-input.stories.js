@@ -3,10 +3,10 @@ export default { title: "Skin/Phone Input/Base" };
 export const Default = () => `
   <span class="phone-input">
     <span class="listbox-button listbox-button--form">
-      <button class="btn btn--form btn--split-start" aria-expanded="false" aria-haspopup="listbox" type="button"
+      <button class="button button--form button--split-start" aria-expanded="false" aria-haspopup="listbox" type="button"
         data-listbox-button-prefix="Country: ">
-        <span class="btn__cell">
-          <span class="btn__text">
+        <span class="button__cell">
+          <span class="button__text">
             <span class="fflag fflag--us" data-country-code="1"
               aria-label="Country: United States of America (+1)">
             </span>
@@ -86,10 +86,10 @@ export const Default = () => `
 export const Large = () => `
   <span class="phone-input phone-input--large">
     <span class="listbox-button listbox-button--form">
-      <button class="btn btn--form btn--split-start btn--large btn--large-fixed-height" aria-expanded="false" aria-haspopup="listbox" type="button"
+      <button class="button button--form button--split-start button--large button--large-fixed-height" aria-expanded="false" aria-haspopup="listbox" type="button"
         data-listbox-button-prefix="Country: ">
-        <span class="btn__cell">
-          <span class="btn__text">
+        <span class="button__cell">
+          <span class="button__text">
             <span class="fflag fflag--us" data-country-code="1"
               aria-label="Country: United States of America (+1)">
             </span>
@@ -169,10 +169,10 @@ export const Large = () => `
 export const ReadOnly = () => `
   <span class="phone-input phone-input--readonly">
     <span class="listbox-button listbox-button--form">
-      <button class="btn btn--form btn--split-start" aria-expanded="false" aria-haspopup="listbox" type="button"
+      <button class="button button--form button--split-start" aria-expanded="false" aria-haspopup="listbox" type="button"
         data-listbox-button-prefix="Country: " disabled>
-        <span class="btn__cell">
-          <span class="btn__text">
+        <span class="button__cell">
+          <span class="button__text">
             <span class="fflag fflag--us" data-country-code="1"
               aria-label="Country: United States of America (+1)">
             </span>
@@ -252,10 +252,10 @@ export const ReadOnly = () => `
 export const Disabled = () => `
   <span class="phone-input phone-input--disabled">
     <span class="listbox-button listbox-button--form">
-      <button class="btn btn--form btn--split-start" aria-expanded="false" aria-haspopup="listbox" type="button"
+      <button class="button button--form button--split-start" aria-expanded="false" aria-haspopup="listbox" type="button"
         data-listbox-button-prefix="Country: " disabled>
-        <span class="btn__cell">
-          <span class="btn__text">
+        <span class="button__cell">
+          <span class="button__text">
             <span class="fflag fflag--us"
               data-country-code="1" aria-label="Country: United States of America (+1)">
             </span>
@@ -335,10 +335,10 @@ export const Disabled = () => `
 export const Error = () => `
   <span class="phone-input phone-input--error">
     <span class="listbox-button listbox-button--form listbox-button--error">
-      <button class="btn btn--form btn--split-start" aria-expanded="false" aria-haspopup="listbox" type="button"
+      <button class="button button--form button--split-start" aria-expanded="false" aria-haspopup="listbox" type="button"
         data-listbox-button-prefix="Country: ">
-        <span class="btn__cell">
-          <span class="btn__text">
+        <span class="button__cell">
+          <span class="button__text">
             <span class="fflag fflag--us" data-country-code="1"
               aria-label="Country: United States of America (+1)">
             </span>
@@ -418,10 +418,10 @@ export const Error = () => `
 export const Fluid = () => `
   <span class="phone-input phone-input--fluid">
     <span class="listbox-button listbox-button--form">
-      <button class="btn btn--form btn--split-start" aria-expanded="false" aria-haspopup="listbox" type="button"
+      <button class="button button--form button--split-start" aria-expanded="false" aria-haspopup="listbox" type="button"
         data-listbox-button-prefix="Country: ">
-        <span class="btn__cell">
-          <span class="btn__text">
+        <span class="button__cell">
+          <span class="button__text">
             <span class="fflag fflag--us" data-country-code="1"
               aria-label="Country: United States of America (+1)">
             </span>
@@ -502,10 +502,10 @@ export const RTL = () => `
   <div dir="rtl">
     <span class="phone-input">
       <span class="listbox-button listbox-button--form">
-        <button class="btn btn--form btn--split-start" aria-expanded="false" aria-haspopup="listbox" type="button"
+        <button class="button button--form button--split-start" aria-expanded="false" aria-haspopup="listbox" type="button"
           data-listbox-button-prefix="Country: ">
-          <span class="btn__cell">
-            <span class="btn__text">
+          <span class="button__cell">
+            <span class="button__text">
               <span class="fflag fflag--us" data-country-code="1"
                 aria-label="Country: United States of America (+1)">
               </span>
@@ -589,10 +589,10 @@ export const TextSpacing = () => `
   <label class="field__label field__label--stacked" id="phone-number-label-0">Phone number</label>
   <span class="phone-input">
     <span class="listbox-button listbox-button--form">
-      <button class="btn btn--form btn--split-start" aria-expanded="false" aria-haspopup="listbox" type="button"
+      <button class="button button--form button--split-start" aria-expanded="false" aria-haspopup="listbox" type="button"
         data-listbox-button-prefix="Country: " aria-label="Country: United States of America">
-        <span class="btn__cell">
-          <span class="btn__text">
+        <span class="button__cell">
+          <span class="button__text">
             <span class="fflag fflag--us" aria-hidden="true"
               data-country-code="1">
             </span>
@@ -682,10 +682,10 @@ export const overrideFontSize = () => `
     <label style="font-size: 200%;" class="field__label field__label--stacked" id="phone-number-label-0">Phone number</label>
     <span class="phone-input">
       <span class="listbox-button listbox-button--form" style="font-size: 200%;">
-        <button class="btn btn--form btn--split-start" aria-expanded="false" aria-haspopup="listbox" type="button"
+        <button class="button button--form button--split-start" aria-expanded="false" aria-haspopup="listbox" type="button"
           data-listbox-button-prefix="Country: " aria-label="Country: United States of America">
-          <span class="btn__cell">
-            <span class="btn__text">
+          <span class="button__cell">
+            <span class="button__text">
               <span class="fflag fflag--us" aria-hidden="true"
                 data-country-code="1">
               </span>

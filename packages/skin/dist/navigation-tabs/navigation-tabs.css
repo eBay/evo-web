@@ -1,0 +1,81 @@
+span.navigation-tabs {
+    display: inline-block;
+}
+
+ul.navigation-tabs__items {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: var(--font-size-body);
+    gap: var(--spacing-50);
+    margin: 0;
+    margin-inline-start: calc(0px - var(--spacing-200));
+}
+
+.navigation-tabs--large ul.navigation-tabs__items {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-600);
+}
+
+ul.navigation-tabs__items {
+    list-style: none;
+    padding: 0;
+}
+
+li.navigation-tabs__item {
+    display: inline-block;
+    position: relative;
+    -webkit-tap-highlight-color: var(--color-background-secondary);
+}
+
+li.navigation-tabs__item > a {
+    text-decoration: none;
+    color: var(--tabs-item-foreground-color, var(--color-foreground-secondary));
+    display: inline-block;
+    padding: var(--spacing-150) var(--spacing-200);
+}
+li.navigation-tabs__item > a:after {
+    background-color: initial;
+    border-radius: 6px;
+    content: "";
+    display: block;
+    height: 2px;
+    inset: auto var(--spacing-200) 0;
+    position: absolute;
+}
+
+li.navigation-tabs__item > a[aria-current] {
+    color: var(
+        --tabs-item-selected-foreground-color,
+        var(--color-foreground-primary)
+    );
+}
+li.navigation-tabs__item > a[aria-current]:after {
+    background-color: currentColor;
+}
+li.navigation-tabs__item a:focus:not(:focus-visible) {
+    outline: none;
+}
+
+li.navigation-tabs__item > a:not([aria-current]):not([href]),
+li.navigation-tabs__item > a:not([aria-current]):not([href]):focus,
+li.navigation-tabs__item > a:not([aria-current]):not([href]):hover {
+    color: var(--color-foreground-disabled);
+}
+li.navigation-tabs__item > a:not([aria-current]):not([href]):after,
+li.navigation-tabs__item > a:not([aria-current]):not([href]):focus:after,
+li.navigation-tabs__item > a:not([aria-current]):not([href]):hover:after {
+    background-color: initial;
+}
+
+li.navigation-tabs__item > a:not([aria-current]):focus,
+li.navigation-tabs__item > a:not([aria-current]):hover {
+    color: var(--color-foreground-secondary);
+}
+li.navigation-tabs__item > a:not([aria-current]):focus:after,
+li.navigation-tabs__item > a:not([aria-current]):hover:after {
+    background-color: currentColor;
+}
+
+.navigation-tabs__cell {
+    margin: var(--spacing-200) 0;
+}

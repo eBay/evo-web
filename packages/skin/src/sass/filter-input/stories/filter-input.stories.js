@@ -8,7 +8,7 @@ export const base = () => `
         </svg>
         <input class="textbox__control" placeholder="Filter list" type="search" aria-controls="search-results-container-id" aria-label="Filter list" required/>
         <button
-            class="icon-btn icon-btn--transparent icon-btn--small filter-input__clear-btn"
+            class="icon-button icon-button--transparent icon-button--small filter-input__clear-btn"
             type="button"
             aria-label="Clear filter"
         >
@@ -28,7 +28,7 @@ export const filled = () => `
         </svg>
         <input class="textbox__control" placeholder="Filter list" type="search" aria-controls="search-results-container-id" aria-label="Filter list" required value="Tenni" />
         <button
-            class="icon-btn icon-btn--transparent icon-btn--small filter-input__clear-btn"
+            class="icon-button icon-button--transparent icon-button--small filter-input__clear-btn"
             type="button"
             aria-label="Clear filter"
         >
@@ -48,7 +48,7 @@ export const small = () => `
         </svg>
         <input class="textbox__control" placeholder="Filter list" type="search" aria-controls="search-results-container-id" aria-label="Filter list" required />
         <button
-            class="icon-btn icon-btn--transparent icon-btn--small filter-input__clear-btn"
+            class="icon-button icon-button--transparent icon-button--small filter-input__clear-btn"
             type="button"
             aria-label="Clear filter"
         >
@@ -68,7 +68,7 @@ export const large = () => `
         </svg>
         <input class="textbox__control" placeholder="Filter list" type="search" aria-controls="search-results-container-id" aria-label="Filter list" required />
         <button
-            class="icon-btn icon-btn--transparent icon-btn--small filter-input__clear-btn"
+            class="icon-button icon-button--transparent icon-button--small filter-input__clear-btn"
             type="button"
             aria-label="Clear filter"
         >
@@ -88,7 +88,7 @@ export const textSpacing = () => `
         </svg>
         <input class="textbox__control" placeholder="Filter list" type="search" aria-controls="search-results-container-id" aria-label="Filter list" required value="Tenni" />
         <button
-            class="icon-btn icon-btn--transparent icon-btn--small filter-input__clear-btn"
+            class="icon-button icon-button--transparent icon-button--small filter-input__clear-btn"
             type="button"
             aria-label="Clear filter"
         >
@@ -109,7 +109,7 @@ export const RTL = () => `
             </svg>
             <input class="textbox__control" placeholder="Filter list" type="search" aria-controls="search-results-container-id" aria-label="Filter list" value="Tenni" required />
             <button
-                class="icon-btn icon-btn--transparent icon-btn--small filter-input__clear-btn"
+                class="icon-button icon-button--transparent icon-button--small filter-input__clear-btn"
                 type="button"
                 aria-label="Clear filter"
             >

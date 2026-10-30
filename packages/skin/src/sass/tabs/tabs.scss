@@ -1,5 +1,8 @@
 @use "../mixins/private/token-mixins";
 
+// DEPRECATED: the `fake-tabs*` selectors in this file are removed in the next
+// major version. Use `navigation-tabs` instead.
+
 span.tabs,
 span.fake-tabs {
     display: inline-block;

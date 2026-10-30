@@ -6,7 +6,7 @@ export const base = () => `
         Add a number
     </label>
     <button
-        class="icon-btn icon-btn--transparent number-input__decrement"
+        class="icon-button icon-button--transparent number-input__decrement"
         tabindex="-1"
         type="button"
     >
@@ -28,7 +28,7 @@ export const base = () => `
         value="0"
     >
     <button
-        class="icon-btn icon-btn--transparent number-input__increment"
+        class="icon-button icon-button--transparent number-input__increment"
         type="button"
         tabindex="-1"
     >
@@ -50,7 +50,7 @@ export const fluid = () => `
         Add a number
     </label>
     <button
-        class="icon-btn icon-btn--transparent number-input__decrement"
+        class="icon-button icon-button--transparent number-input__decrement"
         tabindex="-1"
         type="button"
     >
@@ -72,7 +72,7 @@ export const fluid = () => `
         value="0"
     >
     <button
-        class="icon-btn icon-btn--transparent number-input__increment"
+        class="icon-button icon-button--transparent number-input__increment"
         type="button"
         tabindex="-1"
     >
@@ -94,7 +94,7 @@ export const large = () => `
         Add a number
     </label>
     <button
-        class="icon-btn icon-btn--transparent number-input__decrement"
+        class="icon-button icon-button--transparent number-input__decrement"
         tabindex="-1"
         type="button"
     >
@@ -116,7 +116,7 @@ export const large = () => `
         value="0"
     >
     <button
-        class="icon-btn icon-btn--transparent number-input__increment"
+        class="icon-button icon-button--transparent number-input__increment"
         type="button"
         tabindex="-1"
     >

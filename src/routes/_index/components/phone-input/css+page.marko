@@ -4,34 +4,33 @@ import { urls } from "../../../../data";
 
   <h3>Default Phone input</h3>
   <p>
-    Use the
-    <code>phone-input</code>
-    class to create the default phone input. The phone input consists of a
-    listbox button and a textbox with
-    <code>type=tel</code>
-    . The listbox button is used to select the country code and the
-    textbox is used to enter the local phone number.
+    Use the <code>phone-input</code> class to create the default phone input.
+    The phone input consists of a listbox button and a textbox with
+    <code>type=tel</code> . The listbox button is used to select the country
+    code and the textbox is used to enter the local phone number.
   </p>
   <div class="demo">
     <div class="demo__inner">
       <span class="phone-input">
         <span class="listbox-button listbox-button--form">
           <button
-            class="btn btn--form btn--split-start"
+            class="button button--form button--split-start"
             aria-expanded="false"
             aria-haspopup="listbox"
             type="button"
             data-listbox-button-prefix="Country: "
-            aria-label="Country: United States of America">
-            <span class="btn__cell">
-              <span class="btn__text">
+            aria-label="Country: United States of America"
+          >
+            <span class="button__cell">
+              <span class="button__text">
                 <span class="fflag fflag--us" data-country-code="1"/>
               </span>
               <svg
                 class="icon icon--12"
                 height="10"
                 width="14"
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 <use href="#icon-chevron-down-12"/>
               </svg>
             </span>
@@ -41,28 +40,28 @@ import { urls } from "../../../../data";
               <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">
                   <span class="fflag fflag--al" data-country-code="355"/>
-                  <span>Albania</span>
-                  <span>(+355)</span>
+                  <span>Albania</span><span>(+355)</span>
                 </span>
                 <svg
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
               <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">
                   <span class="fflag fflag--in" data-country-code="91"/>
-                  <span>India</span>
-                  <span>(+91)</span>
+                  <span>India</span><span>(+91)</span>
                 </span>
                 <svg
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
@@ -76,38 +75,40 @@ import { urls } from "../../../../data";
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
               <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">
                   <span class="fflag fflag--gb" data-country-code="44"/>
-                  <span>United Kingdom</span>
-                  <span>(+44)</span>
+                  <span>United Kingdom</span><span>(+44)</span>
                 </span>
                 <svg
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
               <div
                 class="listbox-button__option"
                 role="option"
-                aria-selected="true">
+                aria-selected="true"
+              >
                 <span class="listbox-button__value">
                   <span class="fflag fflag--us" data-country-code="1"/>
-                  <span>United States of America</span>
-                  <span>(+1)</span>
+                  <span>United States of America</span><span>(+1)</span>
                 </span>
                 <svg
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
@@ -115,15 +116,14 @@ import { urls } from "../../../../data";
           </div>
         </span>
         <span class="textbox">
-          <span id="phone-prefix-0">
-            +1
-          </span>
+          <span id="phone-prefix-0">+1</span>
           <input
             class="textbox__control"
             type="tel"
             aria-label="area code + phone number"
             autocomplete="tel-national"
-            aria-describedby="phone-prefix-0">
+            aria-describedby="phone-prefix-0"
+          >
         </span>
       </span>
     </div>
@@ -133,24 +133,27 @@ import { urls } from "../../../../data";
     <span class="phone-input">
       <span class="listbox-button listbox-button--form">
         <button
-          class="btn btn--form btn--split-start"
+          class="button button--form button--split-start"
           aria-expanded="false"
           aria-haspopup="listbox"
           type="button"
           data-listbox-button-prefix="Country: "
-          aria-label="Country: United States of America">
-          <span class="btn__cell">
-            <span class="btn__text">
+          aria-label="Country: United States of America"
+        >
+          <span class="button__cell">
+            <span class="button__text">
               <span
                 class="fflag fflag--us"
                 aria-hidden="true"
-                data-country-code="1"/>
+                data-country-code="1"
+              />
             </span>
             <svg
               class="icon icon--12"
               height="10"
               width="14"
-              aria-hidden="true">
+              aria-hidden="true"
+            >
               <use href="#icon-chevron-down-12"/>
             </svg>
           </span>
@@ -162,15 +165,16 @@ import { urls } from "../../../../data";
                 <span
                   class="fflag fflag--al"
                   aria-hidden="true"
-                  data-country-code="355"/>
-                <span>Albania</span>
-                <span>(+355)</span>
+                  data-country-code="355"
+                />
+                <span>Albania</span><span>(+355)</span>
               </span>
               <svg
                 class="icon icon--16"
                 height="10"
                 width="14"
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 <use href="#icon-tick-16"/>
               </svg>
             </div>
@@ -179,15 +183,16 @@ import { urls } from "../../../../data";
                 <span
                   class="fflag fflag--in"
                   aria-hidden="true"
-                  data-country-code="91"/>
-                <span>India</span>
-                <span>(+91)</span>
+                  data-country-code="91"
+                />
+                <span>India</span><span>(+91)</span>
               </span>
               <svg
                 class="icon icon--16"
                 height="10"
                 width="14"
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 <use href="#icon-tick-16"/>
               </svg>
             </div>
@@ -196,7 +201,8 @@ import { urls } from "../../../../data";
                 <span
                   class="fflag fflag--sh"
                   aria-hidden="true"
-                  data-country-code="290"/>
+                  data-country-code="290"
+                />
                 <span>Saint Helena, Ascension and Tristan da Cunha</span>
                 <span>(+290)</span>
               </span>
@@ -204,7 +210,8 @@ import { urls } from "../../../../data";
                 class="icon icon--16"
                 height="10"
                 width="14"
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 <use href="#icon-tick-16"/>
               </svg>
             </div>
@@ -213,35 +220,38 @@ import { urls } from "../../../../data";
                 <span
                   class="fflag fflag--gb"
                   aria-hidden="true"
-                  data-country-code="44"/>
-                <span>United Kingdom</span>
-                <span>(+44)</span>
+                  data-country-code="44"
+                />
+                <span>United Kingdom</span><span>(+44)</span>
               </span>
               <svg
                 class="icon icon--16"
                 height="10"
                 width="14"
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 <use href="#icon-tick-16"/>
               </svg>
             </div>
             <div
               class="listbox-button__option"
               role="option"
-              aria-selected="true">
+              aria-selected="true"
+            >
               <span class="listbox-button__value">
                 <span
                   class="fflag fflag--us"
                   aria-hidden="true"
-                  data-country-code="1"/>
-                <span>United States of America</span>
-                <span>(+1)</span>
+                  data-country-code="1"
+                />
+                <span>United States of America</span><span>(+1)</span>
               </span>
               <svg
                 class="icon icon--16"
                 height="10"
                 width="14"
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 <use href="#icon-tick-16"/>
               </svg>
             </div>
@@ -249,15 +259,14 @@ import { urls } from "../../../../data";
         </div>
       </span>
       <span class="textbox">
-        <span id="phone-prefix-0">
-          +1
-        </span>
+        <span id="phone-prefix-0">+1</span>
         <input
           class="textbox__control"
           type="tel"
           aria-label="area code + phone number"
           autocomplete="tel-national"
-          aria-describedby="phone-prefix-0">
+          aria-describedby="phone-prefix-0"
+        >
       </span>
     </span>
   </highlight-code>
@@ -265,40 +274,38 @@ import { urls } from "../../../../data";
   <h3>With Group Label</h3>
   <p>
     Use ARIA to provide a grouping role, similar to fieldset and legend, for
-    more flexibility when using
-    <code>field</code>
-    classes. For label inline usage, please see the
-    <a href=`${urls.components}/field`>
-      field module
-    </a>
-    .
+    more flexibility when using <code>field</code> classes. For label inline
+    usage, please see the <a href=`${urls.components}/field`>field module</a> .
   </p>
   <div class="demo">
     <div class="demo__inner">
       <span class="field" role="group" aria-labelledby="phone-number-label-0">
         <label
           class="field__label field__label--stacked"
-          id="phone-number-label-0">
+          id="phone-number-label-0"
+        >
           Phone number
         </label>
         <span class="phone-input">
           <span class="listbox-button listbox-button--form">
             <button
-              class="btn btn--form btn--split-start"
+              class="button button--form button--split-start"
               aria-expanded="false"
               aria-haspopup="listbox"
               type="button"
               data-listbox-button-prefix="Country: "
-              aria-label="Country: United States of America">
-              <span class="btn__cell">
-                <span class="btn__text">
+              aria-label="Country: United States of America"
+            >
+              <span class="button__cell">
+                <span class="button__text">
                   <span class="fflag fflag--us" data-country-code="1"/>
                 </span>
                 <svg
                   class="icon icon--12"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-chevron-down-12"/>
                 </svg>
               </span>
@@ -308,28 +315,28 @@ import { urls } from "../../../../data";
                 <div class="listbox-button__option" role="option">
                   <span class="listbox-button__value">
                     <span class="fflag fflag--al" data-country-code="355"/>
-                    <span>Albania</span>
-                    <span>(+355)</span>
+                    <span>Albania</span><span>(+355)</span>
                   </span>
                   <svg
                     class="icon icon--16"
                     height="10"
                     width="14"
-                    aria-hidden="true">
+                    aria-hidden="true"
+                  >
                     <use href="#icon-tick-16"/>
                   </svg>
                 </div>
                 <div class="listbox-button__option" role="option">
                   <span class="listbox-button__value">
                     <span class="fflag fflag--in" data-country-code="91"/>
-                    <span>India</span>
-                    <span>(+91)</span>
+                    <span>India</span><span>(+91)</span>
                   </span>
                   <svg
                     class="icon icon--16"
                     height="10"
                     width="14"
-                    aria-hidden="true">
+                    aria-hidden="true"
+                  >
                     <use href="#icon-tick-16"/>
                   </svg>
                 </div>
@@ -343,38 +350,40 @@ import { urls } from "../../../../data";
                     class="icon icon--16"
                     height="10"
                     width="14"
-                    aria-hidden="true">
+                    aria-hidden="true"
+                  >
                     <use href="#icon-tick-16"/>
                   </svg>
                 </div>
                 <div class="listbox-button__option" role="option">
                   <span class="listbox-button__value">
                     <span class="fflag fflag--gb" data-country-code="44"/>
-                    <span>United Kingdom</span>
-                    <span>(+44)</span>
+                    <span>United Kingdom</span><span>(+44)</span>
                   </span>
                   <svg
                     class="icon icon--16"
                     height="10"
                     width="14"
-                    aria-hidden="true">
+                    aria-hidden="true"
+                  >
                     <use href="#icon-tick-16"/>
                   </svg>
                 </div>
                 <div
                   class="listbox-button__option"
                   role="option"
-                  aria-selected="true">
+                  aria-selected="true"
+                >
                   <span class="listbox-button__value">
                     <span class="fflag fflag--us" data-country-code="1"/>
-                    <span>United States of America</span>
-                    <span>(+1)</span>
+                    <span>United States of America</span><span>(+1)</span>
                   </span>
                   <svg
                     class="icon icon--16"
                     height="10"
                     width="14"
-                    aria-hidden="true">
+                    aria-hidden="true"
+                  >
                     <use href="#icon-tick-16"/>
                   </svg>
                 </div>
@@ -382,15 +391,14 @@ import { urls } from "../../../../data";
             </div>
           </span>
           <span class="textbox">
-            <span id="phone-prefix-1">
-              +1
-            </span>
+            <span id="phone-prefix-1">+1</span>
             <input
               class="textbox__control"
               type="tel"
               aria-label="area code + phone number"
               autocomplete="tel-national"
-              aria-describedby="phone-prefix-1">
+              aria-describedby="phone-prefix-1"
+            >
           </span>
         </span>
       </span>
@@ -401,30 +409,34 @@ import { urls } from "../../../../data";
     <span class="field" role="group" aria-labelledby="phone-number-label-1">
       <label
         class="field__label field__label--stacked"
-        id="phone-number-label-1">
+        id="phone-number-label-1"
+      >
         Phone number
       </label>
       <span class="phone-input">
         <span class="listbox-button listbox-button--form">
           <button
-            class="btn btn--form btn--split-start"
+            class="button button--form button--split-start"
             aria-expanded="false"
             aria-haspopup="listbox"
             type="button"
             data-listbox-button-prefix="Country: "
-            aria-label="Country: United States of America">
-            <span class="btn__cell">
-              <span class="btn__text">
+            aria-label="Country: United States of America"
+          >
+            <span class="button__cell">
+              <span class="button__text">
                 <span
                   class="fflag fflag--us"
                   aria-hidden="true"
-                  data-country-code="1"/>
+                  data-country-code="1"
+                />
               </span>
               <svg
                 class="icon icon--12"
                 height="10"
                 width="14"
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 <use href="#icon-chevron-down-12"/>
               </svg>
             </span>
@@ -434,14 +446,14 @@ import { urls } from "../../../../data";
               <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">
                   <span class="fflag fflag--al" data-country-code="355"/>
-                  <span>Albania</span>
-                  <span>(+355)</span>
+                  <span>Albania</span><span>(+355)</span>
                 </span>
                 <svg
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
@@ -449,17 +461,18 @@ import { urls } from "../../../../data";
               <div
                 class="listbox-button__option"
                 role="option"
-                aria-selected="true">
+                aria-selected="true"
+              >
                 <span class="listbox-button__value">
                   <span class="fflag fflag--us" data-country-code="1"/>
-                  <span>United States of America</span>
-                  <span>(+1)</span>
+                  <span>United States of America</span><span>(+1)</span>
                 </span>
                 <svg
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
@@ -467,15 +480,14 @@ import { urls } from "../../../../data";
           </div>
         </span>
         <span class="textbox">
-          <span id="phone-prefix-1">
-            +1
-          </span>
+          <span id="phone-prefix-1">+1</span>
           <input
             class="textbox__control"
             type="tel"
             aria-label="area code + phone number"
             autocomplete="tel-national"
-            aria-describedby="phone-prefix-1">
+            aria-describedby="phone-prefix-1"
+          >
         </span>
       </span>
     </span>
@@ -483,34 +495,33 @@ import { urls } from "../../../../data";
 
   <h3>Large Phone input</h3>
   <p>
-    Use the
-    <code>phone-input--large</code>
-    modifier to increase the size of the phone input. Also, use
-    <code>btn--large, btn--large-fixed-height</code>
-    and
-    <code>textbox--large</code>
-    for the button and textbox respectively.
+    Use the <code>phone-input--large</code> modifier to increase the size of the
+    phone input. Also, use
+    <code>button--large, button--large-fixed-height</code> and
+    <code>textbox--large</code> for the button and textbox respectively.
   </p>
   <div class="demo">
     <div class="demo__inner">
       <span class="phone-input phone-input--large">
         <span class="listbox-button listbox-button--form">
           <button
-            class="btn btn--form btn--split-start btn--large btn--large-fixed-height"
+            class="button button--form button--split-start button--large button--large-fixed-height"
             aria-expanded="false"
             aria-haspopup="listbox"
             type="button"
             data-listbox-button-prefix="Country: "
-            aria-label="Country: United States of America">
-            <span class="btn__cell">
-              <span class="btn__text">
+            aria-label="Country: United States of America"
+          >
+            <span class="button__cell">
+              <span class="button__text">
                 <span class="fflag fflag--us" data-country-code="1"/>
               </span>
               <svg
                 class="icon icon--12"
                 height="10"
                 width="14"
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 <use href="#icon-chevron-down-12"/>
               </svg>
             </span>
@@ -520,28 +531,28 @@ import { urls } from "../../../../data";
               <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">
                   <span class="fflag fflag--al" data-country-code="355"/>
-                  <span>Albania</span>
-                  <span>(+355)</span>
+                  <span>Albania</span><span>(+355)</span>
                 </span>
                 <svg
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
               <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">
                   <span class="fflag fflag--in" data-country-code="91"/>
-                  <span>India</span>
-                  <span>(+91)</span>
+                  <span>India</span><span>(+91)</span>
                 </span>
                 <svg
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
@@ -555,38 +566,40 @@ import { urls } from "../../../../data";
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
               <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">
                   <span class="fflag fflag--gb" data-country-code="44"/>
-                  <span>United Kingdom</span>
-                  <span>(+44)</span>
+                  <span>United Kingdom</span><span>(+44)</span>
                 </span>
                 <svg
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
               <div
                 class="listbox-button__option"
                 role="option"
-                aria-selected="true">
+                aria-selected="true"
+              >
                 <span class="listbox-button__value">
                   <span class="fflag fflag--us" data-country-code="1"/>
-                  <span>United States of America</span>
-                  <span>(+1)</span>
+                  <span>United States of America</span><span>(+1)</span>
                 </span>
                 <svg
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
@@ -594,15 +607,14 @@ import { urls } from "../../../../data";
           </div>
         </span>
         <span class="textbox">
-          <span id="phone-prefix-2">
-            +1
-          </span>
+          <span id="phone-prefix-2">+1</span>
           <input
             class="textbox__control"
             type="tel"
             aria-label="area code + phone number"
             autocomplete="tel-national"
-            aria-describedby="phone-prefix-2">
+            aria-describedby="phone-prefix-2"
+          >
         </span>
       </span>
     </div>
@@ -612,23 +624,26 @@ import { urls } from "../../../../data";
     <span class="phone-input phone-input--large">
       <span class="listbox-button listbox-button--form">
         <button
-          class="btn btn--form btn--split-start btn--large btn--large-fixed-height"
+          class="button button--form button--split-start button--large button--large-fixed-height"
           aria-expanded="false"
           aria-haspopup="listbox"
           type="button"
-          data-listbox-button-prefix="Country: ">
-          <span class="btn__cell">
-            <span class="btn__text">
+          data-listbox-button-prefix="Country: "
+        >
+          <span class="button__cell">
+            <span class="button__text">
               <span
                 class="fflag fflag--us"
                 data-country-code="1"
-                aria-label="Country: United States of America (+1)"/>
+                aria-label="Country: United States of America (+1)"
+              />
             </span>
             <svg
               class="icon icon--12"
               height="10"
               width="14"
-              aria-hidden="true">
+              aria-hidden="true"
+            >
               <use href="#icon-chevron-down-12"/>
             </svg>
           </span>
@@ -640,15 +655,16 @@ import { urls } from "../../../../data";
                 <span
                   class="fflag fflag--al"
                   aria-hidden="true"
-                  data-country-code="355"/>
-                <span>Albania</span>
-                <span>(+355)</span>
+                  data-country-code="355"
+                />
+                <span>Albania</span><span>(+355)</span>
               </span>
               <svg
                 class="icon icon--16"
                 height="10"
                 width="14"
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 <use href="#icon-tick-16"/>
               </svg>
             </div>
@@ -656,20 +672,22 @@ import { urls } from "../../../../data";
             <div
               class="listbox-button__option"
               role="option"
-              aria-selected="true">
+              aria-selected="true"
+            >
               <span class="listbox-button__value">
                 <span
                   class="fflag fflag--us"
                   aria-hidden="true"
-                  data-country-code="1"/>
-                <span>United States of America</span>
-                <span>(+1)</span>
+                  data-country-code="1"
+                />
+                <span>United States of America</span><span>(+1)</span>
               </span>
               <svg
                 class="icon icon--16"
                 height="10"
                 width="14"
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 <use href="#icon-tick-16"/>
               </svg>
             </div>
@@ -677,50 +695,47 @@ import { urls } from "../../../../data";
         </div>
       </span>
       <span class="textbox">
-        <span id="phone-prefix-2">
-          +1
-        </span>
+        <span id="phone-prefix-2">+1</span>
         <input
           class="textbox__control"
           type="tel"
           aria-label="area code + phone number"
           autocomplete="tel-national"
-          aria-describedby="phone-prefix-2">
+          aria-describedby="phone-prefix-2"
+        >
       </span>
     </span>
   </highlight-code>
 
   <h3>Readonly Phone input</h3>
   <p>
-    Use the
-    <code>phone-input--readonly</code>
-    modifier to make the control readonly. The listbox button is disabled
-    and
-    <code>readonly</code>
-    attribute is added on the textbox to prevent any modification of its
-    value.
+    Use the <code>phone-input--readonly</code> modifier to make the control
+    readonly. The listbox button is disabled and <code>readonly</code> attribute
+    is added on the textbox to prevent any modification of its value.
   </p>
   <div class="demo">
     <div class="demo__inner">
       <span class="phone-input phone-input--readonly">
         <span class="listbox-button listbox-button--form">
           <button
-            class="btn btn--form btn--split-start"
+            class="button button--form button--split-start"
             aria-expanded="false"
             aria-haspopup="listbox"
             type="button"
             data-listbox-button-prefix="Country: "
             aria-label="Country: United States of America"
-            disabled>
-            <span class="btn__cell">
-              <span class="btn__text">
+            disabled
+          >
+            <span class="button__cell">
+              <span class="button__text">
                 <span class="fflag fflag--us" data-country-code="1"/>
               </span>
               <svg
                 class="icon icon--12"
                 height="10"
                 width="14"
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 <use href="#icon-chevron-down-12"/>
               </svg>
             </span>
@@ -730,28 +745,28 @@ import { urls } from "../../../../data";
               <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">
                   <span class="fflag fflag--al" data-country-code="355"/>
-                  <span>Albania</span>
-                  <span>(+355)</span>
+                  <span>Albania</span><span>(+355)</span>
                 </span>
                 <svg
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
               <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">
                   <span class="fflag fflag--in" data-country-code="91"/>
-                  <span>India</span>
-                  <span>(+91)</span>
+                  <span>India</span><span>(+91)</span>
                 </span>
                 <svg
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
@@ -765,38 +780,40 @@ import { urls } from "../../../../data";
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
               <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">
                   <span class="fflag fflag--gb" data-country-code="44"/>
-                  <span>United Kingdom</span>
-                  <span>(+44)</span>
+                  <span>United Kingdom</span><span>(+44)</span>
                 </span>
                 <svg
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
               <div
                 class="listbox-button__option"
                 role="option"
-                aria-selected="true">
+                aria-selected="true"
+              >
                 <span class="listbox-button__value">
                   <span class="fflag fflag--us" data-country-code="1"/>
-                  <span>United States of America</span>
-                  <span>(+1)</span>
+                  <span>United States of America</span><span>(+1)</span>
                 </span>
                 <svg
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
@@ -804,9 +821,7 @@ import { urls } from "../../../../data";
           </div>
         </span>
         <span class="textbox">
-          <span id="phone-prefix-3">
-            +1
-          </span>
+          <span id="phone-prefix-3">+1</span>
           <input
             class="textbox__control"
             type="tel"
@@ -814,7 +829,8 @@ import { urls } from "../../../../data";
             autocomplete="tel-national"
             aria-describedby="phone-prefix-3"
             value="123456789"
-            readonly>
+            readonly
+          >
         </span>
       </span>
     </div>
@@ -824,25 +840,28 @@ import { urls } from "../../../../data";
     <span class="phone-input phone-input--readonly">
       <span class="listbox-button listbox-button--form">
         <button
-          class="btn btn--form btn--split-start"
+          class="button button--form button--split-start"
           aria-expanded="false"
           aria-haspopup="listbox"
           type="button"
           data-listbox-button-prefix="Country: "
           aria-label="Country: United States of America"
-          disabled>
-          <span class="btn__cell">
-            <span class="btn__text">
+          disabled
+        >
+          <span class="button__cell">
+            <span class="button__text">
               <span
                 class="fflag fflag--us"
                 aria-hidden="true"
-                data-country-code="1"/>
+                data-country-code="1"
+              />
             </span>
             <svg
               class="icon icon--12"
               height="10"
               width="14"
-              aria-hidden="true">
+              aria-hidden="true"
+            >
               <use href="#icon-chevron-down-12"/>
             </svg>
           </span>
@@ -854,15 +873,16 @@ import { urls } from "../../../../data";
                 <span
                   class="fflag fflag--al"
                   aria-hidden="true"
-                  data-country-code="355"/>
-                <span>Albania</span>
-                <span>(+355)</span>
+                  data-country-code="355"
+                />
+                <span>Albania</span><span>(+355)</span>
               </span>
               <svg
                 class="icon icon--16"
                 height="10"
                 width="14"
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 <use href="#icon-tick-16"/>
               </svg>
             </div>
@@ -870,20 +890,22 @@ import { urls } from "../../../../data";
             <div
               class="listbox-button__option"
               role="option"
-              aria-selected="true">
+              aria-selected="true"
+            >
               <span class="listbox-button__value">
                 <span
                   class="fflag fflag--us"
                   aria-hidden="true"
-                  data-country-code="1"/>
-                <span>United States of America</span>
-                <span>(+1)</span>
+                  data-country-code="1"
+                />
+                <span>United States of America</span><span>(+1)</span>
               </span>
               <svg
                 class="icon icon--16"
                 height="10"
                 width="14"
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 <use href="#icon-tick-16"/>
               </svg>
             </div>
@@ -891,9 +913,7 @@ import { urls } from "../../../../data";
         </div>
       </span>
       <span class="textbox">
-        <span id="phone-prefix-3">
-          +1
-        </span>
+        <span id="phone-prefix-3">+1</span>
         <input
           class="textbox__control"
           type="tel"
@@ -901,41 +921,41 @@ import { urls } from "../../../../data";
           autocomplete="tel-national"
           aria-describedby="phone-prefix-3"
           value="123456789"
-          readonly>
+          readonly
+        >
       </span>
     </span>
   </highlight-code>
 
   <h3>Disabled Phone Input</h3>
   <p>
-    Use the
-    <code>phone-input--disabled</code>
-    modifier to turn on the disabled state. Besides modifier,
-    <code>disabled</code>
-    attribute on both the listbox button and textbox input to completely
-    disable the phone input.
+    Use the <code>phone-input--disabled</code> modifier to turn on the disabled
+    state. Besides modifier, <code>disabled</code> attribute on both the listbox
+    button and textbox input to completely disable the phone input.
   </p>
   <div class="demo">
     <div class="demo__inner">
       <span class="phone-input phone-input--disabled">
         <span class="listbox-button listbox-button--form">
           <button
-            class="btn btn--form btn--split-start"
+            class="button button--form button--split-start"
             aria-expanded="false"
             aria-haspopup="listbox"
             type="button"
             data-listbox-button-prefix="Country: "
             aria-label="Country: United States of America"
-            disabled>
-            <span class="btn__cell">
-              <span class="btn__text">
+            disabled
+          >
+            <span class="button__cell">
+              <span class="button__text">
                 <span class="fflag fflag--us" data-country-code="1"/>
               </span>
               <svg
                 class="icon icon--12"
                 height="10"
                 width="14"
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 <use href="#icon-chevron-down-12"/>
               </svg>
             </span>
@@ -945,28 +965,28 @@ import { urls } from "../../../../data";
               <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">
                   <span class="fflag fflag--al" data-country-code="355"/>
-                  <span>Albania</span>
-                  <span>(+355)</span>
+                  <span>Albania</span><span>(+355)</span>
                 </span>
                 <svg
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
               <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">
                   <span class="fflag fflag--in" data-country-code="91"/>
-                  <span>India</span>
-                  <span>(+91)</span>
+                  <span>India</span><span>(+91)</span>
                 </span>
                 <svg
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
@@ -980,38 +1000,40 @@ import { urls } from "../../../../data";
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
               <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">
                   <span class="fflag fflag--gb" data-country-code="44"/>
-                  <span>United Kingdom</span>
-                  <span>(+44)</span>
+                  <span>United Kingdom</span><span>(+44)</span>
                 </span>
                 <svg
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
               <div
                 class="listbox-button__option"
                 role="option"
-                aria-selected="true">
+                aria-selected="true"
+              >
                 <span class="listbox-button__value">
                   <span class="fflag fflag--us" data-country-code="1"/>
-                  <span>United States of America</span>
-                  <span>(+1)</span>
+                  <span>United States of America</span><span>(+1)</span>
                 </span>
                 <svg
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
@@ -1019,16 +1041,15 @@ import { urls } from "../../../../data";
           </div>
         </span>
         <span class="textbox">
-          <span id="phone-prefix-4">
-            +1
-          </span>
+          <span id="phone-prefix-4">+1</span>
           <input
             class="textbox__control"
             type="tel"
             aria-label="area code + phone number"
             autocomplete="tel-national"
             aria-describedby="phone-prefix-4"
-            disabled>
+            disabled
+          >
         </span>
       </span>
     </div>
@@ -1038,25 +1059,28 @@ import { urls } from "../../../../data";
     <span class="phone-input phone-input--disabled">
       <span class="listbox-button listbox-button--form">
         <button
-          class="btn btn--form btn--split-start"
+          class="button button--form button--split-start"
           aria-expanded="false"
           aria-haspopup="listbox"
           type="button"
           data-listbox-button-prefix="Country: "
           aria-label="Country: United States of America"
-          disabled>
-          <span class="btn__cell">
-            <span class="btn__text">
+          disabled
+        >
+          <span class="button__cell">
+            <span class="button__text">
               <span
                 class="fflag fflag--us"
                 aria-hidden="true"
-                data-country-code="1"/>
+                data-country-code="1"
+              />
             </span>
             <svg
               class="icon icon--12"
               height="10"
               width="14"
-              aria-hidden="true">
+              aria-hidden="true"
+            >
               <use href="#icon-chevron-down-12"/>
             </svg>
           </span>
@@ -1068,15 +1092,16 @@ import { urls } from "../../../../data";
                 <span
                   class="fflag fflag--al"
                   aria-hidden="true"
-                  data-country-code="355"/>
-                <span>Albania</span>
-                <span>(+355)</span>
+                  data-country-code="355"
+                />
+                <span>Albania</span><span>(+355)</span>
               </span>
               <svg
                 class="icon icon--16"
                 height="10"
                 width="14"
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 <use href="#icon-tick-16"/>
               </svg>
             </div>
@@ -1084,20 +1109,22 @@ import { urls } from "../../../../data";
             <div
               class="listbox-button__option"
               role="option"
-              aria-selected="true">
+              aria-selected="true"
+            >
               <span class="listbox-button__value">
                 <span
                   class="fflag fflag--us"
                   aria-hidden="true"
-                  data-country-code="1"/>
-                <span>United States of America</span>
-                <span>(+1)</span>
+                  data-country-code="1"
+                />
+                <span>United States of America</span><span>(+1)</span>
               </span>
               <svg
                 class="icon icon--16"
                 height="10"
                 width="14"
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 <use href="#icon-tick-16"/>
               </svg>
             </div>
@@ -1105,54 +1132,54 @@ import { urls } from "../../../../data";
         </div>
       </span>
       <span class="textbox">
-        <span id="phone-prefix-4">
-          +1
-        </span>
+        <span id="phone-prefix-4">+1</span>
         <input
           class="textbox__control"
           type="tel"
           aria-label="area code + phone number"
           autocomplete="tel-national"
           aria-describedby="phone-prefix-4"
-          disabled>
+          disabled
+        >
       </span>
     </span>
   </highlight-code>
 
   <h3>Error Phone Input</h3>
   <p>
-    Using the
-    <code>listbox-button--error</code>
-    modifier, turns on the error state to the listbox button and
-    <code>aria-invalid="true"</code>
-    to the textbox.
+    Using the <code>listbox-button--error</code> modifier, turns on the error
+    state to the listbox button and <code>aria-invalid="true"</code> to the
+    textbox.
   </p>
   <div class="demo">
     <div class="demo__inner">
       <span class="field" role="group" aria-labelledby="phone-number-label-2">
         <label
           class="field__label field__label--stacked"
-          id="phone-number-label-2">
+          id="phone-number-label-2"
+        >
           Phone number
         </label>
         <span class="phone-input phone-input--error">
           <span class="listbox-button listbox-button--form listbox-button--error">
             <button
-              class="btn btn--form btn--split-start"
+              class="button button--form button--split-start"
               aria-expanded="false"
               aria-haspopup="listbox"
               type="button"
               data-listbox-button-prefix="Country: "
-              aria-label="Country: United States of America">
-              <span class="btn__cell">
-                <span class="btn__text">
+              aria-label="Country: United States of America"
+            >
+              <span class="button__cell">
+                <span class="button__text">
                   <span class="fflag fflag--us" data-country-code="1"/>
                 </span>
                 <svg
                   class="icon icon--12"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-chevron-down-12"/>
                 </svg>
               </span>
@@ -1162,28 +1189,28 @@ import { urls } from "../../../../data";
                 <div class="listbox-button__option" role="option">
                   <span class="listbox-button__value">
                     <span class="fflag fflag--al" data-country-code="355"/>
-                    <span>Albania</span>
-                    <span>(+355)</span>
+                    <span>Albania</span><span>(+355)</span>
                   </span>
                   <svg
                     class="icon icon--16"
                     height="10"
                     width="14"
-                    aria-hidden="true">
+                    aria-hidden="true"
+                  >
                     <use href="#icon-tick-16"/>
                   </svg>
                 </div>
                 <div class="listbox-button__option" role="option">
                   <span class="listbox-button__value">
                     <span class="fflag fflag--in" data-country-code="91"/>
-                    <span>India</span>
-                    <span>(+91)</span>
+                    <span>India</span><span>(+91)</span>
                   </span>
                   <svg
                     class="icon icon--16"
                     height="10"
                     width="14"
-                    aria-hidden="true">
+                    aria-hidden="true"
+                  >
                     <use href="#icon-tick-16"/>
                   </svg>
                 </div>
@@ -1197,38 +1224,40 @@ import { urls } from "../../../../data";
                     class="icon icon--16"
                     height="10"
                     width="14"
-                    aria-hidden="true">
+                    aria-hidden="true"
+                  >
                     <use href="#icon-tick-16"/>
                   </svg>
                 </div>
                 <div class="listbox-button__option" role="option">
                   <span class="listbox-button__value">
                     <span class="fflag fflag--gb" data-country-code="44"/>
-                    <span>United Kingdom</span>
-                    <span>(+44)</span>
+                    <span>United Kingdom</span><span>(+44)</span>
                   </span>
                   <svg
                     class="icon icon--16"
                     height="10"
                     width="14"
-                    aria-hidden="true">
+                    aria-hidden="true"
+                  >
                     <use href="#icon-tick-16"/>
                   </svg>
                 </div>
                 <div
                   class="listbox-button__option"
                   role="option"
-                  aria-selected="true">
+                  aria-selected="true"
+                >
                   <span class="listbox-button__value">
                     <span class="fflag fflag--us" data-country-code="1"/>
-                    <span>United States of America</span>
-                    <span>(+1)</span>
+                    <span>United States of America</span><span>(+1)</span>
                   </span>
                   <svg
                     class="icon icon--16"
                     height="10"
                     width="14"
-                    aria-hidden="true">
+                    aria-hidden="true"
+                  >
                     <use href="#icon-tick-16"/>
                   </svg>
                 </div>
@@ -1236,21 +1265,21 @@ import { urls } from "../../../../data";
             </div>
           </span>
           <span class="textbox">
-            <span id="phone-prefix-5">
-              +1
-            </span>
+            <span id="phone-prefix-5">+1</span>
             <input
               class="textbox__control"
               type="tel"
               aria-label="area code + phone number"
               autocomplete="tel-national"
               aria-describedby="phone-prefix-5 field-phone-number-1-description"
-              aria-invalid="true">
+              aria-invalid="true"
+            >
           </span>
         </span>
         <div
           class="field__description field__description--attention"
-          id="field-phone-number-1-description">
+          id="field-phone-number-1-description"
+        >
           <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
             <icon-symbol name="attention-filled-16"/>
           </svg>
@@ -1264,30 +1293,34 @@ import { urls } from "../../../../data";
     <span class="field" role="group" aria-labelledby="phone-number-label-2">
       <label
         class="field__label field__label--stacked"
-        id="phone-number-label-2">
+        id="phone-number-label-2"
+      >
         Phone number
       </label>
       <span class="phone-input phone-input--error">
         <span class="listbox-button listbox-button--form listbox-button--error">
           <button
-            class="btn btn--form btn--split-start"
+            class="button button--form button--split-start"
             aria-expanded="false"
             aria-haspopup="listbox"
             type="button"
             data-listbox-button-prefix="Country: "
-            aria-label="Country: United States of America">
-            <span class="btn__cell">
-              <span class="btn__text">
+            aria-label="Country: United States of America"
+          >
+            <span class="button__cell">
+              <span class="button__text">
                 <span
                   class="fflag fflag--us"
                   aria-hidden="true"
-                  data-country-code="1"/>
+                  data-country-code="1"
+                />
               </span>
               <svg
                 class="icon icon--12"
                 height="10"
                 width="14"
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 <use href="#icon-chevron-down-12"/>
               </svg>
             </span>
@@ -1297,14 +1330,14 @@ import { urls } from "../../../../data";
               <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">
                   <span class="fflag fflag--al" data-country-code="355"/>
-                  <span>Albania</span>
-                  <span>(+355)</span>
+                  <span>Albania</span><span>(+355)</span>
                 </span>
                 <svg
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
@@ -1312,17 +1345,18 @@ import { urls } from "../../../../data";
               <div
                 class="listbox-button__option"
                 role="option"
-                aria-selected="true">
+                aria-selected="true"
+              >
                 <span class="listbox-button__value">
                   <span class="fflag fflag--us" data-country-code="1"/>
-                  <span>United States of America</span>
-                  <span>(+1)</span>
+                  <span>United States of America</span><span>(+1)</span>
                 </span>
                 <svg
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
@@ -1330,21 +1364,21 @@ import { urls } from "../../../../data";
           </div>
         </span>
         <span class="textbox">
-          <span id="phone-prefix-5">
-            +1
-          </span>
+          <span id="phone-prefix-5">+1</span>
           <input
             class="textbox__control"
             type="tel"
             aria-label="area code + phone number"
             autocomplete="tel-national"
             aria-describedby="phone-prefix-5 field-phone-number-1-description"
-            aria-invalid="true">
+            aria-invalid="true"
+          >
         </span>
       </span>
       <div
         class="field__description field__description--attention"
-        id="field-phone-number-1-description">
+        id="field-phone-number-1-description"
+      >
         <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
           <use href="#icon-attention-filled-16"/>
         </svg>
@@ -1355,31 +1389,31 @@ import { urls } from "../../../../data";
 
   <h3>Fluid Phone input</h3>
   <p>
-    Using the
-    <code>phone-input--fluid</code>
-    modifier makes the component fluid and expands it to the width of its
-    container.
+    Using the <code>phone-input--fluid</code> modifier makes the component fluid
+    and expands it to the width of its container.
   </p>
   <div class="demo">
     <div class="demo__inner">
       <span class="phone-input phone-input--fluid">
         <span class="listbox-button listbox-button--form">
           <button
-            class="btn btn--form btn--split-start"
+            class="button button--form button--split-start"
             aria-expanded="false"
             aria-haspopup="listbox"
             type="button"
             data-listbox-button-prefix="Country: "
-            aria-label="Country: United States of America">
-            <span class="btn__cell">
-              <span class="btn__text">
+            aria-label="Country: United States of America"
+          >
+            <span class="button__cell">
+              <span class="button__text">
                 <span class="fflag fflag--us" data-country-code="1"/>
               </span>
               <svg
                 class="icon icon--12"
                 height="10"
                 width="14"
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 <use href="#icon-chevron-down-12"/>
               </svg>
             </span>
@@ -1389,28 +1423,28 @@ import { urls } from "../../../../data";
               <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">
                   <span class="fflag fflag--al" data-country-code="355"/>
-                  <span>Albania</span>
-                  <span>(+355)</span>
+                  <span>Albania</span><span>(+355)</span>
                 </span>
                 <svg
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
               <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">
                   <span class="fflag fflag--in" data-country-code="91"/>
-                  <span>India</span>
-                  <span>(+91)</span>
+                  <span>India</span><span>(+91)</span>
                 </span>
                 <svg
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
@@ -1424,38 +1458,40 @@ import { urls } from "../../../../data";
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
               <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">
                   <span class="fflag fflag--gb" data-country-code="44"/>
-                  <span>United Kingdom</span>
-                  <span>(+44)</span>
+                  <span>United Kingdom</span><span>(+44)</span>
                 </span>
                 <svg
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
               <div
                 class="listbox-button__option"
                 role="option"
-                aria-selected="true">
+                aria-selected="true"
+              >
                 <span class="listbox-button__value">
                   <span class="fflag fflag--us" data-country-code="1"/>
-                  <span>United States of America</span>
-                  <span>(+1)</span>
+                  <span>United States of America</span><span>(+1)</span>
                 </span>
                 <svg
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
@@ -1463,15 +1499,14 @@ import { urls } from "../../../../data";
           </div>
         </span>
         <span class="textbox">
-          <span id="phone-prefix-6">
-            +1
-          </span>
+          <span id="phone-prefix-6">+1</span>
           <input
             class="textbox__control"
             type="tel"
             aria-label="area code + phone number"
             autocomplete="tel-national"
-            aria-describedby="phone-prefix-6">
+            aria-describedby="phone-prefix-6"
+          >
         </span>
       </span>
     </div>
@@ -1481,24 +1516,27 @@ import { urls } from "../../../../data";
     <span class="phone-input phone-input--fluid">
       <span class="listbox-button listbox-button--form">
         <button
-          class="btn btn--form btn--split-start"
+          class="button button--form button--split-start"
           aria-expanded="false"
           aria-haspopup="listbox"
           type="button"
           data-listbox-button-prefix="Country: "
-          aria-label="Country: United States of America">
-          <span class="btn__cell">
-            <span class="btn__text">
+          aria-label="Country: United States of America"
+        >
+          <span class="button__cell">
+            <span class="button__text">
               <span
                 class="fflag fflag--us"
                 aria-hidden="true"
-                data-country-code="1"/>
+                data-country-code="1"
+              />
             </span>
             <svg
               class="icon icon--12"
               height="10"
               width="14"
-              aria-hidden="true">
+              aria-hidden="true"
+            >
               <use href="#icon-chevron-down-12"/>
             </svg>
           </span>
@@ -1510,15 +1548,16 @@ import { urls } from "../../../../data";
                 <span
                   class="fflag fflag--al"
                   aria-hidden="true"
-                  data-country-code="355"/>
-                <span>Albania</span>
-                <span>(+355)</span>
+                  data-country-code="355"
+                />
+                <span>Albania</span><span>(+355)</span>
               </span>
               <svg
                 class="icon icon--16"
                 height="10"
                 width="14"
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 <use href="#icon-tick-16"/>
               </svg>
             </div>
@@ -1526,20 +1565,22 @@ import { urls } from "../../../../data";
             <div
               class="listbox-button__option"
               role="option"
-              aria-selected="true">
+              aria-selected="true"
+            >
               <span class="listbox-button__value">
                 <span
                   class="fflag fflag--us"
                   aria-hidden="true"
-                  data-country-code="1"/>
-                <span>United States of America</span>
-                <span>(+1)</span>
+                  data-country-code="1"
+                />
+                <span>United States of America</span><span>(+1)</span>
               </span>
               <svg
                 class="icon icon--16"
                 height="10"
                 width="14"
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 <use href="#icon-tick-16"/>
               </svg>
             </div>
@@ -1547,15 +1588,14 @@ import { urls } from "../../../../data";
         </div>
       </span>
       <span class="textbox">
-        <span id="phone-prefix-6">
-          +1
-        </span>
+        <span id="phone-prefix-6">+1</span>
         <input
           class="textbox__control"
           type="tel"
           aria-label="area code + phone number"
           autocomplete="tel-national"
-          aria-describedby="phone-prefix-6">
+          aria-describedby="phone-prefix-6"
+        >
       </span>
     </span>
   </highlight-code>

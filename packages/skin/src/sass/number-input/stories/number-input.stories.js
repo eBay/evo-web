@@ -4,7 +4,7 @@ export const base = () => `
 <span class="number-input">
     <span class="textbox">
         <button
-            class="icon-btn icon-btn--small icon-btn--transparent number-input__decrement"
+            class="icon-button icon-button--small icon-button--transparent number-input__decrement"
             tabindex="-1"
             type="button"
         >
@@ -26,7 +26,7 @@ export const base = () => `
             value="0"
         >
         <button
-            class="icon-btn icon-btn--small icon-btn--transparent number-input__increment"
+            class="icon-button icon-button--small icon-button--transparent number-input__increment"
             type="button"
             tabindex="-1"
         >
@@ -47,7 +47,7 @@ export const fluid = () => `
 <span class="number-input">
     <span class="textbox textbox--fluid">
         <button
-            class="icon-btn icon-btn--small icon-btn--transparent number-input__decrement"
+            class="icon-button icon-button--small icon-button--transparent number-input__decrement"
             tabindex="-1"
             type="button"
         >
@@ -69,7 +69,7 @@ export const fluid = () => `
             value="0"
         >
         <button
-            class="icon-btn icon-btn--small icon-btn--transparent number-input__increment"
+            class="icon-button icon-button--small icon-button--transparent number-input__increment"
             type="button"
             tabindex="-1"
         >
@@ -90,7 +90,7 @@ export const large = () => `
 <span class="number-input">
     <span class="textbox textbox--large">
         <button
-            class="icon-btn icon-btn--small icon-btn--transparent number-input__decrement"
+            class="icon-button icon-button--small icon-button--transparent number-input__decrement"
             tabindex="-1"
             type="button"
         >
@@ -112,7 +112,7 @@ export const large = () => `
             value="0"
         >
         <button
-            class="icon-btn icon-btn--small icon-btn--transparent number-input__increment"
+            class="icon-button icon-button--small icon-button--transparent number-input__increment"
             type="button"
             tabindex="-1"
         >
@@ -133,7 +133,7 @@ export const withDeleteHidden = () => `
 <span class="number-input">
     <span class="textbox">
         <button
-            class="icon-btn icon-btn--small icon-btn--transparent number-input__decrement"
+            class="icon-button icon-button--small icon-button--transparent number-input__decrement"
             type="button"
             tabindex="-1"
         >
@@ -154,7 +154,7 @@ export const withDeleteHidden = () => `
             min="1"
         >
         <button
-            class="icon-btn icon-btn--small icon-btn--transparent number-input__delete"
+            class="icon-button icon-button--small icon-button--transparent number-input__delete"
             type="button"
             aria-label="Delete item"
         >
@@ -169,7 +169,7 @@ export const withDeleteHidden = () => `
         </button>
 
         <button
-            class="icon-btn icon-btn--small icon-btn--transparent number-input__increment"
+            class="icon-button icon-button--small icon-button--transparent number-input__increment"
             type="button"
             tabindex="-1"
         >
@@ -190,7 +190,7 @@ export const withDeleteShown = () => `
 <span class="number-input number-input--show-delete">
     <span class="textbox">
         <button
-            class="icon-btn icon-btn--small icon-btn--transparent number-input__decrement"
+            class="icon-button icon-button--small icon-button--transparent number-input__decrement"
             type="button"
             tabindex="-1"
         >
@@ -211,7 +211,7 @@ export const withDeleteShown = () => `
             min="1"
         >
         <button
-            class="icon-btn icon-btn--small icon-btn--transparent number-input__delete"
+            class="icon-button icon-button--small icon-button--transparent number-input__delete"
             type="button"
             aria-label="Delete item"
         >
@@ -226,7 +226,7 @@ export const withDeleteShown = () => `
         </button>
 
         <button
-            class="icon-btn icon-btn--small icon-btn--transparent number-input__increment"
+            class="icon-button icon-button--small icon-button--transparent number-input__increment"
             type="button"
             tabindex="-1"
         >
