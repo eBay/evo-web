@@ -27,9 +27,9 @@ span.infotip {
     z-index: 1;
     background-color: var(
         --infotip-background-color,
-        var(--color-background-elevated)
+        var(--color-background-inverse)
     );
-    color: var(--infotip-foreground-color, var(--color-foreground-primary));
+    color: var(--infotip-foreground-color, var(--color-foreground-on-inverse));
 }
 
 .infotip__mask {
@@ -43,8 +43,14 @@ span.infotip__mask {
 .infotip__cell {
     display: flex;
     overflow-wrap: anywhere;
-    padding: var(--spacing-100) var(--spacing-200);
+    padding: var(--spacing-200);
     word-break: normal;
+}
+.infotip__cell a {
+    color: var(--infotip-foreground-color, var(--color-foreground-on-inverse));
+}
+.infotip__cell a:focus {
+    outline: 1px dashed currentColor;
 }
 
 .infotip__content {
@@ -60,7 +66,7 @@ span.infotip__mask {
 .infotip__pointer {
     background-color: var(
         --infotip-background-color,
-        var(--color-background-elevated)
+        var(--color-background-inverse)
     );
     height: 8px;
     position: absolute;
@@ -162,6 +168,10 @@ span.infotip__heading {
 .infotip__close,
 button.infotip__close {
     margin-left: var(--spacing-200);
+}
+
+.infotip button.infotip__close svg.icon {
+    fill: var(--infotip-foreground-color, var(--color-foreground-on-inverse));
 }
 
 @media (min-width: 512px) {
