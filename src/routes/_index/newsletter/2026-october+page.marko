@@ -1,6 +1,6 @@
 <div class="guides-landing-content">
 <h1>October 2026 Evo Web Newsletter</h1>
-<p>October brings new Skin components and button class names, a warning variant for notices, new and updated icons, and accessibility improvements across Evo Web packages. New Marko and React components and fixes round out the release.</p>
+<p>October brings new Skin components and button class names, a warning variant for notices, new and updated icons, and accessibility improvements across Evo Web packages. Marko adds date inputs, and both frameworks add a chips combobox. Fixes cover date validation and video controls.</p>
 <h2>Shared improvements</h2>
 <p>Skin adds <code>button-link</code> and <code>link-button</code>, along with <code>navigation-tabs</code> and <code>navigation-menu</code>. The <code>fake-btn</code>, <code>fake-link</code>, <code>fake-tabs</code> and <code>fake-menu</code> classes remain functional and are deprecated. Skin also adds the spelled-out <code>button</code>, <code>icon-button</code>, <code>cta-button</code> and <code>expand-button</code> classes alongside the existing abbreviated names, which are deprecated. (<a href="https://github.com/eBay/evo-web/pull/1070">#1070</a>)</p>
 <p>Page notices, section notices and inline notices now support a warning variant in Skin, legacy Marko and legacy React. (<a href="https://github.com/eBay/evo-web/pull/1032">#1032</a>)</p>
@@ -27,6 +27,9 @@
 </li>
 <li>
 <p>Number input value callbacks are unified across React and Marko. (<a href="https://github.com/eBay/evo-web/pull/972">#972</a>)</p>
+</li>
+<li>
+<p>Marko <code>evo-input</code> returns references to its input control and postfix button as <code>$control</code> and <code>$postfixButton</code>. (<a href="https://github.com/eBay/evo-web/pull/1033">#1033</a>)</p>
 </li>
 <li>
 <p>Marko star rating accepts <code>a11yText=null</code> when another accessible label is provided. (<a href="https://github.com/eBay/evo-web/pull/989">#989</a>)</p>
