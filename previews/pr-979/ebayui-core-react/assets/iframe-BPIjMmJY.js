@@ -1,0 +1,1 @@
+import{t as e}from"./iframe-Bny2-uE9.js";e();

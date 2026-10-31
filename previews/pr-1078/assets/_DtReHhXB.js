@@ -1,0 +1,2 @@
+function e(e){e.classList.add(`dialog--close`),e.addEventListener(`animationend`,()=>{e.close(),e.classList.remove(`dialog--close`)},{once:!0})}for(let t of document.querySelectorAll(`.dialog`))t.addEventListener(`click`,n=>{n.target===t&&e(t)}),t.addEventListener(`cancel`,n=>{n.preventDefault(),e(t)}),t.querySelector(`.dialog__close`)?.addEventListener(`click`,n=>{e(t)}),t.previousElementSibling?.tagName===`BUTTON`&&t.previousElementSibling.addEventListener(`click`,e=>{t.showModal()});
+//# sourceMappingURL=_DtReHhXB.js.map

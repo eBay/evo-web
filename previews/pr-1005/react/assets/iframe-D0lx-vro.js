@@ -1,0 +1,1 @@
+import{t as e}from"./iframe-COLs6-gZ.js";e();
