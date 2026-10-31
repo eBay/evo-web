@@ -86,8 +86,6 @@ export function EvoInfotip({
           ref={expander.refs.setFloating}
           className="infotip__overlay"
           style={expander.floatingStyles}
-          role="tooltip"
-          aria-labelledby={headingId}
         >
           <span
             ref={expander.refs.arrow}

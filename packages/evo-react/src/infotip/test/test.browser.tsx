@@ -43,7 +43,7 @@ describe("evo-infotip", () => {
     await user.click(trigger);
 
     await expect.element(trigger).toHaveAttribute("aria-expanded", "true");
-    await expect.element(screen.getByRole("tooltip")).toBeInTheDocument();
+    await expect.element(screen.getByText("Additional information")).toBeVisible();
 
     await user.click(screen.getByRole("button", { name: "Dismiss infotip" }));
 
@@ -120,23 +120,22 @@ describe("evo-infotip", () => {
     await expect.element(trigger).toHaveAttribute("aria-expanded", "false");
   });
 
-  it("links the tooltip to its heading", async () => {
+  it("does not expose the overlay as a tooltip", async () => {
     const screen = await render(
       <EvoInfotip defaultOpen a11yIconText="Help" a11yCloseText="Dismiss">
         <EvoInfotipHeading>Shipping information</EvoInfotipHeading>
         <p>Ships tomorrow</p>
       </EvoInfotip>,
     );
-    const heading = screen.getByText("Shipping information");
-    const tooltip = screen.getByRole("tooltip");
+    const overlay = screen.container.querySelector(".infotip__overlay");
 
-    expect(heading.element().id).toBeTruthy();
-    await expect
-      .element(tooltip)
-      .toHaveAttribute("aria-labelledby", heading.element().id);
+    expect(overlay).not.toBeNull();
+    expect(overlay).not.toHaveAttribute("role");
+    expect(overlay).not.toHaveAttribute("aria-labelledby");
+    expect(screen.container.querySelector('[role="tooltip"]')).toBeNull();
   });
 
-  it("updates aria-labelledby when the heading has a custom id", async () => {
+  it("keeps a custom heading id", async () => {
     const screen = await render(
       <EvoInfotip defaultOpen a11yIconText="Help" a11yCloseText="Dismiss">
         <EvoInfotipHeading id="shipping-heading">
@@ -147,8 +146,8 @@ describe("evo-infotip", () => {
     );
 
     await expect
-      .element(screen.getByRole("tooltip"))
-      .toHaveAttribute("aria-labelledby", "shipping-heading");
+      .element(screen.getByText("Shipping information"))
+      .toHaveAttribute("id", "shipping-heading");
   });
 
   it("supports a custom heading element", async () => {
