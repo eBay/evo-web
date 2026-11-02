@@ -10,8 +10,8 @@ export const base = () => `
             <p id="confirm-dialog__description">You will permanently lose this address.</p>
         </div>
         <div class="confirm-dialog__footer">
-            <button class="btn confirm-dialog__reject">Cancel</button>
-            <button class="btn btn--primary confirm-dialog__confirm" aria-describedby="confirm-dialog__description">Delete</button>
+            <button class="button confirm-dialog__reject">Cancel</button>
+            <button class="button button--primary confirm-dialog__confirm" aria-describedby="confirm-dialog__description">Delete</button>
         </div>
     </div>
 </div>
@@ -27,8 +27,8 @@ export const textSpacing = () => `
             <p id="confirm-dialog__description">You will permanently lose this address.</p>
         </div>
         <div class="confirm-dialog__footer">
-            <button class="btn confirm-dialog__reject">Cancel</button>
-            <button class="btn btn--primary confirm-dialog__confirm" aria-describedby="confirm-dialog__description">Delete</button>
+            <button class="button confirm-dialog__reject">Cancel</button>
+            <button class="button button--primary confirm-dialog__confirm" aria-describedby="confirm-dialog__description">Delete</button>
         </div>
     </div>
 </div>
@@ -44,8 +44,8 @@ export const baseWithHeaderOverflow = () => `
             <p id="confirm-dialog__description">You will permanently lose this address.</p>
         </div>
         <div class="confirm-dialog__footer">
-            <button class="btn confirm-dialog__reject">Cancel</button>
-            <button class="btn btn--primary confirm-dialog__confirm" aria-describedby="confirm-dialog__description">Delete</button>
+            <button class="button confirm-dialog__reject">Cancel</button>
+            <button class="button button--primary confirm-dialog__confirm" aria-describedby="confirm-dialog__description">Delete</button>
         </div>
     </div>
 </div>

@@ -2,6 +2,9 @@
 @use "../mixins/private/state-layer";
 @use "../variables/variables";
 
+// DEPRECATED: the `.icon-btn*` selectors in this file are removed in the next
+// major version. Use `.icon-button*` instead.
+
 .file-preview-card {
     display: flex;
     flex-direction: column;
@@ -54,7 +57,8 @@ video.file-preview-card__asset {
     width: 40%;
 }
 
-.file-preview-card__body .icon-btn {
+.file-preview-card__body .icon-btn,
+.file-preview-card__body .icon-button {
     height: var(--spacing-400);
     width: var(--spacing-400);
 }
@@ -71,7 +75,8 @@ video.file-preview-card__asset {
     right: auto;
 }
 
-.icon-btn.file-preview-card__action:not(:hover) {
+.icon-btn.file-preview-card__action:not(:hover),
+.icon-button.file-preview-card__action:not(:hover) {
     @include token-mixins.background-color-token(
         file-preview-card-action-background-color,
         color-background-primary

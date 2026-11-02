@@ -1,8 +1,8 @@
 export default { title: "Skin/Button/Borderless" };
 
-export const base = () => `<button class="btn btn--borderless">
-    <span class="btn__cell">
-        <span class="btn__text">Button</span>
+export const base = () => `<button class="button button--borderless">
+    <span class="button__cell">
+        <span class="button__text">Button</span>
         <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
             <use href="#icon-chevron-down-12"></use>
         </svg>
@@ -10,9 +10,9 @@ export const base = () => `<button class="btn btn--borderless">
 </button>`;
 
 export const disabled =
-    () => `<button class="btn btn--borderless" disabled="true">
-    <span class="btn__cell">
-        <span class="btn__text">Button</span>
+    () => `<button class="button button--borderless" disabled="true">
+    <span class="button__cell">
+        <span class="button__text">Button</span>
         <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
             <use href="#icon-chevron-down-12"></use>
         </svg>
@@ -20,17 +20,18 @@ export const disabled =
 </button>`;
 
 export const ariaDisabled =
-    () => `<button class="btn btn--borderless" aria-disabled="true">
-    <span class="btn__cell">
-        <span class="btn__text">Button</span>
+    () => `<button class="button button--borderless" aria-disabled="true">
+    <span class="button__cell">
+        <span class="button__text">Button</span>
         <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
             <use href="#icon-chevron-down-12"></use>
         </svg>
     </span>
 </button>`;
 
-export const empty = () => `<button class="btn btn--borderless" disabled="true">
-    <span class="btn__cell">
+export const empty =
+    () => `<button class="button button--borderless" disabled="true">
+    <span class="button__cell">
         <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
             <use href="#icon-chevron-down-12"></use>
         </svg>

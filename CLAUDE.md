@@ -12,6 +12,7 @@ AI configuration for eBay's evo-web components monorepo.
 - Never manually edit auto-generated files (they should typically have a comment indicating they are generated)
 - Default to no code comments; follow `<comment_policy>`
 - Never widen a task's diff with out-of-scope fixes — record them in `agent-feedback/` instead (see below)
+- Before changing or moving public selectors, classes or exports, read the release strategy (additive minor or breaking major) from the linked ADR or issue, and state it in the plan
   </agent_constraints>
 
 ## <architecture_rules>

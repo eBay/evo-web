@@ -1,32 +1,34 @@
 import "./_index/+layout.style.scss";
 static const basePath = import.meta.env.BASE_URL;
 <style.scss>
-    .landing-page {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
+  .landing-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 </style>
 <html-script>
-  (async function() {
-    const skinSite = window.location.href.replace("skin/", "").replace("component/", "components/");
-    if (skinSite !== window.location.href && (await fetch(skinSite, { method:"HEAD" })).status === 200) {
+  (async function () {
+    const skinSite = window.location.href
+      .replace("skin/", "")
+      .replace("component/", "components/");
+    if (
+      skinSite !== window.location.href &&
+      (await fetch(skinSite, { method: "HEAD" })).status === 200
+    ) {
       window.location.replace(skinSite);
     }
   })();
 </html-script>
 <!doctype html>
 <html lang="en">
-    <body>
-
-        <site-header/>
-        <main class="landing-page">
-            <h1>Page not found</h1>
-            <a class="fake-btn fake-btn--primary" href=`${basePath}`>
-                Go home
-            </a>
-        </main>
-        <site-footer/>
-    </body>
+  <body>
+    <site-header/>
+    <main class="landing-page">
+      <h1>Page not found</h1>
+      <a class="button-link button-link--primary" href=`${basePath}`>Go home</a>
+    </main>
+    <site-footer/>
+  </body>
 </html>

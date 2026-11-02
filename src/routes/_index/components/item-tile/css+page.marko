@@ -7,25 +7,18 @@ import { urls } from "../../../../data";
   <h2>Anatomy</h2>
 
   <p>
-    An item tile includes a few main sections. The
-    <code>header</code>
-    section typically includes media of an item. It uses the
-    <a href=`${urls.components}/file-preview-card`>
-      file preview card
-    </a>
-    component. The file preview card is a versatile component that can be
-    used to display media along with an action button.
+    An item tile includes a few main sections. The <code>header</code> section
+    typically includes media of an item. It uses the
+    <a href=`${urls.components}/file-preview-card`>file preview card</a>
+    component. The file preview card is a versatile component that can be used
+    to display media along with an action button.
   </p>
 
   <p>
     The body section includes three main sub-sections (
-    <code>section-primary</code>
-    ,
-    <code>section-secondary</code>
-    ,
-    <code>section-tertiary</code>
-    ), each of which are always aligned to the same sections in other item
-    tiles for easier comparative scanning.
+    <code>section-primary</code> , <code>section-secondary</code> ,
+    <code>section-tertiary</code> ), each of which are always aligned to the
+    same sections in other item tiles for easier comparative scanning.
   </p>
 
   <h2>Item Tile in Gallery View</h2>
@@ -45,17 +38,20 @@ import { urls } from "../../../../data";
               <img
                 class="file-preview-card__asset"
                 src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
-                alt="Puma...">
+                alt="Puma..."
+              >
             </a>
             <button
-              class="icon-btn file-preview-card__action"
+              class="icon-button file-preview-card__action"
               type="button"
-              aria-label="Open menu">
+              aria-label="Open menu"
+            >
               <svg
                 class="icon icon--16"
                 height="16"
                 width="16"
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 <use href="#icon-heart-16"/>
               </svg>
             </button>
@@ -64,33 +60,20 @@ import { urls } from "../../../../data";
       </div>
       <div class="item-tile__body">
         <div class="item-tile__section-primary">
-          <span class="signal signal--trustworthy">
-            Great Price
-          </span>
+          <span class="signal signal--trustworthy">Great Price</span>
         </div>
         <div class="item-tile__section-secondary">
           <a href="https://ebay.com?random=1" class="item-tile__title">
             PUMA Men's Astro Kicks Sneakers
           </a>
-          <div class="item-tile__subtitle">
-            Brand new &bull; Size 6
-          </div>
+          <div class="item-tile__subtitle">Brand new &bull; Size 6</div>
         </div>
         <div class="item-tile__section-tertiary">
           <p>
-            $29.99
-            <span class="clipped">
-              Was:
-            </span>
-            <s class="item-tile__list-price">
-              $68.99
-            </s>
+            $29.99 <span class="clipped">Was:</span>
+            <s class="item-tile__list-price">$68.99</s>
           </p>
-          <p>
-            <a href="https://ebay.com">
-              Buy it now
-            </a>
-          </p>
+          <p><a href="https://ebay.com">Buy it now</a></p>
           <p>Free shipping</p>
           <p>Sponsored</p>
         </div>
@@ -107,17 +90,20 @@ import { urls } from "../../../../data";
               <img
                 class="file-preview-card__asset"
                 src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
-                alt="Puma...">
+                alt="Puma..."
+              >
             </a>
             <button
-              class="icon-btn file-preview-card__action"
+              class="icon-button file-preview-card__action"
               type="button"
-              aria-label="Open menu">
+              aria-label="Open menu"
+            >
               <svg
                 class="icon icon--16"
                 height="16"
                 width="16"
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 <use href="#icon-heart-16"/>
               </svg>
             </button>
@@ -126,33 +112,20 @@ import { urls } from "../../../../data";
       </div>
       <div class="item-tile__body">
         <div class="item-tile__section-primary">
-          <span class="signal signal--trustworthy">
-            Great Price
-          </span>
+          <span class="signal signal--trustworthy">Great Price</span>
         </div>
         <div class="item-tile__section-secondary">
           <a href="https://ebay.com" class="item-tile__title">
             PUMA Men's Astro Kicks Sneakers
           </a>
-          <div class="item-tile__subtitle">
-            Brand new &bull; Size 6
-          </div>
+          <div class="item-tile__subtitle">Brand new &bull; Size 6</div>
         </div>
         <div class="item-tile__section-tertiary">
           <p>
-            $29.99
-            <span class="clipped">
-              Was:
-            </span>
-            <s class="item-tile__list-price">
-              $68.99
-            </s>
+            $29.99 <span class="clipped">Was:</span>
+            <s class="item-tile__list-price">$68.99</s>
           </p>
-          <p>
-            <a href="https://ebay.com">
-              Buy it now
-            </a>
-          </p>
+          <p><a href="https://ebay.com">Buy it now</a></p>
           <p>Free shipping</p>
           <p>Sponsored</p>
         </div>
@@ -165,8 +138,7 @@ import { urls } from "../../../../data";
   <p>
     You can also implement item tile in list view, which is a horizontal layout
     and takes up more horizontal space. You may accomplish this by using the
-    <code>item-tile--list-view</code>
-    modifier.
+    <code>item-tile--list-view</code> modifier.
   </p>
 
   <demo>
@@ -178,17 +150,20 @@ import { urls } from "../../../../data";
               <img
                 class="file-preview-card__asset"
                 src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
-                alt="Puma...">
+                alt="Puma..."
+              >
             </a>
             <button
-              class="icon-btn file-preview-card__action"
+              class="icon-button file-preview-card__action"
               type="button"
-              aria-label="Open menu">
+              aria-label="Open menu"
+            >
               <svg
                 class="icon icon--16"
                 height="16"
                 width="16"
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 <use href="#icon-heart-16"/>
               </svg>
             </button>
@@ -197,33 +172,20 @@ import { urls } from "../../../../data";
       </div>
       <div class="item-tile__body">
         <div class="item-tile__section-primary">
-          <span class="signal signal--trustworthy">
-            Great Price
-          </span>
+          <span class="signal signal--trustworthy">Great Price</span>
         </div>
         <div class="item-tile__section-secondary">
           <a href="https://ebay.com" class="item-tile__title">
             PUMA Men's Astro Kicks Sneakers
           </a>
-          <div class="item-tile__subtitle">
-            Brand new &bull; Size 6
-          </div>
+          <div class="item-tile__subtitle">Brand new &bull; Size 6</div>
         </div>
         <div class="item-tile__section-tertiary">
           <p>
-            $29.99
-            <span class="clipped">
-              Was:
-            </span>
-            <s class="item-tile__list-price">
-              $68.99
-            </s>
+            $29.99 <span class="clipped">Was:</span>
+            <s class="item-tile__list-price">$68.99</s>
           </p>
-          <p>
-            <a href="https://ebay.com">
-              Buy it now
-            </a>
-          </p>
+          <p><a href="https://ebay.com">Buy it now</a></p>
           <p>Free shipping</p>
           <p>Sponsored</p>
         </div>
@@ -240,17 +202,20 @@ import { urls } from "../../../../data";
               <img
                 class="file-preview-card__asset"
                 src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
-                alt="Puma...">
+                alt="Puma..."
+              >
             </a>
             <button
-              class="icon-btn file-preview-card__action"
+              class="icon-button file-preview-card__action"
               type="button"
-              aria-label="Open menu">
+              aria-label="Open menu"
+            >
               <svg
                 class="icon icon--16"
                 height="16"
                 width="16"
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 <use href="#icon-heart-16"/>
               </svg>
             </button>
@@ -259,39 +224,24 @@ import { urls } from "../../../../data";
       </div>
       <div class="item-tile__body">
         <div class="item-tile__section-primary">
-          <span class="signal signal--trustworthy">
-            Great Price
-          </span>
+          <span class="signal signal--trustworthy">Great Price</span>
         </div>
         <div class="item-tile__section-secondary">
           <a href="https://ebay.com" class="item-tile__title">
             PUMA Men's Astro Kicks Sneakers
           </a>
-          <div class="item-tile__subtitle">
-            Brand new &bull; Size 6
-          </div>
+          <div class="item-tile__subtitle">Brand new &bull; Size 6</div>
         </div>
         <div class="item-tile__section-tertiary">
           <div class="item-tile__price">
-            $29.99
-            <span class="clipped">
-              Was:
-            </span>
-            <s class="item-tile__list-price">
-              $68.99
-            </s>
+            $29.99 <span class="clipped">Was:</span>
+            <s class="item-tile__list-price">$68.99</s>
           </div>
           <div class="item-tile__buy-links">
-            <div>
-              <a href="https://ebay.com">
-                Buy it now
-              </a>
-            </div>
+            <div><a href="https://ebay.com">Buy it now</a></div>
             <div>Free shipping</div>
           </div>
-          <div class="item-tile__sponsored">
-            Sponsored
-          </div>
+          <div class="item-tile__sponsored">Sponsored</div>
         </div>
       </div>
     </div>

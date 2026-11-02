@@ -14,14 +14,17 @@ span.listbox-button {
     display: inline-block;
 }
 
-.listbox-button .btn {
+.listbox-button .btn,
+.listbox-button .button {
     padding-left: 15px;
     padding-right: 15px;
 }
 
 span.listbox-button--fluid,
 span.listbox-button--fluid .btn,
+span.listbox-button--fluid .button,
 span.listbox-button--fluid .expand-btn,
+span.listbox-button--fluid .expand-button,
 span.listbox-button--fluid div.listbox-button__listbox {
     width: 100%;
 }
@@ -54,7 +57,11 @@ div.listbox-button__listbox--fixed {
 }
 
 .listbox-button button.btn[aria-expanded="true"] ~ div.listbox-button__listbox,
-button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox {
+.listbox-button
+    button.button[aria-expanded="true"]
+    ~ div.listbox-button__listbox,
+button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox,
+button.expand-button[aria-expanded="true"] ~ div.listbox-button__listbox {
     display: block;
 }
 
@@ -70,7 +77,13 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox {
         [disabled],
         [aria-disabled="true"],
         [aria-invalid="true"]
-    ).btn--form {
+    ).btn--form,
+.listbox-button:not(.listbox-button--error)
+    button:not(
+        [disabled],
+        [aria-disabled="true"],
+        [aria-invalid="true"]
+    ).button--form {
     border-color: var(
         --listbox-button-border-color,
         var(--color-border-medium)
@@ -93,19 +106,41 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox {
         [disabled],
         [aria-disabled="true"],
         [aria-invalid="true"]
-    ).btn--form:hover {
+    ).btn--form:hover,
+.listbox-button:not(.listbox-button--error)
+    button:not(
+        [disabled],
+        [aria-disabled="true"],
+        [aria-invalid="true"]
+    ).button--form:active,
+.listbox-button:not(.listbox-button--error)
+    button:not(
+        [disabled],
+        [aria-disabled="true"],
+        [aria-invalid="true"]
+    ).button--form:focus,
+.listbox-button:not(.listbox-button--error)
+    button:not(
+        [disabled],
+        [aria-disabled="true"],
+        [aria-invalid="true"]
+    ).button--form:hover {
     border-color: inherit;
 }
 
 .listbox-button button.btn--borderless,
-.listbox-button button.expand-btn--borderless {
+.listbox-button button.button--borderless,
+.listbox-button button.expand-btn--borderless,
+.listbox-button button.expand-button--borderless {
     background-color: initial;
     border-color: transparent;
     padding-left: 0;
     vertical-align: initial;
 }
 .listbox-button button.btn--borderless:focus,
-.listbox-button button.expand-btn--borderless:focus {
+.listbox-button button.button--borderless:focus,
+.listbox-button button.expand-btn--borderless:focus,
+.listbox-button button.expand-button--borderless:focus {
     outline: none;
     text-decoration: underline;
 }
@@ -113,7 +148,13 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox {
     button.btn--borderless[aria-expanded="true"]
     ~ .listbox-button__listbox,
 .listbox-button
+    button.button--borderless[aria-expanded="true"]
+    ~ .listbox-button__listbox,
+.listbox-button
     button.expand-btn--borderless[aria-expanded="true"]
+    ~ .listbox-button__listbox,
+.listbox-button
+    button.expand-button--borderless[aria-expanded="true"]
     ~ .listbox-button__listbox {
     top: 41px;
 }
@@ -159,7 +200,8 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox {
     );
 }
 
-.listbox-button.listbox-button--error button:not(.btn--borderless) {
+.listbox-button.listbox-button--error
+    button:not(.btn--borderless, .button--borderless) {
     background-color: var(
         --listbox-button-background-color,
         var(--color-background-secondary)
@@ -170,22 +212,27 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox {
     );
 }
 
-.listbox-button .btn__label {
+.listbox-button .btn__label,
+.listbox-button .button__label {
     color: var(--listbox-button-label-color, var(--color-foreground-secondary));
     font-weight: 400;
     margin-right: 3px;
 }
 
-.listbox-button--expanded .btn__label {
+.listbox-button--expanded .btn__label,
+.listbox-button--expanded .button__label {
     color: var(--listbox-button-label-color, var(--color-foreground-primary));
 }
 
 .listbox-button.listbox-button--error button .btn__floating-label,
-.listbox-button.listbox-button--error button .btn__label {
+.listbox-button.listbox-button--error button .btn__label,
+.listbox-button.listbox-button--error button .button__floating-label,
+.listbox-button.listbox-button--error button .button__label {
     color: var(--listbox-button-label-color, var(--color-foreground-attention));
 }
 
-.listbox-button .btn__text {
+.listbox-button .btn__text,
+.listbox-button .button__text {
     font-weight: 700;
     margin-right: auto;
 }
@@ -344,7 +391,8 @@ span.listbox-button__value {
 .listbox-button__options:focus:not(:focus-visible) {
     outline: none;
 }
-[dir="rtl"] .listbox-button .btn__label {
+[dir="rtl"] .listbox-button .btn__label,
+[dir="rtl"] .listbox-button .button__label {
     margin-left: 3px;
     margin-right: 0;
     color: var(--listbox-button-label-color, var(--color-foreground-secondary));

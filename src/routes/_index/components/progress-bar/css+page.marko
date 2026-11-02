@@ -1,71 +1,50 @@
 <div id="progress-bar">
   <section-header/>
 
-  <h3 id="progress-bar-initial">
-    Initial State
-  </h3>
+  <h3 id="progress-bar-initial">Initial State</h3>
   <p>A value of 0 reflects an initial state, with zero progress.</p>
 
   <div class="demo">
     <div class="demo__inner">
-      <progress class="progress-bar" value="0" max="100">
-        0%
-      </progress>
+      <progress class="progress-bar" value="0" max="100">0%</progress>
     </div>
   </div>
 
   <highlight-code type="html">
-    <progress class="progress-bar" value="1" max="100">
-      0%
-    </progress>
+    <progress class="progress-bar" value="1" max="100">0%</progress>
   </highlight-code>
 
-  <h3 id="progress-bar-loading">
-    Loading State
-  </h3>
+  <h3 id="progress-bar-loading">Loading State</h3>
   <p>Any value between 0 and 100 reflects a loading state.</p>
 
   <div class="demo">
     <div class="demo__inner">
-      <progress class="progress-bar" value="50" max="100">
-        50%
-      </progress>
+      <progress class="progress-bar" value="50" max="100">50%</progress>
     </div>
   </div>
 
   <highlight-code type="html">
-    <progress class="progress-bar" value="50" max="100">
-      50%
-    </progress>
+    <progress class="progress-bar" value="50" max="100">50%</progress>
   </highlight-code>
 
-  <h3 id="progress-bar-complete">
-    Completed State
-  </h3>
+  <h3 id="progress-bar-complete">Completed State</h3>
   <p>A value of 100 reflects a completed state.</p>
 
   <div class="demo">
     <div class="demo__inner">
-      <progress class="progress-bar" value="100" max="100">
-        100%
-      </progress>
+      <progress class="progress-bar" value="100" max="100">100%</progress>
     </div>
   </div>
 
   <highlight-code type="html">
-    <progress class="progress-bar" value="100" max="100">
-      100%
-    </progress>
+    <progress class="progress-bar" value="100" max="100">100%</progress>
   </highlight-code>
 
-  <h3 id="progress-bar-fluid">
-    Fluid Progress Bar
-  </h3>
+  <h3 id="progress-bar-fluid">Fluid Progress Bar</h3>
 
   <p>
     To fill the entire width of the container, use the
-    <code>progress-bar--fluid</code>
-    modifier.
+    <code>progress-bar--fluid</code> modifier.
   </p>
 
   <div class="demo">
@@ -82,9 +61,7 @@
     </progress>
   </highlight-code>
 
-  <h3 id="progress-bar-animated">
-    Animated Progress Bar
-  </h3>
+  <h3 id="progress-bar-animated">Animated Progress Bar</h3>
   <p>
     Use the buttons below to see an example of the progress bar value being
     animated.
@@ -96,20 +73,23 @@
         class="progress-bar progress-bar--fluid"
         value="0"
         max="100"
-        id="progress-bar-dynamic">
+        id="progress-bar-dynamic"
+      >
         0%
       </progress>
       <div>
         <button
-          class="btn btn--secondary progress-bar-toggle"
+          class="button button--secondary progress-bar-toggle"
           type="button"
-          data-progress-play-button-for="progress-bar-dynamic">
+          data-progress-play-button-for="progress-bar-dynamic"
+        >
           Play/Pause
         </button>
         <button
-          class="btn btn--secondary progress-bar-reset"
+          class="button button--secondary progress-bar-reset"
           type="button"
-          data-progress-reset-button-for="progress-bar-dynamic">
+          data-progress-reset-button-for="progress-bar-dynamic"
+        >
           Reset
         </button>
       </div>

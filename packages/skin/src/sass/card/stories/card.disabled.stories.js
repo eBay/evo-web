@@ -10,7 +10,7 @@ export const internallyActionable = () => `
             Hockey cards collected by enthusiasts who treat them like fine wine – stored in temperature-controlled cellars and discussed in hushed, reverent tones.
         </div>
         <div class="card__action">
-            <button class="btn btn--primary btn--fluid" tabindex="-1" disabled>See Details</button>
+            <button class="button button--primary button--fluid" tabindex="-1" disabled>See Details</button>
         </div>
     </div>
 </span>

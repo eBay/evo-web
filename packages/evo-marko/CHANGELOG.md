@@ -1,5 +1,11 @@
 # @evo-web/marko
 
+## 0.9.3
+
+### Patch Changes
+
+- [#1076](https://github.com/eBay/evo-web/pull/1076) [`3690578`](https://github.com/eBay/evo-web/commit/36905785fec740849b8a9a68d03324a66fef23ca) Thanks [@sebxt](https://github.com/sebxt)! - fix(date-textbox,date-input): reject typed days that do not exist in the month, such as 02/30/2024
+
 ## 0.9.2
 
 ### Patch Changes

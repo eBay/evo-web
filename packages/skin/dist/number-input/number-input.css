@@ -119,7 +119,8 @@
     flex-grow: 0;
 }
 
-.icon-btn.number-input__delete {
+.icon-btn.number-input__delete,
+.icon-button.number-input__delete {
     display: none;
     margin-inline-end: calc(-1 * var(--spacing-100));
     order: -1;
@@ -148,21 +149,25 @@
     appearance: textfield;
 }
 
-.number-input .icon-btn {
+.number-input .icon-btn,
+.number-input .icon-button {
     transform: scale(1);
     transition: transform var(--motion-duration-short-3)
         var(--motion-easing-standard);
 }
 
-.number-input .icon-btn:hover:not(:disabled) {
+.number-input .icon-btn:hover:not(:disabled),
+.number-input .icon-button:hover:not(:disabled) {
     background-color: var(--state-layer-hover);
 }
 
-.number-input .icon-btn:active {
+.number-input .icon-btn:active,
+.number-input .icon-button:active {
     transform: scale(0.97);
 }
 
-.number-input .textbox .icon-btn:not(:disabled) svg {
+.number-input .textbox .icon-btn:not(:disabled) svg,
+.number-input .textbox .icon-button:not(:disabled) svg {
     color: var(--color-foreground-primary);
     fill: currentColor;
 }

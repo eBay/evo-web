@@ -1,12 +1,12 @@
 export default { title: "Skin/Dialog" };
 
 export const base = () => `
-<button class="btn btn--primary dialog-trigger" type="button">Open Dialog</button>
+<button class="button button--primary dialog-trigger" type="button">Open Dialog</button>
 <script>document.querySelector(".dialog").showModal()</script>
 <dialog aria-labelledby="dialog-title-base" class="dialog">
     <div class="dialog__header">
         <h2 id="dialog-title-base">Dialog</h2>
-        <button class="icon-btn dialog__close" type="button" aria-label="Close Dialog">
+        <button class="icon-button dialog__close" type="button" aria-label="Close Dialog">
             <svg class="icon icon--16" aria-hidden="true">
                 <use href="#icon-close-16"></use>
             </svg>
@@ -24,13 +24,13 @@ export const base = () => `
 `;
 
 export const expressiveBase = () => `
-<button class="btn btn--primary dialog-trigger" type="button">Open Expressive Dialog</button>
+<button class="button button--primary dialog-trigger" type="button">Open Expressive Dialog</button>
 <script>document.querySelector(".dialog").showModal()</script>
 <dialog aria-labelledby="dialog-title-expressive-base" class="dialog dialog--expressive">
     <div class="dialog__image" style="background-image:url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-landscape-pic.jpg)"></div>
     <div class="dialog__header">
         <h2 id="dialog-title-expressive-base">Dialog</h2>
-        <button class="icon-btn dialog__close" type="button" aria-label="Close Dialog">
+        <button class="icon-button dialog__close" type="button" aria-label="Close Dialog">
             <svg class="icon icon--16" aria-hidden="true">
                 <use href="#icon-close-16"></use>
             </svg>
@@ -48,17 +48,17 @@ export const expressiveBase = () => `
 `;
 
 export const basePrev = () => `
-<button class="btn btn--primary dialog-trigger" type="button">Open Dialog</button>
+<button class="button button--primary dialog-trigger" type="button">Open Dialog</button>
 <script>document.querySelector(".dialog").showModal()</script>
 <dialog aria-labelledby="dialog-title-base-prev" class="dialog">
     <div class="dialog__header">
-        <button class="icon-btn dialog__prev" type="button" aria-label="Go back">
+        <button class="icon-button dialog__prev" type="button" aria-label="Go back">
             <svg class="icon icon--16" aria-hidden="true">
                 <use href="#icon-chevron-left-16"></use>
             </svg>
         </button>
         <h2 id="dialog-title-base-prev">Dialog</h2>
-        <button class="icon-btn dialog__close" type="button" aria-label="Close Dialog">
+        <button class="icon-button dialog__close" type="button" aria-label="Close Dialog">
             <svg class="icon icon--16" aria-hidden="true">
                 <use href="#icon-close-16"></use>
             </svg>
@@ -76,12 +76,12 @@ export const basePrev = () => `
 `;
 
 export const scrollingLightbox = () => `
-<button class="btn btn--primary dialog-trigger" type="button">Open Dialog</button>
+<button class="button button--primary dialog-trigger" type="button">Open Dialog</button>
 <script>document.querySelector(".dialog").showModal()</script>
 <dialog aria-labelledby="dialog-title-scrolling-lightbox" class="dialog">
     <div class="dialog__header">
         <h2 id="dialog-title-scrolling-lightbox">Dialog</h2>
-        <button class="icon-btn dialog__close" type="button" aria-label="Close Dialog">
+        <button class="icon-button dialog__close" type="button" aria-label="Close Dialog">
             <svg class="icon icon--16" aria-hidden="true">
                 <use href="#icon-close-16"></use>
             </svg>
@@ -142,12 +142,12 @@ export const scrollingLightbox = () => `
 `;
 
 export const expandedLightbox = () => `
-<button class="btn btn--primary dialog-trigger" type="button">Open Dialog</button>
+<button class="button button--primary dialog-trigger" type="button">Open Dialog</button>
 <script>document.querySelector(".dialog").showModal()</script>
 <dialog aria-labelledby="dialog-title-expanded-lightbox" class="dialog">
     <div class="dialog__header">
         <h2 id="dialog-title-expanded-lightbox">Dialog</h2>
-        <button class="icon-btn dialog__close" type="button" aria-label="Close Dialog">
+        <button class="icon-button dialog__close" type="button" aria-label="Close Dialog">
             <svg class="icon icon--16" aria-hidden="true">
                 <use href="#icon-close-16"></use>
             </svg>
@@ -208,13 +208,13 @@ export const expandedLightbox = () => `
 `;
 
 export const expressiveScrolling = () => `
-<button class="btn btn--primary dialog-trigger" type="button">Open Expressive Dialog</button>
+<button class="button button--primary dialog-trigger" type="button">Open Expressive Dialog</button>
 <script>document.querySelector(".dialog").showModal()</script>
 <dialog aria-labelledby="dialog-title-expressive-scrolling" class="dialog dialog--expressive">
     <div class="dialog__image" style="background-image:url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-landscape-pic.jpg)"></div>
     <div class="dialog__header">
         <h2 id="dialog-title-expressive-scrolling">Dialog</h2>
-        <button class="icon-btn dialog__close" type="button" aria-label="Close Dialog">
+        <button class="icon-button dialog__close" type="button" aria-label="Close Dialog">
             <svg class="icon icon--16" aria-hidden="true">
                 <use href="#icon-close-16"></use>
             </svg>
@@ -275,12 +275,12 @@ export const expressiveScrolling = () => `
 `;
 
 export const baseWithFooter = () => `
-<button class="btn btn--primary dialog-trigger" type="button">Open Dialog with Footer</button>
+<button class="button button--primary dialog-trigger" type="button">Open Dialog with Footer</button>
 <script>document.querySelector(".dialog").showModal()</script>
 <dialog aria-labelledby="dialog-title-base-with-footer" class="dialog">
     <div class="dialog__header">
         <h2 id="dialog-title-base-with-footer">Dialog</h2>
-        <button class="icon-btn dialog__close" type="button" aria-label="Close Dialog">
+        <button class="icon-button dialog__close" type="button" aria-label="Close Dialog">
             <svg class="icon icon--16" aria-hidden="true">
                 <use href="#icon-close-16"></use>
             </svg>
@@ -295,8 +295,8 @@ export const baseWithFooter = () => `
         <p><a href="http://www.ebay.com">www.ebay.com</a></p>
     </div>
     <div class="dialog__footer">
-        <button class="btn btn--primary">Submit</button>
-        <button class="btn">Cancel</button>
+        <button class="button button--primary">Submit</button>
+        <button class="button">Cancel</button>
     </div>
 
 </dialog>
@@ -304,12 +304,12 @@ export const baseWithFooter = () => `
 
 export const baseRTL = () => `
 <div dir="rtl">
-<button class="btn btn--primary dialog-trigger" type="button">Open Dialog</button>
+<button class="button button--primary dialog-trigger" type="button">Open Dialog</button>
 <script>document.querySelector(".dialog").showModal()</script>
     <dialog aria-labelledby="dialog-title-base-rtl" class="dialog">
         <div class="dialog__header">
             <h2 id="dialog-title-base-rtl">Dialog</h2>
-            <button class="icon-btn dialog__close" type="button" aria-label="Close Dialog">
+            <button class="icon-button dialog__close" type="button" aria-label="Close Dialog">
                 <svg class="icon icon--16" aria-hidden="true">
                     <use href="#icon-close-16"></use>
                 </svg>
@@ -328,17 +328,17 @@ export const baseRTL = () => `
 
 export const prevRTL = () => `
 <div dir="rtl">
-<button class="btn btn--primary dialog-trigger" type="button">Open Dialog</button>
+<button class="button button--primary dialog-trigger" type="button">Open Dialog</button>
 <script>document.querySelector(".dialog").showModal()</script>
     <dialog aria-labelledby="dialog-title-prev-rtl" class="dialog">
         <div class="dialog__header">
-            <button class="icon-btn dialog__prev" type="button" aria-label="Go back">
+            <button class="icon-button dialog__prev" type="button" aria-label="Go back">
                 <svg class="icon icon--16" aria-hidden="true">
                     <use href="#icon-chevron-left-16"></use>
                 </svg>
             </button>
             <h2 id="dialog-title-prev-rtl">Dialog</h2>
-            <button class="icon-btn dialog__close" type="button" aria-label="Close Dialog">
+            <button class="icon-button dialog__close" type="button" aria-label="Close Dialog">
                 <svg class="icon icon--16" aria-hidden="true">
                     <use href="#icon-close-16"></use>
                 </svg>
@@ -356,12 +356,12 @@ export const prevRTL = () => `
 `;
 
 export const baseWithLongHeader = () => `
-<button class="btn btn--primary dialog-trigger" type="button">Open Dialog</button>
+<button class="button button--primary dialog-trigger" type="button">Open Dialog</button>
 <script>document.querySelector(".dialog").showModal()</script>
 <dialog aria-labelledby="dialog-title-base-with-long-header" class="dialog">
     <div class="dialog__header">
         <h2 id="dialog-title-base-with-long-header">Dialog with a very long header that should wrap to the next line, but is actually cut off</h2>
-        <button class="icon-btn dialog__close" type="button" aria-label="Close Dialog">
+        <button class="icon-button dialog__close" type="button" aria-label="Close Dialog">
             <svg class="icon icon--16" aria-hidden="true">
                 <use href="#icon-close-16"></use>
             </svg>
@@ -379,12 +379,12 @@ export const baseWithLongHeader = () => `
 `;
 
 export const wide = () => `
-<button class="btn btn--primary dialog-trigger" type="button">Open Dialog</button>
+<button class="button button--primary dialog-trigger" type="button">Open Dialog</button>
 <script>document.querySelector(".dialog").showModal()</script>
 <dialog aria-labelledby="dialog-title-wide" class="dialog dialog--wide">
     <div class="dialog__header">
         <h2 id="dialog-title-wide">Dialog</h2>
-        <button class="icon-btn dialog__close" type="button" aria-label="Close Dialog">
+        <button class="icon-button dialog__close" type="button" aria-label="Close Dialog">
             <svg class="icon icon--16" aria-hidden="true">
                 <use href="#icon-close-16"></use>
             </svg>
@@ -402,12 +402,12 @@ export const wide = () => `
 `;
 
 export const narrow = () => `
-<button class="btn btn--primary dialog-trigger" type="button">Open Dialog</button>
+<button class="button button--primary dialog-trigger" type="button">Open Dialog</button>
 <script>document.querySelector(".dialog").showModal()</script>
 <dialog aria-labelledby="dialog-title-narrow" class="dialog dialog--narrow">
     <div class="dialog__header">
         <h2 id="dialog-title-narrow">Dialog</h2>
-        <button class="icon-btn dialog__close" type="button" aria-label="Close Dialog">
+        <button class="icon-button dialog__close" type="button" aria-label="Close Dialog">
             <svg class="icon icon--16" aria-hidden="true">
                 <use href="#icon-close-16"></use>
             </svg>
@@ -425,12 +425,12 @@ export const narrow = () => `
 `;
 
 export const large = () => `
-<button class="btn btn--primary dialog-trigger" type="button">Open Dialog</button>
+<button class="button button--primary dialog-trigger" type="button">Open Dialog</button>
 <script>document.querySelector(".dialog").showModal()</script>
 <dialog aria-labelledby="dialog-title-large" class="dialog dialog--large">
     <div class="dialog__header">
         <h2 id="dialog-title-large">Dialog</h2>
-        <button class="icon-btn dialog__close" type="button" aria-label="Close Dialog">
+        <button class="icon-button dialog__close" type="button" aria-label="Close Dialog">
             <svg class="icon icon--16" aria-hidden="true">
                 <use href="#icon-close-16"></use>
             </svg>
@@ -448,13 +448,13 @@ export const large = () => `
 `;
 
 export const expressiveWide = () => `
-<button class="btn btn--primary dialog-trigger" type="button">Open Expressive Dialog</button>
+<button class="button button--primary dialog-trigger" type="button">Open Expressive Dialog</button>
 <script>document.querySelector(".dialog").showModal()</script>
 <dialog aria-labelledby="dialog-title-expressive-wide" class="dialog dialog--wide dialog--expressive">
     <div class="dialog__image" style="background-image:url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-landscape-pic.jpg)"></div>
     <div class="dialog__header">
         <h2 id="dialog-title-expressive-wide">Dialog</h2>
-        <button class="icon-btn dialog__close" type="button" aria-label="Close Dialog">
+        <button class="icon-button dialog__close" type="button" aria-label="Close Dialog">
             <svg class="icon icon--16" aria-hidden="true">
                 <use href="#icon-close-16"></use>
             </svg>
@@ -472,18 +472,18 @@ export const expressiveWide = () => `
 `;
 
 export const expressivePrev = () => `
-<button class="btn btn--primary dialog-trigger" type="button">Open Expressive Dialog</button>
+<button class="button button--primary dialog-trigger" type="button">Open Expressive Dialog</button>
 <script>document.querySelector(".dialog").showModal()</script>
 <dialog aria-labelledby="dialog-title-expressive-prev" class="dialog dialog--expressive">
     <div class="dialog__image" style="background-image:url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-landscape-pic.jpg)"></div>
     <div class="dialog__header">
-        <button class="icon-btn dialog__prev" type="button" aria-label="Go back">
+        <button class="icon-button dialog__prev" type="button" aria-label="Go back">
             <svg class="icon icon--16" aria-hidden="true">
                 <use href="#icon-chevron-left-16"></use>
             </svg>
         </button>
         <h2 id="dialog-title-expressive-prev">Dialog</h2>
-        <button class="icon-btn dialog__close" type="button" aria-label="Close Dialog">
+        <button class="icon-button dialog__close" type="button" aria-label="Close Dialog">
             <svg class="icon icon--16" aria-hidden="true">
                 <use href="#icon-close-16"></use>
             </svg>
@@ -501,12 +501,12 @@ export const expressivePrev = () => `
 `;
 
 export const textSpacing = () => `
-<button class="btn btn--primary dialog-trigger" type="button">Open Dialog</button>
+<button class="button button--primary dialog-trigger" type="button">Open Dialog</button>
 <script>document.querySelector(".dialog").showModal()</script>
 <dialog aria-labelledby="dialog-title-text-spacing" class="dialog demo-a11y-text-spacing">
     <div class="dialog__header">
         <h2 id="dialog-title-text-spacing">Dialog</h2>
-        <button class="icon-btn dialog__close" type="button" aria-label="Close Dialog">
+        <button class="icon-button dialog__close" type="button" aria-label="Close Dialog">
             <svg class="icon icon--16" aria-hidden="true">
                 <use href="#icon-close-16"></use>
             </svg>
@@ -524,12 +524,12 @@ export const textSpacing = () => `
 `;
 
 export const baseWithHeaderOverflow = () => `
-<button class="btn btn--primary dialog-trigger" type="button">Open Dialog</button>
+<button class="button button--primary dialog-trigger" type="button">Open Dialog</button>
 <script>document.querySelector(".dialog").showModal()</script>
 <dialog aria-labelledby="dialog-title-base-with-header-overflow" class="dialog">
     <div class="dialog__header">
         <h2 id="dialog-title-base-with-header-overflow">Dialog with a title that is so long it wraps across multiple lines. No dialog header should ever be this long.</h2>
-        <button class="icon-btn dialog__close" type="button" aria-label="Close Dialog">
+        <button class="icon-button dialog__close" type="button" aria-label="Close Dialog">
             <svg class="icon icon--16" aria-hidden="true">
                 <use href="#icon-close-16"></use>
             </svg>
