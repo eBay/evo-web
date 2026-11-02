@@ -1,0 +1,45 @@
+.banner {
+  align-items: center;
+  background-color: var(--color-neutral-800);
+  border-radius: 16px;
+  display: flex;
+  min-height: 230px;
+  overflow: hidden;
+  padding: clamp(24px, 5vw, 48px);
+  position: relative;
+}
+
+.artwork {
+  height: 100%;
+  inset: 0 0 0 auto;
+  position: absolute;
+  width: 100%;
+}
+
+.banner .title {
+  color: var(--color-neutral-100);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 700;
+  line-height: 1.08;
+  margin: 0;
+  max-width: 12ch;
+  position: relative;
+}
+
+.date {
+  display: block;
+}
+
+.accent {
+  color: var(--color-blue-300);
+}
+
+@media (max-width: 600px) {
+  .banner {
+    min-height: 190px;
+  }
+
+  .artwork {
+    opacity: 0.35;
+  }
+}
