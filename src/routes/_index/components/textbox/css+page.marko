@@ -3,9 +3,8 @@ import { urls } from "../../../../data";
   <section-header/>
 
   <p>
-    <strong>IMPORTANT:</strong>
-    The examples below show the textbox in isolation, without any label.
-    Remember: every textbox requires a label!
+    <strong>IMPORTANT:</strong> The examples below show the textbox in
+    isolation, without any label. Remember: every textbox requires a label!
   </p>
   <!-- <p><strong>IMPORTANT:</strong> The examples below show the textbox in isolation, without any label. Please see the <a href=`${urls.components}/field`>field</a> module for details on labelling controls. Remember: every textbox requires a label!</p> -->
 
@@ -18,7 +17,8 @@ import { urls } from "../../../../data";
           aria-label="Textbox demo"
           class="textbox__control"
           type="text"
-          placeholder="placeholder text">
+          placeholder="placeholder text"
+        >
       </span>
     </div>
   </div>
@@ -28,15 +28,15 @@ import { urls } from "../../../../data";
       <input
         class="textbox__control"
         type="text"
-        placeholder="placeholder text">
+        placeholder="placeholder text"
+      >
     </span>
   </highlight-code>
 
   <h3>Readonly Textbox</h3>
   <p>
-    Use the
-    <code>readonly</code>
-    attribute to prevent any modification of the value.
+    Use the <code>readonly</code> attribute to prevent any modification of the
+    value.
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -46,7 +46,8 @@ import { urls } from "../../../../data";
           class="textbox__control"
           type="text"
           value="Readonly textbox"
-          readonly>
+          readonly
+        >
       </span>
     </div>
   </div>
@@ -57,15 +58,15 @@ import { urls } from "../../../../data";
         class="textbox__control"
         type="text"
         value="Readonly textbox"
-        readonly>
+        readonly
+      >
     </span>
   </highlight-code>
 
   <h3>Disabled Textbox</h3>
   <p>
-    Use the
-    <code>disabled</code>
-    attribute to completely disable the input and any value.
+    Use the <code>disabled</code> attribute to completely disable the input and
+    any value.
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -75,7 +76,8 @@ import { urls } from "../../../../data";
           class="textbox__control"
           type="text"
           placeholder="placeholder text"
-          disabled>
+          disabled
+        >
       </span>
     </div>
   </div>
@@ -86,15 +88,15 @@ import { urls } from "../../../../data";
         class="textbox__control"
         type="text"
         placeholder="placeholder text"
-        disabled>
+        disabled
+      >
     </span>
   </highlight-code>
 
   <h3>Error-State Textbox</h3>
   <p>
-    Use the
-    <code>aria-invalid</code>
-    attribute to highlight any input with error.
+    Use the <code>aria-invalid</code> attribute to highlight any input with
+    error.
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -104,7 +106,8 @@ import { urls } from "../../../../data";
           class="textbox__control"
           type="text"
           placeholder="placeholder text"
-          aria-invalid="true">
+          aria-invalid="true"
+        >
       </span>
     </div>
   </div>
@@ -115,13 +118,12 @@ import { urls } from "../../../../data";
         class="textbox__control"
         type="text"
         placeholder="placeholder text"
-        aria-invalid="true">
+        aria-invalid="true"
+      >
     </span>
   </highlight-code>
 
-  <h3 id="textbox-multi-line">
-    Multi-line Textbox
-  </h3>
+  <h3 id="textbox-multi-line">Multi-line Textbox</h3>
   <p>Use the textarea tag for a multi-line textbox.</p>
   <p>
     A multi-line textbox allows line breaks and has a minimum height of 200px.
@@ -132,7 +134,8 @@ import { urls } from "../../../../data";
         <textarea
           aria-label="Textbox demo"
           class="textbox__control"
-          placeholder="placeholder text"/>
+          placeholder="placeholder text"
+        />
       </span>
     </div>
   </div>
@@ -143,14 +146,9 @@ import { urls } from "../../../../data";
     </span>
   </highlight-code>
 
-  <h3 id="textbox-fluid">
-    Fluid Textbox
-  </h3>
+  <h3 id="textbox-fluid">Fluid Textbox</h3>
   <p>
-    Apply the
-    <code>textbox--fluid</code>
-    modifier (or
-    <code>fluid</code>
+    Apply the <code>textbox--fluid</code> modifier (or <code>fluid</code>
     utility class) to fill the width of the parent element.
   </p>
   <div class="demo">
@@ -160,7 +158,8 @@ import { urls } from "../../../../data";
           aria-label="Textbox demo"
           class="textbox__control"
           type="text"
-          placeholder="placeholder text">
+          placeholder="placeholder text"
+        >
       </div>
     </div>
   </div>
@@ -170,19 +169,15 @@ import { urls } from "../../../../data";
       <input
         class="textbox__control"
         type="text"
-        placeholder="placeholder text">
+        placeholder="placeholder text"
+      >
     </div>
   </highlight-code>
 
-  <h3 id="textbox-icon">
-    Textbox with Icon
-  </h3>
+  <h3 id="textbox-icon">Textbox with Icon</h3>
   <p>
     Single-line textboxes can be augmented with any SVG
-    <a href=`${urls.components}/icon`>
-      icon
-    </a>
-    .
+    <a href=`${urls.components}/icon`>icon</a> .
   </p>
 
   <div class="demo">
@@ -195,7 +190,8 @@ import { urls } from "../../../../data";
           aria-label="Textbox demo"
           class="textbox__control"
           type="text"
-          placeholder="placeholder text">
+          placeholder="placeholder text"
+        >
       </span>
     </div>
   </div>
@@ -208,13 +204,13 @@ import { urls } from "../../../../data";
       <input
         class="textbox__control"
         type="text"
-        placeholder="placeholder text">
+        placeholder="placeholder text"
+      >
     </span>
   </highlight-code>
 
   <p>
-    To display the icon at the end of the control, position the
-    <code>svg</code>
+    To display the icon at the end of the control, position the <code>svg</code>
     tag after the input.
   </p>
 
@@ -225,7 +221,8 @@ import { urls } from "../../../../data";
           aria-label="Textbox demo"
           class="textbox__control"
           type="text"
-          placeholder="placeholder text">
+          placeholder="placeholder text"
+        >
         <svg class="icon icon--24" width="16" height="16" aria-hidden="true">
           <icon-symbol name="mail-24"/>
         </svg>
@@ -238,29 +235,24 @@ import { urls } from "../../../../data";
       <input
         class="textbox__control"
         type="text"
-        placeholder="placeholder text">
+        placeholder="placeholder text"
+      >
       <svg class="icon icon--24" width="16" height="16" aria-hidden="true">
         <use href="#icon-mail-24"/>
       </svg>
     </span>
   </highlight-code>
   <p>
-    <strong>NOTE:</strong>
-    The icon is presentational, and therefore hidden from assistive
-    technology using
-    <code>aria-hidden</code>
-    . Remember, the purpose of the field must be conveyed using a label.
+    <strong>NOTE:</strong> The icon is presentational, and therefore hidden from
+    assistive technology using <code>aria-hidden</code> . Remember, the purpose
+    of the field must be conveyed using a label.
   </p>
 
-  <h3 id="textbox-icon-button">
-    Textbox with Icon Button
-  </h3>
+  <h3 id="textbox-icon-button">Textbox with Icon Button</h3>
   <p>
     Single-line textboxes also support an
-    <a href=`${urls.components}/icon-button`>
-      icon button
-    </a>
-    in the end position.
+    <a href=`${urls.components}/icon-button`>icon button</a> in the end
+    position.
   </p>
 
   <div class="demo">
@@ -270,11 +262,13 @@ import { urls } from "../../../../data";
           aria-label="Textbox demo"
           class="textbox__control"
           type="text"
-          placeholder="placeholder text">
+          placeholder="placeholder text"
+        >
         <button
-          class="icon-btn icon-btn--transparent"
+          class="icon-button icon-button--transparent"
           type="button"
-          aria-label="Clear text">
+          aria-label="Clear text"
+        >
           <svg aria-hidden="true" class="icon icon--24" width="16" height="16">
             <icon-symbol name="clear-24"/>
           </svg>
@@ -288,11 +282,13 @@ import { urls } from "../../../../data";
       <input
         class="textbox__control"
         type="text"
-        placeholder="placeholder text">
+        placeholder="placeholder text"
+      >
       <button
-        class="icon-btn icon-btn--transparent"
+        class="icon-button icon-button--transparent"
         type="button"
-        aria-label="Clear text">
+        aria-label="Clear text"
+      >
         <svg aria-hidden="true" class="icon icon--24" width="16" height="16">
           <use href="#icon-clear-24"/>
         </svg>
@@ -315,11 +311,13 @@ import { urls } from "../../../../data";
           aria-label="Textbox demo"
           class="textbox__control"
           type="text"
-          placeholder="placeholder text">
+          placeholder="placeholder text"
+        >
         <button
-          class="icon-btn icon-btn--transparent"
+          class="icon-button icon-button--transparent"
           type="button"
-          aria-label="Clear text">
+          aria-label="Clear text"
+        >
           <svg aria-hidden="true" class="icon icon--24" width="16" height="16">
             <icon-symbol name="clear-24"/>
           </svg>
@@ -337,11 +335,13 @@ import { urls } from "../../../../data";
         aria-label="Textbox demo"
         class="textbox__control"
         type="text"
-        placeholder="placeholder text">
+        placeholder="placeholder text"
+      >
       <button
-        class="icon-btn icon-btn--transparent"
+        class="icon-button icon-button--transparent"
         type="button"
-        aria-label="Clear text">
+        aria-label="Clear text"
+      >
         <svg aria-hidden="true" class="icon icon--24" width="16" height="16">
           <use href="#icon-clear-24"/>
         </svg>
@@ -349,13 +349,10 @@ import { urls } from "../../../../data";
     </span>
   </highlight-code>
 
-  <h3 id="textbox-large">
-    Large Textbox
-  </h3>
+  <h3 id="textbox-large">Large Textbox</h3>
   <p>
-    Use
-    <code>textbox--large</code>
-    modifier to style the textbox to be large size
+    Use <code>textbox--large</code> modifier to style the textbox to be large
+    size
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -371,13 +368,10 @@ import { urls } from "../../../../data";
     </span>
   </highlight-code>
 
-  <h3 id="textbox-prefix-suffix">
-    Textbox Prefix
-  </h3>
+  <h3 id="textbox-prefix-suffix">Textbox Prefix</h3>
   <p>
-    Add a
-    <code>span</code>
-    containing text before the input to show it as a prefix text.
+    Add a <code>span</code> containing text before the input to show it as a
+    prefix text.
   </p>
 
   <div class="demo">
@@ -396,13 +390,10 @@ import { urls } from "../../../../data";
     </span>
   </highlight-code>
 
-  <h3 id="textbox-prefix-suffix">
-    Textbox Postfix
-  </h3>
+  <h3 id="textbox-prefix-suffix">Textbox Postfix</h3>
   <p>
-    Add a
-    <code>span</code>
-    containing text after the input to show it as a postfix text.
+    Add a <code>span</code> containing text after the input to show it as a
+    postfix text.
   </p>
 
   <div class="demo">
@@ -421,9 +412,7 @@ import { urls } from "../../../../data";
     </span>
   </highlight-code>
 
-  <h3 id="textbox-prefix-suffix">
-    Mixed icons and static text
-  </h3>
+  <h3 id="textbox-prefix-suffix">Mixed icons and static text</h3>
   <p>Postfix/prefix icons can be mixed with static text in the textbox.</p>
 
   <div class="demo">
@@ -432,14 +421,16 @@ import { urls } from "../../../../data";
         <span>$</span>
         <input class="textbox__control" type="text" placeholder="0.00">
         <button
-          class="icon-btn icon-btn--transparent icon-btn--small"
+          class="icon-button icon-button--transparent icon-button--small"
           type="button"
-          aria-label="Clear text">
+          aria-label="Clear text"
+        >
           <svg
             aria-hidden="true"
             class="icon icon--clear-16"
             width="16"
-            height="16">
+            height="16"
+          >
             <icon-symbol name="clear-16"/>
           </svg>
         </button>
@@ -452,14 +443,16 @@ import { urls } from "../../../../data";
       <span>$</span>
       <input class="textbox__control" type="text" placeholder="0.00">
       <button
-        class="icon-btn icon-btn--transparent icon-btn--small"
+        class="icon-button icon-button--transparent icon-button--small"
         type="button"
-        aria-label="Clear text">
+        aria-label="Clear text"
+      >
         <svg
           aria-hidden="true"
           class="icon icon--clear-16"
           width="16"
-          height="16">
+          height="16"
+        >
           <use href="#icon-clear-16"/>
         </svg>
       </button>

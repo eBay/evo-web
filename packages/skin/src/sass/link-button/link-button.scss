@@ -1,0 +1,31 @@
+@use "../mixins/private/token-mixins";
+
+// The token names keep the `fake-link-` prefix so existing theme overrides carry
+// over. They are renamed in the major version that removes `fake-link`.
+button.link-button {
+    background-color: transparent;
+    border: 0;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0;
+    text-decoration: underline;
+    @include token-mixins.color-token(
+        fake-link-foreground-color,
+        color-foreground-link-primary
+    );
+
+    &:hover {
+        @include token-mixins.color-token(
+            fake-link-foreground-color-hover,
+            color-foreground-secondary
+        );
+    }
+
+    &[disabled],
+    &[aria-disabled="true"] {
+        @include token-mixins.color-token(
+            fake-link-foreground-disabled-color,
+            color-foreground-disabled
+        );
+    }
+}

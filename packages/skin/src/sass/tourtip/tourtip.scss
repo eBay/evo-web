@@ -2,6 +2,9 @@
 @use "../mixins/private/bubble-mixins";
 @use "../mixins/private/token-mixins";
 
+// DEPRECATED: the `.btn*` selectors in this file are removed in the next
+// major version. Use `.button*` instead.
+
 .tourtip {
     position: relative;
 }
@@ -143,7 +146,8 @@ span.tourtip__heading {
     width: 100%;
 }
 
-.tourtip__footer > button.btn--primary {
+.tourtip__footer > button.btn--primary,
+.tourtip__footer > button.button--primary {
     --btn-primary-background-color: var(
         --tourtip-background-color,
         var(--color-foreground-on-inverse)
@@ -163,6 +167,7 @@ span.tourtip__heading {
 /* stylelint-disable no-descending-specificity */
 /* TODO need to remove this once we update fake-links/links to allow no underline and black text */
 .tourtip__footer > .fake-link,
+.tourtip__footer > .link-button,
 .tourtip__footer > a {
     color: var(--color-foreground-on-inverse);
     text-decoration: none;

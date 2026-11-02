@@ -8,27 +8,21 @@
   </p>
   <p>
     For the input animations, you need to add either
-    <code>.number-input--increment</code>
-    or
-    <code>.number-input--decrement</code>
-    modifier class to the number input element when the paddles are
-    clicked.
+    <code>.number-input--increment</code> or
+    <code>.number-input--decrement</code> modifier class to the number input
+    element when the paddles are clicked.
   </p>
   <p>
     When it reaches the maximum or minimum value, you can add the
-    <code>.number-input--increment-disabled</code>
-    or
-    <code>.number-input--decrement-disabled</code>
-    to trigger the animation on the input when the paddles will be
-    disabled.
+    <code>.number-input--increment-disabled</code> or
+    <code>.number-input--decrement-disabled</code> to trigger the animation on
+    the input when the paddles will be disabled.
   </p>
   <p>
     In order to allow the animation to play in repetition, you need to remove
     the modifier class. A good technique is to first remove the old classes,
-    execute
-    <code>void element.offsetWidth;</code>
-    and then add the modifier of increment or decrement, whichever one you
-    want to animate.
+    execute <code>void element.offsetWidth;</code> and then add the modifier of
+    increment or decrement, whichever one you want to animate.
   </p>
   <p>All following examples have animations applied automatically.</p>
 
@@ -47,16 +41,18 @@
       <span class="number-input">
         <span class="textbox">
           <button
-            class="icon-btn icon-btn--small icon-btn--transparent number-input__decrement"
+            class="icon-button icon-button--small icon-button--transparent number-input__decrement"
             tabindex="-1"
             aria-hidden="true"
             type="button"
-            disabled>
+            disabled
+          >
             <svg
               aria-hidden="true"
               class="icon icon--24"
               width="24"
-              height="24">
+              height="24"
+            >
               <icon-symbol name="remove-24"/>
             </svg>
           </button>
@@ -67,17 +63,20 @@
             type="number"
             min="0"
             max="100"
-            value="0">
+            value="0"
+          >
           <button
-            class="icon-btn icon-btn--small icon-btn--transparent number-input__increment"
+            class="icon-button icon-button--small icon-button--transparent number-input__increment"
             type="button"
             tabindex="-1"
-            aria-hidden="true">
+            aria-hidden="true"
+          >
             <svg
               aria-hidden="true"
               class="icon icon--24"
               width="24"
-              height="24">
+              height="24"
+            >
               <icon-symbol name="add-24"/>
             </svg>
           </button>
@@ -87,16 +86,15 @@
   </div>
 
   <highlight-code type="html">
-
     <span class="number-input">
       <span class="textbox">
         <button
-          class="icon-btn icon-btn--small icon-btn--transparent number-input__decrement"
+          class="icon-button icon-button--small icon-button--transparent number-input__decrement"
           tabindex="-1"
           aria-hidden="true"
           type="button"
-          disabled>
-
+          disabled
+        >
           <svg aria-hidden="true" class="icon icon--24" width="24" height="24">
             <use href="#icon-remove-24"/>
           </svg>
@@ -107,12 +105,14 @@
           class="textbox__control"
           type="number"
           min="0"
-          value="0">
+          value="0"
+        >
         <button
-          class="icon-btn icon-btn--small icon-btn--transparent number-input__increment"
+          class="icon-button icon-button--small icon-button--transparent number-input__increment"
           type="button"
           tabindex="-1"
-          aria-hidden="true">
+          aria-hidden="true"
+        >
           <svg aria-hidden="true" class="icon icon--24" width="24" height="24">
             <use href="#icon-add-24"/>
           </svg>
@@ -123,28 +123,27 @@
 
   <h3>Base with inline label</h3>
   <p>
-    To add an inline label to the number input, use the
-    <code>label</code>
+    To add an inline label to the number input, use the <code>label</code>
     element. The label should be placed before the input field.
   </p>
   <div class="demo">
     <div class="demo__inner">
       <span class="number-input">
         <span class="textbox">
-          <label for="number-input-1">
-            Add a number
-          </label>
+          <label for="number-input-1">Add a number</label>
           <button
-            class="icon-btn icon-btn--small icon-btn--transparent number-input__decrement"
+            class="icon-button icon-button--small icon-button--transparent number-input__decrement"
             tabindex="-1"
             aria-hidden="true"
             type="button"
-            disabled>
+            disabled
+          >
             <svg
               aria-hidden="true"
               class="icon icon--24"
               width="24"
-              height="24">
+              height="24"
+            >
               <icon-symbol name="remove-24"/>
             </svg>
           </button>
@@ -154,17 +153,20 @@
             class="textbox__control"
             type="number"
             min="0"
-            value="0">
+            value="0"
+          >
           <button
-            class="icon-btn icon-btn--small icon-btn--transparent number-input__increment"
+            class="icon-button icon-button--small icon-button--transparent number-input__increment"
             type="button"
             tabindex="-1"
-            aria-hidden="true">
+            aria-hidden="true"
+          >
             <svg
               aria-hidden="true"
               class="icon icon--24"
               width="24"
-              height="24">
+              height="24"
+            >
               <icon-symbol name="add-24"/>
             </svg>
           </button>
@@ -176,15 +178,14 @@
   <highlight-code type="html">
     <span class="number-input">
       <span class="textbox">
-        <label for="number-input-1">
-          Add a number
-        </label>
+        <label for="number-input-1">Add a number</label>
         <button
-          class="icon-btn icon-btn--small icon-btn--transparent number-input__decrement"
+          class="icon-button icon-button--small icon-button--transparent number-input__decrement"
           tabindex="-1"
           aria-hidden="true"
           type="button"
-          disabled>
+          disabled
+        >
           <svg aria-hidden="true" class="icon icon--24" width="24" height="24">
             <use href="#icon-remove-24"/>
           </svg>
@@ -195,12 +196,14 @@
           class="textbox__control"
           type="number"
           min="0"
-          value="0">
+          value="0"
+        >
         <button
-          class="icon-btn icon-btn--small icon-btn--transparent number-input__increment"
+          class="icon-button icon-button--small icon-button--transparent number-input__increment"
           type="button"
           tabindex="-1"
-          aria-hidden="true">
+          aria-hidden="true"
+        >
           <svg aria-hidden="true" class="icon icon--24" width="24" height="24">
             <use href="#icon-add-24"/>
           </svg>
@@ -216,31 +219,31 @@
     CSS.
   </p>
   <p>
-    For the delete button case,
-    <code>min="1"</code>
-    attribute is required for the input.
+    For the delete button case, <code>min="1"</code> attribute is required for
+    the input.
   </p>
   <p>
     When the counter is set to 1 you can use
-    <code>number-input--show-delete</code>
-    modifier class to show the delete button. After the counter is
-    incremented to more than 1, the class should be removed.
+    <code>number-input--show-delete</code> modifier class to show the delete
+    button. After the counter is incremented to more than 1, the class should be
+    removed.
   </p>
   <div class="demo">
     <div class="demo__inner">
-
       <span class="number-input number-input--show-delete">
         <span class="textbox">
           <button
-            class="icon-btn icon-btn--small icon-btn--transparent number-input__decrement"
+            class="icon-button icon-button--small icon-button--transparent number-input__decrement"
             type="button"
             tabindex="-1"
-            aria-hidden="true">
+            aria-hidden="true"
+          >
             <svg
               aria-hidden="true"
               class="icon icon--24"
               width="24"
-              height="24">
+              height="24"
+            >
               <icon-symbol name="remove-24"/>
             </svg>
           </button>
@@ -249,30 +252,35 @@
             class="textbox__control"
             type="number"
             value="1"
-            min="1">
+            min="1"
+          >
           <button
-            class="icon-btn icon-btn--small icon-btn--transparent number-input__delete"
+            class="icon-button icon-button--small icon-button--transparent number-input__delete"
             type="button"
-            aria-label="Delete item">
+            aria-label="Delete item"
+          >
             <svg
               aria-hidden="true"
               class="icon icon--24"
               width="24"
-              height="24">
+              height="24"
+            >
               <icon-symbol name="delete-24"/>
             </svg>
           </button>
 
           <button
-            class="icon-btn icon-btn--small icon-btn--transparent number-input__increment"
+            class="icon-button icon-button--small icon-button--transparent number-input__increment"
             type="button"
             tabindex="-1"
-            aria-hidden="true">
+            aria-hidden="true"
+          >
             <svg
               aria-hidden="true"
               class="icon icon--24"
               width="24"
-              height="24">
+              height="24"
+            >
               <icon-symbol name="add-24"/>
             </svg>
           </button>
@@ -285,10 +293,11 @@
     <span class="number-input number-input--show-delete">
       <span class="textbox">
         <button
-          class="icon-btn icon-btn--small icon-btn--transparent number-input__decrement"
+          class="icon-button icon-button--small icon-button--transparent number-input__decrement"
           type="button"
           tabindex="-1"
-          aria-hidden="true">
+          aria-hidden="true"
+        >
           <svg aria-hidden="true" class="icon icon--24" width="24" height="24">
             <use href="#icon-remove-24"/>
           </svg>
@@ -298,21 +307,24 @@
           class="textbox__control"
           type="number"
           value="1"
-          min="1">
+          min="1"
+        >
         <button
-          class="icon-btn icon-btn--small icon-btn--transparent number-input__delete"
+          class="icon-button icon-button--small icon-button--transparent number-input__delete"
           type="button"
-          aria-label="Delete item">
+          aria-label="Delete item"
+        >
           <svg aria-hidden="true" class="icon icon--24" width="24" height="24">
             <use href="#icon-delete-24"/>
           </svg>
         </button>
 
         <button
-          class="icon-btn icon-btn--small icon-btn--transparent number-input__increment"
+          class="icon-button icon-button--small icon-button--transparent number-input__increment"
           type="button"
           tabindex="-1"
-          aria-hidden="true">
+          aria-hidden="true"
+        >
           <svg aria-hidden="true" class="icon icon--24" width="24" height="24">
             <use href="#icon-add-24"/>
           </svg>
@@ -323,40 +335,43 @@
 
   <h3>Large input field</h3>
   <p>
-    To create a large input field, use the
-    <code>textbox--large</code>
-    modifier class.
+    To create a large input field, use the <code>textbox--large</code> modifier
+    class.
   </p>
   <div class="demo">
     <div class="demo__inner">
       <span class="number-input">
         <span class="textbox textbox--large">
           <button
-            class="icon-btn icon-btn--small icon-btn--transparent number-input__decrement"
+            class="icon-button icon-button--small icon-button--transparent number-input__decrement"
             tabindex="-1"
             aria-hidden="true"
             type="button"
-            disabled>
+            disabled
+          >
             <svg
               aria-hidden="true"
               class="icon icon--24"
               width="24"
-              height="24">
+              height="24"
+            >
               <icon-symbol name="remove-24"/>
             </svg>
           </button>
 
           <input class="textbox__control" type="number" min="0" value="0">
           <button
-            class="icon-btn icon-btn--small icon-btn--transparent number-input__increment"
+            class="icon-button icon-button--small icon-button--transparent number-input__increment"
             type="button"
             tabindex="-1"
-            aria-hidden="true">
+            aria-hidden="true"
+          >
             <svg
               aria-hidden="true"
               class="icon icon--24"
               width="24"
-              height="24">
+              height="24"
+            >
               <icon-symbol name="add-24"/>
             </svg>
           </button>
@@ -366,16 +381,15 @@
   </div>
 
   <highlight-code type="html">
-
     <span class="number-input">
       <span class="textbox textbox--large">
         <button
-          class="icon-btn icon-btn--small icon-btn--transparent number-input__decrement"
+          class="icon-button icon-button--small icon-button--transparent number-input__decrement"
           tabindex="-1"
           aria-hidden="true"
           type="button"
-          disabled>
-
+          disabled
+        >
           <svg aria-hidden="true" class="icon icon--24" width="24" height="24">
             <use href="#icon-remove-24"/>
           </svg>
@@ -386,12 +400,14 @@
           class="textbox__control"
           type="number"
           min="0"
-          value="0">
+          value="0"
+        >
         <button
-          class="icon-btn icon-btn--small icon-btn--transparent number-input__increment"
+          class="icon-button icon-button--small icon-button--transparent number-input__increment"
           type="button"
           tabindex="-1"
-          aria-hidden="true">
+          aria-hidden="true"
+        >
           <svg aria-hidden="true" class="icon icon--24" width="24" height="24">
             <use href="#icon-add-24"/>
           </svg>
@@ -402,25 +418,26 @@
 
   <h3>Fluid input field</h3>
   <p>
-    To create a fluid input field, use the
-    <code>textbox--fluid</code>
-    modifier class.
+    To create a fluid input field, use the <code>textbox--fluid</code> modifier
+    class.
   </p>
   <div class="demo">
     <div class="demo__inner">
       <span class="number-input">
         <span class="textbox textbox--fluid">
           <button
-            class="icon-btn icon-btn--small icon-btn--transparent number-input__decrement"
+            class="icon-button icon-button--small icon-button--transparent number-input__decrement"
             tabindex="-1"
             aria-hidden="true"
             type="button"
-            disabled>
+            disabled
+          >
             <svg
               aria-hidden="true"
               class="icon icon--24"
               width="24"
-              height="24">
+              height="24"
+            >
               <icon-symbol name="remove-24"/>
             </svg>
           </button>
@@ -430,17 +447,20 @@
             class="textbox__control"
             type="number"
             min="0"
-            value="0">
+            value="0"
+          >
           <button
-            class="icon-btn icon-btn--small icon-btn--transparent number-input__increment"
+            class="icon-button icon-button--small icon-button--transparent number-input__increment"
             type="button"
             tabindex="-1"
-            aria-hidden="true">
+            aria-hidden="true"
+          >
             <svg
               aria-hidden="true"
               class="icon icon--24"
               width="24"
-              height="24">
+              height="24"
+            >
               <icon-symbol name="add-24"/>
             </svg>
           </button>
@@ -453,11 +473,12 @@
     <span class="number-input">
       <span class="textbox textbox--fluid">
         <button
-          class="icon-btn icon-btn--small icon-btn--transparent number-input__decrement"
+          class="icon-button icon-button--small icon-button--transparent number-input__decrement"
           tabindex="-1"
           aria-hidden="true"
           type="button"
-          disabled>
+          disabled
+        >
           <svg aria-hidden="true" class="icon icon--24" width="24" height="24">
             <use href="#icon-remove-24"/>
           </svg>
@@ -468,12 +489,14 @@
           aria-label="Number input"
           type="number"
           min="0"
-          value="0">
+          value="0"
+        >
         <button
-          class="icon-btn icon-btn--small icon-btn--transparent number-input__increment"
+          class="icon-button icon-button--small icon-button--transparent number-input__increment"
           type="button"
           tabindex="-1"
-          aria-hidden="true">
+          aria-hidden="true"
+        >
           <svg aria-hidden="true" class="icon icon--24" width="24" height="24">
             <use href="#icon-add-24"/>
           </svg>
@@ -485,27 +508,27 @@
   <h3>Fluid input field with label</h3>
   <p>
     To create a fluid input field with a label, use the
-    <code>textbox--fluid</code>
-    modifier class on the label version of number-input.
+    <code>textbox--fluid</code> modifier class on the label version of
+    number-input.
   </p>
   <div class="demo">
     <div class="demo__inner">
       <span class="number-input">
         <span class="textbox textbox--fluid">
-          <label for="number-input-2">
-            Add a number
-          </label>
+          <label for="number-input-2">Add a number</label>
           <button
-            class="icon-btn icon-btn--small icon-btn--transparent number-input__decrement"
+            class="icon-button icon-button--small icon-button--transparent number-input__decrement"
             tabindex="-1"
             aria-hidden="true"
             type="button"
-            disabled>
+            disabled
+          >
             <svg
               aria-hidden="true"
               class="icon icon--24"
               width="24"
-              height="24">
+              height="24"
+            >
               <icon-symbol name="remove-24"/>
             </svg>
           </button>
@@ -515,17 +538,20 @@
             id="number-input-2"
             type="number"
             min="0"
-            value="0">
+            value="0"
+          >
           <button
-            class="icon-btn icon-btn--small icon-btn--transparent number-input__increment"
+            class="icon-button icon-button--small icon-button--transparent number-input__increment"
             type="button"
             tabindex="-1"
-            aria-hidden="true">
+            aria-hidden="true"
+          >
             <svg
               aria-hidden="true"
               class="icon icon--24"
               width="24"
-              height="24">
+              height="24"
+            >
               <icon-symbol name="add-24"/>
             </svg>
           </button>
@@ -536,16 +562,14 @@
   <highlight-code type="html">
     <span class="number-input">
       <span class="textbox textbox--fluid">
-        <label for="number-input-1">
-          Add a number
-        </label>
+        <label for="number-input-1">Add a number</label>
         <button
-          class="icon-btn icon-btn--small icon-btn--transparent number-input__decrement"
+          class="icon-button icon-button--small icon-button--transparent number-input__decrement"
           tabindex="-1"
           aria-hidden="true"
           type="button"
-          disabled>
-
+          disabled
+        >
           <svg aria-hidden="true" class="icon icon--24" width="24" height="24">
             <use href="#icon-remove-24"/>
           </svg>
@@ -556,12 +580,14 @@
           type="number"
           id="number-input-1"
           min="0"
-          value="0">
+          value="0"
+        >
         <button
-          class="icon-btn icon-btn--small icon-btn--transparent number-input__increment"
+          class="icon-button icon-button--small icon-button--transparent number-input__increment"
           type="button"
           tabindex="-1"
-          aria-hidden="true">
+          aria-hidden="true"
+        >
           <svg aria-hidden="true" class="icon icon--24" width="24" height="24">
             <use href="#icon-add-24"/>
           </svg>

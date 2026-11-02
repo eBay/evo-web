@@ -2,6 +2,9 @@
 @use "../mixins/private/bubble-mixins";
 @use "../mixins/private/token-mixins";
 
+// DEPRECATED: the `.icon-btn*` selectors in this file are removed in the next
+// major version. Use `.icon-button*` instead.
+
 .infotip {
     position: relative;
 }
@@ -120,7 +123,8 @@ span.infotip__heading {
 }
 
 /* todo: refactor out this dependency. Use a mixin instead */
-.infotip .icon-btn {
+.infotip .icon-btn,
+.infotip .icon-button {
     display: inline-flex;
     flex-shrink: 0; /* todo: Should move to icon-btn in next major */
     height: 20px;

@@ -1,0 +1,5 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`EvoField SSR > renders block layout with a required label and description 1`] = `"<div class="field"><label for="listing-title" class="field__label field__label--stacked">Listing title<!-- --> <sup aria-hidden="true">*</sup></label><input id="listing-title" required="" aria-describedby="title-help"/><div id="title-help" class="field__description field__description--information">Include the brand and model.</div></div>"`;
+
+exports[`EvoField SSR > renders inline layout and end label 1`] = `"<span class="field"><input id="save-search" type="checkbox"/><label for="save-search" class="field__label field__label--end">Save this search</label><span class="field__description">Search preferences</span></span>"`;

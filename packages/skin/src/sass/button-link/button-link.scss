@@ -1,0 +1,346 @@
+@use "../mixins/private/button-mixins";
+@use "../mixins/private/state-layer";
+@use "../mixins/private/token-mixins";
+
+a.button-link {
+    align-content: center;
+    background-color: transparent;
+    border-radius: var(
+        --btn-border-radius,
+        calc(button-mixins.$button-height-regular / 2)
+    );
+    color: inherit;
+    display: inline-block;
+    font-size: var(--font-size-body);
+    min-height: button-mixins.$button-height-regular;
+    min-width: 88px;
+    padding: button-mixins.$button-padding-vertical
+        button-mixins.$button-padding-horizontal;
+
+    @include button-mixins.base;
+}
+
+a.button-link:not([href]),
+a.button-link[aria-disabled="true"] {
+    @include token-mixins.color-token(
+        link-foreground-color-disabled,
+        color-foreground-disabled
+    );
+}
+
+a.button-link--borderless {
+    border-color: transparent;
+    min-width: auto;
+    padding-left: 0;
+    vertical-align: initial;
+
+    &:focus,
+    &:hover {
+        background-color: transparent;
+        outline: none;
+        text-decoration: underline;
+    }
+}
+
+a.button-link--borderless[disabled],
+a.button-link--borderless[aria-disabled="true"] {
+    border-color: transparent;
+}
+
+a.button-link--borderless.button-link--destructive {
+    @include token-mixins.color-token(
+        btn-secondary-destructive-foreground-color,
+        color-foreground-attention
+    );
+}
+
+a.button-link--slim {
+    height: button-mixins.$button-height-regular;
+    min-width: auto;
+    padding-left: var(--spacing-100);
+    padding-right: var(--spacing-100);
+}
+
+a.button-link:visited,
+a.button-link:hover {
+    color: inherit;
+}
+
+a.button-link--fluid {
+    width: 100%;
+}
+
+.button-link__cell {
+    justify-content: center;
+
+    @include button-mixins.cell-base;
+    @include button-mixins.cell-fixed-height;
+    @include button-mixins.cell-truncated;
+}
+
+a.button-link--form .button-link__cell,
+a.button-link--borderless .button-link__cell {
+    justify-content: space-between;
+}
+
+a.button-link svg.icon {
+    @include button-mixins.icon-base;
+}
+
+a.button-link__cell--fixed-height svg.icon {
+    align-self: center;
+    height: 1rem;
+    overflow: visible;
+    width: 1rem;
+}
+
+a.button-link--primary {
+    background-color: var(--color-background-accent);
+    border-color: var(--color-border-accent);
+    color: var(--color-foreground-on-accent);
+    font-weight: bold;
+
+    @include button-mixins.animations;
+    @include state-layer.standard;
+}
+
+a.button-link--primary {
+    outline-color: var(
+        --color-foreground-primary
+    ); /* fixes invisible focus outline in Firefox */
+}
+
+a.button-link--primary:visited,
+a.button-link--primary:hover {
+    color: var(--color-foreground-on-accent);
+}
+
+a.button-link--primary.button-link--destructive {
+    background-color: var(--color-background-attention);
+    border-color: var(--color-border-attention);
+    color: var(--color-foreground-on-attention);
+    font-weight: bold;
+
+    @include state-layer.standard;
+}
+
+a.button-link[aria-expanded="true"] svg.icon--12 {
+    transform: rotate(180deg);
+}
+
+a.button-link--large svg.icon {
+    max-height: button-mixins.$button-height-large -
+        (button-mixins.$button-padding-vertical-large * 2);
+}
+
+a.button-link--small svg.icon {
+    max-height: button-mixins.$button-height-small -
+        (button-mixins.$button-padding-vertical-small * 2);
+}
+
+a.button-link--primary:not([href]),
+a.button-link--primary[aria-disabled="true"] {
+    @include token-mixins.background-color-token(
+        btn-primary-disabled-background-color,
+        color-foreground-disabled
+    );
+    @include token-mixins.border-color-token(
+        btn-primary-disabled-border-color,
+        color-foreground-disabled
+    );
+    @include token-mixins.color-token(
+        btn-primary-foreground-color,
+        color-foreground-on-accent
+    );
+}
+
+a.button-link--secondary {
+    background-color: var(--btn-secondary-background-color, transparent);
+    border-color: var(--color-border-accent);
+    color: var(--color-foreground-accent);
+
+    @include button-mixins.animations;
+    @include state-layer.standard;
+}
+
+a.button-link--secondary:visited,
+a.button-link--secondary:hover {
+    @include token-mixins.color-token(
+        btn-secondary-foreground-color,
+        color-foreground-accent
+    );
+}
+
+a.button-link--secondary.button-link--destructive {
+    background-color: var(
+        --btn-secondary-destructive-background-color,
+        transparent
+    );
+    @include token-mixins.border-color-token(
+        btn-secondary-destructive-border-color,
+        color-border-attention
+    );
+    @include token-mixins.color-token(
+        btn-secondary-destructive-foreground-color,
+        color-foreground-attention
+    );
+}
+
+a.button-link--secondary:not([href]),
+a.button-link--secondary[aria-disabled="true"] {
+    @include token-mixins.border-color-token(
+        btn-secondary-disabled-border-color,
+        color-background-disabled
+    );
+    @include token-mixins.color-token(
+        btn-secondary-disabled-foreground-color,
+        color-background-disabled
+    );
+}
+
+a.button-link--tertiary {
+    @include token-mixins.border-color-token(
+        btn-tertiary-border-color,
+        color-border-medium
+    );
+
+    @include button-mixins.animations;
+    @include state-layer.standard;
+}
+
+a.button-link--tertiary:not([href]),
+a.button-link--tertiary[aria-disabled="true"] {
+    @include token-mixins.color-token(
+        btn-tertiary-disabled-foreground-color,
+        color-background-disabled
+    );
+    @include token-mixins.border-color-token(
+        expand-btn-disabled-border-color,
+        color-border-disabled
+    );
+}
+
+a.button-link--tertiary.button-link--destructive {
+    @include token-mixins.border-color-token(
+        btn-tertiary-destructive-foreground-color,
+        color-border-subtle
+    );
+}
+
+a.button-link--large {
+    @include button-mixins.large;
+}
+
+a.button-link--small {
+    border-radius: var(
+        --btn-border-radius,
+        calc(button-mixins.$button-height-small / 2)
+    );
+    font-size: var(--font-size-body);
+    min-height: button-mixins.$button-height-small;
+    padding: button-mixins.$button-padding-vertical-small
+        button-mixins.$button-padding-horizontal-small;
+}
+
+a.button-link--form {
+    border-color: inherit;
+    max-width: 100%;
+    @include token-mixins.border-radius-token(
+        expand-btn-border-radius,
+        border-radius-50
+    );
+    @include state-layer.standard;
+}
+
+a.button-link--transparent {
+    background-color: transparent;
+
+    &:hover,
+    &:focus {
+        background-color: transparent;
+    }
+}
+
+a.button-link--large-fixed-height {
+    height: button-mixins.$button-height-large;
+    min-height: button-mixins.$button-height-large;
+}
+
+a.button-link--truncated {
+    @include button-mixins.truncate;
+}
+
+a.button-link--large-truncated {
+    font-size: var(--font-size-medium);
+    height: button-mixins.$button-height-large;
+    min-height: button-mixins.$button-height-large;
+    padding: button-mixins.$button-padding-vertical-large
+        button-mixins.$button-padding-horizontal;
+
+    @include button-mixins.truncate;
+}
+
+a.button-link--split-start {
+    border-radius: 24px 0 0 24px;
+}
+
+a.button-link--split-end {
+    border-radius: 0 24px 24px 0;
+    margin-left: -1px;
+    min-width: 40px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+a.button-link.button-link--primary.button-link--split-end {
+    @include token-mixins.border-left-color-token(
+        btn-primary-border-split-color,
+        color-background-primary
+    );
+    &:hover,
+    &:focus {
+        @include token-mixins.border-left-color-token(
+            btn-primary-border-split-color,
+            color-background-primary
+        );
+    }
+}
+
+[dir="rtl"] {
+    a.button-link--split-start {
+        border-radius: 0 24px 24px 0;
+    }
+
+    a.button-link--split-end {
+        border-radius: 24px 0 0 24px;
+        margin-left: inherit;
+        margin-right: -1px;
+    }
+
+    a.button-link.button-link--tertiary.button-link--split-end {
+        margin-right: -2px;
+    }
+
+    a.button-link.button-link--primary.button-link--split-end {
+        @include token-mixins.border-left-color-token(
+            btn-primary-border-color,
+            color-border-accent
+        );
+        @include token-mixins.border-right-color-token(
+            primary-border-split-color,
+            color-border-subtle
+        );
+
+        &:hover,
+        &:focus {
+            @include token-mixins.border-left-color-token(
+                btn-primary-border-color,
+                color-border-accent
+            );
+            @include token-mixins.border-right-color-token(
+                primary-border-split-color,
+                color-border-subtle
+            );
+        }
+    }
+}

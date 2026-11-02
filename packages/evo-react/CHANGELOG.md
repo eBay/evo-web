@@ -1,5 +1,15 @@
 # @evo-web/react
 
+## 0.4.11
+
+### Patch Changes
+
+- [#1005](https://github.com/eBay/evo-web/pull/1005) [`bc72dbd`](https://github.com/eBay/evo-web/commit/bc72dbd1f6aebee7a6b7812491b032360e713533) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoEducationNotice component.
+
+- [#1076](https://github.com/eBay/evo-web/pull/1076) [`3690578`](https://github.com/eBay/evo-web/commit/36905785fec740849b8a9a68d03324a66fef23ca) Thanks [@sebxt](https://github.com/sebxt)! - fix(date-textbox,date-input): reject typed days that do not exist in the month, such as 02/30/2024
+
+- [#991](https://github.com/eBay/evo-web/pull/991) [`bb03dad`](https://github.com/eBay/evo-web/commit/bb03dade29b09a4b603efbff8f44a5477bdf6d53) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoField component.
+
 ## 0.4.10
 
 ### Patch Changes

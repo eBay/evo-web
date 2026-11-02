@@ -149,7 +149,8 @@ span.infotip__mask {
 span.infotip__heading {
     display: block;
 }
-.infotip .icon-btn {
+.infotip .icon-btn,
+.infotip .icon-button {
     display: inline-flex;
     flex-shrink: 0;
     height: 20px;

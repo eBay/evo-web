@@ -6,17 +6,15 @@
     The default implementation of the Filter Input component is meant to
     client-side filtering of an existing list in real-time. For accessibility
     purposes, to tie the Filter Input with the results, the Filter Input should
-    include
-    <code>aria-controls="filter-results-container-id"</code>
-    where the ID matches the results container ID.
+    include <code>aria-controls="filter-results-container-id"</code> where the
+    ID matches the results container ID.
   </p>
 
   <p>
     The input placeholder is required and should be descriptive of the filtering
-    action. The 'Clear' button show/hide uses
-    <code>CSS</code>
-    to show/hide the button when the input is empty or filled. Without the
-    placeholder, that interaction would break.
+    action. The 'Clear' button show/hide uses <code>CSS</code> to show/hide the
+    button when the input is empty or filled. Without the placeholder, that
+    interaction would break.
   </p>
 
   <demo>
@@ -31,11 +29,13 @@
           type="search"
           aria-label="Filter list"
           aria-controls="filter-results-container-id"
-          required>
+          required
+        >
         <button
-          class="icon-btn icon-btn--transparent icon-btn--small filter-input__clear-btn"
+          class="icon-button icon-button--transparent icon-button--small filter-input__clear-btn"
           type="button"
-          aria-label="Clear filter">
+          aria-label="Clear filter"
+        >
           <svg aria-hidden="true" class="icon icon--16" width="16" height="16">
             <use href="#icon-clear-16"/>
           </svg>
@@ -56,11 +56,13 @@
           type="search"
           aria-label="Filter list"
           aria-controls="filter-results-container-id"
-          required>
+          required
+        >
         <button
-          class="icon-btn icon-btn--transparent icon-btn--small filter-input__clear-btn"
+          class="icon-button icon-button--transparent icon-button--small filter-input__clear-btn"
           type="button"
-          aria-label="Clear filter">
+          aria-label="Clear filter"
+        >
           <svg aria-hidden="true" class="icon icon--16" width="16" height="16">
             <use href="#icon-clear-16"/>
           </svg>
@@ -73,14 +75,14 @@
   <p>
     The Filter Input component can be used in different sizes. The default size
     is medium. The small size can be implemented by adding the modifier,
-    <code>filter-input--small</code>
-    and is used when the Filter Input is used in a smaller context.
+    <code>filter-input--small</code> and is used when the Filter Input is used
+    in a smaller context.
   </p>
   <p>
     The larger size can be implemented by adding the modifier,
-    <code>filter-input--large</code>
-    . The large size is used when the Filter Input is used in a larger
-    context, such as potentially a full-page implementation.
+    <code>filter-input--large</code> . The large size is used when the Filter
+    Input is used in a larger context, such as potentially a full-page
+    implementation.
   </p>
 
   <demo>
@@ -88,7 +90,8 @@
       <span
         class="filter-input filter-input--small"
         role="search"
-        aria-label="Filter list">
+        aria-label="Filter list"
+      >
         <span class="textbox textbox--fluid">
           <svg class="icon icon--16" width="16" height="16" aria-hidden="true">
             <use href="#icon-search-16"/>
@@ -99,16 +102,19 @@
             type="search"
             aria-controls="filter-results-container-id"
             aria-label="Filter list"
-            required>
+            required
+          >
           <button
-            class="icon-btn icon-btn--transparent icon-btn--small filter-input__clear-btn"
+            class="icon-button icon-button--transparent icon-button--small filter-input__clear-btn"
             type="button"
-            aria-label="Clear filter">
+            aria-label="Clear filter"
+          >
             <svg
               aria-hidden="true"
               class="icon icon--16"
               width="16"
-              height="16">
+              height="16"
+            >
               <use href="#icon-clear-16"/>
             </svg>
           </button>
@@ -119,7 +125,8 @@
       <span
         class="filter-input filter-input--large"
         role="search"
-        aria-label="Filter list">
+        aria-label="Filter list"
+      >
         <span class="textbox textbox--fluid">
           <svg class="icon icon--16" width="16" height="16" aria-hidden="true">
             <use href="#icon-search-16"/>
@@ -130,16 +137,19 @@
             type="search"
             aria-controls="filter-results-container-id"
             aria-label="Filter list"
-            required>
+            required
+          >
           <button
-            class="icon-btn icon-btn--transparent icon-btn--small filter-input__clear-btn"
+            class="icon-button icon-button--transparent icon-button--small filter-input__clear-btn"
             type="button"
-            aria-label="Clear filter">
+            aria-label="Clear filter"
+          >
             <svg
               aria-hidden="true"
               class="icon icon--16"
               width="16"
-              height="16">
+              height="16"
+            >
               <use href="#icon-clear-16"/>
             </svg>
           </button>
@@ -152,7 +162,8 @@
     <span
       class="filter-input filter-input--small"
       role="search"
-      aria-label="Filter list">
+      aria-label="Filter list"
+    >
       <span class="textbox textbox--fluid">
         <svg class="icon icon--16" width="16" height="16" aria-hidden="true">
           <use href="#icon-search-16"/>
@@ -163,22 +174,24 @@
           type="search"
           aria-controls="filter-results-container-id"
           aria-label="Filter list"
-          required>
+          required
+        >
         <button
-          class="icon-btn icon-btn--transparent icon-btn--small filter-input__clear-btn"
+          class="icon-button icon-button--transparent icon-button--small filter-input__clear-btn"
           type="button"
-          aria-label="Clear filter">
+          aria-label="Clear filter"
+        >
           <svg aria-hidden="true" class="icon icon--16" width="16" height="16">
             <use href="#icon-clear-16"/>
           </svg>
         </button>
       </span>
     </span>
-
     <span
       class="filter-input filter-input--large"
       role="search"
-      aria-label="Filter list">
+      aria-label="Filter list"
+    >
       <span class="textbox textbox--fluid">
         <svg class="icon icon--16" width="16" height="16" aria-hidden="true">
           <use href="#icon-search-16"/>
@@ -189,11 +202,13 @@
           type="search"
           aria-controls="filter-results-container-id"
           aria-label="Filter list"
-          required>
+          required
+        >
         <button
-          class="icon-btn icon-btn--transparent icon-btn--small filter-input__clear-btn"
+          class="icon-button icon-button--transparent icon-button--small filter-input__clear-btn"
           type="button"
-          aria-label="Clear filter">
+          aria-label="Clear filter"
+        >
           <svg aria-hidden="true" class="icon icon--16" width="16" height="16">
             <use href="#icon-clear-16"/>
           </svg>

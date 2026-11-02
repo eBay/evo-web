@@ -4,34 +4,34 @@ export const base = () => `
 <div class="layout-grid">
     <ul aria-label="List of options">
         <li>
-            <button class="btn btn--fluid">Button 1</button>
+            <button class="button button--fluid">Button 1</button>
         </li>
         <li>
-            <button class="btn btn--fluid">Button 2</button>
+            <button class="button button--fluid">Button 2</button>
         </li>
         <li>
-            <button class="btn btn--fluid">Button 3</button>
+            <button class="button button--fluid">Button 3</button>
         </li>
         <li>
-            <button class="btn btn--fluid">Button 4</button>
+            <button class="button button--fluid">Button 4</button>
         </li>
         <li>
-            <button class="btn btn--fluid">Button 5</button>
+            <button class="button button--fluid">Button 5</button>
         </li>
         <li>
-            <button class="btn btn--fluid">Button 6</button>
+            <button class="button button--fluid">Button 6</button>
         </li>
         <li>
-            <button class="btn btn--fluid">Button 7</button>
+            <button class="button button--fluid">Button 7</button>
         </li>
         <li>
-            <button class="btn btn--fluid">Button 8</button>
+            <button class="button button--fluid">Button 8</button>
         </li>
         <li>
-            <button class="btn btn--fluid">Button 9</button>
+            <button class="button button--fluid">Button 9</button>
         </li>
         <li>
-            <button class="btn btn--fluid">Button 10</button>
+            <button class="button button--fluid">Button 10</button>
         </li>
     </ul>
 </div>
@@ -47,34 +47,34 @@ export const custom = () => `
 >
     <ul aria-label="List of options">
         <li>
-            <button class="btn btn--fluid">Button 1</button>
+            <button class="button button--fluid">Button 1</button>
         </li>
         <li>
-            <button class="btn btn--fluid">Button 2</button>
+            <button class="button button--fluid">Button 2</button>
         </li>
         <li>
-            <button class="btn btn--fluid">Button 3</button>
+            <button class="button button--fluid">Button 3</button>
         </li>
         <li>
-            <button class="btn btn--fluid">Button 4</button>
+            <button class="button button--fluid">Button 4</button>
         </li>
         <li>
-            <button class="btn btn--fluid">Button 5</button>
+            <button class="button button--fluid">Button 5</button>
         </li>
         <li>
-            <button class="btn btn--fluid">Button 6</button>
+            <button class="button button--fluid">Button 6</button>
         </li>
         <li>
-            <button class="btn btn--fluid">Button 7</button>
+            <button class="button button--fluid">Button 7</button>
         </li>
         <li>
-            <button class="btn btn--fluid">Button 8</button>
+            <button class="button button--fluid">Button 8</button>
         </li>
         <li>
-            <button class="btn btn--fluid">Button 9</button>
+            <button class="button button--fluid">Button 9</button>
         </li>
         <li>
-            <button class="btn btn--fluid">Button 10</button>
+            <button class="button button--fluid">Button 10</button>
         </li>
     </ul>
 </div>
@@ -85,34 +85,34 @@ export const RTL = () => `
     <div class="layout-grid">
         <ul aria-label="List of options">
             <li>
-                <button class="btn btn--fluid">Button 1</button>
+                <button class="button button--fluid">Button 1</button>
             </li>
             <li>
-                <button class="btn btn--fluid">Button 2</button>
+                <button class="button button--fluid">Button 2</button>
             </li>
             <li>
-                <button class="btn btn--fluid">Button 3</button>
+                <button class="button button--fluid">Button 3</button>
             </li>
             <li>
-                <button class="btn btn--fluid">Button 4</button>
+                <button class="button button--fluid">Button 4</button>
             </li>
             <li>
-                <button class="btn btn--fluid">Button 5</button>
+                <button class="button button--fluid">Button 5</button>
             </li>
             <li>
-                <button class="btn btn--fluid">Button 6</button>
+                <button class="button button--fluid">Button 6</button>
             </li>
             <li>
-                <button class="btn btn--fluid">Button 7</button>
+                <button class="button button--fluid">Button 7</button>
             </li>
             <li>
-                <button class="btn btn--fluid">Button 8</button>
+                <button class="button button--fluid">Button 8</button>
             </li>
             <li>
-                <button class="btn btn--fluid">Button 9</button>
+                <button class="button button--fluid">Button 9</button>
             </li>
             <li>
-                <button class="btn btn--fluid">Button 10</button>
+                <button class="button button--fluid">Button 10</button>
             </li>
         </ul>
     </div>

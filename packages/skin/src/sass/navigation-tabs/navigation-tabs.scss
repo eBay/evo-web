@@ -1,0 +1,100 @@
+@use "../mixins/private/token-mixins";
+
+span.navigation-tabs {
+    display: inline-block;
+}
+
+ul.navigation-tabs__items {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: var(--font-size-body);
+    gap: var(--spacing-50);
+
+    // This is done to prevent extra indentation at the start
+    margin: 0;
+    margin-inline-start: calc(0px - var(--spacing-200));
+}
+
+.navigation-tabs--large ul.navigation-tabs__items {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-600);
+}
+
+ul.navigation-tabs__items {
+    list-style: none;
+    padding: 0;
+}
+
+li.navigation-tabs__item {
+    display: inline-block;
+    position: relative;
+    -webkit-tap-highlight-color: var(--color-background-secondary);
+}
+
+li.navigation-tabs__item > a {
+    text-decoration: none;
+}
+
+li.navigation-tabs__item > a {
+    @include token-mixins.color-token(
+        tabs-item-foreground-color,
+        color-foreground-secondary
+    );
+
+    display: inline-block;
+    padding: var(--spacing-150) var(--spacing-200);
+
+    &::after {
+        background-color: transparent;
+        border-radius: 6px;
+        content: "";
+        display: block;
+        height: 2px;
+        inset: auto var(--spacing-200) 0;
+        position: absolute; /* required to avoid focus outline issues */
+    }
+}
+
+li.navigation-tabs__item > a[aria-current] {
+    @include token-mixins.color-token(
+        tabs-item-selected-foreground-color,
+        color-foreground-primary
+    );
+
+    &::after {
+        background-color: currentColor;
+    }
+}
+
+/* https://developer.paciellogroup.com/blog/2018/03/focus-visible-and-backwards-compatibility/ */
+li.navigation-tabs__item a:focus {
+    &:not(:focus-visible) {
+        outline: none;
+    }
+}
+
+li.navigation-tabs__item > a:not([aria-current]):not([href]) {
+    &,
+    &:focus,
+    &:hover {
+        color: var(--color-foreground-disabled);
+        &::after {
+            background-color: transparent;
+        }
+    }
+}
+
+li.navigation-tabs__item > a:not([aria-current]) {
+    &:hover,
+    &:focus {
+        color: var(--color-foreground-secondary);
+
+        &::after {
+            background-color: currentColor;
+        }
+    }
+}
+
+.navigation-tabs__cell {
+    margin: var(--spacing-200) 0;
+}

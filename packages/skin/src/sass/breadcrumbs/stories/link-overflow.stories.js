@@ -12,7 +12,7 @@ export const minimum = () => `
         </li>
         <li>
             <span class="fake-menu-button">
-                <button class="fake-menu-button__button icon-btn" aria-expanded="false" aria-haspopup="true" aria-label="eBay Menu"  type="button">
+                <button class="fake-menu-button__button icon-button" aria-expanded="false" aria-haspopup="true" aria-label="eBay Menu"  type="button">
                     <svg aria-hidden="true" class="icon icon--16">
                         <use href="#icon-overflow-horizontal-16"></use>
                     </svg>
@@ -57,7 +57,7 @@ export const collapsed = () => `
         </li>
         <li>
             <span class="fake-menu-button">
-                <button class="fake-menu-button__button icon-btn" aria-expanded="false" aria-haspopup="true" aria-label="eBay Menu"  type="button">
+                <button class="fake-menu-button__button icon-button" aria-expanded="false" aria-haspopup="true" aria-label="eBay Menu"  type="button">
                     <svg aria-hidden="true" class="icon icon--16">
                         <use href="#icon-overflow-horizontal-16"></use>
                     </svg>
@@ -108,7 +108,7 @@ export const expanded = () => `
         </li>
         <li>
             <span class="fake-menu-button">
-                <button class="fake-menu-button__button icon-btn" aria-expanded="true" aria-haspopup="true" aria-label="eBay Menu"  type="button">
+                <button class="fake-menu-button__button icon-button" aria-expanded="true" aria-haspopup="true" aria-label="eBay Menu"  type="button">
                     <svg aria-hidden="true" class="icon icon--16">
                         <use href="#icon-overflow-horizontal-16"></use>
                     </svg>
@@ -156,7 +156,7 @@ export const textSpacing = () => `
         </li>
         <li>
             <span class="fake-menu-button">
-                <button class="fake-menu-button__button icon-btn" aria-expanded="false" aria-haspopup="true" aria-label="eBay Menu"  type="button">
+                <button class="fake-menu-button__button icon-button" aria-expanded="false" aria-haspopup="true" aria-label="eBay Menu"  type="button">
                     <svg aria-hidden="true" class="icon icon--16">
                         <use href="#icon-overflow-horizontal-16"></use>
                     </svg>

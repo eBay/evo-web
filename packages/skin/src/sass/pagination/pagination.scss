@@ -3,6 +3,9 @@
 @use "../mixins/private/state-layer";
 @use "../mixins/public/utility-mixins";
 
+// DEPRECATED: the `.icon-btn*` selectors in this file are removed in the next
+// major version. Use `.icon-button*` instead.
+
 nav.pagination {
     @include utility-mixins.inline-flex-items-centered;
 
@@ -129,7 +132,8 @@ button.pagination__item {
     }
 }
 
-span.pagination__item button.icon-btn--transparent {
+span.pagination__item button.icon-btn--transparent,
+span.pagination__item button.icon-button--transparent {
     @include state-layer.standard;
 }
 
