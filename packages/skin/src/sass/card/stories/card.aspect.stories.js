@@ -11,7 +11,7 @@ export const verticalAspectSquare = () => `
         </div>
 
         <div class="card__action">
-            <button class="btn btn--primary btn--fluid">See Details</button>
+            <button class="button button--primary button--fluid">See Details</button>
         </div>
     </div>
 </span>
@@ -28,7 +28,7 @@ export const verticalAspect_5by4 = () => `
         </div>
 
         <div class="card__action">
-            <button class="btn btn--primary btn--fluid">See Details</button>
+            <button class="button button--primary button--fluid">See Details</button>
         </div>
     </div>
 </span>
@@ -45,7 +45,7 @@ export const verticalAspect_9by16 = () => `
         </div>
 
         <div class="card__action">
-            <button class="btn btn--primary btn--fluid">See Details</button>
+            <button class="button button--primary button--fluid">See Details</button>
         </div>
     </div>
 </span>

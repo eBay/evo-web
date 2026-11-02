@@ -156,8 +156,8 @@ export const Default = buildExtensionTemplate(
     DefaultTemplate,
     DefaultTemplateCode,
     {
-        a11yCloseButtonText: "Dismiss infotip",
-        ariaLabel: "Important information",
+        a11yCloseButtonText: "Dismiss",
+        ariaLabel: "Info",
     },
 );
 
@@ -165,8 +165,8 @@ export const OpenOnRender = buildExtensionTemplate(
     OpenOnRenderTemplate,
     OpenOnRenderTemplateCode,
     {
-        a11yCloseButtonText: "Dismiss infotip",
-        ariaLabel: "Important information",
+        a11yCloseButtonText: "Dismiss",
+        ariaLabel: "Info",
         open: true,
     },
 );

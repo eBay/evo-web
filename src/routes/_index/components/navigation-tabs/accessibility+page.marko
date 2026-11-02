@@ -1,0 +1,60 @@
+import "../../../../sass/accessibility.scss";
+import { urls } from "../../../../data";
+
+<div class="a11y-pattern-content">
+  <h1>Navigation Tabs Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    Navigation tabs is a navigation pattern. The “tabs” are simply a list of
+    links with no additional JavaScript behaviour. For <em>dynamic</em> tabs
+    that hide &amp; show content, use the
+    <a href=`${urls.components}/tabs`>tabs</a> pattern instead.
+  </p>
+  <p>
+    Each navigation tab <strong>must</strong> be a real <code>&lt;a&gt;</code>
+    element with a valid <code>href</code> . A value of “javascript” (or any
+    such variant) is <strong>not</strong> a valid URL.
+  </p>
+  <p>
+    The <code>aria-current</code> attribute <strong>must</strong> be used to
+    programmatically denote the current page/link.
+  </p>
+  <h2>Interaction Design</h2>
+  <p>
+    This section provides interaction design for keyboard and screen reader
+    users.
+  </p>
+  <h3>Keyboard</h3>
+  <p><code>TAB</code> key navigates between navigation tabs.</p>
+  <p>
+    <code>ENTER</code> key activates a navigation tab (i.e. it navigates to the
+    link's <code>href</code> ).
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    Upon entering the list, the number of list items <strong>must</strong> be
+    announced.
+  </p>
+  <p>
+    The “current” navigation tab <strong>must</strong> be announced as the
+    current item (exact words may differ depending on the screen reader).
+  </p>
+  <h2>ARIA Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>aria-current</strong></td>
+        <td>
+          Provides assistive technology with programmatic state on the
+          navigation tab that reflects the current URL.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,45 @@
+import "../../../../sass/accessibility.scss";
+import { urls } from "../../../../data";
+
+<div class="a11y-pattern-content">
+  <h1>Navigation Menu Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    A navigation menu is a list of links. A link item <strong>must</strong> be a
+    real <code>&lt;a&gt;</code> element with a valid <code>href</code>
+    attribute, so that selecting it navigates to a URL.
+  </p>
+  <p>
+    The component also styles <code>&lt;button&gt;</code> items. A button item
+    <strong>must</strong> be a real <code>&lt;button&gt;</code> element, never a
+    styled <code>&lt;div&gt;</code> or <code>&lt;span&gt;</code> .
+  </p>
+  <p>
+    Do not add <code>role="menu"</code> or <code>role="menuitem"</code> . A
+    navigation menu is not an ARIA menu, and those roles would promise keyboard
+    behaviour the component does not provide. For commands that run JavaScript
+    without leaving the page, use a <a href=`${urls.components}/menu`>menu</a>
+    instead.
+  </p>
+  <h2>Interaction Design</h2>
+  <p>
+    This section provides interaction design for keyboard and screen reader
+    users.
+  </p>
+  <h3>Keyboard</h3>
+  <p>
+    The <code>TAB</code> key moves focus between items, and <code>ENTER</code>
+    activates the focused item. A focused button item also activates with
+    <code>SPACEBAR</code> .
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    A link item <strong>must</strong> announce with a role of “link”, and a
+    button item with a role of “button”.
+  </p>
+  <p>
+    The link that reflects the current URL <strong>should</strong> set
+    <code>aria-current="page"</code> to provide assistive technology with
+    programmatic state.
+  </p>
+</div>

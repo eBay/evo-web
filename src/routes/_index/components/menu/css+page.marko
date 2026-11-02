@@ -3,42 +3,31 @@ import { urls } from "../../../../data";
   <section-header/>
 
   <p>
-    <strong>NOTE:</strong>
-    Only limited JavaScript behaviour has been implemented in these
-    examples. For detailed behaviour requirements, please visit our
+    <strong>NOTE:</strong> Only limited JavaScript behaviour has been
+    implemented in these examples. For detailed behaviour requirements, please
+    visit our
     <a href="https://opensource.ebay.com/mindpatterns/input/menu-button/index.html">
       menu pattern
     </a>
     .
   </p>
 
-  <h3 id="menu-default">
-    Default Menu
-  </h3>
+  <h3 id="menu-default">Default Menu</h3>
   <p>
-    The default menu is a
-    <em>stateless</em>
-    menu. Each item has a role of
-    <code>menuitem</code>
-    .
+    The default menu is a <em>stateless</em> menu. Each item has a role of
+    <code>menuitem</code> .
   </p>
 
   <div class="demo">
     <div class="demo__inner">
       <div class="menu">
         <div class="menu__items" role="menu">
-          <div class="menu__item" role="menuitem">
-            <span>Item 1</span>
-          </div>
-          <div class="menu__item" role="menuitem">
-            <span>Item 2</span>
-          </div>
+          <div class="menu__item" role="menuitem"><span>Item 1</span></div>
+          <div class="menu__item" role="menuitem"><span>Item 2</span></div>
           <div class="menu__item" role="menuitem" aria-disabled="true">
             <span>Item 3</span>
           </div>
-          <div class="menu__item" role="menuitem">
-            <span>Item 4</span>
-          </div>
+          <div class="menu__item" role="menuitem"><span>Item 4</span></div>
         </div>
       </div>
     </div>
@@ -47,35 +36,23 @@ import { urls } from "../../../../data";
   <highlight-code type="html">
     <div class="menu">
       <div class="menu__items" role="menu">
-        <div class="menu__item" role="menuitem">
-          <span>Item 1</span>
-        </div>
-        <div class="menu__item" role="menuitem">
-          <span>Item 2</span>
-        </div>
+        <div class="menu__item" role="menuitem"><span>Item 1</span></div>
+        <div class="menu__item" role="menuitem"><span>Item 2</span></div>
         <div class="menu__item" role="menuitem" aria-disabled="true">
           <span>Item 3</span>
         </div>
-        <div class="menu__item" role="menuitem">
-          <span>Item 4</span>
-        </div>
+        <div class="menu__item" role="menuitem"><span>Item 4</span></div>
       </div>
     </div>
   </highlight-code>
 
-  <h3 id="menu-badged">
-    Badged Menu
-  </h3>
+  <h3 id="menu-badged">Badged Menu</h3>
   <p>
     A menu item can be badged using the
-    <a href=`${urls.components}/badge`>
-      badge
-    </a>
-    module.
+    <a href=`${urls.components}/badge`>badge</a> module.
   </p>
   <p>
-    The menuitem element requires an additional
-    <code>menu__item--badged</code>
+    The menuitem element requires an additional <code>menu__item--badged</code>
     modifier.
   </p>
 
@@ -86,24 +63,16 @@ import { urls } from "../../../../data";
           <div
             aria-label="Item 1 (3 notifications)"
             class="menu__item menu__item--badged"
-            role="menuitem">
-            <span aria-hidden="true">
-              Item 1
-              <span class="badge">
-                3
-              </span>
-            </span>
+            role="menuitem"
+          >
+            <span aria-hidden="true">Item 1 <span class="badge">3</span></span>
           </div>
           <div
             aria-label="Item 2 (77 notifications)"
             class="menu__item menu__item--badged"
-            role="menuitem">
-            <span aria-hidden="true">
-              Item 2
-              <span class="badge">
-                77
-              </span>
-            </span>
+            role="menuitem"
+          >
+            <span aria-hidden="true">Item 2 <span class="badge">77</span></span>
           </div>
           <div class="menu__item menu__item--badged" role="menuitem">
             <span>Item 3</span>
@@ -118,24 +87,16 @@ import { urls } from "../../../../data";
         <div
           aria-label="Item 1 (3 notifications)"
           class="menu__item menu__item--badged"
-          role="menuitem">
-          <span aria-hidden="true">
-            Item 1
-            <span class="badge">
-              3
-            </span>
-          </span>
+          role="menuitem"
+        >
+          <span aria-hidden="true">Item 1 <span class="badge">3</span></span>
         </div>
         <div
           aria-label="Item 2 (77 notifications)"
           class="menu__item menu__item--badged"
-          role="menuitem">
-          <span aria-hidden="true">
-            Item 2
-            <span class="badge">
-              77
-            </span>
-          </span>
+          role="menuitem"
+        >
+          <span aria-hidden="true">Item 2 <span class="badge">77</span></span>
         </div>
         <div class="menu__item menu__item--badged" role="menuitem">
           <span>Item 3</span>
@@ -144,13 +105,10 @@ import { urls } from "../../../../data";
     </span>
   </highlight-code>
 
-  <h3 id="menu-radio">
-    Single-Select Menu
-  </h3>
+  <h3 id="menu-radio">Single-Select Menu</h3>
   <p>
-    For single-select state, use role
-    <code>menuitemradio</code>
-    on each menu item.
+    For single-select state, use role <code>menuitemradio</code> on each menu
+    item.
   </p>
 
   <div class="demo">
@@ -161,13 +119,15 @@ import { urls } from "../../../../data";
             class="menu__item"
             role="menuitemradio"
             aria-checked="true"
-            data-makeup-group="sort">
+            data-makeup-group="sort"
+          >
             <span>Item 1</span>
             <svg
               class="icon icon--16"
               height="10"
               width="14"
-              aria-hidden="true">
+              aria-hidden="true"
+            >
               <icon-symbol name="tick-16"/>
             </svg>
           </div>
@@ -175,13 +135,15 @@ import { urls } from "../../../../data";
             class="menu__item"
             role="menuitemradio"
             aria-checked="false"
-            data-makeup-group="sort">
+            data-makeup-group="sort"
+          >
             <span>Item 2</span>
             <svg
               class="icon icon--16"
               height="10"
               width="14"
-              aria-hidden="true">
+              aria-hidden="true"
+            >
               <icon-symbol name="tick-16"/>
             </svg>
           </div>
@@ -189,13 +151,15 @@ import { urls } from "../../../../data";
             class="menu__item"
             role="menuitemradio"
             aria-checked="false"
-            data-makeup-group="sort">
+            data-makeup-group="sort"
+          >
             <span>Item 3</span>
             <svg
               class="icon icon--16"
               height="10"
               width="14"
-              aria-hidden="true">
+              aria-hidden="true"
+            >
               <icon-symbol name="tick-16"/>
             </svg>
           </div>
@@ -229,13 +193,10 @@ import { urls } from "../../../../data";
     </div>
   </highlight-code>
 
-  <h3 id="menu-checkbox">
-    Multi-Select Menu
-  </h3>
+  <h3 id="menu-checkbox">Multi-Select Menu</h3>
   <p>
-    For multi-select state, use role
-    <code>menuitemcheckbox</code>
-    on each menu item.
+    For multi-select state, use role <code>menuitemcheckbox</code> on each menu
+    item.
   </p>
 
   <div class="demo">
@@ -246,13 +207,15 @@ import { urls } from "../../../../data";
             class="menu__item"
             role="menuitemcheckbox"
             aria-checked="true"
-            data-makeup-group="filter">
+            data-makeup-group="filter"
+          >
             <span>Item 1</span>
             <svg
               class="icon icon--16"
               height="10"
               width="14"
-              aria-hidden="true">
+              aria-hidden="true"
+            >
               <icon-symbol name="tick-16"/>
             </svg>
           </div>
@@ -260,13 +223,15 @@ import { urls } from "../../../../data";
             class="menu__item"
             role="menuitemcheckbox"
             aria-checked="false"
-            data-makeup-group="filter">
+            data-makeup-group="filter"
+          >
             <span>Item 2</span>
             <svg
               class="icon icon--16"
               height="10"
               width="14"
-              aria-hidden="true">
+              aria-hidden="true"
+            >
               <icon-symbol name="tick-16"/>
             </svg>
           </div>
@@ -274,13 +239,15 @@ import { urls } from "../../../../data";
             class="menu__item"
             role="menuitemcheckbox"
             aria-checked="false"
-            data-makeup-group="filter">
+            data-makeup-group="filter"
+          >
             <span>Item 3</span>
             <svg
               class="icon icon--16"
               height="10"
               width="14"
-              aria-hidden="true">
+              aria-hidden="true"
+            >
               <icon-symbol name="tick-16"/>
             </svg>
           </div>
@@ -314,34 +281,28 @@ import { urls } from "../../../../data";
     </div>
   </highlight-code>
 
-  <h3 id="menu-grouped">
-    Grouped Menu
-  </h3>
-  <p>
-    Menu items can be separated into groups, using the
-    <code>hr</code>
-    tag.
-  </p>
+  <h3 id="menu-grouped">Grouped Menu</h3>
+  <p>Menu items can be separated into groups, using the <code>hr</code> tag.</p>
 
   <div class="demo">
     <div class="demo__inner">
       <div class="menu">
         <div class="menu__items" role="menu">
-          <div class="menu__item" role="menuitem">
-            <span>Item A1</span>
-          </div>
+          <div class="menu__item" role="menuitem"><span>Item A1</span></div>
           <hr class="menu__separator" role="separator">
           <div
             class="menu__item"
             role="menuitemradio"
             aria-checked="true"
-            data-makeup-group="sort">
+            data-makeup-group="sort"
+          >
             <span>Item B1</span>
             <svg
               class="icon icon--16"
               height="10"
               width="14"
-              aria-hidden="true">
+              aria-hidden="true"
+            >
               <icon-symbol name="tick-16"/>
             </svg>
           </div>
@@ -349,13 +310,15 @@ import { urls } from "../../../../data";
             class="menu__item"
             role="menuitemradio"
             aria-checked="false"
-            data-makeup-group="sort">
+            data-makeup-group="sort"
+          >
             <span>Item B2</span>
             <svg
               class="icon icon--16"
               height="10"
               width="14"
-              aria-hidden="true">
+              aria-hidden="true"
+            >
               <icon-symbol name="tick-16"/>
             </svg>
           </div>
@@ -363,13 +326,15 @@ import { urls } from "../../../../data";
             class="menu__item"
             role="menuitemradio"
             aria-checked="false"
-            data-makeup-group="sort">
+            data-makeup-group="sort"
+          >
             <span>Item B3</span>
             <svg
               class="icon icon--16"
               height="10"
               width="14"
-              aria-hidden="true">
+              aria-hidden="true"
+            >
               <icon-symbol name="tick-16"/>
             </svg>
           </div>
@@ -378,13 +343,15 @@ import { urls } from "../../../../data";
             class="menu__item"
             role="menuitemcheckbox"
             aria-checked="true"
-            data-makeup-group="filter">
+            data-makeup-group="filter"
+          >
             <span>Item C1</span>
             <svg
               class="icon icon--16"
               height="10"
               width="14"
-              aria-hidden="true">
+              aria-hidden="true"
+            >
               <icon-symbol name="tick-16"/>
             </svg>
           </div>
@@ -392,13 +359,15 @@ import { urls } from "../../../../data";
             class="menu__item"
             role="menuitemcheckbox"
             aria-checked="true"
-            data-makeup-group="filter">
+            data-makeup-group="filter"
+          >
             <span>Item C2</span>
             <svg
               class="icon icon--16"
               height="10"
               width="14"
-              aria-hidden="true">
+              aria-hidden="true"
+            >
               <icon-symbol name="tick-16"/>
             </svg>
           </div>
@@ -410,9 +379,7 @@ import { urls } from "../../../../data";
   <highlight-code type="html">
     <div class="menu">
       <div class="menu__items" role="menu">
-        <div class="menu__item" role="menuitem">
-          <span>Item 1</span>
-        </div>
+        <div class="menu__item" role="menuitem"><span>Item 1</span></div>
 
         <hr class="menu__separator" role="separator">
 
@@ -420,7 +387,8 @@ import { urls } from "../../../../data";
           class="menu__item"
           role="menuitemradio"
           aria-checked="true"
-          data-makeup-group="sort">
+          data-makeup-group="sort"
+        >
           <span>Item B1</span>
           <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
             <use href="#icon-tick-16"/>
@@ -430,7 +398,8 @@ import { urls } from "../../../../data";
           class="menu__item"
           role="menuitemradio"
           aria-checked="false"
-          data-makeup-group="sort">
+          data-makeup-group="sort"
+        >
           <span>Item B2</span>
           <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
             <use href="#icon-tick-16"/>
@@ -440,7 +409,8 @@ import { urls } from "../../../../data";
           class="menu__item"
           role="menuitemradio"
           aria-checked="false"
-          data-makeup-group="sort">
+          data-makeup-group="sort"
+        >
           <span>Item B3</span>
           <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
             <use href="#icon-tick-16"/>
@@ -453,7 +423,8 @@ import { urls } from "../../../../data";
           class="menu__item"
           role="menuitemcheckbox"
           aria-checked="true"
-          data-menuitemcheckbox-name="sort">
+          data-menuitemcheckbox-name="sort"
+        >
           <span>Item 2</span>
           <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
             <use href="#icon-tick-16"/>
@@ -463,7 +434,8 @@ import { urls } from "../../../../data";
           class="menu__item"
           role="menuitemcheckbox"
           aria-checked="true"
-          data-menuitemcheckbox-name="sort">
+          data-menuitemcheckbox-name="sort"
+        >
           <span>Item 3</span>
           <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
             <use href="#icon-tick-16"/>
@@ -473,9 +445,28 @@ import { urls } from "../../../../data";
     </div>
   </highlight-code>
 
-  <h3 id="menu-fake">
-    Fake Menu
-  </h3>
+  <h3 id="menu-fake">Fake Menu</h3>
+  <section
+    class="section-notice section-notice--attention"
+    role="region"
+    aria-label="Attention"
+    aria-roledescription="Notice"
+  >
+    <div class="section-notice__header" id="section-notice-attention">
+      <svg class="icon icon--16" height="16" width="16" aria-label="Attention">
+        <icon-symbol name="attention-filled-16"/>
+      </svg>
+    </div>
+    <div class="section-notice__main">
+      <h4 class="section-notice__title">Deprecated</h4>
+      <p>
+        The <code>fake-menu</code> classes are deprecated and will be removed in
+        the next major version of Skin. Use
+        <a href=`${urls.components}/navigation-menu`>navigation-menu</a>
+        instead.
+      </p>
+    </div>
+  </section>
   <p>
     A fake menu is simply a list of links, styled to look like ARIA menu items.
   </p>
@@ -488,26 +479,24 @@ import { urls } from "../../../../data";
             <a
               class="fake-menu__item"
               href="https://www.ebay.com"
-              aria-current="page">
+              aria-current="page"
+            >
               <span>Link 1</span>
               <svg
                 class="icon icon--16"
                 height="10"
                 width="14"
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 <icon-symbol name="tick-16"/>
               </svg>
             </a>
           </li>
           <li>
-            <a href="https://www.ebay.com" class="fake-menu__item">
-              Link 2
-            </a>
+            <a href="https://www.ebay.com" class="fake-menu__item">Link 2</a>
           </li>
           <li>
-            <a href="https://www.ebay.com" class="fake-menu__item">
-              Link 3
-            </a>
+            <a href="https://www.ebay.com" class="fake-menu__item">Link 3</a>
           </li>
         </ul>
       </div>
@@ -521,26 +510,24 @@ import { urls } from "../../../../data";
           <a
             class="fake-menu__item"
             href="https://www.ebay.com"
-            aria-current="page">
+            aria-current="page"
+          >
             <span>Link 1</span>
             <svg
               class="icon icon--16"
               height="10"
               width="14"
-              aria-hidden="true">
+              aria-hidden="true"
+            >
               <use href="#icon-tick-16"/>
             </svg>
           </a>
         </li>
         <li>
-          <a href="https://www.ebay.com" class="fake-menu__item">
-            Link 2
-          </a>
+          <a href="https://www.ebay.com" class="fake-menu__item">Link 2</a>
         </li>
         <li>
-          <a href="https://www.ebay.com" class="fake-menu__item">
-            Link 3
-          </a>
+          <a href="https://www.ebay.com" class="fake-menu__item">Link 3</a>
         </li>
       </ul>
     </div>
@@ -636,7 +623,8 @@ import { urls } from "../../../../data";
             class="menu__item"
             role="menuitemradio"
             data-makeup-group="sort"
-            aria-checked="false">
+            aria-checked="false"
+          >
             <svg class="icon icon--18 icon--unchecked" height="18" width="18">
               <icon-symbol name="radio-unchecked-18"/>
             </svg>
@@ -649,7 +637,8 @@ import { urls } from "../../../../data";
             class="menu__item"
             role="menuitemradio"
             data-makeup-group="sort"
-            aria-checked="true">
+            aria-checked="true"
+          >
             <svg class="icon icon--18 icon--unchecked" height="18" width="18">
               <icon-symbol name="radio-unchecked-18"/>
             </svg>
@@ -662,7 +651,8 @@ import { urls } from "../../../../data";
             class="menu__item"
             role="menuitemradio"
             data-makeup-group="sort"
-            aria-checked="false">
+            aria-checked="false"
+          >
             <svg class="icon icon--18 icon--unchecked" height="18" width="18">
               <icon-symbol name="radio-unchecked-18"/>
             </svg>
@@ -713,8 +703,7 @@ import { urls } from "../../../../data";
   <h3>Filter menu button - with footer</h3>
   <p>
     To add a filter menu button with a footer, include
-    <code>.menu__footer</code>
-    container
+    <code>.menu__footer</code> container
   </p>
 
   <div class="demo">
@@ -750,9 +739,7 @@ import { urls } from "../../../../data";
           </div>
         </div>
         <div class="menu__footer">
-          <button class="btn btn--tertiary" type="submit">
-            Apply
-          </button>
+          <button class="button button--tertiary" type="submit">Apply</button>
         </div>
       </span>
     </div>
@@ -790,9 +777,7 @@ import { urls } from "../../../../data";
         </div>
       </div>
       <div class="menu__footer">
-        <button class="btn btn--tertiary" type="submit">
-          Apply
-        </button>
+        <button class="button button--tertiary" type="submit">Apply</button>
       </div>
     </span>
   </highlight-code>

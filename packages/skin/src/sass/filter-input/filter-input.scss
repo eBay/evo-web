@@ -1,3 +1,5 @@
+// DEPRECATED: the `.icon-btn*` selectors in this file are removed in the next
+// major version. Use `.icon-button*` instead.
 .filter-input {
     display: inline-block;
     width: 100%;
@@ -30,21 +32,27 @@
     display: none;
 }
 
-.filter-input .textbox button.icon-btn.icon-btn--transparent.icon-btn--small {
+.filter-input .textbox button.icon-btn.icon-btn--transparent.icon-btn--small,
+.filter-input
+    .textbox
+    button.icon-button.icon-button--transparent.icon-button--small {
     min-width: 32px;
 }
 
-.filter-input .textbox .icon-btn:last-child {
+.filter-input .textbox .icon-btn:last-child,
+.filter-input .textbox .icon-button:last-child {
     flex-shrink: 0;
     margin-inline-end: var(--spacing-50);
     margin-inline-start: 0;
 }
 
-.filter-input--small .textbox .icon-btn:last-child {
+.filter-input--small .textbox .icon-btn:last-child,
+.filter-input--small .textbox .icon-button:last-child {
     margin-inline-end: 0;
 }
 
-.filter-input--large .textbox .icon-btn:last-child {
+.filter-input--large .textbox .icon-btn:last-child,
+.filter-input--large .textbox .icon-button:last-child {
     margin-inline-end: var(--spacing-100);
 }
 

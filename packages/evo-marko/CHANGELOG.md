@@ -1,5 +1,17 @@
 # @evo-web/marko
 
+## 0.9.3
+
+### Patch Changes
+
+- [#1076](https://github.com/eBay/evo-web/pull/1076) [`3690578`](https://github.com/eBay/evo-web/commit/36905785fec740849b8a9a68d03324a66fef23ca) Thanks [@sebxt](https://github.com/sebxt)! - fix(date-textbox,date-input): reject typed days that do not exist in the month, such as 02/30/2024
+
+## 0.9.2
+
+### Patch Changes
+
+- [#1068](https://github.com/eBay/evo-web/pull/1068) [`3b01868`](https://github.com/eBay/evo-web/commit/3b0186855bc9da7d38ca96f2b13fb20d7894180b) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Add `bar-chart-20`, `clock-20`, `condition-guarantee-16`, `condition-guarantee-24`, `discount-20`, `hand-swipe-24`, `inspect-20`, `live-raids-16`, `live-raids-24`, `megaphone-20`, `note-20`, `store-20`, `switch-camera-16`, `trophy-12`, and `wallet-20` icons. Update `store-24` and `store-filled-24` artwork.
+
 ## 0.9.1
 
 ### Patch Changes

@@ -30,7 +30,7 @@ exports[`ebay-page-notice rendering > renders confirmation message story correct
 
 exports[`ebay-page-notice rendering > renders dismissible message with cta story correctly 1`] = `
 <svg
-  aria-label="Congratulations"
+  aria-label="Information"
   class="icon icon--16"
   focusable="false"
   role="img"

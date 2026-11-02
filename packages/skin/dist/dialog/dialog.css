@@ -135,7 +135,9 @@ body:has(.dialog[open]) {
     margin-top: 218px;
 }
 button.icon-btn.dialog__close,
-button.icon-btn.dialog__prev {
+button.icon-btn.dialog__prev,
+button.icon-button.dialog__close,
+button.icon-button.dialog__prev {
     align-self: flex-start;
     border: 0;
     flex-shrink: 0;
@@ -146,16 +148,20 @@ button.icon-btn.dialog__prev {
     z-index: 1;
 }
 
-button.icon-btn.dialog__prev {
+button.icon-btn.dialog__prev,
+button.icon-button.dialog__prev {
     margin-inline-end: var(--spacing-200);
 }
 
 .dialog--expressive button.icon-btn.dialog__close,
-.dialog--expressive button.icon-btn.dialog__prev {
+.dialog--expressive button.icon-btn.dialog__prev,
+.dialog--expressive button.icon-button.dialog__close,
+.dialog--expressive button.icon-button.dialog__prev {
     margin: 0;
 }
 
-.dialog--expressive button.icon-btn.dialog__prev + * {
+.dialog--expressive button.icon-btn.dialog__prev + *,
+.dialog--expressive button.icon-button.dialog__prev + * {
     margin-inline-start: -32px;
 }
 
@@ -251,6 +257,7 @@ button.icon-btn.dialog__prev {
         max-width: var(--dialog-wide-max-width);
     }
 }
-[dir="rtl"] button.icon-btn.dialog__prev .icon--16 {
+[dir="rtl"] button.icon-btn.dialog__prev .icon--16,
+[dir="rtl"] button.icon-button.dialog__prev .icon--16 {
     transform: rotate(180deg);
 }

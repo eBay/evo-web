@@ -318,7 +318,7 @@ export const withFooter = () => `
         </div>
     </div>
     <div class="menu__footer">
-        <button class="btn btn--tertiary" type="submit">
+        <button class="button button--tertiary" type="submit">
             Apply
         </button>
     </div>

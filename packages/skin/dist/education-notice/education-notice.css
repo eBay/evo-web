@@ -41,7 +41,8 @@
     margin-inline-start: var(--spacing-150);
 }
 
-.education-notice button.icon-btn {
+.education-notice button.icon-btn,
+.education-notice button.icon-button {
     background-color: initial;
 }
 
@@ -58,7 +59,8 @@
 }
 
 .education-notice__footer a,
-.education-notice__footer button.fake-link {
+.education-notice__footer button.fake-link,
+.education-notice__footer button.link-button {
     font-size: var(--font-size-body);
     font-weight: 700;
 }
@@ -73,7 +75,9 @@
 }
 
 .education-notice__header button.fake-link,
-.education-notice__header button.fake-link:hover {
+.education-notice__header button.fake-link:hover,
+.education-notice__header button.link-button,
+.education-notice__header button.link-button:hover {
     color: var(
         --education-notice-foreground-color,
         var(--color-foreground-primary)

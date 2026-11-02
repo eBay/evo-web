@@ -1,0 +1,89 @@
+<div id="static-navigation-tabs">
+  <h1>Navigation Tabs CSS Component</h1>
+
+  <p>
+    A navigation tab <em>looks</em> like a normal tab, but is actually a
+    hyperlink to a new page. Therefore a set of navigation tabs behaves more
+    like a simple navigational widget, rather than a dynamic user interface
+    control.
+  </p>
+  <p>
+    If HREF is not present, then the tab will be in disabled state. A value of
+    "javascript" (or any such variant) is <strong>not</strong> a valid URL!
+  </p>
+  <p>
+    The <code>aria-current</code> attribute is used to programmatically denote
+    the current page state and current link.
+  </p>
+
+  <p>
+    Use child element modifier <code>navigation-tabs--large</code> to opt into
+    larger font-size for navigation tabs.
+  </p>
+
+  <div class="demo">
+    <div class="demo__inner">
+      <div class="navigation-tabs">
+        <ul class="navigation-tabs__items">
+          <li class="navigation-tabs__item">
+            <a aria-current="page" href="https://www.ebay.com">Page 1</a>
+          </li>
+          <li class="navigation-tabs__item">
+            <a href="https://www.ebay.com">Page 2</a>
+          </li>
+          <li class="navigation-tabs__item">
+            <a href="https://www.ebay.com">Page 3</a>
+          </li>
+        </ul>
+        <div class="navigation-tabs__content">
+          <div class="navigation-tabs__cell">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+              assumenda culpa est nisi porro quae quidem ratione repellendus,
+              temporibus. Assumenda atque dolor dolorem eligendi eveniet ipsam
+              modi necessitatibus quos ut?
+            </p>
+            <p>
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+              quae ab illo inventore veritatis et quasi architecto beatae vitae
+              dicta sunt explicabo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <highlight-code type="html">
+    <div class="navigation-tabs">
+      <ul class="navigation-tabs__items">
+        <li class="navigation-tabs__item">
+          <a aria-current="page" href="https://www.ebay.com">Page 1</a>
+        </li>
+        <li class="navigation-tabs__item">
+          <a href="https://www.ebay.com">Page 2</a>
+        </li>
+        <li class="navigation-tabs__item">
+          <a href="https://www.ebay.com">Page 3</a>
+        </li>
+      </ul>
+      <div class="navigation-tabs__content">
+        <div class="navigation-tabs__cell">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+            assumenda culpa est nisi porro quae quidem ratione repellendus,
+            temporibus. Assumenda atque dolor dolorem eligendi eveniet ipsam
+            modi necessitatibus quos ut?
+          </p>
+        </div>
+      </div>
+    </div>
+  </highlight-code>
+</div>
+export const metadata = {
+  component: "navigation-tabs",
+  "ds-component": {
+    name: "tab",
+    version: 2.1,
+  },
+};

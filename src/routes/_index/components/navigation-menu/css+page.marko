@@ -1,0 +1,82 @@
+<div id="static-navigation-menu">
+  <h1>Navigation Menu CSS Component</h1>
+
+  <p>
+    A navigation menu is simply a list of links, styled to look like ARIA menu
+    items.
+  </p>
+  <p>
+    The <code>aria-current</code> attribute is used to programmatically denote
+    the current page state and current link.
+  </p>
+
+  <div class="demo">
+    <div class="demo__inner">
+      <div class="navigation-menu">
+        <ul class="navigation-menu__items">
+          <li>
+            <a
+              class="navigation-menu__item"
+              href="https://www.ebay.com"
+              aria-current="page"
+            >
+              <span>Link 1</span>
+              <svg
+                class="icon icon--16"
+                height="10"
+                width="14"
+                aria-hidden="true"
+              >
+                <icon-symbol name="tick-16"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.ebay.com" class="navigation-menu__item">
+              Link 2
+            </a>
+          </li>
+          <li>
+            <a href="https://www.ebay.com" class="navigation-menu__item">
+              Link 3
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <div class="navigation-menu">
+      <ul class="navigation-menu__items">
+        <li>
+          <a
+            class="navigation-menu__item"
+            href="https://www.ebay.com"
+            aria-current="page"
+          >
+            <span>Link 1</span>
+            <svg
+              class="icon icon--16"
+              height="10"
+              width="14"
+              aria-hidden="true"
+            >
+              <use href="#icon-tick-16"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.ebay.com" class="navigation-menu__item">
+            Link 2
+          </a>
+        </li>
+        <li>
+          <a href="https://www.ebay.com" class="navigation-menu__item">
+            Link 3
+          </a>
+        </li>
+      </ul>
+    </div>
+  </highlight-code>
+</div>

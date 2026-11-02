@@ -3,13 +3,13 @@ export default { title: "Skin/Split Button/RTL" };
 export const primaryCollapsed = () => `
 <div dir="rtl">
     <span class="split-button">
-        <button class="btn btn--primary btn--split-start" type="button">
-            <span class="btn__cell">
-                <span class="btn__text">Button</span>
+        <button class="button button--primary button--split-start" type="button">
+            <span class="button__cell">
+                <span class="button__text">Button</span>
             </span>
         </button>
         <span class="menu-button">
-            <button class="btn btn--primary btn--split-end" aria-haspopup="true" type="button">
+            <button class="button button--primary button--split-end" aria-haspopup="true" type="button">
                 <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
                     <use href="#icon-chevron-down-12"></use>
                 </svg>
@@ -35,13 +35,13 @@ export const primaryCollapsed = () => `
 export const primaryExpanded = () => `
 <div dir="rtl">
     <span class="split-button">
-        <button class="btn btn--primary btn--split-start" type="button">
-            <span class="btn__cell">
-                <span class="btn__text">Button</span>
+        <button class="button button--primary button--split-start" type="button">
+            <span class="button__cell">
+                <span class="button__text">Button</span>
             </span>
         </button>
         <span class="menu-button">
-            <button class="btn btn--primary btn--split-end" aria-haspopup="true" aria-expanded="true" type="button">
+            <button class="button button--primary button--split-end" aria-haspopup="true" aria-expanded="true" type="button">
                 <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
                     <use href="#icon-chevron-down-12"></use>
                 </svg>
@@ -67,13 +67,13 @@ export const primaryExpanded = () => `
 export const secondaryCollapsed = () => `
 <div dir="rtl">
     <span class="split-button">
-        <button class="btn btn--secondary btn--split-start" type="button">
-            <span class="btn__cell">
-                <span class="btn__text">Button</span>
+        <button class="button button--secondary button--split-start" type="button">
+            <span class="button__cell">
+                <span class="button__text">Button</span>
             </span>
         </button>
         <span class="menu-button">
-            <button class="btn btn--secondary btn--split-end" aria-haspopup="true" type="button">
+            <button class="button button--secondary button--split-end" aria-haspopup="true" type="button">
                 <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
                     <use href="#icon-chevron-down-12"></use>
                 </svg>
@@ -99,13 +99,13 @@ export const secondaryCollapsed = () => `
 export const secondaryExpanded = () => `
 <div dir="rtl">
     <span class="split-button">
-        <button class="btn btn--secondary btn--split-start" type="button">
-            <span class="btn__cell">
-                <span class="btn__text">Button</span>
+        <button class="button button--secondary button--split-start" type="button">
+            <span class="button__cell">
+                <span class="button__text">Button</span>
             </span>
         </button>
         <span class="menu-button">
-            <button class="btn btn--secondary btn--split-end" aria-expanded="true" aria-haspopup="true" type="button">
+            <button class="button button--secondary button--split-end" aria-expanded="true" aria-haspopup="true" type="button">
                 <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
                     <use href="#icon-chevron-down-12"></use>
                 </svg>
@@ -131,13 +131,13 @@ export const secondaryExpanded = () => `
 export const tertiaryCollapsed = () => `
 <div dir="rtl">
     <span class="split-button">
-        <button class="btn btn--tertiary btn--split-start" type="button">
-            <span class="btn__cell">
-                <span class="btn__text">Button</span>
+        <button class="button button--tertiary button--split-start" type="button">
+            <span class="button__cell">
+                <span class="button__text">Button</span>
             </span>
         </button>
         <span class="menu-button">
-            <button class="btn btn--tertiary btn--split-end" aria-haspopup="true" type="button">
+            <button class="button button--tertiary button--split-end" aria-haspopup="true" type="button">
                 <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
                     <use href="#icon-chevron-down-12"></use>
                 </svg>
@@ -163,13 +163,13 @@ export const tertiaryCollapsed = () => `
 export const tertiaryExpanded = () => `
 <div dir="rtl">
     <span class="split-button">
-        <button class="btn btn--tertiary btn--split-start" type="button">
-            <span class="btn__cell">
-                <span class="btn__text">Button</span>
+        <button class="button button--tertiary button--split-start" type="button">
+            <span class="button__cell">
+                <span class="button__text">Button</span>
             </span>
         </button>
         <span class="menu-button">
-            <button class="btn btn--tertiary btn--split-end" aria-expanded="true" aria-haspopup="true" type="button">
+            <button class="button button--tertiary button--split-end" aria-expanded="true" aria-haspopup="true" type="button">
                 <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
                     <use href="#icon-chevron-down-12"></use>
                 </svg>

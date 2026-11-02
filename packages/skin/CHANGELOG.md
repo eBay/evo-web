@@ -1,5 +1,23 @@
 # Skin Changelog
 
+## 19.39.0
+
+### Minor Changes
+
+- [#1070](https://github.com/eBay/evo-web/pull/1070) [`4a057e2`](https://github.com/eBay/evo-web/commit/4a057e26a388d652e6125331a5982189d371020b) Thanks [@ArtBlue](https://github.com/ArtBlue)! - Add `button-link`, `navigation-tabs`, `link-button` and `navigation-menu` as standalone Skin components. Each gives the same look as the pattern it replaces: `button-link` (an `<a>` styled as a button), `navigation-tabs` (a list of links styled as tabs), `link-button` (a `<button>` styled as a link) and `navigation-menu` (a list of links styled as menu items). The compiled CSS of `tabs` and `link` is unchanged. The `fake-btn`, `fake-tabs`, `fake-link` and `fake-menu` classes keep working and are deprecated. They will be removed in the next major version. Also renames the `signal` Storybook title from "Hotness Signals" to "Signal".
+  
+  Add spelled-out class names for the button family: `button`, `icon-button`, `cta-button` and `expand-button`, with every element and modifier (`button__cell`, `button--primary` and so on). Each new selector sits beside its abbreviated twin and produces the same styles. The docs and stories now use the new names. The `btn`, `icon-btn`, `cta-btn` and `expand-btn` classes keep working and are deprecated. They will be removed in the next major version. Don't combine old and new names on one element. The `--btn-*` custom properties are unchanged.
+
+### Patch Changes
+
+- [#979](https://github.com/eBay/evo-web/pull/979) [`8030c9b`](https://github.com/eBay/evo-web/commit/8030c9bb04125c7faa8a19ec13ff52c4699c59b9) Thanks [@ArtBlue](https://github.com/ArtBlue)! - fix(button): apply bold font-weight to borderless button variant; keep the listbox button label at normal weight so only its value is bold
+
+## 19.38.0
+
+### Minor Changes
+
+- [#1068](https://github.com/eBay/evo-web/pull/1068) [`3b01868`](https://github.com/eBay/evo-web/commit/3b0186855bc9da7d38ca96f2b13fb20d7894180b) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Add `bar-chart-20`, `clock-20`, `condition-guarantee-16`, `condition-guarantee-24`, `discount-20`, `hand-swipe-24`, `inspect-20`, `live-raids-16`, `live-raids-24`, `megaphone-20`, `note-20`, `store-20`, `switch-camera-16`, `trophy-12`, and `wallet-20` icons. Update `store-24` and `store-filled-24` artwork.
+
 ## 19.37.1
 
 ### Patch Changes

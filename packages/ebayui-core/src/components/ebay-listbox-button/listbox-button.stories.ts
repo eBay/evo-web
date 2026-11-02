@@ -92,8 +92,8 @@ export default {
             },
             description:
                 "If manual then user will need to press enter to select an item using keyboard. Otherwise auto will automatically select as the user presses up/down",
-            option: ["manual", "auto"],
-            type: "select",
+            options: ["manual", "auto"],
+            control: { type: "select" },
         },
         flip: {
             control: { type: "boolean" },
@@ -169,8 +169,8 @@ export default {
         variant: {
             description:
                 "If `form`, changes appearance to match other form-specific dropdown-esque components for visual consistency.",
-            option: ["standard", "form"],
-            type: "select",
+            options: ["standard", "form"],
+            control: { type: "select" },
         },
 
         onChange: {
