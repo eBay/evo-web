@@ -1,6 +1,4 @@
 import focusables from "makeup-focusables";
-// TODO check carousel
-import { resizeUtil } from "../../common/event-utils";
 import { processHtmlAttributes } from "../../common/html-attributes";
 import { onScrollDebounced as onScroll } from "./utils/on-scroll-debounced";
 import { scrollTransition } from "./utils/scroll-transition";
@@ -90,6 +88,10 @@ class Carousel extends Marko.Component<Input, State> {
     declare listEl: HTMLElement;
     declare nextEl: HTMLElement;
     declare containerEl: HTMLElement;
+    declare resizeObserver: ResizeObserver;
+    declare observedWidths: Map<Element, number>;
+    declare lastScrollLeft: number;
+    declare listenersBound: boolean;
 
     cleanupAsync() {
         clearTimeout(this.autoplayTimeout);
@@ -116,6 +118,8 @@ class Carousel extends Marko.Component<Input, State> {
         const { state } = this;
         const { config, items, gap } = state;
         let closest: number;
+
+        this.lastScrollLeft = scrollLeft;
 
         if (scrollLeft >= this.getMaxOffset(state) - gap) {
             closest = items.length - 1;
@@ -506,14 +510,28 @@ class Carousel extends Marko.Component<Input, State> {
     }
 
     onMount() {
-        const { config } = this.state;
         this.listEl = this.getEl("list");
         this.nextEl = this.getEl("next");
         this.containerEl = this.getEl("container");
-        this.subscribeTo(resizeUtil).on("resize", () => {
-            this.cleanupAsync();
-            this.onRenderLegacy();
+        this.lastScrollLeft = 0;
+        this.listenersBound = false;
+        this.observedWidths = new Map();
+        this.resizeObserver = new ResizeObserver((entries) => {
+            let widthChanged = false;
+
+            for (const { target, contentRect } of entries) {
+                if (this.observedWidths.get(target) !== contentRect.width) {
+                    this.observedWidths.set(target, contentRect.width);
+                    widthChanged = true;
+                }
+            }
+
+            // Height-only changes are ignored, measuring while items are transformed would corrupt their positions.
+            if (widthChanged) {
+                this.measure();
+            }
         });
+        this.once("destroy", () => this.resizeObserver.disconnect());
         this.skipScrolling = false;
 
         // If user had reduced motion turned on in OS settings, pause autoplay.
@@ -521,29 +539,7 @@ class Carousel extends Marko.Component<Input, State> {
             this.state.paused = true;
         }
 
-        if (isNativeScrolling(this.listEl)) {
-            config.nativeScrolling = true;
-            this.once(
-                "destroy",
-                onScroll(this.listEl, () => {
-                    if (!config.scrollTransitioning) {
-                        this.handleScroll(this.listEl.scrollLeft);
-                    }
-                }),
-            );
-        } else {
-            this.subscribeTo(this.listEl).on("transitionend", ({ target }) => {
-                if (target === this.listEl) {
-                    this.emitUpdate();
-                }
-            });
-        }
         this.onRenderLegacy();
-
-        document.fonts.ready.then(() => {
-            this.cleanupAsync();
-            this.onRenderLegacy();
-        });
     }
 
     onUpdate() {
@@ -579,8 +575,15 @@ class Carousel extends Marko.Component<Input, State> {
             // Ensure only visible items within the carousel are focusable.
             // We don't have access to these items in the template so me must update manually.
             this.focusFrame = requestAnimationFrame(() => {
+                const tabindexUpdates: [
+                    HTMLElement[],
+                    (child: HTMLElement) => void,
+                ][] = [];
+
+                // Read every item before writing any tabindex so layout is not thrashed.
                 forEls(listEl, (itemEl) => {
-                    focusables(itemEl).forEach(
+                    tabindexUpdates.push([
+                        focusables(itemEl),
                         itemEl.getAttribute("aria-hidden") !== "true"
                             ? // Default the child tabindex to data-carousel-tabindex if it exists, or remove it
                               (child: HTMLElement) =>
@@ -594,8 +597,12 @@ class Carousel extends Marko.Component<Input, State> {
                                       : child.removeAttribute("tabindex")
                             : (child: HTMLElement) =>
                                   child.setAttribute("tabindex", "-1"),
-                    );
+                    ]);
                 });
+
+                tabindexUpdates.forEach(([children, update]) =>
+                    children.forEach(update),
+                );
             });
 
             if (config.nativeScrolling) {
@@ -603,9 +610,11 @@ class Carousel extends Marko.Component<Input, State> {
                     this.emitUpdate();
                 } else {
                     const offset = this.getOffset(state);
-                    if (offset !== listEl.scrollLeft) {
+                    // Reading scrollLeft here would force a reflow right after the render.
+                    if (offset !== this.lastScrollLeft) {
                         // Animate to the new scrolling position and emit update events afterward.
                         config.scrollTransitioning = true;
+                        this.lastScrollLeft = offset;
                         this.cancelScrollTransition = scrollTransition(
                             listEl,
                             offset,
@@ -637,25 +646,63 @@ class Carousel extends Marko.Component<Input, State> {
         }
 
         // Otherwise recalculates the items / slide sizes.
-        this.renderFrame = requestAnimationFrame(() => {
-            const { width: containerWidth } =
-                containerEl.getBoundingClientRect();
-            const { left: currentLeft } = (
-                listEl.firstElementChild as HTMLElement
-            ).getBoundingClientRect();
+        // Reconnecting makes the observer notify for every element again, which triggers a measure.
+        this.observedWidths.clear();
+        this.resizeObserver.disconnect();
+        this.resizeObserver.observe(containerEl);
+        forEls(listEl, (itemEl) => this.resizeObserver.observe(itemEl));
+    }
 
-            this.setStateDirty("slideWidth", containerWidth);
-            config.preserveItems = true;
-            config.nativeScrolling = isNativeScrolling(listEl);
+    measure() {
+        const { containerEl, listEl, state } = this;
+        const { config, items } = state;
 
-            // Update item positions in the dom.
-            forEls(listEl, (itemEl, i) => {
-                const item = items[i];
-                const { left, right } = itemEl.getBoundingClientRect();
-                item.left = left - currentLeft;
-                item.right = right - currentLeft;
-            });
+        if (!items.length) {
+            return;
+        }
+
+        const { width: containerWidth } = containerEl.getBoundingClientRect();
+        const { left: currentLeft } = (
+            listEl.firstElementChild as HTMLElement
+        ).getBoundingClientRect();
+
+        this.lastScrollLeft = listEl.scrollLeft;
+        this.setStateDirty("slideWidth", containerWidth);
+        config.preserveItems = true;
+        config.nativeScrolling = isNativeScrolling(listEl);
+
+        // Update item positions in the dom.
+        forEls(listEl, (itemEl, i) => {
+            const item = items[i];
+            const { left, right } = itemEl.getBoundingClientRect();
+            item.left = left - currentLeft;
+            item.right = right - currentLeft;
         });
+
+        // Native scrolling is only known once the carousel has been laid out.
+        if (!this.listenersBound) {
+            this.listenersBound = true;
+
+            if (config.nativeScrolling) {
+                this.once(
+                    "destroy",
+                    onScroll(this.listEl, () => {
+                        if (!config.scrollTransitioning) {
+                            this.handleScroll(this.listEl.scrollLeft);
+                        }
+                    }),
+                );
+            } else {
+                this.subscribeTo(this.listEl).on(
+                    "transitionend",
+                    ({ target }) => {
+                        if (target === this.listEl) {
+                            this.emitUpdate();
+                        }
+                    },
+                );
+            }
+        }
     }
 }
 

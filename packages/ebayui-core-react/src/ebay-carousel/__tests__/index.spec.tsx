@@ -1,6 +1,6 @@
 /// <reference types="@testing-library/jest-dom" />
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import { composeStory } from "@storybook/react-vite";
 import Meta, { Continuous, ItemsPerSlide, PreserveTabIndex } from "./index.stories";
 import { EbayCarousel, EbayCarouselItem } from "..";
@@ -145,6 +145,128 @@ describe("ebay-carousel rendering", () => {
             );
 
             expect(screen.getByText("Item 1")).toBeInTheDocument();
+        });
+    });
+
+    describe("measuring with ResizeObserver", () => {
+        class FakeResizeObserver {
+            static instances: FakeResizeObserver[] = [];
+            targets = new Set<Element>();
+
+            constructor(public callback: ResizeObserverCallback) {
+                FakeResizeObserver.instances.push(this);
+            }
+
+            observe(target: Element) {
+                this.targets.add(target);
+            }
+
+            unobserve(target: Element) {
+                this.targets.delete(target);
+            }
+
+            disconnect() {
+                this.targets.clear();
+            }
+        }
+
+        const rectOf = (el: Element) => {
+            if (el.classList.contains("carousel__container")) {
+                return { left: 0, right: 300, width: 300 };
+            }
+            if (el.tagName === "LI") {
+                const left = Array.from(el.parentElement.children).indexOf(el) * 216;
+                return { left, right: left + 200, width: 200 };
+            }
+            return { left: 0, right: 0, width: 0 };
+        };
+
+        const notifyResize = (height: number) =>
+            act(() => {
+                for (const observer of FakeResizeObserver.instances) {
+                    const entries = Array.from(observer.targets, (target) => ({
+                        target,
+                        contentRect: { width: rectOf(target).width, height },
+                    })) as unknown as ResizeObserverEntry[];
+                    if (entries.length) {
+                        observer.callback(entries, observer as unknown as ResizeObserver);
+                    }
+                }
+            });
+
+        let getBoundingClientRect;
+
+        beforeEach(() => {
+            FakeResizeObserver.instances = [];
+            vi.stubGlobal("ResizeObserver", FakeResizeObserver);
+            getBoundingClientRect = vi.spyOn(Element.prototype, "getBoundingClientRect").mockImplementation(function (
+                this: Element,
+            ) {
+                const { left, right, width } = rectOf(this);
+                return { left, right, width, top: 0, bottom: 0, height: 100, x: left, y: 0 } as DOMRect;
+            });
+        });
+
+        afterEach(() => {
+            vi.unstubAllGlobals();
+            vi.restoreAllMocks();
+        });
+
+        const renderCarousel = () =>
+            render(
+                <EbayCarousel a11yPreviousText="Previous" a11yNextText="Next">
+                    <EbayCarouselItem>Item 1</EbayCarouselItem>
+                    <EbayCarouselItem>Item 2</EbayCarouselItem>
+                    <EbayCarouselItem>Item 3</EbayCarouselItem>
+                </EbayCarousel>,
+            );
+
+        it("hides items that do not fit after a resize notification", () => {
+            renderCarousel();
+            expect(screen.getByLabelText("Next")).toHaveAttribute("aria-disabled", "true");
+
+            notifyResize(100);
+
+            const items = screen.getAllByRole("listitem", { hidden: true });
+            expect(items.map((item) => item.getAttribute("aria-hidden"))).toEqual(["false", "true", "true"]);
+            expect(screen.getByLabelText("Next")).toHaveAttribute("aria-disabled", "false");
+        });
+
+        it("measures on width changes but not on height-only changes", () => {
+            renderCarousel();
+            getBoundingClientRect.mockClear();
+
+            notifyResize(100);
+            expect(getBoundingClientRect).toHaveBeenCalled();
+
+            getBoundingClientRect.mockClear();
+            notifyResize(150);
+            expect(getBoundingClientRect).not.toHaveBeenCalled();
+        });
+
+        it("does not measure when hovering the carousel", () => {
+            const { container } = renderCarousel();
+            notifyResize(100);
+            getBoundingClientRect.mockClear();
+
+            fireEvent.mouseEnter(container.querySelector(".carousel__container"));
+
+            expect(getBoundingClientRect).not.toHaveBeenCalled();
+        });
+
+        it("removes hidden items' focusable children from the tab order", () => {
+            vi.spyOn(HTMLElement.prototype, "offsetWidth", "get").mockReturnValue(100);
+            render(<PreserveTabIndexStory />);
+            notifyResize(100);
+
+            const [firstItem, secondItem] = screen.getAllByRole("listitem", { hidden: true });
+            const [firstDataTabIndexLink, firstLink] = firstItem.querySelectorAll("a");
+            const [secondDataTabIndexLink, secondLink] = secondItem.querySelectorAll("a");
+
+            expect(firstDataTabIndexLink).toHaveAttribute("tabindex", "-1");
+            expect(firstLink).not.toHaveAttribute("tabindex");
+            expect(secondDataTabIndexLink).toHaveAttribute("tabindex", "-1");
+            expect(secondLink).toHaveAttribute("tabindex", "-1");
         });
     });
 });

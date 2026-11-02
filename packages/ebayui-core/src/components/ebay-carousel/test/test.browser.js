@@ -297,6 +297,38 @@ describe("given a continuous carousel", () => {
             });
         });
     });
+
+    describe("with 6 items in a container narrower than one item", () => {
+        const input = mock.continuous6Items;
+        let firstItem;
+        let secondItem;
+
+        beforeEach(async () => {
+            component = await render(template, input);
+            component.container.style.width = "150px";
+            firstItem = component.getByText(input.item[0].renderBody.text);
+            secondItem = component.getByText(input.item[1].renderBody.text);
+            // Let font loading settle so only the resize can trigger a re-measure.
+            await document.fonts.ready;
+            await new Promise((resolve) => setTimeout(resolve, 100));
+            await waitFor(() =>
+                expect(firstItem).toHaveAttribute("aria-hidden", "true"),
+            );
+        });
+
+        describe("when the container becomes wide enough for one item", () => {
+            beforeEach(() => {
+                component.container.style.width = "300px";
+            });
+
+            it("then it shows the first item but not the second", async () => {
+                await waitFor(() =>
+                    expect(firstItem).not.toHaveAttribute("aria-hidden"),
+                );
+                expect(secondItem).toHaveAttribute("aria-hidden", "true");
+            });
+        });
+    });
 });
 
 describe("given a discrete carousel", () => {
