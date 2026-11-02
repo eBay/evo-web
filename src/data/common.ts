@@ -55,6 +55,7 @@ export const urls = {
   accessibility: `${basePath}accessibility`,
   guides: `${basePath}guides`,
   poc: `${basePath}poc`,
+  newsletter: `${basePath}newsletter`,
   cssComponents: `${basePath}evo-css-components`,
   markoComponents: `${basePath}evo-marko-components`,
   reactComponents: `${basePath}evo-react-components`,

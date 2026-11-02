@@ -334,24 +334,26 @@ declare module "@marko/run" {
 		"/guides/page-grid": [L1, L4, P319, D319];
 		"/guides/skeleton": [L1, L4, P320, D320];
 		"/guides/theming": [L1, L4, P321, D321];
-		"/poc": [L1, L5, P322, D322];
-		"/poc/chat-dialog": [L1, L5, P323, D323];
-		"/guide-examples/page-grid-blog-stretchy-nested": [L6, L7, P324, D324];
-		"/guide-examples/page-grid-blog-stretchy-subgrid": [L6, P325, D325];
-		"/guide-examples/page-grid-pricing": [L6, P326, D326];
-		"/guide-examples/skeleton-examples/buffered/example-1": [L6, P327, D327];
-		"/guide-examples/skeleton-examples/csr/example-1": [L6, P328, D328];
-		"/guide-examples/skeleton-examples/csr/example-2": [L6, P329, D329];
-		"/guide-examples/skeleton-examples/csr/example-3": [L6, P330, D330];
-		"/guide-examples/skeleton-examples/csr/example-4": [L6, P331, D331];
-		"/guide-examples/skeleton-examples/in-order/example-1a": [L6, P332, D332];
-		"/guide-examples/skeleton-examples/in-order/example-1b": [L6, P333, D333];
-		"/guide-examples/skeleton-examples/in-order/example-2a": [L6, P334, D334];
-		"/guide-examples/skeleton-examples/in-order/example-2b": [L6, P335, D335];
-		"/guide-examples/skeleton-examples/out-of-order/example-1": [L6, P336, D336];
-		"/guide-examples/skeleton-examples/out-of-order/example-2": [L6, P337, D337];
-		"/guide-examples/skeleton-examples/out-of-order/example-3": [L6, P338, D338];
-		"/guide-examples/skeleton-examples/out-of-order/example-4": [L6, P339, D339];
+		"/newsletter": [L1, P322, D322];
+		"/newsletter/2026-october": [L1, P323, D323];
+		"/poc": [L1, L5, P324, D324];
+		"/poc/chat-dialog": [L1, L5, P325, D325];
+		"/guide-examples/page-grid-blog-stretchy-nested": [L6, L7, P326, D326];
+		"/guide-examples/page-grid-blog-stretchy-subgrid": [L6, P327, D327];
+		"/guide-examples/page-grid-pricing": [L6, P328, D328];
+		"/guide-examples/skeleton-examples/buffered/example-1": [L6, P329, D329];
+		"/guide-examples/skeleton-examples/csr/example-1": [L6, P330, D330];
+		"/guide-examples/skeleton-examples/csr/example-2": [L6, P331, D331];
+		"/guide-examples/skeleton-examples/csr/example-3": [L6, P332, D332];
+		"/guide-examples/skeleton-examples/csr/example-4": [L6, P333, D333];
+		"/guide-examples/skeleton-examples/in-order/example-1a": [L6, P334, D334];
+		"/guide-examples/skeleton-examples/in-order/example-1b": [L6, P335, D335];
+		"/guide-examples/skeleton-examples/in-order/example-2a": [L6, P336, D336];
+		"/guide-examples/skeleton-examples/in-order/example-2b": [L6, P337, D337];
+		"/guide-examples/skeleton-examples/out-of-order/example-1": [L6, P338, D338];
+		"/guide-examples/skeleton-examples/out-of-order/example-2": [L6, P339, D339];
+		"/guide-examples/skeleton-examples/out-of-order/example-3": [L6, P340, D340];
+		"/guide-examples/skeleton-examples/out-of-order/example-4": [L6, P341, D341];
 	}> {}
 }
 
@@ -367,7 +369,7 @@ declare module "../src/routes/_index/+layout.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     /** @deprecated use the `Run` namespace instead */
-    export type Route = $.Routes["/" | "/evo-css-components" | "/evo-marko-components" | "/evo-react-components" | "/sitemap" | "/accessibility" | "/accessibility/anti-patterns" | "/accessibility/anti-patterns/disabling-pinch-to-zoom" | "/accessibility/anti-patterns/hand-cursor-on-buttons" | "/accessibility/anti-patterns/javascript-href" | "/accessibility/anti-patterns/layout-table" | "/accessibility/anti-patterns/non-interactive-hover" | "/accessibility/anti-patterns/open-new-window" | "/accessibility/anti-patterns/setting-focus-on-page-load" | "/accessibility/anti-patterns/tabindex-itis" | "/accessibility/anti-patterns/title-tooltip" | "/accessibility/misc" | "/accessibility/misc/aria-essentials" | "/accessibility/misc/component-naming-scheme" | "/accessibility/misc/faq" | "/accessibility/patterns" | "/accessibility/patterns/description-list" | "/accessibility/patterns/fake-menu-button" | "/accessibility/patterns/fake-tabs" | "/accessibility/patterns/footnote" | "/accessibility/patterns/form" | "/accessibility/patterns/form-validation" | "/accessibility/patterns/heading" | "/accessibility/patterns/image" | "/accessibility/patterns/input-dialog" | "/accessibility/patterns/input-meter" | "/accessibility/patterns/input-validation" | "/accessibility/patterns/popover" | "/accessibility/patterns/pulldown-list" | "/accessibility/patterns/region" | "/accessibility/patterns/skip-navigation" | "/accessibility/patterns/table-cell" | "/accessibility/patterns/time" | "/accessibility/techniques" | "/accessibility/techniques/active-descendant" | "/accessibility/techniques/alternative-text" | "/accessibility/techniques/ambiguous-label" | "/accessibility/techniques/background-icon" | "/accessibility/techniques/keyboard-interface" | "/accessibility/techniques/keyboard-trap" | "/accessibility/techniques/live-region" | "/accessibility/techniques/offscreen-text" | "/accessibility/techniques/roving-tabindex" | "/accessibility/techniques/skip-to-main-content" | "/accessibility/testing" | "/accessibility/testing/checklist" | "/accessibility/testing/known-issues" | "/components" | "/components/accordion" | "/components/accordion/accessibility" | "/components/accordion/css" | "/components/alert-dialog" | "/components/alert-dialog/accessibility" | "/components/alert-dialog/css" | "/components/avatar" | "/components/avatar/accessibility" | "/components/avatar/css" | "/components/badge" | "/components/badge/accessibility" | "/components/badge/css" | "/components/breadcrumbs" | "/components/breadcrumbs/accessibility" | "/components/breadcrumbs/css" | "/components/button" | "/components/button/accessibility" | "/components/button/css" | "/components/button/marko" | "/components/button/react" | "/components/button-link" | "/components/button-link/accessibility" | "/components/button-link/css" | "/components/calendar" | "/components/calendar/accessibility" | "/components/calendar/css" | "/components/card" | "/components/card/accessibility" | "/components/card/css" | "/components/carousel" | "/components/carousel/accessibility" | "/components/carousel/css" | "/components/ccd" | "/components/ccd/accessibility" | "/components/ccd/css" | "/components/chart-legend" | "/components/chart-legend/accessibility" | "/components/chart-legend/css" | "/components/checkbox" | "/components/checkbox/accessibility" | "/components/checkbox/css" | "/components/chip" | "/components/chip/accessibility" | "/components/chip/css" | "/components/chips-combobox" | "/components/chips-combobox/accessibility" | "/components/chips-combobox/css" | "/components/combobox" | "/components/combobox/accessibility" | "/components/combobox/css" | "/components/confirm-dialog" | "/components/confirm-dialog/accessibility" | "/components/confirm-dialog/css" | "/components/cta-button" | "/components/cta-button/accessibility" | "/components/cta-button/css" | "/components/cta-button/marko" | "/components/cta-button/react" | "/components/date-textbox" | "/components/date-textbox/accessibility" | "/components/date-textbox/css" | "/components/details" | "/components/details/accessibility" | "/components/details/css" | "/components/dialog" | "/components/dialog/accessibility" | "/components/dialog/css" | "/components/dialog/js" | "/components/donut-chart" | "/components/donut-chart/accessibility" | "/components/donut-chart/css" | "/components/education-notice" | "/components/education-notice/accessibility" | "/components/education-notice/css" | "/components/eek" | "/components/eek/accessibility" | "/components/eek/css" | "/components/field" | "/components/field/accessibility" | "/components/field/css" | "/components/file-input" | "/components/file-input/accessibility" | "/components/file-input/css" | "/components/file-preview-card" | "/components/file-preview-card/accessibility" | "/components/file-preview-card/css" | "/components/file-preview-card-group" | "/components/file-preview-card-group/accessibility" | "/components/file-preview-card-group/css" | "/components/filter-chip" | "/components/filter-chip/accessibility" | "/components/filter-chip/css" | "/components/filter-input" | "/components/filter-input/accessibility" | "/components/filter-input/css" | "/components/flag" | "/components/flag/accessibility" | "/components/flag/css" | "/components/floating-label" | "/components/floating-label/accessibility" | "/components/floating-label/css" | "/components/global" | "/components/global/accessibility" | "/components/global/css" | "/components/icon" | "/components/icon/accessibility" | "/components/icon/css" | "/components/icon-button" | "/components/icon-button/accessibility" | "/components/icon-button/css" | "/components/image-placeholder" | "/components/image-placeholder/accessibility" | "/components/image-placeholder/css" | "/components/infotip" | "/components/infotip/accessibility" | "/components/infotip/css" | "/components/inline-notice" | "/components/inline-notice/accessibility" | "/components/inline-notice/css" | "/components/item-tile" | "/components/item-tile/accessibility" | "/components/item-tile/css" | "/components/item-tile-group" | "/components/item-tile-group/accessibility" | "/components/item-tile-group/css" | "/components/layout-grid" | "/components/layout-grid/accessibility" | "/components/layout-grid/css" | "/components/lightbox-dialog" | "/components/lightbox-dialog/accessibility" | "/components/lightbox-dialog/css" | "/components/link" | "/components/link/accessibility" | "/components/link/css" | "/components/link-button" | "/components/link-button/accessibility" | "/components/link-button/css" | "/components/list" | "/components/list/accessibility" | "/components/list/css" | "/components/listbox" | "/components/listbox/accessibility" | "/components/listbox/css" | "/components/listbox-button" | "/components/listbox-button/accessibility" | "/components/listbox-button/css" | "/components/marketsans" | "/components/marketsans/accessibility" | "/components/marketsans/css" | "/components/menu" | "/components/menu/accessibility" | "/components/menu/css" | "/components/menu-button" | "/components/menu-button/accessibility" | "/components/menu-button/css" | "/components/navigation-menu" | "/components/navigation-menu/accessibility" | "/components/navigation-menu/css" | "/components/navigation-tabs" | "/components/navigation-tabs/accessibility" | "/components/navigation-tabs/css" | "/components/number-input" | "/components/number-input/accessibility" | "/components/number-input/css" | "/components/page-grid" | "/components/page-grid/accessibility" | "/components/page-grid/css" | "/components/page-notice" | "/components/page-notice/accessibility" | "/components/page-notice/css" | "/components/pagination" | "/components/pagination/accessibility" | "/components/pagination/css" | "/components/panel-dialog" | "/components/panel-dialog/accessibility" | "/components/panel-dialog/css" | "/components/phone-input" | "/components/phone-input/accessibility" | "/components/phone-input/css" | "/components/progress-bar" | "/components/progress-bar/accessibility" | "/components/progress-bar/css" | "/components/progress-bar-expressive" | "/components/progress-bar-expressive/accessibility" | "/components/progress-bar-expressive/css" | "/components/progress-spinner" | "/components/progress-spinner/accessibility" | "/components/progress-spinner/css" | "/components/progress-stepper" | "/components/progress-stepper/accessibility" | "/components/progress-stepper/css" | "/components/radio" | "/components/radio/accessibility" | "/components/radio/css" | "/components/sass" | "/components/section-notice" | "/components/section-notice/accessibility" | "/components/section-notice/css" | "/components/section-title" | "/components/section-title/accessibility" | "/components/section-title/css" | "/components/segmented-buttons" | "/components/segmented-buttons/accessibility" | "/components/segmented-buttons/css" | "/components/select" | "/components/select/accessibility" | "/components/select/css" | "/components/selection-chip" | "/components/selection-chip/accessibility" | "/components/signal" | "/components/signal/accessibility" | "/components/signal/css" | "/components/skeleton" | "/components/skeleton/accessibility" | "/components/skeleton/css" | "/components/snackbar-dialog" | "/components/snackbar-dialog/accessibility" | "/components/snackbar-dialog/css" | "/components/split-button" | "/components/split-button/accessibility" | "/components/split-button/css" | "/components/star-rating" | "/components/star-rating/accessibility" | "/components/star-rating/css" | "/components/star-rating-select" | "/components/star-rating-select/accessibility" | "/components/star-rating-select/css" | "/components/switch" | "/components/switch/accessibility" | "/components/switch/css" | "/components/table" | "/components/table/accessibility" | "/components/table/css" | "/components/tabs" | "/components/tabs/accessibility" | "/components/tabs/css" | "/components/textbox" | "/components/textbox/accessibility" | "/components/textbox/css" | "/components/toast-dialog" | "/components/toast-dialog/accessibility" | "/components/toast-dialog/css" | "/components/toggle-button" | "/components/toggle-button/accessibility" | "/components/toggle-button/css" | "/components/toggle-button-group" | "/components/toggle-button-group/accessibility" | "/components/toggle-button-group/css" | "/components/tokens" | "/components/tokens/css" | "/components/tooltip" | "/components/tooltip/accessibility" | "/components/tooltip/css" | "/components/tourtip" | "/components/tourtip/accessibility" | "/components/tourtip/css" | "/components/typography" | "/components/typography/accessibility" | "/components/typography/css" | "/components/utility" | "/components/utility/css" | "/components/video" | "/components/video/css" | "/guides" | "/guides/animation" | "/guides/page-grid" | "/guides/skeleton" | "/guides/theming" | "/poc" | "/poc/chat-dialog"];
+    export type Route = $.Routes["/" | "/evo-css-components" | "/evo-marko-components" | "/evo-react-components" | "/sitemap" | "/accessibility" | "/accessibility/anti-patterns" | "/accessibility/anti-patterns/disabling-pinch-to-zoom" | "/accessibility/anti-patterns/hand-cursor-on-buttons" | "/accessibility/anti-patterns/javascript-href" | "/accessibility/anti-patterns/layout-table" | "/accessibility/anti-patterns/non-interactive-hover" | "/accessibility/anti-patterns/open-new-window" | "/accessibility/anti-patterns/setting-focus-on-page-load" | "/accessibility/anti-patterns/tabindex-itis" | "/accessibility/anti-patterns/title-tooltip" | "/accessibility/misc" | "/accessibility/misc/aria-essentials" | "/accessibility/misc/component-naming-scheme" | "/accessibility/misc/faq" | "/accessibility/patterns" | "/accessibility/patterns/description-list" | "/accessibility/patterns/fake-menu-button" | "/accessibility/patterns/fake-tabs" | "/accessibility/patterns/footnote" | "/accessibility/patterns/form" | "/accessibility/patterns/form-validation" | "/accessibility/patterns/heading" | "/accessibility/patterns/image" | "/accessibility/patterns/input-dialog" | "/accessibility/patterns/input-meter" | "/accessibility/patterns/input-validation" | "/accessibility/patterns/popover" | "/accessibility/patterns/pulldown-list" | "/accessibility/patterns/region" | "/accessibility/patterns/skip-navigation" | "/accessibility/patterns/table-cell" | "/accessibility/patterns/time" | "/accessibility/techniques" | "/accessibility/techniques/active-descendant" | "/accessibility/techniques/alternative-text" | "/accessibility/techniques/ambiguous-label" | "/accessibility/techniques/background-icon" | "/accessibility/techniques/keyboard-interface" | "/accessibility/techniques/keyboard-trap" | "/accessibility/techniques/live-region" | "/accessibility/techniques/offscreen-text" | "/accessibility/techniques/roving-tabindex" | "/accessibility/techniques/skip-to-main-content" | "/accessibility/testing" | "/accessibility/testing/checklist" | "/accessibility/testing/known-issues" | "/components" | "/components/accordion" | "/components/accordion/accessibility" | "/components/accordion/css" | "/components/alert-dialog" | "/components/alert-dialog/accessibility" | "/components/alert-dialog/css" | "/components/avatar" | "/components/avatar/accessibility" | "/components/avatar/css" | "/components/badge" | "/components/badge/accessibility" | "/components/badge/css" | "/components/breadcrumbs" | "/components/breadcrumbs/accessibility" | "/components/breadcrumbs/css" | "/components/button" | "/components/button/accessibility" | "/components/button/css" | "/components/button/marko" | "/components/button/react" | "/components/button-link" | "/components/button-link/accessibility" | "/components/button-link/css" | "/components/calendar" | "/components/calendar/accessibility" | "/components/calendar/css" | "/components/card" | "/components/card/accessibility" | "/components/card/css" | "/components/carousel" | "/components/carousel/accessibility" | "/components/carousel/css" | "/components/ccd" | "/components/ccd/accessibility" | "/components/ccd/css" | "/components/chart-legend" | "/components/chart-legend/accessibility" | "/components/chart-legend/css" | "/components/checkbox" | "/components/checkbox/accessibility" | "/components/checkbox/css" | "/components/chip" | "/components/chip/accessibility" | "/components/chip/css" | "/components/chips-combobox" | "/components/chips-combobox/accessibility" | "/components/chips-combobox/css" | "/components/combobox" | "/components/combobox/accessibility" | "/components/combobox/css" | "/components/confirm-dialog" | "/components/confirm-dialog/accessibility" | "/components/confirm-dialog/css" | "/components/cta-button" | "/components/cta-button/accessibility" | "/components/cta-button/css" | "/components/cta-button/marko" | "/components/cta-button/react" | "/components/date-textbox" | "/components/date-textbox/accessibility" | "/components/date-textbox/css" | "/components/details" | "/components/details/accessibility" | "/components/details/css" | "/components/dialog" | "/components/dialog/accessibility" | "/components/dialog/css" | "/components/dialog/js" | "/components/donut-chart" | "/components/donut-chart/accessibility" | "/components/donut-chart/css" | "/components/education-notice" | "/components/education-notice/accessibility" | "/components/education-notice/css" | "/components/eek" | "/components/eek/accessibility" | "/components/eek/css" | "/components/field" | "/components/field/accessibility" | "/components/field/css" | "/components/file-input" | "/components/file-input/accessibility" | "/components/file-input/css" | "/components/file-preview-card" | "/components/file-preview-card/accessibility" | "/components/file-preview-card/css" | "/components/file-preview-card-group" | "/components/file-preview-card-group/accessibility" | "/components/file-preview-card-group/css" | "/components/filter-chip" | "/components/filter-chip/accessibility" | "/components/filter-chip/css" | "/components/filter-input" | "/components/filter-input/accessibility" | "/components/filter-input/css" | "/components/flag" | "/components/flag/accessibility" | "/components/flag/css" | "/components/floating-label" | "/components/floating-label/accessibility" | "/components/floating-label/css" | "/components/global" | "/components/global/accessibility" | "/components/global/css" | "/components/icon" | "/components/icon/accessibility" | "/components/icon/css" | "/components/icon-button" | "/components/icon-button/accessibility" | "/components/icon-button/css" | "/components/image-placeholder" | "/components/image-placeholder/accessibility" | "/components/image-placeholder/css" | "/components/infotip" | "/components/infotip/accessibility" | "/components/infotip/css" | "/components/inline-notice" | "/components/inline-notice/accessibility" | "/components/inline-notice/css" | "/components/item-tile" | "/components/item-tile/accessibility" | "/components/item-tile/css" | "/components/item-tile-group" | "/components/item-tile-group/accessibility" | "/components/item-tile-group/css" | "/components/layout-grid" | "/components/layout-grid/accessibility" | "/components/layout-grid/css" | "/components/lightbox-dialog" | "/components/lightbox-dialog/accessibility" | "/components/lightbox-dialog/css" | "/components/link" | "/components/link/accessibility" | "/components/link/css" | "/components/link-button" | "/components/link-button/accessibility" | "/components/link-button/css" | "/components/list" | "/components/list/accessibility" | "/components/list/css" | "/components/listbox" | "/components/listbox/accessibility" | "/components/listbox/css" | "/components/listbox-button" | "/components/listbox-button/accessibility" | "/components/listbox-button/css" | "/components/marketsans" | "/components/marketsans/accessibility" | "/components/marketsans/css" | "/components/menu" | "/components/menu/accessibility" | "/components/menu/css" | "/components/menu-button" | "/components/menu-button/accessibility" | "/components/menu-button/css" | "/components/navigation-menu" | "/components/navigation-menu/accessibility" | "/components/navigation-menu/css" | "/components/navigation-tabs" | "/components/navigation-tabs/accessibility" | "/components/navigation-tabs/css" | "/components/number-input" | "/components/number-input/accessibility" | "/components/number-input/css" | "/components/page-grid" | "/components/page-grid/accessibility" | "/components/page-grid/css" | "/components/page-notice" | "/components/page-notice/accessibility" | "/components/page-notice/css" | "/components/pagination" | "/components/pagination/accessibility" | "/components/pagination/css" | "/components/panel-dialog" | "/components/panel-dialog/accessibility" | "/components/panel-dialog/css" | "/components/phone-input" | "/components/phone-input/accessibility" | "/components/phone-input/css" | "/components/progress-bar" | "/components/progress-bar/accessibility" | "/components/progress-bar/css" | "/components/progress-bar-expressive" | "/components/progress-bar-expressive/accessibility" | "/components/progress-bar-expressive/css" | "/components/progress-spinner" | "/components/progress-spinner/accessibility" | "/components/progress-spinner/css" | "/components/progress-stepper" | "/components/progress-stepper/accessibility" | "/components/progress-stepper/css" | "/components/radio" | "/components/radio/accessibility" | "/components/radio/css" | "/components/sass" | "/components/section-notice" | "/components/section-notice/accessibility" | "/components/section-notice/css" | "/components/section-title" | "/components/section-title/accessibility" | "/components/section-title/css" | "/components/segmented-buttons" | "/components/segmented-buttons/accessibility" | "/components/segmented-buttons/css" | "/components/select" | "/components/select/accessibility" | "/components/select/css" | "/components/selection-chip" | "/components/selection-chip/accessibility" | "/components/signal" | "/components/signal/accessibility" | "/components/signal/css" | "/components/skeleton" | "/components/skeleton/accessibility" | "/components/skeleton/css" | "/components/snackbar-dialog" | "/components/snackbar-dialog/accessibility" | "/components/snackbar-dialog/css" | "/components/split-button" | "/components/split-button/accessibility" | "/components/split-button/css" | "/components/star-rating" | "/components/star-rating/accessibility" | "/components/star-rating/css" | "/components/star-rating-select" | "/components/star-rating-select/accessibility" | "/components/star-rating-select/css" | "/components/switch" | "/components/switch/accessibility" | "/components/switch/css" | "/components/table" | "/components/table/accessibility" | "/components/table/css" | "/components/tabs" | "/components/tabs/accessibility" | "/components/tabs/css" | "/components/textbox" | "/components/textbox/accessibility" | "/components/textbox/css" | "/components/toast-dialog" | "/components/toast-dialog/accessibility" | "/components/toast-dialog/css" | "/components/toggle-button" | "/components/toggle-button/accessibility" | "/components/toggle-button/css" | "/components/toggle-button-group" | "/components/toggle-button-group/accessibility" | "/components/toggle-button-group/css" | "/components/tokens" | "/components/tokens/css" | "/components/tooltip" | "/components/tooltip/accessibility" | "/components/tooltip/css" | "/components/tourtip" | "/components/tourtip/accessibility" | "/components/tourtip/css" | "/components/typography" | "/components/typography/accessibility" | "/components/typography/css" | "/components/utility" | "/components/utility/css" | "/components/video" | "/components/video/css" | "/guides" | "/guides/animation" | "/guides/page-grid" | "/guides/skeleton" | "/guides/theming" | "/newsletter" | "/newsletter/2026-october" | "/poc" | "/poc/chat-dialog"];
     /** @deprecated use `Run.Context` instead */
     export type Context = Run.Context;
     /** @deprecated define handlers with `Run.GET(...)`, `Run.POST(...)`, etc. instead */
@@ -11842,11 +11844,81 @@ declare module "../src/routes/_index/guides/theming+page.marko" {
   }
 }
 
-type P322 = $.Template<"P322", typeof import("../src/routes/_index/poc/+page.marko")>;
-declare module "../src/routes/_index/poc/+page.marko" {
+type P322 = $.Template<"P322", typeof import("../src/routes/_index/newsletter/+page.marko")>;
+declare module "../src/routes/_index/newsletter/+page.marko" {
   const Run: $.Namespace<P322>;
   namespace Run {
     type Context = $.ContextForFile<P322> & Marko.Global;
+  }
+
+  /** @deprecated use `Run` namespace instead */
+  namespace MarkoRun {
+    export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
+    /** @deprecated use the `Run` namespace instead */
+    export type Route = $.Routes["/newsletter"];
+    /** @deprecated use `Run.Context` instead */
+    export type Context = Run.Context;
+    /** @deprecated define handlers with `Run.GET(...)`, `Run.POST(...)`, etc. instead */
+    export type Handler = $.HandlerLike<Route>;
+    /** @deprecated define handlers with `Run.GET(...)` instead */
+    export type GET = $.HandlerLike<Route, "GET">;
+    /** @deprecated define handlers with `Run.HEAD(...)` instead */
+    export type HEAD = $.HandlerLike<Route, "HEAD">;
+    /** @deprecated define handlers with `Run.POST(...)` instead */
+    export type POST = $.HandlerLike<Route, "POST">;
+    /** @deprecated define handlers with `Run.PUT(...)` instead */
+    export type PUT = $.HandlerLike<Route, "PUT">;
+    /** @deprecated define handlers with `Run.DELETE(...)` instead */
+    export type DELETE = $.HandlerLike<Route, "DELETE">;
+    /** @deprecated define handlers with `Run.PATCH(...)` instead */
+    export type PATCH = $.HandlerLike<Route, "PATCH">;
+    /** @deprecated define handlers with `Run.OPTIONS(...)` instead */
+    export type OPTIONS = $.HandlerLike<Route, "OPTIONS">;
+    /** @deprecated define handlers with `Run.QUERY(...)` instead */
+    export type QUERY = $.HandlerLike<Route, "QUERY">;
+  }
+}
+
+type P323 = $.Template<"P323", typeof import("../src/routes/_index/newsletter/2026-october+page.marko")>;
+declare module "../src/routes/_index/newsletter/2026-october+page.marko" {
+  const Run: $.Namespace<P323>;
+  namespace Run {
+    type Context = $.ContextForFile<P323> & Marko.Global;
+  }
+
+  /** @deprecated use `Run` namespace instead */
+  namespace MarkoRun {
+    export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
+    /** @deprecated use the `Run` namespace instead */
+    export type Route = $.Routes["/newsletter/2026-october"];
+    /** @deprecated use `Run.Context` instead */
+    export type Context = Run.Context;
+    /** @deprecated define handlers with `Run.GET(...)`, `Run.POST(...)`, etc. instead */
+    export type Handler = $.HandlerLike<Route>;
+    /** @deprecated define handlers with `Run.GET(...)` instead */
+    export type GET = $.HandlerLike<Route, "GET">;
+    /** @deprecated define handlers with `Run.HEAD(...)` instead */
+    export type HEAD = $.HandlerLike<Route, "HEAD">;
+    /** @deprecated define handlers with `Run.POST(...)` instead */
+    export type POST = $.HandlerLike<Route, "POST">;
+    /** @deprecated define handlers with `Run.PUT(...)` instead */
+    export type PUT = $.HandlerLike<Route, "PUT">;
+    /** @deprecated define handlers with `Run.DELETE(...)` instead */
+    export type DELETE = $.HandlerLike<Route, "DELETE">;
+    /** @deprecated define handlers with `Run.PATCH(...)` instead */
+    export type PATCH = $.HandlerLike<Route, "PATCH">;
+    /** @deprecated define handlers with `Run.OPTIONS(...)` instead */
+    export type OPTIONS = $.HandlerLike<Route, "OPTIONS">;
+    /** @deprecated define handlers with `Run.QUERY(...)` instead */
+    export type QUERY = $.HandlerLike<Route, "QUERY">;
+  }
+}
+
+type P324 = $.Template<"P324", typeof import("../src/routes/_index/poc/+page.marko")>;
+declare module "../src/routes/_index/poc/+page.marko" {
+  const Run: $.Namespace<P324>;
+  namespace Run {
+    type Context = $.ContextForFile<P324> & Marko.Global;
   }
 
   /** @deprecated use `Run` namespace instead */
@@ -11877,11 +11949,11 @@ declare module "../src/routes/_index/poc/+page.marko" {
   }
 }
 
-type P323 = $.Template<"P323", typeof import("../src/routes/_index/poc/chat-dialog+page.marko")>;
+type P325 = $.Template<"P325", typeof import("../src/routes/_index/poc/chat-dialog+page.marko")>;
 declare module "../src/routes/_index/poc/chat-dialog+page.marko" {
-  const Run: $.Namespace<P323>;
+  const Run: $.Namespace<P325>;
   namespace Run {
-    type Context = $.ContextForFile<P323> & Marko.Global;
+    type Context = $.ContextForFile<P325> & Marko.Global;
   }
 
   /** @deprecated use `Run` namespace instead */
@@ -11912,11 +11984,11 @@ declare module "../src/routes/_index/poc/chat-dialog+page.marko" {
   }
 }
 
-type P324 = $.Template<"P324", typeof import("../src/routes/guide-examples/page-grid-blog-stretchy-nested/+page.marko")>;
+type P326 = $.Template<"P326", typeof import("../src/routes/guide-examples/page-grid-blog-stretchy-nested/+page.marko")>;
 declare module "../src/routes/guide-examples/page-grid-blog-stretchy-nested/+page.marko" {
-  const Run: $.Namespace<P324>;
+  const Run: $.Namespace<P326>;
   namespace Run {
-    type Context = $.ContextForFile<P324> & Marko.Global;
+    type Context = $.ContextForFile<P326> & Marko.Global;
   }
 
   /** @deprecated use `Run` namespace instead */
@@ -11947,11 +12019,11 @@ declare module "../src/routes/guide-examples/page-grid-blog-stretchy-nested/+pag
   }
 }
 
-type P325 = $.Template<"P325", typeof import("../src/routes/guide-examples/page-grid-blog-stretchy-subgrid/+page.marko")>;
+type P327 = $.Template<"P327", typeof import("../src/routes/guide-examples/page-grid-blog-stretchy-subgrid/+page.marko")>;
 declare module "../src/routes/guide-examples/page-grid-blog-stretchy-subgrid/+page.marko" {
-  const Run: $.Namespace<P325>;
+  const Run: $.Namespace<P327>;
   namespace Run {
-    type Context = $.ContextForFile<P325> & Marko.Global;
+    type Context = $.ContextForFile<P327> & Marko.Global;
   }
 
   /** @deprecated use `Run` namespace instead */
@@ -11982,11 +12054,11 @@ declare module "../src/routes/guide-examples/page-grid-blog-stretchy-subgrid/+pa
   }
 }
 
-type P326 = $.Template<"P326", typeof import("../src/routes/guide-examples/page-grid-pricing/+page.marko")>;
+type P328 = $.Template<"P328", typeof import("../src/routes/guide-examples/page-grid-pricing/+page.marko")>;
 declare module "../src/routes/guide-examples/page-grid-pricing/+page.marko" {
-  const Run: $.Namespace<P326>;
+  const Run: $.Namespace<P328>;
   namespace Run {
-    type Context = $.ContextForFile<P326> & Marko.Global;
+    type Context = $.ContextForFile<P328> & Marko.Global;
   }
 
   /** @deprecated use `Run` namespace instead */
@@ -12017,11 +12089,11 @@ declare module "../src/routes/guide-examples/page-grid-pricing/+page.marko" {
   }
 }
 
-type P327 = $.Template<"P327", typeof import("../src/routes/guide-examples/skeleton-examples/buffered/example-1/+page.marko")>;
+type P329 = $.Template<"P329", typeof import("../src/routes/guide-examples/skeleton-examples/buffered/example-1/+page.marko")>;
 declare module "../src/routes/guide-examples/skeleton-examples/buffered/example-1/+page.marko" {
-  const Run: $.Namespace<P327>;
+  const Run: $.Namespace<P329>;
   namespace Run {
-    type Context = $.ContextForFile<P327> & Marko.Global;
+    type Context = $.ContextForFile<P329> & Marko.Global;
   }
 
   /** @deprecated use `Run` namespace instead */
@@ -12052,11 +12124,11 @@ declare module "../src/routes/guide-examples/skeleton-examples/buffered/example-
   }
 }
 
-type P328 = $.Template<"P328", typeof import("../src/routes/guide-examples/skeleton-examples/csr/example-1/+page.marko")>;
+type P330 = $.Template<"P330", typeof import("../src/routes/guide-examples/skeleton-examples/csr/example-1/+page.marko")>;
 declare module "../src/routes/guide-examples/skeleton-examples/csr/example-1/+page.marko" {
-  const Run: $.Namespace<P328>;
+  const Run: $.Namespace<P330>;
   namespace Run {
-    type Context = $.ContextForFile<P328> & Marko.Global;
+    type Context = $.ContextForFile<P330> & Marko.Global;
   }
 
   /** @deprecated use `Run` namespace instead */
@@ -12087,11 +12159,11 @@ declare module "../src/routes/guide-examples/skeleton-examples/csr/example-1/+pa
   }
 }
 
-type P329 = $.Template<"P329", typeof import("../src/routes/guide-examples/skeleton-examples/csr/example-2/+page.marko")>;
+type P331 = $.Template<"P331", typeof import("../src/routes/guide-examples/skeleton-examples/csr/example-2/+page.marko")>;
 declare module "../src/routes/guide-examples/skeleton-examples/csr/example-2/+page.marko" {
-  const Run: $.Namespace<P329>;
+  const Run: $.Namespace<P331>;
   namespace Run {
-    type Context = $.ContextForFile<P329> & Marko.Global;
+    type Context = $.ContextForFile<P331> & Marko.Global;
   }
 
   /** @deprecated use `Run` namespace instead */
@@ -12122,11 +12194,11 @@ declare module "../src/routes/guide-examples/skeleton-examples/csr/example-2/+pa
   }
 }
 
-type P330 = $.Template<"P330", typeof import("../src/routes/guide-examples/skeleton-examples/csr/example-3/+page.marko")>;
+type P332 = $.Template<"P332", typeof import("../src/routes/guide-examples/skeleton-examples/csr/example-3/+page.marko")>;
 declare module "../src/routes/guide-examples/skeleton-examples/csr/example-3/+page.marko" {
-  const Run: $.Namespace<P330>;
+  const Run: $.Namespace<P332>;
   namespace Run {
-    type Context = $.ContextForFile<P330> & Marko.Global;
+    type Context = $.ContextForFile<P332> & Marko.Global;
   }
 
   /** @deprecated use `Run` namespace instead */
@@ -12157,11 +12229,11 @@ declare module "../src/routes/guide-examples/skeleton-examples/csr/example-3/+pa
   }
 }
 
-type P331 = $.Template<"P331", typeof import("../src/routes/guide-examples/skeleton-examples/csr/example-4/+page.marko")>;
+type P333 = $.Template<"P333", typeof import("../src/routes/guide-examples/skeleton-examples/csr/example-4/+page.marko")>;
 declare module "../src/routes/guide-examples/skeleton-examples/csr/example-4/+page.marko" {
-  const Run: $.Namespace<P331>;
+  const Run: $.Namespace<P333>;
   namespace Run {
-    type Context = $.ContextForFile<P331> & Marko.Global;
+    type Context = $.ContextForFile<P333> & Marko.Global;
   }
 
   /** @deprecated use `Run` namespace instead */
@@ -12192,11 +12264,11 @@ declare module "../src/routes/guide-examples/skeleton-examples/csr/example-4/+pa
   }
 }
 
-type P332 = $.Template<"P332", typeof import("../src/routes/guide-examples/skeleton-examples/in-order/example-1a/+page.marko")>;
+type P334 = $.Template<"P334", typeof import("../src/routes/guide-examples/skeleton-examples/in-order/example-1a/+page.marko")>;
 declare module "../src/routes/guide-examples/skeleton-examples/in-order/example-1a/+page.marko" {
-  const Run: $.Namespace<P332>;
+  const Run: $.Namespace<P334>;
   namespace Run {
-    type Context = $.ContextForFile<P332> & Marko.Global;
+    type Context = $.ContextForFile<P334> & Marko.Global;
   }
 
   /** @deprecated use `Run` namespace instead */
@@ -12227,11 +12299,11 @@ declare module "../src/routes/guide-examples/skeleton-examples/in-order/example-
   }
 }
 
-type P333 = $.Template<"P333", typeof import("../src/routes/guide-examples/skeleton-examples/in-order/example-1b/+page.marko")>;
+type P335 = $.Template<"P335", typeof import("../src/routes/guide-examples/skeleton-examples/in-order/example-1b/+page.marko")>;
 declare module "../src/routes/guide-examples/skeleton-examples/in-order/example-1b/+page.marko" {
-  const Run: $.Namespace<P333>;
+  const Run: $.Namespace<P335>;
   namespace Run {
-    type Context = $.ContextForFile<P333> & Marko.Global;
+    type Context = $.ContextForFile<P335> & Marko.Global;
   }
 
   /** @deprecated use `Run` namespace instead */
@@ -12262,11 +12334,11 @@ declare module "../src/routes/guide-examples/skeleton-examples/in-order/example-
   }
 }
 
-type P334 = $.Template<"P334", typeof import("../src/routes/guide-examples/skeleton-examples/in-order/example-2a/+page.marko")>;
+type P336 = $.Template<"P336", typeof import("../src/routes/guide-examples/skeleton-examples/in-order/example-2a/+page.marko")>;
 declare module "../src/routes/guide-examples/skeleton-examples/in-order/example-2a/+page.marko" {
-  const Run: $.Namespace<P334>;
+  const Run: $.Namespace<P336>;
   namespace Run {
-    type Context = $.ContextForFile<P334> & Marko.Global;
+    type Context = $.ContextForFile<P336> & Marko.Global;
   }
 
   /** @deprecated use `Run` namespace instead */
@@ -12297,11 +12369,11 @@ declare module "../src/routes/guide-examples/skeleton-examples/in-order/example-
   }
 }
 
-type P335 = $.Template<"P335", typeof import("../src/routes/guide-examples/skeleton-examples/in-order/example-2b/+page.marko")>;
+type P337 = $.Template<"P337", typeof import("../src/routes/guide-examples/skeleton-examples/in-order/example-2b/+page.marko")>;
 declare module "../src/routes/guide-examples/skeleton-examples/in-order/example-2b/+page.marko" {
-  const Run: $.Namespace<P335>;
+  const Run: $.Namespace<P337>;
   namespace Run {
-    type Context = $.ContextForFile<P335> & Marko.Global;
+    type Context = $.ContextForFile<P337> & Marko.Global;
   }
 
   /** @deprecated use `Run` namespace instead */
@@ -12332,11 +12404,11 @@ declare module "../src/routes/guide-examples/skeleton-examples/in-order/example-
   }
 }
 
-type P336 = $.Template<"P336", typeof import("../src/routes/guide-examples/skeleton-examples/out-of-order/example-1/+page.marko")>;
+type P338 = $.Template<"P338", typeof import("../src/routes/guide-examples/skeleton-examples/out-of-order/example-1/+page.marko")>;
 declare module "../src/routes/guide-examples/skeleton-examples/out-of-order/example-1/+page.marko" {
-  const Run: $.Namespace<P336>;
+  const Run: $.Namespace<P338>;
   namespace Run {
-    type Context = $.ContextForFile<P336> & Marko.Global;
+    type Context = $.ContextForFile<P338> & Marko.Global;
   }
 
   /** @deprecated use `Run` namespace instead */
@@ -12367,11 +12439,11 @@ declare module "../src/routes/guide-examples/skeleton-examples/out-of-order/exam
   }
 }
 
-type P337 = $.Template<"P337", typeof import("../src/routes/guide-examples/skeleton-examples/out-of-order/example-2/+page.marko")>;
+type P339 = $.Template<"P339", typeof import("../src/routes/guide-examples/skeleton-examples/out-of-order/example-2/+page.marko")>;
 declare module "../src/routes/guide-examples/skeleton-examples/out-of-order/example-2/+page.marko" {
-  const Run: $.Namespace<P337>;
+  const Run: $.Namespace<P339>;
   namespace Run {
-    type Context = $.ContextForFile<P337> & Marko.Global;
+    type Context = $.ContextForFile<P339> & Marko.Global;
   }
 
   /** @deprecated use `Run` namespace instead */
@@ -12402,11 +12474,11 @@ declare module "../src/routes/guide-examples/skeleton-examples/out-of-order/exam
   }
 }
 
-type P338 = $.Template<"P338", typeof import("../src/routes/guide-examples/skeleton-examples/out-of-order/example-3/+page.marko")>;
+type P340 = $.Template<"P340", typeof import("../src/routes/guide-examples/skeleton-examples/out-of-order/example-3/+page.marko")>;
 declare module "../src/routes/guide-examples/skeleton-examples/out-of-order/example-3/+page.marko" {
-  const Run: $.Namespace<P338>;
+  const Run: $.Namespace<P340>;
   namespace Run {
-    type Context = $.ContextForFile<P338> & Marko.Global;
+    type Context = $.ContextForFile<P340> & Marko.Global;
   }
 
   /** @deprecated use `Run` namespace instead */
@@ -12437,11 +12509,11 @@ declare module "../src/routes/guide-examples/skeleton-examples/out-of-order/exam
   }
 }
 
-type P339 = $.Template<"P339", typeof import("../src/routes/guide-examples/skeleton-examples/out-of-order/example-4/+page.marko")>;
+type P341 = $.Template<"P341", typeof import("../src/routes/guide-examples/skeleton-examples/out-of-order/example-4/+page.marko")>;
 declare module "../src/routes/guide-examples/skeleton-examples/out-of-order/example-4/+page.marko" {
-  const Run: $.Namespace<P339>;
+  const Run: $.Namespace<P341>;
   namespace Run {
-    type Context = $.ContextForFile<P339> & Marko.Global;
+    type Context = $.ContextForFile<P341> & Marko.Global;
   }
 
   /** @deprecated use `Run` namespace instead */
@@ -12827,21 +12899,23 @@ type D318 = $.Meta<"D318", typeof import("../src/routes/_index/guides/animation+
 type D319 = $.Meta<"D319", typeof import("../src/routes/_index/guides/page-grid+meta.json")>;
 type D320 = $.Meta<"D320", typeof import("../src/routes/_index/guides/skeleton+meta.json")>;
 type D321 = $.Meta<"D321", typeof import("../src/routes/_index/guides/theming+meta.json")>;
-type D322 = $.Meta<"D322", typeof import("../src/routes/_index/poc/+meta.json")>;
-type D323 = $.Meta<"D323", typeof import("../src/routes/_index/poc/chat-dialog+meta.json")>;
-type D324 = $.Meta<"D324", typeof import("../src/routes/guide-examples/page-grid-blog-stretchy-nested/+meta.json")>;
-type D325 = $.Meta<"D325", typeof import("../src/routes/guide-examples/page-grid-blog-stretchy-subgrid/+meta.json")>;
-type D326 = $.Meta<"D326", typeof import("../src/routes/guide-examples/page-grid-pricing/+meta.json")>;
-type D327 = $.Meta<"D327", typeof import("../src/routes/guide-examples/skeleton-examples/buffered/example-1/+meta.json")>;
-type D328 = $.Meta<"D328", typeof import("../src/routes/guide-examples/skeleton-examples/csr/example-1/+meta.json")>;
-type D329 = $.Meta<"D329", typeof import("../src/routes/guide-examples/skeleton-examples/csr/example-2/+meta.json")>;
-type D330 = $.Meta<"D330", typeof import("../src/routes/guide-examples/skeleton-examples/csr/example-3/+meta.json")>;
-type D331 = $.Meta<"D331", typeof import("../src/routes/guide-examples/skeleton-examples/csr/example-4/+meta.json")>;
-type D332 = $.Meta<"D332", typeof import("../src/routes/guide-examples/skeleton-examples/in-order/example-1a/+meta.json")>;
-type D333 = $.Meta<"D333", typeof import("../src/routes/guide-examples/skeleton-examples/in-order/example-1b/+meta.json")>;
-type D334 = $.Meta<"D334", typeof import("../src/routes/guide-examples/skeleton-examples/in-order/example-2a/+meta.json")>;
-type D335 = $.Meta<"D335", typeof import("../src/routes/guide-examples/skeleton-examples/in-order/example-2b/+meta.json")>;
-type D336 = $.Meta<"D336", typeof import("../src/routes/guide-examples/skeleton-examples/out-of-order/example-1/+meta.json")>;
-type D337 = $.Meta<"D337", typeof import("../src/routes/guide-examples/skeleton-examples/out-of-order/example-2/+meta.json")>;
-type D338 = $.Meta<"D338", typeof import("../src/routes/guide-examples/skeleton-examples/out-of-order/example-3/+meta.json")>;
-type D339 = $.Meta<"D339", typeof import("../src/routes/guide-examples/skeleton-examples/out-of-order/example-4/+meta.json")>;
+type D322 = $.Meta<"D322", typeof import("../src/routes/_index/newsletter/+meta.json")>;
+type D323 = $.Meta<"D323", typeof import("../src/routes/_index/newsletter/2026-october+meta.json")>;
+type D324 = $.Meta<"D324", typeof import("../src/routes/_index/poc/+meta.json")>;
+type D325 = $.Meta<"D325", typeof import("../src/routes/_index/poc/chat-dialog+meta.json")>;
+type D326 = $.Meta<"D326", typeof import("../src/routes/guide-examples/page-grid-blog-stretchy-nested/+meta.json")>;
+type D327 = $.Meta<"D327", typeof import("../src/routes/guide-examples/page-grid-blog-stretchy-subgrid/+meta.json")>;
+type D328 = $.Meta<"D328", typeof import("../src/routes/guide-examples/page-grid-pricing/+meta.json")>;
+type D329 = $.Meta<"D329", typeof import("../src/routes/guide-examples/skeleton-examples/buffered/example-1/+meta.json")>;
+type D330 = $.Meta<"D330", typeof import("../src/routes/guide-examples/skeleton-examples/csr/example-1/+meta.json")>;
+type D331 = $.Meta<"D331", typeof import("../src/routes/guide-examples/skeleton-examples/csr/example-2/+meta.json")>;
+type D332 = $.Meta<"D332", typeof import("../src/routes/guide-examples/skeleton-examples/csr/example-3/+meta.json")>;
+type D333 = $.Meta<"D333", typeof import("../src/routes/guide-examples/skeleton-examples/csr/example-4/+meta.json")>;
+type D334 = $.Meta<"D334", typeof import("../src/routes/guide-examples/skeleton-examples/in-order/example-1a/+meta.json")>;
+type D335 = $.Meta<"D335", typeof import("../src/routes/guide-examples/skeleton-examples/in-order/example-1b/+meta.json")>;
+type D336 = $.Meta<"D336", typeof import("../src/routes/guide-examples/skeleton-examples/in-order/example-2a/+meta.json")>;
+type D337 = $.Meta<"D337", typeof import("../src/routes/guide-examples/skeleton-examples/in-order/example-2b/+meta.json")>;
+type D338 = $.Meta<"D338", typeof import("../src/routes/guide-examples/skeleton-examples/out-of-order/example-1/+meta.json")>;
+type D339 = $.Meta<"D339", typeof import("../src/routes/guide-examples/skeleton-examples/out-of-order/example-2/+meta.json")>;
+type D340 = $.Meta<"D340", typeof import("../src/routes/guide-examples/skeleton-examples/out-of-order/example-3/+meta.json")>;
+type D341 = $.Meta<"D341", typeof import("../src/routes/guide-examples/skeleton-examples/out-of-order/example-4/+meta.json")>;

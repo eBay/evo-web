@@ -1,4 +1,4 @@
-static const pages = ["components", "accessibility", "guides", "poc"];
+static const pages = ["components", "accessibility", "guides", "poc", "newsletter"];
 import { components, urls } from "../data";
 export interface Input {
     page?: string;
@@ -20,6 +20,8 @@ export interface Input {
                                 return urls.guides;
                             } else if (input.page === "poc") {
                                 return urls.poc;
+                            } else if (input.page === "newsletter") {
+                                return urls.newsletter;
                             }
                         })()>
                         <a href=currentUrl>
@@ -32,6 +34,13 @@ export interface Input {
                         </if>
                         <else if=input.page === "accessibility">
                             <a11y-docs-list/>
+                        </else>
+                        <else if=input.page === "newsletter">
+                            <li>
+                                <a href=`${urls.newsletter}/2026-october`>
+                                    October 2026
+                                </a>
+                            </li>
                         </else>
                         <else if=input.page === "guides">
                             <li>

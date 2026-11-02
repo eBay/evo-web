@@ -147,3 +147,12 @@ main {
   top: 0;
   z-index: 100000;
 }
+
+span.highlight {
+  background-color: var(--color-background-education);
+  border-radius: 3px;
+  display: inline-block;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 13px;
+  padding-inline: 4px;
+}
