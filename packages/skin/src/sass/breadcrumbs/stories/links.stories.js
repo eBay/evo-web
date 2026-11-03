@@ -23,7 +23,7 @@ export const currentLocation = () => `
             </svg>
         </li>
         <li>
-            <a aria-current="location">Smart Watch Bands</a>
+            <a aria-current="page">Smart Watch Bands</a>
         </li>
     </ul>
 </nav>
