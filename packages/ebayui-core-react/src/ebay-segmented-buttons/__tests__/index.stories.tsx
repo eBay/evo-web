@@ -2,7 +2,7 @@ import React from "react";
 import { Meta, StoryObj } from "@storybook/react-vite";
 import { action } from "storybook/actions";
 import { EbaySegmentedButtons, EbaySegmentedButton as Button } from "..";
-import { EbayIconFullView24 } from "../../ebay-icon/icons/ebay-icon-full-view-24";
+import { EbayIconDesktop24 } from "../../ebay-icon/icons/ebay-icon-desktop-24";
 import { EbayIconMobile24 } from "../../ebay-icon/icons/ebay-icon-mobile-24";
 
 export default {
@@ -91,7 +91,7 @@ export const WithIcons: StoryObj<typeof EbaySegmentedButtons> = {
     render: (args) => (
         <EbaySegmentedButtons onChange={action("change")} {...args}>
             <Button selected>
-                <EbayIconFullView24 /> Desktop
+                <EbayIconDesktop24 /> Desktop
             </Button>
             <Button>
                 <EbayIconMobile24 /> Mobile

@@ -2,9 +2,7 @@ import { urls } from "../../../../data";
 <div id="segmented-buttons">
   <section-header/>
 
-  <h3 id="button-default">
-    Default Segmented Buttons
-  </h3>
+  <h3 id="button-default">Default Segmented Buttons</h3>
   <p>
     The default segmented button has a 40px height that matches other buttons.
   </p>
@@ -16,7 +14,8 @@ import { urls } from "../../../../data";
             <button
               type="button"
               class="segmented-buttons__button"
-              aria-current="true">
+              aria-current="true"
+            >
               Day
             </button>
           </li>
@@ -42,32 +41,25 @@ import { urls } from "../../../../data";
           <button
             type="button"
             class="segmented-buttons__button"
-            aria-current="true">
+            aria-current="true"
+          >
             Day
           </button>
         </li>
         <li>
-          <button type="button" class="segmented-buttons__button">
-            Month
-          </button>
+          <button type="button" class="segmented-buttons__button">Month</button>
         </li>
         <li>
-          <button type="button" class="segmented-buttons__button">
-            Year
-          </button>
+          <button type="button" class="segmented-buttons__button">Year</button>
         </li>
       </ul>
     </div>
   </highlight-code>
 
-  <h3 id="button-default">
-    Segmented Buttons - large
-  </h3>
+  <h3 id="button-default">Segmented Buttons - large</h3>
   <p>
-    Use the
-    <code>segmented-buttons--large</code>
-    modifier to create large segemented buttons. These have a 48px height
-    to match large buttons.
+    Use the <code>segmented-buttons--large</code> modifier to create large
+    segemented buttons. These have a 48px height to match large buttons.
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -77,7 +69,8 @@ import { urls } from "../../../../data";
             <button
               type="button"
               class="segmented-buttons__button"
-              aria-current="true">
+              aria-current="true"
+            >
               Day
             </button>
           </li>
@@ -103,35 +96,25 @@ import { urls } from "../../../../data";
           <button
             type="button"
             class="segmented-buttons__button"
-            aria-current="true">
+            aria-current="true"
+          >
             Day
           </button>
         </li>
         <li>
-          <button type="button" class="segmented-buttons__button">
-            Month
-          </button>
+          <button type="button" class="segmented-buttons__button">Month</button>
         </li>
         <li>
-          <button type="button" class="segmented-buttons__button">
-            Year
-          </button>
+          <button type="button" class="segmented-buttons__button">Year</button>
         </li>
       </ul>
     </div>
   </highlight-code>
 
-  <h3 id="button-default">
-    Segmented buttons - with icons
-  </h3>
+  <h3 id="button-default">Segmented buttons - with icons</h3>
   <p>
-    Any 24x24
-    <a href=`${urls.components}/icon`>
-      icon
-    </a>
-    can be added inside of a
-    <code>segmented-buttons__button-cell</code>
-    block.
+    Any 24x24 <a href=`${urls.components}/icon`>icon</a> can be added inside of
+    a <code>segmented-buttons__button-cell</code> block.
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -141,14 +124,16 @@ import { urls } from "../../../../data";
             <button
               type="button"
               aria-current="true"
-              class="segmented-buttons__button">
+              class="segmented-buttons__button"
+            >
               <span class="segmented-buttons__button-cell">
                 <svg
                   aria-hidden="true"
                   class="icon icon--24"
                   height="16"
-                  width="16">
-                  <icon-symbol name="full-view-24"/>
+                  width="16"
+                >
+                  <icon-symbol name="desktop-24"/>
                 </svg>
                 <span>Desktop</span>
               </span>
@@ -161,7 +146,8 @@ import { urls } from "../../../../data";
                   aria-hidden="true"
                   class="icon icon--24"
                   height="16"
-                  width="16">
+                  width="16"
+                >
                   <icon-symbol name="mobile-24"/>
                 </svg>
                 <span>Mobile</span>
@@ -180,14 +166,16 @@ import { urls } from "../../../../data";
           <button
             type="button"
             aria-current="true"
-            class="segmented-buttons__button">
+            class="segmented-buttons__button"
+          >
             <span class="segmented-buttons__button-cell">
               <svg
                 aria-hidden="true"
                 class="icon icon--24"
                 height="16"
-                width="16">
-                <use href="#icon-full-view-24"/>
+                width="16"
+              >
+                <use href="#icon-desktop-24"/>
               </svg>
               <span>Desktop</span>
             </span>
@@ -200,7 +188,8 @@ import { urls } from "../../../../data";
                 aria-hidden="true"
                 class="icon icon--24"
                 height="16"
-                width="16">
+                width="16"
+              >
                 <use href="#icon-mobile-24"/>
               </svg>
               <span>Mobile</span>
@@ -211,9 +200,7 @@ import { urls } from "../../../../data";
     </div>
   </highlight-code>
 
-  <h3 id="button-default">
-    Segmented buttons - in fixed width container
-  </h3>
+  <h3 id="button-default">Segmented buttons - in fixed width container</h3>
   <div class="demo">
     <div class="demo__inner">
       <div style="width: 300px;">
@@ -233,7 +220,8 @@ import { urls } from "../../../../data";
               <button
                 type="button"
                 class="segmented-buttons__button"
-                aria-current="true">
+                aria-current="true"
+              >
                 Q3
               </button>
             </li>
@@ -256,24 +244,19 @@ import { urls } from "../../../../data";
             <button
               type="button"
               class="segmented-buttons__button"
-              aria-current="true">
+              aria-current="true"
+            >
               Q1
             </button>
           </li>
           <li>
-            <button type="button" class="segmented-buttons__button">
-              Q2
-            </button>
+            <button type="button" class="segmented-buttons__button">Q2</button>
           </li>
           <li>
-            <button type="button" class="segmented-buttons__button">
-              Q3
-            </button>
+            <button type="button" class="segmented-buttons__button">Q3</button>
           </li>
           <li>
-            <button type="button" class="segmented-buttons__button">
-              Q4
-            </button>
+            <button type="button" class="segmented-buttons__button">Q4</button>
           </li>
         </ul>
       </div>
