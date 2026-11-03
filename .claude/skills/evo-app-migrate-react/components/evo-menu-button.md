@@ -1,6 +1,6 @@
 # ebay-menu-button → evo-menu-button
 
-Use named trigger, menu, and menu-items components. Menu choices follow `EvoMenu`'s value-based groups; select callbacks belong to items or groups.
+Use named trigger, menu, and menu-items components. Replace the legacy `text` prop with `EvoMenuButtonTrigger` children: `text="Actions"` becomes `<EvoMenuButtonTrigger>Actions</EvoMenuButtonTrigger>`. Do not pass `text` to `EvoMenuButton`. Menu choices follow `EvoMenu`'s value-based groups; select callbacks belong to items or groups.
 
 **Before:**
 
@@ -10,7 +10,7 @@ import {
   EbayMenuButtonItem,
 } from "@ebay/ui-core-react/ebay-menu-button";
 
-<EbayMenuButton onSelect={(_, { index }) => handleAction(index)}>
+<EbayMenuButton text="Actions" onSelect={(_, { index }) => handleAction(index)}>
   <EbayMenuButtonItem>Edit</EbayMenuButtonItem>
   <EbayMenuButtonItem>End</EbayMenuButtonItem>
 </EbayMenuButton>;
