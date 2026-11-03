@@ -4,7 +4,7 @@ import focusables from "makeup-focusables";
 import CarouselControlButton from "./carousel-control-button";
 import CarouselList from "./carousel-list";
 import { ListItemRef } from "./types";
-import { animateCarouselLoop, getMaxOffset, getNextIndex, getOffset, getSlide, isNativeScrolling } from "./helpers";
+import { animateCarouselLoop, getMaxOffset, getNextIndex, getOffset, getSlide } from "./helpers";
 import { EbayIconPause24 } from "../ebay-icon/icons/ebay-icon-pause-24";
 import { EbayIconPlay24 } from "../ebay-icon/icons/ebay-icon-play-24";
 import reactDom from "react-dom";
@@ -16,14 +16,12 @@ const flushSync = reactDom.flushSync || ((callback) => callback());
 type CarouselLayout = {
     slideWidth: number;
     items: Omit<ListItemRef, "fullyVisible">[];
-    nativeScrolling: boolean;
 };
 
-const initialLayout: CarouselLayout = { slideWidth: 0, items: [], nativeScrolling: false };
+const initialLayout: CarouselLayout = { slideWidth: 0, items: [] };
 
 const isSameLayout = (a: CarouselLayout, b: CarouselLayout): boolean =>
     a.slideWidth === b.slideWidth &&
-    a.nativeScrolling === b.nativeScrolling &&
     a.items.length === b.items.length &&
     a.items.every(
         (item, i) =>
@@ -75,6 +73,11 @@ const EbayCarousel: FC<CarouselProps> = ({
     const [isUserInteracting, setIsUserInteracting] = useState(false);
     const containerRef = useRef<HTMLDivElement | null>(null);
     const listRef = useRef<HTMLUListElement | null>(null);
+    const scrollLeftRef = useRef(0);
+    const observerRef = useRef<ResizeObserver | null>(null);
+    const observedWidthsRef = useRef(new Map<Element, number>());
+    const loopingRef = useRef(false);
+    const measureDeferredRef = useRef(false);
     const items: ListItemRef[] = layout.items.map(({ element, left, right }) => ({
         element,
         left,
@@ -105,35 +108,56 @@ const EbayCarousel: FC<CarouselProps> = ({
                 left: rects[i].left - firstLeft,
                 right: rects[i].right - firstLeft,
             })),
-            nativeScrolling: isNativeScrolling(list),
         };
 
+        scrollLeftRef.current = list.scrollLeft;
         setLayout((prev) => (isSameLayout(prev, next) ? prev : next));
+    };
+
+    const requestMeasure = () => {
+        const observer = observerRef.current;
+        if (!observer || !containerRef.current || !listRef.current) return;
+
+        // Re-observing makes the observer report every element again, so measure() runs after the next layout.
+        observedWidthsRef.current.clear();
+        observer.disconnect();
+        for (const element of [containerRef.current, ...Array.from(listRef.current.children)]) {
+            observer.observe(element, { box: "border-box" });
+        }
     };
 
     useEffect(() => {
         // ResizeObserver is missing in jsdom; items then stay unmeasured and fully visible.
-        if (typeof ResizeObserver === "undefined" || !containerRef.current || !listRef.current) return;
+        if (typeof ResizeObserver === "undefined") return;
 
-        const observedWidths = new Map<Element, number>();
         const observer = new ResizeObserver((entries) => {
             let widthChanged = false;
-            for (const { target, contentRect } of entries) {
-                if (observedWidths.get(target) !== contentRect.width) {
-                    observedWidths.set(target, contentRect.width);
+            for (const { target, borderBoxSize } of entries) {
+                const width = borderBoxSize[0].inlineSize;
+                if (observedWidthsRef.current.get(target) !== width) {
+                    observedWidthsRef.current.set(target, width);
                     widthChanged = true;
                 }
             }
 
-            // Height-only changes are skipped: items carry transforms during the autoplay loop.
-            if (widthChanged) measure();
+            if (!widthChanged) return;
+
+            // getBoundingClientRect includes the transforms the autoplay loop puts on items.
+            if (loopingRef.current) {
+                measureDeferredRef.current = true;
+            } else {
+                measure();
+            }
         });
+        observerRef.current = observer;
 
-        observer.observe(containerRef.current);
-        Array.from(listRef.current.children).forEach((item) => observer.observe(item));
+        return () => {
+            observer.disconnect();
+            observerRef.current = null;
+        };
+    }, []);
 
-        return () => observer.disconnect();
-    }, [children, gap]);
+    useEffect(() => requestMeasure(), [children, gap, isAutoplayEnabled]);
 
     const visibilityKey = Array.from({ length: itemCount }, (_, i) => items[i]?.fullyVisible ?? true).join();
 
@@ -210,8 +234,18 @@ const EbayCarousel: FC<CarouselProps> = ({
                 itemsRef,
                 slideWidth,
                 gap,
-                onAnimationStart: () => setDisableOffsetCalculation(true),
-                onAnimationEnd: () => setDisableOffsetCalculation(false),
+                onAnimationStart: () => {
+                    loopingRef.current = true;
+                    setDisableOffsetCalculation(true);
+                },
+                onAnimationEnd: () => {
+                    loopingRef.current = false;
+                    setDisableOffsetCalculation(false);
+                    if (measureDeferredRef.current) {
+                        measureDeferredRef.current = false;
+                        requestMeasure();
+                    }
+                },
             });
         }
 
@@ -275,7 +309,8 @@ const EbayCarousel: FC<CarouselProps> = ({
                     listRef={listRef}
                     items={items}
                     itemsRef={itemsRef}
-                    nativeScrolling={layout.nativeScrolling}
+                    scrollLeftRef={scrollLeftRef}
+                    nativeScrolling={!isAutoplayEnabled}
                     offset={offset}
                     gap={gap}
                     itemsPerSlide={itemsPerSlide}

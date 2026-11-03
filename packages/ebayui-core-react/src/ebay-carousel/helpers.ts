@@ -3,8 +3,6 @@ import { Children, cloneElement, ReactElement, ReactNode } from "react";
 import { ListItemRef, MovementDirection } from "./types";
 import { CarouselItemProps } from "./carousel-item";
 
-export const isNativeScrolling = (el: Element): boolean => getComputedStyle(el).overflowX !== "visible";
-
 export const getMaxOffset = (items: ListItemRef[], slideWidth: number): number => {
     if (!items.length) {
         return 0;

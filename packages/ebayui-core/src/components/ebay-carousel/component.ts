@@ -91,7 +91,7 @@ class Carousel extends Marko.Component<Input, State> {
     declare resizeObserver: ResizeObserver;
     declare observedWidths: Map<Element, number>;
     declare lastScrollLeft: number;
-    declare listenersBound: boolean;
+    declare measureDeferred: boolean;
 
     cleanupAsync() {
         clearTimeout(this.autoplayTimeout);
@@ -363,6 +363,15 @@ class Carousel extends Marko.Component<Input, State> {
                 items.forEach((item) => {
                     item.transform = undefined;
                 });
+                // The template only drops the transforms on the next render, which can be one autoplay interval away.
+                forEls(this.listEl, (itemEl) => {
+                    itemEl.style.transform = "";
+                });
+
+                if (this.measureDeferred) {
+                    this.measureDeferred = false;
+                    this.requestMeasure();
+                }
             }
         });
 
@@ -437,7 +446,7 @@ class Carousel extends Marko.Component<Input, State> {
                 input.class,
             ],
             style: input.style,
-            config: {}, // A place to store values that should not trigger an update by themselves.
+            config: {} as State["config"], // A place to store values that should not trigger an update by themselves.
             gap: isNaN(gap) ? 16 : gap,
             index: parseInt(input.index as any, 10) || 0,
             itemsPerSlide: parseFloat(input.itemsPerSlide as any) || 0,
@@ -481,6 +490,9 @@ class Carousel extends Marko.Component<Input, State> {
             }
         }
 
+        // Skin only scrolls natively when autoplay is off.
+        state.config.nativeScrolling = !state.autoplayInterval;
+
         state.items = ((input.item as Item[]) || []).map((item, i) => {
             const isStartOfSlide = state.itemsPerSlide
                 ? i % state.itemsPerSlide === 0
@@ -514,24 +526,45 @@ class Carousel extends Marko.Component<Input, State> {
         this.nextEl = this.getEl("next");
         this.containerEl = this.getEl("container");
         this.lastScrollLeft = 0;
-        this.listenersBound = false;
+        this.measureDeferred = false;
         this.observedWidths = new Map();
         this.resizeObserver = new ResizeObserver((entries) => {
             let widthChanged = false;
 
-            for (const { target, contentRect } of entries) {
-                if (this.observedWidths.get(target) !== contentRect.width) {
-                    this.observedWidths.set(target, contentRect.width);
+            for (const { target, borderBoxSize } of entries) {
+                const width = borderBoxSize[0].inlineSize;
+                if (this.observedWidths.get(target) !== width) {
+                    this.observedWidths.set(target, width);
                     widthChanged = true;
                 }
             }
 
-            // Height-only changes are ignored, measuring while items are transformed would corrupt their positions.
-            if (widthChanged) {
+            if (!widthChanged) {
+                return;
+            }
+
+            // getBoundingClientRect includes the transforms the autoplay loop puts on items.
+            if (this.state.items.some(({ transform }) => transform)) {
+                this.measureDeferred = true;
+            } else {
                 this.measure();
             }
         });
         this.once("destroy", () => this.resizeObserver.disconnect());
+        this.once(
+            "destroy",
+            onScroll(this.listEl, () => {
+                const { config } = this.state;
+                if (config.nativeScrolling && !config.scrollTransitioning) {
+                    this.handleScroll(this.listEl.scrollLeft);
+                }
+            }),
+        );
+        this.subscribeTo(this.listEl).on("transitionend", ({ target }) => {
+            if (target === this.listEl && !this.state.config.nativeScrolling) {
+                this.emitUpdate();
+            }
+        });
         this.skipScrolling = false;
 
         // If user had reduced motion turned on in OS settings, pause autoplay.
@@ -551,7 +584,7 @@ class Carousel extends Marko.Component<Input, State> {
     }
 
     onRenderLegacy() {
-        const { containerEl, listEl, state } = this;
+        const { listEl, state } = this;
         const { config, items, autoplayInterval, paused, interacting } = state;
 
         // Do nothing for empty carousels.
@@ -646,11 +679,19 @@ class Carousel extends Marko.Component<Input, State> {
         }
 
         // Otherwise recalculates the items / slide sizes.
-        // Reconnecting makes the observer notify for every element again, which triggers a measure.
+        this.requestMeasure();
+    }
+
+    requestMeasure() {
+        const { containerEl, listEl, resizeObserver } = this;
+
+        // Re-observing makes the observer report every element again, so measure() runs after the next layout.
         this.observedWidths.clear();
-        this.resizeObserver.disconnect();
-        this.resizeObserver.observe(containerEl);
-        forEls(listEl, (itemEl) => this.resizeObserver.observe(itemEl));
+        resizeObserver.disconnect();
+        resizeObserver.observe(containerEl, { box: "border-box" });
+        forEls(listEl, (itemEl) =>
+            resizeObserver.observe(itemEl, { box: "border-box" }),
+        );
     }
 
     measure() {
@@ -669,7 +710,6 @@ class Carousel extends Marko.Component<Input, State> {
         this.lastScrollLeft = listEl.scrollLeft;
         this.setStateDirty("slideWidth", containerWidth);
         config.preserveItems = true;
-        config.nativeScrolling = isNativeScrolling(listEl);
 
         // Update item positions in the dom.
         forEls(listEl, (itemEl, i) => {
@@ -678,39 +718,7 @@ class Carousel extends Marko.Component<Input, State> {
             item.left = left - currentLeft;
             item.right = right - currentLeft;
         });
-
-        // Native scrolling is only known once the carousel has been laid out.
-        if (!this.listenersBound) {
-            this.listenersBound = true;
-
-            if (config.nativeScrolling) {
-                this.once(
-                    "destroy",
-                    onScroll(this.listEl, () => {
-                        if (!config.scrollTransitioning) {
-                            this.handleScroll(this.listEl.scrollLeft);
-                        }
-                    }),
-                );
-            } else {
-                this.subscribeTo(this.listEl).on(
-                    "transitionend",
-                    ({ target }) => {
-                        if (target === this.listEl) {
-                            this.emitUpdate();
-                        }
-                    },
-                );
-            }
-        }
     }
-}
-
-/**
- * Checks if an element is using native scrolling
- */
-function isNativeScrolling(el: HTMLElement) {
-    return getComputedStyle(el).overflowX !== "visible";
 }
 
 /**
