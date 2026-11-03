@@ -295,12 +295,30 @@ describe("EvoMenuButton", () => {
     await expect.element(trigger).toHaveFocus();
 
     await user.click(trigger);
+    await expect
+      .element(screen.getByRole("menuitemradio", { name: "Price" }))
+      .toHaveAttribute("aria-checked", "true");
     await user.click(
       screen.getByRole("menuitemcheckbox", { name: "Free shipping" }),
     );
     expect(onCheckboxChange).toHaveBeenCalledWith(["free"]);
     await expect.element(trigger).toHaveAttribute("aria-expanded", "false");
     await expect.element(trigger).toHaveFocus();
+
+    await user.click(trigger);
+    await expect
+      .element(screen.getByRole("menuitemcheckbox", { name: "Free shipping" }))
+      .toHaveAttribute("aria-checked", "true");
+    await user.keyboard("{Escape}");
+    await expect.element(trigger).toHaveAttribute("aria-expanded", "false");
+
+    await user.click(trigger);
+    await expect
+      .element(screen.getByRole("menuitemradio", { name: "Price" }))
+      .toHaveAttribute("aria-checked", "true");
+    await expect
+      .element(screen.getByRole("menuitemcheckbox", { name: "Free shipping" }))
+      .toHaveAttribute("aria-checked", "true");
   });
 
   it("hides a controlled-open popup while disabled", async () => {

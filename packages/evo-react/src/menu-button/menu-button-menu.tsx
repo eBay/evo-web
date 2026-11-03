@@ -5,8 +5,10 @@ import { useMenuButton } from "./context";
 import type { EvoMenuProps } from "./types";
 
 /**
- * Positions and conditionally mounts the menu-button popup. Compose explicit
- * `EvoMenuItems` and optional `EvoMenuFooter` children inside it.
+ * Positions the menu-button popup. Compose explicit `EvoMenuItems` and
+ * optional `EvoMenuFooter` children inside it, and render it after
+ * `EvoMenuButtonTrigger`. The popup stays mounted so item and group state
+ * survive closing; Skin shows it only after an expanded trigger.
  *
  * @summary Popup menu for a menu button.
  */
@@ -39,8 +41,6 @@ export function EvoMenu({ children, ref, style, ...rest }: EvoMenuProps) {
     menuButton.floatingStyles.visibility,
     menuElementRef,
   ]);
-
-  if (!menuButton.open) return null;
 
   return (
     <BaseEvoMenu
