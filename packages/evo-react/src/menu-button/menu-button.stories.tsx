@@ -61,8 +61,9 @@ export const Default: Story = {
 
 /** Radio and checkbox items share the same value-based selection API as EvoMenu. */
 export const Choices: Story = {
+  args: { collapseOnSelect: true },
   render: (args) => (
-    <EvoMenuButton {...args} collapseOnSelect>
+    <EvoMenuButton {...args}>
       <EvoMenuButtonTrigger>Preferences</EvoMenuButtonTrigger>
       <EvoMenu>
         <EvoMenuItems>
