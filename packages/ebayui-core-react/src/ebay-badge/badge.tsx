@@ -9,16 +9,15 @@ export type EbayBadgeProps = ComponentProps<"span"> & {
 };
 
 const EbayBadge: FC<EbayBadgeProps> = ({ number, type = "img", className, ...rest }) => {
-    const role = type === "img" ? "img" : undefined;
-    const ariaHidden = type !== "img";
+    const role = type === "icon" ? undefined : "img";
 
     if (number == null) {
-        return <span {...rest} className={classNames("badge", className)} role={role} aria-hidden={ariaHidden} />;
+        return <span {...rest} className={classNames("badge", className)} role={role} />;
     }
 
     if (+number > 99) {
         return (
-            <span {...rest} className={classNames("badge", className)} role={role} aria-hidden={ariaHidden}>
+            <span {...rest} className={classNames("badge", className)} role={role}>
                 99+
             </span>
         );
@@ -26,12 +25,7 @@ const EbayBadge: FC<EbayBadgeProps> = ({ number, type = "img", className, ...res
 
     if (+number > 0) {
         return (
-            <span
-                {...rest}
-                className={classNames("badge", "badge--circle", className)}
-                role={role}
-                aria-hidden={ariaHidden}
-            >
+            <span {...rest} className={classNames("badge", "badge--circle", className)} role={role}>
                 {Math.round(+number)}
             </span>
         );

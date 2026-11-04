@@ -10,11 +10,11 @@
 ## evo-badge Usage
 
 ```marko
-<evo-badge number=5 aria-label="5 unread items"/>
+<evo-badge number=5 a11yText="5 unread items"/>
 ```
 
 ## Examples and Documentation
 
-- [Storybook](https://ebay.github.io/evo-web/ebayui-core/?path=/story/graphics-icons-evo-badge)
-- [Storybook Docs](https://ebay.github.io/evo-web/ebayui-core/?path=/docs/graphics-icons-evo-badge)
-- [Code Examples](https://github.com/eBay/evo-web/tree/main/packages/ebayui-core/src/components/evo-badge/examples)
+- [Storybook](https://opensource.ebay.com/evo-web/marko/?path=/story/graphics-icons-evo-badge)
+- [Storybook Docs](https://opensource.ebay.com/evo-web/marko/?path=/docs/graphics-icons-evo-badge)
+- [Code Examples](https://github.com/eBay/evo-web/tree/main/packages/evo-marko/src/tags/evo-badge/examples)

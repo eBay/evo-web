@@ -47,6 +47,7 @@ $ var separatorMap = component.getSeparatorMap(input);
                 value,
                 checked: itemChecked,
                 badgeNumber,
+                badgeAriaLabel,
                 disabled,
                 renderBody,
                 ...htmlItem
@@ -91,7 +92,11 @@ $ var separatorMap = component.getSeparatorMap(input);
                 <span>
                     <${renderBody}/>
                     <if(badgeNumber)>
-                        <ebay-badge type="menu" number=badgeNumber/>
+                        <ebay-badge
+                            type="menu"
+                            number=badgeNumber
+                            aria-label=badgeAriaLabel
+                        />
                     </if>
                 </span>
                 <if(!isFilter)>

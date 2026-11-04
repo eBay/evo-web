@@ -28,7 +28,7 @@ exports[`given number is a string > renders number with rounded-up string 1`] = 
 
 exports[`renders an empty badge when no number is provided 1`] = `
 <span
-  aria-label="new"
+  aria-label="new notification"
   class="badge"
   role="img"
 />

@@ -3,7 +3,7 @@ import { describe, it } from "vitest";
 import { composeStories } from "@storybook/marko";
 import { snapshotHTML } from "../../../common/test-utils/snapshots";
 import * as stories from "../icon-button.stories"; // import all stories from the stories file
-const { Default } = composeStories(stories);
+const { Default, WithBadge } = composeStories(stories);
 
 interface Properties {
   [key: string]: string[];
@@ -53,10 +53,6 @@ describe("evo-icon-button", () => {
   });
 
   it("renders badged icon variant", async () => {
-    await snapshotHTML(Default, {
-      badgeNumber: 5,
-      badgeAriaLabel: "5 Items",
-      ariaLabel: "Badged button",
-    });
+    await snapshotHTML(WithBadge);
   });
 });

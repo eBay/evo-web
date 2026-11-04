@@ -1,11 +1,11 @@
 import React from "react";
-import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { render } from "vitest-browser-react";
 import { userEvent } from "vitest/browser";
+import { EvoIconAdd16 } from "../../icon/icons/add-16";
+import { EvoIconMenu20 } from "../../icon/icons/menu-20";
 import { EvoIconButton } from "../icon-button";
 import { EvoIconButtonBadge } from "../icon-button-badge";
-import { EvoIconMenu20 } from "../../icon/icons/menu-20";
-import { EvoIconAdd16 } from "../../icon/icons/add-16";
 
 describe("evo-icon-button", () => {
   let user: ReturnType<typeof userEvent.setup>;
@@ -228,13 +228,17 @@ describe("evo-icon-button", () => {
   describe("badge", () => {
     it("renders a badge when EvoIconButtonBadge is used", async () => {
       const screen = await render(
-        <EvoIconButton a11yText="Cart">
+        <EvoIconButton a11yText="Cart, 3 items">
           <EvoIconAdd16 />
           <EvoIconButtonBadge number={3} />
         </EvoIconButton>,
       );
       const badge = screen.getByText("3");
       await expect.element(badge).toBeInTheDocument();
+      await expect
+        .element(screen.getByRole("button", { name: "Cart, 3 items" }))
+        .toBeInTheDocument();
+      await expect.element(badge).toHaveAttribute("aria-hidden", "true");
     });
   });
 
