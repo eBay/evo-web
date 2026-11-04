@@ -36,7 +36,7 @@ export const minimum = () => `
             </svg>
         </li>
         <li>
-            <button aria-current="location">Current Band</button>
+            <button aria-current="page">Current Band</button>
         </li>
     </ul>
 </nav>
@@ -84,7 +84,7 @@ export const collapsed = () => `
             </svg>
         </li>
         <li>
-            <button aria-current="location">Current Band</button>
+            <button aria-current="page">Current Band</button>
         </li>
     </ul>
 </nav>
@@ -131,7 +131,7 @@ export const expanded = () => `
             </svg>
         </li>
         <li>
-            <button aria-current="location">Current Band</button>
+            <button aria-current="page">Current Band</button>
         </li>
     </ul>
 </nav>
@@ -179,7 +179,7 @@ export const textSpacing = () => `
             </svg>
         </li>
         <li>
-            <button aria-current="location">Current Band</button>
+            <button aria-current="page">Current Band</button>
         </li>
     </ul>
 </nav>
