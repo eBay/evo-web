@@ -43,7 +43,9 @@ describe("evo-infotip", () => {
     await user.click(trigger);
 
     await expect.element(trigger).toHaveAttribute("aria-expanded", "true");
-    await expect.element(screen.getByText("Additional information")).toBeVisible();
+    await expect
+      .element(screen.getByText("Additional information"))
+      .toBeVisible();
 
     await user.click(screen.getByRole("button", { name: "Dismiss infotip" }));
 
@@ -133,6 +135,19 @@ describe("evo-infotip", () => {
     expect(overlay).not.toHaveAttribute("role");
     expect(overlay).not.toHaveAttribute("aria-labelledby");
     expect(screen.container.querySelector('[role="tooltip"]')).toBeNull();
+  });
+
+  it("does not add an id to a heading without a custom id", async () => {
+    const screen = await render(
+      <EvoInfotip defaultOpen a11yIconText="Help" a11yCloseText="Dismiss">
+        <EvoInfotipHeading>Shipping information</EvoInfotipHeading>
+        <p>Ships tomorrow</p>
+      </EvoInfotip>,
+    );
+
+    await expect
+      .element(screen.getByText("Shipping information"))
+      .not.toHaveAttribute("id");
   });
 
   it("keeps a custom heading id", async () => {
