@@ -54,6 +54,7 @@ export const urls = {
   components: `${basePath}components`,
   accessibility: `${basePath}accessibility`,
   guides: `${basePath}guides`,
+  poc: `${basePath}poc`,
   newsletter: `${basePath}newsletter`,
   cssComponents: `${basePath}evo-css-components`,
   markoComponents: `${basePath}evo-marko-components`,
