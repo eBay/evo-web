@@ -23,7 +23,7 @@ export const color = () => `
             </svg>
         </li>
         <li>
-            <a aria-current="location">Smart Watch Bands</a>
+            <a aria-current="page">Smart Watch Bands</a>
         </li>
     </ul>
 </nav>
@@ -52,7 +52,7 @@ export const fontSize = () => `
             </svg>
         </li>
         <li>
-            <a aria-current="location">Smart Watch Bands</a>
+            <a aria-current="page">Smart Watch Bands</a>
         </li>
     </ul>
 </nav>
@@ -81,7 +81,7 @@ export const textSpacing = () => `
             </svg>
         </li>
         <li>
-            <a aria-current="location">Smart Watch Bands</a>
+            <a aria-current="page">Smart Watch Bands</a>
         </li>
     </ul>
 </nav>
@@ -111,7 +111,7 @@ export const RTL = () => `
                 </svg>
             </li>
             <li>
-                <a aria-current="location">Smart Watch Bands</a>
+                <a aria-current="page">Smart Watch Bands</a>
             </li>
         </ul>
     </nav>

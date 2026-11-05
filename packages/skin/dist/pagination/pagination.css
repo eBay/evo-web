@@ -129,11 +129,13 @@ button.pagination__item:not([aria-current="page"]):hover:after {
     background-color: currentColor;
 }
 
-span.pagination__item button.icon-btn--transparent {
+span.pagination__item button.icon-btn--transparent,
+span.pagination__item button.icon-button--transparent {
     overflow: hidden;
     position: relative;
 }
-span.pagination__item button.icon-btn--transparent:after {
+span.pagination__item button.icon-btn--transparent:after,
+span.pagination__item button.icon-button--transparent:after {
     background-color: var(--color-state-layer-neutral);
     content: "";
     inset: 0;
@@ -145,7 +147,13 @@ span.pagination__item
         [disabled],
         [aria-disabled="true"]
     ):hover:after,
-span.pagination__item button.icon-btn--transparent[href]:hover:after {
+span.pagination__item button.icon-btn--transparent[href]:hover:after,
+span.pagination__item
+    button.icon-button--transparent:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):hover:after,
+span.pagination__item button.icon-button--transparent[href]:hover:after {
     background-color: var(--color-state-layer-hover);
 }
 span.pagination__item
@@ -153,7 +161,14 @@ span.pagination__item
         [disabled],
         [aria-disabled="true"]
     ):focus-visible:after,
-span.pagination__item button.icon-btn--transparent[href]:focus-visible:after {
+span.pagination__item button.icon-btn--transparent[href]:focus-visible:after,
+span.pagination__item
+    button.icon-button--transparent:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):focus-visible:after,
+span.pagination__item
+    button.icon-button--transparent[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 span.pagination__item
@@ -161,7 +176,13 @@ span.pagination__item
         [disabled],
         [aria-disabled="true"]
     ):active:after,
-span.pagination__item button.icon-btn--transparent[href]:active:after {
+span.pagination__item button.icon-btn--transparent[href]:active:after,
+span.pagination__item
+    button.icon-button--transparent:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):active:after,
+span.pagination__item button.icon-button--transparent[href]:active:after {
     background-color: var(--color-state-layer-pressed);
 }
 

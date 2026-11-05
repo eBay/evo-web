@@ -79,7 +79,7 @@ export default {
             },
             description: "used as the number to be placed in the badge",
         },
-        "aria-label": {
+        badgeAriaLabel: {
             controls: { hideNoControlsWarning: true },
             table: {
                 category: "@item attributes",

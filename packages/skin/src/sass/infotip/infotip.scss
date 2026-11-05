@@ -2,6 +2,9 @@
 @use "../mixins/private/bubble-mixins";
 @use "../mixins/private/token-mixins";
 
+// DEPRECATED: the `.icon-btn*` selectors in this file are removed in the next
+// major version. Use `.icon-button*` instead.
+
 .infotip {
     position: relative;
 }
@@ -14,11 +17,11 @@ span.infotip {
     @include bubble-mixins.base;
     @include token-mixins.background-color-token(
         infotip-background-color,
-        color-background-elevated
+        color-background-inverse
     );
     @include token-mixins.color-token(
         infotip-foreground-color,
-        color-foreground-primary
+        color-foreground-on-inverse
     );
 
     display: none;
@@ -28,11 +31,11 @@ span.infotip {
     @include bubble-mixins.mask;
     @include token-mixins.background-color-token(
         infotip-background-color,
-        color-background-elevated
+        color-background-inverse
     );
     @include token-mixins.color-token(
         infotip-foreground-color,
-        color-foreground-primary
+        color-foreground-on-inverse
     );
 }
 
@@ -41,7 +44,18 @@ span.infotip__mask {
 }
 
 .infotip__cell {
-    @include bubble-mixins.cell;
+    @include bubble-mixins.cell(var(--spacing-200));
+
+    a {
+        @include token-mixins.color-token(
+            infotip-foreground-color,
+            color-foreground-on-inverse
+        );
+
+        &:focus {
+            outline: 1px dashed currentColor;
+        }
+    }
 }
 
 .infotip__content {
@@ -51,7 +65,7 @@ span.infotip__mask {
 .infotip__pointer {
     @include token-mixins.background-color-token(
         infotip-background-color,
-        color-background-elevated
+        color-background-inverse
     );
 
     @include bubble-mixins.pointer-base;
@@ -120,7 +134,8 @@ span.infotip__heading {
 }
 
 /* todo: refactor out this dependency. Use a mixin instead */
-.infotip .icon-btn {
+.infotip .icon-btn,
+.infotip .icon-button {
     display: inline-flex;
     flex-shrink: 0; /* todo: Should move to icon-btn in next major */
     height: 20px;
@@ -133,6 +148,13 @@ span.infotip__heading {
 button.infotip__close,
 .infotip__close {
     margin-left: var(--spacing-200);
+}
+
+.infotip button.infotip__close svg.icon {
+    @include token-mixins.fill-token(
+        infotip-foreground-color,
+        color-foreground-on-inverse
+    );
 }
 
 @media (min-width: variables.$screen-size-SM) {

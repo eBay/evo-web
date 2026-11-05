@@ -8,5 +8,5 @@ import type { EvoIconButtonBadgeProps } from "./types";
  * @summary Badge attached to an icon button.
  */
 export function EvoIconButtonBadge(props: EvoIconButtonBadgeProps) {
-  return <EvoBadge {...props} type="icon" a11yText={null} />;
+  return <EvoBadge {...props} type="icon" a11yText={null} aria-hidden="true" />;
 }

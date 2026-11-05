@@ -1,0 +1,4 @@
+{
+  "pageTitle": "Chat Dialog POC",
+  "pageDescription": "Proof of concept markup for a chat dialog: launcher, conversation log, composer, streaming, error, ended, RTL and full-screen states, with the accessibility decisions behind each."
+}

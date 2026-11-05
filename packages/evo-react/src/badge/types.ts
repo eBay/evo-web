@@ -12,8 +12,7 @@ export type EvoBadgeProps = Omit<
    */
   number?: number | string;
   /**
-   * Removes the default `img` role when the badge labels a menu or icon
-   * control whose accessible name already conveys the badge's meaning.
+   * Removes the default `img` role for icon badges.
    */
   type?: BadgeType;
   /**

@@ -177,7 +177,8 @@ span.combobox {
     opacity: 1;
 }
 
-.combobox__control button.icon-btn {
+.combobox__control button.icon-btn,
+.combobox__control button.icon-button {
     height: 38px;
     padding: 0;
     position: absolute;
@@ -186,7 +187,8 @@ span.combobox {
     width: 38px;
 }
 
-.combobox__control button.icon-btn svg {
+.combobox__control button.icon-btn svg,
+.combobox__control button.icon-button svg {
     inset: auto 0;
     margin: 0;
 }
@@ -345,7 +347,8 @@ span.combobox {
 [dir="rtl"] .combobox__control > button {
     left: 0;
 }
-[dir="rtl"] .combobox__control button.icon-btn {
+[dir="rtl"] .combobox__control button.icon-btn,
+[dir="rtl"] .combobox__control button.icon-button {
     left: 1px;
     right: inherit;
 }

@@ -183,7 +183,8 @@ span.tourtip__heading {
     width: 100%;
 }
 
-.tourtip__footer > button.btn--primary {
+.tourtip__footer > button.btn--primary,
+.tourtip__footer > button.button--primary {
     --btn-primary-background-color: var(
         --tourtip-background-color,
         var(--color-foreground-on-inverse)
@@ -196,11 +197,13 @@ span.tourtip__heading {
     margin-right: var(--spacing-200);
 }
 .tourtip__footer > .fake-link,
+.tourtip__footer > .link-button,
 .tourtip__footer > a {
     color: var(--color-foreground-on-inverse);
     text-decoration: none;
 }
 .tourtip__footer > .fake-link:hover:not(:disabled),
+.tourtip__footer > .link-button:hover:not(:disabled),
 .tourtip__footer > a:hover:not(:disabled) {
     color: var(--color-foreground-on-inverse);
     text-decoration: underline;

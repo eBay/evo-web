@@ -52,7 +52,7 @@ export const overflow = () => `
         </div>
         <div class="section-title__overflow">
             <span class="menu-button">
-                <button class="menu-button__button icon-btn" type="button" aria-expanded="true" aria-haspopup="true" type="button">
+                <button class="menu-button__button icon-button" type="button" aria-expanded="true" aria-haspopup="true" type="button">
                     <svg class="icon icon--24" width="24" height="24" aria-hidden="true">
                         <use href="#icon-overflow-vertical-24"></use>
                     </svg>
@@ -78,7 +78,7 @@ export const withFavorite = () => `
             <span class="section-title__subtitle">Recommended for you</span>
         </div>
         <div class="section-title__info">
-            <button class="icon-btn infotip__host" type="button" aria-expanded="false" aria-label="Help">
+            <button class="icon-button infotip__host" type="button" aria-expanded="false" aria-label="Help">
                 <svg aria-hidden="true" class="icon icon--16" width="16" height="14">
                     <use href="#icon-heart-16"></use>
                 </svg>
@@ -96,7 +96,7 @@ export const withFavoriteAndLink = () => `
             <span class="section-title__subtitle">Recommended for you</span>
         </div>
         <div class="section-title__info">
-            <button class="icon-btn infotip__host" type="button" aria-expanded="false" aria-label="Help">
+            <button class="icon-button infotip__host" type="button" aria-expanded="false" aria-label="Help">
                 <svg aria-hidden="true" class="icon icon--16" width="16" height="14">
                     <use href="#icon-heart-16"></use>
                 </svg>

@@ -50,7 +50,8 @@ video.file-preview-card__asset {
     width: 40%;
 }
 
-.file-preview-card__body .icon-btn {
+.file-preview-card__body .icon-btn,
+.file-preview-card__body .icon-button {
     height: var(--spacing-400);
     width: var(--spacing-400);
 }
@@ -67,7 +68,8 @@ video.file-preview-card__asset {
     right: auto;
 }
 
-.icon-btn.file-preview-card__action:not(:hover) {
+.icon-btn.file-preview-card__action:not(:hover),
+.icon-button.file-preview-card__action:not(:hover) {
     background-color: var(
         --file-preview-card-action-background-color,
         var(--color-background-primary)

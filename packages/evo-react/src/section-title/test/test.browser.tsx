@@ -7,7 +7,6 @@ import {
   EvoSectionTitleContent,
   EvoSectionTitleCta,
   EvoSectionTitleHeading,
-  EvoSectionTitleInfo,
   EvoSectionTitleOverflow,
   EvoSectionTitleSubtitle,
 } from "../index";
@@ -114,27 +113,18 @@ describe("evo-section-title", () => {
     await expect.element(link).toHaveClass("section-title__cta");
   });
 
-  it("keeps info and overflow in their Skin wrappers", async () => {
+  it("keeps overflow in its Skin wrapper", async () => {
     const screen = await render(
       <EvoSectionTitle>
         <EvoSectionTitleContent>
           <EvoSectionTitleHeading>Seller feedback</EvoSectionTitleHeading>
         </EvoSectionTitleContent>
-        <EvoSectionTitleInfo>
-          <span>Updated today</span>
-        </EvoSectionTitleInfo>
         <EvoSectionTitleOverflow>
           <button type="button" aria-label="More seller feedback options" />
         </EvoSectionTitleOverflow>
       </EvoSectionTitle>,
     );
 
-    expect(
-      screen
-        .getByText("Updated today")
-        .element()
-        .closest(".section-title__info"),
-    ).not.toBeNull();
     expect(
       screen
         .getByRole("button", { name: "More seller feedback options" })

@@ -21,7 +21,7 @@ export const uploading = () => `
                     <use href="#icon-spinner-30"></use>
                 </svg>
             </span>
-            <button class="icon-btn file-preview-card__action" type="button" aria-label="Cancel upload">
+            <button class="icon-button file-preview-card__action" type="button" aria-label="Cancel upload">
                 <svg class="icon icon--16" height="16" width="16" aria-hidden="true">
                     <use href="#icon-close-16"></use>
                 </svg>
@@ -34,7 +34,7 @@ export const squareImage = () => `
     <div class="file-preview-card">
         <div class="file-preview-card__body">
             <img class="file-preview-card__asset" src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg" alt="Image">
-            <button class="icon-btn file-preview-card__action" type="button" aria-label="Open menu">
+            <button class="icon-button file-preview-card__action" type="button" aria-label="Open menu">
                 <svg class="icon icon--16" height="16" width="16" aria-hidden="true">
                     <use href="#icon-overflow-vertical-16"></use>
                 </svg>
@@ -47,7 +47,7 @@ export const portraitImage = () => `
     <div class="file-preview-card">
         <div class="file-preview-card__body">
             <img class="file-preview-card__asset" src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-profile-pic.jpg" alt="Image">
-            <button class="icon-btn file-preview-card__action" type="button" aria-label="Open menu">
+            <button class="icon-button file-preview-card__action" type="button" aria-label="Open menu">
                 <svg class="icon icon--16" height="16" width="16" aria-hidden="true">
                     <use href="#icon-overflow-vertical-16"></use>
                 </svg>
@@ -60,7 +60,7 @@ export const portraitWithCSSImageContainBackground = () => `
     <div class="file-preview-card">
         <div class="file-preview-card__body">
             <span class="file-preview-card__asset" style="height: 100%; width: 100%; background-image: url('https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-profile-pic.jpg'); background-repeat: no-repeat; background-position: center; background-size: contain;"></span>
-            <button class="icon-btn file-preview-card__action" type="button" aria-label="Open menu">
+            <button class="icon-button file-preview-card__action" type="button" aria-label="Open menu">
                 <svg class="icon icon--16" height="16" width="16" aria-hidden="true">
                     <use href="#icon-overflow-vertical-16"></use>
                 </svg>
@@ -73,7 +73,7 @@ export const landscapeImage = () => `
     <div class="file-preview-card">
         <div class="file-preview-card__body">
             <img class="file-preview-card__asset" src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-landscape-pic.jpg" alt="Image">
-            <button class="icon-btn file-preview-card__action" type="button" aria-label="Open menu">
+            <button class="icon-button file-preview-card__action" type="button" aria-label="Open menu">
                 <svg class="icon icon--16" height="16" width="16" aria-hidden="true">
                     <use href="#icon-overflow-vertical-16"></use>
                 </svg>
@@ -86,7 +86,7 @@ export const video = () => `
     <div class="file-preview-card">
         <div class="file-preview-card__body">
             <video class="file-preview-card__asset" src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4"></video>
-            <button class="icon-btn file-preview-card__action" type="button" aria-label="Open menu">
+            <button class="icon-button file-preview-card__action" type="button" aria-label="Open menu">
                 <svg class="icon icon--16" height="16" width="16" aria-hidden="true">
                     <use href="#icon-overflow-vertical-16"></use>
                 </svg>
@@ -105,7 +105,7 @@ export const videoRTL = () => `
     <div class="file-preview-card">
         <div class="file-preview-card__body" dir="rtl">
             <video class="file-preview-card__asset" src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4"></video>
-            <button class="icon-btn file-preview-card__action" type="button" aria-label="Open menu">
+            <button class="icon-button file-preview-card__action" type="button" aria-label="Open menu">
                 <svg class="icon icon--16" height="16" width="16" aria-hidden="true">
                     <use href="#icon-overflow-vertical-16"></use>
                 </svg>
@@ -126,7 +126,7 @@ export const document = () => `
             <svg class="icon file-preview-card__asset" aria-hidden="true">
                 <use href="#icon-file-24"></use>
             </svg>
-            <button class="icon-btn file-preview-card__action" type="button" aria-label="Open menu">
+            <button class="icon-button file-preview-card__action" type="button" aria-label="Open menu">
                 <svg class="icon icon--16" height="16" width="16" aria-hidden="true">
                     <use href="#icon-overflow-vertical-16"></use>
                 </svg>
@@ -166,7 +166,7 @@ export const withDescription = () => `
             <svg class="icon file-preview-card__asset" aria-hidden="true">
                 <use href="#icon-file-24"></use>
             </svg>
-            <button class="icon-btn file-preview-card__action" type="button" aria-label="Open menu">
+            <button class="icon-button file-preview-card__action" type="button" aria-label="Open menu">
                 <svg class="icon icon--16" height="16" width="16" aria-hidden="true">
                     <use href="#icon-overflow-vertical-16"></use>
                 </svg>

@@ -66,6 +66,7 @@ export function EvoCombobox({
   floatingLabel: floatingLabelText,
   fluid = false,
   id,
+  inputSize,
   listSelection = "automatic",
   onBlur,
   onChange,
@@ -73,6 +74,7 @@ export function EvoCombobox({
   onFocus,
   onKeyDown,
   onOpenChange,
+  onOptionSelect,
   onValueChange,
   open,
   placeholder,
@@ -144,6 +146,7 @@ export function EvoCombobox({
     containerTagName: fluid ? "div" : "span",
     disabled,
     focused: focused || effectiveOpen,
+    size: inputSize,
     text: floatingLabelText,
     value: displayedValue,
   });
@@ -189,10 +192,17 @@ export function EvoCombobox({
       }
 
       updateValue(text);
+      onOptionSelect?.(text);
       activeDescendant.reset();
       requestOpen(false);
     },
-    [activeDescendant.reset, disabled, requestOpen, updateValue],
+    [
+      activeDescendant.reset,
+      disabled,
+      onOptionSelect,
+      requestOpen,
+      updateValue,
+    ],
   );
 
   const handleFocusOut = useCallback(
@@ -357,6 +367,7 @@ export function EvoCombobox({
           className={classNames(
             "combobox",
             fluid && "combobox--fluid",
+            inputSize === "large" && "combobox--large",
             effectiveOpen && "combobox--expanded",
             className,
           )}

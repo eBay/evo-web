@@ -37,7 +37,6 @@ const EbayMenuItem: FC<EbayFakeMenuItemProps> = ({
         ...rest,
         ref,
         className: classNames(className, "fake-menu__item", hasBadge && "menu__item--badged"),
-        "aria-label": badgeAriaLabel,
     };
 
     const tick = <EbayIconTick16 />;
@@ -46,7 +45,9 @@ const EbayMenuItem: FC<EbayFakeMenuItemProps> = ({
         marginLeft: "var(--spacing-100)",
         marginRight: "var(--spacing-100)",
     };
-    const badge = hasBadge && <EbayBadge type="menu" number={badgeNumber} style={badgeStyleFix} />;
+    const badge = hasBadge && (
+        <EbayBadge type="menu" number={badgeNumber} style={badgeStyleFix} aria-label={badgeAriaLabel} />
+    );
 
     return type === "button" ? (
         <button {...itemProps} type="button" disabled={disabled}>

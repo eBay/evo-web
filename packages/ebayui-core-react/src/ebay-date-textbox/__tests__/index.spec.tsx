@@ -203,6 +203,21 @@ describe("<EbayDateTextbox />", () => {
         expect(container.querySelector("input")).toHaveValue("");
     });
 
+    it("should call onInvalidDate when the typed day does not exist in the month", () => {
+        const onChange = vi.fn();
+        const onInvalidDate = vi.fn();
+        const { container } = render(
+            <EbayDateTextbox locale="en-US" onChange={onChange} onInvalidDate={onInvalidDate} />,
+        );
+        const input = container.querySelector("input") as HTMLInputElement;
+
+        fireEvent.change(input, { target: { value: "02/30/2024" } });
+        fireEvent.blur(input);
+
+        expect(onInvalidDate).toHaveBeenCalledWith({ value: "02/30/2024", index: 0 });
+        expect(onChange).not.toHaveBeenCalled();
+    });
+
     it("should not fail if the date passed is invalid", () => {
         expect(() => {
             render(<EbayDateTextbox locale="en-US" value="invalid" />);

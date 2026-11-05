@@ -485,7 +485,6 @@ exports[`menu > renders with badged version 1`] = `
     role="menu"
   >
     <div
-      aria-label="1 item unread"
       class="menu__item menu__item--badged"
       data-value="0"
       role="menuitem"
@@ -494,7 +493,9 @@ exports[`menu > renders with badged version 1`] = `
       <span>
         item 1 that has very long text
         <span
+          aria-label="1 item unread"
           class="badge badge--circle"
+          role="img"
         >
           1
         </span>
@@ -519,7 +520,6 @@ exports[`menu > renders with badged version 1`] = `
       </svg>
     </div>
     <div
-      aria-label="99 items unread"
       class="menu__item menu__item--badged"
       data-value="1"
       role="menuitem"
@@ -528,7 +528,9 @@ exports[`menu > renders with badged version 1`] = `
       <span>
         item 2
         <span
+          aria-label="99 items unread"
           class="badge badge--circle"
+          role="img"
         >
           99
         </span>
@@ -543,7 +545,6 @@ exports[`menu > renders with badged version 1`] = `
       </svg>
     </div>
     <div
-      aria-label="10 item unread"
       class="menu__item menu__item--badged"
       data-value="2"
       role="menuitem"
@@ -552,7 +553,9 @@ exports[`menu > renders with badged version 1`] = `
       <span>
         item 3
         <span
+          aria-label="10 item unread"
           class="badge badge--circle"
+          role="img"
         >
           10
         </span>

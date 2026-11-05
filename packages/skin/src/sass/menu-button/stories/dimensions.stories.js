@@ -2,9 +2,9 @@ export default { title: "Skin/Menu Button/Dimensions" };
 
 export const fixedWidth = () => `
 <span class="menu-button">
-    <button class="btn" aria-expanded="true" aria-haspopup="true" type="button">
-        <span class="btn__cell">
-            <span class="btn__text">Button</span>
+    <button class="button" aria-expanded="true" aria-haspopup="true" type="button">
+        <span class="button__cell">
+            <span class="button__text">Button</span>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>

@@ -79,19 +79,21 @@ or import styles using SCSS/CSS
 export default meta;
 
 export const Default: StoryFn<typeof EbayAvatar> = (args) => (
-    <EbayAvatar {...args} aria-label="Signed in as Elizabeth" username={args.username || "Elizabeth"} />
+    <EbayAvatar {...args} aria-label="Profile picture - Elizabeth" username={args.username || "Elizabeth"} />
 );
 
 export const WithImage: StoryFn<typeof EbayAvatar> = (args) => (
-    <EbayAvatar {...args} aria-label="Signed in as Elizabeth" username={args.username || "Elizabeth"}>
+    <EbayAvatar {...args} aria-label="Profile picture - Elizabeth" username={args.username || "Elizabeth"}>
         <EbayAvatarImage src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile.png" />
     </EbayAvatar>
 );
 
-export const SignedOut: StoryFn<typeof EbayAvatar> = (args) => <EbayAvatar {...args} aria-label="Signed out" />;
+export const SignedOut: StoryFn<typeof EbayAvatar> = (args) => (
+    <EbayAvatar {...args} aria-label="Profile picture - Signed out" />
+);
 
 export const WithCustomBody: StoryFn<typeof EbayAvatar> = (args) => (
-    <EbayAvatar {...args} aria-label="Signed in as Elizabeth" username={args.username || "Elizabeth"}>
+    <EbayAvatar {...args} aria-label="Profile picture - Elizabeth" username={args.username || "Elizabeth"}>
         <div
             style={{
                 display: "flex",
@@ -111,19 +113,19 @@ export const WithCustomBody: StoryFn<typeof EbayAvatar> = (args) => (
 export const WithAutoPlacement: StoryFn<typeof EbayAvatar> = (args) => (
     <>
         <div>
-            <EbayAvatar {...args} aria-label="Signed in as Doggy">
+            <EbayAvatar {...args} aria-label="Profile picture - Doggy">
                 <EbayAvatarImage src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile2.png" />
             </EbayAvatar>
         </div>
 
         <div>
-            <EbayAvatar {...args} aria-label="Signed in as Doggy">
+            <EbayAvatar {...args} aria-label="Profile picture - Doggy">
                 <EbayAvatarImage src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile3.png" />
             </EbayAvatar>
         </div>
 
         <div>
-            <EbayAvatar {...args} aria-label="Signed in as Doggy">
+            <EbayAvatar {...args} aria-label="Profile picture - Doggy">
                 <EbayAvatarImage src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile4.png" />
             </EbayAvatar>
         </div>

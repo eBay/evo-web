@@ -173,7 +173,7 @@ describe("evo-breadcrumbs", () => {
   });
 
   describe("given mixed link and button items", () => {
-    it("applies aria-current=location only to the last item", async () => {
+    it("applies aria-current=page only to the last item", async () => {
       const screen = await render(
         <EvoBreadcrumbs
           items={[
@@ -185,14 +185,14 @@ describe("evo-breadcrumbs", () => {
       );
 
       const links = screen.baseElement.querySelectorAll("a");
-      expect(links[2].getAttribute("aria-current")).toBe("location");
+      expect(links[2].getAttribute("aria-current")).toBe("page");
       expect(links[0].hasAttribute("aria-current")).toBe(false);
       expect(links[1].hasAttribute("aria-current")).toBe(false);
     });
   });
 
   describe("given all button items", () => {
-    it("applies aria-current=location to the last button", async () => {
+    it("applies aria-current=page to the last button", async () => {
       const screen = await render(
         <EvoBreadcrumbs
           items={[
@@ -204,20 +204,20 @@ describe("evo-breadcrumbs", () => {
       );
 
       const buttons = screen.baseElement.querySelectorAll("button");
-      expect(buttons[2].getAttribute("aria-current")).toBe("location");
+      expect(buttons[2].getAttribute("aria-current")).toBe("page");
       expect(buttons[0].hasAttribute("aria-current")).toBe(false);
       expect(buttons[1].hasAttribute("aria-current")).toBe(false);
     });
   });
 
   describe("given a single item", () => {
-    it("applies aria-current=location to that item", async () => {
+    it("applies aria-current=page to that item", async () => {
       const screen = await render(
         <EvoBreadcrumbs items={[{ content: "Only Item" }]} />,
       );
 
       const button = screen.getByRole("button");
-      await expect.element(button).toHaveAttribute("aria-current", "location");
+      await expect.element(button).toHaveAttribute("aria-current", "page");
     });
   });
 

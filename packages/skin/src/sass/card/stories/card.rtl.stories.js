@@ -19,7 +19,7 @@ export const vertical = () => `
             </div>
 
             <div class="card__action">
-                <button class="btn btn--primary btn--fluid">See Details</button>
+                <button class="button button--primary button--fluid">See Details</button>
             </div>
         </div>
     </span>
@@ -45,7 +45,7 @@ export const horizontal = () => `
             </div>
 
             <div class="card__action">
-                <button class="btn btn--primary">See Details</button>
+                <button class="button button--primary">See Details</button>
             </div>
         </div>
     </span>

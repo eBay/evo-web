@@ -2,7 +2,11 @@
 @use "../mixins/private/button-mixins";
 @use "../mixins/private/token-mixins";
 
-a.cta-btn {
+// DEPRECATED: the `.cta-btn*` selectors in this file are removed in the next
+// major version. Use `.cta-button*` instead.
+
+a.cta-btn,
+a.cta-button {
     align-content: center;
     border-color: currentColor;
     border-radius: var(
@@ -26,7 +30,8 @@ a.cta-btn {
     @include button-mixins.base;
 }
 
-a.cta-btn:visited {
+a.cta-btn:visited,
+a.cta-button:visited {
     @include token-mixins.color-token(
         cta-btn-visited-foreground-color,
         color-foreground-primary
@@ -34,7 +39,9 @@ a.cta-btn:visited {
 }
 
 a.cta-btn:focus,
-a.cta-btn:hover {
+a.cta-button:focus,
+a.cta-btn:hover,
+a.cta-button:hover {
     @include token-mixins.background-color-token(
         cta-btn-hover-background-color,
         color-foreground-primary
@@ -50,7 +57,9 @@ a.cta-btn:hover {
 }
 
 a.cta-btn:not([href]),
-a.cta-btn[aria-disabled="true"] {
+a.cta-button:not([href]),
+a.cta-btn[aria-disabled="true"],
+a.cta-button[aria-disabled="true"] {
     @include token-mixins.background-color-token(
         cta-btn-disabled-background-color,
         color-background-primary
@@ -65,11 +74,13 @@ a.cta-btn[aria-disabled="true"] {
     );
 }
 
-a.cta-btn--fluid {
+a.cta-btn--fluid,
+a.cta-button--fluid {
     width: 100%;
 }
 
-span.cta-btn__cell {
+span.cta-btn__cell,
+span.cta-button__cell {
     @include button-mixins.cell-base;
 
     justify-content: center;
@@ -78,7 +89,8 @@ span.cta-btn__cell {
     @include button-mixins.cell-truncated;
 }
 
-a.cta-btn svg.icon {
+a.cta-btn svg.icon,
+a.cta-button svg.icon {
     flex-shrink: 0;
     height: 10px;
     width: 10px;
@@ -86,24 +98,28 @@ a.cta-btn svg.icon {
     @include button-mixins.icon-base;
 }
 
-span.cta-btn__cell--fixed-height svg.icon {
+span.cta-btn__cell--fixed-height svg.icon,
+span.cta-button__cell--fixed-height svg.icon {
     align-self: center;
     height: 1rem;
     overflow: visible; /* needed? */
     width: 1rem;
 }
 
-a.cta-btn--truncated {
+a.cta-btn--truncated,
+a.cta-button--truncated {
     @include button-mixins.truncate;
 }
 
-a.cta-btn--large {
+a.cta-btn--large,
+a.cta-button--large {
     border-radius: button-mixins.$button-border-radius-large;
     display: inline-flex;
     font-size: var(--font-size-medium);
     min-height: button-mixins.$button-height-large;
 }
 
-[dir="rtl"] a.cta-btn svg.icon--arrow-right-24 {
+[dir="rtl"] a.cta-btn svg.icon--arrow-right-24,
+[dir="rtl"] a.cta-button svg.icon--arrow-right-24 {
     transform: rotate(180deg);
 }

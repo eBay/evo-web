@@ -37,7 +37,7 @@ export const withIcons = () => `
                 <button type="button" aria-current="true" class="segmented-buttons__button">
                 <span class="segmented-buttons__button-cell">
                         <svg aria-hidden="true" class="icon icon--24" height="16" width="16">
-                            <use href="#icon-full-view-24"></use>
+                            <use href="#icon-desktop-24"></use>
                         </svg>
                         <span>Desktop</span>
                     </span>

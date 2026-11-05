@@ -12,7 +12,7 @@ export const minimum = () => `
         </li>
         <li>
             <span class="fake-menu-button">
-                <button class="fake-menu-button__button icon-btn" aria-expanded="false" aria-haspopup="true" aria-label="eBay Menu"  type="button">
+                <button class="fake-menu-button__button icon-button" aria-expanded="false" aria-haspopup="true" aria-label="eBay Menu"  type="button">
                     <svg aria-hidden="true" class="icon icon--16">
                         <use href="#icon-overflow-horizontal-16"></use>
                     </svg>
@@ -39,7 +39,7 @@ export const minimum = () => `
             </svg>
         </li>
         <li>
-            <a aria-current="location">Current Band</a>
+            <a aria-current="page">Current Band</a>
         </li>
     </ul>
 </nav>
@@ -57,7 +57,7 @@ export const collapsed = () => `
         </li>
         <li>
             <span class="fake-menu-button">
-                <button class="fake-menu-button__button icon-btn" aria-expanded="false" aria-haspopup="true" aria-label="eBay Menu"  type="button">
+                <button class="fake-menu-button__button icon-button" aria-expanded="false" aria-haspopup="true" aria-label="eBay Menu"  type="button">
                     <svg aria-hidden="true" class="icon icon--16">
                         <use href="#icon-overflow-horizontal-16"></use>
                     </svg>
@@ -90,7 +90,7 @@ export const collapsed = () => `
             </svg>
         </li>
         <li>
-            <a aria-current="location">Current Band</a>
+            <a aria-current="page">Current Band</a>
         </li>
     </ul>
 </nav>
@@ -108,7 +108,7 @@ export const expanded = () => `
         </li>
         <li>
             <span class="fake-menu-button">
-                <button class="fake-menu-button__button icon-btn" aria-expanded="true" aria-haspopup="true" aria-label="eBay Menu"  type="button">
+                <button class="fake-menu-button__button icon-button" aria-expanded="true" aria-haspopup="true" aria-label="eBay Menu"  type="button">
                     <svg aria-hidden="true" class="icon icon--16">
                         <use href="#icon-overflow-horizontal-16"></use>
                     </svg>
@@ -138,7 +138,7 @@ export const expanded = () => `
             </svg>
         </li>
         <li>
-            <a aria-current="location">Current Band</a>
+            <a aria-current="page">Current Band</a>
         </li>
     </ul>
 </nav>
@@ -156,7 +156,7 @@ export const textSpacing = () => `
         </li>
         <li>
             <span class="fake-menu-button">
-                <button class="fake-menu-button__button icon-btn" aria-expanded="false" aria-haspopup="true" aria-label="eBay Menu"  type="button">
+                <button class="fake-menu-button__button icon-button" aria-expanded="false" aria-haspopup="true" aria-label="eBay Menu"  type="button">
                     <svg aria-hidden="true" class="icon icon--16">
                         <use href="#icon-overflow-horizontal-16"></use>
                     </svg>
@@ -189,7 +189,7 @@ export const textSpacing = () => `
             </svg>
         </li>
         <li>
-            <a aria-current="location">Current Band</a>
+            <a aria-current="page">Current Band</a>
         </li>
     </ul>
 </nav>
