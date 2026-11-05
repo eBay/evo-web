@@ -66,13 +66,6 @@ li.navigation-tabs__item > a[aria-current] {
     }
 }
 
-/* https://developer.paciellogroup.com/blog/2018/03/focus-visible-and-backwards-compatibility/ */
-li.navigation-tabs__item a:focus {
-    &:not(:focus-visible) {
-        outline: none;
-    }
-}
-
 li.navigation-tabs__item > a:not([aria-current]):not([href]) {
     &,
     &:focus,

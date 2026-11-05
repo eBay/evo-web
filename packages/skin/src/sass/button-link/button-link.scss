@@ -104,12 +104,6 @@ a.button-link--primary {
     @include state-layer.standard;
 }
 
-a.button-link--primary {
-    outline-color: var(
-        --color-foreground-primary
-    ); /* fixes invisible focus outline in Firefox */
-}
-
 a.button-link--primary:visited,
 a.button-link--primary:hover {
     color: var(--color-foreground-on-accent);

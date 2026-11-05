@@ -163,10 +163,6 @@ a.button-link--primary[href]:active:after {
     background-color: var(--color-state-layer-pressed);
 }
 
-a.button-link--primary {
-    outline-color: var(--color-foreground-primary);
-}
-
 a.button-link--primary:hover,
 a.button-link--primary:visited {
     color: var(--color-foreground-on-accent);
