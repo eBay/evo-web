@@ -8,28 +8,21 @@ import "../../../../sass/accessibility.scss";
   </p>
   <p>An SVG symbol is used to separate each breadcrumb link.</p>
   <p>
-    The last breadcrumb link, representing the current place in the hierarchy,
-    is non-interactive.
+    Breadcrumbs are links by default. The last breadcrumb link, representing the
+    current place in the hierarchy, is non-interactive.
   </p>
   <p>
-    Breadcrumbs
-    <strong>must</strong>
-    have a heading of ‘You are here’, or words to those effect. This
-    heading can be visually hidden offscreen.
+    Breadcrumbs <strong>must</strong> have a heading of ‘You are here’, or words
+    to those effect. This heading can be visually hidden offscreen.
   </p>
   <h2>Interaction Design</h2>
   <p>Breadcrumb interaction is similar to a simple list of ordered links.</p>
   <h3>Keyboard</h3>
   <p>TAB key moves from breadcrumb to breadcrumb.</p>
+  <p>Separator symbols <strong>must not</strong> be keyboard focusable.</p>
   <p>
-    Separator symbols
-    <strong>must not</strong>
-    be keyboard focusable.
-  </p>
-  <p>
-    The last breadcrumb lacks an
-    <code>href</code>
-    value and therefore is omitted from the tab order.
+    The last breadcrumb lacks an <code>href</code> value and is therefore not
+    focusable, so it is omitted from the tab order.
   </p>
   <h3>Screen Reader</h3>
   <p>
@@ -56,24 +49,18 @@ import "../../../../sass/accessibility.scss";
     </thead>
     <tbody>
       <tr>
+        <td><strong>aria-current=“page”</strong></td>
         <td>
-          <strong>aria-current=“location”</strong>
-        </td>
-        <td>
-          Provides AT with programmatic state on the breadcrumb that reflects
-          the current site location.
+          Applied to the last breadcrumb so AT announces it as the current page
+          within the trail.
         </td>
       </tr>
       <tr>
-        <td>
-          <strong>role=“navigation”</strong>
-        </td>
+        <td><strong>role=“navigation”</strong></td>
         <td>Creates a navigational landmark for AT.</td>
       </tr>
       <tr>
-        <td>
-          <strong>aria-labelledby</strong>
-        </td>
+        <td><strong>aria-labelledby</strong></td>
         <td>
           References the heading element that labels the breadcrumbs navigation
           (e.g., “You are here”).

@@ -123,8 +123,8 @@ export const WithInfo = (args) => (
             <Subtitle>Plus, guaranteed best prices.</Subtitle>
             <Info>
                 <EbayInfotip
-                    a11yCloseText="Dismiss infotip"
-                    aria-label="Important information"
+                    a11yCloseText="Dismiss"
+                    aria-label="Info"
                     pointer="top-left"
                     icon={<EbayIconInformation16 />}
                 >

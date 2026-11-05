@@ -58,9 +58,9 @@ or import styles using SCSS/CSS
 
 export const Stars = (args) => (
     <>
-        <EbayStarRating {...args} a11yText="star-rating" />
-        <EbayStarRating {...args} value="3-5" a11yText="star-rating" />
-        <EbayStarRating {...args} value="5" a11yText="star-rating" />
+        <EbayStarRating {...args} a11yText="Star rating" />
+        <EbayStarRating {...args} value="3-5" a11yText="Rated 3.5 out of 5 stars" />
+        <EbayStarRating {...args} value="5" a11yText="Rated 5 out of 5 stars" />
     </>
 );
 
@@ -68,7 +68,7 @@ export const StarsWithControls = {
     render: (args) => (
         <>
             <h2>Change stars using `Controls` addon</h2>
-            <EbayStarRating {...args} a11yText="star-rating" />
+            <EbayStarRating {...args} a11yText="Star rating" />
         </>
     ),
 };

@@ -2,6 +2,9 @@
 @use "../mixins/private/token-mixins";
 @use "../mixins/private/state-layer";
 
+// DEPRECATED: the `.icon-btn*` selectors in this file are removed in the next
+// major version. Use `.icon-button*` instead.
+
 .calendar {
     display: table;
     @include token-mixins.color-token(
@@ -43,7 +46,8 @@
     margin: 0;
 }
 
-.calendar__header .icon-btn svg {
+.calendar__header .icon-btn svg,
+.calendar__header .icon-button svg {
     width: var(--spacing-200);
 }
 

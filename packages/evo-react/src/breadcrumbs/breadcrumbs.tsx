@@ -16,11 +16,7 @@ function BreadcrumbLink({
   const { content, as: Component = "a", href, ...rest } = item;
 
   return (
-    <Component
-      {...rest}
-      href={href}
-      aria-current={isLast ? "location" : undefined}
-    >
+    <Component {...rest} href={href} aria-current={isLast ? "page" : undefined}>
       {content}
     </Component>
   );
@@ -36,7 +32,7 @@ function BreadcrumbButton({
   const { content, ...rest } = item;
 
   return (
-    <button {...rest} aria-current={isLast ? "location" : undefined}>
+    <button {...rest} aria-current={isLast ? "page" : undefined}>
       {content}
     </button>
   );
@@ -46,7 +42,7 @@ function BreadcrumbButton({
  * Breadcrumbs show the navigational hierarchy of a page.
  *
  * Items with `href` render as `<a>` elements; items without `href` render as
- * `<button>` elements. The last item receives `aria-current`, and
+ * `<button>` elements. The last item receives `aria-current="page"`, and
  * `a11yHeadingText` labels the navigation.
  *
  * ## Usage

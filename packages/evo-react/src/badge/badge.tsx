@@ -26,7 +26,7 @@ export function EvoBadge({
   className,
   ...rest
 }: EvoBadgeProps) {
-  const role = type !== "menu" && type !== "icon" ? "img" : undefined;
+  const role = type === "icon" ? undefined : "img";
   const ariaLabel = a11yText ?? undefined;
 
   if (number == null) {

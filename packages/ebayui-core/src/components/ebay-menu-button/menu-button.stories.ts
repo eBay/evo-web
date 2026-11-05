@@ -201,7 +201,7 @@ export default {
                 category: "@item attribute tags",
             },
         },
-        "aria-label": {
+        badgeAriaLabel: {
             controls: { hideNoControlsWarning: true },
             description:
                 "Passed as the `aria-label` directly to the badge. Required only if badge number is provided",

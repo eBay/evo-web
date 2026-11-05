@@ -31,6 +31,7 @@ const EbayIconButton: FC<EbayIconButtonProps> = ({
     size,
     onEscape = () => {},
     onKeyDown = () => {},
+    "aria-label": ariaLabel,
     ...rest
 }) => {
     const classPrefix = href ? "icon-link" : "icon-btn";
@@ -53,9 +54,10 @@ const EbayIconButton: FC<EbayIconButtonProps> = ({
     const children = (
         <>
             {typeof icon === "string" ? <EbayIcon name={icon} /> : icon}
-            {badgeNumber && <EbayBadge type="icon" number={badgeNumber} aria-label={badgeAriaLabel} />}
+            {badgeNumber ? <EbayBadge type="icon" number={badgeNumber} aria-hidden /> : null}
         </>
     );
+    const resolvedAriaLabel = ariaLabel ?? (badgeNumber ? badgeAriaLabel : undefined);
 
     const keyDownHandler = (e: KeyboardEvent<HTMLButtonElement & HTMLAnchorElement>) => {
         if (e.key === "Escape" || e.key === "Esc") {
@@ -65,11 +67,25 @@ const EbayIconButton: FC<EbayIconButtonProps> = ({
     };
 
     return href ? (
-        <a ref={forwardedRef} className={className} href={href} onKeyDown={keyDownHandler} {...rest}>
+        <a
+            ref={forwardedRef}
+            className={className}
+            href={href}
+            onKeyDown={keyDownHandler}
+            aria-label={resolvedAriaLabel}
+            {...rest}
+        >
             {children}
         </a>
     ) : (
-        <button ref={forwardedRef} type="button" className={className} onKeyDown={keyDownHandler} {...rest}>
+        <button
+            ref={forwardedRef}
+            type="button"
+            className={className}
+            onKeyDown={keyDownHandler}
+            aria-label={resolvedAriaLabel}
+            {...rest}
+        >
             {children}
         </button>
     );

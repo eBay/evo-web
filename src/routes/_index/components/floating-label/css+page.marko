@@ -21,9 +21,7 @@
 
   <highlight-code type="html">
     <span class="floating-label">
-      <label class="floating-label__label" for="first-name">
-        First Name
-      </label>
+      <label class="floating-label__label" for="first-name">First Name</label>
       <span class="textbox">
         <input class="textbox__control" id="first-name" type="text">
       </span>
@@ -38,15 +36,14 @@
   <div class="demo">
     <div class="demo__inner">
       <span class="floating-label">
-        <label class="floating-label__label" for="last-name-1">
-          Last Name
-        </label>
+        <label class="floating-label__label" for="last-name-1">Last Name</label>
         <span class="textbox">
           <input
             class="textbox__control"
             id="last-name-1"
             type="text"
-            value="Smith">
+            value="Smith"
+          >
         </span>
       </span>
     </div>
@@ -54,15 +51,14 @@
 
   <highlight-code type="html">
     <span class="floating-label">
-      <label class="floating-label__label" for="last-name">
-        Last Name
-      </label>
+      <label class="floating-label__label" for="last-name">Last Name</label>
       <span class="textbox">
         <input
           class="textbox__control"
           id="last-name"
           type="text"
-          value="Smith">
+          value="Smith"
+        >
       </span>
     </span>
   </highlight-code>
@@ -72,9 +68,7 @@
   <div class="demo">
     <div class="demo__inner">
       <span class="floating-label floating-label--large">
-        <label class="floating-label__label" for="dob-1">
-          Date Of Birth
-        </label>
+        <label class="floating-label__label" for="dob-1">Date Of Birth</label>
         <span class="textbox textbox--large">
           <input class="textbox__control" id="dob-1" type="text">
         </span>
@@ -84,9 +78,7 @@
 
   <highlight-code type="html">
     <span class="floating-label floating-label--large">
-      <label class="floating-label__label" for="dob">
-        Date Of Birth
-      </label>
+      <label class="floating-label__label" for="dob">Date Of Birth</label>
       <span class="textbox">
         <input class="textbox__control" id="dob" type="text">
       </span>
@@ -95,12 +87,9 @@
 
   <h3>Floating Label with Disabled Textbox</h3>
   <p>
-    Use the
-    <code>disabled</code>
-    property &amp;
-    <code>floating-label__label--disabled</code>
-    modifier on the input element and the label element respectively to
-    disable the input.
+    Use the <code>disabled</code> property &amp;
+    <code>floating-label__label--disabled</code> modifier on the input element
+    and the label element respectively to disable the input.
   </p>
 
   <div class="demo">
@@ -108,7 +97,8 @@
       <span class="floating-label">
         <label
           class="floating-label__label floating-label__label--disabled"
-          for="first-name-2">
+          for="first-name-2"
+        >
           First Name
         </label>
         <span class="textbox textbox--disabled">
@@ -116,7 +106,8 @@
             class="textbox__control"
             id="first-name-2"
             type="text"
-            disabled>
+            disabled
+          >
         </span>
       </span>
     </div>
@@ -126,7 +117,8 @@
     <span class="floating-label">
       <label
         class="floating-label__label floating-label__label--disabled"
-        for="first-name">
+        for="first-name"
+      >
         First Name
       </label>
       <span class="textbox textbox--disabled">
@@ -152,7 +144,8 @@
             class="textbox__control"
             id="first-name-3"
             type="text"
-            placeholder="No spaces or numbers allowed">
+            placeholder="No spaces or numbers allowed"
+          >
         </span>
       </span>
     </div>
@@ -160,28 +153,23 @@
 
   <highlight-code type="html">
     <span class="floating-label">
-      <label class="floating-label__label" for="first-name">
-        First Name
-      </label>
+      <label class="floating-label__label" for="first-name">First Name</label>
       <span class="textbox">
         <input
           class="textbox__control"
           id="first-name"
           type="text"
-          placeholder="No spaces or numbers allowed">
+          placeholder="No spaces or numbers allowed"
+        >
       </span>
     </span>
   </highlight-code>
 
   <h3>Floating Label with Invalid Textbox</h3>
   <p>
-    Set the
-    <code>aria-invalid</code>
-    property to
-    <code>true</code>
-    and add
-    <code>floating-label__label--invalid</code>
-    to the label to semantically and visually highlight the invalid state.
+    Set the <code>aria-invalid</code> property to <code>true</code> and add
+    <code>floating-label__label--invalid</code> to the label to semantically and
+    visually highlight the invalid state.
   </p>
 
   <div class="demo">
@@ -195,7 +183,8 @@
             class="textbox__control"
             id="first-name-4"
             type="text"
-            aria-invalid="true">
+            aria-invalid="true"
+          >
         </span>
       </span>
     </div>
@@ -205,7 +194,8 @@
     <span class="floating-label">
       <label
         class="floating-label__label floating-label__label--invalid"
-        for="first-name">
+        for="first-name"
+      >
         First Name
       </label>
       <span class="textbox textbox--invalid">
@@ -213,22 +203,20 @@
           class="textbox__control"
           id="first-name"
           type="text"
-          aria-invalid="true">
+          aria-invalid="true"
+        >
       </span>
     </span>
   </highlight-code>
 
-  <h3 id="floating-label-textarea">
-    Floating Label with Textarea
-  </h3>
+  <h3 id="floating-label-textarea">Floating Label with Textarea</h3>
   <p>Use the textarea tag for a multi-line textbox.</p>
   <p>
     A multi-line textbox allows line breaks and has a minimum height of 200px.
   </p>
   <p>
     In order to prevent overlap for floating label, use
-    <code>.floating-label--opaque</code>
-    class
+    <code>.floating-label--opaque</code> class
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -254,9 +242,7 @@
     </span>
   </highlight-code>
 
-  <h3 id="floating-label-combobox">
-    Floating label with Combobox
-  </h3>
+  <h3 id="floating-label-combobox">Floating label with Combobox</h3>
   <p>Use the textarea tag for a multi-line textbox.</p>
   <p>
     A multi-line textbox allows line breaks and has a minimum height of 200px.
@@ -275,7 +261,8 @@
               type="text"
               aria-haspopup="listbox"
               aria-label="Combobox demo"
-              aria-owns="listbox1">
+              aria-owns="listbox1"
+            >
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
               <icon-symbol name="chevron-down-12"/>
             </svg>
@@ -311,7 +298,8 @@
           type="text"
           aria-haspopup="listbox"
           aria-label="Combobox demo"
-          aria-owns="listbox1">
+          aria-owns="listbox1"
+        >
         <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
           <use href="#icon-chevron-down-12"/>
         </svg>
@@ -364,23 +352,13 @@
   <div class="demo">
     <div class="demo__inner">
       <span class="floating-label">
-        <label class="floating-label__label">
-          Select Option
-        </label>
+        <label class="floating-label__label">Select Option</label>
         <span class="select">
           <select aria-label="Select demo" name="options">
-            <option value="">
-              Choose an option
-            </option>
-            <option value="item1">
-              Pick Option 1 (default)
-            </option>
-            <option value="item2">
-              Pick Option 2
-            </option>
-            <option value="item3">
-              Pick Option 3
-            </option>
+            <option value="">Choose an option</option>
+            <option value="item1">Pick Option 1 (default)</option>
+            <option value="item2">Pick Option 2</option>
+            <option value="item3">Pick Option 3</option>
           </select>
           <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
             <icon-symbol name="chevron-down-12"/>
@@ -392,23 +370,13 @@
 
   <highlight-code type="html">
     <span class="floating-label">
-      <label class="floating-label__label">
-        Select Option
-      </label>
+      <label class="floating-label__label">Select Option</label>
       <span class="select">
         <select name="options">
-          <option value="">
-            Choose an option
-          </option>
-          <option value="item1">
-            Pick Option 1 (default)
-          </option>
-          <option value="item2">
-            Pick Option 2
-          </option>
-          <option value="item3">
-            Pick Option 3
-          </option>
+          <option value="">Choose an option</option>
+          <option value="item1">Pick Option 1 (default)</option>
+          <option value="item2">Pick Option 2</option>
+          <option value="item3">Pick Option 3</option>
         </select>
         <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
           <use href="#icon-chevron-down-12"/>
@@ -422,24 +390,15 @@
   <div class="demo">
     <div class="demo__inner">
       <span class="floating-label floating-label--large">
-
         <label class="floating-label__label floating-label__label">
           Select Option
         </label>
         <span class="select select--large ">
           <select aria-label="Select demo" name="options">
-            <option value="">
-              Choose an option
-            </option>
-            <option value="item1">
-              Pick Option 1 (default)
-            </option>
-            <option value="item2">
-              Pick Option 2
-            </option>
-            <option value="item3">
-              Pick Option 3
-            </option>
+            <option value="">Choose an option</option>
+            <option value="item1">Pick Option 1 (default)</option>
+            <option value="item2">Pick Option 2</option>
+            <option value="item3">Pick Option 3</option>
           </select>
           <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
             <icon-symbol name="chevron-down-12"/>
@@ -451,23 +410,13 @@
 
   <highlight-code type="html">
     <span class="floating-label floating-label--large">
-      <label class="floating-label__label">
-        Select Option
-      </label>
+      <label class="floating-label__label">Select Option</label>
       <span class="select select--large">
         <select name="options">
-          <option value="">
-            Choose an option
-          </option>
-          <option value="item1">
-            Pick Option 1
-          </option>
-          <option value="item2">
-            Pick Option 2
-          </option>
-          <option value="item3">
-            Pick Option 3
-          </option>
+          <option value="">Choose an option</option>
+          <option value="item1">Pick Option 1</option>
+          <option value="item2">Pick Option 2</option>
+          <option value="item3">Pick Option 3</option>
         </select>
         <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
           <use href="#icon-chevron-down-12"/>
@@ -486,20 +435,22 @@
       <span class="phone-input">
         <span class="listbox-button listbox-button--form">
           <button
-            class="btn btn--form btn--split-start"
+            class="button button--form button--split-start"
             aria-expanded="false"
             aria-haspopup="listbox"
             type="button"
             data-listbox-button-prefix="Country: "
-            aria-label="Country: United States of America (+1)">
-            <span class="btn__cell">
-              <span class="btn__text">
+            aria-label="Country: United States of America (+1)"
+          >
+            <span class="button__cell">
+              <span class="button__text">
                 <svg
                   class="flag flag--us"
                   height="18"
                   width="24"
                   aria-hidden="true"
-                  data-country-code="1">
+                  data-country-code="1"
+                >
                   <use href="#flag-us"/>
                 </svg>
               </span>
@@ -507,7 +458,8 @@
                 class="icon icon--12"
                 height="10"
                 width="14"
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 <use href="#icon-chevron-down-12"/>
               </svg>
             </span>
@@ -521,17 +473,18 @@
                     height="18"
                     width="24"
                     aria-hidden="true"
-                    data-country-code="355">
+                    data-country-code="355"
+                  >
                     <use href="#flag-al"/>
                   </svg>
-                  <span>Albania</span>
-                  <span>(+355)</span>
+                  <span>Albania</span><span>(+355)</span>
                 </span>
                 <svg
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
@@ -542,17 +495,18 @@
                     height="18"
                     width="24"
                     aria-hidden="true"
-                    data-country-code="91">
+                    data-country-code="91"
+                  >
                     <use href="#flag-in"/>
                   </svg>
-                  <span>India</span>
-                  <span>(+91)</span>
+                  <span>India</span><span>(+91)</span>
                 </span>
                 <svg
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
@@ -563,7 +517,8 @@
                     height="18"
                     width="24"
                     aria-hidden="true"
-                    data-country-code="290">
+                    data-country-code="290"
+                  >
                     <use href="#flag-sh"/>
                   </svg>
                   <span>Saint Helena, Ascension and Tristan da Cunha</span>
@@ -573,7 +528,8 @@
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
@@ -584,41 +540,44 @@
                     height="18"
                     width="24"
                     aria-hidden="true"
-                    data-country-code="44">
+                    data-country-code="44"
+                  >
                     <use href="#flag-gb"/>
                   </svg>
-                  <span>United Kingdom</span>
-                  <span>(+44)</span>
+                  <span>United Kingdom</span><span>(+44)</span>
                 </span>
                 <svg
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
               <div
                 class="listbox-button__option"
                 role="option"
-                aria-selected="true">
+                aria-selected="true"
+              >
                 <span class="listbox-button__value">
                   <svg
                     class="flag flag--us"
                     height="18"
                     width="24"
                     aria-hidden="true"
-                    data-country-code="1">
+                    data-country-code="1"
+                  >
                     <use href="#flag-us"/>
                   </svg>
-                  <span>United States of America</span>
-                  <span>(+1)</span>
+                  <span>United States of America</span><span>(+1)</span>
                 </span>
                 <svg
                   class="icon icon--16"
                   height="10"
                   width="14"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <use href="#icon-tick-16"/>
                 </svg>
               </div>
@@ -627,21 +586,17 @@
         </span>
         <span class="field floating-label">
           <label class="floating-label__label" for="field1">
-            <span class="clipped">
-              Area code +
-            </span>
-            Phone Number
+            <span class="clipped">Area code +</span> Phone Number
           </label>
           <span class="textbox">
-            <span id="floating-phone-prefix-0">
-              +1
-            </span>
+            <span id="floating-phone-prefix-0">+1</span>
             <input
               class="textbox__control"
               type="tel"
               aria-label="area code + phone number"
               autocomplete="tel-national"
-              aria-describedby="floating-phone-prefix-0">
+              aria-describedby="floating-phone-prefix-0"
+            >
           </span>
         </span>
       </span>
@@ -651,19 +606,21 @@
     <span class="phone-input">
       <span class="listbox-button listbox-button--form">
         <button
-          class="btn btn--form btn--split-start"
+          class="button button--form button--split-start"
           aria-expanded="false"
           aria-haspopup="listbox"
           type="button"
-          data-listbox-button-prefix="Country: ">
-          <span class="btn__cell">
-            <span class="btn__text">
+          data-listbox-button-prefix="Country: "
+        >
+          <span class="button__cell">
+            <span class="button__text">
               <svg
                 class="flag flag--us"
                 height="18"
                 width="24"
                 aria-hidden="true"
-                data-country-code="1">
+                data-country-code="1"
+              >
                 <use href="#flag-us"/>
               </svg>
             </span>
@@ -671,7 +628,8 @@
               class="icon icon--12"
               height="10"
               width="14"
-              aria-hidden="true">
+              aria-hidden="true"
+            >
               <use href="#icon-chevron-down-12"/>
             </svg>
           </span>
@@ -685,17 +643,18 @@
                   height="18"
                   width="24"
                   aria-hidden="true"
-                  data-country-code="355">
+                  data-country-code="355"
+                >
                   <use href="#flag-al"/>
                 </svg>
-                <span>Albania</span>
-                <span>(+355)</span>
+                <span>Albania</span><span>(+355)</span>
               </span>
               <svg
                 class="icon icon--16"
                 height="10"
                 width="14"
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 <use href="#icon-tick-16"/>
               </svg>
             </div>
@@ -703,24 +662,26 @@
             <div
               class="listbox-button__option"
               role="option"
-              aria-selected="true">
+              aria-selected="true"
+            >
               <span class="listbox-button__value">
                 <svg
                   class="flag flag--us"
                   height="18"
                   width="24"
                   aria-hidden="true"
-                  data-country-code="1">
+                  data-country-code="1"
+                >
                   <use href="#flag-us"/>
                 </svg>
-                <span>United States of America</span>
-                <span>(+1)</span>
+                <span>United States of America</span><span>(+1)</span>
               </span>
               <svg
                 class="icon icon--16"
                 height="10"
                 width="14"
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 <use href="#icon-tick-16"/>
               </svg>
             </div>
@@ -729,29 +690,23 @@
       </span>
       <span class="field floating-label">
         <label class="floating-label__label" for="field1">
-          <span class="clipped">
-            Area code +
-          </span>
-          Phone Number
+          <span class="clipped">Area code +</span> Phone Number
         </label>
         <span class="textbox">
-          <span id="floating-phone-prefix-0">
-            +1
-          </span>
+          <span id="floating-phone-prefix-0">+1</span>
           <input
             class="textbox__control"
             type="tel"
             aria-label="area code + phone number"
             autocomplete="tel-national"
-            aria-describedby="floating-phone-prefix-0">
+            aria-describedby="floating-phone-prefix-0"
+          >
         </span>
       </span>
     </span>
   </highlight-code>
 
-  <h3 id="floating-label-transitions">
-    Floating Label Transitions
-  </h3>
+  <h3 id="floating-label-transitions">Floating Label Transitions</h3>
   <p>
     By default, with only the base markup shown above, the label remains in a
     floating state above the input. This default state ensures that the label
@@ -759,32 +714,29 @@
   </p>
   <p>
     When JavaScript is ready, the label can be re-positioned inside the textbox
-    by adding the
-    <code>floating-label__label--inline</code>
-    modifier class. By default, this re-positioning of label happens
-    instantly, without a transition. Typically, we do not want to show
-    transitions on the initial page render, as this might be too jarring and
-    distracting for some users.
+    by adding the <code>floating-label__label--inline</code> modifier class. By
+    default, this re-positioning of label happens instantly, without a
+    transition. Typically, we do not want to show transitions on the initial
+    page render, as this might be too jarring and distracting for some users.
   </p>
   <p>
-    You will also need to add the
-    <code>floating-label__label--focus</code>
+    You will also need to add the <code>floating-label__label--focus</code>
     class when the input recieves focus and remove it when the input loses
     focus. This is to ensure the right colors are applied to the label when
     focusing the input.
   </p>
   <p>
     To opt into transitions after the initial render is complete, add the
-    <code>floating-label__label--animate</code>
-    modifier when the textbox receives focus.
+    <code>floating-label__label--animate</code> modifier when the textbox
+    receives focus.
   </p>
   <p>
     The examples above use
     <a href="https://github.com/makeup-js/makeup-floating-label">
       makeup-floating-label
     </a>
-    , a simple JavaScript module that adds the aforementioned logic. Feel
-    free to use this module or use it as the basis to roll your own.
+    , a simple JavaScript module that adds the aforementioned logic. Feel free
+    to use this module or use it as the basis to roll your own.
   </p>
 </div>
 export const metadata = {

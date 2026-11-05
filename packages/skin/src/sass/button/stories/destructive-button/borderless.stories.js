@@ -1,4 +1,4 @@
 export default { title: "Skin/Button/Destructive/Borderless" };
 
 export const base = () =>
-    '<button class="btn btn--borderless btn--destructive">Destructive Borderless Button</button>';
+    '<button class="button button--borderless button--destructive">Destructive Borderless Button</button>';

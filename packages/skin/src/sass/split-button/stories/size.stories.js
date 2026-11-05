@@ -1,13 +1,13 @@
 export default { title: "Skin/Split Button/Size" };
 export const longTextCollapsed = () => `
 <span class="split-button">
-    <button class="btn btn--primary btn--split-start btn--truncated" aria-haspopup="true" type="button">
-        <span class="btn__cell">
-            <span class="btn__text">Longest Button Text Example Lorem Ipsum Dolor</span>
+    <button class="button button--primary button--split-start button--truncated" aria-haspopup="true" type="button">
+        <span class="button__cell">
+            <span class="button__text">Longest Button Text Example Lorem Ipsum Dolor</span>
         </span>
     </button>
     <span class="menu-button">
-        <button class="btn btn--primary btn--split-end" aria-haspopup="true" type="button">
+        <button class="button button--primary button--split-end" aria-haspopup="true" type="button">
             <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -31,13 +31,13 @@ export const longTextCollapsed = () => `
 
 export const longTextExpanded = () => `
 <span class="split-button">
-    <button class="btn btn--primary btn--split-start btn--truncated" aria-haspopup="true" type="button">
-        <span class="btn__cell">
-            <span class="btn__text">Longest Button Text Example Lorem Ipsum Dolor</span>
+    <button class="button button--primary button--split-start button--truncated" aria-haspopup="true" type="button">
+        <span class="button__cell">
+            <span class="button__text">Longest Button Text Example Lorem Ipsum Dolor</span>
         </span>
     </button>
     <span class="menu-button">
-        <button class="btn btn--primary btn--split-end" aria-expanded="true" aria-haspopup="true" type="button">
+        <button class="button button--primary button--split-end" aria-expanded="true" aria-haspopup="true" type="button">
             <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>

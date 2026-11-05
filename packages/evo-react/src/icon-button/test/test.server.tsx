@@ -1,10 +1,10 @@
-import { it, expect, describe } from "vitest";
 import { renderToString } from "react-dom/server";
-import { EvoIconButton } from "../icon-button";
-import { EvoIconButtonBadge } from "../icon-button-badge";
+import { describe, expect, it } from "vitest";
+import { EvoIconCart16 } from "../../icon/icons/cart-16";
 import { EvoIconMenu20 } from "../../icon/icons/menu-20";
 import { EvoIconSettings16 } from "../../icon/icons/settings-16";
-import { EvoIconCart16 } from "../../icon/icons/cart-16";
+import { EvoIconButton } from "../icon-button";
+import { EvoIconButtonBadge } from "../icon-button-badge";
 import type { Priority, Size } from "../types";
 
 describe("EvoIconButton SSR", () => {
@@ -97,7 +97,7 @@ describe("EvoIconButton SSR", () => {
   it("should render with badge", () => {
     expect(
       renderToString(
-        <EvoIconButton a11yText="Cart">
+        <EvoIconButton a11yText="Cart, 3 items">
           <EvoIconCart16 />
           <EvoIconButtonBadge number={3} />
         </EvoIconButton>,
@@ -108,7 +108,7 @@ describe("EvoIconButton SSR", () => {
   it("should render with badge number > 99", () => {
     expect(
       renderToString(
-        <EvoIconButton a11yText="Cart">
+        <EvoIconButton a11yText="Cart, 100 items">
           <EvoIconCart16 />
           <EvoIconButtonBadge number={100} />
         </EvoIconButton>,

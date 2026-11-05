@@ -13,7 +13,7 @@ export interface LayoutOptions {
 }
 static {
     interface LayoutGridInput extends Omit<Marko.HTML.Div, `on${string}`> {
-        item?: Marko.AttrTag<Marko.Renderable>;
+        item?: Marko.AttrTag<Omit<Marko.HTML.LI, `on${string}`>>;
         columns?: LayoutOptions;
     }
 }
@@ -39,8 +39,9 @@ $ const {
 >
     <ul ...processHtmlAttributes(htmlInput)>
         <for|item| of=items>
-            <li>
-                <${item}/>
+            $ const { renderBody, ...itemInput } = item;
+            <li ...processHtmlAttributes(itemInput)>
+                <${renderBody}/>
             </li>
         </for>
     </ul>

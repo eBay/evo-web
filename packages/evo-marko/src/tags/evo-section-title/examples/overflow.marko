@@ -1,0 +1,15 @@
+import type { Input as SectionTitleInput } from "../index.marko";
+export interface Input extends SectionTitleInput {}
+
+<evo-section-title ...input>
+  <@title>Today's Deals - All With Free Shipping</@title>
+  <@subtitle>Plus, guaranteed best prices.</@subtitle>
+  <@overflow>
+    <evo-menu-button variant="icon" aria-label="eBay Menu">
+      <@item>item 1</@item>
+      <@item>item 2</@item>
+      <@item>item 3</@item>
+      <evo-icon-overflow-vertical-16/>
+    </evo-menu-button>
+  </@overflow>
+</evo-section-title>

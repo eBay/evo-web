@@ -24,7 +24,7 @@ const EbayBreadcrumbItem: FC<BreadcrumbItemProps> = ({
     const isLink = Item === "a";
     const itemAttr: ItemAttributes = {
         ...rest,
-        ...(isLastItem ? { "aria-current": "location" } : {}),
+        ...(isLastItem ? { "aria-current": "page" } : {}),
         href: isLink ? href : undefined,
         onClick: isLink ? undefined : onClick,
     };

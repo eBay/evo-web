@@ -1,12 +1,16 @@
 @use "../variables/variables";
 @use "../mixins/private/token-mixins";
 
+// DEPRECATED: the `.btn*` selectors in this file are removed in the next
+// major version. Use `.button*` instead.
+
 .phone-input,
 .phone-input .listbox-button {
     display: inline-flex;
 }
 
-.phone-input button.btn {
+.phone-input button.btn,
+.phone-input button.button {
     border-radius: 8px 0 0 8px;
     border-right-style: none;
     min-width: 64px;
@@ -14,11 +18,13 @@
 }
 
 /* keep the native ring above the adjoining textbox */
-.phone-input button.btn:focus-visible {
+.phone-input button.btn:focus-visible,
+.phone-input button.button:focus-visible {
     z-index: 1;
 }
 
-.phone-input button.btn svg.icon:last-child {
+.phone-input button.btn svg.icon:last-child,
+.phone-input button.button svg.icon:last-child {
     margin-inline-start: var(--spacing-50);
 }
 
@@ -154,7 +160,8 @@
 }
 
 [dir="rtl"] {
-    .phone-input button.btn {
+    .phone-input button.btn,
+    .phone-input button.button {
         border-radius: 0 8px 8px 0;
     }
 

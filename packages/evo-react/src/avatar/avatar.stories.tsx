@@ -49,7 +49,7 @@ type Story = StoryObj<typeof EvoAvatar>;
 export const Default: Story = {
   args: {
     username: "Elizabeth",
-    a11yText: "Signed in as Elizabeth",
+    a11yText: "Profile picture - Elizabeth",
   },
 };
 
@@ -57,7 +57,7 @@ export const Default: Story = {
 export const WithImage: Story = {
   args: {
     username: "Elizabeth",
-    a11yText: "Signed in as Elizabeth",
+    a11yText: "Profile picture - Elizabeth",
   },
   render: (args) => (
     <EvoAvatar {...args}>
@@ -69,7 +69,7 @@ export const WithImage: Story = {
 /** The signed-out fallback represents an avatar without a signed-in identity. */
 export const SignedOut: Story = {
   args: {
-    a11yText: "Signed out",
+    a11yText: "Profile picture - Signed out",
   },
 };
 

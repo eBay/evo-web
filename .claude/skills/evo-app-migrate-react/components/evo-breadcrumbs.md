@@ -41,7 +41,7 @@ The old API used `<EbayBreadcrumbItem>` as JSX children. The new API uses an `it
 | `onSelect` on `EbayBreadcrumbs`      | Not in evo-marko. Use `onClick` on individual items instead via the `items` array.               |
 | `id` on `EbayBreadcrumbs`            | Was used only to generate an internal heading ID. Now handled via `useId()` internally.          |
 | `tag` on `EbayBreadcrumbItem`        | Removed. Rendering as `<a>` vs `<button>` is determined automatically by the presence of `href`. |
-| `isLastItem` on `EbayBreadcrumbItem` | Removed. `aria-current="location"` is applied automatically to the last item.                    |
+| `isLastItem` on `EbayBreadcrumbItem` | Removed. `aria-current="page"` is applied automatically to the last item.                        |
 | `_sp`, `navsrc` on items             | Still supported — pass them in the item object and they will be forwarded as HTML attributes.    |
 
 ---

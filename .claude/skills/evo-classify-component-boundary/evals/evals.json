@@ -1,0 +1,81 @@
+{
+  "skill_name": "evo-classify-component-boundary",
+  "evals": [
+    {
+      "id": 1,
+      "name": "decided-anchor-styled-as-button",
+      "prompt": "Where should this live in Skin? It's an anchor that has to look exactly like our button. Markup: <a class=\"fake-btn\" href=\"https://www.ebay.com\"><span class=\"fake-btn__cell\"><span>Go</span></span></a>. The disabled version has no href.",
+      "expected_output": "Verdict: own module, not a modifier of button. Facts listed: root element is a (not button), activates on Enter only (Space scrolls), no native disabled so the disabled state is faked (drop href, or aria-disabled plus JavaScript), announced as a link. Rule fired: the accessibility test, all three checks. Proposed name: button-link (built on an a, looks like a button). Look-alike: button. Mentions shared styling through mixins.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "decided-link-list-styled-as-tabs",
+      "prompt": "Classify the fake tabs pattern in packages/skin/src/sass/tabs/stories/fake-tabs/block.stories.js. It should look like our tabs component.",
+      "expected_output": "Verdict: own module. Facts read from the story markup: root is a div wrapping a ul of li > a with aria-current, no role=tablist or role=tab, so it is a navigation list of links, not an ARIA tablist; links activate on Enter, announced as a list of links. Rule fired: accessibility test (keyboard activation and screen reader announcement). Proposed name: navigation-tabs. Look-alike: tabs.",
+      "files": [
+        "packages/skin/src/sass/tabs/stories/fake-tabs/block.stories.js"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "decided-button-styled-as-link",
+      "prompt": "I need a control that looks like a text link but triggers an action on the page. Markup: <button class=\"fake-link\" type=\"button\">Button</button>. Does it go inside link as a modifier or somewhere else?",
+      "expected_output": "Verdict: own module, not a modifier of link. Facts: root is button, activates on Enter and Space, native disabled works, announced as a button although it looks like a link. Rule fired: accessibility test (keyboard activation and announcement differ from a link). Proposed name: link-button (built on a button, looks like a link). Look-alike: link. Notes that link already stands as a single-variant top-level module, so a module for one variant is not unusual.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "name": "decided-menu-pointer",
+      "prompt": "Where should the pattern in packages/skin/src/sass/menu/stories/fake-menu.stories.js live? It looks like our menu.",
+      "expected_output": "Verdict: own module. Facts read from the story: root is a div > ul > li with a or button items, no role=menu or menuitem, so it is navigation or action lists with no menu keyboard model. Rule fired: accessibility test. Proposed name: navigation-menu. Look-alike: menu. Notes it should not be merged into menu.",
+      "files": ["packages/skin/src/sass/menu/stories/fake-menu.stories.js"]
+    },
+    {
+      "id": 5,
+      "name": "modifier-new-size",
+      "prompt": "Design wants a slightly shorter version of the standard button for dense tables. Same <button>, same behavior, only the height and padding change. How do we slot it in?",
+      "expected_output": "Verdict: modifier of button. Facts: root stays button, keyboard activation, disabled handling and announcement are unchanged, so no accessibility check trips. Modifier test passes: a size modifier combines with priority and other modifiers. Flags existing near-matches (button--small, button--slim) and asks whether one already covers it before adding a new modifier.",
+      "files": []
+    },
+    {
+      "id": 6,
+      "name": "modifier-borderless",
+      "prompt": "We want a button with no visible border that otherwise behaves like a normal button, still a <button>. Own component or part of button?",
+      "expected_output": "Verdict: modifier of button, noting button--borderless already exists. Facts: same root element, same activation and disabled behavior, same announcement. Rule fired: no accessibility check trips, modifier compatibility passes (combines with size and priority). Does not propose a new module.",
+      "files": []
+    },
+    {
+      "id": 7,
+      "name": "description-missing-element",
+      "prompt": "There's a new control that looks like our primary button but it takes the user to another page. Which component does it belong in?",
+      "expected_output": "Does not return a verdict. Asks for the missing facts: which native element it is built with (a or button), how it activates, and how the disabled state works. If it cannot get them, returns 'rules don't cover this' naming the missing facts. Does not infer the element from 'takes the user to another page'.",
+      "files": []
+    },
+    {
+      "id": 8,
+      "name": "no-look-alike-search",
+      "prompt": "New pattern: a pair of icon buttons for thumbs up and thumbs down feedback. Each is a <button> with aria-pressed, and only one can be pressed at a time. Where does it go?",
+      "expected_output": "Searches the existing components for a likely parent before defaulting to new pattern, and names candidates such as toggle-button and toggle-button-group. Asks whether the control is meant to resemble one of them before settling. Does not default silently to 'new pattern'.",
+      "files": []
+    },
+    {
+      "id": 9,
+      "name": "joined-buttons-ask-for-markup",
+      "prompt": "We want three buttons joined edge to edge so they read as one control, where exactly one is selected at a time (see the attached screenshot). Is this a variant of button or its own module?",
+      "expected_output": "Does not return a verdict yet. Searches the existing components and finds segmented-buttons as a likely look-alike, noting it is already a full component and not a set of separate buttons. Asks for the markup, because the markup shows whether this is one control (a single-selection group) or independent buttons, and that decides the answer. Does not return 'rules don't cover this' unless the markup is never supplied.",
+      "files": [
+        ".claude/skills/evo-classify-component-boundary/evals/files/segmented-buttons.png"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "image-only-fake-button",
+      "prompt": "Here's a screenshot of a new control from design (see the attached image). Where should it live in Skin?",
+      "expected_output": "Does not return a verdict. Extracts only what the image shows: a large, pill-shaped, outlined control with a text label, which resembles a large button. Notes that the image cannot show the root element, keyboard activation, disabled handling or announcement, and asks for the markup or for the native element and its behavior. Does not infer an anchor from the label 'Large Link'. If the element is never supplied, returns 'rules don't cover this' naming the missing facts.",
+      "files": [
+        ".claude/skills/evo-classify-component-boundary/evals/files/fake-button-large.png"
+      ]
+    }
+  ]
+}

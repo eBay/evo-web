@@ -3,7 +3,7 @@
 exports[`<EbayAvatar /> rendering > renders a different color for different users 1`] = `
 <div>
   <div
-    aria-label="Signed in as Elizabeth"
+    aria-label="Profile picture - Elizabeth"
     class="avatar avatar--magenta"
     role="img"
   >
@@ -15,7 +15,7 @@ exports[`<EbayAvatar /> rendering > renders a different color for different user
 exports[`<EbayAvatar /> rendering > renders a different color for different users 2`] = `
 <div>
   <div
-    aria-label="Signed in as Elizabeth"
+    aria-label="Profile picture - Elizabeth"
     class="avatar avatar--green"
     role="img"
   >
@@ -27,7 +27,7 @@ exports[`<EbayAvatar /> rendering > renders a different color for different user
 exports[`<EbayAvatar /> rendering > renders a different color for different users 3`] = `
 <div>
   <div
-    aria-label="Signed in as Elizabeth"
+    aria-label="Profile picture - Elizabeth"
     class="avatar avatar--lime"
     role="img"
   >
@@ -39,7 +39,7 @@ exports[`<EbayAvatar /> rendering > renders a different color for different user
 exports[`<EbayAvatar /> rendering > renders default story correctly 1`] = `
 <div>
   <div
-    aria-label="Signed in as Elizabeth"
+    aria-label="Profile picture - Elizabeth"
     class="avatar avatar--teal"
     role="img"
   >
@@ -51,7 +51,7 @@ exports[`<EbayAvatar /> rendering > renders default story correctly 1`] = `
 exports[`<EbayAvatar /> rendering > renders signed out story correctly 1`] = `
 <div>
   <div
-    aria-label="Signed out"
+    aria-label="Profile picture - Signed out"
     class="avatar"
     role="img"
   >
@@ -86,7 +86,7 @@ exports[`<EbayAvatar /> rendering > renders the image-fit correctly 1`] = `
 exports[`<EbayAvatar /> rendering > renders with custom body story correctly 1`] = `
 <div>
   <div
-    aria-label="Signed in as Elizabeth"
+    aria-label="Profile picture - Elizabeth"
     class="avatar"
     role="img"
   >
@@ -104,7 +104,7 @@ exports[`<EbayAvatar /> rendering > renders with custom body story correctly 1`]
 exports[`<EbayAvatar /> rendering > renders with image story correctly 1`] = `
 <div>
   <div
-    aria-label="Signed in as Elizabeth"
+    aria-label="Profile picture - Elizabeth"
     class="avatar"
     role="img"
   >
