@@ -168,7 +168,7 @@ export const endMenuCollapsed = () => `
         <li>
             <span class="pagination__item">
                 <span class="fake-menu-button">
-                    <button class="icon-btn icon-btn--transparent fake-menu-button__button" type="button" aria-label="Menu">
+                    <button class="icon-button icon-button--transparent fake-menu-button__button" type="button" aria-label="Menu">
                         <svg class="icon icon--24" width="8" height="8" role="separator">
                             <use href="#icon-overflow-horizontal-24"></use>
                         </svg>
@@ -239,7 +239,7 @@ export const endMenuExpanded = () => `
         <li>
             <span class="pagination__item">
                 <span class="fake-menu-button">
-                    <button class="icon-btn icon-btn--transparent fake-menu-button__button" type="button" aria-expanded="true" aria-label="Menu">
+                    <button class="icon-button icon-button--transparent fake-menu-button__button" type="button" aria-expanded="true" aria-label="Menu">
                         <svg class="icon icon--24" width="8" height="8" role="separator">
                             <use href="#icon-overflow-horizontal-24"></use>
                         </svg>

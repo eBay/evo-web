@@ -1,0 +1,67 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`evo-flag SSR > renders decorative flag next to text 1`] = `
+"<span>
+  <span
+    aria-hidden="true"
+    class="fflag fflag--us ff-md"
+  />
+   United States
+</span>"
+`;
+
+exports[`evo-flag SSR > renders default 1`] = `
+"<span
+  aria-label="United States"
+  class="fflag fflag--us ff-md"
+  role="img"
+/>"
+`;
+
+exports[`evo-flag SSR > renders large size 1`] = `
+"<span
+  aria-label="United States"
+  class="fflag fflag--us ff-lg"
+  role="img"
+/>"
+`;
+
+exports[`evo-flag SSR > renders medium size 1`] = `
+"<span
+  aria-label="United States"
+  class="fflag fflag--us ff-md"
+  role="img"
+/>"
+`;
+
+exports[`evo-flag SSR > renders no size class when size is omitted 1`] = `
+"<span
+  aria-label="United States"
+  class="fflag fflag--us"
+  role="img"
+/>"
+`;
+
+exports[`evo-flag SSR > renders small size 1`] = `
+"<span
+  aria-label="United States"
+  class="fflag fflag--us ff-sm"
+  role="img"
+/>"
+`;
+
+exports[`evo-flag SSR > renders uppercase country code in lowercase 1`] = `
+"<span
+  aria-label="United Kingdom"
+  class="fflag fflag--gb ff-md"
+  role="img"
+/>"
+`;
+
+exports[`evo-flag SSR > renders x-large size 1`] = `
+"<span
+  aria-label="United States"
+  class="fflag fflag--us ff-xl"
+  role="img"
+/>"
+`;

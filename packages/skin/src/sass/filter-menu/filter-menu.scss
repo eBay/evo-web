@@ -2,6 +2,9 @@
 @use "../mixins/private/filter-menu-mixins";
 @use "../mixins/private/token-mixins";
 
+// DEPRECATED: the `.btn*` selectors in this file are removed in the next
+// major version. Use `.button*` instead.
+
 .filter-menu,
 .filter-menu-form {
     @include token-mixins.background-color-token(
@@ -98,7 +101,8 @@ span.filter-menu-form__item {
     font-size: var(--font-size-body);
 }
 
-.filter-menu__header button.btn {
+.filter-menu__header button.btn,
+.filter-menu__header button.button {
     border: none;
     min-height: var(--spacing-250);
     min-width: var(--spacing-250);

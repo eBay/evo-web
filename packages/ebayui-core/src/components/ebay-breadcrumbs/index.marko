@@ -52,7 +52,7 @@ $ var anyHref = (items || []).some((element) => element.href != null);
                 $ var current = !item.href && isLast;
                 <${anyHref ? "a" : "button"}
                     ...processHtmlAttributes(item)
-                    aria-current=current && "location"
+                    aria-current=isLast && "page"
                     on-click(!current && "handleClick")
                 >
                     <${item.renderBody}/>

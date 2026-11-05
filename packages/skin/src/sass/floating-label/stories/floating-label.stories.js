@@ -198,10 +198,10 @@ export const textSpacing = () => `
 export const phoneInput = () => `
 <span class="phone-input">
     <span class="listbox-button listbox-button--form">
-    <button class="btn btn--form btn--split-start" aria-expanded="false" aria-haspopup="listbox" type="button"
+    <button class="button button--form button--split-start" aria-expanded="false" aria-haspopup="listbox" type="button"
         data-listbox-button-prefix="Country: " aria-label="Country: United States of America (+1)">
-        <span class="btn__cell">
-        <span class="btn__text">
+        <span class="button__cell">
+        <span class="button__text">
             <svg class="flag flag--us" focusable="false" height="18" width="24" aria-hidden="true" data-country-code="1">
             <use href="#flag-us"></use>
             </svg>

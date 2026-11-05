@@ -104,7 +104,7 @@ export const Default: StoryFn<typeof EbayItemTileGroup> = (args) => {
                         src: "https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg",
                     }}
                 >
-                    <EbayItemTileAction aria-label="action label" icon={<EbayIconHeart16 />} />
+                    <EbayItemTileAction aria-label="Add to watchlist" icon={<EbayIconHeart16 />} />
                     <EbayItemTileSupertitle>
                         <EbaySignal status="time-sensitive">Time Sensitive</EbaySignal>
                     </EbayItemTileSupertitle>

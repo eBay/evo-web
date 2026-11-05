@@ -86,7 +86,7 @@ export const Default = buildExtensionTemplate(
   DefaultTemplate,
   DefaultTemplateCode,
   {
-    a11yText: "Signed in - as Elizabeth",
+    a11yText: "Profile picture - Elizabeth",
     username: "Elizabeth",
     color: "teal",
   },
@@ -96,7 +96,7 @@ export const WithImage = buildExtensionTemplate(
   imageTemplate,
   imageTemplateCode,
   {
-    a11yText: "Signed in - as Doggy",
+    a11yText: "Profile picture - Doggy",
     username: "Doggy",
   },
 );
@@ -105,7 +105,7 @@ export const WithAutoPlacement = buildExtensionTemplate(
   autoImageTemplate,
   autoImageTemplateCode,
   {
-    a11yText: "Signed in - as Doggy",
+    a11yText: "Profile picture - Doggy",
     username: "Doggy",
   },
 );
@@ -114,6 +114,6 @@ export const SignedOut = buildExtensionTemplate(
   signedOutTemplate,
   signedOutTemplateCode,
   {
-    a11yText: "Signed out",
+    a11yText: "Profile picture - Signed out",
   },
 );

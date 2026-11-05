@@ -1,5 +1,29 @@
 # @evo-web/react
 
+## 0.4.11
+
+### Patch Changes
+
+- [#1005](https://github.com/eBay/evo-web/pull/1005) [`bc72dbd`](https://github.com/eBay/evo-web/commit/bc72dbd1f6aebee7a6b7812491b032360e713533) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoEducationNotice component.
+
+- [#1076](https://github.com/eBay/evo-web/pull/1076) [`3690578`](https://github.com/eBay/evo-web/commit/36905785fec740849b8a9a68d03324a66fef23ca) Thanks [@sebxt](https://github.com/sebxt)! - fix(date-textbox,date-input): reject typed days that do not exist in the month, such as 02/30/2024
+
+- [#991](https://github.com/eBay/evo-web/pull/991) [`bb03dad`](https://github.com/eBay/evo-web/commit/bb03dade29b09a4b603efbff8f44a5477bdf6d53) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoField component.
+
+## 0.4.10
+
+### Patch Changes
+
+- [#1022](https://github.com/eBay/evo-web/pull/1022) [`4fce07c`](https://github.com/eBay/evo-web/commit/4fce07c2bf139feae5ff710a5a7fbdc3461ba58a) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoChipsCombobox with composable chip options, and add an `onOptionSelect` callback and a large input variant to EvoCombobox.
+
+- [#1068](https://github.com/eBay/evo-web/pull/1068) [`3b01868`](https://github.com/eBay/evo-web/commit/3b0186855bc9da7d38ca96f2b13fb20d7894180b) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Add `bar-chart-20`, `clock-20`, `condition-guarantee-16`, `condition-guarantee-24`, `discount-20`, `hand-swipe-24`, `inspect-20`, `live-raids-16`, `live-raids-24`, `megaphone-20`, `note-20`, `store-20`, `switch-camera-16`, `trophy-12`, and `wallet-20` icons. Update `store-24` and `store-filled-24` artwork.
+
+## 0.4.9
+
+### Patch Changes
+
+- [#1055](https://github.com/eBay/evo-web/pull/1055) [`9bb8a65`](https://github.com/eBay/evo-web/commit/9bb8a658f2b04efb50bbabd36d51ac80279fd73e) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Remove `EvoSectionTitleInfo` from `EvoSectionTitle`
+
 ## 0.4.8
 
 ### Patch Changes

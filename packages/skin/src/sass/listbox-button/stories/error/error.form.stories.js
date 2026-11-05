@@ -2,10 +2,10 @@ export default { title: "Skin/Listbox Button/Error/Form" };
 
 export const enabled = () => `
 <span class="listbox-button listbox-button--form listbox-button--error">
-    <button class="btn btn--form" aria-expanded="false" aria-haspopup="listbox">
-        <span class="btn__cell">
-            <span class="btn__label">Color: </span>
-            <span class="btn__text">-</span>
+    <button class="button button--form" aria-expanded="false" aria-haspopup="listbox">
+        <span class="button__cell">
+            <span class="button__label">Color: </span>
+            <span class="button__text">-</span>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -50,10 +50,10 @@ export const enabled = () => `
 
 export const invalid = () => `
 <span class="listbox-button listbox-button--form listbox-button--error">
-    <button class="btn btn--form" aria-expanded="false" aria-haspopup="listbox" aria-invalid="true">
-        <span class="btn__cell">
-            <span class="btn__label">Color: </span>
-            <span class="btn__text">-</span>
+    <button class="button button--form" aria-expanded="false" aria-haspopup="listbox" aria-invalid="true">
+        <span class="button__cell">
+            <span class="button__label">Color: </span>
+            <span class="button__text">-</span>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>

@@ -1,12 +1,9 @@
 import type { ComponentProps } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { EvoInfotip } from "../infotip/infotip";
-import { EvoInfotipHeading } from "../infotip/infotip-heading";
 import { EvoSectionTitle } from "./section-title";
 import { EvoSectionTitleContent } from "./section-title-content";
 import { EvoSectionTitleCta } from "./section-title-cta";
 import { EvoSectionTitleHeading } from "./section-title-heading";
-import { EvoSectionTitleInfo } from "./section-title-info";
 import { EvoSectionTitleOverflow } from "./section-title-overflow";
 import { EvoSectionTitleSubtitle } from "./section-title-subtitle";
 
@@ -18,7 +15,6 @@ const meta: Meta<typeof EvoSectionTitle> = {
     EvoSectionTitleHeading,
     EvoSectionTitleSubtitle,
     EvoSectionTitleCta,
-    EvoSectionTitleInfo,
     EvoSectionTitleOverflow,
   },
 };
@@ -117,24 +113,4 @@ import { Link } from "react-router";
       },
     },
   },
-};
-
-/** An infotip gives extra context without putting a control inside the heading. */
-export const WithInfo: Story = {
-  render: (args) => (
-    <EvoSectionTitle {...args}>
-      <EvoSectionTitleContent>
-        <EvoSectionTitleHeading>Seller feedback</EvoSectionTitleHeading>
-      </EvoSectionTitleContent>
-      <EvoSectionTitleInfo>
-        <EvoInfotip
-          a11yIconText="About seller feedback"
-          a11yCloseText="Dismiss seller feedback help"
-        >
-          <EvoInfotipHeading>About seller feedback</EvoInfotipHeading>
-          <p>Feedback comes from buyers who purchased from this seller.</p>
-        </EvoInfotip>
-      </EvoSectionTitleInfo>
-    </EvoSectionTitle>
-  ),
 };

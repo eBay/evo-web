@@ -56,7 +56,12 @@ const EbayTourtip: FC<TourtipProps> = ({
         hostRef,
     });
 
-    const { overlayStyles, arrowStyles, refs } = useFloatingTooltip({
+    const {
+        overlayStyles,
+        arrowStyles,
+        pointer: resolvedPointer,
+        refs,
+    } = useFloatingTooltip({
         open: isExpanded,
         hostRef,
         options: {
@@ -96,7 +101,7 @@ const EbayTourtip: FC<TourtipProps> = ({
                 a11yCloseText={a11yCloseText}
                 ariaLabelledBy={labelId}
                 onClose={collapseTooltip}
-                pointer={pointer}
+                pointer={resolvedPointer}
                 showCloseButton
                 style={{ ...overlayStyles, ...overlayStyle }}
                 type="tourtip"

@@ -18,6 +18,7 @@ export interface Item extends MenuItem {
     itemMatchesUrl?: boolean;
     current?: boolean;
     badgeNumber?: number;
+    badgeAriaLabel?: string;
 }
 
 export interface Separator {}

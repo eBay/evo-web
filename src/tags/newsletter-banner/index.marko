@@ -1,0 +1,66 @@
+import __styles from "./style.module.scss";
+static const { banner, artwork, title, date, accent } = __styles;
+
+export interface Input {
+  month: string;
+  year: number;
+}
+
+<id/grayGradient>
+<id/blueGradient>
+<id/whiteGradient>
+
+<div class=banner>
+  <svg
+    class=artwork
+    viewBox="0 0 1711 451"
+    preserveAspectRatio="xMaxYMid slice"
+    aria-hidden="true"
+  >
+    <defs>
+      <linearGradient id=grayGradient x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="var(--color-neutral-600)"/>
+        <stop offset="1" stop-color="var(--color-neutral-800)"/>
+      </linearGradient>
+      <linearGradient id=blueGradient x1="0" y1="1" x2="1" y2="0">
+        <stop offset="0" stop-color="var(--color-blue-400)"/>
+        <stop offset="1" stop-color="var(--color-blue-600)"/>
+      </linearGradient>
+      <linearGradient id=whiteGradient x1="0" y1="1" x2="1" y2="0">
+        <stop offset="0" stop-color="var(--color-neutral-300)"/>
+        <stop offset="1" stop-color="var(--color-neutral-100)"/>
+      </linearGradient>
+    </defs>
+    <rect
+      x="0"
+      y="0"
+      width="520"
+      height="600"
+      rx="55"
+      transform="translate(1395 29) rotate(19.5)"
+      fill=`url(#${grayGradient})`
+    />
+    <rect
+      x="0"
+      y="0"
+      width="390"
+      height="600"
+      rx="55"
+      transform="translate(1186 117) rotate(19.5)"
+      fill=`url(#${blueGradient})`
+    />
+    <rect
+      x="0"
+      y="0"
+      width="600"
+      height="500"
+      rx="55"
+      transform="translate(1304 247) rotate(19.5)"
+      fill=`url(#${whiteGradient})`
+    />
+  </svg>
+  <h1 class=title>
+    <span class=date>${input.month} ${input.year}</span> Evo Web
+    <span class=accent>Newsletter</span>
+  </h1>
+</div>

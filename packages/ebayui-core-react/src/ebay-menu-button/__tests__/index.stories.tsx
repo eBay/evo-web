@@ -147,8 +147,8 @@ or import styles using SCSS/CSS
         },
         badgeNumber: { description: "used as the number to be placed in the badge", control: "number" },
         badgeAriaLabel: {
-            description: "used as the number to be placed in the badge (NOT YET IMPLEMENTED)",
-            control: "number",
+            description: "passed as the badge's accessible label when `badgeNumber` is provided",
+            control: "text",
         },
         onClick: {
             description: "For a non-link menu item, with param `{ originalEvent }`",

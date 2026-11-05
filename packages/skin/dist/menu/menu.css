@@ -242,14 +242,18 @@ div.menu__item[role^="menuitem"] span.badge {
 }
 
 .fake-menu button.expand-btn--borderless,
-.menu button.expand-btn--borderless {
+.fake-menu button.expand-button--borderless,
+.menu button.expand-btn--borderless,
+.menu button.expand-button--borderless {
     background-color: initial;
     border-color: transparent;
     padding-left: 0;
     vertical-align: initial;
 }
 .fake-menu button.expand-btn--borderless:focus,
-.menu button.expand-btn--borderless:focus {
+.fake-menu button.expand-button--borderless:focus,
+.menu button.expand-btn--borderless:focus,
+.menu button.expand-button--borderless:focus {
     outline: none;
     text-decoration: underline;
 }

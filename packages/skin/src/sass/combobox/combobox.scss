@@ -5,6 +5,9 @@
 @use "../mixins/private/token-mixins";
 @use "../mixins/public/utility-mixins";
 
+// DEPRECATED: the `.icon-btn*` selectors in this file are removed in the next
+// major version. Use `.icon-button*` instead.
+
 $height-textbox: 40px;
 
 .combobox {
@@ -66,7 +69,8 @@ span.combobox {
     }
 }
 
-.combobox__control button.icon-btn {
+.combobox__control button.icon-btn,
+.combobox__control button.icon-button {
     height: 38px;
     padding: 0;
     position: absolute;
@@ -75,7 +79,8 @@ span.combobox {
     width: 38px;
 }
 
-.combobox__control button.icon-btn svg {
+.combobox__control button.icon-btn svg,
+.combobox__control button.icon-button svg {
     inset: auto 0;
     margin: 0;
 }
@@ -259,7 +264,8 @@ span.combobox {
         left: 0;
     }
 
-    .combobox__control button.icon-btn {
+    .combobox__control button.icon-btn,
+    .combobox__control button.icon-button {
         left: 1px;
         right: inherit;
     }

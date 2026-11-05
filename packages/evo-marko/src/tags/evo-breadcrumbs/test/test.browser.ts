@@ -24,9 +24,9 @@ describe("evo-breadcrumbs", () => {
       expect(links.length).toBeGreaterThan(0);
     });
 
-    it("marks the last item without href as current location", () => {
+    it("marks the last item as the current page", () => {
       const currentItem = component.getByText("Smart Watch Bands");
-      expect(currentItem.getAttribute("aria-current")).toBe("location");
+      expect(currentItem.getAttribute("aria-current")).toBe("page");
     });
   });
 
@@ -40,9 +40,9 @@ describe("evo-breadcrumbs", () => {
       expect(buttons.length).toBeGreaterThan(0);
     });
 
-    it("marks the last button as current location", () => {
+    it("marks the last button as the current page", () => {
       const lastItem = component.getByText("Smart Watch Bands");
-      expect(lastItem.getAttribute("aria-current")).toBe("location");
+      expect(lastItem.getAttribute("aria-current")).toBe("page");
     });
   });
 });

@@ -133,7 +133,7 @@ export const withHeaderSearch = () => `
             placeholder="Search"
             aria-owns="filter-menu-search-items-1"
         />
-        <button type="button" class="btn" aria-label="Clear search">
+        <button type="button" class="button" aria-label="Clear search">
             <svg aria-hidden="true" class="icon icon--20" height="28" width="28">
                 <use href="#icon-clear-20"></use>
             </svg>
@@ -190,7 +190,7 @@ export const textSpacing = () => `
             placeholder="Search"
             aria-owns="filter-menu-search-items-1"
         />
-        <button type="button" class="btn" aria-label="Clear search">
+        <button type="button" class="button" aria-label="Clear search">
             <svg aria-hidden="true" class="icon icon--20" height="28" width="28">
                 <use href="#icon-clear-20"></use>
             </svg>
@@ -301,7 +301,7 @@ export const RTL = () => `
                     placeholder="Search"
                     aria-owns="filter-menu-search-items-1"
                 />
-                <button type="button" class="btn" aria-label="Clear search">
+                <button type="button" class="button" aria-label="Clear search">
                     <svg aria-hidden="true" class="icon icon--20" height="28" width="28">
                         <use href="#icon-clear-20"></use>
                     </svg>

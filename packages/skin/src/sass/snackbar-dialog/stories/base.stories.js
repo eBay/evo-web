@@ -17,7 +17,7 @@ export const action = () => `
                 <p>1 item deleted from watch list.</p>
             </div>
             <div class="snackbar-dialog__actions">
-                <button accesskey="u" class="fake-link snackbar-dialog__cta">Undo</button>
+                <button accesskey="u" class="link-button snackbar-dialog__cta">Undo</button>
             </div>
         </div>
     </aside>
@@ -30,8 +30,8 @@ export const actionAndDismiss = () => `
                 <p>1 item deleted from watch list.</p>
             </div>
             <div class="snackbar-dialog__actions">
-                <button accesskey="u" class="fake-link snackbar-dialog__cta">Undo</button> |
-                <button accesskey="d" class="fake-link snackbar-dialog__close">Close</button>
+                <button accesskey="u" class="link-button snackbar-dialog__cta">Undo</button> |
+                <button accesskey="d" class="link-button snackbar-dialog__close">Close</button>
             </div>
         </div>
     </aside>
@@ -44,8 +44,8 @@ export const actionsStacked = () => `
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
             <div class="snackbar-dialog__actions">
-            <button accesskey="u" class="fake-link snackbar-dialog__cta">Undo</button> |
-            <button accesskey="d" class="fake-link snackbar-dialog__close">Close</button>
+            <button accesskey="u" class="link-button snackbar-dialog__cta">Undo</button> |
+            <button accesskey="d" class="link-button snackbar-dialog__close">Close</button>
             </div>
         </div>
     </aside>
@@ -58,8 +58,8 @@ export const textSpacing = () => `
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
             <div class="snackbar-dialog__actions">
-            <button accesskey="u" class="fake-link snackbar-dialog__cta">Undo</button> |
-            <button accesskey="d" class="fake-link snackbar-dialog__close">Close</button>
+            <button accesskey="u" class="link-button snackbar-dialog__cta">Undo</button> |
+            <button accesskey="d" class="link-button snackbar-dialog__close">Close</button>
             </div>
         </div>
     </aside>

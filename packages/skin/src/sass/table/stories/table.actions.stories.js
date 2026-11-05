@@ -106,8 +106,8 @@ export const base = () => `
                 </td>
                 <td class="table-cell">
                     <div class="table-cell__layout">
-                        <a class="cta-btn" href="https://www.ebay.com">
-                            <span class="cta-btn__cell">
+                        <a class="cta-button" href="https://www.ebay.com">
+                            <span class="cta-button__cell">
                                 <span>Edit Listing</span>
                                 <svg aria-hidden="true" class="icon icon--24" height="8" width="8">
                                 <use href="#icon-arrow-right-24" />
@@ -116,7 +116,7 @@ export const base = () => `
                         </a>
 
                         <button
-                            class="fake-menu-button__button icon-btn"
+                            class="fake-menu-button__button icon-button"
                             aria-expanded="false"
                             aria-haspopup="true"
                             aria-label="Actions"
@@ -130,7 +130,7 @@ export const base = () => `
                 </td>
                 <td class="table-cell table-cell--icon-action">
                     <button
-                        class="fake-menu-button__button icon-btn"
+                        class="fake-menu-button__button icon-button"
                         aria-expanded="false"
                         aria-haspopup="true"
                         aria-label="Actions"
@@ -166,8 +166,8 @@ export const base = () => `
                 </td>
                 <td class="table-cell">
                     <div class="table-cell__layout">
-                        <a class="cta-btn" href="https://www.ebay.com">
-                            <span class="cta-btn__cell">
+                        <a class="cta-button" href="https://www.ebay.com">
+                            <span class="cta-button__cell">
                                 <span>Edit Listing</span>
                                 <svg aria-hidden="true" class="icon icon--24" height="8" width="8">
                                 <use href="#icon-arrow-right-24" />
@@ -176,7 +176,7 @@ export const base = () => `
                         </a>
 
                         <button
-                            class="fake-menu-button__button icon-btn"
+                            class="fake-menu-button__button icon-button"
                             aria-expanded="false"
                             aria-haspopup="true"
                             aria-label="Actions"
@@ -190,7 +190,7 @@ export const base = () => `
                 </td>
                 <td class="table-cell table-cell--icon-action">
                     <button
-                        class="fake-menu-button__button icon-btn"
+                        class="fake-menu-button__button icon-button"
                         aria-expanded="false"
                         aria-haspopup="true"
                         aria-label="Actions"
@@ -226,8 +226,8 @@ export const base = () => `
                 </td>
                 <td class="table-cell">
                     <div class="table-cell__layout">
-                        <a class="cta-btn" href="https://www.ebay.com">
-                            <span class="cta-btn__cell">
+                        <a class="cta-button" href="https://www.ebay.com">
+                            <span class="cta-button__cell">
                                 <span>Edit Listing</span>
                                 <svg aria-hidden="true" class="icon icon--24" height="8" width="8">
                                 <use href="#icon-arrow-right-24" />
@@ -236,7 +236,7 @@ export const base = () => `
                         </a>
 
                         <button
-                            class="fake-menu-button__button icon-btn"
+                            class="fake-menu-button__button icon-button"
                             aria-expanded="false"
                             aria-haspopup="true"
                             aria-label="Actions"
@@ -250,7 +250,7 @@ export const base = () => `
                 </td>
                 <td class="table-cell table-cell--icon-action">
                     <button
-                        class="fake-menu-button__button icon-btn"
+                        class="fake-menu-button__button icon-button"
                         aria-expanded="false"
                         aria-haspopup="true"
                         aria-label="Actions"
@@ -286,8 +286,8 @@ export const base = () => `
                 </td>
                 <td class="table-cell">
                     <div class="table-cell__layout">
-                        <a class="cta-btn" href="https://www.ebay.com">
-                            <span class="cta-btn__cell">
+                        <a class="cta-button" href="https://www.ebay.com">
+                            <span class="cta-button__cell">
                                 <span>Edit Listing</span>
                                 <svg aria-hidden="true" class="icon icon--24" height="8" width="8">
                                 <use href="#icon-arrow-right-24" />
@@ -296,7 +296,7 @@ export const base = () => `
                         </a>
 
                         <button
-                            class="fake-menu-button__button icon-btn"
+                            class="fake-menu-button__button icon-button"
                             aria-expanded="false"
                             aria-haspopup="true"
                             aria-label="Actions"
@@ -310,7 +310,7 @@ export const base = () => `
                 </td>
                 <td class="table-cell table-cell--icon-action">
                     <button
-                        class="fake-menu-button__button icon-btn"
+                        class="fake-menu-button__button icon-button"
                         aria-expanded="false"
                         aria-haspopup="true"
                         aria-label="Actions"
@@ -346,8 +346,8 @@ export const base = () => `
                 </td>
                 <td class="table-cell">
                     <div class="table-cell__layout">
-                        <a class="cta-btn" href="https://www.ebay.com">
-                            <span class="cta-btn__cell">
+                        <a class="cta-button" href="https://www.ebay.com">
+                            <span class="cta-button__cell">
                                 <span>Edit Listing</span>
                                 <svg aria-hidden="true" class="icon icon--24" height="8" width="8">
                                 <use href="#icon-arrow-right-24" />
@@ -356,7 +356,7 @@ export const base = () => `
                         </a>
 
                         <button
-                            class="fake-menu-button__button icon-btn"
+                            class="fake-menu-button__button icon-button"
                             aria-expanded="false"
                             aria-haspopup="true"
                             aria-label="Actions"
@@ -370,7 +370,7 @@ export const base = () => `
                 </td>
                 <td class="table-cell table-cell--icon-action">
                     <button
-                        class="fake-menu-button__button icon-btn"
+                        class="fake-menu-button__button icon-button"
                         aria-expanded="false"
                         aria-haspopup="true"
                         aria-label="Actions"
@@ -500,8 +500,8 @@ export const compact = () => `
                 </td>
                 <td class="table-cell">
                     <div class="table-cell__layout">
-                        <a class="cta-btn" href="https://www.ebay.com">
-                            <span class="cta-btn__cell">
+                        <a class="cta-button" href="https://www.ebay.com">
+                            <span class="cta-button__cell">
                                 <span>Edit Listing</span>
                                 <svg aria-hidden="true" class="icon icon--24" height="8" width="8">
                                 <use href="#icon-arrow-right-24" />
@@ -510,7 +510,7 @@ export const compact = () => `
                         </a>
 
                         <button
-                            class="fake-menu-button__button icon-btn"
+                            class="fake-menu-button__button icon-button"
                             aria-expanded="false"
                             aria-haspopup="true"
                             aria-label="Actions"
@@ -524,7 +524,7 @@ export const compact = () => `
                 </td>
                 <td class="table-cell table-cell--icon-action">
                     <button
-                        class="fake-menu-button__button icon-btn"
+                        class="fake-menu-button__button icon-button"
                         aria-expanded="false"
                         aria-haspopup="true"
                         aria-label="Actions"
@@ -560,8 +560,8 @@ export const compact = () => `
                 </td>
                 <td class="table-cell">
                     <div class="table-cell__layout">
-                        <a class="cta-btn" href="https://www.ebay.com">
-                            <span class="cta-btn__cell">
+                        <a class="cta-button" href="https://www.ebay.com">
+                            <span class="cta-button__cell">
                                 <span>Edit Listing</span>
                                 <svg aria-hidden="true" class="icon icon--24" height="8" width="8">
                                 <use href="#icon-arrow-right-24" />
@@ -570,7 +570,7 @@ export const compact = () => `
                         </a>
 
                         <button
-                            class="fake-menu-button__button icon-btn"
+                            class="fake-menu-button__button icon-button"
                             aria-expanded="false"
                             aria-haspopup="true"
                             aria-label="Actions"
@@ -584,7 +584,7 @@ export const compact = () => `
                 </td>
                 <td class="table-cell table-cell--icon-action">
                     <button
-                        class="fake-menu-button__button icon-btn"
+                        class="fake-menu-button__button icon-button"
                         aria-expanded="false"
                         aria-haspopup="true"
                         aria-label="Actions"
@@ -620,8 +620,8 @@ export const compact = () => `
                 </td>
                 <td class="table-cell">
                     <div class="table-cell__layout">
-                        <a class="cta-btn" href="https://www.ebay.com">
-                            <span class="cta-btn__cell">
+                        <a class="cta-button" href="https://www.ebay.com">
+                            <span class="cta-button__cell">
                                 <span>Edit Listing</span>
                                 <svg aria-hidden="true" class="icon icon--24" height="8" width="8">
                                 <use href="#icon-arrow-right-24" />
@@ -630,7 +630,7 @@ export const compact = () => `
                         </a>
 
                         <button
-                            class="fake-menu-button__button icon-btn"
+                            class="fake-menu-button__button icon-button"
                             aria-expanded="false"
                             aria-haspopup="true"
                             aria-label="Actions"
@@ -644,7 +644,7 @@ export const compact = () => `
                 </td>
                 <td class="table-cell table-cell--icon-action">
                     <button
-                        class="fake-menu-button__button icon-btn"
+                        class="fake-menu-button__button icon-button"
                         aria-expanded="false"
                         aria-haspopup="true"
                         aria-label="Actions"
@@ -680,8 +680,8 @@ export const compact = () => `
                 </td>
                 <td class="table-cell">
                     <div class="table-cell__layout">
-                        <a class="cta-btn" href="https://www.ebay.com">
-                            <span class="cta-btn__cell">
+                        <a class="cta-button" href="https://www.ebay.com">
+                            <span class="cta-button__cell">
                                 <span>Edit Listing</span>
                                 <svg aria-hidden="true" class="icon icon--24" height="8" width="8">
                                 <use href="#icon-arrow-right-24" />
@@ -690,7 +690,7 @@ export const compact = () => `
                         </a>
 
                         <button
-                            class="fake-menu-button__button icon-btn"
+                            class="fake-menu-button__button icon-button"
                             aria-expanded="false"
                             aria-haspopup="true"
                             aria-label="Actions"
@@ -704,7 +704,7 @@ export const compact = () => `
                 </td>
                 <td class="table-cell table-cell--icon-action">
                     <button
-                        class="fake-menu-button__button icon-btn"
+                        class="fake-menu-button__button icon-button"
                         aria-expanded="false"
                         aria-haspopup="true"
                         aria-label="Actions"
@@ -740,8 +740,8 @@ export const compact = () => `
                 </td>
                 <td class="table-cell">
                     <div class="table-cell__layout">
-                        <a class="cta-btn" href="https://www.ebay.com">
-                            <span class="cta-btn__cell">
+                        <a class="cta-button" href="https://www.ebay.com">
+                            <span class="cta-button__cell">
                                 <span>Edit Listing</span>
                                 <svg aria-hidden="true" class="icon icon--24" height="8" width="8">
                                 <use href="#icon-arrow-right-24" />
@@ -750,7 +750,7 @@ export const compact = () => `
                         </a>
 
                         <button
-                            class="fake-menu-button__button icon-btn"
+                            class="fake-menu-button__button icon-button"
                             aria-expanded="false"
                             aria-haspopup="true"
                             aria-label="Actions"
@@ -764,7 +764,7 @@ export const compact = () => `
                 </td>
                 <td class="table-cell table-cell--icon-action">
                     <button
-                        class="fake-menu-button__button icon-btn"
+                        class="fake-menu-button__button icon-button"
                         aria-expanded="false"
                         aria-haspopup="true"
                         aria-label="Actions"
@@ -894,8 +894,8 @@ export const relaxed = () => `
                 </td>
                 <td class="table-cell">
                     <div class="table-cell__layout">
-                        <a class="cta-btn" href="https://www.ebay.com">
-                            <span class="cta-btn__cell">
+                        <a class="cta-button" href="https://www.ebay.com">
+                            <span class="cta-button__cell">
                                 <span>Edit Listing</span>
                                 <svg aria-hidden="true" class="icon icon--24" height="8" width="8">
                                 <use href="#icon-arrow-right-24" />
@@ -904,7 +904,7 @@ export const relaxed = () => `
                         </a>
 
                         <button
-                            class="fake-menu-button__button icon-btn"
+                            class="fake-menu-button__button icon-button"
                             aria-expanded="false"
                             aria-haspopup="true"
                             aria-label="Actions"
@@ -918,7 +918,7 @@ export const relaxed = () => `
                 </td>
                 <td class="table-cell table-cell--icon-action">
                     <button
-                        class="fake-menu-button__button icon-btn"
+                        class="fake-menu-button__button icon-button"
                         aria-expanded="false"
                         aria-haspopup="true"
                         aria-label="Actions"
@@ -954,8 +954,8 @@ export const relaxed = () => `
                 </td>
                 <td class="table-cell">
                     <div class="table-cell__layout">
-                        <a class="cta-btn" href="https://www.ebay.com">
-                            <span class="cta-btn__cell">
+                        <a class="cta-button" href="https://www.ebay.com">
+                            <span class="cta-button__cell">
                                 <span>Edit Listing</span>
                                 <svg aria-hidden="true" class="icon icon--24" height="8" width="8">
                                 <use href="#icon-arrow-right-24" />
@@ -964,7 +964,7 @@ export const relaxed = () => `
                         </a>
 
                         <button
-                            class="fake-menu-button__button icon-btn"
+                            class="fake-menu-button__button icon-button"
                             aria-expanded="false"
                             aria-haspopup="true"
                             aria-label="Actions"
@@ -978,7 +978,7 @@ export const relaxed = () => `
                 </td>
                 <td class="table-cell table-cell--icon-action">
                     <button
-                        class="fake-menu-button__button icon-btn"
+                        class="fake-menu-button__button icon-button"
                         aria-expanded="false"
                         aria-haspopup="true"
                         aria-label="Actions"
@@ -1014,8 +1014,8 @@ export const relaxed = () => `
                 </td>
                 <td class="table-cell">
                     <div class="table-cell__layout">
-                        <a class="cta-btn" href="https://www.ebay.com">
-                            <span class="cta-btn__cell">
+                        <a class="cta-button" href="https://www.ebay.com">
+                            <span class="cta-button__cell">
                                 <span>Edit Listing</span>
                                 <svg aria-hidden="true" class="icon icon--24" height="8" width="8">
                                 <use href="#icon-arrow-right-24" />
@@ -1024,7 +1024,7 @@ export const relaxed = () => `
                         </a>
 
                         <button
-                            class="fake-menu-button__button icon-btn"
+                            class="fake-menu-button__button icon-button"
                             aria-expanded="false"
                             aria-haspopup="true"
                             aria-label="Actions"
@@ -1038,7 +1038,7 @@ export const relaxed = () => `
                 </td>
                 <td class="table-cell table-cell--icon-action">
                     <button
-                        class="fake-menu-button__button icon-btn"
+                        class="fake-menu-button__button icon-button"
                         aria-expanded="false"
                         aria-haspopup="true"
                         aria-label="Actions"
@@ -1074,8 +1074,8 @@ export const relaxed = () => `
                 </td>
                 <td class="table-cell">
                     <div class="table-cell__layout">
-                        <a class="cta-btn" href="https://www.ebay.com">
-                            <span class="cta-btn__cell">
+                        <a class="cta-button" href="https://www.ebay.com">
+                            <span class="cta-button__cell">
                                 <span>Edit Listing</span>
                                 <svg aria-hidden="true" class="icon icon--24" height="8" width="8">
                                 <use href="#icon-arrow-right-24" />
@@ -1084,7 +1084,7 @@ export const relaxed = () => `
                         </a>
 
                         <button
-                            class="fake-menu-button__button icon-btn"
+                            class="fake-menu-button__button icon-button"
                             aria-expanded="false"
                             aria-haspopup="true"
                             aria-label="Actions"
@@ -1098,7 +1098,7 @@ export const relaxed = () => `
                 </td>
                 <td class="table-cell table-cell--icon-action">
                     <button
-                        class="fake-menu-button__button icon-btn"
+                        class="fake-menu-button__button icon-button"
                         aria-expanded="false"
                         aria-haspopup="true"
                         aria-label="Actions"
@@ -1134,8 +1134,8 @@ export const relaxed = () => `
                 </td>
                 <td class="table-cell">
                     <div class="table-cell__layout">
-                        <a class="cta-btn" href="https://www.ebay.com">
-                            <span class="cta-btn__cell">
+                        <a class="cta-button" href="https://www.ebay.com">
+                            <span class="cta-button__cell">
                                 <span>Edit Listing</span>
                                 <svg aria-hidden="true" class="icon icon--24" height="8" width="8">
                                 <use href="#icon-arrow-right-24" />
@@ -1144,7 +1144,7 @@ export const relaxed = () => `
                         </a>
 
                         <button
-                            class="fake-menu-button__button icon-btn"
+                            class="fake-menu-button__button icon-button"
                             aria-expanded="false"
                             aria-haspopup="true"
                             aria-label="Actions"
@@ -1158,7 +1158,7 @@ export const relaxed = () => `
                 </td>
                 <td class="table-cell table-cell--icon-action">
                     <button
-                        class="fake-menu-button__button icon-btn"
+                        class="fake-menu-button__button icon-button"
                         aria-expanded="false"
                         aria-haspopup="true"
                         aria-label="Actions"

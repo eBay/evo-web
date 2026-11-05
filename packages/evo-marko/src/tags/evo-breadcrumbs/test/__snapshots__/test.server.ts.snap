@@ -113,7 +113,7 @@ exports[`evo-breadcrumbs SSR > renders buttons when no hrefs 1`] = `
     </li>
     <li>
       <button
-        aria-current="location"
+        aria-current="page"
       >
         Smart Watch Bands
       </button>
@@ -241,7 +241,7 @@ exports[`evo-breadcrumbs SSR > renders default with links 1`] = `
     </li>
     <li>
       <button
-        aria-current="location"
+        aria-current="page"
       >
         Smart Watch Bands
       </button>

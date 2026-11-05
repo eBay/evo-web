@@ -1,6 +1,9 @@
 @use "../variables/variables";
 @use "../mixins/private/token-mixins";
 
+// DEPRECATED: the `.icon-btn*` selectors in this file are removed in the next
+// major version. Use `.icon-button*` instead.
+
 .education-notice {
     @include token-mixins.background-color-token(
         education-notice-default-background-color,
@@ -45,7 +48,8 @@
     margin-inline-start: var(--spacing-150);
 }
 
-.education-notice button.icon-btn {
+.education-notice button.icon-btn,
+.education-notice button.icon-button {
     background-color: transparent;
 }
 
@@ -64,7 +68,8 @@
     white-space: nowrap; /* force links with text having more than one word to remain on same line */
 }
 
-.education-notice__footer button.fake-link {
+.education-notice__footer button.fake-link,
+.education-notice__footer button.link-button {
     font-size: var(--font-size-body);
     font-weight: bold;
 }
@@ -79,7 +84,9 @@
 }
 
 .education-notice__header button.fake-link,
-.education-notice__header button.fake-link:hover {
+.education-notice__header button.fake-link:hover,
+.education-notice__header button.link-button,
+.education-notice__header button.link-button:hover {
     @include token-mixins.color-token(
         education-notice-foreground-color,
         color-foreground-primary

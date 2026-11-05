@@ -132,9 +132,7 @@ exports[`EbayMenuButton rendering > WithDisabledItem > should render correctly 1
           role="menuitemradio"
           tabindex="0"
         >
-          <span
-            aria-hidden="false"
-          >
+          <span>
             item 1 that has very long text
           </span>
           <svg
@@ -154,9 +152,7 @@ exports[`EbayMenuButton rendering > WithDisabledItem > should render correctly 1
           role="menuitemradio"
           tabindex="-1"
         >
-          <span
-            aria-hidden="false"
-          >
+          <span>
             item 2
           </span>
           <svg
@@ -176,9 +172,7 @@ exports[`EbayMenuButton rendering > WithDisabledItem > should render correctly 1
           role="menuitemradio"
           tabindex="-1"
         >
-          <span
-            aria-hidden="false"
-          >
+          <span>
             item 3
           </span>
           <svg
@@ -199,9 +193,7 @@ exports[`EbayMenuButton rendering > WithDisabledItem > should render correctly 1
           role="menuitemradio"
           tabindex="-1"
         >
-          <span
-            aria-hidden="false"
-          >
+          <span>
             item 4
           </span>
           <svg

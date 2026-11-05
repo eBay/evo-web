@@ -67,7 +67,12 @@ const EbayInfotip: FC<InfotipProps> = ({
         hostRef: buttonRef,
     });
 
-    const { overlayStyles, arrowStyles, refs } = useFloatingTooltip({
+    const {
+        overlayStyles,
+        arrowStyles,
+        pointer: resolvedPointer,
+        refs,
+    } = useFloatingTooltip({
         open: isExpanded,
         hostRef: buttonRef,
         options: {
@@ -124,7 +129,7 @@ const EbayInfotip: FC<InfotipProps> = ({
                         {...contentProps}
                         type="infotip"
                         style={{ ...overlayStyles, ...overlayStyle }}
-                        pointer={pointer}
+                        pointer={resolvedPointer}
                         showCloseButton
                         a11yCloseText={a11yCloseText}
                         onClose={collapseTooltip}
