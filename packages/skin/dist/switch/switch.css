@@ -78,13 +78,6 @@ span.switch__control[aria-disabled="true"] + span.switch__button {
 input.switch__control {
     opacity: 0;
 }
-input.switch__control:focus + span.switch__button {
-    outline: 1px auto
-        var(--switch-custom-outline-color, var(--color-foreground-secondary));
-}
-input.switch__control:focus:not(:focus-visible) + span.switch__button {
-    outline: none;
-}
 input.switch__control[disabled] + span.switch__button:after,
 span.switch__control[aria-disabled="true"] + span.switch__button:after {
     border-color: var(--switch-border-color, var(--color-background-disabled));
@@ -131,9 +124,9 @@ span.switch__control[aria-disabled="true"][aria-checked="true"]
 input.switch__control:not([disabled]):focus-visible + span.switch__button,
 span.switch__control:not([aria-disabled="true"]):focus-visible
     + span.switch__button {
-    box-shadow:
-        0 0 0 2px var(--color-background-primary),
-        0 0 0 4px var(--color-background-accent);
+    outline: auto;
+    outline-color: -webkit-focus-ring-color;
+    outline-offset: 4px;
 }
 input.switch__control:checked + span.switch__button:after,
 span.switch__control[aria-checked="true"] + span.switch__button:after {

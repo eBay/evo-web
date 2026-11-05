@@ -124,16 +124,3 @@
 @mixin fill-token($component-token, $product-token: "") {
     @include custom-property-token(fill, $component-token, $product-token);
 }
-
-@mixin outline-color-token($component-token, $product-token: "") {
-    @include custom-property-token(
-        outline-color,
-        $component-token,
-        $product-token
-    );
-}
-
-@mixin outline-token($width, $style, $component-token, $product-token: "") {
-    /* stylelint-disable-next-line custom-property-pattern */
-    outline: $width $style var(--#{$component-token}, var(--#{$product-token}));
-}

@@ -62,14 +62,8 @@ span.select {
     );
 }
 
-.select select:focus:not(:read-only) {
-    background-color: var(
-        --select-focus-background-color,
-        var(--color-background-primary)
-    );
-    border-color: var(--select-focus-border-color, var(--color-border-medium));
-    outline: 0;
-    text-decoration: underline;
+.select select:focus-visible {
+    outline-offset: var(--spacing-50);
 }
 .select select::-ms-expand {
     display: none;

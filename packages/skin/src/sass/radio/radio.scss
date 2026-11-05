@@ -26,7 +26,6 @@ $dimensions-radio-large: 24px;
 span.radio__icon {
     display: inline-flex;
     height: $dimensions-radio;
-    outline-offset: 1px;
 }
 
 .radio--large span.radio__icon {
@@ -104,17 +103,9 @@ input.radio__control[type="radio"][disabled] + span.radio__icon {
     }
 }
 
-/* https://developer.paciellogroup.com/blog/2018/03/focus-visible-and-backwards-compatibility/ */
-input.radio__control[type="radio"]:focus + span.radio__icon {
-    outline: 1px auto;
+input.radio__control[type="radio"]:focus-visible + span.radio__icon {
+    border-radius: 50%;
+    outline: auto;
+    outline-color: -webkit-focus-ring-color;
     outline-offset: 2px;
-    @include token-mixins.outline-color-token(
-        radio-outline,
-        color-foreground-secondary
-    );
-}
-
-input.radio__control[type="radio"]:focus:not(:focus-visible)
-    + span.radio__icon {
-    outline: none;
 }
