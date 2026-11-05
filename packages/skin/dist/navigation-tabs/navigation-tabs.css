@@ -52,9 +52,6 @@ li.navigation-tabs__item > a[aria-current] {
 li.navigation-tabs__item > a[aria-current]:after {
     background-color: currentColor;
 }
-li.navigation-tabs__item a:focus:not(:focus-visible) {
-    outline: none;
-}
 
 li.navigation-tabs__item > a:not([aria-current]):not([href]),
 li.navigation-tabs__item > a:not([aria-current]):not([href]):focus,
