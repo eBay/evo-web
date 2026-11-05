@@ -33,14 +33,7 @@ $button-border-radius-large: 24px;
     }
 
     &:focus-visible {
-        outline-offset: var(--spacing-25);
-        outline-style: solid;
-        outline-width: var(--spacing-25);
-    }
-
-    /* https://developer.paciellogroup.com/blog/2018/03/focus-visible-and-backwards-compatibility/ */
-    &:focus:not(:focus-visible) {
-        outline: none;
+        outline-offset: var(--spacing-50);
     }
 }
 

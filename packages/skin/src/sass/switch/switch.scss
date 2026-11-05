@@ -156,11 +156,6 @@ span.switch__control[aria-checked="true"] + span.switch__button::after {
     left: 15px;
 }
 
-/* https://developer.paciellogroup.com/blog/2018/03/focus-visible-and-backwards-compatibility/ */
-span.switch__control:focus:not(:focus-visible) {
-    outline: 0;
-}
-
 @media screen and (-ms-high-contrast: active) {
     input.switch__control {
         opacity: 1;

@@ -139,9 +139,6 @@ input.switch__control:checked + span.switch__button:after,
 span.switch__control[aria-checked="true"] + span.switch__button:after {
     left: 15px;
 }
-span.switch__control:focus:not(:focus-visible) {
-    outline: 0;
-}
 
 @media screen and (-ms-high-contrast: active) {
     input.switch__control {

@@ -68,9 +68,3 @@ a.filter-link--selected[aria-disabled="true"] {
 
     font-weight: normal;
 }
-
-/* https://developer.paciellogroup.com/blog/2018/03/focus-visible-and-backwards-compatibility/ */
-a.filter-link:focus:not(:focus-visible),
-button.filter-button:focus:not(:focus-visible) {
-    outline: none;
-}

@@ -27,12 +27,7 @@ a.button-link--truncated {
     height: 40px;
 }
 a.button-link:focus-visible {
-    outline-offset: var(--spacing-25);
-    outline-style: solid;
-    outline-width: var(--spacing-25);
-}
-a.button-link:focus:not(:focus-visible) {
-    outline: none;
+    outline-offset: var(--spacing-50);
 }
 
 a.button-link:not([href]),
@@ -166,10 +161,6 @@ a.button-link--primary[href]:focus-visible:after {
 a.button-link--primary:not([disabled], [aria-disabled="true"]):active:after,
 a.button-link--primary[href]:active:after {
     background-color: var(--color-state-layer-pressed);
-}
-
-a.button-link--primary {
-    outline-color: var(--color-foreground-primary);
 }
 
 a.button-link--primary:hover,

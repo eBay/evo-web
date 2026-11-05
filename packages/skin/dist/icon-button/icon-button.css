@@ -75,11 +75,6 @@ button.icon-button > svg {
     max-width: 75%;
     position: relative;
 }
-a.icon-link:not(:focus-visible),
-button.icon-btn:not(:focus-visible),
-button.icon-button:not(:focus-visible) {
-    outline: none;
-}
 a.icon-link:not(
         .icon-link--primary,
         .icon-link--secondary,
