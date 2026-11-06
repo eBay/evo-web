@@ -110,11 +110,13 @@ export interface Input extends Marko.HTML.Dialog {
     <div
       ...bannerInput
       class=["dialog__image", bannerClass]
-      style={
-        ...(bannerStyle as Record<string, unknown>),
-        "background-image": bannerSrc && `url(${bannerSrc})`,
-        "background-position": bannerPosition,
-      }
+      style=[
+        bannerStyle,
+        {
+          "background-image": bannerSrc && `url(${bannerSrc})`,
+          "background-position": bannerPosition,
+        },
+      ]
     />
   </if>
   <div class="dialog__header">

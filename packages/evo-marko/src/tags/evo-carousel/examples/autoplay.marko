@@ -1,0 +1,23 @@
+<style>
+  .demo-carousel-banner {
+    align-items: center;
+    background-color: var(--color-background-secondary);
+    border-radius: var(--border-radius-50);
+    display: flex;
+    font-size: 24px;
+    height: 240px;
+    justify-content: center;
+  }
+</style>
+
+<let/paused=false>
+
+<p>The carousel is ${paused ? "paused" : "playing"}.</p>
+
+<evo-carousel a11yText="Featured deals" autoplay ...input paused:=paused>
+  <for|i| from=1 to=4>
+    <@item>
+      <div class="demo-carousel-banner">Slide ${i}</div>
+    </@item>
+  </for>
+</evo-carousel>

@@ -342,3 +342,46 @@ export const hiddenScrollbarWithPaddlesVisible = () => `
     </div>
 </div>
 `;
+
+export const customPropertySlides = () => `
+<style>
+    .carousel__list--custom-property-demo li {
+        background-color: grey;
+        font-size: 24px;
+        font-weight: bold;
+        height: 120px;
+        line-height: 120px;
+        text-align: center;
+    }
+</style>
+<div class="carousel carousel--slides carousel--peek" style="--carousel-items-in-view: 3.1">
+    <div class="carousel__container">
+        <button class="carousel__control carousel__control--prev" aria-label="Previous Slide - Top Products" aria-disabled="true">
+            <svg aria-hidden="true" class="icon icon--16">
+                <use href="#icon-chevron-left-16"></use>
+            </svg>
+        </button>
+        <div class="carousel__viewport">
+            <ul class="carousel__list carousel__list--snap carousel__list--slides carousel__list--custom-property-demo">
+                <li>Card 1</li>
+                <li>Card 2</li>
+                <li>Card 3</li>
+                <li>Card 4</li>
+                <li>Card 5</li>
+                <li>Card 6</li>
+                <li>Card 7</li>
+                <li>Card 8</li>
+            </ul>
+        </div>
+        <button class="carousel__control carousel__control--next" aria-label="Next Slide - Top Products">
+            <svg aria-hidden="true" class="icon icon--16">
+                <use href="#icon-chevron-right-16"></use>
+            </svg>
+        </button>
+    </div>
+</div>
+`;
+
+export const customPropertySlidesRTL = () => `
+<div dir="rtl">${customPropertySlides()}</div>
+`;

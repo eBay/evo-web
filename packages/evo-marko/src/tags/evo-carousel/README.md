@@ -1,0 +1,26 @@
+<h1 style='display: flex; justify-content: space-between; align-items: center;'>
+    <span>
+        evo-carousel
+    </span>
+    <span style='font-weight: normal; font-size: medium; margin-bottom: -15px;'>
+        DS v1.1.0
+    </span>
+</h1>
+
+A horizontally scrolling list of items with previous and next controls. Continuous by default, where each item sizes itself; discrete with `itemsPerSlide`, where a set number fill the view; and a rotator with `autoplay`, which advances on a timer and goes round from the last slide to the first.
+
+## Examples and Documentation
+
+- [Storybook](https://ebay.github.io/evo-web/ebayui-core/?path=/story/navigation-disclosure-evo-carousel)
+- [Storybook Docs](https://ebay.github.io/evo-web/ebayui-core/?path=/docs/navigation-disclosure-evo-carousel)
+- [Code Examples](https://github.com/eBay/evo-web/tree/main/packages/evo-marko/src/tags/evo-carousel/examples)
+
+## Items out of view
+
+Items not wholly in view, peeks included, are hidden from assistive technology with `aria-hidden`, and whatever is focusable inside them gets `tabindex="-1"` until they scroll into view. They can still be clicked, and focus stays where it is when its item scrolls out of view.
+
+An item's own `tabindex` comes back when it scrolls into view. As in `ebay-carousel`, `data-carousel-tabindex="-1"` on a focusable element keeps it out of the tab order even when in view.
+
+## Reduced motion
+
+Presses jump rather than scroll, and autoplay starts paused, for users who prefer reduced motion.

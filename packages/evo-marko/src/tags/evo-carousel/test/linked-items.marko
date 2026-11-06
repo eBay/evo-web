@@ -1,0 +1,23 @@
+import type { Input as CarouselInput } from "<evo-carousel>";
+
+export type Input = Partial<CarouselInput>;
+
+<style>
+  .carousel-test-card {
+    display: flex;
+    flex-direction: column;
+    height: 120px;
+    width: 200px;
+  }
+</style>
+
+<evo-carousel a11yText="Linked products" ...input>
+  <for|i| from=0 to=9>
+    <@item>
+      <div class="carousel-test-card">
+        <a href="#" data-carousel-tabindex="-1">Image ${i}</a>
+        <a href="#">Card ${i}</a><a href="#" tabindex="-1">Seller ${i}</a>
+      </div>
+    </@item>
+  </for>
+</evo-carousel>
