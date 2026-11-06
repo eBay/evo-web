@@ -128,6 +128,43 @@ describe("evo-star-rating-select", () => {
     );
   });
 
+  it("returns an uncontrolled rating to its default when the form is reset, unless the reset is canceled", async () => {
+    let cancelReset = true;
+    const screen = await render(
+      <form
+        aria-label="Purchase review"
+        onReset={(event) => cancelReset && event.preventDefault()}
+      >
+        <EvoStarRatingSelect
+          a11yText="Rate your purchase"
+          a11yStarText={STAR_TEXT}
+          defaultValue={2}
+          name="rating"
+        />
+        <button type="reset">Reset</button>
+      </form>,
+    );
+    const twoStars = screen.getByRole("radio", { name: "2 stars" });
+    const threeStars = screen.getByRole("radio", { name: "3 stars" });
+    const fourStars = screen.getByRole("radio", { name: "4 stars" });
+    const reset = screen.getByRole("button", { name: "Reset" });
+
+    await user.click(fourStars);
+    await user.click(reset);
+    await new Promise((resolve) => setTimeout(resolve, 50));
+    await expect.element(fourStars).toBeChecked();
+    await expect
+      .element(threeStars)
+      .toHaveClass("star-rating-select__control--filled");
+
+    cancelReset = false;
+    await user.click(reset);
+    await expect.element(twoStars).toBeChecked();
+    await expect
+      .element(threeStars)
+      .not.toHaveClass("star-rating-select__control--filled");
+  });
+
   it("disables all choices without changing selection", async () => {
     const onValueChange = vi.fn();
     const screen = await render(

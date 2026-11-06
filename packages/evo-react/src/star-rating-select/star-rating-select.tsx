@@ -52,6 +52,22 @@ export function EvoStarRatingSelect({
   const isControlled = value !== undefined;
   const selectedValue = isControlled ? value : uncontrolledValue;
 
+  const watchFormReset = (radio: HTMLInputElement | null) => {
+    const form = radio?.form;
+    if (isControlled || !form) return;
+
+    const handleReset = (event: Event) => {
+      setTimeout(() => {
+        if (!event.defaultPrevented) {
+          setUncontrolledValue(defaultValue);
+        }
+      });
+    };
+
+    form.addEventListener("reset", handleReset);
+    return () => form.removeEventListener("reset", handleReset);
+  };
+
   return (
     <div
       {...rest}
@@ -62,6 +78,7 @@ export function EvoStarRatingSelect({
       {STAR_VALUES.map((starValue) => (
         <span className="star-rating-select__radio" key={starValue}>
           <input
+            ref={starValue === 1 ? watchFormReset : undefined}
             aria-label={a11yStarText[starValue - 1]}
             className={classNames("star-rating-select__control", {
               "star-rating-select__control--filled": starValue <= selectedValue,

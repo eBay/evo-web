@@ -1,0 +1,18 @@
+<let/rating=3>
+
+<p>Selected: ${rating || "none"}</p>
+
+<evo-star-rating-select
+  a11yText="Rate your purchase"
+  a11yStarText=["1 star", "2 stars", "3 stars", "4 stars", "5 stars"]
+  ...input
+  value:=rating
+/>
+
+<p>
+  <evo-button onClick() {
+    rating = 0;
+  }>
+    Clear
+  </evo-button>
+</p>

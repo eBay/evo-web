@@ -1,17 +1,15 @@
 <div id="star-rating-select">
   <section-header/>
   <p>
-    <strong>NOTE:</strong>
-    JavaScript is required to handle the filled visual marking of all
-    stars previous to the currently selected star rating.
+    <strong>NOTE:</strong> The filled visual marking of all stars previous to
+    the currently selected star rating follows the checked radio. Browsers
+    without <code>:has()</code> support still require JavaScript to set the
+    <code>star-rating-select__control--filled</code> modifier on those stars.
   </p>
   <h3>Star Rating Select with Visual Semantic Grouping</h3>
   <p>
-    This instance of star rating select uses visible HTML
-    <code>fieldset</code>
-    and
-    <code>legend</code>
-    for semantic grouping.
+    This instance of star rating select uses visible HTML <code>fieldset</code>
+    and <code>legend</code> for semantic grouping.
   </p>
 
   <div class="demo">
@@ -19,7 +17,8 @@
       <div
         role="radiogroup"
         aria-label="Rate this product"
-        class="star-rating-select">
+        class="star-rating-select"
+      >
         <fieldset>
           <legend>Rate this product</legend>
           <span class="star-rating-select__radio">
@@ -28,63 +27,64 @@
               aria-label="1 Star"
               type="radio"
               name="star-rating-select-fieldset"
-              value="1">
+              value="1"
+            >
             <span class="star-rating-select__radio-icon">
               <svg height="16" width="16" aria-hidden="true">
                 <icon-symbol name="star-dynamic"/>
               </svg>
             </span>
           </span>
-
           <span class="star-rating-select__radio">
             <input
               class="star-rating-select__control"
               aria-label="2 Stars"
               type="radio"
               name="star-rating-select-fieldset"
-              value="2">
+              value="2"
+            >
             <span class="star-rating-select__radio-icon">
               <svg height="16" width="16" aria-hidden="true">
                 <icon-symbol name="star-dynamic"/>
               </svg>
             </span>
           </span>
-
           <span class="star-rating-select__radio">
             <input
               class="star-rating-select__control"
               aria-label="3 Stars"
               type="radio"
               name="star-rating-select-fieldset"
-              value="3">
+              value="3"
+            >
             <span class="star-rating-select__radio-icon">
               <svg height="16" width="16" aria-hidden="true">
                 <icon-symbol name="star-dynamic"/>
               </svg>
             </span>
           </span>
-
           <span class="star-rating-select__radio">
             <input
               class="star-rating-select__control"
               aria-label="4 Stars"
               type="radio"
               name="star-rating-select-fieldset"
-              value="4">
+              value="4"
+            >
             <span class="star-rating-select__radio-icon">
               <svg height="16" width="16" aria-hidden="true">
                 <icon-symbol name="star-dynamic"/>
               </svg>
             </span>
           </span>
-
           <span class="star-rating-select__radio">
             <input
               class="star-rating-select__control"
               aria-label="5 Stars"
               type="radio"
               name="star-rating-select-fieldset"
-              value="5">
+              value="5"
+            >
             <span class="star-rating-select__radio-icon">
               <svg height="16" width="16" aria-hidden="true">
                 <icon-symbol name="star-dynamic"/>
@@ -100,7 +100,8 @@
     <div
       role="radiogroup"
       aria-label="Rate this product"
-      class="star-rating-select">
+      class="star-rating-select"
+    >
       <fieldset>
         <legend>Rate this product</legend>
         <span class="star-rating-select__radio">
@@ -108,59 +109,60 @@
             class="star-rating-select__control"
             aria-label="1 Star"
             type="radio"
-            value="1">
+            value="1"
+          >
           <span class="star-rating-select__radio-icon">
             <svg height="16" width="16" aria-hidden="true">
               <use href="#icon-star-dynamic"/>
             </svg>
           </span>
         </span>
-
         <span class="star-rating-select__radio">
           <input
             class="star-rating-select__control"
             aria-label="2 Stars"
             type="radio"
-            value="2">
+            value="2"
+          >
           <span class="star-rating-select__radio-icon">
             <svg height="16" width="16" aria-hidden="true">
               <use href="#icon-star-dynamic"/>
             </svg>
           </span>
         </span>
-
         <span class="star-rating-select__radio">
           <input
             class="star-rating-select__control"
             aria-label="3 Stars"
             type="radio"
-            value="3">
+            value="3"
+          >
           <span class="star-rating-select__radio-icon">
             <svg height="16" width="16" aria-hidden="true">
               <use href="#icon-star-dynamic"/>
             </svg>
           </span>
         </span>
-
         <span class="star-rating-select__radio">
           <input
             class="star-rating-select__control"
             aria-label="4 Stars"
             type="radio"
-            value="4">
+            value="4"
+          >
           <span class="star-rating-select__radio-icon">
             <svg height="16" width="16" aria-hidden="true">
               <use href="#icon-star-dynamic"/>
             </svg>
           </span>
         </span>
-
         <span class="star-rating-select__radio">
           <input
             class="star-rating-select__control"
             aria-label="5 Stars"
             type="radio"
-            value="5">
+            value="5"
+          >
           <span class="star-rating-select__radio-icon">
             <svg height="16" width="16" aria-hidden="true">
               <use href="#icon-star-dynamic"/>
@@ -181,70 +183,72 @@
       <div
         role="radiogroup"
         aria-label="Rate this product"
-        class="star-rating-select">
+        class="star-rating-select"
+      >
         <span class="star-rating-select__radio">
           <input
             class="star-rating-select__control"
             aria-label="1 Star"
             type="radio"
             name="star-rating-select-aria"
-            value="1">
+            value="1"
+          >
           <span class="star-rating-select__radio-icon">
             <svg height="16" width="16" aria-hidden="true">
               <icon-symbol name="star-dynamic"/>
             </svg>
           </span>
         </span>
-
         <span class="star-rating-select__radio">
           <input
             class="star-rating-select__control"
             aria-label="2 Stars"
             type="radio"
             name="star-rating-select-aria"
-            value="2">
+            value="2"
+          >
           <span class="star-rating-select__radio-icon">
             <svg height="16" width="16" aria-hidden="true">
               <icon-symbol name="star-dynamic"/>
             </svg>
           </span>
         </span>
-
         <span class="star-rating-select__radio">
           <input
             class="star-rating-select__control"
             aria-label="3 Stars"
             type="radio"
             name="star-rating-select-aria"
-            value="3">
+            value="3"
+          >
           <span class="star-rating-select__radio-icon">
             <svg height="16" width="16" aria-hidden="true">
               <icon-symbol name="star-dynamic"/>
             </svg>
           </span>
         </span>
-
         <span class="star-rating-select__radio">
           <input
             class="star-rating-select__control"
             aria-label="4 Stars"
             type="radio"
             name="star-rating-select-aria"
-            value="4">
+            value="4"
+          >
           <span class="star-rating-select__radio-icon">
             <svg height="16" width="16" aria-hidden="true">
               <icon-symbol name="star-dynamic"/>
             </svg>
           </span>
         </span>
-
         <span class="star-rating-select__radio">
           <input
             class="star-rating-select__control"
             aria-label="5 Stars"
             type="radio"
             name="star-rating-select-aria"
-            value="5">
+            value="5"
+          >
           <span class="star-rating-select__radio-icon">
             <svg height="16" width="16" aria-hidden="true">
               <icon-symbol name="star-dynamic"/>
@@ -259,65 +263,67 @@
     <div
       role="radiogroup"
       aria-label="Rate this product"
-      class="star-rating-select">
+      class="star-rating-select"
+    >
       <span class="star-rating-select__radio">
         <input
           class="star-rating-select__control"
           aria-label="1 Star"
           type="radio"
-          value="1">
+          value="1"
+        >
         <span class="star-rating-select__radio-icon">
           <svg height="16" width="16" aria-hidden="true">
             <use href="#icon-star-dynamic"/>
           </svg>
         </span>
       </span>
-
       <span class="star-rating-select__radio">
         <input
           class="star-rating-select__control"
           aria-label="2 Stars"
           type="radio"
-          value="2">
+          value="2"
+        >
         <span class="star-rating-select__radio-icon">
           <svg height="16" width="16" aria-hidden="true">
             <use href="#icon-star-dynamic"/>
           </svg>
         </span>
       </span>
-
       <span class="star-rating-select__radio">
         <input
           class="star-rating-select__control"
           aria-label="3 Stars"
           type="radio"
-          value="3">
+          value="3"
+        >
         <span class="star-rating-select__radio-icon">
           <svg height="16" width="16" aria-hidden="true">
             <use href="#icon-star-dynamic"/>
           </svg>
         </span>
       </span>
-
       <span class="star-rating-select__radio">
         <input
           class="star-rating-select__control"
           aria-label="4 Stars"
           type="radio"
-          value="4">
+          value="4"
+        >
         <span class="star-rating-select__radio-icon">
           <svg height="16" width="16" aria-hidden="true">
             <use href="#icon-star-dynamic"/>
           </svg>
         </span>
       </span>
-
       <span class="star-rating-select__radio">
         <input
           class="star-rating-select__control"
           aria-label="5 Stars"
           type="radio"
-          value="5">
+          value="5"
+        >
         <span class="star-rating-select__radio-icon">
           <svg height="16" width="16" aria-hidden="true">
             <use href="#icon-star-dynamic"/>
