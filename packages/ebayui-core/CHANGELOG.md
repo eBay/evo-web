@@ -1,5 +1,18 @@
 # eBayUI-Core Changelog
 
+## 16.19.3
+
+### Patch Changes
+
+- [#1086](https://github.com/eBay/evo-web/pull/1086) [`d6743e9`](https://github.com/eBay/evo-web/commit/d6743e91cfd55d330ad00b1c5805ebcc2ae417f5) Thanks [@saiponnada](https://github.com/saiponnada)! - Align embedded badge accessibility across Marko and React, including decorative icon-button badges and labelled menu badges.
+
+- [#1102](https://github.com/eBay/evo-web/pull/1102) [`5af1b77`](https://github.com/eBay/evo-web/commit/5af1b7785836d70c4bf47c3f77c243d35060282d) Thanks [@saiponnada](https://github.com/saiponnada)! - fix(breadcrumbs): use `aria-current="page"` for the current breadcrumb
+  
+  The last breadcrumb now exposes `aria-current="page"` instead of
+  `aria-current="location"`.
+
+- [#1096](https://github.com/eBay/evo-web/pull/1096) [`5de4bae`](https://github.com/eBay/evo-web/commit/5de4baefa243cf40ebf4c3089a7186c0ab9faa5e) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - fix(carousel): avoid forced reflows by measuring with ResizeObserver
+
 ## 16.19.2
 
 ### Patch Changes

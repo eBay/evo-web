@@ -1,5 +1,20 @@
 # @evo-web/react
 
+## 0.4.12
+
+### Patch Changes
+
+- [#1086](https://github.com/eBay/evo-web/pull/1086) [`d6743e9`](https://github.com/eBay/evo-web/commit/d6743e91cfd55d330ad00b1c5805ebcc2ae417f5) Thanks [@saiponnada](https://github.com/saiponnada)! - Align embedded badge accessibility across Marko and React, including decorative icon-button badges and labelled menu badges.
+
+- [#1102](https://github.com/eBay/evo-web/pull/1102) [`5af1b77`](https://github.com/eBay/evo-web/commit/5af1b7785836d70c4bf47c3f77c243d35060282d) Thanks [@saiponnada](https://github.com/saiponnada)! - fix(breadcrumbs): use `aria-current="page"` for the current breadcrumb
+  
+  The last breadcrumb now exposes `aria-current="page"` instead of
+  `aria-current="location"`.
+
+- [#1094](https://github.com/eBay/evo-web/pull/1094) [`f8470ef`](https://github.com/eBay/evo-web/commit/f8470efcc0cd2fb63d0d48a6e93341102910d7da) Thanks [@vinaycookscode](https://github.com/vinaycookscode)! - fix(infotip): remove `role="tooltip"` and `aria-labelledby` from the infotip overlay
+
+- [#1011](https://github.com/eBay/evo-web/pull/1011) [`0ea1f00`](https://github.com/eBay/evo-web/commit/0ea1f00c82513a1222f2d021b5444309d03a9bc9) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoMenuButton component.
+
 ## 0.4.11
 
 ### Patch Changes

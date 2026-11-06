@@ -1,5 +1,20 @@
 # Skin Changelog
 
+## 19.39.1
+
+### Patch Changes
+
+- [#1102](https://github.com/eBay/evo-web/pull/1102) [`5af1b77`](https://github.com/eBay/evo-web/commit/5af1b7785836d70c4bf47c3f77c243d35060282d) Thanks [@saiponnada](https://github.com/saiponnada)! - fix(breadcrumbs): use `aria-current="page"` for the current breadcrumb
+  
+  The last breadcrumb now exposes `aria-current="page"` instead of
+  `aria-current="location"`.
+
+- [#1052](https://github.com/eBay/evo-web/pull/1052) [`849e903`](https://github.com/eBay/evo-web/commit/849e903e97fddda70ad3f42c22f4ff2c2d591616) Thanks [@LuLaValva](https://github.com/LuLaValva)! - fix(skin): remove redundant focus outline overrides so buttons, chip close, toggle button and filter-menu header use the native focus ring
+
+- [#1092](https://github.com/eBay/evo-web/pull/1092) [`3f4a6f9`](https://github.com/eBay/evo-web/commit/3f4a6f9fdbcd52a90a09f6db4b48ad3c69920dbc) Thanks [@ArtBlue](https://github.com/ArtBlue)! - fix(infotip): use the inverse background and foreground colors and `--spacing-200` padding to match the Playbook tourtip spec. If you override `--infotip-background-color`, also set `--infotip-foreground-color`, since the default text color is now light.
+
+- [#1053](https://github.com/eBay/evo-web/pull/1053) [`ca6f5bc`](https://github.com/eBay/evo-web/commit/ca6f5bcdbbc9d28c8d047a3db1344fe8cae79587) Thanks [@LuLaValva](https://github.com/LuLaValva)! - fix(skin): use native focus rings for checkbox, radio, star rating select and switch. Removes the `--checkbox-outline`, `--radio-outline` and `--switch-custom-outline-color` tokens, and the switch's accent box-shadow focus ring
+
 ## 19.39.0
 
 ### Minor Changes
