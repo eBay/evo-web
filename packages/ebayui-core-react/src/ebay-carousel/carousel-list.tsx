@@ -1,6 +1,6 @@
 import React, { FC, ReactNode, Children, useEffect, useRef, RefObject, useCallback, useState } from "react";
 import classNames from "classnames";
-import { isNativeScrolling, alterChildren, getClosestIndex } from "./helpers";
+import { alterChildren, getClosestIndex } from "./helpers";
 import { scrollTransition } from "./scroll-to-transition";
 import { ListItemRef } from "./types";
 
@@ -13,7 +13,11 @@ type CarouselListProps = {
     nextControlDisabled?: boolean;
     isAutoplayEnabled?: boolean;
     className?: string;
-    itemsRef?: RefObject<Array<ListItemRef | null>>;
+    listRef: RefObject<HTMLUListElement | null>;
+    items: ListItemRef[];
+    itemsRef: RefObject<ListItemRef[]>;
+    scrollLeftRef: RefObject<number>;
+    nativeScrolling: boolean;
     children: ReactNode;
     onSetActiveIndex: (index: number) => void;
     onScroll?: ({ index }) => void;
@@ -28,7 +32,11 @@ const CarouselList: FC<CarouselListProps> = ({
     nextControlDisabled,
     isAutoplayEnabled,
     className,
+    listRef,
+    items,
     itemsRef,
+    scrollLeftRef,
+    nativeScrolling,
     children,
     onSetActiveIndex,
     onScroll,
@@ -36,7 +44,6 @@ const CarouselList: FC<CarouselListProps> = ({
     const [translateLeft, setTranslateLeft] = useState(0);
     const [skipScrolling, setSkipScrolling] = useState(false);
     const [scrollTransitioning, setScrollTransitioning] = useState(false);
-    const listRef = useRef<HTMLUListElement | null>(null);
     const scrollTimeout = useRef(null);
 
     useEffect(() => {
@@ -50,19 +57,23 @@ const CarouselList: FC<CarouselListProps> = ({
             return;
         }
 
-        const list = listRef.current;
-        const isNativeScroll = isNativeScrolling(list);
+        if (nativeScrolling) {
+            if (offset === scrollLeftRef.current) {
+                setScrollTransitioning(false);
+                return;
+            }
 
-        if (isNativeScroll) {
+            scrollLeftRef.current = offset;
             setScrollTransitioning(true);
-            return scrollTransition(list, offset, () => setScrollTransitioning(false));
+            return scrollTransition(listRef.current, offset, () => setScrollTransitioning(false));
         } else {
             setTranslateLeft(offset);
         }
-    }, [offset]);
+    }, [offset, slideWidth]);
 
     const handleFinishScrolling = useCallback(() => {
         const scrollLeft = listRef.current.scrollLeft;
+        scrollLeftRef.current = scrollLeft;
         const closest = getClosestIndex(scrollLeft, itemsRef.current, slideWidth, itemsPerSlide, gap);
         if (closest !== activeIndex) {
             setSkipScrolling(true);
@@ -98,7 +109,7 @@ const CarouselList: FC<CarouselListProps> = ({
                 onScroll={handleScroll}
                 style={{ transform: `translate3d(${-translateLeft}px, 0, 0)` }}
             >
-                {alterChildren(children, itemsRef, itemsPerSlide, slideWidth, offset, gap)}
+                {alterChildren(children, items, itemsPerSlide, gap)}
             </ul>
         </div>
     );

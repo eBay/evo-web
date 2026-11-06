@@ -297,6 +297,70 @@ describe("given a continuous carousel", () => {
             });
         });
     });
+
+    describe("with 6 items in a container narrower than one item", () => {
+        const input = mock.continuous6Items;
+        let firstItem;
+        let secondItem;
+
+        beforeEach(async () => {
+            component = await render(template, input);
+            component.container.style.width = "150px";
+            firstItem = component.getByText(input.item[0].renderBody.text);
+            secondItem = component.getByText(input.item[1].renderBody.text);
+            // Let font loading settle so only the resize can trigger a re-measure.
+            await document.fonts.ready;
+            await new Promise((resolve) => setTimeout(resolve, 100));
+            await waitFor(() =>
+                expect(firstItem).toHaveAttribute("aria-hidden", "true"),
+            );
+        });
+
+        describe("when the container becomes wide enough for one item", () => {
+            beforeEach(() => {
+                component.container.style.width = "300px";
+            });
+
+            it("then it shows the first item but not the second", async () => {
+                await waitFor(() =>
+                    expect(firstItem).not.toHaveAttribute("aria-hidden"),
+                );
+                expect(secondItem).toHaveAttribute("aria-hidden", "true");
+            });
+        });
+    });
+
+    describe("with 6 items in a container that fits two items", () => {
+        const input = mock.continuous6Items;
+        let secondItem;
+
+        beforeEach(async () => {
+            component = await render(template, input);
+            component.container.style.width = "500px";
+            secondItem = component.getByText(input.item[1].renderBody.text);
+            await document.fonts.ready;
+            await new Promise((resolve) => setTimeout(resolve, 100));
+            await waitFor(() =>
+                expect(secondItem).not.toHaveAttribute("aria-hidden"),
+            );
+        });
+
+        describe("when the items get horizontal padding", () => {
+            beforeEach(() => {
+                for (const item of component.getAllByRole("listitem", {
+                    hidden: true,
+                })) {
+                    item.style.padding = "0 30px";
+                }
+            });
+
+            it("then the second item no longer fits", async () => {
+                await waitFor(() =>
+                    expect(secondItem).toHaveAttribute("aria-hidden", "true"),
+                );
+            });
+        });
+    });
 });
 
 describe("given a discrete carousel", () => {
@@ -383,6 +447,25 @@ describe("given a discrete carousel", () => {
                     input.item[0].renderBody.text,
                 );
                 assertAtStartOfSlide(firstItem);
+            });
+        });
+
+        describe("when it is rerendered with autoplay and next is clicked", () => {
+            beforeEach(async () => {
+                await component.rerender(
+                    Object.assign({}, input, { autoplay: 400, paused: true }),
+                );
+                // Dropping the peek resizes the items, let that settle before moving.
+                await new Promise((resolve) => setTimeout(resolve, 100));
+                fireEvent.click(component.getByLabelText(input.a11yNextText));
+                await waitForCarouselUpdate();
+            });
+
+            it("then it moved to the second item", () => {
+                const secondItem = component.getByText(
+                    input.item[1].renderBody.text,
+                );
+                assertAtStartOfSlide(secondItem);
             });
         });
 

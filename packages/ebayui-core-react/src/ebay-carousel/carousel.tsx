@@ -1,10 +1,10 @@
 import React, { Children, ComponentProps, FC, SyntheticEvent, useEffect, useRef, useState } from "react";
 import classNames from "classnames";
+import focusables from "makeup-focusables";
 import CarouselControlButton from "./carousel-control-button";
 import CarouselList from "./carousel-list";
 import { ListItemRef } from "./types";
 import { animateCarouselLoop, getMaxOffset, getNextIndex, getOffset, getSlide } from "./helpers";
-import { debounce } from "../common/debounce";
 import { EbayIconPause24 } from "../ebay-icon/icons/ebay-icon-pause-24";
 import { EbayIconPlay24 } from "../ebay-icon/icons/ebay-icon-play-24";
 import reactDom from "react-dom";
@@ -12,6 +12,21 @@ import { useReducedMotion } from "../utils";
 
 // Make sure to support React 16
 const flushSync = reactDom.flushSync || ((callback) => callback());
+
+type CarouselLayout = {
+    slideWidth: number;
+    items: Omit<ListItemRef, "fullyVisible">[];
+};
+
+const initialLayout: CarouselLayout = { slideWidth: 0, items: [] };
+
+const isSameLayout = (a: CarouselLayout, b: CarouselLayout): boolean =>
+    a.slideWidth === b.slideWidth &&
+    a.items.length === b.items.length &&
+    a.items.every(
+        (item, i) =>
+            item.element === b.items[i].element && item.left === b.items[i].left && item.right === b.items[i].right,
+    );
 
 export type CarouselProps = ComponentProps<"div"> & {
     className?: string;
@@ -52,33 +67,123 @@ const EbayCarousel: FC<CarouselProps> = ({
     ...rest
 }) => {
     const [activeIndex, setActiveIndex] = useState(index);
-    const [slideWidth, setSlideWidth] = useState(0);
+    const [layout, setLayout] = useState(initialLayout);
+    const { slideWidth } = layout;
     const [offset, setOffset] = useState(0);
     const [isUserInteracting, setIsUserInteracting] = useState(false);
     const containerRef = useRef<HTMLDivElement | null>(null);
-    const itemsRef = useRef<Array<ListItemRef | null>>([]);
+    const listRef = useRef<HTMLUListElement | null>(null);
+    const scrollLeftRef = useRef(0);
+    const observerRef = useRef<ResizeObserver | null>(null);
+    const observedWidthsRef = useRef(new Map<Element, number>());
+    const loopingRef = useRef(false);
+    const measureDeferredRef = useRef(false);
+    const items: ListItemRef[] = layout.items.map(({ element, left, right }) => ({
+        element,
+        left,
+        right,
+        fullyVisible: left - offset >= -0.01 && right - offset <= slideWidth + 0.01,
+    }));
+    const itemsRef = useRef(items);
+    itemsRef.current = items;
     const itemCount = Children.count(children);
     const itemsPerSlide = Math.floor(_itemsPerSlide) || undefined;
     const isSingleSlide = itemCount <= itemsPerSlide;
     const isAutoplayEnabled = Boolean(autoplay);
     const prevControlDisabled = isSingleSlide || (offset === 0 && !isAutoplayEnabled);
-    const nextControlDisabled =
-        isSingleSlide || (offset === getMaxOffset(itemsRef.current, slideWidth) && !isAutoplayEnabled);
+    const nextControlDisabled = isSingleSlide || (offset === getMaxOffset(items, slideWidth) && !isAutoplayEnabled);
 
-    const handleResize = () => {
-        if (!containerRef.current) return;
+    const measure = () => {
+        const container = containerRef.current;
+        const list = listRef.current;
+        if (!container || !list) return;
 
-        const { width: containerWidth } = containerRef.current.getBoundingClientRect();
-        setSlideWidth(containerWidth);
+        const elements = Array.from(list.children) as HTMLLIElement[];
+        const rects = elements.map((element) => element.getBoundingClientRect());
+        const firstLeft = rects.length ? rects[0].left : 0;
+        const next: CarouselLayout = {
+            slideWidth: container.getBoundingClientRect().width,
+            items: elements.map((element, i) => ({
+                element,
+                left: rects[i].left - firstLeft,
+                right: rects[i].right - firstLeft,
+            })),
+        };
+
+        scrollLeftRef.current = list.scrollLeft;
+        setLayout((prev) => (isSameLayout(prev, next) ? prev : next));
+    };
+
+    const requestMeasure = () => {
+        const observer = observerRef.current;
+        if (!observer || !containerRef.current || !listRef.current) return;
+
+        // Re-observing makes the observer report every element again, so measure() runs after the next layout.
+        observedWidthsRef.current.clear();
+        observer.disconnect();
+        for (const element of [containerRef.current, ...Array.from(listRef.current.children)]) {
+            observer.observe(element, { box: "border-box" });
+        }
     };
 
     useEffect(() => {
-        window.addEventListener("resize", debounce(handleResize, 16));
+        // ResizeObserver is missing in jsdom; items then stay unmeasured and fully visible.
+        if (typeof ResizeObserver === "undefined") return;
+
+        const observer = new ResizeObserver((entries) => {
+            let widthChanged = false;
+            for (const { target, borderBoxSize } of entries) {
+                const width = borderBoxSize[0].inlineSize;
+                if (observedWidthsRef.current.get(target) !== width) {
+                    observedWidthsRef.current.set(target, width);
+                    widthChanged = true;
+                }
+            }
+
+            if (!widthChanged) return;
+
+            // getBoundingClientRect includes the transforms the autoplay loop puts on items.
+            if (loopingRef.current) {
+                measureDeferredRef.current = true;
+            } else {
+                measure();
+            }
+        });
+        observerRef.current = observer;
 
         return () => {
-            window.removeEventListener("resize", debounce(handleResize, 16));
+            observer.disconnect();
+            observerRef.current = null;
         };
     }, []);
+
+    useEffect(() => requestMeasure(), [children, gap, isAutoplayEnabled]);
+
+    const visibilityKey = Array.from({ length: itemCount }, (_, i) => items[i]?.fullyVisible ?? true).join();
+
+    useEffect(() => {
+        if (!listRef.current) return;
+
+        // Collect every item's focusables before writing tabindex so layout is read only once.
+        const updates = Array.from(listRef.current.children, (item) => ({
+            elements: focusables(item as HTMLElement),
+            visible: item.getAttribute("aria-hidden") !== "true",
+        }));
+
+        for (const { elements, visible } of updates) {
+            for (const element of elements) {
+                if (visible) {
+                    if (element.hasAttribute("data-carousel-tabindex")) {
+                        element.setAttribute("tabindex", element.getAttribute("data-carousel-tabindex"));
+                    } else {
+                        element.removeAttribute("tabindex");
+                    }
+                } else {
+                    element.setAttribute("tabindex", "-1");
+                }
+            }
+        }
+    }, [visibilityKey, layout]);
 
     // During autoplay animation, we manually set the offset positions, so we temporarily disable
     // until the animation is complete
@@ -88,22 +193,13 @@ const EbayCarousel: FC<CarouselProps> = ({
         if (!disableOffsetCalculation) {
             setOffset(getOffset(itemsRef.current, activeIndex, slideWidth));
         }
-    }, [activeIndex, slideWidth, disableOffsetCalculation]);
+    }, [activeIndex, slideWidth, disableOffsetCalculation, layout]);
 
     useEffect(() => {
         if (index >= 0 && index <= itemCount - 1) {
             setActiveIndex(index);
         }
     }, [index]);
-
-    useEffect(() => {
-        itemsRef.current = itemsRef.current.splice(0, itemCount);
-    }, [children]);
-
-    useEffect(() => {
-        const { width: containerWidth } = containerRef.current.getBoundingClientRect();
-        setSlideWidth(containerWidth);
-    }, [containerRef.current]);
 
     const isReducedMotion = useReducedMotion();
     const [paused, setPaused] = useState(isReducedMotion);
@@ -138,8 +234,18 @@ const EbayCarousel: FC<CarouselProps> = ({
                 itemsRef,
                 slideWidth,
                 gap,
-                onAnimationStart: () => setDisableOffsetCalculation(true),
-                onAnimationEnd: () => setDisableOffsetCalculation(false),
+                onAnimationStart: () => {
+                    loopingRef.current = true;
+                    setDisableOffsetCalculation(true);
+                },
+                onAnimationEnd: () => {
+                    loopingRef.current = false;
+                    setDisableOffsetCalculation(false);
+                    if (measureDeferredRef.current) {
+                        measureDeferredRef.current = false;
+                        requestMeasure();
+                    }
+                },
             });
         }
 
@@ -200,7 +306,11 @@ const EbayCarousel: FC<CarouselProps> = ({
                     onClick={handleControlClick}
                 />
                 <CarouselList
+                    listRef={listRef}
+                    items={items}
                     itemsRef={itemsRef}
+                    scrollLeftRef={scrollLeftRef}
+                    nativeScrolling={!isAutoplayEnabled}
                     offset={offset}
                     gap={gap}
                     itemsPerSlide={itemsPerSlide}

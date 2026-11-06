@@ -1,6 +1,4 @@
 import focusables from "makeup-focusables";
-// TODO check carousel
-import { resizeUtil } from "../../common/event-utils";
 import { processHtmlAttributes } from "../../common/html-attributes";
 import { onScrollDebounced as onScroll } from "./utils/on-scroll-debounced";
 import { scrollTransition } from "./utils/scroll-transition";
@@ -90,6 +88,10 @@ class Carousel extends Marko.Component<Input, State> {
     declare listEl: HTMLElement;
     declare nextEl: HTMLElement;
     declare containerEl: HTMLElement;
+    declare resizeObserver: ResizeObserver;
+    declare observedWidths: Map<Element, number>;
+    declare lastScrollLeft: number;
+    declare measureDeferred: boolean;
 
     cleanupAsync() {
         clearTimeout(this.autoplayTimeout);
@@ -116,6 +118,8 @@ class Carousel extends Marko.Component<Input, State> {
         const { state } = this;
         const { config, items, gap } = state;
         let closest: number;
+
+        this.lastScrollLeft = scrollLeft;
 
         if (scrollLeft >= this.getMaxOffset(state) - gap) {
             closest = items.length - 1;
@@ -359,6 +363,15 @@ class Carousel extends Marko.Component<Input, State> {
                 items.forEach((item) => {
                     item.transform = undefined;
                 });
+                // The template only drops the transforms on the next render, which can be one autoplay interval away.
+                forEls(this.listEl, (itemEl) => {
+                    itemEl.style.transform = "";
+                });
+
+                if (this.measureDeferred) {
+                    this.measureDeferred = false;
+                    this.requestMeasure();
+                }
             }
         });
 
@@ -433,7 +446,7 @@ class Carousel extends Marko.Component<Input, State> {
                 input.class,
             ],
             style: input.style,
-            config: {}, // A place to store values that should not trigger an update by themselves.
+            config: {} as State["config"], // A place to store values that should not trigger an update by themselves.
             gap: isNaN(gap) ? 16 : gap,
             index: parseInt(input.index as any, 10) || 0,
             itemsPerSlide: parseFloat(input.itemsPerSlide as any) || 0,
@@ -477,6 +490,9 @@ class Carousel extends Marko.Component<Input, State> {
             }
         }
 
+        // Skin only scrolls natively when autoplay is off.
+        state.config.nativeScrolling = !state.autoplayInterval;
+
         state.items = ((input.item as Item[]) || []).map((item, i) => {
             const isStartOfSlide = state.itemsPerSlide
                 ? i % state.itemsPerSlide === 0
@@ -506,13 +522,48 @@ class Carousel extends Marko.Component<Input, State> {
     }
 
     onMount() {
-        const { config } = this.state;
         this.listEl = this.getEl("list");
         this.nextEl = this.getEl("next");
         this.containerEl = this.getEl("container");
-        this.subscribeTo(resizeUtil).on("resize", () => {
-            this.cleanupAsync();
-            this.onRenderLegacy();
+        this.lastScrollLeft = 0;
+        this.measureDeferred = false;
+        this.observedWidths = new Map();
+        this.resizeObserver = new ResizeObserver((entries) => {
+            let widthChanged = false;
+
+            for (const { target, borderBoxSize } of entries) {
+                const width = borderBoxSize[0].inlineSize;
+                if (this.observedWidths.get(target) !== width) {
+                    this.observedWidths.set(target, width);
+                    widthChanged = true;
+                }
+            }
+
+            if (!widthChanged) {
+                return;
+            }
+
+            // getBoundingClientRect includes the transforms the autoplay loop puts on items.
+            if (this.state.items.some(({ transform }) => transform)) {
+                this.measureDeferred = true;
+            } else {
+                this.measure();
+            }
+        });
+        this.once("destroy", () => this.resizeObserver.disconnect());
+        this.once(
+            "destroy",
+            onScroll(this.listEl, () => {
+                const { config } = this.state;
+                if (config.nativeScrolling && !config.scrollTransitioning) {
+                    this.handleScroll(this.listEl.scrollLeft);
+                }
+            }),
+        );
+        this.subscribeTo(this.listEl).on("transitionend", ({ target }) => {
+            if (target === this.listEl && !this.state.config.nativeScrolling) {
+                this.emitUpdate();
+            }
         });
         this.skipScrolling = false;
 
@@ -521,29 +572,7 @@ class Carousel extends Marko.Component<Input, State> {
             this.state.paused = true;
         }
 
-        if (isNativeScrolling(this.listEl)) {
-            config.nativeScrolling = true;
-            this.once(
-                "destroy",
-                onScroll(this.listEl, () => {
-                    if (!config.scrollTransitioning) {
-                        this.handleScroll(this.listEl.scrollLeft);
-                    }
-                }),
-            );
-        } else {
-            this.subscribeTo(this.listEl).on("transitionend", ({ target }) => {
-                if (target === this.listEl) {
-                    this.emitUpdate();
-                }
-            });
-        }
         this.onRenderLegacy();
-
-        document.fonts.ready.then(() => {
-            this.cleanupAsync();
-            this.onRenderLegacy();
-        });
     }
 
     onUpdate() {
@@ -555,7 +584,7 @@ class Carousel extends Marko.Component<Input, State> {
     }
 
     onRenderLegacy() {
-        const { containerEl, listEl, state } = this;
+        const { listEl, state } = this;
         const { config, items, autoplayInterval, paused, interacting } = state;
 
         // Do nothing for empty carousels.
@@ -579,8 +608,15 @@ class Carousel extends Marko.Component<Input, State> {
             // Ensure only visible items within the carousel are focusable.
             // We don't have access to these items in the template so me must update manually.
             this.focusFrame = requestAnimationFrame(() => {
+                const tabindexUpdates: [
+                    HTMLElement[],
+                    (child: HTMLElement) => void,
+                ][] = [];
+
+                // Read every item before writing any tabindex so layout is not thrashed.
                 forEls(listEl, (itemEl) => {
-                    focusables(itemEl).forEach(
+                    tabindexUpdates.push([
+                        focusables(itemEl),
                         itemEl.getAttribute("aria-hidden") !== "true"
                             ? // Default the child tabindex to data-carousel-tabindex if it exists, or remove it
                               (child: HTMLElement) =>
@@ -594,8 +630,12 @@ class Carousel extends Marko.Component<Input, State> {
                                       : child.removeAttribute("tabindex")
                             : (child: HTMLElement) =>
                                   child.setAttribute("tabindex", "-1"),
-                    );
+                    ]);
                 });
+
+                tabindexUpdates.forEach(([children, update]) =>
+                    children.forEach(update),
+                );
             });
 
             if (config.nativeScrolling) {
@@ -603,9 +643,11 @@ class Carousel extends Marko.Component<Input, State> {
                     this.emitUpdate();
                 } else {
                     const offset = this.getOffset(state);
-                    if (offset !== listEl.scrollLeft) {
+                    // Reading scrollLeft here would force a reflow right after the render.
+                    if (offset !== this.lastScrollLeft) {
                         // Animate to the new scrolling position and emit update events afterward.
                         config.scrollTransitioning = true;
+                        this.lastScrollLeft = offset;
                         this.cancelScrollTransition = scrollTransition(
                             listEl,
                             offset,
@@ -637,33 +679,46 @@ class Carousel extends Marko.Component<Input, State> {
         }
 
         // Otherwise recalculates the items / slide sizes.
-        this.renderFrame = requestAnimationFrame(() => {
-            const { width: containerWidth } =
-                containerEl.getBoundingClientRect();
-            const { left: currentLeft } = (
-                listEl.firstElementChild as HTMLElement
-            ).getBoundingClientRect();
+        this.requestMeasure();
+    }
 
-            this.setStateDirty("slideWidth", containerWidth);
-            config.preserveItems = true;
-            config.nativeScrolling = isNativeScrolling(listEl);
+    requestMeasure() {
+        const { containerEl, listEl, resizeObserver } = this;
 
-            // Update item positions in the dom.
-            forEls(listEl, (itemEl, i) => {
-                const item = items[i];
-                const { left, right } = itemEl.getBoundingClientRect();
-                item.left = left - currentLeft;
-                item.right = right - currentLeft;
-            });
+        // Re-observing makes the observer report every element again, so measure() runs after the next layout.
+        this.observedWidths.clear();
+        resizeObserver.disconnect();
+        resizeObserver.observe(containerEl, { box: "border-box" });
+        forEls(listEl, (itemEl) =>
+            resizeObserver.observe(itemEl, { box: "border-box" }),
+        );
+    }
+
+    measure() {
+        const { containerEl, listEl, state } = this;
+        const { config, items } = state;
+
+        if (!items.length) {
+            return;
+        }
+
+        const { width: containerWidth } = containerEl.getBoundingClientRect();
+        const { left: currentLeft } = (
+            listEl.firstElementChild as HTMLElement
+        ).getBoundingClientRect();
+
+        this.lastScrollLeft = listEl.scrollLeft;
+        this.setStateDirty("slideWidth", containerWidth);
+        config.preserveItems = true;
+
+        // Update item positions in the dom.
+        forEls(listEl, (itemEl, i) => {
+            const item = items[i];
+            const { left, right } = itemEl.getBoundingClientRect();
+            item.left = left - currentLeft;
+            item.right = right - currentLeft;
         });
     }
-}
-
-/**
- * Checks if an element is using native scrolling
- */
-function isNativeScrolling(el: HTMLElement) {
-    return getComputedStyle(el).overflowX !== "visible";
 }
 
 /**

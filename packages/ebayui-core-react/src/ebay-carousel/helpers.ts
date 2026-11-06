@@ -1,20 +1,7 @@
 import React from "react";
-import { Children, cloneElement, ReactElement, ReactNode, RefObject } from "react";
-import { ListItemRef, MovementDirection, RelativeRect } from "./types";
+import { Children, cloneElement, ReactElement, ReactNode } from "react";
+import { ListItemRef, MovementDirection } from "./types";
 import { CarouselItemProps } from "./carousel-item";
-
-export function getRelativeRects(el: Element): RelativeRect {
-    const parent = el.parentElement;
-    const currentLeft = parent ? parent.firstElementChild.getBoundingClientRect().left : 0;
-    const { left, right } = el.getBoundingClientRect();
-
-    return {
-        left: left - currentLeft,
-        right: right - currentLeft,
-    };
-}
-
-export const isNativeScrolling = (el: Element): boolean => getComputedStyle(el).overflowX !== "visible";
 
 export const getMaxOffset = (items: ListItemRef[], slideWidth: number): number => {
     if (!items.length) {
@@ -36,10 +23,8 @@ export const getOffset = (items: ListItemRef[], index: number, slideWidth: numbe
 
 export const alterChildren = (
     children: ReactNode,
-    itemsRef: RefObject<Array<ListItemRef | null>>,
+    items: ListItemRef[],
     itemsPerSlide?: number,
-    slideWidth?: number,
-    offset?: number,
     gap?: number,
 ): ReactElement[] =>
     Children.map(children, (item: ReactElement<CarouselItemProps>, index) => {
@@ -53,11 +38,7 @@ export const alterChildren = (
         const isStartOfSlide = itemsPerSlide ? index % itemsPerSlide === 0 : true;
 
         return cloneElement(item, {
-            slideWidth,
-            offset,
-            ref: (el) => {
-                itemsRef.current[index] = el;
-            },
+            fullyVisible: items[index]?.fullyVisible ?? true,
             className: isStartOfSlide ? "carousel__snap-point" : item.props.className,
             style: {
                 ...style,

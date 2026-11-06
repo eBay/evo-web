@@ -1,9 +1,10 @@
 /// <reference types="@testing-library/jest-dom" />
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import { composeStory } from "@storybook/react-vite";
 import Meta, { Continuous, ItemsPerSlide, PreserveTabIndex } from "./index.stories";
 import { EbayCarousel, EbayCarouselItem } from "..";
+import { scrollTransition } from "../scroll-to-transition";
 import { beforeEach, afterEach, expect, vi, describe, it } from "vitest";
 
 const ContinuousStory = composeStory(Continuous, Meta);
@@ -145,6 +146,235 @@ describe("ebay-carousel rendering", () => {
             );
 
             expect(screen.getByText("Item 1")).toBeInTheDocument();
+        });
+    });
+
+    describe("measuring with ResizeObserver", () => {
+        class FakeResizeObserver {
+            static instances: FakeResizeObserver[] = [];
+            targets = new Set<Element>();
+
+            constructor(public callback: ResizeObserverCallback) {
+                FakeResizeObserver.instances.push(this);
+            }
+
+            observe(target: Element) {
+                this.targets.add(target);
+            }
+
+            unobserve(target: Element) {
+                this.targets.delete(target);
+            }
+
+            disconnect() {
+                this.targets.clear();
+            }
+        }
+
+        let itemWidth: number;
+
+        const rectOf = (el: Element) => {
+            if (el.classList.contains("carousel__container")) {
+                return { left: 0, right: 300, width: 300 };
+            }
+            if (el.tagName === "LI") {
+                const translateX = Number(
+                    /translateX\((-?[\d.]+)px\)/.exec((el as HTMLElement).style.transform)?.[1] ?? 0,
+                );
+                const left = Array.from(el.parentElement.children).indexOf(el) * (itemWidth + 16) + translateX;
+                return { left, right: left + itemWidth, width: itemWidth };
+            }
+            return { left: 0, right: 0, width: 0 };
+        };
+
+        const contentWidthOf = (el: Element) => (el.tagName === "LI" ? 200 : rectOf(el).width);
+
+        const notifyResize = (height = 100) =>
+            act(() => {
+                for (const observer of FakeResizeObserver.instances) {
+                    const entries = Array.from(observer.targets, (target) => ({
+                        target,
+                        contentRect: { width: contentWidthOf(target), height },
+                        borderBoxSize: [{ inlineSize: rectOf(target).width, blockSize: height }],
+                    })) as unknown as ResizeObserverEntry[];
+                    if (entries.length) {
+                        observer.callback(entries, observer as unknown as ResizeObserver);
+                    }
+                }
+            });
+
+        let getBoundingClientRect;
+
+        // jsdom has no Skin CSS, so emulate the list scrolling natively unless autoplay is on.
+        const emulateSkinScrolling = () => {
+            const getComputedStyle = window.getComputedStyle;
+            vi.spyOn(window, "getComputedStyle").mockImplementation((el, pseudo) => {
+                const style = getComputedStyle(el, pseudo);
+                const nativeScrolling = el.matches(".carousel:not(.carousel__autoplay) .carousel__list");
+                return new Proxy(style, {
+                    get: (target, prop) => {
+                        if (prop === "overflowX" && nativeScrolling) return "auto";
+                        const value = target[prop];
+                        return typeof value === "function" ? value.bind(target) : value;
+                    },
+                });
+            });
+        };
+
+        beforeEach(() => {
+            itemWidth = 200;
+            vi.mocked(scrollTransition).mockClear();
+            FakeResizeObserver.instances = [];
+            vi.stubGlobal("ResizeObserver", FakeResizeObserver);
+            getBoundingClientRect = vi.spyOn(Element.prototype, "getBoundingClientRect").mockImplementation(function (
+                this: Element,
+            ) {
+                const { left, right, width } = rectOf(this);
+                return { left, right, width, top: 0, bottom: 0, height: 100, x: left, y: 0 } as DOMRect;
+            });
+        });
+
+        afterEach(() => {
+            vi.unstubAllGlobals();
+            vi.restoreAllMocks();
+        });
+
+        const renderCarousel = () =>
+            render(
+                <EbayCarousel a11yPreviousText="Previous" a11yNextText="Next">
+                    <EbayCarouselItem>Item 1</EbayCarouselItem>
+                    <EbayCarouselItem>Item 2</EbayCarouselItem>
+                    <EbayCarouselItem>Item 3</EbayCarouselItem>
+                </EbayCarousel>,
+            );
+
+        it("hides items that do not fit after a resize notification", () => {
+            renderCarousel();
+            expect(screen.getByLabelText("Next")).toHaveAttribute("aria-disabled", "true");
+
+            notifyResize(100);
+
+            const items = screen.getAllByRole("listitem", { hidden: true });
+            expect(items.map((item) => item.getAttribute("aria-hidden"))).toEqual(["false", "true", "true"]);
+            expect(screen.getByLabelText("Next")).toHaveAttribute("aria-disabled", "false");
+        });
+
+        it("measures on width changes but not on height-only changes", () => {
+            renderCarousel();
+            getBoundingClientRect.mockClear();
+
+            notifyResize(100);
+            expect(getBoundingClientRect).toHaveBeenCalled();
+
+            getBoundingClientRect.mockClear();
+            notifyResize(150);
+            expect(getBoundingClientRect).not.toHaveBeenCalled();
+        });
+
+        it("does not measure when hovering the carousel", () => {
+            const { container } = renderCarousel();
+            notifyResize(100);
+            getBoundingClientRect.mockClear();
+
+            fireEvent.mouseEnter(container.querySelector(".carousel__container"));
+
+            expect(getBoundingClientRect).not.toHaveBeenCalled();
+        });
+
+        it("measures when only an item's border box width changes", () => {
+            itemWidth = 260;
+            renderCarousel();
+            notifyResize();
+            const items = screen.getAllByRole("listitem", { hidden: true });
+            expect(items.map((item) => item.getAttribute("aria-hidden"))).toEqual(["false", "true", "true"]);
+
+            itemWidth = 140;
+            notifyResize();
+
+            expect(items.map((item) => item.getAttribute("aria-hidden"))).toEqual(["false", "false", "true"]);
+        });
+
+        it("scrolls a restored list back to the current item after measuring", () => {
+            emulateSkinScrolling();
+            renderCarousel();
+            const list = screen.getByRole("list");
+            Object.defineProperty(list, "scrollLeft", { configurable: true, writable: true, value: 500 });
+
+            notifyResize();
+
+            expect(scrollTransition).toHaveBeenCalledWith(list, 0, expect.any(Function));
+        });
+
+        it("does not scroll on mount when the list is already in place", () => {
+            emulateSkinScrolling();
+            renderCarousel();
+
+            notifyResize();
+
+            expect(scrollTransition).not.toHaveBeenCalled();
+        });
+
+        it("moves with transforms after autoplay is turned on", () => {
+            emulateSkinScrolling();
+            const items = [1, 2, 3].map((i) => <EbayCarouselItem key={i}>Item {i}</EbayCarouselItem>);
+            const { rerender } = render(
+                <EbayCarousel itemsPerSlide={1} a11yNextText="Next">
+                    {items}
+                </EbayCarousel>,
+            );
+            notifyResize();
+
+            rerender(
+                <EbayCarousel itemsPerSlide={1} a11yNextText="Next" autoplay>
+                    {items}
+                </EbayCarousel>,
+            );
+            notifyResize();
+            fireEvent.click(screen.getByLabelText("Next"));
+
+            expect(screen.getByRole("list")).toHaveStyle({ transform: "translate3d(-216px, 0, 0)" });
+            expect(scrollTransition).not.toHaveBeenCalled();
+        });
+
+        it("defers a measure requested during the autoplay loop until the loop ends", () => {
+            const frames: FrameRequestCallback[] = [];
+            vi.stubGlobal("requestAnimationFrame", (callback: FrameRequestCallback) => frames.push(callback));
+            const flushFrames = () => act(() => frames.splice(0).forEach((callback) => callback(0)));
+            render(
+                <EbayCarousel itemsPerSlide={1} index={2} autoplay a11yNextText="Next">
+                    <EbayCarouselItem>Item 1</EbayCarouselItem>
+                    <EbayCarouselItem>Item 2</EbayCarouselItem>
+                    <EbayCarouselItem>Item 3</EbayCarouselItem>
+                </EbayCarousel>,
+            );
+            notifyResize();
+
+            fireEvent.click(screen.getByLabelText("Next"));
+            flushFrames();
+            itemWidth = 140;
+            notifyResize();
+
+            fireEvent.transitionEnd(screen.getByRole("list"));
+            flushFrames();
+            notifyResize();
+
+            const items = screen.getAllByRole("listitem", { hidden: true });
+            expect(items.map((item) => item.getAttribute("aria-hidden"))).toEqual(["false", "false", "true"]);
+        });
+
+        it("removes hidden items' focusable children from the tab order", () => {
+            vi.spyOn(HTMLElement.prototype, "offsetWidth", "get").mockReturnValue(100);
+            render(<PreserveTabIndexStory />);
+            notifyResize(100);
+
+            const [firstItem, secondItem] = screen.getAllByRole("listitem", { hidden: true });
+            const [firstDataTabIndexLink, firstLink] = firstItem.querySelectorAll("a");
+            const [secondDataTabIndexLink, secondLink] = secondItem.querySelectorAll("a");
+
+            expect(firstDataTabIndexLink).toHaveAttribute("tabindex", "-1");
+            expect(firstLink).not.toHaveAttribute("tabindex");
+            expect(secondDataTabIndexLink).toHaveAttribute("tabindex", "-1");
+            expect(secondLink).toHaveAttribute("tabindex", "-1");
         });
     });
 });
