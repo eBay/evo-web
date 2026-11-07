@@ -1,0 +1,86 @@
+import{a as e,n as t}from"./rolldown-runtime-DkW27tQK.js";import{t as n}from"./react-CK-NQdWx.js";import{t as r}from"./jsx-runtime-DeHZSEgm.js";import{t as i}from"./classnames-D09xBJOL.js";import{t as a}from"./tabs-DqM1PmOr.js";function o(){let e=(0,c.use)(u);if(!e)throw Error(`EvoFakeTab must be used within an EvoFakeTabs component`);return e}function s({selected:e,ariaCurrent:t,children:n}){let r=(0,c.useMemo)(()=>({selected:e,ariaCurrent:t}),[e,t]);return(0,l.jsx)(u,{value:r,children:n})}var c,l,u;function d(){return(d=t((()=>{c=n(),l=r(),u=(0,c.createContext)(void 0);try{s.displayName=`FakeTabsProvider`,s.__docgenInfo={description:``,displayName:`FakeTabsProvider`,filePath:`/home/runner/work/evo-web/evo-web/packages/evo-react/src/fake-tabs/context.tsx`,methods:[],props:{selected:{defaultValue:null,declarations:[{fileName:`evo-react/src/fake-tabs/context.tsx`,name:`TypeLiteral`}],description:``,name:`selected`,required:!0,tags:{},type:{name:`FakeTabId | null`}},ariaCurrent:{defaultValue:null,declarations:[{fileName:`evo-react/src/fake-tabs/context.tsx`,name:`TypeLiteral`}],description:``,name:`ariaCurrent`,required:!0,tags:{},type:{name:`enum`,raw:`"true" | "page"`,value:[{value:`"true"`},{value:`"page"`}]}}},tags:{}}}catch{}})))()}function f({id:e,href:t,as:n,className:r,children:i,onClick:a,...s}){let{selected:c,ariaCurrent:l}=o(),u=t===void 0,d=Object.is(c,e),f=n??`a`;return(0,m.jsx)(`li`,{className:(0,p.default)(`fake-tabs__item`,r),children:(0,m.jsx)(f,{...s,href:t,"aria-current":!u&&d?l:void 0,"aria-disabled":u?`true`:void 0,onClick:u?void 0:a,children:i})})}var p,m;function h(){return(h=t((()=>{p=e(i(),1),d(),m=r();try{f.displayName=`EvoFakeTab`,f.__docgenInfo={description:"Represents one destination in a fake tab strip. Its `id` is compared with the\nparent `selected` value; omitting `href` marks the tab unavailable.",displayName:`EvoFakeTab`,filePath:`/home/runner/work/evo-web/evo-web/packages/evo-react/src/fake-tabs/fake-tab.tsx`,methods:[],props:{id:{defaultValue:null,declarations:[{fileName:`evo-react/src/fake-tabs/types.ts`,name:`TypeLiteral`}],description:"Unique identifier matching this tab to the parent `EvoFakeTabs` `selected` prop.",name:`id`,required:!0,tags:{},type:{name:`FakeTabId`}},href:{defaultValue:null,declarations:[{fileName:`evo-react/src/fake-tabs/types.ts`,name:`TypeLiteral`}],description:`Link destination. Omit to disable the tab.`,name:`href`,required:!1,tags:{},type:{name:`string`}},as:{defaultValue:null,declarations:[{fileName:`evo-react/src/fake-tabs/types.ts`,name:`TypeLiteral`}],description:"Custom component used in place of the native anchor, such as a framework\n`Link`. The component receives `href` and all other anchor-compatible props.",name:`as`,required:!1,tags:{},type:{name:`ComponentType<DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>>`}}},tags:{summary:`URL-based tab link.`}}}catch{}})))()}function g({className:e,children:t,...n}){return(0,v.jsx)(`ul`,{...n,className:(0,_.default)(`fake-tabs__items`,e),children:t})}var _,v;function y(){return(y=t((()=>{_=e(i(),1),v=r();try{g.displayName=`EvoFakeTabList`,g.__docgenInfo={description:`Contains the links in a fake tab strip.`,displayName:`EvoFakeTabList`,filePath:`/home/runner/work/evo-web/evo-web/packages/evo-react/src/fake-tabs/fake-tab-list.tsx`,methods:[],props:{},tags:{summary:`Fake tab link list.`}}}catch{}})))()}function b({className:e,children:t,...n}){return(0,S.jsx)(`div`,{...n,className:(0,x.default)(`fake-tabs__content`,e),children:(0,S.jsx)(`div`,{className:`fake-tabs__panel`,children:(0,S.jsx)(`div`,{className:`fake-tabs__cell`,children:(0,S.jsx)(`div`,{children:t})})})})}var x,S;function C(){return(C=t((()=>{x=e(i(),1),S=r();try{b.displayName=`EvoFakeTabPanel`,b.__docgenInfo={description:`Contains page content associated with fake tab navigation. Route changes,
+rather than this component, determine which page is shown.`,displayName:`EvoFakeTabPanel`,filePath:`/home/runner/work/evo-web/evo-web/packages/evo-react/src/fake-tabs/fake-tab-panel.tsx`,methods:[],props:{},tags:{summary:`Fake tab content region.`}}}catch{}})))()}function w({selected:e,size:t=`regular`,tabMatchesCurrentUrl:n=!0,className:r,children:i,...a}){return(0,E.jsx)(s,{selected:e,ariaCurrent:n?`page`:`true`,children:(0,E.jsx)(`div`,{...a,className:(0,T.default)(`fake-tabs`,t===`large`&&`fake-tabs--large`,r),children:i})})}var T,E;function D(){return(D=t((()=>{T=e(i(),1),d(),a(),E=r();try{w.displayName=`EvoFakeTabs`,w.__docgenInfo={description:`Fake tabs provide tab-styled navigation between URLs.
+
+Each tab navigates, and selection reflects the current route. Fake tabs do
+not implement tab keyboard behavior; \`tabMatchesCurrentUrl\` controls the
+\`aria-current\` semantics. Use \`selected\` from the current route and omit a
+tab's \`href\` to mark it unavailable.
+
+## Usage
+
+\`\`\`tsx
+import {
+  EvoFakeTab,
+  EvoFakeTabList,
+  EvoFakeTabs,
+} from "@evo-web/react/fake-tabs";
+
+<EvoFakeTabs selected="overview">
+  <EvoFakeTabList>
+    <EvoFakeTab id="overview" href="/overview">
+      Overview
+    </EvoFakeTab>
+  </EvoFakeTabList>
+</EvoFakeTabs>
+\`\`\``,displayName:`EvoFakeTabs`,filePath:`/home/runner/work/evo-web/evo-web/packages/evo-react/src/fake-tabs/fake-tabs.tsx`,methods:[],props:{selected:{defaultValue:null,declarations:[{fileName:`evo-react/src/fake-tabs/types.ts`,name:`TypeLiteral`}],description:"The `id` of the currently `selected` tab.\nPass `null` explicitly when no tab corresponds to the current page.",name:`selected`,required:!0,tags:{},type:{name:`FakeTabId | null`}},size:{defaultValue:{value:`regular`},declarations:[{fileName:`evo-react/src/fake-tabs/types.ts`,name:`TypeLiteral`}],description:'Size of the tab strip. Defaults to `"regular"`.',name:`size`,required:!1,tags:{},type:{name:`enum`,raw:`Size`,value:[{value:`"large"`},{value:`"regular"`}]}},tabMatchesCurrentUrl:{defaultValue:{value:`true`},declarations:[{fileName:`evo-react/src/fake-tabs/types.ts`,name:`TypeLiteral`}],description:'Controls the `aria-current` value on the `selected` tab link.\nWhen `true` (default), the selected link gets `aria-current="page"`.\nWhen `false`, it gets `aria-current="true"`.',name:`tabMatchesCurrentUrl`,required:!1,tags:{},type:{name:`boolean`}}},tags:{summary:`URL-based tab navigation.`}}}catch{}})))()}var O,k,A,j,M;function N(){return(N=t((()=>{h(),y(),C(),D(),O=r(),k={title:`Navigation & Disclosure/EvoFakeTabs`,component:w,subcomponents:{EvoFakeTabList:g,EvoFakeTab:f,EvoFakeTabPanel:b},argTypes:{selected:{control:`select`,options:[`overview`,`shipping`,`returns`,null]},size:{control:`select`,options:[`regular`,`large`],table:{defaultValue:{summary:`regular`}}},tabMatchesCurrentUrl:{control:`boolean`,table:{defaultValue:{summary:`true`}}}},args:{selected:`overview`,size:`regular`,tabMatchesCurrentUrl:!0},render({selected:e,...t}){return(0,O.jsxs)(w,{selected:e,...t,children:[(0,O.jsxs)(g,{children:[(0,O.jsx)(f,{id:`overview`,href:`/overview`,children:`About this item`}),(0,O.jsx)(f,{id:`shipping`,href:`/shipping`,children:`Shipping and returns`}),(0,O.jsx)(f,{id:`returns`,href:`/returns`,children:`Seller feedback`}),(0,O.jsx)(f,{id:`contact`,children:`Warranty unavailable`})]}),(0,O.jsxs)(b,{children:[(0,O.jsx)(`h3`,{children:`About this item`}),(0,O.jsx)(`p`,{children:`Seller refurbished · Bluetooth connectivity · Charging cable included`})]})]})}},A={},j={parameters:{docs:{description:{story:`
+Pass a custom \`as\` component to swap the native \`<a>\` for a framework link.
+The component receives \`href\` and all anchor-compatible props:
+
+\`\`\`tsx
+import { Link } from "react-router";
+
+function RouterTab({ href, ...props }: React.ComponentProps<"a">) {
+  return href === undefined ? null : <Link to={href} {...props} />;
+}
+
+<EvoFakeTab id="overview" href="/overview" as={RouterTab}>
+  About this item
+</EvoFakeTab>
+\`\`\`
+`}}},render(e){let t=({href:e,children:t,...n})=>(0,O.jsx)(`a`,{"data-router-link":`true`,href:e,...n,children:t});return(0,O.jsxs)(w,{...e,children:[(0,O.jsxs)(g,{children:[(0,O.jsx)(f,{id:`overview`,href:`/overview`,as:t,children:`About this item`}),(0,O.jsx)(f,{id:`shipping`,href:`/shipping`,as:t,children:`Shipping and returns`})]}),(0,O.jsx)(b,{children:(0,O.jsx)(`p`,{children:`Product details loaded for the selected route.`})})]})}},M=[`Default`,`CustomLink`],A.parameters={...A.parameters,docs:{...A.parameters?.docs,source:{originalSource:`{}`,...A.parameters?.docs?.source},description:{story:`The selected link reflects the current URL beside an unavailable tab.`,...A.parameters?.docs?.description}}},j.parameters={...j.parameters,docs:{...j.parameters?.docs,source:{originalSource:`{
+  parameters: {
+    docs: {
+      description: {
+        story: \`
+Pass a custom \\\`as\\\` component to swap the native \\\`<a>\\\` for a framework link.
+The component receives \\\`href\\\` and all anchor-compatible props:
+
+\\\`\\\`\\\`tsx
+import { Link } from "react-router";
+
+function RouterTab({ href, ...props }: React.ComponentProps<"a">) {
+  return href === undefined ? null : <Link to={href} {...props} />;
+}
+
+<EvoFakeTab id="overview" href="/overview" as={RouterTab}>
+  About this item
+</EvoFakeTab>
+\\\`\\\`\\\`
+\`
+      }
+    }
+  },
+  render(args) {
+    type LinkProps = React.ComponentProps<"a">;
+    const CustomLink = ({
+      href,
+      children,
+      ...rest
+    }: LinkProps) => <a data-router-link="true" href={href} {...rest}>
+        {children}
+      </a>;
+    return <EvoFakeTabs {...args}>
+        <EvoFakeTabList>
+          <EvoFakeTab id="overview" href="/overview" as={CustomLink}>
+            About this item
+          </EvoFakeTab>
+          <EvoFakeTab id="shipping" href="/shipping" as={CustomLink}>
+            Shipping and returns
+          </EvoFakeTab>
+        </EvoFakeTabList>
+        <EvoFakeTabPanel>
+          <p>Product details loaded for the selected route.</p>
+        </EvoFakeTabPanel>
+      </EvoFakeTabs>;
+  }
+}`,...j.parameters?.docs?.source},description:{story:"Fake tab navigation adapts to a router link component through `as`.",...j.parameters?.docs?.description}}}})))()}N();export{j as CustomLink,A as Default,M as __namedExportsOrder,k as default};

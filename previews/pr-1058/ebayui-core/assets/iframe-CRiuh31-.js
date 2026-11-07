@@ -1,0 +1,1 @@
+import{t as e}from"./iframe-fnB21cay.js";e();
