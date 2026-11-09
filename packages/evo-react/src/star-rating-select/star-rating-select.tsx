@@ -53,11 +53,7 @@ export function EvoStarRatingSelect({
   const isControlled = value !== undefined;
   const selectedValue = isControlled ? value : uncontrolledValue;
   const inputRef = useRef<HTMLInputElement>(null);
-  useFormReset(
-    inputRef,
-    defaultValue,
-    isControlled ? undefined : setUncontrolledValue,
-  );
+  useFormReset(inputRef, defaultValue, setUncontrolledValue);
 
   return (
     <div

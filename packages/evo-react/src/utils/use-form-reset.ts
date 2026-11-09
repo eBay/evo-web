@@ -6,7 +6,7 @@ type FormControl = HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
 export function useFormReset<Value>(
   ref: RefObject<HTMLElement | null | undefined>,
   defaultValue: Value,
-  setValue?: (value: Value) => void,
+  setValue: (value: Value) => void,
 ) {
   const pendingResets = useRef(new Set<ReturnType<typeof setTimeout>>());
   useEffect(() => {
@@ -24,7 +24,7 @@ export function useFormReset<Value>(
         ? (element as FormControl)
         : element?.querySelector<FormControl>("input, textarea, select");
     const form = control?.form;
-    if (!form || !setValue) return;
+    if (!form) return;
 
     const handleReset = (event: Event) => {
       // React's delegated reset handlers must finish before checking cancellation.

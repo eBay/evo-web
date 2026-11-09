@@ -117,17 +117,11 @@ export function EvoCombobox({
     scrollIntoView: activeDescendantScrollIntoView,
     shouldWrap: true,
   });
-  useFormReset(
-    inputRef,
-    defaultValue,
-    isControlled
-      ? undefined
-      : (nextValue) => {
-          setUncontrolledValue(nextValue);
-          setTemporaryValue(null);
-          activeDescendant.reset();
-        },
-  );
+  useFormReset(inputRef, defaultValue, (nextValue) => {
+    setUncontrolledValue(nextValue);
+    setTemporaryValue(null);
+    activeDescendant.reset();
+  });
   const activeOption = effectiveOpen
     ? activeDescendant.getActiveItem()
     : undefined;

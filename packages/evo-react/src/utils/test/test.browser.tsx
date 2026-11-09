@@ -182,6 +182,66 @@ describe("form reset", () => {
     });
   });
 
+  it("preserves controlled composite values without change callbacks", async () => {
+    const onChange = vi.fn();
+    const screen = await render(
+      <form>
+        <EvoDateInput
+          floatingLabel="Date"
+          locale="en-US"
+          value="2024-01-12"
+          defaultValue="2024-01-03"
+          a11yOpenPopoverText="Choose date"
+          onChange={onChange}
+        >
+          {null}
+        </EvoDateInput>
+        <EvoDateRangeInputGroup
+          value={{ from: "2024-01-12", to: "2024-01-20" }}
+          defaultValue={{ from: "2024-01-03", to: "2024-01-10" }}
+          locale="en-US"
+          a11yOpenPopoverText="Choose range"
+          onChange={onChange}
+        >
+          <EvoDateRangeInput type="start" floatingLabel="From" />
+          <EvoDateRangeInput type="end" floatingLabel="To" />
+        </EvoDateRangeInputGroup>
+        <EvoNumberInput value={4} defaultValue={2} onChange={onChange} />
+        <EvoStarRatingSelect
+          value={4}
+          defaultValue={2}
+          a11yText="Rating"
+          a11yStarText={starText}
+          onValueChange={onChange}
+        />
+        <EvoChipsCombobox
+          aria-label="Features"
+          selected={["Controlled"]}
+          onSelectedChange={onChange}
+        />
+        <button type="reset">Reset</button>
+      </form>,
+    );
+
+    await user.click(screen.getByRole("button", { name: "Reset" }));
+
+    await expect
+      .element(screen.getByRole("textbox", { name: "Date" }))
+      .toHaveValue("01/12/2024");
+    await expect
+      .element(screen.getByRole("textbox", { name: "From" }))
+      .toHaveValue("01/12/2024");
+    await expect
+      .element(screen.getByRole("textbox", { name: "To" }))
+      .toHaveValue("01/20/2024");
+    await expect.element(screen.getByRole("spinbutton")).toHaveValue(4);
+    await expect
+      .element(screen.getByRole("radio", { name: "4 stars" }))
+      .toBeChecked();
+    await expect.element(screen.getByText("Controlled")).toBeInTheDocument();
+    expect(onChange).not.toHaveBeenCalled();
+  });
+
   it.each([0, 2] as const)(
     "restores a star rating of %s and its filled icons",
     async (defaultValue) => {

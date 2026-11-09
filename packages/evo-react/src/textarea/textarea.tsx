@@ -52,11 +52,7 @@ export function EvoTextarea({
     ref,
     null,
   );
-  useFormReset(
-    textareaRef,
-    defaultValue,
-    value === undefined ? setUncontrolledValue : undefined,
-  );
+  useFormReset(textareaRef, defaultValue, setUncontrolledValue);
   const textareaId = id ?? (floatingLabelText ? generatedId : undefined);
   const currentValue = value !== undefined ? value : uncontrolledValue;
   const floatingLabel = useFloatingLabel({

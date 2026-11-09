@@ -65,11 +65,7 @@ export function EvoInput({
   const [focused, setFocused] = useState(false);
   const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue);
   const [setInputRef, inputRef] = useRefTee<HTMLInputElement | null>(ref, null);
-  useFormReset(
-    inputRef,
-    defaultValue,
-    value === undefined ? setUncontrolledValue : undefined,
-  );
+  useFormReset(inputRef, defaultValue, setUncontrolledValue);
 
   const {
     content: prefixContent,

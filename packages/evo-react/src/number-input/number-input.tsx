@@ -66,11 +66,7 @@ export function EvoNumberInput({
     null,
   );
   const displayValue = value !== undefined ? value : uncontrolledValue;
-  useFormReset(
-    inputRef,
-    defaultValue ?? resolvedMin,
-    value === undefined ? setUncontrolledValue : undefined,
-  );
+  useFormReset(inputRef, defaultValue ?? resolvedMin, setUncontrolledValue);
 
   const checkBoundary = useCallback(
     (nextValue: number) => {

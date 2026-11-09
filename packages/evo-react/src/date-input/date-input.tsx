@@ -64,11 +64,7 @@ export function EvoDateInput({
     ref,
     null,
   );
-  useFormReset(
-    containerRef,
-    defaultValue,
-    value === undefined ? setUncontrolledValue : undefined,
-  );
+  useFormReset(containerRef, defaultValue, setUncontrolledValue);
   const popover = useDatePopover<HTMLDivElement>({
     open,
     defaultOpen,

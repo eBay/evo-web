@@ -71,11 +71,7 @@ export function EvoDateRangeInputGroup({
     ref,
     null,
   );
-  useFormReset(
-    containerRef,
-    defaultValue,
-    value === undefined ? setUncontrolledValue : undefined,
-  );
+  useFormReset(containerRef, defaultValue, setUncontrolledValue);
   const popover = useDatePopover<HTMLSpanElement>({
     open,
     defaultOpen,

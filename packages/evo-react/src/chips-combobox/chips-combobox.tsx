@@ -80,7 +80,7 @@ export function EvoChipsCombobox({
   const invalid = ariaInvalid === true || ariaInvalid === "true";
   const pendingRemoval = useRef<PendingRemoval | null>(null);
   useFormReset(inputRef, defaultSelected, (nextSelected) => {
-    if (selected === undefined) setUncontrolledSelected(nextSelected);
+    setUncontrolledSelected(nextSelected);
     setInputValue("");
     pendingRemoval.current = null;
   });
