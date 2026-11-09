@@ -117,74 +117,70 @@ describe("form reset", () => {
     expect(onResetValue).not.toHaveBeenCalled();
   });
 
-  for (const [name, Component] of [
+  describe.each([
     ["input", EvoInput],
     ["textarea", EvoTextarea],
     ["combobox", EvoCombobox],
-  ] as const) {
-    describe(name, () => {
-      it.each([undefined, "initial"])(
-        "restores native value and floating label to default %s",
-        async (defaultValue) => {
-          const onChange = vi.fn();
-          const ref = vi.fn();
-          const screen = await render(
-            <form>
-              <Component
-                ref={ref}
-                floatingLabel="Field"
-                defaultValue={defaultValue}
-                onChange={onChange}
-              />
-              <button type="reset">Reset</button>
-            </form>,
-          );
-          const input = screen.getByRole(
-            Component === EvoCombobox ? "combobox" : "textbox",
-          );
-          await user.type(input, "edited");
-          onChange.mockClear();
-          await user.click(screen.getByRole("button", { name: "Reset" }));
-
-          await expect.element(input).toHaveValue(defaultValue ?? "");
-          await expect
-            .element(screen.getByText("Field"))
-            .toHaveClass(
-              defaultValue
-                ? "floating-label__label"
-                : "floating-label__label--inline",
-            );
-          expect(onChange).not.toHaveBeenCalled();
-          expect(ref).toHaveBeenCalledWith(input.element());
-          await user.click(screen.getByRole("button", { name: "Reset" }));
-          await expect.element(input).toHaveValue(defaultValue ?? "");
-        },
-      );
-
-      it("preserves controlled values", async () => {
+  ] as const)("%s", (_name, Component) => {
+    it.each([undefined, "initial"])(
+      "restores native value and floating label to default %s",
+      async (defaultValue) => {
         const onChange = vi.fn();
+        const ref = vi.fn();
         const screen = await render(
           <form>
             <Component
+              ref={ref}
               floatingLabel="Field"
-              value="controlled"
+              defaultValue={defaultValue}
               onChange={onChange}
             />
             <button type="reset">Reset</button>
           </form>,
         );
+        const input = screen.getByRole(
+          Component === EvoCombobox ? "combobox" : "textbox",
+        );
+        await user.type(input, "edited");
+        onChange.mockClear();
         await user.click(screen.getByRole("button", { name: "Reset" }));
+
+        await expect.element(input).toHaveValue(defaultValue ?? "");
         await expect
-          .element(
-            screen.getByRole(
-              Component === EvoCombobox ? "combobox" : "textbox",
-            ),
-          )
-          .toHaveValue("controlled");
+          .element(screen.getByText("Field"))
+          .toHaveClass(
+            defaultValue
+              ? "floating-label__label"
+              : "floating-label__label--inline",
+          );
         expect(onChange).not.toHaveBeenCalled();
-      });
+        expect(ref).toHaveBeenCalledWith(input.element());
+        await user.click(screen.getByRole("button", { name: "Reset" }));
+        await expect.element(input).toHaveValue(defaultValue ?? "");
+      },
+    );
+
+    it("preserves controlled values", async () => {
+      const onChange = vi.fn();
+      const screen = await render(
+        <form>
+          <Component
+            floatingLabel="Field"
+            value="controlled"
+            onChange={onChange}
+          />
+          <button type="reset">Reset</button>
+        </form>,
+      );
+      await user.click(screen.getByRole("button", { name: "Reset" }));
+      await expect
+        .element(
+          screen.getByRole(Component === EvoCombobox ? "combobox" : "textbox"),
+        )
+        .toHaveValue("controlled");
+      expect(onChange).not.toHaveBeenCalled();
     });
-  }
+  });
 
   it.each([0, 2] as const)(
     "restores a star rating of %s and its filled icons",
