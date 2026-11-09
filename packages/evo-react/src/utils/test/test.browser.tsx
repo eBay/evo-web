@@ -117,6 +117,23 @@ describe("form reset", () => {
     expect(onResetValue).not.toHaveBeenCalled();
   });
 
+  it("preserves callback ref cleanup on replacement and unmount", async () => {
+    const firstCleanup = vi.fn();
+    const secondCleanup = vi.fn();
+    const firstRef = vi.fn(() => firstCleanup);
+    const secondRef = vi.fn(() => secondCleanup);
+    const screen = await render(<EvoInput aria-label="Field" ref={firstRef} />);
+    const input = screen.getByRole("textbox").element();
+
+    await screen.rerender(<EvoInput aria-label="Field" ref={secondRef} />);
+    expect(firstRef).toHaveBeenCalledExactlyOnceWith(input);
+    expect(firstCleanup).toHaveBeenCalledExactlyOnce();
+    expect(secondRef).toHaveBeenCalledExactlyOnceWith(input);
+
+    await screen.rerender(null);
+    expect(secondCleanup).toHaveBeenCalledExactlyOnce();
+  });
+
   describe.each([
     ["input", EvoInput],
     ["textarea", EvoTextarea],
