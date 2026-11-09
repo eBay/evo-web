@@ -15,9 +15,7 @@ export function useRefTee<T>(ref?: RefTeeInput<T>, initialValue?: T) {
     const cleanups = refs.map((currentRef) => {
       if (typeof currentRef === "function") {
         const cleanup = currentRef(node);
-        return typeof cleanup === "function"
-          ? cleanup
-          : () => currentRef(null);
+        return typeof cleanup === "function" ? cleanup : () => currentRef(null);
       } else if (currentRef) {
         currentRef.current = node;
         return () => {

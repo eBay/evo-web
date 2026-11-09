@@ -127,11 +127,11 @@ describe("form reset", () => {
 
     await screen.rerender(<EvoInput aria-label="Field" ref={secondRef} />);
     expect(firstRef).toHaveBeenCalledExactlyOnceWith(input);
-    expect(firstCleanup).toHaveBeenCalledExactlyOnce();
+    expect(firstCleanup).toHaveBeenCalledTimes(1);
     expect(secondRef).toHaveBeenCalledExactlyOnceWith(input);
 
     await screen.rerender(null);
-    expect(secondCleanup).toHaveBeenCalledExactlyOnce();
+    expect(secondCleanup).toHaveBeenCalledTimes(1);
   });
 
   describe.each([
