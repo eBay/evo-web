@@ -7,6 +7,8 @@ import type {
   EvoDateRangeInputGroupProps,
 } from "./types";
 import { useDatePopover } from "../date-input/use-date-popover";
+import { useFormReset } from "../utils/use-form-reset";
+import { useRefTee } from "../utils/use-ref-tee";
 import "@ebay/skin/date-textbox.mjs";
 
 /**
@@ -65,11 +67,20 @@ export function EvoDateRangeInputGroup({
 }: EvoDateRangeInputGroupProps) {
   const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue);
   const selected = value !== undefined ? value : uncontrolledValue;
+  const [setContainerRef, containerRef] = useRefTee<HTMLSpanElement | null>(
+    ref,
+    null,
+  );
+  useFormReset(
+    containerRef,
+    defaultValue,
+    value === undefined ? setUncontrolledValue : undefined,
+  );
   const popover = useDatePopover<HTMLSpanElement>({
     open,
     defaultOpen,
     onOpenChange,
-    ref,
+    ref: setContainerRef,
   });
 
   const commit = useCallback(

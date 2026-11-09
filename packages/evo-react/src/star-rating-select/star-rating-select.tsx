@@ -1,6 +1,7 @@
-import { useId, useState } from "react";
+import { useId, useRef, useState } from "react";
 import classNames from "classnames";
 import { EvoIconStarDynamic } from "../icon/icons/star-dynamic";
+import { useFormReset } from "../utils/use-form-reset";
 import type { EvoStarRatingSelectProps, StarRatingSelectValue } from "./types";
 import "@ebay/skin/star-rating-select.mjs";
 
@@ -51,6 +52,12 @@ export function EvoStarRatingSelect({
   const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue);
   const isControlled = value !== undefined;
   const selectedValue = isControlled ? value : uncontrolledValue;
+  const inputRef = useRef<HTMLInputElement>(null);
+  useFormReset(
+    inputRef,
+    defaultValue,
+    isControlled ? undefined : setUncontrolledValue,
+  );
 
   return (
     <div
@@ -62,6 +69,7 @@ export function EvoStarRatingSelect({
       {STAR_VALUES.map((starValue) => (
         <span className="star-rating-select__radio" key={starValue}>
           <input
+            ref={starValue === 1 ? inputRef : undefined}
             aria-label={a11yStarText[starValue - 1]}
             className={classNames("star-rating-select__control", {
               "star-rating-select__control--filled": starValue <= selectedValue,

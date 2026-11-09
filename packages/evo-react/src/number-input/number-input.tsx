@@ -7,6 +7,7 @@ import { EvoIconRemove24 } from "../icon/icons/remove-24";
 import { EvoIconButton } from "../icon-button";
 import { EvoInput } from "../input";
 import { useRefTee } from "../utils/use-ref-tee";
+import { useFormReset } from "../utils/use-form-reset";
 import type { EvoNumberInputProps } from "./types";
 import "@ebay/skin/number-input.mjs";
 
@@ -65,6 +66,11 @@ export function EvoNumberInput({
     null,
   );
   const displayValue = value !== undefined ? value : uncontrolledValue;
+  useFormReset(
+    inputRef,
+    defaultValue ?? resolvedMin,
+    value === undefined ? setUncontrolledValue : undefined,
+  );
 
   const checkBoundary = useCallback(
     (nextValue: number) => {

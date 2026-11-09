@@ -12,6 +12,7 @@ import { useActiveDescendant } from "../utils/use-active-descendant";
 import { useExpander } from "../utils/use-expander";
 import { useFloatingLabel } from "../utils/use-floating-label";
 import { useRefTee } from "../utils/use-ref-tee";
+import { useFormReset } from "../utils/use-form-reset";
 import { ComboboxProvider } from "./context";
 import type { EvoComboboxProps } from "./types";
 import "@ebay/skin/combobox.mjs";
@@ -109,15 +110,24 @@ export function EvoCombobox({
     expander.refs.setFloating,
     null,
   );
-  const [setForwardedInputElement] = useRefTee<HTMLInputElement | null>(
-    ref,
-    null,
-  );
+  const [setForwardedInputElement, inputRef] =
+    useRefTee<HTMLInputElement | null>(ref, null);
   const activeDescendant = useActiveDescendant<string, string>({
     containerRef: listboxRef as RefObject<HTMLElement | null>,
     scrollIntoView: activeDescendantScrollIntoView,
     shouldWrap: true,
   });
+  useFormReset(
+    inputRef,
+    defaultValue,
+    isControlled
+      ? undefined
+      : (nextValue) => {
+          setUncontrolledValue(nextValue);
+          setTemporaryValue(null);
+          activeDescendant.reset();
+        },
+  );
   const activeOption = effectiveOpen
     ? activeDescendant.getActiveItem()
     : undefined;
