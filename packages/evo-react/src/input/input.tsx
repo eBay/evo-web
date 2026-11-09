@@ -2,6 +2,8 @@ import { useId, useState } from "react";
 import classNames from "classnames";
 import { EvoIconButton } from "../icon-button";
 import { useFloatingLabel } from "../utils/use-floating-label";
+import { useFormReset } from "../utils/use-form-reset";
+import { useRefTee } from "../utils/use-ref-tee";
 import type { EvoInputProps } from "./types";
 import "@ebay/skin/textbox.mjs";
 
@@ -62,6 +64,8 @@ export function EvoInput({
   const generatedPostfixId = useId();
   const [focused, setFocused] = useState(false);
   const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue);
+  const [setInputRef, inputRef] = useRefTee<HTMLInputElement | null>(ref, null);
+  useFormReset(inputRef, defaultValue, setUncontrolledValue);
 
   const {
     content: prefixContent,
@@ -142,7 +146,7 @@ export function EvoInput({
         <input
           {...rest}
           id={inputId}
-          ref={ref}
+          ref={setInputRef}
           className="textbox__control"
           aria-describedby={describedBy}
           aria-invalid={invalid ? "true" : ariaInvalid}

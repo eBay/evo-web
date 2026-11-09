@@ -6,6 +6,7 @@ import { EvoChipDeleteButton } from "../chip/chip-delete-button";
 import { EvoChipText } from "../chip/chip-text";
 import { EvoCombobox } from "../combobox/combobox";
 import { useRefTee } from "../utils/use-ref-tee";
+import { useFormReset } from "../utils/use-form-reset";
 import { ChipsComboboxProvider } from "./context";
 import type { EvoChipsComboboxProps } from "./types";
 import "@ebay/skin/chips-combobox.mjs";
@@ -78,6 +79,11 @@ export function EvoChipsCombobox({
     selected !== undefined ? selected : uncontrolledSelected;
   const invalid = ariaInvalid === true || ariaInvalid === "true";
   const pendingRemoval = useRef<PendingRemoval | null>(null);
+  useFormReset(inputRef, defaultSelected, (nextSelected) => {
+    setUncontrolledSelected(nextSelected);
+    setInputValue("");
+    pendingRemoval.current = null;
+  });
 
   // A controlled parent may apply, defer, or reject a removal, so focus moves
   // only once the requested selection renders and the clicked button is gone.

@@ -3,6 +3,8 @@ import type { ChangeEvent, FocusEvent, KeyboardEvent } from "react";
 import { EvoInput } from "../input";
 import type { EvoInputPostfixProps } from "../input";
 import { format, getLocale, parse, placeholder } from "../utils/dates";
+import { useFormReset } from "../utils/use-form-reset";
+import { useRefTee } from "../utils/use-ref-tee";
 import type {
   DateInputValue,
   EvoDateFieldProps,
@@ -38,11 +40,17 @@ export function DateField({
     onKeyUp,
     placeholder: placeholderText,
     invalid: inputInvalid,
+    ref,
     ...inputRest
   } = input ?? {};
   const [draft, setDraft] = useState<string | null>(null);
   const [invalid, setInvalid] = useState(false);
   const [prevIso, setPrevIso] = useState(iso);
+  const [setInputRef, inputRef] = useRefTee<HTMLInputElement | null>(ref, null);
+  useFormReset(inputRef, null, () => {
+    setDraft(null);
+    setInvalid(false);
+  });
   if (iso !== prevIso) {
     setPrevIso(iso);
     setDraft(null);
@@ -119,6 +127,7 @@ export function DateField({
   return (
     <EvoInput
       {...inputRest}
+      ref={setInputRef}
       disabled={disabled}
       readOnly={readOnly}
       invalid={inputInvalid || invalid}
