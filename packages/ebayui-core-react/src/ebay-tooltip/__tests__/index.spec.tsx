@@ -26,12 +26,10 @@ const renderComponent = (props = {}) =>
 
 const checkIsExpanded = (wrapper) => {
     expect(wrapper.container.querySelector(".tooltip--expanded")).toBeInTheDocument();
-    expect(wrapper.container.querySelector("button[aria-expanded=true]")).toBeInTheDocument();
 };
 
 const checkIsCollapsed = (wrapper) => {
     expect(wrapper.container.querySelector(".tooltip--expanded")).not.toBeInTheDocument();
-    expect(wrapper.container.querySelector("button[aria-expanded=true]")).not.toBeInTheDocument();
 };
 
 describe("<EbayTooltip>", () => {

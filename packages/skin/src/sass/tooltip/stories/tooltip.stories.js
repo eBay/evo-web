@@ -2,7 +2,7 @@ export default { title: "Skin/Tooltip" };
 
 export const collapsed = () => `
 <span class="tooltip">
-    <button accesskey="s" class="icon-button tooltip__host" aria-describedby="tooltip-0" aria-expanded="false" aria-label="Settings">
+    <button accesskey="s" class="icon-button tooltip__host" aria-describedby="tooltip-0" aria-label="Settings">
         <svg class="icon icon--24" height="16" width="16" aria-hidden="true">
             <use href="#icon-settings-24"></use>
         </svg>
@@ -20,8 +20,8 @@ export const collapsed = () => `
 </span>`;
 
 export const expanded = () => `
-<span class="tooltip">
-    <button accesskey="s" class="icon-button tooltip__host" aria-describedby="tooltip-0" aria-expanded="true" aria-label="Settings">
+<span class="tooltip tooltip--expanded">
+    <button accesskey="s" class="icon-button tooltip__host" aria-describedby="tooltip-0" aria-label="Settings">
         <svg class="icon icon--24" height="16" width="16" aria-hidden="true">
             <use href="#icon-settings-24"></use>
         </svg>
@@ -39,8 +39,8 @@ export const expanded = () => `
 </span>`;
 
 export const textSpacing = () => `
-<span class="tooltip demo-a11y-text-spacing">
-    <button accesskey="s" class="icon-button tooltip__host" aria-describedby="tooltip-0" aria-expanded="true" aria-label="Settings">
+<span class="tooltip tooltip--expanded demo-a11y-text-spacing">
+    <button accesskey="s" class="icon-button tooltip__host" aria-describedby="tooltip-0" aria-label="Settings">
         <svg class="icon icon--24" height="16" width="16" aria-hidden="true">
             <use href="#icon-settings-24"></use>
         </svg>

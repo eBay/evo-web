@@ -1,19 +1,19 @@
-import Expander from "makeup-expander";
-import { load as floatinguiLoad } from "@internal/floating-ui";
-import focusables from "makeup-focusables";
-import { pointerStyles } from "./constants";
-import type { WithNormalizedProps } from "../../../global";
 import type {
     Placement,
-    computePosition,
-    autoUpdate,
-    offset,
-    flip,
-    shift,
-    arrow,
-    inline,
     Strategy,
+    arrow,
+    autoUpdate,
+    computePosition,
+    flip,
+    inline,
+    offset,
+    shift,
 } from "@floating-ui/dom";
+import { load as floatinguiLoad } from "@internal/floating-ui";
+import Expander from "makeup-expander";
+import focusables from "makeup-focusables";
+import type { WithNormalizedProps } from "../../../global";
+import { pointerStyles } from "./constants";
 
 interface TooptipBaseInput {
     open?: boolean;
@@ -160,8 +160,17 @@ class TooltipBase extends Marko.Component<Input, State> {
                 expandOnFocus: isTooltip,
                 expandOnHover: isTooltip && !input.noHover,
                 expandOnClick: isInfotip,
+                useAriaExpanded: isInfotip,
                 autoCollapse: isTooltip,
             });
+
+            if (isTooltip) {
+                // Every re-render creates a new expander, which starts collapsed.
+                // Carry over the open state from the expanded class.
+                this._expander._expanded = expanderEl!.classList.contains(
+                    `${type}--expanded`,
+                );
+            }
 
             if (isTooltip && !host.hasAttribute("aria-describedby")) {
                 host.setAttribute("aria-describedby", input.overlayId!);
