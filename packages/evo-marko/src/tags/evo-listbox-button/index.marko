@@ -113,17 +113,12 @@ export interface Input<Index extends number | string> extends Marko.HTML.Div {
   }
 >
   <id/labelId>
-  <button
-    class=[
-      "listbox-button__control",
-      "btn",
-      split && `btn--split-${split}`,
-      borderless ? "btn--borderless" : "btn--form",
-      truncate && "btn--truncated",
-      floatingLabel && "btn--floating-label",
-    ]
+  <evo-button
+    class=["listbox-button__control", floatingLabel && "btn--floating-label"]
+    appearance=borderless ? "borderless" : "form"
+    split=split
+    truncate=truncate
     value=selectedOption?.value as string | undefined
-    type="button"
     disabled=disabled
     name=buttonName
     aria-haspopup="listbox"
@@ -163,7 +158,7 @@ export interface Input<Index extends number | string> extends Marko.HTML.Div {
       </else>
       <evo-icon-chevron-down-16/>
     </span>
-  </button>
+  </evo-button>
   <evo-listbox/$listboxEls
     style=expander.floatingStyles
     class=[
