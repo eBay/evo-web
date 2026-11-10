@@ -67,7 +67,7 @@ export default {
     },
     priority: {
       type: "string",
-      options: ["none (default)", "primary", "secondary", "delete", "tertiary"],
+      options: ["primary", "secondary", "tertiary"],
       control: "select",
       description: 'button priority, only used when `variant="button"`',
     },

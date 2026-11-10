@@ -4,8 +4,6 @@ import Button, { type Input } from "./index.marko";
 import Readme from "./README.md";
 import ButtonTemplate from "./examples/button.marko";
 import ButtonTemplateCode from "./examples/button.marko?raw";
-import ExpandButtonTemplate from "./examples/expand-button.marko";
-import ExpandButtonTemplateCode from "./examples/expand-button.marko?raw";
 
 export default {
   title: "buttons/evo-button",
@@ -27,11 +25,11 @@ export default {
       control: "inline-radio",
       description: "The size of the button",
     },
-    priority: {
+    appearance: {
       type: "string",
-      options: ["primary", "secondary", "tertiary", "none"],
+      options: ["primary", "secondary", "tertiary", "borderless", "form"],
       control: "inline-radio",
-      description: "Button priority",
+      description: "Button appearance",
       table: { defaultValue: { summary: "secondary" } },
     },
     fluid: {
@@ -40,24 +38,16 @@ export default {
       control: "boolean",
       table: { defaultValue: { summary: "false" } },
     },
-    borderless: {
+    destructive: {
       type: "boolean",
-      description: "If `true`, border is removed.",
+      description: "Destructive styling",
       control: "boolean",
       table: { defaultValue: { summary: "false" } },
-    },
-    bodyState: {
-      type: "string",
-      description:
-        "when state is loading, adds progress spinner. when user interacts with button, reset should be called to reset aria-live state. default is none",
-      options: ["none", "loading", "reset", "expand"],
-      control: "inline-radio",
-      table: { defaultValue: { summary: "none" } },
     },
     a11yLoadingText: {
       type: "string",
       description:
-        "Localized aria label for button when `bodyState` is `loading`",
+        "Localized aria label for the loading state. Setting it shows the progress spinner.",
       control: "text",
     },
     disabled: {
@@ -65,34 +55,16 @@ export default {
       description: "Disabled state",
       table: { defaultValue: { summary: "false" } },
     },
-    variant: {
-      type: "string",
-      options: ["standard (default)", "destructive", "form"],
-      control: "inline-radio",
-      description: "Additional style transformations beyond `priority`.",
-    },
     partiallyDisabled: {
       type: "boolean",
       description: "programmatically disabled, but remains keyboard focusable",
       control: "boolean",
       table: { defaultValue: { summary: "false" } },
     },
-    transparent: {
-      type: "boolean",
-      description: "transparent background color (overrides `priority`).",
-      control: "boolean",
-      table: { defaultValue: { summary: "false" } },
-    },
-    fixedHeight: {
-      type: "boolean",
-      description: "fixes the height based on `size`",
-      control: "boolean",
-      table: { defaultValue: { summary: "false" } },
-    },
     truncate: {
       type: "boolean",
       description:
-        "used in conjunction with `fixedHeight`; truncates text to single line with ellipsis when text overflows",
+        "truncates text to single line with ellipsis when text overflows",
       control: "boolean",
       table: { defaultValue: { summary: "false" } },
     },
@@ -112,9 +84,4 @@ export default {
 export const Default = buildExtensionTemplate(
   ButtonTemplate,
   ButtonTemplateCode,
-);
-
-export const ExpandButton = buildExtensionTemplate(
-  ExpandButtonTemplate,
-  ExpandButtonTemplateCode,
 );

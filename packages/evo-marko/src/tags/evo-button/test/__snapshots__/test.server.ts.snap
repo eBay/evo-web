@@ -1,18 +1,127 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`does not apply priority class for unsupported value 1`] = `
+exports[`renders button with appearance=borderless 1`] = `
 "<button
-  class="btn"
+  class="btn btn--borderless"
   type="button"
 >
   Button
 </button>"
 `;
 
-exports[`renders a11yText when bodyState === loading 1`] = `
+exports[`renders button with appearance=form 1`] = `
 "<button
-  a11ytext="loading text"
-  aria-label="loading"
+  class="btn btn--form"
+  type="button"
+>
+  Button
+</button>"
+`;
+
+exports[`renders button with appearance=primary 1`] = `
+"<button
+  class="btn btn--primary"
+  type="button"
+>
+  Button
+</button>"
+`;
+
+exports[`renders button with appearance=secondary 1`] = `
+"<button
+  class="btn btn--secondary"
+  type="button"
+>
+  Button
+</button>"
+`;
+
+exports[`renders button with appearance=tertiary 1`] = `
+"<button
+  class="btn btn--tertiary"
+  type="button"
+>
+  Button
+</button>"
+`;
+
+exports[`renders button with fluid=false 1`] = `
+"<button
+  class="btn btn--secondary"
+  type="button"
+>
+  Button
+</button>"
+`;
+
+exports[`renders button with fluid=true 1`] = `
+"<button
+  class="btn btn--fluid btn--secondary"
+  type="button"
+>
+  Button
+</button>"
+`;
+
+exports[`renders button with size=large 1`] = `
+"<button
+  class="btn btn--large btn--secondary"
+  type="button"
+>
+  Button
+</button>"
+`;
+
+exports[`renders defaults 1`] = `
+"<button
+  class="btn btn--secondary"
+  type="button"
+>
+  Button
+</button>"
+`;
+
+exports[`renders destructive button 1`] = `
+"<button
+  class="btn btn--destructive btn--primary"
+  type="button"
+>
+  Button
+</button>"
+`;
+
+exports[`renders disabled version 1`] = `
+"<button
+  class="btn btn--secondary"
+  disabled=""
+  type="button"
+>
+  Button
+</button>"
+`;
+
+exports[`renders fake version 1`] = `
+"<a
+  arialabel="fake button"
+  class="fake-btn fake-btn--large fake-btn--primary"
+  href="#"
+>
+  Button
+</a>"
+`;
+
+exports[`renders large truncated button 1`] = `
+"<button
+  class="btn btn--large-truncated btn--large btn--secondary"
+  type="button"
+>
+  Button
+</button>"
+`;
+
+exports[`renders loading state when a11yLoadingText is set 1`] = `
+"<button
+  aria-label="loading text"
   class="btn btn--primary"
   type="button"
 >
@@ -56,149 +165,6 @@ exports[`renders a11yText when bodyState === loading 1`] = `
 </button>"
 `;
 
-exports[`renders button with fluid=false 1`] = `
-"<button
-  class="btn btn--secondary"
-  type="button"
->
-  Button
-</button>"
-`;
-
-exports[`renders button with fluid=true 1`] = `
-"<button
-  class="btn btn--fluid btn--secondary"
-  type="button"
->
-  Button
-</button>"
-`;
-
-exports[`renders button with priority=delete 1`] = `
-"<button
-  class="btn"
-  type="button"
->
-  Button
-</button>"
-`;
-
-exports[`renders button with priority=primary 1`] = `
-"<button
-  class="btn btn--primary"
-  type="button"
->
-  Button
-</button>"
-`;
-
-exports[`renders button with priority=secondary 1`] = `
-"<button
-  class="btn btn--secondary"
-  type="button"
->
-  Button
-</button>"
-`;
-
-exports[`renders button with size=large 1`] = `
-"<button
-  class="btn btn--large btn--secondary"
-  type="button"
->
-  Button
-</button>"
-`;
-
-exports[`renders defaults 1`] = `
-"<button
-  class="btn btn--secondary"
-  type="button"
->
-  Button
-</button>"
-`;
-
-exports[`renders disabled version 1`] = `
-"<button
-  class="btn btn--secondary"
-  disabled=""
-  type="button"
->
-  Button
-</button>"
-`;
-
-exports[`renders expanded button 1`] = `
-"<button
-  class="btn btn--form"
-  type="button"
->
-  <span
-    class="btn__cell"
-  >
-    <span
-      class="btn__text"
-    >
-      Button
-    </span>
-    <svg
-      aria-hidden="true"
-      class="icon icon--16"
-    >
-      <symbol
-        id="GENERATED-0"
-        viewBox="0 0 16 16"
-      >
-        <path
-          d="M8.707 12.707a1 1 0 0 1-1.414 0l-6-6a1 1 0 0 1 1.414-1.414L8 10.586l5.293-5.293a1 1 0 1 1 1.414 1.414l-6 6Z"
-        />
-      </symbol>
-      <use
-        href="#icon-chevron-down-16"
-      />
-    </svg>
-  </span>
-</button>"
-`;
-
-exports[`renders fake version 1`] = `
-"<a
-  arialabel="fake button"
-  class="fake-btn fake-btn--large fake-btn--primary"
-  href="#"
->
-  Button
-</a>"
-`;
-
-exports[`renders fixed-height button 1`] = `
-"<button
-  class="btn btn--fixed-height btn--secondary"
-  type="button"
->
-  Button
-</button>"
-`;
-
-exports[`renders large fixed-height button 1`] = `
-"<button
-  class="btn btn--large-fixed-height btn--secondary"
-  type="button"
->
-  Button
-</button>"
-`;
-
-exports[`renders large truncated button 1`] = `
-"<button
-  class="btn btn--large-truncated btn--secondary"
-  type="button"
->
-  Button
-</button>"
-`;
-
 exports[`renders partially disabled version 1`] = `
 "<button
   aria-disabled="true"
@@ -212,6 +178,15 @@ exports[`renders partially disabled version 1`] = `
 exports[`renders small button 1`] = `
 "<button
   class="btn btn--small btn--secondary"
+  type="button"
+>
+  Button
+</button>"
+`;
+
+exports[`renders small truncated button 1`] = `
+"<button
+  class="btn btn--truncated btn--small btn--secondary"
   type="button"
 >
   Button

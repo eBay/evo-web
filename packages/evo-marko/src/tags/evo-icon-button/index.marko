@@ -1,8 +1,4 @@
-import {
-  type Input as ButtonInput,
-  validPriorities,
-  validSizes,
-} from "<evo-button>";
+import { type Input as ButtonInput, validSizes } from "<evo-button>";
 import type { Input as BadgeInput } from "<evo-badge>";
 export interface Input
   extends
@@ -10,11 +6,9 @@ export interface Input
     Omit<Marko.HTML.A, "type" | `on${string}` | "aria-label"> {
   badge?: Marko.AttrTag<Omit<BadgeInput, "a11yText" | "type">>;
   href?: string;
-  transparent?: boolean;
-  priority?: ButtonInput["priority"];
+  appearance?: "primary" | "secondary" | "tertiary" | "transparent";
   size?: ButtonInput["size"];
   partiallyDisabled?: ButtonInput["partiallyDisabled"];
-  onEscape?: ButtonInput["onEscape"];
   /**
    * The `aria-label` of the button
    *
@@ -27,12 +21,11 @@ export interface Input
 
 <const/{
   badge,
-  priority = "none",
+  appearance,
   partiallyDisabled,
   content,
   type,
   size,
-  transparent,
   class: inputClass,
   a11yText = "button",
   ...htmlInput
@@ -44,17 +37,10 @@ export interface Input
 <${tagType}
   ...htmlInput
   aria-label=a11yText
-  onKeyDown(e: KeyboardEvent, el: HTMLButtonElement) {
-    if (e.key === "Escape" && !input.disabled) {
-      input.onEscape?.(e);
-    }
-    input.onKeyDown && input.onKeyDown(e as any, el);
-  }
   class=[
     inputClass,
     baseClassName,
-    transparent && `${baseClassName}--transparent`,
-    validPriorities.includes(priority) && `${baseClassName}--${priority}`,
+    appearance && `${baseClassName}--${appearance}`,
     size && validSizes.includes(size) && `${baseClassName}--${size}`,
   ]
   type=tagType === "button" && (type || "button")
