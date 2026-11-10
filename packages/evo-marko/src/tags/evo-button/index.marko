@@ -9,7 +9,6 @@ export interface Input
   disabled?: boolean;
   partiallyDisabled?: boolean;
   truncate?: boolean;
-  split?: "start" | "end";
   /**
    * The `aria-label` while loading; setting it shows the progress spinner
    */
@@ -26,7 +25,6 @@ export interface Input
   partiallyDisabled,
   appearance = "secondary",
   size,
-  split,
   truncate,
   type = "button",
   ...htmlInput
@@ -54,7 +52,6 @@ export interface Input
     truncateClass,
     destructive && `${baseClass}--destructive`,
     sizeClass,
-    split && `${baseClass}--split-${split}`,
     `${baseClass}--${appearance}`,
   ]
   aria-disabled=partiallyDisabled && "true"
