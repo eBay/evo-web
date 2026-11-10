@@ -50,6 +50,10 @@ span.tourtip__mask {
 .tourtip__cell a {
     color: var(--tourtip-foreground-color, var(--color-foreground-on-inverse));
 }
+.tourtip__cell a:not([href]),
+.tourtip__cell a[aria-disabled="true"] {
+    color: var(--color-foreground-disabled);
+}
 .tourtip__cell a:focus {
     outline: 1px dashed currentColor;
 }
@@ -207,6 +211,12 @@ span.tourtip__heading {
 .tourtip__footer > a:hover:not(:disabled) {
     color: var(--color-foreground-on-inverse);
     text-decoration: underline;
+}
+
+.tourtip__cell .tourtip__footer > a:not([href]):hover,
+.tourtip__cell .tourtip__footer > a[aria-disabled="true"]:hover {
+    color: var(--color-foreground-disabled);
+    text-decoration: none;
 }
 .tourtip__index {
     flex: 1;

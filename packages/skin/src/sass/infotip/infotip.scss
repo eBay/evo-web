@@ -52,6 +52,11 @@ span.infotip__mask {
             color-foreground-on-inverse
         );
 
+        &:not([href]),
+        &[aria-disabled="true"] {
+            color: var(--color-foreground-disabled);
+        }
+
         &:focus {
             outline: 1px dashed currentColor;
         }

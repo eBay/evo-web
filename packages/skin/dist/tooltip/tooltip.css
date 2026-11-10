@@ -49,6 +49,10 @@ span.tooltip__mask {
 .tooltip__cell a {
     color: var(--tooltip-foreground-color, var(--color-foreground-on-inverse));
 }
+.tooltip__cell a:not([href]),
+.tooltip__cell a[aria-disabled="true"] {
+    color: var(--color-foreground-disabled);
+}
 .tooltip__cell a:focus {
     outline: 1px dashed currentColor;
 }

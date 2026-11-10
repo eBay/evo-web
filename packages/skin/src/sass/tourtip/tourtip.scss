@@ -44,6 +44,11 @@ span.tourtip__mask {
             color-foreground-on-inverse
         );
 
+        &:not([href]),
+        &[aria-disabled="true"] {
+            color: var(--color-foreground-disabled);
+        }
+
         &:focus {
             outline: 1px dashed currentColor;
         }
@@ -176,6 +181,12 @@ span.tourtip__heading {
         color: var(--color-foreground-on-inverse);
         text-decoration: underline;
     }
+}
+
+.tourtip__cell .tourtip__footer > a:not([href]):hover,
+.tourtip__cell .tourtip__footer > a[aria-disabled="true"]:hover {
+    color: var(--color-foreground-disabled);
+    text-decoration: none;
 }
 /* stylelint-enable no-descending-specificity */
 .tourtip__index {

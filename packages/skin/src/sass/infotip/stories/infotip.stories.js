@@ -156,3 +156,18 @@ export const textSpacing = () => `
         </div>
     </div>
 </span>`;
+
+export const disabledLinks = () => `
+<span class="infotip">
+    <div class="infotip__overlay" style="left: calc(50% - 16px); right: auto; top: calc(100% + 8px);">
+        <span class="infotip__pointer infotip__pointer--top-left"></span>
+        <div class="infotip__mask">
+            <div class="infotip__cell">
+                <div class="infotip__content">
+                    <p><a>Link without href</a></p>
+                    <p><a href="#" aria-disabled="true">Link with aria-disabled</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</span>`;
