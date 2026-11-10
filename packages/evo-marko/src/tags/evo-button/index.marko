@@ -1,10 +1,8 @@
-static export const validSizes = ["large", "small"] as const;
-static export const validSplit = ["start", "end"] as const;
 export type RootInput = Marko.HTML.Button | Marko.HTML.A;
 export interface Input
   extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `on${string}`> {
   href?: string;
-  size?: (typeof validSizes)[number];
+  size?: "large" | "small";
   appearance?: "primary" | "secondary" | "tertiary" | "borderless" | "form";
   destructive?: boolean;
   fluid?: boolean;
@@ -27,14 +25,12 @@ export interface Input
   href,
   partiallyDisabled,
   appearance = "secondary",
-  size: inputSize,
+  size,
   split,
   truncate,
   type = "button",
   ...htmlInput
 }=input>
-
-<const/size=inputSize && validSizes.includes(inputSize) ? inputSize : null>
 
 <const/baseClass=href ? "fake-btn" : "btn">
 <const/sizeClass=size && baseClass + "--" + size>
@@ -58,7 +54,7 @@ export interface Input
     truncateClass,
     destructive && `${baseClass}--destructive`,
     sizeClass,
-    validSplit.includes(split!) && `${baseClass}--split-${split}`,
+    split && `${baseClass}--split-${split}`,
     `${baseClass}--${appearance}`,
   ]
   aria-disabled=partiallyDisabled && "true"
