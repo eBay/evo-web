@@ -22,6 +22,7 @@ interface InfotipInput extends Omit<
     "no-flip"?: TooltipBaseInput["no-flip"];
     "not-inline"?: TooltipBaseInput["not-inline"];
     "no-shift"?: TooltipBaseInput["no-shift"];
+    strategy?: TooltipBaseInput["strategy"];
     content: Marko.AttrTag<Marko.HTML.Span>;
     "a11y-close-button-text"?: Marko.HTMLAttributes["aria-label"];
     "on-loaded"?: () => void;

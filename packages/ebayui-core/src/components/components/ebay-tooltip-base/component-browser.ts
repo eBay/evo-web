@@ -12,6 +12,7 @@ import type {
     shift,
     arrow,
     inline,
+    Strategy,
 } from "@floating-ui/dom";
 
 interface TooptipBaseInput {
@@ -26,6 +27,7 @@ interface TooptipBaseInput {
     "no-flip"?: boolean;
     "not-inline"?: boolean;
     "no-shift"?: boolean;
+    strategy?: Strategy;
     pointer?: keyof typeof pointerStyles;
     "on-base-expand"?: (event: { originalEvent: Event }) => void;
     "on-base-collapse"?: (event: { originalEvent: Event }) => void;
@@ -172,6 +174,12 @@ class TooltipBase extends Marko.Component<Input, State> {
 
     updateTip() {
         if (!this.state.loaded) return;
+        const strategy = this.input.strategy ?? "absolute";
+        // Skin CSS makes the overlay absolute, and floating-ui reads its computed
+        // position to pick clipping ancestors, so set it before computing.
+        if (this.overlayEl) {
+            this.overlayEl.style.position = strategy === "fixed" ? "fixed" : "";
+        }
         this.computePosition(
             this.hostEl as HTMLElement,
             this.overlayEl as HTMLElement,
@@ -179,7 +187,7 @@ class TooltipBase extends Marko.Component<Input, State> {
                 placement:
                     this.input.placement ||
                     pointerStyles[this.input.pointer ?? "bottom"],
-                strategy: "absolute",
+                strategy,
                 middleware: [
                     this.offset(this.input.offset || 6),
                     !this.input.notInline && this.inline(),
