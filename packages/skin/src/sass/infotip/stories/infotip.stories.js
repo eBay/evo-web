@@ -159,6 +159,11 @@ export const textSpacing = () => `
 
 export const disabledLinks = () => `
 <span class="infotip">
+    <button class="icon-button icon-button--transparent infotip__host" type="button" aria-expanded="true" aria-label="Help">
+        <svg class="icon icon--16" width="16" height="16" aria-hidden="true">
+            <use href="#icon-information-16"></use>
+        </svg>
+    </button>
     <div class="infotip__overlay" style="left: calc(50% - 16px); right: auto; top: calc(100% + 8px);">
         <span class="infotip__pointer infotip__pointer--top-left"></span>
         <div class="infotip__mask">

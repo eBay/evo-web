@@ -59,7 +59,12 @@ export const textSpacing = () => `
 
 export const disabledLinks = () => `
 <span class="tooltip">
-    <div class="tooltip__overlay" style="left: calc(50% - 16px); right: auto; top: calc(100% + 8px);">
+    <button class="icon-button tooltip__host" type="button" aria-describedby="tooltip-disabled-links" aria-expanded="true" aria-label="Settings">
+        <svg class="icon icon--24" height="16" width="16" aria-hidden="true">
+            <use href="#icon-settings-24"></use>
+        </svg>
+    </button>
+    <div class="tooltip__overlay" id="tooltip-disabled-links" role="tooltip" style="left: calc(50% - 16px); right: auto; top: calc(100% + 8px);">
         <span class="tooltip__pointer tooltip__pointer--top-left"></span>
         <div class="tooltip__mask">
             <div class="tooltip__cell">
