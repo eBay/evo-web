@@ -68,6 +68,12 @@ export default {
       control: "boolean",
       table: { defaultValue: { summary: "false" } },
     },
+    split: {
+      type: "string",
+      options: ["none (default)", "start", "end"],
+      control: "inline-radio",
+      description: "Apply split button styles.",
+    },
     ["<button> attributes" as any]: {
       description:
         "All attributes and event handlers from [the native HTML `<button>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button) will be passed through",

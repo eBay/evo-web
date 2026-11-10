@@ -17,7 +17,7 @@ export interface Input<Index extends number | string | (number | string)[]>
   size?: ButtonInput["size"];
   transparent?: boolean;
   disabled?: boolean;
-  split?: "start" | "end";
+  split?: ButtonInput["split"];
   noToggleIcon?: boolean;
   label?: Marko.AttrTag<Marko.HTML.Span>;
   footerButton?: Marko.AttrTag<ButtonInput>;
@@ -144,7 +144,7 @@ export interface Input<Index extends number | string | (number | string)[]>
   }
 >
   <${tagName as any}
-    class=["menu-button__button", split && `btn--split-${split}`]
+    class=[`menu-button__button`]
     size=size
     appearance=appearance
     variant=chipVariant
@@ -154,6 +154,7 @@ export interface Input<Index extends number | string | (number | string)[]>
     aria-labelledby=(
       prefixId && (variant === "icon" ? prefixId : `${prefixId} ${labelId}`)
     )
+    split=split
     disabled=disabled
     partiallyDisabled=partiallyDisabled
     onClick() {
