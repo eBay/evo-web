@@ -46,20 +46,15 @@ span.infotip__mask {
 .infotip__cell {
     @include bubble-mixins.cell(var(--spacing-200));
 
-    a {
+    a[href]:not([aria-disabled="true"]) {
         @include token-mixins.color-token(
             infotip-foreground-color,
             color-foreground-on-inverse
         );
+    }
 
-        &:not([href]),
-        &[aria-disabled="true"] {
-            color: var(--color-foreground-disabled);
-        }
-
-        &:focus {
-            outline: 1px dashed currentColor;
-        }
+    a:focus {
+        outline: 1px dashed currentColor;
     }
 }
 

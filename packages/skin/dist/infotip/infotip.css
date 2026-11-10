@@ -46,12 +46,8 @@ span.infotip__mask {
     padding: var(--spacing-200);
     word-break: normal;
 }
-.infotip__cell a {
+.infotip__cell a[href]:not([aria-disabled="true"]) {
     color: var(--infotip-foreground-color, var(--color-foreground-on-inverse));
-}
-.infotip__cell a:not([href]),
-.infotip__cell a[aria-disabled="true"] {
-    color: var(--color-foreground-disabled);
 }
 .infotip__cell a:focus {
     outline: 1px dashed currentColor;
