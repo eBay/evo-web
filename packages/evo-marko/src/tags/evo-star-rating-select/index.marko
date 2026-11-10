@@ -1,0 +1,71 @@
+static const defaultStarText = [
+  "1 star",
+  "2 stars",
+  "3 stars",
+  "4 stars",
+  "5 stars",
+] as const;
+static function toRating(checkedValue = "0") {
+  return Number(checkedValue);
+}
+export interface Input extends Omit<Marko.HTML.Div, "role" | "aria-label"> {
+  value?: number;
+  valueChange?: (value: number) => void;
+  disabled?: boolean;
+  name?: string;
+  /**
+   * The `aria-label` of the radio group
+   *
+   * English default to be overridden is `"Rating"`
+   *
+   * Pass `null` explicitly _only_ if alternative accessibility information is present
+   */
+  a11yText: string | null;
+  /**
+   * The `aria-label` of each star's radio button, in order from 1 to 5
+   *
+   * English default to be overridden is `["1 star", "2 stars", "3 stars", "4 stars", "5 stars"]`
+   */
+  a11yStarText: readonly [string, string, string, string, string];
+}
+
+<const/{
+  class: inputClass,
+  value: inputValue,
+  valueChange,
+  disabled,
+  name,
+  a11yText = "Rating",
+  a11yStarText = defaultStarText,
+  ...htmlInput
+}=input>
+
+<let/value=inputValue ?? 0 valueChange=valueChange>
+<id/radioName=name>
+
+<div
+  ...htmlInput
+  role="radiogroup"
+  aria-label=a11yText
+  class=["star-rating-select", inputClass]
+>
+  <for|star| from=1 to=5>
+    <span class="star-rating-select__radio">
+      <input
+        type="radio"
+        class=[
+          "star-rating-select__control",
+          star <= value && "star-rating-select__control--filled",
+        ]
+        name=radioName
+        value=star
+        disabled=disabled
+        aria-label=a11yStarText[star - 1]
+        checkedValue:toRating:=value
+      >
+      <span class="star-rating-select__radio-icon">
+        <evo-icon-star-dynamic/>
+      </span>
+    </span>
+  </for>
+</div>
