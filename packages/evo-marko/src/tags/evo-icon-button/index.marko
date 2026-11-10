@@ -1,4 +1,4 @@
-import { type Input as ButtonInput, validSizes } from "<evo-button>";
+import { type Input as ButtonInput } from "<evo-button>";
 import type { Input as BadgeInput } from "<evo-badge>";
 export interface Input
   extends
@@ -41,7 +41,7 @@ export interface Input
     inputClass,
     baseClassName,
     appearance && `${baseClassName}--${appearance}`,
-    size && validSizes.includes(size) && `${baseClassName}--${size}`,
+    size && `${baseClassName}--${size}`,
   ]
   type=tagType === "button" && (type || "button")
   aria-disabled=partiallyDisabled && "true"

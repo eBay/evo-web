@@ -1,5 +1,5 @@
 import type { Input as ListboxInput } from "<evo-listbox>";
-import { validSplit, type Input as ButtonInput } from "<evo-button>";
+import { type Input as ButtonInput } from "<evo-button>";
 export interface Input<Index extends number | string> extends Marko.HTML.Div {
   selected?: ListboxInput<Index>["selected"];
   selectedChange?: ListboxInput<Index>["selectedChange"];
@@ -117,7 +117,7 @@ export interface Input<Index extends number | string> extends Marko.HTML.Div {
     class=[
       "listbox-button__control",
       "btn",
-      validSplit.includes(split!) && `btn--split-${split}`,
+      split && `btn--split-${split}`,
       borderless ? "btn--borderless" : "btn--form",
       truncate && "btn--truncated",
       floatingLabel && "btn--floating-label",
