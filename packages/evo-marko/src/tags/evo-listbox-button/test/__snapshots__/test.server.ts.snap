@@ -275,7 +275,7 @@ exports[`listbox button > renders truncated layout 1`] = `
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-labelledby="GENERATED-1"
-    class="listbox-button__control btn btn--form btn--truncated"
+    class="listbox-button__control btn btn--truncated btn--form"
     type="button"
   >
     <span
@@ -733,7 +733,7 @@ exports[`listbox button > renders with floating label 1`] = `
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-labelledby="MARKO-ID-0"
-    class="listbox-button__control btn btn--form btn--floating-label"
+    class="listbox-button__control btn--floating-label btn btn--form"
     type="button"
   >
     <span
