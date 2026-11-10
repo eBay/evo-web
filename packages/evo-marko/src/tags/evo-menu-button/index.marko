@@ -13,7 +13,7 @@ export interface Input<Index extends number | string | (number | string)[]>
   variant?: "form" | "button" | "icon" | "filter";
   borderless?: boolean;
   partiallyDisabled?: ButtonInput["partiallyDisabled"];
-  priority?: "primary" | "secondary" | "tertiary" | "delete" | "none";
+  priority?: "primary" | "secondary" | "tertiary";
   size?: ButtonInput["size"];
   transparent?: boolean;
   disabled?: boolean;
@@ -65,24 +65,25 @@ export interface Input<Index extends number | string | (number | string)[]>
 }>
 <const/{
   tagName,
-  transparent,
   isSelected,
+  chipVariant,
   split,
-  priority,
+  appearance,
   noToggleIcon,
 }=(() => {
-  let priority = null;
+  let appearance;
   let split;
   let noToggleIcon;
-  let transparent;
   let tagName;
   let isSelected;
+  let chipVariant;
 
   if (variant === "icon") {
     tagName = IconButton;
-    transparent = inputTransparent;
+    if (inputTransparent) appearance = "transparent";
   } else if (variant === "filter") {
     tagName = FilterChip;
+    chipVariant = variant;
     isSelected = Array.isArray(selected)
       ? selected.length > 0
       : selected != null && selected !== -1;
@@ -90,16 +91,20 @@ export interface Input<Index extends number | string | (number | string)[]>
     tagName = Button;
     split = inputSplit;
     noToggleIcon = inputNoToggleIcon;
-    priority = inputPriority;
+    appearance = borderless
+      ? "borderless"
+      : variant === "form"
+        ? "form"
+        : inputPriority;
   }
 
   return {
     tagName,
     split,
     isSelected,
+    chipVariant,
     noToggleIcon,
-    transparent,
-    priority,
+    appearance,
   };
 })()>
 
@@ -141,12 +146,10 @@ export interface Input<Index extends number | string | (number | string)[]>
   <${tagName as any}
     class=[`menu-button__button`]
     size=size
-    priority=priority as ButtonInput["priority"]
-    borderless=borderless
-    variant=variant as any
+    appearance=appearance
+    variant=chipVariant
     aria-haspopup="true"
     selected=isSelected
-    transparent=transparent
     aria-expanded=expander.ariaExpanded
     aria-labelledby=(
       prefixId && (variant === "icon" ? prefixId : `${prefixId} ${labelId}`)

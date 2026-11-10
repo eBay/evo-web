@@ -83,7 +83,7 @@ export interface Input extends Marko.HTML.Span {
   <evo-icon-button
     id=hostId
     class="infotip__host"
-    transparent
+    appearance="transparent"
     disabled=disabled
     a11yText=a11yIconText
     aria-expanded=expander.ariaExpanded
@@ -120,7 +120,7 @@ export interface Input extends Marko.HTML.Span {
         <evo-icon-button
           a11yText=a11yCloseText
           class="infotip__close"
-          transparent
+          appearance="transparent"
           onClick() {
             open = false;
             $host().focus();

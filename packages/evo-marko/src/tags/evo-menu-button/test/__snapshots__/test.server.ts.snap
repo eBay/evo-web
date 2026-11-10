@@ -362,7 +362,7 @@ exports[`menu-button > renders with button variant 1`] = `
   <button
     aria-expanded="false"
     aria-haspopup="true"
-    class="menu-button__button btn btn--button btn--secondary"
+    class="menu-button__button btn btn--secondary"
     type="button"
   >
     <span>
@@ -1404,7 +1404,7 @@ exports[`menu-button > renders with overflow variant 1`] = `
   <button
     aria-expanded="false"
     aria-haspopup="true"
-    class="menu-button__button btn btn--overflow btn--secondary"
+    class="menu-button__button btn btn--secondary"
     type="button"
   >
     <span>

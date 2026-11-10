@@ -7,7 +7,7 @@ export interface Input extends Marko.HTML.Span {
   collapseOnSelect?: boolean;
   variant?: "form" | "button" | "icon";
   borderless?: boolean;
-  priority?: "primary" | "secondary" | "tertiary" | "delete" | "none";
+  priority?: "primary" | "secondary" | "tertiary";
   size?: ButtonInput["size"];
   transparent?: boolean;
   disabled?: boolean;
@@ -46,23 +46,25 @@ const/{
 
 let/open:=input.open
 
-const/{ tagName, transparent, priority }=(() => {
-  let priority = null;
-  let transparent;
+const/{ tagName, appearance }=(() => {
+  let appearance;
   let tagName;
 
   if (variant === "icon") {
     tagName = IconButton;
-    transparent = inputTransparent;
+    if (inputTransparent) appearance = "transparent";
   } else {
     tagName = Button;
-    priority = inputPriority;
+    appearance = borderless
+      ? "borderless"
+      : variant === "form"
+        ? "form"
+        : inputPriority;
   }
 
   return {
     tagName,
-    transparent,
-    priority,
+    appearance,
   };
 })()
 
@@ -89,10 +91,7 @@ span/$root
   }
   ${tagName as any}.fake-menu-button__button
     ,size=size
-    ,priority=priority as ButtonInput["priority"]
-    ,borderless=borderless
-    ,variant=(variant === "form" ? ("form" as any) : undefined)
-    ,transparent=transparent
+    ,appearance=appearance
     ,aria-expanded=expander.ariaExpanded
     ,aria-label=a11yText
     ,disabled=disabled

@@ -10,7 +10,7 @@ interface Properties {
 }
 
 const properties: Properties = {
-  priority: ["primary", "secondary", "delete"],
+  appearance: ["primary", "secondary", "tertiary", "transparent"],
   size: ["large", "small"],
 };
 

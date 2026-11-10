@@ -83,7 +83,7 @@ export interface Input extends Omit<
       />
       <evo-icon-button
         ...close
-        transparent
+        appearance="transparent"
         class=["toast-dialog__close", close.class]
         onClick(e, el) {
           $dialog().requestClose();
