@@ -1,7 +1,11 @@
 import { useId, useState } from "react";
+import type { ChangeEvent } from "react";
 import classNames from "classnames";
 import { EvoIconChevronDown12 } from "../icon/icons/chevron-down-12";
 import { useFloatingLabel } from "../utils/use-floating-label";
+import { useFormReset } from "../utils/use-form-reset";
+import { useRefTee } from "../utils/use-ref-tee";
+import { PlaceholderHiddenContext } from "./context";
 import type { EvoSelectProps } from "./types";
 import "@ebay/skin/select.mjs";
 
@@ -11,7 +15,7 @@ import "@ebay/skin/select.mjs";
  *
  * `EvoSelectOption` renders an option. Place grouped options inside
  * `EvoSelectOptionGroup`; this keeps the native `<optgroup>` structure without
- * inspecting children. `value` and `onValueChange` support controlled use,
+ * inspecting children. `value` and `onChange` support controlled use,
  * while `defaultValue` supports uncontrolled use.
  *
  * ## Usage
@@ -44,7 +48,6 @@ export function EvoSelect({
   onBlur,
   onChange,
   onFocus,
-  onValueChange,
   ref,
   size = "regular",
   style,
@@ -55,6 +58,11 @@ export function EvoSelect({
   const inputId = id ?? (floatingLabelText ? generatedId : undefined);
   const [focused, setFocused] = useState(false);
   const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue);
+  const [setSelectRef, selectRef] = useRefTee<HTMLSelectElement | null>(
+    ref,
+    null,
+  );
+  useFormReset(selectRef, defaultValue, setUncontrolledValue);
   const isControlled = value !== undefined;
   const currentValue = isControlled ? value : uncontrolledValue;
   const floatingLabel = useFloatingLabel({
@@ -66,7 +74,7 @@ export function EvoSelect({
     value: currentValue,
   });
 
-  const handleChange: NonNullable<EvoSelectProps["onChange"]> = (event) => {
+  const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
     if (multiple) {
       const nextValue = Array.from(
         event.currentTarget.selectedOptions,
@@ -75,15 +83,13 @@ export function EvoSelect({
       if (!isControlled) {
         setUncontrolledValue(nextValue);
       }
-      onChange?.(event);
-      onValueChange?.(nextValue);
+      onChange?.(nextValue);
     } else {
       const nextValue = event.currentTarget.value;
       if (!isControlled) {
         setUncontrolledValue(nextValue);
       }
-      onChange?.(event);
-      onValueChange?.(nextValue);
+      onChange?.(nextValue);
     }
   };
 
@@ -112,7 +118,7 @@ export function EvoSelect({
       >
         <select
           {...rest}
-          ref={ref}
+          ref={setSelectRef}
           aria-invalid={ariaInvalid}
           defaultValue={isControlled ? undefined : defaultValue}
           disabled={disabled}
@@ -123,7 +129,9 @@ export function EvoSelect({
           onFocus={handleFocus}
           value={value}
         >
-          {children}
+          <PlaceholderHiddenContext value={!floatingLabel.showPlaceholder}>
+            {children}
+          </PlaceholderHiddenContext>
         </select>
         <EvoIconChevronDown12 height="8" width="8" />
       </span>

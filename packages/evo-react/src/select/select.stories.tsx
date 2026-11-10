@@ -9,6 +9,7 @@ const meta: Meta<typeof EvoSelect> = {
     size: { control: "select", options: ["regular", "large"] },
     borderless: { control: "boolean" },
     fluid: { control: "boolean" },
+    onChange: { action: "onChange", table: { category: "Events" } },
   },
   args: {
     "aria-label": "Shipping method",

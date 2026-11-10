@@ -1,3 +1,5 @@
+import { use } from "react";
+import { PlaceholderHiddenContext } from "./context";
 import type { EvoSelectOptionProps } from "./types";
 
 /**
@@ -6,5 +8,11 @@ import type { EvoSelectOptionProps } from "./types";
  * @summary Native select option.
  */
 export function EvoSelectOption({ children, ...rest }: EvoSelectOptionProps) {
-  return <option {...rest}>{children}</option>;
+  const placeholderHidden = use(PlaceholderHiddenContext);
+
+  return (
+    <option {...rest}>
+      {placeholderHidden && rest.value === "" ? null : children}
+    </option>
+  );
 }

@@ -2,14 +2,14 @@
 
 Import `EvoSelect`, `EvoSelectOption`, and (when needed) `EvoSelectOptionGroup` from `@evo-web/react/select`. The native `<select>` and option markup remain in place.
 
-| ebayui-core-react                      | evo-react                                       | Change                                                                                                         |
-| -------------------------------------- | ----------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `inputSize="default"`                  | `size="regular"` or omit                        | The visual size follows Evo Marko's name.                                                                      |
-| `inputSize="large"`                    | `size="large"`                                  | The large Skin treatment remains.                                                                              |
-| `invalid`                              | `aria-invalid="true"`                           | Skin styles the native invalid attribute.                                                                      |
-| `forwardedRef`                         | `ref`                                           | React 19 passes the native select ref.                                                                         |
-| `onChange(event, { selected, index })` | `onChange(event)` and/or `onValueChange(value)` | Native `onChange` receives only the event. `onValueChange` reports a string, or a string array for `multiple`. |
-| `EbaySelectOption optgroup="..."`      | `EvoSelectOptionGroup label="..."`              | Wrap related options in an explicit native group.                                                              |
+| ebayui-core-react                      | evo-react                          | Change                                                                                                                            |
+| -------------------------------------- | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `inputSize="default"`                  | `size="regular"` or omit           | The visual size follows Evo Marko's name.                                                                                         |
+| `inputSize="large"`                    | `size="large"`                     | The large Skin treatment remains.                                                                                                 |
+| `invalid`                              | `aria-invalid="true"`              | Skin styles the native invalid attribute.                                                                                         |
+| `forwardedRef`                         | `ref`                              | React 19 passes the native select ref.                                                                                            |
+| `onChange(event, { selected, index })` | `onChange(value)`                  | `onChange` receives the selected value as a string, or a string array for `multiple`. It no longer receives the event or `index`. |
+| `EbaySelectOption optgroup="..."`      | `EvoSelectOptionGroup label="..."` | Wrap related options in an explicit native group.                                                                                 |
 
 ```tsx
 import {
@@ -18,7 +18,7 @@ import {
   EvoSelectOptionGroup,
 } from "@evo-web/react/select";
 
-<EvoSelect floatingLabel="Shipping method" onValueChange={setShipping}>
+<EvoSelect floatingLabel="Shipping method" onChange={setShipping}>
   <EvoSelectOption value="">Choose</EvoSelectOption>
   <EvoSelectOptionGroup label="Domestic">
     <EvoSelectOption value="standard">Standard</EvoSelectOption>
