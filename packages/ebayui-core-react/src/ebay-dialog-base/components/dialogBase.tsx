@@ -139,7 +139,7 @@ export const DialogBase: FC<DialogBaseProps<HTMLElement>> = ({
     };
 
     useEffect(() => {
-        const prevFocusEl = open && isModal ? (document.activeElement as HTMLElement | null) : null;
+        const prevFocusEl = open && isModal ? (document.activeElement as HTMLElement) : null;
         const dialogEl: HTMLElement | null = dialogRef.current;
 
         // For animated dialogs we handle the focus on transitionEnd event
@@ -152,8 +152,7 @@ export const DialogBase: FC<DialogBaseProps<HTMLElement>> = ({
 
         return () => {
             const activeEl = document.activeElement;
-            const focusIsUnclaimed = !activeEl || activeEl === document.body || dialogEl?.contains(activeEl);
-            if (prevFocusEl && prevFocusEl !== document.body && prevFocusEl.isConnected && focusIsUnclaimed) {
+            if (prevFocusEl?.isConnected && (activeEl === document.body || dialogEl?.contains(activeEl))) {
                 prevFocusEl.focus();
             }
         };
