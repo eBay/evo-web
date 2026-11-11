@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { vi } from "vitest";
-import { render, RenderResult } from "@testing-library/react";
+import { render, RenderResult, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { DialogBaseWithState } from "..";
 import DialogBase from "../components/dialogBase";
@@ -87,6 +87,49 @@ describe("DialogBase", () => {
                 await userEvent.click(wrapper.container.querySelector(".drawer-dialog")!);
                 expect(spyBackgroundClick).toHaveBeenCalled();
             });
+        });
+    });
+
+    describe("focus restoration", () => {
+        const DialogWithTrigger = ({ animated, onClose = () => {} }: { animated?: boolean; onClose?: () => void }) => {
+            const [open, setOpen] = useState(false);
+            return (
+                <>
+                    <button onClick={() => setOpen(true)}>Open</button>
+                    <button>Elsewhere</button>
+                    <DialogBaseWithState
+                        open={open}
+                        animated={animated}
+                        a11yCloseText="Close"
+                        onCloseBtnClick={() => {
+                            onClose();
+                            setOpen(false);
+                        }}
+                    >
+                        <EbayDialogHeader>title</EbayDialogHeader>
+                        dialog content
+                    </DialogBaseWithState>
+                </>
+            );
+        };
+
+        it.each([false, true])("returns focus to the trigger on close (animated: %s)", async (animated) => {
+            render(<DialogWithTrigger animated={animated} />);
+            const trigger = screen.getByRole("button", { name: "Open" });
+
+            await userEvent.click(trigger);
+            await userEvent.click(screen.getByRole("button", { name: "Close" }));
+
+            expect(trigger).toHaveFocus();
+        });
+
+        it("keeps focus where the close handler moved it", async () => {
+            render(<DialogWithTrigger animated={false} onClose={() => screen.getByText("Elsewhere").focus()} />);
+
+            await userEvent.click(screen.getByRole("button", { name: "Open" }));
+            await userEvent.click(screen.getByRole("button", { name: "Close" }));
+
+            expect(screen.getByText("Elsewhere")).toHaveFocus();
         });
     });
 });
