@@ -95,7 +95,6 @@ exports[`evo-section-title SSR > renders with overflow 1`] = `
         aria-label="button"
         class="menu-button__button icon-btn"
         type="button"
-        variant="icon"
       >
         <svg
           aria-hidden="true"

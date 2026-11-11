@@ -20,6 +20,10 @@ describe("menu-button", () => {
     await snapshotHTML(Default);
   });
 
+  it("renders partially disabled form variant", async () => {
+    await snapshotHTML(Default, { variant: "form", partiallyDisabled: true });
+  });
+
   it("renders with reverse=true", async () => {
     await snapshotHTML(Default, { reverse: true });
   });

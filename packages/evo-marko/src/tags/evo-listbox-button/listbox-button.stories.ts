@@ -143,12 +143,6 @@ export default {
       control: "text",
       description: "used for the `name` attribute of the native `<button>`.",
     },
-    split: {
-      type: "string",
-      options: ["none (default)", "start", "end"],
-      control: "inline-radio",
-      description: "Applies split button styles to the component.",
-    },
     invalid: {
       type: "boolean",
       control: "boolean",

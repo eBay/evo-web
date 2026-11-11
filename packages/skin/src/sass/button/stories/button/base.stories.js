@@ -4,6 +4,17 @@ export const textOnly = () => '<button class="button">Button</button>';
 
 export const form = () => '<button class="button button--form">Button</button>';
 
+export const formBorderless = () => `
+<button class="button button--form button--borderless">
+    <span class="button__cell">
+        <span class="button__label">Quantity: </span>
+        <span class="button__text">1</span>
+        <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
+            <use href="#icon-chevron-down-12"></use>
+        </svg>
+    </span>
+</button>`;
+
 export const formSlim = () =>
     '<button class="button button--form button--slim"><svg class="icon icon--12" width="16" height="16"><use href="#icon-chevron-down-12"></use></svg></button>';
 

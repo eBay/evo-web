@@ -32,7 +32,7 @@ export interface Input extends Omit<TextboxInput, "size"> {
           a11yText=a11yClearButtonText
           class="filter-input__clear-btn"
           size="small"
-          transparent
+          appearance="transparent"
           onClick() {
             (input.valueChange || null)?.("");
           }

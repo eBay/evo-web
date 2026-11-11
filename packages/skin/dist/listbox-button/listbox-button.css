@@ -77,13 +77,13 @@ button.expand-button[aria-expanded="true"] ~ div.listbox-button__listbox {
         [disabled],
         [aria-disabled="true"],
         [aria-invalid="true"]
-    ).btn--form,
+    ).btn--form:not(.btn--borderless),
 .listbox-button:not(.listbox-button--error)
     button:not(
         [disabled],
         [aria-disabled="true"],
         [aria-invalid="true"]
-    ).button--form {
+    ).button--form:not(.button--borderless) {
     border-color: var(
         --listbox-button-border-color,
         var(--color-border-medium)
@@ -94,37 +94,37 @@ button.expand-button[aria-expanded="true"] ~ div.listbox-button__listbox {
         [disabled],
         [aria-disabled="true"],
         [aria-invalid="true"]
-    ).btn--form:active,
+    ).btn--form:not(.btn--borderless):active,
 .listbox-button:not(.listbox-button--error)
     button:not(
         [disabled],
         [aria-disabled="true"],
         [aria-invalid="true"]
-    ).btn--form:focus,
+    ).btn--form:not(.btn--borderless):focus,
 .listbox-button:not(.listbox-button--error)
     button:not(
         [disabled],
         [aria-disabled="true"],
         [aria-invalid="true"]
-    ).btn--form:hover,
+    ).btn--form:not(.btn--borderless):hover,
 .listbox-button:not(.listbox-button--error)
     button:not(
         [disabled],
         [aria-disabled="true"],
         [aria-invalid="true"]
-    ).button--form:active,
+    ).button--form:not(.button--borderless):active,
 .listbox-button:not(.listbox-button--error)
     button:not(
         [disabled],
         [aria-disabled="true"],
         [aria-invalid="true"]
-    ).button--form:focus,
+    ).button--form:not(.button--borderless):focus,
 .listbox-button:not(.listbox-button--error)
     button:not(
         [disabled],
         [aria-disabled="true"],
         [aria-invalid="true"]
-    ).button--form:hover {
+    ).button--form:not(.button--borderless):hover {
     border-color: inherit;
 }
 

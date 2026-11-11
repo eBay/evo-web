@@ -27,6 +27,10 @@ describe("evo-fake-menu-button SSR", () => {
     await snapshotHTML(Default, { borderless: true });
   });
 
+  it("renders borderless form variant", async () => {
+    await snapshotHTML(Default, { variant: "form", borderless: true });
+  });
+
   it("renders with size=small", async () => {
     await snapshotHTML(Default, { size: "small" });
   });

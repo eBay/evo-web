@@ -3,14 +3,14 @@ import { it } from "vitest";
 import { composeStories } from "@storybook/marko";
 import { snapshotHTML } from "../../../common/test-utils/snapshots";
 import * as stories from "../button.stories"; // import all stories from the stories file
-const { Default, ExpandButton } = composeStories(stories);
+const { Default } = composeStories(stories);
 
 interface Properties {
   [key: string]: string[];
 }
 
 const properties: Properties = {
-  priority: ["primary", "secondary", "delete"],
+  appearance: ["primary", "secondary", "tertiary", "borderless"],
   size: ["large"],
 };
 
@@ -41,15 +41,11 @@ it("renders with type override", async () => {
   await snapshotHTML(Default, { type: "submit" });
 });
 
-it("does not apply priority class for unsupported value", async () => {
-  await snapshotHTML(Default, { priority: "none" });
-});
-
 it("renders fake version", async () => {
   await snapshotHTML(Default, {
     href: "#",
     size: "large",
-    priority: "primary",
+    appearance: "primary",
     ariaLabel: "fake button",
   });
 });
@@ -74,6 +70,13 @@ it("renders small button", async () => {
   });
 });
 
+it("renders small truncated button", async () => {
+  await snapshotHTML(Default, {
+    truncate: true,
+    size: "small",
+  });
+});
+
 it("renders large truncated button", async () => {
   await snapshotHTML(Default, {
     truncate: true,
@@ -81,27 +84,13 @@ it("renders large truncated button", async () => {
   });
 });
 
-it("renders fixed-height button", async () => {
-  await snapshotHTML(Default, {
-    fixedHeight: true,
-  });
+it("renders destructive button", async () => {
+  await snapshotHTML(Default, { appearance: "primary", destructive: true });
 });
 
-it("renders large fixed-height button", async () => {
+it("renders loading state when a11yLoadingText is set", async () => {
   await snapshotHTML(Default, {
-    fixedHeight: true,
-    size: "large",
+    appearance: "primary",
+    a11yLoadingText: "loading text",
   });
-});
-
-it("renders a11yText when bodyState === loading", async () => {
-  await snapshotHTML(Default, {
-    priority: "primary",
-    a11yText: "loading text",
-    bodyState: "loading",
-  });
-});
-
-it("renders expanded button", async () => {
-  await snapshotHTML(ExpandButton);
 });

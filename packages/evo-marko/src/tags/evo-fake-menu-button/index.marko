@@ -1,5 +1,6 @@
 import IconButton from "<evo-icon-button>";
 import Button, { type Input as ButtonInput } from "<evo-button>";
+import ButtonField from "<evo-button-field>";
 import { type Item as FakeMenuItem } from "<evo-fake-menu>";
 export interface Input extends Marko.HTML.Span {
   open?: boolean;
@@ -7,7 +8,7 @@ export interface Input extends Marko.HTML.Span {
   collapseOnSelect?: boolean;
   variant?: "form" | "button" | "icon";
   borderless?: boolean;
-  priority?: "primary" | "secondary" | "tertiary" | "delete" | "none";
+  priority?: "primary" | "secondary" | "tertiary";
   size?: ButtonInput["size"];
   transparent?: boolean;
   disabled?: boolean;
@@ -46,23 +47,29 @@ const/{
 
 let/open:=input.open
 
-const/{ tagName, transparent, priority }=(() => {
-  let priority = null;
-  let transparent;
+const/{ tagName, appearance, fieldBorderless, toggleIcon }=(() => {
+  let appearance;
   let tagName;
+  let fieldBorderless;
+  let toggleIcon = false;
 
   if (variant === "icon") {
     tagName = IconButton;
-    transparent = inputTransparent;
+    if (inputTransparent) appearance = "transparent";
+  } else if (variant === "form") {
+    tagName = ButtonField;
+    fieldBorderless = borderless;
   } else {
     tagName = Button;
-    priority = inputPriority;
+    toggleIcon = !noToggleIcon;
+    appearance = borderless ? "borderless" : inputPriority;
   }
 
   return {
     tagName,
-    transparent,
-    priority,
+    appearance,
+    fieldBorderless,
+    toggleIcon,
   };
 })()
 
@@ -89,10 +96,8 @@ span/$root
   }
   ${tagName as any}.fake-menu-button__button
     ,size=size
-    ,priority=priority as ButtonInput["priority"]
-    ,borderless=borderless
-    ,variant=(variant === "form" ? ("form" as any) : undefined)
-    ,transparent=transparent
+    ,appearance=appearance
+    ,borderless=fieldBorderless
     ,aria-expanded=expander.ariaExpanded
     ,aria-label=a11yText
     ,disabled=disabled
@@ -107,7 +112,7 @@ span/$root
     else
       span
         ${input.content}
-      if=!noToggleIcon
+      if=toggleIcon
         evo-icon-chevron-down-12
   evo-fake-menu/$fakeMenuEls
     ,style=expander.floatingStyles
