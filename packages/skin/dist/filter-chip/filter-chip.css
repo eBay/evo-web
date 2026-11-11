@@ -208,30 +208,22 @@ button.filter-chip--animated[aria-pressed="true"] {
 }
 
 a.filter-chip:not([href]),
-a.filter-chip[aria-disabled="true"],
-button.filter-chip[aria-disabled="true"],
-button.filter-chip[disabled] {
+button.filter-chip:disabled {
     border-color: var(--color-border-disabled);
     color: var(--color-foreground-disabled);
 }
-
-a.filter-chip--selected:not([href]),
-a.filter-chip--selected[aria-disabled="true"],
-button.filter-chip--selected[aria-disabled="true"],
-button.filter-chip--selected[disabled],
-button.filter-chip[aria-pressed="true"][aria-disabled="true"],
-button.filter-chip[aria-pressed="true"][disabled] {
+a.filter-chip:not([href]).filter-chip--selected,
+a.filter-chip:not([href])[aria-pressed="true"],
+button.filter-chip:disabled.filter-chip--selected,
+button.filter-chip:disabled[aria-pressed="true"] {
     animation: none;
     background-color: var(--color-background-disabled);
     background-image: none;
     border-color: var(--color-background-disabled);
     color: var(--color-foreground-on-disabled);
 }
-
 a.filter-chip:not([href]) .filter-chip__media > img,
-a.filter-chip[aria-disabled="true"] .filter-chip__media > img,
-button.filter-chip[aria-disabled="true"] .filter-chip__media > img,
-button.filter-chip[disabled] .filter-chip__media > img {
+button.filter-chip:disabled .filter-chip__media > img {
     filter: var(--color-media-disabled-filter);
 }
 
