@@ -48,6 +48,30 @@ export const anchorSelected = () => `
 </a>
 `;
 
+export const buttonDisabled = () => `
+<button class="filter-chip filter-chip--expressive" type="button" aria-pressed="false" disabled>
+    <span class="filter-chip__media">
+        <img
+            src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile_optimized.jpg"
+            alt=""
+        >
+    </span>
+    <span class="filter-chip__text">Football</span>
+</button>
+`;
+
+export const buttonSelectedDisabled = () => `
+<button class="filter-chip filter-chip--expressive" type="button" aria-pressed="true" disabled>
+    <span class="filter-chip__media">
+        <img
+            src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile_optimized.jpg"
+            alt=""
+        >
+    </span>
+    <span class="filter-chip__text">Football</span>
+</button>
+`;
+
 export const RTL = () => `
 <div dir="rtl">
     <button class="filter-chip filter-chip--expressive" type="button" aria-pressed="false">
