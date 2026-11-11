@@ -45,32 +45,23 @@ button.filter-chip--animated.filter-chip--selected {
     @include chip-mixins.selected-animation;
 }
 
-button.filter-chip[disabled],
-button.filter-chip[aria-disabled="true"],
-a.filter-chip:not([href]),
-a.filter-chip[aria-disabled="true"] {
+button.filter-chip:disabled,
+a.filter-chip:not([href]) {
     border-color: var(--color-border-disabled);
     color: var(--color-foreground-disabled);
-}
 
-button.filter-chip[aria-pressed="true"][disabled],
-button.filter-chip[aria-pressed="true"][aria-disabled="true"],
-button.filter-chip--selected[disabled],
-button.filter-chip--selected[aria-disabled="true"],
-a.filter-chip--selected:not([href]),
-a.filter-chip--selected[aria-disabled="true"] {
-    animation: none;
-    background-color: var(--color-background-disabled);
-    background-image: none;
-    border-color: var(--color-background-disabled);
-    color: var(--color-foreground-on-disabled);
-}
+    &[aria-pressed="true"],
+    &.filter-chip--selected {
+        animation: none;
+        background-color: var(--color-background-disabled);
+        background-image: none;
+        border-color: var(--color-background-disabled);
+        color: var(--color-foreground-on-disabled);
+    }
 
-button.filter-chip[disabled] .filter-chip__media > img,
-button.filter-chip[aria-disabled="true"] .filter-chip__media > img,
-a.filter-chip:not([href]) .filter-chip__media > img,
-a.filter-chip[aria-disabled="true"] .filter-chip__media > img {
-    filter: var(--color-media-disabled-filter);
+    .filter-chip__media > img {
+        filter: var(--color-media-disabled-filter);
+    }
 }
 
 button.filter-chip[aria-expanded="false"]:active .filter-chip__trailing {
