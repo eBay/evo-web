@@ -97,6 +97,13 @@ or import styles using SCSS/CSS
         noFlip: { description: "Disable automatic flip behavior", control: "boolean" },
         noShift: { description: "Disable automatic shift behavior", control: "boolean" },
         notInline: { description: "Opt out of inline display", control: "boolean" },
+        strategy: {
+            description:
+                "Positioning strategy for the overlay. Use `fixed` when a scrolling or `overflow: hidden` ancestor clips it.",
+            control: "inline-radio",
+            options: ["absolute", "fixed"],
+            table: { defaultValue: { summary: "absolute" } },
+        },
     },
 };
 

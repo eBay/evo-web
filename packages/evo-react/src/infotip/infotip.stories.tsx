@@ -49,6 +49,10 @@ const meta: Meta<typeof EvoInfotip> = {
       control: "boolean",
       table: { defaultValue: { summary: "true" } },
     },
+    detachPopover: {
+      control: "boolean",
+      table: { defaultValue: { summary: "false" } },
+    },
     disabled: {
       control: "boolean",
     },

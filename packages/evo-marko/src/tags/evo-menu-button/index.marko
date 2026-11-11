@@ -22,14 +22,14 @@ export interface Input<Index extends number | string | (number | string)[]>
   label?: Marko.AttrTag<Marko.HTML.Span>;
   footerButton?: Marko.AttrTag<ButtonInput>;
   reverse?: boolean;
-  strategy?: "absolute" | "fixed";
+  detachPopover?: boolean;
   fixWidth?: boolean;
 }
 <const/{
   class: inputClass,
   noToggleIcon: inputNoToggleIcon,
   reverse,
-  strategy,
+  detachPopover,
   fixWidth,
   borderless,
   size,
@@ -106,7 +106,7 @@ export interface Input<Index extends number | string | (number | string)[]>
 <evo-expander/expander
   open=open
   placement=reverse ? "bottom-end" : "bottom-start"
-  strategy=strategy
+  detachPopover=detachPopover
   host=$root
   overlay=(): HTMLElement => $menuEls().$root()
 />
@@ -178,7 +178,7 @@ export interface Input<Index extends number | string | (number | string)[]>
     style=expander.floatingStyles
     selected:=input.selected
     classPrefix="menu-button"
-    fixed=strategy === "fixed"
+    fixed=detachPopover
     variant=variant as MenuInput<Index>["variant"]
     fixWidth=fixWidth
     tabindex=-1

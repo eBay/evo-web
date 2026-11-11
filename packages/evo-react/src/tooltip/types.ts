@@ -24,6 +24,12 @@ export type EvoTooltipProps = ComponentProps<"span"> & {
   flip?: boolean;
   /** Shifts the tooltip to keep it within the viewport. Defaults to `true`. */
   shift?: boolean;
+  /**
+   * Detaches the overlay from its container so a scrolling or
+   * `overflow: hidden` ancestor can't clip it. The overlay then repositions as
+   * the page scrolls instead of moving with its container. Defaults to `false`.
+   */
+  detachPopover?: boolean;
   /** Uses inline positioning for hosts that wrap across multiple lines. Defaults to `true`. */
   inline?: boolean;
 };

@@ -41,6 +41,12 @@ export type EvoInfotipProps = ComponentProps<"span"> & {
    * infotip must stay exactly aligned with the button. Defaults to `true`.
    */
   shift?: boolean;
+  /**
+   * Detaches the overlay from its container so a scrolling or
+   * `overflow: hidden` ancestor can't clip it. The overlay then repositions as
+   * the page scrolls instead of moving with its container. Defaults to `false`.
+   */
+  detachPopover?: boolean;
   /** Disables the infotip trigger button. */
   disabled?: boolean;
   /** Custom trigger icon. Defaults to the information icon. */

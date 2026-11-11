@@ -387,9 +387,9 @@ describe("evo-date-range-input", () => {
       .toHaveValue("01/02/2024");
   });
 
-  it("positions the popover with the strategy passed to the popover child", async () => {
+  it("detaches the popover when the popover child asks for it", async () => {
     const screen = await render(
-      <TestRangeInput calendarPopover={{ strategy: "fixed" }} />,
+      <TestRangeInput calendarPopover={{ detachPopover: true }} />,
     );
     await user.click(screen.getByRole("button", { name: a11yOpenPopoverText }));
 

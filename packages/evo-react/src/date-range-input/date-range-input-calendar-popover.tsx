@@ -44,11 +44,11 @@ function toCalendarRange(
  * @summary Shared range calendar for `EvoDateRangeInputGroup`.
  */
 export function EvoDateRangeInputCalendarPopover({
-  strategy = "absolute",
+  detachPopover,
   ...calendar
 }: EvoDateRangeInputCalendarPopoverProps) {
   const context = useDateRangeInputContext();
-  const expander = useDatePopoverPosition(context, strategy);
+  const expander = useDatePopoverPosition(context, detachPopover);
   const visibleMonthCount = useResponsiveMonthCount(calendar.visibleMonthCount);
   const { visibleMonth, setVisibleMonth } = useFollowSelectedMonth(
     monthFromValue(context.selected),
@@ -60,7 +60,7 @@ export function EvoDateRangeInputCalendarPopover({
   return (
     <DateInputPopover
       popoverId={context.popoverId}
-      strategy={strategy}
+      detachPopover={detachPopover}
       expander={expander}
     >
       <EvoCalendar

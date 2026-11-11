@@ -83,6 +83,7 @@ export class DropdownUtil {
             );
         }
         middleware.push(this.shift());
+        this.overlay.style.position = this.options.strategy ?? "";
         this.computePosition(this.host, this.overlay, {
             placement: this.options.reverse ? "bottom-end" : "bottom-start",
             strategy: this.options.strategy ?? "fixed",

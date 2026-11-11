@@ -1,5 +1,4 @@
 import type { ComponentProps, CSSProperties, ReactNode } from "react";
-import type { Strategy } from "@floating-ui/react";
 import type { NativeIconButtonProps } from "../icon-button";
 
 export type InputSize = "regular" | "large";
@@ -9,9 +8,6 @@ export type ComboboxFilterMethod = "auto" | "manual" | "none";
 
 /** How keyboard navigation previews the active option. */
 export type ComboboxListSelection = "automatic" | "manual";
-
-/** Floating UI positioning strategy used by the listbox. */
-export type ComboboxStrategy = Strategy;
 
 /** Optional icon rendered after the combobox input. */
 export type EvoComboboxPostfixProps = {
@@ -81,8 +77,12 @@ export type EvoComboboxProps = Omit<
   open?: boolean;
   /** Optional icon or icon button rendered after the input. */
   postfix?: EvoComboboxPostfixProps;
-  /** Listbox positioning strategy. Defaults to `"absolute"`. */
-  strategy?: ComboboxStrategy;
+  /**
+   * Detaches the overlay from its container so a scrolling or
+   * `overflow: hidden` ancestor can't clip it. The overlay then repositions as
+   * the page scrolls instead of moving with its container. Defaults to `false`.
+   */
+  detachPopover?: boolean;
   /** Style applied to the combobox wrapper. */
   style?: CSSProperties;
   /** Controlled displayed input value. */

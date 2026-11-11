@@ -96,13 +96,12 @@ export default {
       control: "boolean",
       description: "Expand the menu flyout to the left",
     },
-    strategy: {
-      type: "string",
-      options: ["absolute", "fixed"],
-      control: "inline-radio",
-      table: { defaultValue: { summary: "absolute" } },
+    detachPopover: {
+      type: "boolean",
+      control: "boolean",
       description:
-        "Positioning strategy for the dropdown. Use fixed when dropdown is contained in an overflow and needs to be visible as you scroll the screen.",
+        "Detaches the overlay from its container so a scrolling or `overflow: hidden` ancestor can't clip it. The overlay then repositions as the page scrolls instead of moving with its container.",
+      table: { defaultValue: { summary: "false" } },
     },
     flip: {
       type: "boolean",

@@ -233,4 +233,11 @@ describe("<EbayTooltip>", () => {
             checkIsCollapsed(wrapper);
         });
     });
+
+    describe("on using the strategy prop", () => {
+        it("should position the overlay with that strategy", () => {
+            const wrapper = renderComponent({ open: true, strategy: "fixed" });
+            expect(wrapper.container.querySelector<HTMLElement>(".tooltip__overlay").style.position).toBe("fixed");
+        });
+    });
 });

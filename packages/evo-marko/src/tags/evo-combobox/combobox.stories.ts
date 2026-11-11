@@ -48,11 +48,12 @@ export default {
       control: "boolean",
       description: "Stretches the component to fill its container.",
     },
-    strategy: {
-      type: "string",
-      options: ["absolute", "fixed"],
-      control: "select",
-      description: "Listbox CSS position strategy (`absolute` by default).",
+    detachPopover: {
+      type: "boolean",
+      control: "boolean",
+      description:
+        "Detaches the overlay from its container so a scrolling or `overflow: hidden` ancestor can't clip it. The overlay then repositions as the page scrolls instead of moving with its container.",
+      table: { defaultValue: { summary: "false" } },
     },
     disabled: {
       type: "boolean",

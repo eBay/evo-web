@@ -25,6 +25,7 @@ type Props = Omit<TooltipProps, "ref"> & {
     noFlip?: boolean;
     noShift?: boolean;
     notInline?: boolean;
+    strategy?: "absolute" | "fixed";
 };
 
 const EbayTooltip: FC<Props> = ({
@@ -37,6 +38,7 @@ const EbayTooltip: FC<Props> = ({
     noFlip,
     noShift,
     notInline,
+    strategy,
     onFocus = () => {},
     onBlur = () => {},
     onMouseEnter = () => {},
@@ -64,6 +66,7 @@ const EbayTooltip: FC<Props> = ({
             noFlip,
             noShift,
             notInline,
+            strategy,
         },
     });
 

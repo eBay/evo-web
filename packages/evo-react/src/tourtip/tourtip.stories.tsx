@@ -43,6 +43,7 @@ const meta: Meta<typeof EvoTourtip> = {
     offset: { control: "number" },
     flip: { control: "boolean" },
     shift: { control: "boolean" },
+    detachPopover: { control: "boolean" },
     inline: { control: "boolean" },
   },
   args: {

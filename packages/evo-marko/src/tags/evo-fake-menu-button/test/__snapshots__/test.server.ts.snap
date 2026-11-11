@@ -331,6 +331,115 @@ exports[`evo-fake-menu-button SSR > renders with a custom label 1`] = `
 </span>"
 `;
 
+exports[`evo-fake-menu-button SSR > renders with a detached overlay 1`] = `
+"<span
+  class="fake-menu-button"
+>
+  <button
+    aria-expanded="false"
+    class="fake-menu-button__button btn btn--secondary"
+    type="button"
+  >
+    <span>
+      eBay Menu
+    </span>
+    <svg
+      aria-hidden="true"
+      class="icon icon--12"
+    >
+      <symbol
+        id="GENERATED-0"
+        viewBox="0 0 12 12"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+          fill-rule="evenodd"
+        />
+      </symbol>
+      <use
+        href="#icon-chevron-down-12"
+      />
+    </svg>
+  </button>
+  <span
+    class="fake-menu-button__menu fake-menu-button__menu--fixed"
+    style="position:fixed;visibility:hidden"
+    tabindex="-1"
+  >
+    <ul
+      class="fake-menu__items"
+      tabindex="-1"
+    >
+      <li>
+        <a
+          class="fake-menu-button__item"
+          href="#"
+        >
+          <span>
+            item 1
+          </span>
+          <svg
+            aria-hidden="true"
+            class="icon icon--16"
+          >
+            <symbol
+              id="GENERATED-1"
+              viewBox="0 0 16 16"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+                fill-rule="evenodd"
+              />
+            </symbol>
+            <use
+              href="#icon-tick-16"
+            />
+          </svg>
+        </a>
+      </li>
+      <li>
+        <button
+          class="fake-menu-button__item"
+          type="button"
+        >
+          <span>
+            item 2
+          </span>
+          <svg
+            aria-hidden="true"
+            class="icon icon--16"
+          >
+            <use
+              href="#icon-tick-16"
+            />
+          </svg>
+        </button>
+      </li>
+      <li>
+        <a
+          class="fake-menu-button__item"
+          href="#"
+        >
+          <span>
+            item 3
+          </span>
+          <svg
+            aria-hidden="true"
+            class="icon icon--16"
+          >
+            <use
+              href="#icon-tick-16"
+            />
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </span>
+</span>"
+`;
+
 exports[`evo-fake-menu-button SSR > renders with borderless=true 1`] = `
 "<span
   class="fake-menu-button"
@@ -473,115 +582,6 @@ exports[`evo-fake-menu-button SSR > renders with fixWidth=true 1`] = `
   </button>
   <span
     class="fake-menu-button__menu fake-menu-button__menu--fix-width"
-    style="visibility:hidden"
-    tabindex="-1"
-  >
-    <ul
-      class="fake-menu__items"
-      tabindex="-1"
-    >
-      <li>
-        <a
-          class="fake-menu-button__item"
-          href="#"
-        >
-          <span>
-            item 1
-          </span>
-          <svg
-            aria-hidden="true"
-            class="icon icon--16"
-          >
-            <symbol
-              id="GENERATED-1"
-              viewBox="0 0 16 16"
-            >
-              <path
-                clip-rule="evenodd"
-                d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
-                fill-rule="evenodd"
-              />
-            </symbol>
-            <use
-              href="#icon-tick-16"
-            />
-          </svg>
-        </a>
-      </li>
-      <li>
-        <button
-          class="fake-menu-button__item"
-          type="button"
-        >
-          <span>
-            item 2
-          </span>
-          <svg
-            aria-hidden="true"
-            class="icon icon--16"
-          >
-            <use
-              href="#icon-tick-16"
-            />
-          </svg>
-        </button>
-      </li>
-      <li>
-        <a
-          class="fake-menu-button__item"
-          href="#"
-        >
-          <span>
-            item 3
-          </span>
-          <svg
-            aria-hidden="true"
-            class="icon icon--16"
-          >
-            <use
-              href="#icon-tick-16"
-            />
-          </svg>
-        </a>
-      </li>
-    </ul>
-  </span>
-</span>"
-`;
-
-exports[`evo-fake-menu-button SSR > renders with fixed strategy 1`] = `
-"<span
-  class="fake-menu-button"
->
-  <button
-    aria-expanded="false"
-    class="fake-menu-button__button btn btn--secondary"
-    type="button"
-  >
-    <span>
-      eBay Menu
-    </span>
-    <svg
-      aria-hidden="true"
-      class="icon icon--12"
-    >
-      <symbol
-        id="GENERATED-0"
-        viewBox="0 0 12 12"
-      >
-        <path
-          clip-rule="evenodd"
-          d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
-          fill-rule="evenodd"
-        />
-      </symbol>
-      <use
-        href="#icon-chevron-down-12"
-      />
-    </svg>
-  </button>
-  <span
-    class="fake-menu-button__menu fake-menu-button__menu--fixed"
     style="visibility:hidden"
     tabindex="-1"
   >

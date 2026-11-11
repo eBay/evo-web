@@ -31,8 +31,8 @@ for the pre-main API.
 
 Single-field `EvoInput` props remain inline on `EvoDateInput`. Do not pass an
 `EvoInput` child. `EvoDateInputCalendarPopover` receives calendar options such
-as `today`, `disable`, `visibleMonth`, and `visibleMonthCount`. `strategy` is
-also passed to the popover.
+as `today`, `disable`, `visibleMonth`, and `visibleMonthCount`.
+`strategy="fixed"` becomes `detachPopover` on the popover.
 
 ## Date range
 
@@ -133,7 +133,7 @@ calendar popover child:
 | `a11yRangeStartText` / `InRange` / `End`        | required `a11yRangeText` on the range popover  |
 | `numMonths`                                     | `visibleMonthCount` on the calendar popover    |
 | `onMonthChange`                                 | `onVisibleMonthChange` on the calendar popover |
-| `strategy`                                      | `strategy` on the calendar popover             |
+| `strategy="fixed"`                              | `detachPopover` on the calendar popover        |
 | `linkBuilder`                                   | removed                                        |
 | `a11ySeparator`                                 | removed; the calendar owns it                  |
 

@@ -399,6 +399,139 @@ exports[`listbox button > renders truncated layout 1`] = `
 </div>"
 `;
 
+exports[`listbox button > renders with a detached overlay 1`] = `
+"<span
+  class="listbox-button"
+  id="GENERATED-0"
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-labelledby="GENERATED-1"
+    class="listbox-button__control btn btn--form"
+    type="button"
+  >
+    <span
+      class="btn__cell"
+    >
+      <span
+        class="btn__text"
+        id="GENERATED-1"
+      >
+        -
+      </span>
+      <svg
+        aria-hidden="true"
+        class="icon icon--16"
+      >
+        <symbol
+          id="GENERATED-2"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8.707 12.707a1 1 0 0 1-1.414 0l-6-6a1 1 0 0 1 1.414-1.414L8 10.586l5.293-5.293a1 1 0 1 1 1.414 1.414l-6 6Z"
+          />
+        </symbol>
+        <use
+          href="#icon-chevron-down-16"
+        />
+      </svg>
+    </span>
+  </button>
+  <div
+    class="listbox__options listbox-button__listbox listbox-button__listbox--fixed"
+    role="listbox"
+    style="position:fixed;visibility:hidden"
+    tabindex="0"
+  >
+    <div
+      class="listbox__option"
+      data-value="1"
+      role="option"
+    >
+      <span
+        class="listbox__value"
+      >
+        Option 1
+      </span>
+       
+      <svg
+        aria-hidden="true"
+        class="icon icon--16"
+      >
+        <symbol
+          id="GENERATED-3"
+          viewBox="0 0 16 16"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+            fill-rule="evenodd"
+          />
+        </symbol>
+        <use
+          href="#icon-tick-16"
+        />
+      </svg>
+    </div>
+    <div
+      class="listbox__option"
+      data-value="2"
+      role="option"
+    >
+      <span
+        class="listbox__value"
+      >
+        Option 2
+      </span>
+       
+      <svg
+        aria-hidden="true"
+        class="icon icon--16"
+      >
+        <use
+          href="#icon-tick-16"
+        />
+      </svg>
+    </div>
+    <div
+      class="listbox__option"
+      data-value="3"
+      role="option"
+    >
+      <span
+        class="listbox__value"
+      >
+        Option 3
+      </span>
+       
+      <svg
+        aria-hidden="true"
+        class="icon icon--16"
+      >
+        <use
+          href="#icon-tick-16"
+        />
+      </svg>
+    </div>
+  </div>
+  <select
+    class="listbox__native"
+    hidden=""
+  >
+    <option
+      value="1"
+    />
+    <option
+      value="2"
+    />
+    <option
+      value="3"
+    />
+  </select>
+</span>"
+`;
+
 exports[`listbox button > renders with description 1`] = `
 "<span
   class="listbox-button"
@@ -1308,139 +1441,6 @@ exports[`listbox button > renders with second item selected 1`] = `
   >
     <div
       class="listbox__option listbox__option--active"
-      data-value="1"
-      role="option"
-    >
-      <span
-        class="listbox__value"
-      >
-        Option 1
-      </span>
-       
-      <svg
-        aria-hidden="true"
-        class="icon icon--16"
-      >
-        <symbol
-          id="GENERATED-3"
-          viewBox="0 0 16 16"
-        >
-          <path
-            clip-rule="evenodd"
-            d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
-            fill-rule="evenodd"
-          />
-        </symbol>
-        <use
-          href="#icon-tick-16"
-        />
-      </svg>
-    </div>
-    <div
-      class="listbox__option"
-      data-value="2"
-      role="option"
-    >
-      <span
-        class="listbox__value"
-      >
-        Option 2
-      </span>
-       
-      <svg
-        aria-hidden="true"
-        class="icon icon--16"
-      >
-        <use
-          href="#icon-tick-16"
-        />
-      </svg>
-    </div>
-    <div
-      class="listbox__option"
-      data-value="3"
-      role="option"
-    >
-      <span
-        class="listbox__value"
-      >
-        Option 3
-      </span>
-       
-      <svg
-        aria-hidden="true"
-        class="icon icon--16"
-      >
-        <use
-          href="#icon-tick-16"
-        />
-      </svg>
-    </div>
-  </div>
-  <select
-    class="listbox__native"
-    hidden=""
-  >
-    <option
-      value="1"
-    />
-    <option
-      value="2"
-    />
-    <option
-      value="3"
-    />
-  </select>
-</span>"
-`;
-
-exports[`listbox button > renders with strategy=fixed 1`] = `
-"<span
-  class="listbox-button"
-  id="GENERATED-0"
->
-  <button
-    aria-expanded="false"
-    aria-haspopup="listbox"
-    aria-labelledby="GENERATED-1"
-    class="listbox-button__control btn btn--form"
-    type="button"
-  >
-    <span
-      class="btn__cell"
-    >
-      <span
-        class="btn__text"
-        id="GENERATED-1"
-      >
-        -
-      </span>
-      <svg
-        aria-hidden="true"
-        class="icon icon--16"
-      >
-        <symbol
-          id="GENERATED-2"
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="M8.707 12.707a1 1 0 0 1-1.414 0l-6-6a1 1 0 0 1 1.414-1.414L8 10.586l5.293-5.293a1 1 0 1 1 1.414 1.414l-6 6Z"
-          />
-        </symbol>
-        <use
-          href="#icon-chevron-down-16"
-        />
-      </svg>
-    </span>
-  </button>
-  <div
-    class="listbox__options listbox-button__listbox listbox-button__listbox--fixed"
-    role="listbox"
-    style="visibility:hidden"
-    tabindex="0"
-  >
-    <div
-      class="listbox__option"
       data-value="1"
       role="option"
     >

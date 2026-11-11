@@ -18,8 +18,8 @@ describe("listbox button", () => {
     await snapshotHTML(Default, { truncate: true });
   });
 
-  it("renders with strategy=fixed", async () => {
-    await snapshotHTML(Default, { strategy: "fixed" });
+  it("renders with a detached overlay", async () => {
+    await snapshotHTML(Default, { detachPopover: true });
   });
 
   it("renders with second item selected", async () => {
