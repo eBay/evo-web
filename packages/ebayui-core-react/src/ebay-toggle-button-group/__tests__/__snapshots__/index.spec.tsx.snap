@@ -14,15 +14,15 @@ exports[`<EbayToggleButtonGroup /> > should render component - <Default /> 1`] =
             aria-pressed="true"
             class="toggle-button toggle-button--minimal-layout"
           >
-            <div
+            <span
               class="toggle-button__content"
             >
-              <p
+              <span
                 class="toggle-button__title"
               >
                 Button1
-              </p>
-            </div>
+              </span>
+            </span>
           </button>
         </li>
         <li>
@@ -30,11 +30,11 @@ exports[`<EbayToggleButtonGroup /> > should render component - <Default /> 1`] =
             aria-pressed="false"
             class="toggle-button toggle-button--minimal-layout"
           >
-            <div
+            <span
               class="toggle-button__content"
             >
               Child Button
-            </div>
+            </span>
           </button>
         </li>
         <li>
@@ -42,20 +42,20 @@ exports[`<EbayToggleButtonGroup /> > should render component - <Default /> 1`] =
             aria-pressed="false"
             class="toggle-button toggle-button--minimal-layout"
           >
-            <div
+            <span
               class="toggle-button__content"
             >
-              <p
+              <span
                 class="toggle-button__title"
               >
                 Button2
-              </p>
-              <p
+              </span>
+              <span
                 class="toggle-button__subtitle"
               >
                 subtitle
-              </p>
-            </div>
+              </span>
+            </span>
           </button>
         </li>
         <li>
@@ -63,7 +63,7 @@ exports[`<EbayToggleButtonGroup /> > should render component - <Default /> 1`] =
             aria-pressed="false"
             class="toggle-button toggle-button--minimal-layout"
           >
-            <div
+            <span
               class="toggle-button__icon"
             >
               <svg
@@ -76,21 +76,21 @@ exports[`<EbayToggleButtonGroup /> > should render component - <Default /> 1`] =
                   xlink:href="#icon-settings-24"
                 />
               </svg>
-            </div>
-            <div
+            </span>
+            <span
               class="toggle-button__content"
             >
-              <p
+              <span
                 class="toggle-button__title"
               >
                 Button3
-              </p>
-              <p
+              </span>
+              <span
                 class="toggle-button__subtitle"
               >
                 subtitle
-              </p>
-            </div>
+              </span>
+            </span>
           </button>
         </li>
         <li>
@@ -110,20 +110,20 @@ exports[`<EbayToggleButtonGroup /> > should render component - <Default /> 1`] =
                 />
               </span>
             </span>
-            <div
+            <span
               class="toggle-button__content"
             >
-              <p
+              <span
                 class="toggle-button__title"
               >
                 Button4
-              </p>
-              <p
+              </span>
+              <span
                 class="toggle-button__subtitle"
               >
                 subtitle
-              </p>
-            </div>
+              </span>
+            </span>
           </button>
         </li>
       </ul>

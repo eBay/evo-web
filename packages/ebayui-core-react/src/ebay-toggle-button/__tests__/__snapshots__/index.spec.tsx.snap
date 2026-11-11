@@ -6,20 +6,20 @@ exports[`<EbayToggleButton /> > should render component - <Default /> 1`] = `
     aria-pressed="false"
     class="toggle-button toggle-button--custom-modifier toggle-button--minimal-layout"
   >
-    <div
+    <span
       class="toggle-button__content"
     >
-      <p
+      <span
         class="toggle-button__title"
       >
         Button 1
-      </p>
-      <p
+      </span>
+      <span
         class="toggle-button__subtitle"
       >
         subtitle
-      </p>
-    </div>
+      </span>
+    </span>
   </button>
 </DocumentFragment>
 `;
@@ -30,7 +30,7 @@ exports[`<EbayToggleButton /> > should render component - <IconButton /> 1`] = `
     aria-pressed="false"
     class="toggle-button toggle-button--minimal-layout"
   >
-    <div
+    <span
       class="toggle-button__icon"
     >
       <svg
@@ -43,21 +43,21 @@ exports[`<EbayToggleButton /> > should render component - <IconButton /> 1`] = `
           xlink:href="#icon-settings-24"
         />
       </svg>
-    </div>
-    <div
+    </span>
+    <span
       class="toggle-button__content"
     >
-      <p
+      <span
         class="toggle-button__title"
       >
         Button 1
-      </p>
-      <p
+      </span>
+      <span
         class="toggle-button__subtitle"
       >
         Some context here
-      </p>
-    </div>
+      </span>
+    </span>
   </button>
 </DocumentFragment>
 `;
@@ -80,20 +80,20 @@ exports[`<EbayToggleButton /> > should render component - <ImageButton /> 1`] = 
         />
       </span>
     </span>
-    <div
+    <span
       class="toggle-button__content"
     >
-      <p
+      <span
         class="toggle-button__title"
       >
         Button 1
-      </p>
-      <p
+      </span>
+      <span
         class="toggle-button__subtitle"
       >
         Some context here
-      </p>
-    </div>
+      </span>
+    </span>
   </button>
 </DocumentFragment>
 `;
@@ -114,20 +114,20 @@ exports[`<EbayToggleButton /> > should render component - <ImageButtonWithPlacem
         style="background-image: url("https://cloudfront.slrlounge.com/wp-content/uploads/2012/07/01-SLRLounge-Holding-Standing-Wrong.jpg"); background-position: center top; background-size: cover; background-repeat: no-repeat;"
       />
     </span>
-    <div
+    <span
       class="toggle-button__content"
     >
-      <p
+      <span
         class="toggle-button__title"
       >
         Button 1
-      </p>
-      <p
+      </span>
+      <span
         class="toggle-button__subtitle"
       >
         Some context here
-      </p>
-    </div>
+      </span>
+    </span>
   </button>
 </DocumentFragment>
 `;
@@ -138,13 +138,13 @@ exports[`<EbayToggleButton /> > should render component - <WithChildren /> 1`] =
     aria-pressed="false"
     class="toggle-button toggle-button--minimal-layout"
   >
-    <div
+    <span
       class="toggle-button__content"
     >
       <p>
         Button 1
       </p>
-    </div>
+    </span>
   </button>
 </DocumentFragment>
 `;

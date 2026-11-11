@@ -27,8 +27,8 @@ const EbayToggleButton: FC<ToggleButtonProps> = ({
         }
         return (
             <>
-                <p className="toggle-button__title">{title}</p>
-                {subtitle && <p className="toggle-button__subtitle">{subtitle}</p>}
+                <span className="toggle-button__title">{title}</span>
+                {subtitle && <span className="toggle-button__subtitle">{subtitle}</span>}
             </>
         );
     };
@@ -36,7 +36,9 @@ const EbayToggleButton: FC<ToggleButtonProps> = ({
     const getMediaContent = () => {
         if (icon) {
             return (
-                <div className="toggle-button__icon">{typeof icon === "string" ? <EbayIcon name={icon} /> : icon}</div>
+                <span className="toggle-button__icon">
+                    {typeof icon === "string" ? <EbayIcon name={icon} /> : icon}
+                </span>
             );
         } else if (img) {
             return (
@@ -76,7 +78,7 @@ const EbayToggleButton: FC<ToggleButtonProps> = ({
             {...rest}
         >
             {getMediaContent()}
-            <div className="toggle-button__content">{getButtonContent()}</div>
+            <span className="toggle-button__content">{getButtonContent()}</span>
         </button>
     );
 };
