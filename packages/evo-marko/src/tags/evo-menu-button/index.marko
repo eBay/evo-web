@@ -1,6 +1,7 @@
 import IconButton from "<evo-icon-button>";
 import FilterChip from "<evo-filter-chip>";
 import Button, { type Input as ButtonInput } from "<evo-button>";
+import ButtonField from "<evo-button-field>";
 import { type Input as MenuInput } from "<evo-menu>";
 export interface Input<Index extends number | string | (number | string)[]>
   extends
@@ -33,7 +34,7 @@ export interface Input<Index extends number | string | (number | string)[]>
   fixWidth,
   borderless,
   size,
-  partiallyDisabled,
+  partiallyDisabled: inputPartiallyDisabled,
   footerButton,
   priority: inputPriority,
   disabled,
@@ -69,14 +70,20 @@ export interface Input<Index extends number | string | (number | string)[]>
   chipVariant,
   split,
   appearance,
-  noToggleIcon,
+  toggleIcon,
+  fieldBorderless,
+  partiallyDisabled,
+  ariaDisabled,
 }=(() => {
   let appearance;
   let split;
-  let noToggleIcon;
+  let toggleIcon = true;
   let tagName;
   let isSelected;
   let chipVariant;
+  let fieldBorderless;
+  let partiallyDisabled = inputPartiallyDisabled;
+  let ariaDisabled;
 
   if (variant === "icon") {
     tagName = IconButton;
@@ -87,15 +94,17 @@ export interface Input<Index extends number | string | (number | string)[]>
     isSelected = Array.isArray(selected)
       ? selected.length > 0
       : selected != null && selected !== -1;
+  } else if (variant === "form") {
+    tagName = ButtonField;
+    fieldBorderless = borderless;
+    toggleIcon = false;
+    partiallyDisabled = undefined;
+    ariaDisabled = inputPartiallyDisabled && "true";
   } else {
     tagName = Button;
     split = inputSplit;
-    noToggleIcon = inputNoToggleIcon;
-    appearance = borderless
-      ? "borderless"
-      : variant === "form"
-        ? "form"
-        : inputPriority;
+    toggleIcon = !inputNoToggleIcon;
+    appearance = borderless ? "borderless" : inputPriority;
   }
 
   return {
@@ -103,8 +112,11 @@ export interface Input<Index extends number | string | (number | string)[]>
     split,
     isSelected,
     chipVariant,
-    noToggleIcon,
+    toggleIcon,
     appearance,
+    fieldBorderless,
+    partiallyDisabled,
+    ariaDisabled,
   };
 })()>
 
@@ -147,6 +159,7 @@ export interface Input<Index extends number | string | (number | string)[]>
     class=[`menu-button__button`]
     size=size
     appearance=appearance
+    borderless=fieldBorderless
     variant=chipVariant
     aria-haspopup="true"
     selected=isSelected
@@ -157,6 +170,7 @@ export interface Input<Index extends number | string | (number | string)[]>
     split=split
     disabled=disabled
     partiallyDisabled=partiallyDisabled
+    aria-disabled=ariaDisabled
     onClick() {
       focusOnOpen = true;
       open = !open;
@@ -172,7 +186,7 @@ export interface Input<Index extends number | string | (number | string)[]>
       <span id=prefixId && labelId>
         <${input.content}/>
       </span>
-      <if=!noToggleIcon>
+      <if=toggleIcon>
         <evo-icon-chevron-down-12/>
       </if>
     </else>

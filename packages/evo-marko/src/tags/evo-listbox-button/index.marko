@@ -1,5 +1,4 @@
 import type { Input as ListboxInput } from "<evo-listbox>";
-import { type Input as ButtonInput } from "<evo-button>";
 export interface Input<Index extends number | string> extends Marko.HTML.Div {
   selected?: ListboxInput<Index>["selected"];
   selectedChange?: ListboxInput<Index>["selectedChange"];
@@ -18,7 +17,6 @@ export interface Input<Index extends number | string> extends Marko.HTML.Div {
   floatingLabel?: string;
   disabled?: boolean;
   buttonName?: string;
-  split?: ButtonInput["split"];
   invalid?: boolean;
   hasError?: boolean;
   /**
@@ -56,7 +54,6 @@ export interface Input<Index extends number | string> extends Marko.HTML.Div {
   variant,
   hasError,
   strategy,
-  split,
   a11yDescribedBy,
   a11ySelectedText = "selected",
   onKeyDown,
@@ -113,10 +110,9 @@ export interface Input<Index extends number | string> extends Marko.HTML.Div {
   }
 >
   <id/labelId>
-  <evo-button
+  <evo-button-field
     class=["listbox-button__control", floatingLabel && "btn--floating-label"]
-    appearance=borderless ? "borderless" : "form"
-    split=split
+    borderless=borderless
     truncate=truncate
     value=selectedOption?.value as string | undefined
     disabled=disabled
@@ -130,35 +126,32 @@ export interface Input<Index extends number | string> extends Marko.HTML.Div {
       open = !open;
     }
   >
-    <span class="btn__cell">
-      <if=floatingLabel>
-        <span class=[
-          "btn__floating-label",
-          "btn__floating-label--animate",
-          !selectedOption && "btn__floating-label--inline",
-        ]>
-          ${floatingLabel}
-        </span>
-      </if>
-      <else if=prefixLabel><span class="btn__label">${prefixLabel}</span></else>
+    <if=floatingLabel>
+      <span class=[
+        "btn__floating-label",
+        "btn__floating-label--animate",
+        !selectedOption && "btn__floating-label--inline",
+      ]>
+        ${floatingLabel}
+      </span>
+    </if>
+    <else if=prefixLabel><span class="btn__label">${prefixLabel}</span></else>
 
-      <if=selectedOption>
-        <if=selectedOption.icon>
-          <span ...selectedOption.icon id=labelId class="btn__text"/>
-        </if>
-        <span id=labelId class="btn__text">
-          <${selectedOption.content}/>
-        </span>
-        <if=postfixLabel>
-          <span class="btn__postfix-label">${" "}${postfixLabel}</span>
-        </if>
+    <if=selectedOption>
+      <if=selectedOption.icon>
+        <span ...selectedOption.icon id=labelId class="btn__text"/>
       </if>
-      <else if=!floatingLabel>
-        <span id=labelId class="btn__text">${unselectedText}</span>
-      </else>
-      <evo-icon-chevron-down-16/>
-    </span>
-  </evo-button>
+      <span id=labelId class="btn__text">
+        <${selectedOption.content}/>
+      </span>
+      <if=postfixLabel>
+        <span class="btn__postfix-label">${" "}${postfixLabel}</span>
+      </if>
+    </if>
+    <else if=!floatingLabel>
+      <span id=labelId class="btn__text">${unselectedText}</span>
+    </else>
+  </evo-button-field>
   <evo-listbox/$listboxEls
     style=expander.floatingStyles
     class=[

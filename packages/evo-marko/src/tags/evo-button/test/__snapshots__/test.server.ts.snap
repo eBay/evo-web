@@ -9,15 +9,6 @@ exports[`renders button with appearance=borderless 1`] = `
 </button>"
 `;
 
-exports[`renders button with appearance=form 1`] = `
-"<button
-  class="btn btn--form"
-  type="button"
->
-  Button
-</button>"
-`;
-
 exports[`renders button with appearance=primary 1`] = `
 "<button
   class="btn btn--primary"

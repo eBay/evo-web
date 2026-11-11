@@ -23,18 +23,20 @@ exports[`listbox button > renders basic version 1`] = `
       </span>
       <svg
         aria-hidden="true"
-        class="icon icon--16"
+        class="icon icon--12"
       >
         <symbol
           id="GENERATED-2"
-          viewBox="0 0 16 16"
+          viewBox="0 0 12 12"
         >
           <path
-            d="M8.707 12.707a1 1 0 0 1-1.414 0l-6-6a1 1 0 0 1 1.414-1.414L8 10.586l5.293-5.293a1 1 0 1 1 1.414 1.414l-6 6Z"
+            clip-rule="evenodd"
+            d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+            fill-rule="evenodd"
           />
         </symbol>
         <use
-          href="#icon-chevron-down-16"
+          href="#icon-chevron-down-12"
         />
       </svg>
     </span>
@@ -156,18 +158,20 @@ exports[`listbox button > renders fluid layout 1`] = `
       </span>
       <svg
         aria-hidden="true"
-        class="icon icon--16"
+        class="icon icon--12"
       >
         <symbol
           id="GENERATED-2"
-          viewBox="0 0 16 16"
+          viewBox="0 0 12 12"
         >
           <path
-            d="M8.707 12.707a1 1 0 0 1-1.414 0l-6-6a1 1 0 0 1 1.414-1.414L8 10.586l5.293-5.293a1 1 0 1 1 1.414 1.414l-6 6Z"
+            clip-rule="evenodd"
+            d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+            fill-rule="evenodd"
           />
         </symbol>
         <use
-          href="#icon-chevron-down-16"
+          href="#icon-chevron-down-12"
         />
       </svg>
     </span>
@@ -275,7 +279,7 @@ exports[`listbox button > renders truncated layout 1`] = `
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-labelledby="GENERATED-1"
-    class="listbox-button__control btn btn--truncated btn--form"
+    class="listbox-button__control btn btn--form btn--truncated"
     type="button"
   >
     <span
@@ -289,18 +293,20 @@ exports[`listbox button > renders truncated layout 1`] = `
       </span>
       <svg
         aria-hidden="true"
-        class="icon icon--16"
+        class="icon icon--12"
       >
         <symbol
           id="GENERATED-2"
-          viewBox="0 0 16 16"
+          viewBox="0 0 12 12"
         >
           <path
-            d="M8.707 12.707a1 1 0 0 1-1.414 0l-6-6a1 1 0 0 1 1.414-1.414L8 10.586l5.293-5.293a1 1 0 1 1 1.414 1.414l-6 6Z"
+            clip-rule="evenodd"
+            d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+            fill-rule="evenodd"
           />
         </symbol>
         <use
-          href="#icon-chevron-down-16"
+          href="#icon-chevron-down-12"
         />
       </svg>
     </span>
@@ -427,18 +433,20 @@ exports[`listbox button > renders with description 1`] = `
       </span>
       <svg
         aria-hidden="true"
-        class="icon icon--16"
+        class="icon icon--12"
       >
         <symbol
           id="GENERATED-2"
-          viewBox="0 0 16 16"
+          viewBox="0 0 12 12"
         >
           <path
-            d="M8.707 12.707a1 1 0 0 1-1.414 0l-6-6a1 1 0 0 1 1.414-1.414L8 10.586l5.293-5.293a1 1 0 1 1 1.414 1.414l-6 6Z"
+            clip-rule="evenodd"
+            d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+            fill-rule="evenodd"
           />
         </symbol>
         <use
-          href="#icon-chevron-down-16"
+          href="#icon-chevron-down-12"
         />
       </svg>
     </span>
@@ -581,18 +589,20 @@ exports[`listbox button > renders with error 1`] = `
         </span>
         <svg
           aria-hidden="true"
-          class="icon icon--16"
+          class="icon icon--12"
         >
           <symbol
             id="GENERATED-2"
-            viewBox="0 0 16 16"
+            viewBox="0 0 12 12"
           >
             <path
-              d="M8.707 12.707a1 1 0 0 1-1.414 0l-6-6a1 1 0 0 1 1.414-1.414L8 10.586l5.293-5.293a1 1 0 1 1 1.414 1.414l-6 6Z"
+              clip-rule="evenodd"
+              d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+              fill-rule="evenodd"
             />
           </symbol>
           <use
-            href="#icon-chevron-down-16"
+            href="#icon-chevron-down-12"
           />
         </svg>
       </span>
@@ -746,18 +756,20 @@ exports[`listbox button > renders with floating label 1`] = `
       </span>
       <svg
         aria-hidden="true"
-        class="icon icon--16"
+        class="icon icon--12"
       >
         <symbol
           id="GENERATED-1"
-          viewBox="0 0 16 16"
+          viewBox="0 0 12 12"
         >
           <path
-            d="M8.707 12.707a1 1 0 0 1-1.414 0l-6-6a1 1 0 0 1 1.414-1.414L8 10.586l5.293-5.293a1 1 0 1 1 1.414 1.414l-6 6Z"
+            clip-rule="evenodd"
+            d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+            fill-rule="evenodd"
           />
         </symbol>
         <use
-          href="#icon-chevron-down-16"
+          href="#icon-chevron-down-12"
         />
       </svg>
     </span>
@@ -879,18 +891,20 @@ exports[`listbox button > renders with form 1`] = `
       </span>
       <svg
         aria-hidden="true"
-        class="icon icon--16"
+        class="icon icon--12"
       >
         <symbol
           id="GENERATED-2"
-          viewBox="0 0 16 16"
+          viewBox="0 0 12 12"
         >
           <path
-            d="M8.707 12.707a1 1 0 0 1-1.414 0l-6-6a1 1 0 0 1 1.414-1.414L8 10.586l5.293-5.293a1 1 0 1 1 1.414 1.414l-6 6Z"
+            clip-rule="evenodd"
+            d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+            fill-rule="evenodd"
           />
         </symbol>
         <use
-          href="#icon-chevron-down-16"
+          href="#icon-chevron-down-12"
         />
       </svg>
     </span>
@@ -1012,18 +1026,20 @@ exports[`listbox button > renders with prefix id 1`] = `
       </span>
       <svg
         aria-hidden="true"
-        class="icon icon--16"
+        class="icon icon--12"
       >
         <symbol
           id="GENERATED-2"
-          viewBox="0 0 16 16"
+          viewBox="0 0 12 12"
         >
           <path
-            d="M8.707 12.707a1 1 0 0 1-1.414 0l-6-6a1 1 0 0 1 1.414-1.414L8 10.586l5.293-5.293a1 1 0 1 1 1.414 1.414l-6 6Z"
+            clip-rule="evenodd"
+            d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+            fill-rule="evenodd"
           />
         </symbol>
         <use
-          href="#icon-chevron-down-16"
+          href="#icon-chevron-down-12"
         />
       </svg>
     </span>
@@ -1150,18 +1166,20 @@ exports[`listbox button > renders with prefix label 1`] = `
       </span>
       <svg
         aria-hidden="true"
-        class="icon icon--16"
+        class="icon icon--12"
       >
         <symbol
           id="GENERATED-2"
-          viewBox="0 0 16 16"
+          viewBox="0 0 12 12"
         >
           <path
-            d="M8.707 12.707a1 1 0 0 1-1.414 0l-6-6a1 1 0 0 1 1.414-1.414L8 10.586l5.293-5.293a1 1 0 1 1 1.414 1.414l-6 6Z"
+            clip-rule="evenodd"
+            d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+            fill-rule="evenodd"
           />
         </symbol>
         <use
-          href="#icon-chevron-down-16"
+          href="#icon-chevron-down-12"
         />
       </svg>
     </span>
@@ -1284,18 +1302,20 @@ exports[`listbox button > renders with second item selected 1`] = `
       </span>
       <svg
         aria-hidden="true"
-        class="icon icon--16"
+        class="icon icon--12"
       >
         <symbol
           id="GENERATED-2"
-          viewBox="0 0 16 16"
+          viewBox="0 0 12 12"
         >
           <path
-            d="M8.707 12.707a1 1 0 0 1-1.414 0l-6-6a1 1 0 0 1 1.414-1.414L8 10.586l5.293-5.293a1 1 0 1 1 1.414 1.414l-6 6Z"
+            clip-rule="evenodd"
+            d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+            fill-rule="evenodd"
           />
         </symbol>
         <use
-          href="#icon-chevron-down-16"
+          href="#icon-chevron-down-12"
         />
       </svg>
     </span>
@@ -1417,18 +1437,20 @@ exports[`listbox button > renders with strategy=fixed 1`] = `
       </span>
       <svg
         aria-hidden="true"
-        class="icon icon--16"
+        class="icon icon--12"
       >
         <symbol
           id="GENERATED-2"
-          viewBox="0 0 16 16"
+          viewBox="0 0 12 12"
         >
           <path
-            d="M8.707 12.707a1 1 0 0 1-1.414 0l-6-6a1 1 0 0 1 1.414-1.414L8 10.586l5.293-5.293a1 1 0 1 1 1.414 1.414l-6 6Z"
+            clip-rule="evenodd"
+            d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+            fill-rule="evenodd"
           />
         </symbol>
         <use
-          href="#icon-chevron-down-16"
+          href="#icon-chevron-down-12"
         />
       </svg>
     </span>
