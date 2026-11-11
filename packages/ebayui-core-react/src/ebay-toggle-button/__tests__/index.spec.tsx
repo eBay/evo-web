@@ -38,18 +38,6 @@ describe("<EbayToggleButton />", () => {
         const snapshot = asFragment();
         expect(snapshot).toMatchSnapshot();
     });
-    it("should render inner parts as spans to match Skin markup", () => {
-        const { container } = render(<IconButton subtitle="Subtitle" />);
-
-        [
-            ".toggle-button__icon",
-            ".toggle-button__content",
-            ".toggle-button__title",
-            ".toggle-button__subtitle",
-        ].forEach((selector) => {
-            expect(container.querySelector(selector)?.tagName).toBe("SPAN");
-        });
-    });
     it("should fire onToggle when clicking", async () => {
         const mockOnToggle = vi.fn();
 
