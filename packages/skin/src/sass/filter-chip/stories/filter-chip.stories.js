@@ -39,6 +39,42 @@ export const anchorSelected = () => `
 </a>
 `;
 
+export const buttonDisabled = () => `
+<button class="filter-chip" type="button" aria-pressed="false" disabled>
+    <svg class="icon icon--16" width="16" height="16" aria-hidden="true">
+        <use href="#icon-sneaker-16"/>
+    </svg>
+    <span class="filter-chip__text">Football</span>
+</button>
+`;
+
+export const buttonSelectedDisabled = () => `
+<button class="filter-chip" type="button" aria-pressed="true" disabled>
+    <svg class="icon icon--16" width="16" height="16" aria-hidden="true">
+        <use href="#icon-sneaker-16"/>
+    </svg>
+    <span class="filter-chip__text">Football</span>
+</button>
+`;
+
+export const anchorDisabled = () => `
+<a class="filter-chip">
+    <svg class="icon icon--16" width="16" height="16" aria-hidden="true">
+        <use href="#icon-sneaker-16"/>
+    </svg>
+    <span class="filter-chip__text">Football</span>
+</a>
+`;
+
+export const anchorSelectedDisabled = () => `
+<a class="filter-chip filter-chip--selected">
+    <svg class="icon icon--16" width="16" height="16" aria-hidden="true">
+        <use href="#icon-sneaker-16"/>
+    </svg>
+    <span class="filter-chip__text">Football <span class="clipped">- Selected</span></span>
+</a>
+`;
+
 export const RTL = () => `
 <div dir="rtl">
     <button class="filter-chip" type="button" aria-pressed="false">
