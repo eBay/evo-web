@@ -64,7 +64,7 @@ Rename open-state props and callbacks:
 + onOpenChange={setOpen}
 ```
 
-Use `defaultOpen` for an initially open uncontrolled combobox. The new `strategy` prop accepts `"absolute"` or `"fixed"` and defaults to `"absolute"`.
+Use `defaultOpen` for an initially open uncontrolled combobox. Use `detachPopover` where a scrolling or `overflow: hidden` ancestor would clip the listbox.
 
 ## Removed props
 

@@ -319,7 +319,6 @@ The `<evo-roving-tabindex>` tag variable exposes: `onClick(index)`, `onKeyDown(e
   flip=flip
   shift=shift
   inline=inline
-  strategy="absolute"
   host=$host
   overlay=$overlay
   arrow=$arrow/>

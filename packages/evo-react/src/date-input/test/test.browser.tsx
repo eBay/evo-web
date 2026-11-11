@@ -135,11 +135,11 @@ describe("evo-date-input", () => {
       .toBeLessThan(0.5);
   });
 
-  it("positions the popover with the strategy passed to the popover child", async () => {
+  it("detaches the popover when the popover child asks for it", async () => {
     const screen = await render(
       <TestDateInput
         floatingLabel="Date"
-        calendarPopover={{ strategy: "fixed" }}
+        calendarPopover={{ detachPopover: true }}
       />,
     );
     await user.click(screen.getByRole("button", { name: a11yOpenPopoverText }));

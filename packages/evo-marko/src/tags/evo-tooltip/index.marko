@@ -6,7 +6,7 @@ export interface Input extends Marko.HTML.Span {
   offset?: number;
   flip?: boolean;
   shift?: boolean;
-  strategy?: ExpanderInput["strategy"];
+  detachPopover?: boolean;
   inline?: boolean;
   host: Marko.AttrTag<
     Marko.HTML.Span & {
@@ -26,7 +26,7 @@ export interface Input extends Marko.HTML.Span {
   offset = 8,
   flip,
   shift,
-  strategy,
+  detachPopover,
   inline,
   open: inputOpen,
   openChange,
@@ -65,7 +65,7 @@ export interface Input extends Marko.HTML.Span {
   flip=flip
   shift=shift
   inline=inline
-  strategy=strategy
+  detachPopover=detachPopover
   host=$host
   overlay=$overlay
   arrow=$arrow

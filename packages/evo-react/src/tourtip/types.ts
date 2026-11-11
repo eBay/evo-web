@@ -24,10 +24,11 @@ export type EvoTourtipProps = ComponentProps<"span"> & {
   /** Shifts the overlay to remain within the viewport. Defaults to `false`. */
   shift?: boolean;
   /**
-   * Positioning strategy for the overlay. Use `"fixed"` when a scrolling or
-   * `overflow: hidden` ancestor clips it. Defaults to `"absolute"`.
+   * Detaches the overlay from its container so a scrolling or
+   * `overflow: hidden` ancestor can't clip it. The overlay then repositions as
+   * the page scrolls instead of moving with its container. Defaults to `false`.
    */
-  strategy?: "absolute" | "fixed";
+  detachPopover?: boolean;
   /** Positions against individual lines of a wrapping host. Defaults to `true`. */
   inline?: boolean;
   /** Close button label. English default to be overridden is `"Dismiss tourtip"`. */

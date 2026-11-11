@@ -65,13 +65,12 @@ export default {
       description: "Enable automatic shifting when near viewport edge",
       table: { defaultValue: { summary: "true" } },
     },
-    strategy: {
-      type: "string",
-      options: ["absolute", "fixed"],
-      control: "inline-radio",
+    detachPopover: {
+      type: "boolean",
+      control: "boolean",
       description:
-        "Use fixed when a scrolling or overflow: hidden ancestor clips the overlay.",
-      table: { defaultValue: { summary: "absolute" } },
+        "Detaches the overlay from its container so a scrolling or `overflow: hidden` ancestor can't clip it. The overlay then repositions as the page scrolls instead of moving with its container.",
+      table: { defaultValue: { summary: "false" } },
     },
     inline: {
       type: "boolean",

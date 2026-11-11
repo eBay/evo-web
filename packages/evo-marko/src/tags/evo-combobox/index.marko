@@ -19,7 +19,7 @@ export interface Input extends Omit<
   floatingLabel?: string;
   borderless?: boolean;
   fluid?: boolean;
-  strategy?: "fixed" | "absolute";
+  detachPopover?: boolean;
   invalid?: boolean;
   open?: boolean;
   openChange?: (open: boolean) => void;
@@ -37,7 +37,7 @@ export interface Input extends Omit<
   listSelection = "automatic",
   floatingLabel,
   invalid,
-  strategy,
+  detachPopover,
   option: options = [],
   button,
   fluid,
@@ -219,7 +219,7 @@ export interface Input extends Omit<
       class=[
         "combobox__listbox",
         "combobox__listbox--set-position",
-        strategy === "fixed" && "combobox__listbox--fixed",
+        detachPopover && "combobox__listbox--fixed",
       ]
     >
       <for|option, i| of=visibleOptions>

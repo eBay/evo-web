@@ -28,7 +28,7 @@ describe("EvoMenuButton SSR", () => {
   it("renders the filter presentation from the root variant", () => {
     expect(
       renderToString(
-        <EvoMenuButton variant="filter" open reverse strategy="fixed" fixWidth>
+        <EvoMenuButton variant="filter" open reverse detachPopover fixWidth>
           <EvoMenuButtonTrigger hasSelection a11ySelectedText="Filters applied">
             Delivery
           </EvoMenuButtonTrigger>

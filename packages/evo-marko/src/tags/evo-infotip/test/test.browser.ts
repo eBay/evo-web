@@ -41,7 +41,7 @@ describe("evo-infotip focus management", () => {
   });
 });
 
-it("is not clipped by an overflow: hidden ancestor with the fixed strategy", async () => {
+it("is not clipped by an overflow: hidden ancestor with a detached overlay", async () => {
   const container = document.createElement("div");
   container.style.cssText =
     "overflow: hidden; height: 24px; margin: 100px 0 0 150px;";
@@ -50,7 +50,7 @@ it("is not clipped by an overflow: hidden ancestor with the fixed strategy", asy
     cleanup();
     container.remove();
   });
-  await render(Default, { strategy: "fixed", open: true }, { container });
+  await render(Default, { detachPopover: true, open: true }, { container });
   const overlay = container.querySelector(".infotip__overlay") as HTMLElement;
   await waitFor(() => expect(overlay.style.visibility).toBe("visible"));
 

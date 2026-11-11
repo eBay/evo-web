@@ -209,7 +209,7 @@ describe("evo-infotip", () => {
     );
   });
 
-  it("is not clipped by an overflow: hidden ancestor with the fixed strategy", async () => {
+  it("is not clipped by an overflow: hidden ancestor with a detached overlay", async () => {
     const container = document.createElement("div");
     container.style.cssText =
       "overflow: hidden; height: 24px; margin: 100px 0 0 150px;";
@@ -219,7 +219,7 @@ describe("evo-infotip", () => {
       <EvoInfotip
         a11yIconText="Help"
         a11yCloseText="Dismiss infotip"
-        strategy="fixed"
+        detachPopover
         defaultOpen
       >
         <InfotipContent />

@@ -7,7 +7,7 @@ import {
   shift as floatingShift,
   useFloating,
 } from "@floating-ui/react";
-import type { Middleware, Placement, Strategy } from "@floating-ui/react";
+import type { Middleware, Placement } from "@floating-ui/react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 
@@ -16,7 +16,7 @@ type UseExpanderOptions = {
   defaultOpen?: boolean;
   onOpenChange?: (open: boolean) => void;
   placement?: Placement;
-  strategy?: Strategy;
+  detachPopover?: boolean;
   offset?: number;
   flip?: boolean;
   shift?: boolean;
@@ -31,7 +31,7 @@ export function useExpander({
   defaultOpen = false,
   onOpenChange,
   placement = "bottom-start",
-  strategy = "fixed",
+  detachPopover = false,
   offset = 4,
   flip = true,
   shift = true,
@@ -100,7 +100,7 @@ export function useExpander({
     open: currentOpen,
     onOpenChange: setOpen,
     placement,
-    strategy,
+    strategy: detachPopover ? "fixed" : "absolute",
     middleware,
     elements,
     whileElementsMounted: autoUpdate,

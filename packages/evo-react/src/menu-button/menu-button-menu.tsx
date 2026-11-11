@@ -51,7 +51,7 @@ export function EvoMenu({ children, ref, style, ...rest }: EvoMenuProps) {
       tabIndex={-1}
       classPrefix="menu-button"
       reverse={menuButton.reverse}
-      fixed={menuButton.strategy === "fixed"}
+      fixed={menuButton.detachPopover}
       fixWidth={menuButton.fixWidth}
       style={{ ...style, ...menuButton.floatingStyles }}
     >

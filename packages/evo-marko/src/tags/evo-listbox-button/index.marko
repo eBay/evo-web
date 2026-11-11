@@ -13,7 +13,7 @@ export interface Input<Index extends number | string> extends Marko.HTML.Div {
   variant?: "standard" | "form";
   truncate?: boolean;
   fluid?: boolean;
-  strategy?: "fixed" | "absolute";
+  detachPopover?: boolean;
   borderless?: boolean;
   floatingLabel?: string;
   disabled?: boolean;
@@ -55,7 +55,7 @@ export interface Input<Index extends number | string> extends Marko.HTML.Div {
   listSelection,
   variant,
   hasError,
-  strategy,
+  detachPopover,
   split,
   a11yDescribedBy,
   a11ySelectedText = "selected",
@@ -84,7 +84,7 @@ export interface Input<Index extends number | string> extends Marko.HTML.Div {
   (typeof import("<evo-expander>"))["default"]
 >["value"]
   open=open
-  strategy=strategy
+  detachPopover=detachPopover
   host=$root
   overlay=() => $listboxEls().$root()
 />
@@ -168,7 +168,7 @@ export interface Input<Index extends number | string> extends Marko.HTML.Div {
     style=expander.floatingStyles
     class=[
       "listbox-button__listbox",
-      strategy === "fixed" && "listbox-button__listbox--fixed",
+      detachPopover && "listbox-button__listbox--fixed",
     ]
     selected:=selected
     name=name

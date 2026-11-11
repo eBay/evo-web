@@ -81,7 +81,7 @@ export function EvoCombobox({
   placeholder,
   postfix,
   ref,
-  strategy = "absolute",
+  detachPopover,
   style,
   value,
   ...inputProps
@@ -103,7 +103,7 @@ export function EvoCombobox({
     open,
     placement: "bottom-start",
     resetOnDisabled: Boolean(disabled),
-    strategy,
+    detachPopover,
   });
   const effectiveOpen = !disabled && expander.open;
   const [setListboxElement, listboxRef] = useRefTee<HTMLElement | null>(
@@ -430,7 +430,7 @@ export function EvoCombobox({
             className={classNames(
               "combobox__listbox",
               "combobox__listbox--set-position",
-              strategy === "fixed" && "combobox__listbox--fixed",
+              detachPopover && "combobox__listbox--fixed",
             )}
             style={expander.floatingStyles}
           >
