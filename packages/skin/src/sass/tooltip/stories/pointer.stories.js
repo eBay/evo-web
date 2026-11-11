@@ -92,7 +92,7 @@ function getPointerStyle(key) {
 }
 
 export const top = () => `
-<span class="tooltip" style="margin-left: 100px; margin-top: 100px;">
+<span class="tooltip tooltip--expanded" style="margin-left: 100px; margin-top: 100px;">
     <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-label="Info">
         <svg class="icon icon--24" height="16" width="16" aria-hidden="true">
             <use href="#icon-settings-24"></use>
@@ -114,7 +114,7 @@ export const top = () => `
 </span>`;
 
 export const topLeft = () => `
-<span class="tooltip" style="margin-left: 100px; margin-top: 100px;">
+<span class="tooltip tooltip--expanded" style="margin-left: 100px; margin-top: 100px;">
     <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-label="Info">
         <svg class="icon icon--24" height="16" width="16" aria-hidden="true">
             <use href="#icon-settings-24"></use>
@@ -136,7 +136,7 @@ export const topLeft = () => `
 </span>`;
 
 export const leftTop = () => `
-<span class="tooltip" style="margin-left: 100px; margin-top: 100px;">
+<span class="tooltip tooltip--expanded" style="margin-left: 100px; margin-top: 100px;">
     <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-label="Info">
         <svg class="icon icon--24" height="16" width="16" aria-hidden="true">
             <use href="#icon-settings-24"></use>
@@ -158,7 +158,7 @@ export const leftTop = () => `
 </span>`;
 
 export const left = () => `
-<span class="tooltip" style="margin-left: 100px; margin-top: 100px;">
+<span class="tooltip tooltip--expanded" style="margin-left: 100px; margin-top: 100px;">
     <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-label="Info">
         <svg class="icon icon--24" height="16" width="16" aria-hidden="true">
             <use href="#icon-settings-24"></use>
@@ -180,7 +180,7 @@ export const left = () => `
 </span>`;
 
 export const leftBottom = () => `
-<span class="tooltip" style="margin-left: 100px; margin-top: 100px;">
+<span class="tooltip tooltip--expanded" style="margin-left: 100px; margin-top: 100px;">
     <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-label="Info">
         <svg class="icon icon--24" height="16" width="16" aria-hidden="true">
             <use href="#icon-settings-24"></use>
@@ -202,7 +202,7 @@ export const leftBottom = () => `
 </span>`;
 
 export const bottomLeft = () => `
-<span class="tooltip" style="margin-left: 100px; margin-top: 100px;">
+<span class="tooltip tooltip--expanded" style="margin-left: 100px; margin-top: 100px;">
     <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-label="Info">
         <svg class="icon icon--24" height="16" width="16" aria-hidden="true">
             <use href="#icon-settings-24"></use>
@@ -224,7 +224,7 @@ export const bottomLeft = () => `
 </span>`;
 
 export const bottom = () => `
-<span class="tooltip" style="margin-left: 100px; margin-top: 100px;">
+<span class="tooltip tooltip--expanded" style="margin-left: 100px; margin-top: 100px;">
     <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-label="Info">
         <svg class="icon icon--24" height="16" width="16" aria-hidden="true">
             <use href="#icon-settings-24"></use>
@@ -246,7 +246,7 @@ export const bottom = () => `
 </span>`;
 
 export const bottomRight = () => `
-<span class="tooltip" style="margin-left: 100px; margin-top: 100px;">
+<span class="tooltip tooltip--expanded" style="margin-left: 100px; margin-top: 100px;">
     <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-label="Info">
         <svg class="icon icon--24" height="16" width="16" aria-hidden="true">
             <use href="#icon-settings-24"></use>
@@ -268,7 +268,7 @@ export const bottomRight = () => `
 </span>`;
 
 export const rightBottom = () => `
-<span class="tooltip" style="margin-left: 100px; margin-top: 100px;">
+<span class="tooltip tooltip--expanded" style="margin-left: 100px; margin-top: 100px;">
     <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-label="Info">
         <svg class="icon icon--24" height="16" width="16" aria-hidden="true">
             <use href="#icon-settings-24"></use>
@@ -290,7 +290,7 @@ export const rightBottom = () => `
 </span>`;
 
 export const right = () => `
-<span class="tooltip" style="margin-left: 100px; margin-top: 100px;">
+<span class="tooltip tooltip--expanded" style="margin-left: 100px; margin-top: 100px;">
     <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-label="Info">
         <svg class="icon icon--24" height="16" width="16" aria-hidden="true">
             <use href="#icon-settings-24"></use>
@@ -312,7 +312,7 @@ export const right = () => `
 </span>`;
 
 export const rightTop = () => `
-<span class="tooltip" style="margin-left: 100px; margin-top: 100px;">
+<span class="tooltip tooltip--expanded" style="margin-left: 100px; margin-top: 100px;">
     <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-label="Info">
         <svg class="icon icon--24" height="16" width="16" aria-hidden="true">
             <use href="#icon-settings-24"></use>
@@ -334,7 +334,7 @@ export const rightTop = () => `
 </span>`;
 
 export const topRight = () => `
-<span class="tooltip" style="margin-left: 100px; margin-top: 100px;">
+<span class="tooltip tooltip--expanded" style="margin-left: 100px; margin-top: 100px;">
     <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-label="Info">
         <svg class="icon icon--24" height="16" width="16" aria-hidden="true">
             <use href="#icon-settings-24"></use>
