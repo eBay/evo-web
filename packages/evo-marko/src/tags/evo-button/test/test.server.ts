@@ -10,7 +10,7 @@ interface Properties {
 }
 
 const properties: Properties = {
-  appearance: ["primary", "secondary", "tertiary", "borderless", "form"],
+  appearance: ["primary", "secondary", "tertiary", "borderless"],
   size: ["large"],
 };
 

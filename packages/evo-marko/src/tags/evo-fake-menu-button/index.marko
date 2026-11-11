@@ -1,5 +1,6 @@
 import IconButton from "<evo-icon-button>";
 import Button, { type Input as ButtonInput } from "<evo-button>";
+import ButtonField from "<evo-button-field>";
 import { type Item as FakeMenuItem } from "<evo-fake-menu>";
 export interface Input extends Marko.HTML.Span {
   open?: boolean;
@@ -46,25 +47,29 @@ const/{
 
 let/open:=input.open
 
-const/{ tagName, appearance }=(() => {
+const/{ tagName, appearance, fieldBorderless, toggleIcon }=(() => {
   let appearance;
   let tagName;
+  let fieldBorderless;
+  let toggleIcon = false;
 
   if (variant === "icon") {
     tagName = IconButton;
     if (inputTransparent) appearance = "transparent";
+  } else if (variant === "form") {
+    tagName = ButtonField;
+    fieldBorderless = borderless;
   } else {
     tagName = Button;
-    appearance = borderless
-      ? "borderless"
-      : variant === "form"
-        ? "form"
-        : inputPriority;
+    toggleIcon = !noToggleIcon;
+    appearance = borderless ? "borderless" : inputPriority;
   }
 
   return {
     tagName,
     appearance,
+    fieldBorderless,
+    toggleIcon,
   };
 })()
 
@@ -92,6 +97,7 @@ span/$root
   ${tagName as any}.fake-menu-button__button
     ,size=size
     ,appearance=appearance
+    ,borderless=fieldBorderless
     ,aria-expanded=expander.ariaExpanded
     ,aria-label=a11yText
     ,disabled=disabled
@@ -106,7 +112,7 @@ span/$root
     else
       span
         ${input.content}
-      if=!noToggleIcon
+      if=toggleIcon
         evo-icon-chevron-down-12
   evo-fake-menu/$fakeMenuEls
     ,style=expander.floatingStyles

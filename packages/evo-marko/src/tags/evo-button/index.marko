@@ -3,7 +3,7 @@ export interface Input
   extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `on${string}`> {
   href?: string;
   size?: "large" | "small";
-  appearance?: "primary" | "secondary" | "tertiary" | "borderless" | "form";
+  appearance?: "primary" | "secondary" | "tertiary" | "borderless";
   destructive?: boolean;
   fluid?: boolean;
   disabled?: boolean;

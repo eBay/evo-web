@@ -1,0 +1,34 @@
+import { type Input as ButtonInput } from "<evo-button>";
+export interface Input extends Marko.HTML.Button {
+  size?: ButtonInput["size"];
+  borderless?: boolean;
+  truncate?: boolean;
+}
+
+<const/{
+  content,
+  class: inputClass,
+  size,
+  borderless,
+  truncate,
+  type = "button",
+  ...htmlInput
+}=input>
+
+<button
+  ...htmlInput
+  type=type
+  class=[
+    inputClass,
+    "btn",
+    "btn--form",
+    borderless && "btn--borderless",
+    size && `btn--${size}`,
+    truncate && `btn--${size === "large" ? "large-" : ""}truncated`,
+  ]
+>
+  <span class="btn__cell">
+    <${content}/>
+    <evo-icon-chevron-down-12/>
+  </span>
+</button>

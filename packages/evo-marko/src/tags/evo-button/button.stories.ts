@@ -27,7 +27,7 @@ export default {
     },
     appearance: {
       type: "string",
-      options: ["primary", "secondary", "tertiary", "borderless", "form"],
+      options: ["primary", "secondary", "tertiary", "borderless"],
       control: "inline-radio",
       description: "Button appearance",
       table: { defaultValue: { summary: "secondary" } },
