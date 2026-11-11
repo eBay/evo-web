@@ -70,26 +70,6 @@ describe("given the a custom aligned tooltip", () => {
     });
 });
 
-describe("given a tooltip with the fixed strategy", () => {
-    beforeEach(async () => {
-        component = await render(Standard, { strategy: "fixed" });
-        await waitFor(() => expect(component.emitted("loaded")).has.length(1));
-    });
-
-    describe("when the host element is hovered", () => {
-        beforeEach(async () => {
-            await fireEvent.mouseEnter(component.getByText(renderBodyText));
-        });
-
-        it("then it positions the overlay as fixed", async () => {
-            const overlay =
-                component.getByText(renderBodyText).nextElementSibling;
-            await waitFor(() => expect(overlay.style.top).to.not.equal(""));
-            expect(overlay.style.position).to.equal("fixed");
-        });
-    });
-});
-
 describe("given a fixed tooltip inside a clipping container", () => {
     let container;
 

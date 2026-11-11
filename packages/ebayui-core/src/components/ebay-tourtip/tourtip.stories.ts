@@ -94,13 +94,11 @@ export default {
             },
         },
         strategy: {
-            control: { type: "select" },
-            options: ["absolute", "fixed"],
             description:
-                "positioning strategy for the overlay; use fixed when a clipping or scrolling ancestor (overflow: hidden/auto) cuts the tourtip off",
-            table: {
-                defaultValue: { summary: "absolute" },
-            },
+                "Positioning strategy for the overlay. Use `fixed` when a scrolling or `overflow: hidden` ancestor clips it.",
+            control: { type: "inline-radio" },
+            options: ["absolute", "fixed"],
+            table: { defaultValue: { summary: "absolute" } },
         },
         notInline: {
             control: { type: "boolean" },

@@ -31,6 +31,7 @@ export type InfotipProps = {
     noFlip?: boolean;
     noShift?: boolean;
     notInline?: boolean;
+    strategy?: "absolute" | "fixed";
     onExpand?: () => void;
     onCollapse?: () => void;
     a11yCloseText: string;
@@ -47,6 +48,7 @@ const EbayInfotip: FC<InfotipProps> = ({
     noFlip,
     noShift,
     notInline,
+    strategy,
     disabled,
     onExpand,
     onCollapse,
@@ -81,6 +83,7 @@ const EbayInfotip: FC<InfotipProps> = ({
             noFlip,
             noShift,
             notInline,
+            strategy,
         },
     });
 

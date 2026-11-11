@@ -49,6 +49,11 @@ const meta: Meta<typeof EvoInfotip> = {
       control: "boolean",
       table: { defaultValue: { summary: "true" } },
     },
+    strategy: {
+      control: "inline-radio",
+      options: ["absolute", "fixed"],
+      table: { defaultValue: { summary: "absolute" } },
+    },
     disabled: {
       control: "boolean",
     },

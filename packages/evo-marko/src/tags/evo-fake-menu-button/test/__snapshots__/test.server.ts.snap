@@ -582,7 +582,7 @@ exports[`evo-fake-menu-button SSR > renders with fixed strategy 1`] = `
   </button>
   <span
     class="fake-menu-button__menu fake-menu-button__menu--fixed"
-    style="visibility:hidden"
+    style="position:fixed;visibility:hidden"
     tabindex="-1"
   >
     <ul

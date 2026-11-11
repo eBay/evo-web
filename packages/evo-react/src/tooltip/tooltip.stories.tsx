@@ -60,6 +60,11 @@ const meta: Meta<typeof EvoTooltip> = {
       control: "boolean",
       table: { defaultValue: { summary: "true" } },
     },
+    strategy: {
+      control: "inline-radio",
+      options: ["absolute", "fixed"],
+      table: { defaultValue: { summary: "absolute" } },
+    },
     inline: {
       control: "boolean",
       table: { defaultValue: { summary: "true" } },

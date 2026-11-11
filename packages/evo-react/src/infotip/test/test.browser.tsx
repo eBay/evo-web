@@ -1,5 +1,13 @@
 import { useState } from "react";
-import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import {
+  afterEach,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  onTestFinished,
+  vi,
+} from "vitest";
 import { userEvent } from "vitest/browser";
 import { render } from "vitest-browser-react";
 import { EvoIconSettings16 } from "../../icon/icons/settings-16";
@@ -199,5 +207,32 @@ describe("evo-infotip", () => {
       "xlink:href",
       "#icon-settings-16",
     );
+  });
+
+  it("is not clipped by an overflow: hidden ancestor with the fixed strategy", async () => {
+    const container = document.createElement("div");
+    container.style.cssText =
+      "overflow: hidden; height: 24px; margin: 100px 0 0 150px;";
+    document.body.appendChild(container);
+    onTestFinished(() => container.remove());
+    await render(
+      <EvoInfotip
+        a11yIconText="Help"
+        a11yCloseText="Dismiss infotip"
+        strategy="fixed"
+        defaultOpen
+      >
+        <InfotipContent />
+      </EvoInfotip>,
+      { container },
+    );
+    const overlay = container.querySelector(".infotip__overlay") as HTMLElement;
+    await expect.poll(() => overlay.style.visibility).not.toBe("hidden");
+
+    const { left, width, bottom } = overlay.getBoundingClientRect();
+    expect(bottom).toBeGreaterThan(container.getBoundingClientRect().bottom);
+    expect(
+      overlay.contains(document.elementFromPoint(left + width / 2, bottom - 5)),
+    ).toBe(true);
   });
 });

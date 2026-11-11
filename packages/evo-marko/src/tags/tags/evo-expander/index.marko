@@ -29,7 +29,7 @@ export interface Input {
 
   computePosition(input.host(), input.overlay(), {
     placement: input.placement ?? "bottom-start",
-    strategy: input.strategy ?? "fixed",
+    strategy: input.strategy ?? "absolute",
     middleware: [
       offset(input.offset ?? 4),
       input.inline !== false && inline(),
@@ -67,7 +67,7 @@ export interface Input {
 </script>
 
 <return={
-  floatingStyles,
+  floatingStyles: { position: input.strategy, ...floatingStyles },
   /** Whether the overlay has been positioned, and is therefore visible. */
   positioned: floatingStyles.visibility === "visible",
   arrowStyles,

@@ -1436,7 +1436,7 @@ exports[`listbox button > renders with strategy=fixed 1`] = `
   <div
     class="listbox__options listbox-button__listbox listbox-button__listbox--fixed"
     role="listbox"
-    style="visibility:hidden"
+    style="position:fixed;visibility:hidden"
     tabindex="0"
   >
     <div

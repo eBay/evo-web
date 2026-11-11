@@ -27,6 +27,7 @@ export type TourtipProps = Omit<TooltipProps, "ref"> & {
     noFlip?: boolean;
     noShift?: boolean;
     notInline?: boolean;
+    strategy?: "absolute" | "fixed";
     "aria-label"?: string;
     className?: string;
 };
@@ -45,6 +46,7 @@ const EbayTourtip: FC<TourtipProps> = ({
     noFlip,
     noShift,
     notInline,
+    strategy,
     ...rest
 }) => {
     const hostRef = useRef<HTMLElement>(null);
@@ -70,6 +72,7 @@ const EbayTourtip: FC<TourtipProps> = ({
             noFlip,
             noShift,
             notInline,
+            strategy,
         },
     });
 

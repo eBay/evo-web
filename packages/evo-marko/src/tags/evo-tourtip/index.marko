@@ -6,6 +6,7 @@ export interface Input extends Marko.HTML.Span {
   offset?: number;
   flip?: boolean;
   shift?: boolean;
+  strategy?: ExpanderInput["strategy"];
   inline?: boolean;
   host: Marko.AttrTag<
     Marko.HTML.Span & {
@@ -38,6 +39,7 @@ export interface Input extends Marko.HTML.Span {
   offset = 6,
   flip,
   shift = false,
+  strategy,
   inline,
   host,
   heading,
@@ -61,7 +63,7 @@ export interface Input extends Marko.HTML.Span {
   flip=flip
   shift=shift
   inline=inline
-  strategy="absolute"
+  strategy=strategy
   host=() => document.getElementById(hostId) as HTMLElement
   overlay=() => document.getElementById(overlayId) as HTMLElement
   arrow=() => document.getElementById(arrowId) as HTMLElement

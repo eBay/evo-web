@@ -67,6 +67,14 @@ export default {
       description: "Enable automatic shifting when near viewport edge",
       table: { defaultValue: { summary: "false" } },
     },
+    strategy: {
+      type: "string",
+      options: ["absolute", "fixed"],
+      control: "inline-radio",
+      description:
+        "Use fixed when a scrolling or overflow: hidden ancestor clips the overlay.",
+      table: { defaultValue: { summary: "absolute" } },
+    },
     inline: {
       type: "boolean",
       control: "boolean",

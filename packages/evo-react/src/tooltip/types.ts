@@ -24,6 +24,11 @@ export type EvoTooltipProps = ComponentProps<"span"> & {
   flip?: boolean;
   /** Shifts the tooltip to keep it within the viewport. Defaults to `true`. */
   shift?: boolean;
+  /**
+   * Positioning strategy for the overlay. Use `"fixed"` when a scrolling or
+   * `overflow: hidden` ancestor clips it. Defaults to `"absolute"`.
+   */
+  strategy?: "absolute" | "fixed";
   /** Uses inline positioning for hosts that wrap across multiple lines. Defaults to `true`. */
   inline?: boolean;
 };

@@ -41,6 +41,11 @@ export type EvoInfotipProps = ComponentProps<"span"> & {
    * infotip must stay exactly aligned with the button. Defaults to `true`.
    */
   shift?: boolean;
+  /**
+   * Positioning strategy for the overlay. Use `"fixed"` when a scrolling or
+   * `overflow: hidden` ancestor clips it. Defaults to `"absolute"`.
+   */
+  strategy?: "absolute" | "fixed";
   /** Disables the infotip trigger button. */
   disabled?: boolean;
   /** Custom trigger icon. Defaults to the information icon. */

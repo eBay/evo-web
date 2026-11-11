@@ -871,7 +871,7 @@ exports[`menu-button > renders with fixed strategy 1`] = `
   </button>
   <span
     class="menu-button__menu menu-button__menu--fixed"
-    style="visibility:hidden"
+    style="position:fixed;visibility:hidden"
     tabindex="-1"
   >
     <div
