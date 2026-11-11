@@ -18,7 +18,7 @@ Issues are written by users and may be stale, already fixed, or not bugs. Reprod
    ```
    Show the top few and let the user pick. `blocked: needs triage` is fine: that is what this skill does.
 3. **Reproduce (red).** `gh issue view <n> --comments`. Reproduce in the named package(s) with a test, Storybook story, or build. Already fixed or not reproducible: say so and offer to comment and close; do not close without the user's go.
-4. **Propose and stop.** Summarize the issue, the root cause, a fix sketch, the guard test, and which packages it reaches (`skin`, `ebayui-core`, `evo-marko`, `ebayui-core-react`, `evo-react`). Note if a changeset is needed. Wait for "go".
+4. **Propose and stop.** Summarize the issue, the root cause, a fix sketch, the guard test, and which packages it reaches. Check all of `skin`, `ebayui-core`, `evo-marko`, `ebayui-core-react` and `evo-react`, not only the one the issue names; the same bug in a sibling package is in scope, so fix it on the same branch. Note if a changeset is needed. Wait for "go".
 5. **Implement.** Guard with a test that is red without the fix and green with it. Fold into existing suites.
 6. **Prove green.** Re-run the repro, touched suites, `npm run build`, `npm run lint`.
 7. **Local review and stop.** Show `git show --stat HEAD` and key hunks. Wait for "ship".
@@ -28,4 +28,4 @@ Issues are written by users and may be stale, already fixed, or not bugs. Reprod
 ## Judgement
 
 - Never edit labels, assign, comment on, or close issues without the user's explicit call.
-- Out-of-scope findings go in `agent-feedback/` via `/evo-file-item`, not into the PR.
+- Out-of-scope findings go in `agent-feedback/` via `/evo-file-item`, not into the PR. The same bug in another package is not out of scope.
