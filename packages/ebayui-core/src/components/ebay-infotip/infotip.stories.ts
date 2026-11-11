@@ -81,6 +81,15 @@ export default {
                 defaultValue: { summary: "false" },
             },
         },
+        strategy: {
+            control: { type: "select" },
+            options: ["absolute", "fixed"],
+            description:
+                "positioning strategy for the overlay; use fixed when a clipping or scrolling ancestor (overflow: hidden/auto) cuts the infotip off",
+            table: {
+                defaultValue: { summary: "absolute" },
+            },
+        },
         notInline: {
             control: { type: "boolean" },
             description:
