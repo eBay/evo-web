@@ -10,9 +10,9 @@ Issues are written by users and may be stale, already fixed, or not bugs. Reprod
 ## The loop
 
 1. **Sync.** Start from the latest base. One issue, one commit, one PR.
-2. **Pick low-hanging fruit.** Open bugs, smallest `tshirt-size` first (unsized last), then by priority (`P1` before `P4`). Skip `blocked: *`, assigned issues, and issues with a linked PR:
+2. **Pick low-hanging fruit.** Open bugs, smallest `tshirt-size` first (unsized last), then by priority (`P1` before `P4`). Skip `blocked: *`, assigned issues, issues with a linked PR, and issues queued for Copilot (`assign ai`, `status: ai fix candidate`):
    ```sh
-   gh issue list --search 'is:open no:assignee -linked:pr (type:Bug OR label:"type: bug") -label:"blocked: discussion" -label:"blocked: design" -label:"blocked: accessibility"' \
+   gh issue list --search 'is:open no:assignee -linked:pr (type:Bug OR label:"type: bug") -label:"blocked: discussion" -label:"blocked: design" -label:"blocked: accessibility" -label:"assign ai" -label:"status: ai fix candidate"' \
      --limit 100 --json number,title,labels \
      --jq 'map([.labels[].name] as $l | . + {size: ([$l[] | select(startswith("tshirt-size:")) | ltrimstr("tshirt-size: ") | tonumber] | first // 9), pri: ([$l[] | select(test("^P[1-4]$")) | ltrimstr("P") | tonumber] | first // 9)}) | sort_by(.size, .pri) | .[] | "#\(.number) [size \(.size) P\(.pri)] \(.title)"'
    ```
