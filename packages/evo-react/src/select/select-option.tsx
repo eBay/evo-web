@@ -7,12 +7,17 @@ import type { EvoSelectOptionProps } from "./types";
  *
  * @summary Native select option.
  */
-export function EvoSelectOption({ children, ...rest }: EvoSelectOptionProps) {
+export function EvoSelectOption({
+  children,
+  label,
+  ...rest
+}: EvoSelectOptionProps) {
   const placeholderHidden = use(PlaceholderHiddenContext);
+  const hideText = placeholderHidden && rest.value === "";
 
   return (
-    <option {...rest}>
-      {placeholderHidden && rest.value === "" ? null : children}
+    <option {...rest} label={hideText ? undefined : label}>
+      {hideText ? null : children}
     </option>
   );
 }

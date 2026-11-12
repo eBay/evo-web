@@ -1,4 +1,4 @@
-import { useId, useState } from "react";
+import { useCallback, useId, useState } from "react";
 import type { ChangeEvent } from "react";
 import classNames from "classnames";
 import { EvoIconChevronDown12 } from "../icon/icons/chevron-down-12";
@@ -62,8 +62,28 @@ export function EvoSelect({
     ref,
     null,
   );
-  useFormReset(selectRef, defaultValue, setUncontrolledValue);
   const isControlled = value !== undefined;
+  const syncUncontrolledValue = useCallback(() => {
+    const select = selectRef.current;
+    if (select && !isControlled) {
+      setUncontrolledValue(
+        select.multiple
+          ? Array.from(select.selectedOptions, (option) => option.value)
+          : select.value,
+      );
+    }
+  }, [isControlled, selectRef]);
+  // The browser picks the selection itself when options mount, change or reset,
+  // so the ref re-attaches with new children to read it.
+  const attachSelect = useCallback(
+    (node: HTMLSelectElement | null) => {
+      const cleanup = setSelectRef(node);
+      syncUncontrolledValue();
+      return cleanup;
+    },
+    [children, setSelectRef, syncUncontrolledValue],
+  );
+  useFormReset(selectRef, null, syncUncontrolledValue);
   const currentValue = isControlled ? value : uncontrolledValue;
   const floatingLabel = useFloatingLabel({
     disabled,
@@ -118,7 +138,7 @@ export function EvoSelect({
       >
         <select
           {...rest}
-          ref={setSelectRef}
+          ref={attachSelect}
           aria-invalid={ariaInvalid}
           defaultValue={isControlled ? undefined : defaultValue}
           disabled={disabled}

@@ -205,6 +205,205 @@ describe("evo-select", () => {
     await expect.element(select).toHaveDisplayValue("Choose a shipping method");
   });
 
+  describe("without a value or defaultValue", () => {
+    const methodOptions = (
+      <>
+        <EvoSelectOption value="standard">Standard shipping</EvoSelectOption>
+        <EvoSelectOption value="express">Express shipping</EvoSelectOption>
+      </>
+    );
+
+    it("floats the label for the option the browser selects on mount", async () => {
+      const onChange = vi.fn();
+      const screen = await render(
+        <EvoSelect floatingLabel="Shipping method" onChange={onChange}>
+          {methodOptions}
+        </EvoSelect>,
+      );
+      const select = screen.getByRole("combobox", { name: "Shipping method" });
+      const label = screen.getByText("Shipping method", { exact: true });
+
+      await expect.element(select).toHaveValue("standard");
+      await expect.element(select).toHaveDisplayValue("Standard shipping");
+      await expect
+        .element(label)
+        .not.toHaveClass("floating-label__label--inline");
+      expect(onChange).not.toHaveBeenCalled();
+    });
+
+    it("keeps the label floating after focus and blur", async () => {
+      const screen = await render(
+        <EvoSelect floatingLabel="Shipping method">{methodOptions}</EvoSelect>,
+      );
+      const select = screen.getByRole("combobox", { name: "Shipping method" });
+      const label = screen.getByText("Shipping method", { exact: true });
+
+      await user.tab();
+      await expect.element(select).toHaveFocus();
+      await expect.element(label).toHaveClass("floating-label__label--focus");
+      await user.tab();
+      await expect.element(select).not.toHaveFocus();
+      await expect.element(label).toHaveClass("floating-label__label--focus");
+      await expect
+        .element(label)
+        .not.toHaveClass("floating-label__label--inline");
+      await expect.element(select).toHaveDisplayValue("Standard shipping");
+    });
+
+    it("floats the label for the first enabled option when a disabled placeholder comes first", async () => {
+      const screen = await render(
+        <EvoSelect floatingLabel="Shipping method">
+          <EvoSelectOption value="" disabled>
+            Choose a shipping method
+          </EvoSelectOption>
+          {methodOptions}
+        </EvoSelect>,
+      );
+      const select = screen.getByRole("combobox", { name: "Shipping method" });
+      const label = screen.getByText("Shipping method", { exact: true });
+
+      await expect.element(select).toHaveValue("standard");
+      await expect.element(select).toHaveDisplayValue("Standard shipping");
+      await expect
+        .element(label)
+        .not.toHaveClass("floating-label__label--inline");
+    });
+
+    it("floats the label for options added after mount", async () => {
+      const screen = await render(
+        <EvoSelect floatingLabel="Shipping method" />,
+      );
+      const select = screen.getByRole("combobox", { name: "Shipping method" });
+      const label = screen.getByText("Shipping method", { exact: true });
+
+      await expect.element(label).toHaveClass("floating-label__label--inline");
+      await screen.rerender(
+        <EvoSelect floatingLabel="Shipping method">{methodOptions}</EvoSelect>,
+      );
+
+      await expect.element(select).toHaveValue("standard");
+      await expect
+        .element(label)
+        .not.toHaveClass("floating-label__label--inline");
+    });
+
+    it("follows the native selection when options are replaced", async () => {
+      const screen = await render(
+        <EvoSelect floatingLabel="Shipping method">{methodOptions}</EvoSelect>,
+      );
+      const select = screen.getByRole("combobox", { name: "Shipping method" });
+      const label = screen.getByText("Shipping method", { exact: true });
+
+      await expect
+        .element(label)
+        .not.toHaveClass("floating-label__label--inline");
+      await screen.rerender(
+        <EvoSelect floatingLabel="Shipping method">
+          <EvoSelectOption value="">Choose a shipping method</EvoSelectOption>
+          <EvoSelectOption value="pickup">Pickup</EvoSelectOption>
+        </EvoSelect>,
+      );
+
+      await expect.element(select).toHaveValue("");
+      await expect.element(label).toHaveClass("floating-label__label--inline");
+    });
+
+    it("pairs every forwarded ref attach with a cleanup when options change", async () => {
+      const attached: (HTMLSelectElement | null)[] = [];
+      const cleanup = vi.fn();
+      const forwardedRef = (node: HTMLSelectElement | null) => {
+        attached.push(node);
+        return cleanup;
+      };
+      const screen = await render(
+        <EvoSelect aria-label="Shipping method" ref={forwardedRef} />,
+      );
+      const select = screen.getByRole("combobox").element();
+
+      await screen.rerender(
+        <EvoSelect aria-label="Shipping method" ref={forwardedRef}>
+          {methodOptions}
+        </EvoSelect>,
+      );
+
+      expect(attached).toEqual([select, select]);
+      expect(cleanup).toHaveBeenCalledTimes(1);
+      await screen.unmount();
+      expect(attached).toEqual([select, select]);
+      expect(cleanup).toHaveBeenCalledTimes(2);
+    });
+  });
+
+  describe("empty option label attribute", () => {
+    const labelledOptions = (
+      <>
+        <EvoSelectOption value="" label="Choose shipping">
+          Choose a shipping method
+        </EvoSelectOption>
+        <EvoSelectOption value="standard">Standard shipping</EvoSelectOption>
+        <EvoSelectOption value="express">Express shipping</EvoSelectOption>
+      </>
+    );
+
+    // toHaveDisplayValue reads option text and ignores the label attribute, so
+    // these tests assert option.label, which is what the browser renders.
+    const emptyOption = (select: Element) =>
+      select.querySelector<HTMLOptionElement>('option[value=""]')!;
+
+    it("omits the label while the floating label is inline and restores it on focus", async () => {
+      const screen = await render(
+        <EvoSelect floatingLabel="Shipping method">
+          {labelledOptions}
+        </EvoSelect>,
+      );
+      const select = screen.getByRole("combobox", { name: "Shipping method" });
+      const placeholder = emptyOption(select.element());
+
+      expect(placeholder.hasAttribute("label")).toBe(false);
+      expect(placeholder.label).toBe("");
+
+      await user.tab();
+      await expect.element(select).toHaveFocus();
+      await expect.poll(() => placeholder.label).toBe("Choose shipping");
+      expect(placeholder.getAttribute("label")).toBe("Choose shipping");
+
+      await user.tab();
+      await expect.element(select).not.toHaveFocus();
+      await expect.poll(() => placeholder.label).toBe("");
+      expect(placeholder.hasAttribute("label")).toBe(false);
+    });
+
+    it("keeps the label when the floating label is already floating", async () => {
+      const screen = await render(
+        <EvoSelect floatingLabel="Shipping method" defaultValue="express">
+          {labelledOptions}
+        </EvoSelect>,
+      );
+      const select = screen.getByRole("combobox", { name: "Shipping method" });
+      const placeholder = emptyOption(select.element());
+
+      expect(placeholder.getAttribute("label")).toBe("Choose shipping");
+      expect(placeholder.label).toBe("Choose shipping");
+    });
+
+    it("leaves the label alone without a floating label", async () => {
+      const screen = await render(
+        <EvoSelect aria-label="Shipping method">{labelledOptions}</EvoSelect>,
+      );
+      const select = screen.getByRole("combobox", { name: "Shipping method" });
+      const placeholder = emptyOption(select.element());
+
+      expect(placeholder.label).toBe("Choose shipping");
+      await user.tab();
+      await expect.element(select).toHaveFocus();
+      expect(placeholder.label).toBe("Choose shipping");
+      await user.tab();
+      await expect.element(select).not.toHaveFocus();
+      expect(placeholder.label).toBe("Choose shipping");
+      expect(placeholder.getAttribute("label")).toBe("Choose shipping");
+    });
+  });
+
   it("renders native groups and passes option attributes", async () => {
     const screen = await render(
       <EvoSelect
@@ -335,6 +534,34 @@ describe("evo-select", () => {
       expect(onChange).not.toHaveBeenCalled();
     });
 
+    it("keeps the label floating for the option the browser re-selects when no default is set", async () => {
+      const onChange = vi.fn();
+      const screen = await render(
+        <form>
+          <EvoSelect floatingLabel="Shipping method" onChange={onChange}>
+            <EvoSelectOption value="standard">Standard</EvoSelectOption>
+            <EvoSelectOption value="express">Express</EvoSelectOption>
+          </EvoSelect>
+          <button type="reset">Reset</button>
+        </form>,
+      );
+      const select = screen.getByRole("combobox", { name: "Shipping method" });
+      const label = screen.getByText("Shipping method", { exact: true });
+
+      await user.selectOptions(select, "express");
+      await expect.element(select).toHaveValue("express");
+      onChange.mockClear();
+      await user.click(screen.getByRole("button", { name: "Reset" }));
+      await settleReset();
+
+      await expect.element(select).toHaveValue("standard");
+      await expect.element(select).toHaveDisplayValue("Standard");
+      await expect
+        .element(label)
+        .not.toHaveClass("floating-label__label--inline");
+      expect(onChange).not.toHaveBeenCalled();
+    });
+
     it("does not apply a canceled reset", async () => {
       const onChange = vi.fn();
       const screen = await render(
@@ -388,5 +615,47 @@ describe("evo-select", () => {
       await expect.poll(() => selectedValues(select)).toEqual(["standard"]);
       expect(onChange).not.toHaveBeenCalled();
     });
+
+    it.each([
+      { defaultValue: undefined, inline: true },
+      { defaultValue: ["standard"], inline: false },
+    ])(
+      "derives the label of a multiple select from its restored selections (default $defaultValue)",
+      async ({ defaultValue, inline }) => {
+        const onChange = vi.fn();
+        const screen = await render(
+          <form>
+            <EvoSelect
+              floatingLabel="Shipping methods"
+              multiple
+              defaultValue={defaultValue}
+              onChange={onChange}
+            >
+              {methodOptions}
+            </EvoSelect>
+            <button type="reset">Reset</button>
+          </form>,
+        );
+        const select = screen
+          .getByRole("listbox", { name: "Shipping methods" })
+          .element() as HTMLSelectElement;
+        const label = screen.getByText("Shipping methods", { exact: true });
+        const labelIsInline = () =>
+          label.element().classList.contains("floating-label__label--inline");
+
+        await expect.poll(labelIsInline).toBe(inline);
+        await user.selectOptions(select, ["express", "global"]);
+        await expect.poll(labelIsInline).toBe(false);
+        onChange.mockClear();
+        await user.click(screen.getByRole("button", { name: "Reset" }));
+        await settleReset();
+
+        await expect
+          .poll(() => selectedValues(select))
+          .toEqual(defaultValue ?? []);
+        await expect.poll(labelIsInline).toBe(inline);
+        expect(onChange).not.toHaveBeenCalled();
+      },
+    );
   });
 });
