@@ -3,13 +3,21 @@ import type { ComponentProps, ReactElement } from "react";
 /** A stable value identifying one segment. */
 export type SegmentedButtonValue = string | number;
 
-export type EvoSegmentedButtonsProps = ComponentProps<"div"> & {
+/**
+ * `Value` is inferred from `selected`, `defaultSelected`, or `onSelectedChange`,
+ * so a `useState` setter can be passed to `onSelectedChange` directly. Each
+ * child's `value` must be one of the `Value` options; TypeScript cannot check
+ * this through JSX children.
+ */
+export type EvoSegmentedButtonsProps<
+  Value extends SegmentedButtonValue = SegmentedButtonValue,
+> = ComponentProps<"div"> & {
   /** Selected segment value. Pass `null` when no segment is selected. */
-  selected?: SegmentedButtonValue | null;
+  selected?: Value | null;
   /** Initial selection when `selected` is omitted. Defaults to `null`. */
-  defaultSelected?: SegmentedButtonValue | null;
+  defaultSelected?: Value | null;
   /** Called with the newly selected value after a segment is activated. */
-  onSelectedChange?: (selected: SegmentedButtonValue) => void;
+  onSelectedChange?: (selected: Value) => void;
   /** Uses Skin's larger segment size. Omit for the regular size. */
   size?: "large";
   /** Accessible name for the button list. Use this or `a11yLabelId`. */

@@ -1,4 +1,4 @@
-import { createRef } from "react";
+import { createRef, useState } from "react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { userEvent } from "vitest/browser";
 import { render } from "vitest-browser-react";
@@ -80,6 +80,58 @@ describe("evo-segmented-buttons", () => {
     await expect
       .element(screen.getByRole("button", { name: "Active" }))
       .toHaveAttribute("aria-current", "true");
+  });
+
+  it("accepts a typed state setter as the selection callback", async () => {
+    function ListingView() {
+      const [view, setView] = useState<"grid" | "list">("grid");
+      return (
+        <EvoSegmentedButtons
+          a11yText="Listing view"
+          selected={view}
+          onSelectedChange={setView}
+        >
+          <EvoSegmentedButton value="grid">Grid</EvoSegmentedButton>
+          <EvoSegmentedButton value="list">List</EvoSegmentedButton>
+        </EvoSegmentedButtons>
+      );
+    }
+    const screen = await render(<ListingView />);
+
+    await user.click(screen.getByRole("button", { name: "List" }));
+    await expect
+      .element(screen.getByRole("button", { name: "List" }))
+      .toHaveAttribute("aria-current", "true");
+  });
+
+  it("rejects a selection callback for a different value type", () => {
+    const setCount = vi.fn<(count: number) => void>();
+    const element = (
+      <EvoSegmentedButtons
+        a11yText="Listing view"
+        // @ts-expect-error A string selection doesn't match a number callback.
+        selected="grid"
+        onSelectedChange={setCount}
+      />
+    );
+    expect(element.props.selected).toBe("grid");
+  });
+
+  it("forwards each segment value to its native button", async () => {
+    const onClick = vi.fn<(value: string) => void>();
+    const screen = await render(
+      <EvoSegmentedButtons a11yText="Listing view">
+        <EvoSegmentedButton
+          value="grid"
+          onClick={(event) => onClick(event.currentTarget.value)}
+        >
+          Grid
+        </EvoSegmentedButton>
+      </EvoSegmentedButtons>,
+    );
+
+    await user.click(screen.getByRole("button", { name: "Grid" }));
+    expect(onClick).toHaveBeenCalledExactlyOnceWith("grid");
   });
 
   it("uses native keyboard and disabled button behavior", async () => {

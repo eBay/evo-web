@@ -30,7 +30,7 @@ import "@ebay/skin/segmented-buttons.mjs";
  *
  * @summary Compact set of mutually exclusive options.
  */
-export function EvoSegmentedButtons({
+export function EvoSegmentedButtons<Value extends SegmentedButtonValue>({
   selected: selectedProp,
   defaultSelected = null,
   onSelectedChange,
@@ -40,17 +40,19 @@ export function EvoSegmentedButtons({
   className,
   children,
   ...rest
-}: EvoSegmentedButtonsProps) {
+}: EvoSegmentedButtonsProps<Value>) {
   const [uncontrolledSelected, setUncontrolledSelected] =
-    useState<SegmentedButtonValue | null>(defaultSelected);
+    useState<Value | null>(defaultSelected);
   const isControlled = selectedProp !== undefined;
   const selected = isControlled ? selectedProp : uncontrolledSelected;
 
   const select = useCallback(
     (next: SegmentedButtonValue) => {
       if (Object.is(next, selected)) return;
-      if (!isControlled) setUncontrolledSelected(next);
-      onSelectedChange?.(next);
+      // Children's values are not type-checked against `Value`; see the props JSDoc.
+      const value = next as Value;
+      if (!isControlled) setUncontrolledSelected(value);
+      onSelectedChange?.(value);
     },
     [isControlled, onSelectedChange, selected],
   );

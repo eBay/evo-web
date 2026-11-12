@@ -24,6 +24,7 @@ export function EvoSegmentedButton({
       <button
         {...rest}
         type={type}
+        value={value}
         className={classNames("segmented-buttons__button", className)}
         aria-current={Object.is(group.selected, value) || undefined}
         onClick={(event) => {
