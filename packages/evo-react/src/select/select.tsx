@@ -1,5 +1,5 @@
 import { useCallback, useId, useState } from "react";
-import type { ChangeEvent } from "react";
+import type { ChangeEvent, JSX } from "react";
 import classNames from "classnames";
 import { EvoIconChevronDown12 } from "../icon/icons/chevron-down-12";
 import { useFloatingLabel } from "../utils/use-floating-label";
@@ -34,6 +34,9 @@ import "@ebay/skin/select.mjs";
  *
  * @summary Native select with Skin styling and optional floating label.
  */
+export function EvoSelect<Value extends string = string>(
+  props: EvoSelectProps<Value>,
+): JSX.Element;
 export function EvoSelect({
   "aria-invalid": ariaInvalid,
   borderless = false,

@@ -8,9 +8,10 @@ import type {
 
 export type Size = "regular" | "large";
 export type AccordionId = string;
-export type SingleOpenValue = AccordionId | undefined;
-export type MultipleOpenValue = AccordionId[];
-export type OpenValue = SingleOpenValue | MultipleOpenValue;
+export type SingleOpenValue<Id extends string = string> = Id | undefined;
+export type MultipleOpenValue<Id extends string = string> = Id[];
+export type OpenValue<Id extends string = string> =
+  SingleOpenValue<Id> | MultipleOpenValue<Id>;
 
 type BaseAccordionProps = Omit<ComponentProps<"ul">, "aria-roledescription"> & {
   /** Size of the accordion. */
@@ -22,32 +23,35 @@ type BaseAccordionProps = Omit<ComponentProps<"ul">, "aria-roledescription"> & {
   children?: ReactNode;
 };
 
-export type SingleAccordionProps = BaseAccordionProps & {
-  /** Controlled `open` value. Use a `string` for single-open mode or a `string[]` for multi-open mode. */
-  open?: SingleOpenValue;
-  /** Initial uncontrolled `defaultOpen` value. Use an empty `string[]` for uncontrolled multi-open mode. */
-  defaultOpen?: SingleOpenValue;
-  /** Fired when the open item `id` or ids change. */
-  onOpenChange?: (open: SingleOpenValue) => void;
-};
+export type SingleAccordionProps<Id extends string = string> =
+  BaseAccordionProps & {
+    /** Controlled `open` value. Use a `string` for single-open mode or a `string[]` for multi-open mode. */
+    open?: SingleOpenValue<Id>;
+    /** Initial uncontrolled `defaultOpen` value. Use an empty `string[]` for uncontrolled multi-open mode. */
+    defaultOpen?: SingleOpenValue<Id>;
+    /** Fired when the open item `id` or ids change. */
+    onOpenChange?: (open: SingleOpenValue<Id>) => void;
+  };
 
-export type MultipleAccordionProps = BaseAccordionProps & {
-  /** Controlled `open` value. Use a `string` for single-open mode or a `string[]` for multi-open mode. */
-  open?: MultipleOpenValue;
-  /** Initial uncontrolled `defaultOpen` value. Use an empty `string[]` for uncontrolled multi-open mode. */
-  defaultOpen?: MultipleOpenValue;
-  /** Fired when the open item `id` or ids change. */
-  onOpenChange?: (open: MultipleOpenValue) => void;
-};
+export type MultipleAccordionProps<Id extends string = string> =
+  BaseAccordionProps & {
+    /** Controlled `open` value. Use a `string` for single-open mode or a `string[]` for multi-open mode. */
+    open?: MultipleOpenValue<Id>;
+    /** Initial uncontrolled `defaultOpen` value. Use an empty `string[]` for uncontrolled multi-open mode. */
+    defaultOpen?: MultipleOpenValue<Id>;
+    /** Fired when the open item `id` or ids change. */
+    onOpenChange?: (open: MultipleOpenValue<Id>) => void;
+  };
 
-export type EvoAccordionProps = SingleAccordionProps | MultipleAccordionProps;
+export type EvoAccordionProps<Id extends string = string> =
+  SingleAccordionProps<Id> | MultipleAccordionProps<Id>;
 
-export type EvoAccordionItemProps = Omit<
+export type EvoAccordionItemProps<Id extends string = string> = Omit<
   ComponentProps<"details">,
   "id" | "open" | "defaultOpen" | "onToggle"
 > & {
   /** Unique `id` used by the parent to track this item's `open` state. */
-  id: AccordionId;
+  id: Id;
   /** Summary and content composition for the section. */
   children?: ReactNode;
   /** Called when this item changes `open` state. */

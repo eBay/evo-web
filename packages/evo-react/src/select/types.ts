@@ -2,10 +2,12 @@ import type { ComponentProps } from "react";
 
 export type SelectSize = "regular" | "large";
 
-type BaseSelectProps = Omit<
+type BaseSelectProps<Value extends string> = Omit<
   ComponentProps<"select">,
-  "multiple" | "onChange" | "size"
+  "multiple" | "onChange" | "size" | "value" | "defaultValue"
 > & {
+  value?: Value | readonly Value[];
+  defaultValue?: Value | readonly Value[];
   /** Removes the select border while retaining the native control. */
   borderless?: boolean;
   /**
@@ -20,21 +22,22 @@ type BaseSelectProps = Omit<
   size?: SelectSize;
 };
 
-export type EvoSelectProps = BaseSelectProps &
-  (
-    | {
-        /** Selects one option at a time. */
-        multiple?: false;
-        /** Called with the selected option value. */
-        onChange?: (value: string) => void;
-      }
-    | {
-        /** Allows more than one option to be selected. */
-        multiple: true;
-        /** Called with all selected option values. */
-        onChange?: (values: string[]) => void;
-      }
-  );
+export type EvoSelectProps<Value extends string = string> =
+  BaseSelectProps<Value> &
+    (
+      | {
+          /** Selects one option at a time. */
+          multiple?: false;
+          /** Called with the selected option value. */
+          onChange?: (value: Value) => void;
+        }
+      | {
+          /** Allows more than one option to be selected. */
+          multiple: true;
+          /** Called with all selected option values. */
+          onChange?: (values: Value[]) => void;
+        }
+    );
 
 export type EvoSelectOptionProps = ComponentProps<"option">;
 
