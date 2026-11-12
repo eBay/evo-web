@@ -212,6 +212,12 @@ button.filter-chip:disabled {
     border-color: var(--color-border-disabled);
     color: var(--color-foreground-disabled);
 }
+a.filter-chip:not([href]):active:after,
+a.filter-chip:not([href]):hover:after,
+button.filter-chip:disabled:active:after,
+button.filter-chip:disabled:hover:after {
+    background-color: initial;
+}
 a.filter-chip:not([href]).filter-chip--selected,
 a.filter-chip:not([href])[aria-pressed="true"],
 button.filter-chip:disabled.filter-chip--selected,
