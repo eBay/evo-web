@@ -50,6 +50,11 @@ a.filter-chip:not([href]) {
     border-color: var(--color-border-disabled);
     color: var(--color-foreground-disabled);
 
+    &:hover::after,
+    &:active::after {
+        background-color: transparent;
+    }
+
     &[aria-pressed="true"],
     &.filter-chip--selected {
         animation: none;
