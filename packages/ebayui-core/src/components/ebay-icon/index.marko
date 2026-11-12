@@ -27,14 +27,17 @@ static function getIconClass(type: string, name: string, size?: string) {
 }
 $ var noTitle = a11yVariant === "label";
 $ var lookup = isBrowser ? browserLookup : out.global;
-$ var a11yAttributes = a11yText ? { role: "img" } : { "aria-hidden": "true" };
+$ {
+    var a11yAttributes: Marko.SVG.SVG = a11yText
+        ? { role: "img" }
+        : { "aria-hidden": "true" };
+}
 $ var prefixSvg = _type === "icon" ? "icon-" : "";
 <svg
     ...a11yAttributes
     ...processHtmlAttributes(htmlInput)
     class=[inputClass, !noSkinClasses && getIconClass(_type, _name, _size)]
     key="svg"
-    focusable="false"
     aria-labelledby=a11yText && !noTitle && component.elId("text")
     aria-label=noTitle && a11yText
 >

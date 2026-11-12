@@ -1,10 +1,8 @@
 import type { Input as BaseInput } from "<ebay-dialog-base>";
 import type { WithNormalizedProps } from "../../global";
-static {
-    interface ToastDialogInput extends Omit<BaseInput, `on${string}`> {
-        "on-open"?: () => void;
-        "on-close"?: () => void;
-    }
+static interface ToastDialogInput extends Omit<BaseInput, `on${string}`> {
+    "on-open"?: () => void;
+    "on-close"?: () => void;
 }
 export interface Input extends WithNormalizedProps<ToastDialogInput> {}
 $ const {

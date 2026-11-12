@@ -1,17 +1,15 @@
 import type { Input as BaseInput } from "<ebay-dialog-base>";
 import type { WithNormalizedProps } from "../../global";
-static {
-    interface AlertDialogInput extends Omit<BaseInput, `on${string}`> {
-        "confirm-text"?: string;
-        "on-open"?: () => void;
-        "on-close"?: () => void;
-        "on-confirm"?: () => void;
-        confirm?: Marko.AttrTag<
-            Marko.Input<`h${number}`> & {
-                renderBody?: Marko.Body;
-            }
-        >;
-    }
+static interface AlertDialogInput extends Omit<BaseInput, `on${string}`> {
+    "confirm-text"?: string;
+    "on-open"?: () => void;
+    "on-close"?: () => void;
+    "on-confirm"?: () => void;
+    confirm?: Marko.AttrTag<
+        Marko.Input<`h${number}`> & {
+            renderBody?: Marko.Body;
+        }
+    >;
 }
 export interface Input extends WithNormalizedProps<AlertDialogInput> {}
 $ var confirmId = component.getElId("alert-dialog-confirm");

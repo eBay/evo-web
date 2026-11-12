@@ -28,7 +28,6 @@ exports[`pagination > Interactive > renders defaults 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -193,7 +192,6 @@ exports[`pagination > Interactive > renders defaults 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -245,7 +243,6 @@ exports[`pagination > passes through additional html attributes 1`] = `
     <svg
       aria-hidden="true"
       class="icon icon--16"
-      focusable="false"
     >
       <defs>
         <symbol
@@ -375,7 +372,6 @@ exports[`pagination > passes through additional html attributes 1`] = `
     <svg
       aria-hidden="true"
       class="icon icon--16"
-      focusable="false"
     >
       <defs>
         <symbol
@@ -426,7 +422,6 @@ exports[`pagination > passes through additional html attributes 2`] = `
     <svg
       aria-hidden="true"
       class="icon icon--16"
-      focusable="false"
     >
       <defs>
         <symbol
@@ -556,7 +551,6 @@ exports[`pagination > passes through additional html attributes 2`] = `
     <svg
       aria-hidden="true"
       class="icon icon--16"
-      focusable="false"
     >
       <defs>
         <symbol
@@ -607,7 +601,6 @@ exports[`pagination > passes through additional html attributes 3`] = `
     <svg
       aria-hidden="true"
       class="icon icon--16"
-      focusable="false"
     >
       <defs>
         <symbol
@@ -728,7 +721,6 @@ exports[`pagination > passes through additional html attributes 3`] = `
     <svg
       aria-hidden="true"
       class="icon icon--16"
-      focusable="false"
     >
       <defs>
         <symbol
@@ -779,7 +771,6 @@ exports[`pagination > passes through additional html attributes 4`] = `
     <svg
       aria-hidden="true"
       class="icon icon--16"
-      focusable="false"
     >
       <defs>
         <symbol
@@ -900,7 +891,6 @@ exports[`pagination > passes through additional html attributes 4`] = `
     <svg
       aria-hidden="true"
       class="icon icon--16"
-      focusable="false"
     >
       <defs>
         <symbol
@@ -947,7 +937,6 @@ exports[`pagination > with buttons > renders button version 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -1102,7 +1091,6 @@ exports[`pagination > with buttons > renders button version 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -1150,7 +1138,6 @@ exports[`pagination > with buttons > renders button version selected items 1`] =
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -1306,7 +1293,6 @@ exports[`pagination > with buttons > renders button version selected items 1`] =
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -1356,7 +1342,6 @@ exports[`pagination > with buttons > renders buttons with last page visible 1`] 
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -1451,7 +1436,6 @@ exports[`pagination > with buttons > renders buttons with last page visible 1`] 
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--24"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<defs>[39m
               [36m<symbol[39m
@@ -1487,7 +1471,6 @@ exports[`pagination > with buttons > renders buttons with last page visible 1`] 
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -1536,7 +1519,6 @@ exports[`pagination > with buttons > renders default button version 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -1639,7 +1621,6 @@ exports[`pagination > with buttons > renders default button version 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -1689,7 +1670,6 @@ exports[`pagination > with buttons > renders default button with overflow 1`] = 
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -1740,7 +1720,6 @@ exports[`pagination > with buttons > renders default button with overflow 1`] = 
                 [36m<svg[39m
                   [33maria-hidden[39m=[32m"true"[39m
                   [33mclass[39m=[32m"icon icon--24"[39m
-                  [33mfocusable[39m=[32m"false"[39m
                 [36m>[39m
                   [36m<defs>[39m
                     [36m<symbol[39m
@@ -1851,7 +1830,6 @@ exports[`pagination > with buttons > renders default button with overflow 1`] = 
                 [36m<svg[39m
                   [33maria-hidden[39m=[32m"true"[39m
                   [33mclass[39m=[32m"icon icon--24"[39m
-                  [33mfocusable[39m=[32m"false"[39m
                 [36m>[39m
                   [36m<use[39m
                     [33mhref[39m=[32m"#icon-overflow-horizontal-24"[39m
@@ -1880,7 +1858,6 @@ exports[`pagination > with buttons > renders default button with overflow 1`] = 
                     [36m<svg[39m
                       [33maria-hidden[39m=[32m"true"[39m
                       [33mclass[39m=[32m"icon icon--16"[39m
-                      [33mfocusable[39m=[32m"false"[39m
                     [36m>[39m
                       [36m<defs>[39m
                         [36m<symbol[39m
@@ -1912,7 +1889,6 @@ exports[`pagination > with buttons > renders default button with overflow 1`] = 
                     [36m<svg[39m
                       [33maria-hidden[39m=[32m"true"[39m
                       [33mclass[39m=[32m"icon icon--16"[39m
-                      [33mfocusable[39m=[32m"false"[39m
                     [36m>[39m
                       [36m<use[39m
                         [33mhref[39m=[32m"#icon-tick-16"[39m
@@ -1932,7 +1908,6 @@ exports[`pagination > with buttons > renders default button with overflow 1`] = 
                     [36m<svg[39m
                       [33maria-hidden[39m=[32m"true"[39m
                       [33mclass[39m=[32m"icon icon--16"[39m
-                      [33mfocusable[39m=[32m"false"[39m
                     [36m>[39m
                       [36m<use[39m
                         [33mhref[39m=[32m"#icon-tick-16"[39m
@@ -1952,7 +1927,6 @@ exports[`pagination > with buttons > renders default button with overflow 1`] = 
                     [36m<svg[39m
                       [33maria-hidden[39m=[32m"true"[39m
                       [33mclass[39m=[32m"icon icon--16"[39m
-                      [33mfocusable[39m=[32m"false"[39m
                     [36m>[39m
                       [36m<use[39m
                         [33mhref[39m=[32m"#icon-tick-16"[39m
@@ -1972,7 +1946,6 @@ exports[`pagination > with buttons > renders default button with overflow 1`] = 
                     [36m<svg[39m
                       [33maria-hidden[39m=[32m"true"[39m
                       [33mclass[39m=[32m"icon icon--16"[39m
-                      [33mfocusable[39m=[32m"false"[39m
                     [36m>[39m
                       [36m<use[39m
                         [33mhref[39m=[32m"#icon-tick-16"[39m
@@ -2003,7 +1976,6 @@ exports[`pagination > with buttons > renders default button with overflow 1`] = 
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -2051,7 +2023,6 @@ exports[`pagination > with buttons > renders empty button version 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -2080,7 +2051,6 @@ exports[`pagination > with buttons > renders empty button version 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -2129,7 +2099,6 @@ exports[`pagination > with links > renders basic version 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -2241,7 +2210,6 @@ exports[`pagination > with links > renders basic version 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -2290,7 +2258,6 @@ exports[`pagination > with links > renders empty version 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -2320,7 +2287,6 @@ exports[`pagination > with links > renders empty version 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -2369,7 +2335,6 @@ exports[`pagination > with links > renders with a selected item 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -2541,7 +2506,6 @@ exports[`pagination > with links > renders with a selected item 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -2590,7 +2554,6 @@ exports[`pagination > with links > renders with aria-disabled when navigation is
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -2762,7 +2725,6 @@ exports[`pagination > with links > renders with aria-disabled when navigation is
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -2810,7 +2772,6 @@ exports[`pagination > with links > renders with aria-disabled when navigation it
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -2981,7 +2942,6 @@ exports[`pagination > with links > renders with aria-disabled when navigation it
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -3031,7 +2991,6 @@ exports[`pagination > with links > renders with last page visible 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -3134,7 +3093,6 @@ exports[`pagination > with links > renders with last page visible 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--24"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<defs>[39m
               [36m<symbol[39m
@@ -3171,7 +3129,6 @@ exports[`pagination > with links > renders with last page visible 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -3221,7 +3178,6 @@ exports[`pagination > with links > renders with overflow 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -3273,7 +3229,6 @@ exports[`pagination > with links > renders with overflow 1`] = `
                 [36m<svg[39m
                   [33maria-hidden[39m=[32m"true"[39m
                   [33mclass[39m=[32m"icon icon--24"[39m
-                  [33mfocusable[39m=[32m"false"[39m
                 [36m>[39m
                   [36m<defs>[39m
                     [36m<symbol[39m
@@ -3391,7 +3346,6 @@ exports[`pagination > with links > renders with overflow 1`] = `
                 [36m<svg[39m
                   [33maria-hidden[39m=[32m"true"[39m
                   [33mclass[39m=[32m"icon icon--24"[39m
-                  [33mfocusable[39m=[32m"false"[39m
                 [36m>[39m
                   [36m<use[39m
                     [33mhref[39m=[32m"#icon-overflow-horizontal-24"[39m
@@ -3420,7 +3374,6 @@ exports[`pagination > with links > renders with overflow 1`] = `
                     [36m<svg[39m
                       [33maria-hidden[39m=[32m"true"[39m
                       [33mclass[39m=[32m"icon icon--16"[39m
-                      [33mfocusable[39m=[32m"false"[39m
                     [36m>[39m
                       [36m<defs>[39m
                         [36m<symbol[39m
@@ -3452,7 +3405,6 @@ exports[`pagination > with links > renders with overflow 1`] = `
                     [36m<svg[39m
                       [33maria-hidden[39m=[32m"true"[39m
                       [33mclass[39m=[32m"icon icon--16"[39m
-                      [33mfocusable[39m=[32m"false"[39m
                     [36m>[39m
                       [36m<use[39m
                         [33mhref[39m=[32m"#icon-tick-16"[39m
@@ -3472,7 +3424,6 @@ exports[`pagination > with links > renders with overflow 1`] = `
                     [36m<svg[39m
                       [33maria-hidden[39m=[32m"true"[39m
                       [33mclass[39m=[32m"icon icon--16"[39m
-                      [33mfocusable[39m=[32m"false"[39m
                     [36m>[39m
                       [36m<use[39m
                         [33mhref[39m=[32m"#icon-tick-16"[39m
@@ -3492,7 +3443,6 @@ exports[`pagination > with links > renders with overflow 1`] = `
                     [36m<svg[39m
                       [33maria-hidden[39m=[32m"true"[39m
                       [33mclass[39m=[32m"icon icon--16"[39m
-                      [33mfocusable[39m=[32m"false"[39m
                     [36m>[39m
                       [36m<use[39m
                         [33mhref[39m=[32m"#icon-tick-16"[39m
@@ -3512,7 +3462,6 @@ exports[`pagination > with links > renders with overflow 1`] = `
                     [36m<svg[39m
                       [33maria-hidden[39m=[32m"true"[39m
                       [33mclass[39m=[32m"icon icon--16"[39m
-                      [33mfocusable[39m=[32m"false"[39m
                     [36m>[39m
                       [36m<use[39m
                         [33mhref[39m=[32m"#icon-tick-16"[39m
@@ -3544,7 +3493,6 @@ exports[`pagination > with links > renders with overflow 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m

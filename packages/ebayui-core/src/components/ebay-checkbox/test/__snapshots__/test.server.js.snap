@@ -31,7 +31,6 @@ exports[`passes through additional html attributes 2`] = `
       aria-hidden="true"
       class="checkbox__unchecked"
       data-marko-key="@svg s0-5-0"
-      focusable="false"
     >
       <defs
         data-marko-key="@defs s0-5-0"
@@ -55,7 +54,6 @@ exports[`passes through additional html attributes 2`] = `
       aria-hidden="true"
       class="checkbox__checked"
       data-marko-key="@svg s0-6-0"
-      focusable="false"
     >
       <defs
         data-marko-key="@defs s0-6-0"
@@ -113,7 +111,6 @@ exports[`renders default checkbox 2`] = `
       aria-hidden="true"
       class="checkbox__unchecked"
       data-marko-key="@svg s0-5-0"
-      focusable="false"
     >
       <defs
         data-marko-key="@defs s0-5-0"
@@ -137,7 +134,6 @@ exports[`renders default checkbox 2`] = `
       aria-hidden="true"
       class="checkbox__checked"
       data-marko-key="@svg s0-6-0"
-      focusable="false"
     >
       <defs
         data-marko-key="@defs s0-6-0"

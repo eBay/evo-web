@@ -9,15 +9,16 @@ export interface Step extends Omit<Marko.HTML.Div, `on${string}` | "title"> {
         }
     >;
 }
-static {
-    interface ProgressStepperInput extends Omit<Marko.HTML.Div, `on${string}`> {
-        direction?: "row" | "column";
-        step?: Marko.AttrTag<Step>;
-        "default-state"?: "complete" | "upcoming" | "attention" | "current";
-        "a11y-heading-tag"?: keyof Marko.NativeTags;
-        "a11y-heading-text"?: Marko.HTMLAttributes["aria-label"];
-        "auto-paragraph"?: boolean;
-    }
+static interface ProgressStepperInput extends Omit<
+    Marko.HTML.Div,
+    `on${string}`
+> {
+    direction?: "row" | "column";
+    step?: Marko.AttrTag<Step>;
+    "default-state"?: "complete" | "upcoming" | "attention" | "current";
+    "a11y-heading-tag"?: keyof Marko.NativeTags;
+    "a11y-heading-text"?: Marko.HTMLAttributes["aria-label"];
+    "auto-paragraph"?: boolean;
 }
 export interface Input extends WithNormalizedProps<ProgressStepperInput> {}
 $ const {

@@ -80,8 +80,8 @@
         "shaka-player": "5.0.2"
     },
     "devDependencies": {
-        "@marko/compiler": "^5.39.50",
-        "marko": "^5.38.38"
+        "@marko/compiler": "^5.43.2",
+        "marko": "^5.40.1"
     },
     "peerDependencies": {
         "@ebay/skin": "^19",

@@ -12,7 +12,6 @@ exports[`ebay-icon-button > Renders defaults 1`] = `
     [36m<svg[39m
       [33maria-hidden[39m=[32m"true"[39m
       [33mclass[39m=[32m"icon icon--24"[39m
-      [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
       [36m<defs>[39m
         [36m<symbol[39m
@@ -47,7 +46,6 @@ exports[`ebay-icon-button > passes through additional html attributes 1`] = `
   <svg
     aria-hidden="true"
     class="icon icon--24"
-    focusable="false"
   >
     <defs>
       <symbol
@@ -82,7 +80,6 @@ exports[`ebay-icon-button > passes through additional html attributes 2`] = `
   <svg
     aria-hidden="true"
     class="icon icon--24"
-    focusable="false"
   >
     <defs>
       <symbol
@@ -114,7 +111,6 @@ exports[`ebay-icon-button > renders badged icon variant 1`] = `
     [36m<svg[39m
       [33maria-hidden[39m=[32m"true"[39m
       [33mclass[39m=[32m"icon icon--24"[39m
-      [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
       [36m<defs>[39m
         [36m<symbol[39m
@@ -152,7 +148,6 @@ exports[`ebay-icon-button > renders button with priority=delete 1`] = `
     [36m<svg[39m
       [33maria-hidden[39m=[32m"true"[39m
       [33mclass[39m=[32m"icon icon--24"[39m
-      [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
       [36m<defs>[39m
         [36m<symbol[39m
@@ -184,7 +179,6 @@ exports[`ebay-icon-button > renders button with priority=primary 1`] = `
     [36m<svg[39m
       [33maria-hidden[39m=[32m"true"[39m
       [33mclass[39m=[32m"icon icon--24"[39m
-      [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
       [36m<defs>[39m
         [36m<symbol[39m
@@ -216,7 +210,6 @@ exports[`ebay-icon-button > renders button with priority=secondary 1`] = `
     [36m<svg[39m
       [33maria-hidden[39m=[32m"true"[39m
       [33mclass[39m=[32m"icon icon--24"[39m
-      [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
       [36m<defs>[39m
         [36m<symbol[39m
@@ -248,7 +241,6 @@ exports[`ebay-icon-button > renders button with size=large 1`] = `
     [36m<svg[39m
       [33maria-hidden[39m=[32m"true"[39m
       [33mclass[39m=[32m"icon icon--24"[39m
-      [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
       [36m<defs>[39m
         [36m<symbol[39m
@@ -280,7 +272,6 @@ exports[`ebay-icon-button > renders button with size=small 1`] = `
     [36m<svg[39m
       [33maria-hidden[39m=[32m"true"[39m
       [33mclass[39m=[32m"icon icon--24"[39m
-      [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
       [36m<defs>[39m
         [36m<symbol[39m
@@ -313,7 +304,6 @@ exports[`ebay-icon-button > renders disabled version 1`] = `
     [36m<svg[39m
       [33maria-hidden[39m=[32m"true"[39m
       [33mclass[39m=[32m"icon icon--24"[39m
-      [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
       [36m<defs>[39m
         [36m<symbol[39m
@@ -344,7 +334,6 @@ exports[`ebay-icon-button > renders fake version 1`] = `
     [36m<svg[39m
       [33maria-hidden[39m=[32m"true"[39m
       [33mclass[39m=[32m"icon icon--24"[39m
-      [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
       [36m<defs>[39m
         [36m<symbol[39m
@@ -376,7 +365,6 @@ exports[`ebay-icon-button > renders icon 1`] = `
     [36m<svg[39m
       [33maria-hidden[39m=[32m"true"[39m
       [33mclass[39m=[32m"icon icon--24"[39m
-      [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
       [36m<defs>[39m
         [36m<symbol[39m
@@ -409,7 +397,6 @@ exports[`ebay-icon-button > renders partially disabled version 1`] = `
     [36m<svg[39m
       [33maria-hidden[39m=[32m"true"[39m
       [33mclass[39m=[32m"icon icon--24"[39m
-      [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
       [36m<defs>[39m
         [36m<symbol[39m
