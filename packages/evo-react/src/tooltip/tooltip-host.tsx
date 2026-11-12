@@ -10,8 +10,7 @@ import { useRefTee } from "../utils/use-ref-tee";
  * `EvoButton`; use `as` for another element or component.
  *
  * Custom components must forward the supplied `ref` and DOM attributes to the
- * rendered host. The tooltip automatically applies `aria-expanded` and
- * `aria-describedby`.
+ * rendered host. The tooltip automatically applies `aria-describedby`.
  *
  * @summary Tooltip trigger and anchor.
  */
@@ -22,7 +21,7 @@ export function EvoTooltipHost<T extends ElementType = typeof EvoButton>({
   ref,
   ...rest
 }: EvoTooltipHostProps<T>) {
-  const { open, tooltipId, setReference } = useTooltipContext();
+  const { tooltipId, setReference } = useTooltipContext();
   const [referenceRef] = useRefTee([setReference, ref], null);
   const Component = (as ?? EvoButton) as ElementType;
 
@@ -31,7 +30,6 @@ export function EvoTooltipHost<T extends ElementType = typeof EvoButton>({
       {...rest}
       ref={referenceRef}
       className={classNames("tooltip__host", className)}
-      aria-expanded={open}
       aria-describedby={tooltipId}
     >
       {children}

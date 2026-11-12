@@ -43,8 +43,8 @@ type TooltipHostOwnProps<T extends ElementType> = {
   className?: string;
   /**
    * Ref forwarded to the rendered host. Custom components must pass it and
-   * forwarded DOM attributes to their DOM element so `aria-expanded` and
-   * `aria-describedby` reach the rendered host.
+   * forwarded DOM attributes to their DOM element so `aria-describedby`
+   * reaches the rendered host.
    */
   ref?: ComponentPropsWithRef<T>["ref"];
 };
@@ -53,7 +53,7 @@ export type EvoTooltipHostProps<T extends ElementType = typeof EvoButton> =
   TooltipHostOwnProps<T> &
     Omit<
       ComponentPropsWithRef<T>,
-      keyof TooltipHostOwnProps<T> | "aria-describedby" | "aria-expanded"
+      keyof TooltipHostOwnProps<T> | "aria-describedby"
     >;
 
 export type EvoTooltipContentProps = Omit<

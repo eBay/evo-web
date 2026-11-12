@@ -92,8 +92,8 @@ function getPointerStyle(key) {
 }
 
 export const top = () => `
-<span class="tooltip" style="margin-left: 100px; margin-top: 100px;">
-    <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-expanded="true" aria-label="Info">
+<span class="tooltip tooltip--expanded" style="margin-left: 100px; margin-top: 100px;">
+    <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-label="Info">
         <svg class="icon icon--24" height="16" width="16" aria-hidden="true">
             <use href="#icon-settings-24"></use>
         </svg>
@@ -114,8 +114,8 @@ export const top = () => `
 </span>`;
 
 export const topLeft = () => `
-<span class="tooltip" style="margin-left: 100px; margin-top: 100px;">
-    <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-expanded="true" aria-label="Info">
+<span class="tooltip tooltip--expanded" style="margin-left: 100px; margin-top: 100px;">
+    <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-label="Info">
         <svg class="icon icon--24" height="16" width="16" aria-hidden="true">
             <use href="#icon-settings-24"></use>
         </svg>
@@ -136,8 +136,8 @@ export const topLeft = () => `
 </span>`;
 
 export const leftTop = () => `
-<span class="tooltip" style="margin-left: 100px; margin-top: 100px;">
-    <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-expanded="true" aria-label="Info">
+<span class="tooltip tooltip--expanded" style="margin-left: 100px; margin-top: 100px;">
+    <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-label="Info">
         <svg class="icon icon--24" height="16" width="16" aria-hidden="true">
             <use href="#icon-settings-24"></use>
         </svg>
@@ -158,8 +158,8 @@ export const leftTop = () => `
 </span>`;
 
 export const left = () => `
-<span class="tooltip" style="margin-left: 100px; margin-top: 100px;">
-    <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-expanded="true" aria-label="Info">
+<span class="tooltip tooltip--expanded" style="margin-left: 100px; margin-top: 100px;">
+    <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-label="Info">
         <svg class="icon icon--24" height="16" width="16" aria-hidden="true">
             <use href="#icon-settings-24"></use>
         </svg>
@@ -180,8 +180,8 @@ export const left = () => `
 </span>`;
 
 export const leftBottom = () => `
-<span class="tooltip" style="margin-left: 100px; margin-top: 100px;">
-    <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-expanded="true" aria-label="Info">
+<span class="tooltip tooltip--expanded" style="margin-left: 100px; margin-top: 100px;">
+    <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-label="Info">
         <svg class="icon icon--24" height="16" width="16" aria-hidden="true">
             <use href="#icon-settings-24"></use>
         </svg>
@@ -202,8 +202,8 @@ export const leftBottom = () => `
 </span>`;
 
 export const bottomLeft = () => `
-<span class="tooltip" style="margin-left: 100px; margin-top: 100px;">
-    <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-expanded="true" aria-label="Info">
+<span class="tooltip tooltip--expanded" style="margin-left: 100px; margin-top: 100px;">
+    <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-label="Info">
         <svg class="icon icon--24" height="16" width="16" aria-hidden="true">
             <use href="#icon-settings-24"></use>
         </svg>
@@ -224,8 +224,8 @@ export const bottomLeft = () => `
 </span>`;
 
 export const bottom = () => `
-<span class="tooltip" style="margin-left: 100px; margin-top: 100px;">
-    <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-expanded="true" aria-label="Info">
+<span class="tooltip tooltip--expanded" style="margin-left: 100px; margin-top: 100px;">
+    <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-label="Info">
         <svg class="icon icon--24" height="16" width="16" aria-hidden="true">
             <use href="#icon-settings-24"></use>
         </svg>
@@ -246,8 +246,8 @@ export const bottom = () => `
 </span>`;
 
 export const bottomRight = () => `
-<span class="tooltip" style="margin-left: 100px; margin-top: 100px;">
-    <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-expanded="true" aria-label="Info">
+<span class="tooltip tooltip--expanded" style="margin-left: 100px; margin-top: 100px;">
+    <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-label="Info">
         <svg class="icon icon--24" height="16" width="16" aria-hidden="true">
             <use href="#icon-settings-24"></use>
         </svg>
@@ -268,8 +268,8 @@ export const bottomRight = () => `
 </span>`;
 
 export const rightBottom = () => `
-<span class="tooltip" style="margin-left: 100px; margin-top: 100px;">
-    <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-expanded="true" aria-label="Info">
+<span class="tooltip tooltip--expanded" style="margin-left: 100px; margin-top: 100px;">
+    <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-label="Info">
         <svg class="icon icon--24" height="16" width="16" aria-hidden="true">
             <use href="#icon-settings-24"></use>
         </svg>
@@ -290,8 +290,8 @@ export const rightBottom = () => `
 </span>`;
 
 export const right = () => `
-<span class="tooltip" style="margin-left: 100px; margin-top: 100px;">
-    <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-expanded="true" aria-label="Info">
+<span class="tooltip tooltip--expanded" style="margin-left: 100px; margin-top: 100px;">
+    <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-label="Info">
         <svg class="icon icon--24" height="16" width="16" aria-hidden="true">
             <use href="#icon-settings-24"></use>
         </svg>
@@ -312,8 +312,8 @@ export const right = () => `
 </span>`;
 
 export const rightTop = () => `
-<span class="tooltip" style="margin-left: 100px; margin-top: 100px;">
-    <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-expanded="true" aria-label="Info">
+<span class="tooltip tooltip--expanded" style="margin-left: 100px; margin-top: 100px;">
+    <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-label="Info">
         <svg class="icon icon--24" height="16" width="16" aria-hidden="true">
             <use href="#icon-settings-24"></use>
         </svg>
@@ -334,8 +334,8 @@ export const rightTop = () => `
 </span>`;
 
 export const topRight = () => `
-<span class="tooltip" style="margin-left: 100px; margin-top: 100px;">
-    <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-expanded="true" aria-label="Info">
+<span class="tooltip tooltip--expanded" style="margin-left: 100px; margin-top: 100px;">
+    <button class="icon-button tooltip__host" aria-describedby="tooltip-1" aria-label="Info">
         <svg class="icon icon--24" height="16" width="16" aria-hidden="true">
             <use href="#icon-settings-24"></use>
         </svg>

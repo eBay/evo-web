@@ -351,6 +351,8 @@ document
 
 class PopperTooltip {
   constructor(widgetEl, prefix) {
+    this.widgetEl = widgetEl;
+    this.isTooltip = prefix === "tooltip";
     this.host = widgetEl.querySelector(`.${prefix}__host`);
     this.overlay = widgetEl.querySelector(`.${prefix}__overlay`);
     this.arrowEl = widgetEl.querySelector(`.${prefix}__pointer`);
@@ -410,17 +412,28 @@ class PopperTooltip {
   }
 
   show() {
-    this.host.setAttribute("aria-expanded", "true");
+    this.setExpanded(true);
     this.init();
   }
   isExpanded() {
+    if (this.isTooltip) {
+      return this.widgetEl.classList.contains("tooltip--expanded");
+    }
     return this.host.getAttribute("aria-expanded") === "true";
   }
 
   hide() {
     if (this.isExpanded()) {
-      this.host.setAttribute("aria-expanded", "false");
+      this.setExpanded(false);
       if (this.cleanup) this.cleanup();
+    }
+  }
+
+  setExpanded(expanded) {
+    if (this.isTooltip) {
+      this.widgetEl.classList.toggle("tooltip--expanded", expanded);
+    } else {
+      this.host.setAttribute("aria-expanded", String(expanded));
     }
   }
 }
@@ -435,10 +448,12 @@ document.querySelectorAll(".tooltip").forEach(function (widgetEl) {
       contentSelector: ".tooltip__overlay",
       collapseOnFocusOut: true,
       collapseOnMouseOut: true,
+      expandedClass: "tooltip--expanded",
       expandOnFocus: true,
       expandOnHover: true,
       focusManagement: "focusable",
       hostSelector: ".tooltip__host",
+      useAriaExpanded: false,
     }),
   );
 });

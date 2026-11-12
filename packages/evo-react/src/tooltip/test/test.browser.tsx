@@ -20,6 +20,20 @@ function DefaultTooltip() {
   );
 }
 
+async function expectExpanded(
+  target: { element: () => Element },
+  expanded: boolean,
+) {
+  await vi.waitFor(() => {
+    expect(
+      target
+        .element()
+        .closest(".tooltip")
+        ?.classList.contains("tooltip--expanded"),
+    ).toBe(expanded);
+  });
+}
+
 describe("evo-tooltip", () => {
   let user: ReturnType<typeof userEvent.setup>;
 
@@ -39,7 +53,7 @@ describe("evo-tooltip", () => {
     await expect.element(host).toHaveAttribute("type", "button");
 
     await user.tab();
-    await expect.element(host).toHaveAttribute("aria-expanded", "true");
+    await expectExpanded(host, true);
 
     const tooltip = screen.getByRole("tooltip");
     await expect.element(tooltip).toHaveTextContent("Additional information");
@@ -54,12 +68,11 @@ describe("evo-tooltip", () => {
     const host = screen.getByRole("button", { name: "Information" });
 
     await user.hover(host);
-    await expect.element(host).toHaveAttribute("aria-expanded", "true");
+    await expectExpanded(host, true);
+    await expect.element(host).not.toHaveAttribute("aria-expanded");
 
     await user.unhover(host);
-    await vi.waitFor(async () => {
-      await expect.element(host).toHaveAttribute("aria-expanded", "false");
-    });
+    await expectExpanded(host, false);
   });
 
   it("opens on focus and closes when focus leaves", async () => {
@@ -68,11 +81,11 @@ describe("evo-tooltip", () => {
 
     await user.tab();
     await expect.element(host).toHaveFocus();
-    await expect.element(host).toHaveAttribute("aria-expanded", "true");
+    await expectExpanded(host, true);
 
     await user.tab();
     await expect.element(host).not.toHaveFocus();
-    await expect.element(host).toHaveAttribute("aria-expanded", "false");
+    await expectExpanded(host, false);
   });
 
   it("opens when a nested input host receives focus", async () => {
@@ -95,7 +108,7 @@ describe("evo-tooltip", () => {
     input.element().focus();
 
     await expect.element(input).toHaveFocus();
-    await expect.element(input).toHaveAttribute("aria-expanded", "true");
+    await expectExpanded(input, true);
     expect(getComputedStyle(tooltip).display).not.toBe("none");
   });
 
@@ -104,10 +117,11 @@ describe("evo-tooltip", () => {
     const host = screen.getByRole("button", { name: "Information" });
 
     await user.hover(host);
-    await expect.element(host).toHaveAttribute("aria-expanded", "true");
+    await expectExpanded(host, true);
 
     await user.keyboard("{Escape}");
-    await expect.element(host).toHaveAttribute("aria-expanded", "false");
+    await expectExpanded(host, false);
+    await expect.element(host).not.toHaveAttribute("aria-expanded");
   });
 
   it("closes a focus-opened tooltip when Escape is pressed", async () => {
@@ -115,10 +129,11 @@ describe("evo-tooltip", () => {
     const host = screen.getByRole("button", { name: "Information" });
 
     await user.tab();
-    await expect.element(host).toHaveAttribute("aria-expanded", "true");
+    await expectExpanded(host, true);
 
     await user.keyboard("{Escape}");
-    await expect.element(host).toHaveAttribute("aria-expanded", "false");
+    await expectExpanded(host, false);
+    await expect.element(host).not.toHaveAttribute("aria-expanded");
   });
 
   it("supports a controlled open state", async () => {
@@ -144,11 +159,11 @@ describe("evo-tooltip", () => {
     const host = screen.getByRole("button", { name: "Information" });
 
     await user.tab();
-    await expect.element(host).toHaveAttribute("aria-expanded", "true");
+    await expectExpanded(host, true);
     expect(onOpenChange).toHaveBeenLastCalledWith(true);
 
     await user.tab();
-    await expect.element(host).toHaveAttribute("aria-expanded", "false");
+    await expectExpanded(host, false);
     expect(onOpenChange).toHaveBeenLastCalledWith(false);
   });
 

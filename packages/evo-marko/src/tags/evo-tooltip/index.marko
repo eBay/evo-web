@@ -73,7 +73,7 @@ export interface Input extends Marko.HTML.Span {
 
 <span/$root
   ...htmlInput
-  class=["tooltip", inputClass]
+  class=["tooltip", open && "tooltip--expanded", inputClass]
   onMouseEnter(e, el) {
     clearTimeout(hoverTimeout);
     open = true;
@@ -96,12 +96,7 @@ export interface Input extends Marko.HTML.Span {
   }
 >
   <const/{ as: hostAs = "span", class: hostClass, ...htmlHost }=host>
-  <${hostAs}
-    ...htmlHost
-    id=hostId
-    class=["tooltip__host", hostClass]
-    aria-expanded=expander.ariaExpanded
-  />
+  <${hostAs} ...htmlHost id=hostId class=["tooltip__host", hostClass]/>
   <span
     id=overlayId
     tabindex=(
