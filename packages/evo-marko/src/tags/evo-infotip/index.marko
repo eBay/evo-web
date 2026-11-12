@@ -6,6 +6,7 @@ export interface Input extends Marko.HTML.Span {
   offset?: number;
   flip?: boolean;
   shift?: boolean;
+  detachPopover?: boolean;
   disabled?: boolean;
   icon?: Marko.AttrTag<Marko.HTML.Span>;
   heading?: Marko.AttrTag<
@@ -35,6 +36,7 @@ export interface Input extends Marko.HTML.Span {
   openChange,
   flip,
   shift,
+  detachPopover,
   disabled,
   icon,
   heading,
@@ -73,7 +75,7 @@ export interface Input extends Marko.HTML.Span {
   flip=flip
   shift=shift
   inline=false
-  strategy="absolute"
+  detachPopover=detachPopover
   host=$host
   overlay=$overlay
   arrow=$arrow

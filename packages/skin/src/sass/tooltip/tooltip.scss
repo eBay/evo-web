@@ -33,15 +33,15 @@ span.tooltip__mask {
 .tooltip__cell {
     @include bubble-mixins.cell;
 
-    a {
+    a[href]:not([aria-disabled="true"]) {
         @include token-mixins.color-token(
             tooltip-foreground-color,
             color-foreground-on-inverse
         );
+    }
 
-        &:focus {
-            outline: 1px dashed currentColor;
-        }
+    a:focus {
+        outline: 1px dashed currentColor;
     }
 }
 

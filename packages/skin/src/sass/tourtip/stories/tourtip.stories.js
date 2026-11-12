@@ -113,3 +113,25 @@ export const textSpacing = () => `
         </div>
     </div>
 </div>`;
+
+export const disabledLinks = () => `
+<div class="tourtip tourtip--expanded">
+    <div class="tourtip__overlay" style="left: 0; top: 0;" role="region" aria-labelledby="tourtip-disabled-links-label">
+        <span class="tourtip__pointer tourtip__pointer--top"></span>
+        <div class="tourtip__mask">
+            <div class="tourtip__cell">
+                <div class="tourtip__content">
+                    <h2 class="tourtip__heading" id="tourtip-disabled-links-label">Tourtip</h2>
+                    <p><a>Link without href</a></p>
+                    <p><a href="#" aria-disabled="true">Link with aria-disabled</a></p>
+                </div>
+                <div class="tourtip__footer">
+                    <a>Link without href</a>
+                    <a href="#" aria-disabled="true">Link with aria-disabled</a>
+                    <a class="link-button" aria-disabled="true" href="#">Disabled link button</a>
+                    <a class="fake-link">Disabled fake link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>`;

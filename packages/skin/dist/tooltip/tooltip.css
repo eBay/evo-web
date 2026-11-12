@@ -46,7 +46,7 @@ span.tooltip__mask {
     padding: var(--spacing-100) var(--spacing-200);
     word-break: normal;
 }
-.tooltip__cell a {
+.tooltip__cell a[href]:not([aria-disabled="true"]) {
     color: var(--tooltip-foreground-color, var(--color-foreground-on-inverse));
 }
 .tooltip__cell a:focus {

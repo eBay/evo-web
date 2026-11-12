@@ -15,8 +15,8 @@ describe("evo-fake-menu-button SSR", () => {
     await snapshotHTML(Default, { reverse: true });
   });
 
-  it("renders with fixed strategy", async () => {
-    await snapshotHTML(Default, { strategy: "fixed" });
+  it("renders with a detached overlay", async () => {
+    await snapshotHTML(Default, { detachPopover: true });
   });
 
   it("renders with fixWidth=true", async () => {

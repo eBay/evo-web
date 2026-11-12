@@ -43,6 +43,9 @@
     "@aria-label": "string",
     "@variant": "string",
     "@no-shift": "boolean",
+    "@strategy": {
+        "enum": ["absolute", "fixed"]
+    },
     "@not-inline": "boolean",
     "@no-flip": "boolean",
     "@a11y-close-button-text": "string",

@@ -24,7 +24,7 @@ export function EvoMenuButton({
   open,
   ref,
   reverse = false,
-  strategy = "absolute",
+  detachPopover = false,
   variant = "button",
   ...rest
 }: EvoMenuButtonProps) {
@@ -38,7 +38,7 @@ export function EvoMenuButton({
     defaultOpen,
     onOpenChange,
     placement: reverse ? "bottom-end" : "bottom-start",
-    strategy,
+    detachPopover,
     resetOnDisabled: disabled,
   });
   const effectiveOpen = !disabled && expander.open;
@@ -80,7 +80,7 @@ export function EvoMenuButton({
       triggerId={triggerId}
       disabled={disabled}
       reverse={reverse}
-      strategy={strategy}
+      detachPopover={detachPopover}
       fixWidth={fixWidth}
       variant={variant}
     >

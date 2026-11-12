@@ -5,6 +5,8 @@ import { DateField } from "./date-field";
 import { DateInputProvider } from "./context";
 import type { EvoDateInputProps, DateInputValue } from "./types";
 import { useDatePopover } from "./use-date-popover";
+import { useFormReset } from "../utils/use-form-reset";
+import { useRefTee } from "../utils/use-ref-tee";
 import "@ebay/skin/date-textbox.mjs";
 
 /**
@@ -58,11 +60,16 @@ export function EvoDateInput({
 }: EvoDateInputProps) {
   const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue);
   const selected = value !== undefined ? value : uncontrolledValue;
+  const [setContainerRef, containerRef] = useRefTee<HTMLDivElement | null>(
+    ref,
+    null,
+  );
+  useFormReset(containerRef, defaultValue, setUncontrolledValue);
   const popover = useDatePopover<HTMLDivElement>({
     open,
     defaultOpen,
     onOpenChange,
-    ref,
+    ref: setContainerRef,
   });
 
   const commit = useCallback(

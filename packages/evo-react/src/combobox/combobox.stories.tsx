@@ -26,10 +26,9 @@ const meta: Meta<typeof EvoCombobox> = {
       options: ["regular", "large"],
       table: { defaultValue: { summary: "regular" } },
     },
-    strategy: {
-      control: "select",
-      options: ["absolute", "fixed"],
-      table: { defaultValue: { summary: "absolute" } },
+    detachPopover: {
+      control: "boolean",
+      table: { defaultValue: { summary: "false" } },
     },
     borderless: {
       control: "boolean",

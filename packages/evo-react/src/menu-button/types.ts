@@ -22,8 +22,12 @@ export type EvoMenuButtonProps = Omit<ComponentProps<"span">, "onChange"> & {
   disabled?: boolean;
   /** Aligns the popup to the opposite inline edge. */
   reverse?: boolean;
-  /** CSS positioning strategy for the popup. Defaults to `"absolute"`. */
-  strategy?: "absolute" | "fixed";
+  /**
+   * Detaches the overlay from its container so a scrolling or
+   * `overflow: hidden` ancestor can't clip it. The overlay then repositions as
+   * the page scrolls instead of moving with its container. Defaults to `false`.
+   */
+  detachPopover?: boolean;
   /** Makes the menu width match its trigger. */
   fixWidth?: boolean;
 };

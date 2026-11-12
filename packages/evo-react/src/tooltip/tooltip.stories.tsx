@@ -60,6 +60,10 @@ const meta: Meta<typeof EvoTooltip> = {
       control: "boolean",
       table: { defaultValue: { summary: "true" } },
     },
+    detachPopover: {
+      control: "boolean",
+      table: { defaultValue: { summary: "false" } },
+    },
     inline: {
       control: "boolean",
       table: { defaultValue: { summary: "true" } },

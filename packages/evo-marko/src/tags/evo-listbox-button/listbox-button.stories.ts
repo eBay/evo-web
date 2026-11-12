@@ -114,13 +114,12 @@ export default {
       control: "boolean",
       description: "Expands the button to 100% width.",
     },
-    strategy: {
-      type: "string",
-      options: ["absolute", "fixed"],
-      control: "inline-radio",
+    detachPopover: {
+      type: "boolean",
+      control: "boolean",
       description:
-        "Use fixed when dropdown is in contained in an overflow and needs to be visible as you scroll the screen.",
-      table: { defaultValue: { summary: "absolute" } },
+        "Detaches the overlay from its container so a scrolling or `overflow: hidden` ancestor can't clip it. The overlay then repositions as the page scrolls instead of moving with its container.",
+      table: { defaultValue: { summary: "false" } },
     },
     borderless: {
       type: "boolean",

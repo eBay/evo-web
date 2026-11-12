@@ -8,9 +8,9 @@ import type {
 type DateInputStoryArgs = EvoDateInputProps & {
   calendarPopover?: Omit<
     EvoDateInputCalendarPopoverProps,
-    "a11yNavigateText" | "strategy"
+    "a11yNavigateText" | "detachPopover"
   >;
-  popoverStrategy?: EvoDateInputCalendarPopoverProps["strategy"];
+  detachPopover?: EvoDateInputCalendarPopoverProps["detachPopover"];
 };
 
 const meta: Meta<DateInputStoryArgs> = {
@@ -33,12 +33,11 @@ const meta: Meta<DateInputStoryArgs> = {
     defaultOpen: {
       control: "boolean",
     },
-    popoverStrategy: {
-      control: "select",
-      options: ["absolute", "fixed"],
+    detachPopover: {
+      control: "boolean",
       table: {
         category: "Calendar popover",
-        defaultValue: { summary: "absolute" },
+        defaultValue: { summary: "false" },
       },
     },
     disabled: {
@@ -78,7 +77,6 @@ const meta: Meta<DateInputStoryArgs> = {
     calendarPopover: {
       today: "2024-01-05",
     },
-    popoverStrategy: "absolute",
   },
 };
 
@@ -87,11 +85,11 @@ type Story = StoryObj<DateInputStoryArgs>;
 
 /** Accepts localized date entry and synchronizes calendar selection. */
 export const Default: Story = {
-  render: ({ calendarPopover, popoverStrategy, ...args }) => (
+  render: ({ calendarPopover, detachPopover, ...args }) => (
     <EvoDateInput {...args}>
       <EvoDateInputCalendarPopover
         {...calendarPopover}
-        strategy={popoverStrategy}
+        detachPopover={detachPopover}
         a11yNavigateText={(month, direction) =>
           `${direction === "prev" ? "Previous" : "Next"} month, ${month}`
         }

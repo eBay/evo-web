@@ -605,7 +605,7 @@ describe("EvoMenuButton", () => {
     const screen = await render(
       <>
         <span id="menu-label">Available actions</span>
-        <EvoMenuButton reverse strategy="fixed" fixWidth>
+        <EvoMenuButton reverse detachPopover fixWidth>
           <EvoMenuButtonTrigger>Actions</EvoMenuButtonTrigger>
           <EvoMenu>
             <EvoMenuItems a11yLabelId="menu-label">

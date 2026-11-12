@@ -1,14 +1,11 @@
 import type { ReactNode } from "react";
-import type { Strategy } from "@floating-ui/react";
 import classNames from "classnames";
 import { useExpander } from "../utils/use-expander";
 import type { DatePopoverState } from "./use-date-popover";
 
-export type DatePopoverStrategy = Extract<Strategy, "absolute" | "fixed">;
-
 type DateInputPopoverProps = {
   popoverId: string;
-  strategy: DatePopoverStrategy;
+  detachPopover?: boolean;
   expander: ReturnType<typeof useExpander>;
   children: ReactNode;
 };
@@ -19,13 +16,13 @@ export function useDatePopoverPosition(
     setOpen,
     positioningReferenceElement,
   }: Pick<DatePopoverState, "open" | "setOpen" | "positioningReferenceElement">,
-  strategy: DatePopoverStrategy,
+  detachPopover?: boolean,
 ) {
   const expander = useExpander({
     open,
     onOpenChange: setOpen,
     placement: "bottom-start",
-    strategy,
+    detachPopover,
     inline: false,
     referenceElement: positioningReferenceElement,
   });
@@ -35,7 +32,7 @@ export function useDatePopoverPosition(
 
 export function DateInputPopover({
   popoverId,
-  strategy,
+  detachPopover,
   expander,
   children,
 }: DateInputPopoverProps) {
@@ -47,7 +44,7 @@ export function DateInputPopover({
       style={expander.floatingStyles}
       className={classNames(
         "date-textbox__popover",
-        strategy === "fixed" && "date-textbox__popover--fixed",
+        detachPopover && "date-textbox__popover--fixed",
       )}
     >
       {children}

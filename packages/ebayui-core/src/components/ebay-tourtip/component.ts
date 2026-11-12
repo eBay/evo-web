@@ -23,6 +23,7 @@ interface TourtipInput extends Omit<
     "no-flip"?: TooltipBaseInput["noFlip"];
     "not-inline"?: TooltipBaseInput["not-inline"];
     "no-shift"?: TooltipBaseInput["no-shift"];
+    strategy?: TooltipBaseInput["strategy"];
     footer?: TooltipOverlayInput["footer"] & {
         index?: string;
     };

@@ -41,7 +41,7 @@ describe("evo-combobox SSR", () => {
     await snapshotHTML(Default, { filterMethod: "none", value: "missing" });
   });
 
-  it("renders with fixed strategy", async () => {
-    await snapshotHTML(Default, { strategy: "fixed" });
+  it("renders with a detached overlay", async () => {
+    await snapshotHTML(Default, { detachPopover: true });
   });
 });

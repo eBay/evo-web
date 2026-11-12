@@ -38,6 +38,9 @@
         ]
     },
     "@no-shift": "boolean",
+    "@strategy": {
+        "enum": ["absolute", "fixed"]
+    },
     "@not-inline": "boolean",
     "@no-flip": "boolean",
     "@no-hover": "boolean",

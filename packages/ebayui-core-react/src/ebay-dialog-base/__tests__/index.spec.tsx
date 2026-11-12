@@ -89,4 +89,14 @@ describe("DialogBase", () => {
             });
         });
     });
+
+    it("should return focus to the previously focused element when closed", () => {
+        const trigger = document.body.appendChild(document.createElement("button"));
+        trigger.focus();
+        const { rerender } = render(<HeaderFooterDialog isModal open />);
+        rerender(<HeaderFooterDialog isModal open={false} />);
+
+        expect(trigger).toHaveFocus();
+        trigger.remove();
+    });
 });

@@ -52,9 +52,9 @@ describe("EvoCombobox SSR", () => {
     ).toMatchSnapshot();
   });
 
-  it("renders a fixed-strategy listbox", () => {
+  it("renders a detached listbox", () => {
     expect(
-      renderCombobox({ defaultOpen: true, strategy: "fixed" }),
+      renderCombobox({ defaultOpen: true, detachPopover: true }),
     ).toMatchSnapshot();
   });
 

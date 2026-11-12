@@ -1,6 +1,8 @@
 import { useId, useState } from "react";
 import classNames from "classnames";
 import { useFloatingLabel } from "../utils/use-floating-label";
+import { useFormReset } from "../utils/use-form-reset";
+import { useRefTee } from "../utils/use-ref-tee";
 import type { EvoTextareaProps } from "./types";
 import "@ebay/skin/textbox.mjs";
 
@@ -46,6 +48,11 @@ export function EvoTextarea({
   const generatedId = useId();
   const [focused, setFocused] = useState(false);
   const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue);
+  const [setTextareaRef, textareaRef] = useRefTee<HTMLTextAreaElement | null>(
+    ref,
+    null,
+  );
+  useFormReset(textareaRef, defaultValue, setUncontrolledValue);
   const textareaId = id ?? (floatingLabelText ? generatedId : undefined);
   const currentValue = value !== undefined ? value : uncontrolledValue;
   const floatingLabel = useFloatingLabel({
@@ -97,7 +104,7 @@ export function EvoTextarea({
         <textarea
           {...rest}
           id={textareaId}
-          ref={ref}
+          ref={setTextareaRef}
           className="textbox__control"
           aria-invalid={invalid ? "true" : ariaInvalid}
           defaultValue={defaultValue}

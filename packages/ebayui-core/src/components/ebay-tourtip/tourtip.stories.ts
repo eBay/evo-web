@@ -93,6 +93,13 @@ export default {
                 defaultValue: { summary: "true" },
             },
         },
+        strategy: {
+            description:
+                "Positioning strategy for the overlay. Use `fixed` when a scrolling or `overflow: hidden` ancestor clips it.",
+            control: { type: "inline-radio" },
+            options: ["absolute", "fixed"],
+            table: { defaultValue: { summary: "absolute" } },
+        },
         notInline: {
             control: { type: "boolean" },
             description:

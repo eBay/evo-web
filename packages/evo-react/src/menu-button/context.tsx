@@ -15,7 +15,7 @@ type MenuButtonContextValue = {
   triggerId: string;
   disabled: boolean;
   reverse: boolean;
-  strategy: "absolute" | "fixed";
+  detachPopover: boolean;
   fixWidth: boolean;
   variant: MenuButtonVariant;
 };
@@ -44,7 +44,7 @@ export function MenuButtonProvider({
   triggerId,
   disabled,
   reverse,
-  strategy,
+  detachPopover,
   fixWidth,
   variant,
 }: MenuButtonContextValue & { children: ReactNode }) {
@@ -62,7 +62,7 @@ export function MenuButtonProvider({
       triggerId,
       disabled,
       reverse,
-      strategy,
+      detachPopover,
       fixWidth,
       variant,
     }),
@@ -79,7 +79,7 @@ export function MenuButtonProvider({
       triggerId,
       disabled,
       reverse,
-      strategy,
+      detachPopover,
       fixWidth,
       variant,
     ],

@@ -69,3 +69,36 @@ describe("given the a custom aligned tooltip", () => {
         });
     });
 });
+
+describe("given a fixed tooltip inside a clipping container", () => {
+    let container;
+
+    beforeEach(async () => {
+        container = document.createElement("div");
+        container.style.cssText =
+            "overflow: hidden; height: 24px; margin-top: 100px;";
+        document.body.appendChild(container);
+        component = await render(
+            Standard,
+            { strategy: "fixed", pointer: "top" },
+            { container },
+        );
+        await waitFor(() => expect(component.emitted("loaded")).has.length(1));
+        await fireEvent.mouseEnter(component.getByText(renderBodyText));
+    });
+
+    afterEach(() => container.remove());
+
+    it("then the overlay is not clipped by the container", async () => {
+        const overlay = component.getByText(renderBodyText).nextElementSibling;
+        await waitFor(() => expect(overlay.style.top).to.not.equal(""));
+        const { left, width, bottom } = overlay.getBoundingClientRect();
+        const { bottom: containerBottom } = container.getBoundingClientRect();
+        expect(bottom).to.be.greaterThan(containerBottom);
+        expect(
+            overlay.contains(
+                document.elementFromPoint(left + width / 2, bottom - 5),
+            ),
+        ).to.equal(true);
+    });
+});

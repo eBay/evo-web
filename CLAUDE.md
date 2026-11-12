@@ -157,7 +157,7 @@ Default to no comment. Before adding one, try renaming, extracting or simplifyin
 
 **Write one only for** a non-obvious why the code can't express: a hidden constraint, a browser/AT quirk, or an unavoidable or deliberately kept workaround. Max 2 lines. Link only to a **public** issue that already exists; never file one.
 
-**Exempt:** JSDoc for consumers of a published API (`evo-react` props, `evo-marko` `Input`).
+**Exempt:** JSDoc for consumers of a published API.
 
 </comment_policy>
 

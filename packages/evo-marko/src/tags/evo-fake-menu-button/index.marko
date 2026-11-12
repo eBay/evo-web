@@ -15,7 +15,7 @@ export interface Input extends Marko.HTML.Span {
   a11yText?: string;
   label?: Marko.AttrTag<Marko.HTML.Span>;
   reverse?: boolean;
-  strategy?: "absolute" | "fixed";
+  detachPopover?: boolean;
   fixWidth?: boolean;
   flip?: boolean;
   item?: Marko.AttrTag<FakeMenuItem>;
@@ -24,7 +24,7 @@ const/{
   class: inputClass,
   noToggleIcon,
   reverse,
-  strategy,
+  detachPopover,
   fixWidth,
   flip,
   borderless,
@@ -69,7 +69,7 @@ const/{ tagName, transparent, priority }=(() => {
 evo-expander/expander
   ,open=open
   ,placement=(reverse ? "bottom-end" : "bottom-start")
-  ,strategy=strategy
+  ,detachPopover=detachPopover
   ,flip=flip
   ,host=$root
   ,overlay=(): HTMLElement => $fakeMenuEls().$root()
@@ -113,7 +113,7 @@ span/$root
     ,style=expander.floatingStyles
     ,classPrefix="fake-menu-button"
     ,reverse=reverse
-    ,fixed=strategy === "fixed"
+    ,fixed=detachPopover
     ,fixWidth=fixWidth
     ,tabindex=-1
     ,onClick() {

@@ -14,9 +14,9 @@ type DateRangeInputStoryArgs = EvoDateRangeInputGroupProps & {
   endFloatingLabel?: string;
   calendarPopover?: Omit<
     EvoDateRangeInputCalendarPopoverProps,
-    "a11yRangeText" | "a11yNavigateText" | "strategy"
+    "a11yRangeText" | "a11yNavigateText" | "detachPopover"
   >;
-  popoverStrategy?: EvoDateRangeInputCalendarPopoverProps["strategy"];
+  detachPopover?: EvoDateRangeInputCalendarPopoverProps["detachPopover"];
 };
 
 const meta: Meta<DateRangeInputStoryArgs> = {
@@ -40,12 +40,11 @@ const meta: Meta<DateRangeInputStoryArgs> = {
     defaultOpen: {
       control: "boolean",
     },
-    popoverStrategy: {
-      control: "select",
-      options: ["absolute", "fixed"],
+    detachPopover: {
+      control: "boolean",
       table: {
         category: "Calendar popover",
-        defaultValue: { summary: "absolute" },
+        defaultValue: { summary: "false" },
       },
     },
     disabled: {
@@ -89,7 +88,6 @@ const meta: Meta<DateRangeInputStoryArgs> = {
     calendarPopover: {
       today: "2024-01-05",
     },
-    popoverStrategy: "absolute",
   },
 };
 
@@ -102,7 +100,7 @@ export const Default: Story = {
     startFloatingLabel,
     endFloatingLabel,
     calendarPopover,
-    popoverStrategy,
+    detachPopover,
     ...args
   }) => (
     <EvoDateRangeInputGroup {...args}>
@@ -110,7 +108,7 @@ export const Default: Story = {
       <EvoDateRangeInput type="end" floatingLabel={endFloatingLabel} />
       <EvoDateRangeInputCalendarPopover
         {...calendarPopover}
-        strategy={popoverStrategy}
+        detachPopover={detachPopover}
         a11yNavigateText={(month, direction) =>
           `${direction === "prev" ? "Previous" : "Next"} month, ${month}`
         }

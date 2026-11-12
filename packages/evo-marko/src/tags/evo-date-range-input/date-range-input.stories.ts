@@ -65,11 +65,12 @@ export default {
       description:
         "Indicates a field-level error on both fields with red border",
     },
-    strategy: {
-      type: "string",
-      options: ["absolute (default)", "fixed"],
-      control: "inline-radio",
-      description: "Positioning strategy for the calendar popover",
+    detachPopover: {
+      type: "boolean",
+      control: "boolean",
+      description:
+        "Detaches the overlay from its container so a scrolling or `overflow: hidden` ancestor can't clip it. The overlay then repositions as the page scrolls instead of moving with its container.",
+      table: { defaultValue: { summary: "false" } },
     },
     onInvalidDate: {
       description:

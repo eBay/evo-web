@@ -115,6 +115,13 @@ or import styles using SCSS/CSS
         noFlip: { description: "Disable automatic flip behavior", control: "boolean" },
         noShift: { description: "Disable automatic shift behavior", control: "boolean" },
         notInline: { description: "Opt out of inline display", control: "boolean" },
+        strategy: {
+            description:
+                "Positioning strategy for the overlay. Use `fixed` when a scrolling or `overflow: hidden` ancestor clips it.",
+            control: "inline-radio",
+            options: ["absolute", "fixed"],
+            table: { defaultValue: { summary: "absolute" } },
+        },
         onExpand: { description: "overlay has been expanded", action: "onExpand", table: { category: "Events" } },
         onCollapse: { description: "overlay has been collapsed", action: "onCollapse", table: { category: "Events" } },
         EbayInfotipHost: { description: "The custom host-button (trigger) for the Infotip", control: "text" },

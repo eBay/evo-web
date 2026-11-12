@@ -19,11 +19,11 @@ const DISABLE_ALL_DATES = {
  * @summary Calendar popover for `EvoDateInput`.
  */
 export function EvoDateInputCalendarPopover({
-  strategy = "absolute",
+  detachPopover,
   ...calendar
 }: EvoDateInputCalendarPopoverProps) {
   const context = useDateInputContext();
-  const expander = useDatePopoverPosition(context, strategy);
+  const expander = useDatePopoverPosition(context, detachPopover);
   const visibleMonthCount = useResponsiveMonthCount(calendar.visibleMonthCount);
   const { visibleMonth, setVisibleMonth } = useFollowSelectedMonth(
     monthFromValue(context.selected),
@@ -35,7 +35,7 @@ export function EvoDateInputCalendarPopover({
   return (
     <DateInputPopover
       popoverId={context.popoverId}
-      strategy={strategy}
+      detachPopover={detachPopover}
       expander={expander}
     >
       <EvoCalendar

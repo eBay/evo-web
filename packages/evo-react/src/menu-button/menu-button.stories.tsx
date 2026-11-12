@@ -33,7 +33,7 @@ const meta: Meta<typeof EvoMenuButton> = {
     EvoMenuFooter,
   },
   argTypes: {
-    strategy: { control: "select", options: ["absolute", "fixed"] },
+    detachPopover: { control: "boolean" },
   },
 };
 
