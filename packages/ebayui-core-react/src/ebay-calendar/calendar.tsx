@@ -218,7 +218,9 @@ const EbayCalendar: FC<EbayCalendarProps> = ({
     };
 
     const onKeyDown = (event: KeyboardEvent) => {
-        const dayChange = DAY_UPDATE_KEYMAP[event.key as keyof typeof DAY_UPDATE_KEYMAP];
+        const step = DAY_UPDATE_KEYMAP[event.key as keyof typeof DAY_UPDATE_KEYMAP];
+        const dayChange =
+            Math.abs(step) === 1 && getComputedStyle(event.currentTarget).direction === "rtl" ? -step : step;
 
         if (dayChange) {
             let tries = 7;
