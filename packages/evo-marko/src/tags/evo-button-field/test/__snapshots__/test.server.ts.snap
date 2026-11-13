@@ -1,45 +1,5 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`renders borderless 1`] = `
-"<button
-  class="btn btn--form btn--borderless"
-  type="button"
->
-  <span
-    class="btn__cell"
-  >
-    <span
-      class="btn__label"
-    >
-      Quantity: 
-    </span>
-    <span
-      class="btn__text"
-    >
-      1
-    </span>
-    <svg
-      aria-hidden="true"
-      class="icon icon--12"
-    >
-      <symbol
-        id="GENERATED-0"
-        viewBox="0 0 12 12"
-      >
-        <path
-          clip-rule="evenodd"
-          d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
-          fill-rule="evenodd"
-        />
-      </symbol>
-      <use
-        href="#icon-chevron-down-12"
-      />
-    </svg>
-  </span>
-</button>"
-`;
-
 exports[`renders defaults 1`] = `
 "<button
   class="btn btn--form"
@@ -124,6 +84,46 @@ exports[`renders expanded 1`] = `
 exports[`renders large truncated 1`] = `
 "<button
   class="btn btn--form btn--large btn--large-truncated"
+  type="button"
+>
+  <span
+    class="btn__cell"
+  >
+    <span
+      class="btn__label"
+    >
+      Quantity: 
+    </span>
+    <span
+      class="btn__text"
+    >
+      1
+    </span>
+    <svg
+      aria-hidden="true"
+      class="icon icon--12"
+    >
+      <symbol
+        id="GENERATED-0"
+        viewBox="0 0 12 12"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+          fill-rule="evenodd"
+        />
+      </symbol>
+      <use
+        href="#icon-chevron-down-12"
+      />
+    </svg>
+  </span>
+</button>"
+`;
+
+exports[`renders transparent 1`] = `
+"<button
+  class="btn btn--form btn--borderless"
   type="button"
 >
   <span

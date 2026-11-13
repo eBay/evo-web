@@ -22,7 +22,7 @@ export default {
       control: "inline-radio",
       description: "The size of the button",
     },
-    borderless: {
+    transparent: {
       type: "boolean",
       description: "Removes the border",
       control: "boolean",

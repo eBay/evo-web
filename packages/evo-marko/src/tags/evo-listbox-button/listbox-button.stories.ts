@@ -121,7 +121,7 @@ export default {
         "Detaches the overlay from its container so a scrolling or `overflow: hidden` ancestor can't clip it. The overlay then repositions as the page scrolls instead of moving with its container.",
       table: { defaultValue: { summary: "false" } },
     },
-    borderless: {
+    transparent: {
       type: "boolean",
       control: "boolean",
       description: "Removes button borders.",

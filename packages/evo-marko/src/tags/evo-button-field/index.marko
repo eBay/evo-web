@@ -1,7 +1,7 @@
 import { type Input as ButtonInput } from "<evo-button>";
 export interface Input extends Marko.HTML.Button {
   size?: ButtonInput["size"];
-  borderless?: boolean;
+  transparent?: boolean;
   truncate?: boolean;
 }
 
@@ -9,7 +9,7 @@ export interface Input extends Marko.HTML.Button {
   content,
   class: inputClass,
   size,
-  borderless,
+  transparent,
   truncate,
   type = "button",
   ...htmlInput
@@ -22,7 +22,7 @@ export interface Input extends Marko.HTML.Button {
     inputClass,
     "btn",
     "btn--form",
-    borderless && "btn--borderless",
+    transparent && "btn--borderless",
     size && `btn--${size}`,
     truncate && `btn--${size === "large" ? "large-" : ""}truncated`,
   ]

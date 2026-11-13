@@ -3,15 +3,18 @@ export interface Input
   extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `on${string}`> {
   href?: string;
   size?: "large" | "small";
-  appearance?: "primary" | "secondary" | "tertiary" | "borderless";
+  appearance?: "primary" | "secondary" | "tertiary" | "transparent";
   destructive?: boolean;
   fluid?: boolean;
   disabled?: boolean;
+  /**
+   * Sets `aria-disabled`: the button stays focusable but ignores clicks
+   */
   partiallyDisabled?: boolean;
   truncate?: boolean;
   split?: "start" | "end";
   /**
-   * The `aria-label` while loading; setting it shows the progress spinner
+   * The `aria-label` while loading; setting it shows the progress spinner and the button ignores clicks
    */
   a11yLoadingText?: string | false | null;
 }
@@ -29,6 +32,7 @@ export interface Input
   split,
   truncate,
   type = "button",
+  onClick,
   ...htmlInput
 }=input>
 
@@ -55,10 +59,17 @@ export interface Input
     destructive && `${baseClass}--destructive`,
     sizeClass,
     split && `${baseClass}--split-${split}`,
-    `${baseClass}--${appearance}`,
+    `${baseClass}--${appearance === "transparent" ? "borderless" : appearance}`,
   ]
   aria-disabled=partiallyDisabled && "true"
   aria-label=a11yLoadingText || input["aria-label"]
+  onClick(e: MouseEvent, el: Element) {
+    if (a11yLoadingText || partiallyDisabled) {
+      e.preventDefault();
+    } else {
+      onClick && onClick(e as any, el as any);
+    }
+  }
 >
   <if=a11yLoadingText>
     <span class="btn__cell">
