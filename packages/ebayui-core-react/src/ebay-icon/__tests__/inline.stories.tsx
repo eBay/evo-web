@@ -507,6 +507,7 @@ import { EbayIconHandSwipe40 } from "../icons/ebay-icon-hand-swipe-40";
 import { EbayIconHandbag16 } from "../icons/ebay-icon-handbag-16";
 import { EbayIconHandbag24 } from "../icons/ebay-icon-handbag-24";
 import { EbayIconHanger16 } from "../icons/ebay-icon-hanger-16";
+import { EbayIconHanger20 } from "../icons/ebay-icon-hanger-20";
 import { EbayIconHanger24 } from "../icons/ebay-icon-hanger-24";
 import { EbayIconHeadlight16 } from "../icons/ebay-icon-headlight-16";
 import { EbayIconHeadlight24 } from "../icons/ebay-icon-headlight-24";
@@ -891,6 +892,7 @@ import { EbayIconRewind16 } from "../icons/ebay-icon-rewind-16";
 import { EbayIconRibbon16 } from "../icons/ebay-icon-ribbon-16";
 import { EbayIconRibbon24 } from "../icons/ebay-icon-ribbon-24";
 import { EbayIconRim16 } from "../icons/ebay-icon-rim-16";
+import { EbayIconRim20 } from "../icons/ebay-icon-rim-20";
 import { EbayIconRim24 } from "../icons/ebay-icon-rim-24";
 import { EbayIconRinggit16 } from "../icons/ebay-icon-ringgit-16";
 import { EbayIconRinggit24 } from "../icons/ebay-icon-ringgit-24";
@@ -1065,6 +1067,7 @@ import { EbayIconTopServiceFilled16Colored } from "../icons/ebay-icon-top-servic
 import { EbayIconTopServiceFilled24 } from "../icons/ebay-icon-top-service-filled-24";
 import { EbayIconTopServiceFilled24Colored } from "../icons/ebay-icon-top-service-filled-24-colored";
 import { EbayIconTradingCard16 } from "../icons/ebay-icon-trading-card-16";
+import { EbayIconTradingCard20 } from "../icons/ebay-icon-trading-card-20";
 import { EbayIconTradingCard24 } from "../icons/ebay-icon-trading-card-24";
 import { EbayIconTradingCardEdition24 } from "../icons/ebay-icon-trading-card-edition-24";
 import { EbayIconTradingCardGrade16 } from "../icons/ebay-icon-trading-card-grade-16";
@@ -5215,6 +5218,14 @@ export const AllIcons = () => (
             
 
         <tr>
+            <td>ebay-icon-hanger-20</td>
+            <td>
+                <EbayIconHanger20 />
+            </td>
+        </tr>
+            
+
+        <tr>
             <td>ebay-icon-hanger-24</td>
             <td>
                 <EbayIconHanger24 />
@@ -8287,6 +8298,14 @@ export const AllIcons = () => (
             
 
         <tr>
+            <td>ebay-icon-rim-20</td>
+            <td>
+                <EbayIconRim20 />
+            </td>
+        </tr>
+            
+
+        <tr>
             <td>ebay-icon-rim-24</td>
             <td>
                 <EbayIconRim24 />
@@ -9674,6 +9693,14 @@ export const AllIcons = () => (
             <td>ebay-icon-trading-card-16</td>
             <td>
                 <EbayIconTradingCard16 />
+            </td>
+        </tr>
+            
+
+        <tr>
+            <td>ebay-icon-trading-card-20</td>
+            <td>
+                <EbayIconTradingCard20 />
             </td>
         </tr>
             

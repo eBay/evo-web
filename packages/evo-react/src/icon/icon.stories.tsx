@@ -509,6 +509,7 @@ import { EvoIconHandSwipe40 } from "./icons/hand-swipe-40";
 import { EvoIconHandbag16 } from "./icons/handbag-16";
 import { EvoIconHandbag24 } from "./icons/handbag-24";
 import { EvoIconHanger16 } from "./icons/hanger-16";
+import { EvoIconHanger20 } from "./icons/hanger-20";
 import { EvoIconHanger24 } from "./icons/hanger-24";
 import { EvoIconHeadlight16 } from "./icons/headlight-16";
 import { EvoIconHeadlight24 } from "./icons/headlight-24";
@@ -893,6 +894,7 @@ import { EvoIconRewind16 } from "./icons/rewind-16";
 import { EvoIconRibbon16 } from "./icons/ribbon-16";
 import { EvoIconRibbon24 } from "./icons/ribbon-24";
 import { EvoIconRim16 } from "./icons/rim-16";
+import { EvoIconRim20 } from "./icons/rim-20";
 import { EvoIconRim24 } from "./icons/rim-24";
 import { EvoIconRinggit16 } from "./icons/ringgit-16";
 import { EvoIconRinggit24 } from "./icons/ringgit-24";
@@ -1067,6 +1069,7 @@ import { EvoIconTopServiceFilled16Colored } from "./icons/top-service-filled-16-
 import { EvoIconTopServiceFilled24 } from "./icons/top-service-filled-24";
 import { EvoIconTopServiceFilled24Colored } from "./icons/top-service-filled-24-colored";
 import { EvoIconTradingCard16 } from "./icons/trading-card-16";
+import { EvoIconTradingCard20 } from "./icons/trading-card-20";
 import { EvoIconTradingCard24 } from "./icons/trading-card-24";
 import { EvoIconTradingCardEdition24 } from "./icons/trading-card-edition-24";
 import { EvoIconTradingCardGrade16 } from "./icons/trading-card-grade-16";
@@ -2759,6 +2762,9 @@ export const AllIcons: Story = {
         <IconExample name="EvoIconHanger16">
           <EvoIconHanger16 {...args} />
         </IconExample>
+        <IconExample name="EvoIconHanger20">
+          <EvoIconHanger20 {...args} />
+        </IconExample>
         <IconExample name="EvoIconHanger24">
           <EvoIconHanger24 {...args} />
         </IconExample>
@@ -3911,6 +3917,9 @@ export const AllIcons: Story = {
         <IconExample name="EvoIconRim16">
           <EvoIconRim16 {...args} />
         </IconExample>
+        <IconExample name="EvoIconRim20">
+          <EvoIconRim20 {...args} />
+        </IconExample>
         <IconExample name="EvoIconRim24">
           <EvoIconRim24 {...args} />
         </IconExample>
@@ -4432,6 +4441,9 @@ export const AllIcons: Story = {
         </IconExample>
         <IconExample name="EvoIconTradingCard16">
           <EvoIconTradingCard16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTradingCard20">
+          <EvoIconTradingCard20 {...args} />
         </IconExample>
         <IconExample name="EvoIconTradingCard24">
           <EvoIconTradingCard24 {...args} />
