@@ -8,12 +8,12 @@ import { useAccordionContext } from "./context";
  *
  * @summary Accordion section.
  */
-export function EvoAccordionItem({
+export function EvoAccordionItem<Id extends string = string>({
   id,
   children,
   onOpenChange,
   ...rest
-}: EvoAccordionItemProps) {
+}: EvoAccordionItemProps<Id>) {
   const { open, isControlled, a11yHeadingTag, onItemToggle } =
     useAccordionContext();
   const isOpen = Array.isArray(open) ? open.includes(id) : open === id;

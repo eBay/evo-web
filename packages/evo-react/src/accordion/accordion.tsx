@@ -70,8 +70,12 @@ function getNextOpenValue(
  *
  * @summary Expandable group of related sections.
  */
-export function EvoAccordion(props: MultipleAccordionProps): JSX.Element;
-export function EvoAccordion(props: SingleAccordionProps): JSX.Element;
+export function EvoAccordion<Id extends string = string>(
+  props: MultipleAccordionProps<Id>,
+): JSX.Element;
+export function EvoAccordion<Id extends string = string>(
+  props: SingleAccordionProps<Id>,
+): JSX.Element;
 export function EvoAccordion(props: EvoAccordionProps) {
   const {
     size,
