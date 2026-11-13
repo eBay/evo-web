@@ -4,7 +4,9 @@ import { EvoIconFolder16 } from "../../icon/icons/folder-16";
 import {
   EvoList,
   EvoListItem,
-  EvoListItemBody,
+  EvoListItemContent,
+  EvoListItemButton,
+  EvoListItemLink,
   EvoListItemLeading,
   EvoListItemTrailing,
   EvoListSeparator,
@@ -19,7 +21,7 @@ describe("EvoList SSR", () => {
             <EvoListItemLeading>
               <EvoIconFolder16 />
             </EvoListItemLeading>
-            <EvoListItemBody>Product photos</EvoListItemBody>
+            <EvoListItemContent>Product photos</EvoListItemContent>
             <EvoListItemTrailing>12 files</EvoListItemTrailing>
           </EvoListItem>
         </EvoList>,
@@ -31,13 +33,13 @@ describe("EvoList SSR", () => {
     expect(
       renderToString(
         <EvoList>
-          <EvoListItem as="button" type="button">
-            <EvoListItemBody>Show shipping details</EvoListItemBody>
-          </EvoListItem>
+          <EvoListItemButton type="button">
+            <EvoListItemContent>Show shipping details</EvoListItemContent>
+          </EvoListItemButton>
           <EvoListSeparator />
-          <EvoListItem as="a" href="/help/returns">
-            <EvoListItemBody>Read the returns guide</EvoListItemBody>
-          </EvoListItem>
+          <EvoListItemLink href="/help/returns">
+            <EvoListItemContent>Read the returns guide</EvoListItemContent>
+          </EvoListItemLink>
         </EvoList>,
       ),
     ).toMatchSnapshot();

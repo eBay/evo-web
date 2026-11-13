@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import type { EvoListItemTrailingProps } from "./types";
 
-/** Adds content after an `EvoListItemBody`. @summary Trailing list item region. */
+/** Adds content after an `EvoListItemContent`. @summary Trailing list item region. */
 export function EvoListItemTrailing({
   className,
   children,

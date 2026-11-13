@@ -1,3 +1,4 @@
+import type { ComponentProps } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { action } from "storybook/actions";
 import { EvoIconChevronRight16 } from "../icon/icons/chevron-right-16";
@@ -5,7 +6,9 @@ import { EvoIconFile16 } from "../icon/icons/file-16";
 import { EvoIconFolder16 } from "../icon/icons/folder-16";
 import { EvoList } from "./list";
 import { EvoListItem } from "./list-item";
-import { EvoListItemBody } from "./list-item-body";
+import { EvoListItemButton } from "./list-item-button";
+import { EvoListItemLink } from "./list-item-link";
+import { EvoListItemContent } from "./list-item-content";
 import { EvoListItemLeading } from "./list-item-leading";
 import { EvoListItemTrailing } from "./list-item-trailing";
 import { EvoListSeparator } from "./list-separator";
@@ -15,7 +18,9 @@ const meta: Meta<typeof EvoList> = {
   component: EvoList,
   subcomponents: {
     EvoListItem,
-    EvoListItemBody,
+    EvoListItemButton,
+    EvoListItemLink,
+    EvoListItemContent,
     EvoListItemLeading,
     EvoListItemTrailing,
     EvoListSeparator,
@@ -35,13 +40,13 @@ export const Default: Story = {
           <EvoListItemLeading>
             <EvoIconFolder16 />
           </EvoListItemLeading>
-          <EvoListItemBody>Product photos</EvoListItemBody>
+          <EvoListItemContent>Product photos</EvoListItemContent>
         </EvoListItem>
         <EvoListItem>
           <EvoListItemLeading>
             <EvoIconFile16 />
           </EvoListItemLeading>
-          <EvoListItemBody>Size guide.pdf</EvoListItemBody>
+          <EvoListItemContent>Size guide.pdf</EvoListItemContent>
         </EvoListItem>
       </EvoList>
     </>
@@ -52,17 +57,69 @@ export const Default: Story = {
 export const Interactive: Story = {
   render: (args) => (
     <EvoList {...args}>
-      <EvoListItem as="button" onClick={action("show shipping details")}>
-        <EvoListItemBody>Show shipping details</EvoListItemBody>
-      </EvoListItem>
-      <EvoListItem as="a" href="/help/returns">
-        <EvoListItemBody>Read the returns guide</EvoListItemBody>
+      <EvoListItemButton
+        type="button"
+        onClick={action("show shipping details")}
+      >
+        <EvoListItemContent>Show shipping details</EvoListItemContent>
+      </EvoListItemButton>
+      <EvoListItemLink href="/help/returns">
+        <EvoListItemContent>Read the returns guide</EvoListItemContent>
         <EvoListItemTrailing>
           <EvoIconChevronRight16 />
         </EvoListItemTrailing>
-      </EvoListItem>
+      </EvoListItemLink>
     </EvoList>
   ),
+};
+
+function Link({
+  to,
+  children,
+  ...rest
+}: ComponentProps<"a"> & { to?: string }) {
+  return (
+    <a data-custom-link="true" {...rest} href={to}>
+      {children}
+    </a>
+  );
+}
+
+/** The `as` prop connects a link item to a client-side link component. */
+export const CustomLink: Story = {
+  render: (args) => (
+    <EvoList {...args}>
+      <EvoListItemLink
+        href="/help/returns"
+        as={({ href, ...rest }) => <Link {...rest} to={href} />}
+      >
+        <EvoListItemContent>Read the returns guide</EvoListItemContent>
+        <EvoListItemTrailing>
+          <EvoIconChevronRight16 />
+        </EvoListItemTrailing>
+      </EvoListItemLink>
+    </EvoList>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: `
+Pass a custom component via the \`as\` prop of \`EvoListItemLink\` to replace the native \`<a>\`.
+
+\`\`\`tsx
+import { Link } from "react-router";
+
+<EvoListItemLink
+  href="/help/returns"
+  as={({ href, ...rest }) => <Link {...rest} to={href} />}
+>
+  <EvoListItemContent>Read the returns guide</EvoListItemContent>
+</EvoListItemLink>
+\`\`\`
+        `,
+      },
+    },
+  },
 };
 
 /** A separator divides related groups without adding an item. */
@@ -70,11 +127,11 @@ export const WithSeparator: Story = {
   render: (args) => (
     <EvoList {...args}>
       <EvoListItem>
-        <EvoListItemBody>Saved searches</EvoListItemBody>
+        <EvoListItemContent>Saved searches</EvoListItemContent>
       </EvoListItem>
       <EvoListSeparator />
       <EvoListItem>
-        <EvoListItemBody>Recently viewed</EvoListItemBody>
+        <EvoListItemContent>Recently viewed</EvoListItemContent>
       </EvoListItem>
     </EvoList>
   ),

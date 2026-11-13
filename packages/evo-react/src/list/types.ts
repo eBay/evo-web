@@ -1,4 +1,4 @@
-import type { ComponentProps } from "react";
+import type { ComponentProps, ComponentType } from "react";
 
 export type EvoListProps = ComponentProps<"div"> & {
   /** Accessible name for the list. Use this or `a11yLabelId`. */
@@ -7,21 +7,16 @@ export type EvoListProps = ComponentProps<"div"> & {
   a11yLabelId?: string;
 };
 
-export type EvoListItemProps =
-  | (ComponentProps<"div"> & {
-      /** Renders the static item body as a `<div>` by default. */
-      as?: "div";
-    })
-  | (ComponentProps<"button"> & {
-      /** Renders an interactive item as a native `<button>`. */
-      as: "button";
-    })
-  | (ComponentProps<"a"> & {
-      /** Renders a navigation item as a native `<a>`. */
-      as: "a";
-    });
-
-export type EvoListItemBodyProps = ComponentProps<"div">;
+export type EvoListItemProps = ComponentProps<"div">;
+export type EvoListItemButtonProps = ComponentProps<"button">;
+export type EvoListItemLinkProps = ComponentProps<"a"> & {
+  /**
+   * Custom component used in place of the native anchor, such as a framework `Link`.
+   * It must render an `<a>` element because the list's Skin CSS rules target anchors.
+   */
+  as?: ComponentType<ComponentProps<"a">>;
+};
+export type EvoListItemContentProps = ComponentProps<"div">;
 export type EvoListItemLeadingProps = ComponentProps<"div">;
 export type EvoListItemTrailingProps = ComponentProps<"div">;
 export type EvoListSeparatorProps = ComponentProps<"hr">;
