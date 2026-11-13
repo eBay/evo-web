@@ -240,7 +240,12 @@ export function EvoCalendar({
 
   const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
     if (event.key in DAY_UPDATE_KB) {
-      const change = DAY_UPDATE_KB[event.key as keyof typeof DAY_UPDATE_KB];
+      const step = DAY_UPDATE_KB[event.key as keyof typeof DAY_UPDATE_KB];
+      const change =
+        Math.abs(step) === 1 &&
+        getComputedStyle(event.currentTarget).direction === "rtl"
+          ? -step
+          : step;
       event.preventDefault();
       let iso = focusedDate;
       let tries = 7;

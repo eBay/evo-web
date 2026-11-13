@@ -244,3 +244,33 @@
         var(--color-background-secondary)
     );
 }
+
+[dir="rtl"] .calendar__header .icon-btn svg,
+[dir="rtl"] .calendar__header .icon-button svg {
+    transform: rotate(180deg);
+}
+[dir="rtl"] .calendar__range--start {
+    background: linear-gradient(
+        to left,
+        transparent 50%,
+        var(
+                --calendar-day-highlight-background-color,
+                var(--color-background-secondary)
+            )
+            50%
+    );
+}
+[dir="rtl"] .calendar__range--end {
+    background: linear-gradient(
+        to right,
+        transparent 50%,
+        var(
+                --calendar-day-highlight-background-color,
+                var(--color-background-secondary)
+            )
+            50%
+    );
+}
+[dir="rtl"] .calendar__range--start.calendar__range--end {
+    background: transparent;
+}
