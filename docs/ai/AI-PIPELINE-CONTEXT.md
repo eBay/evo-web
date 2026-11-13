@@ -33,7 +33,7 @@ Skills live in `.claude/skills/[skill-name]/SKILL.md`.
 | `/evo-docs-hookup` full          | Sub-agent                    | Step 13                           | Writes `+page.marko`, `+meta.json`, updates `component-metadata.json`                                                      |
 | `/evo-qa`                        | **Forked** sub-agent         | Step 15                           | Layer 1: manifest fidelity; Layer 2: optional reference delta score                                                        |
 | `/evo-icon`                      | Discrete                     | Engineer or Step 8 (major delete) | Add / deprecate / delete icons; SVG → sprite → React → Marko                                                               |
-| `evo-safe-coding`                | Safety gate (auto-activates) | Every code session                | Scope check, risk rating, minimal diff, merge readiness                                                                    |
+| `evo-safe-coding`                | Safety gate (auto-activates) | Every code session                | Risk rating, unattended mode, package style, scoped checks, PR handoff                                                     |
 
 ---
 
