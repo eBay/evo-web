@@ -254,8 +254,13 @@ div.menu__item[role^="menuitem"] span.badge {
 .fake-menu button.expand-button--borderless:focus,
 .menu button.expand-btn--borderless:focus,
 .menu button.expand-button--borderless:focus {
-    outline: none;
     text-decoration: underline;
+}
+.fake-menu button.expand-btn--borderless:focus-visible,
+.fake-menu button.expand-button--borderless:focus-visible,
+.menu button.expand-btn--borderless:focus-visible,
+.menu button.expand-button--borderless:focus-visible {
+    border-radius: 4px;
 }
 
 hr.menu__separator {

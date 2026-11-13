@@ -47,8 +47,10 @@ a.button-link--borderless {
 a.button-link--borderless:focus,
 a.button-link--borderless:hover {
     background-color: initial;
-    outline: none;
     text-decoration: underline;
+}
+a.button-link--borderless:focus-visible {
+    border-radius: 4px;
 }
 
 a.button-link--borderless[aria-disabled="true"],
