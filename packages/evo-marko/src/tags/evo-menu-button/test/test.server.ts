@@ -36,8 +36,8 @@ describe("menu-button", () => {
     await snapshotHTML(Default, { strategy: "fixed" });
   });
 
-  it("renders with borderless=true", async () => {
-    await snapshotHTML(Default, { borderless: true });
+  it("renders with transparent=true", async () => {
+    await snapshotHTML(Default, { transparent: true });
   });
 
   it("renders with size=small", async () => {

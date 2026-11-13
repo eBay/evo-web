@@ -13,7 +13,7 @@ export interface Input<Index extends number | string> extends Marko.HTML.Div {
   truncate?: boolean;
   fluid?: boolean;
   strategy?: "fixed" | "absolute";
-  borderless?: boolean;
+  transparent?: boolean;
   floatingLabel?: string;
   disabled?: boolean;
   buttonName?: string;
@@ -37,7 +37,7 @@ export interface Input<Index extends number | string> extends Marko.HTML.Div {
   selectedChange,
   open: inputOpen,
   openChange,
-  borderless,
+  transparent,
   disabled,
   fluid,
   invalid,
@@ -112,7 +112,7 @@ export interface Input<Index extends number | string> extends Marko.HTML.Div {
   <id/labelId>
   <evo-button-field
     class=["listbox-button__control", floatingLabel && "btn--floating-label"]
-    borderless=borderless
+    transparent=transparent
     truncate=truncate
     value=selectedOption?.value as string | undefined
     disabled=disabled

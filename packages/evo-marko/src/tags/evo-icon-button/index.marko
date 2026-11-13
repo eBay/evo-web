@@ -6,8 +6,11 @@ export interface Input
     Omit<Marko.HTML.A, "type" | `on${string}` | "aria-label"> {
   badge?: Marko.AttrTag<Omit<BadgeInput, "a11yText" | "type">>;
   href?: string;
-  appearance?: "primary" | "secondary" | "tertiary" | "transparent";
+  appearance?: ButtonInput["appearance"];
   size?: ButtonInput["size"];
+  /**
+   * Sets `aria-disabled`: the button stays focusable but ignores clicks
+   */
   partiallyDisabled?: ButtonInput["partiallyDisabled"];
   /**
    * The `aria-label` of the button
@@ -28,6 +31,7 @@ export interface Input
   size,
   class: inputClass,
   a11yText = "button",
+  onClick,
   ...htmlInput
 }=input>
 
@@ -45,6 +49,13 @@ export interface Input
   ]
   type=tagType === "button" && (type || "button")
   aria-disabled=partiallyDisabled && "true"
+  onClick(e: MouseEvent, el: Element) {
+    if (partiallyDisabled) {
+      e.preventDefault();
+    } else {
+      onClick && onClick(e as any, el as any);
+    }
+  }
 >
   <${content}/>
   <if=badge>

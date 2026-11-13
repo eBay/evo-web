@@ -12,10 +12,12 @@ export interface Input<Index extends number | string | (number | string)[]>
   collapseOnSelect?: boolean;
   prefixId?: string;
   variant?: "form" | "button" | "icon" | "filter";
-  borderless?: boolean;
   partiallyDisabled?: ButtonInput["partiallyDisabled"];
   priority?: "primary" | "secondary" | "tertiary";
   size?: ButtonInput["size"];
+  /**
+   * Removes the button's border, for the `button`, `form` and `icon` variants
+   */
   transparent?: boolean;
   disabled?: boolean;
   split?: ButtonInput["split"];
@@ -32,7 +34,6 @@ export interface Input<Index extends number | string | (number | string)[]>
   reverse,
   strategy,
   fixWidth,
-  borderless,
   size,
   partiallyDisabled: inputPartiallyDisabled,
   footerButton,
@@ -71,7 +72,7 @@ export interface Input<Index extends number | string | (number | string)[]>
   split,
   appearance,
   toggleIcon,
-  fieldBorderless,
+  fieldTransparent,
   partiallyDisabled,
   ariaDisabled,
 }=(() => {
@@ -81,7 +82,7 @@ export interface Input<Index extends number | string | (number | string)[]>
   let tagName;
   let isSelected;
   let chipVariant;
-  let fieldBorderless;
+  let fieldTransparent;
   let partiallyDisabled = inputPartiallyDisabled;
   let ariaDisabled;
 
@@ -96,7 +97,7 @@ export interface Input<Index extends number | string | (number | string)[]>
       : selected != null && selected !== -1;
   } else if (variant === "form") {
     tagName = ButtonField;
-    fieldBorderless = borderless;
+    fieldTransparent = inputTransparent;
     toggleIcon = false;
     partiallyDisabled = undefined;
     ariaDisabled = inputPartiallyDisabled && "true";
@@ -104,7 +105,7 @@ export interface Input<Index extends number | string | (number | string)[]>
     tagName = Button;
     split = inputSplit;
     toggleIcon = !inputNoToggleIcon;
-    appearance = borderless ? "borderless" : inputPriority;
+    appearance = inputTransparent ? "transparent" : inputPriority;
   }
 
   return {
@@ -114,7 +115,7 @@ export interface Input<Index extends number | string | (number | string)[]>
     chipVariant,
     toggleIcon,
     appearance,
-    fieldBorderless,
+    fieldTransparent,
     partiallyDisabled,
     ariaDisabled,
   };
@@ -159,7 +160,7 @@ export interface Input<Index extends number | string | (number | string)[]>
     class=[`menu-button__button`]
     size=size
     appearance=appearance
-    borderless=fieldBorderless
+    transparent=fieldTransparent
     variant=chipVariant
     aria-haspopup="true"
     selected=isSelected
@@ -172,6 +173,7 @@ export interface Input<Index extends number | string | (number | string)[]>
     partiallyDisabled=partiallyDisabled
     aria-disabled=ariaDisabled
     onClick() {
+      if (inputPartiallyDisabled) return;
       focusOnOpen = true;
       open = !open;
     }

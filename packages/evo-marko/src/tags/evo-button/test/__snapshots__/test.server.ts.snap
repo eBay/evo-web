@@ -1,14 +1,5 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`renders button with appearance=borderless 1`] = `
-"<button
-  class="btn btn--borderless"
-  type="button"
->
-  Button
-</button>"
-`;
-
 exports[`renders button with appearance=primary 1`] = `
 "<button
   class="btn btn--primary"
@@ -30,6 +21,15 @@ exports[`renders button with appearance=secondary 1`] = `
 exports[`renders button with appearance=tertiary 1`] = `
 "<button
   class="btn btn--tertiary"
+  type="button"
+>
+  Button
+</button>"
+`;
+
+exports[`renders button with appearance=transparent 1`] = `
+"<button
+  class="btn btn--borderless"
   type="button"
 >
   Button

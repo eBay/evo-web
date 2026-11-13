@@ -8,8 +8,8 @@ it("renders defaults", async () => {
   await snapshotHTML(Default);
 });
 
-it("renders borderless", async () => {
-  await snapshotHTML(Default, { borderless: true });
+it("renders transparent", async () => {
+  await snapshotHTML(Default, { transparent: true });
 });
 
 it("renders large truncated", async () => {

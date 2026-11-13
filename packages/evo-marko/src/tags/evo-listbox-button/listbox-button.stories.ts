@@ -122,7 +122,7 @@ export default {
         "Use fixed when dropdown is in contained in an overflow and needs to be visible as you scroll the screen.",
       table: { defaultValue: { summary: "absolute" } },
     },
-    borderless: {
+    transparent: {
       type: "boolean",
       control: "boolean",
       description: "Removes button borders.",

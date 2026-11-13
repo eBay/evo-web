@@ -32,6 +32,27 @@ describe("evo-button", () => {
     });
   });
 
+  [
+    { state: "loading", input: { a11yLoadingText: "Loading" } },
+    { state: "partially disabled", input: { partiallyDisabled: true } },
+  ].forEach(({ state, input }) => {
+    describe(`given button is ${state}`, () => {
+      beforeEach(async () => {
+        component = await render(Default, { ...input, onClick: clickSpy });
+      });
+
+      describe("when button is clicked", () => {
+        beforeEach(async () => {
+          await fireEvent.click(component.getByRole("button"));
+        });
+
+        it("then it does not emit the event", () => {
+          expect(clickSpy).not.toBeCalled();
+        });
+      });
+    });
+  });
+
   describe.skip("given button is disabled", () => {
     beforeEach(async () => {
       component = await render(Default, {

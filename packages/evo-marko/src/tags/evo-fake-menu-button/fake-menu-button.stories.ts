@@ -43,11 +43,6 @@ export default {
       table: { defaultValue: { summary: "button" } },
       description: "Controls the button style",
     },
-    borderless: {
-      type: "boolean",
-      control: "boolean",
-      description: 'Whether button has borders. Forces `variant="button"`',
-    },
     priority: {
       type: "string",
       options: ["primary", "secondary", "tertiary"],
@@ -63,7 +58,8 @@ export default {
     transparent: {
       type: "boolean",
       control: "boolean",
-      description: "Removes the background color of the button",
+      description:
+        "Removes the button's border, for the `button`, `form` and `icon` variants",
     },
     disabled: {
       type: "boolean",

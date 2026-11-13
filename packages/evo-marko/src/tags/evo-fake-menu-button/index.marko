@@ -7,9 +7,11 @@ export interface Input extends Marko.HTML.Span {
   openChange?: (open: boolean) => void;
   collapseOnSelect?: boolean;
   variant?: "form" | "button" | "icon";
-  borderless?: boolean;
   priority?: "primary" | "secondary" | "tertiary";
   size?: ButtonInput["size"];
+  /**
+   * Removes the button's border, for the `button`, `form` and `icon` variants
+   */
   transparent?: boolean;
   disabled?: boolean;
   noToggleIcon?: boolean;
@@ -28,7 +30,6 @@ const/{
   strategy,
   fixWidth,
   flip,
-  borderless,
   size,
   priority: inputPriority,
   disabled,
@@ -47,10 +48,10 @@ const/{
 
 let/open:=input.open
 
-const/{ tagName, appearance, fieldBorderless, toggleIcon }=(() => {
+const/{ tagName, appearance, fieldTransparent, toggleIcon }=(() => {
   let appearance;
   let tagName;
-  let fieldBorderless;
+  let fieldTransparent;
   let toggleIcon = false;
 
   if (variant === "icon") {
@@ -58,17 +59,17 @@ const/{ tagName, appearance, fieldBorderless, toggleIcon }=(() => {
     if (inputTransparent) appearance = "transparent";
   } else if (variant === "form") {
     tagName = ButtonField;
-    fieldBorderless = borderless;
+    fieldTransparent = inputTransparent;
   } else {
     tagName = Button;
     toggleIcon = !noToggleIcon;
-    appearance = borderless ? "borderless" : inputPriority;
+    appearance = inputTransparent ? "transparent" : inputPriority;
   }
 
   return {
     tagName,
     appearance,
-    fieldBorderless,
+    fieldTransparent,
     toggleIcon,
   };
 })()
@@ -97,7 +98,7 @@ span/$root
   ${tagName as any}.fake-menu-button__button
     ,size=size
     ,appearance=appearance
-    ,borderless=fieldBorderless
+    ,transparent=fieldTransparent
     ,aria-expanded=expander.ariaExpanded
     ,aria-label=a11yText
     ,disabled=disabled
