@@ -1,0 +1,4 @@
+export function symbol() {
+    // eslint-disable-next-line max-len,quotes
+    return '<symbol viewbox="0 0 20 20" id=icon-trading-card-20><path d="M15 0a3 3 0 0 1 3 3v14a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V3a3 3 0 0 1 3-3zM4 17a1 1 0 0 0 1 1h1c0-1.31.63-2.472 1.602-3.201A3 3 0 0 1 7 13a3 3 0 1 1 6 0c0 .675-.226 1.296-.602 1.798A4 4 0 0 1 14 18h1a1 1 0 0 0 1-1V8.063H4zm6-.999A2 2 0 0 0 8 18h4a2 2 0 0 0-2-1.999m0-4a1 1 0 1 0 0 2 1 1 0 0 0 0-2M5 2a1 1 0 0 0-1 1v3.063h3V2zm4 4.063h7V3a1 1 0 0 0-1-1H9zM13.906 3a1 1 0 1 1 0 2H11a1 1 0 1 1 0-2z"></path></symbol>';
+}

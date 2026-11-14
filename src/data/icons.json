@@ -1764,6 +1764,7 @@
       { "name": "handbag-16", "size": "16", "height": "16", "width": "16" },
       { "name": "handbag-24", "size": "24", "height": "24", "width": "24" },
       { "name": "hanger-16", "size": "16", "height": "16", "width": "16" },
+      { "name": "hanger-20", "size": "20", "height": "20", "width": "20" },
       { "name": "hanger-24", "size": "24", "height": "24", "width": "24" },
       { "name": "headlight-16", "size": "16", "height": "16", "width": "16" },
       { "name": "headlight-24", "size": "24", "height": "24", "width": "24" },
@@ -2964,6 +2965,7 @@
       { "name": "ribbon-16", "size": "16", "height": "16", "width": "16" },
       { "name": "ribbon-24", "size": "24", "height": "24", "width": "24" },
       { "name": "rim-16", "size": "16", "height": "16", "width": "16" },
+      { "name": "rim-20", "size": "20", "height": "20", "width": "20" },
       { "name": "rim-24", "size": "24", "height": "24", "width": "24" },
       { "name": "ringgit-16", "size": "16", "height": "16", "width": "16" },
       { "name": "ringgit-24", "size": "24", "height": "24", "width": "24" },
@@ -3459,6 +3461,12 @@
         "size": "16",
         "height": "16",
         "width": "16"
+      },
+      {
+        "name": "trading-card-20",
+        "size": "20",
+        "height": "20",
+        "width": "20"
       },
       {
         "name": "trading-card-24",

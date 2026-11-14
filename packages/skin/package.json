@@ -45,7 +45,7 @@
         "copy:assetsToStorybook": "tsx scripts storybook-copy",
         "copy:sassToDist": " copyfiles src/sass/variables dist -u 2 && copyfiles src/sass/mixins/public dist/mixins -u 4 && copyfiles src/sass/gh dist -u 2",
         "copy:svgToDist": "copyfiles src/svg dist -u 1",
-        "copy:svgToDocs": "tsx scripts copy-icons",
+        "copy:svgToDocs": "tsx scripts copy-icons && prettier ../../src/tags/master-icons.marko --write",
         "deploy": "npm run build:storybook && rimraf _site/public/archive && copyfiles docs/archive _site/public -u 1 && touch _site/public/.nojekyll",
         "deploy:only": "npm run build:storybook && rimraf _site/public/archive && copyfiles docs/archive _site/public -u 1 && touch _site/public/.nojekyll",
         "format": "npx prettier --write .",
