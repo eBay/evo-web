@@ -23,7 +23,6 @@ exports[`carousel > passes through additional html attributes 1`] = `
       <svg
         aria-hidden="true"
         class="icon icon--16"
-        focusable="false"
       >
         <defs>
           <symbol
@@ -58,7 +57,6 @@ exports[`carousel > passes through additional html attributes 1`] = `
       <svg
         aria-hidden="true"
         class="icon icon--16"
-        focusable="false"
       >
         <defs>
           <symbol
@@ -102,7 +100,6 @@ exports[`carousel > passes through additional html attributes 2`] = `
       <svg
         aria-hidden="true"
         class="icon icon--16"
-        focusable="false"
       >
         <defs>
           <symbol
@@ -137,7 +134,6 @@ exports[`carousel > passes through additional html attributes 2`] = `
       <svg
         aria-hidden="true"
         class="icon icon--16"
-        focusable="false"
       >
         <defs>
           <symbol
@@ -197,7 +193,6 @@ exports[`carousel > with discrete items per slide > renders base version 1`] = `
       <svg
         aria-hidden="true"
         class="icon icon--16"
-        focusable="false"
       >
         <defs>
           <symbol
@@ -257,7 +252,6 @@ exports[`carousel > with discrete items per slide > renders base version 1`] = `
       <svg
         aria-hidden="true"
         class="icon icon--16"
-        focusable="false"
       >
         <defs>
           <symbol
@@ -321,7 +315,6 @@ exports[`carousel > with discrete items per slide > renders without any provided
   <svg
     aria-hidden="true"
     class="icon icon--16"
-    focusable="false"
   >
     <defs>
       <symbol
@@ -351,7 +344,6 @@ exports[`carousel > with discrete items per slide > renders without any provided
   <svg
     aria-hidden="true"
     class="icon icon--16"
-    focusable="false"
   >
     <defs>
       <symbol
@@ -379,7 +371,6 @@ exports[`carousel > with discrete items per slide > with autoplay enabled > rend
   <svg
     aria-hidden="true"
     class="icon icon--24"
-    focusable="false"
   >
     <defs>
       <symbol
@@ -407,7 +398,6 @@ exports[`carousel > with discrete items per slide > with autoplay enabled > rend
   <svg
     aria-hidden="true"
     class="icon icon--24"
-    focusable="false"
   >
     <defs>
       <symbol
@@ -445,7 +435,6 @@ exports[`carousel > with discrete items per slide > with hidden scrollbar > rend
       <svg
         aria-hidden="true"
         class="icon icon--16"
-        focusable="false"
       >
         <defs>
           <symbol
@@ -505,7 +494,6 @@ exports[`carousel > with discrete items per slide > with hidden scrollbar > rend
       <svg
         aria-hidden="true"
         class="icon icon--16"
-        focusable="false"
       >
         <defs>
           <symbol
@@ -538,7 +526,6 @@ exports[`carousel > without items per slide (continuous) > renders base version 
   <svg
     aria-hidden="true"
     class="icon icon--16"
-    focusable="false"
   >
     <defs>
       <symbol
@@ -568,7 +555,6 @@ exports[`carousel > without items per slide (continuous) > renders base version 
   <svg
     aria-hidden="true"
     class="icon icon--16"
-    focusable="false"
   >
     <defs>
       <symbol
@@ -663,7 +649,6 @@ exports[`carousel > without items per slide (continuous) > renders without any p
   <svg
     aria-hidden="true"
     class="icon icon--16"
-    focusable="false"
   >
     <defs>
       <symbol
@@ -693,7 +678,6 @@ exports[`carousel > without items per slide (continuous) > renders without any p
   <svg
     aria-hidden="true"
     class="icon icon--16"
-    focusable="false"
   >
     <defs>
       <symbol

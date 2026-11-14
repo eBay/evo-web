@@ -37,7 +37,6 @@ describe("given sortable table with Seller column is sorted in ascending order (
                 <svg
                   aria-hidden="true"
                   class="icon icon--12"
-                  focusable="false"
                 >
                   <use
                     href="#icon-sort-down-12"
@@ -78,7 +77,6 @@ describe("given sortable table with Seller column is sorted in ascending order (
                     <svg
                       aria-hidden="true"
                       class="icon icon--12"
-                      focusable="false"
                     >
                       <use
                         href="#icon-sort-12"

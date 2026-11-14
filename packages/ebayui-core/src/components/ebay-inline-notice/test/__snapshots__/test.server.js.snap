@@ -15,7 +15,6 @@ exports[`inline-notice > passes through additional html attributes 1`] = `
     <svg
       aria-label="Heading Text"
       class="icon icon--16"
-      focusable="false"
       role="img"
     >
       <defs>
@@ -58,7 +57,6 @@ exports[`inline-notice > passes through additional html attributes 2`] = `
     <svg
       aria-label="Heading Text"
       class="icon icon--16"
-      focusable="false"
       role="img"
     >
       <defs>
@@ -97,7 +95,6 @@ exports[`inline-notice > renders with custom status type 1`] = `
     <svg
       aria-label="Heading Text"
       class="icon icon--16"
-      focusable="false"
       role="img"
     >
       <defs>
@@ -135,7 +132,6 @@ exports[`inline-notice > renders with defaults 1`] = `
   <svg
     aria-label="Heading Text"
     class="icon icon--16"
-    focusable="false"
     role="img"
   >
     <defs>
@@ -166,7 +162,6 @@ exports[`inline-notice > renders with defaults 2`] = `
     <svg
       aria-label="Heading Text"
       class="icon icon--16"
-      focusable="false"
       role="img"
     >
       <defs>
@@ -215,7 +210,6 @@ exports[`inline-notice > renders with warning status type 1`] = `
     <svg
       aria-label="Heading Text"
       class="icon icon--16"
-      focusable="false"
       role="img"
     >
       <defs>

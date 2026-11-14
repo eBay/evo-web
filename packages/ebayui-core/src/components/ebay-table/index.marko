@@ -57,7 +57,7 @@ $ const isLoading = bodyState === "loading";
                         ...thInput
                     } = header;
                     $ const sortOrder = state.sorted[name];
-                    $ let ariaSort: Marko.AriaAttributes["aria-sort"];
+                    $ let ariaSort: Marko.HTMLAttributes["aria-sort"];
                     $ if (sortOrder === "asc") {
                         ariaSort = "ascending";
                     } else if (sortOrder === "desc") {

@@ -57,19 +57,16 @@ exports[`card > anchor > then it matches the snapshot 1`] = `
         font-weight: 700;
         margin-block-end: var(--spacing-100)
       ">
-        <svg
-          focusable="false"
-          style="
-            display: inline-block;
-            fill: currentcolor;
-            height: 16px;
-            pointer-events: none;
-            stroke-width: 0;
-            stroke: currentcolor;
-            vertical-align: middle;
-            width: 16px
-          "
-        >
+        <svg style="
+          display: inline-block;
+          fill: currentcolor;
+          height: 16px;
+          pointer-events: none;
+          stroke-width: 0;
+          stroke: currentcolor;
+          vertical-align: middle;
+          width: 16px
+        ">
           <use href="#icon-authenticity-guarantee-16"/>
         </svg>
         Authenticity Guaranteed
@@ -153,19 +150,16 @@ exports[`card > anchor disabled > then it matches the snapshot 1`] = `
         font-weight: 700;
         margin-block-end: var(--spacing-100)
       ">
-        <svg
-          focusable="false"
-          style="
-            display: inline-block;
-            fill: currentcolor;
-            height: 16px;
-            pointer-events: none;
-            stroke-width: 0;
-            stroke: currentcolor;
-            vertical-align: middle;
-            width: 16px
-          "
-        >
+        <svg style="
+          display: inline-block;
+          fill: currentcolor;
+          height: 16px;
+          pointer-events: none;
+          stroke-width: 0;
+          stroke: currentcolor;
+          vertical-align: middle;
+          width: 16px
+        ">
           <use href="#icon-authenticity-guarantee-16"/>
         </svg>
         Authenticity Guaranteed
@@ -261,19 +255,16 @@ exports[`card > button > then it matches the snapshot 1`] = `
         font-weight: 700;
         margin-block-end: var(--spacing-100)
       ">
-        <svg
-          focusable="false"
-          style="
-            display: inline-block;
-            fill: currentcolor;
-            height: 16px;
-            pointer-events: none;
-            stroke-width: 0;
-            stroke: currentcolor;
-            vertical-align: middle;
-            width: 16px
-          "
-        >
+        <svg style="
+          display: inline-block;
+          fill: currentcolor;
+          height: 16px;
+          pointer-events: none;
+          stroke-width: 0;
+          stroke: currentcolor;
+          vertical-align: middle;
+          width: 16px
+        ">
           <use href="#icon-authenticity-guarantee-16"/>
         </svg>
         Authenticity Guaranteed
@@ -375,19 +366,16 @@ exports[`card > button disabled > then it matches the snapshot 1`] = `
         font-weight: 700;
         margin-block-end: var(--spacing-100)
       ">
-        <svg
-          focusable="false"
-          style="
-            display: inline-block;
-            fill: currentcolor;
-            height: 16px;
-            pointer-events: none;
-            stroke-width: 0;
-            stroke: currentcolor;
-            vertical-align: middle;
-            width: 16px
-          "
-        >
+        <svg style="
+          display: inline-block;
+          fill: currentcolor;
+          height: 16px;
+          pointer-events: none;
+          stroke-width: 0;
+          stroke: currentcolor;
+          vertical-align: middle;
+          width: 16px
+        ">
           <use href="#icon-authenticity-guarantee-16"/>
         </svg>
         Authenticity Guaranteed
@@ -467,19 +455,16 @@ exports[`card > default > then it matches the snapshot 1`] = `
         font-weight: 700;
         margin-block-end: var(--spacing-100)
       ">
-        <svg
-          focusable="false"
-          style="
-            display: inline-block;
-            fill: currentcolor;
-            height: 16px;
-            pointer-events: none;
-            stroke-width: 0;
-            stroke: currentcolor;
-            vertical-align: middle;
-            width: 16px
-          "
-        >
+        <svg style="
+          display: inline-block;
+          fill: currentcolor;
+          height: 16px;
+          pointer-events: none;
+          stroke-width: 0;
+          stroke: currentcolor;
+          vertical-align: middle;
+          width: 16px
+        ">
           <use href="#icon-authenticity-guarantee-16"/>
         </svg>
         Authenticity Guaranteed
@@ -609,19 +594,16 @@ exports[`card > default aspect 5:4 > then it matches the snapshot 1`] = `
         font-weight: 700;
         margin-block-end: var(--spacing-100)
       ">
-        <svg
-          focusable="false"
-          style="
-            display: inline-block;
-            fill: currentcolor;
-            height: 16px;
-            pointer-events: none;
-            stroke-width: 0;
-            stroke: currentcolor;
-            vertical-align: middle;
-            width: 16px
-          "
-        >
+        <svg style="
+          display: inline-block;
+          fill: currentcolor;
+          height: 16px;
+          pointer-events: none;
+          stroke-width: 0;
+          stroke: currentcolor;
+          vertical-align: middle;
+          width: 16px
+        ">
           <use href="#icon-authenticity-guarantee-16"/>
         </svg>
         Authenticity Guaranteed
@@ -751,19 +733,16 @@ exports[`card > default aspect 16:9 > then it matches the snapshot 1`] = `
         font-weight: 700;
         margin-block-end: var(--spacing-100)
       ">
-        <svg
-          focusable="false"
-          style="
-            display: inline-block;
-            fill: currentcolor;
-            height: 16px;
-            pointer-events: none;
-            stroke-width: 0;
-            stroke: currentcolor;
-            vertical-align: middle;
-            width: 16px
-          "
-        >
+        <svg style="
+          display: inline-block;
+          fill: currentcolor;
+          height: 16px;
+          pointer-events: none;
+          stroke-width: 0;
+          stroke: currentcolor;
+          vertical-align: middle;
+          width: 16px
+        ">
           <use href="#icon-authenticity-guarantee-16"/>
         </svg>
         Authenticity Guaranteed

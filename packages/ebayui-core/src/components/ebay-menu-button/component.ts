@@ -6,7 +6,7 @@ import setupMenu, {
     type BaseMenuInput,
     type MenuState,
 } from "../../common/menu-utils";
-import type { MenuEvent } from "../ebay-menu/component";
+import type { MenuEvent, Item } from "../ebay-menu/component";
 import type {
     Input as EbayButtonInput,
     ButtonEvent,
@@ -27,6 +27,7 @@ interface MenuButtonInput
     extends
         Omit<BaseMenuInput, "variant">,
         Omit<Marko.HTML.Span, `on${string}`> {
+    item?: Marko.AttrTag<Item>;
     "collapse-on-select"?: boolean;
     "prefix-id"?: string;
     variant?: "overflow" | "form" | "button" | "icon" | "filter";

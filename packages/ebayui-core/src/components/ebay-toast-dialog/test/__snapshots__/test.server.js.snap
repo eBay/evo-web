@@ -33,7 +33,6 @@ exports[`toast-dialog > passes through additional html attributes 1`] = `
         <svg
           aria-hidden="true"
           class="icon icon--16"
-          focusable="false"
         >
           <defs>
             <symbol
@@ -95,7 +94,6 @@ exports[`toast-dialog > passes through additional html attributes 2`] = `
         <svg
           aria-hidden="true"
           class="icon icon--16"
-          focusable="false"
         >
           <defs>
             <symbol
@@ -158,7 +156,6 @@ exports[`toast-dialog > renders basic version 1`] = `
         <svg
           aria-hidden="true"
           class="icon icon--16"
-          focusable="false"
         >
           <defs>
             <symbol
@@ -204,7 +201,6 @@ exports[`toast-dialog > renders basic version 2`] = `
   <svg
     aria-hidden="true"
     class="icon icon--16"
-    focusable="false"
   >
     <defs>
       <symbol
@@ -256,7 +252,6 @@ exports[`toast-dialog > renders basic version 4`] = `
     <svg
       aria-hidden="true"
       class="icon icon--16"
-      focusable="false"
     >
       <defs>
         <symbol
@@ -320,7 +315,6 @@ exports[`toast-dialog > renders in open state 1`] = `
         <svg
           aria-hidden="true"
           class="icon icon--16"
-          focusable="false"
         >
           <defs>
             <symbol

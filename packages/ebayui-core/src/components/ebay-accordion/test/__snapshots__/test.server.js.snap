@@ -25,7 +25,6 @@ exports[`accordion > renders accordion headers with a custom heading tag 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<defs>[39m
                 [36m<symbol[39m
@@ -71,7 +70,6 @@ exports[`accordion > renders accordion headers with a custom heading tag 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<use[39m
                 [33mhref[39m=[32m"#icon-chevron-down-16"[39m
@@ -107,7 +105,6 @@ exports[`accordion > renders accordion headers with a custom heading tag 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<use[39m
                 [33mhref[39m=[32m"#icon-chevron-down-16"[39m
@@ -153,7 +150,6 @@ exports[`accordion > renders accordion with auto-collapse true 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<defs>[39m
                 [36m<symbol[39m
@@ -199,7 +195,6 @@ exports[`accordion > renders accordion with auto-collapse true 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<use[39m
                 [33mhref[39m=[32m"#icon-chevron-down-16"[39m
@@ -235,7 +230,6 @@ exports[`accordion > renders accordion with auto-collapse true 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<use[39m
                 [33mhref[39m=[32m"#icon-chevron-down-16"[39m
@@ -276,7 +270,6 @@ exports[`accordion > renders accordion with icons 1`] = `
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--24"[39m
               [33mdata-marko-key[39m=[32m"@svg s0-0-1[0]-2-1-0"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<defs[39m
                 [33mdata-marko-key[39m=[32m"@defs s0-0-1[0]-2-1-0"[39m
@@ -309,7 +302,6 @@ exports[`accordion > renders accordion with icons 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<defs>[39m
                 [36m<symbol[39m
@@ -350,7 +342,6 @@ exports[`accordion > renders accordion with icons 1`] = `
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--24"[39m
               [33mdata-marko-key[39m=[32m"@svg s0-0-1[1]-2-3-0"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<defs[39m
                 [33mdata-marko-key[39m=[32m"@defs s0-0-1[1]-2-3-0"[39m
@@ -383,7 +374,6 @@ exports[`accordion > renders accordion with icons 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<use[39m
                 [33mhref[39m=[32m"#icon-chevron-down-16"[39m
@@ -414,7 +404,6 @@ exports[`accordion > renders accordion with icons 1`] = `
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--24"[39m
               [33mdata-marko-key[39m=[32m"@svg s0-0-1[2]-2-5-0"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<defs[39m
                 [33mdata-marko-key[39m=[32m"@defs s0-0-1[2]-2-5-0"[39m
@@ -445,7 +434,6 @@ exports[`accordion > renders accordion with icons 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<use[39m
                 [33mhref[39m=[32m"#icon-chevron-down-16"[39m
@@ -491,7 +479,6 @@ exports[`accordion > renders accordion with large size 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<defs>[39m
                 [36m<symbol[39m
@@ -537,7 +524,6 @@ exports[`accordion > renders accordion with large size 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<use[39m
                 [33mhref[39m=[32m"#icon-chevron-down-16"[39m
@@ -573,7 +559,6 @@ exports[`accordion > renders accordion with large size 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<use[39m
                 [33mhref[39m=[32m"#icon-chevron-down-16"[39m
@@ -619,7 +604,6 @@ exports[`accordion > renders accordion with localized role description 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<defs>[39m
                 [36m<symbol[39m
@@ -665,7 +649,6 @@ exports[`accordion > renders accordion with localized role description 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<use[39m
                 [33mhref[39m=[32m"#icon-chevron-down-16"[39m
@@ -701,7 +684,6 @@ exports[`accordion > renders accordion with localized role description 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<use[39m
                 [33mhref[39m=[32m"#icon-chevron-down-16"[39m
@@ -747,7 +729,6 @@ exports[`accordion > renders default accordion 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<defs>[39m
                 [36m<symbol[39m
@@ -793,7 +774,6 @@ exports[`accordion > renders default accordion 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<use[39m
                 [33mhref[39m=[32m"#icon-chevron-down-16"[39m
@@ -829,7 +809,6 @@ exports[`accordion > renders default accordion 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<use[39m
                 [33mhref[39m=[32m"#icon-chevron-down-16"[39m

@@ -11,11 +11,9 @@ export interface LayoutOptions {
     xl3?: number;
     xl4?: number;
 }
-static {
-    interface LayoutGridInput extends Omit<Marko.HTML.Div, `on${string}`> {
-        item?: Marko.AttrTag<Omit<Marko.HTML.LI, `on${string}`>>;
-        columns?: LayoutOptions;
-    }
+static interface LayoutGridInput extends Omit<Marko.HTML.Div, `on${string}`> {
+    item?: Marko.AttrTag<Omit<Marko.HTML.LI, `on${string}`>>;
+    columns?: LayoutOptions;
 }
 export interface Input extends WithNormalizedProps<LayoutGridInput> {}
 $ const {

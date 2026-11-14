@@ -7,7 +7,10 @@ import * as eventUtils from "../../common/event-utils";
 import safeRegex from "../../common/build-safe-regex";
 import type { WithNormalizedProps } from "../../global";
 
-export interface ComboboxOption {
+export interface ComboboxOption extends Omit<
+    Marko.HTML.Div,
+    `on${string}` | "role" | "tabindex" | "aria-selected"
+> {
     text: string;
     value?: string;
     class?: Marko.HTMLAttributes["class"];

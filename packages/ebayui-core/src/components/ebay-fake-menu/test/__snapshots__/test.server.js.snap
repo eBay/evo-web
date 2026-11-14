@@ -44,7 +44,6 @@ exports[`fake-menu > passes through additional html attributes from child item 1
   <svg
     aria-hidden="true"
     class="icon icon--16"
-    focusable="false"
   >
     <defs>
       <symbol
@@ -77,7 +76,6 @@ exports[`fake-menu > passes through additional html attributes from child item 2
   <svg
     aria-hidden="true"
     class="icon icon--16"
-    focusable="false"
   >
     <defs>
       <symbol
@@ -111,7 +109,6 @@ exports[`fake-menu > renders base version 1`] = `
   <svg
     aria-hidden="true"
     class="icon icon--16"
-    focusable="false"
   >
     <defs>
       <symbol
@@ -145,7 +142,6 @@ exports[`fake-menu > renders base version 2`] = `
   <svg
     aria-hidden="true"
     class="icon icon--16"
-    focusable="false"
   >
     <use
       href="#icon-tick-16"
@@ -167,7 +163,6 @@ exports[`fake-menu > renders with aria-current=true 1`] = `
   <svg
     aria-hidden="true"
     class="icon icon--16"
-    focusable="false"
   >
     <defs>
       <symbol
@@ -210,7 +205,6 @@ exports[`fake-menu > renders with fix-width=true 1`] = `
         <svg
           aria-hidden="true"
           class="icon icon--16"
-          focusable="false"
         >
           <defs>
             <symbol
@@ -243,7 +237,6 @@ exports[`fake-menu > renders with fix-width=true 1`] = `
         <svg
           aria-hidden="true"
           class="icon icon--16"
-          focusable="false"
         >
           <use
             href="#icon-tick-16"
@@ -277,7 +270,6 @@ exports[`fake-menu > renders with reverse=true 1`] = `
         <svg
           aria-hidden="true"
           class="icon icon--16"
-          focusable="false"
         >
           <defs>
             <symbol
@@ -310,7 +302,6 @@ exports[`fake-menu > renders with reverse=true 1`] = `
         <svg
           aria-hidden="true"
           class="icon icon--16"
-          focusable="false"
         >
           <use
             href="#icon-tick-16"

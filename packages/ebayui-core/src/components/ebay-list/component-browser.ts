@@ -1,5 +1,8 @@
 import type { WithNormalizedProps } from "../../global";
-export interface ListItem extends Omit<Marko.HTML.Div, `on${string}`> {
+export interface ListItem
+    extends
+        Omit<Marko.HTML.Button, `on${string}`>,
+        Omit<Marko.HTML.A, "type" | `on${string}`> {
     as?: keyof Marko.NativeTags;
     separator?: boolean;
     leading?: Marko.AttrTag<Marko.HTML.Div>;

@@ -10,7 +10,7 @@ $ const files = [
         src: "https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg",
     },
 ];
-<ebay-file-preview-card
+<ebay-file-preview-card-group
     a11y-cancel-upload-text="cancel upload"
     delete-text="remove"
     a11y-see-more-text="show more"
@@ -18,4 +18,4 @@ $ const files = [
     <for|file| of=files>
         <@card file=file/>
     </for>
-</ebay-file-preview-card>
+</ebay-file-preview-card-group>

@@ -57,7 +57,6 @@ exports[`section-title > renders icon and see all 1`] = `
           [33maria-hidden[39m=[32m"true"[39m
           [33mclass[39m=[32m"icon icon--16"[39m
           [33mdata-marko-key[39m=[32m"@svg s0-0-6-1-1-2-0"[39m
-          [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
           [36m<defs[39m
             [33mdata-marko-key[39m=[32m"@defs s0-0-6-1-1-2-0"[39m
@@ -129,7 +128,6 @@ exports[`section-title > renders icon and see all and no subtitle 1`] = `
           [33maria-hidden[39m=[32m"true"[39m
           [33mclass[39m=[32m"icon icon--16"[39m
           [33mdata-marko-key[39m=[32m"@svg s0-0-6-1-1-2-0"[39m
-          [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
           [36m<defs[39m
             [33mdata-marko-key[39m=[32m"@defs s0-0-6-1-1-2-0"[39m
@@ -261,7 +259,6 @@ exports[`section-title > renders with overflow 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--16"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<defs>[39m
               [36m<symbol[39m
@@ -297,7 +294,6 @@ exports[`section-title > renders with overflow 1`] = `
               [36m<svg[39m
                 [33maria-hidden[39m=[32m"true"[39m
                 [33mclass[39m=[32m"icon icon--16"[39m
-                [33mfocusable[39m=[32m"false"[39m
               [36m>[39m
                 [36m<defs>[39m
                   [36m<symbol[39m
@@ -326,7 +322,6 @@ exports[`section-title > renders with overflow 1`] = `
               [36m<svg[39m
                 [33maria-hidden[39m=[32m"true"[39m
                 [33mclass[39m=[32m"icon icon--16"[39m
-                [33mfocusable[39m=[32m"false"[39m
               [36m>[39m
                 [36m<use[39m
                   [33mhref[39m=[32m"#icon-tick-16"[39m
@@ -343,7 +338,6 @@ exports[`section-title > renders with overflow 1`] = `
               [36m<svg[39m
                 [33maria-hidden[39m=[32m"true"[39m
                 [33mclass[39m=[32m"icon icon--16"[39m
-                [33mfocusable[39m=[32m"false"[39m
               [36m>[39m
                 [36m<use[39m
                   [33mhref[39m=[32m"#icon-tick-16"[39m
@@ -395,7 +389,6 @@ exports[`section-title > renders with overflow and no subtitle 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--16"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<defs>[39m
               [36m<symbol[39m
@@ -431,7 +424,6 @@ exports[`section-title > renders with overflow and no subtitle 1`] = `
               [36m<svg[39m
                 [33maria-hidden[39m=[32m"true"[39m
                 [33mclass[39m=[32m"icon icon--16"[39m
-                [33mfocusable[39m=[32m"false"[39m
               [36m>[39m
                 [36m<defs>[39m
                   [36m<symbol[39m
@@ -460,7 +452,6 @@ exports[`section-title > renders with overflow and no subtitle 1`] = `
               [36m<svg[39m
                 [33maria-hidden[39m=[32m"true"[39m
                 [33mclass[39m=[32m"icon icon--16"[39m
-                [33mfocusable[39m=[32m"false"[39m
               [36m>[39m
                 [36m<use[39m
                   [33mhref[39m=[32m"#icon-tick-16"[39m
@@ -477,7 +468,6 @@ exports[`section-title > renders with overflow and no subtitle 1`] = `
               [36m<svg[39m
                 [33maria-hidden[39m=[32m"true"[39m
                 [33mclass[39m=[32m"icon icon--16"[39m
-                [33mfocusable[39m=[32m"false"[39m
               [36m>[39m
                 [36m<use[39m
                   [33mhref[39m=[32m"#icon-tick-16"[39m

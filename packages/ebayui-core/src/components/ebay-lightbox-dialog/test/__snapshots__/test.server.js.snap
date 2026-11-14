@@ -41,7 +41,6 @@ exports[`dialog > passes through additional html attributes 1`] = `
         <svg
           aria-hidden="true"
           class="icon icon--16"
-          focusable="false"
         >
           <defs>
             <symbol
@@ -123,7 +122,6 @@ exports[`dialog > passes through additional html attributes 2`] = `
         <svg
           aria-hidden="true"
           class="icon icon--16"
-          focusable="false"
         >
           <defs>
             <symbol
@@ -193,7 +191,6 @@ exports[`dialog > renders basic version 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--16"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<defs>[39m
               [36m<symbol[39m
@@ -270,7 +267,6 @@ exports[`dialog > renders expressive version 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--16"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<defs>[39m
               [36m<symbol[39m
@@ -342,7 +338,6 @@ exports[`dialog > renders in open state 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--16"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<defs>[39m
               [36m<symbol[39m
@@ -415,7 +410,6 @@ exports[`dialog > renders scrolling dialog 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--16"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<defs>[39m
               [36m<symbol[39m
@@ -464,7 +458,7 @@ exports[`dialog > renders scrolling dialog 1`] = `
           [0mLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.[0m
         [36m</p>[39m
         [36m<p>[39m
-          [0mLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupid..."
+          [0mLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deser..."
 `;
 
 exports[`dialog > renders size=large 1`] = `
@@ -496,7 +490,6 @@ exports[`dialog > renders size=large 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--16"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<defs>[39m
               [36m<symbol[39m
@@ -569,7 +562,6 @@ exports[`dialog > renders size=narrow 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--16"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<defs>[39m
               [36m<symbol[39m
@@ -642,7 +634,6 @@ exports[`dialog > renders size=wide 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--16"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<defs>[39m
               [36m<symbol[39m
@@ -715,7 +706,6 @@ exports[`dialog > renders with header and footer 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--16"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<defs>[39m
               [36m<symbol[39m
@@ -796,7 +786,6 @@ exports[`dialog > renders with previous button 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--16"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<defs>[39m
               [36m<symbol[39m
@@ -827,7 +816,6 @@ exports[`dialog > renders with previous button 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--16"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<defs>[39m
               [36m<symbol[39m
