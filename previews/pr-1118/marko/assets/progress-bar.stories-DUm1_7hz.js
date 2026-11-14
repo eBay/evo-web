@@ -1,0 +1,19 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{t}from"./utils-CkiB0p9L.js";import{E as n,T as r,c as i,i as a,it as o,k as s,s as c,st as l,t as u}from"./dom-CUxLGBQ2.js";var d;function f(){return(f=e((()=>{d=`<h1 style='display: flex; justify-content: space-between; align-items: center;'>
+    <span>
+        evo-progress-bar
+    </span>
+    <span style='font-weight: normal; font-size: medium; margin-bottom: -15px;'>
+        DS v2.1.0
+    </span>
+</h1>
+
+An immediate, real-time visualisation of the current task completion status.
+
+## Examples and Documentation
+
+- [Storybook](https://opensource.ebay.com/evo-web/marko/?path=/story/progress-evo-progress-bar)
+- [Storybook Docs](https://opensource.ebay.com/evo-web/marko/?path=/docs/progress-evo-progress-bar)
+- [Code Examples](https://github.com/eBay/evo-web/tree/main/packages/evo-marko/src/tags/evo-progress-bar/examples)
+`})))()}function p(){return(p=e((()=>{})))()}function m(){return(m=e((()=>{p()})))()}var h,g,_,v,y,b,x,S,C,w;function T(){return(T=e((()=>{a(),m(),h=`<progress></progress>`,g=(e,t)=>c(e.a,`aria-label`,t===void 0?`Progress`:t),_=(e,t)=>c(e.a,`max`,t===void 0?100:t),v=o(6,e=>i(e.a,[`progress-bar`,e.f&&`progress-bar--fluid`,e.d])),y=s(3,v),b=s(5,v),x=l(`S0`,e=>n(e,`a`)),S=s(8,e=>{r(e,`a`,e.i,{"aria-label":1,class:1,max:1}),x(e)}),C=(e,t)=>{S(e,(({a11yText:e,class:t,fluid:n,max:r,...i})=>i)(t)),y(e,t.class),g(e,t.a11yText),b(e,t.fluid),_(e,t.max)},w=u(`S`,h,` b`,0,C)})))()}var E,D,O,k;function A(){return(A=e((()=>{T(),a(),E=h,D=(e=>`/${e}&`)(` b`),O=s(2,e=>{let t={a11yText:`Upload progress`,value:50,...e.c};g(e.a,t.a11yText),y(e.a,t.class),b(e.a,t.fluid),_(e.a,t.max),S(e.a,(({a11yText:e,class:t,fluid:n,max:r,...i})=>i)(t))}),k=u(`FbJNZuJ`,E,D,0,O)})))()}var j;function M(){return(M=e((()=>{j=`<evo-progress-bar a11yText="Upload progress" value=50 ...input/>
+`})))()}var N,P,F,I;function L(){return(L=e((()=>{T(),a(),N=h,P=(e=>`/${e}&`)(` b`),F=s(2,e=>{let t={a11yText:`Loading results`,...e.c};g(e.a,t.a11yText),y(e.a,t.class),b(e.a,t.fluid),_(e.a,t.max),S(e.a,(({a11yText:e,class:t,fluid:n,max:r,...i})=>i)(t))}),I=u(`hcFF4WH`,N,P,0,F)})))()}var R;function z(){return(z=e((()=>{R=`<evo-progress-bar a11yText="Loading results" ...input/>
+`})))()}var B,V,H,U;function W(){return(W=e((()=>{f(),T(),A(),M(),L(),z(),B={title:`progress/evo-progress-bar`,component:w,parameters:{docs:{description:{component:d}}},argTypes:{value:{type:`number`,control:{type:`number`,min:0},description:`Current progress value. Omit for indeterminate progress.`},max:{type:`number`,control:{type:`number`,min:1},description:`Maximum progress value`,table:{defaultValue:{summary:`100`}}},fluid:{type:`boolean`,control:`boolean`,description:`Fills the width of the container`},a11yText:{type:{name:`string`,required:!0},control:`text`,description:'Localized accessibility label for the progress bar, describing the task in progress, such as "Upload progress". May be set to `null` only if accessibility is provided through other means, such as `aria-labelledby`.',table:{defaultValue:{summary:`"Progress"`}}},"<progress> attributes":{description:"All attributes and event handlers from [the native HTML `<progress>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/progress) will be passed through"}}},V=t(k,j),H=t(I,R),U=[`Default`,`Indeterminate`],V.parameters={...V.parameters,docs:{...V.parameters?.docs,source:{originalSource:`buildExtensionTemplate(DefaultTemplate, DefaultCode)`,...V.parameters?.docs?.source}}},H.parameters={...H.parameters,docs:{...H.parameters?.docs,source:{originalSource:`buildExtensionTemplate(IndeterminateTemplate, IndeterminateCode)`,...H.parameters?.docs?.source}}}})))()}W();export{V as Default,H as Indeterminate,U as __namedExportsOrder,B as default};

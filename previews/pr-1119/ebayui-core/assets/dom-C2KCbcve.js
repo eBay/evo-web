@@ -1,0 +1,1 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";function t(e){let t=e.style.width;e.style.width=`100vw`;let n=e.offsetWidth;return e.style.width=t,n}var n;function r(){return(r=e((()=>{n=typeof window<`u`&&window.matchMedia(`(prefers-reduced-motion: reduce)`).matches})))()}export{r as n,n as r,t};

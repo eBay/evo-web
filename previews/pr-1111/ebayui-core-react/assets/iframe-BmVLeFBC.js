@@ -1,0 +1,1 @@
+import{t as e}from"./iframe-BnW1_-31.js";e();

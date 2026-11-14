@@ -1,0 +1,29 @@
+import{a as e,n as t}from"./rolldown-runtime-DkW27tQK.js";import{t as n}from"./react-CK-NQdWx.js";import{t as r}from"./jsx-runtime-DeHZSEgm.js";import{t as i}from"./classnames-D09xBJOL.js";import{n as a,t as o}from"./use-form-reset-DCx6l1Hy.js";import{n as s,t as c}from"./star-dynamic-Dufy-j_6.js";function l(){return(l=t((()=>{})))()}function u({value:e,defaultValue:t=0,a11yText:n=`Rating`,a11yStarText:r=h,disabled:i,name:o,onValueChange:s,className:l,...u}){let g=(0,d.useId)(),_=o??`evo-star-rating-${g}`,[v,y]=(0,d.useState)(t),b=e!==void 0,x=b?e:v,S=(0,d.useRef)(null);return a(S,t,y),(0,p.jsx)(`div`,{...u,role:`radiogroup`,"aria-label":n??void 0,className:(0,f.default)(`star-rating-select`,l),children:m.map(e=>(0,p.jsxs)(`span`,{className:`star-rating-select__radio`,children:[(0,p.jsx)(`input`,{ref:e===1?S:void 0,"aria-label":r[e-1],className:(0,f.default)(`star-rating-select__control`,{"star-rating-select__control--filled":e<=x}),type:`radio`,name:_,value:e,disabled:i,checked:x===e,onChange:()=>{b||y(e),s?.(e)}}),(0,p.jsx)(`span`,{className:`star-rating-select__radio-icon`,children:(0,p.jsx)(c,{className:`star-rating__icon`})})]},e))})}var d,f,p,m,h;function g(){return(g=t((()=>{d=n(),f=e(i(),1),s(),o(),l(),p=r(),m=[1,2,3,4,5],h=[`1 star`,`2 stars`,`3 stars`,`4 stars`,`5 stars`];try{u.displayName=`EvoStarRatingSelect`,u.__docgenInfo={description:`Lets users pick a rating from 1 to 5 with five native radio buttons.
+
+Use \`value\` to control the rating or \`defaultValue\` to set a starting
+rating. \`a11yText\` names the group and \`a11yStarText\` names each star. For a
+read-only score, use \`EvoStarRating\`.
+
+## Usage
+
+\`\`\`tsx
+import { EvoStarRatingSelect } from "@evo-web/react/star-rating-select";
+
+<EvoStarRatingSelect
+  name="purchase-rating"
+  a11yText="Rate your purchase"
+  a11yStarText={["1 star", "2 stars", "3 stars", "4 stars", "5 stars"]}
+  onValueChange={(value) => setRating(value)}
+/>
+\`\`\``,displayName:`EvoStarRatingSelect`,filePath:`/home/runner/work/evo-web/evo-web/packages/evo-react/src/star-rating-select/star-rating-select.tsx`,methods:[],props:{value:{defaultValue:null,declarations:[{fileName:`evo-react/src/star-rating-select/types.ts`,name:`TypeLiteral`}],description:"Controlled selected rating from `0` to `5`; `0` means no selection.",name:`value`,required:!1,tags:{},type:{name:`enum`,raw:`StarRatingSelectValue`,value:[{value:`0`},{value:`1`},{value:`2`},{value:`3`},{value:`4`},{value:`5`}]}},disabled:{defaultValue:null,declarations:[{fileName:`evo-react/src/star-rating-select/types.ts`,name:`TypeLiteral`}],description:`Disables all five radio options.`,name:`disabled`,required:!1,tags:{},type:{name:`boolean`}},name:{defaultValue:null,declarations:[{fileName:`evo-react/src/star-rating-select/types.ts`,name:`TypeLiteral`}],description:`Shared name of the radio inputs. A stable generated name is used when omitted.`,name:`name`,required:!1,tags:{},type:{name:`string`}},a11yText:{defaultValue:{value:`Rating`},declarations:[{fileName:`evo-react/src/star-rating-select/types.ts`,name:`TypeLiteral`}],description:'Accessible name for the radio group. English default to be overridden is\n`"Rating"`. Pass `null` explicitly _only_ if alternative accessibility\ninformation is present, such as `aria-labelledby`.',name:`a11yText`,required:!1,tags:{},type:{name:`string | null`}},a11yStarText:{defaultValue:{value:`[
+  "1 star",
+  "2 stars",
+  "3 stars",
+  "4 stars",
+  "5 stars",
+]`},declarations:[{fileName:`evo-react/src/star-rating-select/types.ts`,name:`TypeLiteral`}],description:'Accessible names for the five radio choices, in order. English default to\nbe overridden is `"1 star", "2 stars", "3 stars", "4 stars", "5 stars"`.',name:`a11yStarText`,required:!1,tags:{},type:{name:`readonly [string, string, string, string, string]`}},onValueChange:{defaultValue:null,declarations:[{fileName:`evo-react/src/star-rating-select/types.ts`,name:`TypeLiteral`}],description:`Fired when a radio becomes selected, with the selected rating.`,name:`onValueChange`,required:!1,tags:{},type:{name:`((value: StarRatingSelectValue) => void)`}}},tags:{summary:`Interactive five-star rating with native radios.`}}}catch{}})))()}var _,v,y,b,x;function S(){return(S=t((()=>{g(),_=r(),v={title:`Form Input/EvoStarRatingSelect`,component:u,argTypes:{value:{control:{type:`range`,min:0,max:5,step:1}},defaultValue:{control:{type:`range`,min:0,max:5,step:1}},onValueChange:{action:`onValueChange`,table:{category:`Events`}}},args:{a11yText:`Rate your purchase`,a11yStarText:[`1 star`,`2 stars`,`3 stars`,`4 stars`,`5 stars`],defaultValue:0,disabled:!1,name:`purchase-rating`}},y={},b={render:e=>(0,_.jsxs)(`fieldset`,{children:[(0,_.jsx)(`legend`,{id:`purchase-rating-legend`,children:`Rate your purchase`}),(0,_.jsx)(u,{...e,a11yText:null,"aria-labelledby":`purchase-rating-legend`})]})},x=[`Default`,`InFieldset`],y.parameters={...y.parameters,docs:{...y.parameters?.docs,source:{originalSource:`{}`,...y.parameters?.docs?.source},description:{story:`The rating starts empty. Click a star or use the arrow keys to select one.`,...y.parameters?.docs?.description}}},b.parameters={...b.parameters,docs:{...b.parameters?.docs,source:{originalSource:`{
+  render: args => <fieldset>
+      <legend id="purchase-rating-legend">Rate your purchase</legend>
+      <EvoStarRatingSelect {...args} a11yText={null} aria-labelledby="purchase-rating-legend" />
+    </fieldset>
+}`,...b.parameters?.docs?.source},description:{story:"A visible legend can name the group through `aria-labelledby`.",...b.parameters?.docs?.description}}}})))()}S();export{y as Default,b as InFieldset,x as __namedExportsOrder,v as default};

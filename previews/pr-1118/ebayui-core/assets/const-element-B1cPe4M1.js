@@ -1,0 +1,1 @@
+import{t as e}from"./rolldown-runtime-DkW27tQK.js";import{d as t}from"./registry-CyvpKyn5.js";var n=e(((e,n)=>{var r=t().bF_,i=0;n.exports=function(e,t,n){return new a(e,t,n)};function a(e,t,n){r.call(this,e,t,null,null,n,null,{i:i++})}a.prototype=Object.create(r.prototype),a.prototype.e=function(e,t,n){var r=this.bX_(new a(e,t,n));return n===0?this.cp_():r}}));export{n as t};

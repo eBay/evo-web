@@ -1,0 +1,2 @@
+import{t as e}from"./_BR5vlmav.js";var t=`<div class=a11y-pattern-content><h1>Known Issues</h1><ul><li><a href=https://issues.chromium.org/issues/40260928>https://issues.chromium.org/issues/40260928</a></li><li><a href=https://issues.chromium.org/issues/40945405>https://issues.chromium.org/issues/40945405</a></li></ul></div>`,n=`b`,r=e=>{},i=e(`CXvNtg8`,t,`b`);export{r as $setup,t as $template,n as $walks,i as default};
+//# sourceMappingURL=_DC-7biJV.js.map

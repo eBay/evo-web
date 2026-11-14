@@ -1,0 +1,1 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{t}from"./react-CK-NQdWx.js";var n,r,i;function a(){return(a=e((()=>{n=t(),r=()=>Math.random().toString(16).slice(-4),i=()=>{let[e,t]=(0,n.useState)(``);return(0,n.useEffect)(()=>{t(r())},[]),e}})))()}export{r as n,i as r,a as t};
