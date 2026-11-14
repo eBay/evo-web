@@ -45,6 +45,30 @@ button.filter-chip--animated.filter-chip--selected {
     @include chip-mixins.selected-animation;
 }
 
+button.filter-chip:disabled,
+a.filter-chip:not([href]) {
+    border-color: var(--color-border-disabled);
+    color: var(--color-foreground-disabled);
+
+    &:hover::after,
+    &:active::after {
+        background-color: transparent;
+    }
+
+    &[aria-pressed="true"],
+    &.filter-chip--selected {
+        animation: none;
+        background-color: var(--color-background-disabled);
+        background-image: none;
+        border-color: var(--color-background-disabled);
+        color: var(--color-foreground-on-disabled);
+    }
+
+    .filter-chip__media > img {
+        filter: var(--color-media-disabled-filter);
+    }
+}
+
 button.filter-chip[aria-expanded="false"]:active .filter-chip__trailing {
     rotate: 180deg;
 

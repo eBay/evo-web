@@ -207,6 +207,32 @@ button.filter-chip--animated[aria-pressed="true"] {
         var(--motion-easing-standard);
 }
 
+a.filter-chip:not([href]),
+button.filter-chip:disabled {
+    border-color: var(--color-border-disabled);
+    color: var(--color-foreground-disabled);
+}
+a.filter-chip:not([href]):active:after,
+a.filter-chip:not([href]):hover:after,
+button.filter-chip:disabled:active:after,
+button.filter-chip:disabled:hover:after {
+    background-color: initial;
+}
+a.filter-chip:not([href]).filter-chip--selected,
+a.filter-chip:not([href])[aria-pressed="true"],
+button.filter-chip:disabled.filter-chip--selected,
+button.filter-chip:disabled[aria-pressed="true"] {
+    animation: none;
+    background-color: var(--color-background-disabled);
+    background-image: none;
+    border-color: var(--color-background-disabled);
+    color: var(--color-foreground-on-disabled);
+}
+a.filter-chip:not([href]) .filter-chip__media > img,
+button.filter-chip:disabled .filter-chip__media > img {
+    filter: var(--color-media-disabled-filter);
+}
+
 button.filter-chip[aria-expanded="false"]:active .filter-chip__trailing {
     rotate: 180deg;
     animation: chevron-bounce-close var(--motion-duration-medium-1)
