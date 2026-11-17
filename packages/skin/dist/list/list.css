@@ -74,11 +74,13 @@
     position: absolute;
 }
 .list li > a:not([disabled], [aria-disabled="true"], a:not([href])):hover:after,
-.list li > a[href]:hover:after,
 .list
     li
-    > button:not([disabled], [aria-disabled="true"], a:not([href])):hover:after,
-.list li > button[href]:hover:after {
+    > button:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):hover:after {
     background-color: var(--color-state-layer-hover);
 }
 .list
@@ -88,29 +90,25 @@
         [aria-disabled="true"],
         a:not([href])
     ):focus-visible:after,
-.list li > a[href]:focus-visible:after,
 .list
     li
     > button:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):focus-visible:after,
-.list li > button[href]:focus-visible:after {
+    ):focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 .list
     li
     > a:not([disabled], [aria-disabled="true"], a:not([href])):active:after,
-.list li > a[href]:active:after,
 .list
     li
     > button:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):active:after,
-.list li > button[href]:active:after {
+    ):active:after {
     background-color: var(--color-state-layer-pressed);
 }
 

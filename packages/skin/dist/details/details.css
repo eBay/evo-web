@@ -23,24 +23,21 @@ summary.details__summary:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):hover:after,
-summary.details__summary[href]:hover:after {
+    ):hover:after {
     background-color: var(--color-state-layer-hover);
 }
 summary.details__summary:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):focus-visible:after,
-summary.details__summary[href]:focus-visible:after {
+    ):focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 summary.details__summary:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):active:after,
-summary.details__summary[href]:active:after {
+    ):active:after {
     background-color: var(--color-state-layer-pressed);
 }
 summary.details__summary {

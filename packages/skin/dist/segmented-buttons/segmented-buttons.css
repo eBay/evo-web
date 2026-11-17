@@ -83,23 +83,20 @@
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):hover:after,
-.segmented-buttons__button:not([aria-current])[href]:hover:after {
+    ):hover:after {
     background-color: var(--color-state-layer-hover);
 }
 .segmented-buttons__button:not([aria-current]):not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):focus-visible:after,
-.segmented-buttons__button:not([aria-current])[href]:focus-visible:after {
+    ):focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 .segmented-buttons__button:not([aria-current]):not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):active:after,
-.segmented-buttons__button:not([aria-current])[href]:active:after {
+    ):active:after {
     background-color: var(--color-state-layer-pressed);
 }

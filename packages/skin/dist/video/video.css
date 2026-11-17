@@ -62,24 +62,21 @@
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):hover:after,
-.video__control[href]:hover:after {
+    ):hover:after {
     background-color: var(--color-state-layer-hover);
 }
 .video__control:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):focus-visible:after,
-.video__control[href]:focus-visible:after {
+    ):focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 .video__control:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):active:after,
-.video__control[href]:active:after {
+    ):active:after {
     background-color: var(--color-state-layer-pressed);
 }
 .video__control {

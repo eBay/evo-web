@@ -55,13 +55,11 @@ a.filter-link:not(
         [aria-disabled="true"],
         a:not([href])
     ):hover:after,
-a.filter-link[href]:hover:after,
 button.filter-button:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):hover:after,
-button.filter-button[href]:hover:after {
+    ):hover:after {
     background-color: var(--color-state-layer-hover);
 }
 a.filter-link:not(
@@ -69,13 +67,11 @@ a.filter-link:not(
         [aria-disabled="true"],
         a:not([href])
     ):focus-visible:after,
-a.filter-link[href]:focus-visible:after,
 button.filter-button:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):focus-visible:after,
-button.filter-button[href]:focus-visible:after {
+    ):focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 a.filter-link:not(
@@ -83,13 +79,11 @@ a.filter-link:not(
         [aria-disabled="true"],
         a:not([href])
     ):active:after,
-a.filter-link[href]:active:after,
 button.filter-button:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):active:after,
-button.filter-button[href]:active:after {
+    ):active:after {
     background-color: var(--color-state-layer-pressed);
 }
 

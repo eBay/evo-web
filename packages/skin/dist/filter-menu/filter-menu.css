@@ -83,13 +83,11 @@ span.filter-menu__item[role^="menuitem"] {
         [aria-disabled="true"],
         a:not([href])
     ):hover:after,
-.filter-menu-form__item[href]:hover:after,
 .filter-menu__item[role^="menuitem"]:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):hover:after,
-.filter-menu__item[role^="menuitem"][href]:hover:after {
+    ):hover:after {
     background-color: var(--color-state-layer-hover);
 }
 .filter-menu-form__item:not(
@@ -97,13 +95,11 @@ span.filter-menu__item[role^="menuitem"] {
         [aria-disabled="true"],
         a:not([href])
     ):focus-visible:after,
-.filter-menu-form__item[href]:focus-visible:after,
 .filter-menu__item[role^="menuitem"]:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):focus-visible:after,
-.filter-menu__item[role^="menuitem"][href]:focus-visible:after {
+    ):focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 .filter-menu-form__item:not(
@@ -111,13 +107,11 @@ span.filter-menu__item[role^="menuitem"] {
         [aria-disabled="true"],
         a:not([href])
     ):active:after,
-.filter-menu-form__item[href]:active:after,
 .filter-menu__item[role^="menuitem"]:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):active:after,
-.filter-menu__item[role^="menuitem"][href]:active:after {
+    ):active:after {
     background-color: var(--color-state-layer-pressed);
 }
 .filter-menu-form__item,
@@ -206,13 +200,11 @@ button.filter-menu-form__footer[type="submit"]:not(
         [aria-disabled="true"],
         a:not([href])
     ):hover:after,
-button.filter-menu-form__footer[type="submit"][href]:hover:after,
 button.filter-menu__footer:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):hover:after,
-button.filter-menu__footer[href]:hover:after {
+    ):hover:after {
     background-color: var(--color-state-layer-hover);
 }
 button.filter-menu-form__footer[type="submit"]:not(
@@ -220,13 +212,11 @@ button.filter-menu-form__footer[type="submit"]:not(
         [aria-disabled="true"],
         a:not([href])
     ):focus-visible:after,
-button.filter-menu-form__footer[type="submit"][href]:focus-visible:after,
 button.filter-menu__footer:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):focus-visible:after,
-button.filter-menu__footer[href]:focus-visible:after {
+    ):focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 button.filter-menu-form__footer[type="submit"]:not(
@@ -234,13 +224,11 @@ button.filter-menu-form__footer[type="submit"]:not(
         [aria-disabled="true"],
         a:not([href])
     ):active:after,
-button.filter-menu-form__footer[type="submit"][href]:active:after,
 button.filter-menu__footer:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):active:after,
-button.filter-menu__footer[href]:active:after {
+    ):active:after {
     background-color: var(--color-state-layer-pressed);
 }
 button.filter-menu-form__footer[type="submit"],

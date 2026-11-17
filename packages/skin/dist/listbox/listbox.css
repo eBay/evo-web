@@ -79,24 +79,21 @@ div.listbox__option[role="option"]:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):hover:after,
-div.listbox__option[role="option"][href]:hover:after {
+    ):hover:after {
     background-color: var(--color-state-layer-hover);
 }
 div.listbox__option[role="option"]:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):focus-visible:after,
-div.listbox__option[role="option"][href]:focus-visible:after {
+    ):focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 div.listbox__option[role="option"]:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):active:after,
-div.listbox__option[role="option"][href]:active:after {
+    ):active:after {
     background-color: var(--color-state-layer-pressed);
 }
 div.listbox__option[role="option"][hidden] {

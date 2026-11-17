@@ -84,13 +84,11 @@ a.filter-chip:not(
         [aria-disabled="true"],
         a:not([href])
     ):hover:after,
-a.filter-chip[href]:hover:after,
 button.filter-chip:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):hover:after,
-button.filter-chip[href]:hover:after {
+    ):hover:after {
     background-color: var(--color-state-layer-hover);
 }
 a.filter-chip:not(
@@ -98,13 +96,11 @@ a.filter-chip:not(
         [aria-disabled="true"],
         a:not([href])
     ):focus-visible:after,
-a.filter-chip[href]:focus-visible:after,
 button.filter-chip:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):focus-visible:after,
-button.filter-chip[href]:focus-visible:after {
+    ):focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 a.filter-chip:not(
@@ -112,13 +108,11 @@ a.filter-chip:not(
         [aria-disabled="true"],
         a:not([href])
     ):active:after,
-a.filter-chip[href]:active:after,
 button.filter-chip:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):active:after,
-button.filter-chip[href]:active:after {
+    ):active:after {
     background-color: var(--color-state-layer-pressed);
 }
 
@@ -183,19 +177,16 @@ a.filter-chip--selected:not(
         [aria-disabled="true"],
         a:not([href])
     ):hover:after,
-a.filter-chip--selected[href]:hover:after,
 button.filter-chip.filter-chip--selected:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
     ):hover:after,
-button.filter-chip.filter-chip--selected[href]:hover:after,
 button.filter-chip[aria-pressed="true"]:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):hover:after,
-button.filter-chip[aria-pressed="true"][href]:hover:after {
+    ):hover:after {
     background-color: var(--color-state-layer-hover-on-strong);
 }
 a.filter-chip--selected:not(
@@ -203,19 +194,16 @@ a.filter-chip--selected:not(
         [aria-disabled="true"],
         a:not([href])
     ):focus-visible:after,
-a.filter-chip--selected[href]:focus-visible:after,
 button.filter-chip.filter-chip--selected:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
     ):focus-visible:after,
-button.filter-chip.filter-chip--selected[href]:focus-visible:after,
 button.filter-chip[aria-pressed="true"]:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):focus-visible:after,
-button.filter-chip[aria-pressed="true"][href]:focus-visible:after {
+    ):focus-visible:after {
     background-color: var(--color-state-layer-focus-on-strong);
 }
 a.filter-chip--selected:not(
@@ -223,19 +211,16 @@ a.filter-chip--selected:not(
         [aria-disabled="true"],
         a:not([href])
     ):active:after,
-a.filter-chip--selected[href]:active:after,
 button.filter-chip.filter-chip--selected:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
     ):active:after,
-button.filter-chip.filter-chip--selected[href]:active:after,
 button.filter-chip[aria-pressed="true"]:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):active:after,
-button.filter-chip[aria-pressed="true"][href]:active:after {
+    ):active:after {
     background-color: var(--color-state-layer-pressed-on-strong);
 }
 

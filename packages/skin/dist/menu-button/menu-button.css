@@ -98,24 +98,21 @@ div.menu-button__item[role^="menuitem"]:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):hover:after,
-div.menu-button__item[role^="menuitem"][href]:hover:after {
+    ):hover:after {
     background-color: var(--color-state-layer-hover);
 }
 div.menu-button__item[role^="menuitem"]:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):focus-visible:after,
-div.menu-button__item[role^="menuitem"][href]:focus-visible:after {
+    ):focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 div.menu-button__item[role^="menuitem"]:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):active:after,
-div.menu-button__item[role^="menuitem"][href]:active:after {
+    ):active:after {
     background-color: var(--color-state-layer-pressed);
 }
 div.menu-button__item[role^="menuitem"]:active {
@@ -265,14 +262,12 @@ div.menu-button__item[role^="menuitem"][aria-checked="true"] svg.icon--16 {
         [aria-disabled="true"],
         a:not([href])
     ):hover:after,
-.fake-menu-button__menu a.fake-menu-button__item[href]:hover:after,
 .fake-menu-button__menu
     button.fake-menu-button__item:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):hover:after,
-.fake-menu-button__menu button.fake-menu-button__item[href]:hover:after {
+    ):hover:after {
     background-color: var(--color-state-layer-hover);
 }
 .fake-menu-button__menu
@@ -281,15 +276,12 @@ div.menu-button__item[role^="menuitem"][aria-checked="true"] svg.icon--16 {
         [aria-disabled="true"],
         a:not([href])
     ):focus-visible:after,
-.fake-menu-button__menu a.fake-menu-button__item[href]:focus-visible:after,
 .fake-menu-button__menu
     button.fake-menu-button__item:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):focus-visible:after,
-.fake-menu-button__menu
-    button.fake-menu-button__item[href]:focus-visible:after {
+    ):focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 .fake-menu-button__menu
@@ -298,14 +290,12 @@ div.menu-button__item[role^="menuitem"][aria-checked="true"] svg.icon--16 {
         [aria-disabled="true"],
         a:not([href])
     ):active:after,
-.fake-menu-button__menu a.fake-menu-button__item[href]:active:after,
 .fake-menu-button__menu
     button.fake-menu-button__item:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):active:after,
-.fake-menu-button__menu button.fake-menu-button__item[href]:active:after {
+    ):active:after {
     background-color: var(--color-state-layer-pressed);
 }
 .fake-menu-button__menu a.fake-menu-button__item:active,

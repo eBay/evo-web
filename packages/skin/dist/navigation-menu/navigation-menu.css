@@ -97,13 +97,11 @@ a.navigation-menu__item:not(
         [aria-disabled="true"],
         a:not([href])
     ):hover:after,
-a.navigation-menu__item[href]:hover:after,
 button.navigation-menu__item:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):hover:after,
-button.navigation-menu__item[href]:hover:after {
+    ):hover:after {
     background-color: var(--color-state-layer-hover);
 }
 a.navigation-menu__item:not(
@@ -111,13 +109,11 @@ a.navigation-menu__item:not(
         [aria-disabled="true"],
         a:not([href])
     ):focus-visible:after,
-a.navigation-menu__item[href]:focus-visible:after,
 button.navigation-menu__item:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):focus-visible:after,
-button.navigation-menu__item[href]:focus-visible:after {
+    ):focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 a.navigation-menu__item:not(
@@ -125,13 +121,11 @@ a.navigation-menu__item:not(
         [aria-disabled="true"],
         a:not([href])
     ):active:after,
-a.navigation-menu__item[href]:active:after,
 button.navigation-menu__item:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):active:after,
-button.navigation-menu__item[href]:active:after {
+    ):active:after {
     background-color: var(--color-state-layer-pressed);
 }
 a.navigation-menu__item:active,

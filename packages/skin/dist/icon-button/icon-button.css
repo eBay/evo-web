@@ -28,19 +28,16 @@ button.icon-button:after {
     position: absolute;
 }
 a.icon-link:not([disabled], [aria-disabled="true"], a:not([href])):hover:after,
-a.icon-link[href]:hover:after,
 button.icon-btn:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
     ):hover:after,
-button.icon-btn[href]:hover:after,
 button.icon-button:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):hover:after,
-button.icon-button[href]:hover:after {
+    ):hover:after {
     background-color: var(--color-state-layer-hover);
 }
 a.icon-link:not(
@@ -48,35 +45,29 @@ a.icon-link:not(
         [aria-disabled="true"],
         a:not([href])
     ):focus-visible:after,
-a.icon-link[href]:focus-visible:after,
 button.icon-btn:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
     ):focus-visible:after,
-button.icon-btn[href]:focus-visible:after,
 button.icon-button:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):focus-visible:after,
-button.icon-button[href]:focus-visible:after {
+    ):focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 a.icon-link:not([disabled], [aria-disabled="true"], a:not([href])):active:after,
-a.icon-link[href]:active:after,
 button.icon-btn:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
     ):active:after,
-button.icon-btn[href]:active:after,
 button.icon-button:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):active:after,
-button.icon-button[href]:active:after {
+    ):active:after {
     background-color: var(--color-state-layer-pressed);
 }
 a.icon-link,
@@ -200,9 +191,6 @@ a.icon-link--transparent:not(
         [aria-disabled="true"],
         a:not([href])
     ):hover:after,
-a.icon-link--transparent[href]:active:after,
-a.icon-link--transparent[href]:focus-visible:after,
-a.icon-link--transparent[href]:hover:after,
 button.icon-btn--transparent,
 button.icon-btn--transparent:not(
         [disabled],
@@ -219,9 +207,6 @@ button.icon-btn--transparent:not(
         [aria-disabled="true"],
         a:not([href])
     ):hover:after,
-button.icon-btn--transparent[href]:active:after,
-button.icon-btn--transparent[href]:focus-visible:after,
-button.icon-btn--transparent[href]:hover:after,
 button.icon-button--transparent,
 button.icon-button--transparent:not(
         [disabled],
@@ -237,10 +222,7 @@ button.icon-button--transparent:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):hover:after,
-button.icon-button--transparent[href]:active:after,
-button.icon-button--transparent[href]:focus-visible:after,
-button.icon-button--transparent[href]:hover:after {
+    ):hover:after {
     background-color: initial;
 }
 

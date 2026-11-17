@@ -123,24 +123,21 @@ div.carousel {
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):hover:after,
-.carousel__control[href]:hover:after {
+    ):hover:after {
     background-color: var(--color-state-layer-hover);
 }
 .carousel__control:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):focus-visible:after,
-.carousel__control[href]:focus-visible:after {
+    ):focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 .carousel__control:not(
         [disabled],
         [aria-disabled="true"],
         a:not([href])
-    ):active:after,
-.carousel__control[href]:active:after {
+    ):active:after {
     background-color: var(--color-state-layer-pressed);
 }
 .carousel__control {
