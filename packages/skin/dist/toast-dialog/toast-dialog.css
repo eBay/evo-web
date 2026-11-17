@@ -112,36 +112,42 @@ button.icon-button.toast-dialog__close:after {
 }
 button.icon-btn.toast-dialog__close:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):hover:after,
 button.icon-btn.toast-dialog__close[href]:hover:after,
 button.icon-button.toast-dialog__close:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):hover:after,
 button.icon-button.toast-dialog__close[href]:hover:after {
     background-color: var(--color-state-layer-hover);
 }
 button.icon-btn.toast-dialog__close:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):focus-visible:after,
 button.icon-btn.toast-dialog__close[href]:focus-visible:after,
 button.icon-button.toast-dialog__close:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):focus-visible:after,
 button.icon-button.toast-dialog__close[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 button.icon-btn.toast-dialog__close:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):active:after,
 button.icon-btn.toast-dialog__close[href]:active:after,
 button.icon-button.toast-dialog__close:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):active:after,
 button.icon-button.toast-dialog__close[href]:active:after {
     background-color: var(--color-state-layer-pressed);
@@ -181,18 +187,31 @@ button.icon-button.toast-dialog__close > svg {
     position: absolute;
 }
 .toast-dialog__footer
-    button.btn--primary:not([disabled], [aria-disabled="true"]):hover:after,
+    button.btn--primary:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):hover:after,
 .toast-dialog__footer button.btn--primary[href]:hover:after,
 .toast-dialog__footer
-    button.btn--secondary:not([disabled], [aria-disabled="true"]):hover:after,
+    button.btn--secondary:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):hover:after,
 .toast-dialog__footer button.btn--secondary[href]:hover:after,
 .toast-dialog__footer
-    button.button--primary:not([disabled], [aria-disabled="true"]):hover:after,
+    button.button--primary:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):hover:after,
 .toast-dialog__footer button.button--primary[href]:hover:after,
 .toast-dialog__footer
     button.button--secondary:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):hover:after,
 .toast-dialog__footer button.button--secondary[href]:hover:after {
     background-color: var(--color-state-layer-hover);
@@ -200,42 +219,59 @@ button.icon-button.toast-dialog__close > svg {
 .toast-dialog__footer
     button.btn--primary:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):focus-visible:after,
 .toast-dialog__footer button.btn--primary[href]:focus-visible:after,
 .toast-dialog__footer
     button.btn--secondary:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):focus-visible:after,
 .toast-dialog__footer button.btn--secondary[href]:focus-visible:after,
 .toast-dialog__footer
     button.button--primary:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):focus-visible:after,
 .toast-dialog__footer button.button--primary[href]:focus-visible:after,
 .toast-dialog__footer
     button.button--secondary:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):focus-visible:after,
 .toast-dialog__footer button.button--secondary[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 .toast-dialog__footer
-    button.btn--primary:not([disabled], [aria-disabled="true"]):active:after,
+    button.btn--primary:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):active:after,
 .toast-dialog__footer button.btn--primary[href]:active:after,
 .toast-dialog__footer
-    button.btn--secondary:not([disabled], [aria-disabled="true"]):active:after,
+    button.btn--secondary:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):active:after,
 .toast-dialog__footer button.btn--secondary[href]:active:after,
 .toast-dialog__footer
-    button.button--primary:not([disabled], [aria-disabled="true"]):active:after,
+    button.button--primary:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):active:after,
 .toast-dialog__footer button.button--primary[href]:active:after,
 .toast-dialog__footer
     button.button--secondary:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):active:after,
 .toast-dialog__footer button.button--secondary[href]:active:after {
     background-color: var(--color-state-layer-pressed);

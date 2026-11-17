@@ -32,7 +32,7 @@
 @mixin standard($radius: null) {
     @include base($radius: $radius);
 
-    &:not([disabled], [aria-disabled="true"]),
+    &:not([disabled], [aria-disabled="true"], a:not([href])),
     &[href] {
         &:hover::after {
             background-color: var(--color-state-layer-hover);
@@ -47,7 +47,7 @@
 }
 
 @mixin transparent() {
-    &:not([disabled], [aria-disabled="true"]),
+    &:not([disabled], [aria-disabled="true"], a:not([href])),
     &[href] {
         &:hover::after,
         &:focus-visible::after,
@@ -60,7 +60,7 @@
 @mixin strong() {
     @include base(var(--color-state-layer-neutral-on-strong));
 
-    &:not([disabled], [aria-disabled="true"]),
+    &:not([disabled], [aria-disabled="true"], a:not([href])),
     &[href] {
         &:hover::after {
             background-color: var(--color-state-layer-hover-on-strong);

@@ -147,18 +147,27 @@ a.button-link--primary:after {
     pointer-events: none;
     position: absolute;
 }
-a.button-link--primary:not([disabled], [aria-disabled="true"]):hover:after,
+a.button-link--primary:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):hover:after,
 a.button-link--primary[href]:hover:after {
     background-color: var(--color-state-layer-hover);
 }
 a.button-link--primary:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):focus-visible:after,
 a.button-link--primary[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
-a.button-link--primary:not([disabled], [aria-disabled="true"]):active:after,
+a.button-link--primary:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):active:after,
 a.button-link--primary[href]:active:after {
     background-color: var(--color-state-layer-pressed);
 }
@@ -185,21 +194,24 @@ a.button-link--primary.button-link--destructive:after {
 }
 a.button-link--primary.button-link--destructive:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):hover:after,
 a.button-link--primary.button-link--destructive[href]:hover:after {
     background-color: var(--color-state-layer-hover);
 }
 a.button-link--primary.button-link--destructive:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):focus-visible:after,
 a.button-link--primary.button-link--destructive[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 a.button-link--primary.button-link--destructive:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):active:after,
 a.button-link--primary.button-link--destructive[href]:active:after {
     background-color: var(--color-state-layer-pressed);
@@ -254,18 +266,27 @@ a.button-link--secondary:after {
     pointer-events: none;
     position: absolute;
 }
-a.button-link--secondary:not([disabled], [aria-disabled="true"]):hover:after,
+a.button-link--secondary:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):hover:after,
 a.button-link--secondary[href]:hover:after {
     background-color: var(--color-state-layer-hover);
 }
 a.button-link--secondary:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):focus-visible:after,
 a.button-link--secondary[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
-a.button-link--secondary:not([disabled], [aria-disabled="true"]):active:after,
+a.button-link--secondary:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):active:after,
 a.button-link--secondary[href]:active:after {
     background-color: var(--color-state-layer-pressed);
 }
@@ -324,18 +345,27 @@ a.button-link--tertiary:after {
     pointer-events: none;
     position: absolute;
 }
-a.button-link--tertiary:not([disabled], [aria-disabled="true"]):hover:after,
+a.button-link--tertiary:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):hover:after,
 a.button-link--tertiary[href]:hover:after {
     background-color: var(--color-state-layer-hover);
 }
 a.button-link--tertiary:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):focus-visible:after,
 a.button-link--tertiary[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
-a.button-link--tertiary:not([disabled], [aria-disabled="true"]):active:after,
+a.button-link--tertiary:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):active:after,
 a.button-link--tertiary[href]:active:after {
     background-color: var(--color-state-layer-pressed);
 }
@@ -387,15 +417,27 @@ a.button-link--form:after {
     pointer-events: none;
     position: absolute;
 }
-a.button-link--form:not([disabled], [aria-disabled="true"]):hover:after,
+a.button-link--form:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):hover:after,
 a.button-link--form[href]:hover:after {
     background-color: var(--color-state-layer-hover);
 }
-a.button-link--form:not([disabled], [aria-disabled="true"]):focus-visible:after,
+a.button-link--form:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):focus-visible:after,
 a.button-link--form[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
-a.button-link--form:not([disabled], [aria-disabled="true"]):active:after,
+a.button-link--form:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):active:after,
 a.button-link--form[href]:active:after {
     background-color: var(--color-state-layer-pressed);
 }

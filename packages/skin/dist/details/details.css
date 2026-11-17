@@ -19,18 +19,27 @@ summary.details__summary:after {
     pointer-events: none;
     position: absolute;
 }
-summary.details__summary:not([disabled], [aria-disabled="true"]):hover:after,
+summary.details__summary:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):hover:after,
 summary.details__summary[href]:hover:after {
     background-color: var(--color-state-layer-hover);
 }
 summary.details__summary:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):focus-visible:after,
 summary.details__summary[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
-summary.details__summary:not([disabled], [aria-disabled="true"]):active:after,
+summary.details__summary:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):active:after,
 summary.details__summary[href]:active:after {
     background-color: var(--color-state-layer-pressed);
 }

@@ -58,15 +58,27 @@
     pointer-events: none;
     position: absolute;
 }
-.video__control:not([disabled], [aria-disabled="true"]):hover:after,
+.video__control:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):hover:after,
 .video__control[href]:hover:after {
     background-color: var(--color-state-layer-hover);
 }
-.video__control:not([disabled], [aria-disabled="true"]):focus-visible:after,
+.video__control:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):focus-visible:after,
 .video__control[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
-.video__control:not([disabled], [aria-disabled="true"]):active:after,
+.video__control:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):active:after,
 .video__control[href]:active:after {
     background-color: var(--color-state-layer-pressed);
 }

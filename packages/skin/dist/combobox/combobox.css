@@ -95,21 +95,24 @@ span.combobox {
 }
 .combobox__option[role^="option"]:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):hover:after,
 .combobox__option[role^="option"][href]:hover:after {
     background-color: var(--color-state-layer-hover);
 }
 .combobox__option[role^="option"]:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):focus-visible:after,
 .combobox__option[role^="option"][href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 .combobox__option[role^="option"]:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):active:after,
 .combobox__option[role^="option"][href]:active:after {
     background-color: var(--color-state-layer-pressed);

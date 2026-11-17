@@ -145,13 +145,15 @@ span.pagination__item button.icon-button--transparent:after {
 span.pagination__item
     button.icon-btn--transparent:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):hover:after,
 span.pagination__item button.icon-btn--transparent[href]:hover:after,
 span.pagination__item
     button.icon-button--transparent:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):hover:after,
 span.pagination__item button.icon-button--transparent[href]:hover:after {
     background-color: var(--color-state-layer-hover);
@@ -159,13 +161,15 @@ span.pagination__item button.icon-button--transparent[href]:hover:after {
 span.pagination__item
     button.icon-btn--transparent:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):focus-visible:after,
 span.pagination__item button.icon-btn--transparent[href]:focus-visible:after,
 span.pagination__item
     button.icon-button--transparent:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):focus-visible:after,
 span.pagination__item
     button.icon-button--transparent[href]:focus-visible:after {
@@ -174,13 +178,15 @@ span.pagination__item
 span.pagination__item
     button.icon-btn--transparent:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):active:after,
 span.pagination__item button.icon-btn--transparent[href]:active:after,
 span.pagination__item
     button.icon-button--transparent:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):active:after,
 span.pagination__item button.icon-button--transparent[href]:active:after {
     background-color: var(--color-state-layer-pressed);

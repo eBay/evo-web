@@ -55,21 +55,24 @@ button.filter-menu-button__button:after {
 }
 button.filter-menu-button__button:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):hover:after,
 button.filter-menu-button__button[href]:hover:after {
     background-color: var(--color-state-layer-hover);
 }
 button.filter-menu-button__button:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):focus-visible:after,
 button.filter-menu-button__button[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 button.filter-menu-button__button:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):active:after,
 button.filter-menu-button__button[href]:active:after {
     background-color: var(--color-state-layer-pressed);
@@ -276,18 +279,27 @@ span.filter-menu-button__radio svg.icon--checked {
     pointer-events: none;
     position: absolute;
 }
-.filter-menu-button__item:not([disabled], [aria-disabled="true"]):hover:after,
+.filter-menu-button__item:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):hover:after,
 .filter-menu-button__item[href]:hover:after {
     background-color: var(--color-state-layer-hover);
 }
 .filter-menu-button__item:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):focus-visible:after,
 .filter-menu-button__item[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
-.filter-menu-button__item:not([disabled], [aria-disabled="true"]):active:after,
+.filter-menu-button__item:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):active:after,
 .filter-menu-button__item[href]:active:after {
     background-color: var(--color-state-layer-pressed);
 }
@@ -355,21 +367,24 @@ button.filter-menu-button__footer:after {
 }
 button.filter-menu-button__footer:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):hover:after,
 button.filter-menu-button__footer[href]:hover:after {
     background-color: var(--color-state-layer-hover);
 }
 button.filter-menu-button__footer:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):focus-visible:after,
 button.filter-menu-button__footer[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 button.filter-menu-button__footer:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):active:after,
 button.filter-menu-button__footer[href]:active:after {
     background-color: var(--color-state-layer-pressed);

@@ -50,24 +50,45 @@ button.filter-button:after {
     pointer-events: none;
     position: absolute;
 }
-a.filter-link:not([disabled], [aria-disabled="true"]):hover:after,
+a.filter-link:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):hover:after,
 a.filter-link[href]:hover:after,
-button.filter-button:not([disabled], [aria-disabled="true"]):hover:after,
+button.filter-button:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):hover:after,
 button.filter-button[href]:hover:after {
     background-color: var(--color-state-layer-hover);
 }
-a.filter-link:not([disabled], [aria-disabled="true"]):focus-visible:after,
+a.filter-link:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):focus-visible:after,
 a.filter-link[href]:focus-visible:after,
 button.filter-button:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):focus-visible:after,
 button.filter-button[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
-a.filter-link:not([disabled], [aria-disabled="true"]):active:after,
+a.filter-link:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):active:after,
 a.filter-link[href]:active:after,
-button.filter-button:not([disabled], [aria-disabled="true"]):active:after,
+button.filter-button:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):active:after,
 button.filter-button[href]:active:after {
     background-color: var(--color-state-layer-pressed);
 }
