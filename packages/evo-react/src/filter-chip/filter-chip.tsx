@@ -152,7 +152,7 @@ export function EvoFilterChip({
       ref={rootRef}
       type="button"
       disabled={disabled}
-      aria-selected={!isMenu ? (selected ? "true" : "false") : undefined}
+      aria-pressed={!isMenu ? (selected ? "true" : "false") : undefined}
       aria-expanded={isMenu ? (open ? "true" : "false") : undefined}
       className={rootClassName}
       onClick={handleClick}

@@ -47,7 +47,7 @@ export interface Input
       ...input as Marko.HTML.Button
       disabled=disabled
       type="button"
-      aria-selected=!isMenu && (selected ? "true" : "false")
+      aria-pressed=!isMenu && (selected ? "true" : "false")
     />
   </else>
 </define>

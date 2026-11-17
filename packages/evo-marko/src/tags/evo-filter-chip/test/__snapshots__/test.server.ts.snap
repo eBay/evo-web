@@ -2,7 +2,7 @@
 
 exports[`evo-filter-chip > renders as link 1`] = `
 "<button
-  aria-selected="false"
+  aria-pressed="false"
   class="filter-chip"
   href="www.ebay.com"
   type="button"
@@ -61,7 +61,7 @@ exports[`evo-filter-chip > renders as link selected 1`] = `
 
 exports[`evo-filter-chip > renders expressive 1`] = `
 "<button
-  aria-selected="false"
+  aria-pressed="false"
   class="filter-chip filter-chip--expressive"
   type="button"
 >
@@ -83,7 +83,7 @@ exports[`evo-filter-chip > renders expressive 1`] = `
 
 exports[`evo-filter-chip > renders expressive selected 1`] = `
 "<button
-  aria-selected="true"
+  aria-pressed="true"
   class="filter-chip filter-chip--expressive"
   type="button"
 >
@@ -243,7 +243,7 @@ exports[`evo-filter-chip > renders menu button selected 1`] = `
 
 exports[`evo-filter-chip > renders static default 1`] = `
 "<button
-  aria-selected="false"
+  aria-pressed="false"
   class="filter-chip"
   type="button"
 >
@@ -275,7 +275,7 @@ exports[`evo-filter-chip > renders static default 1`] = `
 
 exports[`evo-filter-chip > renders static selected 1`] = `
 "<button
-  aria-selected="true"
+  aria-pressed="true"
   class="filter-chip"
   type="button"
 >
