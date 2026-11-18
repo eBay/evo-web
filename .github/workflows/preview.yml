@@ -1,22 +1,39 @@
 name: PR Preview
 
+# Same-repo PRs deploy on every push. Fork PRs can't get a write token under
+# pull_request, so they run via pull_request_target instead, gated on the
+# external-preview environment: each push waits for a maintainer to review the
+# diff and click "Review deployments" -> "Approve and deploy". Only the build
+# job runs PR code, with a read-only token, no cache and no credentials; the
+# jobs that write never check it out.
+
 on:
   pull_request:
     types: [opened, synchronize, reopened]
+  pull_request_target:
+    types: [opened, synchronize, reopened]
 
 concurrency:
-  group: "preview-${{ github.head_ref }}"
+  # Both events fire for every PR (only one does any work), so key on the
+  # event too, or the idle run would cancel the real one.
+  group: "preview-${{ github.event_name }}-${{ github.event.pull_request.number }}"
   cancel-in-progress: true
 
+env:
+  IS_FORK: ${{ github.event.pull_request.head.repo.full_name != github.repository }}
+
+# Each job runs for one event only: pull_request for same-repo PRs,
+# pull_request_target for forks.
 jobs:
-  deploy-preview:
+  mark-deploying:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.head.repo.full_name == github.repository
+    if: >-
+      (github.event_name == 'pull_request') ==
+      (github.event.pull_request.head.repo.full_name == github.repository)
+    environment: ${{ github.event_name == 'pull_request_target' && 'external-preview' || '' }}
     permissions:
-      contents: write
-      pull-requests: write
       issues: write
-      deployments: read
+      pull-requests: write
     steps:
       - name: Post "updating" status to PR
         uses: actions/github-script@v7
@@ -47,14 +64,29 @@ jobs:
               });
             }
 
+  build:
+    runs-on: ubuntu-latest
+    if: >-
+      (github.event_name == 'pull_request') ==
+      (github.event.pull_request.head.repo.full_name == github.repository)
+    environment: ${{ github.event_name == 'pull_request_target' && 'external-preview' || '' }}
+    permissions:
+      contents: read
+    steps:
       - name: Checkout code
         uses: actions/checkout@v6
+        with:
+          # Forks build the exact commit that was approved.
+          ref: ${{ env.IS_FORK == 'true' && github.event.pull_request.head.sha || '' }}
+          persist-credentials: false
 
+      # No npm cache for forks: under pull_request_target it would be saved to
+      # the base branch's scope, where untrusted code could poison it.
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
           node-version: 24
-          cache: npm
+          cache: ${{ env.IS_FORK != 'true' && 'npm' || '' }}
 
       - name: Install dependencies
         run: npm ci
@@ -63,6 +95,35 @@ jobs:
         run: npm run deploy
         env:
           BASE_URL: /evo-web/previews/pr-${{ github.event.pull_request.number }}/
+
+      - name: Upload site
+        uses: actions/upload-artifact@v4
+        with:
+          name: preview-site
+          path: _site/public/
+          include-hidden-files: true
+          retention-days: 1
+
+  deploy-preview:
+    runs-on: ubuntu-latest
+    needs: [mark-deploying, build]
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      deployments: read
+    steps:
+      # pull_request_target checks out the base branch, never a fork's code.
+      - name: Checkout scripts
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Download site
+        uses: actions/download-artifact@v4
+        with:
+          name: preview-site
+          path: _site/public/
 
       - name: Deploy to gh-pages branch (preview subdirectory)
         id: deploy
@@ -95,7 +156,7 @@ jobs:
             du -sb "previews/pr-${PR}" | cut -f1 > "previews/pr-${PR}/.size-bytes"
             touch .nojekyll
             git add -A .nojekyll "previews/pr-${PR}"
-            git commit -m "preview: pr-${PR} @ ${{ github.sha }}"
+            git commit -m "preview: pr-${PR} @ ${{ github.event.pull_request.head.sha }}"
             if git push origin gh-pages; then
               pushed=true
               break
