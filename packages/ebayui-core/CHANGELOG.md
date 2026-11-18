@@ -1,5 +1,40 @@
 # eBayUI-Core Changelog
 
+## 16.20.0
+
+### Minor Changes
+
+- [#1128](https://github.com/eBay/evo-web/pull/1128) [`c3f892b`](https://github.com/eBay/evo-web/commit/c3f892b4880a1d969708f8d3781d54e143a0e298) Thanks [@saiponnada](https://github.com/saiponnada)! - feat(icons): Add `hanger-20`, `rim-20`, and `trading-card-20` icons. Update `trading-card-16` artwork.
+
+- [#1110](https://github.com/eBay/evo-web/pull/1110) [`9fb3ee9`](https://github.com/eBay/evo-web/commit/9fb3ee9aa93b5681bada28e3a9a2fdf527d61e03) Thanks [@petter](https://github.com/petter)! - feat(tooltip,infotip,tourtip): add a `strategy` input (`"absolute"` default, or `"fixed"`). Use `"fixed"` when a scrolling or `overflow: hidden` ancestor clips the overlay.
+
+### Patch Changes
+
+- [#1086](https://github.com/eBay/evo-web/pull/1086) [`d6743e9`](https://github.com/eBay/evo-web/commit/d6743e91cfd55d330ad00b1c5805ebcc2ae417f5) Thanks [@saiponnada](https://github.com/saiponnada)! - Align embedded badge accessibility across Marko and React, including decorative icon-button badges and labelled menu badges.
+
+- [#1102](https://github.com/eBay/evo-web/pull/1102) [`5af1b77`](https://github.com/eBay/evo-web/commit/5af1b7785836d70c4bf47c3f77c243d35060282d) Thanks [@saiponnada](https://github.com/saiponnada)! - fix(breadcrumbs): use `aria-current="page"` for the current breadcrumb
+  
+  The last breadcrumb now exposes `aria-current="page"` instead of
+  `aria-current="location"`.
+
+- [#1126](https://github.com/eBay/evo-web/pull/1126) [`0325f7b`](https://github.com/eBay/evo-web/commit/0325f7bce3ca39c789d01cff63800d8b2963e7a4) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Mirror the calendar in RTL: flip the navigation chevrons and the range start/end fills, and make ArrowLeft/ArrowRight move by visual direction.
+
+- [#1096](https://github.com/eBay/evo-web/pull/1096) [`5de4bae`](https://github.com/eBay/evo-web/commit/5de4baefa243cf40ebf4c3089a7186c0ab9faa5e) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - fix(carousel): avoid forced reflows by measuring with ResizeObserver
+
+- [#1113](https://github.com/eBay/evo-web/pull/1113) [`abcc70a`](https://github.com/eBay/evo-web/commit/abcc70a219b5402efc82f5896cdd8e4fdada2ca1) Thanks [@LuLaValva](https://github.com/LuLaValva)! - feat(ebay-tooltip,ebay-infotip,ebay-tourtip): add a `strategy` prop to the ebayui-core-react tips (`"absolute"` default, or `"fixed"`). Use `"fixed"` when a scrolling or `overflow: hidden` ancestor clips the overlay.
+  
+  feat(evo-tooltip,evo-infotip,evo-tourtip): add a `detachPopover` option to the evo-marko and evo-react tips. Use it when a scrolling or `overflow: hidden` ancestor clips the overlay.
+  
+  BREAKING: in evo-marko and evo-react, `strategy` is replaced by `detachPopover` on listbox-button, menu-button, fake-menu-button, combobox, date-input and date-range-input. Replace `strategy="fixed"` with `detachPopover`, and remove `strategy="absolute"`. evo-react's `ComboboxStrategy` type is removed.
+  
+  fix(ebay-listbox-button,ebay-menu-button,ebay-fake-menu-button,ebay-combobox,ebay-date-textbox): set the overlay's position from a passed `strategy`, so it matches what floating-ui computes.
+  
+  fix(ebay-tooltip,ebay-infotip,ebay-tourtip): declare `strategy` in `marko-tag.json`.
+  
+  fix(evo-listbox-button,evo-menu-button,evo-fake-menu-button,evo-date-input,evo-date-range-input): position the overlay against its container by default, matching the overlay's CSS.
+
+- [#1111](https://github.com/eBay/evo-web/pull/1111) [`9febb02`](https://github.com/eBay/evo-web/commit/9febb02962b95a2af37f280170d48c36674797f5) Thanks [@saiponnada](https://github.com/saiponnada)! - fix(tooltip): stop setting `aria-expanded` on the tooltip host
+
 ## 16.19.2
 
 ### Patch Changes
