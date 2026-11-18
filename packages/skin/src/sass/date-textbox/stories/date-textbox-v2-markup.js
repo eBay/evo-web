@@ -91,7 +91,7 @@ export const textValueMarkup = (
     return `<span class="date-textbox__value" tabindex="0" role="group" aria-labelledby="${labelId}"${describedBy ? ` aria-describedby="${describedBy}"` : ""}>${text}</span>`;
 };
 
-export const dateField = ({ id, label, size, layout, valueHtml }) => {
+export const dateField = ({ id, label, size, layout, valueHtml, helper }) => {
     const rootClasses = ["date-textbox", "date-textbox--v2"];
     if (size === "medium") rootClasses.push("date-textbox--medium");
     if (layout === "stacked") rootClasses.push("date-textbox--stacked");
@@ -107,6 +107,11 @@ export const dateField = ({ id, label, size, layout, valueHtml }) => {
             ${valueHtml}
         </span>
         <button class="icon-button icon-button--small" type="button" data-action="toggle" aria-label="Open calendar" aria-haspopup="dialog" aria-expanded="false">${icon("calendar")}</button>
-    </span>
+    </span>${
+        helper
+            ? `
+    <span class="date-textbox__helper" id="${id}-helper">${helper}</span>`
+            : ""
+    }
 </span>`;
 };
