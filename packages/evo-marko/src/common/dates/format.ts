@@ -1,7 +1,24 @@
-import { type DayISO, getLocale } from "./date-utils";
+import {
+  type DateField,
+  type DayISO,
+  getDateParts,
+  localeDefault,
+} from "./date-utils";
+
+const SIZES: Record<DateField, number> = { year: 4, month: 2, day: 2 };
+
+function getLayout(locale?: string) {
+  const order: DateField[] = [];
+  const sep: string[] = [];
+  for (const { type, value } of getDateParts(locale)) {
+    if (type !== "literal") order.push(type);
+    else if (order.length) sep[order.length - 1] = value;
+  }
+  return { order, sep };
+}
 
 export function parse(value: string, locale?: string): DayISO | null {
-  const { o: order, s: sep } = getLocale(locale);
+  const { order, sep } = getLayout(locale);
 
   const parts: string[] = [];
   const firstEnd = value.indexOf(sep[0].trim());
@@ -21,26 +38,26 @@ export function parse(value: string, locale?: string): DayISO | null {
     return null;
   }
 
-  const parsed = {} as { y: number; m: number; d: number };
+  const parsed = {} as Record<DateField, number>;
   for (const i in parts) {
     const num = parseInt(parts[i]);
     if (isNaN(num)) {
       return null;
     }
-    parsed[order[i] as "y" | "m" | "d"] = num;
+    parsed[order[i]] = num;
   }
 
-  if (parsed.y < 100) {
+  if (parsed.year < 100) {
     // 2-digit year: if year is less than 50, assume 2000s, otherwise 1900s
-    if (parsed.y < 50) {
-      parsed.y += 2000;
+    if (parsed.year < 50) {
+      parsed.year += 2000;
     } else {
-      parsed.y += 1900;
+      parsed.year += 1900;
     }
   }
 
   const iso =
-    `${padStart(parsed.y, 4)}-${padStart(parsed.m, 2)}-${padStart(parsed.d, 2)}` as DayISO;
+    `${padStart(parsed.year, 4)}-${padStart(parsed.month, 2)}-${padStart(parsed.day, 2)}` as DayISO;
   const date = new Date(iso);
   if (isNaN(date.getTime()) || date.toISOString().slice(0, 10) !== iso) {
     return null;
@@ -53,37 +70,35 @@ export function format(date: DayISO, locale?: string) {
     return "";
   }
 
-  const { o: order, s: sep } = getLocale(locale);
-  const [y, m, d] = date.split("-");
-  const parts = { y, m, d };
-  let result = "";
-  for (let i = 0; i < 3; i++) {
-    result += parts[order[i] as "y" | "m" | "d"];
-    if (sep[i]) {
-      result += sep[i];
-    }
-  }
-
-  return result;
+  const [year, month, day] = date.split("-");
+  return fill({ year, month, day }, locale);
 }
 
+// Repeats the initial of the field's localized name, as in JJ/MM/AAAA. Scripts
+// without letter case have no such convention, so they use English letters.
 export function placeholder(locale?: string) {
-  const { o: order, s: sep, y, m, d } = getLocale(locale);
-  const parts = {
-    y: `${y}${y}${y}${y}`,
-    m: `${m}${m}`,
-    d: `${d}${d}`,
+  locale = localeDefault(locale);
+  const names = new Intl.DisplayNames(locale, { type: "dateTimeField" });
+  const initial = (field: DateField) => {
+    const letter = [...names.of(field)!][0].toLocaleUpperCase(locale);
+    return letter === letter.toLocaleLowerCase(locale)
+      ? field[0].toUpperCase()
+      : letter;
   };
+  return fill(
+    {
+      year: initial("year").repeat(SIZES.year),
+      month: initial("month").repeat(SIZES.month),
+      day: initial("day").repeat(SIZES.day),
+    },
+    locale,
+  );
+}
 
-  let result = "";
-  for (let i = 0; i < 3; i++) {
-    result += parts[order[i] as "y" | "m" | "d"];
-    if (sep[i]) {
-      result += sep[i];
-    }
-  }
-
-  return result;
+function fill(values: Record<DateField, string>, locale?: string) {
+  return getDateParts(locale)
+    .map(({ type, value }) => (type === "literal" ? value : values[type]))
+    .join("");
 }
 
 /**
@@ -93,8 +108,8 @@ export function placeholder(locale?: string) {
  * while deleting.
  */
 export function maskDate(raw: string, locale?: string, eager = true): string {
-  const { o: order, s: sep } = getLocale(locale);
-  const max = (i: number) => (order[i] === "y" ? 4 : 2);
+  const { order, sep } = getLayout(locale);
+  const max = (i: number) => (order[i] === "year" ? 4 : 2);
 
   const uniqueSeps = [...new Set(sep.filter(Boolean))];
   const splitter = new RegExp(
