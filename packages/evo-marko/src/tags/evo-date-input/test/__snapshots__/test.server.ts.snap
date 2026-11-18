@@ -8,19 +8,75 @@ exports[`evo-date-input SSR > renders default 1`] = `
     class="floating-label"
   >
     <label
-      class="floating-label__label floating-label__label--animate floating-label__label--inline"
+      class="floating-label__label floating-label__label--animate floating-label__label--focus"
       for="GENERATED-0"
     >
       Purchase date
     </label>
     <span
+      aria-label="Purchase date"
       class="textbox"
+      role="group"
     >
-      <input
-        class="textbox__control"
-        id="GENERATED-0"
-        value=""
-      />
+      <span
+        class="textbox__control date-textbox__value"
+      >
+        <span
+          class="date-textbox__part"
+          data-size="MM"
+        >
+          <input
+            aria-label="month"
+            autocomplete="off"
+            id="GENERATED-0"
+            inputmode="numeric"
+            maxlength="3"
+            placeholder="MM"
+            role="spinbutton"
+            value=""
+          />
+        </span>
+        <span
+          aria-hidden="true"
+          class="date-textbox__separator"
+        >
+          /
+        </span>
+        <span
+          class="date-textbox__part"
+          data-size="DD"
+        >
+          <input
+            aria-label="day"
+            autocomplete="off"
+            inputmode="numeric"
+            maxlength="3"
+            placeholder="DD"
+            role="spinbutton"
+            value=""
+          />
+        </span>
+        <span
+          aria-hidden="true"
+          class="date-textbox__separator"
+        >
+          /
+        </span>
+        <span
+          class="date-textbox__part"
+          data-size="YYYY"
+        >
+          <input
+            aria-label="year"
+            autocomplete="off"
+            inputmode="numeric"
+            maxlength="5"
+            placeholder="YYYY"
+            role="spinbutton"
+            value=""
+          />
+        </span>
+      </span>
       <button
         aria-controls="GENERATED-2"
         aria-expanded="false"
@@ -449,20 +505,78 @@ exports[`evo-date-input SSR > renders readonly with a disabled calendar trigger 
     class="floating-label"
   >
     <label
-      class="floating-label__label floating-label__label--animate floating-label__label--inline"
+      class="floating-label__label floating-label__label--animate floating-label__label--focus"
       for="GENERATED-0"
     >
       Purchase date
     </label>
     <span
+      aria-label="Purchase date"
       class="textbox textbox--readonly"
+      role="group"
     >
-      <input
-        class="textbox__control"
-        id="GENERATED-0"
-        readonly=""
-        value=""
-      />
+      <span
+        class="textbox__control date-textbox__value"
+      >
+        <span
+          class="date-textbox__part"
+          data-size="MM"
+        >
+          <input
+            aria-label="month"
+            autocomplete="off"
+            id="GENERATED-0"
+            inputmode="numeric"
+            maxlength="3"
+            placeholder="MM"
+            readonly=""
+            role="spinbutton"
+            value=""
+          />
+        </span>
+        <span
+          aria-hidden="true"
+          class="date-textbox__separator"
+        >
+          /
+        </span>
+        <span
+          class="date-textbox__part"
+          data-size="DD"
+        >
+          <input
+            aria-label="day"
+            autocomplete="off"
+            inputmode="numeric"
+            maxlength="3"
+            placeholder="DD"
+            readonly=""
+            role="spinbutton"
+            value=""
+          />
+        </span>
+        <span
+          aria-hidden="true"
+          class="date-textbox__separator"
+        >
+          /
+        </span>
+        <span
+          class="date-textbox__part"
+          data-size="YYYY"
+        >
+          <input
+            aria-label="year"
+            autocomplete="off"
+            inputmode="numeric"
+            maxlength="5"
+            placeholder="YYYY"
+            readonly=""
+            role="spinbutton"
+            value=""
+          />
+        </span>
+      </span>
       <button
         aria-controls="GENERATED-2"
         aria-expanded="false"
@@ -898,14 +1012,72 @@ exports[`evo-date-input SSR > renders with a value 1`] = `
       Purchase date
     </label>
     <span
+      aria-label="Purchase date"
       class="textbox"
+      role="group"
     >
-      <input
-        class="textbox__control"
-        id="GENERATED-0"
-        placeholder="MM/DD/YYYY"
-        value="05/06/2024"
-      />
+      <span
+        class="textbox__control date-textbox__value"
+      >
+        <span
+          class="date-textbox__part"
+          data-size="05"
+        >
+          <input
+            aria-label="month"
+            aria-valuenow="5"
+            autocomplete="off"
+            id="GENERATED-0"
+            inputmode="numeric"
+            maxlength="3"
+            placeholder="MM"
+            role="spinbutton"
+            value="05"
+          />
+        </span>
+        <span
+          aria-hidden="true"
+          class="date-textbox__separator"
+        >
+          /
+        </span>
+        <span
+          class="date-textbox__part"
+          data-size="06"
+        >
+          <input
+            aria-label="day"
+            aria-valuenow="6"
+            autocomplete="off"
+            inputmode="numeric"
+            maxlength="3"
+            placeholder="DD"
+            role="spinbutton"
+            value="06"
+          />
+        </span>
+        <span
+          aria-hidden="true"
+          class="date-textbox__separator"
+        >
+          /
+        </span>
+        <span
+          class="date-textbox__part"
+          data-size="2024"
+        >
+          <input
+            aria-label="year"
+            aria-valuenow="2024"
+            autocomplete="off"
+            inputmode="numeric"
+            maxlength="5"
+            placeholder="YYYY"
+            role="spinbutton"
+            value="2024"
+          />
+        </span>
+      </span>
       <button
         aria-controls="GENERATED-2"
         aria-expanded="false"

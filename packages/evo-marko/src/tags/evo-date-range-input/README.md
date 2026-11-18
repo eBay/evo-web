@@ -7,7 +7,7 @@
     </span>
 </h1>
 
-Locale-aware start and end date inputs with a shared calendar popover. For selecting a single date, use `evo-date-input`.
+A locale-aware input for a start and end date, with a shared calendar popover. For selecting a single date, use `evo-date-input`.
 
 ## Examples and Documentation
 

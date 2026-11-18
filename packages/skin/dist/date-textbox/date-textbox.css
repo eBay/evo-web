@@ -6,8 +6,82 @@
     display: inline-block;
 }
 
-.date-textbox > .textbox + .textbox {
-    margin-left: var(--spacing-100);
+.date-textbox__value,
+.date-textbox__value > [role="group"] {
+    align-items: center;
+    display: inline-flex;
+}
+.date-textbox__value {
+    height: calc(-2px + var(--input-default-height));
+    min-width: 14ch;
+}
+
+.date-textbox__value:has(> [role="group"]) {
+    min-width: 28ch;
+}
+.date-textbox__value > :first-child {
+    margin-inline-start: -2px;
+}
+
+.date-textbox__separator {
+    color: var(--textbox-placeholder-color, var(--color-foreground-secondary));
+    white-space: pre;
+}
+
+.textbox--disabled .date-textbox__separator {
+    color: var(
+        --textbox-disabled-foreground-color,
+        var(--color-foreground-disabled)
+    );
+}
+.date-textbox__part {
+    display: inline-grid;
+}
+
+.date-textbox__part:after,
+.date-textbox__part > input {
+    font: inherit;
+    grid-area: 1/1;
+    padding: 0 2px;
+}
+
+.date-textbox__part:after {
+    content: attr(data-size);
+    visibility: hidden;
+}
+
+.date-textbox__part > input {
+    appearance: none;
+    background-color: initial;
+    border: none;
+    box-sizing: border-box;
+    caret-color: transparent;
+    color: inherit;
+    margin: 0;
+    min-width: 100%;
+    outline: none;
+    width: 0;
+}
+.date-textbox__part > input::placeholder {
+    color: var(--textbox-placeholder-color, var(--color-foreground-secondary));
+    opacity: 1;
+}
+.date-textbox__part > input:disabled::placeholder {
+    color: var(
+        --textbox-disabled-placeholder-color,
+        var(--color-foreground-ghost)
+    );
+}
+.date-textbox__part > input:focus:not([readonly]) {
+    background-color: Highlight;
+    color: HighlightText;
+}
+.date-textbox__part > input:focus:not([readonly])::placeholder {
+    color: HighlightText;
+    opacity: 0.7;
+}
+.date-textbox__part > input::selection {
+    background-color: initial;
 }
 
 .date-textbox__popover {

@@ -1,6 +1,6 @@
 import { localeDefault, type MonthISO } from "../../common/dates/date-utils";
 import type { DayInput as CalendarDayInput } from "<evo-calendar>";
-import type { DateInputValue, Input as DateFieldInput } from "<evo-date-field>";
+import type { DateInputValue } from "<evo-date-parts>";
 export type { DateInputValue };
 export type { DayISO } from "../../common/dates/date-utils";
 
@@ -12,7 +12,9 @@ export interface CalendarInput extends Omit<
 export interface Input extends Omit<Marko.HTML.Span, "value"> {
   value?: DateInputValue;
   valueChange?: (value: DateInputValue) => void;
+  name?: string;
   locale?: string;
+  floatingLabel?: string;
   /**
    * Accessible label for the button that opens the calendar popover, mapped
    * to `aria-label`.
@@ -27,8 +29,6 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
   readonly?: boolean;
   invalid?: boolean;
   detachPopover?: boolean;
-  onInvalidDate?: DateFieldInput["onInvalidDate"];
-  input?: DateFieldInput["field"];
   calendar?: Marko.AttrTag<CalendarInput>;
 }
 
@@ -36,12 +36,12 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
   class: inputClass,
   a11yOpenPopoverText = "open calendar",
   collapseOnSelect,
+  name,
+  floatingLabel,
   disabled,
   readonly,
   invalid,
   detachPopover,
-  onInvalidDate,
-  input: field,
   calendar,
   locale: _locale,
   value: _value,
@@ -54,6 +54,7 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
 <const/locale=localeDefault(input.locale)>
 <let/value:=input.value>
 <let/open:=input.open>
+<id/partsId>
 <id/popoverId>
 
 <let/visibleMonth=value ? (value.slice(0, 7) as MonthISO) : undefined>
@@ -80,12 +81,9 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
   }
 </script>
 
-<const/toggle() {
-  if (disabled || readonly) return;
-  if (!open && value) {
-    visibleMonth = value.slice(0, 7) as MonthISO;
-  }
-  open = !open;
+<const/close() {
+  open = false;
+  $trigger().focus();
 }>
 
 <evo-expander/expander
@@ -101,10 +99,7 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
   ...htmlInput
   class=["date-textbox", inputClass]
   onKeyDown(e, el) {
-    if (e.key === "Escape" && open) {
-      open = false;
-      focusTrigger();
-    }
+    if (e.key === "Escape" && open) close();
     onKeyDown && onKeyDown(e, el);
   }
   onFocusOut(e, el) {
@@ -113,28 +108,53 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
     }
   }
 >
-  <evo-date-field/fieldControl
-    value=value ?? ""
-    locale=locale
-    index=0
+  <evo-floating-label
+    floatingLabel=floatingLabel
+    alwaysUp
+    htmlFor=partsId
     disabled=disabled
-    readonly=readonly
     invalid=invalid
-    field=field
-    trigger={
-      a11yText: a11yOpenPopoverText,
-      open: open ?? false,
-      popoverId,
-      toggle,
-    }
-    valueChange(next) {
-      value = next;
-    }
-    onInvalidDate=onInvalidDate
-  />
-  <const/focusTrigger() {
-    fieldControl().$postfixButton?.()?.focus();
-  }>
+  >
+    <span
+      class=[
+        "textbox",
+        disabled && "textbox--disabled",
+        invalid && "textbox--invalid",
+        readonly && "textbox--readonly",
+      ]
+      role="group"
+      aria-label=floatingLabel
+    >
+      <span class="textbox__control date-textbox__value">
+        <evo-date-parts
+          id=partsId
+          value=value ?? ""
+          valueChange(next) {
+            value = next;
+          }
+          locale=locale
+          name=name
+          disabled=disabled
+          readonly=readonly
+          invalid=invalid
+        />
+      </span>
+      <button/$trigger
+        class="icon-btn icon-btn--transparent"
+        type="button"
+        aria-label=a11yOpenPopoverText
+        aria-expanded=open ? "true" : "false"
+        aria-controls=popoverId
+        disabled=disabled || readonly
+        onClick() {
+          if (!open && value) visibleMonth = value.slice(0, 7) as MonthISO;
+          open = !open;
+        }
+      >
+        <evo-icon-calendar-24/>
+      </button>
+    </span>
+  </evo-floating-label>
   <div/$popover
     id=popoverId
     hidden=!open
@@ -155,10 +175,7 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
       selectedChange(next) {
         if (disabled || readonly) return;
         value = next;
-        if (collapseOnSelect) {
-          open = false;
-          focusTrigger();
-        }
+        if (collapseOnSelect) close();
       }
     />
   </div>

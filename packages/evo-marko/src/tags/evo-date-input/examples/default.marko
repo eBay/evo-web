@@ -1,5 +1,8 @@
-<evo-date-input ...input a11yOpenPopoverText="Open calendar">
-  <@input floatingLabel="Purchase date"/>
+<evo-date-input
+  ...input
+  floatingLabel="Purchase date"
+  a11yOpenPopoverText="Open calendar"
+>
   <@calendar a11yNavigateText(month, dir) {
     return `Go to ${month} (${dir === "prev" ? "Previous" : "Next"} month)`;
   }/>

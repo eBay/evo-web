@@ -46,21 +46,13 @@ interface DatePart {
   value: string;
 }
 
-// Typed dates don't contain the bidi marks Intl puts around RTL separators.
-const BIDI_MARKS = /[\u061c\u200e\u200f]/g;
-
 export function getDateParts(locale?: string) {
   return new Intl.DateTimeFormat(localeDefault(locale), {
     year: "numeric",
     month: "2-digit",
     day: "2-digit",
     calendar: "gregory",
-  })
-    .formatToParts(0)
-    .map(({ type, value }) => ({
-      type: type as DatePart["type"],
-      value: value.replace(BIDI_MARKS, ""),
-    }));
+  }).formatToParts(0) as DatePart[];
 }
 
 function getFirstDayOfWeek(localeName: string) {
