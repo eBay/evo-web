@@ -47,6 +47,10 @@ npm run build -w packages/evo-react
 # Test specific package
 npm test -w packages/ebayui-core
 
+# Test one component (path is relative to the package)
+npm test -w packages/evo-marko -- src/tags/evo-button
+npm test -w packages/evo-react -- src/button
+
 # Update visual snapshots (Marko packages)
 npm run update-snapshots -w packages/ebayui-core
 
@@ -59,10 +63,12 @@ npm run storybook -w packages/ebayui-core-react
 ## Test File Locations & Patterns
 
 **Marko component test structure:**
+
 - `test/test.browser.js` - Browser tests with Playwright (Vitest)
 - `test/test.server.js` - Server-side rendering tests (Vitest)
 
 **React component test structure:**
+
 - `__tests__/index.spec.tsx` - Vitest with @testing-library/react (jsdom)
 
 ### Run Individual Test Files
