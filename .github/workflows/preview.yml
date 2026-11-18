@@ -31,11 +31,15 @@ jobs:
         env:
           BASE_URL: /evo-web/previews/pr-${{ github.event.pull_request.number }}/
 
+      # Artifacts reject some of the site's file names (e.g. "css?debug=1.html").
+      - name: Pack site
+        run: tar -czf preview-site.tgz -C _site/public .
+
       - name: Upload site
         uses: actions/upload-artifact@v4
         with:
           name: preview-site
-          path: _site/public/
-          include-hidden-files: true
+          path: preview-site.tgz
+          compression-level: 0
           # Fork builds wait for approval, which GitHub allows for up to 30 days.
           retention-days: ${{ github.event.pull_request.head.repo.fork && 30 || 1 }}

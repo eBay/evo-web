@@ -176,9 +176,17 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: preview-site
-          path: _site/public/
           run-id: ${{ github.event.workflow_run.id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      # The tarball is untrusted: refuse links and paths that could escape _site/public.
+      - name: Unpack site
+        run: |
+          set -euo pipefail
+          if tar -tvzf preview-site.tgz | grep -q '^[^-d]'; then echo "Preview build contains links or special files."; exit 1; fi
+          if tar -tzf preview-site.tgz | grep -qE '^/|(^|/)\.\.(/|$)'; then echo "Preview build contains unsafe paths."; exit 1; fi
+          mkdir -p _site/public
+          tar -xzf preview-site.tgz -C _site/public --no-same-owner --no-same-permissions
 
       - name: Deploy to gh-pages branch (preview subdirectory)
         id: deploy
@@ -188,7 +196,6 @@ jobs:
         run: |
           set -euo pipefail
           repo_url="https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
-          if [ -n "$(find _site/public -type l)" ]; then echo "Symlinks in preview build."; exit 1; fi
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
