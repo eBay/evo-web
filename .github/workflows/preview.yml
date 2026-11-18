@@ -37,4 +37,5 @@ jobs:
           name: preview-site
           path: _site/public/
           include-hidden-files: true
-          retention-days: 1
+          # Fork builds wait for approval, which GitHub allows for up to 30 days.
+          retention-days: ${{ github.event.pull_request.head.repo.fork && 30 || 1 }}
