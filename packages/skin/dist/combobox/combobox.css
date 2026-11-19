@@ -95,23 +95,23 @@ span.combobox {
 }
 .combobox__option[role^="option"]:not(
         [disabled],
-        [aria-disabled="true"]
-    ):hover:after,
-.combobox__option[role^="option"][href]:hover:after {
+        [aria-disabled="true"],
+        a:not([href])
+    ):hover:after {
     background-color: var(--color-state-layer-hover);
 }
 .combobox__option[role^="option"]:not(
         [disabled],
-        [aria-disabled="true"]
-    ):focus-visible:after,
-.combobox__option[role^="option"][href]:focus-visible:after {
+        [aria-disabled="true"],
+        a:not([href])
+    ):focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 .combobox__option[role^="option"]:not(
         [disabled],
-        [aria-disabled="true"]
-    ):active:after,
-.combobox__option[role^="option"][href]:active:after {
+        [aria-disabled="true"],
+        a:not([href])
+    ):active:after {
     background-color: var(--color-state-layer-pressed);
 }
 .combobox__option[role^="option"][hidden] {

@@ -81,22 +81,22 @@
 }
 .segmented-buttons__button:not([aria-current]):not(
         [disabled],
-        [aria-disabled="true"]
-    ):hover:after,
-.segmented-buttons__button:not([aria-current])[href]:hover:after {
+        [aria-disabled="true"],
+        a:not([href])
+    ):hover:after {
     background-color: var(--color-state-layer-hover);
 }
 .segmented-buttons__button:not([aria-current]):not(
         [disabled],
-        [aria-disabled="true"]
-    ):focus-visible:after,
-.segmented-buttons__button:not([aria-current])[href]:focus-visible:after {
+        [aria-disabled="true"],
+        a:not([href])
+    ):focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 .segmented-buttons__button:not([aria-current]):not(
         [disabled],
-        [aria-disabled="true"]
-    ):active:after,
-.segmented-buttons__button:not([aria-current])[href]:active:after {
+        [aria-disabled="true"],
+        a:not([href])
+    ):active:after {
     background-color: var(--color-state-layer-pressed);
 }

@@ -117,23 +117,23 @@ video.file-preview-card__asset {
 }
 .file-preview-card__see-more:not(
         [disabled],
-        [aria-disabled="true"]
-    ):hover:after,
-.file-preview-card__see-more[href]:hover:after {
+        [aria-disabled="true"],
+        a:not([href])
+    ):hover:after {
     background-color: var(--color-state-layer-hover);
 }
 .file-preview-card__see-more:not(
         [disabled],
-        [aria-disabled="true"]
-    ):focus-visible:after,
-.file-preview-card__see-more[href]:focus-visible:after {
+        [aria-disabled="true"],
+        a:not([href])
+    ):focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 .file-preview-card__see-more:not(
         [disabled],
-        [aria-disabled="true"]
-    ):active:after,
-.file-preview-card__see-more[href]:active:after {
+        [aria-disabled="true"],
+        a:not([href])
+    ):active:after {
     background-color: var(--color-state-layer-pressed);
 }
 .file-preview-card__see-more {

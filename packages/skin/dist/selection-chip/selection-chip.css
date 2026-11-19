@@ -53,16 +53,25 @@
     pointer-events: none;
     position: absolute;
 }
-.selection-chip:not([disabled], [aria-disabled="true"]):hover:after,
-.selection-chip[href]:hover:after {
+.selection-chip:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):hover:after {
     background-color: var(--color-state-layer-hover);
 }
-.selection-chip:not([disabled], [aria-disabled="true"]):focus-visible:after,
-.selection-chip[href]:focus-visible:after {
+.selection-chip:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
-.selection-chip:not([disabled], [aria-disabled="true"]):active:after,
-.selection-chip[href]:active:after {
+.selection-chip:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):active:after {
     background-color: var(--color-state-layer-pressed);
 }
 
@@ -96,23 +105,23 @@
 }
 .selection-chip[aria-pressed="true"]:not(
         [disabled],
-        [aria-disabled="true"]
-    ):hover:after,
-.selection-chip[aria-pressed="true"][href]:hover:after {
+        [aria-disabled="true"],
+        a:not([href])
+    ):hover:after {
     background-color: var(--color-state-layer-hover-on-strong);
 }
 .selection-chip[aria-pressed="true"]:not(
         [disabled],
-        [aria-disabled="true"]
-    ):focus-visible:after,
-.selection-chip[aria-pressed="true"][href]:focus-visible:after {
+        [aria-disabled="true"],
+        a:not([href])
+    ):focus-visible:after {
     background-color: var(--color-state-layer-focus-on-strong);
 }
 .selection-chip[aria-pressed="true"]:not(
         [disabled],
-        [aria-disabled="true"]
-    ):active:after,
-.selection-chip[aria-pressed="true"][href]:active:after {
+        [aria-disabled="true"],
+        a:not([href])
+    ):active:after {
     background-color: var(--color-state-layer-pressed-on-strong);
 }
 

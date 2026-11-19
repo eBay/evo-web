@@ -315,23 +315,23 @@ div.listbox-button__option[role="option"]:after {
 }
 div.listbox-button__option[role="option"]:not(
         [disabled],
-        [aria-disabled="true"]
-    ):hover:after,
-div.listbox-button__option[role="option"][href]:hover:after {
+        [aria-disabled="true"],
+        a:not([href])
+    ):hover:after {
     background-color: var(--color-state-layer-hover);
 }
 div.listbox-button__option[role="option"]:not(
         [disabled],
-        [aria-disabled="true"]
-    ):focus-visible:after,
-div.listbox-button__option[role="option"][href]:focus-visible:after {
+        [aria-disabled="true"],
+        a:not([href])
+    ):focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 div.listbox-button__option[role="option"]:not(
         [disabled],
-        [aria-disabled="true"]
-    ):active:after,
-div.listbox-button__option[role="option"][href]:active:after {
+        [aria-disabled="true"],
+        a:not([href])
+    ):active:after {
     background-color: var(--color-state-layer-pressed);
 }
 div.listbox-button__option[role="option"][hidden] {

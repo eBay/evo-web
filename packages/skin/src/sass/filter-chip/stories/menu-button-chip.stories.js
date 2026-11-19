@@ -38,6 +38,25 @@ export const expandedSelected = () => `
 </button>
 `;
 
+export const collapsedDisabled = () => `
+<button class="filter-chip" type="button" aria-expanded="false" disabled>
+    <span class="filter-chip__text">Football</span>
+    <svg class="icon icon--12 filter-chip__trailing" width="13" height="12" aria-hidden="true">
+        <use href="#icon-chevron-down-12"/>
+    </svg>
+</button>
+`;
+
+export const collapsedSelectedDisabled = () => `
+<button class="filter-chip filter-chip--selected" type="button" aria-expanded="false" disabled>
+    <span class="filter-chip__text">Football</span>
+    <svg class="icon icon--12 filter-chip__trailing" width="13" height="12" aria-hidden="true">
+        <use href="#icon-chevron-down-12"/>
+    </svg>
+    <span class="clipped">Filter Applied</span>
+</button>
+`;
+
 export const RTL = () => `
 <div dir="rtl">
     <button class="filter-chip" type="button" aria-expanded="false">
