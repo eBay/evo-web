@@ -22,7 +22,6 @@ exports[`listbox > passes through additional html attributes 1`] = `
     <svg
       aria-hidden="true"
       class="icon icon--16"
-      focusable="false"
     >
       <defs>
         <symbol
@@ -53,7 +52,6 @@ exports[`listbox > passes through additional html attributes 1`] = `
     <svg
       aria-hidden="true"
       class="icon icon--16"
-      focusable="false"
     >
       <use
         href="#icon-tick-16"
@@ -72,7 +70,6 @@ exports[`listbox > passes through additional html attributes 1`] = `
     <svg
       aria-hidden="true"
       class="icon icon--16"
-      focusable="false"
     >
       <use
         href="#icon-tick-16"
@@ -104,7 +101,6 @@ exports[`listbox > passes through additional html attributes 2`] = `
     <svg
       aria-hidden="true"
       class="icon icon--16"
-      focusable="false"
     >
       <defs>
         <symbol
@@ -135,7 +131,6 @@ exports[`listbox > passes through additional html attributes 2`] = `
     <svg
       aria-hidden="true"
       class="icon icon--16"
-      focusable="false"
     >
       <use
         href="#icon-tick-16"
@@ -154,7 +149,6 @@ exports[`listbox > passes through additional html attributes 2`] = `
     <svg
       aria-hidden="true"
       class="icon icon--16"
-      focusable="false"
     >
       <use
         href="#icon-tick-16"
@@ -179,7 +173,6 @@ exports[`listbox > passes through additional html attributes from child option 1
   <svg
     aria-hidden="true"
     class="icon icon--16"
-    focusable="false"
   >
     <defs>
       <symbol
@@ -215,7 +208,6 @@ exports[`listbox > passes through additional html attributes from child option 2
   <svg
     aria-hidden="true"
     class="icon icon--16"
-    focusable="false"
   >
     <defs>
       <symbol
@@ -255,7 +247,6 @@ exports[`listbox > renders basic version 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -286,7 +277,6 @@ exports[`listbox > renders basic version 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<use[39m
           [33mhref[39m=[32m"#icon-tick-16"[39m
@@ -305,7 +295,6 @@ exports[`listbox > renders basic version 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<use[39m
           [33mhref[39m=[32m"#icon-tick-16"[39m
@@ -368,7 +357,6 @@ exports[`listbox > renders with description 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -404,7 +392,6 @@ exports[`listbox > renders with description 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<use[39m
           [33mhref[39m=[32m"#icon-tick-16"[39m
@@ -428,7 +415,6 @@ exports[`listbox > renders with description 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<use[39m
           [33mhref[39m=[32m"#icon-tick-16"[39m
@@ -473,7 +459,6 @@ exports[`listbox > renders with second item disabled 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -512,7 +497,6 @@ exports[`listbox > renders with second item disabled 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<use[39m
           [33mhref[39m=[32m"#icon-tick-16"[39m
@@ -531,7 +515,6 @@ exports[`listbox > renders with second item disabled 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<use[39m
           [33mhref[39m=[32m"#icon-tick-16"[39m
@@ -576,7 +559,6 @@ exports[`listbox > renders with second item selected 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -613,7 +595,6 @@ exports[`listbox > renders with second item selected 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<use[39m
           [33mhref[39m=[32m"#icon-tick-16"[39m
@@ -632,7 +613,6 @@ exports[`listbox > renders with second item selected 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<use[39m
           [33mhref[39m=[32m"#icon-tick-16"[39m

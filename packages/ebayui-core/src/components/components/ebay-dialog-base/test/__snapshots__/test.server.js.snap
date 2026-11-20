@@ -25,7 +25,6 @@ exports[`dialog-base > passes through additional html attributes 1`] = `
         <svg
           aria-hidden="true"
           class="icon icon--16"
-          focusable="false"
         >
           <defs>
             <symbol
@@ -76,7 +75,6 @@ exports[`dialog-base > passes through additional html attributes 2`] = `
         <svg
           aria-hidden="true"
           class="icon icon--16"
-          focusable="false"
         >
           <defs>
             <symbol
@@ -124,7 +122,6 @@ exports[`dialog-base > renders basic version 1`] = `
         <svg
           aria-hidden="true"
           class="icon icon--16"
-          focusable="false"
         >
           <defs>
             <symbol
@@ -163,7 +160,6 @@ exports[`dialog-base > renders basic version 2`] = `
   <svg
     aria-hidden="true"
     class="icon icon--16"
-    focusable="false"
   >
     <defs>
       <symbol
@@ -213,7 +209,6 @@ exports[`dialog-base > renders in open state 1`] = `
         <svg
           aria-hidden="true"
           class="icon icon--16"
-          focusable="false"
         >
           <defs>
             <symbol
@@ -266,7 +261,6 @@ exports[`dialog-base > renders non modal 1`] = `
         <svg
           aria-hidden="true"
           class="icon icon--16"
-          focusable="false"
         >
           <defs>
             <symbol
@@ -329,7 +323,6 @@ exports[`dialog-base > renders with header and footer 1`] = `
         <svg
           aria-hidden="true"
           class="icon icon--16"
-          focusable="false"
         >
           <defs>
             <symbol
@@ -375,7 +368,6 @@ exports[`dialog-base > renders with header and footer 2`] = `
   <svg
     aria-hidden="true"
     class="icon icon--16"
-    focusable="false"
   >
     <defs>
       <symbol
@@ -438,7 +430,6 @@ exports[`dialog-base > renders with header and footer 5`] = `
     <svg
       aria-hidden="true"
       class="icon icon--16"
-      focusable="false"
     >
       <defs>
         <symbol

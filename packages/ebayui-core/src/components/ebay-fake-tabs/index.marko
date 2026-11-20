@@ -12,13 +12,11 @@ $ const {
 export interface Tab extends Omit<Marko.HTML.LI, `on${string}`> {
     href?: string;
 }
-static {
-    interface FakeTabsInput extends Omit<Marko.HTML.Div, `on${string}`> {
-        "selected-index"?: number;
-        size?: "large" | "regular";
-        tab?: Marko.AttrTag<Tab>;
-        "tab-matches-current-url"?: boolean;
-    }
+static interface FakeTabsInput extends Omit<Marko.HTML.Div, `on${string}`> {
+    "selected-index"?: number;
+    size?: "large" | "regular";
+    tab?: Marko.AttrTag<Tab>;
+    "tab-matches-current-url"?: boolean;
 }
 export interface Input extends WithNormalizedProps<FakeTabsInput> {}
 $ {

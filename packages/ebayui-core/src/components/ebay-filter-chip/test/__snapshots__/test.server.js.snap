@@ -9,7 +9,6 @@ exports[`ebay-filter-chip > renders as link 1`] = `
     [36m<svg[39m
       [33maria-hidden[39m=[32m"true"[39m
       [33mclass[39m=[32m"icon icon--16"[39m
-      [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
       [36m<defs>[39m
         [36m<symbol[39m
@@ -127,7 +126,6 @@ exports[`ebay-filter-chip > renders menu button 1`] = `
     [36m<svg[39m
       [33maria-hidden[39m=[32m"true"[39m
       [33mclass[39m=[32m"filter-chip__trailing icon icon--12"[39m
-      [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
       [36m<defs>[39m
         [36m<symbol[39m
@@ -164,7 +162,6 @@ exports[`ebay-filter-chip > renders menu button expanded 1`] = `
     [36m<svg[39m
       [33maria-hidden[39m=[32m"true"[39m
       [33mclass[39m=[32m"filter-chip__trailing icon icon--12"[39m
-      [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
       [36m<defs>[39m
         [36m<symbol[39m
@@ -206,7 +203,6 @@ exports[`ebay-filter-chip > renders menu button expanded and selected 1`] = `
     [36m<svg[39m
       [33maria-hidden[39m=[32m"true"[39m
       [33mclass[39m=[32m"filter-chip__trailing icon icon--12"[39m
-      [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
       [36m<defs>[39m
         [36m<symbol[39m
@@ -248,7 +244,6 @@ exports[`ebay-filter-chip > renders menu button selected 1`] = `
     [36m<svg[39m
       [33maria-hidden[39m=[32m"true"[39m
       [33mclass[39m=[32m"filter-chip__trailing icon icon--12"[39m
-      [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
       [36m<defs>[39m
         [36m<symbol[39m
@@ -280,7 +275,6 @@ exports[`ebay-filter-chip > renders static default 1`] = `
     [36m<svg[39m
       [33maria-hidden[39m=[32m"true"[39m
       [33mclass[39m=[32m"icon icon--16"[39m
-      [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
       [36m<defs>[39m
         [36m<symbol[39m
@@ -317,7 +311,6 @@ exports[`ebay-filter-chip > renders static selected 1`] = `
     [36m<svg[39m
       [33maria-hidden[39m=[32m"true"[39m
       [33mclass[39m=[32m"icon icon--16"[39m
-      [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
       [36m<defs>[39m
         [36m<symbol[39m

@@ -84,7 +84,6 @@ exports[`breadcrumbs > renders basic structure 1`] = `
       <svg
         aria-hidden="true"
         class="icon icon--12"
-        focusable="false"
       >
         <defs>
           <symbol
@@ -114,7 +113,6 @@ exports[`breadcrumbs > renders basic structure 1`] = `
       <svg
         aria-hidden="true"
         class="icon icon--12"
-        focusable="false"
       >
         <use
           href="#icon-chevron-right-12"

@@ -22,7 +22,6 @@ exports[`menu-button > passes through additional html attributes 1`] = `
       <svg
         aria-hidden="true"
         class="icon icon--12"
-        focusable="false"
       >
         <defs>
           <symbol
@@ -78,7 +77,6 @@ exports[`menu-button > passes through additional html attributes 2`] = `
       <svg
         aria-hidden="true"
         class="icon icon--12"
-        focusable="false"
       >
         <defs>
           <symbol
@@ -124,7 +122,6 @@ exports[`menu-button > passes through additional html attributes from child item
   <svg
     aria-hidden="true"
     class="icon icon--16"
-    focusable="false"
   >
     <defs>
       <symbol
@@ -157,7 +154,6 @@ exports[`menu-button > passes through additional html attributes from child item
   <svg
     aria-hidden="true"
     class="icon icon--16"
-    focusable="false"
   >
     <defs>
       <symbol
@@ -199,7 +195,6 @@ exports[`menu-button > renders basic version 1`] = `
         [36m<svg[39m
           [33maria-hidden[39m=[32m"true"[39m
           [33mclass[39m=[32m"icon icon--12"[39m
-          [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
           [36m<defs>[39m
             [36m<symbol[39m
@@ -239,7 +234,6 @@ exports[`menu-button > renders basic version 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<defs>[39m
                 [36m<symbol[39m
@@ -270,7 +264,6 @@ exports[`menu-button > renders basic version 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<use[39m
                 [33mhref[39m=[32m"#icon-tick-16"[39m
@@ -307,7 +300,6 @@ exports[`menu-button > renders with a custom label 1`] = `
         [36m<svg[39m
           [33maria-hidden[39m=[32m"true"[39m
           [33mclass[39m=[32m"icon icon--12"[39m
-          [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
           [36m<defs>[39m
             [36m<symbol[39m
@@ -347,7 +339,6 @@ exports[`menu-button > renders with a custom label 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<defs>[39m
                 [36m<symbol[39m
@@ -378,7 +369,6 @@ exports[`menu-button > renders with a custom label 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<use[39m
                 [33mhref[39m=[32m"#icon-tick-16"[39m
@@ -413,7 +403,6 @@ exports[`menu-button > renders with borderless=true 1`] = `
         [36m<svg[39m
           [33maria-hidden[39m=[32m"true"[39m
           [33mclass[39m=[32m"icon icon--12"[39m
-          [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
           [36m<defs>[39m
             [36m<symbol[39m
@@ -453,7 +442,6 @@ exports[`menu-button > renders with borderless=true 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<defs>[39m
                 [36m<symbol[39m
@@ -484,7 +472,6 @@ exports[`menu-button > renders with borderless=true 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<use[39m
                 [33mhref[39m=[32m"#icon-tick-16"[39m
@@ -516,7 +503,6 @@ exports[`menu-button > renders with button variant 1`] = `
         [36m<svg[39m
           [33maria-hidden[39m=[32m"true"[39m
           [33mclass[39m=[32m"icon icon--12"[39m
-          [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
           [36m<defs>[39m
             [36m<symbol[39m
@@ -572,7 +558,6 @@ exports[`menu-button > renders with disabled state 1`] = `
         [36m<svg[39m
           [33maria-hidden[39m=[32m"true"[39m
           [33mclass[39m=[32m"icon icon--12"[39m
-          [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
           [36m<defs>[39m
             [36m<symbol[39m
@@ -612,7 +597,6 @@ exports[`menu-button > renders with disabled state 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<defs>[39m
                 [36m<symbol[39m
@@ -643,7 +627,6 @@ exports[`menu-button > renders with disabled state 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<use[39m
                 [33mhref[39m=[32m"#icon-tick-16"[39m
@@ -662,7 +645,6 @@ exports[`menu-button > renders with disabled state 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<use[39m
                 [33mhref[39m=[32m"#icon-tick-16"[39m
@@ -697,7 +679,6 @@ exports[`menu-button > renders with fix-width=true 1`] = `
         [36m<svg[39m
           [33maria-hidden[39m=[32m"true"[39m
           [33mclass[39m=[32m"icon icon--12"[39m
-          [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
           [36m<defs>[39m
             [36m<symbol[39m
@@ -737,7 +718,6 @@ exports[`menu-button > renders with fix-width=true 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<defs>[39m
                 [36m<symbol[39m
@@ -768,7 +748,6 @@ exports[`menu-button > renders with fix-width=true 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<use[39m
                 [33mhref[39m=[32m"#icon-tick-16"[39m
@@ -803,7 +782,6 @@ exports[`menu-button > renders with fixed strategy 1`] = `
         [36m<svg[39m
           [33maria-hidden[39m=[32m"true"[39m
           [33mclass[39m=[32m"icon icon--12"[39m
-          [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
           [36m<defs>[39m
             [36m<symbol[39m
@@ -843,7 +821,6 @@ exports[`menu-button > renders with fixed strategy 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<defs>[39m
                 [36m<symbol[39m
@@ -874,7 +851,6 @@ exports[`menu-button > renders with fixed strategy 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<use[39m
                 [33mhref[39m=[32m"#icon-tick-16"[39m
@@ -907,7 +883,6 @@ exports[`menu-button > renders with icon 1`] = `
         [36m<svg[39m
           [33maria-hidden[39m=[32m"true"[39m
           [33mclass[39m=[32m"icon icon--12"[39m
-          [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
           [36m<defs>[39m
             [36m<symbol[39m
@@ -947,7 +922,6 @@ exports[`menu-button > renders with icon 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<defs>[39m
                 [36m<symbol[39m
@@ -978,7 +952,6 @@ exports[`menu-button > renders with icon 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<use[39m
                 [33mhref[39m=[32m"#icon-tick-16"[39m
@@ -1007,7 +980,6 @@ exports[`menu-button > renders with overflow variant 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -1044,7 +1016,6 @@ exports[`menu-button > renders with overflow variant 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<defs>[39m
                 [36m<symbol[39m
@@ -1075,7 +1046,6 @@ exports[`menu-button > renders with overflow variant 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<use[39m
                 [33mhref[39m=[32m"#icon-tick-16"[39m
@@ -1110,7 +1080,6 @@ exports[`menu-button > renders with reverse=true 1`] = `
         [36m<svg[39m
           [33maria-hidden[39m=[32m"true"[39m
           [33mclass[39m=[32m"icon icon--12"[39m
-          [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
           [36m<defs>[39m
             [36m<symbol[39m
@@ -1150,7 +1119,6 @@ exports[`menu-button > renders with reverse=true 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<defs>[39m
                 [36m<symbol[39m
@@ -1181,7 +1149,6 @@ exports[`menu-button > renders with reverse=true 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<use[39m
                 [33mhref[39m=[32m"#icon-tick-16"[39m
@@ -1216,7 +1183,6 @@ exports[`menu-button > renders with separators 1`] = `
         [36m<svg[39m
           [33maria-hidden[39m=[32m"true"[39m
           [33mclass[39m=[32m"icon icon--12"[39m
-          [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
           [36m<defs>[39m
             [36m<symbol[39m
@@ -1256,7 +1222,6 @@ exports[`menu-button > renders with separators 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<defs>[39m
                 [36m<symbol[39m
@@ -1287,7 +1252,6 @@ exports[`menu-button > renders with separators 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<use[39m
                 [33mhref[39m=[32m"#icon-tick-16"[39m
@@ -1312,7 +1276,6 @@ exports[`menu-button > renders with separators 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<use[39m
                 [33mhref[39m=[32m"#icon-tick-16"[39m
@@ -1347,7 +1310,6 @@ exports[`menu-button > renders with size=small 1`] = `
         [36m<svg[39m
           [33maria-hidden[39m=[32m"true"[39m
           [33mclass[39m=[32m"icon icon--12"[39m
-          [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
           [36m<defs>[39m
             [36m<symbol[39m
@@ -1387,7 +1349,6 @@ exports[`menu-button > renders with size=small 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<defs>[39m
                 [36m<symbol[39m
@@ -1418,7 +1379,6 @@ exports[`menu-button > renders with size=small 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<use[39m
                 [33mhref[39m=[32m"#icon-tick-16"[39m
@@ -1473,7 +1433,6 @@ exports[`menu-button > renders without toggle icon 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<defs>[39m
                 [36m<symbol[39m
@@ -1504,7 +1463,6 @@ exports[`menu-button > renders without toggle icon 1`] = `
             [36m<svg[39m
               [33maria-hidden[39m=[32m"true"[39m
               [33mclass[39m=[32m"icon icon--16"[39m
-              [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
               [36m<use[39m
                 [33mhref[39m=[32m"#icon-tick-16"[39m

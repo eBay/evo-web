@@ -2,7 +2,7 @@ import type { WithNormalizedProps } from "../../global";
 
 export interface CharacterCountEvent {
     count: number;
-    inputAriaLive: Marko.AriaAttributes["aria-live"];
+    inputAriaLive: Marko.HTMLAttributes["aria-live"];
 }
 
 interface CharacterCountInput extends Omit<Marko.HTML.Span, `on${string}`> {
