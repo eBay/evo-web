@@ -92,34 +92,40 @@ button.navigation-menu__item:after {
     pointer-events: none;
     position: absolute;
 }
-a.navigation-menu__item:not([disabled], [aria-disabled="true"]):hover:after,
-a.navigation-menu__item[href]:hover:after,
+a.navigation-menu__item:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):hover:after,
 button.navigation-menu__item:not(
         [disabled],
-        [aria-disabled="true"]
-    ):hover:after,
-button.navigation-menu__item[href]:hover:after {
+        [aria-disabled="true"],
+        a:not([href])
+    ):hover:after {
     background-color: var(--color-state-layer-hover);
 }
 a.navigation-menu__item:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):focus-visible:after,
-a.navigation-menu__item[href]:focus-visible:after,
 button.navigation-menu__item:not(
         [disabled],
-        [aria-disabled="true"]
-    ):focus-visible:after,
-button.navigation-menu__item[href]:focus-visible:after {
+        [aria-disabled="true"],
+        a:not([href])
+    ):focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
-a.navigation-menu__item:not([disabled], [aria-disabled="true"]):active:after,
-a.navigation-menu__item[href]:active:after,
+a.navigation-menu__item:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):active:after,
 button.navigation-menu__item:not(
         [disabled],
-        [aria-disabled="true"]
-    ):active:after,
-button.navigation-menu__item[href]:active:after {
+        [aria-disabled="true"],
+        a:not([href])
+    ):active:after {
     background-color: var(--color-state-layer-pressed);
 }
 a.navigation-menu__item:active,

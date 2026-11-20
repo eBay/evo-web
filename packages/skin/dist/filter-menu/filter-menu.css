@@ -78,34 +78,40 @@ span.filter-menu__item[role^="menuitem"] {
     pointer-events: none;
     position: absolute;
 }
-.filter-menu-form__item:not([disabled], [aria-disabled="true"]):hover:after,
-.filter-menu-form__item[href]:hover:after,
+.filter-menu-form__item:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):hover:after,
 .filter-menu__item[role^="menuitem"]:not(
         [disabled],
-        [aria-disabled="true"]
-    ):hover:after,
-.filter-menu__item[role^="menuitem"][href]:hover:after {
+        [aria-disabled="true"],
+        a:not([href])
+    ):hover:after {
     background-color: var(--color-state-layer-hover);
 }
 .filter-menu-form__item:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):focus-visible:after,
-.filter-menu-form__item[href]:focus-visible:after,
 .filter-menu__item[role^="menuitem"]:not(
         [disabled],
-        [aria-disabled="true"]
-    ):focus-visible:after,
-.filter-menu__item[role^="menuitem"][href]:focus-visible:after {
+        [aria-disabled="true"],
+        a:not([href])
+    ):focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
-.filter-menu-form__item:not([disabled], [aria-disabled="true"]):active:after,
-.filter-menu-form__item[href]:active:after,
+.filter-menu-form__item:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):active:after,
 .filter-menu__item[role^="menuitem"]:not(
         [disabled],
-        [aria-disabled="true"]
-    ):active:after,
-.filter-menu__item[role^="menuitem"][href]:active:after {
+        [aria-disabled="true"],
+        a:not([href])
+    ):active:after {
     background-color: var(--color-state-layer-pressed);
 }
 .filter-menu-form__item,
@@ -191,32 +197,38 @@ button.filter-menu__footer:after {
 }
 button.filter-menu-form__footer[type="submit"]:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):hover:after,
-button.filter-menu-form__footer[type="submit"][href]:hover:after,
-button.filter-menu__footer:not([disabled], [aria-disabled="true"]):hover:after,
-button.filter-menu__footer[href]:hover:after {
+button.filter-menu__footer:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):hover:after {
     background-color: var(--color-state-layer-hover);
 }
 button.filter-menu-form__footer[type="submit"]:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):focus-visible:after,
-button.filter-menu-form__footer[type="submit"][href]:focus-visible:after,
 button.filter-menu__footer:not(
         [disabled],
-        [aria-disabled="true"]
-    ):focus-visible:after,
-button.filter-menu__footer[href]:focus-visible:after {
+        [aria-disabled="true"],
+        a:not([href])
+    ):focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 button.filter-menu-form__footer[type="submit"]:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):active:after,
-button.filter-menu-form__footer[type="submit"][href]:active:after,
-button.filter-menu__footer:not([disabled], [aria-disabled="true"]):active:after,
-button.filter-menu__footer[href]:active:after {
+button.filter-menu__footer:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):active:after {
     background-color: var(--color-state-layer-pressed);
 }
 button.filter-menu-form__footer[type="submit"],

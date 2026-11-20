@@ -119,16 +119,25 @@ div.carousel {
     pointer-events: none;
     position: absolute;
 }
-.carousel__control:not([disabled], [aria-disabled="true"]):hover:after,
-.carousel__control[href]:hover:after {
+.carousel__control:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):hover:after {
     background-color: var(--color-state-layer-hover);
 }
-.carousel__control:not([disabled], [aria-disabled="true"]):focus-visible:after,
-.carousel__control[href]:focus-visible:after {
+.carousel__control:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
-.carousel__control:not([disabled], [aria-disabled="true"]):active:after,
-.carousel__control[href]:active:after {
+.carousel__control:not(
+        [disabled],
+        [aria-disabled="true"],
+        a:not([href])
+    ):active:after {
     background-color: var(--color-state-layer-pressed);
 }
 .carousel__control {

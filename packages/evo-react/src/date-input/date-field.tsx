@@ -2,7 +2,7 @@ import { useCallback, useState } from "react";
 import type { ChangeEvent, FocusEvent, KeyboardEvent } from "react";
 import { EvoInput } from "../input";
 import type { EvoInputPostfixProps } from "../input";
-import { format, getLocale, parse, placeholder } from "../utils/dates";
+import { format, getLayout, parse, placeholder } from "../utils/dates";
 import { useFormReset } from "../utils/use-form-reset";
 import { useRefTee } from "../utils/use-ref-tee";
 import type {
@@ -108,7 +108,7 @@ export function DateField({
         return;
       }
 
-      const { o: order, s: sep } = getLocale(locale);
+      const { order, sep } = getLayout(locale);
       let i = 0;
       let start = 0;
       for (let currStart; ~(currStart = value.indexOf(sep[i], start));) {
@@ -116,7 +116,7 @@ export function DateField({
         i++;
       }
 
-      const segmentLength = order[i] === "y" ? 4 : 2;
+      const segmentLength = order[i] === "year" ? 4 : 2;
       if (value.length - start === segmentLength && sep[i]) {
         setDraft(`${value}${sep[i]}`);
       }

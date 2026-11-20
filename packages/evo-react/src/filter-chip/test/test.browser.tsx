@@ -24,15 +24,15 @@ describe("evo-filter-chip", () => {
       );
       const button = screen.getByRole("button");
 
-      await expect.element(button).toHaveAttribute("aria-selected", "false");
+      await expect.element(button).toHaveAttribute("aria-pressed", "false");
       await user.click(button);
-      await expect.element(button).toHaveAttribute("aria-selected", "true");
+      await expect.element(button).toHaveAttribute("aria-pressed", "true");
       expect(onClick).toHaveBeenLastCalledWith(expect.any(Object), {
         selected: true,
       });
 
       await user.click(button);
-      await expect.element(button).toHaveAttribute("aria-selected", "false");
+      await expect.element(button).toHaveAttribute("aria-pressed", "false");
       expect(onClick).toHaveBeenLastCalledWith(expect.any(Object), {
         selected: false,
       });
@@ -49,7 +49,7 @@ describe("evo-filter-chip", () => {
 
       await user.click(button);
 
-      await expect.element(button).toHaveAttribute("aria-selected", "false");
+      await expect.element(button).toHaveAttribute("aria-pressed", "false");
       expect(onClick).toHaveBeenCalledWith(expect.any(Object), {
         selected: true,
       });
@@ -79,7 +79,7 @@ describe("evo-filter-chip", () => {
       const button = screen.getByRole("button");
 
       await expect.element(button).toHaveAttribute("aria-expanded", "false");
-      await expect.element(button).not.toHaveAttribute("aria-selected");
+      await expect.element(button).not.toHaveAttribute("aria-pressed");
 
       await user.click(button);
       await expect.element(button).toHaveAttribute("aria-expanded", "true");
