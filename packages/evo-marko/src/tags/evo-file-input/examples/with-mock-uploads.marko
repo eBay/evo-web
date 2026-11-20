@@ -30,11 +30,7 @@ static async function mockFetch() {
 
 <evo-file-preview-card-group>
   <for|[file, url], index| of=files>
-    <@card
-      a11yCancelUploadText="Cancel upload"
-      file=file
-      status=url ? undefined : "uploading"
-    >
+    <@card file=file status=url ? undefined : "uploading">
       <@deleteAction
         a11yText="Delete Card"
         onClick() {

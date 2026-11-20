@@ -34,7 +34,7 @@ $ const { max = 120, clippedText } = input;
 class {
     declare state: {
         inputValue: string;
-        inputAriaLive: Marko.AriaAttributes["aria-live"];
+        inputAriaLive: Marko.HTMLAttributes["aria-live"];
     };
     onCreate() {
         this.state = {
@@ -47,7 +47,7 @@ class {
     }
     onCharCountChange(e?: {
         count: number;
-        inputAriaLive: Marko.AriaAttributes["aria-live"];
+        inputAriaLive: Marko.HTMLAttributes["aria-live"];
     }) {
         if (e) {
             this.state.inputAriaLive = e.inputAriaLive;

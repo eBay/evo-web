@@ -11,7 +11,6 @@ exports[`ebay-filter-input > renders default input 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -43,7 +42,6 @@ exports[`ebay-filter-input > renders default input 1`] = `
         [36m<svg[39m
           [33maria-hidden[39m=[32m"true"[39m
           [33mclass[39m=[32m"icon icon--16"[39m
-          [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
           [36m<defs>[39m
             [36m<symbol[39m
@@ -76,7 +74,6 @@ exports[`ebay-filter-input > renders large 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -108,7 +105,6 @@ exports[`ebay-filter-input > renders large 1`] = `
         [36m<svg[39m
           [33maria-hidden[39m=[32m"true"[39m
           [33mclass[39m=[32m"icon icon--16"[39m
-          [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
           [36m<defs>[39m
             [36m<symbol[39m
@@ -141,7 +137,6 @@ exports[`ebay-filter-input > renders small 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -173,7 +168,6 @@ exports[`ebay-filter-input > renders small 1`] = `
         [36m<svg[39m
           [33maria-hidden[39m=[32m"true"[39m
           [33mclass[39m=[32m"icon icon--16"[39m
-          [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
           [36m<defs>[39m
             [36m<symbol[39m
@@ -207,7 +201,6 @@ exports[`ebay-filter-input > renders with aria-controls 1`] = `
         [36m<svg[39m
           [33maria-hidden[39m=[32m"true"[39m
           [33mclass[39m=[32m"icon icon--16"[39m
-          [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
           [36m<defs>[39m
             [36m<symbol[39m
@@ -240,7 +233,6 @@ exports[`ebay-filter-input > renders with aria-controls 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--16"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<defs>[39m
               [36m<symbol[39m
@@ -279,7 +271,6 @@ exports[`ebay-filter-input > renders with custom placeholder and aria label 1`] 
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -311,7 +302,6 @@ exports[`ebay-filter-input > renders with custom placeholder and aria label 1`] 
         [36m<svg[39m
           [33maria-hidden[39m=[32m"true"[39m
           [33mclass[39m=[32m"icon icon--16"[39m
-          [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
           [36m<defs>[39m
             [36m<symbol[39m
@@ -344,7 +334,6 @@ exports[`ebay-filter-input > renders without clear button and no placeholder 1`]
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m

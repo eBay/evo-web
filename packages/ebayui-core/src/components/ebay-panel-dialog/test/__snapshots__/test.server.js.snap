@@ -37,7 +37,6 @@ exports[`dialog > passes through additional html attributes 1`] = `
         <svg
           aria-hidden="true"
           class="icon icon--16"
-          focusable="false"
         >
           <defs>
             <symbol
@@ -115,7 +114,6 @@ exports[`dialog > passes through additional html attributes 2`] = `
         <svg
           aria-hidden="true"
           class="icon icon--16"
-          focusable="false"
         >
           <defs>
             <symbol
@@ -185,7 +183,6 @@ exports[`dialog > renders basic version 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--16"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<defs>[39m
               [36m<symbol[39m
@@ -258,7 +255,6 @@ exports[`dialog > renders with footer 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--16"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<defs>[39m
               [36m<symbol[39m
@@ -339,7 +335,6 @@ exports[`dialog > renders with previous button 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--16"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<defs>[39m
               [36m<symbol[39m
@@ -370,7 +365,6 @@ exports[`dialog > renders with previous button 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--16"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<defs>[39m
               [36m<symbol[39m

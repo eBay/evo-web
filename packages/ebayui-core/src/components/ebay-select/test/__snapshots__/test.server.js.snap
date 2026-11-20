@@ -23,7 +23,6 @@ exports[`select > passes through additional html attributes 2`] = `
   <svg
     aria-hidden="true"
     class="icon icon--12"
-    focusable="false"
   >
     <defs>
       <symbol
@@ -156,7 +155,6 @@ exports[`select > renders basic version 1`] = `
   <svg
     aria-hidden="true"
     class="icon icon--12"
-    focusable="false"
   >
     <defs>
       <symbol
@@ -207,7 +205,6 @@ exports[`select > renders basic version 2`] = `
   <svg
     aria-hidden="true"
     class="icon icon--12"
-    focusable="false"
   >
     <defs>
       <symbol

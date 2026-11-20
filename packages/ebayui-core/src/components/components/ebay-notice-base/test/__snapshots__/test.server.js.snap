@@ -16,7 +16,6 @@ exports[`notice-icon > passes through additional html attributes 1`] = `
     <svg
       aria-label="default label"
       class="icon icon--16"
-      focusable="false"
       role="img"
     >
       <defs>
@@ -60,7 +59,6 @@ exports[`notice-icon > passes through additional html attributes 2`] = `
     <svg
       aria-label="default label"
       class="icon icon--16"
-      focusable="false"
       role="img"
     >
       <defs>
@@ -96,7 +94,6 @@ exports[`notice-icon > renders basic version 1`] = `
   <svg
     aria-label="default label"
     class="icon icon--16"
-    focusable="false"
     role="img"
   >
     <defs>
@@ -128,7 +125,6 @@ exports[`notice-icon > renders basic version 2`] = `
     <svg
       aria-label="default label"
       class="icon icon--16"
-      focusable="false"
       role="img"
     >
       <defs>
@@ -170,7 +166,6 @@ exports[`notice-icon > renders basic version 4`] = `
 <svg
   aria-label="default label"
   class="icon icon--16"
-  focusable="false"
   role="img"
 >
   <defs>
@@ -197,7 +192,6 @@ exports[`notice-icon > renders education notice 1`] = `
   <svg
     aria-label="education label"
     class="icon icon--24"
-    focusable="false"
     role="img"
   >
     <defs>
@@ -231,7 +225,6 @@ exports[`notice-icon > renders education notice 2`] = `
     <svg
       aria-label="education label"
       class="icon icon--24"
-      focusable="false"
       role="img"
     >
       <defs>
@@ -265,7 +258,6 @@ exports[`notice-icon > renders education notice 3`] = `
 <svg
   aria-label="education label"
   class="icon icon--24"
-  focusable="false"
   role="img"
 >
   <defs>
@@ -298,7 +290,6 @@ exports[`notice-icon > renders inline version 1`] = `
     <svg
       aria-label="default label"
       class="notice-class icon icon--16"
-      focusable="false"
       role="img"
     >
       <defs>
@@ -330,7 +321,6 @@ exports[`notice-icon > renders inline version 2`] = `
 <svg
   aria-label="default label"
   class="notice-class icon icon--16"
-  focusable="false"
   role="img"
 >
   <defs>
@@ -361,7 +351,6 @@ exports[`notice-icon > renders title and footer version 1`] = `
     <svg
       aria-label="default label"
       class="icon icon--16"
-      focusable="false"
       role="img"
     >
       <defs>
@@ -448,7 +437,6 @@ exports[`notice-icon > renders warning version 1`] = `
   <svg
     aria-label="default label"
     class="icon icon--16"
-    focusable="false"
     role="img"
   >
     <defs>
@@ -480,7 +468,6 @@ exports[`notice-icon > renders warning version 2`] = `
     <svg
       aria-label="default label"
       class="icon icon--16"
-      focusable="false"
       role="img"
     >
       <defs>
@@ -522,7 +509,6 @@ exports[`notice-icon > renders warning version 4`] = `
 <svg
   aria-label="default label"
   class="icon icon--16"
-  focusable="false"
   role="img"
 >
   <defs>

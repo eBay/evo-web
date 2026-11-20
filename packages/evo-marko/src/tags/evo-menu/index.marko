@@ -24,7 +24,16 @@ export interface Input<
   selected?: Index | null;
   selectedChange?: (selected: Index) => void;
   item?: Marko.AttrTag<Item>;
-  group?: Marko.AttrTag<Group>;
+  /** Each group is typed by its own `selected`: a value selects one item, an array several. */
+  // Listed, not taken from `Index`: that is the menu's own selection, and one type for the whole tag.
+  // `Group<never>` (no selection) is the unit-typed member TypeScript needs to tell the kinds apart.
+  group?: Marko.AttrTag<
+    | Group<never>
+    | Group<string>
+    | Group<number>
+    | Group<string[]>
+    | Group<number[]>
+  >;
   variant?: "filter" | "none";
   classPrefix?: string;
   typeaheadTimeoutLength?: number;
