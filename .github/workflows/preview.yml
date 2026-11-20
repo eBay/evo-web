@@ -5,48 +5,15 @@ on:
     types: [opened, synchronize, reopened]
 
 concurrency:
-  group: "preview-${{ github.head_ref }}"
+  group: "preview-${{ github.event.pull_request.number }}"
   cancel-in-progress: true
 
 jobs:
-  deploy-preview:
+  build:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.head.repo.full_name == github.repository
     permissions:
-      contents: write
-      pull-requests: write
-      issues: write
-      deployments: read
+      contents: read
     steps:
-      - name: Post "updating" status to PR
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const pr = context.payload.pull_request.number;
-            const sha = context.payload.pull_request.head.sha;
-            const { data: comments } = await github.rest.issues.listComments({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: pr,
-            });
-            const existing = comments.find(
-              c => c.user.login === 'github-actions[bot]' && c.body.includes('PR Preview Deployed')
-            );
-            if (existing) {
-              // Strip any prior "(deploying ...)" marker rather than stacking, in case
-              // a previous run was cancelled (via concurrency) before it could clean up.
-              const body = existing.body
-                .replace(/ _\(deploying .+?\)_$/, '')
-                .trimEnd();
-              await github.rest.issues.updateComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                comment_id: existing.id,
-                body: body + ` _(deploying ${sha}...)_`,
-              });
-            }
-
       - name: Checkout code
         uses: actions/checkout@v6
 
@@ -64,131 +31,15 @@ jobs:
         env:
           BASE_URL: /evo-web/previews/pr-${{ github.event.pull_request.number }}/
 
-      - name: Deploy to gh-pages branch (preview subdirectory)
-        id: deploy
-        run: |
-          set -euo pipefail
-          repo_url="https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
-          PR=${{ github.event.pull_request.number }}
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      # Artifacts reject some of the site's file names (e.g. "css?debug=1.html").
+      - name: Pack site
+        run: tar -czf preview-site.tgz -C _site/public .
 
-          # Deploy by fully REPLACING previews/pr-<N> rather than gh-pages --add,
-          # which layered every build's hashed assets on top of the last and let a
-          # single preview grow to many copies of its storybooks. A blobless
-          # sparse clone keeps this cheap: only this PR's directory is ever
-          # checked out, never the whole (multi-GB) branch. Retry on a
-          # non-fast-forward rejection in case a concurrent gh-pages write
-          # (another preview, the cleanup job, or the production deploy) lands first.
-          git clone --filter=blob:none --no-checkout --depth 1 --branch gh-pages "$repo_url" gh-pages-work
-          cd gh-pages-work
-          git sparse-checkout set "previews/pr-${PR}"
-          pushed=false
-          for attempt in 1 2 3; do
-            git fetch --depth 1 origin gh-pages
-            git checkout -B gh-pages origin/gh-pages
-            rm -rf "previews/pr-${PR}"
-            mkdir -p "previews/pr-${PR}"
-            cp -R ../_site/public/. "previews/pr-${PR}/"
-            # Read by enforce-preview-budget.sh for LRU eviction.
-            date -u +%Y-%m-%dT%H:%M:%SZ > "previews/pr-${PR}/.deployed-at"
-            du -sb "previews/pr-${PR}" | cut -f1 > "previews/pr-${PR}/.size-bytes"
-            touch .nojekyll
-            git add -A .nojekyll "previews/pr-${PR}"
-            git commit -m "preview: pr-${PR} @ ${{ github.sha }}"
-            if git push origin gh-pages; then
-              pushed=true
-              break
-            fi
-            echo "gh-pages push rejected (attempt ${attempt}); retrying against new tip."
-            sleep $((attempt * 3))
-          done
-          cd ..
-          $pushed || { echo "Failed to deploy preview after 3 attempts."; exit 1; }
-          echo "sha=$(git ls-remote "$repo_url" gh-pages | cut -f1)" >> "$GITHUB_OUTPUT"
-
-      # Before the Pages wait below, which fails on an oversized deploy —
-      # exactly when this needs to run, and steps skip by default on failure.
-      - name: Enforce preview size budget
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: .github/scripts/enforce-preview-budget.sh
-
-      - name: Wait for GitHub Pages deployment
-        run: |
-          set -uo pipefail
-          sha="${{ steps.deploy.outputs.sha }}"
-          api="https://api.github.com/repos/${{ github.repository }}"
-          auth=(-H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" -H "Accept: application/vnd.github+json")
-          gh_api() { curl -s --max-time 15 "${auth[@]}" "$@"; }
-
-          id=""
-          for attempt in $(seq 1 30); do
-            if [ -z "$id" ]; then
-              # Query by exact commit SHA; the legacy /pages/builds/latest endpoint
-              # isn't a reliable per-commit signal.
-              id=$(gh_api "${api}/deployments?sha=${sha}&environment=github-pages" | jq -r 'if type=="array" and length>0 then .[0].id else empty end')
-              if [ -z "$id" ]; then
-                echo "No GitHub Pages deployment recorded yet for ${sha} (attempt ${attempt}/30)..."
-                sleep 10
-                continue
-              fi
-            fi
-
-            state=$(gh_api "${api}/deployments/${id}/statuses" | jq -r 'if type=="array" and length>0 then .[0].state else empty end')
-
-            if [ "$state" = "success" ]; then
-              echo "GitHub Pages deployment for ${sha} succeeded."
-              exit 0
-            fi
-            if [ "$state" = "failure" ] || [ "$state" = "error" ]; then
-              echo "GitHub Pages deployment for ${sha} failed (state: ${state})."
-              exit 1
-            fi
-
-            echo "GitHub Pages deployment for ${sha} is ${state:-pending} (attempt ${attempt}/30)..."
-            sleep 10
-          done
-          echo "GitHub Pages deployment did not confirm within 5 minutes; posting the link anyway."
-
-      - name: Post preview URL to PR
-        uses: actions/github-script@v7
+      - name: Upload site
+        uses: actions/upload-artifact@v4
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const pr = context.payload.pull_request.number;
-            const sha = context.payload.pull_request.head.sha.slice(0, 7);
-            const url = `https://opensource.ebay.com/evo-web/previews/pr-${pr}/`;
-            const body = [
-              `### PR Preview Deployed`,
-              ``,
-              `[Website](${url}) • [\`evo-marko\`](${url}marko/) • [\`evo-react\`](${url}react/) • [\`ebayui-core\`](${url}ebayui-core/) • [\`ebayui-core-react\`](${url}ebayui-core-react/) • [\`skin\`](${url}skin-storybook/storybook/)`,
-              ``,
-              `###### commit ${sha}`,
-            ].join('\n');
-
-            // Overwrite any existing bot comment outright, so stale
-            // "deploying"/"evicted" state never lingers.
-            const { data: comments } = await github.rest.issues.listComments({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: pr,
-            });
-            const existing = comments.find(
-              c => c.user.login === 'github-actions[bot]' && c.body.includes('PR Preview Deployed')
-            );
-            if (existing) {
-              await github.rest.issues.updateComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                comment_id: existing.id,
-                body,
-              });
-            } else {
-              await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: pr,
-                body,
-              });
-            }
+          name: preview-site
+          path: preview-site.tgz
+          compression-level: 0
+          # Fork builds wait for approval, which GitHub allows for up to 30 days.
+          retention-days: ${{ github.event.pull_request.head.repo.fork && 30 || 1 }}
