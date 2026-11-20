@@ -9,8 +9,102 @@
     display: inline-block;
 }
 
-.date-textbox > .textbox + .textbox {
-    margin-left: var(--spacing-100);
+.date-textbox__value,
+.date-textbox__value > [role="group"] {
+    align-items: center;
+    display: inline-flex;
+}
+
+/* A minimum width keeps the field from shrinking as digits replace placeholders. */
+.date-textbox__value {
+    height: calc(var(--input-default-height) - 2px);
+    min-width: 14ch;
+}
+
+.date-textbox__value:has(> [role="group"]) {
+    min-width: 28ch;
+}
+
+/* Pulls the first part's padding into the textbox's, so its digits align with other inputs' text. */
+.date-textbox__value > :first-child {
+    margin-inline-start: -2px;
+}
+
+.date-textbox__separator {
+    @include token-mixins.color-token(
+        textbox-placeholder-color,
+        color-foreground-secondary
+    );
+
+    white-space: pre;
+}
+
+.textbox--disabled .date-textbox__separator {
+    @include token-mixins.color-token(
+        textbox-disabled-foreground-color,
+        color-foreground-disabled
+    );
+}
+
+/* The hidden ::after sizes each part to its value or placeholder. */
+.date-textbox__part {
+    display: inline-grid;
+}
+
+.date-textbox__part::after,
+.date-textbox__part > input {
+    font: inherit;
+    grid-area: 1 / 1;
+    padding: 0 2px;
+}
+
+.date-textbox__part::after {
+    content: attr(data-size);
+    visibility: hidden;
+}
+
+.date-textbox__part > input {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+    caret-color: transparent;
+    color: inherit;
+    margin: 0;
+    min-width: 100%;
+    outline: none;
+    width: 0;
+
+    &::placeholder {
+        @include token-mixins.color-token(
+            textbox-placeholder-color,
+            color-foreground-secondary
+        );
+
+        opacity: 1;
+    }
+
+    &:disabled::placeholder {
+        @include token-mixins.color-token(
+            textbox-disabled-placeholder-color,
+            color-foreground-ghost
+        );
+    }
+
+    &:focus:not([readonly]) {
+        background-color: Highlight;
+        color: HighlightText;
+    }
+
+    &:focus:not([readonly])::placeholder {
+        color: HighlightText;
+        opacity: 0.7;
+    }
+
+    /* The part's background already shows the selection; a second one would differ in color. */
+    &::selection {
+        background-color: transparent;
+    }
 }
 
 .date-textbox__popover {

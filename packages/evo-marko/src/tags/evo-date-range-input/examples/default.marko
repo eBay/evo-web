@@ -1,6 +1,10 @@
-<evo-date-range-input ...input a11yOpenPopoverText="Open calendar">
-  <@input floatingLabel="Purchase date from"/>
-  <@input floatingLabel="Purchase date to"/>
+<evo-date-range-input
+  ...input
+  floatingLabel="Purchase dates"
+  a11yOpenPopoverText="Open calendar"
+  a11yStartText="Start"
+  a11yEndText="End"
+>
   <@calendar
     a11yNavigateText(month, dir) {
       return `Go to ${month} (${dir === "prev" ? "Previous" : "Next"} month)`;

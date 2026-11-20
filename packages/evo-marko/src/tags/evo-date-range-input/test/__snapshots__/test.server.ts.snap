@@ -8,40 +8,147 @@ exports[`evo-date-range-input SSR > renders default 1`] = `
     class="floating-label"
   >
     <label
-      class="floating-label__label floating-label__label--animate floating-label__label--inline"
+      class="floating-label__label floating-label__label--animate floating-label__label--focus"
       for="GENERATED-0"
     >
-      Purchase date from
+      Purchase dates
     </label>
     <span
+      aria-label="Purchase dates"
       class="textbox"
+      role="group"
     >
-      <input
-        class="textbox__control"
-        id="GENERATED-0"
-        value=""
-      />
-    </span>
-  </span>
-  <span
-    class="floating-label"
-  >
-    <label
-      class="floating-label__label floating-label__label--animate floating-label__label--inline"
-      for="GENERATED-1"
-    >
-      Purchase date to
-    </label>
-    <span
-      class="textbox"
-    >
-      <input
-        class="textbox__control"
-        id="GENERATED-1"
-        value=""
-      />
+      <span
+        class="textbox__control date-textbox__value"
+      >
+        <span
+          aria-label="Start"
+          role="group"
+        >
+          <span
+            class="date-textbox__part"
+            data-size="MM"
+          >
+            <input
+              aria-label="month"
+              autocomplete="off"
+              id="GENERATED-0"
+              inputmode="numeric"
+              maxlength="3"
+              placeholder="MM"
+              role="spinbutton"
+              value=""
+            />
+          </span>
+          <span
+            aria-hidden="true"
+            class="date-textbox__separator"
+          >
+            /
+          </span>
+          <span
+            class="date-textbox__part"
+            data-size="DD"
+          >
+            <input
+              aria-label="day"
+              autocomplete="off"
+              inputmode="numeric"
+              maxlength="3"
+              placeholder="DD"
+              role="spinbutton"
+              value=""
+            />
+          </span>
+          <span
+            aria-hidden="true"
+            class="date-textbox__separator"
+          >
+            /
+          </span>
+          <span
+            class="date-textbox__part"
+            data-size="YYYY"
+          >
+            <input
+              aria-label="year"
+              autocomplete="off"
+              inputmode="numeric"
+              maxlength="5"
+              placeholder="YYYY"
+              role="spinbutton"
+              value=""
+            />
+          </span>
+        </span>
+        <span
+          aria-hidden="true"
+          class="date-textbox__separator"
+        >
+           — 
+        </span>
+        <span
+          aria-label="End"
+          role="group"
+        >
+          <span
+            class="date-textbox__part"
+            data-size="MM"
+          >
+            <input
+              aria-label="month"
+              autocomplete="off"
+              inputmode="numeric"
+              maxlength="3"
+              placeholder="MM"
+              role="spinbutton"
+              value=""
+            />
+          </span>
+          <span
+            aria-hidden="true"
+            class="date-textbox__separator"
+          >
+            /
+          </span>
+          <span
+            class="date-textbox__part"
+            data-size="DD"
+          >
+            <input
+              aria-label="day"
+              autocomplete="off"
+              inputmode="numeric"
+              maxlength="3"
+              placeholder="DD"
+              role="spinbutton"
+              value=""
+            />
+          </span>
+          <span
+            aria-hidden="true"
+            class="date-textbox__separator"
+          >
+            /
+          </span>
+          <span
+            class="date-textbox__part"
+            data-size="YYYY"
+          >
+            <input
+              aria-label="year"
+              autocomplete="off"
+              inputmode="numeric"
+              maxlength="5"
+              placeholder="YYYY"
+              role="spinbutton"
+              value=""
+            />
+          </span>
+        </span>
+      </span>
       <button
-        aria-controls="GENERATED-3"
+        aria-controls="GENERATED-2"
         aria-expanded="false"
         aria-label="Open calendar"
         class="icon-btn icon-btn--transparent"
@@ -52,7 +159,7 @@ exports[`evo-date-range-input SSR > renders default 1`] = `
           class="icon icon--24"
         >
           <symbol
-            id="GENERATED-2"
+            id="GENERATED-1"
             viewBox="0 0 24 24"
           >
             <path
@@ -71,7 +178,7 @@ exports[`evo-date-range-input SSR > renders default 1`] = `
   <div
     class="date-textbox__popover"
     hidden=""
-    id="GENERATED-3"
+    id="GENERATED-2"
     style="visibility:hidden"
   >
     <div
@@ -93,7 +200,7 @@ exports[`evo-date-range-input SSR > renders default 1`] = `
               class="icon icon--24"
             >
               <symbol
-                id="GENERATED-4"
+                id="GENERATED-3"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -118,7 +225,7 @@ exports[`evo-date-range-input SSR > renders default 1`] = `
               class="icon icon--24"
             >
               <symbol
-                id="GENERATED-5"
+                id="GENERATED-4"
                 viewBox="0 0 24 24"
               >
                 <path
