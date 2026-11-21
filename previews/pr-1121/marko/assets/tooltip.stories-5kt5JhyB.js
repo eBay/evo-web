@@ -1,0 +1,50 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{t}from"./utils-CkiB0p9L.js";import{$ as n,A as r,E as ee,H as te,Q as i,R as a,W as ne,at as o,b as s,c,ct as l,et as u,ft as re,i as d,it as f,j as p,k as m,n as h,nt as ie,ot as g,pt as ae,s as _,t as v,tt as oe,ut as se,w as ce}from"./dom-BJr4MHiD.js";import{t as le}from"./controllable.feat-Cluo05Rw.js";import{t as ue}from"./dynamic-tag-script.feat-HXJ_YFdo.js";import{i as de,n as fe,t as pe}from"./evo-icon-button-Dhy7mouB.js";import{n as me,r as he,t as ge}from"./evo-expander-CxJlMCTc.js";import{a as _e,i as ve,n as ye,r as be,t as xe}from"./evo-icon-settings-24-BGltQxSJ.js";function y(){return(y=e((()=>{})))()}function b(){return(b=e((()=>{y()})))()}function x(e){re(e,0,je),me(e.a),B(e,void 0),Te(e,i(e)),De(e,i(e)),ke(e,i(e)),Ae(e)}var S,C,w,T,E,D,O,k,A,j,M,N,P,F,I,L,R,z,Se,B,Ce,we,V,Te,Ee,De,Oe,ke,Ae,je,Me,Ne,Pe,Fe,Ie,Le,H,Re,ze,Be,Ve,He,Ue,We,Ge,Ke,U,qe,Je,Ye,Xe,Ze,Qe,$e,et,W,G,K,tt;function q(){return(q=e((()=>{d(),he(),ue(),le(),b(),S=(e=>`${e}<span><!><span class=tooltip__overlay role=tooltip><span class=tooltip__pointer></span><span class=tooltip__mask><span class=tooltip__cell><span class=tooltip__content><!><!></span></span></span></span></span>`)(``),C=(e=>`0${e}& D%b D bF%b%p`)(``),w=a(0),T=o(2,e=>w(e,e.b,()=>({...e._.ap,class:[`tooltip__heading`,e._.ao]})),2),E=r(1,T),D=u(6,0,e=>E(e,e._.an===void 0?`span`:e._.an)),O=e=>{D._(e),k._(e),A._(e)},k=u(6,0,T),A=u(6,0,T),j=o(40,e=>ge(e.a,{open:e.a4,placement:e.a2,offset:e.a3,flip:e.r,shift:e.s,inline:e.u,detachPopover:e.t,host:e.a9,overlay:e.ab,arrow:e.ad}),9),M=r(28,j),N=(e,t)=>M(e,t===void 0?`bottom`:t),P=r(29,j),F=(e,t)=>P(e,t===void 0?8:t),I=o(32,e=>c(e.c,[`tooltip`,e.a4&&`tooltip--expanded`,e.o])),L=ie(30,e=>{_(e.e,`tabindex`,e.a4&&-1),j(e),I(e)}),R=o(12,e=>L(e,e.k??!1,e.l)),z=r(10,R),Se=r(11,R),B=oe(33),Ce=r(35,j),we=a(3),V=o(48,e=>we(e,e.al,()=>({...e.ak,id:e.a8,class:[`tooltip__host`,e.aj]})),3),Te=r(34,e=>{Ce(e,W(e)),V(e)}),Ee=r(37,j),De=r(36,e=>{_(e.e,`id`,e.aa),Ee(e,G(e))}),Oe=r(39,j),ke=r(38,e=>{_(e.f,`id`,e.ac),Oe(e,K(e))}),Ae=l(`kb3`,e=>{f(e.c,`mouseenter`,function(t,n){clearTimeout(e.a7),L(e,!0),e.x&&e.x(t,n)}),f(e.c,`mouseleave`,function(t,n){clearTimeout(e.a7),B(e,setTimeout(()=>{L(e,!1)},300)),e.y&&e.y(t,n)}),f(e.c,`focusin`,function(t,n){L(e,!0),e.z&&e.z(t,n)}),f(e.c,`focusout`,function(t,n){L(e,n.contains(t.relatedTarget)),e.a0&&e.a0(t,n)})}),je=ae(`kb4`,(e,t)=>{Me(e,t?.floatingStyles),Ne(e,t?.arrowStyles)}),Me=(e,t)=>s(e.e,t),Ne=(e,t)=>s(e.f,t),Pe=r(17,j),Fe=r(18,j),Ie=r(19,j),Le=r(20,j),H=r(14,I),Re=l(`kb5`,e=>ee(e,`c`)),ze=r(27,e=>{ce(e,`c`,e.a1,{class:1,"on-mouseenter":1,"on-mouseleave":1,"on-focusin":1,"on-focusout":1}),Re(e)}),Be=r(47,V),Ve=(e,t)=>Be(e,t===void 0?`span`:t),He=r(45,V),Ue=r(46,V),We=n(6,`<!><!><!>`,`b%`,O),Ge=(e,t)=>{(({as:t,class:n,...r})=>Je(e,r))(t||{}),Ye(e,t?.as),Xe(e,t?.class),We(e,+!t)},Ke=a(7),U=(e,t)=>{(({class:t,detachPopover:n,flip:r,heading:ee,host:te,inline:i,offset:a,onFocusIn:ne,onFocusOut:o,onMouseEnter:s,onMouseLeave:c,open:l,openChange:u,placement:re,shift:d,...f})=>ze(e,f))(t),z(e,t.open),Se(e,t.openChange),Ke(e,t.content),H(e,t.class),N(e,t.placement),F(e,t.offset),Pe(e,t.flip),Fe(e,t.shift),Ie(e,t.detachPopover),Le(e,t.inline),qe(e,t.host),Ge(e,t.heading),Ze(e,t.onMouseEnter),Qe(e,t.onMouseLeave),$e(e,t.onFocusIn),et(e,t.onFocusOut)},qe=(e,t)=>{(({as:t,class:n,...r})=>Ue(e,r))(t),Ve(e,t.as),He(e,t.class)},Je=r(51,A),Ye=r(49,D),Xe=r(50,k),Ze=r(23),Qe=r(24),$e=r(25),et=r(26),W=e=>function(){return document.getElementById(e.a8)},G=e=>function(){return document.getElementById(e.aa)},K=e=>function(){return document.getElementById(e.ac)},g.kb0=W,g.kb1=G,g.kb2=K,tt=v(`kb`,S,C,x,U)})))()}function nt(e){x(e.a)}var rt,it,at,ot,st,ct;function lt(){return(lt=e((()=>{q(),d(),rt=S,it=(e=>`/${e}&`)(C),at=p(`l04gSRC`,`<a href=https://www.ebay.com>View options</a>`),ot=p(`tBJ0UA6`,`Use Access Key 'S' to display settings.`),st=(e,t)=>U(e.a,{...t,host:h({content:at(e)}),content:ot(e)}),ct=v(`n2wPuOY`,rt,it,nt,st)})))()}var ut;function dt(){return(dt=e((()=>{ut=`<evo-tooltip ...input>
+  <@host><a href="https://www.ebay.com">View options</a></@host>
+  Use Access Key 'S' to display settings.
+</evo-tooltip>
+`})))()}var ft;function pt(){return(pt=e((()=>{ft=`_grid_11q24_2`})))()}function mt(e){c(e.a,ft),xt(e,[[`top-start`,`top`,`top-end`,`right-start`,`right`,`right-end`,`bottom-start`,`bottom`,`bottom-end`,`left-start`,`left`,`left-end`]])}var ht,gt,_t,J,Y,vt,yt,bt,xt,St,Ct;function wt(){return(wt=e((()=>{pt(),d(),q(),ht=`<div></div><a></a>`,gt=p(`UjI4qOA`,`<p>Tooltip content for <code> </code></p><p>Here we explicitly set <code>flip=false</code> for demonstration. By default, tourtip will not extend outside the window</p>`,`DbD `,m(4,e=>se(e.a,e._.c))),_t=p(`GYmOo3D`,` `,` `,m(4,e=>se(e.a,e._.c))),J=o(3,e=>U(e.a,{...e._.c,placement:e.c,flip:!1,host:h({as:`button`,content:_t(e)}),content:gt(e)})),Y=te(0,J),vt=e=>{Y._(e),x(e.a)},yt=r(2,J),bt=(e,t)=>yt(e,t[0]),xt=ne(0,S,(e=>`/${e}&`)(C),vt,bt),St=r(2,Y),Ct=v(`r7GD90a`,ht,` c`,mt,St)})))()}var Tt;function Et(){return(Et=e((()=>{Tt=`<style/styles>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    justify-items: center;
+  }
+</style>
+
+<div class=(styles as any).grid>
+  <for|placement|
+    of=[
+      "top-start",
+      "top",
+      "top-end",
+      "right-start",
+      "right",
+      "right-end",
+      "bottom-start",
+      "bottom",
+      "bottom-end",
+      "left-start",
+      "left",
+      "left-end",
+    ] as const
+  >
+    <evo-tooltip ...input placement=placement flip=false>
+      <@host as="button">\${placement}</@host>
+      <p>Tooltip content for <code>\${placement}</code></p>
+      <p>
+        Here we explicitly set <code>flip=false</code> for demonstration. By
+        default, tourtip will not extend outside the window
+      </p>
+    </evo-tooltip>
+  </for>
+</div>
+<a/>
+`})))()}function Dt(e){x(e.a)}var Ot,kt,At,jt,Mt,Nt,Pt,Ft,It;function Lt(){return(Lt=e((()=>{_e(),de(),q(),d(),Ot=S,kt=(e=>`/${e}&`)(C),At=e=>{ye(e.a),xe(e.a,{})},jt=p(`JHnhxpG`,be,(e=>`/${e}&`)(ve),At),Mt=e=>pe(e.a,{a11yText:`Settings`,content:jt(e)}),Nt=p(`QY9S$Zf`,(e=>`<!>${e}<!>`)(fe),(e=>`b/${e}&b`)(`b%c`),Mt),Pt=p(`RBlDSSo`,`Configure your settings`),Ft=(e,t)=>U(e.a,{...t,placement:`right`,host:h({content:Nt(e)}),content:Pt(e)}),It=v(`g1aUJUj`,Ot,kt,Dt,Ft)})))()}var Rt;function zt(){return(zt=e((()=>{Rt=`<evo-tooltip ...input placement="right">
+  <@host>
+    <evo-icon-button a11yText="Settings">
+      <evo-icon-settings-24/>
+    </evo-icon-button>
+  </@host>
+  Configure your settings
+</evo-tooltip>
+`})))()}var Bt,X,Z,Q,Vt;function $(){return($=e((()=>{q(),lt(),dt(),wt(),Et(),Lt(),zt(),Bt={title:`notices & tips/evo-tooltip`,component:tt,parameters:{docs:{description:{component:`A tooltip provides brief, supplementary information on hover or focus.`}}},argTypes:{open:{controllable:!0,type:`boolean`,control:`boolean`,description:`Visibility of the tooltip.`},placement:{type:`string`,control:`select`,options:[`top`,`top-start`,`top-end`,`right`,`right-start`,`right-end`,`bottom`,`bottom-start`,`bottom-end`,`left`,`left-start`,`left-end`],description:`Position of the overlay relative to the host element`,table:{defaultValue:{summary:`bottom`}}},offset:{type:`number`,control:`number`,description:`Offset distance from the host element in pixels`,table:{defaultValue:{summary:`8`}}},flip:{type:`boolean`,control:`boolean`,description:`Enable automatic flipping when near viewport edge`,table:{defaultValue:{summary:`true`}}},shift:{type:`boolean`,control:`boolean`,description:`Enable automatic shifting when near viewport edge`,table:{defaultValue:{summary:`true`}}},detachPopover:{type:`boolean`,control:`boolean`,description:"Detaches the overlay from its container so a scrolling or `overflow: hidden` ancestor can't clip it. The overlay then repositions as the page scrolls instead of moving with its container.",table:{defaultValue:{summary:`false`}}},inline:{type:`boolean`,control:`boolean`,description:`Enable inline positioning middleware`,table:{defaultValue:{summary:`true`}}},host:{type:{name:`object`,value:{},required:!0},description:`The host element that triggers the tooltip.`,table:{type:{summary:void 0}},"@":{as:{type:`string`,control:`text`,description:"Override the element that the item is rendered as, instead of `<span>`",table:{defaultValue:{summary:`span`}}},"<span> attributes":{description:"All attributes and event handlers from [the native HTML `<span>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/span) will be passed through"}}},heading:{description:"Optional heading content, rendered as a styled `<span>`.","@":{as:{type:`string`,control:`text`,description:"Override the element that the item is rendered as, instead of `<span>`",table:{defaultValue:{summary:`span`}}},"<span> attributes":{description:"All attributes and event handlers from [the native HTML `<span>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/span) will be passed through"}}},"<span> attributes":{description:"All attributes and event handlers from [the native HTML `<span>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/span) will be passed through"}}},X=t(ct,ut),Z=t(It,Rt),Q=t(Ct,Tt),Vt=[`Default`,`IconButtonHost`,`Placements`],X.parameters={...X.parameters,docs:{...X.parameters?.docs,source:{originalSource:`buildExtensionTemplate(DefaultTemplate, DefaultTemplateCode)`,...X.parameters?.docs?.source}}},Z.parameters={...Z.parameters,docs:{...Z.parameters?.docs,source:{originalSource:`buildExtensionTemplate(IconButtonHostTemplate, IconButtonHostTemplateCode)`,...Z.parameters?.docs?.source}}},Q.parameters={...Q.parameters,docs:{...Q.parameters?.docs,source:{originalSource:`buildExtensionTemplate(PlacementsTemplate, PlacementsTemplateCode)`,...Q.parameters?.docs?.source}}}})))()}$();export{X as Default,Z as IconButtonHost,Q as Placements,Vt as __namedExportsOrder,Bt as default};

@@ -1,0 +1,2 @@
+import{s as e}from"./_DxHs8lr8.js";import{a as t,i as n,n as r,o as i,r as a}from"./_DA33w0zY.js";import{n as o,t as s}from"./_DtosW-QI.js";var c=t,l=(e=>`/${e}&`)(i),u=e(`je0`,`Patterns`),d=e(`je1`,`List of design patterns that don't have a dedicated component.`);function f(e){a(e.a,o({content:u(e)})),r(e.a,d(e)),n(e.a,`patterns`)}var p=s(`je`,c,l,f);export{f as $setup,c as $template,l as $walks,p as default};
+//# sourceMappingURL=_Dw43CnN9.js.map

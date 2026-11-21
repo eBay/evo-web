@@ -1,0 +1,2 @@
+import"./_CPvm-hcf.js";import{C as e,v as t}from"./_BvufeqKM.js";import"./_C47PhJ9p.js";t(`R0`,e=>document.addEventListener(`submit`,e=>{e.target instanceof Element&&e.target.closest(`.poc-chat-dialog`)&&e.preventDefault()})),e();
+//# sourceMappingURL=poc-C7jVlOx2.js.map

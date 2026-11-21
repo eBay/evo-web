@@ -1,0 +1,1 @@
+{"version":3,"file":"newsletter-Uu_c9AQJ.js","names":["init"],"sources":["../../.marko-run/newsletter.2026-october.client-entry.marko"],"sourcesContent":["<!-- use tags -->\n\nimport Layout1 from \"../../src/routes/_index/+layout.marko\";\nimport Page from \"../../src/routes/_index/newsletter/2026-october+page.marko\";\n\n<Layout1>\n\t<Page/>\n</>\n"],"mappings":"A,0DAGAA,EAAK"}

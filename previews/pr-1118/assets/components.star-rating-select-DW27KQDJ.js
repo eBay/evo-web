@@ -1,0 +1,2 @@
+import{S as e,v as t}from"./_DxHs8lr8.js";import"./_BClcDFrl.js";import"./_DLFLtSJB.js";import"./_B2fXUzj4.js";t(`$i0`,e=>document.querySelectorAll(`.star-rating-select`).forEach(function(e){e.addEventListener(`change`,function(t){let n=parseInt(t.target.value)-1;e.querySelectorAll(`input`).forEach(function(e,t){e.classList.toggle(`star-rating-select__control--filled`,t<n)})})})),e();
+//# sourceMappingURL=components.star-rating-select-DW27KQDJ.js.map
