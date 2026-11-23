@@ -15,28 +15,6 @@
         background-size: 100% 100%;
     }
 }
-@keyframes chevron-bounce-open {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-7px);
-    }
-    to {
-        transform: translateY(0);
-    }
-}
-@keyframes chevron-bounce-close {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(7px);
-    }
-    to {
-        transform: translateY(0);
-    }
-}
 a.filter-chip,
 button.filter-chip {
     border-radius: var(--border-radius-100);
@@ -251,28 +229,35 @@ button.filter-chip:disabled .filter-chip__media > img {
     filter: var(--color-media-disabled-filter);
 }
 
-button.filter-chip[aria-expanded="false"]:active .filter-chip__trailing {
-    rotate: 180deg;
-    animation: chevron-bounce-close var(--motion-duration-medium-1)
-        var(--motion-easing-standard);
+@property --filter-chip-chevron-progress {
+    inherits: false;
+    initial-value: 0;
+    syntax: "<number>";
 }
-
-button.filter-chip[aria-expanded="false"] .filter-chip__trailing {
+button.filter-chip[aria-expanded] .filter-chip__trailing {
+    --filter-chip-chevron-progress: 0;
     rotate: 0deg;
-    transition: none;
-}
-
-button.filter-chip[aria-expanded="true"]:active .filter-chip__trailing {
-    rotate: 0deg;
-    animation: chevron-bounce-open var(--motion-duration-medium-1)
-        var(--motion-easing-standard) var(--motion-duration-short-1);
+    transition:
+        --filter-chip-chevron-progress var(--motion-duration-medium-1)
+            var(--motion-easing-linear),
+        rotate 0s var(--motion-duration-short-1);
+    translate: 0
+        calc(
+            4px * sin(180deg * var(--filter-chip-chevron-progress)) *
+                sin(180deg * var(--filter-chip-chevron-progress))
+        );
 }
 
 button.filter-chip[aria-expanded="true"] .filter-chip__trailing {
+    --filter-chip-chevron-progress: 1;
     rotate: 180deg;
-    transition: none;
 }
 
+@media (prefers-reduced-motion) {
+    button.filter-chip[aria-expanded] .filter-chip__trailing {
+        transition: none;
+    }
+}
 .filter-chip__text {
     overflow: hidden;
     padding: var(--spacing-75) 0;

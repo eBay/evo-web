@@ -1,10 +1,8 @@
-@use "../mixins/public/animation-mixins";
 @use "../mixins/private/chip-mixins";
 @use "../mixins/private/state-layer";
 @use "../mixins/public/utility-mixins";
 
 @include chip-mixins.background-keyframes;
-@include animation-mixins.chevron-keyframes;
 
 button.filter-chip,
 a.filter-chip {
@@ -64,26 +62,37 @@ a.filter-chip:not([href]) {
     }
 }
 
-button.filter-chip[aria-expanded="false"]:active .filter-chip__trailing {
-    rotate: 180deg;
-
-    @include animation-mixins.chevron-close;
+@property --filter-chip-chevron-progress {
+    inherits: false;
+    initial-value: 0;
+    syntax: "<number>";
 }
 
-button.filter-chip[aria-expanded="false"] .filter-chip__trailing {
-    rotate: 0deg;
-    transition: none;
-}
+button.filter-chip[aria-expanded] .filter-chip__trailing {
+    --filter-chip-chevron-progress: 0;
 
-button.filter-chip[aria-expanded="true"]:active .filter-chip__trailing {
     rotate: 0deg;
-
-    @include animation-mixins.chevron-open;
+    transition:
+        --filter-chip-chevron-progress var(--motion-duration-medium-1)
+            var(--motion-easing-linear),
+        rotate 0s var(--motion-duration-short-1);
+    translate: 0
+        calc(
+            sin(var(--filter-chip-chevron-progress) * 180deg) *
+                sin(var(--filter-chip-chevron-progress) * 180deg) * 4px
+        );
 }
 
 button.filter-chip[aria-expanded="true"] .filter-chip__trailing {
+    --filter-chip-chevron-progress: 1;
+
     rotate: 180deg;
-    transition: none;
+}
+
+@media (prefers-reduced-motion) {
+    button.filter-chip[aria-expanded] .filter-chip__trailing {
+        transition: none;
+    }
 }
 
 .filter-chip__text {
