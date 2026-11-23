@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 16.20.1
+
+### Patch Changes
+
+- [#1139](https://github.com/eBay/evo-web/pull/1139) [`4cf3f23`](https://github.com/eBay/evo-web/commit/4cf3f234002b1538a16ce34d7d5bb312072a3b79) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Fix `@html-attributes` typo in the ebay-filter-menu and ebay-filter-menu-button tag definitions.
+
 ## 16.20.0
 
 ### Minor Changes
