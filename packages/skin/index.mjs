@@ -1,4 +1,5 @@
 import './dist/accordion/accordion.css';
+import './dist/action-menu/action-menu.css';
 import './dist/alert-dialog/alert-dialog.css';
 import './dist/avatar/avatar.css';
 import './dist/badge/badge.css';

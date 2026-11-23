@@ -1,6 +1,793 @@
 import { urls } from "../../../../data";
 <div id="menu-button">
   <section-header/>
+  <p>
+    A menu button holds a trigger button and a
+    <code>menu-button__dropdown</code> . The dropdown is hidden until the
+    trigger, which must come first, has <code>aria-expanded="true"</code> . It
+    opens below the trigger, at least as wide as the trigger.
+  </p>
+  <p>
+    <strong>NOTE:</strong> Only limited JavaScript behaviour has been
+    implemented in these examples. For detailed behaviour requirements, see the
+    <a href=`${urls.components}/menu-button/accessibility`>
+      accessibility guidelines
+    </a>
+    .
+  </p>
+
+  <h2 id="menu-button-action">Action Menu</h2>
+  <p>
+    To open commands, place an
+    <a href=`${urls.components}/action-menu`>action menu</a> in the dropdown.
+    The trigger sets <code>aria-haspopup="menu"</code> , and the menu points
+    back at it with <code>aria-labelledby</code> .
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <span class="menu-button">
+        <button
+          class="button"
+          type="button"
+          id="pb-docs-action-trigger"
+          aria-expanded="false"
+          aria-haspopup="menu"
+          aria-controls="pb-docs-action-content"
+        >
+          <span class="button__cell">
+            <span class="button__text">Actions</span>
+            <svg
+              class="icon icon--12"
+              height="12"
+              width="12"
+              aria-hidden="true"
+            >
+              <icon-symbol name="chevron-down-12"/>
+            </svg>
+          </span>
+        </button>
+        <div class="menu-button__dropdown">
+          <div
+            class="action-menu"
+            role="menu"
+            id="pb-docs-action-content"
+            aria-labelledby="pb-docs-action-trigger"
+          >
+            <div class="action-menu__item" role="menuitem" tabindex="0">
+              <span>Edit</span>
+            </div>
+            <div class="action-menu__item" role="menuitem" tabindex="-1">
+              <span>Duplicate</span>
+            </div>
+            <div
+              class="action-menu__item"
+              role="menuitem"
+              aria-disabled="true"
+              tabindex="-1"
+            >
+              <span>Archive</span>
+            </div>
+            <hr class="action-menu__separator" role="separator">
+            <div
+              class="action-menu__item"
+              role="menuitemcheckbox"
+              aria-checked="true"
+              tabindex="-1"
+            >
+              <span>Show sold items</span>
+              <svg
+                class="icon icon--16 action-menu__icon"
+                height="16"
+                width="16"
+                aria-hidden="true"
+              >
+                <icon-symbol name="tick-16"/>
+              </svg>
+            </div>
+            <div
+              class="action-menu__item"
+              role="menuitemcheckbox"
+              aria-checked="false"
+              tabindex="-1"
+            >
+              <span>Show ended items</span>
+              <svg
+                class="icon icon--16 action-menu__icon"
+                height="16"
+                width="16"
+                aria-hidden="true"
+              >
+                <icon-symbol name="tick-16"/>
+              </svg>
+            </div>
+            <hr class="action-menu__separator" role="separator">
+            <div
+              class="action-menu__item"
+              role="menuitemradio"
+              aria-checked="true"
+              data-makeup-group="sort"
+              tabindex="-1"
+            >
+              <span>Sort by price</span>
+              <svg
+                class="icon icon--16 action-menu__icon"
+                height="16"
+                width="16"
+                aria-hidden="true"
+              >
+                <icon-symbol name="tick-16"/>
+              </svg>
+            </div>
+            <div
+              class="action-menu__item"
+              role="menuitemradio"
+              aria-checked="false"
+              data-makeup-group="sort"
+              tabindex="-1"
+            >
+              <span>Sort by date</span>
+              <svg
+                class="icon icon--16 action-menu__icon"
+                height="16"
+                width="16"
+                aria-hidden="true"
+              >
+                <icon-symbol name="tick-16"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </span>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <span class="menu-button">
+      <button
+        class="button"
+        type="button"
+        id="pb-docs-action-trigger"
+        aria-expanded="false"
+        aria-haspopup="menu"
+        aria-controls="pb-docs-action-content"
+      >
+        <span class="button__cell">
+          <span class="button__text">Actions</span>
+          <svg class="icon icon--12" height="12" width="12" aria-hidden="true">
+            <use href="#icon-chevron-down-12"/>
+          </svg>
+        </span>
+      </button>
+      <div class="menu-button__dropdown">
+        <div
+          class="action-menu"
+          role="menu"
+          id="pb-docs-action-content"
+          aria-labelledby="pb-docs-action-trigger"
+        >
+          <div class="action-menu__item" role="menuitem" tabindex="0">
+            <span>Edit</span>
+          </div>
+          <div class="action-menu__item" role="menuitem" tabindex="-1">
+            <span>Duplicate</span>
+          </div>
+          <div
+            class="action-menu__item"
+            role="menuitem"
+            aria-disabled="true"
+            tabindex="-1"
+          >
+            <span>Archive</span>
+          </div>
+          <hr class="action-menu__separator" role="separator">
+          <div
+            class="action-menu__item"
+            role="menuitemcheckbox"
+            aria-checked="true"
+            tabindex="-1"
+          >
+            <span>Show sold items</span>
+            <svg
+              class="icon icon--16 action-menu__icon"
+              height="16"
+              width="16"
+              aria-hidden="true"
+            >
+              <use href="#icon-tick-16"/>
+            </svg>
+          </div>
+          <div
+            class="action-menu__item"
+            role="menuitemcheckbox"
+            aria-checked="false"
+            tabindex="-1"
+          >
+            <span>Show ended items</span>
+            <svg
+              class="icon icon--16 action-menu__icon"
+              height="16"
+              width="16"
+              aria-hidden="true"
+            >
+              <use href="#icon-tick-16"/>
+            </svg>
+          </div>
+          <hr class="action-menu__separator" role="separator">
+          <div
+            class="action-menu__item"
+            role="menuitemradio"
+            aria-checked="true"
+            data-makeup-group="sort"
+            tabindex="-1"
+          >
+            <span>Sort by price</span>
+            <svg
+              class="icon icon--16 action-menu__icon"
+              height="16"
+              width="16"
+              aria-hidden="true"
+            >
+              <use href="#icon-tick-16"/>
+            </svg>
+          </div>
+          <div
+            class="action-menu__item"
+            role="menuitemradio"
+            aria-checked="false"
+            data-makeup-group="sort"
+            tabindex="-1"
+          >
+            <span>Sort by date</span>
+            <svg
+              class="icon icon--16 action-menu__icon"
+              height="16"
+              width="16"
+              aria-hidden="true"
+            >
+              <use href="#icon-tick-16"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </span>
+  </highlight-code>
+
+  <h2 id="menu-button-navigation">Navigation Menu</h2>
+  <p>
+    To open links, place a
+    <a href=`${urls.components}/navigation-menu`>navigation menu</a> in the
+    dropdown. The trigger sets no <code>aria-haspopup</code> , because the
+    dropdown holds plain links.
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <span class="menu-button">
+        <button
+          class="button"
+          type="button"
+          id="pb-docs-nav-trigger"
+          aria-expanded="false"
+          aria-controls="pb-docs-nav-content"
+        >
+          <span class="button__cell">
+            <span class="button__text">My eBay</span>
+            <svg
+              class="icon icon--12"
+              height="12"
+              width="12"
+              aria-hidden="true"
+            >
+              <icon-symbol name="chevron-down-12"/>
+            </svg>
+          </span>
+        </button>
+        <div class="menu-button__dropdown">
+          <div class="navigation-menu">
+            <ul class="navigation-menu__items" id="pb-docs-nav-content">
+              <li>
+                <a href="https://www.ebay.com" class="navigation-menu__item">
+                  Purchases
+                </a>
+              </li>
+              <li>
+                <a href="https://www.ebay.com" class="navigation-menu__item">
+                  Watchlist
+                </a>
+              </li>
+              <li>
+                <a href="https://www.ebay.com" class="navigation-menu__item">
+                  Saved searches
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </span>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <span class="menu-button">
+      <button
+        class="button"
+        type="button"
+        id="pb-docs-nav-trigger"
+        aria-expanded="false"
+        aria-controls="pb-docs-nav-content"
+      >
+        <span class="button__cell">
+          <span class="button__text">My eBay</span>
+          <svg class="icon icon--12" height="12" width="12" aria-hidden="true">
+            <use href="#icon-chevron-down-12"/>
+          </svg>
+        </span>
+      </button>
+      <div class="menu-button__dropdown">
+        <div class="navigation-menu">
+          <ul class="navigation-menu__items" id="pb-docs-nav-content">
+            <li>
+              <a href="https://www.ebay.com" class="navigation-menu__item">
+                Purchases
+              </a>
+            </li>
+            <li>
+              <a href="https://www.ebay.com" class="navigation-menu__item">
+                Watchlist
+              </a>
+            </li>
+            <li>
+              <a href="https://www.ebay.com" class="navigation-menu__item">
+                Saved searches
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </span>
+  </highlight-code>
+
+  <h2 id="menu-button-filter">Filter Menu</h2>
+  <p>
+    To open filter choices, use a
+    <a href=`${urls.components}/filter-chip`>filter chip</a> as the trigger and
+    place a <a href=`${urls.components}/filter-menu`>filter menu</a> in the
+    dropdown. When a filter is applied, add <code>filter-chip--selected</code>
+    and say so in visually hidden text; do not use <code>aria-pressed</code> .
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <span class="menu-button">
+        <button
+          class="filter-chip filter-chip--selected"
+          type="button"
+          id="pb-docs-filter-trigger"
+          aria-expanded="false"
+          aria-haspopup="menu"
+          aria-controls="pb-docs-filter-content"
+        >
+          <span class="filter-chip__text">Color</span>
+          <svg
+            class="icon icon--12 filter-chip__trailing"
+            height="12"
+            width="13"
+            aria-hidden="true"
+          >
+            <icon-symbol name="chevron-down-12"/>
+          </svg>
+          <span class="clipped">Filter Applied</span>
+        </button>
+        <div class="menu-button__dropdown">
+          <span class="filter-menu">
+            <div
+              class="filter-menu__items"
+              role="menu"
+              id="pb-docs-filter-content"
+              aria-labelledby="pb-docs-filter-trigger"
+            >
+              <div
+                class="filter-menu__item"
+                role="menuitemcheckbox"
+                aria-checked="true"
+                tabindex="0"
+              >
+                <span class="filter-menu__checkbox">
+                  <svg
+                    class="icon icon--18 icon--unchecked"
+                    height="18"
+                    width="18"
+                    aria-hidden="true"
+                  >
+                    <icon-symbol name="checkbox-unchecked-18"/>
+                  </svg>
+                  <svg
+                    class="icon icon--18 icon--checked"
+                    height="18"
+                    width="18"
+                    aria-hidden="true"
+                  >
+                    <icon-symbol name="checkbox-checked-18"/>
+                  </svg>
+                </span>
+                <span class="filter-menu__text">Black</span>
+              </div>
+              <div
+                class="filter-menu__item"
+                role="menuitemcheckbox"
+                aria-checked="false"
+                tabindex="-1"
+              >
+                <span class="filter-menu__checkbox">
+                  <svg
+                    class="icon icon--18 icon--unchecked"
+                    height="18"
+                    width="18"
+                    aria-hidden="true"
+                  >
+                    <icon-symbol name="checkbox-unchecked-18"/>
+                  </svg>
+                  <svg
+                    class="icon icon--18 icon--checked"
+                    height="18"
+                    width="18"
+                    aria-hidden="true"
+                  >
+                    <icon-symbol name="checkbox-checked-18"/>
+                  </svg>
+                </span>
+                <span class="filter-menu__text">Blue</span>
+              </div>
+              <div
+                class="filter-menu__item"
+                role="menuitemcheckbox"
+                aria-checked="false"
+                tabindex="-1"
+              >
+                <span class="filter-menu__checkbox">
+                  <svg
+                    class="icon icon--18 icon--unchecked"
+                    height="18"
+                    width="18"
+                    aria-hidden="true"
+                  >
+                    <icon-symbol name="checkbox-unchecked-18"/>
+                  </svg>
+                  <svg
+                    class="icon icon--18 icon--checked"
+                    height="18"
+                    width="18"
+                    aria-hidden="true"
+                  >
+                    <icon-symbol name="checkbox-checked-18"/>
+                  </svg>
+                </span>
+                <span class="filter-menu__text">Red</span>
+              </div>
+            </div>
+            <button type="button" class="filter-menu__footer">Apply</button>
+          </span>
+        </div>
+      </span>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <span class="menu-button">
+      <button
+        class="filter-chip filter-chip--selected"
+        type="button"
+        id="pb-docs-filter-trigger"
+        aria-expanded="false"
+        aria-haspopup="menu"
+        aria-controls="pb-docs-filter-content"
+      >
+        <span class="filter-chip__text">Color</span>
+        <svg
+          class="icon icon--12 filter-chip__trailing"
+          height="12"
+          width="13"
+          aria-hidden="true"
+        >
+          <use href="#icon-chevron-down-12"/>
+        </svg>
+        <span class="clipped">Filter Applied</span>
+      </button>
+      <div class="menu-button__dropdown">
+        <span class="filter-menu">
+          <div
+            class="filter-menu__items"
+            role="menu"
+            id="pb-docs-filter-content"
+            aria-labelledby="pb-docs-filter-trigger"
+          >
+            <div
+              class="filter-menu__item"
+              role="menuitemcheckbox"
+              aria-checked="true"
+              tabindex="0"
+            >
+              <span class="filter-menu__checkbox">
+                <svg
+                  class="icon icon--18 icon--unchecked"
+                  height="18"
+                  width="18"
+                  aria-hidden="true"
+                >
+                  <use href="#icon-checkbox-unchecked-18"/>
+                </svg>
+                <svg
+                  class="icon icon--18 icon--checked"
+                  height="18"
+                  width="18"
+                  aria-hidden="true"
+                >
+                  <use href="#icon-checkbox-checked-18"/>
+                </svg>
+              </span>
+              <span class="filter-menu__text">Black</span>
+            </div>
+            <div
+              class="filter-menu__item"
+              role="menuitemcheckbox"
+              aria-checked="false"
+              tabindex="-1"
+            >
+              <span class="filter-menu__checkbox">
+                <svg
+                  class="icon icon--18 icon--unchecked"
+                  height="18"
+                  width="18"
+                  aria-hidden="true"
+                >
+                  <use href="#icon-checkbox-unchecked-18"/>
+                </svg>
+                <svg
+                  class="icon icon--18 icon--checked"
+                  height="18"
+                  width="18"
+                  aria-hidden="true"
+                >
+                  <use href="#icon-checkbox-checked-18"/>
+                </svg>
+              </span>
+              <span class="filter-menu__text">Blue</span>
+            </div>
+            <div
+              class="filter-menu__item"
+              role="menuitemcheckbox"
+              aria-checked="false"
+              tabindex="-1"
+            >
+              <span class="filter-menu__checkbox">
+                <svg
+                  class="icon icon--18 icon--unchecked"
+                  height="18"
+                  width="18"
+                  aria-hidden="true"
+                >
+                  <use href="#icon-checkbox-unchecked-18"/>
+                </svg>
+                <svg
+                  class="icon icon--18 icon--checked"
+                  height="18"
+                  width="18"
+                  aria-hidden="true"
+                >
+                  <use href="#icon-checkbox-checked-18"/>
+                </svg>
+              </span>
+              <span class="filter-menu__text">Red</span>
+            </div>
+          </div>
+          <button type="button" class="filter-menu__footer">Apply</button>
+        </span>
+      </div>
+    </span>
+  </highlight-code>
+
+  <h2 id="menu-button-icon">Icon Button Trigger</h2>
+  <p>
+    An <a href=`${urls.components}/icon-button`>icon button</a> trigger needs an
+    <code>aria-label</code> .
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <span class="menu-button">
+        <button
+          class="icon-button"
+          type="button"
+          id="pb-docs-icon-trigger"
+          aria-label="My eBay"
+          aria-expanded="false"
+          aria-controls="pb-docs-icon-content"
+        >
+          <svg class="icon icon--24" height="24" width="24" aria-hidden="true">
+            <icon-symbol name="profile-24"/>
+          </svg>
+        </button>
+        <div class="menu-button__dropdown">
+          <div class="navigation-menu">
+            <ul class="navigation-menu__items" id="pb-docs-icon-content">
+              <li>
+                <a href="https://www.ebay.com" class="navigation-menu__item">
+                  Purchases
+                </a>
+              </li>
+              <li>
+                <a href="https://www.ebay.com" class="navigation-menu__item">
+                  Watchlist
+                </a>
+              </li>
+              <li>
+                <a href="https://www.ebay.com" class="navigation-menu__item">
+                  Saved searches
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </span>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <span class="menu-button">
+      <button
+        class="icon-button"
+        type="button"
+        id="pb-docs-icon-trigger"
+        aria-label="My eBay"
+        aria-expanded="false"
+        aria-controls="pb-docs-icon-content"
+      >
+        <svg class="icon icon--24" height="24" width="24" aria-hidden="true">
+          <use href="#icon-profile-24"/>
+        </svg>
+      </button>
+      <div class="menu-button__dropdown">
+        <div class="navigation-menu">
+          <ul class="navigation-menu__items" id="pb-docs-icon-content">
+            <li>
+              <a href="https://www.ebay.com" class="navigation-menu__item">
+                Purchases
+              </a>
+            </li>
+            <li>
+              <a href="https://www.ebay.com" class="navigation-menu__item">
+                Watchlist
+              </a>
+            </li>
+            <li>
+              <a href="https://www.ebay.com" class="navigation-menu__item">
+                Saved searches
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </span>
+  </highlight-code>
+
+  <h2 id="menu-button-reverse">Reverse Alignment</h2>
+  <p>
+    The dropdown aligns with the start edge of the trigger. Add
+    <code>menu-button__dropdown--reverse</code> to align it with the end edge
+    instead, for a trigger near the end of the page.
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <span class="menu-button">
+        <button
+          class="button"
+          type="button"
+          id="pb-docs-reverse-trigger"
+          aria-expanded="false"
+          aria-controls="pb-docs-reverse-content"
+        >
+          <span class="button__cell">
+            <span class="button__text">My eBay</span>
+            <svg
+              class="icon icon--12"
+              height="12"
+              width="12"
+              aria-hidden="true"
+            >
+              <icon-symbol name="chevron-down-12"/>
+            </svg>
+          </span>
+        </button>
+        <div class="menu-button__dropdown menu-button__dropdown--reverse">
+          <div class="navigation-menu">
+            <ul class="navigation-menu__items" id="pb-docs-reverse-content">
+              <li>
+                <a href="https://www.ebay.com" class="navigation-menu__item">
+                  Purchases
+                </a>
+              </li>
+              <li>
+                <a href="https://www.ebay.com" class="navigation-menu__item">
+                  Watchlist
+                </a>
+              </li>
+              <li>
+                <a href="https://www.ebay.com" class="navigation-menu__item">
+                  Saved searches
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </span>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <span class="menu-button">
+      <button
+        class="button"
+        type="button"
+        id="pb-docs-reverse-trigger"
+        aria-expanded="false"
+        aria-controls="pb-docs-reverse-content"
+      >
+        <span class="button__cell">
+          <span class="button__text">My eBay</span>
+          <svg class="icon icon--12" height="12" width="12" aria-hidden="true">
+            <use href="#icon-chevron-down-12"/>
+          </svg>
+        </span>
+      </button>
+      <div class="menu-button__dropdown menu-button__dropdown--reverse">
+        <div class="navigation-menu">
+          <ul class="navigation-menu__items" id="pb-docs-reverse-content">
+            <li>
+              <a href="https://www.ebay.com" class="navigation-menu__item">
+                Purchases
+              </a>
+            </li>
+            <li>
+              <a href="https://www.ebay.com" class="navigation-menu__item">
+                Watchlist
+              </a>
+            </li>
+            <li>
+              <a href="https://www.ebay.com" class="navigation-menu__item">
+                Saved searches
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </span>
+  </highlight-code>
+
+  <h2 id="menu-button-deprecated">Deprecated markup</h2>
+  <section
+    class="section-notice section-notice--attention"
+    role="region"
+    aria-label="Attention"
+    aria-roledescription="Notice"
+  >
+    <div class="section-notice__header" id="menu-button-css-deprecated-notice">
+      <svg class="icon icon--16" height="16" width="16" aria-label="Attention">
+        <icon-symbol name="attention-filled-16"/>
+      </svg>
+    </div>
+    <div class="section-notice__main">
+      <h3 class="section-notice__title">Deprecated</h3>
+      <p>
+        The older <code>menu-button</code> classes,
+        <code>menu-button__button</code> , <code>__menu</code> ,
+        <code>__items</code> , <code>__item</code> , <code>__separator</code> ,
+        <code>__footer</code> , <code>__option--active</code> and
+        <code>menu-button--filter</code> , are deprecated and will be removed in
+        the next major version of Skin. Use <code>menu-button__dropdown</code>
+        with an <a href=`${urls.components}/action-menu`>action-menu</a> ,
+        <a href=`${urls.components}/filter-menu`>filter-menu</a> or
+        <a href=`${urls.components}/navigation-menu`>navigation-menu</a> inside
+        it instead.
+      </p>
+    </div>
+  </section>
 
   <p><strong>NOTE:</strong> .</p>
 
@@ -687,6 +1474,27 @@ import { urls } from "../../../../data";
   </highlight-code>
 
   <h3 id="menu-button-fake">Fake Menu Button</h3>
+  <section
+    class="section-notice section-notice--attention"
+    role="region"
+    aria-label="Attention"
+    aria-roledescription="Notice"
+  >
+    <div class="section-notice__header" id="menu-button-fake-deprecated-notice">
+      <svg class="icon icon--16" height="16" width="16" aria-label="Attention">
+        <icon-symbol name="attention-filled-16"/>
+      </svg>
+    </div>
+    <div class="section-notice__main">
+      <h4 class="section-notice__title">Deprecated</h4>
+      <p>
+        The <code>fake-menu-button</code> component is deprecated and will be
+        removed in the next major version of Skin. Use <code>menu-button</code>
+        with a <a href=`${urls.components}/navigation-menu`>navigation-menu</a>
+        inside it instead.
+      </p>
+    </div>
+  </section>
   <p>
     At first glance, a fake menu button <em>appears</em> to be a normal menu
     button component, but it contains a list of hyperlinks and thus behaves more
@@ -1645,11 +2453,3 @@ import { urls } from "../../../../data";
     </span>
   </highlight-code>
 </div>
-export const metadata = {
-  component: "menu-button",
-  "ds-component": {
-    name: "dropdown",
-    version: 2.3,
-  },
-  submodules: ["button", "icon", "menu"],
-};

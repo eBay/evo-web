@@ -83,6 +83,7 @@ nav.breadcrumbs.breadcrumb--overflow {
     scrollbar-width: unset;
 }
 
+nav.breadcrumbs .breadcrumbs__overflow,
 nav.breadcrumbs .fake-menu-button__button,
 nav.breadcrumbs .menu-button__button {
     background-color: var(
@@ -96,6 +97,7 @@ nav.breadcrumbs .menu-button__button {
     width: var(--spacing-300);
 }
 
+nav.breadcrumbs .breadcrumbs__overflow-icon,
 nav.breadcrumbs .fake-menu-button__button svg.icon,
 nav.breadcrumbs .menu-button__button svg.icon {
     fill: var(
@@ -104,6 +106,7 @@ nav.breadcrumbs .menu-button__button svg.icon {
     );
 }
 
+nav.breadcrumbs .breadcrumbs__overflow-menu,
 nav.breadcrumbs .fake-menu-button__menu,
 nav.breadcrumbs .menu-button__menu {
     font-size: var(--font-size-body);

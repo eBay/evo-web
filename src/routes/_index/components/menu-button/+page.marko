@@ -3,66 +3,53 @@ import { urls } from "../../../../data";
   <component-banner-img/>
 
   <p>
-    The menu button pattern is a JavaScript widget. It is a button that expands
-    to reveal a <a href=`${urls.components}/menu`>menu</a> in a popover.
+    A menu button pairs a trigger button with the content it opens, shown in a
+    dropdown below the trigger. The trigger can be a
+    <a href=`${urls.components}/button`>button</a> , an
+    <a href=`${urls.components}/icon-button`>icon button</a> or a
+    <a href=`${urls.components}/filter-chip`>filter chip</a> , and keeps its own
+    look.
   </p>
-  <p>
-    A menu is
-    appropriate when requiring a partial page re-render <em>without</em> using a form
-    or full page reload. For example: dynamic filtering and sorting of search results.
-  </p>
-  <p>
-    A
-    menu is <strong>not</strong> appropriate for a full page reload. For that, please use links
-    instead (see the <a href="accssibility/patterns/fake-menu">fake menu</a> pattern. The
-    distinction between menu items and links is important. A menu item is a
-    command that executes JavaScript, whereas a link is a command that navigates
-    to a url. If your menu must contain a mix of JavaScript behaviour and link
-    behaviour, please use a regular list of buttons and links. Do no mix menu
-    items with links.
-  </p>
-  <p>
-    <strong>TIP</strong>: Do not call a menu button a "dropdown"! The term
-    "dropdown" is ambiguous and could be confused with a listbox, combobox
-    select or any other kind of overlay that "drops down". If you must, call it
-    a dropdown menu.
-  </p>
-
-  <p>
-    A menu button follows the principal of
-    <a href="https://en.wikipedia.org/wiki/Progressive_disclosure">
-      progressive disclosure
-    </a>
-    , it keeps secondary commands hidden from view until needed.
-  </p>
-
-  <h2>Terminology</h2>
-  <p>We use the following terminology when discussing this pattern.</p>
+  <p>The dropdown holds one of three menus:</p>
   <ul>
     <li>
-      <strong>widget</strong>
-      : the pattern as a whole, comprising the parts listed below
+      an <a href=`${urls.components}/action-menu`>action menu</a> , for commands
+      that run on the current page;
     </li>
     <li>
-      <strong>button</strong>
-      : expands or collapses the overlay
+      a <a href=`${urls.components}/filter-menu`>filter menu</a> , for choices
+      that narrow a set of results;
     </li>
     <li>
-      <strong>collapsed/expanded</strong>
-      : state of overlay
-    </li>
-    <li>
-      <strong>overlay</strong>
-      : contains menu
-    </li>
-    <li>
-      <strong>menu</strong>
-      : a menu that contains commands
-    </li>
-    <li>
-      <strong>command</strong>
-      : individual menu item, menu item checkbox or menu item radio
-      commands
+      a <a href=`${urls.components}/navigation-menu`>navigation menu</a> , for
+      links to other pages.
     </li>
   </ul>
+  <section
+    class="section-notice section-notice--attention"
+    role="region"
+    aria-label="Attention"
+    aria-roledescription="Notice"
+  >
+    <div class="section-notice__header" id="menu-button-deprecated-notice">
+      <svg class="icon icon--16" height="16" width="16" aria-label="Attention">
+        <icon-symbol name="attention-filled-16"/>
+      </svg>
+    </div>
+    <div class="section-notice__main">
+      <h3 class="section-notice__title">Deprecated</h3>
+      <p>
+        The older <code>menu-button</code> classes,
+        <code>menu-button__button</code> , <code>__menu</code> ,
+        <code>__items</code> , <code>__item</code> , <code>__separator</code> ,
+        <code>__footer</code> , <code>__option--active</code> and
+        <code>menu-button--filter</code> , are deprecated and will be removed in
+        the next major version of Skin. Use <code>menu-button__dropdown</code>
+        with an <a href=`${urls.components}/action-menu`>action-menu</a> ,
+        <a href=`${urls.components}/filter-menu`>filter-menu</a> or
+        <a href=`${urls.components}/navigation-menu`>navigation-menu</a> inside
+        it instead.
+      </p>
+    </div>
+  </section>
 </div>

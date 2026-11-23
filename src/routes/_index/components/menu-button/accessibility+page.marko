@@ -1,254 +1,75 @@
-import { urls } from "../../../../data";
 import "../../../../sass/accessibility.scss";
+import { urls } from "../../../../data";
+
 <div class="a11y-pattern-content">
   <h1>Menu Button Accessibility</h1>
-  <h3>Best Practices</h3>
+  <h2>Best Practices</h2>
   <p>
-    See
-    <a href=`${urls.components}/menu/accessibility`>
-      menu best practices
-    </a>
-    .
-  </p>
-    <p>
-    Selecting a menu item command should update the page
-    <strong>without</strong>
-    a full page reload (i.e. acting similar to buttons, checkboxes or
-    radios). If a full page load is required instead (i.e. acting like links),
-    please refer to the
-    <a href=`${urls.accessibility}/patterns/fake-menu-button`>
-      fake menu button
-    </a>
-    .
+    The trigger <strong>must</strong> be a real <code>&lt;button&gt;</code>
+    element and the first child of the menu button, with the dropdown after it.
+    Its accessible name comes from its text, or from <code>aria-label</code>
+    when it shows only an icon.
   </p>
   <p>
-    <strong>Care is needed when labelling a menu button!</strong>
+    The trigger <strong>must</strong> set <code>aria-expanded</code> to
+    <code>"true"</code> when the dropdown is open and <code>"false"</code> when
+    it is closed. The dropdown is shown only while the trigger is expanded. The
+    trigger <strong>must</strong> set <code>aria-controls</code> to the id of
+    the element it opens.
+  </p>
+  <p>What the trigger announces depends on what it opens:</p>
+  <ul>
+    <li>
+      For an <a href=`${urls.components}/action-menu`>action menu</a> or a
+      <a href=`${urls.components}/filter-menu`>filter menu</a> , set
+      <code>aria-haspopup="menu"</code> , and point the menu at the trigger with
+      <code>aria-labelledby</code> .
+    </li>
+    <li>
+      For a <a href=`${urls.components}/navigation-menu`>navigation menu</a> ,
+      set no <code>aria-haspopup</code> . The dropdown holds plain links, not an
+      ARIA menu.
+    </li>
+  </ul>
+  <p>
+    A filter chip trigger <strong>must</strong> state in its text when a filter
+    is applied, visibly or with visually hidden text. It
+    <strong>must not</strong> use <code>aria-pressed</code> , because pressing
+    it opens a menu instead of toggling the filter.
+  </p>
+  <h2>Interaction Design</h2>
+  <p>
+    This section provides interaction design for keyboard and screen reader
+    users.
+  </p>
+  <h3>Keyboard</h3>
+  <p>
+    <code>ENTER</code> or <code>SPACEBAR</code> on the trigger opens the
+    dropdown and moves focus to the first enabled item. In an action or filter
+    menu, the arrow keys move between items; in a navigation menu, the
+    <code>TAB</code> key does.
   </p>
   <p>
-    If attempting to mimic the behaviour of an HTML select inside of a form,
-    please use the
-    <a href=`${urls.components}/listbox-button`>
-      Listbox Button
-    </a>
-    .
+    <code>ESCAPE</code> closes the dropdown and returns focus to the trigger.
+    Moving focus or clicking outside the menu button closes it without moving
+    focus back.
   </p>
+  <h3>Dismissal</h3>
+  <ul>
+    <li>
+      Action menu: activating an enabled item closes the dropdown, including a
+      checkbox or radio action.
+    </li>
+    <li>
+      Filter menu: selecting a radio item closes it; toggling a checkbox item
+      leaves it open; an Apply button closes it.
+    </li>
+    <li>Navigation menu: activating a link or button closes it.</li>
+  </ul>
+  <h3>Screen Reader</h3>
   <p>
-    A menu button’s accessible label must at
-    <strong>all times</strong>
-    reflect its function. By default, this label is provided by the button
-    <strong>’</strong>
-    s inner text (i.e. buttons are not intended to work with
-    <code>&lt;label&gt;</code>
-    elements).
+    The trigger <strong>must</strong> announce as a button with its expanded or
+    collapsed state. A trigger for an action or filter menu also announces that
+    it opens a menu.
   </p>
-  <p>
-    If a menu button’s inner text is intended to also convey some state (i.e.
-    single select) then please consider the following options.
-  </p>
-  <h4>
-    <strong>Internally Labelled Menu Button</strong>
-  </h4>
-  <p>
-    The button’s inner text can be written as a key/value pair, where key
-    denotes purpose and value represents the current selection.
-  </p>
-  <p>
-    <code>&lt;button&gt;Colour: blue&lt;button&gt;</code>
-  </p>
-  <h4>
-    <strong>Additionally Labelled Menu Button</strong>
-  </h4>
-  <p>
-    We can use
-    <code>aria-labelledby</code>
-    to stitch together an external text element with the internal value.
-  </p>
-  <p>
-    <code>
-      &lt;span id=&quot;el1&quot;&gt;Colour&lt;/span&gt;&lt;button
-      aria-labelledby=&quot;el1 el2&quot;&gt;&lt;span
-      id=&quot;el2&quot;&gt;blue&lt;/span&gt;&lt;/button&gt;
-    </code>
-  </p>
-  <h3>Interaction Design</h3>
-  <p>
-    This section provides interaction design for keyboard, screen reader &amp;
-    pointing devices.
-  </p>
-  <p>
-    Please also see related
-    <a href=`${urls.components}/menu`>
-      menu
-    </a>
-    pattern for best practices of nested menu.
-  </p>
-  <h4>Keyboard</h4>
-  <p>
-    The button
-    <strong>must</strong>
-    be keyboard focusable.
-  </p>
-  <p>
-    <code>SPACEBAR</code>
-    or
-    <code>ENTER</code>
-    key on button
-    <strong>must</strong>
-    expand the menu.
-  </p>
-  <p>
-    When menu is expanded, keyboard focus
-    <strong>must</strong>
-    go to the first item in the menu.
-  </p>
-  <p>
-    <code>UP-ARROW</code>
-    and
-    <code>DOWN-ARROW</code>
-    keys
-    <strong>must</strong>
-    navigate keyboard focus through commands via a roving tabindex.
-  </p>
-  <p>
-    If focus is on a command,
-    <code>ENTER</code>
-    or
-    <code>SPACEBAR</code>
-    keys
-    <strong>must</strong>
-    activate that command.
-  </p>
-  <p>
-    <code>ESC</code>
-    key must collapse menu and return focus to button.
-  </p>
-  <p>
-    Activating any menu item
-    <em>should</em>
-    collapse menu (typically after a very short delay/transition).
-  </p>
-  <p>
-    <code>TAB</code>
-    key must move keyboard focus off widget, and onto next interactive
-    element in the page.
-  </p>
-  <p>
-    When widget loses focus, menu
-    <em>should</em>
-    collapse.
-  </p>
-  <h4>Screen Reader</h4>
-  <p>
-    Button label
-    <strong>must</strong>
-    be announced (e.g. ‘Options’).
-  </p>
-  <p>
-    Button state
-    <strong>must</strong>
-    be announced (e.g. expanded or collapsed).
-  </p>
-  <h4>Pointer</h4>
-  <p>
-    Clicking any menu item
-    <em>should</em>
-    collapse menu (typically after a very short delay/transition).
-  </p>
-  <h3>ARIA Reference</h3>
-  <p>
-    This section gives an overview of our use of ARIA, within the specific
-    context of the menu button pattern.
-  </p>
-  <table>
-    <thead>
-      <tr>
-        <th>Attribute</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          <strong>role=menu</strong>
-        </td>
-        <td>
-          Informs assistive technology that this is a menu containing menuitems,
-          menuitemradios or menuitemcheckboxes.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <strong>role=presentation</strong>
-        </td>
-        <td>
-          Informs assistive technology that the divs around groups of menu items
-          are for presentation purposes only and should not be added to
-          accessibility tree.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <strong>role=menuitem</strong>
-        </td>
-        <td>
-          Informs assistive technology that this menu command has button
-          behaviour.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <strong>role=menuitemradio</strong>
-        </td>
-        <td>
-          Informs assistive technology that this menu command has radio button
-          behaviour.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <strong>role=menuitemcheckbox</strong>
-        </td>
-        <td>
-          Informs assistive technology that this menu command has checkbox
-          behaviour.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <strong>aria-haspopup=true</strong>
-        </td>
-        <td>
-          Informs assistive technology that the button controls a
-          <em>popup</em>
-
-          <em>menu</em>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <strong>aria-controls</strong>
-        </td>
-        <td>Inform assistive technology of which menu this button controls.</td>
-      </tr>
-      <tr>
-        <td>
-          <strong>aria-expanded</strong>
-        </td>
-        <td>
-          Informs assistive technology whether the popup menu is expanded or
-          not. And yes, this state goes on the button, not the menu.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <strong>aria-checked</strong>
-        </td>
-        <td>
-          Informs assistive technology whether the menuitemradio or
-          menuitemcheckbox is checked or not. Notice we do not use
-          aria-selected.
-        </td>
-      </tr>
-    </tbody>
-  </table>
 </div>

@@ -7,20 +7,20 @@ export const longTextCollapsed = () => `
         </span>
     </button>
     <span class="menu-button">
-        <button class="button button--primary button--split-end" aria-haspopup="true" type="button">
+        <button class="button button--primary button--split-end" aria-haspopup="menu" type="button" aria-expanded="false" aria-label="More actions" id="split-button-size-1-trigger" aria-controls="split-button-size-1-content">
             <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
         </button>
-        <div class="menu-button__menu menu-button__menu--reverse menu-button__menu--set-position">
-            <div class="menu-button__items" role="menu">
-                <div class="menu-button__item" role="menuitem">
+        <div class="menu-button__dropdown menu-button__dropdown--reverse">
+            <div class="action-menu" role="menu" id="split-button-size-1-content" aria-labelledby="split-button-size-1-trigger">
+                <div class="action-menu__item" role="menuitem">
                     <span>Item 10000</span>
                 </div>
-                <div class="menu-button__item" role="menuitem">
+                <div class="action-menu__item" role="menuitem">
                     <span>Item 20000</span>
                 </div>
-                <div class="menu-button__item" role="menuitem">
+                <div class="action-menu__item" role="menuitem">
                     <span>Item 30000</span>
                 </div>
             </div>
@@ -37,20 +37,20 @@ export const longTextExpanded = () => `
         </span>
     </button>
     <span class="menu-button">
-        <button class="button button--primary button--split-end" aria-expanded="true" aria-haspopup="true" type="button">
+        <button class="button button--primary button--split-end" aria-expanded="true" aria-haspopup="menu" type="button" aria-label="More actions" id="split-button-size-2-trigger" aria-controls="split-button-size-2-content">
             <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
         </button>
-        <div class="menu-button__menu menu-button__menu--reverse menu-button__menu--set-position">
-            <div class="menu-button__items" role="menu">
-                <div class="menu-button__item" role="menuitem">
+        <div class="menu-button__dropdown menu-button__dropdown--reverse">
+            <div class="action-menu" role="menu" id="split-button-size-2-content" aria-labelledby="split-button-size-2-trigger">
+                <div class="action-menu__item" role="menuitem">
                     <span>Item 10000</span>
                 </div>
-                <div class="menu-button__item" role="menuitem">
+                <div class="action-menu__item" role="menuitem">
                     <span>Item 20000</span>
                 </div>
-                <div class="menu-button__item" role="menuitem">
+                <div class="action-menu__item" role="menuitem">
                     <span>Item 30000</span>
                 </div>
             </div>

@@ -1,0 +1,7 @@
+---
+"@ebay/skin": minor
+---
+
+Add `action-menu` as a standalone Skin component, document `filter-menu`, and add a `menu-button__dropdown` element to `menu-button`. The menu family is now three menus opened by `menu-button`: `action-menu` for commands (checkable actions show a small trailing tick; mark the tick with `action-menu__icon` and any badge with `action-menu__badge`), `filter-menu` for choices that narrow results, and `navigation-menu` for links, each placed in a `menu-button__dropdown` after a `button`, `icon-button` or `filter-chip` trigger. The dropdown has 16px corners, matching the design system; the deprecated `menu-button__menu` keeps its 8px corners. `breadcrumbs` gains `breadcrumbs__overflow`, `breadcrumbs__overflow-icon` and `breadcrumbs__overflow-menu` elements for its overflow menu, beside its existing `menu-button` selectors, and the breadcrumbs, pagination, section-title, split-button and table stories and docs, plus the global stories, now use the new markup.
+
+Deprecated, still working, and removed in the next major version: the `menu`, `fake-menu-button` and `filter-menu-button` components, and the older `menu-button` classes (`menu-button__button`, `__menu`, `__items`, `__item`, `__separator`, `__footer`, `__option--active` and `menu-button--filter`). Their styles are unchanged; the deprecated `menu-button` rules now live in their own file. A standalone `action-menu` reads the existing `--menu-*` custom properties; inside a `menu-button__dropdown`, the dropdown provides the background instead.

@@ -1,0 +1,61 @@
+import "../../../../sass/accessibility.scss";
+import { urls } from "../../../../data";
+
+<div class="a11y-pattern-content">
+  <h1>Filter Menu Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    A filter menu is an ARIA menu. The container <strong>must</strong> have
+    <code>role="menu"</code> and an accessible name: when the menu opens from a
+    trigger, use <code>aria-labelledby</code> pointing at the trigger; otherwise
+    use <code>aria-label</code> .
+  </p>
+  <p>
+    Each choice <strong>must</strong> have a role of
+    <code>menuitemcheckbox</code> (any number checked) or
+    <code>menuitemradio</code> (exactly one checked), and <strong>must</strong>
+    set <code>aria-checked</code> to <code>"true"</code> or <code>"false"</code>
+    . The checkbox and radio graphics are decorative and <strong>must</strong>
+    be hidden with <code>aria-hidden="true"</code> .
+  </p>
+  <p>
+    Use a filter menu only for choices that narrow a set of results. For
+    commands, use an <a href=`${urls.components}/action-menu`>action menu</a> ;
+    for links, use a
+    <a href=`${urls.components}/navigation-menu`>navigation menu</a> . To submit
+    choices with a native form instead, use the <code>filter-menu-form</code>
+    variant, which uses real checkboxes and no ARIA menu roles.
+  </p>
+  <h2>Interaction Design</h2>
+  <p>
+    This section provides interaction design for keyboard and screen reader
+    users.
+  </p>
+  <h3>Keyboard</h3>
+  <p>
+    Focus moves to the first enabled item when the menu opens. The
+    <code>UP ARROW</code> and <code>DOWN ARROW</code> keys move focus between
+    items, and <code>HOME</code> and <code>END</code> move to the first and last
+    item. <code>SPACEBAR</code> or <code>ENTER</code> toggles a checkbox item or
+    selects a radio item.
+  </p>
+  <p>
+    When a filter menu opens from a trigger, selecting a radio item closes it.
+    Toggling a checkbox item leaves it open, and an Apply button, when present,
+    closes it. <code>ESCAPE</code> closes the menu and returns focus to the
+    trigger. Moving focus or clicking outside closes it without moving focus.
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    A checkbox item <strong>must</strong> announce as a menu item checkbox with
+    its checked or not checked state, and a radio item as a menu item radio with
+    its state. A disabled item sets <code>aria-disabled="true"</code> and
+    announces as dimmed or unavailable.
+  </p>
+  <p>
+    A trigger that opens a filter menu <strong>must</strong> state in its text
+    when a filter is applied, visibly or with visually hidden text. It
+    <strong>must not</strong> use <code>aria-pressed</code> , because pressing
+    it opens a menu instead of toggling the filter.
+  </p>
+</div>

@@ -4,8 +4,7 @@
     --state-layer-neutral: rgb(var(--color-neutral-900-rgb), 0);
 }
 
-.fake-menu-button,
-.menu-button {
+.fake-menu-button {
     line-height: normal;
     position: relative;
 }
@@ -443,4 +442,42 @@ hr.menu-button__separator {
 
 .menu-button--filter div.menu-button__item[role^="menuitem"] {
     justify-content: flex-start;
+}
+
+.menu-button {
+    line-height: normal;
+    position: relative;
+}
+
+.menu-button__dropdown {
+    --filter-menu-item-background-color: transparent;
+    --menu-background-color: transparent;
+    --menu-menuitem-border-color: transparent;
+    background-color: var(--color-background-elevated);
+    border-radius: var(--border-radius-100);
+    box-shadow: var(--bubble-shadow);
+    box-sizing: border-box;
+    display: none;
+    left: 0;
+    max-height: 400px;
+    min-width: 100%;
+    overflow-y: auto;
+    position: absolute;
+    top: calc(100% + var(--spacing-50));
+    width: max-content;
+    z-index: 2;
+}
+
+.menu-button__dropdown--reverse,
+[dir="rtl"] .menu-button__dropdown {
+    left: unset;
+    right: 0;
+}
+[dir="rtl"] .menu-button__dropdown--reverse {
+    left: 0;
+    right: unset;
+}
+
+.menu-button > [aria-expanded="true"] ~ .menu-button__dropdown {
+    display: block;
 }

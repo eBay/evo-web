@@ -52,16 +52,16 @@ export const overflow = () => `
         </div>
         <div class="section-title__overflow">
             <span class="menu-button">
-                <button class="menu-button__button icon-button" type="button" aria-expanded="true" aria-haspopup="true" type="button">
+                <button class="icon-button" type="button" aria-expanded="true" aria-haspopup="menu" aria-label="More options" id="section-title-rtl-1-trigger" aria-controls="section-title-rtl-1-content">
                     <svg class="icon icon--24" width="24" height="24" aria-hidden="true">
                         <use href="#icon-overflow-vertical-24"></use>
                     </svg>
                 </button>
-                <div class="menu-button__menu menu-button__menu--reverse menu-button__menu--set-position">
-                    <div class="menu-button__items" role="menu">
-                        <div class="menu-button__item" role="menuitem"><span>Item 1</span></div>
-                        <div class="menu-button__item" role="menuitem"><span>Item 2</span></div>
-                        <div class="menu-button__item" role="menuitem"><span>Item 3</span></div>
+                <div class="menu-button__dropdown menu-button__dropdown--reverse">
+                    <div class="action-menu" role="menu" id="section-title-rtl-1-content" aria-labelledby="section-title-rtl-1-trigger">
+                        <div class="action-menu__item" role="menuitem"><span>Item 1</span></div>
+                        <div class="action-menu__item" role="menuitem"><span>Item 2</span></div>
+                        <div class="action-menu__item" role="menuitem"><span>Item 3</span></div>
                     </div>
                 </div>
             </span>

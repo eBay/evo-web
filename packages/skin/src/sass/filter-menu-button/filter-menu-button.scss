@@ -5,6 +5,9 @@
 @use "../mixins/private/token-mixins";
 @use "../mixins/private/state-layer";
 
+// DEPRECATED: the `filter-menu-button*` selectors in this file are removed in the next
+// major version. Use `menu-button` with a `filter-chip` and `filter-menu` inside it.
+
 /* .filter-group also exists in filter-button */
 /* todo: move to utility/layout class and/or mixin */
 div.filter-group {

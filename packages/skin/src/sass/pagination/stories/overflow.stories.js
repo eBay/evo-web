@@ -167,34 +167,38 @@ export const endMenuCollapsed = () => `
         </li>
         <li>
             <span class="pagination__item">
-                <span class="fake-menu-button">
-                    <button class="icon-button icon-button--transparent fake-menu-button__button" type="button" aria-label="Menu">
+                <span class="menu-button">
+                    <button class="icon-button icon-button--transparent" type="button" aria-label="Menu" aria-expanded="false" id="pagination-overflow-1-trigger" aria-controls="pagination-overflow-1-content">
                         <svg class="icon icon--24" width="8" height="8" role="separator">
                             <use href="#icon-overflow-horizontal-24"></use>
                         </svg>
                     </button>
-                    <ul class="fake-menu-button__menu fake-menu-button__menu--set-position">
-                        <li>
-                            <a class="fake-menu-button__item" href="http://www.ebay.com">
-                                <span>6</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://www.ebay.com" class="fake-menu-button__item">
-                                <span>7<span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://www.ebay.com" class="fake-menu-button__item">
-                                <span>8<span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://www.ebay.com" class="fake-menu-button__item">
-                                <span>9<span>
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="menu-button__dropdown">
+                        <div class="navigation-menu">
+                            <ul class="navigation-menu__items" id="pagination-overflow-1-content">
+                                <li>
+                                    <a class="navigation-menu__item" href="http://www.ebay.com">
+                                        <span>6</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://www.ebay.com" class="navigation-menu__item">
+                                        <span>7<span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://www.ebay.com" class="navigation-menu__item">
+                                        <span>8<span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://www.ebay.com" class="navigation-menu__item">
+                                        <span>9<span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </span>
             </span>
         </li>
@@ -238,34 +242,38 @@ export const endMenuExpanded = () => `
         </li>
         <li>
             <span class="pagination__item">
-                <span class="fake-menu-button">
-                    <button class="icon-button icon-button--transparent fake-menu-button__button" type="button" aria-expanded="true" aria-label="Menu">
+                <span class="menu-button">
+                    <button class="icon-button icon-button--transparent" type="button" aria-expanded="true" aria-label="Menu" id="pagination-overflow-2-trigger" aria-controls="pagination-overflow-2-content">
                         <svg class="icon icon--24" width="8" height="8" role="separator">
                             <use href="#icon-overflow-horizontal-24"></use>
                         </svg>
                     </button>
-                    <ul class="fake-menu-button__menu fake-menu-button__menu--set-position">
-                        <li>
-                            <a class="fake-menu-button__item" href="http://www.ebay.com">
-                                <span>6</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://www.ebay.com" class="fake-menu-button__item">
-                                <span>7<span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://www.ebay.com" class="fake-menu-button__item">
-                                <span>8<span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://www.ebay.com" class="fake-menu-button__item">
-                                <span>9<span>
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="menu-button__dropdown">
+                        <div class="navigation-menu">
+                            <ul class="navigation-menu__items" id="pagination-overflow-2-content">
+                                <li>
+                                    <a class="navigation-menu__item" href="http://www.ebay.com">
+                                        <span>6</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://www.ebay.com" class="navigation-menu__item">
+                                        <span>7<span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://www.ebay.com" class="navigation-menu__item">
+                                        <span>8<span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://www.ebay.com" class="navigation-menu__item">
+                                        <span>9<span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </span>
             </span>
         </li>
