@@ -207,9 +207,13 @@ export type Input = StaticInput | DayInput | RangeInput;
     onFocusOut(e, el) {
       bodyHasFocus = el.contains(e.relatedTarget as Node);
     }
-    onKeyDown(e) {
+    onKeyDown(e, el) {
       if (e.key in DAY_UPDATE_KB) {
-        const change = DAY_UPDATE_KB[e.key as keyof typeof DAY_UPDATE_KB];
+        const step = DAY_UPDATE_KB[e.key as keyof typeof DAY_UPDATE_KB];
+        const change =
+          Math.abs(step) === 1 && getComputedStyle(el).direction === "rtl"
+            ? -step
+            : step;
         e.preventDefault();
         let iso = focus;
         let tries = 7;

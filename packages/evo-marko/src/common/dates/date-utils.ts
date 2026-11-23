@@ -1,5 +1,3 @@
-import localeInfo, { type LocaleInfo, type Locales } from "./locale-info";
-
 export type DayISO = `${number}-${number}-${number}`;
 export type MonthISO = `${number}-${number}`;
 
@@ -27,8 +25,7 @@ export function monthOffset(date: MonthISO, offset: number) {
 
 export function getWeekdayInfo(localeName?: string) {
   localeName = localeDefault(localeName);
-  const locale = getLocale(localeName);
-  const firstDayOfWeek = locale.w;
+  const firstDayOfWeek = getFirstDayOfWeek(localeName);
 
   const weekdayLabelFormatter = new Intl.DateTimeFormat(localeName, {
     weekday: "short",
@@ -43,33 +40,37 @@ export function getWeekdayInfo(localeName?: string) {
   return { firstDayOfWeek, weekdayLabels };
 }
 
-const localeCache = new Map<string | undefined, LocaleInfo>();
+export type DateField = "year" | "month" | "day";
+interface DatePart {
+  type: DateField | "literal";
+  value: string;
+}
 
-export function getLocale(locale?: string): LocaleInfo {
-  if (!locale) {
-    locale = localeDefault();
-  }
+// Typed dates don't contain the bidi marks Intl puts around RTL separators.
+const BIDI_MARKS = /[\u061c\u200e\u200f]/g;
 
-  if (localeCache.has(locale)) {
-    return localeCache.get(locale) as LocaleInfo;
-  }
+export function getDateParts(locale?: string) {
+  return new Intl.DateTimeFormat(localeDefault(locale), {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    calendar: "gregory",
+  })
+    .formatToParts(0)
+    .map(({ type, value }) => ({
+      type: type as DatePart["type"],
+      value: value.replace(BIDI_MARKS, ""),
+    }));
+}
 
-  let info = { ...localeInfo._ } as LocaleInfo;
-
-  let curr = localeInfo;
-  const parts = locale.split("-");
-  for (let part of parts) {
-    part = part.toLowerCase();
-    if (curr[part]) {
-      curr = curr[part] as Locales;
-      info = { ...info, ...curr._ };
-    } else {
-      break;
-    }
-  }
-
-  localeCache.set(locale, info);
-  return info;
+function getFirstDayOfWeek(localeName: string) {
+  // Chrome 99–129 has this getter instead of getWeekInfo(). Remove it once
+  // browserslist requires Chrome 130.
+  const locale = new Intl.Locale(localeName) as Intl.Locale & {
+    readonly weekInfo?: Intl.WeekInfo;
+  };
+  const weekInfo = locale.getWeekInfo?.() ?? locale.weekInfo;
+  return weekInfo ? weekInfo.firstDay % 7 : 0;
 }
 
 /**

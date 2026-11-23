@@ -6,8 +6,8 @@ AI configuration for eBay's evo-web components monorepo.
 
 <agent_constraints>
 
-- Never auto-commit or push without explicit user request
-- Always run `npm run build` before marking component work complete
+- Never auto-commit or push without explicit user request. Exception: an unattended agent assigned to an issue (such as the Copilot coding agent) commits to its own branch and opens a PR
+- Follow `evo-safe-coding` for every change: when to proceed or stop, and which checks to run for the files changed. CI runs the full `npm run build` on every PR
 - Prefer reading existing patterns over introducing new ones
 - Never manually edit auto-generated files (they should typically have a comment indicating they are generated)
 - Default to no code comments; follow `<comment_policy>`
@@ -126,8 +126,8 @@ Declare `<const/>`, `<let/>`, `<id/>`, and other tag variables close to where th
 
 **React Package Differences:**
 
-- `ebayui-core-react`: Requires `React.forwardRef` wrapper
-- `evo-react`: Use native `ref` (React 19, no forwardRef needed)
+- `ebayui-core-react`: Pre-19 patterns (`forwardRef` through `common/component-utils/forwardRef.tsx`, `useContext`) even though its peer dependency is React 19. Don't bring 19-only APIs into it
+- `evo-react`: React 19 APIs: `use()`, `useId`, native `ref` (no forwardRef needed)
 
 **BEM Syntax:**
 
@@ -207,13 +207,13 @@ Follow existing component structures:
 **CRITICAL package differences:**
 
 - `@ebay/ui-core-react`:
-  - Requires `React.forwardRef` wrapper for ref forwarding
+  - Requires `React.forwardRef` wrapper for ref forwarding; uses `useContext`, not `use()`
   - CommonJS build target
   - External MakeupJS dependency
   - Assumes global `@ebay/skin` SCSS/CSS
 
 - `@evo-web/react`:
-  - Use native `ref` prop (React 19, no forwardRef needed)
+  - Use native `ref` prop (React 19, no forwardRef needed); `use()` for context, `useId` for ids
   - ESM-only build target
   - Bundled MakeupJS utilities
   - Imports Skin CSS directly in component files
@@ -243,7 +243,7 @@ Follow existing component structures:
 - ✅ Build must be green
 - ✅ Changes within scope of linked issue
 - ✅ Reference issue: `Fixes #[number]`
-- ✅ Include changeset (unless docs-only, in `/src/routes/`)
+- ✅ Include changeset (unless only docs, stories or tests changed)
 
 **CSS/SCSS changes:**
 

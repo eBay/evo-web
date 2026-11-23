@@ -96,6 +96,7 @@ When migrating a listed component, read the linked file completely and apply the
 - `ebay-progress-spinner`: [evo-progress-spinner.md](components/evo-progress-spinner.md)
 - `ebay-radio`: [evo-radio.md](components/evo-radio.md)
 - `ebay-section-title`: [evo-section-title.md](components/evo-section-title.md)
+- `ebay-segmented-buttons`: [evo-segmented-buttons.md](components/evo-segmented-buttons.md)
 - `ebay-select`: [evo-select.md](components/evo-select.md)
 - `ebay-signal`: [evo-signal.md](components/evo-signal.md)
 - `ebay-skeleton`: [evo-skeleton.md](components/evo-skeleton.md)

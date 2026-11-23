@@ -505,6 +505,7 @@ export type Icon =
 'handbag16' |
 'handbag24' |
 'hanger16' |
+'hanger20' |
 'hanger24' |
 'headlight16' |
 'headlight24' |
@@ -890,6 +891,7 @@ export type Icon =
 'ribbon16' |
 'ribbon24' |
 'rim16' |
+'rim20' |
 'rim24' |
 'ringgit16' |
 'ringgit24' |
@@ -1086,6 +1088,7 @@ export type Icon =
 'topServiceFilled24' |
 'topServiceFilled24Colored' |
 'tradingCard16' |
+'tradingCard20' |
 'tradingCard24' |
 'tradingCardEdition24' |
 'tradingCardGrade16' |

@@ -190,8 +190,13 @@ class Calendar extends Marko.Component<Input, State> {
     }
 
     onKeyDown(event: KeyboardEvent) {
-        const dayChange =
+        const step =
             DAY_UPDATE_KEYMAP[event.key as keyof typeof DAY_UPDATE_KEYMAP];
+        const dayChange =
+            Math.abs(step) === 1 &&
+            getComputedStyle(event.currentTarget as Element).direction === "rtl"
+                ? -step
+                : step;
         if (dayChange) {
             event.preventDefault();
             // find new tabindex iso, skipping up to 7 disabled cells

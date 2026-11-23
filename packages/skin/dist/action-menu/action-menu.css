@@ -54,23 +54,23 @@ div.action-menu__item[role^="menuitem"]:after {
 }
 div.action-menu__item[role^="menuitem"]:not(
         [disabled],
-        [aria-disabled="true"]
-    ):hover:after,
-div.action-menu__item[role^="menuitem"][href]:hover:after {
+        [aria-disabled="true"],
+        a:not([href])
+    ):hover:after {
     background-color: var(--color-state-layer-hover);
 }
 div.action-menu__item[role^="menuitem"]:not(
         [disabled],
-        [aria-disabled="true"]
-    ):focus-visible:after,
-div.action-menu__item[role^="menuitem"][href]:focus-visible:after {
+        [aria-disabled="true"],
+        a:not([href])
+    ):focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 div.action-menu__item[role^="menuitem"]:not(
         [disabled],
-        [aria-disabled="true"]
-    ):active:after,
-div.action-menu__item[role^="menuitem"][href]:active:after {
+        [aria-disabled="true"],
+        a:not([href])
+    ):active:after {
     background-color: var(--color-state-layer-pressed);
 }
 div.action-menu__item[role^="menuitem"]:active {

@@ -95,23 +95,23 @@ div.menu-button__item[role^="menuitem"]:after {
 }
 div.menu-button__item[role^="menuitem"]:not(
         [disabled],
-        [aria-disabled="true"]
-    ):hover:after,
-div.menu-button__item[role^="menuitem"][href]:hover:after {
+        [aria-disabled="true"],
+        a:not([href])
+    ):hover:after {
     background-color: var(--color-state-layer-hover);
 }
 div.menu-button__item[role^="menuitem"]:not(
         [disabled],
-        [aria-disabled="true"]
-    ):focus-visible:after,
-div.menu-button__item[role^="menuitem"][href]:focus-visible:after {
+        [aria-disabled="true"],
+        a:not([href])
+    ):focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 div.menu-button__item[role^="menuitem"]:not(
         [disabled],
-        [aria-disabled="true"]
-    ):active:after,
-div.menu-button__item[role^="menuitem"][href]:active:after {
+        [aria-disabled="true"],
+        a:not([href])
+    ):active:after {
     background-color: var(--color-state-layer-pressed);
 }
 div.menu-button__item[role^="menuitem"]:active {
@@ -258,44 +258,43 @@ div.menu-button__item[role^="menuitem"][aria-checked="true"] svg.icon--16 {
 .fake-menu-button__menu
     a.fake-menu-button__item:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):hover:after,
-.fake-menu-button__menu a.fake-menu-button__item[href]:hover:after,
 .fake-menu-button__menu
     button.fake-menu-button__item:not(
         [disabled],
-        [aria-disabled="true"]
-    ):hover:after,
-.fake-menu-button__menu button.fake-menu-button__item[href]:hover:after {
+        [aria-disabled="true"],
+        a:not([href])
+    ):hover:after {
     background-color: var(--color-state-layer-hover);
 }
 .fake-menu-button__menu
     a.fake-menu-button__item:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):focus-visible:after,
-.fake-menu-button__menu a.fake-menu-button__item[href]:focus-visible:after,
 .fake-menu-button__menu
     button.fake-menu-button__item:not(
         [disabled],
-        [aria-disabled="true"]
-    ):focus-visible:after,
-.fake-menu-button__menu
-    button.fake-menu-button__item[href]:focus-visible:after {
+        [aria-disabled="true"],
+        a:not([href])
+    ):focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 .fake-menu-button__menu
     a.fake-menu-button__item:not(
         [disabled],
-        [aria-disabled="true"]
+        [aria-disabled="true"],
+        a:not([href])
     ):active:after,
-.fake-menu-button__menu a.fake-menu-button__item[href]:active:after,
 .fake-menu-button__menu
     button.fake-menu-button__item:not(
         [disabled],
-        [aria-disabled="true"]
-    ):active:after,
-.fake-menu-button__menu button.fake-menu-button__item[href]:active:after {
+        [aria-disabled="true"],
+        a:not([href])
+    ):active:after {
     background-color: var(--color-state-layer-pressed);
 }
 .fake-menu-button__menu a.fake-menu-button__item:active,

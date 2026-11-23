@@ -33,13 +33,12 @@ describe("scroll-debounced", () => {
         await new Promise((resolve) => {
             const scrollSpy = vi.fn();
             onScrollDebounced(scrollEl, scrollSpy);
-            simulateScroll(scrollEl, 50, () => {
-                simulateScroll(scrollEl, 100, () => {
-                    setTimeout(() => {
-                        expect(scrollSpy).toBeCalledTimes(1);
-                        resolve();
-                    }, 400);
-                });
+            simulateScroll(scrollEl, 50);
+            simulateScroll(scrollEl, 100, () => {
+                setTimeout(() => {
+                    expect(scrollSpy).toBeCalledTimes(1);
+                    resolve();
+                }, 400);
             });
         });
     });

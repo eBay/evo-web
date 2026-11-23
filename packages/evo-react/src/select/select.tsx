@@ -34,7 +34,7 @@ import "@ebay/skin/select.mjs";
  *
  * @summary Native select with Skin styling and optional floating label.
  */
-export function EvoSelect({
+export function EvoSelect<Value extends string = string>({
   "aria-invalid": ariaInvalid,
   borderless = false,
   children,
@@ -53,11 +53,13 @@ export function EvoSelect({
   style,
   value,
   ...rest
-}: EvoSelectProps) {
+}: EvoSelectProps<Value>) {
   const generatedId = useId();
   const inputId = id ?? (floatingLabelText ? generatedId : undefined);
   const [focused, setFocused] = useState(false);
-  const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue);
+  const [uncontrolledValue, setUncontrolledValue] = useState<
+    string | readonly string[] | undefined
+  >(defaultValue);
   const [setSelectRef, selectRef] = useRefTee<HTMLSelectElement | null>(
     ref,
     null,
@@ -103,13 +105,13 @@ export function EvoSelect({
       if (!isControlled) {
         setUncontrolledValue(nextValue);
       }
-      onChange?.(nextValue);
+      onChange?.(nextValue as Value[]);
     } else {
       const nextValue = event.currentTarget.value;
       if (!isControlled) {
         setUncontrolledValue(nextValue);
       }
-      onChange?.(nextValue);
+      onChange?.(nextValue as Value);
     }
   };
 

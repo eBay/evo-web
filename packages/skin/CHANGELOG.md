@@ -1,5 +1,32 @@
 # Skin Changelog
 
+## 19.40.0
+
+### Minor Changes
+
+- [#1128](https://github.com/eBay/evo-web/pull/1128) [`c3f892b`](https://github.com/eBay/evo-web/commit/c3f892b4880a1d969708f8d3781d54e143a0e298) Thanks [@saiponnada](https://github.com/saiponnada)! - feat(icons): Add `hanger-20`, `rim-20`, and `trading-card-20` icons. Update `trading-card-16` artwork.
+
+### Patch Changes
+
+- [#1102](https://github.com/eBay/evo-web/pull/1102) [`5af1b77`](https://github.com/eBay/evo-web/commit/5af1b7785836d70c4bf47c3f77c243d35060282d) Thanks [@saiponnada](https://github.com/saiponnada)! - fix(breadcrumbs): use `aria-current="page"` for the current breadcrumb
+  
+  The last breadcrumb now exposes `aria-current="page"` instead of
+  `aria-current="location"`.
+
+- [#1126](https://github.com/eBay/evo-web/pull/1126) [`0325f7b`](https://github.com/eBay/evo-web/commit/0325f7bce3ca39c789d01cff63800d8b2963e7a4) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Mirror the calendar in RTL: flip the navigation chevrons and the range start/end fills, and make ArrowLeft/ArrowRight move by visual direction.
+
+- [#1052](https://github.com/eBay/evo-web/pull/1052) [`849e903`](https://github.com/eBay/evo-web/commit/849e903e97fddda70ad3f42c22f4ff2c2d591616) Thanks [@LuLaValva](https://github.com/LuLaValva)! - fix(skin): remove redundant focus outline overrides so buttons, chip close, toggle button and filter-menu header use the native focus ring
+
+- [#1108](https://github.com/eBay/evo-web/pull/1108) [`1fb95fa`](https://github.com/eBay/evo-web/commit/1fb95fa8e4b4fc1a6c25c863825b825d021e4292) Thanks [@ArtBlue](https://github.com/ArtBlue)! - Fix disabled link colors inside tooltips, infotips, and tourtips.
+
+- [#1104](https://github.com/eBay/evo-web/pull/1104) [`ac018c5`](https://github.com/eBay/evo-web/commit/ac018c5eb879e83d1bb7ee7f464ab66afbc3cda8) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Add `<evo-star-rating-select>`, migrated from ebayui-core's `<ebay-star-rating-select>`. `value` is now a number that binds with `value:=` (or `valueChange`), replacing `on-change`. The wrapped `on-focus` and `on-keydown` events are removed in favor of native handlers on the root. `a11yText` and `a11yStarText` are required with English defaults, the root is always a `radiogroup`, and a new `name` attribute sets the radios' form name.
+  
+  Skin's star rating select now fills the stars before the checked radio in CSS, so the rating is right before JavaScript runs. Where `:has()` is supported the checked radio decides the fill, and a `star-rating-select__control--filled` modifier after it is ignored. The modifier still works when no radio is checked and in browsers without `:has()`.
+
+- [#1092](https://github.com/eBay/evo-web/pull/1092) [`3f4a6f9`](https://github.com/eBay/evo-web/commit/3f4a6f9fdbcd52a90a09f6db4b48ad3c69920dbc) Thanks [@ArtBlue](https://github.com/ArtBlue)! - fix(infotip): use the inverse background and foreground colors and `--spacing-200` padding to match the Playbook tourtip spec. If you override `--infotip-background-color`, also set `--infotip-foreground-color`, since the default text color is now light.
+
+- [#1053](https://github.com/eBay/evo-web/pull/1053) [`ca6f5bc`](https://github.com/eBay/evo-web/commit/ca6f5bcdbbc9d28c8d047a3db1344fe8cae79587) Thanks [@LuLaValva](https://github.com/LuLaValva)! - fix(skin): use native focus rings for checkbox, radio, star rating select and switch. Removes the `--checkbox-outline`, `--radio-outline` and `--switch-custom-outline-color` tokens, and the switch's accent box-shadow focus ring
+
 ## 19.39.0
 
 ### Minor Changes

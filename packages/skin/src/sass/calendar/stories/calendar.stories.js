@@ -1296,3 +1296,7 @@ export const doubleWithHeader = () => /* HTML */ `
         </div>
     </div>
 `;
+
+export const RTL = () => /* HTML */ `
+    <div dir="rtl">${doubleWithHeader()}</div>
+`;

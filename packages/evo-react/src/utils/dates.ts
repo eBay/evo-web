@@ -1,5 +1,4 @@
 import type { DayISO, Disable, MonthISO } from "../calendar/types";
-import localeInfo, { type LocaleInfo, type Locales } from "./locale-info";
 
 export function localeDefault(inputLocale?: string): string {
   if (inputLocale) {
@@ -20,37 +19,43 @@ export function localeDefault(inputLocale?: string): string {
   }
 }
 
-const localeCache = new Map<string | undefined, LocaleInfo>();
+export type DateField = "year" | "month" | "day";
+interface DatePart {
+  type: DateField | "literal";
+  value: string;
+}
 
-export function getLocale(locale?: string): LocaleInfo {
-  if (!locale) {
-    locale = localeDefault();
+// Typed dates don't contain the bidi marks Intl puts around RTL separators.
+const BIDI_MARKS = /[\u061c\u200e\u200f]/g;
+
+const SIZES: Record<DateField, number> = { year: 4, month: 2, day: 2 };
+
+function getDateParts(locale?: string) {
+  return new Intl.DateTimeFormat(localeDefault(locale), {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    calendar: "gregory",
+  })
+    .formatToParts(0)
+    .map(({ type, value }) => ({
+      type: type as DatePart["type"],
+      value: value.replace(BIDI_MARKS, ""),
+    }));
+}
+
+export function getLayout(locale?: string) {
+  const order: DateField[] = [];
+  const sep: string[] = [];
+  for (const { type, value } of getDateParts(locale)) {
+    if (type !== "literal") order.push(type);
+    else if (order.length) sep[order.length - 1] = value;
   }
-
-  const cached = localeCache.get(locale);
-  if (cached) {
-    return cached;
-  }
-
-  let info = { ...localeInfo._ } as LocaleInfo;
-  let curr = localeInfo;
-  const parts = locale.split("-");
-  for (let part of parts) {
-    part = part.toLowerCase();
-    if (curr[part]) {
-      curr = curr[part] as Locales;
-      info = { ...info, ...curr._ };
-    } else {
-      break;
-    }
-  }
-
-  localeCache.set(locale, info);
-  return info;
+  return { order, sep };
 }
 
 export function parse(value: string, locale?: string): DayISO | null {
-  const { o: order, s: sep } = getLocale(locale);
+  const { order, sep } = getLayout(locale);
   const parts: string[] = [];
   const firstEnd = value.indexOf(sep[0].trim());
   parts.push(value.slice(0, firstEnd).trim());
@@ -69,21 +74,21 @@ export function parse(value: string, locale?: string): DayISO | null {
     return null;
   }
 
-  const parsed = {} as { y: number; m: number; d: number };
+  const parsed = {} as Record<DateField, number>;
   for (const i in parts) {
     const num = Number.parseInt(parts[i], 10);
     if (Number.isNaN(num)) {
       return null;
     }
-    parsed[order[i] as "y" | "m" | "d"] = num;
+    parsed[order[i]] = num;
   }
 
-  if (parsed.y < 100) {
-    parsed.y += parsed.y < 50 ? 2000 : 1900;
+  if (parsed.year < 100) {
+    parsed.year += parsed.year < 50 ? 2000 : 1900;
   }
 
   const iso =
-    `${padStart(parsed.y, 4)}-${padStart(parsed.m, 2)}-${padStart(parsed.d, 2)}` as DayISO;
+    `${padStart(parsed.year, 4)}-${padStart(parsed.month, 2)}-${padStart(parsed.day, 2)}` as DayISO;
   const date = new Date(iso);
   if (Number.isNaN(date.getTime()) || date.toISOString().slice(0, 10) !== iso) {
     return null;
@@ -96,37 +101,35 @@ export function format(date: DayISO, locale?: string) {
     return "";
   }
 
-  const { o: order, s: sep } = getLocale(locale);
-  const [y, m, d] = date.split("-");
-  const parts = { y, m, d };
-  let result = "";
-  for (let i = 0; i < 3; i++) {
-    result += parts[order[i] as "y" | "m" | "d"];
-    if (sep[i]) {
-      result += sep[i];
-    }
-  }
-
-  return result;
+  const [year, month, day] = date.split("-");
+  return fill({ year, month, day }, locale);
 }
 
+// Repeats the initial of the field's localized name, as in JJ/MM/AAAA. Scripts
+// without letter case have no such convention, so they use English letters.
 export function placeholder(locale?: string) {
-  const { o: order, s: sep, y, m, d } = getLocale(locale);
-  const parts = {
-    y: `${y}${y}${y}${y}`,
-    m: `${m}${m}`,
-    d: `${d}${d}`,
+  locale = localeDefault(locale);
+  const names = new Intl.DisplayNames(locale, { type: "dateTimeField" });
+  const initial = (field: DateField) => {
+    const letter = [...names.of(field)!][0].toLocaleUpperCase(locale);
+    return letter === letter.toLocaleLowerCase(locale)
+      ? field[0].toUpperCase()
+      : letter;
   };
+  return fill(
+    {
+      year: initial("year").repeat(SIZES.year),
+      month: initial("month").repeat(SIZES.month),
+      day: initial("day").repeat(SIZES.day),
+    },
+    locale,
+  );
+}
 
-  let result = "";
-  for (let i = 0; i < 3; i++) {
-    result += parts[order[i] as "y" | "m" | "d"];
-    if (sep[i]) {
-      result += sep[i];
-    }
-  }
-
-  return result;
+function fill(values: Record<DateField, string>, locale?: string) {
+  return getDateParts(locale)
+    .map(({ type, value }) => (type === "literal" ? value : values[type]))
+    .join("");
 }
 
 export function monthOffset(date: MonthISO, offset: number) {
@@ -212,20 +215,19 @@ export function isDisabled(
   );
 }
 
-function getFirstDayOfWeek(localeName: string): number {
-  try {
-    const locale = new Intl.Locale(localeName) as Intl.Locale & {
-      weekInfo?: { firstDay: number };
-    };
+interface WeekInfo {
+  firstDay: number;
+}
 
-    if (locale.weekInfo) {
-      return locale.weekInfo.firstDay % 7;
-    }
-  } catch {
-    return 0;
-  }
-
-  return 0;
+function getFirstDayOfWeek(localeName: string) {
+  // Chrome 99–129 has this getter instead of getWeekInfo(). Remove it once
+  // browserslist requires Chrome 130.
+  const locale = new Intl.Locale(localeName) as Intl.Locale & {
+    getWeekInfo?(): WeekInfo;
+    readonly weekInfo?: WeekInfo;
+  };
+  const weekInfo = locale.getWeekInfo?.() ?? locale.weekInfo;
+  return weekInfo ? weekInfo.firstDay % 7 : 0;
 }
 
 function padStart(num: number, digits: number) {
