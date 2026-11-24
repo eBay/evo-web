@@ -69,6 +69,7 @@ export interface Input {
   return true;
 }>
 <let/focused=false>
+<id/formlessId>
 <const/rest=focused ? remainingFormat(text, locale) : undefined>
 
 // The hidden ::after sizes the field to what it shows: text and format hint,
@@ -80,7 +81,11 @@ export interface Input {
     aria-label=ariaLabel
     aria-invalid=(input.invalid || typed?.invalid) && "true"
     inputmode="numeric"
-    autocomplete="off"
+    autocomplete=(
+      "off"
+      // No element has this id, so the text belongs to no form; only the hidden
+    )
+    form=formlessId
     placeholder=hint
     disabled=disabled
     readonly=readonly

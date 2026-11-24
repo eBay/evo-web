@@ -49,6 +49,29 @@ describe("evo-date-range-input", () => {
     ]);
   });
 
+  it("submits only the ISO dates, not the text inputs", async () => {
+    component = await render(Default, {
+      locale: "en-US",
+      startName: "from",
+      endName: "to",
+    });
+    const form = document.createElement("form");
+    document.body.append(form);
+    form.append(component.container.querySelector(".date-textbox")!);
+    const [start, end] = form.querySelectorAll<HTMLInputElement>(
+      ".date-textbox__input",
+    );
+    expect([start.form, end.form]).toEqual([null, null]);
+
+    await fireEvent.input(start, { target: { value: "12/08/2024" } });
+    await fireEvent.change(start);
+    expect([...new FormData(form)]).toEqual([
+      ["from", "2024-12-08"],
+      ["to", ""],
+    ]);
+    form.remove();
+  });
+
   it("moves to the end date once the start date is filled in", async () => {
     component = await render(Default, { locale: "en-US" });
     const [start, end] = component.getAllByRole("textbox");
