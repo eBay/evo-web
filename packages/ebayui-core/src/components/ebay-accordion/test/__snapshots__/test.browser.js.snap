@@ -106,10 +106,18 @@ exports[`accordion > given the accordion in the default state > then it matches 
           <span
             hidden
             style="
+              --chevron-bounce-progress: 0;
               animation-duration: 0ms;
               display: inline-flex;
               transition-delay: 0ms;
-              transition-duration: 0ms
+              transition-duration: 0ms;
+              transition: --chevron-bounce-progress var(--motion-duration-medium-1)
+                      var(--motion-easing-linear);
+              translate: 0
+                      calc(
+                          4px * sin(180deg * var(--chevron-bounce-progress)) *
+                              sin(180deg * var(--chevron-bounce-progress))
+                      )
             "
           >
             <style>@scope{:scope{
@@ -266,10 +274,18 @@ exports[`accordion > given the accordion in the default state > then it matches 
           <span
             hidden
             style="
+              --chevron-bounce-progress: 0;
               animation-duration: 0ms;
               display: inline-flex;
               transition-delay: 0ms;
-              transition-duration: 0ms
+              transition-duration: 0ms;
+              transition: --chevron-bounce-progress var(--motion-duration-medium-1)
+                      var(--motion-easing-linear);
+              translate: 0
+                      calc(
+                          4px * sin(180deg * var(--chevron-bounce-progress)) *
+                              sin(180deg * var(--chevron-bounce-progress))
+                      )
             "
           >
             <style>@scope{:scope{
@@ -425,10 +441,18 @@ exports[`accordion > given the accordion in the default state > then it matches 
           <span
             hidden
             style="
+              --chevron-bounce-progress: 0;
               animation-duration: 0ms;
               display: inline-flex;
               transition-delay: 0ms;
-              transition-duration: 0ms
+              transition-duration: 0ms;
+              transition: --chevron-bounce-progress var(--motion-duration-medium-1)
+                      var(--motion-easing-linear);
+              translate: 0
+                      calc(
+                          4px * sin(180deg * var(--chevron-bounce-progress)) *
+                              sin(180deg * var(--chevron-bounce-progress))
+                      )
             "
           >
             <style>@scope{:scope{
@@ -537,44 +561,27 @@ exports[`accordion > given the accordion in the default state > when first secti
                bottom: 0px;
                content: "";
                left: 0px;
-@@ -105,6 +108,7 @@
+@@ -103,9 +106,10 @@
+           <span
+             hidden
              style="
+-               --chevron-bounce-progress: 0;
++               --chevron-bounce-progress: 1;
                animation-duration: 0ms;
                display: inline-flex;
 +               transform: rotate(180deg);
                transition-delay: 0ms;
-               transition-duration: 0ms
-             "
-@@ -116,8 +120,10 @@
-               focusable="false"
+               transition-duration: 0ms;
+               transition: --chevron-bounce-progress var(--motion-duration-medium-1)
+@@ -125,7 +129,7 @@
                style="
                  animation-duration: 0ms;
-+                 animation: chevron-bounce-open var(--motion-duration-medium-1)
-+                         var(--motion-easing-standard) var(--motion-duration-short-1);
                  display: inline-block;
 -                 fill: var(--color-foreground-secondary);
 +                 fill: currentcolor;
                  height: 16px;
                  pointer-events: none;
                  stroke-width: 0;
-@@ -276,6 +282,8 @@
-               focusable="false"
-               style="
-                 animation-duration: 0ms;
-+                 animation: chevron-bounce-close var(--motion-duration-medium-1)
-+                         var(--motion-easing-standard);
-                 display: inline-block;
-                 fill: var(--color-foreground-secondary);
-                 height: 16px;
-@@ -435,6 +443,8 @@
-               focusable="false"
-               style="
-                 animation-duration: 0ms;
-+                 animation: chevron-bounce-close var(--motion-duration-medium-1)
-+                         var(--motion-easing-standard);
-                 display: inline-block;
-                 fill: var(--color-foreground-secondary);
-                 height: 16px;
 "
 `;
 
@@ -588,33 +595,6 @@ exports[`accordion > given the accordion in the default state > when first secti
                bottom: 0px;
                content: "";
                left: 0px;
-@@ -116,6 +116,8 @@
-               focusable="false"
-               style="
-                 animation-duration: 0ms;
-+                 animation: chevron-bounce-close var(--motion-duration-medium-1)
-+                         var(--motion-easing-standard);
-                 display: inline-block;
-                 fill: var(--color-foreground-secondary);
-                 height: 16px;
-@@ -276,6 +278,8 @@
-               focusable="false"
-               style="
-                 animation-duration: 0ms;
-+                 animation: chevron-bounce-close var(--motion-duration-medium-1)
-+                         var(--motion-easing-standard);
-                 display: inline-block;
-                 fill: var(--color-foreground-secondary);
-                 height: 16px;
-@@ -435,6 +439,8 @@
-               focusable="false"
-               style="
-                 animation-duration: 0ms;
-+                 animation: chevron-bounce-close var(--motion-duration-medium-1)
-+                         var(--motion-easing-standard);
-                 display: inline-block;
-                 fill: var(--color-foreground-secondary);
-                 height: 16px;
 "
 `;
 
@@ -657,44 +637,27 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
                bottom: 0px;
                content: "";
                left: 0px;
-@@ -105,6 +108,7 @@
+@@ -103,9 +106,10 @@
+           <span
+             hidden
              style="
+-               --chevron-bounce-progress: 0;
++               --chevron-bounce-progress: 1;
                animation-duration: 0ms;
                display: inline-flex;
 +               transform: rotate(180deg);
                transition-delay: 0ms;
-               transition-duration: 0ms
-             "
-@@ -116,8 +120,10 @@
-               focusable="false"
+               transition-duration: 0ms;
+               transition: --chevron-bounce-progress var(--motion-duration-medium-1)
+@@ -125,7 +129,7 @@
                style="
                  animation-duration: 0ms;
-+                 animation: chevron-bounce-open var(--motion-duration-medium-1)
-+                         var(--motion-easing-standard) var(--motion-duration-short-1);
                  display: inline-block;
 -                 fill: var(--color-foreground-secondary);
 +                 fill: currentcolor;
                  height: 16px;
                  pointer-events: none;
                  stroke-width: 0;
-@@ -276,6 +282,8 @@
-               focusable="false"
-               style="
-                 animation-duration: 0ms;
-+                 animation: chevron-bounce-close var(--motion-duration-medium-1)
-+                         var(--motion-easing-standard);
-                 display: inline-block;
-                 fill: var(--color-foreground-secondary);
-                 height: 16px;
-@@ -435,6 +443,8 @@
-               focusable="false"
-               style="
-                 animation-duration: 0ms;
-+                 animation: chevron-bounce-close var(--motion-duration-medium-1)
-+                         var(--motion-easing-standard);
-                 display: inline-block;
-                 fill: var(--color-foreground-secondary);
-                 height: 16px;
 "
 `;
 
@@ -708,16 +671,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
                bottom: 0px;
                content: "";
                left: 0px;
-@@ -116,6 +116,8 @@
-               focusable="false"
-               style="
-                 animation-duration: 0ms;
-+                 animation: chevron-bounce-close var(--motion-duration-medium-1)
-+                         var(--motion-easing-standard);
-                 display: inline-block;
-                 fill: var(--color-foreground-secondary);
-                 height: 16px;
-@@ -181,17 +183,20 @@
+@@ -189,17 +189,20 @@
        <style>@scope{:scope{
          &::marker {font-size: 0px}
        }}</style>
@@ -746,34 +700,26 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
              overflow-x: clip;
              overflow-y: clip;
              transition-delay: 0ms;
-@@ -265,6 +270,7 @@
+@@ -271,9 +274,10 @@
+           <span
+             hidden
              style="
+-               --chevron-bounce-progress: 0;
++               --chevron-bounce-progress: 1;
                animation-duration: 0ms;
                display: inline-flex;
 +               transform: rotate(180deg);
                transition-delay: 0ms;
-               transition-duration: 0ms
-             "
-@@ -276,8 +282,10 @@
-               focusable="false"
+               transition-duration: 0ms;
+               transition: --chevron-bounce-progress var(--motion-duration-medium-1)
+@@ -293,7 +297,7 @@
                style="
                  animation-duration: 0ms;
-+                 animation: chevron-bounce-open var(--motion-duration-medium-1)
-+                         var(--motion-easing-standard) var(--motion-duration-short-1);
                  display: inline-block;
 -                 fill: var(--color-foreground-secondary);
 +                 fill: currentcolor;
                  height: 16px;
                  pointer-events: none;
                  stroke-width: 0;
-@@ -435,6 +443,8 @@
-               focusable="false"
-               style="
-                 animation-duration: 0ms;
-+                 animation: chevron-bounce-close var(--motion-duration-medium-1)
-+                         var(--motion-easing-standard);
-                 display: inline-block;
-                 fill: var(--color-foreground-secondary);
-                 height: 16px;
 "
 `;

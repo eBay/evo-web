@@ -1,4 +1,6 @@
-@use "../mixins/public/animation";
+@use "../mixins/private/chevron-mixins";
+
+@include chevron-mixins.bounce-property;
 
 ul.accordion {
     margin: 0;
@@ -51,20 +53,12 @@ ul.accordion
     fill: var(--color-foreground-secondary);
 }
 
-ul.accordion--animated
-    details:not([open])
-    summary.details__summary
-    span.details__icon
-    svg {
-    @include animation.chevron-close;
+ul.accordion details summary.details__summary span.details__icon {
+    @include chevron-mixins.bounce;
 }
 
-ul.accordion--animated
-    details[open]
-    summary.details__summary
-    span.details__icon
-    svg {
-    @include animation.chevron-open;
+ul.accordion details[open] summary.details__summary span.details__icon {
+    @include chevron-mixins.bounce-open;
 }
 
 /* DEPRECATED: Remove next major */

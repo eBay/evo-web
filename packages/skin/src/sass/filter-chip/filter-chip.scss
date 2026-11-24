@@ -1,10 +1,10 @@
-@use "../mixins/public/animation-mixins";
+@use "../mixins/private/chevron-mixins";
 @use "../mixins/private/chip-mixins";
 @use "../mixins/private/state-layer";
 @use "../mixins/public/utility-mixins";
 
 @include chip-mixins.background-keyframes;
-@include animation-mixins.chevron-keyframes;
+@include chevron-mixins.bounce-property;
 
 button.filter-chip,
 a.filter-chip {
@@ -64,26 +64,16 @@ a.filter-chip:not([href]) {
     }
 }
 
-button.filter-chip[aria-expanded="false"]:active .filter-chip__trailing {
-    rotate: 180deg;
-
-    @include animation-mixins.chevron-close;
-}
-
-button.filter-chip[aria-expanded="false"] .filter-chip__trailing {
-    rotate: 0deg;
-    transition: none;
-}
-
-button.filter-chip[aria-expanded="true"]:active .filter-chip__trailing {
+button.filter-chip[aria-expanded] .filter-chip__trailing {
     rotate: 0deg;
 
-    @include animation-mixins.chevron-open;
+    @include chevron-mixins.bounce(rotate 0s var(--motion-duration-short-1));
 }
 
 button.filter-chip[aria-expanded="true"] .filter-chip__trailing {
     rotate: 180deg;
-    transition: none;
+
+    @include chevron-mixins.bounce-open;
 }
 
 .filter-chip__text {
