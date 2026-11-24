@@ -5,8 +5,7 @@ export interface Input extends DateInputInput {}
 
 <p>Selected: ${date || "none"}</p>
 
-<evo-date-input ...input value:=date>
-  <@input floatingLabel="Purchase date"/>
+<evo-date-input ...input floatingLabel="Purchase date" value:=date>
   <@calendar a11yNavigateText(month, dir) {
     return `Go to ${month} (${dir === "prev" ? "Previous" : "Next"} month)`;
   }/>
