@@ -1,3 +1,8 @@
+@property --chevron-bounce-progress {
+    inherits: false;
+    initial-value: 0;
+    syntax: "<number>";
+}
 ul.accordion {
     margin: 0;
     padding: 0;
@@ -45,22 +50,24 @@ ul.accordion
     fill: var(--color-foreground-secondary);
 }
 
-ul.accordion--animated
-    details:not([open])
-    summary.details__summary
-    span.details__icon
-    svg {
-    animation: chevron-bounce-close var(--motion-duration-medium-1)
-        var(--motion-easing-standard);
+ul.accordion details summary.details__summary span.details__icon {
+    --chevron-bounce-progress: 0;
+    transition: --chevron-bounce-progress var(--motion-duration-medium-1)
+        var(--motion-easing-linear);
+    translate: 0
+        calc(
+            4px * sin(180deg * var(--chevron-bounce-progress)) *
+                sin(180deg * var(--chevron-bounce-progress))
+        );
+}
+@media (prefers-reduced-motion) {
+    ul.accordion details summary.details__summary span.details__icon {
+        transition: none;
+    }
 }
 
-ul.accordion--animated
-    details[open]
-    summary.details__summary
-    span.details__icon
-    svg {
-    animation: chevron-bounce-open var(--motion-duration-medium-1)
-        var(--motion-easing-standard) var(--motion-duration-short-1);
+ul.accordion details[open] summary.details__summary span.details__icon {
+    --chevron-bounce-progress: 1;
 }
 ul.accordion details svg.details__expand,
 ul.accordion details[open] svg.details__collapse {

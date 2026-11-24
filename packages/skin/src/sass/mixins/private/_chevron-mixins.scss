@@ -1,0 +1,40 @@
+@use "sass:list";
+
+// Transitions run only on state changes, so the bounce never plays on page load.
+@mixin bounce-property() {
+    @property --chevron-bounce-progress {
+        inherits: false;
+        initial-value: 0;
+        syntax: "<number>";
+    }
+}
+
+@mixin bounce($transitions...) {
+    --chevron-bounce-progress: 0;
+
+    @if list.length($transitions) > 0 {
+        transition:
+            --chevron-bounce-progress
+                var(--motion-duration-medium-1)
+                var(--motion-easing-linear),
+            $transitions;
+    } @else {
+        transition: --chevron-bounce-progress
+            var(--motion-duration-medium-1)
+            var(--motion-easing-linear);
+    }
+
+    translate: 0
+        calc(
+            sin(var(--chevron-bounce-progress) * 180deg) *
+                sin(var(--chevron-bounce-progress) * 180deg) * 4px
+        );
+
+    @media (prefers-reduced-motion) {
+        transition: none;
+    }
+}
+
+@mixin bounce-open() {
+    --chevron-bounce-progress: 1;
+}
