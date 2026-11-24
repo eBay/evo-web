@@ -1,0 +1,1166 @@
+import { urls } from "../../../../data";
+<div id="filter-menu">
+  <h1>Filter Menu CSS Component</h1>
+  <p>
+    A filter menu is an ARIA menu of <code>menuitemcheckbox</code> or
+    <code>menuitemradio</code> items. Each item sets <code>aria-checked</code> ,
+    checked or not, and the checkbox or radio graphic follows it.
+  </p>
+  <p>
+    <strong>NOTE:</strong> Only limited JavaScript behaviour has been
+    implemented in these examples. To open a filter menu from a filter chip, see
+    <a href=`${urls.components}/menu-button`>menu button</a> .
+  </p>
+
+  <h2 id="filter-menu-checkbox">Multiple-Choice Filter Menu</h2>
+  <p>
+    Each item has a role of <code>menuitemcheckbox</code> . Any number of items
+    can be checked.
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <span class="filter-menu">
+        <div class="filter-menu__items" role="menu" aria-label="Color">
+          <div
+            class="filter-menu__item"
+            role="menuitemcheckbox"
+            aria-checked="true"
+            tabindex="0"
+          >
+            <span class="filter-menu__checkbox">
+              <svg
+                class="icon icon--18 icon--unchecked"
+                height="18"
+                width="18"
+                aria-hidden="true"
+              >
+                <icon-symbol name="checkbox-unchecked-18"/>
+              </svg>
+              <svg
+                class="icon icon--18 icon--checked"
+                height="18"
+                width="18"
+                aria-hidden="true"
+              >
+                <icon-symbol name="checkbox-checked-18"/>
+              </svg>
+            </span>
+            <span class="filter-menu__text">Black</span>
+          </div>
+          <div
+            class="filter-menu__item"
+            role="menuitemcheckbox"
+            aria-checked="false"
+          >
+            <span class="filter-menu__checkbox">
+              <svg
+                class="icon icon--18 icon--unchecked"
+                height="18"
+                width="18"
+                aria-hidden="true"
+              >
+                <icon-symbol name="checkbox-unchecked-18"/>
+              </svg>
+              <svg
+                class="icon icon--18 icon--checked"
+                height="18"
+                width="18"
+                aria-hidden="true"
+              >
+                <icon-symbol name="checkbox-checked-18"/>
+              </svg>
+            </span>
+            <span class="filter-menu__text">Blue</span>
+          </div>
+          <div
+            class="filter-menu__item"
+            role="menuitemcheckbox"
+            aria-checked="false"
+          >
+            <span class="filter-menu__checkbox">
+              <svg
+                class="icon icon--18 icon--unchecked"
+                height="18"
+                width="18"
+                aria-hidden="true"
+              >
+                <icon-symbol name="checkbox-unchecked-18"/>
+              </svg>
+              <svg
+                class="icon icon--18 icon--checked"
+                height="18"
+                width="18"
+                aria-hidden="true"
+              >
+                <icon-symbol name="checkbox-checked-18"/>
+              </svg>
+            </span>
+            <span class="filter-menu__text">
+              Red with a long label that wraps to another line
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <span class="filter-menu">
+      <div class="filter-menu__items" role="menu" aria-label="Color">
+        <div
+          class="filter-menu__item"
+          role="menuitemcheckbox"
+          aria-checked="true"
+          tabindex="0"
+        >
+          <span class="filter-menu__checkbox">
+            <svg
+              class="icon icon--18 icon--unchecked"
+              height="18"
+              width="18"
+              aria-hidden="true"
+            >
+              <use href="#icon-checkbox-unchecked-18"/>
+            </svg>
+            <svg
+              class="icon icon--18 icon--checked"
+              height="18"
+              width="18"
+              aria-hidden="true"
+            >
+              <use href="#icon-checkbox-checked-18"/>
+            </svg>
+          </span>
+          <span class="filter-menu__text">Black</span>
+        </div>
+        <div
+          class="filter-menu__item"
+          role="menuitemcheckbox"
+          aria-checked="false"
+        >
+          <span class="filter-menu__checkbox">
+            <svg
+              class="icon icon--18 icon--unchecked"
+              height="18"
+              width="18"
+              aria-hidden="true"
+            >
+              <use href="#icon-checkbox-unchecked-18"/>
+            </svg>
+            <svg
+              class="icon icon--18 icon--checked"
+              height="18"
+              width="18"
+              aria-hidden="true"
+            >
+              <use href="#icon-checkbox-checked-18"/>
+            </svg>
+          </span>
+          <span class="filter-menu__text">Blue</span>
+        </div>
+        <div
+          class="filter-menu__item"
+          role="menuitemcheckbox"
+          aria-checked="false"
+        >
+          <span class="filter-menu__checkbox">
+            <svg
+              class="icon icon--18 icon--unchecked"
+              height="18"
+              width="18"
+              aria-hidden="true"
+            >
+              <use href="#icon-checkbox-unchecked-18"/>
+            </svg>
+            <svg
+              class="icon icon--18 icon--checked"
+              height="18"
+              width="18"
+              aria-hidden="true"
+            >
+              <use href="#icon-checkbox-checked-18"/>
+            </svg>
+          </span>
+          <span class="filter-menu__text">
+            Red with a long label that wraps to another line
+          </span>
+        </div>
+      </div>
+    </span>
+  </highlight-code>
+
+  <h2 id="filter-menu-radio">Single-Choice Filter Menu</h2>
+  <p>
+    Each item has a role of <code>menuitemradio</code> . Exactly one item is
+    checked.
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <span class="filter-menu">
+        <div class="filter-menu__items" role="menu" aria-label="Condition">
+          <div
+            class="filter-menu__item"
+            role="menuitemradio"
+            aria-checked="true"
+            tabindex="0"
+            data-makeup-group="condition"
+          >
+            <span class="filter-menu__radio">
+              <svg
+                class="icon icon--18 icon--unchecked"
+                height="18"
+                width="18"
+                aria-hidden="true"
+              >
+                <icon-symbol name="radio-unchecked-18"/>
+              </svg>
+              <svg
+                class="icon icon--18 icon--checked"
+                height="18"
+                width="18"
+                aria-hidden="true"
+              >
+                <icon-symbol name="radio-checked-18"/>
+              </svg>
+            </span>
+            <span class="filter-menu__text">Any condition</span>
+          </div>
+          <div
+            class="filter-menu__item"
+            role="menuitemradio"
+            aria-checked="false"
+            data-makeup-group="condition"
+          >
+            <span class="filter-menu__radio">
+              <svg
+                class="icon icon--18 icon--unchecked"
+                height="18"
+                width="18"
+                aria-hidden="true"
+              >
+                <icon-symbol name="radio-unchecked-18"/>
+              </svg>
+              <svg
+                class="icon icon--18 icon--checked"
+                height="18"
+                width="18"
+                aria-hidden="true"
+              >
+                <icon-symbol name="radio-checked-18"/>
+              </svg>
+            </span>
+            <span class="filter-menu__text">New</span>
+          </div>
+          <div
+            class="filter-menu__item"
+            role="menuitemradio"
+            aria-checked="false"
+            data-makeup-group="condition"
+          >
+            <span class="filter-menu__radio">
+              <svg
+                class="icon icon--18 icon--unchecked"
+                height="18"
+                width="18"
+                aria-hidden="true"
+              >
+                <icon-symbol name="radio-unchecked-18"/>
+              </svg>
+              <svg
+                class="icon icon--18 icon--checked"
+                height="18"
+                width="18"
+                aria-hidden="true"
+              >
+                <icon-symbol name="radio-checked-18"/>
+              </svg>
+            </span>
+            <span class="filter-menu__text">Used</span>
+          </div>
+        </div>
+      </span>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <span class="filter-menu">
+      <div class="filter-menu__items" role="menu" aria-label="Condition">
+        <div
+          class="filter-menu__item"
+          role="menuitemradio"
+          aria-checked="true"
+          tabindex="0"
+          data-makeup-group="condition"
+        >
+          <span class="filter-menu__radio">
+            <svg
+              class="icon icon--18 icon--unchecked"
+              height="18"
+              width="18"
+              aria-hidden="true"
+            >
+              <use href="#icon-radio-unchecked-18"/>
+            </svg>
+            <svg
+              class="icon icon--18 icon--checked"
+              height="18"
+              width="18"
+              aria-hidden="true"
+            >
+              <use href="#icon-radio-checked-18"/>
+            </svg>
+          </span>
+          <span class="filter-menu__text">Any condition</span>
+        </div>
+        <div
+          class="filter-menu__item"
+          role="menuitemradio"
+          aria-checked="false"
+          data-makeup-group="condition"
+        >
+          <span class="filter-menu__radio">
+            <svg
+              class="icon icon--18 icon--unchecked"
+              height="18"
+              width="18"
+              aria-hidden="true"
+            >
+              <use href="#icon-radio-unchecked-18"/>
+            </svg>
+            <svg
+              class="icon icon--18 icon--checked"
+              height="18"
+              width="18"
+              aria-hidden="true"
+            >
+              <use href="#icon-radio-checked-18"/>
+            </svg>
+          </span>
+          <span class="filter-menu__text">New</span>
+        </div>
+        <div
+          class="filter-menu__item"
+          role="menuitemradio"
+          aria-checked="false"
+          data-makeup-group="condition"
+        >
+          <span class="filter-menu__radio">
+            <svg
+              class="icon icon--18 icon--unchecked"
+              height="18"
+              width="18"
+              aria-hidden="true"
+            >
+              <use href="#icon-radio-unchecked-18"/>
+            </svg>
+            <svg
+              class="icon icon--18 icon--checked"
+              height="18"
+              width="18"
+              aria-hidden="true"
+            >
+              <use href="#icon-radio-checked-18"/>
+            </svg>
+          </span>
+          <span class="filter-menu__text">Used</span>
+        </div>
+      </div>
+    </span>
+  </highlight-code>
+
+  <h2 id="filter-menu-disabled">Disabled Item</h2>
+  <p>
+    A disabled item sets <code>aria-disabled="true"</code> . It stays focusable
+    so keyboard users can discover it.
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <span class="filter-menu">
+        <div class="filter-menu__items" role="menu" aria-label="Size">
+          <div
+            class="filter-menu__item"
+            role="menuitemcheckbox"
+            aria-checked="false"
+            tabindex="0"
+          >
+            <span class="filter-menu__checkbox">
+              <svg
+                class="icon icon--18 icon--unchecked"
+                height="18"
+                width="18"
+                aria-hidden="true"
+              >
+                <icon-symbol name="checkbox-unchecked-18"/>
+              </svg>
+              <svg
+                class="icon icon--18 icon--checked"
+                height="18"
+                width="18"
+                aria-hidden="true"
+              >
+                <icon-symbol name="checkbox-checked-18"/>
+              </svg>
+            </span>
+            <span class="filter-menu__text">Small</span>
+          </div>
+          <div
+            class="filter-menu__item"
+            role="menuitemcheckbox"
+            aria-checked="false"
+            aria-disabled="true"
+          >
+            <span class="filter-menu__checkbox">
+              <svg
+                class="icon icon--18 icon--unchecked"
+                height="18"
+                width="18"
+                aria-hidden="true"
+              >
+                <icon-symbol name="checkbox-unchecked-18"/>
+              </svg>
+              <svg
+                class="icon icon--18 icon--checked"
+                height="18"
+                width="18"
+                aria-hidden="true"
+              >
+                <icon-symbol name="checkbox-checked-18"/>
+              </svg>
+            </span>
+            <span class="filter-menu__text">Medium</span>
+          </div>
+          <div
+            class="filter-menu__item"
+            role="menuitemcheckbox"
+            aria-checked="false"
+          >
+            <span class="filter-menu__checkbox">
+              <svg
+                class="icon icon--18 icon--unchecked"
+                height="18"
+                width="18"
+                aria-hidden="true"
+              >
+                <icon-symbol name="checkbox-unchecked-18"/>
+              </svg>
+              <svg
+                class="icon icon--18 icon--checked"
+                height="18"
+                width="18"
+                aria-hidden="true"
+              >
+                <icon-symbol name="checkbox-checked-18"/>
+              </svg>
+            </span>
+            <span class="filter-menu__text">Large</span>
+          </div>
+        </div>
+      </span>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <span class="filter-menu">
+      <div class="filter-menu__items" role="menu" aria-label="Size">
+        <div
+          class="filter-menu__item"
+          role="menuitemcheckbox"
+          aria-checked="false"
+          tabindex="0"
+        >
+          <span class="filter-menu__checkbox">
+            <svg
+              class="icon icon--18 icon--unchecked"
+              height="18"
+              width="18"
+              aria-hidden="true"
+            >
+              <use href="#icon-checkbox-unchecked-18"/>
+            </svg>
+            <svg
+              class="icon icon--18 icon--checked"
+              height="18"
+              width="18"
+              aria-hidden="true"
+            >
+              <use href="#icon-checkbox-checked-18"/>
+            </svg>
+          </span>
+          <span class="filter-menu__text">Small</span>
+        </div>
+        <div
+          class="filter-menu__item"
+          role="menuitemcheckbox"
+          aria-checked="false"
+          aria-disabled="true"
+        >
+          <span class="filter-menu__checkbox">
+            <svg
+              class="icon icon--18 icon--unchecked"
+              height="18"
+              width="18"
+              aria-hidden="true"
+            >
+              <use href="#icon-checkbox-unchecked-18"/>
+            </svg>
+            <svg
+              class="icon icon--18 icon--checked"
+              height="18"
+              width="18"
+              aria-hidden="true"
+            >
+              <use href="#icon-checkbox-checked-18"/>
+            </svg>
+          </span>
+          <span class="filter-menu__text">Medium</span>
+        </div>
+        <div
+          class="filter-menu__item"
+          role="menuitemcheckbox"
+          aria-checked="false"
+        >
+          <span class="filter-menu__checkbox">
+            <svg
+              class="icon icon--18 icon--unchecked"
+              height="18"
+              width="18"
+              aria-hidden="true"
+            >
+              <use href="#icon-checkbox-unchecked-18"/>
+            </svg>
+            <svg
+              class="icon icon--18 icon--checked"
+              height="18"
+              width="18"
+              aria-hidden="true"
+            >
+              <use href="#icon-checkbox-checked-18"/>
+            </svg>
+          </span>
+          <span class="filter-menu__text">Large</span>
+        </div>
+      </div>
+    </span>
+  </highlight-code>
+
+  <h2 id="filter-menu-footer">Filter Menu With Apply Button</h2>
+  <p>
+    When choices should apply together, add a <code>filter-menu__footer</code>
+    button after the items. Activating it applies the choices and closes the
+    menu.
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <span class="filter-menu">
+        <div class="filter-menu__items" role="menu" aria-label="Brand">
+          <div
+            class="filter-menu__item"
+            role="menuitemcheckbox"
+            aria-checked="false"
+            tabindex="0"
+          >
+            <span class="filter-menu__checkbox">
+              <svg
+                class="icon icon--18 icon--unchecked"
+                height="18"
+                width="18"
+                aria-hidden="true"
+              >
+                <icon-symbol name="checkbox-unchecked-18"/>
+              </svg>
+              <svg
+                class="icon icon--18 icon--checked"
+                height="18"
+                width="18"
+                aria-hidden="true"
+              >
+                <icon-symbol name="checkbox-checked-18"/>
+              </svg>
+            </span>
+            <span class="filter-menu__text">Apple</span>
+          </div>
+          <div
+            class="filter-menu__item"
+            role="menuitemcheckbox"
+            aria-checked="false"
+          >
+            <span class="filter-menu__checkbox">
+              <svg
+                class="icon icon--18 icon--unchecked"
+                height="18"
+                width="18"
+                aria-hidden="true"
+              >
+                <icon-symbol name="checkbox-unchecked-18"/>
+              </svg>
+              <svg
+                class="icon icon--18 icon--checked"
+                height="18"
+                width="18"
+                aria-hidden="true"
+              >
+                <icon-symbol name="checkbox-checked-18"/>
+              </svg>
+            </span>
+            <span class="filter-menu__text">Samsung</span>
+          </div>
+          <div
+            class="filter-menu__item"
+            role="menuitemcheckbox"
+            aria-checked="false"
+          >
+            <span class="filter-menu__checkbox">
+              <svg
+                class="icon icon--18 icon--unchecked"
+                height="18"
+                width="18"
+                aria-hidden="true"
+              >
+                <icon-symbol name="checkbox-unchecked-18"/>
+              </svg>
+              <svg
+                class="icon icon--18 icon--checked"
+                height="18"
+                width="18"
+                aria-hidden="true"
+              >
+                <icon-symbol name="checkbox-checked-18"/>
+              </svg>
+            </span>
+            <span class="filter-menu__text">Google</span>
+          </div>
+        </div>
+        <button type="button" class="filter-menu__footer">Apply</button>
+      </span>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <span class="filter-menu">
+      <div class="filter-menu__items" role="menu" aria-label="Brand">
+        <div
+          class="filter-menu__item"
+          role="menuitemcheckbox"
+          aria-checked="false"
+          tabindex="0"
+        >
+          <span class="filter-menu__checkbox">
+            <svg
+              class="icon icon--18 icon--unchecked"
+              height="18"
+              width="18"
+              aria-hidden="true"
+            >
+              <use href="#icon-checkbox-unchecked-18"/>
+            </svg>
+            <svg
+              class="icon icon--18 icon--checked"
+              height="18"
+              width="18"
+              aria-hidden="true"
+            >
+              <use href="#icon-checkbox-checked-18"/>
+            </svg>
+          </span>
+          <span class="filter-menu__text">Apple</span>
+        </div>
+        <div
+          class="filter-menu__item"
+          role="menuitemcheckbox"
+          aria-checked="false"
+        >
+          <span class="filter-menu__checkbox">
+            <svg
+              class="icon icon--18 icon--unchecked"
+              height="18"
+              width="18"
+              aria-hidden="true"
+            >
+              <use href="#icon-checkbox-unchecked-18"/>
+            </svg>
+            <svg
+              class="icon icon--18 icon--checked"
+              height="18"
+              width="18"
+              aria-hidden="true"
+            >
+              <use href="#icon-checkbox-checked-18"/>
+            </svg>
+          </span>
+          <span class="filter-menu__text">Samsung</span>
+        </div>
+        <div
+          class="filter-menu__item"
+          role="menuitemcheckbox"
+          aria-checked="false"
+        >
+          <span class="filter-menu__checkbox">
+            <svg
+              class="icon icon--18 icon--unchecked"
+              height="18"
+              width="18"
+              aria-hidden="true"
+            >
+              <use href="#icon-checkbox-unchecked-18"/>
+            </svg>
+            <svg
+              class="icon icon--18 icon--checked"
+              height="18"
+              width="18"
+              aria-hidden="true"
+            >
+              <use href="#icon-checkbox-checked-18"/>
+            </svg>
+          </span>
+          <span class="filter-menu__text">Google</span>
+        </div>
+      </div>
+      <button type="button" class="filter-menu__footer">Apply</button>
+    </span>
+  </highlight-code>
+
+  <h2 id="filter-menu-search">Filter Menu With Search</h2>
+  <p>
+    A <code>filter-menu__header</code> holds a search field for a long list of
+    choices. Skin styles the field; hiding the choices that do not match is up
+    to script, which this example does not include. The field needs an
+    accessible name, and <code>aria-controls</code> points it at the menu it
+    narrows.
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <span class="filter-menu">
+        <div class="filter-menu__header">
+          <svg class="icon icon--16" height="16" width="16" aria-hidden="true">
+            <icon-symbol name="search-16"/>
+          </svg>
+          <input
+            type="text"
+            class="filter-menu__search"
+            placeholder="Search"
+            aria-label="Search brands"
+            aria-controls="filter-menu-search-items"
+          >
+          <button
+            type="button"
+            class="icon-button icon-button--transparent"
+            aria-label="Clear search"
+          >
+            <svg
+              class="icon icon--20"
+              height="20"
+              width="20"
+              aria-hidden="true"
+            >
+              <icon-symbol name="clear-20"/>
+            </svg>
+          </button>
+        </div>
+        <div
+          class="filter-menu__items"
+          role="menu"
+          aria-label="Brand"
+          id="filter-menu-search-items"
+        >
+          <div
+            class="filter-menu__item"
+            role="menuitemcheckbox"
+            aria-checked="false"
+            tabindex="0"
+          >
+            <span class="filter-menu__checkbox">
+              <svg
+                class="icon icon--18 icon--unchecked"
+                height="18"
+                width="18"
+                aria-hidden="true"
+              >
+                <icon-symbol name="checkbox-unchecked-18"/>
+              </svg>
+              <svg
+                class="icon icon--18 icon--checked"
+                height="18"
+                width="18"
+                aria-hidden="true"
+              >
+                <icon-symbol name="checkbox-checked-18"/>
+              </svg>
+            </span>
+            <span class="filter-menu__text">Apple</span>
+          </div>
+          <div
+            class="filter-menu__item"
+            role="menuitemcheckbox"
+            aria-checked="false"
+          >
+            <span class="filter-menu__checkbox">
+              <svg
+                class="icon icon--18 icon--unchecked"
+                height="18"
+                width="18"
+                aria-hidden="true"
+              >
+                <icon-symbol name="checkbox-unchecked-18"/>
+              </svg>
+              <svg
+                class="icon icon--18 icon--checked"
+                height="18"
+                width="18"
+                aria-hidden="true"
+              >
+                <icon-symbol name="checkbox-checked-18"/>
+              </svg>
+            </span>
+            <span class="filter-menu__text">Samsung</span>
+          </div>
+          <div
+            class="filter-menu__item"
+            role="menuitemcheckbox"
+            aria-checked="false"
+          >
+            <span class="filter-menu__checkbox">
+              <svg
+                class="icon icon--18 icon--unchecked"
+                height="18"
+                width="18"
+                aria-hidden="true"
+              >
+                <icon-symbol name="checkbox-unchecked-18"/>
+              </svg>
+              <svg
+                class="icon icon--18 icon--checked"
+                height="18"
+                width="18"
+                aria-hidden="true"
+              >
+                <icon-symbol name="checkbox-checked-18"/>
+              </svg>
+            </span>
+            <span class="filter-menu__text">Google</span>
+          </div>
+        </div>
+        <button type="button" class="filter-menu__footer">Apply</button>
+      </span>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <span class="filter-menu">
+      <div class="filter-menu__header">
+        <svg class="icon icon--16" height="16" width="16" aria-hidden="true">
+          <use href="#icon-search-16"/>
+        </svg>
+        <input
+          type="text"
+          class="filter-menu__search"
+          placeholder="Search"
+          aria-label="Search brands"
+          aria-controls="filter-menu-search-items"
+        >
+        <button
+          type="button"
+          class="icon-button icon-button--transparent"
+          aria-label="Clear search"
+        >
+          <svg class="icon icon--20" height="20" width="20" aria-hidden="true">
+            <use href="#icon-clear-20"/>
+          </svg>
+        </button>
+      </div>
+      <div
+        class="filter-menu__items"
+        role="menu"
+        aria-label="Brand"
+        id="filter-menu-search-items"
+      >
+        <div
+          class="filter-menu__item"
+          role="menuitemcheckbox"
+          aria-checked="false"
+          tabindex="0"
+        >
+          <span class="filter-menu__checkbox">
+            <svg
+              class="icon icon--18 icon--unchecked"
+              height="18"
+              width="18"
+              aria-hidden="true"
+            >
+              <use href="#icon-checkbox-unchecked-18"/>
+            </svg>
+            <svg
+              class="icon icon--18 icon--checked"
+              height="18"
+              width="18"
+              aria-hidden="true"
+            >
+              <use href="#icon-checkbox-checked-18"/>
+            </svg>
+          </span>
+          <span class="filter-menu__text">Apple</span>
+        </div>
+        <div
+          class="filter-menu__item"
+          role="menuitemcheckbox"
+          aria-checked="false"
+        >
+          <span class="filter-menu__checkbox">
+            <svg
+              class="icon icon--18 icon--unchecked"
+              height="18"
+              width="18"
+              aria-hidden="true"
+            >
+              <use href="#icon-checkbox-unchecked-18"/>
+            </svg>
+            <svg
+              class="icon icon--18 icon--checked"
+              height="18"
+              width="18"
+              aria-hidden="true"
+            >
+              <use href="#icon-checkbox-checked-18"/>
+            </svg>
+          </span>
+          <span class="filter-menu__text">Samsung</span>
+        </div>
+        <div
+          class="filter-menu__item"
+          role="menuitemcheckbox"
+          aria-checked="false"
+        >
+          <span class="filter-menu__checkbox">
+            <svg
+              class="icon icon--18 icon--unchecked"
+              height="18"
+              width="18"
+              aria-hidden="true"
+            >
+              <use href="#icon-checkbox-unchecked-18"/>
+            </svg>
+            <svg
+              class="icon icon--18 icon--checked"
+              height="18"
+              width="18"
+              aria-hidden="true"
+            >
+              <use href="#icon-checkbox-checked-18"/>
+            </svg>
+          </span>
+          <span class="filter-menu__text">Google</span>
+        </div>
+      </div>
+      <button type="button" class="filter-menu__footer">Apply</button>
+    </span>
+  </highlight-code>
+
+  <h2 id="filter-menu-form">Form Filter Menu</h2>
+  <p>
+    When choices submit with a form instead of updating the page with
+    JavaScript, use <code>filter-menu-form</code> with native checkboxes in
+    place of ARIA menu items.
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <span class="filter-menu-form">
+        <form name="filter-menu-form">
+          <fieldset class="filter-menu-form__items">
+            <legend class="clipped">Color</legend>
+            <label for="filter-menu-form-item-1" class="filter-menu-form__item">
+              <span class="checkbox">
+                <input
+                  class="checkbox__control"
+                  type="checkbox"
+                  name="color"
+                  value="black"
+                  id="filter-menu-form-item-1"
+                >
+                <span class="checkbox__icon" hidden>
+                  <svg
+                    class="checkbox__unchecked"
+                    height="18"
+                    width="18"
+                    aria-hidden="true"
+                  >
+                    <icon-symbol name="checkbox-unchecked-18"/>
+                  </svg>
+                  <svg
+                    class="checkbox__checked"
+                    height="18"
+                    width="18"
+                    aria-hidden="true"
+                  >
+                    <icon-symbol name="checkbox-checked-18"/>
+                  </svg>
+                </span>
+              </span>
+              <span class="filter-menu-form__text">Black</span>
+            </label>
+            <label for="filter-menu-form-item-2" class="filter-menu-form__item">
+              <span class="checkbox">
+                <input
+                  class="checkbox__control"
+                  type="checkbox"
+                  name="color"
+                  value="blue"
+                  id="filter-menu-form-item-2"
+                >
+                <span class="checkbox__icon" hidden>
+                  <svg
+                    class="checkbox__unchecked"
+                    height="18"
+                    width="18"
+                    aria-hidden="true"
+                  >
+                    <icon-symbol name="checkbox-unchecked-18"/>
+                  </svg>
+                  <svg
+                    class="checkbox__checked"
+                    height="18"
+                    width="18"
+                    aria-hidden="true"
+                  >
+                    <icon-symbol name="checkbox-checked-18"/>
+                  </svg>
+                </span>
+              </span>
+              <span class="filter-menu-form__text">Blue</span>
+            </label>
+            <label for="filter-menu-form-item-3" class="filter-menu-form__item">
+              <span class="checkbox">
+                <input
+                  class="checkbox__control"
+                  type="checkbox"
+                  name="color"
+                  value="red"
+                  id="filter-menu-form-item-3"
+                >
+                <span class="checkbox__icon" hidden>
+                  <svg
+                    class="checkbox__unchecked"
+                    height="18"
+                    width="18"
+                    aria-hidden="true"
+                  >
+                    <icon-symbol name="checkbox-unchecked-18"/>
+                  </svg>
+                  <svg
+                    class="checkbox__checked"
+                    height="18"
+                    width="18"
+                    aria-hidden="true"
+                  >
+                    <icon-symbol name="checkbox-checked-18"/>
+                  </svg>
+                </span>
+              </span>
+              <span class="filter-menu-form__text">Red</span>
+            </label>
+          </fieldset>
+          <button type="submit" class="filter-menu-form__footer">Apply</button>
+        </form>
+      </span>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <span class="filter-menu-form">
+      <form name="filter-menu-form">
+        <fieldset class="filter-menu-form__items">
+          <legend class="clipped">Color</legend>
+          <label for="filter-menu-form-item-1" class="filter-menu-form__item">
+            <span class="checkbox">
+              <input
+                class="checkbox__control"
+                type="checkbox"
+                name="color"
+                value="black"
+                id="filter-menu-form-item-1"
+              >
+              <span class="checkbox__icon" hidden>
+                <svg
+                  class="checkbox__unchecked"
+                  height="18"
+                  width="18"
+                  aria-hidden="true"
+                >
+                  <use href="#icon-checkbox-unchecked-18"/>
+                </svg>
+                <svg
+                  class="checkbox__checked"
+                  height="18"
+                  width="18"
+                  aria-hidden="true"
+                >
+                  <use href="#icon-checkbox-checked-18"/>
+                </svg>
+              </span>
+            </span>
+            <span class="filter-menu-form__text">Black</span>
+          </label>
+          <label for="filter-menu-form-item-2" class="filter-menu-form__item">
+            <span class="checkbox">
+              <input
+                class="checkbox__control"
+                type="checkbox"
+                name="color"
+                value="blue"
+                id="filter-menu-form-item-2"
+              >
+              <span class="checkbox__icon" hidden>
+                <svg
+                  class="checkbox__unchecked"
+                  height="18"
+                  width="18"
+                  aria-hidden="true"
+                >
+                  <use href="#icon-checkbox-unchecked-18"/>
+                </svg>
+                <svg
+                  class="checkbox__checked"
+                  height="18"
+                  width="18"
+                  aria-hidden="true"
+                >
+                  <use href="#icon-checkbox-checked-18"/>
+                </svg>
+              </span>
+            </span>
+            <span class="filter-menu-form__text">Blue</span>
+          </label>
+          <label for="filter-menu-form-item-3" class="filter-menu-form__item">
+            <span class="checkbox">
+              <input
+                class="checkbox__control"
+                type="checkbox"
+                name="color"
+                value="red"
+                id="filter-menu-form-item-3"
+              >
+              <span class="checkbox__icon" hidden>
+                <svg
+                  class="checkbox__unchecked"
+                  height="18"
+                  width="18"
+                  aria-hidden="true"
+                >
+                  <use href="#icon-checkbox-unchecked-18"/>
+                </svg>
+                <svg
+                  class="checkbox__checked"
+                  height="18"
+                  width="18"
+                  aria-hidden="true"
+                >
+                  <use href="#icon-checkbox-checked-18"/>
+                </svg>
+              </span>
+            </span>
+            <span class="filter-menu-form__text">Red</span>
+          </label>
+        </fieldset>
+        <button type="submit" class="filter-menu-form__footer">Apply</button>
+      </form>
+    </span>
+  </highlight-code>
+</div>

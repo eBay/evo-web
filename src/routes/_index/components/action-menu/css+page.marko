@@ -1,0 +1,441 @@
+import { urls } from "../../../../data";
+<div id="action-menu">
+  <h1>Action Menu CSS Component</h1>
+  <p>
+    An action menu is an ARIA menu. The <code>action-menu</code> element has
+    <code>role="menu"</code> and each command has a role of
+    <code>menuitem</code> , <code>menuitemcheckbox</code> or
+    <code>menuitemradio</code> .
+  </p>
+  <p>
+    <strong>NOTE:</strong> Only limited JavaScript behaviour has been
+    implemented in these examples. To open an action menu from a button, see
+    <a href=`${urls.components}/menu-button`>menu button</a> .
+  </p>
+
+  <h2 id="action-menu-default">Default Action Menu</h2>
+  <p>Each command has a role of <code>menuitem</code> .</p>
+  <div class="demo">
+    <div class="demo__inner">
+      <div class="action-menu" role="menu" aria-label="Actions">
+        <div class="action-menu__item" role="menuitem" tabindex="0">
+          <span>Edit</span>
+        </div>
+        <div class="action-menu__item" role="menuitem" tabindex="-1">
+          <span>Duplicate</span>
+        </div>
+        <div class="action-menu__item" role="menuitem" tabindex="-1">
+          <span>Share</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <div class="action-menu" role="menu" aria-label="Actions">
+      <div class="action-menu__item" role="menuitem" tabindex="0">
+        <span>Edit</span>
+      </div>
+      <div class="action-menu__item" role="menuitem" tabindex="-1">
+        <span>Duplicate</span>
+      </div>
+      <div class="action-menu__item" role="menuitem" tabindex="-1">
+        <span>Share</span>
+      </div>
+    </div>
+  </highlight-code>
+
+  <h2 id="action-menu-checkbox">Checkbox Actions</h2>
+  <p>
+    A <code>menuitemcheckbox</code> turns a setting on or off. Set
+    <code>aria-checked</code> to <code>"true"</code> or <code>"false"</code> and
+    add a tick icon with the <code>action-menu__icon</code> class after the
+    label; the tick shows only when the item is checked.
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <div class="action-menu" role="menu" aria-label="View">
+        <div
+          class="action-menu__item"
+          role="menuitemcheckbox"
+          aria-checked="true"
+          tabindex="0"
+        >
+          <span>Show sold items</span>
+          <svg
+            class="icon icon--16 action-menu__icon"
+            height="16"
+            width="16"
+            aria-hidden="true"
+          >
+            <icon-symbol name="tick-16"/>
+          </svg>
+        </div>
+        <div
+          class="action-menu__item"
+          role="menuitemcheckbox"
+          aria-checked="false"
+          tabindex="-1"
+        >
+          <span>Show ended items</span>
+          <svg
+            class="icon icon--16 action-menu__icon"
+            height="16"
+            width="16"
+            aria-hidden="true"
+          >
+            <icon-symbol name="tick-16"/>
+          </svg>
+        </div>
+        <div
+          class="action-menu__item"
+          role="menuitemcheckbox"
+          aria-checked="true"
+          tabindex="-1"
+        >
+          <span>Show watched items</span>
+          <svg
+            class="icon icon--16 action-menu__icon"
+            height="16"
+            width="16"
+            aria-hidden="true"
+          >
+            <icon-symbol name="tick-16"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <div class="action-menu" role="menu" aria-label="View">
+      <div
+        class="action-menu__item"
+        role="menuitemcheckbox"
+        aria-checked="true"
+        tabindex="0"
+      >
+        <span>Show sold items</span>
+        <svg
+          class="icon icon--16 action-menu__icon"
+          height="16"
+          width="16"
+          aria-hidden="true"
+        >
+          <use href="#icon-tick-16"/>
+        </svg>
+      </div>
+      <div
+        class="action-menu__item"
+        role="menuitemcheckbox"
+        aria-checked="false"
+        tabindex="-1"
+      >
+        <span>Show ended items</span>
+        <svg
+          class="icon icon--16 action-menu__icon"
+          height="16"
+          width="16"
+          aria-hidden="true"
+        >
+          <use href="#icon-tick-16"/>
+        </svg>
+      </div>
+      <div
+        class="action-menu__item"
+        role="menuitemcheckbox"
+        aria-checked="true"
+        tabindex="-1"
+      >
+        <span>Show watched items</span>
+        <svg
+          class="icon icon--16 action-menu__icon"
+          height="16"
+          width="16"
+          aria-hidden="true"
+        >
+          <use href="#icon-tick-16"/>
+        </svg>
+      </div>
+    </div>
+  </highlight-code>
+
+  <h2 id="action-menu-radio">Radio Actions</h2>
+  <p>
+    A <code>menuitemradio</code> picks one of several views or orderings.
+    Exactly one item in the group is checked.
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <div class="action-menu" role="menu" aria-label="Sort">
+        <div
+          class="action-menu__item"
+          role="menuitemradio"
+          aria-checked="true"
+          data-makeup-group="sort"
+          tabindex="0"
+        >
+          <span>Best match</span>
+          <svg
+            class="icon icon--16 action-menu__icon"
+            height="16"
+            width="16"
+            aria-hidden="true"
+          >
+            <icon-symbol name="tick-16"/>
+          </svg>
+        </div>
+        <div
+          class="action-menu__item"
+          role="menuitemradio"
+          aria-checked="false"
+          data-makeup-group="sort"
+          tabindex="-1"
+        >
+          <span>Price: lowest first</span>
+          <svg
+            class="icon icon--16 action-menu__icon"
+            height="16"
+            width="16"
+            aria-hidden="true"
+          >
+            <icon-symbol name="tick-16"/>
+          </svg>
+        </div>
+        <div
+          class="action-menu__item"
+          role="menuitemradio"
+          aria-checked="false"
+          data-makeup-group="sort"
+          tabindex="-1"
+        >
+          <span>Price: highest first</span>
+          <svg
+            class="icon icon--16 action-menu__icon"
+            height="16"
+            width="16"
+            aria-hidden="true"
+          >
+            <icon-symbol name="tick-16"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <div class="action-menu" role="menu" aria-label="Sort">
+      <div
+        class="action-menu__item"
+        role="menuitemradio"
+        aria-checked="true"
+        data-makeup-group="sort"
+        tabindex="0"
+      >
+        <span>Best match</span>
+        <svg
+          class="icon icon--16 action-menu__icon"
+          height="16"
+          width="16"
+          aria-hidden="true"
+        >
+          <use href="#icon-tick-16"/>
+        </svg>
+      </div>
+      <div
+        class="action-menu__item"
+        role="menuitemradio"
+        aria-checked="false"
+        data-makeup-group="sort"
+        tabindex="-1"
+      >
+        <span>Price: lowest first</span>
+        <svg
+          class="icon icon--16 action-menu__icon"
+          height="16"
+          width="16"
+          aria-hidden="true"
+        >
+          <use href="#icon-tick-16"/>
+        </svg>
+      </div>
+      <div
+        class="action-menu__item"
+        role="menuitemradio"
+        aria-checked="false"
+        data-makeup-group="sort"
+        tabindex="-1"
+      >
+        <span>Price: highest first</span>
+        <svg
+          class="icon icon--16 action-menu__icon"
+          height="16"
+          width="16"
+          aria-hidden="true"
+        >
+          <use href="#icon-tick-16"/>
+        </svg>
+      </div>
+    </div>
+  </highlight-code>
+
+  <h2 id="action-menu-grouped">Grouped Action Menu</h2>
+  <p>
+    Separate groups of commands with an <code>action-menu__separator</code>
+    element that has <code>role="separator"</code> . A disabled command sets
+    <code>aria-disabled="true"</code> .
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <div class="action-menu" role="menu" aria-label="Actions">
+        <div class="action-menu__item" role="menuitem" tabindex="0">
+          <span>Edit</span>
+        </div>
+        <div
+          class="action-menu__item"
+          role="menuitem"
+          aria-disabled="true"
+          tabindex="-1"
+        >
+          <span>Archive</span>
+        </div>
+        <hr class="action-menu__separator" role="separator">
+        <div
+          class="action-menu__item"
+          role="menuitemcheckbox"
+          aria-checked="true"
+          tabindex="-1"
+        >
+          <span>Show sold items</span>
+          <svg
+            class="icon icon--16 action-menu__icon"
+            height="16"
+            width="16"
+            aria-hidden="true"
+          >
+            <icon-symbol name="tick-16"/>
+          </svg>
+        </div>
+        <div
+          class="action-menu__item"
+          role="menuitemcheckbox"
+          aria-checked="false"
+          tabindex="-1"
+        >
+          <span>Show ended items</span>
+          <svg
+            class="icon icon--16 action-menu__icon"
+            height="16"
+            width="16"
+            aria-hidden="true"
+          >
+            <icon-symbol name="tick-16"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <div class="action-menu" role="menu" aria-label="Actions">
+      <div class="action-menu__item" role="menuitem" tabindex="0">
+        <span>Edit</span>
+      </div>
+      <div
+        class="action-menu__item"
+        role="menuitem"
+        aria-disabled="true"
+        tabindex="-1"
+      >
+        <span>Archive</span>
+      </div>
+      <hr class="action-menu__separator" role="separator">
+      <div
+        class="action-menu__item"
+        role="menuitemcheckbox"
+        aria-checked="true"
+        tabindex="-1"
+      >
+        <span>Show sold items</span>
+        <svg
+          class="icon icon--16 action-menu__icon"
+          height="16"
+          width="16"
+          aria-hidden="true"
+        >
+          <use href="#icon-tick-16"/>
+        </svg>
+      </div>
+      <div
+        class="action-menu__item"
+        role="menuitemcheckbox"
+        aria-checked="false"
+        tabindex="-1"
+      >
+        <span>Show ended items</span>
+        <svg
+          class="icon icon--16 action-menu__icon"
+          height="16"
+          width="16"
+          aria-hidden="true"
+        >
+          <use href="#icon-tick-16"/>
+        </svg>
+      </div>
+    </div>
+  </highlight-code>
+
+  <h2 id="action-menu-badged">Badged Action Menu</h2>
+  <p>
+    A command can carry a <a href=`${urls.components}/badge`>badge</a> . Add the
+    <code>action-menu__item--badged</code> modifier to the item and the
+    <code>action-menu__badge</code> class to the badge.
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <div class="action-menu" role="menu" aria-label="Messages">
+        <div
+          class="action-menu__item action-menu__item--badged"
+          role="menuitem"
+          tabindex="0"
+        >
+          <span>
+            Inbox<span class="badge action-menu__badge" role="img" aria-label="5 unread">5</span>
+          </span>
+        </div>
+        <div
+          class="action-menu__item action-menu__item--badged"
+          role="menuitem"
+          tabindex="-1"
+        >
+          <span>
+            Offers<span class="badge action-menu__badge" role="img" aria-label="12 new">12</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <div class="action-menu" role="menu" aria-label="Messages">
+      <div
+        class="action-menu__item action-menu__item--badged"
+        role="menuitem"
+        tabindex="0"
+      >
+        <span>
+          Inbox<span class="badge action-menu__badge" role="img" aria-label="5 unread">5</span>
+        </span>
+      </div>
+      <div
+        class="action-menu__item action-menu__item--badged"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          Offers<span class="badge action-menu__badge" role="img" aria-label="12 new">12</span>
+        </span>
+      </div>
+    </div>
+  </highlight-code>
+</div>

@@ -2,74 +2,79 @@ import { urls } from "../../../../data";
 <div id="menu-overview">
   <component-banner-img/>
 
+  <section
+    class="section-notice section-notice--attention"
+    role="region"
+    aria-label="Attention"
+    aria-roledescription="Notice"
+  >
+    <div class="section-notice__header" id="menu-deprecated-notice">
+      <svg class="icon icon--16" height="16" width="16" aria-label="Attention">
+        <icon-symbol name="attention-filled-16"/>
+      </svg>
+    </div>
+    <div class="section-notice__main">
+      <h3 class="section-notice__title">Deprecated</h3>
+      <p>
+        The <code>menu</code> component is deprecated and will be removed in the
+        next major version of Skin. Use
+        <a href=`${urls.components}/action-menu`>action-menu</a> instead.
+      </p>
+    </div>
+  </section>
+
   <p>
-    A menu may contain <a href="http://www.w3.org/TR/wai-aria/roles#menuitem">menu
-    item</a>, <a href="http://www.w3.org/TR/wai-aria/roles#menuitemradio">menu item
-    radio</a>() or <a href="http://www.w3.org/TR/wai-aria/roles#menuitemcheckbox">menu item
-    checkbox</a> commands.
-  </p>
-  <p>A
-    menu is appropriate when requiring a partial page re-render <em>without</em> using
-    a form or full page reload. For example: filtering and sorting of search
-    results.
-  </p>
-  <p>A menu is <strong>not</strong> appropriate for a full page reload. For that, please
-    use links instead (see the <a href="../navigation/fake-menu-button">Fake Menu</a>
-    pattern). The distinction between menu items and links is important! A menu
-    item is a command that executes JavaScript, whereas a link is a command that
-    navigates to a url. If your menu must contain a <em>mix</em> of JavaScript
-    behaviour and links behaviour, please use a list of buttons and links. Do no
-    mix menu items and links.
+    A menu may contain
+    <a href="http://www.w3.org/TR/wai-aria/roles#menuitem">menu item</a>, <a href="http://www.w3.org/TR/wai-aria/roles#menuitemradio">
+      menu item radio
+    </a>() or
+    <a href="http://www.w3.org/TR/wai-aria/roles#menuitemcheckbox">
+      menu item checkbox
+    </a>
+    commands.
   </p>
   <p>
-    A menu is
-    <strong>not</strong>
-    a form control. If you wish to submit form data natively, without
-    JavaScript, please consider
-    <a href=`${urls.components}/checkbox`>
-      checkbox
-    </a>
-    ,
-    <a href=`${urls.components}/combobox`>
-      combobox
-    </a>
-    ,
-    <a href=`${urls.components}/select`>
-      select
-    </a>
-    , or
-    <a href=`${urls.components}/radio`>
-      radio
-    </a>
-    instead.
+    A menu is appropriate when requiring a partial page re-render
+    <em>without</em> using a form or full page reload. For example: filtering
+    and sorting of search results.
+  </p>
+  <p>
+    A menu is <strong>not</strong> appropriate for a full page reload. For that,
+    please use links instead (see the
+    <a href="../navigation/fake-menu-button">Fake Menu</a> pattern). The
+    distinction between menu items and links is important! A menu item is a
+    command that executes JavaScript, whereas a link is a command that navigates
+    to a url. If your menu must contain a <em>mix</em> of JavaScript behaviour
+    and links behaviour, please use a list of buttons and links. Do no mix menu
+    items and links.
+  </p>
+  <p>
+    A menu is <strong>not</strong> a form control. If you wish to submit form
+    data natively, without JavaScript, please consider
+    <a href=`${urls.components}/checkbox`>checkbox</a> ,
+    <a href=`${urls.components}/combobox`>combobox</a> ,
+    <a href=`${urls.components}/select`>select</a> , or
+    <a href=`${urls.components}/radio`>radio</a> instead.
   </p>
   <p>
     Selecting a menu item command should update the page
-    <strong>without</strong>
-    a full page reload (i.e. acting similar to buttons, checkboxes or
-    radios). If a full page load is required instead (i.e. acting like links),
-    please refer to the
-    <a href=`${urls.components}/menu/#menu-fake`>
-      fake menu
-    </a>
-    .
+    <strong>without</strong> a full page reload (i.e. acting similar to buttons,
+    checkboxes or radios). If a full page load is required instead (i.e. acting
+    like links), please refer to the
+    <a href=`${urls.components}/menu/#menu-fake`>fake menu</a> .
   </p>
 
   <h2>Terminology</h2>
   <p>We use the following terminology when discussing this pattern.</p>
   <ul>
     <li>
-      <strong>menu</strong>
-      : the pattern as a whole, comprising the parts listed below
+      <strong>menu</strong> : the pattern as a whole, comprising the parts
+      listed below
     </li>
+    <li><strong>command list</strong> : the list of menu items</li>
     <li>
-      <strong>command list</strong>
-      : the list of menu items
-    </li>
-    <li>
-      <strong>command</strong>
-      : the individual menu item, menu item checkbox or menu item radio
-      commands
+      <strong>command</strong> : the individual menu item, menu item checkbox or
+      menu item radio commands
     </li>
   </ul>
 </div>

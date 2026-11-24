@@ -603,7 +603,7 @@
     immediately available in the pagination's current view. This mechanism can
     either be deferred to another control outside of the pagination (e.g. a menu
     button) or, as described in this section, the static overflow icon can be
-    switched out for a fake menu button.
+    switched out for a menu button that opens a navigation menu.
   </p>
 
   <div class="demo">
@@ -672,11 +672,14 @@
           </li>
           <li>
             <span class="pagination__item">
-              <span class="fake-menu-button">
+              <span class="menu-button">
                 <button
-                  class="icon-button icon-button--transparent fake-menu-button__button"
+                  class="icon-button icon-button--transparent"
                   type="button"
                   aria-label="Menu"
+                  aria-expanded="false"
+                  id="pagination-docs-1-trigger"
+                  aria-controls="pagination-docs-1-content"
                 >
                   <svg
                     class="icon icon--24"
@@ -687,40 +690,47 @@
                     <icon-symbol name="overflow-horizontal-24"/>
                   </svg>
                 </button>
-                <ul class="fake-menu-button__menu">
-                  <li>
-                    <a
-                      class="fake-menu-button__item"
-                      href="https://www.ebay.com"
+                <div class="menu-button__dropdown">
+                  <div class="navigation-menu">
+                    <ul
+                      class="navigation-menu__items"
+                      id="pagination-docs-1-content"
                     >
-                      <span>6</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.ebay.com"
-                      class="fake-menu-button__item"
-                    >
-                      <span>7</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.ebay.com"
-                      class="fake-menu-button__item"
-                    >
-                      <span>8</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.ebay.com"
-                      class="fake-menu-button__item"
-                    >
-                      <span>9</span>
-                    </a>
-                  </li>
-                </ul>
+                      <li>
+                        <a
+                          class="navigation-menu__item"
+                          href="https://www.ebay.com"
+                        >
+                          <span>6</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="https://www.ebay.com"
+                          class="navigation-menu__item"
+                        >
+                          <span>7</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="https://www.ebay.com"
+                          class="navigation-menu__item"
+                        >
+                          <span>8</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="https://www.ebay.com"
+                          class="navigation-menu__item"
+                        >
+                          <span>9</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </span>
             </span>
           </li>
@@ -810,11 +820,14 @@
         </li>
         <li>
           <span class="pagination__item">
-            <span class="fake-menu-button">
+            <span class="menu-button">
               <button
-                class="icon-button icon-button--transparent fake-menu-button__button"
+                class="icon-button icon-button--transparent"
                 type="button"
                 aria-label="Menu"
+                aria-expanded="false"
+                id="pagination-docs-2-trigger"
+                aria-controls="pagination-docs-2-content"
               >
                 <svg
                   class="icon icon--24"
@@ -825,28 +838,47 @@
                   <use href="#icon-overflow-horizontal-24"/>
                 </svg>
               </button>
-              <ul class="fake-menu-button__menu">
-                <li>
-                  <a class="fake-menu-button__item" href="https://www.ebay.com">
-                    <span>6</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.ebay.com" class="fake-menu-button__item">
-                    <span>7</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.ebay.com" class="fake-menu-button__item">
-                    <span>8</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.ebay.com" class="fake-menu-button__item">
-                    <span>9</span>
-                  </a>
-                </li>
-              </ul>
+              <div class="menu-button__dropdown">
+                <div class="navigation-menu">
+                  <ul
+                    class="navigation-menu__items"
+                    id="pagination-docs-2-content"
+                  >
+                    <li>
+                      <a
+                        class="navigation-menu__item"
+                        href="https://www.ebay.com"
+                      >
+                        <span>6</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.ebay.com"
+                        class="navigation-menu__item"
+                      >
+                        <span>7</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.ebay.com"
+                        class="navigation-menu__item"
+                      >
+                        <span>8</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.ebay.com"
+                        class="navigation-menu__item"
+                      >
+                        <span>9</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </span>
           </span>
         </li>

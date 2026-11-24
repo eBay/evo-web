@@ -87,7 +87,7 @@ export const alignment = () => `
 </span>
 
 <span class="menu-button">
-    <button class="button button--form button--fixed-height" aria-haspopup="true" type="button">
+    <button class="button button--form button--fixed-height" aria-haspopup="menu" type="button" aria-expanded="false" id="global-1-trigger" aria-controls="global-1-content">
         <span class="button__cell">
             <span class="button__text">Menu</span>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
@@ -95,6 +95,13 @@ export const alignment = () => `
             </svg>
         </span>
     </button>
+    <div class="menu-button__dropdown">
+        <div class="action-menu" role="menu" id="global-1-content" aria-labelledby="global-1-trigger">
+            <div class="action-menu__item" role="menuitem" tabindex="0"><span>Item 1</span></div>
+            <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Item 2</span></div>
+            <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Item 3</span></div>
+        </div>
+    </div>
 </span>
 `;
 
@@ -140,7 +147,7 @@ export const RTLAlignment = () => `
     </span>
 
     <span class="menu-button">
-        <button class="button button--fixed-height" aria-haspopup="true" type="button">
+        <button class="button button--fixed-height" aria-haspopup="menu" type="button" aria-expanded="false" id="global-2-trigger" aria-controls="global-2-content">
             <span class="button__cell">
                 <span class="button__text">Menu</span>
                 <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
@@ -148,6 +155,13 @@ export const RTLAlignment = () => `
                 </svg>
             </span>
         </button>
+        <div class="menu-button__dropdown">
+            <div class="action-menu" role="menu" id="global-2-content" aria-labelledby="global-2-trigger">
+                <div class="action-menu__item" role="menuitem" tabindex="0"><span>Item 1</span></div>
+                <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Item 2</span></div>
+                <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Item 3</span></div>
+            </div>
+        </div>
     </span>
 <div>
 `;
@@ -193,7 +207,7 @@ export const alignmentLarge = () => `
 </span>
 
 <span class="menu-button">
-    <button class="button button--large button--form button--large-fixed-height" aria-haspopup="true" type="button">
+    <button class="button button--large button--form button--large-fixed-height" aria-haspopup="menu" type="button" aria-expanded="false" id="global-3-trigger" aria-controls="global-3-content">
         <span class="button__cell">
             <span class="button__text">Menu</span>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
@@ -201,5 +215,12 @@ export const alignmentLarge = () => `
             </svg>
         </span>
     </button>
+    <div class="menu-button__dropdown">
+        <div class="action-menu" role="menu" id="global-3-content" aria-labelledby="global-3-trigger">
+            <div class="action-menu__item" role="menuitem" tabindex="0"><span>Item 1</span></div>
+            <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Item 2</span></div>
+            <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Item 3</span></div>
+        </div>
+    </div>
 </span>
 `;

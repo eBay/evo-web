@@ -1,0 +1,238 @@
+@use "../mixins/private/dropdown-mixins";
+@use "../mixins/private/menu-mixins";
+@use "../mixins/private/token-mixins";
+@use "../mixins/public/utility-mixins";
+
+// DEPRECATED: every rule in this file is removed in the next major version.
+// Use `menu-button__dropdown` with `action-menu`, `filter-menu` or `navigation-menu`.
+// The `.btn*`, `.expand-btn*` selectors are replaced by `.button*`, `.expand-button*`.
+
+.fake-menu-button {
+    line-height: normal;
+    position: relative;
+}
+
+.menu-button__menu,
+.fake-menu-button__menu {
+    /* In ebayui there is a bug where if tabindex=-1 outside the menu button */
+    /* Any clicks inside will trigger on the outher tabindex=-1. In order to fix it */
+    /* We added a tabindex=-1 on the popup menu root (on root so you can scroll) */
+    /* This forces a focus ring, so this focus ring is removed from the root. */
+    outline: 0;
+
+    @include dropdown-mixins.base(menu-button-menu);
+}
+
+span.menu-button__button,
+span.fake-menu-button__button {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.fake-menu-button__menu {
+    list-style-type: none;
+    margin: 0;
+    max-height: calc(50vh - 40px);
+    overflow-y: auto;
+    padding: 0;
+}
+
+div.menu-button__item[role^="menuitem"] {
+    cursor: default; /* needed to override text cursor */
+
+    @include menu-mixins.base(menu-button);
+    @include dropdown-mixins.item-border-radius(menu-button-menu);
+}
+
+.menu-button__item > svg.icon--16,
+.fake-menu-button__item > svg.icon--16 {
+    @include menu-mixins.status;
+}
+
+.menu-button__item > svg.icon--16:last-child,
+.fake-menu-button__item > svg.icon--16:last-child {
+    margin-left: var(--spacing-100);
+}
+
+/* anchor tag specific */
+a.fake-menu-button__item {
+    @include token-mixins.color-token(
+        menu-button-anchor-color,
+        color-foreground-primary
+    );
+
+    text-decoration: none;
+
+    &:focus {
+        text-decoration: underline;
+    }
+
+    &:hover,
+    &:visited {
+        @include token-mixins.color-token(
+            menu-button-anchor-color,
+            color-background-primary
+        );
+    }
+}
+
+/* button tag specific */
+button.fake-menu-button__item {
+    @include token-mixins.background-color-token(
+        menu-button-background-color,
+        color-background-primary
+    );
+    @include token-mixins.color-token(
+        menu-button-foreground-color,
+        color-foreground-primary
+    );
+
+    font-family: inherit;
+    font-size: 1em;
+    text-align: left;
+}
+
+a.fake-menu-button__item[aria-current="page"] svg.icon--16,
+button.fake-menu-button__item[aria-current="page"] svg.icon--16 {
+    opacity: 1;
+}
+
+div.menu-button__item[role^="menuitem"][aria-checked="true"] svg.icon--16 {
+    opacity: 1;
+}
+
+.menu-button__item {
+    @include menu-mixins.filter;
+}
+
+.fake-menu-button__menu a.fake-menu-button__item,
+.fake-menu-button__menu button.fake-menu-button__item {
+    @include menu-mixins.base(menu-button);
+}
+
+.fake-menu-button__menu a.fake-menu-button__item:not([href]),
+.fake-menu-button__menu button.fake-menu-button__item[disabled],
+.menu-button__menu
+    div.menu-button__item[role^="menuitem"][aria-disabled="true"] {
+    @include token-mixins.color-token(
+        menu-button-menuitem-disabled-foreground-color,
+        color-foreground-disabled
+    );
+}
+
+.fake-menu-button__menu > li:first-child a.fake-menu-button__item {
+    @include token-mixins.border-top-left-radius-token(
+        menu-button-menu-border-radius,
+        border-radius-50
+    );
+    @include token-mixins.border-top-right-radius-token(
+        menu-button-menu-border-radius,
+        border-radius-50
+    );
+}
+
+.fake-menu-button__menu > li:last-child a.fake-menu-button__item {
+    @include token-mixins.border-bottom-left-radius-token(
+        menu-button-menu-border-radius,
+        border-radius-50
+    );
+    @include token-mixins.border-bottom-right-radius-token(
+        menu-button-menu-border-radius,
+        border-radius-50
+    );
+}
+
+.menu-button__menu--fix-width,
+.fake-menu-button__menu--fix-width {
+    width: 100%;
+
+    span {
+        @include utility-mixins.truncate;
+
+        width: 100%;
+    }
+}
+
+a.fake-menu-button__item > span,
+button.fake-menu-button__item > span,
+div.menu-button__item[role^="menuitem"] > span {
+    flex: 1 0 auto;
+    white-space: nowrap;
+}
+
+a.fake-menu-button__item--badged,
+button.fake-menu-button__item--badged,
+div.menu-button__item--badged[role^="menuitem"] {
+    padding-right: 36px;
+    position: relative;
+}
+
+a.fake-menu-button__item--badged .badge,
+button.fake-menu-button__item--badged .badge,
+div.menu-button__item--badged[role^="menuitem"] .badge {
+    margin-left: var(--spacing-50);
+    position: absolute;
+    top: 6px;
+    z-index: 1;
+}
+
+.menu-button__menu--scroll {
+    overflow-y: scroll;
+}
+
+.menu-button__menu--reverse,
+.fake-menu-button__menu--reverse {
+    @include dropdown-mixins.reverse;
+}
+
+.menu-button__button[aria-expanded="true"] ~ .menu-button__menu,
+.fake-menu-button__button[aria-expanded="true"] ~ .fake-menu-button__menu,
+.menu-button .expand-btn[aria-expanded="true"] ~ .menu-button__menu,
+.menu-button .expand-button[aria-expanded="true"] ~ .menu-button__menu,
+.fake-menu-button .expand-btn[aria-expanded="true"] ~ .fake-menu-button__menu,
+.fake-menu-button
+    .expand-button[aria-expanded="true"]
+    ~ .fake-menu-button__menu,
+.menu-button .btn[aria-expanded="true"] ~ .menu-button__menu,
+.menu-button .button[aria-expanded="true"] ~ .menu-button__menu,
+.fake-menu-button .btn[aria-expanded="true"] ~ .fake-menu-button__menu,
+.fake-menu-button .button[aria-expanded="true"] ~ .fake-menu-button__menu,
+.menu-button .filter-chip[aria-expanded="true"] ~ .menu-button__menu {
+    display: block;
+}
+
+.menu-button__button ~ .menu-button__menu--static,
+.fake-menu-button__button ~ .fake-menu-button__menu--static,
+.expand-btn ~ .menu-button__menu--static,
+.expand-button ~ .menu-button__menu--static,
+.expand_btn ~ .fake-menu-button__menu--static,
+.btn ~ .menu-button__menu--static,
+.button ~ .menu-button__menu--static,
+.btn ~ .fake-menu-button__menu--static,
+.button ~ .fake-menu-button__menu--static,
+.filter-chip ~ .fake-menu-button__menu--static {
+    position: static;
+}
+
+div.menu-button__option--active[role="option"] {
+    font-weight: bold;
+}
+
+hr.menu-button__separator {
+    @include token-mixins.border-color-token(
+        menu-button-separator-color,
+        color-border-subtle
+    );
+
+    border-style: solid;
+    border-width: 1px;
+    margin: 0;
+}
+
+.menu-button__footer {
+    @include menu-mixins.footer;
+}
+
+.menu-button--filter div.menu-button__item[role^="menuitem"] {
+    justify-content: flex-start;
+}

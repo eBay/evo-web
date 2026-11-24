@@ -2,6 +2,27 @@ import { urls } from "../../../../data";
 <div id="menu">
   <section-header/>
 
+  <section
+    class="section-notice section-notice--attention"
+    role="region"
+    aria-label="Attention"
+    aria-roledescription="Notice"
+  >
+    <div class="section-notice__header" id="menu-css-deprecated-notice">
+      <svg class="icon icon--16" height="16" width="16" aria-label="Attention">
+        <icon-symbol name="attention-filled-16"/>
+      </svg>
+    </div>
+    <div class="section-notice__main">
+      <h3 class="section-notice__title">Deprecated</h3>
+      <p>
+        The <code>menu</code> component is deprecated and will be removed in the
+        next major version of Skin. Use
+        <a href=`${urls.components}/action-menu`>action-menu</a> instead.
+      </p>
+    </div>
+  </section>
+
   <p>
     <strong>NOTE:</strong> Only limited JavaScript behaviour has been
     implemented in these examples. For detailed behaviour requirements, please

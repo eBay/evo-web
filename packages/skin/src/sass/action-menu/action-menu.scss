@@ -1,0 +1,83 @@
+@use "../mixins/private/menu-mixins";
+@use "../mixins/private/token-mixins";
+
+.action-menu {
+    @include token-mixins.background-color-token(
+        menu-background-color,
+        color-background-primary
+    );
+
+    cursor: default; /* override text cursor */
+}
+
+span.action-menu {
+    display: inline-block;
+}
+
+div.action-menu__item[role^="menuitem"] {
+    @include menu-mixins.base(menu);
+
+    display: grid;
+}
+
+svg.action-menu__icon {
+    @include menu-mixins.status;
+}
+
+svg.action-menu__icon:last-child,
+span.action-menu__badge {
+    margin-left: var(--spacing-100);
+    margin-right: var(--spacing-100);
+}
+
+div.action-menu__item[role^="menuitem"][aria-checked="true"]
+    svg.action-menu__icon {
+    opacity: 1;
+}
+
+div.action-menu__item[role^="menuitem"][aria-disabled="true"] {
+    @include token-mixins.color-token(
+        menu-menuitem-disabled-foreground-color,
+        color-foreground-disabled
+    );
+
+    background-color: unset;
+    font-weight: unset;
+}
+
+div.action-menu__item[role^="menuitem"] > span {
+    flex: 0 0 auto;
+    text-align: start;
+    white-space: nowrap;
+}
+
+div.action-menu__item--badged[role^="menuitem"],
+div.action-menu__item[role^="menuitem"]:has(.action-menu__badge) {
+    position: relative;
+}
+
+div.action-menu__item[role^="menuitem"] span.action-menu__badge {
+    padding: 1px 5px;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+.action-menu--scroll {
+    overflow-y: scroll;
+}
+
+.action-menu--fix-width {
+    width: 100%;
+}
+
+hr.action-menu__separator {
+    @include token-mixins.border-color-token(
+        menu-separator-color,
+        color-border-subtle
+    );
+
+    border-style: solid;
+    border-width: 1px;
+    margin: 0;
+}

@@ -2,6 +2,9 @@
 @use "../mixins/private/dropdown-mixins";
 @use "../mixins/private/token-mixins";
 
+// DEPRECATED: the `menu*` selectors in this file are removed in the next major
+// version. Use `action-menu`, or `filter-menu` in place of `menu--filter`.
+
 // DEPRECATED: the `.expand-btn*` selectors in this file are removed in the next
 // major version. Use `.expand-button*` instead.
 

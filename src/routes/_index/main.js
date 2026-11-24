@@ -82,8 +82,14 @@ const debounce = (func, wait) => {
 };
 
 class PopperDropdown {
-  constructor(widgetEl, hostSelector, overlaySelector) {
+  constructor(
+    widgetEl,
+    hostSelector,
+    overlaySelector,
+    placement = "bottom-start",
+  ) {
     this.el = widgetEl;
+    this.placement = placement;
     if (!hostSelector) {
       this.host = widgetEl;
     } else {
@@ -112,7 +118,7 @@ class PopperDropdown {
   update() {
     if (this.isInitialized) {
       computePosition(this.host, this.overlay, {
-        placement: "bottom-start",
+        placement: this.placement,
         middleware: [offset(4), flip(), shift()],
       }).then(({ x, y }) => {
         Object.assign(this.overlay.style, {
@@ -707,6 +713,7 @@ document
   });
 
 document.querySelectorAll(".menu-button").forEach(function (widgetEl) {
+  if (!widgetEl.querySelector(":scope > .menu-button__menu")) return;
   const popperDropdown = new PopperDropdown(
     widgetEl,
     "button",
@@ -722,6 +729,88 @@ document.querySelectorAll(".menu-button").forEach(function (widgetEl) {
 
   widget.menu.el.addEventListener("makeup-menu-select", logEvent);
   widget.menu.el.addEventListener("makeup-menu-change", logEvent);
+});
+
+// MENU BUTTON WITH DROPDOWN
+document.querySelectorAll(".menu-button").forEach(function (widgetEl) {
+  if (!widgetEl.querySelector(":scope > .menu-button__dropdown")) return;
+  const triggerEl = widgetEl.querySelector(":scope > button");
+  const dropdownEl = widgetEl.querySelector(".menu-button__dropdown");
+  const menuEl = dropdownEl.querySelector('[role="menu"]');
+  const popperDropdown = new PopperDropdown(
+    widgetEl,
+    ":scope > button",
+    ".menu-button__dropdown",
+    dropdownEl.classList.contains("menu-button__dropdown--reverse")
+      ? "bottom-end"
+      : "bottom-start",
+  );
+  const expander = new Expander(widgetEl, {
+    alwaysDoFocusManagement: true,
+    ariaControls: false,
+    collapseOnClickOut: true,
+    collapseOnFocusOut: true,
+    contentSelector: menuEl
+      ? '.menu-button__dropdown [role="menu"]'
+      : ".menu-button__dropdown",
+    expandOnClick: true,
+    focusManagement: "focusable",
+    hostSelector: ":scope > button",
+  });
+  const collapse = function () {
+    expander.expanded = false;
+    triggerEl.focus();
+  };
+
+  pageWidgets.push(expander);
+  popperDropdown.attachEvents();
+
+  widgetEl.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && expander.expanded) {
+      collapse();
+    }
+  });
+
+  if (menuEl) {
+    const isFilterMenu = Boolean(menuEl.closest(".filter-menu"));
+    const isDisabled = (e) =>
+      e.detail.el.getAttribute("aria-disabled") === "true";
+    const updateApplied = function () {
+      if (!triggerEl.classList.contains("filter-chip")) return;
+      const applied = Boolean(menuEl.querySelector('[aria-checked="true"]'));
+      let appliedText = triggerEl.querySelector(".clipped");
+      triggerEl.classList.toggle("filter-chip--selected", applied);
+      if (applied && !appliedText) {
+        appliedText = document.createElement("span");
+        appliedText.className = "clipped";
+        appliedText.textContent = "Filter Applied";
+        triggerEl.append(appliedText);
+      } else if (!applied && appliedText) {
+        appliedText.remove();
+      }
+    };
+
+    pageWidgets.push(new Menu(menuEl));
+    menuEl.addEventListener("makeup-menu-select", function (e) {
+      logEvent(e);
+      if (!isDisabled(e)) collapse();
+    });
+    menuEl.addEventListener("makeup-menu-change", function (e) {
+      logEvent(e);
+      if (isFilterMenu) updateApplied();
+      if (isDisabled(e)) return;
+      if (
+        !isFilterMenu ||
+        e.detail.el.getAttribute("role") === "menuitemradio"
+      ) {
+        collapse();
+      }
+    });
+  }
+
+  dropdownEl
+    .querySelector(".filter-menu__footer")
+    ?.addEventListener("click", collapse);
 });
 
 document
@@ -750,12 +839,22 @@ document.querySelectorAll(".menu").forEach(function (widgetEl) {
   widgetEl.addEventListener("makeup-menu-change", logEvent);
 });
 
-document.querySelectorAll(".filter-menu").forEach(function (widgetEl) {
+document.querySelectorAll(".action-menu").forEach(function (widgetEl) {
+  if (widgetEl.closest(".menu-button")) return;
   pageWidgets.push(new Menu(widgetEl));
 
   widgetEl.addEventListener("makeup-menu-select", logEvent);
   widgetEl.addEventListener("makeup-menu-change", logEvent);
-  widgetEl.addEventListener("makeup-menu-toggle", logEvent);
+});
+
+document.querySelectorAll(".filter-menu").forEach(function (widgetEl) {
+  const menuEl = widgetEl.querySelector('[role="menu"]');
+  if (!menuEl || widgetEl.closest(".menu-button")) return;
+  pageWidgets.push(new Menu(menuEl));
+
+  menuEl.addEventListener("makeup-menu-select", logEvent);
+  menuEl.addEventListener("makeup-menu-change", logEvent);
+  menuEl.addEventListener("makeup-menu-toggle", logEvent);
 });
 
 // segmented-buttons

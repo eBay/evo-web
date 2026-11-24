@@ -115,31 +115,53 @@ export const base = () => `
                             </span>
                         </a>
 
+                        <span class="menu-button">
+                            <button
+                                class="icon-button"
+                                aria-expanded="false"
+                                aria-haspopup="menu"
+                                aria-label="Actions"
+                                type="button"
+                                id="table-actions-1-trigger"
+                                aria-controls="table-actions-1-content"
+                                >
+                                <svg aria-hidden="true" class="icon icon--16">
+                                    <use href="#icon-overflow-vertical-16" />
+                                </svg>
+                            </button>
+                            <div class="menu-button__dropdown">
+                                <div class="action-menu" role="menu" id="table-actions-1-content" aria-labelledby="table-actions-1-trigger">
+                                    <div class="action-menu__item" role="menuitem" tabindex="0"><span>Edit listing</span></div>
+                                    <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Duplicate</span></div>
+                                    <div class="action-menu__item" role="menuitem" tabindex="-1"><span>End listing</span></div>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </td>
+                <td class="table-cell table-cell--icon-action">
+                    <span class="menu-button">
                         <button
-                            class="fake-menu-button__button icon-button"
+                            class="icon-button"
                             aria-expanded="false"
-                            aria-haspopup="true"
+                            aria-haspopup="menu"
                             aria-label="Actions"
                             type="button"
+                            id="table-actions-2-trigger"
+                            aria-controls="table-actions-2-content"
                             >
                             <svg aria-hidden="true" class="icon icon--16">
                                 <use href="#icon-overflow-vertical-16" />
                             </svg>
                         </button>
-                    </div>
-                </td>
-                <td class="table-cell table-cell--icon-action">
-                    <button
-                        class="fake-menu-button__button icon-button"
-                        aria-expanded="false"
-                        aria-haspopup="true"
-                        aria-label="Actions"
-                        type="button"
-                        >
-                        <svg aria-hidden="true" class="icon icon--16">
-                            <use href="#icon-overflow-vertical-16" />
-                        </svg>
-                    </button>
+                        <div class="menu-button__dropdown">
+                            <div class="action-menu" role="menu" id="table-actions-2-content" aria-labelledby="table-actions-2-trigger">
+                                <div class="action-menu__item" role="menuitem" tabindex="0"><span>Edit listing</span></div>
+                                <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Duplicate</span></div>
+                                <div class="action-menu__item" role="menuitem" tabindex="-1"><span>End listing</span></div>
+                            </div>
+                        </div>
+                    </span>
                 </td>
                 <td class="table-cell table-cell--numeric">$287.96</td>
                 <td class="table-cell table-cell--numeric">300</td>
@@ -175,31 +197,53 @@ export const base = () => `
                             </span>
                         </a>
 
+                        <span class="menu-button">
+                            <button
+                                class="icon-button"
+                                aria-expanded="false"
+                                aria-haspopup="menu"
+                                aria-label="Actions"
+                                type="button"
+                                id="table-actions-3-trigger"
+                                aria-controls="table-actions-3-content"
+                                >
+                                <svg aria-hidden="true" class="icon icon--16">
+                                    <use href="#icon-overflow-vertical-16" />
+                                </svg>
+                            </button>
+                            <div class="menu-button__dropdown">
+                                <div class="action-menu" role="menu" id="table-actions-3-content" aria-labelledby="table-actions-3-trigger">
+                                    <div class="action-menu__item" role="menuitem" tabindex="0"><span>Edit listing</span></div>
+                                    <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Duplicate</span></div>
+                                    <div class="action-menu__item" role="menuitem" tabindex="-1"><span>End listing</span></div>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </td>
+                <td class="table-cell table-cell--icon-action">
+                    <span class="menu-button">
                         <button
-                            class="fake-menu-button__button icon-button"
+                            class="icon-button"
                             aria-expanded="false"
-                            aria-haspopup="true"
+                            aria-haspopup="menu"
                             aria-label="Actions"
                             type="button"
+                            id="table-actions-4-trigger"
+                            aria-controls="table-actions-4-content"
                             >
                             <svg aria-hidden="true" class="icon icon--16">
                                 <use href="#icon-overflow-vertical-16" />
                             </svg>
                         </button>
-                    </div>
-                </td>
-                <td class="table-cell table-cell--icon-action">
-                    <button
-                        class="fake-menu-button__button icon-button"
-                        aria-expanded="false"
-                        aria-haspopup="true"
-                        aria-label="Actions"
-                        type="button"
-                        >
-                        <svg aria-hidden="true" class="icon icon--16">
-                            <use href="#icon-overflow-vertical-16" />
-                        </svg>
-                    </button>
+                        <div class="menu-button__dropdown">
+                            <div class="action-menu" role="menu" id="table-actions-4-content" aria-labelledby="table-actions-4-trigger">
+                                <div class="action-menu__item" role="menuitem" tabindex="0"><span>Edit listing</span></div>
+                                <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Duplicate</span></div>
+                                <div class="action-menu__item" role="menuitem" tabindex="-1"><span>End listing</span></div>
+                            </div>
+                        </div>
+                    </span>
                 </td>
                 <td class="table-cell table-cell--numeric">$89.85</td>
                 <td class="table-cell table-cell--numeric">45</td>
@@ -235,31 +279,53 @@ export const base = () => `
                             </span>
                         </a>
 
+                        <span class="menu-button">
+                            <button
+                                class="icon-button"
+                                aria-expanded="false"
+                                aria-haspopup="menu"
+                                aria-label="Actions"
+                                type="button"
+                                id="table-actions-5-trigger"
+                                aria-controls="table-actions-5-content"
+                                >
+                                <svg aria-hidden="true" class="icon icon--16">
+                                    <use href="#icon-overflow-vertical-16" />
+                                </svg>
+                            </button>
+                            <div class="menu-button__dropdown">
+                                <div class="action-menu" role="menu" id="table-actions-5-content" aria-labelledby="table-actions-5-trigger">
+                                    <div class="action-menu__item" role="menuitem" tabindex="0"><span>Edit listing</span></div>
+                                    <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Duplicate</span></div>
+                                    <div class="action-menu__item" role="menuitem" tabindex="-1"><span>End listing</span></div>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </td>
+                <td class="table-cell table-cell--icon-action">
+                    <span class="menu-button">
                         <button
-                            class="fake-menu-button__button icon-button"
+                            class="icon-button"
                             aria-expanded="false"
-                            aria-haspopup="true"
+                            aria-haspopup="menu"
                             aria-label="Actions"
                             type="button"
+                            id="table-actions-6-trigger"
+                            aria-controls="table-actions-6-content"
                             >
                             <svg aria-hidden="true" class="icon icon--16">
                                 <use href="#icon-overflow-vertical-16" />
                             </svg>
                         </button>
-                    </div>
-                </td>
-                <td class="table-cell table-cell--icon-action">
-                    <button
-                        class="fake-menu-button__button icon-button"
-                        aria-expanded="false"
-                        aria-haspopup="true"
-                        aria-label="Actions"
-                        type="button"
-                        >
-                        <svg aria-hidden="true" class="icon icon--16">
-                            <use href="#icon-overflow-vertical-16" />
-                        </svg>
-                    </button>
+                        <div class="menu-button__dropdown">
+                            <div class="action-menu" role="menu" id="table-actions-6-content" aria-labelledby="table-actions-6-trigger">
+                                <div class="action-menu__item" role="menuitem" tabindex="0"><span>Edit listing</span></div>
+                                <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Duplicate</span></div>
+                                <div class="action-menu__item" role="menuitem" tabindex="-1"><span>End listing</span></div>
+                            </div>
+                        </div>
+                    </span>
                 </td>
                 <td class="table-cell table-cell--numeric">$499.99</td>
                 <td class="table-cell table-cell--numeric">345</td>
@@ -295,31 +361,53 @@ export const base = () => `
                             </span>
                         </a>
 
+                        <span class="menu-button">
+                            <button
+                                class="icon-button"
+                                aria-expanded="false"
+                                aria-haspopup="menu"
+                                aria-label="Actions"
+                                type="button"
+                                id="table-actions-7-trigger"
+                                aria-controls="table-actions-7-content"
+                                >
+                                <svg aria-hidden="true" class="icon icon--16">
+                                    <use href="#icon-overflow-vertical-16" />
+                                </svg>
+                            </button>
+                            <div class="menu-button__dropdown">
+                                <div class="action-menu" role="menu" id="table-actions-7-content" aria-labelledby="table-actions-7-trigger">
+                                    <div class="action-menu__item" role="menuitem" tabindex="0"><span>Edit listing</span></div>
+                                    <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Duplicate</span></div>
+                                    <div class="action-menu__item" role="menuitem" tabindex="-1"><span>End listing</span></div>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </td>
+                <td class="table-cell table-cell--icon-action">
+                    <span class="menu-button">
                         <button
-                            class="fake-menu-button__button icon-button"
+                            class="icon-button"
                             aria-expanded="false"
-                            aria-haspopup="true"
+                            aria-haspopup="menu"
                             aria-label="Actions"
                             type="button"
+                            id="table-actions-8-trigger"
+                            aria-controls="table-actions-8-content"
                             >
                             <svg aria-hidden="true" class="icon icon--16">
                                 <use href="#icon-overflow-vertical-16" />
                             </svg>
                         </button>
-                    </div>
-                </td>
-                <td class="table-cell table-cell--icon-action">
-                    <button
-                        class="fake-menu-button__button icon-button"
-                        aria-expanded="false"
-                        aria-haspopup="true"
-                        aria-label="Actions"
-                        type="button"
-                        >
-                        <svg aria-hidden="true" class="icon icon--16">
-                            <use href="#icon-overflow-vertical-16" />
-                        </svg>
-                    </button>
+                        <div class="menu-button__dropdown">
+                            <div class="action-menu" role="menu" id="table-actions-8-content" aria-labelledby="table-actions-8-trigger">
+                                <div class="action-menu__item" role="menuitem" tabindex="0"><span>Edit listing</span></div>
+                                <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Duplicate</span></div>
+                                <div class="action-menu__item" role="menuitem" tabindex="-1"><span>End listing</span></div>
+                            </div>
+                        </div>
+                    </span>
                 </td>
                 <td class="table-cell table-cell--numeric">$499.99</td>
                 <td class="table-cell table-cell--numeric">399</td>
@@ -355,31 +443,53 @@ export const base = () => `
                             </span>
                         </a>
 
+                        <span class="menu-button">
+                            <button
+                                class="icon-button"
+                                aria-expanded="false"
+                                aria-haspopup="menu"
+                                aria-label="Actions"
+                                type="button"
+                                id="table-actions-9-trigger"
+                                aria-controls="table-actions-9-content"
+                                >
+                                <svg aria-hidden="true" class="icon icon--16">
+                                    <use href="#icon-overflow-vertical-16" />
+                                </svg>
+                            </button>
+                            <div class="menu-button__dropdown">
+                                <div class="action-menu" role="menu" id="table-actions-9-content" aria-labelledby="table-actions-9-trigger">
+                                    <div class="action-menu__item" role="menuitem" tabindex="0"><span>Edit listing</span></div>
+                                    <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Duplicate</span></div>
+                                    <div class="action-menu__item" role="menuitem" tabindex="-1"><span>End listing</span></div>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </td>
+                <td class="table-cell table-cell--icon-action">
+                    <span class="menu-button">
                         <button
-                            class="fake-menu-button__button icon-button"
+                            class="icon-button"
                             aria-expanded="false"
-                            aria-haspopup="true"
+                            aria-haspopup="menu"
                             aria-label="Actions"
                             type="button"
+                            id="table-actions-10-trigger"
+                            aria-controls="table-actions-10-content"
                             >
                             <svg aria-hidden="true" class="icon icon--16">
                                 <use href="#icon-overflow-vertical-16" />
                             </svg>
                         </button>
-                    </div>
-                </td>
-                <td class="table-cell table-cell--icon-action">
-                    <button
-                        class="fake-menu-button__button icon-button"
-                        aria-expanded="false"
-                        aria-haspopup="true"
-                        aria-label="Actions"
-                        type="button"
-                        >
-                        <svg aria-hidden="true" class="icon icon--16">
-                            <use href="#icon-overflow-vertical-16" />
-                        </svg>
-                    </button>
+                        <div class="menu-button__dropdown">
+                            <div class="action-menu" role="menu" id="table-actions-10-content" aria-labelledby="table-actions-10-trigger">
+                                <div class="action-menu__item" role="menuitem" tabindex="0"><span>Edit listing</span></div>
+                                <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Duplicate</span></div>
+                                <div class="action-menu__item" role="menuitem" tabindex="-1"><span>End listing</span></div>
+                            </div>
+                        </div>
+                    </span>
                 </td>
                 <td class="table-cell table-cell--numeric">$519.99</td>
                 <td class="table-cell table-cell--numeric">205</td>
@@ -509,31 +619,53 @@ export const compact = () => `
                             </span>
                         </a>
 
+                        <span class="menu-button">
+                            <button
+                                class="icon-button"
+                                aria-expanded="false"
+                                aria-haspopup="menu"
+                                aria-label="Actions"
+                                type="button"
+                                id="table-actions-11-trigger"
+                                aria-controls="table-actions-11-content"
+                                >
+                                <svg aria-hidden="true" class="icon icon--16">
+                                    <use href="#icon-overflow-vertical-16" />
+                                </svg>
+                            </button>
+                            <div class="menu-button__dropdown">
+                                <div class="action-menu" role="menu" id="table-actions-11-content" aria-labelledby="table-actions-11-trigger">
+                                    <div class="action-menu__item" role="menuitem" tabindex="0"><span>Edit listing</span></div>
+                                    <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Duplicate</span></div>
+                                    <div class="action-menu__item" role="menuitem" tabindex="-1"><span>End listing</span></div>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </td>
+                <td class="table-cell table-cell--icon-action">
+                    <span class="menu-button">
                         <button
-                            class="fake-menu-button__button icon-button"
+                            class="icon-button"
                             aria-expanded="false"
-                            aria-haspopup="true"
+                            aria-haspopup="menu"
                             aria-label="Actions"
                             type="button"
+                            id="table-actions-12-trigger"
+                            aria-controls="table-actions-12-content"
                             >
                             <svg aria-hidden="true" class="icon icon--16">
                                 <use href="#icon-overflow-vertical-16" />
                             </svg>
                         </button>
-                    </div>
-                </td>
-                <td class="table-cell table-cell--icon-action">
-                    <button
-                        class="fake-menu-button__button icon-button"
-                        aria-expanded="false"
-                        aria-haspopup="true"
-                        aria-label="Actions"
-                        type="button"
-                        >
-                        <svg aria-hidden="true" class="icon icon--16">
-                            <use href="#icon-overflow-vertical-16" />
-                        </svg>
-                    </button>
+                        <div class="menu-button__dropdown">
+                            <div class="action-menu" role="menu" id="table-actions-12-content" aria-labelledby="table-actions-12-trigger">
+                                <div class="action-menu__item" role="menuitem" tabindex="0"><span>Edit listing</span></div>
+                                <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Duplicate</span></div>
+                                <div class="action-menu__item" role="menuitem" tabindex="-1"><span>End listing</span></div>
+                            </div>
+                        </div>
+                    </span>
                 </td>
                 <td class="table-cell table-cell--numeric">$287.96</td>
                 <td class="table-cell table-cell--numeric">300</td>
@@ -569,31 +701,53 @@ export const compact = () => `
                             </span>
                         </a>
 
+                        <span class="menu-button">
+                            <button
+                                class="icon-button"
+                                aria-expanded="false"
+                                aria-haspopup="menu"
+                                aria-label="Actions"
+                                type="button"
+                                id="table-actions-13-trigger"
+                                aria-controls="table-actions-13-content"
+                                >
+                                <svg aria-hidden="true" class="icon icon--16">
+                                    <use href="#icon-overflow-vertical-16" />
+                                </svg>
+                            </button>
+                            <div class="menu-button__dropdown">
+                                <div class="action-menu" role="menu" id="table-actions-13-content" aria-labelledby="table-actions-13-trigger">
+                                    <div class="action-menu__item" role="menuitem" tabindex="0"><span>Edit listing</span></div>
+                                    <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Duplicate</span></div>
+                                    <div class="action-menu__item" role="menuitem" tabindex="-1"><span>End listing</span></div>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </td>
+                <td class="table-cell table-cell--icon-action">
+                    <span class="menu-button">
                         <button
-                            class="fake-menu-button__button icon-button"
+                            class="icon-button"
                             aria-expanded="false"
-                            aria-haspopup="true"
+                            aria-haspopup="menu"
                             aria-label="Actions"
                             type="button"
+                            id="table-actions-14-trigger"
+                            aria-controls="table-actions-14-content"
                             >
                             <svg aria-hidden="true" class="icon icon--16">
                                 <use href="#icon-overflow-vertical-16" />
                             </svg>
                         </button>
-                    </div>
-                </td>
-                <td class="table-cell table-cell--icon-action">
-                    <button
-                        class="fake-menu-button__button icon-button"
-                        aria-expanded="false"
-                        aria-haspopup="true"
-                        aria-label="Actions"
-                        type="button"
-                        >
-                        <svg aria-hidden="true" class="icon icon--16">
-                            <use href="#icon-overflow-vertical-16" />
-                        </svg>
-                    </button>
+                        <div class="menu-button__dropdown">
+                            <div class="action-menu" role="menu" id="table-actions-14-content" aria-labelledby="table-actions-14-trigger">
+                                <div class="action-menu__item" role="menuitem" tabindex="0"><span>Edit listing</span></div>
+                                <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Duplicate</span></div>
+                                <div class="action-menu__item" role="menuitem" tabindex="-1"><span>End listing</span></div>
+                            </div>
+                        </div>
+                    </span>
                 </td>
                 <td class="table-cell table-cell--numeric">$89.85</td>
                 <td class="table-cell table-cell--numeric">45</td>
@@ -629,31 +783,53 @@ export const compact = () => `
                             </span>
                         </a>
 
+                        <span class="menu-button">
+                            <button
+                                class="icon-button"
+                                aria-expanded="false"
+                                aria-haspopup="menu"
+                                aria-label="Actions"
+                                type="button"
+                                id="table-actions-15-trigger"
+                                aria-controls="table-actions-15-content"
+                                >
+                                <svg aria-hidden="true" class="icon icon--16">
+                                    <use href="#icon-overflow-vertical-16" />
+                                </svg>
+                            </button>
+                            <div class="menu-button__dropdown">
+                                <div class="action-menu" role="menu" id="table-actions-15-content" aria-labelledby="table-actions-15-trigger">
+                                    <div class="action-menu__item" role="menuitem" tabindex="0"><span>Edit listing</span></div>
+                                    <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Duplicate</span></div>
+                                    <div class="action-menu__item" role="menuitem" tabindex="-1"><span>End listing</span></div>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </td>
+                <td class="table-cell table-cell--icon-action">
+                    <span class="menu-button">
                         <button
-                            class="fake-menu-button__button icon-button"
+                            class="icon-button"
                             aria-expanded="false"
-                            aria-haspopup="true"
+                            aria-haspopup="menu"
                             aria-label="Actions"
                             type="button"
+                            id="table-actions-16-trigger"
+                            aria-controls="table-actions-16-content"
                             >
                             <svg aria-hidden="true" class="icon icon--16">
                                 <use href="#icon-overflow-vertical-16" />
                             </svg>
                         </button>
-                    </div>
-                </td>
-                <td class="table-cell table-cell--icon-action">
-                    <button
-                        class="fake-menu-button__button icon-button"
-                        aria-expanded="false"
-                        aria-haspopup="true"
-                        aria-label="Actions"
-                        type="button"
-                        >
-                        <svg aria-hidden="true" class="icon icon--16">
-                            <use href="#icon-overflow-vertical-16" />
-                        </svg>
-                    </button>
+                        <div class="menu-button__dropdown">
+                            <div class="action-menu" role="menu" id="table-actions-16-content" aria-labelledby="table-actions-16-trigger">
+                                <div class="action-menu__item" role="menuitem" tabindex="0"><span>Edit listing</span></div>
+                                <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Duplicate</span></div>
+                                <div class="action-menu__item" role="menuitem" tabindex="-1"><span>End listing</span></div>
+                            </div>
+                        </div>
+                    </span>
                 </td>
                 <td class="table-cell table-cell--numeric">$499.99</td>
                 <td class="table-cell table-cell--numeric">345</td>
@@ -689,31 +865,53 @@ export const compact = () => `
                             </span>
                         </a>
 
+                        <span class="menu-button">
+                            <button
+                                class="icon-button"
+                                aria-expanded="false"
+                                aria-haspopup="menu"
+                                aria-label="Actions"
+                                type="button"
+                                id="table-actions-17-trigger"
+                                aria-controls="table-actions-17-content"
+                                >
+                                <svg aria-hidden="true" class="icon icon--16">
+                                    <use href="#icon-overflow-vertical-16" />
+                                </svg>
+                            </button>
+                            <div class="menu-button__dropdown">
+                                <div class="action-menu" role="menu" id="table-actions-17-content" aria-labelledby="table-actions-17-trigger">
+                                    <div class="action-menu__item" role="menuitem" tabindex="0"><span>Edit listing</span></div>
+                                    <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Duplicate</span></div>
+                                    <div class="action-menu__item" role="menuitem" tabindex="-1"><span>End listing</span></div>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </td>
+                <td class="table-cell table-cell--icon-action">
+                    <span class="menu-button">
                         <button
-                            class="fake-menu-button__button icon-button"
+                            class="icon-button"
                             aria-expanded="false"
-                            aria-haspopup="true"
+                            aria-haspopup="menu"
                             aria-label="Actions"
                             type="button"
+                            id="table-actions-18-trigger"
+                            aria-controls="table-actions-18-content"
                             >
                             <svg aria-hidden="true" class="icon icon--16">
                                 <use href="#icon-overflow-vertical-16" />
                             </svg>
                         </button>
-                    </div>
-                </td>
-                <td class="table-cell table-cell--icon-action">
-                    <button
-                        class="fake-menu-button__button icon-button"
-                        aria-expanded="false"
-                        aria-haspopup="true"
-                        aria-label="Actions"
-                        type="button"
-                        >
-                        <svg aria-hidden="true" class="icon icon--16">
-                            <use href="#icon-overflow-vertical-16" />
-                        </svg>
-                    </button>
+                        <div class="menu-button__dropdown">
+                            <div class="action-menu" role="menu" id="table-actions-18-content" aria-labelledby="table-actions-18-trigger">
+                                <div class="action-menu__item" role="menuitem" tabindex="0"><span>Edit listing</span></div>
+                                <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Duplicate</span></div>
+                                <div class="action-menu__item" role="menuitem" tabindex="-1"><span>End listing</span></div>
+                            </div>
+                        </div>
+                    </span>
                 </td>
                 <td class="table-cell table-cell--numeric">$499.99</td>
                 <td class="table-cell table-cell--numeric">399</td>
@@ -749,31 +947,53 @@ export const compact = () => `
                             </span>
                         </a>
 
+                        <span class="menu-button">
+                            <button
+                                class="icon-button"
+                                aria-expanded="false"
+                                aria-haspopup="menu"
+                                aria-label="Actions"
+                                type="button"
+                                id="table-actions-19-trigger"
+                                aria-controls="table-actions-19-content"
+                                >
+                                <svg aria-hidden="true" class="icon icon--16">
+                                    <use href="#icon-overflow-vertical-16" />
+                                </svg>
+                            </button>
+                            <div class="menu-button__dropdown">
+                                <div class="action-menu" role="menu" id="table-actions-19-content" aria-labelledby="table-actions-19-trigger">
+                                    <div class="action-menu__item" role="menuitem" tabindex="0"><span>Edit listing</span></div>
+                                    <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Duplicate</span></div>
+                                    <div class="action-menu__item" role="menuitem" tabindex="-1"><span>End listing</span></div>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </td>
+                <td class="table-cell table-cell--icon-action">
+                    <span class="menu-button">
                         <button
-                            class="fake-menu-button__button icon-button"
+                            class="icon-button"
                             aria-expanded="false"
-                            aria-haspopup="true"
+                            aria-haspopup="menu"
                             aria-label="Actions"
                             type="button"
+                            id="table-actions-20-trigger"
+                            aria-controls="table-actions-20-content"
                             >
                             <svg aria-hidden="true" class="icon icon--16">
                                 <use href="#icon-overflow-vertical-16" />
                             </svg>
                         </button>
-                    </div>
-                </td>
-                <td class="table-cell table-cell--icon-action">
-                    <button
-                        class="fake-menu-button__button icon-button"
-                        aria-expanded="false"
-                        aria-haspopup="true"
-                        aria-label="Actions"
-                        type="button"
-                        >
-                        <svg aria-hidden="true" class="icon icon--16">
-                            <use href="#icon-overflow-vertical-16" />
-                        </svg>
-                    </button>
+                        <div class="menu-button__dropdown">
+                            <div class="action-menu" role="menu" id="table-actions-20-content" aria-labelledby="table-actions-20-trigger">
+                                <div class="action-menu__item" role="menuitem" tabindex="0"><span>Edit listing</span></div>
+                                <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Duplicate</span></div>
+                                <div class="action-menu__item" role="menuitem" tabindex="-1"><span>End listing</span></div>
+                            </div>
+                        </div>
+                    </span>
                 </td>
                 <td class="table-cell table-cell--numeric">$519.99</td>
                 <td class="table-cell table-cell--numeric">205</td>
@@ -903,31 +1123,53 @@ export const relaxed = () => `
                             </span>
                         </a>
 
+                        <span class="menu-button">
+                            <button
+                                class="icon-button"
+                                aria-expanded="false"
+                                aria-haspopup="menu"
+                                aria-label="Actions"
+                                type="button"
+                                id="table-actions-21-trigger"
+                                aria-controls="table-actions-21-content"
+                                >
+                                <svg aria-hidden="true" class="icon icon--16">
+                                    <use href="#icon-overflow-vertical-16" />
+                                </svg>
+                            </button>
+                            <div class="menu-button__dropdown">
+                                <div class="action-menu" role="menu" id="table-actions-21-content" aria-labelledby="table-actions-21-trigger">
+                                    <div class="action-menu__item" role="menuitem" tabindex="0"><span>Edit listing</span></div>
+                                    <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Duplicate</span></div>
+                                    <div class="action-menu__item" role="menuitem" tabindex="-1"><span>End listing</span></div>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </td>
+                <td class="table-cell table-cell--icon-action">
+                    <span class="menu-button">
                         <button
-                            class="fake-menu-button__button icon-button"
+                            class="icon-button"
                             aria-expanded="false"
-                            aria-haspopup="true"
+                            aria-haspopup="menu"
                             aria-label="Actions"
                             type="button"
+                            id="table-actions-22-trigger"
+                            aria-controls="table-actions-22-content"
                             >
                             <svg aria-hidden="true" class="icon icon--16">
                                 <use href="#icon-overflow-vertical-16" />
                             </svg>
                         </button>
-                    </div>
-                </td>
-                <td class="table-cell table-cell--icon-action">
-                    <button
-                        class="fake-menu-button__button icon-button"
-                        aria-expanded="false"
-                        aria-haspopup="true"
-                        aria-label="Actions"
-                        type="button"
-                        >
-                        <svg aria-hidden="true" class="icon icon--16">
-                            <use href="#icon-overflow-vertical-16" />
-                        </svg>
-                    </button>
+                        <div class="menu-button__dropdown">
+                            <div class="action-menu" role="menu" id="table-actions-22-content" aria-labelledby="table-actions-22-trigger">
+                                <div class="action-menu__item" role="menuitem" tabindex="0"><span>Edit listing</span></div>
+                                <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Duplicate</span></div>
+                                <div class="action-menu__item" role="menuitem" tabindex="-1"><span>End listing</span></div>
+                            </div>
+                        </div>
+                    </span>
                 </td>
                 <td class="table-cell table-cell--numeric">$287.96</td>
                 <td class="table-cell table-cell--numeric">300</td>
@@ -963,31 +1205,53 @@ export const relaxed = () => `
                             </span>
                         </a>
 
+                        <span class="menu-button">
+                            <button
+                                class="icon-button"
+                                aria-expanded="false"
+                                aria-haspopup="menu"
+                                aria-label="Actions"
+                                type="button"
+                                id="table-actions-23-trigger"
+                                aria-controls="table-actions-23-content"
+                                >
+                                <svg aria-hidden="true" class="icon icon--16">
+                                    <use href="#icon-overflow-vertical-16" />
+                                </svg>
+                            </button>
+                            <div class="menu-button__dropdown">
+                                <div class="action-menu" role="menu" id="table-actions-23-content" aria-labelledby="table-actions-23-trigger">
+                                    <div class="action-menu__item" role="menuitem" tabindex="0"><span>Edit listing</span></div>
+                                    <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Duplicate</span></div>
+                                    <div class="action-menu__item" role="menuitem" tabindex="-1"><span>End listing</span></div>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </td>
+                <td class="table-cell table-cell--icon-action">
+                    <span class="menu-button">
                         <button
-                            class="fake-menu-button__button icon-button"
+                            class="icon-button"
                             aria-expanded="false"
-                            aria-haspopup="true"
+                            aria-haspopup="menu"
                             aria-label="Actions"
                             type="button"
+                            id="table-actions-24-trigger"
+                            aria-controls="table-actions-24-content"
                             >
                             <svg aria-hidden="true" class="icon icon--16">
                                 <use href="#icon-overflow-vertical-16" />
                             </svg>
                         </button>
-                    </div>
-                </td>
-                <td class="table-cell table-cell--icon-action">
-                    <button
-                        class="fake-menu-button__button icon-button"
-                        aria-expanded="false"
-                        aria-haspopup="true"
-                        aria-label="Actions"
-                        type="button"
-                        >
-                        <svg aria-hidden="true" class="icon icon--16">
-                            <use href="#icon-overflow-vertical-16" />
-                        </svg>
-                    </button>
+                        <div class="menu-button__dropdown">
+                            <div class="action-menu" role="menu" id="table-actions-24-content" aria-labelledby="table-actions-24-trigger">
+                                <div class="action-menu__item" role="menuitem" tabindex="0"><span>Edit listing</span></div>
+                                <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Duplicate</span></div>
+                                <div class="action-menu__item" role="menuitem" tabindex="-1"><span>End listing</span></div>
+                            </div>
+                        </div>
+                    </span>
                 </td>
                 <td class="table-cell table-cell--numeric">$89.85</td>
                 <td class="table-cell table-cell--numeric">45</td>
@@ -1023,31 +1287,53 @@ export const relaxed = () => `
                             </span>
                         </a>
 
+                        <span class="menu-button">
+                            <button
+                                class="icon-button"
+                                aria-expanded="false"
+                                aria-haspopup="menu"
+                                aria-label="Actions"
+                                type="button"
+                                id="table-actions-25-trigger"
+                                aria-controls="table-actions-25-content"
+                                >
+                                <svg aria-hidden="true" class="icon icon--16">
+                                    <use href="#icon-overflow-vertical-16" />
+                                </svg>
+                            </button>
+                            <div class="menu-button__dropdown">
+                                <div class="action-menu" role="menu" id="table-actions-25-content" aria-labelledby="table-actions-25-trigger">
+                                    <div class="action-menu__item" role="menuitem" tabindex="0"><span>Edit listing</span></div>
+                                    <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Duplicate</span></div>
+                                    <div class="action-menu__item" role="menuitem" tabindex="-1"><span>End listing</span></div>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </td>
+                <td class="table-cell table-cell--icon-action">
+                    <span class="menu-button">
                         <button
-                            class="fake-menu-button__button icon-button"
+                            class="icon-button"
                             aria-expanded="false"
-                            aria-haspopup="true"
+                            aria-haspopup="menu"
                             aria-label="Actions"
                             type="button"
+                            id="table-actions-26-trigger"
+                            aria-controls="table-actions-26-content"
                             >
                             <svg aria-hidden="true" class="icon icon--16">
                                 <use href="#icon-overflow-vertical-16" />
                             </svg>
                         </button>
-                    </div>
-                </td>
-                <td class="table-cell table-cell--icon-action">
-                    <button
-                        class="fake-menu-button__button icon-button"
-                        aria-expanded="false"
-                        aria-haspopup="true"
-                        aria-label="Actions"
-                        type="button"
-                        >
-                        <svg aria-hidden="true" class="icon icon--16">
-                            <use href="#icon-overflow-vertical-16" />
-                        </svg>
-                    </button>
+                        <div class="menu-button__dropdown">
+                            <div class="action-menu" role="menu" id="table-actions-26-content" aria-labelledby="table-actions-26-trigger">
+                                <div class="action-menu__item" role="menuitem" tabindex="0"><span>Edit listing</span></div>
+                                <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Duplicate</span></div>
+                                <div class="action-menu__item" role="menuitem" tabindex="-1"><span>End listing</span></div>
+                            </div>
+                        </div>
+                    </span>
                 </td>
                 <td class="table-cell table-cell--numeric">$499.99</td>
                 <td class="table-cell table-cell--numeric">345</td>
@@ -1083,31 +1369,53 @@ export const relaxed = () => `
                             </span>
                         </a>
 
+                        <span class="menu-button">
+                            <button
+                                class="icon-button"
+                                aria-expanded="false"
+                                aria-haspopup="menu"
+                                aria-label="Actions"
+                                type="button"
+                                id="table-actions-27-trigger"
+                                aria-controls="table-actions-27-content"
+                                >
+                                <svg aria-hidden="true" class="icon icon--16">
+                                    <use href="#icon-overflow-vertical-16" />
+                                </svg>
+                            </button>
+                            <div class="menu-button__dropdown">
+                                <div class="action-menu" role="menu" id="table-actions-27-content" aria-labelledby="table-actions-27-trigger">
+                                    <div class="action-menu__item" role="menuitem" tabindex="0"><span>Edit listing</span></div>
+                                    <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Duplicate</span></div>
+                                    <div class="action-menu__item" role="menuitem" tabindex="-1"><span>End listing</span></div>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </td>
+                <td class="table-cell table-cell--icon-action">
+                    <span class="menu-button">
                         <button
-                            class="fake-menu-button__button icon-button"
+                            class="icon-button"
                             aria-expanded="false"
-                            aria-haspopup="true"
+                            aria-haspopup="menu"
                             aria-label="Actions"
                             type="button"
+                            id="table-actions-28-trigger"
+                            aria-controls="table-actions-28-content"
                             >
                             <svg aria-hidden="true" class="icon icon--16">
                                 <use href="#icon-overflow-vertical-16" />
                             </svg>
                         </button>
-                    </div>
-                </td>
-                <td class="table-cell table-cell--icon-action">
-                    <button
-                        class="fake-menu-button__button icon-button"
-                        aria-expanded="false"
-                        aria-haspopup="true"
-                        aria-label="Actions"
-                        type="button"
-                        >
-                        <svg aria-hidden="true" class="icon icon--16">
-                            <use href="#icon-overflow-vertical-16" />
-                        </svg>
-                    </button>
+                        <div class="menu-button__dropdown">
+                            <div class="action-menu" role="menu" id="table-actions-28-content" aria-labelledby="table-actions-28-trigger">
+                                <div class="action-menu__item" role="menuitem" tabindex="0"><span>Edit listing</span></div>
+                                <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Duplicate</span></div>
+                                <div class="action-menu__item" role="menuitem" tabindex="-1"><span>End listing</span></div>
+                            </div>
+                        </div>
+                    </span>
                 </td>
                 <td class="table-cell table-cell--numeric">$499.99</td>
                 <td class="table-cell table-cell--numeric">399</td>
@@ -1143,31 +1451,53 @@ export const relaxed = () => `
                             </span>
                         </a>
 
+                        <span class="menu-button">
+                            <button
+                                class="icon-button"
+                                aria-expanded="false"
+                                aria-haspopup="menu"
+                                aria-label="Actions"
+                                type="button"
+                                id="table-actions-29-trigger"
+                                aria-controls="table-actions-29-content"
+                                >
+                                <svg aria-hidden="true" class="icon icon--16">
+                                    <use href="#icon-overflow-vertical-16" />
+                                </svg>
+                            </button>
+                            <div class="menu-button__dropdown">
+                                <div class="action-menu" role="menu" id="table-actions-29-content" aria-labelledby="table-actions-29-trigger">
+                                    <div class="action-menu__item" role="menuitem" tabindex="0"><span>Edit listing</span></div>
+                                    <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Duplicate</span></div>
+                                    <div class="action-menu__item" role="menuitem" tabindex="-1"><span>End listing</span></div>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </td>
+                <td class="table-cell table-cell--icon-action">
+                    <span class="menu-button">
                         <button
-                            class="fake-menu-button__button icon-button"
+                            class="icon-button"
                             aria-expanded="false"
-                            aria-haspopup="true"
+                            aria-haspopup="menu"
                             aria-label="Actions"
                             type="button"
+                            id="table-actions-30-trigger"
+                            aria-controls="table-actions-30-content"
                             >
                             <svg aria-hidden="true" class="icon icon--16">
                                 <use href="#icon-overflow-vertical-16" />
                             </svg>
                         </button>
-                    </div>
-                </td>
-                <td class="table-cell table-cell--icon-action">
-                    <button
-                        class="fake-menu-button__button icon-button"
-                        aria-expanded="false"
-                        aria-haspopup="true"
-                        aria-label="Actions"
-                        type="button"
-                        >
-                        <svg aria-hidden="true" class="icon icon--16">
-                            <use href="#icon-overflow-vertical-16" />
-                        </svg>
-                    </button>
+                        <div class="menu-button__dropdown">
+                            <div class="action-menu" role="menu" id="table-actions-30-content" aria-labelledby="table-actions-30-trigger">
+                                <div class="action-menu__item" role="menuitem" tabindex="0"><span>Edit listing</span></div>
+                                <div class="action-menu__item" role="menuitem" tabindex="-1"><span>Duplicate</span></div>
+                                <div class="action-menu__item" role="menuitem" tabindex="-1"><span>End listing</span></div>
+                            </div>
+                        </div>
+                    </span>
                 </td>
                 <td class="table-cell table-cell--numeric">$519.99</td>
                 <td class="table-cell table-cell--numeric">205</td>

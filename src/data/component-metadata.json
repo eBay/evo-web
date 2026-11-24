@@ -17,6 +17,17 @@
     },
     "description": "A series of expanding/collapsing panels of content."
   },
+  "action-menu": {
+    "component": "action-menu",
+    "ds-component": {
+      "name": "dropdown",
+      "url": "https://playbook.ebay.com/design-system/components/dropdown",
+      "version": "2.3"
+    },
+    "submodules": ["icon", "badge"],
+    "cssStorybookPath": "/story/skin-action-menu--base",
+    "description": "A list of commands, including checkable actions, that run on the current page."
+  },
   "alert-dialog": {
     "component": "alert-dialog",
     "ds-component": {
@@ -61,7 +72,7 @@
       "url": "https://playbook.ebay.com/design-system/components/breadcrumb",
       "version": "1.2"
     },
-    "submodules": ["icon"],
+    "submodules": ["icon", "menu-button", "navigation-menu"],
     "markoStorybookPath": "/docs/navigation-disclosure-ebay-breadcrumbs--documentation",
     "reactStorybookPath": "/docs/navigation-disclosure-ebay-breadcrumbs--documentation",
     "description": "A list of links representing current location in site hierarchy."
@@ -364,6 +375,17 @@
     "reactStorybookPath": "/docs/form-input-ebay-filter-input--documentation",
     "description": "A textbox for dynamic, real-time filtering of in-page data sets"
   },
+  "filter-menu": {
+    "component": "filter-menu",
+    "ds-component": {
+      "name": "dropdown",
+      "url": "https://playbook.ebay.com/design-system/components/dropdown",
+      "version": "2.3"
+    },
+    "submodules": ["icon"],
+    "cssStorybookPath": "/story/skin-filter-menu--base",
+    "description": "A list of checkbox or radio choices that narrow a set of results."
+  },
   "flag": {
     "component": "flag",
     "ds-component": {
@@ -569,10 +591,20 @@
       "url": "https://playbook.ebay.com/design-system/components/dropdown",
       "version": "2.3"
     },
-    "submodules": ["button", "icon", "menu"],
+    "submodules": [
+      "button",
+      "icon",
+      "icon-button",
+      "filter-chip",
+      "action-menu",
+      "filter-menu",
+      "navigation-menu",
+      "menu"
+    ],
     "markoStorybookPath": "/docs/buttons-ebay-menu-button--documentation",
     "reactStorybookPath": "/docs/buttons-ebay-menu-button--documentation",
-    "description": "A button that expands to reveal a menu within a popover."
+    "description": "A trigger button that opens an action, filter or navigation menu in a dropdown.",
+    "cssStorybookPath": "/story/skin-menu-button-dropdown--expanded"
   },
   "menu": {
     "component": "menu",
@@ -646,7 +678,12 @@
       "url": "https://playbook.ebay.com/design-system/components/pagination",
       "version": "2.0"
     },
-    "submodules": ["icon-link", "icon-button"],
+    "submodules": [
+      "icon-link",
+      "icon-button",
+      "menu-button",
+      "navigation-menu"
+    ],
     "markoStorybookPath": "/docs/navigation-disclosure-ebay-pagination--documentation",
     "reactStorybookPath": "/docs/navigation-disclosure-ebay-pagination--documentation",
     "description": "Navigate between pages of results."
@@ -835,7 +872,7 @@
       "name": "split-button",
       "version": "1.6"
     },
-    "submodules": ["button", "menu-button"],
+    "submodules": ["button", "menu-button", "action-menu"],
     "markoStorybookPath": "/docs/buttons-ebay-split-button--documentation",
     "reactStorybookPath": "/docs/buttons-ebay-split-button--documentation",
     "description": "Button combining a primary action with dropdown of secondary actions."

@@ -1,0 +1,43 @@
+import { urls } from "../../../../data";
+<div id="filter-menu-overview">
+  <component-banner-img/>
+
+  <p>
+    A filter menu is a list of checkbox or radio choices that narrow a set of
+    results, such as search results or a product list. Selecting a choice
+    updates the results without a full page load.
+  </p>
+  <p>
+    Use a filter menu when a choice narrows results. Use an
+    <a href=`${urls.components}/action-menu`>action menu</a> when a choice runs
+    a command or changes the current view or ordering, and a
+    <a href=`${urls.components}/navigation-menu`>navigation menu</a> when a
+    choice loads another page.
+  </p>
+  <p>
+    To open a filter menu from a filter chip, place both inside a
+    <a href=`${urls.components}/menu-button`>menu button</a> .
+  </p>
+  <section
+    class="section-notice section-notice--attention"
+    role="region"
+    aria-label="Attention"
+    aria-roledescription="Notice"
+  >
+    <div class="section-notice__header" id="filter-menu-deprecated-notice">
+      <svg class="icon icon--16" height="16" width="16" aria-label="Attention">
+        <icon-symbol name="attention-filled-16"/>
+      </svg>
+    </div>
+    <div class="section-notice__main">
+      <h3 class="section-notice__title">Replaces Deprecated Components</h3>
+      <p>
+        Filter menu replaces the deprecated <code>filter-menu-button</code>
+        component and the <code>menu--filter</code> and
+        <code>menu-button--filter</code> variants, which will be removed in the
+        next major version of Skin. To open a filter menu from a trigger, place
+        it in a <a href=`${urls.components}/menu-button`>menu-button</a> .
+      </p>
+    </div>
+  </section>
+</div>

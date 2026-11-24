@@ -1,0 +1,55 @@
+import "../../../../sass/accessibility.scss";
+import { urls } from "../../../../data";
+
+<div class="a11y-pattern-content">
+  <h1>Action Menu Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    An action menu is an ARIA menu. The <code>action-menu</code> element
+    <strong>must</strong> have <code>role="menu"</code> and an accessible name:
+    when the menu opens from a trigger, use <code>aria-labelledby</code>
+    pointing at the trigger; otherwise use <code>aria-label</code> .
+  </p>
+  <p>
+    Each command <strong>must</strong> have a role of <code>menuitem</code> ,
+    <code>menuitemcheckbox</code> or <code>menuitemradio</code> . A checkable
+    command <strong>must</strong> set <code>aria-checked</code> to
+    <code>"true"</code> or <code>"false"</code> . The tick icon is decorative
+    and <strong>must</strong> be hidden with <code>aria-hidden="true"</code> ;
+    screen readers get the checked state from <code>aria-checked</code> .
+  </p>
+  <p>
+    Use an action menu only for commands that run on the current page. For
+    choices that narrow a set of results, use a
+    <a href=`${urls.components}/filter-menu`>filter menu</a> ; for links, use a
+    <a href=`${urls.components}/navigation-menu`>navigation menu</a> . Do not
+    mix commands and links in one menu.
+  </p>
+  <h2>Interaction Design</h2>
+  <p>
+    This section provides interaction design for keyboard and screen reader
+    users.
+  </p>
+  <h3>Keyboard</h3>
+  <p>
+    Focus moves to the first enabled command when the menu opens. The
+    <code>UP ARROW</code> and <code>DOWN ARROW</code> keys move focus between
+    commands, and <code>HOME</code> and <code>END</code> move to the first and
+    last. Typing a character moves focus to the next command that starts with
+    it. <code>ENTER</code> or <code>SPACEBAR</code> runs the focused command,
+    toggles a checkbox action, or selects a radio action.
+  </p>
+  <p>
+    When an action menu opens from a trigger, running an enabled command closes
+    it, including a checkbox or radio action. <code>ESCAPE</code> closes the
+    menu and returns focus to the trigger. Moving focus or clicking outside
+    closes it without moving focus.
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    A command <strong>must</strong> announce as a menu item. A checkbox action
+    announces as a menu item checkbox and a radio action as a menu item radio,
+    each with its checked or not checked state. A disabled command sets
+    <code>aria-disabled="true"</code> and announces as dimmed or unavailable.
+  </p>
+</div>

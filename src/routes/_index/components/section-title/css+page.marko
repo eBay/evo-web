@@ -151,11 +151,13 @@
         <div class="section-title__overflow">
           <span class="menu-button">
             <button
-              class="menu-button__button icon-button"
+              class="icon-button"
               aria-expanded="false"
-              aria-haspopup="true"
+              aria-haspopup="menu"
               aria-label="Options"
               type="button"
+              id="section-title-docs-1-trigger"
+              aria-controls="section-title-docs-1-content"
             >
               <svg
                 class="icon icon--16"
@@ -166,15 +168,20 @@
                 <icon-symbol name="overflow-vertical-16"/>
               </svg>
             </button>
-            <div class="menu-button__menu menu-button__menu--reverse">
-              <div class="menu-button__items" role="menu">
-                <div class="menu-button__item" role="menuitem">
+            <div class="menu-button__dropdown menu-button__dropdown--reverse">
+              <div
+                class="action-menu"
+                role="menu"
+                id="section-title-docs-1-content"
+                aria-labelledby="section-title-docs-1-trigger"
+              >
+                <div class="action-menu__item" role="menuitem">
                   <span>Item 1</span>
                 </div>
-                <div class="menu-button__item" role="menuitem">
+                <div class="action-menu__item" role="menuitem">
                   <span>Item 2</span>
                 </div>
-                <div class="menu-button__item" role="menuitem">
+                <div class="action-menu__item" role="menuitem">
                   <span>Item 3</span>
                 </div>
               </div>
@@ -192,25 +199,32 @@
       <div class="section-title__overflow">
         <span class="menu-button">
           <button
-            class="menu-button__button icon-button"
+            class="icon-button"
             type="button"
             aria-expanded="false"
-            aria-haspopup="true"
+            aria-haspopup="menu"
             aria-label="Options"
+            id="section-title-docs-2-trigger"
+            aria-controls="section-title-docs-2-content"
           >
             <svg class="icon icon--16" width="3" height="13" aria-hidden="true">
               <use href="#icon-overflow-vertical-16"/>
             </svg>
           </button>
-          <div class="menu-button__menu menu-button__menu--reverse">
-            <div class="menu-button__items" role="menu">
-              <div class="menu-button__item" role="menuitem">
+          <div class="menu-button__dropdown menu-button__dropdown--reverse">
+            <div
+              class="action-menu"
+              role="menu"
+              id="section-title-docs-2-content"
+              aria-labelledby="section-title-docs-2-trigger"
+            >
+              <div class="action-menu__item" role="menuitem">
                 <span>Item 1</span>
               </div>
-              <div class="menu-button__item" role="menuitem">
+              <div class="action-menu__item" role="menuitem">
                 <span>Item 2</span>
               </div>
-              <div class="menu-button__item" role="menuitem">
+              <div class="action-menu__item" role="menuitem">
                 <span>Item 3</span>
               </div>
             </div>

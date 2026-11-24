@@ -1,0 +1,42 @@
+import { urls } from "../../../../data";
+<div id="action-menu-overview">
+  <component-banner-img/>
+
+  <p>
+    An action menu is a list of commands that run on the current page without a
+    full page load. A command can also be checkable: a checkbox action turns a
+    setting on or off, and a radio action picks one of several views or
+    orderings. A small tick on the trailing side marks a checked action, as in
+    desktop application menus.
+  </p>
+  <p>
+    Use an action menu when a choice runs a command or changes the current view
+    or ordering. Use a <a href=`${urls.components}/filter-menu`>filter menu</a>
+    when a choice narrows a set of results, and a
+    <a href=`${urls.components}/navigation-menu`>navigation menu</a> when a
+    choice loads another page.
+  </p>
+  <p>
+    To open an action menu from a button, place both inside a
+    <a href=`${urls.components}/menu-button`>menu button</a> .
+  </p>
+  <section
+    class="section-notice section-notice--attention"
+    role="region"
+    aria-label="Attention"
+    aria-roledescription="Notice"
+  >
+    <div class="section-notice__header" id="action-menu-deprecated-notice">
+      <svg class="icon icon--16" height="16" width="16" aria-label="Attention">
+        <icon-symbol name="attention-filled-16"/>
+      </svg>
+    </div>
+    <div class="section-notice__main">
+      <h3 class="section-notice__title">Replaces Deprecated Components</h3>
+      <p>
+        Action menu replaces the deprecated <code>menu</code> component, which
+        will be removed in the next major version of Skin.
+      </p>
+    </div>
+  </section>
+</div>
