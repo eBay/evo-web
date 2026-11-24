@@ -4,6 +4,11 @@ import type { DateInputValue, Input as DateFieldInput } from "<evo-date-field>";
 export type { DateInputValue };
 export type { DayISO } from "../../common/dates/date-utils";
 
+static function distanceTo(el: Element, x: number) {
+  const { left, right } = el.getBoundingClientRect();
+  return Math.max(left - x, 0, x - right);
+}
+
 export interface DateInputRange {
   from?: DateInputValue;
   to?: DateInputValue;
@@ -15,6 +20,8 @@ export interface CalendarInput extends Omit<
 > {}
 
 export interface Input extends Omit<Marko.HTML.Span, "value"> {
+  /** Set on the start date's input, so a `<label for>` outside can name it. */
+  id?: string;
   value?: DateInputRange;
   valueChange?: (value: DateInputRange) => void;
   startName?: string;
@@ -53,6 +60,7 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
 
 <const/{
   class: inputClass,
+  id,
   a11yOpenPopoverText = "open calendar",
   a11yStartText = "Start",
   a11yEndText = "End",
@@ -77,7 +85,8 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
 <const/locale=localeDefault(input.locale)>
 <let/value:=input.value>
 <let/open:=input.open>
-<id/fieldId>
+<id/generatedId>
+<const/fieldId=id || generatedId>
 <id/popoverId>
 <const/invalid=(
   input.invalid || (!!value?.from && !!value?.to && value.from > value.to)
@@ -157,8 +166,9 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
       onMouseDown(e) {
         if ((e.target as Element).closest("input, button")) return;
         e.preventDefault();
-        const { left, width } = $separator().getBoundingClientRect();
-        const field = e.clientX < left + width / 2 ? startField() : endField();
+        const [field] = [startField(), endField()].sort(
+          (a, b) => distanceTo(a, e.clientX) - distanceTo(b, e.clientX),
+        );
         field.focus();
         field.setSelectionRange(field.value.length, field.value.length);
       }
@@ -182,9 +192,7 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
           }
           onInvalidDate=onInvalidDate
         />
-        <span/$separator class="date-textbox__separator" aria-hidden="true">
-          ${" — "}
-        </span>
+        <span class="date-textbox__separator" aria-hidden="true">${" — "}</span>
         <evo-date-field/endField
           index=1
           aria-label=a11yEndText

@@ -39,28 +39,27 @@ function isDone(digits: string, field: DateField) {
 }
 
 /**
- * Reads a typed or pasted date: parts with any separators in the locale's
- * order, 8 digits with none, or an ISO date.
+ * Reads a typed or pasted date: parts with any separators, in the locale's
+ * order or as an ISO date.
  */
 export function parse(text: string, locale?: string): DayISO | null {
-  let numbers: string[] = text.match(/\d+/g) ?? [];
-  let { fields } = layout(locale);
-  if (numbers.length === 1 && numbers[0].length === 8) {
-    let rest = numbers[0];
-    numbers = fields.map((field) => {
-      const digits = rest.slice(0, SIZES[field]);
-      rest = rest.slice(SIZES[field]);
-      return digits;
-    });
-  }
+  const numbers: string[] = text.match(/\d+/g) ?? [];
   if (numbers.length !== 3) return null;
 
   // Pasted ISO dates are year-first whatever the locale's order.
-  if (numbers[0].length === 4) fields = ["year", "month", "day"];
+  const fields: DateField[] =
+    numbers[0].length === 4 ? ["year", "month", "day"] : layout(locale).fields;
+  const year = numbers[fields.indexOf("year")];
+  if (
+    (year.length !== 2 && year.length !== 4) ||
+    numbers.some((n, i) => n.length > SIZES[fields[i]])
+  ) {
+    return null;
+  }
   const parsed = {} as Record<DateField, number>;
   fields.forEach((field, i) => (parsed[field] = +numbers[i]));
 
-  if (parsed.year < 100) {
+  if (year.length === 2) {
     // 2-digit year: if year is less than 50, assume 2000s, otherwise 1900s
     parsed.year += parsed.year < 50 ? 2000 : 1900;
   }
@@ -199,64 +198,6 @@ export function remainingFormat(text: string, locale?: string) {
   return rest;
 }
 
-/**
- * Steps the part the caret is in or just before by `by`, wrapping months and
- * days as a native date input's arrow keys do. Parts not typed yet are filled
- * from today instead.
- */
-export function stepAt(
-  text: string,
-  caret: number,
-  by: number,
-  locale?: string,
-) {
-  const { fields, literals } = layout(locale);
-  const numbers: string[] = text.match(/\d+/g) ?? [];
-  const today = new Date();
-  const now: Record<DateField, number> = {
-    year: today.getFullYear(),
-    month: today.getMonth() + 1,
-    day: today.getDate(),
-  };
-  const date = {} as Record<DateField, number>;
-  fields.forEach(
-    (field, i) => (date[field] = i < numbers.length ? +numbers[i] : now[field]),
-  );
-
-  const before = text.slice(0, caret);
-  const runs = before.match(/\d+/g)?.length ?? 0;
-  const slot = Math.min(
-    /\d$/.test(before) || !runs ? Math.max(runs - 1, 0) : runs,
-    2,
-  );
-  const field = fields[slot];
-  if (slot < numbers.length) {
-    const max =
-      field === "year"
-        ? 9999
-        : field === "month"
-          ? 12
-          : new Date(Date.UTC(date.year, date.month, 0)).getUTCDate();
-    const next = date[field] + by;
-    date[field] =
-      field === "year"
-        ? Math.min(Math.max(next, 1), max)
-        : next < 1
-          ? max
-          : next > max
-            ? 1
-            : next;
-  }
-
-  const parts = fields.map((f) => padStart(date[f], SIZES[f]));
-  const start = assemble(parts.slice(0, slot), literals).length;
-  return {
-    text: assemble(parts, literals),
-    start,
-    end: start + parts[slot].length,
-  };
-}
-
 function padStart(num: number, digits: number) {
-  return String(num).slice(-digits).padStart(digits, "0");
+  return String(num).padStart(digits, "0");
 }

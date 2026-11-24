@@ -59,13 +59,31 @@ describe("evo-date-range-input", () => {
     expect((end as HTMLInputElement).value).toBe("12/15/2024");
   });
 
-  it("focuses the nearer date when the box around them is clicked", async () => {
+  it("focuses the nearer date when the box around them is pressed", async () => {
     const [start, end] = component.getAllByRole("textbox");
     const box = start.closest(".textbox") as HTMLElement;
-    const { width, height } = box.getBoundingClientRect();
-    await userEvent.click(box, { position: { x: width - 60, y: height / 2 } });
-    expect(document.activeElement).toBe(end);
-    await userEvent.click(box, { position: { x: 4, y: height / 2 } });
+    // Presses just outside each date, on the side away from the other one.
+    const pressBeside = async (field: HTMLElement, other: HTMLElement) => {
+      const { left, right } = field.getBoundingClientRect();
+      const before = left < other.getBoundingClientRect().left;
+      await fireEvent.mouseDown(box, {
+        clientX: before ? left - 4 : right + 4,
+      });
+      return document.activeElement;
+    };
+    expect(await pressBeside(end, start)).toBe(end);
+    expect(await pressBeside(start, end)).toBe(start);
+
+    box.closest(".date-textbox")!.setAttribute("dir", "rtl");
+    expect(await pressBeside(end, start)).toBe(end);
+    expect(await pressBeside(start, end)).toBe(start);
+  });
+
+  it("stays on the start date when an edit there isn't typing", async () => {
+    component = await render(Default, { locale: "en-US" });
+    const [start] = component.getAllByRole("textbox");
+    await userEvent.click(start);
+    await fireEvent.input(start, { target: { value: "12/08/2024" } });
     expect(document.activeElement).toBe(start);
   });
 
@@ -73,7 +91,7 @@ describe("evo-date-range-input", () => {
     const [start, end] = component.getAllByRole(
       "textbox",
     ) as HTMLInputElement[];
-    await fireEvent.input(start, { target: { value: "12082024" } });
+    await fireEvent.input(start, { target: { value: "12/08/2024" } });
     await fireEvent.change(start);
     expect(valueChange).toHaveBeenCalledWith({
       from: "2024-12-08",

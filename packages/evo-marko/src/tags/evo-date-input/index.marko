@@ -10,6 +10,8 @@ export interface CalendarInput extends Omit<
 > {}
 
 export interface Input extends Omit<Marko.HTML.Span, "value"> {
+  /** Set on the input, so a `<label for>` outside can name it. */
+  id?: string;
   value?: DateInputValue;
   valueChange?: (value: DateInputValue) => void;
   name?: string;
@@ -35,6 +37,7 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
 
 <const/{
   class: inputClass,
+  id,
   a11yOpenPopoverText = "open calendar",
   collapseOnSelect,
   name,
@@ -56,7 +59,8 @@ export interface Input extends Omit<Marko.HTML.Span, "value"> {
 <const/locale=localeDefault(input.locale)>
 <let/value:=input.value>
 <let/open:=input.open>
-<id/fieldId>
+<id/generatedId>
+<const/fieldId=id || generatedId>
 <id/popoverId>
 
 <let/visibleMonth=value ? (value.slice(0, 7) as MonthISO) : undefined>

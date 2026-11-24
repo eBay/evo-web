@@ -44,16 +44,22 @@ describe("evo-date-input", () => {
     );
   });
 
-  it("reads digits alone in the locale's order and ISO dates year-first", async () => {
+  it("reads ISO dates year-first and rejects parts with extra digits", async () => {
     const textbox = component.getByRole("textbox") as HTMLInputElement;
-    await fireEvent.input(textbox, { target: { value: "12082024" } });
-    await fireEvent.change(textbox);
-    expect(textbox.value).toBe("12/08/2024");
-
-    await userEvent.clear(textbox);
     await userEvent.fill(textbox, "2024-12-25");
     await userEvent.keyboard("{Enter}");
     await expect.poll(() => textbox.value).toBe("12/25/2024");
+
+    for (const text of [
+      "112/08/2024",
+      "12/108/2024",
+      "12/08/12024",
+      "12/08/202",
+    ]) {
+      await fireEvent.input(textbox, { target: { value: text } });
+      await fireEvent.change(textbox);
+      expect(textbox).toHaveAttribute("aria-invalid", "true");
+    }
   });
 
   it("adds separators as parts are completed", async () => {
@@ -103,11 +109,12 @@ describe("evo-date-input", () => {
     expect(textbox.value).toBe("1/08/024");
   });
 
-  it("focuses the date when the box around it is clicked", async () => {
+  it("focuses the date when the box around it is pressed", async () => {
     const textbox = component.getByRole("textbox");
-    const box = textbox.closest(".textbox") as HTMLElement;
-    const { width, height } = box.getBoundingClientRect();
-    await userEvent.click(box, { position: { x: width - 50, y: height / 2 } });
+    const { right } = textbox.getBoundingClientRect();
+    await fireEvent.mouseDown(textbox.closest(".textbox")!, {
+      clientX: right + 4,
+    });
     expect(document.activeElement).toBe(textbox);
   });
 
@@ -126,31 +133,6 @@ describe("evo-date-input", () => {
     await expect.poll(ghost).toBeUndefined();
   });
 
-  it("steps the part under the caret with Up and Down", async () => {
-    const textbox = component.getByRole("textbox") as HTMLInputElement;
-    await userEvent.type(textbox, "12/31/2024{Enter}");
-
-    textbox.setSelectionRange(4, 4);
-    await userEvent.keyboard("{ArrowUp}");
-    await expect.poll(() => textbox.value).toBe("12/01/2024");
-    expect([textbox.selectionStart, textbox.selectionEnd]).toEqual([3, 5]);
-
-    textbox.setSelectionRange(0, 0);
-    await userEvent.keyboard("{ArrowUp}");
-    await expect.poll(() => textbox.value).toBe("01/01/2024");
-
-    await userEvent.clear(textbox);
-    await userEvent.keyboard("{ArrowDown}");
-    const today = new Date();
-    expect(textbox.value).toBe(
-      today.toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "2-digit",
-        day: "2-digit",
-      }),
-    );
-  });
-
   it("flags a day that does not exist in the month", async () => {
     const textbox = component.getByRole("textbox") as HTMLInputElement;
     await fireEvent.input(textbox, { target: { value: "02/30/2024" } });
@@ -164,20 +146,27 @@ describe("evo-date-input", () => {
     );
   });
 
-  it("replaces typed text with a date picked from the calendar", async () => {
+  it("replaces typed text with a date picked from the calendar for good", async () => {
     const textbox = component.getByRole("textbox") as HTMLInputElement;
+    const pick = async (i: number) => {
+      await fireEvent.click(
+        component.getByRole("button", { name: "Open calendar" }),
+      );
+      const days = component.container.querySelectorAll<HTMLElement>(
+        ".date-textbox__popover td button:not([disabled])",
+      );
+      await fireEvent.click(days[i]);
+    };
+    await pick(0);
+    const first = textbox.value;
     await fireEvent.input(textbox, { target: { value: "99/99/9999" } });
     await fireEvent.change(textbox);
     expect(textbox).toHaveAttribute("aria-invalid", "true");
 
-    await fireEvent.click(
-      component.getByRole("button", { name: "Open calendar" }),
-    );
-    const [day] = component.container.querySelectorAll<HTMLElement>(
-      ".date-textbox__popover td button:not([disabled])",
-    );
-    await fireEvent.click(day);
+    await pick(1);
     expect(textbox.value).not.toBe("99/99/9999");
+    await pick(0);
+    expect(textbox.value).toBe(first);
     expect(textbox).not.toHaveAttribute("aria-invalid");
   });
 
@@ -231,11 +220,24 @@ describe("evo-date-input", () => {
     }
   });
 
-  it("disables the field and calendar trigger when disabled", async () => {
-    component = await render(Default, { locale: "en-US", disabled: true });
+  it("disables the field, calendar trigger and form value when disabled", async () => {
+    component = await render(Default, {
+      locale: "en-US",
+      disabled: true,
+      name: "purchase",
+      value: "2024-12-08",
+    });
     expect(component.getByRole("textbox")).toBeDisabled();
     expect(
       component.getByRole("button", { name: "Open calendar" }),
     ).toBeDisabled();
+    expect(
+      component.container.querySelector("input[type=hidden]"),
+    ).toBeDisabled();
+  });
+
+  it("puts a given id on the input so an outside label can name it", async () => {
+    component = await render(Default, { locale: "en-US", id: "purchase" });
+    expect(component.getByRole("textbox").id).toBe("purchase");
   });
 });

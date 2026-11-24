@@ -7,7 +7,6 @@ import {
   parse,
   placeholder,
   remainingFormat,
-  stepAt,
   typeDigit,
 } from "../../../common/dates/format";
 
@@ -54,6 +53,10 @@ export interface Input {
     { key: DateInputValue; text: string; invalid: boolean } | undefined
 )>
 <const/typed=draft?.key === value ? draft : undefined>
+<script>
+  // A date set from outside, as from the calendar, discards the typed text.
+  if (draft && draft.key !== value) draft = undefined;
+</script>
 <const/text=typed ? typed.text : value ? format(value, locale) : "">
 <const/commit(next: string) {
   const parsed = next.trim() ? parse(next, locale) : "";
@@ -141,32 +144,11 @@ export interface Input {
     }
     onInput(e, el) {
       if (
-        (e as InputEvent).inputType?.startsWith("insert") &&
+        (e as InputEvent).inputType === "insertText" &&
         el.selectionEnd === el.value.length &&
         isFilled(el.value, locale)
       ) {
         onFilled && onFilled();
-      }
-    }
-    onKeyDown(e, el) {
-      if (
-        (e.key === "ArrowUp" || e.key === "ArrowDown") &&
-        !e.altKey &&
-        !e.metaKey &&
-        !e.ctrlKey &&
-        !readonly
-      ) {
-        e.preventDefault();
-        const stepped = stepAt(
-          el.value,
-          el.selectionStart ?? 0,
-          e.key === "ArrowUp" ? 1 : -1,
-          locale,
-        );
-        el.select();
-        document.execCommand("insertText", false, stepped.text);
-        el.setSelectionRange(stepped.start, stepped.end);
-        commit(stepped.text);
       }
     }
   >
@@ -177,7 +159,7 @@ export interface Input {
   </if>
 </span>
 <if=name>
-  <input type="hidden" name=name value=value>
+  <input type="hidden" name=name value=value disabled=disabled>
 </if>
 
 <return=$input>
