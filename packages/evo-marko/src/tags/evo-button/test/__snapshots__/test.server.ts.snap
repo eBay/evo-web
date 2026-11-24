@@ -103,7 +103,7 @@ exports[`renders fake version 1`] = `
 
 exports[`renders large truncated button 1`] = `
 "<button
-  class="btn btn--large-truncated btn--large btn--secondary"
+  class="btn btn--large-truncated btn--secondary"
   type="button"
 >
   Button

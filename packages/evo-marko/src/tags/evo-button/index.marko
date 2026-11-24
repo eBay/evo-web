@@ -37,9 +37,10 @@ export interface Input
 }=input>
 
 <const/baseClass=href ? "fake-btn" : "btn">
-<const/sizeClass=size && baseClass + "--" + size>
+<const/largeTruncated=truncate && size === "large">
+<const/sizeClass=size && !largeTruncated && baseClass + "--" + size>
 <const/truncateClass=(
-  truncate && `${baseClass}--${size === "large" ? "large-" : ""}truncated`
+  truncate && `${baseClass}--${largeTruncated ? "large-" : ""}truncated`
 )>
 
 <define/Root|input: RootInput|>

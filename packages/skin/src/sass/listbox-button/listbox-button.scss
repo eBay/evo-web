@@ -62,13 +62,13 @@ button.expand-button[aria-expanded="true"] ~ div.listbox-button__listbox,
         [disabled],
         [aria-disabled="true"],
         [aria-invalid="true"]
-    ).btn--form:not(.btn--borderless),
+    ).btn--form,
 .listbox-button:not(.listbox-button--error)
     button:not(
         [disabled],
         [aria-disabled="true"],
         [aria-invalid="true"]
-    ).button--form:not(.button--borderless) {
+    ).button--form {
     @include token-mixins.border-color-token(
         listbox-button-border-color,
         color-border-medium
