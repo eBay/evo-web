@@ -1,4 +1,4 @@
 {
-  "pageTitle": "Signal Accessibility Guidelines — Building Inclusive Status Indicators",
-  "pageDescription": "Learn how to make signal components fully accessible with proper ARIA labels, status roles, and visual indicators. Follow these guidelines to ensure connection and signal status is conveyed to all users."
+  "pageTitle": "Signal Accessibility Guidelines — Building Inclusive Labels",
+  "pageDescription": "Learn how to make Signals accessible: the label carries the meaning, the Signal is not interactive, the leading icon is decorative, and every tone and emphasis meets 4.5:1 contrast."
 }

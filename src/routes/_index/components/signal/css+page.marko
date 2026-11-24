@@ -1,15 +1,99 @@
+import { urls } from "../../../../data";
 <div id="signal">
   <section-header/>
 
+  <h3 id="signal-default">Default signal</h3>
+  <p>
+    Use the <code>signal</code> class for a neutral signal at default emphasis.
+    You can also add <code>signal--neutral</code>.
+  </p>
+  <component-demo component="signal" variant="base"/>
+
+  <h3 id="signal-tones">Tones</h3>
+  <p>
+    Use a tone modifier to set the color and meaning:
+    <code>signal--information</code>, <code>signal--positive</code>,
+    <code>signal--warning</code> and <code>signal--attention</code>. Neutral is the
+    bare <code>signal</code> class or <code>signal--neutral</code>.
+  </p>
+  <component-demo component="signal" variant="tonesRow"/>
+
+  <h3 id="signal-emphasis">Emphasis</h3>
+  <p>
+    Default emphasis has no modifier. Add <code>signal--strong</code> for more
+    visual weight, only when the signal is rare on the page.
+  </p>
+  <component-demo component="signal" variant="strong"/>
+  <p>
+    Add <code>signal--subtle</code> for text only, with no fill, border or
+    padding.
+  </p>
+  <component-demo component="signal" variant="subtle"/>
+
+  <h3 id="signal-icon">Leading icon</h3>
+  <p>
+    A signal has no icon by default. To add one, place a 12px icon as the first
+    child. The icon is decorative, so set <code>aria-hidden="true"</code> on it.
+    The label carries the meaning.
+  </p>
+  <component-demo component="signal" variant="leadingIcon"/>
+
+  <h3 id="signal-truncation">Truncation</h3>
+  <p>
+    The label is a single line. When the container is too narrow, the label
+    truncates with an ellipsis. The full text stays in the DOM.
+  </p>
+  <component-demo component="signal" variant="truncated"/>
+
+  <h3 id="signal-v1-deprecated">Signal V1 (deprecated)</h3>
+  <section
+    class="section-notice section-notice--attention"
+    role="region"
+    aria-label="Attention"
+    aria-roledescription="Notice"
+  >
+    <div class="section-notice__header" id="section-notice-attention">
+      <svg class="icon icon--16" height="16" width="16" aria-label="Attention">
+        <icon-symbol name="attention-filled-16"/>
+      </svg>
+    </div>
+    <div class="section-notice__main">
+      <h3 class="section-notice__title">Deprecated</h3>
+      <p>
+        These classes are deprecated and will be removed in the next major
+        version of Skin. Use a V2 tone instead:
+      </p>
+      <ul>
+        <li>
+          <code>signal--trustworthy</code> becomes
+          <code>signal--information</code>
+        </li>
+        <li>
+          <code>signal--recent</code> becomes <code>signal--positive</code>
+        </li>
+        <li>
+          <code>signal--time-sensitive</code> becomes
+          <code>signal--attention</code>
+        </li>
+      </ul>
+      <p><code>signal--neutral</code> is not deprecated.</p>
+      <p>
+        The aliases keep today's colors, not semantic correctness. Review the
+        tone of each signal and use sentence case for the label. See the
+        <a href=`${urls.components}/signal#signal-v1`>overview</a> for the full
+        mapping.
+      </p>
+    </div>
+  </section>
+  <p>The aliases render the V2 look at default emphasis.</p>
   <component-demo component="signal" variant="trustWorthy"/>
   <component-demo component="signal" variant="recent"/>
   <component-demo component="signal" variant="timeSensitive"/>
-  <component-demo component="signal" variant="neutral"/>
 </div>
 export const metadata = {
   component: "signal",
   "ds-component": {
     name: "signal",
-    version: 1,
+    version: 2,
   },
 };

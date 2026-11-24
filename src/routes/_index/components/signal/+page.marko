@@ -1,12 +1,186 @@
+import { urls } from "../../../../data";
 <div id="signal-overview">
   <component-banner-img/>
 
   <p>
-    Signals are non-interactive, informational elements that provide data-backed recommendations to help customers make more informed
-    decisions.
+    A Signal is a small, non-interactive label that tells the user one fact
+    about the item or object it's attached to, such as "Great price", "Shipped"
+    or "Deal ending".
+  </p>
+
+  <h2 id="signal-usage">When to use</h2>
+  <ul>
+    <li>
+      To state one short fact that helps the user understand an item or decide:
+      a status, a favorable value, a time limit or background context.
+    </li>
+    <li>
+      On item tiles, and in cards, list rows, page headers and other places
+      where an object needs a compact label.
+    </li>
+  </ul>
+
+  <h2 id="signal-usage-not">When not to use</h2>
+  <ul>
+    <li>
+      For anything interactive or clickable. A Signal has no focus, hover or
+      pressed state.
+    </li>
+    <li>
+      For counts or presence indicators on another element. Use
+      <a href=`${urls.components}/badge`>badge</a> instead.
+    </li>
+    <li>For free-form or marketing copy. Use approved strings.</li>
+    <li>On many items at once. Overuse removes the meaning of a Signal.</li>
+  </ul>
+
+  <h2 id="signal-tones">Tones</h2>
+  <p>
+    A Signal has five tones. Each tone has one meaning everywhere it appears.
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Tone</th>
+        <th>Color</th>
+        <th>Meaning</th>
+        <th>Examples</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Neutral</strong></td>
+        <td>Gray</td>
+        <td>
+          This is context. A standard state or background, without judgment.
+        </td>
+        <td>"Draft", "Ended", "Small business"</td>
+      </tr>
+      <tr>
+        <td><strong>Information</strong></td>
+        <td>Blue</td>
+        <td>
+          This is worth knowing. Something new, an option, activity or assurance
+          that could help the user decide.
+        </td>
+        <td>"New listing", "Trending", "Authenticity guarantee"</td>
+      </tr>
+      <tr>
+        <td><strong>Positive</strong></td>
+        <td>Green</td>
+        <td>
+          This is favorable. The message says something is good: a benefit, a
+          good value or a successful outcome.
+        </td>
+        <td>"Great price", "Free shipping", "Shipped"</td>
+      </tr>
+      <tr>
+        <td><strong>Warning</strong></td>
+        <td>Yellow</td>
+        <td>
+          Be aware of this. An unresolved condition or requirement with a
+          possible consequence.
+        </td>
+        <td>"Pending", "Under review", "Ship by [date]"</td>
+      </tr>
+      <tr>
+        <td><strong>Attention</strong></td>
+        <td>Red</td>
+        <td>
+          Notice this now. An immediate consequence: limited time or
+          availability, a failure, or something blocked.
+        </td>
+        <td>"Last one", "Deal ending", "Shipment overdue"</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    Choose the tone from what the Signal means in its context, not from the text
+    alone. For example, "Sold" is positive for a seller but not for a buyer.
   </p>
   <p>
-    There are four signal types, each with its own corresponding modifier class:
-    trustworthy, recent, time-sensitive &amp; neutral.
+    To pick a tone, ask in this order: is there an immediate consequence
+    (attention), a possible one (warning), does the message say something is
+    favorable (positive), or could it change what the user does next
+    (information). Otherwise use neutral.
+  </p>
+
+  <h2 id="signal-emphasis">Emphasis</h2>
+  <ul>
+    <li>
+      <strong>Default:</strong> start here. Use it for most Signals, including
+      Signals that repeat across many items.
+    </li>
+    <li>
+      <strong>Strong:</strong> use only when the Signal is rare on the page.
+    </li>
+    <li>
+      <strong>Subtle:</strong> text only, with no fill, border or padding.
+    </li>
+  </ul>
+  <p>
+    Emphasis changes visual weight, never meaning. Don't change the tone to get
+    more emphasis. To make "Great price" stand out, keep it positive and use
+    strong.
+  </p>
+
+  <h2 id="signal-content">Content</h2>
+  <ul>
+    <li>Use approved Signal strings. New wording needs content review.</li>
+    <li>Keep labels to one to three words.</li>
+    <li>Use sentence case. Don't use all caps.</li>
+    <li>
+      The label stays on a single line and truncates with an ellipsis instead of
+      wrapping.
+    </li>
+  </ul>
+
+  <h2 id="signal-v1">Signal V1 (deprecated)</h2>
+  <p>
+    These Signal V1 classes are deprecated aliases. They render the V2 look with
+    the mapped tone at default emphasis, and are removed in the next major
+    release of Skin.
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>V1 class</th>
+        <th>V2 tone</th>
+        <th>V2 emphasis</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>signal--trustworthy</code></td>
+        <td>Information</td>
+        <td>Default</td>
+      </tr>
+      <tr>
+        <td><code>signal--recent</code></td>
+        <td>Positive</td>
+        <td>Default</td>
+      </tr>
+      <tr>
+        <td><code>signal--time-sensitive</code></td>
+        <td>Attention</td>
+        <td>Default</td>
+      </tr>
+      <tr>
+        <td><code>signal--neutral</code></td>
+        <td>Neutral</td>
+        <td>Default</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    <strong>The mapping keeps today's colors, not semantic correctness.</strong>
+    Domain teams must review their Signals and correct the tone and emphasis.
+    For example, "New listing" was <code>recent</code> (positive) but should be
+    information.
+  </p>
+  <p>
+    Move migrated labels from uppercase to sentence case. See the
+    <a href=`${urls.components}/signal/css#signal-v1-deprecated`>CSS tab</a> for
+    the class replacements.
   </p>
 </div>
