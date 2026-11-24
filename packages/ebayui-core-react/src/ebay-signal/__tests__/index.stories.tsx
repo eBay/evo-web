@@ -65,8 +65,8 @@ or import styles using SCSS/CSS
             control: { type: "select" },
         },
         icon: {
-            description: "Shows a sample `promotion-12` icon before the label",
-            control: { type: "boolean" },
+            description: "Optional leading 12px icon, rendered before the label. See the WithIcon story",
+            control: false,
         },
         status: {
             description:
@@ -77,10 +77,16 @@ or import styles using SCSS/CSS
     },
 };
 
-export const DefaultCase = ({ icon, ...args }) => (
+export const DefaultCase = (args) => (
     <>
-        <EbaySignal {...args} icon={icon ? <EbayIconPromotion12 /> : undefined}>
-            Default
+        <EbaySignal {...args}>Default</EbaySignal>
+    </>
+);
+
+export const WithIcon = (args) => (
+    <>
+        <EbaySignal {...args} icon={<EbayIconPromotion12 />}>
+            With icon
         </EbaySignal>
     </>
 );

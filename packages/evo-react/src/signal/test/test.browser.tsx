@@ -3,7 +3,7 @@ import { describe, expect, it, vi } from "vitest";
 import { render } from "vitest-browser-react";
 import { EvoSignal } from "../signal";
 import { EvoIconPromotion12 } from "../../icon/icons/promotion-12";
-import type { SignalStatus } from "../types";
+import type { SignalTone } from "../types";
 
 describe("evo-signal", () => {
   it("renders visible text with the neutral style by default", async () => {
@@ -15,18 +15,21 @@ describe("evo-signal", () => {
     await expect.element(signal).not.toHaveAttribute("tabindex");
   });
 
-  it.each<SignalStatus>(["trustworthy", "recent", "time-sensitive"])(
-    "applies the %s status class",
-    async (status) => {
-      const screen = await render(
-        <EvoSignal status={status}>Listing signal</EvoSignal>,
-      );
+  it.each<SignalTone>([
+    "neutral",
+    "information",
+    "positive",
+    "warning",
+    "attention",
+  ])("applies the %s tone class", async (tone) => {
+    const screen = await render(
+      <EvoSignal tone={tone}>Listing signal</EvoSignal>,
+    );
 
-      await expect
-        .element(screen.getByText("Listing signal"))
-        .toHaveClass(`signal--${status}`);
-    },
-  );
+    expect(screen.getByText("Listing signal").element().className).toBe(
+      `signal signal--${tone}`,
+    );
+  });
 
   it("passes native span props, events, and ref through", async () => {
     const ref = createRef<HTMLSpanElement>();
@@ -51,31 +54,11 @@ describe("evo-signal", () => {
     expect(onClick).toHaveBeenCalledTimes(1);
   });
 
-  it("keeps the status-only class output", async () => {
-    const screen = await render(<EvoSignal status="recent">Recent</EvoSignal>);
-
-    expect(screen.getByText("Recent").element().className).toBe(
-      "signal signal--recent",
-    );
-  });
-
   it("sets the tone class", async () => {
     const screen = await render(<EvoSignal tone="positive">Tone</EvoSignal>);
 
     expect(screen.getByText("Tone").element().className).toBe(
       "signal signal--positive",
-    );
-  });
-
-  it("lets tone override status", async () => {
-    const screen = await render(
-      <EvoSignal status="recent" tone="warning">
-        Override
-      </EvoSignal>,
-    );
-
-    expect(screen.getByText("Override").element().className).toBe(
-      "signal signal--warning",
     );
   });
 
@@ -99,15 +82,15 @@ describe("evo-signal", () => {
     );
   });
 
-  it("combines emphasis with status and a custom class", async () => {
+  it("combines emphasis with tone and a custom class", async () => {
     const screen = await render(
-      <EvoSignal status="trustworthy" emphasis="strong" className="custom">
+      <EvoSignal tone="information" emphasis="strong" className="custom">
         Combined
       </EvoSignal>,
     );
 
     expect(screen.getByText("Combined").element().className).toBe(
-      "signal signal--trustworthy signal--strong custom",
+      "signal signal--information signal--strong custom",
     );
   });
 

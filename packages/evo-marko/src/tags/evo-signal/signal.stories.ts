@@ -19,19 +19,12 @@ export default {
   },
 
   argTypes: {
-    status: {
-      type: "string",
-      options: ["neutral", "trustworthy", "recent", "time-sensitive"],
-      control: "radio",
-      description:
-        "Deprecated: use `tone`. trustworthy → information, recent → positive, time-sensitive → attention, neutral → neutral",
-      table: { defaultValue: { summary: "neutral" } },
-    },
     tone: {
       type: "string",
       options: ["neutral", "information", "positive", "warning", "attention"],
       control: "select",
-      description: "Color tone of the signal. Takes precedence over `status`",
+      description: "Color tone of the signal",
+      table: { defaultValue: { summary: "neutral" } },
     },
     emphasis: {
       type: "string",

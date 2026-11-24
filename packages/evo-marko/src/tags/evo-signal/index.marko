@@ -1,16 +1,11 @@
 export interface Input extends Marko.HTML.Span {
-  /**
-   * @deprecated Use `tone`. Maps: trustworthy → information, recent → positive, time-sensitive → attention, neutral → neutral.
-   */
-  status?: "trustworthy" | "recent" | "time-sensitive" | "neutral";
   tone?: "neutral" | "information" | "positive" | "warning" | "attention";
   emphasis?: "default" | "strong" | "subtle";
   icon?: Marko.AttrTag<{ content?: Marko.Body }>;
 }
 <const/{
   class: inputClass,
-  status = "neutral",
-  tone,
+  tone = "neutral",
   emphasis = "default",
   icon,
   content,
@@ -22,7 +17,7 @@ export interface Input extends Marko.HTML.Span {
   class=[
     inputClass,
     "signal",
-    `signal--${tone || status}`,
+    `signal--${tone}`,
     emphasis !== "default" && `signal--${emphasis}`,
   ]
 >

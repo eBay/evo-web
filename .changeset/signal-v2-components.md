@@ -1,8 +1,6 @@
 ---
 "@ebay/ebayui-core": minor
 "@ebay/ui-core-react": minor
-"@evo-web/marko": minor
-"@evo-web/react": minor
 ---
 
 feat(signal): add Signal V2 inputs

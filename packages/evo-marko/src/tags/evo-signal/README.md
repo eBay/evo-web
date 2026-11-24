@@ -19,11 +19,10 @@
 
 ## Attributes
 
-| Name       | Type                                                                   | Description                                                                                                             |
-| ---------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| `tone`     | `"neutral" \| "information" \| "positive" \| "warning" \| "attention"` | Color tone. Takes precedence over `status`                                                                              |
-| `emphasis` | `"default" \| "strong" \| "subtle"`                                    | Visual emphasis. Defaults to `"default"`                                                                                |
-| `status`   | `"neutral" \| "trustworthy" \| "recent" \| "time-sensitive"`           | **Deprecated**, use `tone`. trustworthy → information, recent → positive, time-sensitive → attention, neutral → neutral |
+| Name       | Type                                                                   | Description                              |
+| ---------- | ---------------------------------------------------------------------- | ---------------------------------------- |
+| `tone`     | `"neutral" \| "information" \| "positive" \| "warning" \| "attention"` | Color tone.Defaults to `"neutral"`       |
+| `emphasis` | `"default" \| "strong" \| "subtle"`                                    | Visual emphasis. Defaults to `"default"` |
 
 ## Attribute Tags
 

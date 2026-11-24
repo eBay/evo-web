@@ -6,7 +6,7 @@ import "@ebay/skin/signal.mjs";
  * Signals are non-interactive, informational elements that show data-backed
  * recommendations to help users make informed decisions.
  *
- * `EvoSignal` renders a `<span>` with a status color. Keep the visible text
+ * `EvoSignal` renders a `<span>` with a tone color. Keep the visible text
  * descriptive so it communicates the meaning without color alone. Native
  * `<span>` attributes and a React 19 `ref` pass through.
  *
@@ -15,13 +15,12 @@ import "@ebay/skin/signal.mjs";
  * ```tsx
  * import { EvoSignal } from "@evo-web/react/signal";
  *
- * <EvoSignal status="recent">Listed today</EvoSignal>
+ * <EvoSignal tone="positive">Listed today</EvoSignal>
  * ```
  *
  * ### Tone, emphasis and icon
  *
- * `status` is deprecated: use `tone` (trustworthy → information, recent →
- * positive, time-sensitive → attention). The icon renders before the label.
+ * Use `emphasis` for visual weight. The icon renders before the label.
  *
  * ```tsx
  * import { EvoIconPromotion12 } from "@evo-web/react/icons/promotion-12";
@@ -34,8 +33,7 @@ import "@ebay/skin/signal.mjs";
  * @summary Text signal for a data-backed recommendation.
  */
 export function EvoSignal({
-  status = "neutral",
-  tone,
+  tone = "neutral",
   emphasis = "default",
   icon,
   className,
@@ -47,7 +45,7 @@ export function EvoSignal({
       {...rest}
       className={classNames(
         "signal",
-        `signal--${tone ?? status}`,
+        `signal--${tone}`,
         emphasis !== "default" && `signal--${emphasis}`,
         className,
       )}
