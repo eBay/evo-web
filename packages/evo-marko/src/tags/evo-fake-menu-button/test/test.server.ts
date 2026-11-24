@@ -39,10 +39,6 @@ describe("evo-fake-menu-button SSR", () => {
     await snapshotHTML(IconText);
   });
 
-  it("renders without toggle icon", async () => {
-    await snapshotHTML(Default, { noToggleIcon: true });
-  });
-
   it("renders with a custom label", async () => {
     await snapshotHTML(CustomLabel);
   });

@@ -14,7 +14,6 @@ export interface Input extends Marko.HTML.Span {
    */
   transparent?: boolean;
   disabled?: boolean;
-  noToggleIcon?: boolean;
   a11yText?: string;
   label?: Marko.AttrTag<Marko.HTML.Span>;
   reverse?: boolean;
@@ -25,7 +24,6 @@ export interface Input extends Marko.HTML.Span {
 }
 const/{
   class: inputClass,
-  noToggleIcon,
   reverse,
   detachPopover,
   fixWidth,
@@ -48,11 +46,10 @@ const/{
 
 let/open:=input.open
 
-const/{ tagName, appearance, fieldTransparent, toggleIcon }=(() => {
+const/{ tagName, appearance, fieldTransparent }=(() => {
   let appearance;
   let tagName;
   let fieldTransparent;
-  let toggleIcon = false;
 
   if (variant === "icon") {
     tagName = IconButton;
@@ -62,7 +59,6 @@ const/{ tagName, appearance, fieldTransparent, toggleIcon }=(() => {
     fieldTransparent = inputTransparent;
   } else {
     tagName = Button;
-    toggleIcon = !noToggleIcon;
     appearance = inputTransparent ? "transparent" : inputPriority;
   }
 
@@ -70,7 +66,6 @@ const/{ tagName, appearance, fieldTransparent, toggleIcon }=(() => {
     tagName,
     appearance,
     fieldTransparent,
-    toggleIcon,
   };
 })()
 
@@ -113,7 +108,7 @@ span/$root
     else
       span
         ${input.content}
-      if=toggleIcon
+      if=variant !== "form"
         evo-icon-chevron-down-12
   evo-fake-menu/$fakeMenuEls
     ,style=expander.floatingStyles

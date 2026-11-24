@@ -48,10 +48,6 @@ describe("menu-button", () => {
     await snapshotHTML(IconText);
   });
 
-  it("renders without toggle icon", async () => {
-    await snapshotHTML(Default, { noToggleIcon: true });
-  });
-
   it("renders with disabled state", async () => {
     await snapshotHTML(Default, { disabled: true });
   });

@@ -21,7 +21,6 @@ export interface Input<Index extends number | string | (number | string)[]>
   transparent?: boolean;
   disabled?: boolean;
   split?: ButtonInput["split"];
-  noToggleIcon?: boolean;
   label?: Marko.AttrTag<Marko.HTML.Span>;
   footerButton?: Marko.AttrTag<ButtonInput>;
   reverse?: boolean;
@@ -30,7 +29,6 @@ export interface Input<Index extends number | string | (number | string)[]>
 }
 <const/{
   class: inputClass,
-  noToggleIcon: inputNoToggleIcon,
   reverse,
   detachPopover,
   fixWidth,
@@ -71,14 +69,12 @@ export interface Input<Index extends number | string | (number | string)[]>
   chipVariant,
   split,
   appearance,
-  toggleIcon,
   fieldTransparent,
   partiallyDisabled,
   ariaDisabled,
 }=(() => {
   let appearance;
   let split;
-  let toggleIcon = true;
   let tagName;
   let isSelected;
   let chipVariant;
@@ -98,13 +94,11 @@ export interface Input<Index extends number | string | (number | string)[]>
   } else if (variant === "form") {
     tagName = ButtonField;
     fieldTransparent = inputTransparent;
-    toggleIcon = false;
     partiallyDisabled = undefined;
     ariaDisabled = inputPartiallyDisabled && "true";
   } else {
     tagName = Button;
     split = inputSplit;
-    toggleIcon = !inputNoToggleIcon;
     appearance = inputTransparent ? "transparent" : inputPriority;
   }
 
@@ -113,7 +107,6 @@ export interface Input<Index extends number | string | (number | string)[]>
     split,
     isSelected,
     chipVariant,
-    toggleIcon,
     appearance,
     fieldTransparent,
     partiallyDisabled,
@@ -188,7 +181,7 @@ export interface Input<Index extends number | string | (number | string)[]>
       <span id=prefixId && labelId>
         <${input.content}/>
       </span>
-      <if=toggleIcon>
+      <if=variant !== "form">
         <evo-icon-chevron-down-12/>
       </if>
     </else>

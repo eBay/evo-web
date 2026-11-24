@@ -67,11 +67,6 @@ export default {
       description:
         "Will disable the entire dropdown (also disables the button trigger) if set to true",
     },
-    noToggleIcon: {
-      type: "boolean",
-      control: "boolean",
-      description: "Hides the chevron toggle icon.",
-    },
     a11yText: {
       type: "string",
       control: "text",

@@ -90,11 +90,6 @@ export default {
       control: "inline-radio",
       description: "Apply split button styles.",
     },
-    noToggleIcon: {
-      type: "boolean",
-      control: "boolean",
-      description: "Hides the chevron toggle icon.",
-    },
     label: {
       description: "The prefix label. Cannot be used in conjunction with text.",
       "@": {
