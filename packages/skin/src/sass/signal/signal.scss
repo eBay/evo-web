@@ -85,8 +85,9 @@
     padding: 0;
 }
 
-.signal > svg {
-    fill: currentColor;
+.signal > svg.icon {
+    margin-block-start: var(--spacing-25);
+    margin-block-start: calc((1lh - 12px) / 2);
     margin-inline-end: var(--spacing-50);
-    vertical-align: middle;
+    vertical-align: top;
 }

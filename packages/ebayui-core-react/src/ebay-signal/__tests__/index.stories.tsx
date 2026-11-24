@@ -37,7 +37,7 @@ or import styles using SCSS/CSS
 ### Basic
 
 \`\`\`jsx
-<EbaySignal tone="information">Top Rated</EbaySignal>
+<EbaySignal tone="information">Top rated</EbaySignal>
 \`\`\`
 
 ### Emphasis and icon

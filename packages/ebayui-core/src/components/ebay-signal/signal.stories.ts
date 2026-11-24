@@ -62,7 +62,7 @@ export default {
 };
 export const Standard = Template.bind({});
 Standard.args = {
-    renderBody: `Signal Text` as any,
+    renderBody: `Signal text` as any,
 };
 
 Standard.parameters = {
