@@ -1,4 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { userEvent } from "vitest/browser";
 import { composeStories } from "@storybook/marko";
 import { cleanup, fireEvent, render } from "@marko/testing-library";
 import * as stories from "../date-input.stories";
@@ -20,32 +21,20 @@ describe("evo-date-input", () => {
     });
   });
 
-  it("masks typed text into the locale format with independent parts", async () => {
+  it("leaves typed text alone and commits a parsed date on change", async () => {
     const textbox = component.getByRole("textbox") as HTMLInputElement;
+    await fireEvent.input(textbox, { target: { value: "12-8" } });
+    expect(textbox.value).toBe("12-8");
 
-    await fireEvent.input(textbox, { target: { value: "12" } });
-    expect(textbox.value).toBe("12/");
-    await fireEvent.input(textbox, { target: { value: "12" } });
-    expect(textbox.value).toBe("12");
-    await fireEvent.input(textbox, { target: { value: "12082024" } });
-    expect(textbox.value).toBe("12/08/2024");
-
-    for (const step of ["12/8/2024", "12//2024", "12/15/2024"]) {
-      await fireEvent.input(textbox, { target: { value: step } });
-      expect(textbox.value).toBe(step);
-    }
-  });
-
-  it("commits a parsed date on blur and flags unparseable text", async () => {
-    const textbox = component.getByRole("textbox") as HTMLInputElement;
-    await fireEvent.input(textbox, { target: { value: "12082024" } });
-    await fireEvent.blur(textbox);
+    await fireEvent.input(textbox, { target: { value: "12-8-24" } });
+    await fireEvent.change(textbox);
     expect(textbox.value).toBe("12/08/2024");
     expect(textbox).not.toHaveAttribute("aria-invalid");
     expect(onInvalidDate).not.toHaveBeenCalled();
 
     await fireEvent.input(textbox, { target: { value: "99/99/9999" } });
-    await fireEvent.blur(textbox);
+    await fireEvent.change(textbox);
+    expect(textbox.value).toBe("99/99/9999");
     expect(textbox).toHaveAttribute("aria-invalid", "true");
     expect(onInvalidDate).toHaveBeenCalledWith(
       expect.anything(),
@@ -55,10 +44,99 @@ describe("evo-date-input", () => {
     );
   });
 
+  it("reads ISO dates year-first and rejects parts with extra digits", async () => {
+    const textbox = component.getByRole("textbox") as HTMLInputElement;
+    await userEvent.fill(textbox, "2024-12-25");
+    await userEvent.keyboard("{Enter}");
+    await expect.poll(() => textbox.value).toBe("12/25/2024");
+
+    for (const text of [
+      "112/08/2024",
+      "12/108/2024",
+      "12/08/12024",
+      "12/08/202",
+    ]) {
+      await fireEvent.input(textbox, { target: { value: text } });
+      await fireEvent.change(textbox);
+      expect(textbox).toHaveAttribute("aria-invalid", "true");
+    }
+  });
+
+  it("adds separators as parts are completed", async () => {
+    const textbox = component.getByRole("textbox") as HTMLInputElement;
+    expect(textbox.inputMode).toBe("numeric");
+    await userEvent.type(textbox, "12");
+    expect(textbox.value).toBe("12/");
+    await userEvent.type(textbox, "/4");
+    expect(textbox.value).toBe("12/4/");
+    await userEvent.type(textbox, "2024");
+    expect(textbox.value).toBe("12/4/2024");
+
+    await userEvent.clear(textbox);
+    await userEvent.type(textbox, "9");
+    expect(textbox.value).toBe("9/");
+
+    await userEvent.clear(textbox);
+    await userEvent.type(textbox, "1/5/2024");
+    expect(textbox.value).toBe("1/5/2024");
+  });
+
+  it("deletes a separator at the end with the digit before it", async () => {
+    const textbox = component.getByRole("textbox") as HTMLInputElement;
+    await userEvent.type(textbox, "12");
+    expect(textbox.value).toBe("12/");
+    await userEvent.keyboard("{Backspace}");
+    expect(textbox.value).toBe("1");
+    await userEvent.type(textbox, "1");
+    expect(textbox.value).toBe("11/");
+  });
+
+  it("skips over separators inside the date with Backspace and Delete", async () => {
+    const textbox = component.getByRole("textbox") as HTMLInputElement;
+    await userEvent.type(textbox, "12/08/2024");
+    textbox.setSelectionRange(3, 3);
+    await userEvent.keyboard("{Backspace}");
+    expect(textbox.value).toBe("12/08/2024");
+    expect(textbox.selectionStart).toBe(2);
+    await userEvent.keyboard("{Backspace}");
+    expect(textbox.value).toBe("1/08/2024");
+
+    textbox.setSelectionRange(4, 4);
+    await userEvent.keyboard("{Delete}");
+    expect(textbox.value).toBe("1/08/2024");
+    expect(textbox.selectionStart).toBe(5);
+    await userEvent.keyboard("{Delete}");
+    expect(textbox.value).toBe("1/08/024");
+  });
+
+  it("focuses the date when the box around it is pressed", async () => {
+    const textbox = component.getByRole("textbox");
+    const { right } = textbox.getBoundingClientRect();
+    await fireEvent.mouseDown(textbox.closest(".textbox")!, {
+      clientX: right + 4,
+    });
+    expect(document.activeElement).toBe(textbox);
+  });
+
+  it("shows the rest of the format while typing", async () => {
+    const textbox = component.getByRole("textbox") as HTMLInputElement;
+    const ghost = () =>
+      component.container.querySelector(".date-textbox__ghost")?.textContent;
+    await userEvent.type(textbox, "120");
+    await expect.poll(ghost).toBe("12/0D/YYYY");
+    await userEvent.type(textbox, "8/2024");
+    await expect.poll(ghost).toBeUndefined();
+
+    await userEvent.clear(textbox);
+    await userEvent.type(textbox, "12");
+    await userEvent.tab();
+    await expect.poll(ghost).toBeUndefined();
+  });
+
   it("flags a day that does not exist in the month", async () => {
     const textbox = component.getByRole("textbox") as HTMLInputElement;
     await fireEvent.input(textbox, { target: { value: "02/30/2024" } });
-    await fireEvent.blur(textbox);
+    await fireEvent.change(textbox);
     expect(textbox).toHaveAttribute("aria-invalid", "true");
     expect(onInvalidDate).toHaveBeenCalledWith(
       expect.anything(),
@@ -66,6 +144,30 @@ describe("evo-date-input", () => {
       "02/30/2024",
       0,
     );
+  });
+
+  it("replaces typed text with a date picked from the calendar for good", async () => {
+    const textbox = component.getByRole("textbox") as HTMLInputElement;
+    const pick = async (i: number) => {
+      await fireEvent.click(
+        component.getByRole("button", { name: "Open calendar" }),
+      );
+      const days = component.container.querySelectorAll<HTMLElement>(
+        ".date-textbox__popover td button:not([disabled])",
+      );
+      await fireEvent.click(days[i]);
+    };
+    await pick(0);
+    const first = textbox.value;
+    await fireEvent.input(textbox, { target: { value: "99/99/9999" } });
+    await fireEvent.change(textbox);
+    expect(textbox).toHaveAttribute("aria-invalid", "true");
+
+    await pick(1);
+    expect(textbox.value).not.toBe("99/99/9999");
+    await pick(0);
+    expect(textbox.value).toBe(first);
+    expect(textbox).not.toHaveAttribute("aria-invalid");
   });
 
   it("opens and closes the calendar popover", async () => {
@@ -118,18 +220,89 @@ describe("evo-date-input", () => {
     }
   });
 
-  it("disables the field and popover when disabled", async () => {
-    component = await render(Default, { locale: "en-US", disabled: true });
+  it("disables the field, calendar trigger and form value when disabled", async () => {
+    component = await render(Default, {
+      locale: "en-US",
+      disabled: true,
+      name: "purchase",
+      value: "2024-12-08",
+    });
     expect(component.getByRole("textbox")).toBeDisabled();
-    await fireEvent.click(
-      component.getByRole("button", { name: "Open calendar" }),
-    );
     expect(
-      (
-        component.container.querySelector(
-          ".date-textbox__popover",
-        ) as HTMLElement
-      ).hidden,
-    ).toBe(true);
+      component.getByRole("button", { name: "Open calendar" }),
+    ).toBeDisabled();
+    expect(
+      component.container.querySelector("input[type=hidden]"),
+    ).toBeDisabled();
+  });
+
+  describe("in a form", () => {
+    let form: HTMLFormElement;
+    let textbox: HTMLInputElement;
+    const submitted = vi.fn();
+
+    beforeEach(async () => {
+      submitted.mockReset();
+      component = await render(Default, {
+        locale: "en-US",
+        name: "purchase",
+        value: "2024-12-08",
+      });
+      form = document.createElement("form");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        submitted(Object.fromEntries(new FormData(form)));
+      });
+      document.body.append(form);
+      form.append(component.container.querySelector(".date-textbox")!);
+      textbox = form.querySelector(".date-textbox__input")!;
+    });
+
+    afterEach(() => form.remove());
+
+    it("submits the ISO date on Enter like one of the form's fields", async () => {
+      expect(textbox.form).toBeNull();
+      await userEvent.fill(textbox, "12/25/2024");
+      await userEvent.keyboard("{Enter}");
+      expect(submitted).toHaveBeenCalledWith({ purchase: "2024-12-25" });
+    });
+
+    it("clicks the form's default button on Enter", async () => {
+      const button = document.createElement("button");
+      const clicked = vi.fn();
+      button.addEventListener("click", clicked);
+      const other = document.createElement("input");
+      form.append(other, button);
+      await userEvent.click(textbox);
+      await userEvent.keyboard("{Enter}");
+      expect(clicked).toHaveBeenCalledOnce();
+      expect(submitted).toHaveBeenCalledOnce();
+    });
+
+    it("doesn't submit invalid text or past another field without a button", async () => {
+      await userEvent.fill(textbox, "99/99/9999");
+      await userEvent.keyboard("{Enter}");
+      expect(submitted).not.toHaveBeenCalled();
+
+      form.append(document.createElement("input"));
+      await userEvent.fill(textbox, "12/25/2024");
+      await userEvent.keyboard("{Enter}");
+      expect(submitted).not.toHaveBeenCalled();
+    });
+
+    it("goes back to its first date when the form resets", async () => {
+      await userEvent.fill(textbox, "12/25/2024");
+      await userEvent.keyboard("{Enter}");
+      form.reset();
+      await expect.poll(() => textbox.value).toBe("12/08/2024");
+      expect(Object.fromEntries(new FormData(form))).toEqual({
+        purchase: "2024-12-08",
+      });
+    });
+  });
+
+  it("puts a given id on the input so an outside label can name it", async () => {
+    component = await render(Default, { locale: "en-US", id: "purchase" });
+    expect(component.getByRole("textbox").id).toBe("purchase");
   });
 });

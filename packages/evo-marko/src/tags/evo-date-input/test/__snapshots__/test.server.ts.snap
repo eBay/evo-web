@@ -8,7 +8,7 @@ exports[`evo-date-input SSR > renders default 1`] = `
     class="floating-label"
   >
     <label
-      class="floating-label__label floating-label__label--animate floating-label__label--inline"
+      class="floating-label__label floating-label__label--animate floating-label__label--focus"
       for="GENERATED-0"
     >
       Purchase date
@@ -16,11 +16,28 @@ exports[`evo-date-input SSR > renders default 1`] = `
     <span
       class="textbox"
     >
-      <input
-        class="textbox__control"
-        id="GENERATED-0"
-        value=""
-      />
+      <span
+        class="textbox__control date-textbox__value"
+      >
+        <span
+          class="date-textbox__field"
+          data-size="MM/DD/YYYY"
+        >
+          <input
+            autocomplete="off"
+            class="date-textbox__input"
+            form="MARKO-ID-0"
+            id="GENERATED-0"
+            inputmode="numeric"
+            placeholder="MM/DD/YYYY"
+            value=""
+          />
+        </span>
+        <input
+          type="hidden"
+          value=""
+        />
+      </span>
       <button
         aria-controls="GENERATED-2"
         aria-expanded="false"
@@ -449,7 +466,7 @@ exports[`evo-date-input SSR > renders readonly with a disabled calendar trigger 
     class="floating-label"
   >
     <label
-      class="floating-label__label floating-label__label--animate floating-label__label--inline"
+      class="floating-label__label floating-label__label--animate floating-label__label--focus"
       for="GENERATED-0"
     >
       Purchase date
@@ -457,12 +474,29 @@ exports[`evo-date-input SSR > renders readonly with a disabled calendar trigger 
     <span
       class="textbox textbox--readonly"
     >
-      <input
-        class="textbox__control"
-        id="GENERATED-0"
-        readonly=""
-        value=""
-      />
+      <span
+        class="textbox__control date-textbox__value"
+      >
+        <span
+          class="date-textbox__field"
+          data-size="MM/DD/YYYY"
+        >
+          <input
+            autocomplete="off"
+            class="date-textbox__input"
+            form="MARKO-ID-0"
+            id="GENERATED-0"
+            inputmode="numeric"
+            placeholder="MM/DD/YYYY"
+            readonly=""
+            value=""
+          />
+        </span>
+        <input
+          type="hidden"
+          value=""
+        />
+      </span>
       <button
         aria-controls="GENERATED-2"
         aria-expanded="false"
@@ -900,12 +934,28 @@ exports[`evo-date-input SSR > renders with a value 1`] = `
     <span
       class="textbox"
     >
-      <input
-        class="textbox__control"
-        id="GENERATED-0"
-        placeholder="MM/DD/YYYY"
-        value="05/06/2024"
-      />
+      <span
+        class="textbox__control date-textbox__value"
+      >
+        <span
+          class="date-textbox__field"
+          data-size="05/06/2024"
+        >
+          <input
+            autocomplete="off"
+            class="date-textbox__input"
+            form="MARKO-ID-0"
+            id="GENERATED-0"
+            inputmode="numeric"
+            placeholder="MM/DD/YYYY"
+            value="05/06/2024"
+          />
+        </span>
+        <input
+          type="hidden"
+          value="2024-05-06"
+        />
+      </span>
       <button
         aria-controls="GENERATED-2"
         aria-expanded="false"

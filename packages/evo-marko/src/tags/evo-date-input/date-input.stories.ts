@@ -32,11 +32,21 @@ export default {
       control: "boolean",
       description: "Whether the calendar popover is showing",
     },
+    floatingLabel: {
+      type: "string",
+      control: "text",
+      description: "Label shown above the date, which also names the field",
+    },
+    name: {
+      type: "string",
+      control: "text",
+      description: "Form field name for the `YYYY-MM-DD` value",
+    },
     locale: {
       type: "string",
       control: "text",
       description:
-        "BCP 47 language tag used to parse, format, and label dates. Defaults to `navigator.language`.",
+        "BCP 47 language tag that sets the order and separators of the date's parts and the language of the format hint. Defaults to `navigator.language`.",
     },
     a11yOpenPopoverText: {
       type: { name: "string", required: true },
@@ -74,11 +84,7 @@ export default {
     },
     onInvalidDate: {
       description:
-        "Called with `(event, target, value, index)` when the field blurs with text that cannot be parsed as a date",
-    },
-    input: {
-      description: "Attributes forwarded to the internal `evo-input` field",
-      "@": {},
+        "Called with `(event, target, value, index)` when the field commits text (on blur or Enter) that cannot be parsed as a date",
     },
     calendar: {
       description: "Attributes forwarded to the internal `evo-calendar`",
