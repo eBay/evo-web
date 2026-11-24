@@ -1,6 +1,7 @@
 import IconButton from "<evo-icon-button>";
 import FilterChip from "<evo-filter-chip>";
 import Button, { type Input as ButtonInput } from "<evo-button>";
+import ButtonField from "<evo-button-field>";
 import { type Input as MenuInput } from "<evo-menu>";
 export interface Input<Index extends number | string | (number | string)[]>
   extends
@@ -11,14 +12,15 @@ export interface Input<Index extends number | string | (number | string)[]>
   collapseOnSelect?: boolean;
   prefixId?: string;
   variant?: "form" | "button" | "icon" | "filter";
-  borderless?: boolean;
   partiallyDisabled?: ButtonInput["partiallyDisabled"];
-  priority?: "primary" | "secondary" | "tertiary" | "delete" | "none";
+  priority?: "primary" | "secondary" | "tertiary";
   size?: ButtonInput["size"];
+  /**
+   * Removes the button's border, for the `button`, `form` and `icon` variants
+   */
   transparent?: boolean;
   disabled?: boolean;
   split?: ButtonInput["split"];
-  noToggleIcon?: boolean;
   label?: Marko.AttrTag<Marko.HTML.Span>;
   footerButton?: Marko.AttrTag<ButtonInput>;
   reverse?: boolean;
@@ -27,13 +29,11 @@ export interface Input<Index extends number | string | (number | string)[]>
 }
 <const/{
   class: inputClass,
-  noToggleIcon: inputNoToggleIcon,
   reverse,
   detachPopover,
   fixWidth,
-  borderless,
   size,
-  partiallyDisabled,
+  partiallyDisabled: inputPartiallyDisabled,
   footerButton,
   priority: inputPriority,
   disabled,
@@ -65,41 +65,52 @@ export interface Input<Index extends number | string | (number | string)[]>
 }>
 <const/{
   tagName,
-  transparent,
   isSelected,
+  chipVariant,
   split,
-  priority,
-  noToggleIcon,
+  appearance,
+  fieldTransparent,
+  partiallyDisabled,
+  ariaDisabled,
 }=(() => {
-  let priority = null;
+  let appearance;
   let split;
-  let noToggleIcon;
-  let transparent;
   let tagName;
   let isSelected;
+  let chipVariant;
+  let fieldTransparent;
+  let partiallyDisabled = inputPartiallyDisabled;
+  let ariaDisabled;
 
   if (variant === "icon") {
     tagName = IconButton;
-    transparent = inputTransparent;
+    if (inputTransparent) appearance = "transparent";
   } else if (variant === "filter") {
     tagName = FilterChip;
+    chipVariant = variant;
     isSelected = Array.isArray(selected)
       ? selected.length > 0
       : selected != null && selected !== -1;
+  } else if (variant === "form") {
+    tagName = ButtonField;
+    fieldTransparent = inputTransparent;
+    partiallyDisabled = undefined;
+    ariaDisabled = inputPartiallyDisabled && "true";
   } else {
     tagName = Button;
     split = inputSplit;
-    noToggleIcon = inputNoToggleIcon;
-    priority = inputPriority;
+    appearance = inputTransparent ? "transparent" : inputPriority;
   }
 
   return {
     tagName,
     split,
     isSelected,
-    noToggleIcon,
-    transparent,
-    priority,
+    chipVariant,
+    appearance,
+    fieldTransparent,
+    partiallyDisabled,
+    ariaDisabled,
   };
 })()>
 
@@ -141,12 +152,11 @@ export interface Input<Index extends number | string | (number | string)[]>
   <${tagName as any}
     class=[`menu-button__button`]
     size=size
-    priority=priority as ButtonInput["priority"]
-    borderless=borderless
-    variant=variant as any
+    appearance=appearance
+    transparent=fieldTransparent
+    variant=chipVariant
     aria-haspopup="true"
     selected=isSelected
-    transparent=transparent
     aria-expanded=expander.ariaExpanded
     aria-labelledby=(
       prefixId && (variant === "icon" ? prefixId : `${prefixId} ${labelId}`)
@@ -154,7 +164,9 @@ export interface Input<Index extends number | string | (number | string)[]>
     split=split
     disabled=disabled
     partiallyDisabled=partiallyDisabled
+    aria-disabled=ariaDisabled
     onClick() {
+      if (inputPartiallyDisabled) return;
       focusOnOpen = true;
       open = !open;
     }
@@ -169,7 +181,7 @@ export interface Input<Index extends number | string | (number | string)[]>
       <span id=prefixId && labelId>
         <${input.content}/>
       </span>
-      <if=!noToggleIcon>
+      <if=variant !== "form">
         <evo-icon-chevron-down-12/>
       </if>
     </else>

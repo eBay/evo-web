@@ -23,8 +23,12 @@ describe("evo-fake-menu-button SSR", () => {
     await snapshotHTML(Default, { fixWidth: true });
   });
 
-  it("renders with borderless=true", async () => {
-    await snapshotHTML(Default, { borderless: true });
+  it("renders with transparent=true", async () => {
+    await snapshotHTML(Default, { transparent: true });
+  });
+
+  it("renders transparent form variant", async () => {
+    await snapshotHTML(Default, { variant: "form", transparent: true });
   });
 
   it("renders with size=small", async () => {
@@ -33,10 +37,6 @@ describe("evo-fake-menu-button SSR", () => {
 
   it("renders with icon and text", async () => {
     await snapshotHTML(IconText);
-  });
-
-  it("renders without toggle icon", async () => {
-    await snapshotHTML(Default, { noToggleIcon: true });
   });
 
   it("renders with a custom label", async () => {

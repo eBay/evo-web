@@ -56,32 +56,7 @@ exports[`evo-icon-button > renders badged icon variant 1`] = `
 </button>"
 `;
 
-exports[`evo-icon-button > renders button with priority=delete 1`] = `
-"<button
-  aria-label="Menu"
-  class="icon-btn"
-  type="button"
->
-  <svg
-    aria-hidden="true"
-    class="icon icon--24"
-  >
-    <symbol
-      id="GENERATED-0"
-      viewBox="0 0 24 24"
-    >
-      <path
-        d="M3 5h18a1 1 0 0 0 0-2H3a1 1 0 0 0 0 2Zm18 6H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2ZM3 19h18a1 1 0 0 1 0 2H3a1 1 0 0 1 0-2Z"
-      />
-    </symbol>
-    <use
-      href="#icon-menu-24"
-    />
-  </svg>
-</button>"
-`;
-
-exports[`evo-icon-button > renders button with priority=primary 1`] = `
+exports[`evo-icon-button > renders button with appearance=primary 1`] = `
 "<button
   aria-label="Menu"
   class="icon-btn icon-btn--primary"
@@ -106,10 +81,60 @@ exports[`evo-icon-button > renders button with priority=primary 1`] = `
 </button>"
 `;
 
-exports[`evo-icon-button > renders button with priority=secondary 1`] = `
+exports[`evo-icon-button > renders button with appearance=secondary 1`] = `
 "<button
   aria-label="Menu"
   class="icon-btn icon-btn--secondary"
+  type="button"
+>
+  <svg
+    aria-hidden="true"
+    class="icon icon--24"
+  >
+    <symbol
+      id="GENERATED-0"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M3 5h18a1 1 0 0 0 0-2H3a1 1 0 0 0 0 2Zm18 6H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2ZM3 19h18a1 1 0 0 1 0 2H3a1 1 0 0 1 0-2Z"
+      />
+    </symbol>
+    <use
+      href="#icon-menu-24"
+    />
+  </svg>
+</button>"
+`;
+
+exports[`evo-icon-button > renders button with appearance=tertiary 1`] = `
+"<button
+  aria-label="Menu"
+  class="icon-btn icon-btn--tertiary"
+  type="button"
+>
+  <svg
+    aria-hidden="true"
+    class="icon icon--24"
+  >
+    <symbol
+      id="GENERATED-0"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M3 5h18a1 1 0 0 0 0-2H3a1 1 0 0 0 0 2Zm18 6H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2ZM3 19h18a1 1 0 0 1 0 2H3a1 1 0 0 1 0-2Z"
+      />
+    </symbol>
+    <use
+      href="#icon-menu-24"
+    />
+  </svg>
+</button>"
+`;
+
+exports[`evo-icon-button > renders button with appearance=transparent 1`] = `
+"<button
+  aria-label="Menu"
+  class="icon-btn icon-btn--transparent"
   type="button"
 >
   <svg

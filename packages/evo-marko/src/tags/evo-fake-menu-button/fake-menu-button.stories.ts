@@ -43,14 +43,9 @@ export default {
       table: { defaultValue: { summary: "button" } },
       description: "Controls the button style",
     },
-    borderless: {
-      type: "boolean",
-      control: "boolean",
-      description: 'Whether button has borders. Forces `variant="button"`',
-    },
     priority: {
       type: "string",
-      options: ["none (default)", "primary", "secondary", "delete", "tertiary"],
+      options: ["primary", "secondary", "tertiary"],
       control: "select",
       description: 'Button priority, only used when `variant="button"`',
     },
@@ -63,18 +58,14 @@ export default {
     transparent: {
       type: "boolean",
       control: "boolean",
-      description: "Removes the background color of the button",
+      description:
+        "Removes the button's border, for the `button`, `form` and `icon` variants",
     },
     disabled: {
       type: "boolean",
       control: "boolean",
       description:
         "Will disable the entire dropdown (also disables the button trigger) if set to true",
-    },
-    noToggleIcon: {
-      type: "boolean",
-      control: "boolean",
-      description: "Hides the chevron toggle icon.",
     },
     a11yText: {
       type: "string",

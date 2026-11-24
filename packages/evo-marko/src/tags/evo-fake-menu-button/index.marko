@@ -1,17 +1,19 @@
 import IconButton from "<evo-icon-button>";
 import Button, { type Input as ButtonInput } from "<evo-button>";
+import ButtonField from "<evo-button-field>";
 import { type Item as FakeMenuItem } from "<evo-fake-menu>";
 export interface Input extends Marko.HTML.Span {
   open?: boolean;
   openChange?: (open: boolean) => void;
   collapseOnSelect?: boolean;
   variant?: "form" | "button" | "icon";
-  borderless?: boolean;
-  priority?: "primary" | "secondary" | "tertiary" | "delete" | "none";
+  priority?: "primary" | "secondary" | "tertiary";
   size?: ButtonInput["size"];
+  /**
+   * Removes the button's border, for the `button`, `form` and `icon` variants
+   */
   transparent?: boolean;
   disabled?: boolean;
-  noToggleIcon?: boolean;
   a11yText?: string;
   label?: Marko.AttrTag<Marko.HTML.Span>;
   reverse?: boolean;
@@ -22,12 +24,10 @@ export interface Input extends Marko.HTML.Span {
 }
 const/{
   class: inputClass,
-  noToggleIcon,
   reverse,
   detachPopover,
   fixWidth,
   flip,
-  borderless,
   size,
   priority: inputPriority,
   disabled,
@@ -46,23 +46,26 @@ const/{
 
 let/open:=input.open
 
-const/{ tagName, transparent, priority }=(() => {
-  let priority = null;
-  let transparent;
+const/{ tagName, appearance, fieldTransparent }=(() => {
+  let appearance;
   let tagName;
+  let fieldTransparent;
 
   if (variant === "icon") {
     tagName = IconButton;
-    transparent = inputTransparent;
+    if (inputTransparent) appearance = "transparent";
+  } else if (variant === "form") {
+    tagName = ButtonField;
+    fieldTransparent = inputTransparent;
   } else {
     tagName = Button;
-    priority = inputPriority;
+    appearance = inputTransparent ? "transparent" : inputPriority;
   }
 
   return {
     tagName,
-    transparent,
-    priority,
+    appearance,
+    fieldTransparent,
   };
 })()
 
@@ -89,10 +92,8 @@ span/$root
   }
   ${tagName as any}.fake-menu-button__button
     ,size=size
-    ,priority=priority as ButtonInput["priority"]
-    ,borderless=borderless
-    ,variant=(variant === "form" ? ("form" as any) : undefined)
-    ,transparent=transparent
+    ,appearance=appearance
+    ,transparent=fieldTransparent
     ,aria-expanded=expander.ariaExpanded
     ,aria-label=a11yText
     ,disabled=disabled
@@ -107,7 +108,7 @@ span/$root
     else
       span
         ${input.content}
-      if=!noToggleIcon
+      if=variant !== "form"
         evo-icon-chevron-down-12
   evo-fake-menu/$fakeMenuEls
     ,style=expander.floatingStyles

@@ -20,6 +20,10 @@ describe("menu-button", () => {
     await snapshotHTML(Default);
   });
 
+  it("renders partially disabled form variant", async () => {
+    await snapshotHTML(Default, { variant: "form", partiallyDisabled: true });
+  });
+
   it("renders with reverse=true", async () => {
     await snapshotHTML(Default, { reverse: true });
   });
@@ -32,8 +36,8 @@ describe("menu-button", () => {
     await snapshotHTML(Default, { detachPopover: true });
   });
 
-  it("renders with borderless=true", async () => {
-    await snapshotHTML(Default, { borderless: true });
+  it("renders with transparent=true", async () => {
+    await snapshotHTML(Default, { transparent: true });
   });
 
   it("renders with size=small", async () => {
@@ -42,10 +46,6 @@ describe("menu-button", () => {
 
   it("renders with icon", async () => {
     await snapshotHTML(IconText);
-  });
-
-  it("renders without toggle icon", async () => {
-    await snapshotHTML(Default, { noToggleIcon: true });
   });
 
   it("renders with disabled state", async () => {

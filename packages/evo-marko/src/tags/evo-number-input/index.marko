@@ -88,7 +88,7 @@ export type Input = Omit<TextboxInput, "value" | "valueChange"> & {
         disabled=controlsDisabled || displayValue <= min
         size="small"
         class="number-input__decrement"
-        transparent
+        appearance="transparent"
         tabindex="-1"
         onClick() {
           value = checkBoundary(displayValue, -1);
@@ -102,7 +102,7 @@ export type Input = Omit<TextboxInput, "value" | "valueChange"> & {
         <evo-icon-button
           class="number-input__delete"
           size="small"
-          transparent
+          appearance="transparent"
           a11yText=a11yDeleteText
           disabled=controlsDisabled
           onClick(event, target) {
@@ -119,7 +119,7 @@ export type Input = Omit<TextboxInput, "value" | "valueChange"> & {
         disabled=controlsDisabled || displayValue >= max
         class="number-input__increment"
         size="small"
-        transparent
+        appearance="transparent"
         onClick() {
           value = checkBoundary(displayValue, 1);
         }

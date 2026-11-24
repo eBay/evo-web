@@ -32,20 +32,15 @@ export default {
       control: "text",
       description: "URL for link behavior (switches to `<a>` tag)",
     },
-    transparent: {
-      type: "boolean",
-      control: "boolean",
-      description: "Uses transparent styles for the button.",
-    },
     size: {
       options: ["regular (default)", "small", "large"],
       control: "inline-radio",
       description: "Alternative size for the icon button",
     },
-    priority: {
-      options: ["none (default)", "primary", "secondary", "tertiary"],
+    appearance: {
+      options: ["primary", "secondary", "tertiary", "transparent"],
       control: "inline-radio",
-      description: "Priority of the button. Changes color and border.",
+      description: "Icon button appearance",
     },
     a11yText: {
       type: { name: "string", required: true },
@@ -57,11 +52,6 @@ export default {
       type: "boolean",
       control: "boolean",
       description: "programmatically disabled, but remains keyboard focusable",
-    },
-    onEscape: {
-      action: "onEscape",
-      description: "Triggered on escape key",
-      table: { category: "Events" },
     },
     ["<button> attributes" as any]: {
       description:

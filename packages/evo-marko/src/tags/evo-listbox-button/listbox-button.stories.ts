@@ -121,7 +121,7 @@ export default {
         "Detaches the overlay from its container so a scrolling or `overflow: hidden` ancestor can't clip it. The overlay then repositions as the page scrolls instead of moving with its container.",
       table: { defaultValue: { summary: "false" } },
     },
-    borderless: {
+    transparent: {
       type: "boolean",
       control: "boolean",
       description: "Removes button borders.",
@@ -141,12 +141,6 @@ export default {
       type: "string",
       control: "text",
       description: "used for the `name` attribute of the native `<button>`.",
-    },
-    split: {
-      type: "string",
-      options: ["none (default)", "start", "end"],
-      control: "inline-radio",
-      description: "Applies split button styles to the component.",
     },
     invalid: {
       type: "boolean",
