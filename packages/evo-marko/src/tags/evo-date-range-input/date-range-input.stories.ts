@@ -31,11 +31,38 @@ export default {
       control: "boolean",
       description: "Whether the calendar popover is showing",
     },
+    floatingLabel: {
+      type: "string",
+      control: "text",
+      description: "Label shown above the date, which also names the field",
+    },
+    startName: {
+      type: "string",
+      control: "text",
+      description: "Form field name for the start date's `YYYY-MM-DD` value",
+    },
+    endName: {
+      type: "string",
+      control: "text",
+      description: "Form field name for the end date's `YYYY-MM-DD` value",
+    },
+    a11yStartText: {
+      type: { name: "string", required: true },
+      control: "text",
+      description: "Accessible name for the start date's input",
+      table: { defaultValue: { summary: "Start" } },
+    },
+    a11yEndText: {
+      type: { name: "string", required: true },
+      control: "text",
+      description: "Accessible name for the end date's input",
+      table: { defaultValue: { summary: "End" } },
+    },
     locale: {
       type: "string",
       control: "text",
       description:
-        "BCP 47 language tag used to parse, format, and label dates. Defaults to `navigator.language`.",
+        "BCP 47 language tag that sets the order and separators of the date's parts and the language of the format hint. Defaults to `navigator.language`.",
     },
     a11yOpenPopoverText: {
       type: { name: "string", required: true },
@@ -74,12 +101,7 @@ export default {
     },
     onInvalidDate: {
       description:
-        "Called with `(event, target, value, index)` when either field blurs with text that cannot be parsed as a date (`index` 0 = start, 1 = end)",
-    },
-    input: {
-      description:
-        "Repeatable. Attributes forwarded to the internal `evo-input` fields: the first `<@input>` customizes the start field, the second the end field.",
-      "@": {},
+        "Called with `(event, target, value, index)` when either date commits text (on blur or Enter) that cannot be parsed as a date (`index` 0 = start, 1 = end)",
     },
     calendar: {
       description: "Attributes forwarded to the internal `evo-calendar`",

@@ -28,7 +28,7 @@
     padding: 0;
 }
 .textbox--focus,
-.textbox:has(> .textbox__control:focus):not(.textbox--readonly):not(
+.textbox:has(> .textbox__control:focus-within):not(.textbox--readonly):not(
         :has(> .textbox__control[readonly])
     ) {
     box-shadow: 0 0 0 1px var(--color-border-strong);
@@ -50,6 +50,7 @@
     );
 }
 .textbox--invalid,
+.textbox:has(> .textbox__control [aria-invalid="true"]),
 .textbox:has(> .textbox__control[aria-invalid="true"]) {
     border-color: var(
         --textbox-invalid-border-color,

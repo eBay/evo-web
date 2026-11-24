@@ -8,40 +8,55 @@ exports[`evo-date-range-input SSR > renders default 1`] = `
     class="floating-label"
   >
     <label
-      class="floating-label__label floating-label__label--animate floating-label__label--inline"
+      class="floating-label__label floating-label__label--animate floating-label__label--focus"
       for="GENERATED-0"
     >
-      Purchase date from
+      Purchase dates
     </label>
     <span
+      aria-label="Purchase dates"
       class="textbox"
+      role="group"
     >
-      <input
-        class="textbox__control"
-        id="GENERATED-0"
-        value=""
-      />
-    </span>
-  </span>
-  <span
-    class="floating-label"
-  >
-    <label
-      class="floating-label__label floating-label__label--animate floating-label__label--inline"
-      for="GENERATED-1"
-    >
-      Purchase date to
-    </label>
-    <span
-      class="textbox"
-    >
-      <input
-        class="textbox__control"
-        id="GENERATED-1"
-        value=""
-      />
+      <span
+        class="textbox__control date-textbox__value"
+      >
+        <span
+          class="date-textbox__field"
+          data-size="MM/DD/YYYY"
+        >
+          <input
+            aria-label="Start"
+            autocomplete="off"
+            class="date-textbox__input"
+            id="GENERATED-0"
+            inputmode="numeric"
+            placeholder="MM/DD/YYYY"
+            value=""
+          />
+        </span>
+        <span
+          aria-hidden="true"
+          class="date-textbox__separator"
+        >
+           — 
+        </span>
+        <span
+          class="date-textbox__field"
+          data-size="MM/DD/YYYY"
+        >
+          <input
+            aria-label="End"
+            autocomplete="off"
+            class="date-textbox__input"
+            inputmode="numeric"
+            placeholder="MM/DD/YYYY"
+            value=""
+          />
+        </span>
+      </span>
       <button
-        aria-controls="GENERATED-3"
+        aria-controls="GENERATED-2"
         aria-expanded="false"
         aria-label="Open calendar"
         class="icon-btn icon-btn--transparent"
@@ -52,7 +67,7 @@ exports[`evo-date-range-input SSR > renders default 1`] = `
           class="icon icon--24"
         >
           <symbol
-            id="GENERATED-2"
+            id="GENERATED-1"
             viewBox="0 0 24 24"
           >
             <path
@@ -71,7 +86,7 @@ exports[`evo-date-range-input SSR > renders default 1`] = `
   <div
     class="date-textbox__popover"
     hidden=""
-    id="GENERATED-3"
+    id="GENERATED-2"
     style="visibility:hidden"
   >
     <div
@@ -93,7 +108,7 @@ exports[`evo-date-range-input SSR > renders default 1`] = `
               class="icon icon--24"
             >
               <symbol
-                id="GENERATED-4"
+                id="GENERATED-3"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -118,7 +133,7 @@ exports[`evo-date-range-input SSR > renders default 1`] = `
               class="icon icon--24"
             >
               <symbol
-                id="GENERATED-5"
+                id="GENERATED-4"
                 viewBox="0 0 24 24"
               >
                 <path

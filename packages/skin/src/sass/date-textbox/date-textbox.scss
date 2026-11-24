@@ -13,6 +13,99 @@
     margin-left: var(--spacing-100);
 }
 
+.date-textbox__value {
+    align-items: center;
+    display: inline-flex;
+    height: calc(var(--input-default-height) - 2px);
+    min-width: 14ch;
+}
+
+.date-textbox__value:has(> .date-textbox__separator) {
+    min-width: 28ch;
+}
+
+.date-textbox__separator {
+    @include token-mixins.color-token(
+        textbox-placeholder-color,
+        color-foreground-secondary
+    );
+
+    white-space: pre;
+}
+
+.textbox--disabled .date-textbox__separator {
+    @include token-mixins.color-token(
+        textbox-disabled-foreground-color,
+        color-foreground-disabled
+    );
+}
+
+/* The hidden ::after sizes the field to its text or placeholder. */
+.date-textbox__field {
+    display: inline-grid;
+    position: relative;
+}
+
+.date-textbox__field::after,
+.date-textbox__input {
+    font: inherit;
+    grid-area: 1 / 1;
+    padding: 0;
+}
+
+.date-textbox__field::after {
+    content: attr(data-size);
+    visibility: hidden;
+    white-space: pre;
+}
+
+.date-textbox__input {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+    color: inherit;
+    margin: 0;
+    min-width: 100%;
+    outline: none;
+    width: 0;
+
+    &::placeholder {
+        @include token-mixins.color-token(
+            textbox-placeholder-color,
+            color-foreground-secondary
+        );
+
+        opacity: 1;
+    }
+
+    &:disabled::placeholder {
+        @include token-mixins.color-token(
+            textbox-disabled-placeholder-color,
+            color-foreground-ghost
+        );
+    }
+}
+
+/* The rest of the date format, drawn past the typed text like a placeholder */
+.date-textbox__ghost {
+    @include token-mixins.color-token(
+        textbox-placeholder-color,
+        color-foreground-secondary
+    );
+
+    align-items: center;
+    display: flex;
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+    white-space: pre;
+}
+
+.date-textbox__ghost > span {
+    visibility: hidden;
+}
+
 .date-textbox__popover {
     @include token-mixins.background-color-token(
         calendar-background-color,

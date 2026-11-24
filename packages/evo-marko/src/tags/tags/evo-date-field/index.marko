@@ -1,42 +1,31 @@
 import { type DayISO } from "../../../common/dates/date-utils";
 import {
+  editAtSeparator,
+  endsWithSeparator,
   format,
-  maskDate,
+  isFilled,
   parse,
-  placeholder as localePlaceholder,
+  placeholder,
+  remainingFormat,
+  stepAt,
+  typeDigit,
 } from "../../../common/dates/format";
-import type { Input as TextboxInput } from "<evo-input>";
 
 export type DateInputValue = DayISO | "";
 
 export interface Input {
   value: DateInputValue;
-  locale?: string;
+  valueChange: (value: DateInputValue) => void;
+  locale: string;
   index: 0 | 1;
+  id?: string;
+  name?: string;
+  "aria-label"?: string;
   disabled?: boolean;
   readonly?: boolean;
   invalid?: boolean;
-  field?: Marko.AttrTag<
-    Omit<
-      TextboxInput,
-      | "value"
-      | "valueChange"
-      | "type"
-      | "disabled"
-      | "readonly"
-      | "prefixIcon"
-      | "postfixIcon"
-      | "prefixText"
-      | "postfixText"
-    >
-  >;
-  trigger?: {
-    a11yText: string;
-    open: boolean;
-    popoverId: string;
-    toggle: () => void;
-  };
-  valueChange: (value: DateInputValue) => void;
+  /** Called when typing at the end fills in the last part of the date. */
+  onFilled?: () => void;
   onInvalidDate?: (
     event: Event,
     target: HTMLElement,
@@ -45,68 +34,150 @@ export interface Input {
   ) => void;
 }
 
-<const/{ locale, index, disabled, readonly, trigger }=input>
-<let/value:=input.value>
 <const/{
-  placeholder,
-  invalid: fieldInvalid,
-  onBlur,
-  ...field
-}=input.field ?? ({} as NonNullable<Input["field"]>)>
+  locale,
+  index,
+  id,
+  name,
+  "aria-label": ariaLabel,
+  disabled,
+  readonly,
+  onFilled,
+  onInvalidDate,
+}=input>
+<let/value:=input.value>
+<const/hint=placeholder(locale)>
 
-<let/draft="">
-<let/invalid=false>
-<const/display=draft || (value ? format(value, locale) : "")>
-
-<evo-input/control
-  ...field
-  disabled=disabled
-  readonly=readonly
-  invalid=fieldInvalid || invalid || input.invalid
-  placeholder=placeholder ?? localePlaceholder(locale)
-  value=display
-  valueChange(next) {
-    invalid = false;
-    if (next === "") {
-      draft = "";
-      value = "";
-    } else {
-      draft = maskDate(next, locale, next.length > display.length);
-    }
+// Text the user typed shows until the value changes some other way.
+<let/draft=(
+  undefined as
+    { key: DateInputValue; text: string; invalid: boolean } | undefined
+)>
+<const/typed=draft?.key === value ? draft : undefined>
+<const/text=typed ? typed.text : value ? format(value, locale) : "">
+<const/commit(next: string) {
+  const parsed = next.trim() ? parse(next, locale) : "";
+  if (parsed === null) {
+    draft = { key: value, text: next, invalid: true };
+    return false;
   }
-  onBlur(e, el) {
-    const text = (e.target as HTMLInputElement).value;
-    if (text.trim() === "") {
-      draft = "";
-      invalid = false;
-      value = "";
-    } else {
-      const parsed = parse(text, locale);
-      if (parsed === null) {
-        invalid = true;
-        input.onInvalidDate && input.onInvalidDate(e, el, text, index);
+  draft = undefined;
+  value = parsed;
+  return true;
+}>
+<let/focused=false>
+<const/rest=focused ? remainingFormat(text, locale) : undefined>
+
+// The hidden ::after sizes the field to what it shows: text and format hint,
+// or the placeholder.
+<span class="date-textbox__field" data-size=text + (rest ?? "") || hint>
+  <input/$input
+    id=id
+    class="date-textbox__input"
+    aria-label=ariaLabel
+    aria-invalid=(input.invalid || typed?.invalid) && "true"
+    inputmode="numeric"
+    autocomplete="off"
+    placeholder=hint
+    disabled=disabled
+    readonly=readonly
+    value=text
+    valueChange(next) {
+      if (next) {
+        draft = { key: value, text: next, invalid: false };
       } else {
-        draft = "";
-        invalid = false;
-        value = parsed;
+        commit("");
       }
     }
-    onBlur && onBlur(e, el);
-  }
->
-  <if=trigger>
-    <@postfixIcon
-      a11yText=trigger.a11yText
-      disabled=disabled || readonly
-      aria-expanded=trigger.open ? "true" : "false"
-      aria-controls=trigger.popoverId
-      onClick() {
-        trigger.toggle();
+    onChange(e, el) {
+      if (!commit(el.value)) {
+        onInvalidDate && onInvalidDate(e, el, el.value, index);
       }
-    >
-      <evo-icon-calendar-24/>
-    </@postfixIcon>
+    }
+    onBeforeInput(e, el) {
+      const { value: current, selectionStart, selectionEnd } = el;
+      const data = e.data ?? "";
+      const collapsed = selectionStart === selectionEnd;
+      if (
+        e.inputType === "insertText" &&
+        collapsed &&
+        selectionEnd === current.length
+      ) {
+        if (/^\d$/.test(data)) {
+          const insert = typeDigit(current, data, locale);
+          if (insert !== data) {
+            e.preventDefault();
+            // Unlike setting the value, this keeps the edit on the undo stack.
+            document.execCommand("insertText", false, insert);
+          }
+        } else if (
+          /^[^\p{L}\d]$/u.test(data) &&
+          endsWithSeparator(current, locale)
+        ) {
+          e.preventDefault();
+        }
+      } else if (
+        (e.inputType === "deleteContentBackward" ||
+          e.inputType === "deleteContentForward") &&
+        collapsed
+      ) {
+        const edit = editAtSeparator(
+          current,
+          selectionStart ?? 0,
+          e.inputType === "deleteContentForward",
+        );
+        if (edit) {
+          e.preventDefault();
+          el.setSelectionRange(edit.start, edit.end);
+          if (edit.start !== edit.end) document.execCommand("delete");
+        }
+      }
+    }
+    onFocus() {
+      focused = true;
+    }
+    onBlur() {
+      focused = false;
+    }
+    onInput(e, el) {
+      if (
+        (e as InputEvent).inputType?.startsWith("insert") &&
+        el.selectionEnd === el.value.length &&
+        isFilled(el.value, locale)
+      ) {
+        onFilled && onFilled();
+      }
+    }
+    onKeyDown(e, el) {
+      if (
+        (e.key === "ArrowUp" || e.key === "ArrowDown") &&
+        !e.altKey &&
+        !e.metaKey &&
+        !e.ctrlKey &&
+        !readonly
+      ) {
+        e.preventDefault();
+        const stepped = stepAt(
+          el.value,
+          el.selectionStart ?? 0,
+          e.key === "ArrowUp" ? 1 : -1,
+          locale,
+        );
+        el.select();
+        document.execCommand("insertText", false, stepped.text);
+        el.setSelectionRange(stepped.start, stepped.end);
+        commit(stepped.text);
+      }
+    }
+  >
+  <if=rest>
+    <span class="date-textbox__ghost" aria-hidden="true">
+      <span>${text}</span>${rest}
+    </span>
   </if>
-</evo-input>
+</span>
+<if=name>
+  <input type="hidden" name=name value=value>
+</if>
 
-<return=control>
+<return=$input>
