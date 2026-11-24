@@ -12,6 +12,26 @@ import {
 
 export type DateInputValue = DayISO | "";
 
+static const BLOCKS_IMPLICIT_SUBMISSION =
+  /^(text|search|url|tel|email|password|date|month|week|time|datetime-local|number)$/;
+
+// Enter in a field of `form`, as the browser handles it for the form's own
+// fields: click the default button, or submit if no other field would stop it.
+static function submitImplicitly(form: HTMLFormElement) {
+  const controls = [...form.elements] as HTMLInputElement[];
+  const button = controls.find(
+    (control) => control.type === "submit" || control.type === "image",
+  );
+  if (button) {
+    if (!button.disabled) button.click();
+    return;
+  }
+  const fields =
+    controls.filter((control) => BLOCKS_IMPLICIT_SUBMISSION.test(control.type))
+      .length + form.querySelectorAll(".date-textbox__input").length;
+  if (fields === 1) form.requestSubmit();
+}
+
 export interface Input {
   value: DateInputValue;
   valueChange: (value: DateInputValue) => void;
@@ -69,6 +89,8 @@ export interface Input {
   return true;
 }>
 <let/focused=false>
+// No element has this id, so the text inputs belong to no form, which only
+// sees the hidden ISO input. Enter and reset are forwarded to keep the feel.
 <id/formlessId>
 <const/rest=focused ? remainingFormat(text, locale) : undefined>
 
@@ -81,10 +103,7 @@ export interface Input {
     aria-label=ariaLabel
     aria-invalid=(input.invalid || typed?.invalid) && "true"
     inputmode="numeric"
-    autocomplete=(
-      "off"
-      // No element has this id, so the text belongs to no form; only the hidden
-    )
+    autocomplete="off"
     form=formlessId
     placeholder=hint
     disabled=disabled
@@ -147,6 +166,17 @@ export interface Input {
     onBlur() {
       focused = false;
     }
+    onKeyDown(e, el) {
+      const form = $hidden().form;
+      if (e.key !== "Enter" || e.isComposing || !form) return;
+      const parsed = el.value.trim() ? parse(el.value, locale) : "";
+      // Invalid text stays put for the change event to flag, as it would block
+      // a native date input's form.
+      if (parsed === null) return;
+      commit(el.value);
+      $hidden().value = parsed;
+      submitImplicitly(form);
+    }
     onInput(e, el) {
       if (
         (e as InputEvent).inputType === "insertText" &&
@@ -163,8 +193,19 @@ export interface Input {
     </span>
   </if>
 </span>
-<if=name>
-  <input type="hidden" name=name value=value disabled=disabled>
-</if>
+<input/$hidden type="hidden" name=name value=value disabled=disabled>
+<let/initialValue=input.value>
+<script>
+  document.addEventListener(
+    "reset",
+    (e) => {
+      if (e.target === $hidden().form) {
+        draft = undefined;
+        value = initialValue;
+      }
+    },
+    { signal: $signal },
+  );
+</script>
 
 <return=$input>

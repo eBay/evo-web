@@ -33,6 +33,10 @@ exports[`evo-date-input SSR > renders default 1`] = `
             value=""
           />
         </span>
+        <input
+          type="hidden"
+          value=""
+        />
       </span>
       <button
         aria-controls="GENERATED-2"
@@ -488,6 +492,10 @@ exports[`evo-date-input SSR > renders readonly with a disabled calendar trigger 
             value=""
           />
         </span>
+        <input
+          type="hidden"
+          value=""
+        />
       </span>
       <button
         aria-controls="GENERATED-2"
@@ -943,6 +951,10 @@ exports[`evo-date-input SSR > renders with a value 1`] = `
             value="05/06/2024"
           />
         </span>
+        <input
+          type="hidden"
+          value="2024-05-06"
+        />
       </span>
       <button
         aria-controls="GENERATED-2"

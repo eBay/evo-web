@@ -36,6 +36,10 @@ exports[`evo-date-range-input SSR > renders default 1`] = `
             value=""
           />
         </span>
+        <input
+          type="hidden"
+          value=""
+        />
         <span
           aria-hidden="true"
           class="date-textbox__separator"
@@ -56,6 +60,10 @@ exports[`evo-date-range-input SSR > renders default 1`] = `
             value=""
           />
         </span>
+        <input
+          type="hidden"
+          value=""
+        />
       </span>
       <button
         aria-controls="GENERATED-2"

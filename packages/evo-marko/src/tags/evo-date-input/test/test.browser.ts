@@ -236,6 +236,71 @@ describe("evo-date-input", () => {
     ).toBeDisabled();
   });
 
+  describe("in a form", () => {
+    let form: HTMLFormElement;
+    let textbox: HTMLInputElement;
+    const submitted = vi.fn();
+
+    beforeEach(async () => {
+      submitted.mockReset();
+      component = await render(Default, {
+        locale: "en-US",
+        name: "purchase",
+        value: "2024-12-08",
+      });
+      form = document.createElement("form");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        submitted(Object.fromEntries(new FormData(form)));
+      });
+      document.body.append(form);
+      form.append(component.container.querySelector(".date-textbox")!);
+      textbox = form.querySelector(".date-textbox__input")!;
+    });
+
+    afterEach(() => form.remove());
+
+    it("submits the ISO date on Enter like one of the form's fields", async () => {
+      expect(textbox.form).toBeNull();
+      await userEvent.fill(textbox, "12/25/2024");
+      await userEvent.keyboard("{Enter}");
+      expect(submitted).toHaveBeenCalledWith({ purchase: "2024-12-25" });
+    });
+
+    it("clicks the form's default button on Enter", async () => {
+      const button = document.createElement("button");
+      const clicked = vi.fn();
+      button.addEventListener("click", clicked);
+      const other = document.createElement("input");
+      form.append(other, button);
+      await userEvent.click(textbox);
+      await userEvent.keyboard("{Enter}");
+      expect(clicked).toHaveBeenCalledOnce();
+      expect(submitted).toHaveBeenCalledOnce();
+    });
+
+    it("doesn't submit invalid text or past another field without a button", async () => {
+      await userEvent.fill(textbox, "99/99/9999");
+      await userEvent.keyboard("{Enter}");
+      expect(submitted).not.toHaveBeenCalled();
+
+      form.append(document.createElement("input"));
+      await userEvent.fill(textbox, "12/25/2024");
+      await userEvent.keyboard("{Enter}");
+      expect(submitted).not.toHaveBeenCalled();
+    });
+
+    it("goes back to its first date when the form resets", async () => {
+      await userEvent.fill(textbox, "12/25/2024");
+      await userEvent.keyboard("{Enter}");
+      form.reset();
+      await expect.poll(() => textbox.value).toBe("12/08/2024");
+      expect(Object.fromEntries(new FormData(form))).toEqual({
+        purchase: "2024-12-08",
+      });
+    });
+  });
+
   it("puts a given id on the input so an outside label can name it", async () => {
     component = await render(Default, { locale: "en-US", id: "purchase" });
     expect(component.getByRole("textbox").id).toBe("purchase");
