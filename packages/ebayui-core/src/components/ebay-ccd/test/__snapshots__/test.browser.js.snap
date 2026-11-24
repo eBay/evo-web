@@ -15,19 +15,16 @@ exports[`ccd > then it matches the snapshot 1`] = `
       justify-content: center;
       width: 39px
     ">
-      <svg
-        focusable="false"
-        style="
-          display: inline-block;
-          fill: currentcolor;
-          height: 18px;
-          pointer-events: none;
-          stroke-width: 0;
-          stroke: currentcolor;
-          vertical-align: middle;
-          width: 27px
-        "
-      >
+      <svg style="
+        display: inline-block;
+        fill: currentcolor;
+        height: 18px;
+        pointer-events: none;
+        stroke-width: 0;
+        stroke: currentcolor;
+        vertical-align: middle;
+        width: 27px
+      ">
         <use href="#icon-ccd-top"/>
       </svg>
       <div style="

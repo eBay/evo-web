@@ -23,7 +23,6 @@ exports[`eek > passes through additional html attributes 1`] = `
         aria-hidden="true"
         class="icon icon--eek-range-arrow"
         data-marko-key="@svg s0-4-0"
-        focusable="false"
       >
         <defs
           data-marko-key="@defs s0-4-0"
@@ -56,7 +55,6 @@ exports[`eek > passes through additional html attributes 1`] = `
     aria-hidden="true"
     class="icon icon--eek-arrow"
     data-marko-key="@svg s0-7-0"
-    focusable="false"
   >
     <defs
       data-marko-key="@defs s0-7-0"
@@ -103,7 +101,6 @@ exports[`eek > passes through additional html attributes 2`] = `
         aria-hidden="true"
         class="icon icon--eek-range-arrow"
         data-marko-key="@svg s0-4-0"
-        focusable="false"
       >
         <defs
           data-marko-key="@defs s0-4-0"
@@ -136,7 +133,6 @@ exports[`eek > passes through additional html attributes 2`] = `
     aria-hidden="true"
     class="icon icon--eek-arrow"
     data-marko-key="@svg s0-7-0"
-    focusable="false"
   >
     <defs
       data-marko-key="@defs s0-7-0"
@@ -201,7 +197,6 @@ exports[`eek > renders default eek 4`] = `
         aria-hidden="true"
         class="icon icon--eek-range-arrow"
         data-marko-key="@svg s0-4-0"
-        focusable="false"
       >
         <defs
           data-marko-key="@defs s0-4-0"
@@ -238,7 +233,6 @@ exports[`eek > renders default eek 4`] = `
     aria-hidden="true"
     class="icon icon--eek-arrow"
     data-marko-key="@svg s0-7-0"
-    focusable="false"
   >
     <defs
       data-marko-key="@defs s0-7-0"
@@ -303,7 +297,6 @@ exports[`eek > renders invalid eek 4`] = `
         aria-hidden="true"
         class="icon icon--eek-range-arrow"
         data-marko-key="@svg s0-4-0"
-        focusable="false"
       >
         <defs
           data-marko-key="@defs s0-4-0"
@@ -340,7 +333,6 @@ exports[`eek > renders invalid eek 4`] = `
     aria-hidden="true"
     class="icon icon--eek-arrow"
     data-marko-key="@svg s0-7-0"
-    focusable="false"
   >
     <defs
       data-marko-key="@defs s0-7-0"
@@ -405,7 +397,6 @@ exports[`eek > renders large eek 4`] = `
         aria-hidden="true"
         class="icon icon--eek-range-arrow"
         data-marko-key="@svg s0-4-0"
-        focusable="false"
       >
         <defs
           data-marko-key="@defs s0-4-0"
@@ -442,7 +433,6 @@ exports[`eek > renders large eek 4`] = `
     aria-hidden="true"
     class="icon icon--eek-arrow"
     data-marko-key="@svg s0-7-0"
-    focusable="false"
   >
     <defs
       data-marko-key="@defs s0-7-0"
@@ -487,7 +477,6 @@ exports[`eek > renders rating 1 1`] = `
         aria-hidden="true"
         class="icon icon--eek-range-arrow"
         data-marko-key="@svg s0-4-0"
-        focusable="false"
       >
         <defs
           data-marko-key="@defs s0-4-0"
@@ -524,7 +513,6 @@ exports[`eek > renders rating 1 1`] = `
     aria-hidden="true"
     class="icon icon--eek-arrow"
     data-marko-key="@svg s0-7-0"
-    focusable="false"
   >
     <defs
       data-marko-key="@defs s0-7-0"
@@ -569,7 +557,6 @@ exports[`eek > renders rating 2 1`] = `
         aria-hidden="true"
         class="icon icon--eek-range-arrow"
         data-marko-key="@svg s0-4-0"
-        focusable="false"
       >
         <defs
           data-marko-key="@defs s0-4-0"
@@ -606,7 +593,6 @@ exports[`eek > renders rating 2 1`] = `
     aria-hidden="true"
     class="icon icon--eek-arrow"
     data-marko-key="@svg s0-7-0"
-    focusable="false"
   >
     <defs
       data-marko-key="@defs s0-7-0"
@@ -651,7 +637,6 @@ exports[`eek > renders rating 3 1`] = `
         aria-hidden="true"
         class="icon icon--eek-range-arrow"
         data-marko-key="@svg s0-4-0"
-        focusable="false"
       >
         <defs
           data-marko-key="@defs s0-4-0"
@@ -688,7 +673,6 @@ exports[`eek > renders rating 3 1`] = `
     aria-hidden="true"
     class="icon icon--eek-arrow"
     data-marko-key="@svg s0-7-0"
-    focusable="false"
   >
     <defs
       data-marko-key="@defs s0-7-0"
@@ -733,7 +717,6 @@ exports[`eek > renders rating 4 1`] = `
         aria-hidden="true"
         class="icon icon--eek-range-arrow"
         data-marko-key="@svg s0-4-0"
-        focusable="false"
       >
         <defs
           data-marko-key="@defs s0-4-0"
@@ -770,7 +753,6 @@ exports[`eek > renders rating 4 1`] = `
     aria-hidden="true"
     class="icon icon--eek-arrow"
     data-marko-key="@svg s0-7-0"
-    focusable="false"
   >
     <defs
       data-marko-key="@defs s0-7-0"
@@ -815,7 +797,6 @@ exports[`eek > renders rating 5 1`] = `
         aria-hidden="true"
         class="icon icon--eek-range-arrow"
         data-marko-key="@svg s0-4-0"
-        focusable="false"
       >
         <defs
           data-marko-key="@defs s0-4-0"
@@ -852,7 +833,6 @@ exports[`eek > renders rating 5 1`] = `
     aria-hidden="true"
     class="icon icon--eek-arrow"
     data-marko-key="@svg s0-7-0"
-    focusable="false"
   >
     <defs
       data-marko-key="@defs s0-7-0"
@@ -897,7 +877,6 @@ exports[`eek > renders rating 6 1`] = `
         aria-hidden="true"
         class="icon icon--eek-range-arrow"
         data-marko-key="@svg s0-4-0"
-        focusable="false"
       >
         <defs
           data-marko-key="@defs s0-4-0"
@@ -934,7 +913,6 @@ exports[`eek > renders rating 6 1`] = `
     aria-hidden="true"
     class="icon icon--eek-arrow"
     data-marko-key="@svg s0-7-0"
-    focusable="false"
   >
     <defs
       data-marko-key="@defs s0-7-0"
@@ -979,7 +957,6 @@ exports[`eek > renders rating 7 (not 8) 1`] = `
         aria-hidden="true"
         class="icon icon--eek-range-arrow"
         data-marko-key="@svg s0-4-0"
-        focusable="false"
       >
         <defs
           data-marko-key="@defs s0-4-0"
@@ -1016,7 +993,6 @@ exports[`eek > renders rating 7 (not 8) 1`] = `
     aria-hidden="true"
     class="icon icon--eek-arrow"
     data-marko-key="@svg s0-7-0"
-    focusable="false"
   >
     <defs
       data-marko-key="@defs s0-7-0"
@@ -1061,7 +1037,6 @@ exports[`eek > renders rating 7 (not 8) 2`] = `
         aria-hidden="true"
         class="icon icon--eek-range-arrow"
         data-marko-key="@svg s0-4-0"
-        focusable="false"
       >
         <defs
           data-marko-key="@defs s0-4-0"
@@ -1098,7 +1073,6 @@ exports[`eek > renders rating 7 (not 8) 2`] = `
     aria-hidden="true"
     class="icon icon--eek-arrow"
     data-marko-key="@svg s0-7-0"
-    focusable="false"
   >
     <defs
       data-marko-key="@defs s0-7-0"
@@ -1143,7 +1117,6 @@ exports[`eek > renders rating 7 1`] = `
         aria-hidden="true"
         class="icon icon--eek-range-arrow"
         data-marko-key="@svg s0-4-0"
-        focusable="false"
       >
         <defs
           data-marko-key="@defs s0-4-0"
@@ -1180,7 +1153,6 @@ exports[`eek > renders rating 7 1`] = `
     aria-hidden="true"
     class="icon icon--eek-arrow"
     data-marko-key="@svg s0-7-0"
-    focusable="false"
   >
     <defs
       data-marko-key="@defs s0-7-0"
@@ -1225,7 +1197,6 @@ exports[`eek > renders the correct eek if rating is outside 1`] = `
         aria-hidden="true"
         class="icon icon--eek-range-arrow"
         data-marko-key="@svg s0-4-0"
-        focusable="false"
       >
         <defs
           data-marko-key="@defs s0-4-0"
@@ -1262,7 +1233,6 @@ exports[`eek > renders the correct eek if rating is outside 1`] = `
     aria-hidden="true"
     class="icon icon--eek-arrow"
     data-marko-key="@svg s0-7-0"
-    focusable="false"
   >
     <defs
       data-marko-key="@defs s0-7-0"

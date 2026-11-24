@@ -26,7 +26,6 @@ exports[`filter-menu > passes through additional html attributes 1`] = `
         <svg
           aria-hidden="true"
           class="icon icon--18"
-          focusable="false"
         >
           <defs>
             <symbol
@@ -62,7 +61,6 @@ exports[`filter-menu > passes through additional html attributes 1`] = `
         <svg
           aria-hidden="true"
           class="icon icon--18"
-          focusable="false"
         >
           <use
             href="#icon-checkbox-unchecked-18"
@@ -88,7 +86,6 @@ exports[`filter-menu > passes through additional html attributes 1`] = `
         <svg
           aria-hidden="true"
           class="icon icon--18"
-          focusable="false"
         >
           <use
             href="#icon-checkbox-unchecked-18"
@@ -143,7 +140,6 @@ exports[`filter-menu > passes through additional html attributes 2`] = `
         <svg
           aria-hidden="true"
           class="icon icon--18"
-          focusable="false"
         >
           <defs>
             <symbol
@@ -179,7 +175,6 @@ exports[`filter-menu > passes through additional html attributes 2`] = `
         <svg
           aria-hidden="true"
           class="icon icon--18"
-          focusable="false"
         >
           <use
             href="#icon-checkbox-unchecked-18"
@@ -205,7 +200,6 @@ exports[`filter-menu > passes through additional html attributes 2`] = `
         <svg
           aria-hidden="true"
           class="icon icon--18"
-          focusable="false"
         >
           <use
             href="#icon-checkbox-unchecked-18"
@@ -250,7 +244,6 @@ exports[`filter-menu > passes through additional html attributes from child item
     <svg
       aria-hidden="true"
       class="icon icon--18"
-      focusable="false"
     >
       <defs>
         <symbol
@@ -289,7 +282,6 @@ exports[`filter-menu > passes through additional html attributes from child item
     <svg
       aria-hidden="true"
       class="icon icon--18"
-      focusable="false"
     >
       <defs>
         <symbol
@@ -334,7 +326,6 @@ exports[`filter-menu > renders basic version 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--18"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<defs>[39m
               [36m<symbol[39m
@@ -368,7 +359,6 @@ exports[`filter-menu > renders basic version 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--18"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<use[39m
               [33mhref[39m=[32m"#icon-checkbox-unchecked-18"[39m
@@ -392,7 +382,6 @@ exports[`filter-menu > renders basic version 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--18"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<use[39m
               [33mhref[39m=[32m"#icon-checkbox-unchecked-18"[39m
@@ -439,7 +428,6 @@ exports[`filter-menu > renders checked item 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--18"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<defs>[39m
               [36m<symbol[39m
@@ -473,7 +461,6 @@ exports[`filter-menu > renders checked item 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--18"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<use[39m
               [33mhref[39m=[32m"#icon-checkbox-unchecked-18"[39m
@@ -497,7 +484,6 @@ exports[`filter-menu > renders checked item 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--18"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<use[39m
               [33mhref[39m=[32m"#icon-checkbox-unchecked-18"[39m
@@ -544,7 +530,6 @@ exports[`filter-menu > renders disabled item 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--18"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<defs>[39m
               [36m<symbol[39m
@@ -578,7 +563,6 @@ exports[`filter-menu > renders disabled item 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--18"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<use[39m
               [33mhref[39m=[32m"#icon-checkbox-unchecked-18"[39m
@@ -602,7 +586,6 @@ exports[`filter-menu > renders disabled item 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--18"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<use[39m
               [33mhref[39m=[32m"#icon-checkbox-unchecked-18"[39m
@@ -650,7 +633,6 @@ exports[`filter-menu > renders with aria-label 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--18"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<defs>[39m
               [36m<symbol[39m
@@ -684,7 +666,6 @@ exports[`filter-menu > renders with aria-label 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--18"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<use[39m
               [33mhref[39m=[32m"#icon-checkbox-unchecked-18"[39m
@@ -708,7 +689,6 @@ exports[`filter-menu > renders with aria-label 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--18"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<use[39m
               [33mhref[39m=[32m"#icon-checkbox-unchecked-18"[39m
@@ -756,7 +736,6 @@ exports[`filter-menu > renders with aria-labelledby 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--18"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<defs>[39m
               [36m<symbol[39m
@@ -790,7 +769,6 @@ exports[`filter-menu > renders with aria-labelledby 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--18"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<use[39m
               [33mhref[39m=[32m"#icon-checkbox-unchecked-18"[39m
@@ -814,7 +792,6 @@ exports[`filter-menu > renders with aria-labelledby 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--18"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<use[39m
               [33mhref[39m=[32m"#icon-checkbox-unchecked-18"[39m
@@ -861,7 +838,6 @@ exports[`filter-menu > renders with footer render body 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--18"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<defs>[39m
               [36m<symbol[39m
@@ -895,7 +871,6 @@ exports[`filter-menu > renders with footer render body 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--18"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<use[39m
               [33mhref[39m=[32m"#icon-checkbox-unchecked-18"[39m
@@ -919,7 +894,6 @@ exports[`filter-menu > renders with footer render body 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--18"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<use[39m
               [33mhref[39m=[32m"#icon-checkbox-unchecked-18"[39m
@@ -966,7 +940,6 @@ exports[`filter-menu > renders with footer text 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--18"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<defs>[39m
               [36m<symbol[39m
@@ -1000,7 +973,6 @@ exports[`filter-menu > renders with footer text 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--18"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<use[39m
               [33mhref[39m=[32m"#icon-checkbox-unchecked-18"[39m
@@ -1024,7 +996,6 @@ exports[`filter-menu > renders with footer text 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--18"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<use[39m
               [33mhref[39m=[32m"#icon-checkbox-unchecked-18"[39m
@@ -1070,7 +1041,6 @@ exports[`filter-menu > renders with footer text and accessible text 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--18"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<defs>[39m
               [36m<symbol[39m
@@ -1104,7 +1074,6 @@ exports[`filter-menu > renders with footer text and accessible text 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--18"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<use[39m
               [33mhref[39m=[32m"#icon-checkbox-unchecked-18"[39m
@@ -1128,7 +1097,6 @@ exports[`filter-menu > renders with footer text and accessible text 1`] = `
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
             [33mclass[39m=[32m"icon icon--18"[39m
-            [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
             [36m<use[39m
               [33mhref[39m=[32m"#icon-checkbox-unchecked-18"[39m

@@ -67,10 +67,10 @@
   },
   "devDependencies": {
     "@evo-web/storybook-addon-theme": "*",
-    "marko": "^6.3.35"
+    "marko": "^6.5.1"
   },
   "peerDependencies": {
     "@ebay/skin": "^19.2.0",
-    "marko": "5 - 6"
+    "marko": "^5.43.0 || ^6.5.0"
   }
 }

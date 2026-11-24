@@ -18,7 +18,6 @@ exports[`ccd > passes through additional html attributes 1`] = `
       aria-hidden="true"
       class="ccd__top-icon icon icon--ccd-top"
       data-marko-key="@svg s0-0-4-0"
-      focusable="false"
     >
       <defs
         data-marko-key="@defs s0-0-4-0"
@@ -79,7 +78,6 @@ exports[`ccd > passes through additional html attributes 2`] = `
       aria-hidden="true"
       class="ccd__top-icon icon icon--ccd-top"
       data-marko-key="@svg s0-0-4-0"
-      focusable="false"
     >
       <defs
         data-marko-key="@defs s0-0-4-0"
@@ -133,7 +131,6 @@ exports[`ccd > renders ccd with charger included 1`] = `
       [33maria-hidden[39m=[32m"true"[39m
       [33mclass[39m=[32m"ccd__charger-icon icon icon--ccd-charger-included"[39m
       [33mdata-marko-key[39m=[32m"@svg s0-0-1-0"[39m
-      [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
       [36m<defs[39m
         [33mdata-marko-key[39m=[32m"@defs s0-0-1-0"[39m
@@ -160,7 +157,6 @@ exports[`ccd > renders ccd with charger included 1`] = `
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"ccd__top-icon icon icon--ccd-top"[39m
         [33mdata-marko-key[39m=[32m"@svg s0-0-4-0"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs[39m
           [33mdata-marko-key[39m=[32m"@defs s0-0-4-0"[39m
@@ -214,7 +210,6 @@ exports[`ccd > renders ccd with charger included and usbpd 1`] = `
       [33maria-hidden[39m=[32m"true"[39m
       [33mclass[39m=[32m"ccd__charger-icon icon icon--ccd-charger-included"[39m
       [33mdata-marko-key[39m=[32m"@svg s0-0-1-0"[39m
-      [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
       [36m<defs[39m
         [33mdata-marko-key[39m=[32m"@defs s0-0-1-0"[39m
@@ -241,7 +236,6 @@ exports[`ccd > renders ccd with charger included and usbpd 1`] = `
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"ccd__top-icon icon icon--ccd-top"[39m
         [33mdata-marko-key[39m=[32m"@svg s0-0-4-0"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs[39m
           [33mdata-marko-key[39m=[32m"@defs s0-0-4-0"[39m
@@ -298,7 +292,6 @@ exports[`ccd > renders ccd with charger not included 1`] = `
       [33maria-hidden[39m=[32m"true"[39m
       [33mclass[39m=[32m"ccd__charger-icon icon icon--ccd-charger-not-included"[39m
       [33mdata-marko-key[39m=[32m"@svg s0-0-2-0"[39m
-      [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
       [36m<defs[39m
         [33mdata-marko-key[39m=[32m"@defs s0-0-2-0"[39m
@@ -325,7 +318,6 @@ exports[`ccd > renders ccd with charger not included 1`] = `
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"ccd__top-icon icon icon--ccd-top"[39m
         [33mdata-marko-key[39m=[32m"@svg s0-0-4-0"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs[39m
           [33mdata-marko-key[39m=[32m"@defs s0-0-4-0"[39m
@@ -379,7 +371,6 @@ exports[`ccd > renders ccd with custom a11y 1`] = `
       [33maria-hidden[39m=[32m"true"[39m
       [33mclass[39m=[32m"ccd__charger-icon icon icon--ccd-charger-included"[39m
       [33mdata-marko-key[39m=[32m"@svg s0-0-1-0"[39m
-      [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
       [36m<defs[39m
         [33mdata-marko-key[39m=[32m"@defs s0-0-1-0"[39m
@@ -406,7 +397,6 @@ exports[`ccd > renders ccd with custom a11y 1`] = `
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"ccd__top-icon icon icon--ccd-top"[39m
         [33mdata-marko-key[39m=[32m"@svg s0-0-4-0"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs[39m
           [33mdata-marko-key[39m=[32m"@defs s0-0-4-0"[39m
@@ -466,7 +456,6 @@ exports[`ccd > renders ccd with usbpd included 1`] = `
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"ccd__top-icon icon icon--ccd-top"[39m
         [33mdata-marko-key[39m=[32m"@svg s0-0-4-0"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs[39m
           [33mdata-marko-key[39m=[32m"@defs s0-0-4-0"[39m
@@ -526,7 +515,6 @@ exports[`ccd > renders default ccd 1`] = `
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"ccd__top-icon icon icon--ccd-top"[39m
         [33mdata-marko-key[39m=[32m"@svg s0-0-4-0"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs[39m
           [33mdata-marko-key[39m=[32m"@defs s0-0-4-0"[39m
@@ -590,7 +578,6 @@ exports[`ccd > renders with no min and max but with charger included 1`] = `
       [33maria-hidden[39m=[32m"true"[39m
       [33mclass[39m=[32m"ccd__charger-icon icon icon--ccd-charger-included"[39m
       [33mdata-marko-key[39m=[32m"@svg s0-0-1-0"[39m
-      [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
       [36m<defs[39m
         [33mdata-marko-key[39m=[32m"@defs s0-0-1-0"[39m
@@ -625,7 +612,6 @@ exports[`ccd > renders with no min and max but with no charger included 1`] = `
       [33maria-hidden[39m=[32m"true"[39m
       [33mclass[39m=[32m"ccd__charger-icon icon icon--ccd-charger-not-included"[39m
       [33mdata-marko-key[39m=[32m"@svg s0-0-2-0"[39m
-      [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
       [36m<defs[39m
         [33mdata-marko-key[39m=[32m"@defs s0-0-2-0"[39m

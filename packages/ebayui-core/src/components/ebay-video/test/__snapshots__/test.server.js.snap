@@ -27,7 +27,6 @@ exports[`video > renders default 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--24"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -55,7 +54,6 @@ exports[`video > renders default 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--64-colored"[39m
-        [33mfocusable[39m=[32m"false"[39m
         [33mwidth[39m=[32m"64"[39m
       [36m>[39m
         [36m<defs>[39m
@@ -83,7 +81,6 @@ exports[`video > renders default 1`] = `
       [36m<svg[39m
         [33maria-labelledby[39m=[32m"s0-@flag-icon-0-text"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
         [36m<defs>[39m
@@ -110,7 +107,6 @@ exports[`video > renders default 1`] = `
       [36m<svg[39m
         [33maria-labelledby[39m=[32m"s0-@audio-off-icon-0-text"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
         [36m<defs>[39m
@@ -135,7 +131,6 @@ exports[`video > renders default 1`] = `
       [36m<svg[39m
         [33maria-labelledby[39m=[32m"s0-@audio-high-icon-0-text"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
         [36m<defs>[39m
@@ -168,7 +163,6 @@ exports[`video > renders default 1`] = `
       [36m<svg[39m
         [33maria-labelledby[39m=[32m"s0-@expand-icon-0-text"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
         [36m<defs>[39m
@@ -193,7 +187,6 @@ exports[`video > renders default 1`] = `
       [36m<svg[39m
         [33maria-labelledby[39m=[32m"s0-@contract-icon-0-text"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
         [36m<defs>[39m
@@ -252,7 +245,6 @@ exports[`video > renders ios video player 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--24"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -280,7 +272,6 @@ exports[`video > renders ios video player 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--64-colored"[39m
-        [33mfocusable[39m=[32m"false"[39m
         [33mwidth[39m=[32m"64"[39m
       [36m>[39m
         [36m<defs>[39m
@@ -308,7 +299,6 @@ exports[`video > renders ios video player 1`] = `
       [36m<svg[39m
         [33maria-labelledby[39m=[32m"s0-@flag-icon-0-text"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
         [36m<defs>[39m
@@ -335,7 +325,6 @@ exports[`video > renders ios video player 1`] = `
       [36m<svg[39m
         [33maria-labelledby[39m=[32m"s0-@audio-off-icon-0-text"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
         [36m<defs>[39m
@@ -360,7 +349,6 @@ exports[`video > renders ios video player 1`] = `
       [36m<svg[39m
         [33maria-labelledby[39m=[32m"s0-@audio-high-icon-0-text"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
         [36m<defs>[39m
@@ -393,7 +381,6 @@ exports[`video > renders ios video player 1`] = `
       [36m<svg[39m
         [33maria-labelledby[39m=[32m"s0-@expand-icon-0-text"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
         [36m<defs>[39m
@@ -418,7 +405,6 @@ exports[`video > renders ios video player 1`] = `
       [36m<svg[39m
         [33maria-labelledby[39m=[32m"s0-@contract-icon-0-text"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
         [36m<defs>[39m
@@ -478,7 +464,6 @@ exports[`video > renders with compact layout 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--24"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -506,7 +491,6 @@ exports[`video > renders with compact layout 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--64-colored"[39m
-        [33mfocusable[39m=[32m"false"[39m
         [33mwidth[39m=[32m"64"[39m
       [36m>[39m
         [36m<defs>[39m
@@ -534,7 +518,6 @@ exports[`video > renders with compact layout 1`] = `
       [36m<svg[39m
         [33maria-labelledby[39m=[32m"s0-0-@flag-icon-0-text"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
         [36m<defs>[39m
@@ -561,7 +544,6 @@ exports[`video > renders with compact layout 1`] = `
       [36m<svg[39m
         [33maria-labelledby[39m=[32m"s0-0-@audio-off-icon-0-text"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
         [36m<defs>[39m
@@ -586,7 +568,6 @@ exports[`video > renders with compact layout 1`] = `
       [36m<svg[39m
         [33maria-labelledby[39m=[32m"s0-0-@audio-high-icon-0-text"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
         [36m<defs>[39m
@@ -619,7 +600,6 @@ exports[`video > renders with compact layout 1`] = `
       [36m<svg[39m
         [33maria-labelledby[39m=[32m"s0-0-@expand-icon-0-text"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
         [36m<defs>[39m
@@ -644,7 +624,6 @@ exports[`video > renders with compact layout 1`] = `
       [36m<svg[39m
         [33maria-labelledby[39m=[32m"s0-0-@contract-icon-0-text"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
         [36m<defs>[39m
@@ -697,7 +676,6 @@ exports[`video > renders with mp4 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--24"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -725,7 +703,6 @@ exports[`video > renders with mp4 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--64-colored"[39m
-        [33mfocusable[39m=[32m"false"[39m
         [33mwidth[39m=[32m"64"[39m
       [36m>[39m
         [36m<defs>[39m
@@ -753,7 +730,6 @@ exports[`video > renders with mp4 1`] = `
       [36m<svg[39m
         [33maria-labelledby[39m=[32m"s0-@flag-icon-0-text"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
         [36m<defs>[39m
@@ -780,7 +756,6 @@ exports[`video > renders with mp4 1`] = `
       [36m<svg[39m
         [33maria-labelledby[39m=[32m"s0-@audio-off-icon-0-text"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
         [36m<defs>[39m
@@ -805,7 +780,6 @@ exports[`video > renders with mp4 1`] = `
       [36m<svg[39m
         [33maria-labelledby[39m=[32m"s0-@audio-high-icon-0-text"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
         [36m<defs>[39m
@@ -838,7 +812,6 @@ exports[`video > renders with mp4 1`] = `
       [36m<svg[39m
         [33maria-labelledby[39m=[32m"s0-@expand-icon-0-text"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
         [36m<defs>[39m
@@ -863,7 +836,6 @@ exports[`video > renders with mp4 1`] = `
       [36m<svg[39m
         [33maria-labelledby[39m=[32m"s0-@contract-icon-0-text"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
         [36m<defs>[39m
@@ -917,7 +889,6 @@ exports[`video > renders with report text 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--24"[39m
-        [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -945,7 +916,6 @@ exports[`video > renders with report text 1`] = `
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--64-colored"[39m
-        [33mfocusable[39m=[32m"false"[39m
         [33mwidth[39m=[32m"64"[39m
       [36m>[39m
         [36m<defs>[39m
@@ -973,7 +943,6 @@ exports[`video > renders with report text 1`] = `
       [36m<svg[39m
         [33maria-labelledby[39m=[32m"s0-@flag-icon-0-text"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
         [36m<defs>[39m
@@ -1000,7 +969,6 @@ exports[`video > renders with report text 1`] = `
       [36m<svg[39m
         [33maria-labelledby[39m=[32m"s0-@audio-off-icon-0-text"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
         [36m<defs>[39m
@@ -1025,7 +993,6 @@ exports[`video > renders with report text 1`] = `
       [36m<svg[39m
         [33maria-labelledby[39m=[32m"s0-@audio-high-icon-0-text"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
         [36m<defs>[39m
@@ -1058,7 +1025,6 @@ exports[`video > renders with report text 1`] = `
       [36m<svg[39m
         [33maria-labelledby[39m=[32m"s0-@expand-icon-0-text"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
         [36m<defs>[39m
@@ -1083,7 +1049,6 @@ exports[`video > renders with report text 1`] = `
       [36m<svg[39m
         [33maria-labelledby[39m=[32m"s0-@contract-icon-0-text"[39m
         [33mclass[39m=[32m"icon icon--16"[39m
-        [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
         [36m<defs>[39m

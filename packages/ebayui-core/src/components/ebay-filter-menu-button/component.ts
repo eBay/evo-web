@@ -22,10 +22,12 @@ interface FilterMenuButtonInput
     text?: string;
     "footer-text"?: string;
     "a11y-footer-text"?: Marko.HTMLAttributes["aria-label"];
-    footer?: WithNormalizedProps<
-        Omit<Marko.HTML.Button, `on${string}`> & {
-            "a11y-footer-text"?: Marko.HTMLAttributes["aria-label"];
-        }
+    footer?: Marko.AttrTag<
+        WithNormalizedProps<
+            Omit<Marko.HTML.Button, `on${string}`> & {
+                "a11y-footer-text"?: Marko.HTMLAttributes["aria-label"];
+            }
+        >
     >;
     variant?: "form";
     "form-name"?: string;

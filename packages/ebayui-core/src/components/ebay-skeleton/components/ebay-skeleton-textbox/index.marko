@@ -1,10 +1,11 @@
 import { processHtmlAttributes } from "../../../../common/html-attributes";
 import type { WithNormalizedProps } from "../../../../global";
-static {
-    interface SkeletonTextBoxInput extends Omit<Marko.HTML.Div, `on${string}`> {
-        as?: keyof Marko.NativeTags;
-        class?: Marko.HTMLAttributes["class"];
-    }
+static interface SkeletonTextBoxInput extends Omit<
+    Marko.HTML.Div,
+    `on${string}`
+> {
+    as?: keyof Marko.NativeTags;
+    class?: Marko.HTMLAttributes["class"];
 }
 export interface Input extends WithNormalizedProps<SkeletonTextBoxInput> {}
 $ const { as: inputAs, class: inputClass, ...htmlInput } = input;

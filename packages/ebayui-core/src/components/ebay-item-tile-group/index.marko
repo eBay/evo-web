@@ -5,12 +5,13 @@ import type {
     ItemTileLayout,
 } from "../ebay-item-tile/index.marko";
 class {}
-static {
-    interface ItemTileGroupInput extends Omit<Marko.HTML.Div, `on${string}`> {
-        layout?: ItemTileLayout;
-        item?: Marko.AttrTag<ItemTileInput>;
-        "on-action"?: () => void;
-    }
+static interface ItemTileGroupInput extends Omit<
+    Marko.HTML.Div,
+    `on${string}`
+> {
+    layout?: ItemTileLayout;
+    item?: Marko.AttrTag<ItemTileInput>;
+    "on-action"?: () => void;
 }
 export interface Input extends WithNormalizedProps<ItemTileGroupInput> {}
 $ const { class: inputClass, item: items = [], layout, ...htmlInput } = input;
