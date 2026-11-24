@@ -7,10 +7,8 @@ import {
 
 const SIZES: Record<DateField, number> = { year: 4, month: 2, day: 2 };
 
-/**
- * The locale's part order, and the text before the first part and after
- * each, so `literals[i + 1]` follows `fields[i]`.
- */
+// The locale's part order, and the text before the first part and after
+// each, so `literals[i + 1]` follows `fields[i]`.
 function layout(locale?: string) {
   const fields: DateField[] = [];
   const literals = [""];
@@ -38,10 +36,6 @@ function isDone(digits: string, field: DateField) {
   );
 }
 
-/**
- * Reads a typed or pasted date: parts with any separators, in the locale's
- * order or as an ISO date.
- */
 export function parse(text: string, locale?: string): DayISO | null {
   const numbers: string[] = text.match(/\d+/g) ?? [];
   if (numbers.length !== 3) return null;
@@ -108,11 +102,8 @@ export function placeholder(locale?: string) {
   );
 }
 
-/**
- * The text to insert for a digit typed at the end of `text`: the separator
- * goes before it if the last part was already done, and after it once the
- * digit completes a part that another follows.
- */
+// The digit plus any separator it brings: before it if the last part was
+// done, after it if it completes a part that another follows.
 export function typeDigit(text: string, digit: string, locale?: string) {
   const { fields, literals } = layout(locale);
   const runs: string[] = text.match(/\d+/g) ?? [];
@@ -130,7 +121,6 @@ export function typeDigit(text: string, digit: string, locale?: string) {
     : insert;
 }
 
-/** Whether every part of the date in `text` has been typed. */
 export function isFilled(text: string, locale?: string) {
   const runs: string[] = text.match(/\d+/g) ?? [];
   return (
@@ -140,21 +130,14 @@ export function isFilled(text: string, locale?: string) {
   );
 }
 
-/**
- * Whether a separator typed at the end of `text` repeats the one already
- * there, as after one inserted by typeDigit.
- */
+// A separator typed here would repeat the one typeDigit already inserted.
 export function endsWithSeparator(text: string, locale?: string) {
   const runs = text.match(/\d+/g)?.length ?? 0;
   return runs > 0 && runs < 3 && text.endsWith(layout(locale).literals[runs]);
 }
 
-/**
- * The range Backspace (or Delete, `forward`) removes next to a separator, or
- * an empty one to move the caret to. At the end the separator goes with the
- * digit before it, as they were typed together, and elsewhere the caret skips
- * it so parts never merge.
- */
+// At the end a separator is deleted with the digit before it, as they were
+// typed together; elsewhere the caret skips it so parts never merge.
 export function editAtSeparator(text: string, caret: number, forward: boolean) {
   const next = forward ? text[caret] : text[caret - 1];
   if (next === undefined || /\d/.test(next)) return undefined;
@@ -169,10 +152,7 @@ export function editAtSeparator(text: string, caret: number, forward: boolean) {
     : { start: edge, end: edge };
 }
 
-/**
- * The rest of the format after partly typed `text`, as in "D/YYYY" after
- * "12/0", or undefined when the text doesn't follow the format.
- */
+// The rest of the format after partly typed text, as in "D/YYYY" after "12/0".
 export function remainingFormat(text: string, locale?: string) {
   const { fields, literals } = layout(locale);
   const runs: string[] = text.match(/\d+/g) ?? [];

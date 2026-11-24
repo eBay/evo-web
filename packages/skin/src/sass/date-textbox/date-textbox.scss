@@ -40,7 +40,7 @@
     );
 }
 
-/* The hidden ::after sizes the field to its text or placeholder. */
+/* The hidden ::after sizes the field to what it shows: text and format, or placeholder. */
 .date-textbox__field {
     display: inline-grid;
     position: relative;

@@ -43,7 +43,6 @@ export interface Input {
   disabled?: boolean;
   readonly?: boolean;
   invalid?: boolean;
-  /** Called when typing at the end fills in the last part of the date. */
   onFilled?: () => void;
   onInvalidDate?: (
     event: Event,
@@ -100,8 +99,6 @@ export interface Input {
 // sees the hidden ISO input. Enter and reset are forwarded to keep the feel.
 <id/formlessId>
 
-// The hidden ::after sizes the field to what it shows: text and format hint,
-// or the placeholder.
 <span class="date-textbox__field" data-size=text + (rest ?? "") || hint>
   <input/$input
     id=id
