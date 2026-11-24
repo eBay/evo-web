@@ -167,7 +167,7 @@
         --color-stroke-strong: var(--color-border-strong);
         --color-stroke-subtle: var(--color-border-subtle);
         --color-stroke-inverse: var(--color-border-on-inverse);
-        --color-state-visited: var(--color-magenta-3);
+        --color-state-visited: var(--color-pink-400);
         --color-state-primary-hover: #17212c;
         --color-state-primary-active: #1e2a38;
         --color-state-secondary-hover: #3e3e3e;
