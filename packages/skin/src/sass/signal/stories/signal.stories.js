@@ -54,9 +54,15 @@ export const subtle = () => row(" signal--subtle");
 
 export const leadingIcon = () => row("", icon);
 
+export const wrapped = () => `
+<div style="width: 120px">
+    <span class="signal signal--positive">${icon}Great price on this item</span>
+</div>
+`;
+
 export const truncated = () => `
 <div style="width: 120px">
-    <span class="signal signal--positive">Great price on this item</span>
+    <span class="signal signal--positive signal--truncated">${icon}Great price on this item</span>
 </div>
 `;
 
@@ -64,7 +70,7 @@ export const tonesAndEmphasis = () => matrix();
 
 export const withLeadingIcon = () => matrix(icon);
 
-export const truncation = () => `
+export const wrapping = () => `
 <div style="width: 120px">
     <span class="signal signal--positive">Great price on this item</span>
 </div>
@@ -76,6 +82,21 @@ export const truncation = () => `
 </div>
 <div style="width: 120px">
     <span class="signal signal--information signal--subtle">${icon}Great price on this item</span>
+</div>
+`;
+
+export const truncation = () => `
+<div style="width: 120px">
+    <span class="signal signal--positive signal--truncated">Great price on this item</span>
+</div>
+<div style="width: 120px">
+    <span class="signal signal--positive signal--truncated">${icon}Great price on this item</span>
+</div>
+<div style="width: 120px">
+    <span class="signal signal--attention signal--strong signal--truncated">${icon}Great price on this item</span>
+</div>
+<div style="width: 120px">
+    <span class="signal signal--information signal--subtle signal--truncated">${icon}Great price on this item</span>
 </div>
 `;
 
@@ -115,8 +136,13 @@ export const deprecatedAliases = () => `
 
 export const RTL = () => `
 <div dir="rtl">${matrix(icon)}
+<h3>Wrapping</h3>
 <div style="width: 120px">
     <span class="signal signal--positive">${icon}Great price on this item</span>
+</div>
+<h3>Truncation</h3>
+<div style="width: 120px">
+    <span class="signal signal--positive signal--truncated">${icon}Great price on this item</span>
 </div>
 </div>
 `;

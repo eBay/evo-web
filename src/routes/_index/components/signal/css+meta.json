@@ -1,4 +1,4 @@
 {
   "pageTitle": "Signal CSS Component",
-  "pageDescription": "The Signal CSS component is a small, non-interactive label with five tones, three emphasis levels, an optional 12px leading icon and single-line truncation. Includes the deprecated Signal V1 classes."
+  "pageDescription": "The Signal CSS component is a small, non-interactive label with five tones, three emphasis levels, an optional 12px leading icon, wrapping labels and an optional truncation modifier. Includes the deprecated Signal V1 classes."
 }

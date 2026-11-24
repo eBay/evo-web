@@ -38,10 +38,18 @@ import { urls } from "../../../../data";
   </p>
   <component-demo component="signal" variant="leadingIcon"/>
 
-  <h3 id="signal-truncation">Truncation</h3>
+  <h3 id="signal-wrapping">Wrapping</h3>
   <p>
-    The label is a single line. When the container is too narrow, the label
-    truncates with an ellipsis. The full text stays in the DOM.
+    When the container is too narrow, the label wraps onto more lines. The icon
+    stays aligned with the first line.
+  </p>
+  <component-demo component="signal" variant="wrapped"/>
+
+  <h3 id="signal-truncated">Truncation</h3>
+  <p>
+    Add <code>signal--truncated</code> to keep the label on one line. When the
+    container is too narrow, the label truncates with an ellipsis. The full text
+    stays in the DOM, so assistive technology still reads it.
   </p>
   <component-demo component="signal" variant="truncated"/>
 

@@ -281,7 +281,14 @@
 .table-cell .textbox__control {
     width: 100%;
 }
-.table-cell--numeric .textbox__control,
+
+.table-cell--numeric .textbox__control {
+    text-align: right;
+}
+
+.table-cell .signal {
+    white-space: nowrap;
+}
 [dir="rtl"] .table th[scope="row"],
 [dir="rtl"] .table-cell {
     text-align: right;

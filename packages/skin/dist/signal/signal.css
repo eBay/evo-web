@@ -52,16 +52,14 @@
     border-radius: var(--radius-medium);
     box-sizing: border-box;
     color: var(--signal-default-color);
-    display: inline-block;
+    display: inline-flex;
     font-weight: var(--font-weight-400);
+    gap: var(--spacing-50);
     letter-spacing: normal;
     max-width: 100%;
-    overflow: hidden;
     padding: 1px 5px;
-    text-overflow: ellipsis;
     text-transform: none;
     vertical-align: middle;
-    white-space: nowrap;
 }
 
 .signal--strong {
@@ -73,13 +71,25 @@
 .signal--subtle {
     background-color: initial;
     border: 0;
+    border-radius: 0;
     color: var(--signal-subtle-color);
     padding: 0;
 }
 
 .signal > svg.icon {
+    flex-shrink: 0;
     margin-block-start: var(--spacing-25);
     margin-block-start: calc(0.5lh - 6px);
+}
+
+.signal--truncated {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.signal--truncated > svg.icon {
     margin-inline-end: var(--spacing-50);
     vertical-align: top;
 }
