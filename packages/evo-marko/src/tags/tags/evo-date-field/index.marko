@@ -78,21 +78,27 @@ export interface Input {
   if (draft && draft.key !== value) draft = undefined;
 </script>
 <const/text=typed ? typed.text : value ? format(value, locale) : "">
+<const/setValue(next: DateInputValue) {
+  draft = undefined;
+  value = next;
+  // Set now rather than on render, so a submit right after sends the new date.
+  $hidden().value = next;
+}>
 <const/commit(next: string) {
   const parsed = next.trim() ? parse(next, locale) : "";
   if (parsed === null) {
     draft = { key: value, text: next, invalid: true };
     return false;
   }
-  draft = undefined;
-  value = parsed;
+  setValue(parsed);
   return true;
 }>
 <let/focused=false>
+<const/rest=focused ? remainingFormat(text, locale) : undefined>
+
 // No element has this id, so the text inputs belong to no form, which only
 // sees the hidden ISO input. Enter and reset are forwarded to keep the feel.
 <id/formlessId>
-<const/rest=focused ? remainingFormat(text, locale) : undefined>
 
 // The hidden ::after sizes the field to what it shows: text and format hint,
 // or the placeholder.
@@ -168,14 +174,10 @@ export interface Input {
     }
     onKeyDown(e, el) {
       const form = $hidden().form;
-      if (e.key !== "Enter" || e.isComposing || !form) return;
-      const parsed = el.value.trim() ? parse(el.value, locale) : "";
-      // Invalid text stays put for the change event to flag, as it would block
-      // a native date input's form.
-      if (parsed === null) return;
-      commit(el.value);
-      $hidden().value = parsed;
-      submitImplicitly(form);
+      // Invalid text doesn't submit, as it blocks a native date input's form.
+      if (e.key === "Enter" && !e.isComposing && form && commit(el.value)) {
+        submitImplicitly(form);
+      }
     }
     onInput(e, el) {
       if (
@@ -199,10 +201,7 @@ export interface Input {
   document.addEventListener(
     "reset",
     (e) => {
-      if (e.target === $hidden().form) {
-        draft = undefined;
-        value = initialValue;
-      }
+      if (e.target === $hidden().form) setValue(initialValue);
     },
     { signal: $signal },
   );
