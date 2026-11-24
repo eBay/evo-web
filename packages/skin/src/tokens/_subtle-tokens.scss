@@ -1,0 +1,30 @@
+/* TODO: remove this file once @ebay/design-tokens ships the -subtle tokens */
+@mixin light {
+    --color-background-accent-subtle: var(--color-blue-100);
+    --color-background-success-subtle: var(--color-kiwi-100);
+    --color-background-warning-subtle: var(--color-yellow-100);
+    --color-background-attention-subtle: var(--color-red-100);
+    --color-foreground-on-accent-subtle: var(--color-blue-600);
+    --color-foreground-on-success-subtle: var(--color-kiwi-700);
+    --color-foreground-on-warning-subtle: var(--color-yellow-600);
+    --color-foreground-on-attention-subtle: var(--color-red-600);
+    --color-border-accent-subtle: rgba(var(--color-neutral-800-rgb), 0.08);
+    --color-border-success-subtle: rgba(var(--color-neutral-800-rgb), 0.08);
+    --color-border-warning-subtle: rgba(var(--color-neutral-800-rgb), 0.08);
+    --color-border-attention-subtle: rgba(var(--color-neutral-800-rgb), 0.08);
+}
+
+@mixin dark {
+    --color-background-accent-subtle: var(--color-blue-800);
+    --color-background-success-subtle: var(--color-kiwi-800);
+    --color-background-warning-subtle: var(--color-yellow-800);
+    --color-background-attention-subtle: var(--color-red-800);
+    --color-foreground-on-accent-subtle: var(--color-blue-300);
+    --color-foreground-on-success-subtle: var(--color-kiwi-300);
+    --color-foreground-on-warning-subtle: var(--color-yellow-400);
+    --color-foreground-on-attention-subtle: var(--color-red-300);
+    --color-border-accent-subtle: var(--color-blue-700);
+    --color-border-success-subtle: var(--color-kiwi-700);
+    --color-border-warning-subtle: var(--color-yellow-700);
+    --color-border-attention-subtle: var(--color-red-700);
+}

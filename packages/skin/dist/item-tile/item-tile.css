@@ -51,10 +51,6 @@
     margin-block-end: var(--spacing-50);
 }
 
-.item-tile__section-primary .signal {
-    margin: 0;
-}
-
 .item-tile__section-secondary {
     grid-area: section-secondary;
 }

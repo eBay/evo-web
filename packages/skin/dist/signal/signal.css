@@ -1,30 +1,84 @@
-.signal {
-    border: 1px solid;
-    border-radius: var(--border-radius-100);
-    box-sizing: border-box;
-    display: inline-block;
-    font-size: var(--font-size-smallest);
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    line-height: var(--spacing-150);
-    margin: var(--spacing-100) 0;
-    padding: 2px var(--spacing-100) 1px;
-    text-align: center;
-    text-transform: uppercase;
-}
-
-.signal--trustworthy {
-    color: var(--color-foreground-accent);
-}
-
-.signal--recent {
-    color: var(--color-foreground-success);
-}
-
-.signal--time-sensitive {
-    color: var(--color-foreground-attention);
-}
-
+.signal,
 .signal--neutral {
-    color: var(--color-foreground-secondary);
+    --signal-default-background: var(--color-background-secondary);
+    --signal-default-border: var(--color-border-subtle);
+    --signal-default-color: var(--color-foreground-primary);
+    --signal-strong-background: var(--color-background-inverse);
+    --signal-strong-color: var(--color-foreground-on-inverse);
+    --signal-subtle-color: var(--color-foreground-secondary);
+}
+.signal--information,
+.signal--trustworthy {
+    --signal-default-background: var(--color-background-accent-subtle);
+    --signal-default-border: var(--color-border-accent-subtle);
+    --signal-default-color: var(--color-foreground-on-accent-subtle);
+    --signal-strong-background: var(--color-background-accent);
+    --signal-strong-color: var(--color-foreground-on-accent);
+    --signal-subtle-color: var(--color-foreground-accent);
+}
+.signal--positive,
+.signal--recent {
+    --signal-default-background: var(--color-background-success-subtle);
+    --signal-default-border: var(--color-border-success-subtle);
+    --signal-default-color: var(--color-foreground-on-success-subtle);
+    --signal-strong-background: var(--color-background-success);
+    --signal-strong-color: var(--color-foreground-on-success);
+    --signal-subtle-color: var(--color-foreground-success);
+}
+
+.signal--warning {
+    --signal-default-background: var(--color-background-warning-subtle);
+    --signal-default-border: var(--color-border-warning-subtle);
+    --signal-default-color: var(--color-foreground-on-warning-subtle);
+    --signal-strong-background: var(--color-background-warning);
+    --signal-strong-color: var(--color-foreground-on-warning);
+    --signal-subtle-color: var(--color-foreground-on-warning-subtle);
+}
+.signal--attention,
+.signal--time-sensitive {
+    --signal-default-background: var(--color-background-attention-subtle);
+    --signal-default-border: var(--color-border-attention-subtle);
+    --signal-default-color: var(--color-foreground-on-attention-subtle);
+    --signal-strong-background: var(--color-background-attention);
+    --signal-strong-color: var(--color-foreground-on-attention);
+    --signal-subtle-color: var(--color-foreground-attention);
+}
+
+.signal {
+    font-size: var(--font-size-small);
+    line-height: 16px;
+    background-color: var(--signal-default-background);
+    border: 1px solid var(--signal-default-border);
+    border-radius: var(--radius-medium);
+    box-sizing: border-box;
+    color: var(--signal-default-color);
+    display: inline-block;
+    font-weight: var(--font-weight-400);
+    letter-spacing: normal;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 1px 5px;
+    text-overflow: ellipsis;
+    text-transform: none;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.signal--strong {
+    background-color: var(--signal-strong-background);
+    border-color: transparent;
+    color: var(--signal-strong-color);
+}
+
+.signal--subtle {
+    background-color: initial;
+    border: 0;
+    color: var(--signal-subtle-color);
+    padding: 0;
+}
+
+.signal > svg {
+    fill: currentColor;
+    margin-inline-end: var(--spacing-50);
+    vertical-align: middle;
 }

@@ -1,4 +1,6 @@
 @use "@ebay/design-tokens/dist/mixins/evo-light" as tokens;
+@use "subtle-tokens";
 .evo-theme {
     @include tokens.evo-light;
+    @include subtle-tokens.light;
 }
