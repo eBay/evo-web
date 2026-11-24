@@ -8,8 +8,28 @@
 </h1>
 
 ```marko
-<evo-signal status="trustworthy">Trustworthy</evo-signal>
+<evo-signal tone="information">Information</evo-signal>
+<evo-signal tone="positive" emphasis="strong">
+  <@icon>
+    <evo-icon-promotion-12/>
+  </@icon>
+  Positive
+</evo-signal>
 ```
+
+## Attributes
+
+| Name       | Type                                                                   | Description                                                                                                             |
+| ---------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `tone`     | `"neutral" \| "information" \| "positive" \| "warning" \| "attention"` | Color tone. Takes precedence over `status`                                                                              |
+| `emphasis` | `"default" \| "strong" \| "subtle"`                                    | Visual emphasis. Defaults to `"default"`                                                                                |
+| `status`   | `"neutral" \| "trustworthy" \| "recent" \| "time-sensitive"`           | **Deprecated**, use `tone`. trustworthy → information, recent → positive, time-sensitive → attention, neutral → neutral |
+
+## Attribute Tags
+
+| Name    | Description                                                                                                                                                    |
+| ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `@icon` | Optional leading icon rendered before the label. Pass a 12px icon such as `<evo-icon-promotion-12/>`; it is `aria-hidden` by default, so don't pass `a11yText` |
 
 ## Examples and Documentation
 

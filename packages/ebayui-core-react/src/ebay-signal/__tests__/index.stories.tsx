@@ -1,5 +1,6 @@
 import React from "react";
 import { EbaySignal } from "../index";
+import { EbayIconPromotion12 } from "../../ebay-icon/icons/ebay-icon-promotion-12";
 
 export default {
     component: EbaySignal,
@@ -36,24 +37,51 @@ or import styles using SCSS/CSS
 ### Basic
 
 \`\`\`jsx
-<EbaySignal status="trustworthy">Top Rated</EbaySignal>
-\`\`\``,
+<EbaySignal tone="information">Top Rated</EbaySignal>
+\`\`\`
+
+### Emphasis and icon
+
+\`\`\`jsx
+<EbaySignal tone="positive" emphasis="strong" icon={<EbayIconPromotion12 />}>
+    Promoted
+</EbaySignal>
+\`\`\`
+
+\`status\` is deprecated; use \`tone\` (trustworthy → information, recent → positive, time-sensitive → attention).`,
             },
         },
     },
     argTypes: {
+        tone: {
+            description:
+                "Color tone. Takes precedence over `status`. Possible values: `neutral`, `information`, `positive`, `warning` & `attention`",
+            options: ["neutral", "information", "positive", "warning", "attention"],
+            control: { type: "select" },
+        },
+        emphasis: {
+            description: "Visual emphasis. Possible values: `default`, `strong` & `subtle`",
+            options: ["default", "strong", "subtle"],
+            control: { type: "select" },
+        },
+        icon: {
+            description: "Shows a sample `promotion-12` icon before the label",
+            control: { type: "boolean" },
+        },
         status: {
             description:
-                "Status of signal; determines color. Possible values: `trustworthy`, `recent`, `time-sensitive` & `neutral` (default)",
+                "Deprecated: use `tone`. Possible values: `trustworthy` (information), `recent` (positive), `time-sensitive` (attention) & `neutral` (default)",
             options: ["trustworthy", "recent", "time-sensitive", "neutral"],
             control: { type: "select" },
         },
     },
 };
 
-export const DefaultCase = (args) => (
+export const DefaultCase = ({ icon, ...args }) => (
     <>
-        <EbaySignal {...args}>Default</EbaySignal>
+        <EbaySignal {...args} icon={icon ? <EbayIconPromotion12 /> : undefined}>
+            Default
+        </EbaySignal>
     </>
 );
 

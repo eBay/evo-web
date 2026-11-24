@@ -1,2 +1,7 @@
 export { EvoSignal } from "./signal";
-export type { EvoSignalProps, SignalStatus } from "./types";
+export type {
+  EvoSignalProps,
+  SignalEmphasis,
+  SignalStatus,
+  SignalTone,
+} from "./types";
