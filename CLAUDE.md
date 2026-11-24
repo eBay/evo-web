@@ -7,6 +7,7 @@ AI configuration for eBay's evo-web components monorepo.
 <agent_constraints>
 
 - Never auto-commit or push without explicit user request. Exception: an unattended agent assigned to an issue (such as the Copilot coding agent) commits to its own branch and opens a PR
+- A local feature branch tracks the same-named branch on `origin`, never `origin/main`. When branching from a remote branch, use `git switch -c <branch> --no-track origin/main`, and set tracking on the first push with `git push -u origin <branch>`
 - Follow `evo-safe-coding` for every change: when to proceed or stop, and which checks to run for the files changed. CI runs the full `npm run build` on every PR
 - Prefer reading existing patterns over introducing new ones
 - Never manually edit auto-generated files (they should typically have a comment indicating they are generated)
