@@ -3,7 +3,7 @@ export default { title: "Skin/Select/Cascade" };
 export const RTL = () => `
 <div dir="rtl">
     <span class="select">
-        <select>
+        <select aria-label="Select demo">
             <option value="1">Option 1</option>
             <option value="2">Option 2</option>
             <option value="3">Option 3</option>
@@ -17,7 +17,7 @@ export const RTL = () => `
 
 export const fontSize = () => `
 <span class="select" style="font-size: 200%">
-    <select>
+    <select aria-label="Select demo">
         <option value="1">Option 1</option>
         <option value="2">Option 2</option>
         <option value="3">Option 3</option>
@@ -30,7 +30,7 @@ export const fontSize = () => `
 
 export const color = () => `
 <span class="select" style="color: green">
-    <select>
+    <select aria-label="Select demo">
         <option value="1">Option 1</option>
         <option value="2">Option 2</option>
         <option value="3">Option 3</option>

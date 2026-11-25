@@ -782,7 +782,7 @@ document.querySelectorAll("input.switch__control").forEach(function (widgetEl) {
 
 // SWITCH - ARIA/JAVASCRIPT VERSION
 document
-  .querySelectorAll(".switch:not(.switch--form)")
+  .querySelectorAll(".switch:has(> span.switch__control)")
   .forEach(function (widgetEl) {
     pageWidgets.push(
       new Switch(widgetEl, {

@@ -1,8 +1,8 @@
 export default { title: "Skin/Listbox" };
 
 export const unselected = () => `
-<span class="listbox">
-    <div class="listbox__options" role="listbox" tabindex="0">
+<span class="listbox" data-makeup-auto-select="true">
+    <div aria-label="Listbox demo" class="listbox__options" role="listbox" tabindex="0">
         <div class="listbox__option" role="option" aria-selected="false">
             <span class="listbox__value">Option 1</span>
             <svg class="icon icon--16" height="8" width="8">
@@ -15,8 +15,14 @@ export const unselected = () => `
                 <use href="#icon-tick-16"></use>
             </svg>
         </div>
-        <div class="listbox__option" role="option" aria-selected="false">
+        <div class="listbox__option" role="option" aria-selected="false" aria-disabled="true">
             <span class="listbox__value">Option 3</span>
+            <svg class="icon icon--16" height="8" width="8">
+                <use href="#icon-tick-16"></use>
+            </svg>
+        </div>
+        <div class="listbox__option" role="option" aria-selected="false">
+            <span class="listbox__value">Option 4</span>
             <svg class="icon icon--16" height="8" width="8">
                 <use href="#icon-tick-16"></use>
             </svg>
@@ -26,8 +32,8 @@ export const unselected = () => `
 `;
 
 export const selected = () => `
-<span class="listbox">
-    <div class="listbox__options" role="listbox" tabindex="0">
+<span class="listbox" data-makeup-auto-select="true">
+    <div aria-label="Listbox demo" class="listbox__options" role="listbox" tabindex="0">
         <div class="listbox__option" role="option" aria-selected="true">
             <span class="listbox__value">Option 1</span>
             <svg class="icon icon--16" height="8" width="8">
@@ -52,7 +58,7 @@ export const selected = () => `
 
 export const multiSelected = () => `
 <span class="listbox">
-    <div class="listbox__options" role="listbox" tabindex="0">
+    <div aria-label="Listbox demo" class="listbox__options" role="listbox" tabindex="0">
         <div class="listbox__option" role="option" aria-selected="true">
             <span class="listbox__value">Option 1</span>
             <svg class="icon icon--16" height="8" width="8">
@@ -77,7 +83,7 @@ export const multiSelected = () => `
 
 export const subtitleUnselected = () => `
 <span class="listbox">
-    <div class="listbox__options" role="listbox" tabindex="0">
+    <div aria-label="Listbox demo" class="listbox__options" role="listbox" tabindex="0">
         <div class="listbox__option" role="option" aria-selected="false">
             <span class="listbox__value">Option 1</span>
             <span class="listbox__description">
@@ -113,8 +119,8 @@ export const subtitleUnselected = () => `
 `;
 
 export const subtitleSelected = () => `
-<span class="listbox">
-    <div class="listbox__options" role="listbox" tabindex="0">
+<span class="listbox" data-makeup-auto-select="true">
+    <div aria-label="Listbox demo" class="listbox__options" role="listbox" tabindex="0">
         <div class="listbox__option" role="option" aria-selected="true">
             <span class="listbox__value">Option 1</span>
             <span class="listbox__description">
@@ -151,7 +157,7 @@ export const subtitleSelected = () => `
 
 export const textSpacing = () => `
 <span class="listbox demo-a11y-text-spacing">
-    <div class="listbox__options" role="listbox" tabindex="0">
+    <div aria-label="Listbox demo" class="listbox__options" role="listbox" tabindex="0">
         <div class="listbox__option" role="option" aria-selected="true">
             <span class="listbox__value">Option 1</span>
             <span class="listbox__description">

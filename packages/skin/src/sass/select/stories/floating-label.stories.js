@@ -18,9 +18,9 @@ export const defaultLabel = () => `
 
 export const selectedOption = () => `
 <span class="floating-label">
-    <label class="floating-label__label floating-label__label--inline" for="select-01">Here are your options</label>
+    <label class="floating-label__label floating-label__label--inline" for="select-02">Here are your options</label>
     <span class="select">
-        <select id="select-01">
+        <select id="select-02">
             <option value=""></option>
             <option value="1">Option 1 with long text</option>
             <option value="2">Option 2</option>
@@ -51,9 +51,9 @@ export const errorState = () => `
 
 export const disabled = () => `
 <span class="floating-label">
-    <label class="floating-label__label" for="select-03">Choose Option</label>
+    <label class="floating-label__label" for="select-04">Choose Option</label>
     <span class="select">
-        <select disabled>
+        <select id="select-04" disabled>
             <option value="1">Option 1</option>
             <option value="2">Option 2 can't pick</option>
             <option value="3">Option 3</option>

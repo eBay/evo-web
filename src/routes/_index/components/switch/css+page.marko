@@ -2,101 +2,36 @@
   <section-header/>
 
   <p>
-    A switch requires the
-    <code>switch</code>
-    role and
-    <code>aria-checked</code>
+    A switch requires the <code>switch</code> role and <code>aria-checked</code>
     attribute for assistive technology.
   </p>
   <p>
-    <strong>REMEMBER:</strong>
-    every switch requires a visible, programmatic label to indicate its
-    purpose.
+    <strong>REMEMBER:</strong> every switch requires a visible, programmatic
+    label to indicate its purpose.
   </p>
 
-  <h3 id="switch-default">
-    Default Switch
-  </h3>
+  <h3 id="switch-default">Default Switch</h3>
   <p>
     The default version of the switch requires JavaScript to maintain the
-    <code>aria-checked</code>
-    state when clicked.
+    <code>aria-checked</code> state when clicked.
   </p>
   <p>
-    The
-    <code>switch__control</code>
-    child element requires a
-    <code>tabindex</code>
-    value of 0 (zero) to be keyboard focusable.
+    The <code>switch__control</code> child element requires a
+    <code>tabindex</code> value of 0 (zero) to be keyboard focusable.
   </p>
 
-  <div class="demo">
-    <div class="demo__inner">
-      <span class="switch">
-        <span
-          aria-label="Switch Demo"
-          class="switch__control"
-          role="switch"
-          tabindex="0"
-          aria-checked="false"/>
-        <span class="switch__button"/>
-      </span>
-    </div>
-  </div>
-  <highlight-code type="html">
-    <span class="switch">
-      <span
-        class="switch__control"
-        role="switch"
-        tabindex="0"
-        aria-checked="false"/>
-      <span class="switch__button"/>
-    </span>
-  </highlight-code>
+  <component-demo component="switch" variant="script/off"/>
 
-  <h3 id="switch-disabled">
-    Disabled Switch
-  </h3>
+  <h3 id="switch-disabled">Disabled Switch</h3>
+  <p>To disable a switch, apply the <code>aria-disabled</code> attribute.</p>
   <p>
-    To disable a switch, apply the
-    <code>aria-disabled</code>
-    attribute.
-  </p>
-  <p>
-    The
-    <code>tabindex</code>
-    property must be set to -1 (negative one) to prevent keyboard focus.
+    The <code>tabindex</code> property must be set to -1 (negative one) to
+    prevent keyboard focus.
   </p>
 
-  <div class="demo">
-    <div class="demo__inner">
-      <span class="switch">
-        <span
-          aria-label="Switch Demo"
-          class="switch__control"
-          role="switch"
-          tabindex="-1"
-          aria-checked="false"
-          aria-disabled="true"/>
-        <span class="switch__button"/>
-      </span>
-    </div>
-  </div>
-  <highlight-code type="html">
-    <span class="switch">
-      <span
-        class="switch__control"
-        role="switch"
-        tabindex="-1"
-        aria-checked="false"
-        aria-disabled="true"/>
-      <span class="switch__button"/>
-    </span>
-  </highlight-code>
+  <component-demo component="switch" variant="script/offDisabled"/>
 
-  <h3 id="switch-checkbox">
-    Checkbox Switch
-  </h3>
+  <h3 id="switch-checkbox">Checkbox Switch</h3>
   <p>
     This version of the switch uses a checkbox under the hood. It should be used
     if you require the switch to store data inside of a form. As mentioned above
@@ -104,68 +39,17 @@
     consider using an actual checkbox instead.
   </p>
 
-  <div class="demo">
-    <div class="demo__inner">
-      <span class="switch switch--form">
-        <input
-          aria-label="Checkbox switch demo"
-          class="switch__control"
-          role="switch"
-          type="checkbox"
-          aria-checked="false">
-        <span class="switch__button"/>
-      </span>
-    </div>
-  </div>
-  <highlight-code type="html">
-    <span class="switch">
-      <input
-        class="switch__control"
-        role="switch"
-        type="checkbox"
-        aria-checked="false">
-      <span class="switch__button"/>
-    </span>
-  </highlight-code>
+  <component-demo component="switch" variant="form/off"/>
 
-  <h3 id="switch-checkbox-disabled">
-    Disabled Checkbox Switch
-  </h3>
+  <h3 id="switch-checkbox-disabled">Disabled Checkbox Switch</h3>
   <p>
-    To disable a checkbox switch, apply the
-    <code>disabled</code>
-    attribute.
+    To disable a checkbox switch, apply the <code>disabled</code> attribute.
   </p>
 
-  <div class="demo">
-    <div class="demo__inner">
-      <span class="switch switch--form">
-        <input
-          aria-label="Checkbox switch demo"
-          class="switch__control"
-          role="switch"
-          type="checkbox"
-          aria-checked="false"
-          disabled>
-        <span class="switch__button"/>
-      </span>
-    </div>
-  </div>
-  <highlight-code type="html">
-    <span class="switch">
-      <input
-        class="switch__control"
-        role="switch"
-        type="checkbox"
-        aria-checked="false"
-        disabled>
-      <span class="switch__button"/>
-    </span>
-  </highlight-code>
+  <component-demo component="switch" variant="form/offDisabled"/>
 
   <h3 id="switch-variables">
-    Custom Properties of Switch
-    <sup>EXPERIMENTAL</sup>
+    Custom Properties of Switch <sup>EXPERIMENTAL</sup>
   </h3>
   <p>
     The following custom properties (aka CSS Variables) are available for system
@@ -182,64 +66,7 @@
     <li>--switch-checked-hover-background-color</li>
   </ul>
 
-  <style>
-    .switch--theme-1 {
-      --switch-unchecked-background-color: orange;
-      --switch-checked-background-color: green;
-      --switch-unchecked-hover-background-color: coral;
-      --switch-checked-hover-background-color: limegreen;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      .switch--theme-1 {
-        --switch-unchecked-background-color: blue;
-        --switch-checked-background-color: red;
-        --switch-unchecked-hover-background-color: purple;
-        --switch-checked-hover-background-color: indianred;
-      }
-    }
-  </style>
-
-  <div class="demo">
-    <div class="demo__inner">
-      <span class="switch switch--theme-1">
-        <span
-          aria-label="Switch Demo"
-          class="switch__control"
-          role="switch"
-          tabindex="0"
-          aria-checked="false"/>
-        <span class="switch__button"/>
-      </span>
-    </div>
-  </div>
-  <highlight-code type="html">
-    <style>
-      .switch--theme-1 {
-        --switch-unchecked-background-color: orange;
-        --switch-checked-background-color: green;
-        --switch-unchecked-hover-background-color: coral;
-        --switch-checked-hover-background-color: limegreen;
-      }
-
-      @media (prefers-color-scheme: dark) {
-        .switch--theme-1 {
-          --switch-unchecked-background-color: blue;
-          --switch-checked-background-color: red;
-          --switch-unchecked-hover-background-color: purple;
-          --switch-checked-hover-background-color: indianred;
-        }
-      }
-    </style>
-    <span class="switch switch--theme-1">
-      <span
-        class="switch__control"
-        role="switch"
-        tabindex="0"
-        aria-checked="false"/>
-      <span class="switch__button"/>
-    </span>
-  </highlight-code>
+  <component-demo component="switch" variant="script/customProperties"/>
 </div>
 export const metadata = {
   component: "switch",

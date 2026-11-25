@@ -12,7 +12,7 @@ export const collapsedUnselected = () => `
         </span>
     </button>
     <div class="listbox-button__listbox listbox-button__listbox--set-position">
-        <div class="listbox-button__options" role="listbox">
+        <div class="listbox-button__options" role="listbox" aria-label="Color">
             <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">Red</span>
                 <svg class="icon icon--16" height="8" width="8">
@@ -25,7 +25,7 @@ export const collapsedUnselected = () => `
                     <use href="#icon-tick-16"></use>
                 </svg>
             </div>
-            <div class="listbox-button__option" role="option">
+            <div class="listbox-button__option" role="option" aria-disabled="true">
                 <span class="listbox-button__value">Yellow</span>
                 <svg class="icon icon--16" height="8" width="8">
                     <use href="#icon-tick-16"></use>
@@ -54,7 +54,7 @@ export const expandedUnselected = () => `
         </span>
     </button>
     <div class="listbox-button__listbox listbox-button__listbox--set-position">
-        <div class="listbox-button__options" role="listbox">
+        <div class="listbox-button__options" role="listbox" aria-label="Color">
             <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">Red</span>
                 <svg class="icon icon--16" height="8" width="8">
@@ -96,7 +96,7 @@ export const collapsedSelected = () => `
         </span>
     </button>
     <div class="listbox-button__listbox listbox-button__listbox--set-position">
-        <div class="listbox-button__options" role="listbox">
+        <div class="listbox-button__options" role="listbox" aria-label="Color" tabindex="0">
             <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">Red</span>
                 <svg class="icon icon--16" height="8" width="8">
@@ -138,7 +138,7 @@ export const expandedSelected = () => `
         </span>
     </button>
     <div class="listbox-button__listbox listbox-button__listbox--set-position">
-        <div class="listbox-button__options" role="listbox">
+        <div class="listbox-button__options" role="listbox" aria-label="Color">
             <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">Red</span>
                 <svg class="icon icon--16" height="8" width="8">
@@ -180,7 +180,7 @@ export const disabled = () => `
         </span>
     </button>
     <div class="listbox-button__listbox listbox-button__listbox--set-position">
-        <div class="listbox-button__options" role="listbox">
+        <div class="listbox-button__options" role="listbox" aria-label="Color">
             <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">Red</span>
                 <svg class="icon icon--16" height="8" width="8">
@@ -222,7 +222,7 @@ export const invalid = () => `
         </span>
     </button>
     <div class="listbox-button__listbox listbox-button__listbox--set-position">
-        <div class="listbox-button__options" role="listbox">
+        <div class="listbox-button__options" role="listbox" aria-label="Color">
             <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">Red</span>
                 <svg class="icon icon--16" height="8" width="8">
@@ -264,7 +264,7 @@ export const longOption = () => `
         </span>
     </button>
     <div class="listbox-button__listbox listbox-button__listbox--set-position">
-        <div class="listbox-button__options" role="listbox">
+        <div class="listbox-button__options" role="listbox" aria-label="Color">
             <div class="listbox-button__option" role="option" aria-selected="true">
                 <span class="listbox-button__value">Red with very very very long text</span>
                 <svg class="icon icon--16" height="8" width="8">
@@ -300,7 +300,7 @@ export const borderless = () => `
         </span>
     </button>
     <div class="listbox-button__listbox listbox-button__listbox--set-position">
-        <div class="listbox-button__options" role="listbox" tabindex="0">
+        <div class="listbox-button__options" role="listbox" tabindex="0" aria-label="Quantity">
             <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">1</span>
                 <svg class="icon icon--16" height="10" width="14">
@@ -336,7 +336,7 @@ export const floatingLabelSelected = () => `
         </span>
     </button>
     <div class="listbox-button__listbox listbox-button__listbox--set-position">
-        <div class="listbox-button__options" role="listbox" tabindex="0">
+        <div class="listbox-button__options" role="listbox" tabindex="0" aria-label="Color">
             <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">Red</span>
                 <svg class="icon icon--16" height="10" width="14">
@@ -378,7 +378,7 @@ export const textSpacing = () => `
         </span>
     </button>
     <div class="listbox-button__listbox listbox-button__listbox--set-position">
-        <div class="listbox-button__options" role="listbox">
+        <div class="listbox-button__options" role="listbox" aria-label="Color">
             <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">Red</span>
                 <svg class="icon icon--16" height="8" width="8">
@@ -400,6 +400,58 @@ export const textSpacing = () => `
             <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">Green</span>
                 <svg class="icon icon--16" height="8" width="8">
+                    <use href="#icon-tick-16"></use>
+                </svg>
+            </div>
+        </div>
+    </div>
+</span>
+`;
+
+export const floatingLabelUnselected = () => `
+<span class="listbox-button" data-makeup-auto-select="false">
+    <button
+        class="button button--form button--floating-label"
+        style="min-width: 150px"
+        aria-expanded="false"
+        aria-haspopup="listbox"
+    >
+        <span class="button__cell">
+            <span class="button__floating-label">Color</span>
+            <span class="button__text"></span>
+            <svg
+                class="icon icon--12"
+                height="10"
+                width="14"
+                aria-hidden="true"
+            >
+                <use href="#icon-chevron-down-12"></use>
+            </svg>
+        </span>
+    </button>
+    <div class="listbox-button__listbox">
+        <div class="listbox-button__options" role="listbox" aria-label="Color">
+            <div class="listbox-button__option" role="option">
+                <span class="listbox-button__value">Red</span>
+                <svg class="icon icon--16" height="10" width="14">
+                    <use href="#icon-tick-16"></use>
+                </svg>
+            </div>
+            <div class="listbox-button__option" role="option">
+                <span class="listbox-button__value">Blue</span>
+                <svg class="icon icon--16" height="10" width="14">
+                    <use href="#icon-tick-16"></use>
+                </svg>
+            </div>
+            <div class="listbox-button__option" role="option">
+                <span class="listbox-button__value">Yellow</span>
+                <svg class="icon icon--16" height="10" width="14">
+                    <use href="#icon-tick-16"></use>
+                </svg>
+            </div>
+            <div class="listbox-button__option" role="option">
+                <span class="listbox-button__value">Green</span>
+                <svg class="icon icon--16" height="10" width="14">
                     <use href="#icon-tick-16"></use>
                 </svg>
             </div>

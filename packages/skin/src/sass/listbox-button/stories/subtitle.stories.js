@@ -12,7 +12,7 @@ export const collapsedUnselected = () => `
         </span>
     </button>
     <div class="listbox-button__listbox listbox-button__listbox--set-position">
-        <div class="listbox-button__options" role="listbox">
+        <div class="listbox-button__options" role="listbox" aria-label="Color">
             <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">Red</span>
                 <span class="listbox-button__description">
@@ -66,7 +66,7 @@ export const expandedUnselected = () => `
         </span>
     </button>
     <div class="listbox-button__listbox listbox-button__listbox--set-position">
-        <div class="listbox-button__options" role="listbox">
+        <div class="listbox-button__options" role="listbox" aria-label="Color">
             <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">Red</span>
                 <span class="listbox-button__description">
@@ -124,7 +124,7 @@ export const collapsedSelected = () => `
         </span>
     </button>
     <div class="listbox-button__listbox listbox-button__listbox--set-position">
-        <div class="listbox-button__options" role="listbox">
+        <div class="listbox-button__options" role="listbox" aria-label="Color">
             <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">Red</span>
                 <span class="listbox-button__description">
@@ -182,7 +182,7 @@ export const expandedSelected = () => `
         </span>
     </button>
     <div class="listbox-button__listbox listbox-button__listbox--set-position">
-        <div class="listbox-button__options" role="listbox">
+        <div class="listbox-button__options" role="listbox" aria-label="Color">
             <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">Red</span>
                 <span class="listbox-button__description">
@@ -240,7 +240,7 @@ export const disabled = () => `
         </span>
     </button>
     <div class="listbox-button__listbox listbox-button__listbox--set-position">
-        <div class="listbox-button__options" role="listbox">
+        <div class="listbox-button__options" role="listbox" aria-label="Color">
             <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">Red</span>
                 <span class="listbox-button__description">
@@ -298,7 +298,7 @@ export const invalid = () => `
         </span>
     </button>
     <div class="listbox-button__listbox listbox-button__listbox--set-position">
-        <div class="listbox-button__options" role="listbox">
+        <div class="listbox-button__options" role="listbox" aria-label="Color">
             <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">Red</span>
                 <span class="listbox-button__description">
@@ -356,7 +356,7 @@ export const longOption = () => `
         </span>
     </button>
     <div class="listbox-button__listbox listbox-button__listbox--set-position">
-        <div class="listbox-button__options" role="listbox">
+        <div class="listbox-button__options" role="listbox" aria-label="Color">
             <div class="listbox-button__option" role="option" aria-selected="true">
                 <span class="listbox-button__value">Red with very very very long text</span>
                 <span class="listbox-button__description">
@@ -404,7 +404,7 @@ export const longSubtitle = () => `
         </span>
     </button>
     <div class="listbox-button__listbox listbox-button__listbox--set-position">
-        <div class="listbox-button__options" role="listbox">
+        <div class="listbox-button__options" role="listbox" aria-label="Color">
             <div class="listbox-button__option" role="option" aria-selected="true">
                 <span class="listbox-button__value">Red</span>
                 <span class="listbox-button__description">
