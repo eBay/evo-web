@@ -1,7 +1,8 @@
 export default { title: "Skin/Confirm Dialog" };
 
 export const base = () => `
-<div aria-labelledby="confirm-dialog-title" aria-modal="true" class="confirm-dialog confirm-dialog--mask-fade" role="dialog">
+<button class="button button--primary dialog-button" data-makeup-for="confirm-dialog-0" type="button">Open Confirm Dialog</button>
+<div aria-labelledby="confirm-dialog-title" aria-modal="true" class="confirm-dialog confirm-dialog--mask-fade" role="dialog" hidden id="confirm-dialog-0">
     <div class="confirm-dialog__window confirm-dialog__window--fade">
         <div class="confirm-dialog__header">
             <h2 id="confirm-dialog-title" class="confirm-dialog__title">Delete Address?</h2>
@@ -15,6 +16,7 @@ export const base = () => `
         </div>
     </div>
 </div>
+<script>document.getElementById("confirm-dialog-0").hidden = false;</script>
 `;
 
 export const textSpacing = () => `

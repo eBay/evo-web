@@ -2,19 +2,19 @@ export default { title: "Skin/Snackbar Dialog/Font-Size" };
 
 export const noAction = () => `
     <div class="font-large">
-        <aside aria-label="Notification" aria-live="polite" aria-modal="false" class="snackbar-dialog" role="dialog">
+        <div aria-label="Notification" aria-live="polite" aria-modal="false" class="snackbar-dialog" role="dialog">
             <div class="snackbar-dialog__window">
                 <div class="snackbar-dialog__main">
                     <p>1 item deleted from watch list.</p>
                 </div>
             </div>
-        </aside>
+        </div>
     </div>
 `;
 
 export const action = () => `
     <div class="font-large">
-        <aside aria-label="Notification" aria-live="polite" aria-modal="false" class="snackbar-dialog" role="dialog">
+        <div aria-label="Notification" aria-live="polite" aria-modal="false" class="snackbar-dialog" role="dialog">
             <div class="snackbar-dialog__window">
                 <div class="snackbar-dialog__main">
                     <p>1 item deleted from watch list.</p>
@@ -23,13 +23,13 @@ export const action = () => `
                     <button accesskey="u" class="link-button snackbar-dialog__cta">Undo</button>
                 </div>
             </div>
-        </aside>
+        </div>
     </div>
 `;
 
 export const actionAndDismiss = () => `
     <div class="font-large">
-        <aside aria-label="Notification" aria-live="polite" aria-modal="false" class="snackbar-dialog" role="dialog">
+        <div aria-label="Notification" aria-live="polite" aria-modal="false" class="snackbar-dialog" role="dialog">
             <div class="snackbar-dialog__window">
                 <div class="snackbar-dialog__main">
                     <p>1 item deleted from watch list.</p>
@@ -39,13 +39,13 @@ export const actionAndDismiss = () => `
                     <button accesskey="d" class="link-button snackbar-dialog__close">Close</button>
                 </div>
             </div>
-        </aside>
+        </div>
     </div>
 `;
 
 export const actionsStacked = () => `
     <div class="font-large">
-        <aside aria-label="Notification" aria-live="polite" aria-modal="false" class="snackbar-dialog" role="dialog">
+        <div aria-label="Notification" aria-live="polite" aria-modal="false" class="snackbar-dialog" role="dialog">
             <div class="snackbar-dialog__window snackbar-dialog__window--column">
                 <div class="snackbar-dialog__main">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -55,6 +55,6 @@ export const actionsStacked = () => `
                 <button accesskey="d" class="link-button snackbar-dialog__close">Close</button>
                 </div>
             </div>
-        </aside>
+        </div>
     </div>
 `;

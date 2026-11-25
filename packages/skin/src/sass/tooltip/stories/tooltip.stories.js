@@ -76,3 +76,22 @@ export const disabledLinks = () => `
         </div>
     </div>
 </span>`;
+
+export const floatingUI = () => `
+<span class="tooltip tooltip--js">
+    <button accesskey="t" class="icon-button tooltip__host" aria-describedby="tooltip-floating-ui" aria-label="Settings">
+        <svg class="icon icon--24" height="16" width="16" aria-hidden="true">
+            <use href="#icon-settings-24"></use>
+        </svg>
+    </button>
+    <div class="tooltip__overlay" id="tooltip-floating-ui" role="tooltip">
+        <span class="tooltip__pointer"></span>
+        <div class="tooltip__mask">
+            <div class="tooltip__cell">
+                <div class="tooltip__content">
+                    <p>Use Access Key 'T' to display settings.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</span>`;

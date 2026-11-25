@@ -206,7 +206,7 @@ export const dismissableWithTitle = () => `
             <svg aria-hidden="true" class="icon icon--16" height="14" width="14">
                 <use href="#icon-close-16"></use>
             </svg>
-        </a>
+        </button>
     </div>
 </section>
 `;
@@ -227,7 +227,7 @@ export const dismissableWithoutTitle = () => `
             <svg aria-hidden="true" class="icon icon--16" height="14" width="14">
                 <use href="#icon-close-16"></use>
             </svg>
-        </a>
+        </button>
     </div>
 </section>
 `;
@@ -263,7 +263,7 @@ export const textSpacing = () => `
             <svg aria-hidden="true" class="icon icon--16" height="14" width="14">
                 <use href="#icon-close-16"></use>
             </svg>
-        </a>
+        </button>
     </div>
 </section>
 `;
