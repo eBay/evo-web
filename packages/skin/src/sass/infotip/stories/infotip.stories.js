@@ -108,7 +108,7 @@ export const paragraphExpanded = () => `
 
 export const infotipModal = () => `
     <span class="infotip infotip--modal">
-        <button class="icon-button icon-button--transparent dialog-button" type="button" data-makeup-for="lightbox-dialog-mini-infotip-0" aria-expanded="true" aria-label="Help">
+        <button class="icon-button icon-button--transparent dialog-button" type="button" data-makeup-for="lightbox-dialog-mini-infotip-0" aria-expanded="false" aria-label="Help">
             <svg class="icon icon--16" width="16" height="16" aria-hidden="true">
                 <use href="#icon-information-16"></use>
             </svg>
@@ -130,7 +130,7 @@ export const infotipModal = () => `
             </div>
         </div>
     </div>
-<script>document.getElementById("lightbox-dialog-mini-infotip-0").hidden = false;</script>
+<script>document.getElementById("lightbox-dialog-mini-infotip-0").hidden = false; document.querySelector('[data-makeup-for="lightbox-dialog-mini-infotip-0"]').setAttribute("aria-expanded", "true");</script>
 `;
 
 export const textSpacing = () => `

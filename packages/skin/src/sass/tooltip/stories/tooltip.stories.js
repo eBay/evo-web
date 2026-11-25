@@ -89,7 +89,7 @@ export const floatingUI = () => `
         <div class="tooltip__mask">
             <div class="tooltip__cell">
                 <div class="tooltip__content">
-                    <p>Use Access Key 'S' to display settings.</p>
+                    <p>Use Access Key 'T' to display settings.</p>
                 </div>
             </div>
         </div>

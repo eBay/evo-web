@@ -2,7 +2,7 @@ export default { title: "Skin/Toast Dialog" };
 
 export const primaryAction = () => `
 <button class="button button--primary dialog-button" data-makeup-for="toast-dialog-1">Show Default Toast</button>
-<div class="toast-dialog" aria-label="Notification" aria-live="polite" aria-modal="false" role="dialog" hidden id="toast-dialog-1">
+<div class="toast-dialog toast-dialog--transition" aria-label="Notification" aria-live="polite" aria-modal="false" role="dialog" hidden id="toast-dialog-1">
     <div class="toast-dialog__window">
         <div class="toast-dialog__header">
             <h2>User Privacy Preferences</h2>
@@ -26,7 +26,7 @@ export const primaryAction = () => `
 
 export const secondaryAction = () => `
 <button class="button button--primary dialog-button" data-makeup-for="toast-dialog-2">Show Secondary Action Toast</button>
-<div class="toast-dialog" aria-label="Notification" aria-live="polite" aria-modal="false" role="dialog" hidden id="toast-dialog-2">
+<div class="toast-dialog toast-dialog--transition" aria-label="Notification" aria-live="polite" aria-modal="false" role="dialog" hidden id="toast-dialog-2">
     <div class="toast-dialog__window">
         <div class="toast-dialog__header">
             <h2>User Privacy Preferences</h2>

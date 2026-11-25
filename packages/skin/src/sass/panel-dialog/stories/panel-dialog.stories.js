@@ -51,11 +51,10 @@ export const RTL = () => `
 `;
 
 export const panelEnd = () => `
-<button class="button button--primary dialog-button" data-makeup-for="dialog-right-panel-1" type="button">Open End Panel</button>
-<div aria-labelledby="panel-title-end" aria-modal="true" class="panel-dialog" role="dialog" hidden id="dialog-right-panel-1">
+<div aria-labelledby="panel-title" aria-modal="true" class="panel-dialog" role="dialog">
     <div class="panel-dialog__window panel-dialog__window--end">
         <div class="panel-dialog__header">
-            <h2 id="panel-title-end">Right Panel</h2>
+            <h2 id="panel-title">Right Panel</h2>
             <button class="icon-button panel-dialog__close" type="button" aria-label="Close Dialog">
                 <svg class="icon icon--16" aria-hidden="true">
                     <use href="#icon-close-16"></use>
@@ -72,7 +71,6 @@ export const panelEnd = () => `
         </div>
     </div>
 </div>
-<script>document.getElementById("dialog-right-panel-1").hidden = false;</script>
 `;
 
 export const panelEndWithFooter = () => `
@@ -103,10 +101,11 @@ export const panelEndWithFooter = () => `
 `;
 
 export const panelEndSecondaryButton = () => `
-<div aria-labelledby="panel-title" aria-modal="true" class="panel-dialog" role="dialog">
+<button class="button button--primary dialog-button" data-makeup-for="dialog-right-panel-1" type="button">Open End Panel</button>
+<div aria-labelledby="panel-title-end" aria-modal="true" class="panel-dialog" role="dialog" hidden id="dialog-right-panel-1">
     <div class="panel-dialog__window panel-dialog__window--end">
         <div class="panel-dialog__header">
-            <h2 id="panel-title">Right Panel</h2>
+            <h2 id="panel-title-end">Right Panel</h2>
             <button class="link-button panel-dialog__close" type="button">Reset</button>
         </div>
         <div class="panel-dialog__main">
@@ -119,6 +118,7 @@ export const panelEndSecondaryButton = () => `
         </div>
     </div>
 </div>
+<script>document.getElementById("dialog-right-panel-1").hidden = false;</script>
 `;
 
 export const panelScroll = () => `

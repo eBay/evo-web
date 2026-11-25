@@ -55,16 +55,16 @@ Color contrast is reported but not changed: the findings are disabled states (ex
 ### 3.1 Changes forced by the docs page
 
 - `page-notice/stories/page-notice.stories.js` `dismissableWithTitle`: `<button>` was closed with `</a>`; now `</button>`. Reason: unparseable markup. Percy: none.
-- `panel-dialog` `panelWithPrev`, `panelEnd`: `panel-title` renamed `panel-title-prev`, `panel-title-end`. Reason: id collided with `panelStart`. Percy: none.
+- `panel-dialog` `panelWithPrev`, `panelEndSecondaryButton`: `panel-title` renamed `panel-title-prev`, `panel-title-end`. Reason: id collided with `panelStart`. Percy: none.
 - `lightbox-dialog` `scrollingLightbox`, `basePrev`, `wide`, `narrow`, `large`, `baseWithFooter`, `expressiveBase`: `lightbox-dialog-title` renamed per export. Reason: id collided with `base`. Percy: none.
 - `tourtip` `withActions`: `tourtip-label` renamed `tourtip-label-actions`. Reason: id collided with `expanded`. Percy: none.
 - `alert-dialog` `base`: docs trigger button, `hidden` and `id="alert-dialog-0"` on the dialog, and a Storybook-only reveal `<script>`. Reason: the dialog rendered open on the docs page. Percy: visible (trigger button).
 - `confirm-dialog` `base`: docs trigger, `hidden`, `id="confirm-dialog-0"`, reveal script. Reason: dialog rendered open. Percy: visible (trigger button).
-- `snackbar-dialog/base` `noAction`, `action`, `actionsStacked`: docs trigger, `hidden`, `id="snackbar-dialog-1..3"`, reveal script. Reason: the fixed-position dialogs covered the docs page. Percy: visible (trigger button).
-- `toast-dialog` `primaryAction`, `secondaryAction`: docs trigger, `hidden`, `id="toast-dialog-1..2"`, reveal script. Reason: the fixed-position dialogs covered the docs page. Percy: visible (trigger button).
-- `panel-dialog` `panelStart`, `panelWithPrev`, `panelEnd`: docs trigger, `hidden`, docs `id`, reveal script. Reason: dialog rendered open. Percy: visible (trigger button).
+- `snackbar-dialog/base` `noAction`, `action`, `actionsStacked`: docs trigger, `hidden`, `id="snackbar-dialog-1..3"`, reveal script, and the `snackbar-dialog--transition` class the old demos had (the docs script slides the snackbar in with it). `action` and `actionsStacked` also restore the visually hidden `- Access Key: U` text on Undo. Reason: the fixed-position dialogs covered the docs page. Percy: visible (trigger button).
+- `toast-dialog` `primaryAction`, `secondaryAction`: docs trigger, `hidden`, `id="toast-dialog-1..2"`, reveal script, and the `toast-dialog--transition` class the old demos had. Reason: the fixed-position dialogs covered the docs page. Percy: visible (trigger button).
+- `panel-dialog` `panelStart`, `panelWithPrev`, `panelEndSecondaryButton`: docs trigger, `hidden`, docs `id`, reveal script. Reason: dialog rendered open. Percy: visible (trigger button).
 - `lightbox-dialog` `base`, `scrollingLightbox`, `basePrev`, `wide`, `narrow`, `large`, `baseWithFooter`, `expressiveBase`: docs trigger, `hidden`, docs `id`, reveal script. Reason: dialog rendered open. Percy: visible (trigger button).
-- `infotip` `infotipModal`: `hidden`, `id="lightbox-dialog-mini-infotip-0"` and a reveal script (the story already had its trigger). Reason: dialog rendered open. Percy: none.
+- `infotip` `infotipModal`: `hidden`, `id="lightbox-dialog-mini-infotip-0"` and a reveal script (the story already had its trigger). The trigger starts with `aria-expanded="false"` and the reveal script sets it to `true` in Storybook, where the dialog is open. Reason: dialog rendered open, and `aria-expanded="true"` was wrong beside a hidden dialog. Percy: none.
 
 ### 3.2 Accessibility and markup fixes, by component
 
@@ -78,7 +78,7 @@ Color contrast is reported but not changed: the findings are disabled states (ex
 
 ### inline-notice
 
-- inline-notice/stories/inline.stories.js all 11 status-icon exports: added aria-label (Confirmation, Attention, Information, Warning, matching the icon) to the role="img" status icon; longParagraphAndLink moved role="img" from the header span onto the svg. Reason: axe svg-img-alt / role-img-alt; restores old docs aria-label. Percy: none.
+- inline-notice/stories/inline.stories.js all 12 status-icon exports: added aria-label (Confirmation, Attention, Information, Warning, matching the icon) to the role="img" status icon; longParagraphAndLink moved role="img" from the header span onto the svg. Reason: axe svg-img-alt / role-img-alt; restores old docs aria-label. Percy: none.
 
 ### page-notice
 
@@ -96,7 +96,7 @@ Color contrast is reported but not changed: the findings are disabled states (ex
 
 ### tooltip
 
-- tooltip/stories/tooltip.stories.js floatingUI: host accesskey changed from "s" to "t"; the Tooltip page renders it next to collapsed, which also uses "s", so the shortcut could reach only one of them. Reason: 1.2 item (duplicate accesskey). Percy: none.
+- tooltip/stories/tooltip.stories.js floatingUI (new export): host accesskey is "t" and the text says Access Key 'T', where the old docs example used "s" and 'S'; the Tooltip page renders it next to collapsed, which also uses "s", so the shortcut could reach only one of them. Reason: duplicate accesskey. Percy: none.
 
 ## 4. Docs pages
 
@@ -132,12 +132,11 @@ For each migrated demo, the accessibility attributes (`role`, `aria-*`, `tabinde
 
 1. infotip, **Modal Infotip** (`infotip:infotipModal`): adds `aria-label`.
 1. page-notice, **(top of page)** (`page-notice:general` + `page-notice:confirmationWithLink` + `page-notice:attentionWithButton` + `page-notice:informationWithLink` + `page-notice:warningWithButton` + `page-notice:dismissableWithTitle` + `page-notice:formErrors`): adds `role="region" ×2`, `aria-label ×3`.
-1. panel-dialog, **End Panel** (`panel-dialog:panelEnd`): adds `aria-label`.
 1. section-notice, **(top of page)** (`section-notice:iconless/body` + `section-notice:variants/confirmation` + `section-notice:variants/attention` + `section-notice:variants/information` + `section-notice:variants/warning` + `section-notice:base/title` + `section-notice:base/dismiss` + `section-notice:base/dismissAndLinkCTA`): adds `role="region"`, `aria-label ×2`, `aria-roledescription`.
 
 ## 8. Per-demo comparison: old docs markup against the story that replaced it
 
-39 old demos compared: 12 identical and 27 with differences.
+39 old demos compared: 14 identical and 25 with differences.
 
 The old demo is the markup inside its `demo__inner` wrapper on `main`, with Marko-only syntax converted to HTML; the new markup is the story output with `<script>` removed. Compared: class names; `role`, `aria-*`, `tabindex`, `hidden`, `disabled`, `type`, `data-*`, `src`, `checked`, `selected`, `readonly`, `required`, `name` and `value` attributes; element count; and text content. Ignored: whitespace, attribute order, `id` values, and anything inside `<svg>`; id-reference attributes are compared by presence only. "Identical" means identical under these rules, not byte for byte. Old demos are matched to new tags by the prose between them, or in order where the page had examples without a demo wrapper or corrected prose.
 
@@ -190,7 +189,7 @@ The old demo is the markup inside its `demo__inner` wrapper on `main`, with Mark
 1. **(top of page)** → `panel-dialog:panelStart`: classes removed: large-text-1, bold-text; attributes added: aria-label="Close Dialog"; removed: aria-label="Close dialog"; elements 11 → 16; text content differs.
 1. **Panel dialog with Previous button** → `panel-dialog:panelWithPrev`: classes removed: large-text-1, bold-text; attributes added: aria-label="Close Dialog"; removed: aria-label="Close dialog"; elements 13 → 18; text content differs.
 1. **Panel dialog with footer** → `panel-dialog:panelWithFooter`: identical.
-1. **End Panel** → `panel-dialog:panelEnd`: classes added: icon-button, panel-dialog__close; removed: panel-dialog__title, large-text-1, bold-text, link-button, panel-dialog__reset; attributes added: aria-label="Close Dialog"; elements 10 → 16; text content differs.
+1. **End Panel** → `panel-dialog:panelEndSecondaryButton`: classes added: panel-dialog__close; removed: panel-dialog__title, large-text-1, bold-text, panel-dialog__reset; elements 10 → 13; text content differs.
 1. **Sliding Panel** → `panel-dialog:panelSlideStart` + `panel-dialog:panelSlideEnd`: identical.
 
 ### section-notice
@@ -199,14 +198,14 @@ The old demo is the markup inside its `demo__inner` wrapper on `main`, with Mark
 
 ### snackbar-dialog
 
-1. **Default Snackbar** → `snackbar-dialog:base/noAction`: classes removed: snackbar-dialog--transition.
-1. **Action Snackbar** → `snackbar-dialog:base/action`: classes removed: snackbar-dialog--transition, clipped; elements 8 → 7; text content differs.
-1. **Stacked Snackbar** → `snackbar-dialog:base/actionsStacked`: classes added: link-button, snackbar-dialog__close; removed: snackbar-dialog--transition, clipped; text content differs.
+1. **Default Snackbar** → `snackbar-dialog:base/noAction`: identical.
+1. **Action Snackbar** → `snackbar-dialog:base/action`: identical.
+1. **Stacked Snackbar** → `snackbar-dialog:base/actionsStacked`: classes added: link-button, snackbar-dialog__close; text content differs.
 
 ### toast-dialog
 
-1. **Default Toast** → `toast-dialog:primaryAction`: classes removed: toast-dialog--transition, toast-dialog__title, toast-dialog__cta; text content differs.
-1. **Toast Secondary Action** → `toast-dialog:secondaryAction`: classes removed: toast-dialog--transition, toast-dialog__title, toast-dialog__cta; text content differs.
+1. **Default Toast** → `toast-dialog:primaryAction`: classes removed: toast-dialog__title, toast-dialog__cta; text content differs.
+1. **Toast Secondary Action** → `toast-dialog:secondaryAction`: classes removed: toast-dialog__title, toast-dialog__cta; text content differs.
 
 ### tooltip
 
