@@ -242,18 +242,7 @@ static const { table } = __styles;
     Use the <code>skeleton__avatar</code> class to create a skeleton placeholder
     for an avatar.
   </p>
-  <div class="demo">
-    <div class="demo__inner">
-      <div class="skeleton" role="img" aria-label="loading">
-        <div class="skeleton__avatar"/>
-      </div>
-    </div>
-  </div>
-  <highlight-code type="html">
-    <div class="skeleton" role="img" aria-label="loading">
-      <div class="skeleton__avatar"/>
-    </div>
-  </highlight-code>
+  <component-demo component="skeleton" variant="base/avatar"/>
 
   <h3 id="skeleton-button">Button Skeleton</h3>
 
@@ -261,88 +250,24 @@ static const { table } = __styles;
     Use the <code>skeleton__button</code> class to create a skeleton placeholder
     for the default button shape.
   </p>
-  <div class="demo">
-    <div class="demo__inner">
-      <div
-        class="skeleton"
-        role="img"
-        aria-label="loading"
-        style="width: 200px;"
-      >
-        <div class="skeleton__button"/>
-      </div>
-    </div>
-  </div>
-  <highlight-code type="html">
-    <div class="skeleton" role="img" aria-label="loading" style="width: 200px;">
-      <div class="skeleton__button"/>
-    </div>
-  </highlight-code>
+  <component-demo component="skeleton" variant="base/button"/>
 
   <p>
     Use the <code>small</code> modifier to match the shape of a small button.
   </p>
-  <div class="demo">
-    <div class="demo__inner">
-      <div
-        class="skeleton"
-        role="img"
-        aria-label="loading"
-        style="width: 200px;"
-      >
-        <div class="skeleton__button skeleton__button--small"/>
-      </div>
-    </div>
-  </div>
-  <highlight-code type="html">
-    <div class="skeleton" role="img" aria-label="loading" style="width: 200px;">
-      <div class="skeleton__button skeleton__button--small"/>
-    </div>
-  </highlight-code>
+  <component-demo component="skeleton" variant="base/buttonSmall"/>
 
   <p>
     Use the <code>large</code> modifier to match the shape of a large button.
   </p>
-  <div class="demo">
-    <div class="demo__inner">
-      <div
-        class="skeleton"
-        role="img"
-        aria-label="loading"
-        style="width: 200px;"
-      >
-        <div class="skeleton__button skeleton__button--large"/>
-      </div>
-    </div>
-  </div>
-  <highlight-code type="html">
-    <div class="skeleton" role="img" aria-label="loading" style="width: 200px;">
-      <div class="skeleton__button skeleton__button--large"/>
-    </div>
-  </highlight-code>
+  <component-demo component="skeleton" variant="base/buttonLarge"/>
 
   <h3 id="skeleton-textbox">Textbox Skeleton</h3>
   <p>
     Use the <code>skeleton__textbox</code> class to create a skeleton
     placeholder for a textbox.
   </p>
-  <div class="demo">
-    <div class="demo__inner">
-      <div
-        class="skeleton"
-        role="img"
-        aria-label="loading"
-        style="width: 200px;"
-      >
-        <div class="skeleton__textbox"/>
-      </div>
-    </div>
-  </div>
-  <highlight-code type="html">
-    <div class="skeleton" role="img" aria-label="loading" style="width: 200px;">
-      <div class="skeleton__textbox"/>
-    </div>
-  </highlight-code>
+  <component-demo component="skeleton" variant="base/textBox"/>
 
   <h3 id="skeleton-image">Image Skeleton</h3>
   <p>
@@ -350,103 +275,33 @@ static const { table } = __styles;
     for an image.
   </p>
 
-  <div class="demo">
-    <div class="demo__inner">
-      <div class="skeleton" role="img" aria-label="loading">
-        <div class="skeleton__image" style="height: 50px; width: 50px;"/>
-      </div>
-    </div>
-  </div>
-  <highlight-code type="html">
-    <div class="skeleton" role="img" aria-label="loading">
-      <div class="skeleton__image" style="height: 50px; width: 50px;"/>
-    </div>
-  </highlight-code>
+  <component-demo component="skeleton" variant="base/smallImage"/>
 
   <p>
     Notice that the height and width must be set on the
     <code>skeleton__image</code> element.
   </p>
 
-  <div class="demo">
-    <div class="demo__inner">
-      <div class="skeleton" role="img" aria-label="loading">
-        <div class="skeleton__image" style="height: 200px; width: 200px;"/>
-      </div>
-    </div>
-  </div>
-  <highlight-code type="html">
-    <div class="skeleton" role="img" aria-label="loading">
-      <div class="skeleton__image" style="height: 200px; width: 200px;"/>
-    </div>
-  </highlight-code>
+  <component-demo component="skeleton" variant="base/image"/>
 
   <h3 id="skeleton-text">Text Block Skeleton</h3>
   <p>
     Use the <code>skeleton__text</code> class to create a skeleton for a single
     block of text.
   </p>
-  <div class="demo">
-    <div class="demo__inner">
-      <div
-        class="skeleton"
-        role="img"
-        aria-label="loading"
-        style="width: 200px;"
-      >
-        <div class="skeleton__text"/>
-      </div>
-    </div>
-  </div>
-  <highlight-code type="html">
-    <div class="skeleton" role="img" aria-label="loading" style="width: 200px;">
-      <div class="skeleton__text skeleton__text--small"/>
-    </div>
-  </highlight-code>
+  <component-demo component="skeleton" variant="base/textSmall"/>
 
   <p>
     Use the <code>skeleton__text--large</code> modifier to match the shape of a
     large block of text.
   </p>
-  <div class="demo">
-    <div class="demo__inner">
-      <div
-        class="skeleton"
-        role="img"
-        aria-label="loading"
-        style="width: 200px;"
-      >
-        <div class="skeleton__text skeleton__text--large"/>
-      </div>
-    </div>
-  </div>
-  <highlight-code type="html">
-    <div class="skeleton" role="img" aria-label="loading" style="width: 200px;">
-      <div class="skeleton__text skeleton__text--large"/>
-    </div>
-  </highlight-code>
+  <component-demo component="skeleton" variant="base/textLarge"/>
 
   <p>
     Use the <code>skeleton__text--multiline</code> mofifier to create a skeleton
     for two lines of text.
   </p>
-  <div class="demo">
-    <div class="demo__inner">
-      <div
-        class="skeleton"
-        role="img"
-        aria-label="loading"
-        style="width: 200px;"
-      >
-        <div class="skeleton__text skeleton__text--multiline"/>
-      </div>
-    </div>
-  </div>
-  <highlight-code type="html">
-    <div class="skeleton" role="img" aria-label="loading" style="width: 200px;">
-      <div class="skeleton__text skeleton__text--multiline"/>
-    </div>
-  </highlight-code>
+  <component-demo component="skeleton" variant="base/textSmallMultiLine"/>
 
   <h3 id="skeleton-composite">Composite Skeleton</h3>
   <p>
@@ -454,56 +309,14 @@ static const { table } = __styles;
     content, such as a typical eCommerce item tile in the example below.
   </p>
 
-  <div class="demo">
-    <div class="demo__inner">
-      <div
-        class="skeleton skeleton--purple"
-        role="img"
-        aria-label="loading"
-        style="width: 225px;"
-      >
-        <div class="skeleton__image" style="width: 225px; height: 225px"/>
-        <div class="skeleton__text skeleton__text--multiline"/>
-      </div>
-    </div>
-  </div>
-  <highlight-code type="html">
-    <div
-      class="skeleton skeleton--purple"
-      role="img"
-      aria-label="loading"
-      style="width: 225px;"
-    >
-      <div class="skeleton__image" style="width: 225px; height: 225px"/>
-      <div class="skeleton__text skeleton__text--multiline"/>
-    </div>
-  </highlight-code>
+  <component-demo component="skeleton" variant="composite/tile"/>
 
   <p>
     Here is a skeleton for a compact user profile. Notice that a
     <code>div</code> tag can be replaced with a <code>span</code> tag for
     inline-block layout of elements.
   </p>
-  <div class="demo">
-    <div class="demo__inner">
-      <div class="skeleton skeleton--blue" role="img" aria-label="loading">
-        <span class="skeleton__avatar"/>
-        <span
-          class="skeleton__text skeleton__text--multiline"
-          style="width: 200px; vertical-align: top;"
-        />
-      </div>
-    </div>
-  </div>
-  <highlight-code type="html">
-    <div class="skeleton skeleton--blue" role="img" aria-label="loading">
-      <span class="skeleton__avatar"/>
-      <span
-        class="skeleton__text skeleton__text--multiline"
-        style="width: 200px; vertical-align: top;"
-      />
-    </div>
-  </highlight-code>
+  <component-demo component="skeleton" variant="composite/inlineSkeletons"/>
   <h3 id="skeleton-animation">Skeleton Animation <sup>EXPERIMENTAL</sup></h3>
   <p>
     The skeleton loader uses view-transition animation to swap between the
@@ -530,63 +343,7 @@ static const { table } = __styles;
     Reminder: when swapping between the skeleton and the loaded content, use
     <code>document.startViewTransition()</code> to start the view transition.
   </p>
-  <div class="demo">
-    <div class="demo__inner">
-      <button type="button" class="button skeleton-trigger">
-        Load content
-      </button>
-
-      <div
-        class="skeleton"
-        role="img"
-        aria-label="loading"
-        style="display: flex;"
-      >
-        <span
-          id="skeleton-transition-0"
-          class="skeleton__image"
-          style="height: 200px; width: 200px; view-transition-name: skeleton-transition-0"
-        />
-        <span
-          id="skeleton-transition-1"
-          class="skeleton__image"
-          style="height: 200px; width: 200px; view-transition-name: skeleton-transition-1"
-        />
-        <span
-          id="skeleton-transition-2"
-          class="skeleton__image"
-          style="height: 200px; width: 200px; view-transition-name: skeleton-transition-2"
-        />
-      </div>
-    </div>
-  </div>
-
-  <highlight-code type="html">
-    <button type="button" class="button skeleton-trigger">Load content</button>
-
-    <div
-      class="skeleton"
-      role="img"
-      aria-label="loading"
-      style="display: flex;"
-    >
-      <span
-        id="skeleton-transition-0"
-        class="skeleton__image"
-        style="height: 200px; width: 200px; view-transition-name: skeleton-transition-0"
-      />
-      <span
-        id="skeleton-transition-1"
-        class="skeleton__image"
-        style="height: 200px; width: 200px; view-transition-name: skeleton-transition-1"
-      />
-      <span
-        id="skeleton-transition-2"
-        class="skeleton__image"
-        style="height: 200px; width: 200px; view-transition-name: skeleton-transition-2"
-      />
-    </div>
-  </highlight-code>
+  <component-demo component="skeleton" variant="composite/viewTransition"/>
 
   <h3 id="skeleton-variables">Skeleton Variables <sup>EXPERIMENTAL</sup></h3>
   <p>

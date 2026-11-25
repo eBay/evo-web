@@ -3,7 +3,7 @@ export default { title: "Skin/Charts/Chart Legend" };
 export const base = () => `
 <div style="width:250px;">
     <div class="chart-legend">
-        <dl>
+        <dl aria-label="Example chart legend">
             <div class="chart-legend__item chart-legend__item--primary">
                 <dt class="chart-legend__label">Portion 1</dt>
                 <dd class="chart-legend__value">10%</dd>
@@ -23,7 +23,7 @@ export const base = () => `
 export const twoValues = () => `
 <div style="width:250px;">
     <div class="chart-legend">
-        <dl>
+        <dl aria-label="Example chart legend">
             <div class="chart-legend__item chart-legend__item--primary">
                 <dt class="chart-legend__label">Portion 1</dt>
                 <dd class="chart-legend__value">30%</dd>
@@ -39,7 +39,7 @@ export const twoValues = () => `
 export const fiveValues = () => `
 <div style="width:250px;">
     <div class="chart-legend">
-        <dl>
+        <dl aria-label="Example chart legend">
             <div class="chart-legend__item chart-legend__item--primary">
                 <dt class="chart-legend__label">Portion 1</dt>
                 <dd class="chart-legend__value">10%</dd>

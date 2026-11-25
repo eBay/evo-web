@@ -24,7 +24,7 @@ export const base = () => `
 `;
 
 export const withMessages = () => `
-<div class="progress-bar-expressive">
+<div class="progress-bar-expressive progress-bar-expressive-messages-example">
     <div class="progress-bar-expressive__messages">
         <div aria-hidden="true" class="progress-bar-expressive__message">
             We're finishing your order.
@@ -55,16 +55,16 @@ export const withMessages = () => `
 `;
 
 export const withMediumText = () => `
-<div class="progress-bar-expressive progress-bar-expressive--medium">
+<div class="progress-bar-expressive progress-bar-expressive-messages-example">
     <div class="progress-bar-expressive__messages progress-bar-expressive__messages--medium">
         <div aria-hidden="true" class="progress-bar-expressive__message">
             We're finishing your order.
         </div>
-        <div role="status" id="unique-id" class="progress-bar-expressive__message">
+        <div role="status" id="unique-id-medium" class="progress-bar-expressive__message">
             Hang tight.
         </div>
     </div>
-    <div role="progressbar" aria-label="Loading..." aria-describedby="unique-id" class="progress-bar-expressive__progress">
+    <div role="progressbar" aria-label="Loading..." aria-describedby="unique-id-medium" class="progress-bar-expressive__progress">
         <div class="progress-bar-expressive__lines">
             <div class="progress-bar-expressive__line"></div>
             <div class="progress-bar-expressive__line"></div>
@@ -138,6 +138,34 @@ export const textSpacing = () => `
             <div class="progress-bar-expressive__line"></div>
             <div class="progress-bar-expressive__line"></div>
             
+            <div class="progress-bar-expressive__line"></div>
+            <div class="progress-bar-expressive__line"></div>
+            <div class="progress-bar-expressive__line"></div>
+            <div class="progress-bar-expressive__line"></div>
+        </div>
+    </div>
+</div>
+`;
+
+export const withSingleMessage = () => `
+<div class="progress-bar-expressive">
+    <div class="progress-bar-expressive__messages">
+        <div role="status" id="progress-bar-expressive-message-3" class="progress-bar-expressive__message progress-bar-expressive__message--in">
+            Hang tight.
+        </div>
+    </div>
+    <div role="progressbar" aria-label="Loading..." aria-describedby="progress-bar-expressive-message-3" class="progress-bar-expressive__progress">
+        <div class="progress-bar-expressive__lines">
+            <div class="progress-bar-expressive__line"></div>
+            <div class="progress-bar-expressive__line"></div>
+            <div class="progress-bar-expressive__line"></div>
+            <div class="progress-bar-expressive__line"></div>
+
+            <div class="progress-bar-expressive__line"></div>
+            <div class="progress-bar-expressive__line"></div>
+            <div class="progress-bar-expressive__line"></div>
+            <div class="progress-bar-expressive__line"></div>
+
             <div class="progress-bar-expressive__line"></div>
             <div class="progress-bar-expressive__line"></div>
             <div class="progress-bar-expressive__line"></div>

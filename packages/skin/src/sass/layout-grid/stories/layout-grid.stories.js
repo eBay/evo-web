@@ -118,3 +118,109 @@ export const RTL = () => `
     </div>
 </div>
 `;
+
+export const withRadios = () => `
+<h3 id="layout-grid-radio-title">My Radio Buttons</h3>
+<div class="layout-grid">
+    <ul aria-labelledby="layout-grid-radio-title">
+        <li>
+            <span class="radio">
+                <input id="layout-grid-radio-1" class="radio__control" type="radio" name="layout-grid-radio" />
+                <span class="radio__icon" hidden>
+                    <svg class="radio__unchecked" height="18" width="18" aria-hidden="true">
+                        <use href="#icon-radio-unchecked-18"></use>
+                    </svg>
+                    <svg class="radio__checked" height="18" width="18" aria-hidden="true">
+                        <use href="#icon-radio-checked-18"></use>
+                    </svg>
+                </span>
+            </span>
+            <label for="layout-grid-radio-1">Option 1</label>
+        </li>
+        <li>
+            <span class="radio">
+                <input id="layout-grid-radio-2" class="radio__control" type="radio" name="layout-grid-radio" />
+                <span class="radio__icon" hidden>
+                    <svg class="radio__unchecked" height="18" width="18" aria-hidden="true">
+                        <use href="#icon-radio-unchecked-18"></use>
+                    </svg>
+                    <svg class="radio__checked" height="18" width="18" aria-hidden="true">
+                        <use href="#icon-radio-checked-18"></use>
+                    </svg>
+                </span>
+            </span>
+            <label for="layout-grid-radio-2">Option 2</label>
+        </li>
+        <li>
+            <span class="radio">
+                <input id="layout-grid-radio-3" class="radio__control" type="radio" name="layout-grid-radio" />
+                <span class="radio__icon" hidden>
+                    <svg class="radio__unchecked" height="18" width="18" aria-hidden="true">
+                        <use href="#icon-radio-unchecked-18"></use>
+                    </svg>
+                    <svg class="radio__checked" height="18" width="18" aria-hidden="true">
+                        <use href="#icon-radio-checked-18"></use>
+                    </svg>
+                </span>
+            </span>
+            <label for="layout-grid-radio-3">Option 3</label>
+        </li>
+        <li>
+            <span class="radio">
+                <input id="layout-grid-radio-4" class="radio__control" type="radio" name="layout-grid-radio" />
+                <span class="radio__icon" hidden>
+                    <svg class="radio__unchecked" height="18" width="18" aria-hidden="true">
+                        <use href="#icon-radio-unchecked-18"></use>
+                    </svg>
+                    <svg class="radio__checked" height="18" width="18" aria-hidden="true">
+                        <use href="#icon-radio-checked-18"></use>
+                    </svg>
+                </span>
+            </span>
+            <label for="layout-grid-radio-4">Option 4</label>
+        </li>
+        <li>
+            <span class="radio">
+                <input id="layout-grid-radio-5" class="radio__control" type="radio" name="layout-grid-radio" />
+                <span class="radio__icon" hidden>
+                    <svg class="radio__unchecked" height="18" width="18" aria-hidden="true">
+                        <use href="#icon-radio-unchecked-18"></use>
+                    </svg>
+                    <svg class="radio__checked" height="18" width="18" aria-hidden="true">
+                        <use href="#icon-radio-checked-18"></use>
+                    </svg>
+                </span>
+            </span>
+            <label for="layout-grid-radio-5">Option 5</label>
+        </li>
+        <li>
+            <span class="radio">
+                <input id="layout-grid-radio-6" class="radio__control" type="radio" name="layout-grid-radio" />
+                <span class="radio__icon" hidden>
+                    <svg class="radio__unchecked" height="18" width="18" aria-hidden="true">
+                        <use href="#icon-radio-unchecked-18"></use>
+                    </svg>
+                    <svg class="radio__checked" height="18" width="18" aria-hidden="true">
+                        <use href="#icon-radio-checked-18"></use>
+                    </svg>
+                </span>
+            </span>
+            <label for="layout-grid-radio-6">Option 6</label>
+        </li>
+        <li>
+            <span class="radio">
+                <input id="layout-grid-radio-7" class="radio__control" type="radio" name="layout-grid-radio" />
+                <span class="radio__icon" hidden>
+                    <svg class="radio__unchecked" height="18" width="18" aria-hidden="true">
+                        <use href="#icon-radio-unchecked-18"></use>
+                    </svg>
+                    <svg class="radio__checked" height="18" width="18" aria-hidden="true">
+                        <use href="#icon-radio-checked-18"></use>
+                    </svg>
+                </span>
+            </span>
+            <label for="layout-grid-radio-7">Option 7</label>
+        </li>
+    </ul>
+</div>
+`;

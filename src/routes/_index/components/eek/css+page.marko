@@ -13,9 +13,9 @@ static const { table } = __styles;
       </tr>
     </thead>
     <tbody>
-      <for|
-        icon,
-      | of="A+++-D, A+++-E, A+++-G, A++-E, A++-G, A+-F, A+-E, A-G".split(", ")>
+      <for|icon|
+        of="A+++-D, A+++-E, A+++-G, A++-E, A++-G, A+-F, A+-E, A-G".split(", ")
+      >
         <const/range=icon.split("-")>
         <const/min=range[1]>
         <const/max=range[0]>
@@ -49,7 +49,6 @@ static const { table } = __styles;
       <tr>
         <th>EEK RATING NAME</th>
         <th>
-
           <eek-range min="D" max="A+++"/>
         </th>
         <th>
@@ -64,15 +63,12 @@ static const { table } = __styles;
       </tr>
     </thead>
     <tbody>
-
       <for|iconName, index| of="A+++, A++, A+, A, B, C, D, E, F, G".split(", ")>
         <tr>
           <td>
             <span class="demo">
               <span class="demo__inner">
-                <span class="eek__rating">
-                  ${iconName}
-                </span>
+                <span class="eek__rating">${iconName}</span>
               </span>
             </span>
           </td>
@@ -117,9 +113,7 @@ static const { table } = __styles;
           <td>
             <span class="demo">
               <span class="demo__inner">
-                <span class="eek__rating">
-                  ${iconName}
-                </span>
+                <span class="eek__rating">${iconName}</span>
               </span>
             </span>
           </td>
@@ -140,318 +134,15 @@ static const { table } = __styles;
     </tbody>
   </table>
 
-  <h3 id="eek-default">
-    EEK examples
-  </h3>
-  <div class="demo">
-    <div class="demo__inner">
-      <div
-        class="eek eek--rating-1"
-        role="img"
-        aria-label="Energy Rating: A+++. Range: A+++ - D">
-        <div class="eek__container" aria-hidden="true">
-          <span class="eek__rating-range">
-            <span>
-              A+++
-            </span>
-            <svg class="icon icon--eek-range-arrow">
-              <icon-symbol name="eek-range-arrow"/>
-            </svg>
-            <span>
-              D
-            </span>
-          </span>
-          <span class="eek__rating">
-            A+++
-          </span>
-        </div>
-        <svg class="icon icon--eek-arrow">
-          <icon-symbol name="eek-arrow"/>
-        </svg>
-      </div>
-      <div
-        class="eek eek--rating-4"
-        role="img"
-        aria-label="Energy Rating: B. Range: A++ - E">
-        <div class="eek__container" aria-hidden="true">
-          <span class="eek__rating-range">
-            <span>
-              A++
-            </span>
-            <svg class="icon icon--eek-range-arrow">
-              <icon-symbol name="eek-range-arrow"/>
-            </svg>
-            <span>
-              E
-            </span>
-          </span>
-          <span class="eek__rating">
-            B
-          </span>
-        </div>
-        <svg class="icon icon--eek-arrow">
-          <icon-symbol name="eek-arrow"/>
-        </svg>
-      </div>
-      <div
-        class="eek eek--rating-7"
-        role="img"
-        aria-label="Energy Rating: G. Range: A+ - G">
-        <div class="eek__container" aria-hidden="true">
-          <span class="eek__rating-range">
-            <span>
-              A+
-            </span>
-            <svg class="icon icon--eek-range-arrow">
-              <icon-symbol name="eek-range-arrow"/>
-            </svg>
-            <span>
-              E
-            </span>
-          </span>
-          <span class="eek__rating">
-            G
-          </span>
-        </div>
-        <svg class="icon icon--eek-arrow">
-          <icon-symbol name="eek-arrow"/>
-        </svg>
-      </div>
-    </div>
-  </div>
-  <highlight-code type="html">
-    <div
-      class="eek eek--rating-1"
-      role="img"
-      aria-label="Energy Rating: A+++. Range: A+++ - D">
-      <div class="eek__container" aria-hidden="true">
-        <span class="eek__rating-range">
-          <span>
-            A+++
-          </span>
-          <svg class="icon icon--eek-range-arrow">
-            <use href="#icon-eek-range-arrow"/>
-          </svg>
-          <span>
-            D
-          </span>
-        </span>
-        <span class="eek__rating">
-          A+++
-        </span>
-      </div>
-      <svg class="icon icon--eek-arrow">
-        <use href="#icon-eek-arrow"/>
-      </svg>
-    </div>
-    <div
-      class="eek eek--rating-4"
-      role="img"
-      aria-label="Energy Rating: B. Range: A++ - E">
-      <div class="eek__container" aria-hidden="true">
-        <span class="eek__rating-range">
-          <span>
-            A++
-          </span>
-          <svg class="icon icon--eek-range-arrow">
-            <use href="#icon-eek-range-arrow"/>
-          </svg>
-          <span>
-            E
-          </span>
-        </span>
-        <span class="eek__rating">
-          B
-        </span>
-      </div>
-      <svg class="icon icon--eek-arrow">
-        <use href="#icon-eek-arrow"/>
-      </svg>
-    </div>
-    <div
-      class="eek eek--rating-7"
-      role="img"
-      aria-label="Energy Rating: G. Range: A+ - G">
-      <div class="eek__container" aria-hidden="true">
-        <span class="eek__rating-range">
-          <span>
-            A+
-          </span>
-          <svg class="icon icon--eek-range-arrow">
-            <use href="#icon-eek-range-arrow"/>
-          </svg>
-          <span>
-            E
-          </span>
-        </span>
-        <span class="eek__rating">
-          G
-        </span>
-      </div>
-      <svg class="icon icon--eek-arrow">
-        <use href="#icon-eek-arrow"/>
-      </svg>
-    </div>
-  </highlight-code>
+  <h3 id="eek-default">EEK examples</h3>
+  <component-demo component="eek" variant="ratings"/>
 
-  <h3 id="eek-large">
-    Large EEK
-  </h3>
+  <h3 id="eek-large">Large EEK</h3>
   <p>
-    In order to match other items on the screen, you can use${" "}
-    <code>eek--large</code>
-    ${" "}class to increase the size
+    In order to match other items on the screen, you can use
+    <code>eek--large</code> class to increase the size
   </p>
-  <div class="demo">
-    <div class="demo__inner">
-      <div
-        class="eek eek--large eek--rating-1"
-        role="img"
-        aria-label="Energy Rating: A+++. Range: A+++ - D">
-        <div class="eek__container" aria-hidden="true">
-          <span class="eek__rating-range">
-            <span>
-              A+++
-            </span>
-            <svg class="icon icon--eek-range-arrow">
-              <icon-symbol name="eek-range-arrow"/>
-            </svg>
-            <span>
-              D
-            </span>
-          </span>
-          <span class="eek__rating">
-            A+++
-          </span>
-        </div>
-        <svg class="icon icon--eek-arrow">
-          <icon-symbol name="eek-arrow"/>
-        </svg>
-      </div>
-      <div
-        class="eek eek--large eek--rating-4"
-        role="img"
-        aria-label="Energy Rating: B. Range: A++ - E">
-        <div class="eek__container" aria-hidden="true">
-          <span class="eek__rating-range">
-            <span>
-              A++
-            </span>
-            <svg class="icon icon--eek-range-arrow">
-              <icon-symbol name="eek-range-arrow"/>
-            </svg>
-            <span>
-              E
-            </span>
-          </span>
-          <span class="eek__rating">
-            B
-          </span>
-        </div>
-        <svg class="icon icon--eek-arrow">
-          <icon-symbol name="eek-arrow"/>
-        </svg>
-      </div>
-      <div
-        class="eek eek--large eek--rating-7"
-        role="img"
-        aria-label="Energy Rating: G. Range: A+ - G">
-        <div class="eek__container" aria-hidden="true">
-          <span class="eek__rating-range">
-            <span>
-              A+
-            </span>
-            <svg class="icon icon--eek-range-arrow">
-              <icon-symbol name="eek-range-arrow"/>
-            </svg>
-            <span>
-              E
-            </span>
-          </span>
-          <span class="eek__rating">
-            G
-          </span>
-        </div>
-        <svg class="icon icon--eek-arrow">
-          <icon-symbol name="eek-arrow"/>
-        </svg>
-      </div>
-    </div>
-  </div>
-  <highlight-code type="html">
-    <div
-      class="eek eek--large eek--rating-1"
-      role="img"
-      aria-label="Energy Rating: A+++. Range: A+++ - D">
-      <div class="eek__container" aria-hidden="true">
-        <span class="eek__rating-range">
-          <span>
-            A+++
-          </span>
-          <svg class="icon icon--eek-range-arrow">
-            <use href="#icon-eek-range-arrow"/>
-          </svg>
-          <span>
-            D
-          </span>
-        </span>
-        <span class="eek__rating">
-          A+++
-        </span>
-      </div>
-      <svg class="icon icon--eek-arrow">
-        <use href="#icon-eek-arrow"/>
-      </svg>
-    </div>
-    <div
-      class="eek eek--large eek--rating-4"
-      role="img"
-      aria-label="Energy Rating: B. Range: A++ - E">
-      <div class="eek__container" aria-hidden="true">
-        <span class="eek__rating-range">
-          <span>
-            A++
-          </span>
-          <svg class="icon icon--eek-range-arrow">
-            <use href="#icon-eek-range-arrow"/>
-          </svg>
-          <span>
-            E
-          </span>
-        </span>
-        <span class="eek__rating">
-          B
-        </span>
-      </div>
-      <svg class="icon icon--eek-arrow" aria-hidden="true">
-        <use href="#icon-eek-arrow"/>
-      </svg>
-    </div>
-    <div
-      class="eek eek--large eek--rating-7"
-      role="img"
-      aria-label="Energy Rating: G. Range: A+ - G">
-      <div class="eek__container" aria-hidden="true">
-        <span class="eek__rating-range">
-          <span>
-            A+
-          </span>
-          <svg class="icon icon--eek-range-arrow">
-            <use href="#icon-eek-range-arrow"/>
-          </svg>
-          <span>
-            E
-          </span>
-        </span>
-        <span class="eek__rating">
-          G
-        </span>
-      </div>
-      <svg class="icon icon--eek-arrow">
-        <use href="#icon-eek-arrow"/>
-      </svg>
-    </div>
-  </highlight-code>
+  <component-demo component="eek" variant="largeRatings"/>
 </div>
 export const metadata = {
   component: "eek",

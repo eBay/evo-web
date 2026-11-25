@@ -56,6 +56,13 @@ export const variations = () => /* HTML */ `
     >
         <span>G</span>
     </div>
+    <div
+        class="avatar avatar--pink"
+        role="img"
+        aria-label="Profile picture - H"
+    >
+        <span>H</span>
+    </div>
 `;
 
 export const withImage = () => /* HTML */ `

@@ -153,7 +153,7 @@ export const action = () => `
                             type="checkbox"
                             aria-checked="false"
                         />
-                        <span class="switch__button"/>
+                        <span class="switch__button"></span>
                     </span>
                 </span>
             </div>
@@ -213,7 +213,7 @@ export const RTL = () => `
                                 type="checkbox"
                                 aria-checked="false"
                             >
-                            <span class="switch__button"/>
+                            <span class="switch__button"></span>
                         </span>
                     </span>
                 </div>
@@ -272,7 +272,9 @@ export const withDivider = () => `
                 <span class="list__body"> Item 1 </span>
             </div>
         </li>
-        <hr />
+    </ul>
+    <hr />
+    <ul>
         <li>
             <div>
                 <span class="list__leading">
@@ -303,7 +305,9 @@ export const withDivider = () => `
                 <span class="list__body"> Item 4 </span>
             </div>
         </li>
-        <hr />
+    </ul>
+    <hr />
+    <ul>
         <li>
             <div>
                 <span class="list__leading">
@@ -327,7 +331,9 @@ export const withDivider = () => `
                     Item 6
                 </span>
             </div>
-        </div>
+        </li>
+    </ul>
+</div>
 `;
 
 export const withRadio = () => `

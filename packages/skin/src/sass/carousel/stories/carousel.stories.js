@@ -39,12 +39,12 @@ export const imageTreatment = () => `
         </button>
         <div class="carousel__viewport carousel__viewport--mask">
             <ul class="carousel__list carousel__list--image-treatment carousel__list--image-treatment-demo">
-                <li><img src="https://ir.ebaystatic.com/cr/v/c1/skin/image-treatment/aztec-pyramid.jpeg" /></li>
-                <li><img src="https://ir.ebaystatic.com/cr/v/c1/skin/image-treatment/falls.jpeg" /></li>
-                <li><img src="https://ir.ebaystatic.com/cr/v/c1/skin/image-treatment/mountain.jpeg" /></li>
-                <li><img src="https://ir.ebaystatic.com/cr/v/c1/skin/image-treatment/shoes.jpeg"/></li>
-                <li><img src="https://ir.ebaystatic.com/cr/v/c1/skin/image-treatment/tall-cat.jpeg" /></li>
-                <li><img src="https://ir.ebaystatic.com/cr/v/c1/skin/image-treatment/wide-cat.jpeg"/></li>
+                <li><img src="https://ir.ebaystatic.com/cr/v/c1/skin/image-treatment/aztec-pyramid.jpeg" alt="Aztec pyramid" /></li>
+                <li><img src="https://ir.ebaystatic.com/cr/v/c1/skin/image-treatment/falls.jpeg" alt="Waterfall" /></li>
+                <li><img src="https://ir.ebaystatic.com/cr/v/c1/skin/image-treatment/mountain.jpeg" alt="Mountain" /></li>
+                <li><img src="https://ir.ebaystatic.com/cr/v/c1/skin/image-treatment/shoes.jpeg" alt="Shoes" /></li>
+                <li><img src="https://ir.ebaystatic.com/cr/v/c1/skin/image-treatment/tall-cat.jpeg" alt="Tall cat" /></li>
+                <li><img src="https://ir.ebaystatic.com/cr/v/c1/skin/image-treatment/wide-cat.jpeg" alt="Wide cat" /></li>
                 <li>Card 7</li>
                 <li>Card 8</li>
             </ul>
@@ -68,12 +68,12 @@ export const imageTreatmentLarge = () => `
         </button>
         <div class="carousel__viewport carousel__viewport--mask">
             <ul class="carousel__list carousel__list--image-treatment-large carousel__list--image-treatment-demo">
-                <li><img src="https://ir.ebaystatic.com/cr/v/c1/skin/image-treatment/aztec-pyramid.jpeg" /></li>
-                <li><img src="https://ir.ebaystatic.com/cr/v/c1/skin/image-treatment/falls.jpeg" /></li>
-                <li><img src="https://ir.ebaystatic.com/cr/v/c1/skin/image-treatment/mountain.jpeg" /></li>
-                <li><img src="https://ir.ebaystatic.com/cr/v/c1/skin/image-treatment/shoes.jpeg"/></li>
-                <li><img src="https://ir.ebaystatic.com/cr/v/c1/skin/image-treatment/tall-cat.jpeg" /></li>
-                <li><img src="https://ir.ebaystatic.com/cr/v/c1/skin/image-treatment/wide-cat.jpeg"/></li>
+                <li><img src="https://ir.ebaystatic.com/cr/v/c1/skin/image-treatment/aztec-pyramid.jpeg" alt="Aztec pyramid" /></li>
+                <li><img src="https://ir.ebaystatic.com/cr/v/c1/skin/image-treatment/falls.jpeg" alt="Waterfall" /></li>
+                <li><img src="https://ir.ebaystatic.com/cr/v/c1/skin/image-treatment/mountain.jpeg" alt="Mountain" /></li>
+                <li><img src="https://ir.ebaystatic.com/cr/v/c1/skin/image-treatment/shoes.jpeg" alt="Shoes" /></li>
+                <li><img src="https://ir.ebaystatic.com/cr/v/c1/skin/image-treatment/tall-cat.jpeg" alt="Tall cat" /></li>
+                <li><img src="https://ir.ebaystatic.com/cr/v/c1/skin/image-treatment/wide-cat.jpeg" alt="Wide cat" /></li>
                 <li>Card 7</li>
                 <li>Card 8</li>
             </ul>

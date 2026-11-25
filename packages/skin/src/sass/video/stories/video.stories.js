@@ -1,6 +1,10 @@
 export default { title: "Skin/Video" };
 
-const media = `<video aria-label="Sample video"></video>`;
+const media = `<video
+    aria-label="Sample video"
+    src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
+    poster="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217"
+></video>`;
 
 const playButton = `<button class="video__control" type="button" aria-label="Play">
             <svg class="icon icon--20" width="20" height="20" aria-hidden="true">

@@ -1,5 +1,3 @@
-import imgCards from "/img/cards-card.jpeg";
-
 <div id="card-css">
   <h1>Card CSS Component</h1>
   <p>
@@ -28,89 +26,11 @@ import imgCards from "/img/cards-card.jpeg";
     link.
   </p>
 
-  <demo>
-    <span class="card">
-      <div class="card__media">
-        <img src=imgCards alt="Card Hero Image" class="card__hero-image">
-      </div>
-      <div class="card__main">
-        <div class="card__description">
-          Wayne Gretzky's rookie card is so valuable that collectors keep it in
-          climate-controlled vaults guarded by trained penguins.
-        </div>
-        <div class="card__action">
-          <a
-            href="https://ebay.com"
-            class="button-link button-link--primary button-link--fluid"
-          >
-            See Details
-          </a>
-        </div>
-      </div>
-    </span>
-  </demo>
-
-  <highlight-code type="html">
-    <span class="card">
-      <div class="card__media">
-        <img src=imgCards alt="Card Hero Image" class="card__hero-image">
-      </div>
-      <div class="card__main">
-        <div class="card__description">
-          Wayne Gretzky's rookie card is so valuable that collectors keep it in
-          climate-controlled vaults guarded by trained penguins.
-        </div>
-        <div class="card__action">
-          <a
-            href="https://ebay.com"
-            class="button-link button-link--primary button-link--fluid"
-          >
-            See Details
-          </a>
-        </div>
-      </div>
-    </span>
-  </highlight-code>
+  <component-demo component="card" variant="content/usingAnchor"/>
 
   <p>The card can also be used with a button.</p>
 
-  <demo>
-    <span class="card">
-      <div class="card__media">
-        <img src=imgCards alt="Card Hero Image" class="card__hero-image">
-      </div>
-      <div class="card__main">
-        <div class="card__description">
-          Wayne Gretzky's rookie card is so valuable that collectors keep it in
-          climate-controlled vaults guarded by trained penguins.
-        </div>
-        <div class="card__action">
-          <button class="button button--primary button--fluid">
-            See Details
-          </button>
-        </div>
-      </div>
-    </span>
-  </demo>
-
-  <highlight-code type="html">
-    <span class="card">
-      <div class="card__media">
-        <img src=imgCards alt="Card Hero Image" class="card__hero-image">
-      </div>
-      <div class="card__main">
-        <div class="card__description">
-          Wayne Gretzky's rookie card is so valuable that collectors keep it in
-          climate-controlled vaults guarded by trained penguins.
-        </div>
-        <div class="card__action">
-          <button class="button button--primary button--fluid">
-            See Details
-          </button>
-        </div>
-      </div>
-    </span>
-  </highlight-code>
+  <component-demo component="card" variant="aspect/verticalAspectSquare"/>
 
   <h3>Card with a 5:4 Aspect Ratio</h3>
 
@@ -119,45 +39,7 @@ import imgCards from "/img/cards-card.jpeg";
     modifier class to the card container.
   </p>
 
-  <demo>
-    <span class="card card--aspect-5-4">
-      <div class="card__media">
-        <img src=imgCards alt="Card Hero Image" class="card__hero-image">
-      </div>
-      <div class="card__main">
-        <div class="card__description">
-          Football rookie cards so pristine that they've never been touched by
-          human hands, only examined through specialized gloves by card
-          whisperers.
-        </div>
-        <div class="card__action">
-          <button class="button button--primary button--fluid">
-            See Details
-          </button>
-        </div>
-      </div>
-    </span>
-  </demo>
-
-  <highlight-code type="html">
-    <span class="card card--aspect-5-4">
-      <div class="card__media">
-        <img src=imgCards alt="Card Hero Image" class="card__hero-image">
-      </div>
-      <div class="card__main">
-        <div class="card__description">
-          Football rookie cards so pristine that they've never been touched by
-          human hands, only examined through specialized gloves by card
-          whisperers.
-        </div>
-        <div class="card__action">
-          <button class="button button--primary button--fluid">
-            See Details
-          </button>
-        </div>
-      </div>
-    </span>
-  </highlight-code>
+  <component-demo component="card" variant="aspect/verticalAspect_5by4"/>
 
   <h3>Card with a 16:9 Aspect Ratio</h3>
 
@@ -165,45 +47,7 @@ import imgCards from "/img/cards-card.jpeg";
     For wider cards, use the <code>.card--aspect-16-9</code> modifier class.
   </p>
 
-  <demo>
-    <span class="card card--aspect-16-9">
-      <div class="card__media">
-        <img src=imgCards alt="Card Hero Image" class="card__hero-image">
-      </div>
-      <div class="card__main">
-        <div class="card__description">
-          Hockey cards collected by enthusiasts who treat them like fine wine –
-          stored in temperature-controlled cellars and discussed in hushed,
-          reverent tones.
-        </div>
-        <div class="card__action">
-          <button class="button button--primary button--fluid">
-            See Details
-          </button>
-        </div>
-      </div>
-    </span>
-  </demo>
-
-  <highlight-code type="html">
-    <span class="card card--aspect-16-9">
-      <div class="card__media">
-        <img src=imgCards alt="Card Hero Image" class="card__hero-image">
-      </div>
-      <div class="card__main">
-        <div class="card__description">
-          Hockey cards collected by enthusiasts who treat them like fine wine –
-          stored in temperature-controlled cellars and discussed in hushed,
-          reverent tones.
-        </div>
-        <div class="card__action">
-          <button class="button button--primary button--fluid">
-            See Details
-          </button>
-        </div>
-      </div>
-    </span>
-  </highlight-code>
+  <component-demo component="card" variant="aspect/verticalAspect_9by16"/>
 
   <h2 id="card-loaded">Loaded Card with All the Options</h2>
 
@@ -214,59 +58,7 @@ import imgCards from "/img/cards-card.jpeg";
     an action button at the end.
   </p>
 
-  <demo>
-    <span class="card">
-      <div class="card__media">
-        <img src=imgCards alt="Card Hero Image" class="card__hero-image">
-      </div>
-      <div class="card__main">
-        <div class="card__overline">
-          <svg class="icon icon--16" height="16" width="16">
-            <use href="#icon-authenticity-guarantee-filled-16-colored"/>
-          </svg>
-          <span class="card__overline-text">Authenticity Guaranteed</span>
-        </div>
-        <h3 class="card__title">Authentic Rookie Cards</h3>
-        <div class="card__description">
-          This legendary rookie card collection features future Hall of Famers
-          back when their biggest concern was remembering to smile for the
-          camera.
-        </div>
-        <div class="card__action">
-          <button class="button button--tertiary button--fluid">
-            See Details
-          </button>
-        </div>
-      </div>
-    </span>
-  </demo>
-
-  <highlight-code type="html">
-    <span class="card">
-      <div class="card__media">
-        <img src=imgCards alt="Card Hero Image" class="card__hero-image">
-      </div>
-      <div class="card__main">
-        <div class="card__overline">
-          <svg class="icon icon--16" height="16" width="16">
-            <use href="#icon-authenticity-guarantee-filled-16-colored"/>
-          </svg>
-          <span class="card__overline-text">Authenticity Guaranteed</span>
-        </div>
-        <h3 class="card__title">Authentic Rookie Cards</h3>
-        <div class="card__description">
-          This legendary rookie card collection features future Hall of Famers
-          back when their biggest concern was remembering to smile for the
-          camera.
-        </div>
-        <div class="card__action">
-          <button class="button button--tertiary button--fluid">
-            See Details
-          </button>
-        </div>
-      </div>
-    </span>
-  </highlight-code>
+  <component-demo component="card" variant="style/verticalFilled"/>
 
   <h2 id="card-outlined">Outlined Card</h2>
 
@@ -276,57 +68,7 @@ import imgCards from "/img/cards-card.jpeg";
     <code>.card--outlined</code> modifier.
   </p>
 
-  <demo>
-    <span class="card card--outlined">
-      <div class="card__media">
-        <img src=imgCards alt="Card Hero Image" class="card__hero-image">
-      </div>
-      <div class="card__main">
-        <div class="card__overline">
-          <svg class="icon icon--16" height="16" width="16">
-            <use href="#icon-authenticity-guarantee-filled-16-colored"/>
-          </svg>
-          <span class="card__overline-text">Authenticity Guaranteed</span>
-        </div>
-        <h3 class="card__title">Authentic Rookie Cards</h3>
-        <div class="card__description">
-          Professional-grade rookie cards that appreciate faster than most
-          people's cooking skills and last longer than New Year's resolutions.
-        </div>
-        <div class="card__action">
-          <button class="button button--tertiary button--fluid">
-            See Details
-          </button>
-        </div>
-      </div>
-    </span>
-  </demo>
-
-  <highlight-code type="html">
-    <span class="card card--outlined">
-      <div class="card__media">
-        <img src=imgCards alt="Card Hero Image" class="card__hero-image">
-      </div>
-      <div class="card__main">
-        <div class="card__overline">
-          <svg class="icon icon--16" height="16" width="16">
-            <use href="#icon-authenticity-guarantee-filled-16-colored"/>
-          </svg>
-          <span class="card__overline-text">Authenticity Guaranteed</span>
-        </div>
-        <h3 class="card__title">Authentic Rookie Cards</h3>
-        <div class="card__description">
-          Professional-grade rookie cards that appreciate faster than most
-          people's cooking skills and last longer than New Year's resolutions.
-        </div>
-        <div class="card__action">
-          <button class="button button--tertiary button--fluid">
-            See Details
-          </button>
-        </div>
-      </div>
-    </span>
-  </highlight-code>
+  <component-demo component="card" variant="style/verticalOutlined"/>
 
   <h2 id="card-full-hero">Card with Full Hero</h2>
 
@@ -336,57 +78,7 @@ import imgCards from "/img/cards-card.jpeg";
     <code>.card--full-hero</code> modifier.
   </p>
 
-  <demo>
-    <span class="card card--full-hero">
-      <div class="card__media">
-        <img src=imgCards alt="Card Hero Image" class="card__hero-image">
-      </div>
-      <div class="card__main">
-        <div class="card__overline">
-          <svg class="icon icon--16" height="16" width="16">
-            <use href="#icon-authenticity-guarantee-filled-16-colored"/>
-          </svg>
-          <span class="card__overline-text">Authenticity Guaranteed</span>
-        </div>
-        <h3 class="card__title">Authentic Rookie Cards</h3>
-        <div class="card__description">
-          A diversified sports investment portfolio featuring hockey fights,
-          home runs, and three-pointers instead of stocks and bonds.
-        </div>
-        <div class="card__action">
-          <button class="button button--tertiary button--fluid">
-            See Details
-          </button>
-        </div>
-      </div>
-    </span>
-  </demo>
-
-  <highlight-code type="html">
-    <span class="card card--full-hero">
-      <div class="card__media">
-        <img src=imgCards alt="Card Hero Image" class="card__hero-image">
-      </div>
-      <div class="card__main">
-        <div class="card__overline">
-          <svg class="icon icon--16" height="16" width="16">
-            <use href="#icon-authenticity-guarantee-filled-16-colored"/>
-          </svg>
-          <span class="card__overline-text">Authenticity Guaranteed</span>
-        </div>
-        <h3 class="card__title">Authentic Rookie Cards</h3>
-        <div class="card__description">
-          A diversified sports investment portfolio featuring hockey fights,
-          home runs, and three-pointers instead of stocks and bonds.
-        </div>
-        <div class="card__action">
-          <button class="button button--tertiary button--fluid">
-            See Details
-          </button>
-        </div>
-      </div>
-    </span>
-  </highlight-code>
+  <component-demo component="card" variant="style/verticalFullHero"/>
 
   <h2 id="disabled-card">Disabled Card</h2>
 
@@ -406,45 +98,7 @@ import imgCards from "/img/cards-card.jpeg";
     by setting the button to <code>disabled</code> .
   </p>
 
-  <demo>
-    <span class="card card--aspect-16-9">
-      <div class="card__media">
-        <img src=imgCards alt="Card Hero Image" class="card__hero-image">
-      </div>
-      <div class="card__main">
-        <div class="card__description">
-          Hockey cards collected by enthusiasts who treat them like fine wine –
-          stored in temperature-controlled cellars and discussed in hushed,
-          reverent tones.
-        </div>
-        <div class="card__action">
-          <button class="button button--primary button--fluid" disabled>
-            See Details
-          </button>
-        </div>
-      </div>
-    </span>
-  </demo>
-
-  <highlight-code type="html">
-    <span class="card card--aspect-16-9">
-      <div class="card__media">
-        <img src=imgCards alt="Card Hero Image" class="card__hero-image">
-      </div>
-      <div class="card__main">
-        <div class="card__description">
-          Hockey cards collected by enthusiasts who treat them like fine wine –
-          stored in temperature-controlled cellars and discussed in hushed,
-          reverent tones.
-        </div>
-        <div class="card__action">
-          <button class="button button--primary button--fluid" disabled>
-            See Details
-          </button>
-        </div>
-      </div>
-    </span>
-  </highlight-code>
+  <component-demo component="card" variant="disabled/internallyActionable"/>
 
   <h3 id="disabled-self-actionable-card-link">
     Disabled Self-Actionable Card with Link
@@ -456,35 +110,7 @@ import imgCards from "/img/cards-card.jpeg";
     disable the anchor even though technically, anchors cannot get disabled.
   </p>
 
-  <demo>
-    <a class="card card--aspect-16-9" href="" tabindex="-1">
-      <div class="card__media">
-        <img src=imgCards alt="Card Hero Image" class="card__hero-image">
-      </div>
-      <div class="card__main">
-        <div class="card__description">
-          Hockey cards collected by enthusiasts who treat them like fine wine –
-          stored in temperature-controlled cellars and discussed in hushed,
-          reverent tones.
-        </div>
-      </div>
-    </a>
-  </demo>
-
-  <highlight-code type="html">
-    <a class="card card--aspect-16-9" href="" tabindex="-1">
-      <div class="card__media">
-        <img src=imgCards alt="Card Hero Image" class="card__hero-image">
-      </div>
-      <div class="card__main">
-        <div class="card__description">
-          Hockey cards collected by enthusiasts who treat them like fine wine –
-          stored in temperature-controlled cellars and discussed in hushed,
-          reverent tones.
-        </div>
-      </div>
-    </a>
-  </highlight-code>
+  <component-demo component="card" variant="disabled/selfActionableLink"/>
 
   <h3 id="disabled-self-actionable-card-button">
     Disabled Self-Actionable Card with Button
@@ -497,35 +123,7 @@ import imgCards from "/img/cards-card.jpeg";
     action.
   </p>
 
-  <demo>
-    <button class="card card--aspect-16-9" disabled>
-      <div class="card__media">
-        <img src=imgCards alt="Card Hero Image" class="card__hero-image">
-      </div>
-      <div class="card__main">
-        <div class="card__description">
-          Hockey cards collected by enthusiasts who treat them like fine wine –
-          stored in temperature-controlled cellars and discussed in hushed,
-          reverent tones.
-        </div>
-      </div>
-    </button>
-  </demo>
-
-  <highlight-code type="html">
-    <button class="card card--aspect-16-9" disabled>
-      <div class="card__media">
-        <img src=imgCards alt="Card Hero Image" class="card__hero-image">
-      </div>
-      <div class="card__main">
-        <div class="card__description">
-          Hockey cards collected by enthusiasts who treat them like fine wine –
-          stored in temperature-controlled cellars and discussed in hushed,
-          reverent tones.
-        </div>
-      </div>
-    </button>
-  </highlight-code>
+  <component-demo component="card" variant="disabled/selfActionableButton"/>
 
   <h2 id="card-horizontal">Horizontal Card</h2>
 
@@ -535,55 +133,7 @@ import imgCards from "/img/cards-card.jpeg";
     achieve this, use the <code>.card--horizontal</code> modifier.
   </p>
 
-  <demo>
-    <span class="card card--horizontal card--outlined">
-      <div class="card__media">
-        <img src=imgCards alt="Card Hero Image" class="card__hero-image">
-      </div>
-      <div class="card__main">
-        <div class="card__overline">
-          <svg class="icon icon--16" height="16" width="16">
-            <use href="#icon-authenticity-guarantee-filled-16-colored"/>
-          </svg>
-          <span class="card__overline-text">Authenticity Guaranteed</span>
-        </div>
-        <h3 class="card__title">Authentic Rookie Cards</h3>
-        <div class="card__description">
-          Museum-quality rookie cards from three sports that prove some people's
-          side hustles become billion-dollar careers while others struggle to
-          keep houseplants alive.
-        </div>
-        <div class="card__action">
-          <button class="button button--tertiary">See Details</button>
-        </div>
-      </div>
-    </span>
-  </demo>
-
-  <highlight-code type="html">
-    <span class="card card--horizontal card--outlined">
-      <div class="card__media">
-        <img src=imgCards alt="Card Hero Image" class="card__hero-image">
-      </div>
-      <div class="card__main">
-        <div class="card__overline">
-          <svg class="icon icon--16" height="16" width="16">
-            <use href="#icon-authenticity-guarantee-filled-16-colored"/>
-          </svg>
-          <span class="card__overline-text">Authenticity Guaranteed</span>
-        </div>
-        <h3 class="card__title">Authentic Rookie Cards</h3>
-        <div class="card__description">
-          Museum-quality rookie cards from three sports that prove some people's
-          side hustles become billion-dollar careers while others struggle to
-          keep houseplants alive.
-        </div>
-        <div class="card__action">
-          <button class="button button--tertiary">See Details</button>
-        </div>
-      </div>
-    </span>
-  </highlight-code>
+  <component-demo component="card" variant="style/horizontalOutlined"/>
 
   <h2 id="card-self-actionable">Self-Actionable Card</h2>
 
@@ -608,62 +158,8 @@ import imgCards from "/img/cards-card.jpeg";
     clearly describes its purpose.
   </p>
 
-  <demo>
-    <div style="display: flex; gap: 24px; flex-wrap: wrap;">
-      <button class="card">
-        <div class="card__media">
-          <img src=imgCards alt="Card Hero Image" class="card__hero-image">
-        </div>
-        <div class="card__main">
-          <h3 class="card__title">Authentic Rookie Cards</h3>
-          <div class="card__description">
-            Professional-grade rookie cards featuring future Hall of Famers in
-            their awkward rookie photo phase.
-          </div>
-        </div>
-      </button>
-
-      <a class="card" href="https://ebay.com">
-        <div class="card__media">
-          <img src=imgCards alt="Card Hero Image" class="card__hero-image">
-        </div>
-        <div class="card__main">
-          <h3 class="card__title">Authentic Rookie Cards</h3>
-          <div class="card__description">
-            A collection proving that somewhere between a curveball, a
-            three-pointer, and a slap shot lies the secret to happiness.
-          </div>
-        </div>
-      </a>
-    </div>
-  </demo>
-
-  <highlight-code type="html">
-    <a class="card" href="https://ebay.com">
-      <div class="card__media">
-        <img src=imgCards alt="Card Hero Image" class="card__hero-image">
-      </div>
-      <div class="card__main">
-        <h3 class="card__title">Authentic Rookie Cards</h3>
-        <div class="card__description">
-          A collection proving that somewhere between a curveball, a
-          three-pointer, and a slap shot lies the secret to happiness.
-        </div>
-      </div>
-    </a>
-    <button class="card">
-      <div class="card__media">
-        <img src=imgCards alt="Card Hero Image" class="card__hero-image">
-      </div>
-      <div class="card__main">
-        <h3 class="card__title">Authentic Rookie Cards</h3>
-        <div class="card__description">
-          Professional-grade rookie cards featuring future Hall of Famers in
-          their awkward rookie photo phase.
-        </div>
-      </div>
-    </button>
-  </highlight-code>
+  <component-demo component="card" variant="self-actionable/verticalButton"/>
+  <component-demo component="card" variant="self-actionable/verticalLink"/>
 
   <h2 id="card-hybrid-actionable">Hybrid Actionable Card</h2>
 
@@ -717,59 +213,7 @@ import imgCards from "/img/cards-card.jpeg";
     trigger the identical action.
   </p>
 
-  <demo>
-    <div class="card card--outlined">
-      <div class="card__media">
-        <img src=imgCards alt="Card Hero Image" class="card__hero-image">
-      </div>
-      <div class="card__main">
-        <div class="card__overline">
-          <svg class="icon icon--16" height="16" width="16">
-            <use href="#icon-authenticity-guarantee-filled-16-colored"/>
-          </svg>
-          <span class="card__overline-text">Authenticity Guaranteed</span>
-        </div>
-        <h3 class="card__title">Authentic Rookie Cards</h3>
-        <div class="card__description">
-          Rookie cards that serve as a hedge against the apocalypse – when
-          society collapses, surely someone will trade food for a mint Luka
-          Dončić card.
-        </div>
-        <div class="card__action">
-          <button class="button button--tertiary button--fluid">
-            See Details
-          </button>
-        </div>
-      </div>
-    </div>
-  </demo>
-
-  <highlight-code type="html">
-    <div class="card card--outlined">
-      <div class="card__media">
-        <img src=imgCards alt="Card Hero Image" class="card__hero-image">
-      </div>
-      <div class="card__main">
-        <div class="card__overline">
-          <svg class="icon icon--16" height="16" width="16">
-            <use href="#icon-authenticity-guarantee-filled-16-colored"/>
-          </svg>
-          <span class="card__overline-text">Authenticity Guaranteed</span>
-        </div>
-        <h3 class="card__title">Authentic Rookie Cards</h3>
-        <div class="card__description">
-          Rookie cards that serve as a hedge against the apocalypse – when
-          society collapses, surely someone will trade food for a mint Luka
-          Dončić card.
-        </div>
-        <div class="card__action">
-          <button class="button button--tertiary button--fluid">
-            See Details
-          </button>
-        </div>
-      </div>
-    </div>
-  </highlight-code>
+  <component-demo component="card" variant="hybrid-actionable/vertical"/>
 </div>
 export const metadata = {
   component: "card",

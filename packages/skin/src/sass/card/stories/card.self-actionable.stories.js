@@ -3,7 +3,7 @@ export default { title: "Skin/Card/Self Actionable" };
 export const verticalButton = () => `
 <button class="card">
     <div class="card__media">
-        <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
+        <img src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__main">
         <h3 class="card__title">Authentic Rookie Cards</h3>
@@ -17,7 +17,7 @@ export const verticalButton = () => `
 export const verticalLink = () => `
 <a class="card" href="https://ebay.com">
     <div class="card__media">
-        <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
+        <img src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__main">
         <h3 class="card__title">Authentic Rookie Cards</h3>
@@ -31,7 +31,7 @@ export const verticalLink = () => `
 export const horizontalButton = () => `
 <button class="card card--horizontal">
     <div class="card__media">
-        <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
+        <img src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__main">
         <h3 class="card__title">Authentic Rookie Cards</h3>
@@ -45,7 +45,7 @@ export const horizontalButton = () => `
 export const horizontalLink = () => `
 <a class="card card--horizontal" href="https://ebay.com">
     <div class="card__media">
-        <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
+        <img src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__main">
         <h3 class="card__title">Authentic Rookie Cards</h3>

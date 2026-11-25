@@ -3,7 +3,7 @@ export default { title: "Skin/Card/Content" };
 export const minimumContent = () => `
 <span class="card">
     <div class="card__media">
-        <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
+        <img src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__main">
         <div class="card__description">
@@ -20,7 +20,7 @@ export const minimumContent = () => `
 export const maximumContent = () => `
 <span class="card">
     <div class="card__media">
-        <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
+        <img src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__main">
         <div class="card__overline">
@@ -44,7 +44,7 @@ export const maximumContent = () => `
 export const usingAnchor = () => `
 <span class="card">
     <div class="card__media">
-        <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
+        <img src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__main">
         <div class="card__description">
@@ -60,7 +60,7 @@ export const usingAnchor = () => `
 export const usingButton = () => `
 <span class="card">
     <div class="card__media">
-        <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
+        <img src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__main">
         <div class="card__description">
