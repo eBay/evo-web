@@ -131,7 +131,7 @@ export const ratings = () => `
             <svg class="icon icon--eek-range-arrow">
                 <use href="#icon-eek-range-arrow"></use>
             </svg>
-            <span>E</span>
+            <span>G</span>
         </span>
         <span class="eek__rating">G</span>
     </div>
@@ -188,7 +188,7 @@ export const largeRatings = () => `
             <svg class="icon icon--eek-range-arrow">
                 <use href="#icon-eek-range-arrow"></use>
             </svg>
-            <span>E</span>
+            <span>G</span>
         </span>
         <span class="eek__rating">G</span>
     </div>

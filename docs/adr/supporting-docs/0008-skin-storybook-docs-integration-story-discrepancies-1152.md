@@ -65,14 +65,18 @@ Color contrast is reported but not changed: the findings are disabled states (ex
 ### 3.1 Changes forced by the docs page
 
 - `list/stories/list.stories.js` `withDivider`: closed the list that ended with `</div>`. Reason: unparseable markup. Percy: none.
-- 13 `card` exports the Card page uses: `src="/img/cards-card.jpeg"` changed to the same file on `ir.ebaystatic.com`. Reason: root-relative path 404s on the deployed docs site. Percy: none.
+- All 24 `card` exports with a hero image (the Card page renders 14 of them): `src="/img/cards-card.jpeg"` changed to the same file on `ir.ebaystatic.com`. Reason: root-relative path 404s on the deployed docs site. Percy: none.
 - `progress-bar-expressive` `withMediumText`: `unique-id` renamed `unique-id-medium`; `withMessages`, `withMediumText`: added class `progress-bar-expressive-messages-example`. Reason: id collision, and the docs-site script selects on the class to cycle messages. Percy: none.
 
 ### 3.2 Accessibility and markup fixes, by component
 
+### avatar
+
+- avatar/stories/avatar.stories.js variations: added the pink avatar (letter H). Reason: the page prose lists pink among the colors and the old docs showed it, but the story stopped at magenta. Percy: visible (one more avatar).
+
 ### card
 
-- card/stories/card.{content,hybrid-actionable,rtl,self-actionable,style,text-spacing}.stories.js maximumContent, minimumContent, usingButton, horizontal, vertical, horizontalButton, horizontalLink, horizontalFilled: `/img/cards-card.jpeg` changed to https://ir.ebaystatic.com/cr/v/c01/skin/docs/cards-card.jpeg (same file). Reason: static finding (root-relative path). Percy: none.
+- card/stories/card.{aspect,content,disabled,hybrid-actionable,rtl,self-actionable,style,text-spacing}.stories.js, every export with a hero image (24): `/img/cards-card.jpeg` changed to https://ir.ebaystatic.com/cr/v/c01/skin/docs/cards-card.jpeg (same file). Reason: static finding (root-relative path). Percy: none.
 
 ### carousel
 
@@ -86,6 +90,10 @@ Color contrast is reported but not changed: the findings are disabled states (ex
 
 - donut-chart/stories/donut-chart.stories.js base: closed the legend wrapper with </div> instead of a second opening <div>. Reason: static finding (unbalanced <div>). Percy: none.
 - donut-chart/stories/donut-chart.stories.js base, smallContainer: added aria-label="Example donut chart legend" to the legend <dl>. Reason: restores old docs attribute. Percy: none.
+
+### eek
+
+- eek/stories/eek.stories.js ratings, largeRatings: the rating 7 range showed `A+ - E` while its `aria-label` and rating said `A+ - G`; the visible end of the range is now G. Reason: the displayed range did not contain the displayed rating and contradicted the accessible name. Percy: visible (one letter in two stories).
 
 ### image-placeholder
 
@@ -107,6 +115,7 @@ Color contrast is reported but not changed: the findings are disabled states (ex
 ### progress-stepper
 
 - progress-stepper/stories/progress-stepper.stories.js 15 exports (all but customSize, which already had it): added a clipped heading "Shipment progress" (one level above the step titles, so heading order holds) and aria-labelledby on the stepper, as evo-marko and the old docs do; status icons changed from aria-hidden to role="img" with aria-label complete / current / blocked / upcoming, following evo-marko's state logic. Reason: 1.2 item (hidden status icons); restores old docs aria-labelledby. Percy: none.
+- progress-stepper/stories/progress-stepper.stories.js verticalUpcoming: `aria-current="current"` (not a valid token) changed to `aria-current="step"`, and that item's icon label from complete to current. Reason: invalid ARIA value; the item is the current step. Percy: none.
 
 ### video
 
@@ -115,6 +124,8 @@ Color contrast is reported but not changed: the findings are disabled states (ex
 ## 4. Docs pages
 
 - Docs edit, src/routes/_index/components/progress-bar-expressive/css+page.marko, "Medium text" prose: named the real class progress-bar-expressive__messages--medium instead of the unstyled progress-bar-expressive--medium. Reason: docs prose taught a class that does nothing.
+- Docs edit, src/routes/_index/components/calendar/css+page.marko: `calendar__range-end` in the date range prose changed to the real class `calendar__range--end`. Reason: prose taught a class that does not exist.
+- Docs edit, src/routes/_index/components/progress-bar-expressive/css+page.marko, message steps: `expressive_loader__message--out` changed to `progress-bar-expressive__message--out`. Reason: prose taught a class that does not exist.
 - Docs edit, src/routes/_index/components/star-rating/css+page.marko, Method 2 catalogue: each rating's aria-label now comes from the loop value (Rating: 0/5 through Rating: 5/5) instead of a hard-coded "Rating: 2.5/5" on all eleven. Reason: 1.2 item.
 - Docs edit, src/routes/_index/components/progress-bar/css+page.marko: the Initial, Loading and Completed demos, static until now, use <component-demo> for empty, half and full.
 - src/routes/_index/components/avatar/css+page.marko: second `id="avatar-custom"` (Custom Avatar with Fit) changed to `avatar-custom-fit`. Reason: 1.2 item (duplicate id).
@@ -152,7 +163,7 @@ For each migrated demo, the accessibility attributes (`role`, `aria-*`, `tabinde
 
 ### 7.1 Attributes the old example had that the story does not
 
-1. avatar, **Default Avatar** (`avatar:variations`): lacks `role="img"`, `aria-label`. Not a gap: the story shows 7 avatars where the old docs showed 8.
+1. avatar, **Default Avatar** (`avatar:variations`): lacks `role="img"`, `aria-label`. Not a gap: the story shows the same 8 colors with different letters.
 1. calendar, **Interactive Calendar With Date Range Selection** (`calendar:interactive`): lacks `aria-label ×4`. The story adds `tabindex ×30`. Not a gap: the story highlights four fewer days; every day it shows is labelled.
 1. layout-grid, **Default Layouts with Radio Buttons** (`layout-grid:withRadios`): lacks `aria-label ×7`. Improvement (new story): dropped seven identical `aria-label`s that overrode each radio's visible label.
 1. list, **Actionable list** (`list:action`): lacks `tabindex`. Not a gap: the action is a native checkbox, focusable without `tabindex`.
@@ -183,7 +194,7 @@ The old demo is the markup inside its `demo__inner` wrapper on `main`, with Mark
 ### avatar
 
 1. **Default Avatar** → `avatar:base`: identical.
-1. **Default Avatar** → `avatar:variations`: classes removed: avatar, avatar--pink; attributes added: aria-label="Profile picture - Z", aria-label="Profile picture - J"; removed: role="img", aria-label="Profile picture - A", aria-label="Profile picture - E", aria-label="Profile picture - G"; elements 16 → 14; text content differs.
+1. **Default Avatar** → `avatar:variations`: same 8 colors; attributes differ only in the `aria-label` letters (the old pink avatar was labelled G but showed H); text content differs.
 1. **Custom Avatar** → `avatar:withImage`: classes added: avatar, avatar--128; attributes added: role="img", aria-label="Profile picture - Elizabeth", src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile_optimized.jpg"; elements 2 → 4.
 1. **Custom Avatar with Fit** → `avatar:withFitImage`: classes added: avatar, avatar--fit, avatar--128; removed: image-treatment; attributes added: role="img", aria-label="Profile picture - Elizabeth", src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile_optimized.jpg"; elements 2 → 4.
 1. **Signed-Out Avatar** → `avatar:signedOut`: identical.
@@ -238,8 +249,8 @@ The old demo is the markup inside its `demo__inner` wrapper on `main`, with Mark
 
 ### eek
 
-1. **EEK examples** → `eek:ratings`: identical.
-1. **Large EEK** → `eek:largeRatings`: identical.
+1. **EEK examples** → `eek:ratings`: identical except the rating 7 range now ends in G (see 3.2).
+1. **Large EEK** → `eek:largeRatings`: identical except the rating 7 range now ends in G (see 3.2).
 
 ### file-preview-card
 

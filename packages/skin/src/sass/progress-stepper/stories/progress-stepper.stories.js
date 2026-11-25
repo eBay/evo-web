@@ -374,9 +374,9 @@ export const verticalUpcoming = () => `
 <div class="progress-stepper progress-stepper--vertical" aria-labelledby="progress-stepper-heading-verticalUpcoming">
     <h2 class="clipped" id="progress-stepper-heading-verticalUpcoming">Shipment progress</h2>
     <div class="progress-stepper__items" role="list">
-        <div aria-current="current" class="progress-stepper__item" role="listitem">
+        <div aria-current="step" class="progress-stepper__item" role="listitem">
             <span class="progress-stepper__icon">
-                <svg role="img" aria-label="complete" class="icon" height="24" width="24">
+                <svg role="img" aria-label="current" class="icon" height="24" width="24">
                     <use href="#icon-stepper-confirmation-24"></use>
                 </svg>
             </span>
