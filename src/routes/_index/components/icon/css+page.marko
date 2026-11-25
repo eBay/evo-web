@@ -15,25 +15,7 @@ import { urls } from "../../../../data";
     height attributes to override the browser's default 300x150 size.
   </p>
 
-  <div class="demo">
-    <div class="demo__inner">
-      <svg
-        aria-label="Icon example"
-        class="icon icon--24"
-        height="24"
-        width="24"
-        role="img"
-      >
-        <icon-symbol name="information-24"/>
-      </svg>
-    </div>
-  </div>
-
-  <highlight-code type="html">
-    <svg class="icon icon--24" height="24" width="24">
-      <use href="#icon-information-24"/>
-    </svg>
-  </highlight-code>
+  <component-demo component="icon" variant="base"/>
 
   <p>
     <strong>NOTE:</strong> Skin removes all pointer events on icons (via
@@ -145,25 +127,7 @@ import { urls } from "../../../../data";
     stroke/fill.
   </p>
 
-  <div class="demo">
-    <div class="demo__inner">
-      <svg
-        aria-label="Disabled icon example"
-        class="icon icon--24 icon--disabled"
-        height="24"
-        width="24"
-        role="img"
-      >
-        <icon-symbol name="chevron-right-24"/>
-      </svg>
-    </div>
-  </div>
-
-  <highlight-code type="html">
-    <svg class="icon icon--24 icon--disabled" height="24" width="24">
-      <use href="#icon-chevron-right-24"/>
-    </svg>
-  </highlight-code>
+  <component-demo component="icon" variant="simpleDisabled"/>
 
   <h4>Filled Icons</h4>
   <p>
@@ -177,49 +141,7 @@ import { urls } from "../../../../data";
     the icon itself.
   </p>
 
-  <div class="demo">
-    <div class="demo__inner">
-      <svg
-        aria-label="Filled Icons"
-        class="icon icon--16"
-        height="16"
-        width="16"
-        role="img"
-      >
-        <icon-symbol name="confirmation-filled-16"/>
-      </svg>
-      <svg
-        aria-label="Filled Icons"
-        class="icon icon--16"
-        height="16"
-        width="16"
-        role="img"
-      >
-        <icon-symbol name="attention-filled-16"/>
-      </svg>
-      <svg
-        aria-label="Filled Icons"
-        class="icon icon--16"
-        height="16"
-        width="16"
-        role="img"
-      >
-        <icon-symbol name="information-filled-16"/>
-      </svg>
-    </div>
-  </div>
-
-  <highlight-code type="html">
-    <svg class="icon icon--16" height="16" width="16">
-      <use href="#icon-confirmation-filled-16"/>
-    </svg>
-    <svg class="icon icon--16" height="16" width="16">
-      <use href="#icon-attention-filled-16"/>
-    </svg>
-    <svg class="icon icon--16" height="16" width="16">
-      <use href="#icon-information-filled-16"/>
-    </svg>
-  </highlight-code>
+  <component-demo component="icon" variant="filled"/>
 
   <h4>Complex Icons</h4>
   <p>
@@ -227,25 +149,7 @@ import { urls } from "../../../../data";
     <code>-colored</code> are grayscaled with an opacity.
   </p>
 
-  <div class="demo">
-    <div class="demo__inner">
-      <svg
-        aria-label="Disabled icon example"
-        class="icon icon--24-colored icon--disabled"
-        height="24"
-        width="24"
-        role="img"
-      >
-        <icon-symbol name="mastercard-24-colored"/>
-      </svg>
-    </div>
-  </div>
-
-  <highlight-code type="html">
-    <svg class="icon icon--24-colored icon--disabled" height="24" width="24">
-      <use href="#icon-mastercard-24-colored"/>
-    </svg>
-  </highlight-code>
+  <component-demo component="icon" variant="complexDisabled"/>
   <const/deprecatedIcons=iconJSON.icons?.deprecated || []>
 
   <if=deprecatedIcons.length>

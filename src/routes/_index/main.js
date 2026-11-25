@@ -338,6 +338,7 @@ class ProgressBarExpressive {
 document
   .querySelectorAll(".progress-bar-expressive-messages-example")
   .forEach(function (widgetEl) {
+    widgetEl.querySelector('[role="status"]')?.setAttribute("aria-live", "off");
     const expressiveProgressBar = new ProgressBarExpressive(widgetEl, [
       "Hang tight.",
       "We're finishing your order.",

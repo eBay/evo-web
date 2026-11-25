@@ -3,149 +3,23 @@
 
   <h3>Charger included with USB PD</h3>
   <p>
-    When charger is included, use the
-    <code>ccd-charger-included</code>
-    icon.
+    When charger is included, use the <code>ccd-charger-included</code> icon.
   </p>
-  <div class="demo">
-    <div class="demo__inner">
-      <div
-        class="ccd"
-        role="img"
-        aria-label="Charger included. 1001 - 2000 watts. USB PD">
-        <svg class="icon ccd__charger-icon" aria-hidden="true">
-          <icon-symbol name="ccd-charger-included"/>
-        </svg>
-        <div class="ccd__description-figure">
-
-          <svg class="icon ccd__top-icon" aria-hidden="true">
-            <icon-symbol name="ccd-top"/>
-          </svg>
-          <div class="ccd__body">
-            <div>1001 - 2000</div>
-            <div>W</div>
-            <div>USB PD</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <highlight-code type="html">
-    <div
-      class="ccd"
-      role="img"
-      aria-label="Charger included. 1001 - 2000 watts. USB PD">
-      <svg class="icon ccd__charger-icon" aria-hidden="true">
-        <use href="#icon-ccd-charger-included"/>
-      </svg>
-      <div class="ccd__description-figure">
-
-        <svg class="icon ccd__top-icon" aria-hidden="true">
-          <use href="#icon-ccd-top"/>
-        </svg>
-        <div class="ccd__body">
-          <div>1001 - 2000</div>
-          <div>W</div>
-          <div>USB PD</div>
-        </div>
-      </div>
-    </div>
-  </highlight-code>
+  <component-demo component="ccd" variant="withChargerAndUsb"/>
 
   <h3>Charger not included</h3>
   <p>
-    When charger is not included, use the
-    <code>ccd-charger-not-included</code>
+    When charger is not included, use the <code>ccd-charger-not-included</code>
     icon.
   </p>
-  <div class="demo">
-    <div class="demo__inner">
-      <div
-        class="ccd"
-        role="img"
-        aria-label="Charger not included. 1001 - 2000 watts. USB PD">
-        <svg class="icon ccd__charger-icon" aria-hidden="true">
-          <icon-symbol name="ccd-charger-not-included"/>
-        </svg>
-        <div class="ccd__description-figure">
-          <svg class="icon ccd__top-icon" aria-hidden="true">
-            <icon-symbol name="ccd-top"/>
-          </svg>
-          <div class="ccd__body">
-            <div>1001 - 2000</div>
-            <div>W</div>
-            <div>USB PD</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <highlight-code type="html">
-    <div
-      class="ccd"
-      role="img"
-      aria-label="Charger not included. 1001 - 2000 watts. USB PD">
-      <svg class="icon ccd__charger-icon" aria-hidden="true">
-        <use href="#icon-ccd-charger-not-included"/>
-      </svg>
-      <div class="ccd__description-figure">
-
-        <svg class="icon ccd__top-icon" aria-hidden="true">
-          <use href="#icon-ccd-top"/>
-        </svg>
-        <div class="ccd__body">
-          <div>1001 - 2000</div>
-          <div>W</div>
-          <div>USB PD</div>
-        </div>
-      </div>
-    </div>
-  </highlight-code>
+  <component-demo component="ccd" variant="withoutChargerAndUsb"/>
 
   <h3>Charger included without USB PD</h3>
   <p>
     The USB PD text is shown if the charger has USB PD. If the charger does not
     have USB PD, the text should not be shown.
   </p>
-  <div class="demo">
-    <div class="demo__inner">
-      <div
-        class="ccd"
-        role="img"
-        aria-label="Charger included. 1001 - 2000 watts">
-        <svg class="icon ccd__charger-icon" aria-hidden="true">
-          <icon-symbol name="ccd-charger-included"/>
-        </svg>
-        <div class="ccd__description-figure">
-
-          <svg class="icon ccd__top-icon" aria-hidden="true">
-            <icon-symbol name="ccd-top"/>
-          </svg>
-          <div class="ccd__body">
-            <div>1001 - 2000</div>
-            <div>W</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <highlight-code type="html">
-    <div class="ccd" role="img" aria-label="Energy Rating">
-      <svg class="icon ccd__charger-icon" aria-hidden="true">
-        <use href="#icon-ccd-charger-included"/>
-      </svg>
-      <div class="ccd__description-figure">
-
-        <svg class="icon ccd__top-icon" aria-hidden="true">
-          <use href="#icon-ccd-top"/>
-        </svg>
-        <div class="ccd__body">
-          <div>1001 - 2000</div>
-          <div>W</div>
-        </div>
-      </div>
-    </div>
-  </highlight-code>
+  <component-demo component="ccd" variant="withChargerAndNoUsb"/>
 </div>
 export const metadata = {
   component: "ccd",
