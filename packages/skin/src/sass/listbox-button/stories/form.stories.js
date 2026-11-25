@@ -12,7 +12,7 @@ export const enabled = () => `
         </span>
     </button>
     <div class="listbox-button__listbox listbox-button__listbox--set-position">
-        <div class="listbox-button__options" role="listbox">
+        <div class="listbox-button__options" role="listbox" aria-label="Color">
             <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">Red</span>
                 <svg class="icon icon--16" height="8" width="8">
@@ -25,7 +25,7 @@ export const enabled = () => `
                     <use href="#icon-tick-16"></use>
                 </svg>
             </div>
-            <div class="listbox-button__option" role="option">
+            <div class="listbox-button__option" role="option" aria-disabled="true">
                 <span class="listbox-button__value">Yellow</span>
                 <svg class="icon icon--16" height="8" width="8">
                     <use href="#icon-tick-16"></use>
@@ -60,7 +60,7 @@ export const disabled = () => `
         </span>
     </button>
     <div class="listbox-button__listbox listbox-button__listbox--set-position">
-        <div class="listbox-button__options" role="listbox">
+        <div class="listbox-button__options" role="listbox" aria-label="Color">
             <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">Red</span>
                 <svg class="icon icon--16" height="8" width="8">
@@ -108,7 +108,7 @@ export const invalid = () => `
         </span>
     </button>
     <div class="listbox-button__listbox listbox-button__listbox--set-position">
-        <div class="listbox-button__options" role="listbox">
+        <div class="listbox-button__options" role="listbox" aria-label="Color">
             <div class="listbox-button__option" role="option">
                 <span class="listbox-button__value">Red</span>
                 <svg class="icon icon--16" height="8" width="8">

@@ -2,7 +2,7 @@ export default { title: "Skin/Listbox/Cascade" };
 
 export const RTL = () => `
 <span class="listbox" dir="rtl">
-    <div class="listbox__options" role="listbox" tabindex="0">
+    <div aria-label="Listbox demo" class="listbox__options" role="listbox" tabindex="0">
         <div class="listbox__option" role="option" aria-selected="true">
             <span class="listbox__value">Option 1</span>
             <svg class="icon icon--16" height="8" width="8">
@@ -27,7 +27,7 @@ export const RTL = () => `
 
 export const color = () => `
 <span class="listbox">
-    <div class="listbox__options" role="listbox" style="color: red" tabindex="0">
+    <div aria-label="Listbox demo" class="listbox__options" role="listbox" style="color: red" tabindex="0">
         <div class="listbox__option" role="option" aria-selected="true">
             <span class="listbox__value">Option 1</span>
             <svg class="icon icon--16" height="8" width="8">
@@ -52,7 +52,7 @@ export const color = () => `
 
 export const fontSize = () => `
 <span class="listbox">
-    <div class="listbox__options" role="listbox" style="font-size: 200%" tabindex="0">
+    <div aria-label="Listbox demo" class="listbox__options" role="listbox" style="font-size: 200%" tabindex="0">
         <div class="listbox__option" role="option" aria-selected="true">
             <span class="listbox__value">Option 1</span>
             <svg class="icon icon--16" height="8" width="8">

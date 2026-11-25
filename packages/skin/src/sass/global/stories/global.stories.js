@@ -52,7 +52,7 @@ export const alignment = () => `
 </span>
 
 <span class="select">
-    <select>
+    <select aria-label="Select demo">
         <option value="1">Option 1</option>
         <option value="2">Option 2</option>
         <option value="3">Option 3</option>
@@ -68,7 +68,7 @@ export const alignment = () => `
 
 <span class="combobox">
     <span class="combobox__control">
-        <input name="combobox-default" placeholder="Combobox" role="combobox" type="text" aria-expanded="false" aria-haspopup="listbox" />
+        <input name="combobox-default" aria-label="Combobox demo" placeholder="Combobox" role="combobox" type="text" aria-expanded="false" aria-haspopup="listbox" />
         <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
             <use href="#icon-chevron-down-12"></use>
         </svg>
@@ -105,7 +105,7 @@ export const RTLAlignment = () => `
     </span>
 
     <span class="select">
-        <select>
+        <select aria-label="Select demo">
             <option value="1">Option 1</option>
             <option value="2">Option 2</option>
             <option value="3">Option 3</option>
@@ -121,7 +121,7 @@ export const RTLAlignment = () => `
 
     <span class="combobox">
         <span class="combobox__control">
-            <input name="combobox-default" placeholder="Combobox" role="combobox" type="text" aria-expanded="false" aria-haspopup="listbox" />
+            <input name="combobox-default" aria-label="Combobox demo" placeholder="Combobox" role="combobox" type="text" aria-expanded="false" aria-haspopup="listbox" />
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
             </svg>
@@ -149,7 +149,7 @@ export const RTLAlignment = () => `
             </span>
         </button>
     </span>
-<div>
+</div>
 `;
 
 export const alignmentLarge = () => `
@@ -158,7 +158,7 @@ export const alignmentLarge = () => `
 </span>
 
 <span class="select select--large">
-    <select>
+    <select aria-label="Select demo">
         <option value="1">Option 1</option>
         <option value="2">Option 2</option>
         <option value="3">Option 3</option>
@@ -174,7 +174,7 @@ export const alignmentLarge = () => `
 
 <span class="combobox combobox--large">
     <span class="combobox__control">
-        <input name="combobox-default" placeholder="Combobox" role="combobox" type="text" aria-expanded="false" aria-haspopup="listbox" />
+        <input name="combobox-default" aria-label="Combobox demo" placeholder="Combobox" role="combobox" type="text" aria-expanded="false" aria-haspopup="listbox" />
         <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
             <use href="#icon-chevron-down-12"></use>
         </svg>

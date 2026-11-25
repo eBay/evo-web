@@ -3,10 +3,10 @@ export default { title: "Skin/Combobox" };
 export const collapsed = () => `
 <span class="combobox">
     <span class="combobox__control">
-        <input name="combobox-default" placeholder="Combobox" role="combobox" type="text" aria-expanded="false" aria-haspopup="listbox" />
+        <input name="combobox-default" placeholder="Combobox" aria-label="Combobox demo" role="combobox" aria-owns="listbox1" aria-controls="listbox1" type="text" aria-expanded="false" aria-haspopup="listbox" />
     </span>
     <div class="combobox__listbox combobox__listbox--set-position">
-        <div id="listbox1" class="combobox__options" role="listbox">
+        <div id="listbox1" class="combobox__options" role="listbox" aria-label="Combobox demo">
             <div class="combobox__option" role="option">
                 <span>Option 1</span>
             </div>
@@ -21,10 +21,10 @@ export const collapsed = () => `
 export const expanded = () => `
 <span class="combobox combobox--expanded">
     <span class="combobox__control">
-        <input name="combobox-default" placeholder="Combobox" role="combobox" type="text" aria-expanded="true" aria-haspopup="listbox" />
+        <input name="combobox-default" placeholder="Combobox" aria-label="Combobox demo" role="combobox" aria-owns="listbox1" aria-controls="listbox1" type="text" aria-expanded="true" aria-haspopup="listbox" />
     </span>
     <div class="combobox__listbox combobox__listbox--set-position">
-        <div id="listbox1" class="combobox__options" role="listbox">
+        <div id="listbox1" class="combobox__options" role="listbox" aria-label="Combobox demo">
             <div class="combobox__option" role="option">
                 <span>Option 1</span>
             </div>
@@ -39,10 +39,10 @@ export const expanded = () => `
 export const textSpacing = () => `
 <span class="combobox combobox--expanded demo-a11y-text-spacing">
     <span class="combobox__control">
-        <input name="combobox-default" placeholder="Combobox" role="combobox" type="text" aria-expanded="true" aria-haspopup="listbox" />
+        <input name="combobox-default" placeholder="Combobox" aria-label="Combobox demo" role="combobox" aria-owns="listbox1" aria-controls="listbox1" type="text" aria-expanded="true" aria-haspopup="listbox" />
     </span>
     <div class="combobox__listbox combobox__listbox--set-position">
-        <div id="listbox1" class="combobox__options" role="listbox">
+        <div id="listbox1" class="combobox__options" role="listbox" aria-label="Combobox demo">
             <div class="combobox__option" role="option">
                 <span>Option 1</span>
             </div>
@@ -57,10 +57,10 @@ export const textSpacing = () => `
 export const disabled = () => `
 <span class="combobox">
     <span class="combobox__control">
-        <input name="combobox-default" placeholder="Combobox" role="combobox" type="text" aria-expanded="false" aria-haspopup="listbox" disabled />
+        <input name="combobox-default" placeholder="Combobox" aria-label="Combobox demo" role="combobox" aria-owns="listbox2" aria-controls="listbox2" type="text" aria-expanded="false" aria-haspopup="listbox" disabled />
     </span>
     <div class="combobox__listbox combobox__listbox--set-position">
-        <div id="listbox1" class="combobox__options" role="listbox">
+        <div id="listbox2" class="combobox__options" role="listbox" aria-label="Combobox demo">
             <div class="combobox__option" role="option">
                 <span>Option 1</span>
             </div>
@@ -75,10 +75,10 @@ export const disabled = () => `
 export const large = () => `
 <span class="combobox combobox--large combobox--expanded">
     <span class="combobox__control">
-        <input name="combobox-default" placeholder="Combobox" role="combobox" type="text" aria-expanded="true" aria-haspopup="listbox" />
+        <input name="combobox-default" placeholder="Combobox" aria-label="Combobox demo" role="combobox" aria-owns="listbox1" aria-controls="listbox1" type="text" aria-expanded="true" aria-haspopup="listbox" />
     </span>
     <div class="combobox__listbox combobox__listbox--set-position">
-        <div id="listbox1" class="combobox__options" role="listbox">
+        <div id="listbox1" class="combobox__options" role="listbox" aria-label="Combobox demo">
             <div class="combobox__option" role="option">
                 <span>Option 1</span>
             </div>
@@ -93,10 +93,10 @@ export const large = () => `
 export const longOptions = () => `
 <span class="combobox combobox--expanded">
     <span class="combobox__control">
-        <input name="combobox-default" placeholder="Combobox" role="combobox" type="text" aria-expanded="true" aria-haspopup="listbox" />
+        <input name="combobox-default" placeholder="Combobox" aria-label="Combobox demo" role="combobox" aria-owns="listbox1" aria-controls="listbox1" type="text" aria-expanded="true" aria-haspopup="listbox" />
     </span>
     <div class="combobox__listbox combobox__listbox--set-position">
-        <div id="listbox1" class="combobox__options" role="listbox">
+        <div id="listbox1" class="combobox__options" role="listbox" aria-label="Combobox demo">
             <div class="combobox__option" role="option">
                 <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
             </div>
@@ -111,7 +111,7 @@ export const longOptions = () => `
 export const actionable = () => `
 <span class="combobox combobox--expanded">
     <span class="combobox__control">
-        <input placeholder="Combobox" role="combobox" type="text" aria-haspopup="listbox" aria-owns="listbox1" />
+        <input placeholder="Combobox" aria-label="Combobox demo" role="combobox" aria-expanded="true" type="text" aria-haspopup="listbox" aria-owns="listbox1" aria-controls="listbox1" />
         <button class="icon-button icon-button--actionable" type="button" aria-label="Expand Suggestions">
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                 <use href="#icon-chevron-down-12"></use>
@@ -119,7 +119,7 @@ export const actionable = () => `
         </button>
     </span>
     <div class="combobox__listbox combobox__listbox--set-position">
-        <div id="listbox1" class="combobox__options" role="listbox">
+        <div id="listbox1" class="combobox__options" role="listbox" aria-label="Combobox demo">
             <div class="combobox__option" role="option">
                 <span>Option 1</span>
             </div>
@@ -138,10 +138,10 @@ export const RTL = () => `
 <div dir="rtl">
     <span class="combobox combobox--expanded">
         <span class="combobox__control">
-            <input class="pink-placeholder-text" name="combobox-default" placeholder="Combobox" role="combobox" type="text" aria-expanded="true" aria-haspopup="listbox" />
+            <input class="pink-placeholder-text" name="combobox-default" placeholder="Combobox" aria-label="Combobox demo" role="combobox" aria-owns="listbox1" aria-controls="listbox1" type="text" aria-expanded="true" aria-haspopup="listbox" />
         </span>
         <div class="combobox__listbox combobox__listbox--set-position">
-            <div id="listbox1" class="combobox__options" role="listbox">
+            <div id="listbox1" class="combobox__options" role="listbox" aria-label="Combobox demo">
                 <div class="combobox__option" role="option">
                     <span>Option 1</span>
                 </div>
@@ -158,7 +158,7 @@ export const actionableRTL = () => `
 <div dir="rtl">
     <span class="combobox combobox--expanded">
         <span class="combobox__control combobox__control--actionable">
-            <input placeholder="Combobox" role="combobox" type="text" aria-haspopup="listbox" aria-owns="listbox5" />
+            <input placeholder="Combobox" aria-label="Combobox demo" role="combobox" aria-expanded="true" type="text" aria-haspopup="listbox" aria-owns="listbox5" aria-controls="listbox5" />
             <button class="icon-button" type="button" aria-label="Expand Suggestions">
                 <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
                     <use href="#icon-chevron-down-12"></use>
@@ -166,7 +166,7 @@ export const actionableRTL = () => `
             </button>
         </span>
         <div class="combobox__listbox combobox__listbox--set-position">
-            <div id="listbox5" class="combobox__options" role="listbox">
+            <div id="listbox5" class="combobox__options" role="listbox" aria-label="Combobox demo">
                 <div class="combobox__option" role="option">
                     <span>Option 1</span>
                 </div>
@@ -186,10 +186,10 @@ export const inheritColour = () => `
 <div style="color: red">
     <span class="combobox combobox--expanded">
         <span class="combobox__control">
-            <input class="pink-placeholder-text" name="combobox-default" placeholder="Combobox" role="combobox" type="text" aria-expanded="true" aria-haspopup="listbox" />
+            <input class="pink-placeholder-text" name="combobox-default" placeholder="Combobox" aria-label="Combobox demo" role="combobox" aria-owns="listbox1" aria-controls="listbox1" type="text" aria-expanded="true" aria-haspopup="listbox" />
         </span>
         <div class="combobox__listbox combobox__listbox--set-position">
-            <div id="listbox1" class="combobox__options" role="listbox">
+            <div id="listbox1" class="combobox__options" role="listbox" aria-label="Combobox demo">
                 <div class="combobox__option" role="option">
                     <span>Option 1</span>
                 </div>
@@ -206,10 +206,10 @@ export const inheritFontSize = () => `
 <div style="font-size: 200%;">
     <span class="combobox combobox--expanded">
         <span class="combobox__control">
-            <input name="combobox-default" placeholder="Combobox" role="combobox" type="text" aria-expanded="true" aria-haspopup="listbox" />
+            <input name="combobox-default" placeholder="Combobox" aria-label="Combobox demo" role="combobox" aria-owns="listbox1" aria-controls="listbox1" type="text" aria-expanded="true" aria-haspopup="listbox" />
         </span>
         <div class="combobox__listbox combobox__listbox--set-position">
-            <div id="listbox1" class="combobox__options" role="listbox">
+            <div id="listbox1" class="combobox__options" role="listbox" aria-label="Combobox demo">
                 <div class="combobox__option" role="option">
                     <span>Option 1</span>
                 </div>
