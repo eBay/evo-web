@@ -38,11 +38,14 @@ exports[`ebay-number-input > renders default number input 1`] = `
       [36m</button>[39m
       [36m<input[39m
         [33maria-label[39m=[32m"Enter a number"[39m
+        [33maria-valuemax[39m=[32m"100"[39m
+        [33maria-valuemin[39m=[32m"0"[39m
+        [33maria-valuenow[39m=[32m"0"[39m
         [33mclass[39m=[32m"textbox__control"[39m
         [33mid[39m=[32m"s0-0-number-input"[39m
-        [33mmax[39m=[32m"100"[39m
-        [33mmin[39m=[32m"0"[39m
-        [33mtype[39m=[32m"number"[39m
+        [33minputmode[39m=[32m"numeric"[39m
+        [33mrole[39m=[32m"spinbutton"[39m
+        [33mtype[39m=[32m"text"[39m
         [33mvalue[39m=[32m"0"[39m
       [36m/>[39m
       [36m<button[39m
@@ -115,11 +118,13 @@ exports[`ebay-number-input > renders number input with delete 1`] = `
       [36m</button>[39m
       [36m<input[39m
         [33maria-label[39m=[32m"Enter a number"[39m
+        [33maria-valuemin[39m=[32m"1"[39m
+        [33maria-valuenow[39m=[32m"1"[39m
         [33mclass[39m=[32m"textbox__control"[39m
         [33mid[39m=[32m"s0-0-number-input"[39m
-        [33mmax[39m=[32m"Infinity"[39m
-        [33mmin[39m=[32m"1"[39m
-        [33mtype[39m=[32m"number"[39m
+        [33minputmode[39m=[32m"numeric"[39m
+        [33mrole[39m=[32m"spinbutton"[39m
+        [33mtype[39m=[32m"text"[39m
         [33mvalue[39m=[32m"1"[39m
       [36m/>[39m
       [36m<button[39m
@@ -222,11 +227,13 @@ exports[`ebay-number-input > renders number input with delete hidden 1`] = `
       [36m</button>[39m
       [36m<input[39m
         [33maria-label[39m=[32m"Enter a number"[39m
+        [33maria-valuemin[39m=[32m"1"[39m
+        [33maria-valuenow[39m=[32m"12"[39m
         [33mclass[39m=[32m"textbox__control"[39m
         [33mid[39m=[32m"s0-0-number-input"[39m
-        [33mmax[39m=[32m"Infinity"[39m
-        [33mmin[39m=[32m"1"[39m
-        [33mtype[39m=[32m"number"[39m
+        [33minputmode[39m=[32m"numeric"[39m
+        [33mrole[39m=[32m"spinbutton"[39m
+        [33mtype[39m=[32m"text"[39m
         [33mvalue[39m=[32m"12"[39m
       [36m/>[39m
       [36m<button[39m
@@ -334,11 +341,14 @@ exports[`ebay-number-input > renders number input with label 1`] = `
         [36m</svg>[39m
       [36m</button>[39m
       [36m<input[39m
+        [33maria-valuemax[39m=[32m"100"[39m
+        [33maria-valuemin[39m=[32m"0"[39m
+        [33maria-valuenow[39m=[32m"0"[39m
         [33mclass[39m=[32m"textbox__control"[39m
         [33mid[39m=[32m"s0-0-number-input"[39m
-        [33mmax[39m=[32m"100"[39m
-        [33mmin[39m=[32m"0"[39m
-        [33mtype[39m=[32m"number"[39m
+        [33minputmode[39m=[32m"numeric"[39m
+        [33mrole[39m=[32m"spinbutton"[39m
+        [33mtype[39m=[32m"text"[39m
         [33mvalue[39m=[32m"0"[39m
       [36m/>[39m
       [36m<button[39m

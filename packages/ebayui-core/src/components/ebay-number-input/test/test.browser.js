@@ -1,6 +1,7 @@
 import { afterEach, beforeEach, describe, it, expect } from "vitest";
 import { composeStories } from "@storybook/marko";
 import { render, cleanup, waitFor, fireEvent } from "@marko/testing-library";
+import { userEvent } from "vitest/browser";
 import * as stories from "../number-input.stories";
 
 const { Default, withDelete } = composeStories(stories);
@@ -62,6 +63,37 @@ describe("given an number input textbox", () => {
                 expect(component.emitted("decrement")).has.length(0);
             });
         });
+    });
+});
+
+describe("given an number input textbox when typing", () => {
+    it("drops text that isn't part of a whole number", async () => {
+        component = await render(Default, { value: 1 });
+        const input = component.getByLabelText("Enter a number");
+        await userEvent.click(input);
+        input.setSelectionRange(1, 1);
+
+        await userEvent.keyboard(".");
+
+        await waitFor(() => expect(input.value).toBe("1"));
+    });
+
+    it("steps with the arrow keys and jumps to the bounds with Home and End", async () => {
+        component = await render(Default, { min: 1, max: 5, value: 2 });
+        const input = component.getByRole("spinbutton");
+        await userEvent.click(input);
+
+        await userEvent.keyboard("{ArrowUp}");
+        await waitFor(() =>
+            expect(input.getAttribute("aria-valuenow")).toBe("3"),
+        );
+        await userEvent.keyboard("{ArrowDown}{ArrowDown}");
+        await waitFor(() => expect(input.value).toBe("1"));
+        await userEvent.keyboard("{End}");
+        await waitFor(() => expect(input.value).toBe("5"));
+        await userEvent.keyboard("{Home}");
+        await waitFor(() => expect(input.value).toBe("1"));
+        expect(component.emitted("change").at(-1)[0].value).toBe(1);
     });
 });
 

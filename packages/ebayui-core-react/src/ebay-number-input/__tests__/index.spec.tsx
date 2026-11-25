@@ -132,9 +132,36 @@ describe("given a number input textbox with delete", () => {
 
 describe("given a number input textbox with aria-label", () => {
     it("should render aria-label attribute on input", () => {
-        const { container } = render(<EbayNumberInput aria-label="Qty" value={1} />);
-        const input = container.querySelector('input[type="number"]');
-        expect(input).toHaveAttribute("aria-label", "Qty");
+        const { getByRole } = render(<EbayNumberInput aria-label="Qty" value={1} />);
+        expect(getByRole("spinbutton")).toHaveAttribute("aria-label", "Qty");
+    });
+});
+
+describe("given a number input textbox when typing", () => {
+    it("should drop text that isn't part of a whole number", () => {
+        const { getByRole } = render(<EbayNumberInput value={1} />);
+        const input = getByRole("spinbutton");
+
+        fireEvent.change(input, { target: { value: "1." } });
+
+        expect(input).toHaveValue("1");
+    });
+
+    it("should step with the arrow keys and jump to the bounds with Home and End", () => {
+        const onInputChange = vi.fn();
+        const { getByRole } = render(<EbayNumberInput min={1} max={5} value={2} onInputChange={onInputChange} />);
+        const input = getByRole("spinbutton");
+
+        fireEvent.keyDown(input, { key: "ArrowUp" });
+        expect(input).toHaveAttribute("aria-valuenow", "3");
+        fireEvent.keyDown(input, { key: "ArrowDown" });
+        fireEvent.keyDown(input, { key: "ArrowDown" });
+        expect(input).toHaveValue("1");
+        fireEvent.keyDown(input, { key: "End" });
+        expect(input).toHaveValue("5");
+        fireEvent.keyDown(input, { key: "Home" });
+        expect(input).toHaveValue("1");
+        expect(onInputChange).toHaveBeenLastCalledWith(expect.anything(), { value: 1 });
     });
 });
 

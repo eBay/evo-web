@@ -251,7 +251,7 @@ describe("form reset", () => {
     await expect
       .element(screen.getByRole("textbox", { name: "To" }))
       .toHaveValue("01/20/2024");
-    await expect.element(screen.getByRole("spinbutton")).toHaveValue(4);
+    await expect.element(screen.getByRole("spinbutton")).toHaveValue("4");
     await expect
       .element(screen.getByRole("radio", { name: "4 stars" }))
       .toBeChecked();
@@ -308,10 +308,10 @@ describe("form reset", () => {
       ".number-input__decrement",
     )!;
     await user.click(increment);
-    await expect.element(screen.getByRole("spinbutton")).toHaveValue(3);
+    await expect.element(screen.getByRole("spinbutton")).toHaveValue("3");
     onChange.mockClear();
     await user.click(screen.getByRole("button", { name: "Reset" }));
-    await expect.element(screen.getByRole("spinbutton")).toHaveValue(2);
+    await expect.element(screen.getByRole("spinbutton")).toHaveValue("2");
     expect(decrement).toBeDisabled();
     expect(onChange).not.toHaveBeenCalled();
   });

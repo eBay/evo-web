@@ -95,6 +95,18 @@ const EbayNumberInput: FC<EbayNumberInputProps> = (props) => {
     };
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>, eventProps: { value: string }) => {
+        const keyValues: Partial<Record<string, number>> = {
+            ArrowUp: checkBoundary(inputValue, 1),
+            ArrowDown: checkBoundary(inputValue, -1),
+            Home: min,
+            End: max,
+        };
+        const newValue = rest.readOnly ? undefined : keyValues[e.key];
+        if (newValue !== undefined && Number.isFinite(newValue)) {
+            e.preventDefault();
+            setInputValue(newValue);
+            onInputChange(e as unknown as React.ChangeEvent<HTMLInputElement>, { value: newValue });
+        }
         onKeyDown(e, { value: Number(eventProps.value) });
     };
 
@@ -121,8 +133,6 @@ const EbayNumberInput: FC<EbayNumberInputProps> = (props) => {
         >
             <EbayTextbox
                 {...rest}
-                max={max}
-                min={min}
                 onBlur={handleBlur}
                 onChange={handleInputChange}
                 onFocus={handleFocus}
@@ -130,7 +140,12 @@ const EbayNumberInput: FC<EbayNumberInputProps> = (props) => {
                 onKeyDown={handleKeyDown}
                 onKeyPress={handleKeyPress}
                 onKeyUp={handleKeyUp}
-                type="number"
+                type="text"
+                inputMode="numeric"
+                role="spinbutton"
+                aria-valuenow={inputValue}
+                aria-valuemin={min}
+                aria-valuemax={Number.isFinite(max) ? max : undefined}
                 value={inputValue}
             >
                 <EbayTextboxPrefixIcon>

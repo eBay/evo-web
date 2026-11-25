@@ -1,5 +1,5 @@
 import { useCallback, useId, useMemo, useRef, useState } from "react";
-import type { ChangeEvent } from "react";
+import type { ChangeEvent, KeyboardEvent } from "react";
 import classNames from "classnames";
 import { EvoIconAdd24 } from "../icon/icons/add-24";
 import { EvoIconDelete24 } from "../icon/icons/delete-24";
@@ -46,6 +46,7 @@ export function EvoNumberInput({
   min,
   onChange,
   onDelete,
+  onKeyDown,
   readOnly,
   ref,
   value,
@@ -151,6 +152,36 @@ export function EvoNumberInput({
     [checkBoundary, onChange, value],
   );
 
+  const handleKeyDown = useCallback(
+    (event: KeyboardEvent<HTMLInputElement>) => {
+      const keyValues: Partial<Record<string, number>> = {
+        ArrowUp: checkBoundary(displayValue + 1),
+        ArrowDown: checkBoundary(displayValue - 1),
+        Home: resolvedMin,
+        End: resolvedMax,
+      };
+      const nextValue = controlsDisabled ? undefined : keyValues[event.key];
+      if (nextValue !== undefined && Number.isFinite(nextValue)) {
+        event.preventDefault();
+        if (value === undefined) {
+          setUncontrolledValue(nextValue);
+        }
+        onChange?.(nextValue);
+      }
+      onKeyDown?.(event);
+    },
+    [
+      checkBoundary,
+      controlsDisabled,
+      displayValue,
+      onChange,
+      onKeyDown,
+      resolvedMax,
+      resolvedMin,
+      value,
+    ],
+  );
+
   const prefix = useMemo(
     () => ({
       icon: (
@@ -238,11 +269,15 @@ export function EvoNumberInput({
         id={inputId}
         readOnly={readOnly}
         ref={mergedInputRef}
-        type="number"
+        type="text"
+        inputMode="numeric"
+        role="spinbutton"
+        aria-valuenow={displayValue}
+        aria-valuemin={resolvedMin}
+        aria-valuemax={Number.isFinite(resolvedMax) ? resolvedMax : undefined}
         value={displayValue}
-        min={resolvedMin}
-        max={resolvedMax}
         onChange={handleInputChange}
+        onKeyDown={handleKeyDown}
         prefix={prefix}
         postfix={postfix}
       />
