@@ -249,7 +249,7 @@ export const transparent = () => `
 `;
 
 export const badged = () => `
-<a aria-label="Inbox (4 notifications)" class="icon-link icon-link--badged" href="https://www.ebay.com">
+<a aria-label="Inbox (99+ notifications)" class="icon-link icon-link--badged" href="https://www.ebay.com">
     <svg class="icon icon--24" width="24" height="24" aria-hidden="true">
         <use href="#icon-notification-24"></use>
     </svg>

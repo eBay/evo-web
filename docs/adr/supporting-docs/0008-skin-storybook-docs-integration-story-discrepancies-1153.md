@@ -59,8 +59,13 @@ None for these components.
 
 - button/stories/button/base.stories.js formSlim: added type="button", aria-expanded="false", aria-label="Expand/Collapse"; aria-hidden on the icon. Reason: axe button-name; restores old docs attributes. Percy: none.
 - button/stories/button/borderless.stories.js empty: added aria-label="Expand" to the icon-only disabled button. Reason: axe button-name. Percy: none.
+- button/stories/fake-button/{base,primary,secondary,text-spacing}.stories.js: `href="http://www.ebay/com"` corrected to `http://www.ebay.com`. Reason: markup defect, same as button-link. Percy: none.
 - button/stories/fake-button/primary.stories.js, secondary.stories.js iconOnly: added aria-label="Close" to the icon-only link and aria-hidden on its icon. Reason: axe link-name. Percy: none.
 - button/stories/destructive-button/{primary,secondary,tertiary}.stories.js disabled: closed the unterminated `</button`; label "Tertiary" changed to "Destructive Button" to match the sibling exports. Reason: static finding (unparseable). Percy: visible (label text).
+
+### button-link
+
+- button-link/stories/{base,primary,secondary,text-spacing}.stories.js: `href="http://www.ebay/com"` corrected to `http://www.ebay.com`. Reason: markup defect (the sample linked to host `www.ebay`); the old docs example used `https://www.ebay.com`. Percy: none.
 
 ### cta-button
 
@@ -69,6 +74,8 @@ None for these components.
 ### icon-button
 
 - icon-button/stories/links.stories.js baseDisabled, primaryDisabled, secondaryDisabled, tertiaryDisabled: added role="link" aria-disabled="true" to the 12 href-less icon links so their aria-label is allowed; `a[aria-disabled="true"].icon-link` keeps the disabled styling. Reason: axe aria-prohibited-attr. Percy: none.
+
+- icon-button/stories/links.stories.js badged: aria-label "Inbox (4 notifications)" changed to "Inbox (99+ notifications)" so it matches the visible `99+` badge. Reason: accessible name contradicted the displayed count (carried over from the old docs example). Percy: none. The new `badged` export is also listed in section 6.
 
 ### link
 
@@ -99,7 +106,7 @@ None.
 
 ## 6. New story exports
 
-36 new exports. They add Percy snapshots and change none.
+35 new exports, plus the `titleSubtitle` rename in 3.2 (listed here too, as the export is new under that name). The 35 add Percy snapshots and change none.
 
 - `button-link/stories/destructive.stories.js`: `primary`, `secondary`, `tertiary`
 - `button-link/stories/dimensions.stories.js`: `largeFixedHeightTruncated`, `small`
