@@ -1,7 +1,8 @@
 export default { title: "Skin/Alert Dialog" };
 
 export const base = () => `
-<div aria-labelledby="alert-dialog-title" aria-modal="true" class="alert-dialog alert-dialog--mask-fade" role="alertdialog">
+<button class="button button--primary dialog-button" data-makeup-for="alert-dialog-0" type="button">Open Alert Dialog</button>
+<div aria-labelledby="alert-dialog-title" aria-modal="true" class="alert-dialog alert-dialog--mask-fade" role="alertdialog" hidden id="alert-dialog-0">
     <div class="alert-dialog__window alert-dialog__window--fade">
         <div class="alert-dialog__header">
             <h2 id="alert-dialog-title" class="alert-dialog__title">Alert!</h2>
@@ -14,6 +15,7 @@ export const base = () => `
         </div>
     </div>
 </div>
+<script>document.getElementById("alert-dialog-0").hidden = false;</script>
 `;
 
 export const textSpacing = () => `

@@ -3,7 +3,7 @@ export default { title: "Skin/Inline Notice" };
 export const confirmation = () => `
 <div class="inline-notice inline-notice--confirmation">
     <span class="inline-notice__header">
-        <svg class="icon icon--16" role="img">
+        <svg class="icon icon--16" role="img" aria-label="Confirmation">
             <use href="#icon-confirmation-filled-16"></use>
         </svg>
     </span>
@@ -17,7 +17,7 @@ export const RTL = () => `
 <div dir="rtl">
     <div class="inline-notice inline-notice--confirmation">
         <span class="inline-notice__header">
-            <svg class="icon icon--16" role="img">
+            <svg class="icon icon--16" role="img" aria-label="Confirmation">
                 <use href="#icon-confirmation-filled-16"></use>
             </svg>
         </span>
@@ -31,7 +31,7 @@ export const RTL = () => `
 export const attention = () => `
 <div class="inline-notice inline-notice--attention">
     <span class="inline-notice__header">
-        <svg class="icon icon--16" role="img">
+        <svg class="icon icon--16" role="img" aria-label="Attention">
             <use href="#icon-attention-filled-16"></use>
         </svg>
     </span>
@@ -44,7 +44,7 @@ export const attention = () => `
 export const information = () => `
 <div class="inline-notice inline-notice--information">
     <span class="inline-notice__header">
-        <svg class="icon icon--16" role="img">
+        <svg class="icon icon--16" role="img" aria-label="Information">
             <use href="#icon-information-filled-16"></use>
         </svg>
     </span>
@@ -57,7 +57,7 @@ export const information = () => `
 export const warning = () => `
 <div class="inline-notice inline-notice--warning">
     <span class="inline-notice__header">
-        <svg class="icon icon--16" role="img">
+        <svg class="icon icon--16" role="img" aria-label="Warning">
             <use href="#icon-attention-triangle-filled-16"></use>
         </svg>
     </span>
@@ -78,7 +78,7 @@ export const general = () => `
 export const paragraphAndLink = () => `
 <div class="inline-notice inline-notice--attention">
     <span class="inline-notice__header">
-        <svg class="icon icon--16" role="img">
+        <svg class="icon icon--16" role="img" aria-label="Attention">
             <use href="#icon-attention-filled-16"></use>
         </svg>
     </span>
@@ -92,7 +92,7 @@ export const paragraphAndLink = () => `
 export const longParagraph = () => `
 <div class="inline-notice inline-notice--attention">
     <span class="inline-notice__header">
-        <svg class="icon icon--16" role="img">
+        <svg class="icon icon--16" role="img" aria-label="Attention">
             <use href="#icon-attention-filled-16"></use>
         </svg>
     </span>
@@ -104,8 +104,8 @@ export const longParagraph = () => `
 
 export const longParagraphAndLink = () => `
 <div class="inline-notice inline-notice--attention">
-    <span class="inline-notice__header" role="img">
-        <svg class="icon icon--16">
+    <span class="inline-notice__header">
+        <svg class="icon icon--16" role="img" aria-label="Attention">
             <use href="#icon-attention-filled-16"></use>
         </svg>
     </span>
@@ -119,7 +119,7 @@ export const longParagraphAndLink = () => `
 export const multiParagraph = () => `
 <div class="inline-notice inline-notice--attention">
     <span class="inline-notice__header">
-        <svg class="icon icon--16" role="img">
+        <svg class="icon icon--16" role="img" aria-label="Attention">
             <use href="#icon-attention-filled-16"></use>
         </svg>
     </span>
@@ -133,7 +133,7 @@ export const multiParagraph = () => `
 export const multiParagraphAndLink = () => `
 <div class="inline-notice inline-notice--attention">
     <span class="inline-notice__header">
-        <svg class="icon icon--16" role="img">
+        <svg class="icon icon--16" role="img" aria-label="Attention">
             <use href="#icon-attention-filled-16"></use>
         </svg>
     </span>
@@ -149,7 +149,7 @@ export const longWordInConstrainedWidth = () => `
 <div style="width:300px;">
     <div class="inline-notice inline-notice--confirmation">
         <span class="inline-notice__header">
-            <svg class="icon icon--16" role="img">
+            <svg class="icon icon--16" role="img" aria-label="Confirmation">
                 <use href="#icon-confirmation-filled-16"></use>
             </svg>
         </span>
@@ -163,7 +163,7 @@ export const longWordInConstrainedWidth = () => `
 export const textSpacing = () => `
 <div class="inline-notice inline-notice--information demo-a11y-text-spacing">
     <span class="inline-notice__header">
-        <svg class="icon icon--16" role="img">
+        <svg class="icon icon--16" role="img" aria-label="Information">
             <use href="#icon-information-filled-16"></use>
         </svg>
     </span>

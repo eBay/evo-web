@@ -324,6 +324,7 @@ export const baseRTL = () => `
             <p><a href="http://www.ebay.com">www.ebay.com</a></p>
         </div>
 </dialog>
+</div>
 `;
 
 export const prevRTL = () => `
@@ -353,6 +354,7 @@ export const prevRTL = () => `
             <p><a href="http://www.ebay.com">www.ebay.com</a></p>
         </div>
 </dialog>
+</div>
 `;
 
 export const baseWithLongHeader = () => `

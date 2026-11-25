@@ -1,25 +1,25 @@
 export default { title: "Skin/Section Notice/Iconless" };
 
 export const body = () => `
-<div class="section-notice" role="region">
+<section class="section-notice" role="region" aria-label="Notice" aria-roledescription="Notice">
     <div class="section-notice__main">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </div>
-</div>
+</section>
 `;
 
 export const title = () => `
-<div class="section-notice" role="region">
+<section class="section-notice" role="region" aria-label="Notice" aria-roledescription="Notice">
     <div class="section-notice__main">
         <h3 class="section-notice__title">Notification Title</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </div>
-</div>
+</section>
 `;
 
 // known issue: https://github.com/eBay/skin/issues/2146
 export const linkCTA = () => `
-<div class="section-notice" role="region">
+<section class="section-notice" role="region" aria-label="Notice" aria-roledescription="Notice">
     <div class="section-notice__main">
         <h3 class="section-notice__title">Notification Title</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -27,12 +27,12 @@ export const linkCTA = () => `
     <div class="section-notice__footer">
         <a href="https://www.ebay.com">Action</a>
     </div>
-</div>
+</section>
 `;
 
 // known issue: https://github.com/eBay/skin/issues/2146
 export const fakeLinkCTA = () => `
-<div class="section-notice" role="region">
+<section class="section-notice" role="region" aria-label="Notice" aria-roledescription="Notice">
     <div class="section-notice__main">
         <h3 class="section-notice__title">Notification Title</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -40,11 +40,11 @@ export const fakeLinkCTA = () => `
     <div class="section-notice__footer">
         <button class="link-button" type="button">Action</button>
     </div>
-</div>
+</section>
 `;
 
 export const dismiss = () => `
-<div class="section-notice" role="region">
+<section class="section-notice" role="region" aria-label="Notice" aria-roledescription="Notice">
     <div class="section-notice__main">
         <h3 class="section-notice__title">Notification Title</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -56,11 +56,11 @@ export const dismiss = () => `
         </svg>
     </button>
     </div>
-</div>
+</section>
 `;
 
 export const dismissAndLinkCTA = () => `
-<div class="section-notice" role="region">
+<section class="section-notice" role="region" aria-label="Notice" aria-roledescription="Notice">
     <div class="section-notice__main">
         <h3 class="section-notice__title">Notification Title</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -73,11 +73,11 @@ export const dismissAndLinkCTA = () => `
             </svg>
         </button>
     </div>
-</div>
+</section>
 `;
 
 export const dismissAndFakeLinkCTA = () => `
-<div class="section-notice" role="region">
+<section class="section-notice" role="region" aria-label="Notice" aria-roledescription="Notice">
     <div class="section-notice__main">
         <h3 class="section-notice__title">Notification Title</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -92,13 +92,13 @@ export const dismissAndFakeLinkCTA = () => `
             </svg>
         </button>
     </div>
-</div>
+</section>
 `;
 
 // known issue: https://github.com/eBay/skin/issues/2142
 export const RTL = () => `
 <div dir="rtl">
-    <div class="section-notice" role="region">
+    <section class="section-notice" role="region" aria-label="Notice" aria-roledescription="Notice">
         <div class="section-notice__main">
             <h3 class="section-notice__title">Notification Title</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -111,6 +111,6 @@ export const RTL = () => `
                 </svg>
             </button>
         </div>
-    </div>
+    </section>
 </div>
 `;

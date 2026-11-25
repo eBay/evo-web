@@ -1,7 +1,8 @@
 export default { title: "Skin/Lightbox Dialog" };
 
 export const base = () => `
-<div aria-labelledby="lightbox-dialog-title" aria-modal="true" class="lightbox-dialog" role="dialog">
+<button class="button button--primary dialog-button" data-makeup-for="lightbox-dialog-default" type="button">Open Lightbox</button>
+<div aria-labelledby="lightbox-dialog-title" aria-modal="true" class="lightbox-dialog" role="dialog" hidden id="lightbox-dialog-default">
     <div class="lightbox-dialog__window">
         <div class="lightbox-dialog__header">
             <h2 id="lightbox-dialog-title">Dialog Lightbox</h2>
@@ -21,14 +22,16 @@ export const base = () => `
         </div>
     </div>
 </div>
+<script>document.getElementById("lightbox-dialog-default").hidden = false;</script>
 `;
 
 export const expressiveBase = () => `
-<div aria-labelledby="lightbox-dialog-title" aria-modal="true" class="lightbox-dialog lightbox-dialog--expressive" role="dialog">
+<button class="button button--primary dialog-button" data-makeup-for="lightbox-dialog-expressive" type="button">Open Expressive Lightbox</button>
+<div aria-labelledby="lightbox-dialog-title-expressiveBase" aria-modal="true" class="lightbox-dialog lightbox-dialog--expressive" role="dialog" hidden id="lightbox-dialog-expressive">
     <div class="lightbox-dialog__window">
         <div class="lightbox-dialog__image" style="background-image:url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-landscape-pic.jpg)"></div>
         <div class="lightbox-dialog__header">
-           <h2 id="lightbox-dialog-title">Dialog Lightbox</h2>
+           <h2 id="lightbox-dialog-title-expressiveBase">Dialog Lightbox</h2>
             <button class="icon-button lightbox-dialog__close" type="button" aria-label="Close Dialog">
                 <svg class="icon icon--16" aria-hidden="true">
                     <use href="#icon-close-16"></use>
@@ -45,10 +48,12 @@ export const expressiveBase = () => `
         </div>
     </div>
 </div>
+<script>document.getElementById("lightbox-dialog-expressive").hidden = false;</script>
 `;
 
 export const basePrev = () => `
-<div aria-labelledby="lightbox-dialog-title" aria-modal="true" class="lightbox-dialog" role="dialog">
+<button class="button button--primary dialog-button" data-makeup-for="lightbox-dialog-prev-button" type="button">Open Lightbox</button>
+<div aria-labelledby="lightbox-dialog-title-basePrev" aria-modal="true" class="lightbox-dialog" role="dialog" hidden id="lightbox-dialog-prev-button">
     <div class="lightbox-dialog__window">
         <div class="lightbox-dialog__header">
             <button class="icon-button lightbox-dialog__prev" type="button" aria-label="Go back">
@@ -56,7 +61,7 @@ export const basePrev = () => `
                     <use href="#icon-chevron-left-16"></use>
                 </svg>
             </button>
-            <h2 id="lightbox-dialog-title">Dialog Lightbox</h2>
+            <h2 id="lightbox-dialog-title-basePrev">Dialog Lightbox</h2>
             <button class="icon-button lightbox-dialog__close" type="button" aria-label="Close Dialog">
                 <svg class="icon icon--16" aria-hidden="true">
                     <use href="#icon-close-16"></use>
@@ -73,13 +78,15 @@ export const basePrev = () => `
         </div>
     </div>
 </div>
+<script>document.getElementById("lightbox-dialog-prev-button").hidden = false;</script>
 `;
 
 export const scrollingLightbox = () => `
-<div aria-labelledby="lightbox-dialog-title" aria-modal="true" class="lightbox-dialog" role="dialog">
+<button class="button button--primary dialog-button" data-makeup-for="lightbox-dialog-scrolling" type="button">Open Scrolling Lightbox Dialog</button>
+<div aria-labelledby="lightbox-dialog-title-scrollingLightbox" aria-modal="true" class="lightbox-dialog" role="dialog" hidden id="lightbox-dialog-scrolling">
     <div class="lightbox-dialog__window">
         <div class="lightbox-dialog__header">
-            <h2 id="lightbox-dialog-title">Dialog Lightbox</h2>
+            <h2 id="lightbox-dialog-title-scrollingLightbox">Dialog Lightbox</h2>
             <button class="icon-button lightbox-dialog__close" type="button" aria-label="Close Dialog">
                 <svg class="icon icon--16" aria-hidden="true">
                     <use href="#icon-close-16"></use>
@@ -139,6 +146,7 @@ export const scrollingLightbox = () => `
         </div>
     </div>
 </div>
+<script>document.getElementById("lightbox-dialog-scrolling").hidden = false;</script>
 `;
 
 export const expandedLightbox = () => `
@@ -275,10 +283,11 @@ export const expressiveScrolling = () => `
 `;
 
 export const baseWithFooter = () => `
-<div aria-labelledby="lightbox-dialog-title" aria-modal="true" class="lightbox-dialog" role="dialog">
+<button class="button button--primary dialog-button" data-makeup-for="lightbox-dialog-footer" type="button">Open Lightbox Dialog with Footer</button>
+<div aria-labelledby="lightbox-dialog-title-baseWithFooter" aria-modal="true" class="lightbox-dialog" role="dialog" hidden id="lightbox-dialog-footer">
     <div class="lightbox-dialog__window">
         <div class="lightbox-dialog__header">
-            <h2 id="lightbox-dialog-title">Dialog Lightbox</h2>
+            <h2 id="lightbox-dialog-title-baseWithFooter">Dialog Lightbox</h2>
             <button class="icon-button lightbox-dialog__close" type="button" aria-label="Close Dialog">
                 <svg class="icon icon--16" aria-hidden="true">
                     <use href="#icon-close-16"></use>
@@ -300,6 +309,7 @@ export const baseWithFooter = () => `
 
     </div>
 </div>
+<script>document.getElementById("lightbox-dialog-footer").hidden = false;</script>
 `;
 
 export const baseRTL = () => `
@@ -381,10 +391,11 @@ export const baseWithLongHeader = () => `
 `;
 
 export const wide = () => `
-<div aria-labelledby="lightbox-dialog-title" aria-modal="true" class="lightbox-dialog lightbox-dialog--wide" role="dialog">
+<button class="button button--primary dialog-button" data-makeup-for="lightbox-dialog-wide" type="button">Open Lightbox</button>
+<div aria-labelledby="lightbox-dialog-title-wide" aria-modal="true" class="lightbox-dialog lightbox-dialog--wide" role="dialog" hidden id="lightbox-dialog-wide">
     <div class="lightbox-dialog__window">
         <div class="lightbox-dialog__header">
-            <h2 id="lightbox-dialog-title">Dialog Lightbox</h2>
+            <h2 id="lightbox-dialog-title-wide">Dialog Lightbox</h2>
             <button class="icon-button lightbox-dialog__close" type="button" aria-label="Close Dialog">
                 <svg class="icon icon--16" aria-hidden="true">
                     <use href="#icon-close-16"></use>
@@ -401,13 +412,15 @@ export const wide = () => `
         </div>
     </div>
 </div>
+<script>document.getElementById("lightbox-dialog-wide").hidden = false;</script>
 `;
 
 export const narrow = () => `
-<div aria-labelledby="lightbox-dialog-title" aria-modal="true" class="lightbox-dialog lightbox-dialog--narrow" role="dialog">
+<button class="button button--primary dialog-button" data-makeup-for="lightbox-dialog-narrow" type="button">Open Lightbox</button>
+<div aria-labelledby="lightbox-dialog-title-narrow" aria-modal="true" class="lightbox-dialog lightbox-dialog--narrow" role="dialog" hidden id="lightbox-dialog-narrow">
     <div class="lightbox-dialog__window">
         <div class="lightbox-dialog__header">
-            <h2 id="lightbox-dialog-title">Dialog Lightbox</h2>
+            <h2 id="lightbox-dialog-title-narrow">Dialog Lightbox</h2>
             <button class="icon-button lightbox-dialog__close" type="button" aria-label="Close Dialog">
                 <svg class="icon icon--16" aria-hidden="true">
                     <use href="#icon-close-16"></use>
@@ -424,13 +437,15 @@ export const narrow = () => `
         </div>
     </div>
 </div>
+<script>document.getElementById("lightbox-dialog-narrow").hidden = false;</script>
 `;
 
 export const large = () => `
-<div aria-labelledby="lightbox-dialog-title" aria-modal="true" class="lightbox-dialog lightbox-dialog--large" role="dialog">
+<button class="button button--primary dialog-button" data-makeup-for="lightbox-dialog-large" type="button">Open Lightbox</button>
+<div aria-labelledby="lightbox-dialog-title-large" aria-modal="true" class="lightbox-dialog lightbox-dialog--large" role="dialog" hidden id="lightbox-dialog-large">
     <div class="lightbox-dialog__window">
         <div class="lightbox-dialog__header">
-            <h2 id="lightbox-dialog-title">Dialog Lightbox</h2>
+            <h2 id="lightbox-dialog-title-large">Dialog Lightbox</h2>
             <button class="icon-button lightbox-dialog__close" type="button" aria-label="Close Dialog">
                 <svg class="icon icon--16" aria-hidden="true">
                     <use href="#icon-close-16"></use>
@@ -447,6 +462,7 @@ export const large = () => `
         </div>
     </div>
 </div>
+<script>document.getElementById("lightbox-dialog-large").hidden = false;</script>
 `;
 
 export const expressiveWide = () => `
@@ -546,4 +562,57 @@ export const baseWithHeaderOverflow = () => `
         </div>
     </div>
 </div>
+`;
+
+export const transitioned = () => `
+<button
+    class="button button--primary dialog-button"
+    data-makeup-for="lightbox-dialog-fade-0"
+    type="button"
+>
+    Open Transitioned Lightbox
+</button>
+<div
+    aria-labelledby="lightbox-dialog-fade-title"
+    aria-modal="true"
+    class="lightbox-dialog lightbox-dialog--mask-fade"
+    hidden
+    id="lightbox-dialog-fade-0"
+    role="dialog"
+>
+    <div class="lightbox-dialog__window lightbox-dialog__window--animate">
+        <div class="lightbox-dialog__header">
+            <h2 id="lightbox-dialog-fade-title" class="large-text-1 bold-text">
+                Transitioned Lightbox
+            </h2>
+            <button
+                aria-label="Close dialog"
+                class="icon-button lightbox-dialog__close"
+                type="button"
+            >
+                <svg
+                    aria-hidden="true"
+                    class="icon icon--16"
+                    height="16"
+                    width="16"
+                >
+                    <use href="#icon-close-16"></use>
+                </svg>
+            </button>
+        </div>
+        <div class="lightbox-dialog__main">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p><a href="https://www.ebay.com">www.ebay.com</a></p>
+        </div>
+    </div>
+</div>
+<script>document.getElementById("lightbox-dialog-fade-0").hidden = false;</script>
 `;

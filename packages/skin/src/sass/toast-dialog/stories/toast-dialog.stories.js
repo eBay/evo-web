@@ -1,7 +1,8 @@
 export default { title: "Skin/Toast Dialog" };
 
 export const primaryAction = () => `
-<aside class="toast-dialog" aria-label="Notification" aria-live="polite" aria-modal="false" role="dialog">
+<button class="button button--primary dialog-button" data-makeup-for="toast-dialog-1">Show Default Toast</button>
+<div class="toast-dialog" aria-label="Notification" aria-live="polite" aria-modal="false" role="dialog" hidden id="toast-dialog-1">
     <div class="toast-dialog__window">
         <div class="toast-dialog__header">
             <h2>User Privacy Preferences</h2>
@@ -19,11 +20,13 @@ export const primaryAction = () => `
             <button accesskey="a" class="button button--primary">Accept</button>
         </div>
     </div>
-</aside>
+</div>
+<script>document.getElementById("toast-dialog-1").hidden = false;</script>
 `;
 
 export const secondaryAction = () => `
-<aside class="toast-dialog" aria-label="Notification" aria-live="polite" aria-modal="false" role="dialog">
+<button class="button button--primary dialog-button" data-makeup-for="toast-dialog-2">Show Secondary Action Toast</button>
+<div class="toast-dialog" aria-label="Notification" aria-live="polite" aria-modal="false" role="dialog" hidden id="toast-dialog-2">
     <div class="toast-dialog__window">
         <div class="toast-dialog__header">
             <h2>User Privacy Preferences</h2>
@@ -42,12 +45,13 @@ export const secondaryAction = () => `
             <button accesskey="a" class="button button--primary">Accept</button>
         </div>
     </div>
-</aside>
+</div>
+<script>document.getElementById("toast-dialog-2").hidden = false;</script>
 `;
 
 export const RTL = () => `
 <div dir="rtl">
-    <aside class="toast-dialog" aria-label="Notification" aria-live="polite" aria-modal="false" role="dialog">
+    <div class="toast-dialog" aria-label="Notification" aria-live="polite" aria-modal="false" role="dialog">
         <div class="toast-dialog__window">
             <div class="toast-dialog__header">
                 <h2>User Privacy Preferences</h2>
@@ -66,12 +70,12 @@ export const RTL = () => `
                 <button accesskey="a" class="button button--primary">Accept</button>
             </div>
         </div>
-    </aside>
+    </div>
 </div>
 `;
 
 export const textSpacing = () => `
-<aside class="toast-dialog demo-a11y-text-spacing" aria-label="Notification" aria-live="polite" aria-modal="false" role="dialog">
+<div class="toast-dialog demo-a11y-text-spacing" aria-label="Notification" aria-live="polite" aria-modal="false" role="dialog">
     <div class="toast-dialog__window">
         <div class="toast-dialog__header">
             <h2>User Privacy Preferences</h2>
@@ -90,11 +94,11 @@ export const textSpacing = () => `
             <button accesskey="a" class="button button--primary">Accept</button>
         </div>
     </div>
-</aside>
+</div>
 `;
 
 export const primaryActionWithHeaderOverflow = () => `
-<aside class="toast-dialog" aria-label="Notification" aria-live="polite" aria-modal="false" role="dialog">
+<div class="toast-dialog" aria-label="Notification" aria-live="polite" aria-modal="false" role="dialog">
     <div class="toast-dialog__window">
         <div class="toast-dialog__header">
             <h2>User Privacy Preferences but with a title that's super long so it wraps to the next line. No dialog header should ever be this long.</h2>
@@ -112,5 +116,5 @@ export const primaryActionWithHeaderOverflow = () => `
             <button accesskey="a" class="button button--primary">Accept</button>
         </div>
     </div>
-</aside>
+</div>
 `;

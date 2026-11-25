@@ -16,7 +16,7 @@ export const RTL = () => `
             <button class="link-button">Dismiss</button>
         </div>
     </section>
-<div>
+</div>
 `;
 
 export const longText = () => `
@@ -60,7 +60,7 @@ export const legacyLongText = () => `
             <h2 class="page-notice__title">Your new listing is live.</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
-</div>
+</section>
 `;
 
 export const legacyLongTextAndCTA = () => `
@@ -77,7 +77,7 @@ export const legacyLongTextAndCTA = () => `
         <div class="page-notice__footer">
             <p><a href="#">www.ebay.com</a></p>
         </div>
-</div>
+</section>
 `;
 
 export const legacyMultiParagraph = () => `
@@ -92,7 +92,7 @@ export const legacyMultiParagraph = () => `
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
-</div>
+</section>
 `;
 
 export const legacyMultiParagraphWithCTA = () => `
@@ -110,5 +110,5 @@ export const legacyMultiParagraphWithCTA = () => `
         <div class="page-notice__footer">
             <p><a href="#">www.ebay.com</a></p>
         </div>
-</div>
+</section>
 `;

@@ -1,9 +1,9 @@
 export default { title: "Skin/Section Notice/Tests" };
 
 export const longBody = () => `
-<div class="section-notice section-notice--confirmation" role="region">
-    <div class="section-notice__header" role="region" aria-roledescription="Notice">
-        <svg aria-hidden="true" class="icon icon--16">
+<section class="section-notice section-notice--confirmation" role="region" aria-label="Confirmation" aria-roledescription="Notice">
+    <div class="section-notice__header">
+        <svg role="img" aria-label="Confirmation" class="icon icon--16">
             <use href="#icon-confirmation-filled-16"></use>
         </svg>
     </div>
@@ -18,13 +18,13 @@ export const longBody = () => `
             </svg>
         </button>
     </div>
-</div>
+</section>
 `;
 
 export const longTitle = () => `
-<div class="section-notice section-notice--confirmation" role="region">
-    <div class="section-notice__header" role="region" aria-roledescription="Notice">
-        <svg aria-hidden="true" class="icon icon--16">
+<section class="section-notice section-notice--confirmation" role="region" aria-label="Confirmation" aria-roledescription="Notice">
+    <div class="section-notice__header">
+        <svg role="img" aria-label="Confirmation" class="icon icon--16">
             <use href="#icon-confirmation-filled-16"></use>
         </svg>
     </div>
@@ -40,5 +40,5 @@ export const longTitle = () => `
             </svg>
         </button>
     </div>
-</div>
+</section>
 `;
