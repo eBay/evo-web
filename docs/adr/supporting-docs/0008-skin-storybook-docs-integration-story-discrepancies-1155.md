@@ -99,11 +99,11 @@ Decision recorded 2026-11-25: the mixed checkbox moves to `<component-demo>` exa
 
 ### checkbox
 
-- checkbox/stories/checked.stories.js multiLineLabel: wrapped in `<fieldset>` (it had a `<legend>` with no `<fieldset>` and a stray closing `</div>`); removed `aria-label="Multiline checkbox N"` from the inputs, which overrode their associated visible labels. Reason: static finding (unparseable, unbalanced tags); 1.2 item. Percy: possibly visible (fieldset border/legend default styles).
+- checkbox/stories/checked.stories.js multiLineLabel: wrapped in `<fieldset>` (it had a `<legend>` with no `<fieldset>` and a stray closing `</div>`); removed `aria-label="Multiline checkbox N"` from the inputs, which overrode their associated visible labels. Reason: static finding (unparseable, unbalanced tags); defect found during the migration. Percy: possibly visible (fieldset border/legend default styles).
 
 ### chips-combobox
 
-- chips-combobox/stories/chips-combobox.stories.js, rtl-chips-combobox.stories.js (all exports): combobox input gained `aria-expanded`, `aria-controls` (same listbox as its `aria-owns`) and `aria-label="Add Sport"` (matching its placeholder); the listbox gained `aria-label="Add Sport"`. Reason: axe aria-required-attr; 1.2 item (placeholder-only name). Percy: none.
+- chips-combobox/stories/chips-combobox.stories.js, rtl-chips-combobox.stories.js (all exports): combobox input gained `aria-expanded`, `aria-controls` (same listbox as its `aria-owns`) and `aria-label="Add Sport"` (matching its placeholder); the listbox gained `aria-label="Add Sport"`. Reason: axe aria-required-attr; defect found during the migration (placeholder-only name). Percy: none.
 - chips-combobox/stories/chips-combobox.stories.js, rtl-chips-combobox.stories.js manyChips: chip text ids renumbered `chip-interactive-1-1-text` to `-15-text` (13 chips reused `-1-text`), with each Remove button's `aria-describedby` following. Reason: static finding (duplicate ids). Percy: none.
 
 - chips-combobox/stories/chips-combobox.stories.js, rtl-chips-combobox.stories.js disabledState: the three chip Remove buttons gained `disabled`. Reason: the old docs demo and its prose require `disabled` on all buttons inside; the story left them keyboard-focusable in a "frozen" control. Percy: possibly visible (disabled button default colors).
@@ -114,7 +114,7 @@ Decision recorded 2026-11-25: the mixed checkbox moves to `<component-demo>` exa
 
 ### global
 
-- global/stories/global.stories.js alignment, RTLAlignment, alignmentLarge: added `aria-label="Select demo"` to `<select>` and `aria-label="Combobox demo"` to the combobox input (named only by placeholder). Reason: axe select-name; 1.2 item (placeholder-only names). Percy: none.
+- global/stories/global.stories.js alignment, RTLAlignment, alignmentLarge: added `aria-label="Select demo"` to `<select>` and `aria-label="Combobox demo"` to the combobox input (named only by placeholder). Reason: axe select-name; defect found during the migration (placeholder-only names). Percy: none.
 - global/stories/global.stories.js RTLAlignment: closing `<div>` changed to `</div>`. Reason: static finding (unbalanced tags). Percy: none.
 
 ### listbox
