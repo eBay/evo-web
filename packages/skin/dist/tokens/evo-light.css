@@ -141,6 +141,18 @@
     --color-state-layer-pressed: rgba(0, 0, 0, 0.08);
     --color-state-layer-selected-on-strong: rgba(255, 255, 255, 0.2);
     --color-state-layer-selected: rgba(0, 0, 0, 0.12);
+    --color-background-accent-subtle: var(--color-blue-100);
+    --color-background-success-subtle: var(--color-kiwi-100);
+    --color-background-warning-subtle: var(--color-yellow-100);
+    --color-background-attention-subtle: var(--color-red-100);
+    --color-foreground-on-accent-subtle: var(--color-blue-600);
+    --color-foreground-on-success-subtle: var(--color-kiwi-700);
+    --color-foreground-on-warning-subtle: var(--color-yellow-600);
+    --color-foreground-on-attention-subtle: var(--color-red-600);
+    --color-border-accent-subtle: rgba(var(--color-neutral-800-rgb), 0.08);
+    --color-border-success-subtle: rgba(var(--color-neutral-800-rgb), 0.08);
+    --color-border-warning-subtle: rgba(var(--color-neutral-800-rgb), 0.08);
+    --color-border-attention-subtle: rgba(var(--color-neutral-800-rgb), 0.08);
     --color-background-faint: rgba(var(--color-neutral-900-rgb), 0.05);
     --color-background-confirmation: var(--color-background-success);
     --color-background-information: var(--color-background-accent);

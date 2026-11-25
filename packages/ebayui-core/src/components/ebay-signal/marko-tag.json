@@ -7,7 +7,21 @@
     "@html-attributes": "expression",
     "@role": "never",
     "@status": {
-        "enum": ["neutral", "time-sensitive", "recent", "trustworthy"]
+        "enum": ["neutral", "time-sensitive", "recent", "trustworthy"],
+        "description": "Deprecated: use `tone`. trustworthy → information, recent → positive, time-sensitive → attention, neutral → neutral."
+    },
+    "@tone": {
+        "enum": ["neutral", "information", "positive", "warning", "attention"]
+    },
+    "@emphasis": {
+        "enum": ["default", "strong", "subtle"]
+    },
+    "@icon <icon>": {
+        "@*": {
+            "targetProperty": null,
+            "type": "expression"
+        },
+        "@html-attributes": "expression"
     },
     "description": "[view documentation](https://ebay.github.io/evo-web/ebayui-core/?path=/story/graphics-icons-ebay-signal)"
 }

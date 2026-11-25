@@ -1,7 +1,9 @@
 @use "@ebay/design-tokens/dist/mixins/evo-dark" as tokens;
+@use "subtle-tokens";
 @media (prefers-color-scheme: dark) {
     :root {
         @include tokens.evo-dark;
+        @include subtle-tokens.dark;
 
         --color-background-faint: rgba(var(--color-neutral-100-rgb), 0.05);
         --color-background-confirmation: var(--color-background-success);

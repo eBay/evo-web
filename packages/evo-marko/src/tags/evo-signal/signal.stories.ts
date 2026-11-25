@@ -4,6 +4,8 @@ import Readme from "./README.md";
 import Signal, { type Input } from "./index.marko";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";
+import WithIconTemplate from "./examples/with-icon.marko";
+import WithIconTemplateCode from "./examples/with-icon.marko?raw";
 
 export default {
   title: "graphics & icons/evo-signal",
@@ -17,12 +19,24 @@ export default {
   },
 
   argTypes: {
-    status: {
+    tone: {
       type: "string",
-      options: ["neutral", "trustworthy", "recent", "time-sensitive"],
-      control: "radio",
-      description: "Status of the signal",
+      options: ["neutral", "information", "positive", "warning", "attention"],
+      control: "select",
+      description: "Color tone of the signal",
       table: { defaultValue: { summary: "neutral" } },
+    },
+    emphasis: {
+      type: "string",
+      options: ["default", "strong", "subtle"],
+      control: "radio",
+      description: "Visual emphasis of the signal",
+      table: { defaultValue: { summary: "default" } },
+    },
+    icon: {
+      description:
+        "Optional leading 12px icon, rendered before the label. See the WithIcon story",
+      "@": {},
     },
     ["<span> attributes" as any]: {
       description:
@@ -34,4 +48,9 @@ export default {
 export const Default = buildExtensionTemplate(
   DefaultTemplate,
   DefaultTemplateCode,
+);
+
+export const WithIcon = buildExtensionTemplate(
+  WithIconTemplate,
+  WithIconTemplateCode,
 );

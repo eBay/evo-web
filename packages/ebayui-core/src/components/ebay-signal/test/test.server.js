@@ -51,4 +51,51 @@ describe("signal", () => {
 
         expect(el).toMatchSnapshot();
     });
+
+    it("sets the class for tone", async () => {
+        const { getByText } = await render(template, mock.basicTone);
+        expect(getByText("tone").className).toBe("signal signal--positive");
+    });
+
+    it("tone overrides status", async () => {
+        const { getByText } = await render(template, mock.toneOverStatus);
+        expect(getByText("tone over status").className).toBe(
+            "signal signal--warning",
+        );
+    });
+
+    it("adds strong and subtle emphasis classes", async () => {
+        const strong = await render(template, mock.strong);
+        expect(strong.getByText("strong").className).toBe(
+            "signal signal--neutral signal--strong",
+        );
+        const subtle = await render(template, mock.subtle);
+        expect(subtle.getByText("subtle").className).toBe(
+            "signal signal--neutral signal--subtle",
+        );
+    });
+
+    it("adds no class for default emphasis", async () => {
+        const { getByText } = await render(template, mock.defaultEmphasis);
+        expect(getByText("default emphasis").className).toBe(
+            "signal signal--neutral",
+        );
+    });
+
+    it("combines emphasis with status", async () => {
+        const { getByText } = await render(template, mock.statusWithEmphasis);
+        expect(getByText("status emphasis").className).toBe(
+            "signal signal--trustworthy signal--strong",
+        );
+    });
+
+    it("renders the icon before the label", async () => {
+        const { getByText } = await render(template, mock.withIcon);
+        const root = getByText("label", { exact: false });
+        const icon = root.firstElementChild;
+        expect(icon?.tagName.toLowerCase()).toBe("svg");
+        expect(icon?.getAttribute("class")).toBe("icon icon--12");
+        expect(root.firstChild).toBe(icon);
+        expect(root.lastChild?.textContent).toBe("label");
+    });
 });

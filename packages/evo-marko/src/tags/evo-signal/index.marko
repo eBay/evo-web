@@ -1,6 +1,28 @@
 export interface Input extends Marko.HTML.Span {
-  status?: "trustworthy" | "recent" | "time-sensitive" | "neutral";
+  tone?: "neutral" | "information" | "positive" | "warning" | "attention";
+  emphasis?: "default" | "strong" | "subtle";
+  icon?: Marko.AttrTag<{ content?: Marko.Body }>;
 }
-<const/{ class: inputClass, status = "neutral", ...htmlAttributes }=input>
+<const/{
+  class: inputClass,
+  tone = "neutral",
+  emphasis = "default",
+  icon,
+  content,
+  ...htmlAttributes
+}=input>
 
-<span ...htmlAttributes class=[inputClass, "signal", `signal--${status}`]/>
+<span
+  ...htmlAttributes
+  class=[
+    inputClass,
+    "signal",
+    `signal--${tone}`,
+    emphasis !== "default" && `signal--${emphasis}`,
+  ]
+>
+  <if=icon>
+    <${icon}/>
+  </if>
+  <${content}/>
+</span>

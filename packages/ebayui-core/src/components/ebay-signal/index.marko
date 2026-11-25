@@ -2,15 +2,36 @@ import { processHtmlAttributes } from "../../common/html-attributes";
 import type { WithNormalizedProps } from "../../global";
 static {
     interface SignalInput extends Omit<Marko.HTML.Span, `on${string}`> {
+        /**
+         * @deprecated Use `tone`. Maps: trustworthy → information, recent → positive, time-sensitive → attention, neutral → neutral.
+         */
         status?: "trustworthy" | "recent" | "time-sensitive" | "neutral";
+        tone?: "neutral" | "information" | "positive" | "warning" | "attention";
+        emphasis?: "default" | "strong" | "subtle";
+        icon?: Marko.AttrTag<{ renderBody?: Marko.Body }>;
     }
 }
 export interface Input extends WithNormalizedProps<SignalInput> {}
-$ const { class: inputClass, status = "neutral", ...htmlAttributes } = input;
+$ const {
+    class: inputClass,
+    status = "neutral",
+    tone,
+    emphasis = "default",
+    icon,
+    ...htmlAttributes
+} = input;
 
 <span
     ...processHtmlAttributes(htmlAttributes)
-    class=[inputClass, "signal", `signal--${status}`]
+    class=[
+        inputClass,
+        "signal",
+        `signal--${tone || status}`,
+        emphasis !== "default" && `signal--${emphasis}`,
+    ]
 >
+    <if(icon)>
+        <${icon}/>
+    </if>
     <${input.renderBody}/>
 </span>

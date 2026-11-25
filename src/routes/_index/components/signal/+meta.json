@@ -1,4 +1,4 @@
 {
   "pageTitle": "Signal Component",
-  "pageDescription": "The Signal component displays status indicators with visual and semantic clarity. Perfect for connection status, signal strength, and state representation, it provides accessible visual feedback. Available in Evo Web's CSS, React, and Marko implementations."
+  "pageDescription": "A Signal is a small, non-interactive label that tells the user one fact about an item or object, such as \"Great price\" or \"Deal ending\". It has five tones and three emphasis levels. Available in Evo Web's CSS, React, and Marko implementations."
 }

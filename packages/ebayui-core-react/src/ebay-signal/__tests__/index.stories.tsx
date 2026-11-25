@@ -1,5 +1,6 @@
 import React from "react";
 import { EbaySignal } from "../index";
+import { EbayIconPromotion12 } from "../../ebay-icon/icons/ebay-icon-promotion-12";
 
 export default {
     component: EbaySignal,
@@ -36,15 +37,40 @@ or import styles using SCSS/CSS
 ### Basic
 
 \`\`\`jsx
-<EbaySignal status="trustworthy">Top Rated</EbaySignal>
-\`\`\``,
+<EbaySignal tone="information">Top rated</EbaySignal>
+\`\`\`
+
+### Emphasis and icon
+
+\`\`\`jsx
+<EbaySignal tone="positive" emphasis="strong" icon={<EbayIconPromotion12 />}>
+    Promoted
+</EbaySignal>
+\`\`\`
+
+\`status\` is deprecated; use \`tone\` (trustworthy → information, recent → positive, time-sensitive → attention).`,
             },
         },
     },
     argTypes: {
+        tone: {
+            description:
+                "Color tone. Takes precedence over `status`. Possible values: `neutral`, `information`, `positive`, `warning` & `attention`",
+            options: ["neutral", "information", "positive", "warning", "attention"],
+            control: { type: "select" },
+        },
+        emphasis: {
+            description: "Visual emphasis. Possible values: `default`, `strong` & `subtle`",
+            options: ["default", "strong", "subtle"],
+            control: { type: "select" },
+        },
+        icon: {
+            description: "Optional leading 12px icon, rendered before the label. See the WithIcon story",
+            control: false,
+        },
         status: {
             description:
-                "Status of signal; determines color. Possible values: `trustworthy`, `recent`, `time-sensitive` & `neutral` (default)",
+                "Deprecated: use `tone`. Possible values: `trustworthy` (information), `recent` (positive), `time-sensitive` (attention) & `neutral` (default)",
             options: ["trustworthy", "recent", "time-sensitive", "neutral"],
             control: { type: "select" },
         },
@@ -54,6 +80,14 @@ or import styles using SCSS/CSS
 export const DefaultCase = (args) => (
     <>
         <EbaySignal {...args}>Default</EbaySignal>
+    </>
+);
+
+export const WithIcon = (args) => (
+    <>
+        <EbaySignal {...args} icon={<EbayIconPromotion12 />}>
+            With icon
+        </EbaySignal>
     </>
 );
 

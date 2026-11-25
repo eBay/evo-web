@@ -1,4 +1,4 @@
 {
   "pageTitle": "Signal CSS Component",
-  "pageDescription": "A Signal CSS Component is a responsive and accessible signal that is used to display signals."
+  "pageDescription": "The Signal CSS component is a small, non-interactive label with five tones, three emphasis levels, an optional 12px leading icon, wrapping labels and an optional truncation modifier. Includes the deprecated Signal V1 classes."
 }
