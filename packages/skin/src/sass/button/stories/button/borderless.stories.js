@@ -30,7 +30,7 @@ export const ariaDisabled =
 </button>`;
 
 export const empty =
-    () => `<button class="button button--borderless" disabled="true">
+    () => `<button class="button button--borderless" disabled="true" aria-label="Expand">
     <span class="button__cell">
         <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
             <use href="#icon-chevron-down-12"></use>

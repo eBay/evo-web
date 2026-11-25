@@ -29,3 +29,18 @@ export const fixedWidthAndHeightTruncated = () => `
     Button Link with a lot of text that should wrap
 </a>
 `;
+
+export const small = () => `
+<a class="button-link button-link--small" href="http://www.ebay.com">
+    <span class="button-link__cell">
+        <svg class="icon icon--16" width="16" height="16"><use href="#icon-settings-16"></use></svg>
+        <span>Button Link</span>
+    </span>
+</a>
+`;
+
+export const largeFixedHeightTruncated = () => `
+<a style="width: 200px;" class="button-link button-link--primary button-link--large-fixed-height button-link--truncated" href="http://www.ebay.com">
+    Button Link with a lot of text that should wrap
+</a>
+`;

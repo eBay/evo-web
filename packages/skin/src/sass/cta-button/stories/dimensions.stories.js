@@ -21,3 +21,14 @@ export const largeFixedWidthTruncated = () => `
     </span>
 </a>
 `;
+
+export const fluid = () => `
+<a class="cta-button cta-button--fluid" href="http://www.ebay.com">
+    <span class="cta-button__cell">
+        <span>Link</span>
+        <svg class="icon icon--24" height="8" width="8" aria-hidden="true">
+            <use href="#icon-arrow-right-24"></use>
+        </svg>
+    </span>
+</a>
+`;

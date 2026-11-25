@@ -41,3 +41,23 @@ export const busy = () => `
     </span>
 </button>
 `;
+
+export const textAndIcon = () => `
+<button type="button" class="button button--primary">
+    <span class="button__cell">
+        <span>Button</span>
+        <svg class="icon icon--16" width="16" height="16"><use href="#icon-close-16"></use></svg>
+    </span>
+</button>
+`;
+
+export const expandable = () => `
+<button class="button button--primary" aria-expanded="false" type="button">
+    <span class="button__cell">
+        <span class="button__text">Button</span>
+        <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
+            <use href="#icon-chevron-down-16"></use>
+        </svg>
+    </span>
+</button>
+`;

@@ -153,3 +153,29 @@ export const RTL = () => `
     </span>
 </div>
 `;
+
+export const inContainer = () => `
+<div style="width: 300px; display: flex; flex-wrap: wrap; padding: 8px; gap: 8px; background-color: lightsteelblue;">
+    <span class="chip">
+        <span class="chip__text">Football</span>
+    </span>
+    <span class="chip">
+        <span class="chip__text">Basketball</span>
+    </span>
+    <span class="chip">
+        <span class="chip__text">Baseball</span>
+    </span>
+    <span class="chip">
+        <span class="chip__text">Hockey</span>
+    </span>
+    <span class="chip">
+        <span class="chip__text">Cricket</span>
+    </span>
+    <span class="chip">
+        <span class="chip__text">Swimming</span>
+    </span>
+    <span class="chip">
+        <span class="chip__text">Rugby</span>
+    </span>
+</div>
+`;

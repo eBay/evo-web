@@ -44,3 +44,10 @@ export const fixedWidthAndHeightTruncated = () => `
     Button with a lot of text that should wrap
 </button>
 `;
+
+export const fixedHeight = () => `
+<span class="textbox">
+    <input aria-label="Email Address" class="textbox__control" type="text" placeholder="textbox" />
+</span>
+<button class="button button--primary button--fixed-height">Button</button>
+`;

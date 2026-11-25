@@ -43,17 +43,17 @@ export const baseSpinner = () => `
 `;
 
 export const baseDisabled = () => `
-<a aria-label="settings" class="icon-link icon-link--large">
+<a role="link" aria-disabled="true" aria-label="settings" class="icon-link icon-link--large">
     <svg class="icon icon--24" width="16" height="16" aria-hidden="true">
         <use href="#icon-heart-24"></use>
     </svg>
 </a>
-<a aria-label="settings" class="icon-link">
+<a role="link" aria-disabled="true" aria-label="settings" class="icon-link">
     <svg class="icon icon--20" width="16" height="16" aria-hidden="true">
         <use href="#icon-heart-20"></use>
     </svg>
 </a>
-<a aria-label="settings" class="icon-link icon-link--small">
+<a role="link" aria-disabled="true" aria-label="settings" class="icon-link icon-link--small">
     <svg class="icon icon--16" width="16" height="16" aria-hidden="true">
         <use href="#icon-heart-16"></use>
     </svg>
@@ -103,17 +103,17 @@ export const primarySpinner = () => `
 `;
 
 export const primaryDisabled = () => `
-<a aria-label="loading" class="icon-link icon-link--large icon-link--primary">
+<a role="link" aria-disabled="true" aria-label="loading" class="icon-link icon-link--large icon-link--primary">
     <svg class="icon icon--24" width="16" height="16" aria-hidden="true">
         <use href="#icon-heart-24"></use>
     </svg>
 </a>
-<a aria-label="loading" class="icon-link icon-link--primary">
+<a role="link" aria-disabled="true" aria-label="loading" class="icon-link icon-link--primary">
     <svg class="icon icon--20" width="16" height="16" aria-hidden="true">
         <use href="#icon-heart-20"></use>
     </svg>
 </a>
-<a aria-label="loading" class="icon-link icon-link--small icon-link--primary">
+<a role="link" aria-disabled="true" aria-label="loading" class="icon-link icon-link--small icon-link--primary">
     <svg class="icon icon--16" width="16" height="16" aria-hidden="true">
         <use href="#icon-heart-16"></use>
     </svg>
@@ -163,17 +163,17 @@ export const secondarySpinner = () => `
 `;
 
 export const secondaryDisabled = () => `
-<a aria-label="loading" class="icon-link icon-link--large icon-link--secondary">
+<a role="link" aria-disabled="true" aria-label="loading" class="icon-link icon-link--large icon-link--secondary">
     <svg class="icon icon--24" width="16" height="16" aria-hidden="true">
         <use href="#icon-heart-24"></use>
     </svg>
 </a>
-<a aria-label="loading" class="icon-link icon-link--secondary">
+<a role="link" aria-disabled="true" aria-label="loading" class="icon-link icon-link--secondary">
     <svg class="icon icon--20" width="16" height="16" aria-hidden="true">
         <use href="#icon-heart-20"></use>
     </svg>
 </a>
-<a aria-label="loading" class="icon-link icon-link--small icon-link--secondary">
+<a role="link" aria-disabled="true" aria-label="loading" class="icon-link icon-link--small icon-link--secondary">
     <svg class="icon icon--16" width="16" height="16" aria-hidden="true">
         <use href="#icon-heart-16"></use>
     </svg>
@@ -223,19 +223,36 @@ export const tertiarySpinner = () => `
 `;
 
 export const tertiaryDisabled = () => `
-<a aria-label="loading" class="icon-link icon-link--large icon-link--tertiary">
+<a role="link" aria-disabled="true" aria-label="loading" class="icon-link icon-link--large icon-link--tertiary">
     <svg class="icon icon--24" width="16" height="16" aria-hidden="true">
         <use href="#icon-heart-24"></use>
     </svg>
 </a>
-<a aria-label="loading" class="icon-link icon-link--tertiary">
+<a role="link" aria-disabled="true" aria-label="loading" class="icon-link icon-link--tertiary">
     <svg class="icon icon--20" width="16" height="16" aria-hidden="true">
         <use href="#icon-heart-20"></use>
     </svg>
 </a>
-<a aria-label="loading" class="icon-link icon-link--small icon-link--tertiary">
+<a role="link" aria-disabled="true" aria-label="loading" class="icon-link icon-link--small icon-link--tertiary">
     <svg class="icon icon--16" width="16" height="16" aria-hidden="true">
         <use href="#icon-heart-16"></use>
     </svg>
+</a>
+`;
+
+export const transparent = () => `
+<a class="icon-link icon-link--transparent" href="https://www.ebay.com" aria-label="Attention">
+    <svg class="icon icon--24" width="16" height="16" aria-hidden="true">
+        <use href="#icon-attention-filled-24"></use>
+    </svg>
+</a>
+`;
+
+export const badged = () => `
+<a aria-label="Inbox (4 notifications)" class="icon-link icon-link--badged" href="https://www.ebay.com">
+    <svg class="icon icon--24" width="24" height="24" aria-hidden="true">
+        <use href="#icon-notification-24"></use>
+    </svg>
+    <span aria-hidden="true" class="badge">99+</span>
 </a>
 `;

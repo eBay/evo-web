@@ -163,3 +163,118 @@ export const textSpacing = () => `
     </span>
 </button>
 `;
+
+export const disabledStates = () => `
+<button
+    type="button"
+    class="toggle-button toggle-button--gallery-layout"
+    aria-pressed="false"
+    disabled>
+    <span class="toggle-button__content">
+        <span class="toggle-button__title">
+            Title
+        </span>
+        <span class="toggle-button__subtitle">
+            Subtitle
+        </span>
+    </span>
+</button>
+<button
+    type="button"
+    class="toggle-button toggle-button--gallery-layout"
+    aria-pressed="false"
+    aria-disabled="true">
+    <span class="toggle-button__icon">
+        <svg
+            aria-hidden="true"
+            class="icon icon--32-colored"
+            height="16"
+            width="16">
+            <use href="#icon-mastercard-32-colored"></use>
+        </svg>
+    </span>
+    <span class="toggle-button__content">
+        <span class="toggle-button__title">
+            Title
+        </span>
+        <span class="toggle-button__subtitle">
+            Subtitle
+        </span>
+    </span>
+</button>
+<button
+    type="button"
+    class="toggle-button toggle-button--list-layout"
+    aria-pressed="false"
+    disabled>
+    <span class="toggle-button__image-container">
+        <span
+            class="toggle-button__image"
+            style="background-image: url('https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-profile-pic.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;"></span>
+    </span>
+    <span class="toggle-button__content">
+        <span class="toggle-button__title">
+            Title
+        </span>
+        <span class="toggle-button__subtitle">
+            Subtitle
+        </span>
+    </span>
+</button>
+<button
+    type="button"
+    class="toggle-button toggle-button--gallery-layout"
+    aria-pressed="true"
+    aria-disabled="true">
+    <span class="toggle-button__content">
+        <span class="toggle-button__title">
+            Title
+        </span>
+        <span class="toggle-button__subtitle">
+            Subtitle
+        </span>
+    </span>
+</button>
+<button
+    type="button"
+    class="toggle-button toggle-button--gallery-layout"
+    aria-pressed="true"
+    disabled>
+    <span class="toggle-button__icon">
+        <svg
+            aria-hidden="true"
+            class="icon icon--32-colored"
+            height="16"
+            width="16">
+            <use href="#icon-mastercard-32-colored"></use>
+        </svg>
+    </span>
+    <span class="toggle-button__content">
+        <span class="toggle-button__title">
+            Title
+        </span>
+        <span class="toggle-button__subtitle">
+            Subtitle
+        </span>
+    </span>
+</button>
+<button
+    type="button"
+    class="toggle-button toggle-button--list-layout"
+    aria-pressed="true"
+    aria-disabled="true">
+    <span class="toggle-button__image-container">
+        <span
+            class="toggle-button__image"
+            style="background-image: url('https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-profile-pic.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;"></span>
+    </span>
+    <span class="toggle-button__content">
+        <span class="toggle-button__title">
+            Title
+        </span>
+        <span class="toggle-button__subtitle">
+            Subtitle
+        </span>
+    </span>
+</button>
+`;

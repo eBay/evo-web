@@ -21,7 +21,7 @@ export const RTL = () => `
             </svg>
         </span>
     </a>
-<div>
+</div>
 `;
 
 export const fontSize = () => `

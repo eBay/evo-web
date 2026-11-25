@@ -239,3 +239,20 @@ export const tertiaryDisabled = () => `
     </svg>
 </button>
 `;
+
+export const transparent = () => `
+<button class="icon-button icon-button--transparent" type="button" aria-label="Confirmation">
+    <svg class="icon icon--24" width="16" height="16" aria-hidden="true">
+        <use href="#icon-confirmation-filled-24"></use>
+    </svg>
+</button>
+`;
+
+export const badged = () => `
+<button aria-label="Watchlist (4 notifications)" class="icon-button icon-button--badged" type="button">
+    <svg class="icon icon--24" width="24" height="24" aria-hidden="true">
+        <use href="#icon-heart-24"></use>
+    </svg>
+    <span aria-hidden="true" class="badge">4</span>
+</button>
+`;

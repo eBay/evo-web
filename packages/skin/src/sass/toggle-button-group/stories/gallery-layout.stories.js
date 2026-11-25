@@ -679,3 +679,73 @@ export const _1280container = () => `
     </div>
 </div>
 `;
+
+export const withIcons = () => `
+<h5 id="toggle-button-group-m">Selection Options</h5>
+<div style="border: 1px dashed orange;">
+    <div class="toggle-button-group toggle-button-group--gallery-layout">
+        <ul aria-labelledby="toggle-button-group-m">
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false">
+                    <span class="toggle-button__icon">
+                        <svg
+                            aria-hidden="true"
+                            class="icon icon--image-64"
+                            height="64"
+                            width="64"
+                        >
+                            <use href="#icon-image-64"></use>
+                        </svg>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Title 1</span>
+                        <span class="toggle-button__subtitle">
+                            Gallery Subtitle 1
+                        </span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="true">
+                    <span class="toggle-button__icon">
+                        <svg
+                            aria-hidden="true"
+                            class="icon icon--credit-card-64"
+                            height="64"
+                            width="64"
+                        >
+                            <use href="#icon-credit-card-64"></use>
+                        </svg>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Title 2</span>
+                        <span class="toggle-button__subtitle">
+                            Gallery Subtitle 2
+                        </span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false">
+                    <span class="toggle-button__icon">
+                        <svg
+                            aria-hidden="true"
+                            class="icon icon--bank-64"
+                            height="64"
+                            width="64"
+                        >
+                            <use href="#icon-bank-64"></use>
+                        </svg>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Title 3</span>
+                        <span class="toggle-button__subtitle">
+                            Gallery Subtitle 3
+                        </span>
+                    </span>
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>
+`;
