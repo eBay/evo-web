@@ -6,7 +6,7 @@ export const base = () => `
         <svg class="icon icon--16" width="16" height="16" aria-hidden="true">
             <use href="#icon-search-16" />
         </svg>
-        <input class="textbox__control" placeholder="Filter list" type="search" aria-controls="search-results-container-id" aria-label="Filter list" required/>
+        <input class="textbox__control" placeholder="Filter list" type="search" aria-controls="filter-input-results-base" aria-label="Filter list" required/>
         <button
             class="icon-button icon-button--transparent icon-button--small filter-input__clear-btn"
             type="button"
@@ -18,6 +18,7 @@ export const base = () => `
         </button>
     </span>
 </span>
+<div id="filter-input-results-base"></div>
 `;
 
 export const filled = () => `
@@ -26,7 +27,7 @@ export const filled = () => `
         <svg class="icon icon--16" width="16" height="16" aria-hidden="true">
             <use href="#icon-search-16" />
         </svg>
-        <input class="textbox__control" placeholder="Filter list" type="search" aria-controls="search-results-container-id" aria-label="Filter list" required value="Tenni" />
+        <input class="textbox__control" placeholder="Filter list" type="search" aria-controls="filter-input-results-filled" aria-label="Filter list" required value="Tenni" />
         <button
             class="icon-button icon-button--transparent icon-button--small filter-input__clear-btn"
             type="button"
@@ -38,6 +39,7 @@ export const filled = () => `
         </button>
     </span>
 </span>
+<div id="filter-input-results-filled"></div>
 `;
 
 export const small = () => `
@@ -46,7 +48,7 @@ export const small = () => `
         <svg class="icon icon--16" width="16" height="16" aria-hidden="true">
             <use href="#icon-search-16" />
         </svg>
-        <input class="textbox__control" placeholder="Filter list" type="search" aria-controls="search-results-container-id" aria-label="Filter list" required />
+        <input class="textbox__control" placeholder="Filter list" type="search" aria-controls="filter-input-results-small" aria-label="Filter list" required />
         <button
             class="icon-button icon-button--transparent icon-button--small filter-input__clear-btn"
             type="button"
@@ -58,6 +60,7 @@ export const small = () => `
         </button>
     </span>
 </span>
+<div id="filter-input-results-small"></div>
 `;
 
 export const large = () => `
@@ -66,7 +69,7 @@ export const large = () => `
         <svg class="icon icon--16" width="16" height="16" aria-hidden="true">
             <use href="#icon-search-16" />
         </svg>
-        <input class="textbox__control" placeholder="Filter list" type="search" aria-controls="search-results-container-id" aria-label="Filter list" required />
+        <input class="textbox__control" placeholder="Filter list" type="search" aria-controls="filter-input-results-large" aria-label="Filter list" required />
         <button
             class="icon-button icon-button--transparent icon-button--small filter-input__clear-btn"
             type="button"
@@ -78,6 +81,7 @@ export const large = () => `
         </button>
     </span>
 </span>
+<div id="filter-input-results-large"></div>
 `;
 
 export const textSpacing = () => `
@@ -86,7 +90,7 @@ export const textSpacing = () => `
         <svg class="icon icon--16" width="16" height="16" aria-hidden="true">
             <use href="#icon-search-16" />
         </svg>
-        <input class="textbox__control" placeholder="Filter list" type="search" aria-controls="search-results-container-id" aria-label="Filter list" required value="Tenni" />
+        <input class="textbox__control" placeholder="Filter list" type="search" aria-controls="filter-input-results-text-spacing" aria-label="Filter list" required value="Tenni" />
         <button
             class="icon-button icon-button--transparent icon-button--small filter-input__clear-btn"
             type="button"
@@ -98,6 +102,7 @@ export const textSpacing = () => `
         </button>
     </span>
 </span>
+<div id="filter-input-results-text-spacing"></div>
 `;
 
 export const RTL = () => `
@@ -107,7 +112,7 @@ export const RTL = () => `
             <svg class="icon icon--16" width="16" height="16" aria-hidden="true">
                 <use href="#icon-search-16" />
             </svg>
-            <input class="textbox__control" placeholder="Filter list" type="search" aria-controls="search-results-container-id" aria-label="Filter list" value="Tenni" required />
+            <input class="textbox__control" placeholder="Filter list" type="search" aria-controls="filter-input-results-rtl" aria-label="Filter list" value="Tenni" required />
             <button
                 class="icon-button icon-button--transparent icon-button--small filter-input__clear-btn"
                 type="button"
@@ -120,4 +125,5 @@ export const RTL = () => `
         </span>
     </span>
 </div>
+<div id="filter-input-results-rtl"></div>
 `;

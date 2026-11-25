@@ -17,7 +17,7 @@ export const Default = () => `
         </span>
       </button>
       <div class="listbox-button__listbox listbox-button__listbox--set-position">
-        <div class="listbox-button__options" role="listbox">
+        <div class="listbox-button__options" role="listbox" aria-label="Country">
           <div class="listbox-button__option" role="option">
             <span class="listbox-button__value">
               <span class="fflag fflag--al" data-country-code="355">
@@ -77,8 +77,8 @@ export const Default = () => `
       </div>
     </span>
     <span class="textbox">
-      <span aria-hidden="true">+1</span>
-      <input class="textbox__control" type="tel" aria-label="area code + phone number"
+      <span id="phone-prefix-default">+1</span>
+      <input class="textbox__control" type="tel" aria-describedby="phone-prefix-default" aria-label="area code + phone number"
         autocomplete="tel-national" />
     </span>
   </span>`;
@@ -100,7 +100,7 @@ export const Large = () => `
         </span>
       </button>
       <div class="listbox-button__listbox listbox-button__listbox--set-position">
-        <div class="listbox-button__options" role="listbox">
+        <div class="listbox-button__options" role="listbox" aria-label="Country">
           <div class="listbox-button__option" role="option">
             <span class="listbox-button__value">
               <span class="fflag fflag--al" data-country-code="355">
@@ -160,8 +160,8 @@ export const Large = () => `
       </div>
     </span>
     <span class="textbox textbox--large">
-      <span aria-hidden="true">+1</span>
-      <input class="textbox__control" type="tel" aria-label="area code + phone number"
+      <span id="phone-prefix-large">+1</span>
+      <input class="textbox__control" type="tel" aria-describedby="phone-prefix-large" aria-label="area code + phone number"
         autocomplete="tel-national" />
     </span>
   </span>`;
@@ -183,7 +183,7 @@ export const ReadOnly = () => `
         </span>
       </button>
       <div class="listbox-button__listbox listbox-button__listbox--set-position">
-        <div class="listbox-button__options" role="listbox">
+        <div class="listbox-button__options" role="listbox" aria-label="Country">
           <div class="listbox-button__option" role="option">
             <span class="listbox-button__value">
               <span class="fflag fflag--al" data-country-code="355">
@@ -243,8 +243,8 @@ export const ReadOnly = () => `
       </div>
     </span>
     <span class="textbox">
-      <span aria-hidden="true">+1</span>
-      <input class="textbox__control" type="tel" aria-label="Area code + phone number" autocomplete="tel-national"
+      <span id="phone-prefix-readonly">+1</span>
+      <input class="textbox__control" type="tel" aria-describedby="phone-prefix-readonly" aria-label="Area code + phone number" autocomplete="tel-national"
         readonly value="123456789" />
     </span>
   </span>`;
@@ -266,7 +266,7 @@ export const Disabled = () => `
         </span>
       </button>
       <div class="listbox-button__listbox listbox-button__listbox--set-position">
-        <div class="listbox-button__options" role="listbox">
+        <div class="listbox-button__options" role="listbox" aria-label="Country">
           <div class="listbox-button__option" role="option">
             <span class="listbox-button__value">
               <span class="fflag fflag--al" data-country-code="355">
@@ -326,8 +326,8 @@ export const Disabled = () => `
       </div>
     </span>
     <span class="textbox">
-      <span aria-hidden="true">+1</span>
-      <input class="textbox__control" type="tel" aria-label="area code + phone number" autocomplete="tel-national"
+      <span id="phone-prefix-disabled">+1</span>
+      <input class="textbox__control" type="tel" aria-describedby="phone-prefix-disabled" aria-label="area code + phone number" autocomplete="tel-national"
         value="123456789" disabled />
     </span>
   </span>`;
@@ -349,7 +349,7 @@ export const Error = () => `
         </span>
       </button>
       <div class="listbox-button__listbox listbox-button__listbox--set-position">
-        <div class="listbox-button__options" role="listbox">
+        <div class="listbox-button__options" role="listbox" aria-label="Country">
           <div class="listbox-button__option" role="option">
             <span class="listbox-button__value">
               <span class="fflag fflag--al" data-country-code="355">
@@ -409,8 +409,8 @@ export const Error = () => `
       </div>
     </span>
     <span class="textbox">
-      <span aria-hidden="true">+1</span>
-      <input class="textbox__control" type="tel" aria-label="area code + phone number" autocomplete="tel-national"
+      <span id="phone-prefix-error">+1</span>
+      <input class="textbox__control" type="tel" aria-describedby="phone-prefix-error" aria-label="area code + phone number" autocomplete="tel-national"
         value="123456789" aria-invalid="true" />
     </span>
   </span>`;
@@ -432,7 +432,7 @@ export const Fluid = () => `
         </span>
       </button>
       <div class="listbox-button__listbox listbox-button__listbox--set-position">
-        <div class="listbox-button__options" role="listbox">
+        <div class="listbox-button__options" role="listbox" aria-label="Country">
           <div class="listbox-button__option" role="option">
             <span class="listbox-button__value">
               <span class="fflag fflag--al" data-country-code="355">
@@ -492,8 +492,8 @@ export const Fluid = () => `
       </div>
     </span>
     <span class="textbox">
-      <span aria-hidden="true">+1</span>
-      <input class="textbox__control" type="tel" aria-label="area code + phone number"
+      <span id="phone-prefix-fluid">+1</span>
+      <input class="textbox__control" type="tel" aria-describedby="phone-prefix-fluid" aria-label="area code + phone number"
         autocomplete="tel-national" />
     </span>
   </span>`;
@@ -516,7 +516,7 @@ export const RTL = () => `
           </span>
         </button>
         <div class="listbox-button__listbox listbox-button__listbox--set-position">
-          <div class="listbox-button__options" role="listbox">
+          <div class="listbox-button__options" role="listbox" aria-label="Country">
             <div class="listbox-button__option" role="option">
               <span class="listbox-button__value">
                 <span class="fflag fflag--al" data-country-code="355">
@@ -576,8 +576,8 @@ export const RTL = () => `
         </div>
       </span>
       <span class="textbox">
-        <span aria-hidden="true">+1</span>
-        <input class="textbox__control" type="tel" aria-label="area code + phone number"
+        <span id="phone-prefix-rtl">+1</span>
+        <input class="textbox__control" type="tel" aria-describedby="phone-prefix-rtl" aria-label="area code + phone number"
           autocomplete="tel-national" value="123456789" />
       </span>
     </span>
@@ -585,8 +585,8 @@ export const RTL = () => `
 
 export const TextSpacing = () => `
 <div class="demo-a11y-text-spacing">
-  <span class="field" role="group" aria-labelledby="phone-number-label-0">
-  <label class="field__label field__label--stacked" id="phone-number-label-0">Phone number</label>
+  <span class="field" role="group" aria-labelledby="phone-number-label-textspacing">
+  <label class="field__label field__label--stacked" id="phone-number-label-textspacing">Phone number</label>
   <span class="phone-input">
     <span class="listbox-button listbox-button--form">
       <button class="button button--form button--split-start" aria-expanded="false" aria-haspopup="listbox" type="button"
@@ -603,7 +603,7 @@ export const TextSpacing = () => `
         </span>
       </button>
       <div class="listbox-button__listbox listbox-button__listbox--set-position">
-        <div class="listbox-button__options" role="listbox">
+        <div class="listbox-button__options" role="listbox" aria-label="Country">
           <div class="listbox-button__option" role="option">
             <span class="listbox-button__value">
               <span class="fflag fflag--al" aria-hidden="true"
@@ -668,9 +668,9 @@ export const TextSpacing = () => `
       </div>
     </span>
     <span class="textbox">
-      <span id="phone-prefix-1">+1</span>
+      <span id="phone-prefix-textspacing">+1</span>
       <input class="textbox__control" type="tel" aria-label="area code + phone number" autocomplete="tel-national"
-        aria-describedby="phone-prefix-1" value="123456789" />
+        aria-describedby="phone-prefix-textspacing" value="123456789" />
     </span>
   </span>
   </span>
@@ -678,8 +678,8 @@ export const TextSpacing = () => `
 
 export const overrideFontSize = () => `
 <div>
-  <span class="field" role="group" aria-labelledby="phone-number-label-0">
-    <label style="font-size: 200%;" class="field__label field__label--stacked" id="phone-number-label-0">Phone number</label>
+  <span class="field" role="group" aria-labelledby="phone-number-label-fontsize">
+    <label style="font-size: 200%;" class="field__label field__label--stacked" id="phone-number-label-fontsize">Phone number</label>
     <span class="phone-input">
       <span class="listbox-button listbox-button--form" style="font-size: 200%;">
         <button class="button button--form button--split-start" aria-expanded="false" aria-haspopup="listbox" type="button"
@@ -696,7 +696,7 @@ export const overrideFontSize = () => `
           </span>
         </button>
         <div class="listbox-button__listbox listbox-button__listbox--set-position">
-          <div class="listbox-button__options" role="listbox">
+          <div class="listbox-button__options" role="listbox" aria-label="Country">
             <div class="listbox-button__option" role="option">
               <span class="listbox-button__value">
                 <span class="fflag fflag--al" aria-hidden="true"
@@ -761,11 +761,269 @@ export const overrideFontSize = () => `
         </div>
       </span>
       <span class="textbox" style="font-size: 200%;">
-        <span id="phone-prefix-1">+1</span>
+        <span id="phone-prefix-fontsize">+1</span>
         <input class="textbox__control" type="tel" aria-label="area code + phone number" autocomplete="tel-national"
-          aria-describedby="phone-prefix-1" value="123456789" />
+          aria-describedby="phone-prefix-fontsize" value="123456789" />
       </span>
     </span>
   </span>
-<div>
+</div>
+`;
+
+export const withGroupLabel = () => `
+<span class="field" role="group" aria-labelledby="phone-number-label-0">
+    <label
+        class="field__label field__label--stacked"
+        id="phone-number-label-0"
+    >Phone number</label>
+    <span class="phone-input">
+        <span class="listbox-button listbox-button--form">
+            <button
+                class="button button--form button--split-start"
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                type="button"
+                data-listbox-button-prefix="Country: "
+                aria-label="Country: United States of America"
+            >
+                <span class="button__cell">
+                    <span class="button__text">
+                        <span class="fflag fflag--us" data-country-code="1"></span>
+                    </span>
+                    <svg
+                        class="icon icon--12"
+                        height="10"
+                        width="14"
+                        aria-hidden="true"
+                    >
+                        <use href="#icon-chevron-down-12"></use>
+                    </svg>
+                </span>
+            </button>
+            <div class="listbox-button__listbox">
+                <div class="listbox-button__options" role="listbox" aria-label="Country">
+                    <div class="listbox-button__option" role="option">
+                        <span class="listbox-button__value">
+                            <span class="fflag fflag--al" data-country-code="355"></span>
+                            <span>Albania</span><span>(+355)</span>
+                        </span>
+                        <svg
+                            class="icon icon--16"
+                            height="10"
+                            width="14"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-tick-16"></use>
+                        </svg>
+                    </div>
+                    <div class="listbox-button__option" role="option">
+                        <span class="listbox-button__value">
+                            <span class="fflag fflag--in" data-country-code="91"></span>
+                            <span>India</span><span>(+91)</span>
+                        </span>
+                        <svg
+                            class="icon icon--16"
+                            height="10"
+                            width="14"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-tick-16"></use>
+                        </svg>
+                    </div>
+                    <div class="listbox-button__option" role="option">
+                        <span class="listbox-button__value">
+                            <span class="fflag fflag--sh" data-country-code="290"></span>
+                            <span>Saint Helena, Ascension and Tristan da Cunha</span>
+                            <span>(+290)</span>
+                        </span>
+                        <svg
+                            class="icon icon--16"
+                            height="10"
+                            width="14"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-tick-16"></use>
+                        </svg>
+                    </div>
+                    <div class="listbox-button__option" role="option">
+                        <span class="listbox-button__value">
+                            <span class="fflag fflag--gb" data-country-code="44"></span>
+                            <span>United Kingdom</span><span>(+44)</span>
+                        </span>
+                        <svg
+                            class="icon icon--16"
+                            height="10"
+                            width="14"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-tick-16"></use>
+                        </svg>
+                    </div>
+                    <div
+                        class="listbox-button__option"
+                        role="option"
+                        aria-selected="true"
+                    >
+                        <span class="listbox-button__value">
+                            <span class="fflag fflag--us" data-country-code="1"></span>
+                            <span>United States of America</span><span>(+1)</span>
+                        </span>
+                        <svg
+                            class="icon icon--16"
+                            height="10"
+                            width="14"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-tick-16"></use>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </span>
+        <span class="textbox">
+            <span id="phone-prefix-1">+1</span>
+            <input
+                class="textbox__control"
+                type="tel"
+                aria-label="area code + phone number"
+                autocomplete="tel-national"
+                aria-describedby="phone-prefix-1"
+            >
+        </span>
+    </span>
+</span>
+`;
+
+export const errorWithDescription = () => `
+<span class="field" role="group" aria-labelledby="phone-number-label-2">
+    <label
+        class="field__label field__label--stacked"
+        id="phone-number-label-2"
+    >Phone number</label>
+    <span class="phone-input phone-input--error">
+        <span class="listbox-button listbox-button--form listbox-button--error">
+            <button
+                class="button button--form button--split-start"
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                type="button"
+                data-listbox-button-prefix="Country: "
+                aria-label="Country: United States of America"
+            >
+                <span class="button__cell">
+                    <span class="button__text">
+                        <span class="fflag fflag--us" data-country-code="1"></span>
+                    </span>
+                    <svg
+                        class="icon icon--12"
+                        height="10"
+                        width="14"
+                        aria-hidden="true"
+                    >
+                        <use href="#icon-chevron-down-12"></use>
+                    </svg>
+                </span>
+            </button>
+            <div class="listbox-button__listbox">
+                <div class="listbox-button__options" role="listbox" aria-label="Country">
+                    <div class="listbox-button__option" role="option">
+                        <span class="listbox-button__value">
+                            <span class="fflag fflag--al" data-country-code="355"></span>
+                            <span>Albania</span><span>(+355)</span>
+                        </span>
+                        <svg
+                            class="icon icon--16"
+                            height="10"
+                            width="14"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-tick-16"></use>
+                        </svg>
+                    </div>
+                    <div class="listbox-button__option" role="option">
+                        <span class="listbox-button__value">
+                            <span class="fflag fflag--in" data-country-code="91"></span>
+                            <span>India</span><span>(+91)</span>
+                        </span>
+                        <svg
+                            class="icon icon--16"
+                            height="10"
+                            width="14"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-tick-16"></use>
+                        </svg>
+                    </div>
+                    <div class="listbox-button__option" role="option">
+                        <span class="listbox-button__value">
+                            <span class="fflag fflag--sh" data-country-code="290"></span>
+                            <span>Saint Helena, Ascension and Tristan da Cunha</span>
+                            <span>(+290)</span>
+                        </span>
+                        <svg
+                            class="icon icon--16"
+                            height="10"
+                            width="14"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-tick-16"></use>
+                        </svg>
+                    </div>
+                    <div class="listbox-button__option" role="option">
+                        <span class="listbox-button__value">
+                            <span class="fflag fflag--gb" data-country-code="44"></span>
+                            <span>United Kingdom</span><span>(+44)</span>
+                        </span>
+                        <svg
+                            class="icon icon--16"
+                            height="10"
+                            width="14"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-tick-16"></use>
+                        </svg>
+                    </div>
+                    <div
+                        class="listbox-button__option"
+                        role="option"
+                        aria-selected="true"
+                    >
+                        <span class="listbox-button__value">
+                            <span class="fflag fflag--us" data-country-code="1"></span>
+                            <span>United States of America</span><span>(+1)</span>
+                        </span>
+                        <svg
+                            class="icon icon--16"
+                            height="10"
+                            width="14"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-tick-16"></use>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </span>
+        <span class="textbox">
+            <span id="phone-prefix-5">+1</span>
+            <input
+                class="textbox__control"
+                type="tel"
+                aria-label="area code + phone number"
+                autocomplete="tel-national"
+                aria-describedby="phone-prefix-5 field-phone-number-1-description"
+                aria-invalid="true"
+            >
+        </span>
+    </span>
+    <div
+        class="field__description field__description--attention"
+        id="field-phone-number-1-description"
+    >
+        <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
+            <use href="#icon-attention-filled-16"></use>
+        </svg>
+        <span>There was an error</span>
+    </div>
+</span>
 `;

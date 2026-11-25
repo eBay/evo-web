@@ -6,7 +6,9 @@ export const base = () => `
         <button
             class="icon-button icon-button--small icon-button--transparent number-input__decrement"
             tabindex="-1"
+            aria-hidden="true"
             type="button"
+            disabled
         >
             <svg
                 aria-hidden="true"
@@ -27,6 +29,7 @@ export const base = () => `
         >
         <button
             class="icon-button icon-button--small icon-button--transparent number-input__increment"
+            aria-hidden="true"
             type="button"
             tabindex="-1"
         >
@@ -49,7 +52,9 @@ export const fluid = () => `
         <button
             class="icon-button icon-button--small icon-button--transparent number-input__decrement"
             tabindex="-1"
+            aria-hidden="true"
             type="button"
+            disabled
         >
             <svg
                 aria-hidden="true"
@@ -70,6 +75,7 @@ export const fluid = () => `
         >
         <button
             class="icon-button icon-button--small icon-button--transparent number-input__increment"
+            aria-hidden="true"
             type="button"
             tabindex="-1"
         >
@@ -92,7 +98,9 @@ export const large = () => `
         <button
             class="icon-button icon-button--small icon-button--transparent number-input__decrement"
             tabindex="-1"
+            aria-hidden="true"
             type="button"
+            disabled
         >
             <svg
                 aria-hidden="true"
@@ -113,6 +121,7 @@ export const large = () => `
         >
         <button
             class="icon-button icon-button--small icon-button--transparent number-input__increment"
+            aria-hidden="true"
             type="button"
             tabindex="-1"
         >
@@ -134,6 +143,7 @@ export const withDeleteHidden = () => `
     <span class="textbox">
         <button
             class="icon-button icon-button--small icon-button--transparent number-input__decrement"
+            aria-hidden="true"
             type="button"
             tabindex="-1"
         >
@@ -164,12 +174,13 @@ export const withDeleteHidden = () => `
                 width="24"
                 height="24"
             >
-                <icon-symbol name="delete-24"/>
+                <use href="#icon-delete-24"></use>
             </svg>
         </button>
 
         <button
             class="icon-button icon-button--small icon-button--transparent number-input__increment"
+            aria-hidden="true"
             type="button"
             tabindex="-1"
         >
@@ -191,7 +202,9 @@ export const withDeleteShown = () => `
     <span class="textbox">
         <button
             class="icon-button icon-button--small icon-button--transparent number-input__decrement"
+            aria-hidden="true"
             type="button"
+            disabled
             tabindex="-1"
         >
             <svg
@@ -227,6 +240,7 @@ export const withDeleteShown = () => `
 
         <button
             class="icon-button icon-button--small icon-button--transparent number-input__increment"
+            aria-hidden="true"
             type="button"
             tabindex="-1"
         >

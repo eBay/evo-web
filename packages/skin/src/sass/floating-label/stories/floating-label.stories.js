@@ -12,12 +12,12 @@ export const base = () => `
 export const RTL = () => `
 <div dir="rtl">
     <span class="floating-label">
-        <label class="floating-label__label" for="firstName">First Name</label>
+        <label class="floating-label__label" for="firstNameRtl">First Name</label>
         <span class="textbox">
-            <input class="textbox__control" id="firstName" type="text" />
+            <input class="textbox__control" id="firstNameRtl" type="text" />
         </span>
     </span>
-<div>
+</div>
 `;
 
 export const value = () => `
@@ -40,7 +40,7 @@ export const placeholder = () => `
 
 export const disabledTextbox = () => `
 <span class="floating-label">
-    <label class="floating-label__label floating-label__label--disabled" for="firstName">First Name</label>
+    <label class="floating-label__label floating-label__label--disabled" for="firstName02">First Name</label>
     <span class="textbox textbox--disabled">
         <input class="textbox__control" id="firstName02" type="text" disabled />
     </span>
@@ -49,7 +49,7 @@ export const disabledTextbox = () => `
 
 export const invalidTextbox = () => `
 <span class="floating-label">
-    <label class="floating-label__label floating-label__label--inline floating-label__label--invalid" for="firstName">First Name</label>
+    <label class="floating-label__label floating-label__label--inline floating-label__label--invalid" for="firstName03">First Name</label>
     <span class="textbox textbox--invalid">
         <input class="textbox__control" id="firstName03" type="text" aria-invalid="true" />
     </span>
@@ -58,45 +58,45 @@ export const invalidTextbox = () => `
 
 export const invalidTextboxWithValue = () => `
 <span class="floating-label">
-    <label class="floating-label__label floating-label__label--invalid" for="firstName">First Name</label>
+    <label class="floating-label__label floating-label__label--invalid" for="firstName04">First Name</label>
     <span class="textbox textbox--invalid">
-        <input class="textbox__control" id="firstName03" type="text" aria-invalid="true" value="value" />
+        <input class="textbox__control" id="firstName04" type="text" aria-invalid="true" value="value" />
     </span>
 </span>
 `;
 
 export const invalidTextboxWithPlaceholder = () => `
 <span class="floating-label">
-    <label class="floating-label__label floating-label__label--invalid" for="firstName">First Name</label>
+    <label class="floating-label__label floating-label__label--invalid" for="firstName05">First Name</label>
     <span class="textbox textbox--invalid">
-        <input class="textbox__control" id="firstName03" type="text" aria-invalid="true" placeholder="placeholder" />
+        <input class="textbox__control" id="firstName05" type="text" aria-invalid="true" placeholder="placeholder" />
     </span>
 </span>
 `;
 
 export const longText = () => `
 <span class="floating-label">
-    <label class="floating-label__label" for="firstName">Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch</label>
+    <label class="floating-label__label" for="firstNameLongText">Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch</label>
     <span class="textbox">
-        <input class="textbox__control" id="firstName" type="text" />
+        <input class="textbox__control" id="firstNameLongText" type="text" />
     </span>
 </span>
 `;
 
 export const longTextInline = () => `
 <span class="floating-label">
-    <label class="floating-label__label floating-label__label--inline" for="firstName">Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch</label>
+    <label class="floating-label__label floating-label__label--inline" for="firstNameLongTextInline">Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch</label>
     <span class="textbox">
-        <input class="textbox__control" id="firstName" type="text" />
+        <input class="textbox__control" id="firstNameLongTextInline" type="text" />
     </span>
 </span>
 `;
 
 export const select = () => `
 <span class="floating-label">
-    <label class="floating-label__label">Select Option</label>
+    <label class="floating-label__label" for="floating-select-0-1">Select Option</label>
     <span class="select">
-        <select aria-label="Select demo" name="options">
+        <select id="floating-select-0-1" name="options">
             <option value="">Choose an option</option>
             <option value="item1">Pick Option 1 (default)</option>
             <option value="item2">Pick Option 2</option>
@@ -111,9 +111,9 @@ export const select = () => `
 
 export const selectInline = () => `
 <span class="floating-label">
-    <label class="floating-label__label floating-label__label--inline">Select Option long text</label>
+    <label class="floating-label__label floating-label__label--inline" for="floating-select-1-1">Select Option long text</label>
     <span class="select">
-        <select aria-label="Select demo" name="options">
+        <select id="floating-select-1-1" name="options">
             <option value=""></option>
             <option value="item1">Pick Option 1 (default)</option>
             <option value="item2">Pick Option 2</option>
@@ -128,9 +128,9 @@ export const selectInline = () => `
 
 export const selectInlineDoubled = () => `
 <span class="floating-label">
-    <label class="floating-label__label floating-label__label--inline">Select Option long text with ellipsis</label>
+    <label class="floating-label__label floating-label__label--inline" for="floating-select-2-1">Select Option long text with ellipsis</label>
     <span class="select">
-        <select aria-label="Select demo" name="options">
+        <select id="floating-select-2-1" name="options">
             <option value=""></option>
             <option value="item1">Pick Option 1 (default)</option>
             <option value="item2">Pick Option 2</option>
@@ -142,9 +142,9 @@ export const selectInlineDoubled = () => `
     </span>
 </span>
 <span class="floating-label">
-    <label class="floating-label__label floating-label__label--inline">Select Option long text</label>
+    <label class="floating-label__label floating-label__label--inline" for="floating-select-2-2">Select Option long text</label>
     <span class="select">
-        <select aria-label="Select demo" name="options">
+        <select id="floating-select-2-2" name="options">
             <option value=""></option>
             <option value="item1">Pick Option 1 (default)</option>
             <option value="item2">Pick Option 2</option>
@@ -161,9 +161,9 @@ export const selectInlineDoubled = () => `
 export const RTLSelectInline = () => `
 <div dir="rtl">
     <span class="floating-label">
-        <label class="floating-label__label floating-label__label--inline">Select Option long text</label>
+        <label class="floating-label__label floating-label__label--inline" for="floating-select-4-1">Select Option long text</label>
         <span class="select">
-            <select aria-label="Select demo" name="options">
+            <select id="floating-select-4-1" name="options">
                 <option value=""></option>
                 <option value="item1">Pick Option 1 (default)</option>
                 <option value="item2">Pick Option 2</option>
@@ -179,18 +179,18 @@ export const RTLSelectInline = () => `
 
 export const TextArea = () => `
 <span class="floating-label floating-label--opaque">
-    <label class="floating-label__label" for="first-name">Enter list of users</label>
+    <label class="floating-label__label" for="floating-label-textarea-input">Enter list of users</label>
     <span class="textbox">
-        <textarea aria-label="Textbox demo" class="textbox__control"></textarea>
+        <textarea class="textbox__control" id="floating-label-textarea-input"></textarea>
     </span>
 </span>
 `;
 
 export const textSpacing = () => `
 <span class="floating-label demo-a11y-text-spacing">
-    <label class="floating-label__label" for="firstName">First Name</label>
+    <label class="floating-label__label" for="firstNameTextSpacing">First Name</label>
     <span class="textbox">
-        <input class="textbox__control" id="firstName" type="text" />
+        <input class="textbox__control" id="firstNameTextSpacing" type="text" />
     </span>
 </span>
 `;
@@ -212,7 +212,7 @@ export const phoneInput = () => `
         </span>
     </button>
     <div class="listbox-button__listbox listbox-button__listbox--set-position">
-        <div class="listbox-button__options" role="listbox">
+        <div class="listbox-button__options" role="listbox" aria-label="Country">
         <div class="listbox-button__option" role="option">
             <span class="listbox-button__value">
             <svg class="flag flag--al" focusable="false" height="18" width="24" aria-hidden="true" data-country-code="355">
@@ -277,13 +277,78 @@ export const phoneInput = () => `
     </div>
     </span>
     <span class="field floating-label">
-    <label class="floating-label__label" for="field1"><span class="clipped">Area code + </span>Phone
+    <label class="floating-label__label" for="floating-phone-input-0"><span class="clipped">Area code + </span>Phone
         Number</label>
         <span class="textbox">
         <span id="floating-phone-prefix-0">+1</span>
-        <input class="textbox__control" type="tel" aria-label="area code + phone number"
+        <input class="textbox__control" type="tel" id="floating-phone-input-0"
             autocomplete="tel-national" aria-describedby="floating-phone-prefix-0"/>
         </span>
+    </span>
+</span>
+`;
+
+export const large = () => `
+<span class="floating-label floating-label--large">
+    <label class="floating-label__label" for="dob-1">Date Of Birth</label>
+    <span class="textbox textbox--large">
+        <input class="textbox__control" id="dob-1" type="text">
+    </span>
+</span>
+`;
+
+export const combobox = () => `
+<form action="index.html">
+    <span class="combobox floating-label">
+        <label class="floating-label__label" for="floating-label-combobox-input">
+            Enter list of users
+        </label>
+        <span class="combobox__control">
+            <input
+                name="combobox-default"
+                role="combobox"
+                aria-expanded="false"
+                type="text"
+                aria-haspopup="listbox"
+                aria-owns="floating-label-combobox-listbox" aria-controls="floating-label-combobox-listbox"
+                id="floating-label-combobox-input"
+            >
+            <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
+                <use href="#icon-chevron-down-12"></use>
+            </svg>
+        </span>
+        <div class="combobox__listbox">
+            <div id="floating-label-combobox-listbox" class="combobox__options" role="listbox" aria-label="Enter list of users">
+                <div class="combobox__option" role="option">
+                    <span>Option 1</span>
+                </div>
+                <div class="combobox__option" role="option">
+                    <span>Option 2</span>
+                </div>
+                <div class="combobox__option" role="option">
+                    <span>Option 3</span>
+                </div>
+            </div>
+        </div>
+    </span>
+</form>
+`;
+
+export const selectLarge = () => `
+<span class="floating-label floating-label--large">
+    <label class="floating-label__label" for="floating-select-5-1">
+        Select Option
+    </label>
+    <span class="select select--large">
+        <select id="floating-select-5-1" name="options">
+            <option value="">Choose an option</option>
+            <option value="item1">Pick Option 1 (default)</option>
+            <option value="item2">Pick Option 2</option>
+            <option value="item3">Pick Option 3</option>
+        </select>
+        <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
+            <use href="#icon-chevron-down-12"></use>
+        </svg>
     </span>
 </span>
 `;
