@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it } from "vitest";
 import { composeStories } from "@storybook/marko";
 import { cleanup, fireEvent, render, waitFor } from "@marko/testing-library";
+import { userEvent } from "vitest/browser";
 import * as stories from "../number-input.stories";
 import AriaLabelledby from "./aria-labelledby.marko";
 
@@ -23,7 +24,7 @@ describe("evo-number-input", () => {
     await fireEvent.click(increment);
 
     await waitFor(() => {
-      expect(component.getByLabelText("Enter a number")).toHaveValue(1);
+      expect(component.getByLabelText("Enter a number")).toHaveValue("1");
       expect(component.getByText(/Current value is 1/)).toBeInTheDocument();
     });
   });
@@ -35,9 +36,35 @@ describe("evo-number-input", () => {
     await fireEvent.input(input, { target: { value: "7" } });
 
     await waitFor(() => {
-      expect(input).toHaveValue(7);
+      expect(input).toHaveValue("7");
       expect(component.getByText(/Current value is 7/)).toBeInTheDocument();
     });
+  });
+
+  it("drops typed text that isn't part of a whole number", async () => {
+    const component = await render(Default, { value: 1 });
+    const input = component.getByLabelText<HTMLInputElement>("Enter a number");
+    await userEvent.click(input);
+    input.setSelectionRange(1, 1);
+
+    await userEvent.keyboard(".");
+
+    await waitFor(() => expect(input).toHaveValue("1"));
+  });
+
+  it("steps with the arrow keys and jumps to the bounds with Home and End", async () => {
+    const component = await render(Default, { min: 1, max: 5, value: 2 });
+    const input = component.getByRole("spinbutton");
+    await userEvent.click(input);
+
+    await userEvent.keyboard("{ArrowUp}");
+    await waitFor(() => expect(input).toHaveAttribute("aria-valuenow", "3"));
+    await userEvent.keyboard("{ArrowDown}{ArrowDown}");
+    await waitFor(() => expect(input).toHaveValue("1"));
+    await userEvent.keyboard("{End}");
+    await waitFor(() => expect(input).toHaveValue("5"));
+    await userEvent.keyboard("{Home}");
+    await waitFor(() => expect(input).toHaveValue("1"));
   });
 
   it("shows delete at a configured minimum", async () => {
@@ -79,7 +106,7 @@ describe("evo-number-input", () => {
       expect(deleteButton).toBeDisabled();
 
       increment.click();
-      expect(input).toHaveValue(1);
+      expect(input).toHaveValue("1");
     },
   );
 });

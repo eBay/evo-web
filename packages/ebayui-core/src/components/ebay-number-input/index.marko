@@ -16,17 +16,20 @@ $ const {
 ]>
     <ebay-textbox
         ...processHtmlAttributes(htmlInput)
-        min=state.min
-        max=state.max
         id:scoped="number-input"
         on-input-change("updateInputValue")
         on-change("updateInputValueChange")
-        on-keydown("emit", "keydown")
+        on-keydown("handleKeydown")
         on-keyup("emit", "keyup")
         on-focus("emit", "focus")
         on-blur("emit", "blur")
         on-keypress("emit", "keypress")
-        type="number"
+        type="text"
+        inputmode="numeric"
+        role="spinbutton"
+        aria-valuenow=state.value
+        aria-valuemin=state.min
+        aria-valuemax=state.max === Infinity ? undefined : state.max
         key="input"
         value=state.value
     >

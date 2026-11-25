@@ -10,13 +10,14 @@ export default class {
       );
       const trash = widgetEl.querySelector("button.number-input__delete");
 
-      function updateValue(inc) {
-        const value = parseInt(input.value, 10);
+      function updateValue(inc = 0) {
+        const value = parseInt(input.value, 10) || 0;
         let newValue = value;
         if ((value > 0 && inc < 0) || inc > 0) {
           newValue = value + inc;
         }
         input.value = newValue;
+        input.setAttribute("aria-valuenow", newValue);
         if (newValue === 0) {
           decrement.setAttribute("disabled", "true");
         } else {
@@ -31,6 +32,14 @@ export default class {
 
       input.addEventListener("input", function (e) {
         updateValue();
+      });
+
+      input.addEventListener("keydown", function (e) {
+        const inc = { ArrowUp: 1, ArrowDown: -1 }[e.key];
+        if (inc) {
+          e.preventDefault();
+          updateValue(inc);
+        }
       });
 
       function updateAnimationClass(widgetEl, className) {

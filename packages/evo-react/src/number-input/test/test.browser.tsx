@@ -83,7 +83,7 @@ describe("evo-number-input", () => {
     await user.clear(input);
     await user.type(input, "4");
 
-    await expect.element(input).toHaveValue(4);
+    await expect.element(input).toHaveValue("4");
     expect(onChange).toHaveBeenLastCalledWith(4);
   });
 
@@ -101,8 +101,46 @@ describe("evo-number-input", () => {
     await user.clear(input);
     await user.type(input, "8");
 
-    await expect.element(input).toHaveValue(5);
+    await expect.element(input).toHaveValue("5");
     expect(displayedValues[displayedValues.length - 1]).toBe(5);
+  });
+
+  it("drops typed text that isn't part of a whole number", async () => {
+    const screen = await render(
+      <EvoNumberInput a11yText="Item quantity" defaultValue={1} />,
+    );
+    const input = screen.getByRole("spinbutton", { name: "Item quantity" });
+    await user.click(input);
+    (input.element() as HTMLInputElement).setSelectionRange(1, 1);
+
+    await user.keyboard(".");
+
+    await expect.element(input).toHaveValue("1");
+  });
+
+  it("steps with the arrow keys and jumps to the bounds with Home and End", async () => {
+    const onChange = vi.fn();
+    const screen = await render(
+      <EvoNumberInput
+        a11yText="Item quantity"
+        min={1}
+        max={5}
+        defaultValue={2}
+        onChange={onChange}
+      />,
+    );
+    const input = screen.getByRole("spinbutton", { name: "Item quantity" });
+    await user.click(input);
+
+    await user.keyboard("{ArrowUp}");
+    await expect.element(input).toHaveAttribute("aria-valuenow", "3");
+    await user.keyboard("{ArrowDown}{ArrowDown}");
+    await expect.element(input).toHaveValue("1");
+    await user.keyboard("{End}");
+    await expect.element(input).toHaveValue("5");
+    await user.keyboard("{Home}");
+    await expect.element(input).toHaveValue("1");
+    expect(onChange).toHaveBeenLastCalledWith(1);
   });
 
   it("updates an uncontrolled value and calls onChange after incrementing", async () => {
@@ -119,7 +157,7 @@ describe("evo-number-input", () => {
 
     await expect
       .element(screen.getByRole("spinbutton", { name: "Item quantity" }))
-      .toHaveValue(3);
+      .toHaveValue("3");
     expect(onChange).toHaveBeenCalledWith(3);
   });
 
@@ -137,7 +175,7 @@ describe("evo-number-input", () => {
 
     await expect
       .element(screen.getByRole("spinbutton", { name: "Item quantity" }))
-      .toHaveValue(1);
+      .toHaveValue("1");
     expect(onChange).toHaveBeenCalledWith(1);
   });
 
@@ -151,7 +189,7 @@ describe("evo-number-input", () => {
 
     await expect
       .element(screen.getByRole("spinbutton", { name: "Item quantity" }))
-      .toHaveValue(2);
+      .toHaveValue("2");
     expect(onChange).toHaveBeenCalledWith(3);
   });
 
@@ -165,7 +203,7 @@ describe("evo-number-input", () => {
     (input.element() as HTMLInputElement).select();
     await user.type(input, "4");
 
-    await expect.element(input).toHaveValue(2);
+    await expect.element(input).toHaveValue("2");
     expect(onChange).toHaveBeenLastCalledWith(4);
   });
 
@@ -176,8 +214,8 @@ describe("evo-number-input", () => {
     const input = screen.getByRole("spinbutton", { name: "Item quantity" });
     const root = screen.container.querySelector(".number-input")!;
 
-    await expect.element(input).toHaveValue(0);
-    await expect.element(input).toHaveAttribute("min", "0");
+    await expect.element(input).toHaveValue("0");
+    await expect.element(input).toHaveAttribute("aria-valuemin", "0");
     expect(root.querySelector(".number-input__delete")).toBeNull();
     expect(root).not.toHaveClass("number-input--show-delete");
   });
@@ -333,11 +371,11 @@ describe("evo-number-input", () => {
     const input = screen.getByRole("spinbutton", { name: "Item quantity" });
 
     await user.click(getPaddle(screen, "increment"));
-    await expect.element(input).toHaveValue(3);
+    await expect.element(input).toHaveValue("3");
     await user.click(getPaddle(screen, "decrement"));
-    await expect.element(input).toHaveValue(2);
+    await expect.element(input).toHaveValue("2");
     await user.clear(input);
     await user.type(input, "4");
-    await expect.element(input).toHaveValue(4);
+    await expect.element(input).toHaveValue("4");
   });
 });

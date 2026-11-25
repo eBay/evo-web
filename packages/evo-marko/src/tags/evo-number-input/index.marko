@@ -39,6 +39,7 @@ export type Input = Omit<TextboxInput, "value" | "valueChange"> & {
   max = Infinity,
   id,
   onDelete,
+  onKeyDown,
   readonly,
   ...htmlInput
 }=input>
@@ -71,13 +72,31 @@ export type Input = Omit<TextboxInput, "value" | "valueChange"> & {
     aria-label=label ? undefined : a11yText
     disabled=disabled
     readonly=readonly
-    min=min
-    max=max
     id=numberInput
-    type="number"
+    type="text"
+    inputmode="numeric"
+    role="spinbutton"
+    aria-valuenow=displayValue
+    aria-valuemin=min
+    aria-valuemax=max === Infinity ? undefined : max
     value=displayValue
     valueChange(newValue) {
       value = checkBoundary(parseInt(newValue, 10), 0);
+    }
+    onKeyDown(e, el) {
+      const next = controlsDisabled
+        ? undefined
+        : {
+            ArrowUp: checkBoundary(displayValue, 1),
+            ArrowDown: checkBoundary(displayValue, -1),
+            Home: min,
+            End: max,
+          }[e.key];
+      if (next !== undefined && Number.isFinite(next)) {
+        e.preventDefault();
+        value = next;
+      }
+      onKeyDown && onKeyDown(e, el);
     }
   >
     <@prefixIcon>

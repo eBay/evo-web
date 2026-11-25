@@ -91,6 +91,28 @@ class NumberInput extends Marko.Component<Input, State> {
         this.emit("change", { originalEvent: event.originalEvent, value });
     }
 
+    handleKeydown(event: TextboxEvent) {
+        const { key } = event.originalEvent as KeyboardEvent;
+        const keyValues: Partial<Record<string, number>> = {
+            ArrowUp: this.checkBoundary(this.state.value, 1),
+            ArrowDown: this.checkBoundary(this.state.value, -1),
+            Home: this.state.min,
+            End: this.state.max,
+        };
+        const value = this.input.readonly ? undefined : keyValues[key];
+        if (value !== undefined && Number.isFinite(value)) {
+            event.originalEvent.preventDefault();
+            this.state.value = value;
+            this.textbox.value = value.toString();
+            this.emit("input-change", {
+                originalEvent: event.originalEvent,
+                value,
+            });
+            this.emit("change", { originalEvent: event.originalEvent, value });
+        }
+        this.emit("keydown", event);
+    }
+
     handleAnimation(action: string) {
         // Normally we dont want to use dom manipulation for removing or adding classes,
         // but for this animation to work we need to trigger a reflow.

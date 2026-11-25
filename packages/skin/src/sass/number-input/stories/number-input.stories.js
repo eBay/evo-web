@@ -21,8 +21,11 @@ export const base = () => `
         <input
             aria-label="Number input"
             class="textbox__control"
-            type="number"
-            min="0"
+            type="text"
+            inputmode="numeric"
+            role="spinbutton"
+            aria-valuenow="0"
+            aria-valuemin="0"
             value="0"
         >
         <button
@@ -64,8 +67,11 @@ export const fluid = () => `
         <input
             aria-label="Number input"
             class="textbox__control"
-            type="number"
-            min="0"
+            type="text"
+            inputmode="numeric"
+            role="spinbutton"
+            aria-valuenow="0"
+            aria-valuemin="0"
             value="0"
         >
         <button
@@ -107,8 +113,11 @@ export const large = () => `
         <input
             aria-label="Number input"
             class="textbox__control"
-            type="number"
-            min="0"
+            type="text"
+            inputmode="numeric"
+            role="spinbutton"
+            aria-valuenow="0"
+            aria-valuemin="0"
             value="0"
         >
         <button
@@ -149,9 +158,12 @@ export const withDeleteHidden = () => `
         <input
             aria-label="Number input"
             class="textbox__control"
-            type="number"
+            type="text"
+            inputmode="numeric"
+            role="spinbutton"
+            aria-valuenow="2"
+            aria-valuemin="1"
             value="2"
-            min="1"
         >
         <button
             class="icon-button icon-button--small icon-button--transparent number-input__delete"
@@ -206,9 +218,12 @@ export const withDeleteShown = () => `
         <input
             aria-label="Number input"
             class="textbox__control"
-            type="number"
+            type="text"
+            inputmode="numeric"
+            role="spinbutton"
+            aria-valuenow="1"
+            aria-valuemin="1"
             value="1"
-            min="1"
         >
         <button
             class="icon-button icon-button--small icon-button--transparent number-input__delete"

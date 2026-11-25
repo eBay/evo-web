@@ -23,8 +23,11 @@ export const base = () => `
     <input
         id="number-input-1"
         class="textbox__control"
-        type="number"
-        min="0"
+        type="text"
+        inputmode="numeric"
+        role="spinbutton"
+        aria-valuenow="0"
+        aria-valuemin="0"
         value="0"
     >
     <button
@@ -67,8 +70,11 @@ export const fluid = () => `
     <input
         id="number-input-1"
         class="textbox__control"
-        type="number"
-        min="0"
+        type="text"
+        inputmode="numeric"
+        role="spinbutton"
+        aria-valuenow="0"
+        aria-valuemin="0"
         value="0"
     >
     <button
@@ -111,8 +117,11 @@ export const large = () => `
     <input
         id="number-input-1"
         class="textbox__control"
-        type="number"
-        min="0"
+        type="text"
+        inputmode="numeric"
+        role="spinbutton"
+        aria-valuenow="0"
+        aria-valuemin="0"
         value="0"
     >
     <button
