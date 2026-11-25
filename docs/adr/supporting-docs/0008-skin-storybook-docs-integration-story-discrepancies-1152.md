@@ -97,7 +97,7 @@ Color contrast is reported but not changed: the findings are disabled states (ex
 
 ### image-placeholder
 
-- image-placeholder/stories/image-placeholder.stories.js insideHeading, RTLInsideHeading, differentWidths, inContainerVariableWidth: added role="img" aria-label="image not found" to the placeholder svg, as the old docs and the newer stories do. Reason: axe empty-heading; restores old docs attribute; 1.2 item (unnamed image placeholders). Percy: none.
+- image-placeholder/stories/image-placeholder.stories.js insideHeading, RTLInsideHeading, differentWidths, inContainerVariableWidth: added role="img" aria-label="image not found" to the placeholder svg, as the old docs and the newer stories do. Reason: axe empty-heading; restores old docs attribute; defect found during the migration (unnamed image placeholders). Percy: none.
 
 ### list
 
@@ -106,29 +106,29 @@ Color contrast is reported but not changed: the findings are disabled states (ex
 
 ### progress-bar
 
-- progress-bar/stories/progress-bar.stories.js empty, half, full: class "progress" (no styles, rendered as the browser's default control) changed to "progress-bar"; values set to 0, 50 and 100 (empty was 1); fallback text set to 0%, 50% and 100% (all three said 0%). Reason: 1.2 item; restores the documented markup. Percy: visible (now the styled Skin bar).
+- progress-bar/stories/progress-bar.stories.js empty, half, full: class "progress" (no styles, rendered as the browser's default control) changed to "progress-bar"; values set to 0, 50 and 100 (empty was 1); fallback text set to 0%, 50% and 100% (all three said 0%). Reason: defect found during the migration; restores the documented markup. Percy: visible (now the styled Skin bar).
 
 ### progress-bar-expressive
 
-- progress-bar-expressive/stories/progress-bar-expressive.stories.js withMediumText: removed the root class progress-bar-expressive--medium, which no rule styles (the medium size comes from progress-bar-expressive__messages--medium, which the story already has). Reason: 1.2 item (unstyled class). Percy: none.
+- progress-bar-expressive/stories/progress-bar-expressive.stories.js withMediumText: removed the root class progress-bar-expressive--medium, which no rule styles (the medium size comes from progress-bar-expressive__messages--medium, which the story already has). Reason: defect found during the migration (unstyled class). Percy: none.
 
 ### progress-stepper
 
-- progress-stepper/stories/progress-stepper.stories.js 15 exports (all but customSize, which already had it): added a clipped heading "Shipment progress" (one level above the step titles, so heading order holds) and aria-labelledby on the stepper, as evo-marko and the old docs do; status icons changed from aria-hidden to role="img" with aria-label complete / current / blocked / upcoming, following evo-marko's state logic. Reason: 1.2 item (hidden status icons); restores old docs aria-labelledby. Percy: none.
+- progress-stepper/stories/progress-stepper.stories.js 15 exports (all but customSize, which already had it): added a clipped heading "Shipment progress" (one level above the step titles, so heading order holds) and aria-labelledby on the stepper, as evo-marko and the old docs do; status icons changed from aria-hidden to role="img" with aria-label complete / current / blocked / upcoming, following evo-marko's state logic. Reason: defect found during the migration (hidden status icons); restores old docs aria-labelledby. Percy: none.
 - progress-stepper/stories/progress-stepper.stories.js verticalUpcoming: `aria-current="current"` (not a valid token) changed to `aria-current="step"`, and that item's icon label from complete to current. Reason: invalid ARIA value; the item is the current step. Percy: none.
 
 ### video
 
-- video/stories/video.stories.js all 12 exports (shared media constant): restored the old docs' playable sample (src) and poster, so the video is no longer a black box. Reason: restores old docs function (1.2 item). Percy: visible (poster image instead of a black box).
+- video/stories/video.stories.js all 12 exports (shared media constant): restored the old docs' playable sample (src) and poster, so the video is no longer a black box. Reason: restores old docs function (a defect found during the migration). Percy: visible (poster image instead of a black box).
 
 ## 4. Docs pages
 
 - Docs edit, src/routes/_index/components/progress-bar-expressive/css+page.marko, "Medium text" prose: named the real class progress-bar-expressive__messages--medium instead of the unstyled progress-bar-expressive--medium. Reason: docs prose taught a class that does nothing.
 - Docs edit, src/routes/_index/components/calendar/css+page.marko: `calendar__range-end` in the date range prose changed to the real class `calendar__range--end`. Reason: prose taught a class that does not exist.
 - Docs edit, src/routes/_index/components/progress-bar-expressive/css+page.marko, message steps: `expressive_loader__message--out` changed to `progress-bar-expressive__message--out`. Reason: prose taught a class that does not exist.
-- Docs edit, src/routes/_index/components/star-rating/css+page.marko, Method 2 catalogue: each rating's aria-label now comes from the loop value (Rating: 0/5 through Rating: 5/5) instead of a hard-coded "Rating: 2.5/5" on all eleven. Reason: 1.2 item.
+- Docs edit, src/routes/_index/components/star-rating/css+page.marko, Method 2 catalogue: each rating's aria-label now comes from the loop value (Rating: 0/5 through Rating: 5/5) instead of a hard-coded "Rating: 2.5/5" on all eleven. Reason: defect found during the migration.
 - Docs edit, src/routes/_index/components/progress-bar/css+page.marko: the Initial, Loading and Completed demos, static until now, use <component-demo> for empty, half and full.
-- src/routes/_index/components/avatar/css+page.marko: second `id="avatar-custom"` (Custom Avatar with Fit) changed to `avatar-custom-fit`. Reason: 1.2 item (duplicate id).
+- src/routes/_index/components/avatar/css+page.marko: second `id="avatar-custom"` (Custom Avatar with Fit) changed to `avatar-custom-fit`. Reason: defect found during the migration (duplicate id).
 - Duplicate heading ids renamed, nothing linked to them: List (`list-variable-width`, `list-fieldset`).
 
 Demos that stay static on purpose:
