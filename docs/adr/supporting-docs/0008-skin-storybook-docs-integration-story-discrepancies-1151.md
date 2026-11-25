@@ -88,7 +88,7 @@ Color contrast is reported but not changed: the findings are disabled states (ex
 
 ### section-notice
 
-- section-notice/stories/{variants,iconless,icon-16,test}.stories.js all 27 exports: root changed from an unnamed <div role="region"> to <section role="region" aria-label="<status or Notice>" aria-roledescription="Notice">; removed the second role="region" and aria-roledescription from section-notice__header; status icon changed from aria-hidden to role="img" with the status as aria-label. Reason: axe landmark-unique; 1.2 item (Section Notice regions); restores old docs aria-label. Percy: none.
+- section-notice/stories/{variants,iconless,icon-16,test}.stories.js all 27 exports: root changed from an unnamed <div role="region"> to <section role="region" aria-label="<status or Notice>" aria-roledescription="Notice">; removed the second role="region" and aria-roledescription from section-notice__header; status icon changed from aria-hidden to role="img" with the status as aria-label. Reason: axe landmark-unique; defect found during the migration (Section Notice regions); restores old docs aria-label. Percy: none.
 
 ### snackbar-dialog
 
