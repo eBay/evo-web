@@ -15,47 +15,7 @@ import { urls } from "../../../../data";
   <h3 id="snackbar-dialog-default">Default Snackbar</h3>
   <p>The default snackbar displays a short, non-interactive message.</p>
 
-  <div class="demo">
-    <div class="demo__inner">
-      <button
-        class="button button--primary dialog-button"
-        data-makeup-for="snackbar-dialog-1"
-      >
-        Show Default Snackbar
-      </button>
-      <aside
-        aria-label="Notification"
-        aria-live="polite"
-        aria-modal="false"
-        class="snackbar-dialog snackbar-dialog--transition"
-        id="snackbar-dialog-1"
-        role="dialog"
-        hidden
-      >
-        <div class="snackbar-dialog__window">
-          <div class="snackbar-dialog__main">
-            <p>1 item deleted from watch list.</p>
-          </div>
-        </div>
-      </aside>
-    </div>
-  </div>
-  <highlight-code type="html">
-    <aside
-      aria-label="Notification"
-      aria-live="polite"
-      aria-modal="false"
-      class="snackbar-dialog snackbar-dialog--transition"
-      role="dialog"
-      hidden
-    >
-      <div class="snackbar-dialog__window">
-        <div class="snackbar-dialog__main">
-          <p>1 item deleted from watch list.</p>
-        </div>
-      </div>
-    </aside>
-  </highlight-code>
+  <component-demo component="snackbar-dialog" variant="base/noAction"/>
 
   <h3 id="snackbar-dialog-action">Action Snackbar</h3>
   <p>
@@ -74,57 +34,7 @@ import { urls } from "../../../../data";
     .
   </p>
 
-  <div class="demo">
-    <div class="demo__inner">
-      <button
-        class="button button--primary dialog-button"
-        data-makeup-for="snackbar-dialog-2"
-      >
-        Show Action Snackbar
-      </button>
-      <aside
-        aria-label="Notification"
-        aria-live="polite"
-        aria-modal="false"
-        class="snackbar-dialog snackbar-dialog--transition"
-        id="snackbar-dialog-2"
-        role="dialog"
-        hidden
-      >
-        <div class="snackbar-dialog__window">
-          <div class="snackbar-dialog__main">
-            <p>1 item deleted from watch list.</p>
-          </div>
-          <div class="snackbar-dialog__actions">
-            <button accesskey="u" class="link-button snackbar-dialog__cta">
-              Undo <span class="clipped">- Access Key: U</span>
-            </button>
-          </div>
-        </div>
-      </aside>
-    </div>
-  </div>
-  <highlight-code type="html">
-    <aside
-      aria-label="Notification"
-      aria-live="polite"
-      aria-modal="false"
-      class="snackbar-dialog snackbar-dialog--transition"
-      role="dialog"
-      hidden
-    >
-      <div class="snackbar-dialog__window">
-        <div class="snackbar-dialog__main">
-          <p>1 item deleted from watch list.</p>
-        </div>
-        <div class="snackbar-dialog__actions">
-          <button accesskey="u" class="link-button snackbar-dialog__cta">
-            Undo <span class="clipped">- Access Key: U</span>
-          </button>
-        </div>
-      </div>
-    </aside>
-  </highlight-code>
+  <component-demo component="snackbar-dialog" variant="base/action"/>
 
   <h3 id="snackbar-dialog-stacked">Stacked Snackbar</h3>
   <p>
@@ -132,63 +42,7 @@ import { urls } from "../../../../data";
     <code>snackbar-dialog__window--column</code> modifier.
   </p>
 
-  <div class="demo">
-    <div class="demo__inner">
-      <button
-        class="button button--primary dialog-button"
-        data-makeup-for="snackbar-dialog-3"
-      >
-        Show Stacked Snackbar
-      </button>
-      <aside
-        aria-label="Notification"
-        aria-live="polite"
-        aria-modal="false"
-        class="snackbar-dialog snackbar-dialog--transition"
-        id="snackbar-dialog-3"
-        role="dialog"
-        hidden
-      >
-        <div class="snackbar-dialog__window snackbar-dialog__window--column">
-          <div class="snackbar-dialog__main">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-          </div>
-          <div class="snackbar-dialog__actions">
-            <button accesskey="u" class="link-button snackbar-dialog__cta">
-              Undo <span class="clipped">- Access Key: U</span>
-            </button>
-          </div>
-        </div>
-      </aside>
-    </div>
-  </div>
-  <highlight-code type="html">
-    <aside
-      aria-label="Notification"
-      aria-live="polite"
-      aria-modal="false"
-      class="snackbar-dialog snackbar-dialog--transition"
-      role="dialog"
-      hidden
-    >
-      <div class="snackbar-dialog__window snackbar-dialog__window--column">
-        <div class="snackbar-dialog__main">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </div>
-        <div class="snackbar-dialog__actions">
-          <button accesskey="u" class="link-button snackbar-dialog__cta">
-            Undo <span class="clipped">- Access Key: U</span>
-          </button>
-        </div>
-      </div>
-    </aside>
-  </highlight-code>
+  <component-demo component="snackbar-dialog" variant="base/actionsStacked"/>
 </div>
 export const metadata = {
   component: "snackbar",
