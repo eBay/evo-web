@@ -5,13 +5,13 @@ export const base = () => `
     <svg class="icon icon--24" width="16" height="16" aria-hidden="true">
         <use href="#icon-mail-24"></use>
     </svg>
-    <input class="textbox__control" type="text" placeholder="placeholder text" />
+    <input aria-label="Textbox demo" class="textbox__control" type="text" placeholder="placeholder text" />
 </span>
 `;
 
 export const end = () => `
 <span class="textbox">
-    <input class="textbox__control" type="text" placeholder="placeholder text" />
+    <input aria-label="Textbox demo" class="textbox__control" type="text" placeholder="placeholder text" />
     <svg class="icon icon--24" width="16" height="16" aria-hidden="true">
         <use href="#icon-mail-24"></use>
     </svg>
@@ -23,7 +23,7 @@ export const dual = () => `
     <svg class="icon icon--24" width="16" height="16" aria-hidden="true">
         <use href="#icon-search-24"></use>
     </svg>
-    <input class="textbox__control" type="text" placeholder="placeholder text" />
+    <input aria-label="Textbox demo" class="textbox__control" type="text" placeholder="placeholder text" />
     <svg class="icon icon--24" width="16" height="16" aria-hidden="true">
         <use href="#icon-mail-24"></use>
     </svg>
@@ -32,7 +32,7 @@ export const dual = () => `
 
 export const actionable = () => `
 <span class="textbox">
-    <input class="textbox__control" type="text" placeholder="placeholder text" />
+    <input aria-label="Textbox demo" class="textbox__control" type="text" placeholder="placeholder text" />
     <button class="icon-button" type="button" aria-label="Choose Contact">
         <svg aria-hidden="true" class="icon icon--24" width="16" height="16">
             <use href="#icon-mail-24"></use>
@@ -46,7 +46,7 @@ export const dualActionable = () => `
     <svg class="icon icon--24" width="16" height="16" aria-hidden="true">
         <use href="#icon-search-24"></use>
     </svg>
-    <input class="textbox__control" type="text" placeholder="placeholder text" />
+    <input aria-label="Textbox demo" class="textbox__control" type="text" placeholder="placeholder text" />
     <button class="icon-button" type="button" aria-label="Choose Contact">
         <svg class="icon icon--24" width="16" height="16" aria-hidden="true">
             <use href="#icon-mail-24"></use>
@@ -57,7 +57,7 @@ export const dualActionable = () => `
 
 export const actionableLarge = () => `
 <span class="textbox textbox--large">
-    <input class="textbox__control" type="text" placeholder="placeholder text" />
+    <input aria-label="Textbox demo" class="textbox__control" type="text" placeholder="placeholder text" />
     <button class="icon-button" type="button" aria-label="Choose Contact">
         <svg aria-hidden="true" class="icon icon--24" width="16" height="16">
             <use href="#icon-mail-24"></use>
@@ -71,7 +71,7 @@ export const dualActionableLarge = () => `
     <svg class="icon icon--24" width="16" height="16" aria-hidden="true">
         <use href="#icon-search-24"></use>
     </svg>
-    <input class="textbox__control" type="text" placeholder="placeholder text" />
+    <input aria-label="Textbox demo" class="textbox__control" type="text" placeholder="placeholder text" />
     <button class="icon-button" type="button" aria-label="Choose Contact">
         <svg class="icon icon--24" width="16" height="16" aria-hidden="true">
             <use href="#icon-mail-24"></use>
@@ -86,11 +86,54 @@ export const fullyDecorated = () => `
         <use href="#icon-search-24"></use>
     </svg>
     <span>$</span>
-    <input class="textbox__control" type="text" placeholder="placeholder text" />
+    <input aria-label="Textbox demo" class="textbox__control" type="text" placeholder="placeholder text" />
     <span>%</span>
     <button class="icon-button icon-button--transparent icon-button--small" type="button" aria-label="Mail">
         <svg class="icon icon--mail-16" width="16" height="16" aria-hidden="true">
             <use href="#icon-mail-16"></use>
+        </svg>
+    </button>
+</span>
+`;
+
+export const clearable = () => `
+<span class="textbox">
+    <input
+        aria-label="Textbox demo"
+        class="textbox__control"
+        type="text"
+        placeholder="placeholder text"
+    >
+    <button
+        class="icon-button icon-button--transparent"
+        type="button"
+        aria-label="Clear text"
+    >
+        <svg aria-hidden="true" class="icon icon--24" width="16" height="16">
+            <use href="#icon-clear-24"></use>
+        </svg>
+    </button>
+</span>
+`;
+
+export const dualClearable = () => `
+<span class="textbox">
+    <svg class="icon icon--24" width="16" height="16" aria-hidden="true">
+        <use href="#icon-search-24"></use>
+    </svg>
+    <input
+        aria-label="Textbox demo"
+        class="textbox__control"
+        type="text"
+        placeholder="placeholder text"
+    >
+    <button
+        class="icon-button icon-button--transparent"
+        type="button"
+        aria-label="Clear text"
+    >
+        <svg aria-hidden="true" class="icon icon--24" width="16" height="16">
+            <use href="#icon-clear-24"></use>
         </svg>
     </button>
 </span>
