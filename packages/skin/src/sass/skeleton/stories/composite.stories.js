@@ -34,3 +34,14 @@ export const blockSkeletons = () =>
         <div class="skeleton__button"></div>
         <div class="skeleton__button"></div>
     </div>`;
+
+export const viewTransition = () =>
+    `<button type="button" class="button skeleton-trigger">Load content</button>
+    <div class="skeleton" role="img" aria-label="loading" style="display: flex;">
+        <span id="skeleton-transition-0" class="skeleton__image"
+        style="height: 200px; width: 200px; view-transition-name: skeleton-transition-0"></span>
+        <span id="skeleton-transition-1" class="skeleton__image"
+        style="height: 200px; width: 200px; view-transition-name: skeleton-transition-1"></span>
+        <span id="skeleton-transition-2" class="skeleton__image"
+        style="height: 200px; width: 200px; view-transition-name: skeleton-transition-2"></span>
+    </div>`;

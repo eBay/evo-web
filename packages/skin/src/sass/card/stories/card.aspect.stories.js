@@ -3,7 +3,7 @@ export default { title: "Skin/Card/Aspect" };
 export const verticalAspectSquare = () => `
 <span class="card">
     <div class="card__media">
-        <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
+        <img src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__main">
         <div class="card__description">
@@ -20,7 +20,7 @@ export const verticalAspectSquare = () => `
 export const verticalAspect_5by4 = () => `
 <span class="card card--aspect-5-4">
     <div class="card__media">
-        <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
+        <img src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__main">
         <div class="card__description">
@@ -37,7 +37,7 @@ export const verticalAspect_5by4 = () => `
 export const verticalAspect_9by16 = () => `
 <span class="card card--aspect-16-9">
     <div class="card__media">
-        <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
+        <img src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__main">
         <div class="card__description">

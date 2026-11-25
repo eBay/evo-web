@@ -4,7 +4,7 @@ export const vertical = () => `
 <div dir="rtl">
     <span class="card">
         <div class="card__media">
-            <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
+            <img src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
         </div>
         <div class="card__main">
             <div class="card__overline">
@@ -30,7 +30,7 @@ export const horizontal = () => `
 <div dir="rtl">
     <span class="card card--horizontal">
         <div class="card__media">
-            <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
+            <img src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
         </div>
         <div class="card__main">
             <div class="card__overline">

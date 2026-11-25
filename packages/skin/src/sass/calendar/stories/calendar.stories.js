@@ -1300,3 +1300,329 @@ export const doubleWithHeader = () => /* HTML */ `
 export const RTL = () => /* HTML */ `
     <div dir="rtl">${doubleWithHeader()}</div>
 `;
+
+export const readonly = () => `
+<div class="calendar">
+    <div class="calendar__body">
+        <div class="calendar__month">
+            <table>
+                <caption>August 2023</caption>
+                <thead>
+                    <tr>
+                        <th>Su</th>
+                        <th>Mo</th>
+                        <th>Tu</th>
+                        <th>We</th>
+                        <th>Th</th>
+                        <th>Fr</th>
+                        <th>Sa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td><span>1</span></td>
+                        <td><span>2</span></td>
+                        <td><span>3</span></td>
+                        <td><span>4</span></td>
+                        <td><span>5</span></td>
+                    </tr>
+                    <tr>
+                        <td><span>6</span></td>
+                        <td><span>7</span></td>
+                        <td><span>8</span></td>
+                        <td><span>9</span></td>
+                        <td><span>10</span></td>
+                        <td><span>11</span></td>
+                        <td><span>12</span></td>
+                    </tr>
+                    <tr>
+                        <td><span>13</span></td>
+                        <td>
+                            <span class="calendar__cell--current">
+                                14 <span class="clipped">- today</span>
+                            </span>
+                        </td>
+                        <td><span>15</span></td>
+                        <td><span>16</span></td>
+                        <td><span>17</span></td>
+                        <td><span>18</span></td>
+                        <td><span>19</span></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.ebay.com">20</a></td>
+                        <td><span>21</span></td>
+                        <td><span>22</span></td>
+                        <td><span>23</span></td>
+                        <td><span>24</span></td>
+                        <td><span>25</span></td>
+                        <td><span>26</span></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.ebay.com">27</a></td>
+                        <td><span>28</span></td>
+                        <td><a href="https://www.ebay.com">29</a></td>
+                        <td><span>30</span></td>
+                        <td><span>31</span></td>
+                        <td colspan="2"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+`;
+
+export const readonlyInactive = () => `
+<div class="calendar">
+    <div class="calendar__body">
+        <div class="calendar__month">
+            <table>
+                <caption>August 2023</caption>
+                <thead>
+                    <tr>
+                        <th>Su</th>
+                        <th>Mo</th>
+                        <th>Tu</th>
+                        <th>We</th>
+                        <th>Th</th>
+                        <th>Fr</th>
+                        <th>Sa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td>
+                            <span class="calendar__cell--disabled">
+                                1 <span class="clipped">- inactive</span>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="calendar__cell--disabled">
+                                2 <span class="clipped">- inactive</span>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="calendar__cell--disabled">
+                                3 <span class="clipped">- inactive</span>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="calendar__cell--disabled">
+                                4 <span class="clipped">- inactive</span>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="calendar__cell--disabled">
+                                5 <span class="clipped">- inactive</span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="calendar__cell--disabled">
+                                6 <span class="clipped">- inactive</span>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="calendar__cell--disabled">
+                                7 <span class="clipped">- inactive</span>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="calendar__cell--disabled">
+                                8 <span class="clipped">- inactive</span>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="calendar__cell--disabled">
+                                9 <span class="clipped">- inactive</span>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="calendar__cell--disabled">
+                                10 <span class="clipped">- inactive</span>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="calendar__cell--disabled">
+                                11 <span class="clipped">- inactive</span>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="calendar__cell--disabled">
+                                12 <span class="clipped">- inactive</span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="calendar__cell--disabled">
+                                13 <span class="clipped">- inactive</span>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="calendar__cell--current">
+                                14 <span class="clipped">- today</span>
+                            </span>
+                        </td>
+                        <td><span>15</span></td>
+                        <td><span>16</span></td>
+                        <td><span>17</span></td>
+                        <td><span>18</span></td>
+                        <td><span>19</span></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.ebay.com">20</a></td>
+                        <td><span>21</span></td>
+                        <td><span>22</span></td>
+                        <td><span>23</span></td>
+                        <td><span>24</span></td>
+                        <td><span>25</span></td>
+                        <td><span>26</span></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.ebay.com">27</a></td>
+                        <td><span>28</span></td>
+                        <td><a href="https://www.ebay.com">29</a></td>
+                        <td><span>30</span></td>
+                        <td><span>31</span></td>
+                        <td colspan="2"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+`;
+
+export const interactiveSingle = () => `
+<div class="calendar">
+    <div class="calendar__body">
+        <div class="calendar__month">
+            <table>
+                <caption>August 2023</caption>
+                <thead>
+                    <tr>
+                        <th>Su</th>
+                        <th>Mo</th>
+                        <th>Tu</th>
+                        <th>We</th>
+                        <th>Th</th>
+                        <th>Fr</th>
+                        <th>Sa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td>
+                            <button disabled>1</button>
+                        </td>
+                        <td>
+                            <button disabled>2</button>
+                        </td>
+                        <td>
+                            <button disabled>3</button>
+                        </td>
+                        <td>
+                            <button disabled>4</button>
+                        </td>
+                        <td>
+                            <button disabled>5</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button disabled>6</button>
+                        </td>
+                        <td>
+                            <button disabled>7</button>
+                        </td>
+                        <td>
+                            <button disabled>8</button>
+                        </td>
+                        <td>
+                            <button disabled>9</button>
+                        </td>
+                        <td>
+                            <button disabled>10</button>
+                        </td>
+                        <td>
+                            <button disabled>11</button>
+                        </td>
+                        <td>
+                            <button disabled>12</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button disabled>13</button>
+                        </td>
+                        <td>
+                            <button aria-current="date">14</button>
+                        </td>
+                        <td>
+                            <button>15</button>
+                        </td>
+                        <td>
+                            <button>16</button>
+                        </td>
+                        <td class="calendar__cell--selected">
+                            <button aria-pressed="true">17</button>
+                        </td>
+                        <td>
+                            <button>18</button>
+                        </td>
+                        <td>
+                            <button>19</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button>20</button>
+                        </td>
+                        <td>
+                            <button>21</button>
+                        </td>
+                        <td>
+                            <button>22</button>
+                        </td>
+                        <td>
+                            <button>23</button>
+                        </td>
+                        <td>
+                            <button>24</button>
+                        </td>
+                        <td>
+                            <button>25</button>
+                        </td>
+                        <td>
+                            <button>26</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button>27</button>
+                        </td>
+                        <td>
+                            <button>28</button>
+                        </td>
+                        <td>
+                            <button>29</button>
+                        </td>
+                        <td>
+                            <button>30</button>
+                        </td>
+                        <td>
+                            <button>31</button>
+                        </td>
+                        <td colspan="2"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+`;

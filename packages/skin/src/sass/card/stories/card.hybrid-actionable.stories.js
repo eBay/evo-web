@@ -3,7 +3,7 @@ export default { title: "Skin/Card/Hybrid Actionable" };
 export const vertical = () => `
 <div class="card card--outlined">
     <div class="card__media">
-        <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
+        <img src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__main">
         <div class="card__overline">
@@ -27,7 +27,7 @@ export const vertical = () => `
 export const horizontal = () => `
 <div class="card card--horizontal card--outlined">
     <div class="card__media">
-        <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
+        <img src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__main">
         <div class="card__overline">

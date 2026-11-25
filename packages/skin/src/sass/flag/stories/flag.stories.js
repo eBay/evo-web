@@ -55,3 +55,22 @@ export const textSpacing = () => `
     <span style="vertical-align: middle;">United States of America</span>
 </p>
 `;
+
+export const base = () => `
+<span role="img" aria-label="US flag" class="fflag fflag--us ff-md"></span>
+`;
+
+export const sizes = () => `
+<p>
+    <span role="img" aria-label="US flag" class="fflag fflag--us ff-sm"></span>
+</p>
+<p>
+    <span role="img" aria-label="US flag" class="fflag fflag--us ff-md"></span>
+</p>
+<p>
+    <span role="img" aria-label="US flag" class="fflag fflag--us ff-lg"></span>
+</p>
+<p>
+    <span role="img" aria-label="US flag" class="fflag fflag--us ff-xl"></span>
+</p>
+`;
