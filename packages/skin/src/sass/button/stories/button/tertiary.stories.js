@@ -1,7 +1,7 @@
 export default { title: "Skin/Button/Tertiary" };
 
 export const textOnly = () => `
-<button class="button button--tertiary">Tertiary</button
+<button class="button button--tertiary">Tertiary</button>
 `;
 
 export const iconAndText = () => `

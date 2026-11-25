@@ -1,7 +1,7 @@
 export default { title: "Skin/Button Link/Text Spacing" };
 
 export const textOnly = () =>
-    '<a href="http://www.ebay/com" class="button-link demo-a11y-text-spacing">Button Link</a>';
+    '<a href="http://www.ebay.com" class="button-link demo-a11y-text-spacing">Button Link</a>';
 
 export const iconAndText = () => `
 <a class="button-link demo-a11y-text-spacing" href="http://www.ebay.com">

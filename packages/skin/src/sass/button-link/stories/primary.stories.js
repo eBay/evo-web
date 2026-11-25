@@ -1,7 +1,7 @@
 export default { title: "Skin/Button Link/Primary" };
 
 export const textOnly = () =>
-    '<a href="http://www.ebay/com" class="button-link button-link--primary">Button Link</a>';
+    '<a href="http://www.ebay.com" class="button-link button-link--primary">Button Link</a>';
 
 export const iconOnly = () => `
 <a class="button-link button-link--primary" href="http://www.ebay.com" aria-label="Close">

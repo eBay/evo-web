@@ -1,12 +1,12 @@
 export default { title: "Skin/Fake Button/Primary" };
 
 export const textOnly = () =>
-    '<a href="http://www.ebay/com" class="fake-btn fake-btn--primary">Fake Button</a>';
+    '<a href="http://www.ebay.com" class="fake-btn fake-btn--primary">Fake Button</a>';
 
 export const iconOnly = () => `
-<a class="fake-btn fake-btn--primary" href="http://www.ebay.com">
+<a class="fake-btn fake-btn--primary" href="http://www.ebay.com" aria-label="Close">
     <span class="fake-btn__cell">
-        <svg class="icon icon--16" width="16" height="16"><use href="#icon-close-16"></use></svg>
+        <svg class="icon icon--16" width="16" height="16" aria-hidden="true"><use href="#icon-close-16"></use></svg>
     </span>
 </a>
 `;

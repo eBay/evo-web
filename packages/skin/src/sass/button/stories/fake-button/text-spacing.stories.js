@@ -1,7 +1,7 @@
 export default { title: "Skin/Fake Button/Text Spacing" };
 
 export const textOnly = () =>
-    '<a href="http://www.ebay/com" class="fake-btn demo-a11y-text-spacing">Fake Button</a>';
+    '<a href="http://www.ebay.com" class="fake-btn demo-a11y-text-spacing">Fake Button</a>';
 
 export const iconAndText = () => `
 <a class="fake-btn demo-a11y-text-spacing" href="http://www.ebay.com">

@@ -154,3 +154,45 @@ export const textSpacing = () => `
     </span>
 </button>
 `;
+
+export const profileCSSImageContainBackground = () => `
+<button
+    type="button"
+    class="toggle-button toggle-button--list-layout"
+    aria-pressed="false">
+    <span class="toggle-button__image-container">
+        <span
+            class="toggle-button__image"
+            style="background-image: url('https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-profile-pic.jpg'); background-repeat: no-repeat; background-position: center; background-size: contain;"></span>
+    </span>
+    <span class="toggle-button__content">
+        <span class="toggle-button__title">
+            Title
+        </span>
+        <span class="toggle-button__subtitle">
+            Subtitle
+        </span>
+    </span>
+</button>
+`;
+
+export const profileCSSImageCoverBackground = () => `
+<button
+    type="button"
+    class="toggle-button toggle-button--list-layout"
+    aria-pressed="false">
+    <span class="toggle-button__image-container">
+        <span
+            class="toggle-button__image"
+            style="background-image: url('https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-profile-pic.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;"></span>
+    </span>
+    <span class="toggle-button__content">
+        <span class="toggle-button__title">
+            Title
+        </span>
+        <span class="toggle-button__subtitle">
+            Subtitle
+        </span>
+    </span>
+</button>
+`;

@@ -13,7 +13,7 @@ export const iconAndText = () => `
 `;
 
 export const disabled = () => `
-<button disabled class="button button--primary button--destructive">Tertiary</button
+<button disabled class="button button--primary button--destructive">Destructive Button</button>
 `;
 
 export const disabledWithIcon = () => `

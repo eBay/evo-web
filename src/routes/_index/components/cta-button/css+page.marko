@@ -29,86 +29,20 @@
     Use the <code>cta-button</code> class on an <code>&lt;a&gt;</code> tag to
     create a CTA button.
   </p>
-  <div class="demo">
-    <div class="demo__inner">
-      <a class="cta-button" href="https://www.ebay.com">
-        <span class="cta-button__cell">
-          <span>Link</span>
-          <svg class="icon icon--24" height="8" width="8" aria-hidden="true">
-            <icon-symbol name="arrow-right-24"/>
-          </svg>
-        </span>
-      </a>
-    </div>
-  </div>
-
-  <highlight-code type="html">
-    <a class="cta-button" href="https://www.ebay.com">
-      <span class="cta-button__cell">
-        <span>Link</span>
-        <svg class="icon icon--24" height="8" width="8" aria-hidden="true">
-          <use href="#icon-arrow-right-24"/>
-        </svg>
-      </span>
-    </a>
-  </highlight-code>
+  <component-demo component="cta-button" variant="base"/>
 
   <h3 id="cta-button-large">Large CTA Button</h3>
   <p>
     Use the <code>large</code> modifier to increase the size of the CTA button.
   </p>
-  <div class="demo">
-    <div class="demo__inner">
-      <a class="cta-button cta-button--large" href="https://www.ebay.com">
-        <span class="cta-button__cell">
-          <span>Link</span>
-          <svg class="icon icon--24" height="8" width="8" aria-hidden="true">
-            <icon-symbol name="arrow-right-24"/>
-          </svg>
-        </span>
-      </a>
-    </div>
-  </div>
-
-  <highlight-code type="html">
-    <a class="cta-button cta-button--large" href="https://www.ebay.com">
-      <span class="cta-button__cell">
-        <span>Link</span>
-        <svg class="icon icon--24" height="8" width="8" aria-hidden="true">
-          <use href="#icon-arrow-right-24"/>
-        </svg>
-      </span>
-    </a>
-  </highlight-code>
+  <component-demo component="cta-button" variant="dimensions/large"/>
 
   <h3 id="cta-button-fluid">Fluid CTA Button</h3>
   <p>
     Use the <code>fluid</code> modifier to make the CTA button grow to fill the
     width of its container.
   </p>
-  <div class="demo">
-    <div class="demo__inner">
-      <a class="cta-button cta-button--fluid" href="https://www.ebay.com">
-        <span class="cta-button__cell">
-          <span>Link</span>
-          <svg class="icon icon--24" height="8" width="8" aria-hidden="true">
-            <icon-symbol name="arrow-right-24"/>
-          </svg>
-        </span>
-      </a>
-    </div>
-  </div>
-
-  <highlight-code type="html">
-    <a class="cta-button cta-button--fluid" href="https://www.ebay.com">
-      <span class="cta-button__cell">
-        <span>Link</span>
-        <svg class="icon icon--24" height="8" width="8" aria-hidden="true">
-          <use href="#icon-arrow-right-24"/>
-        </svg>
-      </span>
-    </a>
-  </highlight-code>
+  <component-demo component="cta-button" variant="dimensions/fluid"/>
 
   <h3 id="cta-button-truncated">Fixed Width Truncated CTA Button</h3>
   <p>
@@ -116,63 +50,14 @@
     the <code>truncated</code> modifier to truncate overflowing text instead of
     wrapping.
   </p>
-  <div class="demo">
-    <div class="demo__inner">
-      <a
-        class="cta-button cta-button--large cta-button--truncated"
-        href="https://www.ebay.com"
-        style="width: 200px;"
-      >
-        <span class="cta-button__cell">
-          <span>Link with a lot of text that should wrap</span>
-          <svg class="icon icon--24" height="8" width="8" aria-hidden="true">
-            <icon-symbol name="arrow-right-24"/>
-          </svg>
-        </span>
-      </a>
-    </div>
-  </div>
-
-  <highlight-code type="html">
-    <a
-      class="cta-button cta-button--large cta-button--truncated"
-      href="https://www.ebay.com"
-      style="width: 200px;"
-    >
-      <span class="cta-button__cell">
-        <span>Link with a lot of text that should wrap</span>
-        <svg class="icon icon--24" height="8" width="8" aria-hidden="true">
-          <use href="#icon-arrow-right-24"/>
-        </svg>
-      </span>
-    </a>
-  </highlight-code>
+  <component-demo
+    component="cta-button"
+    variant="dimensions/largeFixedWidthTruncated"
+  />
 
   <h3 id="cta-button-disabled">Disabled CTA Button</h3>
   <p>Remove the <code>href</code> attribute to fully disable a CTA button.</p>
-  <div class="demo">
-    <div class="demo__inner">
-      <a class="cta-button">
-        <span class="cta-button__cell">
-          <span>Link</span>
-          <svg class="icon icon--24" height="8" width="8" aria-hidden="true">
-            <icon-symbol name="arrow-right-24"/>
-          </svg>
-        </span>
-      </a>
-    </div>
-  </div>
-
-  <highlight-code type="html">
-    <a class="cta-button">
-      <span class="cta-button__cell">
-        <span>Link</span>
-        <svg class="icon icon--24" height="8" width="8" aria-hidden="true">
-          <use href="#icon-arrow-right-24"/>
-        </svg>
-      </span>
-    </a>
-  </highlight-code>
+  <component-demo component="cta-button" variant="disabled"/>
 
   <h3 id="cta-button-partially-disabled">Partially Disabled CTA Button</h3>
   <p>
@@ -182,29 +67,7 @@
     Unlike removing <code>href</code> , this variant must also be prevented from
     navigating via JavaScript.
   </p>
-  <div class="demo">
-    <div class="demo__inner">
-      <a class="cta-button" href="https://www.ebay.com" aria-disabled="true">
-        <span class="cta-button__cell">
-          <span>Link</span>
-          <svg class="icon icon--24" height="8" width="8" aria-hidden="true">
-            <icon-symbol name="arrow-right-24"/>
-          </svg>
-        </span>
-      </a>
-    </div>
-  </div>
-
-  <highlight-code type="html">
-    <a class="cta-button" href="https://www.ebay.com" aria-disabled="true">
-      <span class="cta-button__cell">
-        <span>Link</span>
-        <svg class="icon icon--24" height="8" width="8" aria-hidden="true">
-          <use href="#icon-arrow-right-24"/>
-        </svg>
-      </span>
-    </a>
-  </highlight-code>
+  <component-demo component="cta-button" variant="partiallyDisabled"/>
 </div>
 export const metadata = {
   component: "cta-button",
