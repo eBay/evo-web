@@ -23,14 +23,14 @@ export const inlineLevel = () => `
 <span class="field">
     <label class="field__label" for="field-unstacked-3">Field 3</label>
     <span class="field__control switch">
-        <input class="switch__control" id="field-unstacked-3" role="switch" type="checkbox" aria-label="Switch Demo" />
+        <input class="switch__control" id="field-unstacked-3" role="switch" type="checkbox" />
         <span class="switch__button"></span>
     </span>
 </span>
 <span class="field field--align-top">
     <label class="field__label" for="field-unstacked-4">Field 4</label>
     <span class="field__control textbox">
-        <textarea class="textbox__control" id="field-unstacked-4" type="text" placeholder="placeholder text"></textarea>
+        <textarea class="textbox__control" id="field-unstacked-4" placeholder="placeholder text"></textarea>
     </span>
 </span>
 `;
@@ -59,14 +59,14 @@ export const RTL = () => `
     <span class="field">
         <label class="field__label" for="field-unstacked-3">Field 3</label>
         <span class="field__control switch">
-            <input class="switch__control" id="field-unstacked-3" role="switch" type="checkbox" aria-label="Switch Demo" />
+            <input class="switch__control" id="field-unstacked-3" role="switch" type="checkbox" />
             <span class="switch__button"></span>
         </span>
     </span>
     <span class="field field--align-top">
         <label class="field__label" for="field-unstacked-4">Field 4</label>
         <span class="field__control textbox">
-            <textarea class="textbox__control" id="field-unstacked-4" type="text" placeholder="placeholder text"></textarea>
+            <textarea class="textbox__control" id="field-unstacked-4" placeholder="placeholder text"></textarea>
         </span>
     </span>
 </div>
@@ -95,14 +95,14 @@ export const blockLevel = () => `
 <div class="field">
     <label class="field__label" for="field-block-3">Field 3</label>
     <span class="field__control switch">
-        <input class="switch__control" id="field-block-3" role="switch" type="checkbox" aria-label="Switch Demo" />
+        <input class="switch__control" id="field-block-3" role="switch" type="checkbox" />
         <span class="switch__button"></span>
     </span>
 </div>
 <div class="field field--align-top">
     <label class="field__label" for="field-block-4">Field 4</label>
     <span class="field__control textbox">
-        <textarea class="textbox__control" id="field-block-4" type="text" placeholder="placeholder text"></textarea>
+        <textarea class="textbox__control" id="field-block-4" placeholder="placeholder text"></textarea>
     </span>
 </div>
 `;
@@ -130,14 +130,14 @@ export const disabled = () => `
 <span class="field">
     <label class="field__label field__label--disabled" for="field-disabled-3">Field 3</label>
     <span class="field__control switch">
-        <input class="switch__control" id="field-disabled-3" role="switch" type="checkbox" aria-label="Switch Demo" disabled />
+        <input class="switch__control" id="field-disabled-3" role="switch" type="checkbox" disabled />
         <span class="switch__button"></span>
     </span>
 </span>
 <span class="field field--align-top">
     <label class="field__label field__label--disabled" for="field-disabled-4">Field 4</label>
     <span class="field__control textbox">
-        <textarea class="textbox__control" id="field-disabled-4" type="text" placeholder="placeholder text"></textarea>
+        <textarea class="textbox__control" id="field-disabled-4" placeholder="placeholder text"></textarea>
     </span>
 </span>
 `;

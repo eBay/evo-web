@@ -8,7 +8,7 @@ export const characterMeterOnly = () => `
     </span>
     <div class="field__description field__description--group">
         <span id="field-character-1">
-            0 of 140
+            0 of 140 <span class="clipped">characters</span>
         </span>
     </div>
 </span>
@@ -26,7 +26,7 @@ export const descriptionCharacterMeter = () => `
             Field description or error
         </span>
         <span id="field-character-2">
-            0 of 140
+            0 of 140 <span class="clipped">characters</span>
         </span>
     </div>
 </span>
@@ -44,7 +44,7 @@ export const longDescriptionCharacterMeter = () => `
             Field description or error which is long and should wrap to next line
         </span>
         <span id="field-character-1">
-            0 of 140
+            0 of 140 <span class="clipped">characters</span>
         </span>
     </div>
 </span>
@@ -61,7 +61,7 @@ export const fluidDescriptionCharacterMeter = () => `
             Field description or error
         </span>
         <span id="field-character-3">
-            0 of 140
+            0 of 140 <span class="clipped">characters</span>
         </span>
     </div>
 </div>
@@ -78,7 +78,7 @@ export const textSpacing = () => `
             Field description or error
         </span>
         <span id="field-character-3">
-            0 of 140
+            0 of 140 <span class="clipped">characters</span>
         </span>
     </div>
 </div>
@@ -97,7 +97,7 @@ export const RTL = () => `
                 Field description or error
             </span>
             <span id="field-character-1">
-                0 / 140
+                0 / 140 <span class="clipped">characters</span>
             </span>
         </div>
     </span>
@@ -109,7 +109,7 @@ export const RTL = () => `
 
         <div class="field__description field__description--group">
             <span id="field-character-2">
-                0 / 140
+                0 / 140 <span class="clipped">characters</span>
             </span>
         </div>
     </span>
@@ -123,7 +123,7 @@ export const RTL = () => `
                 Field description or error
             </span>
             <span id="field-character-3">
-                0 of 140
+                0 of 140 <span class="clipped">characters</span>
             </span>
         </div>
     </div>
@@ -148,7 +148,7 @@ export const descriptionCharacterMeterTextarea = () => `
     <div class="field__description field__description--group">
         <span id="field-describe-4">Field description or error</span>
         <span id="field-character-4">
-            0 of 140 <span class="clipped">characters</span>
+           0 of 140 <span class="clipped">characters</span>
         </span>
     </div>
 </span>
