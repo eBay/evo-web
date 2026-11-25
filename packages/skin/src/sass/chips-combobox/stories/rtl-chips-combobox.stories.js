@@ -350,7 +350,7 @@ export const disabledState = () => `
             <li>
                 <span class="chip">
                     <span id="chip-interactive-1-1-text" class="chip__text">Football</span>
-                    <button class="chip__button" type="button" aria-label="Remove" aria-describedby="chip-interactive-1-1-text">
+                    <button class="chip__button" type="button" aria-label="Remove" aria-describedby="chip-interactive-1-1-text" disabled>
                         <svg class="icon icon--12" width="13" height="12" aria-hidden="true">
                             <use href="#icon-close-12"></use>
                         </svg>
@@ -360,7 +360,7 @@ export const disabledState = () => `
             <li>
                 <span class="chip">
                     <span id="chip-interactive-1-2-text" class="chip__text">Basketball</span>
-                    <button class="chip__button" type="button" aria-label="Remove" aria-describedby="chip-interactive-1-2-text">
+                    <button class="chip__button" type="button" aria-label="Remove" aria-describedby="chip-interactive-1-2-text" disabled>
                         <svg class="icon icon--12" width="13" height="12" aria-hidden="true">
                             <use href="#icon-close-12"></use>
                         </svg>
@@ -370,7 +370,7 @@ export const disabledState = () => `
             <li>
                 <span class="chip">
                     <span id="chip-interactive-1-3-text" class="chip__text">Baseball</span>
-                    <button class="chip__button" type="button" aria-label="Remove" aria-describedby="chip-interactive-1-3-text">
+                    <button class="chip__button" type="button" aria-label="Remove" aria-describedby="chip-interactive-1-3-text" disabled>
                         <svg class="icon icon--12" width="13" height="12" aria-hidden="true">
                             <use href="#icon-close-12"></use>
                         </svg>

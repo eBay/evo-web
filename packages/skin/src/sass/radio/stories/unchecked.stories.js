@@ -2,7 +2,7 @@ export default { title: "Skin/Radio/Unchecked" };
 
 export const base = () => `
 <span class="radio">
-    <input aria-label="Foreground SVG radio example" class="radio__control" name="r2" type="radio" />
+    <input aria-label="Base radio example" class="radio__control" name="r2" type="radio" />
     <span class="radio__icon" hidden>
         <svg aria-hidden="true" class="radio__unchecked">
             <use href="#icon-radio-unchecked-18"></use>
@@ -16,7 +16,7 @@ export const base = () => `
 
 export const disabled = () => `
 <span class="radio">
-    <input aria-label="Disabled Foreground SVG radio example" class="radio__control" name="r4" type="radio" disabled />
+    <input aria-label="Disabled radio example" class="radio__control" name="r4" type="radio" disabled />
     <span class="radio__icon" hidden>
         <svg aria-hidden="true" class="radio__unchecked">
             <use href="#icon-radio-unchecked-18"></use>
@@ -116,7 +116,7 @@ export const groupedInline = () => `
                 class="radio__control"
                 id="group-radio-2"
                 type="radio"
-                value="3"
+                value="2"
                 name="radio-group">
             <span class="radio__icon" hidden>
                 <svg
@@ -181,7 +181,7 @@ export const groupedStacked = () => `
                 id="group-radio-4"
                 type="radio"
                 value="1"
-                name="radio-group">
+                name="radio-group-stacked">
             <span class="radio__icon" hidden>
                 <svg
                     class="radio__unchecked"
@@ -209,8 +209,8 @@ export const groupedStacked = () => `
                 class="radio__control"
                 id="group-radio-5"
                 type="radio"
-                value="3"
-                name="radio-group">
+                value="2"
+                name="radio-group-stacked">
             <span class="radio__icon" hidden>
                 <svg
                     class="radio__unchecked"
@@ -239,7 +239,7 @@ export const groupedStacked = () => `
                 id="group-radio-6"
                 type="radio"
                 value="3"
-                name="radio-group">
+                name="radio-group-stacked">
             <span class="radio__icon" hidden>
                 <svg
                     class="radio__unchecked"

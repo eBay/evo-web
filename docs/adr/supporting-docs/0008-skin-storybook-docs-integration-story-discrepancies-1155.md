@@ -91,6 +91,7 @@ Decision recorded 2026-11-25: the mixed checkbox moves to `<component-demo>` exa
 
 ### 3.1 Changes forced by the docs page
 
+- `radio` `groupedInline` and `groupedStacked` (new exports): the stacked group uses `name="radio-group-stacked"` and both groups use values 1, 2, 3. Reason: both demos render on one page, and a shared `name` made them one radio group (choosing in one cleared the other); the old docs had the same collision and a duplicate `value="3"`. Percy: none.
 - `chips-combobox` `fluid`, `prefilled`, `disabledState`, `errorState`: renumbered from instance 1 to instances 2 to 5 (`chips-combobox-N-input`, `listbox-chips-combobox-N`, `chip-interactive-N-*-text`). Reason: ids collided when the stories share the docs page. Percy: none.
 - `combobox` `disabled`: `listbox1` renamed `listbox2`. Reason: id collided with `collapsed` on the docs page. Percy: none.
 
@@ -104,6 +105,8 @@ Decision recorded 2026-11-25: the mixed checkbox moves to `<component-demo>` exa
 
 - chips-combobox/stories/chips-combobox.stories.js, rtl-chips-combobox.stories.js (all exports): combobox input gained `aria-expanded`, `aria-controls` (same listbox as its `aria-owns`) and `aria-label="Add Sport"` (matching its placeholder); the listbox gained `aria-label="Add Sport"`. Reason: axe aria-required-attr; 1.2 item (placeholder-only name). Percy: none.
 - chips-combobox/stories/chips-combobox.stories.js, rtl-chips-combobox.stories.js manyChips: chip text ids renumbered `chip-interactive-1-1-text` to `-15-text` (13 chips reused `-1-text`), with each Remove button's `aria-describedby` following. Reason: static finding (duplicate ids). Percy: none.
+
+- chips-combobox/stories/chips-combobox.stories.js, rtl-chips-combobox.stories.js disabledState: the three chip Remove buttons gained `disabled`. Reason: the old docs demo and its prose require `disabled` on all buttons inside; the story left them keyboard-focusable in a "frozen" control. Percy: possibly visible (disabled button default colors).
 
 ### combobox
 
@@ -126,6 +129,10 @@ Decision recorded 2026-11-25: the mixed checkbox moves to `<component-demo>` exa
 - listbox-button/stories/{base,cascade,dimensions,form,subtitle}.stories.js and error/{error.base,error.cascade,error.dimensions,error.form}.stories.js (all 40 exports with a listbox popup): added `aria-label` to the `role="listbox"` element, taken from the button's own label ("Color" or "Quantity"). Reason: axe aria-input-field-name. Percy: none.
 - listbox-button/stories/base.stories.js collapsedUnselected, error/error.base.stories.js collapsedUnselected, form.stories.js enabled: the "Yellow" option now has `aria-disabled="true"`. Reason: restores old docs attribute (the docs demos showed a disabled option). Percy: none (popup is collapsed).
 - listbox-button/stories/base.stories.js collapsedSelected: added `tabindex="0"` to the listbox. Reason: restores old docs attribute. Percy: none.
+
+### radio
+
+- radio/stories/unchecked.stories.js base, checked.stories.js disabled: `aria-label` "Foreground SVG radio example" and "Disabled Foreground SVG radio example" changed to "Base radio example" and "Disabled radio example", close to the old docs text. Reason: the names described an implementation detail, and the docs code sample copies them. Percy: none.
 
 ### select
 
@@ -192,7 +199,7 @@ For each migrated demo, the accessibility attributes (`role`, `aria-*`, `tabinde
 
 ## 8. Per-demo comparison: old docs markup against the story that replaced it
 
-44 old demos compared: 12 identical and 32 with differences.
+44 old demos compared: 10 identical and 34 with differences.
 
 The old demo is the markup inside its `demo__inner` wrapper on `main`, with Marko-only syntax converted to HTML; the new markup is the story output with `<script>` removed. Compared: class names; `role`, `aria-*`, `tabindex`, `hidden`, `disabled`, `type`, `data-*`, `src`, `checked`, `selected`, `readonly`, `required`, `name` and `value` attributes; element count; and text content. Ignored: whitespace, attribute order, `id` values, and anything inside `<svg>`; id-reference attributes are compared by presence only. "Identical" means identical under these rules, not byte for byte. Old demos are matched to new tags by the prose between them, or in order where the page had examples without a demo wrapper or corrected prose.
 
@@ -210,7 +217,7 @@ The old demo is the markup inside its `demo__inner` wrapper on `main`, with Mark
 1. **Empty Chips Combobox** → `chips-combobox:base/empty`: classes added: combobox__listbox--set-position; attributes added: aria-label="Add Sport" ×2, aria-expanded="false", aria-controls.
 1. **Fluid Chips Combobox** → `chips-combobox:base/fluid`: classes added: combobox__listbox--set-position; attributes added: aria-label="Add Sport" ×2, aria-expanded="false", aria-controls.
 1. **Prefilled Chips Combobox** → `chips-combobox:base/prefilled`: classes added: combobox__listbox--set-position; attributes added: aria-label="Add Sport" ×2, aria-expanded="false", aria-controls.
-1. **Chips Combobox in Disabled State** → `chips-combobox:base/disabledState`: classes added: combobox__listbox--set-position; attributes added: aria-label="Add Sport" ×2, aria-expanded="false", aria-controls; removed: disabled="" ×3.
+1. **Chips Combobox in Disabled State** → `chips-combobox:base/disabledState`: classes added: combobox__listbox--set-position; attributes added: aria-label="Add Sport" ×2, aria-expanded="false", aria-controls.
 1. **Chips Combobox in Error State** → `chips-combobox:base/errorState`: classes added: combobox__listbox--set-position; attributes added: aria-label="Add Sport" ×2, aria-expanded="false", aria-controls.
 
 ### combobox
@@ -241,11 +248,11 @@ The old demo is the markup inside its `demo__inner` wrapper on `main`, with Mark
 
 ### radio
 
-1. **Default Radio** → `radio:unchecked/base`: attributes added: aria-label="Foreground SVG radio example", name="r2"; removed: aria-label="Default radio example", name="radio-default".
+1. **Default Radio** → `radio:unchecked/base`: attributes added: aria-label="Base radio example", name="r2"; removed: aria-label="Default radio example", name="radio-default".
 1. **Large Radio** → `radio:unchecked/large`: identical.
-1. **Disabled Radio** → `radio:checked/disabled`: attributes added: aria-label="Disabled Foreground SVG radio example", name="r3"; removed: aria-label="Disabled radio example", name="radio-disabled".
-1. **Grouped Radio** → `radio:unchecked/groupedInline`: identical.
-1. **Grouped Radio** → `radio:unchecked/groupedStacked`: identical.
+1. **Disabled Radio** → `radio:checked/disabled`: attributes added: name="r3"; removed: name="radio-disabled".
+1. **Grouped Radio** → `radio:unchecked/groupedInline`: attributes added: value="2"; removed: value="3".
+1. **Grouped Radio** → `radio:unchecked/groupedStacked`: attributes added: value="2", name="radio-group-stacked" ×3; removed: value="3", name="radio-group" ×3.
 
 ### select
 
