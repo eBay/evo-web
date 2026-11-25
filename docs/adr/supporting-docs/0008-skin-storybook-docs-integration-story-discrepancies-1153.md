@@ -85,13 +85,13 @@ None for these components.
 
 ### toggle-button-group
 
-- toggle-button-group/stories/list-layout.stories.js titlaSubtitle: export renamed to titleSubtitle (Storybook id changes to skin-toggle-button-group-list-layout--title-subtitle). Reason: 1.2 item. Percy: snapshot renamed.
+- toggle-button-group/stories/list-layout.stories.js titlaSubtitle: export renamed to titleSubtitle (Storybook id changes to skin-toggle-button-group-list-layout--title-subtitle). Reason: defect found during the migration. Percy: snapshot renamed.
 
 ## 4. Docs pages
 
-- src/routes/_index/components/segmented-buttons/css+page.marko: four `id="button-default"` headings changed to segmented-buttons-default, -large, -icons, -container. Reason: 1.2 item (duplicate id). Nothing linked to the old ids.
-- src/routes/_index/components/toggle-button-group/css+page.marko: `<component-demo>` variant updated to list-layout/titleSubtitle; unused `imgSquarePic` import and `basePath` removed. Reason: 1.2 items.
-- src/routes/_index/components/toggle-button/css+page.marko: "Resonsive" corrected to "Responsive"; unused `imgLandscapePic`, `imgSquarePic` imports and `basePath` removed. Reason: 1.2 items.
+- src/routes/_index/components/segmented-buttons/css+page.marko: four `id="button-default"` headings changed to segmented-buttons-default, -large, -icons, -container. Reason: defect found during the migration (duplicate id). Nothing linked to the old ids.
+- src/routes/_index/components/toggle-button-group/css+page.marko: `<component-demo>` variant updated to list-layout/titleSubtitle; unused `imgSquarePic` import and `basePath` removed. Reason: defects found during the migration.
+- src/routes/_index/components/toggle-button/css+page.marko: "Resonsive" corrected to "Responsive"; unused `imgLandscapePic`, `imgSquarePic` imports and `basePath` removed. Reason: defects found during the migration.
 - Duplicate heading ids renamed, nothing linked to them: Toggle Button Group second width-slider demo (`toggle-button-group-c2`).
 
 Demos that stay static on purpose:
