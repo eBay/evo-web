@@ -38,62 +38,75 @@ import { urls } from "../../../../data";
   <p>
     A Signal has five tones. Each tone has one meaning everywhere it appears.
   </p>
-  <table>
-    <thead>
-      <tr>
-        <th>Tone</th>
-        <th>Color</th>
-        <th>Meaning</th>
-        <th>Examples</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>Neutral</strong></td>
-        <td>Gray</td>
-        <td>
-          This is context. A standard state or background, without judgment.
-        </td>
-        <td>"Draft", "Ended", "Small business"</td>
-      </tr>
-      <tr>
-        <td><strong>Information</strong></td>
-        <td>Blue</td>
-        <td>
-          This is worth knowing. Something new, an option, activity or assurance
-          that could help the user decide.
-        </td>
-        <td>"New listing", "Trending", "Authenticity guarantee"</td>
-      </tr>
-      <tr>
-        <td><strong>Positive</strong></td>
-        <td>Green</td>
-        <td>
-          This is favorable. The message says something is good: a benefit, a
-          good value or a successful outcome.
-        </td>
-        <td>"Great price", "Free shipping", "Shipped"</td>
-      </tr>
-      <tr>
-        <td><strong>Warning</strong></td>
-        <td>Yellow</td>
-        <td>
-          Be aware of this. An unresolved condition or requirement with a
-          possible consequence.
-        </td>
-        <td>"Pending", "Under review", "Ship by [date]"</td>
-      </tr>
-      <tr>
-        <td><strong>Attention</strong></td>
-        <td>Red</td>
-        <td>
-          Notice this now. An immediate consequence: limited time or
-          availability, a failure, or something blocked.
-        </td>
-        <td>"Last one", "Deal ending", "Shipment overdue"</td>
-      </tr>
-    </tbody>
-  </table>
+  <div
+    class="table table--density-compact"
+    role="group"
+    aria-labelledby="signal-tones"
+    tabindex="0"
+  >
+    <table>
+      <thead>
+        <tr>
+          <th class="table-cell">Tone</th>
+          <th class="table-cell">Color</th>
+          <th class="table-cell">Meaning</th>
+          <th class="table-cell">Examples</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="table-cell"><strong>Neutral</strong></td>
+          <td class="table-cell">Gray</td>
+          <td class="table-cell">
+            This is context. A standard state or background, without judgment.
+          </td>
+          <td class="table-cell">"Draft", "Ended", "Small business"</td>
+        </tr>
+        <tr>
+          <td class="table-cell"><strong>Information</strong></td>
+          <td class="table-cell">Blue</td>
+          <td class="table-cell">
+            This is worth knowing. Something new, an option, activity or
+            assurance that could help the user decide.
+          </td>
+          <td class="table-cell">
+            "New listing", "Trending", "Authenticity guarantee"
+          </td>
+        </tr>
+        <tr>
+          <td class="table-cell"><strong>Positive</strong></td>
+          <td class="table-cell">Green</td>
+          <td class="table-cell">
+            This is favorable. The message says something is good: a benefit, a
+            good value or a successful outcome.
+          </td>
+          <td class="table-cell">"Great price", "Free shipping", "Shipped"</td>
+        </tr>
+        <tr>
+          <td class="table-cell"><strong>Warning</strong></td>
+          <td class="table-cell">Yellow</td>
+          <td class="table-cell">
+            Be aware of this. An unresolved condition or requirement with a
+            possible consequence.
+          </td>
+          <td class="table-cell">
+            "Pending", "Under review", "Ship by [date]"
+          </td>
+        </tr>
+        <tr>
+          <td class="table-cell"><strong>Attention</strong></td>
+          <td class="table-cell">Red</td>
+          <td class="table-cell">
+            Notice this now. An immediate consequence: limited time or
+            availability, a failure, or something blocked.
+          </td>
+          <td class="table-cell">
+            "Last one", "Deal ending", "Shipment overdue"
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   <p>
     Choose the tone from what the Signal means in its context, not from the text
     alone. For example, "Sold" is positive for a seller but not for a buyer.
@@ -141,37 +154,44 @@ import { urls } from "../../../../data";
     the mapped tone at default emphasis, and are removed in the next major
     release of Skin.
   </p>
-  <table>
-    <thead>
-      <tr>
-        <th>V1 class</th>
-        <th>V2 tone</th>
-        <th>V2 emphasis</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>signal--trustworthy</code></td>
-        <td>Information</td>
-        <td>Default</td>
-      </tr>
-      <tr>
-        <td><code>signal--recent</code></td>
-        <td>Positive</td>
-        <td>Default</td>
-      </tr>
-      <tr>
-        <td><code>signal--time-sensitive</code></td>
-        <td>Attention</td>
-        <td>Default</td>
-      </tr>
-      <tr>
-        <td><code>signal--neutral</code></td>
-        <td>Neutral</td>
-        <td>Default</td>
-      </tr>
-    </tbody>
-  </table>
+  <div
+    class="table table--density-compact"
+    role="group"
+    aria-labelledby="signal-v1"
+    tabindex="0"
+  >
+    <table>
+      <thead>
+        <tr>
+          <th class="table-cell">V1 class</th>
+          <th class="table-cell">V2 tone</th>
+          <th class="table-cell">V2 emphasis</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="table-cell"><code>signal--trustworthy</code></td>
+          <td class="table-cell">Information</td>
+          <td class="table-cell">Default</td>
+        </tr>
+        <tr>
+          <td class="table-cell"><code>signal--recent</code></td>
+          <td class="table-cell">Positive</td>
+          <td class="table-cell">Default</td>
+        </tr>
+        <tr>
+          <td class="table-cell"><code>signal--time-sensitive</code></td>
+          <td class="table-cell">Attention</td>
+          <td class="table-cell">Default</td>
+        </tr>
+        <tr>
+          <td class="table-cell"><code>signal--neutral</code></td>
+          <td class="table-cell">Neutral</td>
+          <td class="table-cell">Default</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   <p>
     <strong>The mapping keeps today's colors, not semantic correctness.</strong>
     Domain teams must review their Signals and correct the tone and emphasis.
