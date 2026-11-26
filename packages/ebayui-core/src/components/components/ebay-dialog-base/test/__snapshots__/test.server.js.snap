@@ -27,7 +27,9 @@ exports[`dialog-base > passes through additional html attributes 1`] = `
           class="icon icon--16"
           focusable="false"
         >
-          <defs>
+          <defs
+            data-ebay-icon=""
+          >
             <symbol
               id="icon-close-16"
               viewBox="0 0 16 16"
@@ -78,7 +80,9 @@ exports[`dialog-base > passes through additional html attributes 2`] = `
           class="icon icon--16"
           focusable="false"
         >
-          <defs>
+          <defs
+            data-ebay-icon=""
+          >
             <symbol
               id="icon-close-16"
               viewBox="0 0 16 16"
@@ -126,7 +130,9 @@ exports[`dialog-base > renders basic version 1`] = `
           class="icon icon--16"
           focusable="false"
         >
-          <defs>
+          <defs
+            data-ebay-icon=""
+          >
             <symbol
               id="icon-close-16"
               viewBox="0 0 16 16"
@@ -165,7 +171,9 @@ exports[`dialog-base > renders basic version 2`] = `
     class="icon icon--16"
     focusable="false"
   >
-    <defs>
+    <defs
+      data-ebay-icon=""
+    >
       <symbol
         id="icon-close-16"
         viewBox="0 0 16 16"
@@ -215,7 +223,9 @@ exports[`dialog-base > renders in open state 1`] = `
           class="icon icon--16"
           focusable="false"
         >
-          <defs>
+          <defs
+            data-ebay-icon=""
+          >
             <symbol
               id="icon-close-16"
               viewBox="0 0 16 16"
@@ -268,7 +278,9 @@ exports[`dialog-base > renders non modal 1`] = `
           class="icon icon--16"
           focusable="false"
         >
-          <defs>
+          <defs
+            data-ebay-icon=""
+          >
             <symbol
               id="icon-close-16"
               viewBox="0 0 16 16"
@@ -331,7 +343,9 @@ exports[`dialog-base > renders with header and footer 1`] = `
           class="icon icon--16"
           focusable="false"
         >
-          <defs>
+          <defs
+            data-ebay-icon=""
+          >
             <symbol
               id="icon-close-16"
               viewBox="0 0 16 16"
@@ -377,7 +391,9 @@ exports[`dialog-base > renders with header and footer 2`] = `
     class="icon icon--16"
     focusable="false"
   >
-    <defs>
+    <defs
+      data-ebay-icon=""
+    >
       <symbol
         id="icon-close-16"
         viewBox="0 0 16 16"
@@ -440,7 +456,9 @@ exports[`dialog-base > renders with header and footer 5`] = `
       class="icon icon--16"
       focusable="false"
     >
-      <defs>
+      <defs
+        data-ebay-icon=""
+      >
         <symbol
           id="icon-close-16"
           viewBox="0 0 16 16"

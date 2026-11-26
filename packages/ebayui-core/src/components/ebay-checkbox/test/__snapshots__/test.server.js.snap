@@ -26,15 +26,13 @@ exports[`passes through additional html attributes 2`] = `
     class="checkbox__icon"
     hidden=""
   >
-    <!--M#s0-5-0-->
     <svg
       aria-hidden="true"
       class="checkbox__unchecked"
-      data-marko-key="@svg s0-5-0"
       focusable="false"
     >
       <defs
-        data-marko-key="@defs s0-5-0"
+        data-ebay-icon=""
       >
         <symbol
           id="icon-checkbox-unchecked-18"
@@ -49,16 +47,13 @@ exports[`passes through additional html attributes 2`] = `
         href="#icon-checkbox-unchecked-18"
       />
     </svg>
-    <!--M/-->
-    <!--M#s0-6-0-->
     <svg
       aria-hidden="true"
       class="checkbox__checked"
-      data-marko-key="@svg s0-6-0"
       focusable="false"
     >
       <defs
-        data-marko-key="@defs s0-6-0"
+        data-ebay-icon=""
       >
         <symbol
           id="icon-checkbox-checked-18"
@@ -73,7 +68,6 @@ exports[`passes through additional html attributes 2`] = `
         href="#icon-checkbox-checked-18"
       />
     </svg>
-    <!--M/-->
   </span>
 </span>
 `;
@@ -108,15 +102,13 @@ exports[`renders default checkbox 2`] = `
     class="checkbox__icon"
     hidden=""
   >
-    <!--M#s0-5-0-->
     <svg
       aria-hidden="true"
       class="checkbox__unchecked"
-      data-marko-key="@svg s0-5-0"
       focusable="false"
     >
       <defs
-        data-marko-key="@defs s0-5-0"
+        data-ebay-icon=""
       >
         <symbol
           id="icon-checkbox-unchecked-18"
@@ -131,16 +123,13 @@ exports[`renders default checkbox 2`] = `
         href="#icon-checkbox-unchecked-18"
       />
     </svg>
-    <!--M/-->
-    <!--M#s0-6-0-->
     <svg
       aria-hidden="true"
       class="checkbox__checked"
-      data-marko-key="@svg s0-6-0"
       focusable="false"
     >
       <defs
-        data-marko-key="@defs s0-6-0"
+        data-ebay-icon=""
       >
         <symbol
           id="icon-checkbox-checked-18"
@@ -155,7 +144,6 @@ exports[`renders default checkbox 2`] = `
         href="#icon-checkbox-checked-18"
       />
     </svg>
-    <!--M/-->
   </span>
 </span>
 `;

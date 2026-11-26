@@ -3,6 +3,7 @@ import { render } from "@marko/testing-library";
 
 import { snapshotHTML } from "../../../common/test-utils/snapshots";
 import template from "../index.marko";
+import cartIcon from "../icons/ebay-cart-24-icon/index.marko";
 
 const iconName = "mic";
 const progrmaBadgeIcon = "program-badge-authenticity-guaranteed";
@@ -88,5 +89,33 @@ describe("program badges", () => {
             },
         };
         await htmlSnap(template, input);
+    });
+});
+
+describe("symbol", () => {
+    it("inlines each symbol once per render", async () => {
+        const $global = {};
+        const first = await render(cartIcon, { $global });
+        const second = await render(cartIcon, { $global });
+
+        expect(
+            first.container.querySelectorAll("defs[data-ebay-icon] > symbol"),
+        ).toHaveLength(1);
+        expect(second.container.querySelector("defs")).toBeNull();
+    });
+
+    it("marks the symbol as rendered on $global", async () => {
+        const $global = {};
+        await render(cartIcon, { $global });
+
+        expect($global["rendered_ebay_icon_cart-24"]).toBe(true);
+    });
+
+    it("skips a symbol $global marks as rendered", async () => {
+        const { container } = await render(cartIcon, {
+            $global: { "rendered_ebay_icon_cart-24": true },
+        });
+
+        expect(container.querySelector("defs")).toBeNull();
     });
 });

@@ -31,7 +31,9 @@ exports[`renders defaults 1`] = `
             [33mclass[39m=[32m"icon icon--16"[39m
             [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
-            [36m<defs>[39m
+            [36m<defs[39m
+              [33mdata-ebay-icon[39m=[32m""[39m
+            [36m>[39m
               [36m<symbol[39m
                 [33mid[39m=[32m"icon-close-16"[39m
                 [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -99,7 +101,9 @@ exports[`renders open 1`] = `
             [33mclass[39m=[32m"icon icon--16"[39m
             [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
-            [36m<defs>[39m
+            [36m<defs[39m
+              [33mdata-ebay-icon[39m=[32m""[39m
+            [36m>[39m
               [36m<symbol[39m
                 [33mid[39m=[32m"icon-close-16"[39m
                 [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -168,7 +172,9 @@ exports[`renders slide end 1`] = `
             [33mclass[39m=[32m"icon icon--16"[39m
             [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
-            [36m<defs>[39m
+            [36m<defs[39m
+              [33mdata-ebay-icon[39m=[32m""[39m
+            [36m>[39m
               [36m<symbol[39m
                 [33mid[39m=[32m"icon-close-16"[39m
                 [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -230,7 +236,9 @@ exports[`renders without footer and header 1`] = `
             [33mclass[39m=[32m"icon icon--16"[39m
             [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
-            [36m<defs>[39m
+            [36m<defs[39m
+              [33mdata-ebay-icon[39m=[32m""[39m
+            [36m>[39m
               [36m<symbol[39m
                 [33mid[39m=[32m"icon-close-16"[39m
                 [33mviewBox[39m=[32m"0 0 16 16"[39m

@@ -28,7 +28,9 @@ exports[`filter-menu > passes through additional html attributes 1`] = `
         class="icon icon--12"
         focusable="false"
       >
-        <defs>
+        <defs
+          data-ebay-icon=""
+        >
           <symbol
             id="icon-chevron-down-12"
             viewBox="0 0 12 12"
@@ -68,7 +70,9 @@ exports[`filter-menu > passes through additional html attributes 1`] = `
             class="icon icon--18"
             focusable="false"
           >
-            <defs>
+            <defs
+              data-ebay-icon=""
+            >
               <symbol
                 id="icon-checkbox-unchecked-18"
                 viewBox="0 0 18 18"
@@ -177,7 +181,9 @@ exports[`filter-menu > passes through additional html attributes 2`] = `
         class="icon icon--12"
         focusable="false"
       >
-        <defs>
+        <defs
+          data-ebay-icon=""
+        >
           <symbol
             id="icon-chevron-down-12"
             viewBox="0 0 12 12"
@@ -217,7 +223,9 @@ exports[`filter-menu > passes through additional html attributes 2`] = `
             class="icon icon--18"
             focusable="false"
           >
-            <defs>
+            <defs
+              data-ebay-icon=""
+            >
               <symbol
                 id="icon-checkbox-unchecked-18"
                 viewBox="0 0 18 18"
@@ -316,7 +324,9 @@ exports[`filter-menu > passes through additional html attributes from child item
       class="icon icon--18"
       focusable="false"
     >
-      <defs>
+      <defs
+        data-ebay-icon=""
+      >
         <symbol
           id="icon-checkbox-unchecked-18"
           viewBox="0 0 18 18"
@@ -355,7 +365,9 @@ exports[`filter-menu > passes through additional html attributes from child item
       class="icon icon--18"
       focusable="false"
     >
-      <defs>
+      <defs
+        data-ebay-icon=""
+      >
         <symbol
           id="icon-checkbox-unchecked-18"
           viewBox="0 0 18 18"
@@ -401,7 +413,9 @@ exports[`filter-menu > renders basic version 1`] = `
           [33mclass[39m=[32m"icon icon--12"[39m
           [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
-          [36m<defs>[39m
+          [36m<defs[39m
+            [33mdata-ebay-icon[39m=[32m""[39m
+          [36m>[39m
             [36m<symbol[39m
               [33mid[39m=[32m"icon-chevron-down-12"[39m
               [33mviewBox[39m=[32m"0 0 12 12"[39m
@@ -440,7 +454,9 @@ exports[`filter-menu > renders basic version 1`] = `
               [33mclass[39m=[32m"icon icon--18"[39m
               [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
-              [36m<defs>[39m
+              [36m<defs[39m
+                [33mdata-ebay-icon[39m=[32m""[39m
+              [36m>[39m
                 [36m<symbol[39m
                   [33mid[39m=[32m"icon-checkbox-unchecked-18"[39m
                   [33mviewBox[39m=[32m"0 0 18 18"[39m
@@ -540,7 +556,9 @@ exports[`filter-menu > renders checked item 1`] = `
           [33mclass[39m=[32m"icon icon--12"[39m
           [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
-          [36m<defs>[39m
+          [36m<defs[39m
+            [33mdata-ebay-icon[39m=[32m""[39m
+          [36m>[39m
             [36m<symbol[39m
               [33mid[39m=[32m"icon-chevron-down-12"[39m
               [33mviewBox[39m=[32m"0 0 12 12"[39m
@@ -579,7 +597,9 @@ exports[`filter-menu > renders checked item 1`] = `
               [33mclass[39m=[32m"icon icon--18"[39m
               [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
-              [36m<defs>[39m
+              [36m<defs[39m
+                [33mdata-ebay-icon[39m=[32m""[39m
+              [36m>[39m
                 [36m<symbol[39m
                   [33mid[39m=[32m"icon-checkbox-unchecked-18"[39m
                   [33mviewBox[39m=[32m"0 0 18 18"[39m
@@ -679,7 +699,9 @@ exports[`filter-menu > renders disabled item 1`] = `
           [33mclass[39m=[32m"icon icon--12"[39m
           [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
-          [36m<defs>[39m
+          [36m<defs[39m
+            [33mdata-ebay-icon[39m=[32m""[39m
+          [36m>[39m
             [36m<symbol[39m
               [33mid[39m=[32m"icon-chevron-down-12"[39m
               [33mviewBox[39m=[32m"0 0 12 12"[39m
@@ -718,7 +740,9 @@ exports[`filter-menu > renders disabled item 1`] = `
               [33mclass[39m=[32m"icon icon--18"[39m
               [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
-              [36m<defs>[39m
+              [36m<defs[39m
+                [33mdata-ebay-icon[39m=[32m""[39m
+              [36m>[39m
                 [36m<symbol[39m
                   [33mid[39m=[32m"icon-checkbox-unchecked-18"[39m
                   [33mviewBox[39m=[32m"0 0 18 18"[39m
@@ -818,7 +842,9 @@ exports[`filter-menu > renders with footer 1`] = `
           [33mclass[39m=[32m"icon icon--12"[39m
           [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
-          [36m<defs>[39m
+          [36m<defs[39m
+            [33mdata-ebay-icon[39m=[32m""[39m
+          [36m>[39m
             [36m<symbol[39m
               [33mid[39m=[32m"icon-chevron-down-12"[39m
               [33mviewBox[39m=[32m"0 0 12 12"[39m
@@ -857,7 +883,9 @@ exports[`filter-menu > renders with footer 1`] = `
               [33mclass[39m=[32m"icon icon--18"[39m
               [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
-              [36m<defs>[39m
+              [36m<defs[39m
+                [33mdata-ebay-icon[39m=[32m""[39m
+              [36m>[39m
                 [36m<symbol[39m
                   [33mid[39m=[32m"icon-checkbox-unchecked-18"[39m
                   [33mviewBox[39m=[32m"0 0 18 18"[39m
@@ -964,7 +992,9 @@ exports[`filter-menu > renders with footer text 1`] = `
           [33mclass[39m=[32m"icon icon--12"[39m
           [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
-          [36m<defs>[39m
+          [36m<defs[39m
+            [33mdata-ebay-icon[39m=[32m""[39m
+          [36m>[39m
             [36m<symbol[39m
               [33mid[39m=[32m"icon-chevron-down-12"[39m
               [33mviewBox[39m=[32m"0 0 12 12"[39m
@@ -1003,7 +1033,9 @@ exports[`filter-menu > renders with footer text 1`] = `
               [33mclass[39m=[32m"icon icon--18"[39m
               [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
-              [36m<defs>[39m
+              [36m<defs[39m
+                [33mdata-ebay-icon[39m=[32m""[39m
+              [36m>[39m
                 [36m<symbol[39m
                   [33mid[39m=[32m"icon-checkbox-unchecked-18"[39m
                   [33mviewBox[39m=[32m"0 0 18 18"[39m
@@ -1109,7 +1141,9 @@ exports[`filter-menu > renders with footer text and accessible text 1`] = `
           [33mclass[39m=[32m"icon icon--12"[39m
           [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
-          [36m<defs>[39m
+          [36m<defs[39m
+            [33mdata-ebay-icon[39m=[32m""[39m
+          [36m>[39m
             [36m<symbol[39m
               [33mid[39m=[32m"icon-chevron-down-12"[39m
               [33mviewBox[39m=[32m"0 0 12 12"[39m
@@ -1148,7 +1182,9 @@ exports[`filter-menu > renders with footer text and accessible text 1`] = `
               [33mclass[39m=[32m"icon icon--18"[39m
               [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
-              [36m<defs>[39m
+              [36m<defs[39m
+                [33mdata-ebay-icon[39m=[32m""[39m
+              [36m>[39m
                 [36m<symbol[39m
                   [33mid[39m=[32m"icon-checkbox-unchecked-18"[39m
                   [33mviewBox[39m=[32m"0 0 18 18"[39m

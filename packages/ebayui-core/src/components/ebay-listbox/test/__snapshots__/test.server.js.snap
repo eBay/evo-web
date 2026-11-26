@@ -24,7 +24,9 @@ exports[`listbox > passes through additional html attributes 1`] = `
       class="icon icon--16"
       focusable="false"
     >
-      <defs>
+      <defs
+        data-ebay-icon=""
+      >
         <symbol
           id="icon-tick-16"
           viewBox="0 0 16 16"
@@ -106,7 +108,9 @@ exports[`listbox > passes through additional html attributes 2`] = `
       class="icon icon--16"
       focusable="false"
     >
-      <defs>
+      <defs
+        data-ebay-icon=""
+      >
         <symbol
           id="icon-tick-16"
           viewBox="0 0 16 16"
@@ -181,7 +185,9 @@ exports[`listbox > passes through additional html attributes from child option 1
     class="icon icon--16"
     focusable="false"
   >
-    <defs>
+    <defs
+      data-ebay-icon=""
+    >
       <symbol
         id="icon-tick-16"
         viewBox="0 0 16 16"
@@ -217,7 +223,9 @@ exports[`listbox > passes through additional html attributes from child option 2
     class="icon icon--16"
     focusable="false"
   >
-    <defs>
+    <defs
+      data-ebay-icon=""
+    >
       <symbol
         id="icon-tick-16"
         viewBox="0 0 16 16"
@@ -257,7 +265,9 @@ exports[`listbox > renders basic version 1`] = `
         [33mclass[39m=[32m"icon icon--16"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-tick-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -370,7 +380,9 @@ exports[`listbox > renders with description 1`] = `
         [33mclass[39m=[32m"icon icon--16"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-tick-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -475,7 +487,9 @@ exports[`listbox > renders with second item disabled 1`] = `
         [33mclass[39m=[32m"icon icon--16"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-tick-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -578,7 +592,9 @@ exports[`listbox > renders with second item selected 1`] = `
         [33mclass[39m=[32m"icon icon--16"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-tick-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m

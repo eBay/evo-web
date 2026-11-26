@@ -25,7 +25,9 @@ exports[`carousel > passes through additional html attributes 1`] = `
         class="icon icon--16"
         focusable="false"
       >
-        <defs>
+        <defs
+          data-ebay-icon=""
+        >
           <symbol
             id="icon-chevron-left-16"
             viewBox="0 0 16 16"
@@ -60,7 +62,9 @@ exports[`carousel > passes through additional html attributes 1`] = `
         class="icon icon--16"
         focusable="false"
       >
-        <defs>
+        <defs
+          data-ebay-icon=""
+        >
           <symbol
             id="icon-chevron-right-16"
             viewBox="0 0 16 16"
@@ -104,7 +108,9 @@ exports[`carousel > passes through additional html attributes 2`] = `
         class="icon icon--16"
         focusable="false"
       >
-        <defs>
+        <defs
+          data-ebay-icon=""
+        >
           <symbol
             id="icon-chevron-left-16"
             viewBox="0 0 16 16"
@@ -139,7 +145,9 @@ exports[`carousel > passes through additional html attributes 2`] = `
         class="icon icon--16"
         focusable="false"
       >
-        <defs>
+        <defs
+          data-ebay-icon=""
+        >
           <symbol
             id="icon-chevron-right-16"
             viewBox="0 0 16 16"
@@ -199,7 +207,9 @@ exports[`carousel > with discrete items per slide > renders base version 1`] = `
         class="icon icon--16"
         focusable="false"
       >
-        <defs>
+        <defs
+          data-ebay-icon=""
+        >
           <symbol
             id="icon-chevron-left-16"
             viewBox="0 0 16 16"
@@ -259,7 +269,9 @@ exports[`carousel > with discrete items per slide > renders base version 1`] = `
         class="icon icon--16"
         focusable="false"
       >
-        <defs>
+        <defs
+          data-ebay-icon=""
+        >
           <symbol
             id="icon-chevron-right-16"
             viewBox="0 0 16 16"
@@ -323,7 +335,9 @@ exports[`carousel > with discrete items per slide > renders without any provided
     class="icon icon--16"
     focusable="false"
   >
-    <defs>
+    <defs
+      data-ebay-icon=""
+    >
       <symbol
         id="icon-chevron-left-16"
         viewBox="0 0 16 16"
@@ -353,7 +367,9 @@ exports[`carousel > with discrete items per slide > renders without any provided
     class="icon icon--16"
     focusable="false"
   >
-    <defs>
+    <defs
+      data-ebay-icon=""
+    >
       <symbol
         id="icon-chevron-right-16"
         viewBox="0 0 16 16"
@@ -381,7 +397,9 @@ exports[`carousel > with discrete items per slide > with autoplay enabled > rend
     class="icon icon--24"
     focusable="false"
   >
-    <defs>
+    <defs
+      data-ebay-icon=""
+    >
       <symbol
         id="icon-pause-24"
         viewBox="0 0 24 24"
@@ -409,7 +427,9 @@ exports[`carousel > with discrete items per slide > with autoplay enabled > rend
     class="icon icon--24"
     focusable="false"
   >
-    <defs>
+    <defs
+      data-ebay-icon=""
+    >
       <symbol
         id="icon-play-24"
         viewBox="0 0 24 24"
@@ -447,7 +467,9 @@ exports[`carousel > with discrete items per slide > with hidden scrollbar > rend
         class="icon icon--16"
         focusable="false"
       >
-        <defs>
+        <defs
+          data-ebay-icon=""
+        >
           <symbol
             id="icon-chevron-left-16"
             viewBox="0 0 16 16"
@@ -507,7 +529,9 @@ exports[`carousel > with discrete items per slide > with hidden scrollbar > rend
         class="icon icon--16"
         focusable="false"
       >
-        <defs>
+        <defs
+          data-ebay-icon=""
+        >
           <symbol
             id="icon-chevron-right-16"
             viewBox="0 0 16 16"
@@ -540,7 +564,9 @@ exports[`carousel > without items per slide (continuous) > renders base version 
     class="icon icon--16"
     focusable="false"
   >
-    <defs>
+    <defs
+      data-ebay-icon=""
+    >
       <symbol
         id="icon-chevron-left-16"
         viewBox="0 0 16 16"
@@ -570,7 +596,9 @@ exports[`carousel > without items per slide (continuous) > renders base version 
     class="icon icon--16"
     focusable="false"
   >
-    <defs>
+    <defs
+      data-ebay-icon=""
+    >
       <symbol
         id="icon-chevron-right-16"
         viewBox="0 0 16 16"
@@ -665,7 +693,9 @@ exports[`carousel > without items per slide (continuous) > renders without any p
     class="icon icon--16"
     focusable="false"
   >
-    <defs>
+    <defs
+      data-ebay-icon=""
+    >
       <symbol
         id="icon-chevron-left-16"
         viewBox="0 0 16 16"
@@ -695,7 +725,9 @@ exports[`carousel > without items per slide (continuous) > renders without any p
     class="icon icon--16"
     focusable="false"
   >
-    <defs>
+    <defs
+      data-ebay-icon=""
+    >
       <symbol
         id="icon-chevron-right-16"
         viewBox="0 0 16 16"

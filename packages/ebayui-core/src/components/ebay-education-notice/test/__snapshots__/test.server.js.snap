@@ -18,7 +18,9 @@ exports[`education-notice > renders defaults 1`] = `
         [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-lightbulb-24"[39m
             [33mviewBox[39m=[32m"0 0 24 24"[39m
@@ -69,7 +71,9 @@ exports[`education-notice > renders prominent 1`] = `
         [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-the-ebay-vault-24"[39m
             [33mviewBox[39m=[32m"0 0 24 24"[39m
@@ -127,7 +131,9 @@ exports[`education-notice > renders prominent icon 1`] = `
         [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-authenticity-guarantee-24"[39m
             [33mviewBox[39m=[32m"0 0 24 24"[39m
@@ -180,7 +186,9 @@ exports[`education-notice > renders with dismiss 1`] = `
         [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-lightbulb-24"[39m
             [33mviewBox[39m=[32m"0 0 24 24"[39m
@@ -214,7 +222,9 @@ exports[`education-notice > renders with dismiss 1`] = `
           [33mclass[39m=[32m"icon icon--16"[39m
           [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
-          [36m<defs>[39m
+          [36m<defs[39m
+            [33mdata-ebay-icon[39m=[32m""[39m
+          [36m>[39m
             [36m<symbol[39m
               [33mid[39m=[32m"icon-close-16"[39m
               [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -259,7 +269,9 @@ exports[`education-notice > renders with footer 1`] = `
         [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-lightbulb-24"[39m
             [33mviewBox[39m=[32m"0 0 24 24"[39m

@@ -30,7 +30,9 @@ exports[`pagination > Interactive > renders defaults 1`] = `
         [33mclass[39m=[32m"icon icon--16"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-arrow-left-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -195,7 +197,9 @@ exports[`pagination > Interactive > renders defaults 1`] = `
         [33mclass[39m=[32m"icon icon--16"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-arrow-right-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -247,7 +251,9 @@ exports[`pagination > passes through additional html attributes 1`] = `
       class="icon icon--16"
       focusable="false"
     >
-      <defs>
+      <defs
+        data-ebay-icon=""
+      >
         <symbol
           id="icon-arrow-left-16"
           viewBox="0 0 16 16"
@@ -377,7 +383,9 @@ exports[`pagination > passes through additional html attributes 1`] = `
       class="icon icon--16"
       focusable="false"
     >
-      <defs>
+      <defs
+        data-ebay-icon=""
+      >
         <symbol
           id="icon-arrow-right-16"
           viewBox="0 0 16 16"
@@ -428,7 +436,9 @@ exports[`pagination > passes through additional html attributes 2`] = `
       class="icon icon--16"
       focusable="false"
     >
-      <defs>
+      <defs
+        data-ebay-icon=""
+      >
         <symbol
           id="icon-arrow-left-16"
           viewBox="0 0 16 16"
@@ -558,7 +568,9 @@ exports[`pagination > passes through additional html attributes 2`] = `
       class="icon icon--16"
       focusable="false"
     >
-      <defs>
+      <defs
+        data-ebay-icon=""
+      >
         <symbol
           id="icon-arrow-right-16"
           viewBox="0 0 16 16"
@@ -609,7 +621,9 @@ exports[`pagination > passes through additional html attributes 3`] = `
       class="icon icon--16"
       focusable="false"
     >
-      <defs>
+      <defs
+        data-ebay-icon=""
+      >
         <symbol
           id="icon-arrow-left-16"
           viewBox="0 0 16 16"
@@ -730,7 +744,9 @@ exports[`pagination > passes through additional html attributes 3`] = `
       class="icon icon--16"
       focusable="false"
     >
-      <defs>
+      <defs
+        data-ebay-icon=""
+      >
         <symbol
           id="icon-arrow-right-16"
           viewBox="0 0 16 16"
@@ -781,7 +797,9 @@ exports[`pagination > passes through additional html attributes 4`] = `
       class="icon icon--16"
       focusable="false"
     >
-      <defs>
+      <defs
+        data-ebay-icon=""
+      >
         <symbol
           id="icon-arrow-left-16"
           viewBox="0 0 16 16"
@@ -902,7 +920,9 @@ exports[`pagination > passes through additional html attributes 4`] = `
       class="icon icon--16"
       focusable="false"
     >
-      <defs>
+      <defs
+        data-ebay-icon=""
+      >
         <symbol
           id="icon-arrow-right-16"
           viewBox="0 0 16 16"
@@ -949,7 +969,9 @@ exports[`pagination > with buttons > renders button version 1`] = `
         [33mclass[39m=[32m"icon icon--16"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-arrow-left-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -1104,7 +1126,9 @@ exports[`pagination > with buttons > renders button version 1`] = `
         [33mclass[39m=[32m"icon icon--16"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-arrow-right-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -1152,7 +1176,9 @@ exports[`pagination > with buttons > renders button version selected items 1`] =
         [33mclass[39m=[32m"icon icon--16"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-arrow-left-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -1308,7 +1334,9 @@ exports[`pagination > with buttons > renders button version selected items 1`] =
         [33mclass[39m=[32m"icon icon--16"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-arrow-right-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -1358,7 +1386,9 @@ exports[`pagination > with buttons > renders buttons with last page visible 1`] 
         [33mclass[39m=[32m"icon icon--16"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-arrow-left-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -1453,7 +1483,9 @@ exports[`pagination > with buttons > renders buttons with last page visible 1`] 
             [33mclass[39m=[32m"icon icon--24"[39m
             [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
-            [36m<defs>[39m
+            [36m<defs[39m
+              [33mdata-ebay-icon[39m=[32m""[39m
+            [36m>[39m
               [36m<symbol[39m
                 [33mid[39m=[32m"icon-overflow-horizontal-24"[39m
                 [33mviewBox[39m=[32m"0 0 24 24"[39m
@@ -1489,7 +1521,9 @@ exports[`pagination > with buttons > renders buttons with last page visible 1`] 
         [33mclass[39m=[32m"icon icon--16"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-arrow-right-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -1538,7 +1572,9 @@ exports[`pagination > with buttons > renders default button version 1`] = `
         [33mclass[39m=[32m"icon icon--16"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-arrow-left-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -1641,7 +1677,9 @@ exports[`pagination > with buttons > renders default button version 1`] = `
         [33mclass[39m=[32m"icon icon--16"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-arrow-right-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -1691,7 +1729,9 @@ exports[`pagination > with buttons > renders default button with overflow 1`] = 
         [33mclass[39m=[32m"icon icon--16"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-arrow-left-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -1742,7 +1782,9 @@ exports[`pagination > with buttons > renders default button with overflow 1`] = 
                   [33mclass[39m=[32m"icon icon--24"[39m
                   [33mfocusable[39m=[32m"false"[39m
                 [36m>[39m
-                  [36m<defs>[39m
+                  [36m<defs[39m
+                    [33mdata-ebay-icon[39m=[32m""[39m
+                  [36m>[39m
                     [36m<symbol[39m
                       [33mid[39m=[32m"icon-overflow-horizontal-24"[39m
                       [33mviewBox[39m=[32m"0 0 24 24"[39m
@@ -1882,7 +1924,9 @@ exports[`pagination > with buttons > renders default button with overflow 1`] = 
                       [33mclass[39m=[32m"icon icon--16"[39m
                       [33mfocusable[39m=[32m"false"[39m
                     [36m>[39m
-                      [36m<defs>[39m
+                      [36m<defs[39m
+                        [33mdata-ebay-icon[39m=[32m""[39m
+                      [36m>[39m
                         [36m<symbol[39m
                           [33mid[39m=[32m"icon-tick-16"[39m
                           [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -2005,7 +2049,9 @@ exports[`pagination > with buttons > renders default button with overflow 1`] = 
         [33mclass[39m=[32m"icon icon--16"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-arrow-right-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -2053,7 +2099,9 @@ exports[`pagination > with buttons > renders empty button version 1`] = `
         [33mclass[39m=[32m"icon icon--16"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-arrow-left-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -2082,7 +2130,9 @@ exports[`pagination > with buttons > renders empty button version 1`] = `
         [33mclass[39m=[32m"icon icon--16"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-arrow-right-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -2131,7 +2181,9 @@ exports[`pagination > with links > renders basic version 1`] = `
         [33mclass[39m=[32m"icon icon--16"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-arrow-left-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -2243,7 +2295,9 @@ exports[`pagination > with links > renders basic version 1`] = `
         [33mclass[39m=[32m"icon icon--16"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-arrow-right-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -2292,7 +2346,9 @@ exports[`pagination > with links > renders empty version 1`] = `
         [33mclass[39m=[32m"icon icon--16"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-arrow-left-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -2322,7 +2378,9 @@ exports[`pagination > with links > renders empty version 1`] = `
         [33mclass[39m=[32m"icon icon--16"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-arrow-right-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -2371,7 +2429,9 @@ exports[`pagination > with links > renders with a selected item 1`] = `
         [33mclass[39m=[32m"icon icon--16"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-arrow-left-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -2543,7 +2603,9 @@ exports[`pagination > with links > renders with a selected item 1`] = `
         [33mclass[39m=[32m"icon icon--16"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-arrow-right-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -2592,7 +2654,9 @@ exports[`pagination > with links > renders with aria-disabled when navigation is
         [33mclass[39m=[32m"icon icon--16"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-arrow-left-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -2764,7 +2828,9 @@ exports[`pagination > with links > renders with aria-disabled when navigation is
         [33mclass[39m=[32m"icon icon--16"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-arrow-right-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -2812,7 +2878,9 @@ exports[`pagination > with links > renders with aria-disabled when navigation it
         [33mclass[39m=[32m"icon icon--16"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-arrow-left-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -2983,7 +3051,9 @@ exports[`pagination > with links > renders with aria-disabled when navigation it
         [33mclass[39m=[32m"icon icon--16"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-arrow-right-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -3033,7 +3103,9 @@ exports[`pagination > with links > renders with last page visible 1`] = `
         [33mclass[39m=[32m"icon icon--16"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-arrow-left-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -3136,7 +3208,9 @@ exports[`pagination > with links > renders with last page visible 1`] = `
             [33mclass[39m=[32m"icon icon--24"[39m
             [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
-            [36m<defs>[39m
+            [36m<defs[39m
+              [33mdata-ebay-icon[39m=[32m""[39m
+            [36m>[39m
               [36m<symbol[39m
                 [33mid[39m=[32m"icon-overflow-horizontal-24"[39m
                 [33mviewBox[39m=[32m"0 0 24 24"[39m
@@ -3173,7 +3247,9 @@ exports[`pagination > with links > renders with last page visible 1`] = `
         [33mclass[39m=[32m"icon icon--16"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-arrow-right-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -3223,7 +3299,9 @@ exports[`pagination > with links > renders with overflow 1`] = `
         [33mclass[39m=[32m"icon icon--16"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-arrow-left-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -3275,7 +3353,9 @@ exports[`pagination > with links > renders with overflow 1`] = `
                   [33mclass[39m=[32m"icon icon--24"[39m
                   [33mfocusable[39m=[32m"false"[39m
                 [36m>[39m
-                  [36m<defs>[39m
+                  [36m<defs[39m
+                    [33mdata-ebay-icon[39m=[32m""[39m
+                  [36m>[39m
                     [36m<symbol[39m
                       [33mid[39m=[32m"icon-overflow-horizontal-24"[39m
                       [33mviewBox[39m=[32m"0 0 24 24"[39m
@@ -3422,7 +3502,9 @@ exports[`pagination > with links > renders with overflow 1`] = `
                       [33mclass[39m=[32m"icon icon--16"[39m
                       [33mfocusable[39m=[32m"false"[39m
                     [36m>[39m
-                      [36m<defs>[39m
+                      [36m<defs[39m
+                        [33mdata-ebay-icon[39m=[32m""[39m
+                      [36m>[39m
                         [36m<symbol[39m
                           [33mid[39m=[32m"icon-tick-16"[39m
                           [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -3546,7 +3628,9 @@ exports[`pagination > with links > renders with overflow 1`] = `
         [33mclass[39m=[32m"icon icon--16"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-arrow-right-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m

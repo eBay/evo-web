@@ -86,7 +86,9 @@ exports[`breadcrumbs > renders basic structure 1`] = `
         class="icon icon--12"
         focusable="false"
       >
-        <defs>
+        <defs
+          data-ebay-icon=""
+        >
           <symbol
             id="icon-chevron-right-12"
             viewBox="0 0 12 12"

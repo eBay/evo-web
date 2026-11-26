@@ -35,7 +35,9 @@ exports[`toast-dialog > passes through additional html attributes 1`] = `
           class="icon icon--16"
           focusable="false"
         >
-          <defs>
+          <defs
+            data-ebay-icon=""
+          >
             <symbol
               id="icon-close-16"
               viewBox="0 0 16 16"
@@ -97,7 +99,9 @@ exports[`toast-dialog > passes through additional html attributes 2`] = `
           class="icon icon--16"
           focusable="false"
         >
-          <defs>
+          <defs
+            data-ebay-icon=""
+          >
             <symbol
               id="icon-close-16"
               viewBox="0 0 16 16"
@@ -160,7 +164,9 @@ exports[`toast-dialog > renders basic version 1`] = `
           class="icon icon--16"
           focusable="false"
         >
-          <defs>
+          <defs
+            data-ebay-icon=""
+          >
             <symbol
               id="icon-close-16"
               viewBox="0 0 16 16"
@@ -206,7 +212,9 @@ exports[`toast-dialog > renders basic version 2`] = `
     class="icon icon--16"
     focusable="false"
   >
-    <defs>
+    <defs
+      data-ebay-icon=""
+    >
       <symbol
         id="icon-close-16"
         viewBox="0 0 16 16"
@@ -258,7 +266,9 @@ exports[`toast-dialog > renders basic version 4`] = `
       class="icon icon--16"
       focusable="false"
     >
-      <defs>
+      <defs
+        data-ebay-icon=""
+      >
         <symbol
           id="icon-close-16"
           viewBox="0 0 16 16"
@@ -322,7 +332,9 @@ exports[`toast-dialog > renders in open state 1`] = `
           class="icon icon--16"
           focusable="false"
         >
-          <defs>
+          <defs
+            data-ebay-icon=""
+          >
             <symbol
               id="icon-close-16"
               viewBox="0 0 16 16"

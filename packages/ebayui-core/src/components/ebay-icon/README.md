@@ -13,7 +13,7 @@
 <ebay-arrow-left-icon/>
 ```
 
-The icon will include the actual SVG markup in the HTML and then reference the chosen icon. This is useful for applying customizations (like color). Behind the scenes, we determine all foreground icons that could be used at compile-time, and then include each icon stamp a single time at the top of the `<body>`. This is done by including the markup in mark tags in conjunction with inspecting the Node.js `require` cache. With this methodology, icons must be included statically in order to work with the stamper.
+The icon renders an inline `<svg>` that references its symbol with `<use>`, so it can be styled with CSS (like `color`). The first icon of each name in a server render includes that symbol once; in the browser, every symbol is kept in one hidden `<svg>` at the top of the `<body>`.
 video
 
 ## Examples and Documentation

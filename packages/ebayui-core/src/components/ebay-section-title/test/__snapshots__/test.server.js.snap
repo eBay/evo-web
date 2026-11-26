@@ -56,11 +56,10 @@ exports[`section-title > renders icon and see all 1`] = `
         [36m<svg[39m
           [33maria-hidden[39m=[32m"true"[39m
           [33mclass[39m=[32m"icon icon--16"[39m
-          [33mdata-marko-key[39m=[32m"@svg s0-0-6-1-1-2-0"[39m
           [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
           [36m<defs[39m
-            [33mdata-marko-key[39m=[32m"@defs s0-0-6-1-1-2-0"[39m
+            [33mdata-ebay-icon[39m=[32m""[39m
           [36m>[39m
             [36m<symbol[39m
               [33mid[39m=[32m"icon-heart-16"[39m
@@ -128,11 +127,10 @@ exports[`section-title > renders icon and see all and no subtitle 1`] = `
         [36m<svg[39m
           [33maria-hidden[39m=[32m"true"[39m
           [33mclass[39m=[32m"icon icon--16"[39m
-          [33mdata-marko-key[39m=[32m"@svg s0-0-6-1-1-2-0"[39m
           [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
           [36m<defs[39m
-            [33mdata-marko-key[39m=[32m"@defs s0-0-6-1-1-2-0"[39m
+            [33mdata-ebay-icon[39m=[32m""[39m
           [36m>[39m
             [36m<symbol[39m
               [33mid[39m=[32m"icon-heart-16"[39m
@@ -263,7 +261,9 @@ exports[`section-title > renders with overflow 1`] = `
             [33mclass[39m=[32m"icon icon--16"[39m
             [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
-            [36m<defs>[39m
+            [36m<defs[39m
+              [33mdata-ebay-icon[39m=[32m""[39m
+            [36m>[39m
               [36m<symbol[39m
                 [33mid[39m=[32m"icon-overflow-vertical-16"[39m
                 [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -299,7 +299,9 @@ exports[`section-title > renders with overflow 1`] = `
                 [33mclass[39m=[32m"icon icon--16"[39m
                 [33mfocusable[39m=[32m"false"[39m
               [36m>[39m
-                [36m<defs>[39m
+                [36m<defs[39m
+                  [33mdata-ebay-icon[39m=[32m""[39m
+                [36m>[39m
                   [36m<symbol[39m
                     [33mid[39m=[32m"icon-tick-16"[39m
                     [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -397,7 +399,9 @@ exports[`section-title > renders with overflow and no subtitle 1`] = `
             [33mclass[39m=[32m"icon icon--16"[39m
             [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
-            [36m<defs>[39m
+            [36m<defs[39m
+              [33mdata-ebay-icon[39m=[32m""[39m
+            [36m>[39m
               [36m<symbol[39m
                 [33mid[39m=[32m"icon-overflow-vertical-16"[39m
                 [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -433,7 +437,9 @@ exports[`section-title > renders with overflow and no subtitle 1`] = `
                 [33mclass[39m=[32m"icon icon--16"[39m
                 [33mfocusable[39m=[32m"false"[39m
               [36m>[39m
-                [36m<defs>[39m
+                [36m<defs[39m
+                  [33mdata-ebay-icon[39m=[32m""[39m
+                [36m>[39m
                   [36m<symbol[39m
                     [33mid[39m=[32m"icon-tick-16"[39m
                     [33mviewBox[39m=[32m"0 0 16 16"[39m

@@ -18,7 +18,9 @@ exports[`inline-notice > passes through additional html attributes 1`] = `
       focusable="false"
       role="img"
     >
-      <defs>
+      <defs
+        data-ebay-icon=""
+      >
         <symbol
           id="icon-attention-filled-16"
           viewBox="0 0 16 16"
@@ -61,7 +63,9 @@ exports[`inline-notice > passes through additional html attributes 2`] = `
       focusable="false"
       role="img"
     >
-      <defs>
+      <defs
+        data-ebay-icon=""
+      >
         <symbol
           id="icon-attention-filled-16"
           viewBox="0 0 16 16"
@@ -100,7 +104,9 @@ exports[`inline-notice > renders with custom status type 1`] = `
       focusable="false"
       role="img"
     >
-      <defs>
+      <defs
+        data-ebay-icon=""
+      >
         <symbol
           id="icon-confirmation-filled-16"
           viewBox="0 0 16 16"
@@ -138,7 +144,9 @@ exports[`inline-notice > renders with defaults 1`] = `
     focusable="false"
     role="img"
   >
-    <defs>
+    <defs
+      data-ebay-icon=""
+    >
       <symbol
         id="icon-attention-filled-16"
         viewBox="0 0 16 16"
@@ -169,7 +177,9 @@ exports[`inline-notice > renders with defaults 2`] = `
       focusable="false"
       role="img"
     >
-      <defs>
+      <defs
+        data-ebay-icon=""
+      >
         <symbol
           id="icon-attention-filled-16"
           viewBox="0 0 16 16"
@@ -218,7 +228,9 @@ exports[`inline-notice > renders with warning status type 1`] = `
       focusable="false"
       role="img"
     >
-      <defs>
+      <defs
+        data-ebay-icon=""
+      >
         <symbol
           id="icon-attention-triangle-filled-16"
           viewBox="0 0 16 16"

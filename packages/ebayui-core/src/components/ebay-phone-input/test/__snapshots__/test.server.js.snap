@@ -30,7 +30,9 @@ exports[`ebay-phone-input > renders defaults 1`] = `
             [33mclass[39m=[32m"icon icon--16"[39m
             [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
-            [36m<defs>[39m
+            [36m<defs[39m
+              [33mdata-ebay-icon[39m=[32m""[39m
+            [36m>[39m
               [36m<symbol[39m
                 [33mid[39m=[32m"icon-chevron-down-16"[39m
                 [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -73,7 +75,9 @@ exports[`ebay-phone-input > renders defaults 1`] = `
             [33mclass[39m=[32m"icon icon--16"[39m
             [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
-            [36m<defs>[39m
+            [36m<defs[39m
+              [33mdata-ebay-icon[39m=[32m""[39m
+            [36m>[39m
               [36m<symbol[39m
                 [33mid[39m=[32m"icon-tick-16"[39m
                 [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -189,11 +193,7 @@ exports[`ebay-phone-input > renders defaults 1`] = `
             [36m</span>[39m
           [36m</span>[39m
           [36m<svg[39m
-            [33maria-hidden[39m=[32m"true"[39m
-            [33mclass[39m=[32m"icon icon--16"[39m
-            [33mfocusable[39m=[32m"false"[39m
-          [36m>[39m
-  ..."
+            [33maria-hidden..."
 `;
 
 exports[`ebay-phone-input > renders disabled 1`] = `
@@ -227,7 +227,9 @@ exports[`ebay-phone-input > renders disabled 1`] = `
             [33mclass[39m=[32m"icon icon--16"[39m
             [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
-            [36m<defs>[39m
+            [36m<defs[39m
+              [33mdata-ebay-icon[39m=[32m""[39m
+            [36m>[39m
               [36m<symbol[39m
                 [33mid[39m=[32m"icon-chevron-down-16"[39m
                 [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -270,7 +272,9 @@ exports[`ebay-phone-input > renders disabled 1`] = `
             [33mclass[39m=[32m"icon icon--16"[39m
             [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
-            [36m<defs>[39m
+            [36m<defs[39m
+              [33mdata-ebay-icon[39m=[32m""[39m
+            [36m>[39m
               [36m<symbol[39m
                 [33mid[39m=[32m"icon-tick-16"[39m
                 [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -384,11 +388,7 @@ exports[`ebay-phone-input > renders disabled 1`] = `
             [36m<span>[39m
               [0m( + 1 )[0m
             [36m</span>[39m
-          [36m</span>[39m
-          [36m<svg[39m
-            [33maria-hidden[39m=[32m"true"[39m
-            [33mclass[39m=[32m"icon icon--16"[39m
-            ..."
+          [36m</spa..."
 `;
 
 exports[`ebay-phone-input > renders invalid 1`] = `
@@ -422,7 +422,9 @@ exports[`ebay-phone-input > renders invalid 1`] = `
             [33mclass[39m=[32m"icon icon--16"[39m
             [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
-            [36m<defs>[39m
+            [36m<defs[39m
+              [33mdata-ebay-icon[39m=[32m""[39m
+            [36m>[39m
               [36m<symbol[39m
                 [33mid[39m=[32m"icon-chevron-down-16"[39m
                 [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -465,7 +467,9 @@ exports[`ebay-phone-input > renders invalid 1`] = `
             [33mclass[39m=[32m"icon icon--16"[39m
             [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
-            [36m<defs>[39m
+            [36m<defs[39m
+              [33mdata-ebay-icon[39m=[32m""[39m
+            [36m>[39m
               [36m<symbol[39m
                 [33mid[39m=[32m"icon-tick-16"[39m
                 [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -579,11 +583,7 @@ exports[`ebay-phone-input > renders invalid 1`] = `
             [36m<span>[39m
               [0m( + 1 )[0m
             [36m</span>[39m
-          [36m</span>[39m
-          [36m<svg[39m
-            [33maria-hidden[39m=[32m"true"[39m
-            [33mclass[39m=[32m"icon icon--16"[39m
-       ..."
+          [36m..."
 `;
 
 exports[`ebay-phone-input > renders localized version 1`] = `
@@ -616,7 +616,9 @@ exports[`ebay-phone-input > renders localized version 1`] = `
             [33mclass[39m=[32m"icon icon--16"[39m
             [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
-            [36m<defs>[39m
+            [36m<defs[39m
+              [33mdata-ebay-icon[39m=[32m""[39m
+            [36m>[39m
               [36m<symbol[39m
                 [33mid[39m=[32m"icon-chevron-down-16"[39m
                 [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -659,7 +661,9 @@ exports[`ebay-phone-input > renders localized version 1`] = `
             [33mclass[39m=[32m"icon icon--16"[39m
             [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
-            [36m<defs>[39m
+            [36m<defs[39m
+              [33mdata-ebay-icon[39m=[32m""[39m
+            [36m>[39m
               [36m<symbol[39m
                 [33mid[39m=[32m"icon-tick-16"[39m
                 [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -775,11 +779,7 @@ exports[`ebay-phone-input > renders localized version 1`] = `
             [36m</span>[39m
           [36m</span>[39m
           [36m<svg[39m
-            [33maria-hidden[39m=[32m"true"[39m
-            [33mclass[39m=[32m"icon icon--16"[39m
-            [33mfocusable[39m=[32m"false"[39m
-          [36m>[39m
-            ..."
+            [33maria-hidden[39m=[32m..."
 `;
 
 exports[`ebay-phone-input > renders prefilled 1`] = `
@@ -812,7 +812,9 @@ exports[`ebay-phone-input > renders prefilled 1`] = `
             [33mclass[39m=[32m"icon icon--16"[39m
             [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
-            [36m<defs>[39m
+            [36m<defs[39m
+              [33mdata-ebay-icon[39m=[32m""[39m
+            [36m>[39m
               [36m<symbol[39m
                 [33mid[39m=[32m"icon-chevron-down-16"[39m
                 [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -855,7 +857,9 @@ exports[`ebay-phone-input > renders prefilled 1`] = `
             [33mclass[39m=[32m"icon icon--16"[39m
             [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
-            [36m<defs>[39m
+            [36m<defs[39m
+              [33mdata-ebay-icon[39m=[32m""[39m
+            [36m>[39m
               [36m<symbol[39m
                 [33mid[39m=[32m"icon-tick-16"[39m
                 [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -971,11 +975,7 @@ exports[`ebay-phone-input > renders prefilled 1`] = `
             [36m</span>[39m
           [36m</span>[39m
           [36m<svg[39m
-            [33maria-hidden[39m=[32m"true"[39m
-            [33mclass[39m=[32m"icon icon--16"[39m
-            [33mfocusable[39m=[32m"false"[39m
-          [36m>[39m
-  ..."
+            [33maria-hidden..."
 `;
 
 exports[`ebay-phone-input > renders readonly 1`] = `
@@ -1009,7 +1009,9 @@ exports[`ebay-phone-input > renders readonly 1`] = `
             [33mclass[39m=[32m"icon icon--16"[39m
             [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
-            [36m<defs>[39m
+            [36m<defs[39m
+              [33mdata-ebay-icon[39m=[32m""[39m
+            [36m>[39m
               [36m<symbol[39m
                 [33mid[39m=[32m"icon-chevron-down-16"[39m
                 [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -1052,7 +1054,9 @@ exports[`ebay-phone-input > renders readonly 1`] = `
             [33mclass[39m=[32m"icon icon--16"[39m
             [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
-            [36m<defs>[39m
+            [36m<defs[39m
+              [33mdata-ebay-icon[39m=[32m""[39m
+            [36m>[39m
               [36m<symbol[39m
                 [33mid[39m=[32m"icon-tick-16"[39m
                 [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -1166,11 +1170,7 @@ exports[`ebay-phone-input > renders readonly 1`] = `
             [36m<span>[39m
               [0m( + 1 )[0m
             [36m</span>[39m
-          [36m</span>[39m
-          [36m<svg[39m
-            [33maria-hidden[39m=[32m"true"[39m
-            [33mclass[39m=[32m"icon icon--16"[39m
-            ..."
+          [36m</spa..."
 `;
 
 exports[`ebay-phone-input > renders with floating label 1`] = `
@@ -1203,7 +1203,9 @@ exports[`ebay-phone-input > renders with floating label 1`] = `
             [33mclass[39m=[32m"icon icon--16"[39m
             [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
-            [36m<defs>[39m
+            [36m<defs[39m
+              [33mdata-ebay-icon[39m=[32m""[39m
+            [36m>[39m
               [36m<symbol[39m
                 [33mid[39m=[32m"icon-chevron-down-16"[39m
                 [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -1246,7 +1248,9 @@ exports[`ebay-phone-input > renders with floating label 1`] = `
             [33mclass[39m=[32m"icon icon--16"[39m
             [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
-            [36m<defs>[39m
+            [36m<defs[39m
+              [33mdata-ebay-icon[39m=[32m""[39m
+            [36m>[39m
               [36m<symbol[39m
                 [33mid[39m=[32m"icon-tick-16"[39m
                 [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -1362,9 +1366,5 @@ exports[`ebay-phone-input > renders with floating label 1`] = `
             [36m</span>[39m
           [36m</span>[39m
           [36m<svg[39m
-            [33maria-hidden[39m=[32m"true"[39m
-            [33mclass[39m=[32m"icon icon--16"[39m
-            [33mfocusable[39m=[32m"false"[39m
-          [36m>[39m
-  ..."
+            [33maria-hidden..."
 `;

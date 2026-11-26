@@ -26,7 +26,9 @@ exports[`ebay-card > renders anchor 1`] = `
           [33mclass[39m=[32m"icon icon--16"[39m
           [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
-          [36m<defs>[39m
+          [36m<defs[39m
+            [33mdata-ebay-icon[39m=[32m""[39m
+          [36m>[39m
             [36m<symbol[39m
               [33mid[39m=[32m"icon-authenticity-guarantee-16"[39m
               [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -89,7 +91,9 @@ exports[`ebay-card > renders anchor disabled 1`] = `
           [33mclass[39m=[32m"icon icon--16"[39m
           [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
-          [36m<defs>[39m
+          [36m<defs[39m
+            [33mdata-ebay-icon[39m=[32m""[39m
+          [36m>[39m
             [36m<symbol[39m
               [33mid[39m=[32m"icon-authenticity-guarantee-16"[39m
               [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -151,7 +155,9 @@ exports[`ebay-card > renders button 1`] = `
           [33mclass[39m=[32m"icon icon--16"[39m
           [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
-          [36m<defs>[39m
+          [36m<defs[39m
+            [33mdata-ebay-icon[39m=[32m""[39m
+          [36m>[39m
             [36m<symbol[39m
               [33mid[39m=[32m"icon-authenticity-guarantee-16"[39m
               [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -215,7 +221,9 @@ exports[`ebay-card > renders button disabled 1`] = `
           [33mclass[39m=[32m"icon icon--16"[39m
           [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
-          [36m<defs>[39m
+          [36m<defs[39m
+            [33mdata-ebay-icon[39m=[32m""[39m
+          [36m>[39m
             [36m<symbol[39m
               [33mid[39m=[32m"icon-authenticity-guarantee-16"[39m
               [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -276,7 +284,9 @@ exports[`ebay-card > renders default 1`] = `
           [33mclass[39m=[32m"icon icon--16"[39m
           [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
-          [36m<defs>[39m
+          [36m<defs[39m
+            [33mdata-ebay-icon[39m=[32m""[39m
+          [36m>[39m
             [36m<symbol[39m
               [33mid[39m=[32m"icon-authenticity-guarantee-16"[39m
               [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -351,7 +361,9 @@ exports[`ebay-card > renders media 1`] = `
           [33mclass[39m=[32m"icon icon--16"[39m
           [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
-          [36m<defs>[39m
+          [36m<defs[39m
+            [33mdata-ebay-icon[39m=[32m""[39m
+          [36m>[39m
             [36m<symbol[39m
               [33mid[39m=[32m"icon-authenticity-guarantee-16"[39m
               [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -451,7 +463,9 @@ exports[`ebay-card > renders with layout=vertical 1`] = `
           [33mclass[39m=[32m"icon icon--16"[39m
           [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
-          [36m<defs>[39m
+          [36m<defs[39m
+            [33mdata-ebay-icon[39m=[32m""[39m
+          [36m>[39m
             [36m<symbol[39m
               [33mid[39m=[32m"icon-authenticity-guarantee-16"[39m
               [33mviewBox[39m=[32m"0 0 16 16"[39m
