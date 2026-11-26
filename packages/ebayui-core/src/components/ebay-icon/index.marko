@@ -7,7 +7,6 @@ $ const {
     _size,
     _type,
     _themes,
-    _def,
     a11yText,
     a11yVariant,
     class: inputClass,
@@ -47,10 +46,7 @@ $ var prefixSvg = _type === "icon" ? "icon-" : "";
     $ lookup[lookupName] = true;
     <if(renderDefs && themes)>
         <defs key="defs">
-            <if(!isBrowser)>
-                $!{themes()}
-                <if(_def)>$!{_def().server}</if>
-            </if>
+            <if(!isBrowser)>$!{themes()}</if>
         </defs>
     </if>
     <if(a11yText && !noTitle)>
