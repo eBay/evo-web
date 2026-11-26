@@ -12,15 +12,13 @@ exports[`cta-button > passes through additional html attributes 1`] = `
     class="cta-btn__cell"
   >
     <span />
-    <!--M#s0-4-0-->
     <svg
       aria-hidden="true"
       class="icon icon--24"
-      data-marko-key="@svg s0-4-0"
       focusable="false"
     >
       <defs
-        data-marko-key="@defs s0-4-0"
+        data-ebay-icon=""
       >
         <symbol
           id="icon-arrow-right-24"
@@ -35,7 +33,6 @@ exports[`cta-button > passes through additional html attributes 1`] = `
         href="#icon-arrow-right-24"
       />
     </svg>
-    <!--M/-->
   </span>
 </a>
 `;
@@ -52,15 +49,13 @@ exports[`cta-button > passes through additional html attributes 2`] = `
     class="cta-btn__cell"
   >
     <span />
-    <!--M#s0-4-0-->
     <svg
       aria-hidden="true"
       class="icon icon--24"
-      data-marko-key="@svg s0-4-0"
       focusable="false"
     >
       <defs
-        data-marko-key="@defs s0-4-0"
+        data-ebay-icon=""
       >
         <symbol
           id="icon-arrow-right-24"
@@ -75,7 +70,6 @@ exports[`cta-button > passes through additional html attributes 2`] = `
         href="#icon-arrow-right-24"
       />
     </svg>
-    <!--M/-->
   </span>
 </a>
 `;
@@ -102,15 +96,13 @@ exports[`cta-button > renders small cta button 1`] = `
     <span>
       CTA Text
     </span>
-    <!--M#s0-4-0-->
     <svg
       aria-hidden="true"
       class="icon icon--24"
-      data-marko-key="@svg s0-4-0"
       focusable="false"
     >
       <defs
-        data-marko-key="@defs s0-4-0"
+        data-ebay-icon=""
       >
         <symbol
           id="icon-arrow-right-24"
@@ -125,7 +117,6 @@ exports[`cta-button > renders small cta button 1`] = `
         href="#icon-arrow-right-24"
       />
     </svg>
-    <!--M/-->
   </span>
 </a>
 `;

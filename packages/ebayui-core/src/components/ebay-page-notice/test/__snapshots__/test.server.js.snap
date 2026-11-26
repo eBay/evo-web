@@ -20,7 +20,9 @@ exports[`page-notice > passes through additional html attributes 1`] = `
       focusable="false"
       role="img"
     >
-      <defs>
+      <defs
+        data-ebay-icon=""
+      >
         <symbol
           id="icon-attention-filled-16"
           viewBox="0 0 16 16"
@@ -65,7 +67,9 @@ exports[`page-notice > passes through additional html attributes 2`] = `
       focusable="false"
       role="img"
     >
-      <defs>
+      <defs
+        data-ebay-icon=""
+      >
         <symbol
           id="icon-attention-filled-16"
           viewBox="0 0 16 16"
@@ -166,7 +170,9 @@ exports[`page-notice > renders with custom CTA 1`] = `
         [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-information-filled-16"[39m
             [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -240,7 +246,9 @@ exports[`page-notice > renders with custom CTA 1`] = `
           [33mclass[39m=[32m"icon icon--close-16 icon icon--16"[39m
           [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
-          [36m<defs>[39m
+          [36m<defs[39m
+            [33mdata-ebay-icon[39m=[32m""[39m
+          [36m>[39m
             [36m<symbol[39m
               [33mid[39m=[32m"icon-close-16"[39m
               [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -287,7 +295,9 @@ exports[`page-notice > renders with custom status type 1`] = `
       focusable="false"
       role="img"
     >
-      <defs>
+      <defs
+        data-ebay-icon=""
+      >
         <symbol
           id="icon-confirmation-filled-16"
           viewBox="0 0 16 16"
@@ -325,7 +335,9 @@ exports[`page-notice > renders with defaults 1`] = `
     focusable="false"
     role="img"
   >
-    <defs>
+    <defs
+      data-ebay-icon=""
+    >
       <symbol
         id="icon-attention-filled-16"
         viewBox="0 0 16 16"
@@ -358,7 +370,9 @@ exports[`page-notice > renders with defaults 2`] = `
       focusable="false"
       role="img"
     >
-      <defs>
+      <defs
+        data-ebay-icon=""
+      >
         <symbol
           id="icon-attention-filled-16"
           viewBox="0 0 16 16"
@@ -419,7 +433,9 @@ exports[`page-notice > renders with footer button 2`] = `
       focusable="false"
       role="img"
     >
-      <defs>
+      <defs
+        data-ebay-icon=""
+      >
         <symbol
           id="icon-attention-filled-16"
           viewBox="0 0 16 16"
@@ -479,7 +495,9 @@ exports[`page-notice > renders with warning status type 1`] = `
       focusable="false"
       role="img"
     >
-      <defs>
+      <defs
+        data-ebay-icon=""
+      >
         <symbol
           id="icon-attention-triangle-filled-16"
           viewBox="0 0 16 16"

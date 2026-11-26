@@ -1,20 +1,38 @@
 import { processHtmlAttributes } from "../../common/html-attributes";
-static var isBrowser = typeof window !== "undefined";
-static var browserLookup: Record<string, unknown> = {};
-static function noop() {}
+import type { WithNormalizedProps } from "../../global";
+client import { addToSprite } from "./sprite";
+server function isFirstInRender(global: Record<string, unknown>, name: string) {
+    // Deprecated: kept only because some apps read this `$global` key to skip rendering the icon tag.
+    const key = `rendered_ebay_icon_${name}`;
+    if (global[key]) {
+        return false;
+    }
+    global[key] = true;
+    return true;
+}
+static {
+    interface IconInput extends Omit<Marko.Input<"svg">, `on${string}`> {
+        _themes?: () => string;
+        _type: string;
+        _name: string;
+        _size?: string;
+        "a11y-variant"?: "label";
+        "a11y-text"?: Marko.HTMLAttributes["aria-label"];
+        "no-skin-classes"?: boolean;
+    }
+}
+export interface Input extends WithNormalizedProps<IconInput> {}
 $ const {
     _name,
     _size,
     _type,
     _themes,
-    _def,
     a11yText,
     a11yVariant,
     class: inputClass,
     noSkinClasses,
     ...htmlInput
 } = input;
-$ (input as any).toJSON = noop;
 static function getIconClass(type: string, name: string, size?: string) {
     if (size) {
         return `icon icon--${size}`;
@@ -26,35 +44,24 @@ static function getIconClass(type: string, name: string, size?: string) {
     }
 }
 $ var noTitle = a11yVariant === "label";
-$ var lookup = isBrowser ? browserLookup : out.global;
 $ var a11yAttributes = a11yText ? { role: "img" } : { "aria-hidden": "true" };
-$ var prefixSvg = _type === "icon" ? "icon-" : "";
+$ var symbolId = (_type === "icon" ? "icon-" : "") + _name;
+$ var symbol = _themes ? _themes() : "";
+$ var shouldInlineSymbol = symbol && isFirstInRender?.(out.global, _name);
+$ if (symbol) addToSprite?.(symbolId, symbol);
 <svg
     ...a11yAttributes
     ...processHtmlAttributes(htmlInput)
     class=[inputClass, !noSkinClasses && getIconClass(_type, _name, _size)]
-    key="svg"
     focusable="false"
     aria-labelledby=a11yText && !noTitle && component.elId("text")
     aria-label=noTitle && a11yText
 >
-    <!-- Here we check if we should render the inline svg symbol. -->
-    <!-- Server side we store a flag in `out.global` to check if the symbol was rendered. -->
-    <!-- Client side we check the `browserLookup` object to see if the symbol is already present in root svg. -->
-    $ var themes = _themes;
-    $ var lookupName = "rendered_ebay_icon_" + _name;
-    $ var renderDefs = !lookup[lookupName];
-    $ lookup[lookupName] = true;
-    <if(renderDefs && themes)>
-        <defs key="defs">
-            <if(!isBrowser)>
-                $!{themes()}
-                <if(_def)>$!{_def().server}</if>
-            </if>
-        </defs>
+    <if(shouldInlineSymbol)>
+        <defs data-ebay-icon>$!{symbol}</defs>
     </if>
     <if(a11yText && !noTitle)>
         <title id:scoped="text">${a11yText}</title>
     </if>
-    <use href=`#${prefixSvg}${_name}`/>
+    <use href=`#${symbolId}`/>
 </svg>

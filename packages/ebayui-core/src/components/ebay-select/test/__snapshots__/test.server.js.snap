@@ -25,7 +25,9 @@ exports[`select > passes through additional html attributes 2`] = `
     class="icon icon--12"
     focusable="false"
   >
-    <defs>
+    <defs
+      data-ebay-icon=""
+    >
       <symbol
         id="icon-chevron-down-12"
         viewBox="0 0 12 12"
@@ -158,7 +160,9 @@ exports[`select > renders basic version 1`] = `
     class="icon icon--12"
     focusable="false"
   >
-    <defs>
+    <defs
+      data-ebay-icon=""
+    >
       <symbol
         id="icon-chevron-down-12"
         viewBox="0 0 12 12"
@@ -209,7 +213,9 @@ exports[`select > renders basic version 2`] = `
     class="icon icon--12"
     focusable="false"
   >
-    <defs>
+    <defs
+      data-ebay-icon=""
+    >
       <symbol
         id="icon-chevron-down-12"
         viewBox="0 0 12 12"

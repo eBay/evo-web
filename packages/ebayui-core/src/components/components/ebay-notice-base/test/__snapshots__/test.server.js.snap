@@ -19,7 +19,9 @@ exports[`notice-icon > passes through additional html attributes 1`] = `
       focusable="false"
       role="img"
     >
-      <defs>
+      <defs
+        data-ebay-icon=""
+      >
         <symbol
           id="icon-attention-filled-16"
           viewBox="0 0 16 16"
@@ -63,7 +65,9 @@ exports[`notice-icon > passes through additional html attributes 2`] = `
       focusable="false"
       role="img"
     >
-      <defs>
+      <defs
+        data-ebay-icon=""
+      >
         <symbol
           id="icon-attention-filled-16"
           viewBox="0 0 16 16"
@@ -99,7 +103,9 @@ exports[`notice-icon > renders basic version 1`] = `
     focusable="false"
     role="img"
   >
-    <defs>
+    <defs
+      data-ebay-icon=""
+    >
       <symbol
         id="icon-attention-filled-16"
         viewBox="0 0 16 16"
@@ -131,7 +137,9 @@ exports[`notice-icon > renders basic version 2`] = `
       focusable="false"
       role="img"
     >
-      <defs>
+      <defs
+        data-ebay-icon=""
+      >
         <symbol
           id="icon-attention-filled-16"
           viewBox="0 0 16 16"
@@ -173,7 +181,9 @@ exports[`notice-icon > renders basic version 4`] = `
   focusable="false"
   role="img"
 >
-  <defs>
+  <defs
+    data-ebay-icon=""
+  >
     <symbol
       id="icon-attention-filled-16"
       viewBox="0 0 16 16"
@@ -200,7 +210,9 @@ exports[`notice-icon > renders education notice 1`] = `
     focusable="false"
     role="img"
   >
-    <defs>
+    <defs
+      data-ebay-icon=""
+    >
       <symbol
         id="icon-lightbulb-24"
         viewBox="0 0 24 24"
@@ -234,7 +246,9 @@ exports[`notice-icon > renders education notice 2`] = `
       focusable="false"
       role="img"
     >
-      <defs>
+      <defs
+        data-ebay-icon=""
+      >
         <symbol
           id="icon-lightbulb-24"
           viewBox="0 0 24 24"
@@ -268,7 +282,9 @@ exports[`notice-icon > renders education notice 3`] = `
   focusable="false"
   role="img"
 >
-  <defs>
+  <defs
+    data-ebay-icon=""
+  >
     <symbol
       id="icon-lightbulb-24"
       viewBox="0 0 24 24"
@@ -301,7 +317,9 @@ exports[`notice-icon > renders inline version 1`] = `
       focusable="false"
       role="img"
     >
-      <defs>
+      <defs
+        data-ebay-icon=""
+      >
         <symbol
           id="icon-information-filled-16"
           viewBox="0 0 16 16"
@@ -333,7 +351,9 @@ exports[`notice-icon > renders inline version 2`] = `
   focusable="false"
   role="img"
 >
-  <defs>
+  <defs
+    data-ebay-icon=""
+  >
     <symbol
       id="icon-information-filled-16"
       viewBox="0 0 16 16"
@@ -364,7 +384,9 @@ exports[`notice-icon > renders title and footer version 1`] = `
       focusable="false"
       role="img"
     >
-      <defs>
+      <defs
+        data-ebay-icon=""
+      >
         <symbol
           id="icon-attention-filled-16"
           viewBox="0 0 16 16"
@@ -451,7 +473,9 @@ exports[`notice-icon > renders warning version 1`] = `
     focusable="false"
     role="img"
   >
-    <defs>
+    <defs
+      data-ebay-icon=""
+    >
       <symbol
         id="icon-attention-triangle-filled-16"
         viewBox="0 0 16 16"
@@ -483,7 +507,9 @@ exports[`notice-icon > renders warning version 2`] = `
       focusable="false"
       role="img"
     >
-      <defs>
+      <defs
+        data-ebay-icon=""
+      >
         <symbol
           id="icon-attention-triangle-filled-16"
           viewBox="0 0 16 16"
@@ -525,7 +551,9 @@ exports[`notice-icon > renders warning version 4`] = `
   focusable="false"
   role="img"
 >
-  <defs>
+  <defs
+    data-ebay-icon=""
+  >
     <symbol
       id="icon-attention-triangle-filled-16"
       viewBox="0 0 16 16"

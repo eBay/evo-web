@@ -18,15 +18,13 @@ exports[`eek > passes through additional html attributes 1`] = `
       class="eek__rating-range"
     >
       <span />
-      <!--M#s0-4-0-->
       <svg
         aria-hidden="true"
         class="icon icon--eek-range-arrow"
-        data-marko-key="@svg s0-4-0"
         focusable="false"
       >
         <defs
-          data-marko-key="@defs s0-4-0"
+          data-ebay-icon=""
         >
           <symbol
             id="icon-eek-range-arrow"
@@ -44,22 +42,19 @@ exports[`eek > passes through additional html attributes 1`] = `
           href="#icon-eek-range-arrow"
         />
       </svg>
-      <!--M/-->
       <span />
     </span>
     <span
       class="eek__rating"
     />
   </div>
-  <!--M#s0-7-0-->
   <svg
     aria-hidden="true"
     class="icon icon--eek-arrow"
-    data-marko-key="@svg s0-7-0"
     focusable="false"
   >
     <defs
-      data-marko-key="@defs s0-7-0"
+      data-ebay-icon=""
     >
       <symbol
         id="icon-eek-arrow"
@@ -76,7 +71,6 @@ exports[`eek > passes through additional html attributes 1`] = `
       href="#icon-eek-arrow"
     />
   </svg>
-  <!--M/-->
 </div>
 `;
 
@@ -98,15 +92,13 @@ exports[`eek > passes through additional html attributes 2`] = `
       class="eek__rating-range"
     >
       <span />
-      <!--M#s0-4-0-->
       <svg
         aria-hidden="true"
         class="icon icon--eek-range-arrow"
-        data-marko-key="@svg s0-4-0"
         focusable="false"
       >
         <defs
-          data-marko-key="@defs s0-4-0"
+          data-ebay-icon=""
         >
           <symbol
             id="icon-eek-range-arrow"
@@ -124,22 +116,19 @@ exports[`eek > passes through additional html attributes 2`] = `
           href="#icon-eek-range-arrow"
         />
       </svg>
-      <!--M/-->
       <span />
     </span>
     <span
       class="eek__rating"
     />
   </div>
-  <!--M#s0-7-0-->
   <svg
     aria-hidden="true"
     class="icon icon--eek-arrow"
-    data-marko-key="@svg s0-7-0"
     focusable="false"
   >
     <defs
-      data-marko-key="@defs s0-7-0"
+      data-ebay-icon=""
     >
       <symbol
         id="icon-eek-arrow"
@@ -156,7 +145,6 @@ exports[`eek > passes through additional html attributes 2`] = `
       href="#icon-eek-arrow"
     />
   </svg>
-  <!--M/-->
 </div>
 `;
 
@@ -196,15 +184,13 @@ exports[`eek > renders default eek 4`] = `
       <span>
         A+++
       </span>
-      <!--M#s0-4-0-->
       <svg
         aria-hidden="true"
         class="icon icon--eek-range-arrow"
-        data-marko-key="@svg s0-4-0"
         focusable="false"
       >
         <defs
-          data-marko-key="@defs s0-4-0"
+          data-ebay-icon=""
         >
           <symbol
             id="icon-eek-range-arrow"
@@ -222,7 +208,6 @@ exports[`eek > renders default eek 4`] = `
           href="#icon-eek-range-arrow"
         />
       </svg>
-      <!--M/-->
       <span>
         D
       </span>
@@ -233,15 +218,13 @@ exports[`eek > renders default eek 4`] = `
       B
     </span>
   </div>
-  <!--M#s0-7-0-->
   <svg
     aria-hidden="true"
     class="icon icon--eek-arrow"
-    data-marko-key="@svg s0-7-0"
     focusable="false"
   >
     <defs
-      data-marko-key="@defs s0-7-0"
+      data-ebay-icon=""
     >
       <symbol
         id="icon-eek-arrow"
@@ -258,7 +241,6 @@ exports[`eek > renders default eek 4`] = `
       href="#icon-eek-arrow"
     />
   </svg>
-  <!--M/-->
 </div>
 `;
 
@@ -298,15 +280,13 @@ exports[`eek > renders invalid eek 4`] = `
       <span>
         A
       </span>
-      <!--M#s0-4-0-->
       <svg
         aria-hidden="true"
         class="icon icon--eek-range-arrow"
-        data-marko-key="@svg s0-4-0"
         focusable="false"
       >
         <defs
-          data-marko-key="@defs s0-4-0"
+          data-ebay-icon=""
         >
           <symbol
             id="icon-eek-range-arrow"
@@ -324,7 +304,6 @@ exports[`eek > renders invalid eek 4`] = `
           href="#icon-eek-range-arrow"
         />
       </svg>
-      <!--M/-->
       <span>
         D
       </span>
@@ -335,15 +314,13 @@ exports[`eek > renders invalid eek 4`] = `
       B
     </span>
   </div>
-  <!--M#s0-7-0-->
   <svg
     aria-hidden="true"
     class="icon icon--eek-arrow"
-    data-marko-key="@svg s0-7-0"
     focusable="false"
   >
     <defs
-      data-marko-key="@defs s0-7-0"
+      data-ebay-icon=""
     >
       <symbol
         id="icon-eek-arrow"
@@ -360,7 +337,6 @@ exports[`eek > renders invalid eek 4`] = `
       href="#icon-eek-arrow"
     />
   </svg>
-  <!--M/-->
 </div>
 `;
 
@@ -400,15 +376,13 @@ exports[`eek > renders large eek 4`] = `
       <span>
         A+++
       </span>
-      <!--M#s0-4-0-->
       <svg
         aria-hidden="true"
         class="icon icon--eek-range-arrow"
-        data-marko-key="@svg s0-4-0"
         focusable="false"
       >
         <defs
-          data-marko-key="@defs s0-4-0"
+          data-ebay-icon=""
         >
           <symbol
             id="icon-eek-range-arrow"
@@ -426,7 +400,6 @@ exports[`eek > renders large eek 4`] = `
           href="#icon-eek-range-arrow"
         />
       </svg>
-      <!--M/-->
       <span>
         D
       </span>
@@ -437,15 +410,13 @@ exports[`eek > renders large eek 4`] = `
       B
     </span>
   </div>
-  <!--M#s0-7-0-->
   <svg
     aria-hidden="true"
     class="icon icon--eek-arrow"
-    data-marko-key="@svg s0-7-0"
     focusable="false"
   >
     <defs
-      data-marko-key="@defs s0-7-0"
+      data-ebay-icon=""
     >
       <symbol
         id="icon-eek-arrow"
@@ -462,7 +433,6 @@ exports[`eek > renders large eek 4`] = `
       href="#icon-eek-arrow"
     />
   </svg>
-  <!--M/-->
 </div>
 `;
 
@@ -482,15 +452,13 @@ exports[`eek > renders rating 1 1`] = `
       <span>
         A++
       </span>
-      <!--M#s0-4-0-->
       <svg
         aria-hidden="true"
         class="icon icon--eek-range-arrow"
-        data-marko-key="@svg s0-4-0"
         focusable="false"
       >
         <defs
-          data-marko-key="@defs s0-4-0"
+          data-ebay-icon=""
         >
           <symbol
             id="icon-eek-range-arrow"
@@ -508,7 +476,6 @@ exports[`eek > renders rating 1 1`] = `
           href="#icon-eek-range-arrow"
         />
       </svg>
-      <!--M/-->
       <span>
         E
       </span>
@@ -519,15 +486,13 @@ exports[`eek > renders rating 1 1`] = `
       A++
     </span>
   </div>
-  <!--M#s0-7-0-->
   <svg
     aria-hidden="true"
     class="icon icon--eek-arrow"
-    data-marko-key="@svg s0-7-0"
     focusable="false"
   >
     <defs
-      data-marko-key="@defs s0-7-0"
+      data-ebay-icon=""
     >
       <symbol
         id="icon-eek-arrow"
@@ -544,7 +509,6 @@ exports[`eek > renders rating 1 1`] = `
       href="#icon-eek-arrow"
     />
   </svg>
-  <!--M/-->
 </div>
 `;
 
@@ -564,15 +528,13 @@ exports[`eek > renders rating 2 1`] = `
       <span>
         A++
       </span>
-      <!--M#s0-4-0-->
       <svg
         aria-hidden="true"
         class="icon icon--eek-range-arrow"
-        data-marko-key="@svg s0-4-0"
         focusable="false"
       >
         <defs
-          data-marko-key="@defs s0-4-0"
+          data-ebay-icon=""
         >
           <symbol
             id="icon-eek-range-arrow"
@@ -590,7 +552,6 @@ exports[`eek > renders rating 2 1`] = `
           href="#icon-eek-range-arrow"
         />
       </svg>
-      <!--M/-->
       <span>
         E
       </span>
@@ -601,15 +562,13 @@ exports[`eek > renders rating 2 1`] = `
       A+
     </span>
   </div>
-  <!--M#s0-7-0-->
   <svg
     aria-hidden="true"
     class="icon icon--eek-arrow"
-    data-marko-key="@svg s0-7-0"
     focusable="false"
   >
     <defs
-      data-marko-key="@defs s0-7-0"
+      data-ebay-icon=""
     >
       <symbol
         id="icon-eek-arrow"
@@ -626,7 +585,6 @@ exports[`eek > renders rating 2 1`] = `
       href="#icon-eek-arrow"
     />
   </svg>
-  <!--M/-->
 </div>
 `;
 
@@ -646,15 +604,13 @@ exports[`eek > renders rating 3 1`] = `
       <span>
         A++
       </span>
-      <!--M#s0-4-0-->
       <svg
         aria-hidden="true"
         class="icon icon--eek-range-arrow"
-        data-marko-key="@svg s0-4-0"
         focusable="false"
       >
         <defs
-          data-marko-key="@defs s0-4-0"
+          data-ebay-icon=""
         >
           <symbol
             id="icon-eek-range-arrow"
@@ -672,7 +628,6 @@ exports[`eek > renders rating 3 1`] = `
           href="#icon-eek-range-arrow"
         />
       </svg>
-      <!--M/-->
       <span>
         E
       </span>
@@ -683,15 +638,13 @@ exports[`eek > renders rating 3 1`] = `
       A
     </span>
   </div>
-  <!--M#s0-7-0-->
   <svg
     aria-hidden="true"
     class="icon icon--eek-arrow"
-    data-marko-key="@svg s0-7-0"
     focusable="false"
   >
     <defs
-      data-marko-key="@defs s0-7-0"
+      data-ebay-icon=""
     >
       <symbol
         id="icon-eek-arrow"
@@ -708,7 +661,6 @@ exports[`eek > renders rating 3 1`] = `
       href="#icon-eek-arrow"
     />
   </svg>
-  <!--M/-->
 </div>
 `;
 
@@ -728,15 +680,13 @@ exports[`eek > renders rating 4 1`] = `
       <span>
         A++
       </span>
-      <!--M#s0-4-0-->
       <svg
         aria-hidden="true"
         class="icon icon--eek-range-arrow"
-        data-marko-key="@svg s0-4-0"
         focusable="false"
       >
         <defs
-          data-marko-key="@defs s0-4-0"
+          data-ebay-icon=""
         >
           <symbol
             id="icon-eek-range-arrow"
@@ -754,7 +704,6 @@ exports[`eek > renders rating 4 1`] = `
           href="#icon-eek-range-arrow"
         />
       </svg>
-      <!--M/-->
       <span>
         E
       </span>
@@ -765,15 +714,13 @@ exports[`eek > renders rating 4 1`] = `
       B
     </span>
   </div>
-  <!--M#s0-7-0-->
   <svg
     aria-hidden="true"
     class="icon icon--eek-arrow"
-    data-marko-key="@svg s0-7-0"
     focusable="false"
   >
     <defs
-      data-marko-key="@defs s0-7-0"
+      data-ebay-icon=""
     >
       <symbol
         id="icon-eek-arrow"
@@ -790,7 +737,6 @@ exports[`eek > renders rating 4 1`] = `
       href="#icon-eek-arrow"
     />
   </svg>
-  <!--M/-->
 </div>
 `;
 
@@ -810,15 +756,13 @@ exports[`eek > renders rating 5 1`] = `
       <span>
         A++
       </span>
-      <!--M#s0-4-0-->
       <svg
         aria-hidden="true"
         class="icon icon--eek-range-arrow"
-        data-marko-key="@svg s0-4-0"
         focusable="false"
       >
         <defs
-          data-marko-key="@defs s0-4-0"
+          data-ebay-icon=""
         >
           <symbol
             id="icon-eek-range-arrow"
@@ -836,7 +780,6 @@ exports[`eek > renders rating 5 1`] = `
           href="#icon-eek-range-arrow"
         />
       </svg>
-      <!--M/-->
       <span>
         E
       </span>
@@ -847,15 +790,13 @@ exports[`eek > renders rating 5 1`] = `
       C
     </span>
   </div>
-  <!--M#s0-7-0-->
   <svg
     aria-hidden="true"
     class="icon icon--eek-arrow"
-    data-marko-key="@svg s0-7-0"
     focusable="false"
   >
     <defs
-      data-marko-key="@defs s0-7-0"
+      data-ebay-icon=""
     >
       <symbol
         id="icon-eek-arrow"
@@ -872,7 +813,6 @@ exports[`eek > renders rating 5 1`] = `
       href="#icon-eek-arrow"
     />
   </svg>
-  <!--M/-->
 </div>
 `;
 
@@ -892,15 +832,13 @@ exports[`eek > renders rating 6 1`] = `
       <span>
         A++
       </span>
-      <!--M#s0-4-0-->
       <svg
         aria-hidden="true"
         class="icon icon--eek-range-arrow"
-        data-marko-key="@svg s0-4-0"
         focusable="false"
       >
         <defs
-          data-marko-key="@defs s0-4-0"
+          data-ebay-icon=""
         >
           <symbol
             id="icon-eek-range-arrow"
@@ -918,7 +856,6 @@ exports[`eek > renders rating 6 1`] = `
           href="#icon-eek-range-arrow"
         />
       </svg>
-      <!--M/-->
       <span>
         E
       </span>
@@ -929,15 +866,13 @@ exports[`eek > renders rating 6 1`] = `
       D
     </span>
   </div>
-  <!--M#s0-7-0-->
   <svg
     aria-hidden="true"
     class="icon icon--eek-arrow"
-    data-marko-key="@svg s0-7-0"
     focusable="false"
   >
     <defs
-      data-marko-key="@defs s0-7-0"
+      data-ebay-icon=""
     >
       <symbol
         id="icon-eek-arrow"
@@ -954,7 +889,6 @@ exports[`eek > renders rating 6 1`] = `
       href="#icon-eek-arrow"
     />
   </svg>
-  <!--M/-->
 </div>
 `;
 
@@ -974,15 +908,13 @@ exports[`eek > renders rating 7 (not 8) 1`] = `
       <span>
         A++
       </span>
-      <!--M#s0-4-0-->
       <svg
         aria-hidden="true"
         class="icon icon--eek-range-arrow"
-        data-marko-key="@svg s0-4-0"
         focusable="false"
       >
         <defs
-          data-marko-key="@defs s0-4-0"
+          data-ebay-icon=""
         >
           <symbol
             id="icon-eek-range-arrow"
@@ -1000,7 +932,6 @@ exports[`eek > renders rating 7 (not 8) 1`] = `
           href="#icon-eek-range-arrow"
         />
       </svg>
-      <!--M/-->
       <span>
         G
       </span>
@@ -1011,15 +942,13 @@ exports[`eek > renders rating 7 (not 8) 1`] = `
       F
     </span>
   </div>
-  <!--M#s0-7-0-->
   <svg
     aria-hidden="true"
     class="icon icon--eek-arrow"
-    data-marko-key="@svg s0-7-0"
     focusable="false"
   >
     <defs
-      data-marko-key="@defs s0-7-0"
+      data-ebay-icon=""
     >
       <symbol
         id="icon-eek-arrow"
@@ -1036,7 +965,6 @@ exports[`eek > renders rating 7 (not 8) 1`] = `
       href="#icon-eek-arrow"
     />
   </svg>
-  <!--M/-->
 </div>
 `;
 
@@ -1056,15 +984,13 @@ exports[`eek > renders rating 7 (not 8) 2`] = `
       <span>
         A++
       </span>
-      <!--M#s0-4-0-->
       <svg
         aria-hidden="true"
         class="icon icon--eek-range-arrow"
-        data-marko-key="@svg s0-4-0"
         focusable="false"
       >
         <defs
-          data-marko-key="@defs s0-4-0"
+          data-ebay-icon=""
         >
           <symbol
             id="icon-eek-range-arrow"
@@ -1082,7 +1008,6 @@ exports[`eek > renders rating 7 (not 8) 2`] = `
           href="#icon-eek-range-arrow"
         />
       </svg>
-      <!--M/-->
       <span>
         G
       </span>
@@ -1093,15 +1018,13 @@ exports[`eek > renders rating 7 (not 8) 2`] = `
       G
     </span>
   </div>
-  <!--M#s0-7-0-->
   <svg
     aria-hidden="true"
     class="icon icon--eek-arrow"
-    data-marko-key="@svg s0-7-0"
     focusable="false"
   >
     <defs
-      data-marko-key="@defs s0-7-0"
+      data-ebay-icon=""
     >
       <symbol
         id="icon-eek-arrow"
@@ -1118,7 +1041,6 @@ exports[`eek > renders rating 7 (not 8) 2`] = `
       href="#icon-eek-arrow"
     />
   </svg>
-  <!--M/-->
 </div>
 `;
 
@@ -1138,15 +1060,13 @@ exports[`eek > renders rating 7 1`] = `
       <span>
         A++
       </span>
-      <!--M#s0-4-0-->
       <svg
         aria-hidden="true"
         class="icon icon--eek-range-arrow"
-        data-marko-key="@svg s0-4-0"
         focusable="false"
       >
         <defs
-          data-marko-key="@defs s0-4-0"
+          data-ebay-icon=""
         >
           <symbol
             id="icon-eek-range-arrow"
@@ -1164,7 +1084,6 @@ exports[`eek > renders rating 7 1`] = `
           href="#icon-eek-range-arrow"
         />
       </svg>
-      <!--M/-->
       <span>
         E
       </span>
@@ -1175,15 +1094,13 @@ exports[`eek > renders rating 7 1`] = `
       E
     </span>
   </div>
-  <!--M#s0-7-0-->
   <svg
     aria-hidden="true"
     class="icon icon--eek-arrow"
-    data-marko-key="@svg s0-7-0"
     focusable="false"
   >
     <defs
-      data-marko-key="@defs s0-7-0"
+      data-ebay-icon=""
     >
       <symbol
         id="icon-eek-arrow"
@@ -1200,7 +1117,6 @@ exports[`eek > renders rating 7 1`] = `
       href="#icon-eek-arrow"
     />
   </svg>
-  <!--M/-->
 </div>
 `;
 
@@ -1220,15 +1136,13 @@ exports[`eek > renders the correct eek if rating is outside 1`] = `
       <span>
         A+
       </span>
-      <!--M#s0-4-0-->
       <svg
         aria-hidden="true"
         class="icon icon--eek-range-arrow"
-        data-marko-key="@svg s0-4-0"
         focusable="false"
       >
         <defs
-          data-marko-key="@defs s0-4-0"
+          data-ebay-icon=""
         >
           <symbol
             id="icon-eek-range-arrow"
@@ -1246,7 +1160,6 @@ exports[`eek > renders the correct eek if rating is outside 1`] = `
           href="#icon-eek-range-arrow"
         />
       </svg>
-      <!--M/-->
       <span>
         D
       </span>
@@ -1257,15 +1170,13 @@ exports[`eek > renders the correct eek if rating is outside 1`] = `
       A++
     </span>
   </div>
-  <!--M#s0-7-0-->
   <svg
     aria-hidden="true"
     class="icon icon--eek-arrow"
-    data-marko-key="@svg s0-7-0"
     focusable="false"
   >
     <defs
-      data-marko-key="@defs s0-7-0"
+      data-ebay-icon=""
     >
       <symbol
         id="icon-eek-arrow"
@@ -1282,6 +1193,5 @@ exports[`eek > renders the correct eek if rating is outside 1`] = `
       href="#icon-eek-arrow"
     />
   </svg>
-  <!--M/-->
 </div>
 `;

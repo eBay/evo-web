@@ -19,7 +19,9 @@ exports[`3d-viewer > renders default 1`] = `
         [33mclass[39m=[32m"icon icon--24"[39m
         [33mfocusable[39m=[32m"false"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-attention-24"[39m
             [33mviewBox[39m=[32m"0 0 24 24"[39m
@@ -48,7 +50,9 @@ exports[`3d-viewer > renders default 1`] = `
         [33mfocusable[39m=[32m"false"[39m
         [33mrole[39m=[32m"img"[39m
       [36m>[39m
-        [36m<defs>[39m
+        [36m<defs[39m
+          [33mdata-ebay-icon[39m=[32m""[39m
+        [36m>[39m
           [36m<symbol[39m
             [33mid[39m=[32m"icon-play-filled-64-colored"[39m
             [33mviewBox[39m=[32m"0 0 64 64"[39m

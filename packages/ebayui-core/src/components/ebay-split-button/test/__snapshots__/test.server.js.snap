@@ -36,7 +36,9 @@ exports[`renders button with priority=delete 1`] = `
           [33mclass[39m=[32m"icon icon--12"[39m
           [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
-          [36m<defs>[39m
+          [36m<defs[39m
+            [33mdata-ebay-icon[39m=[32m""[39m
+          [36m>[39m
             [36m<symbol[39m
               [33mid[39m=[32m"icon-chevron-down-12"[39m
               [33mviewBox[39m=[32m"0 0 12 12"[39m
@@ -74,7 +76,9 @@ exports[`renders button with priority=delete 1`] = `
               [33mclass[39m=[32m"icon icon--16"[39m
               [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
-              [36m<defs>[39m
+              [36m<defs[39m
+                [33mdata-ebay-icon[39m=[32m""[39m
+              [36m>[39m
                 [36m<symbol[39m
                   [33mid[39m=[32m"icon-tick-16"[39m
                   [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -168,7 +172,9 @@ exports[`renders button with priority=primary 1`] = `
           [33mclass[39m=[32m"icon icon--12"[39m
           [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
-          [36m<defs>[39m
+          [36m<defs[39m
+            [33mdata-ebay-icon[39m=[32m""[39m
+          [36m>[39m
             [36m<symbol[39m
               [33mid[39m=[32m"icon-chevron-down-12"[39m
               [33mviewBox[39m=[32m"0 0 12 12"[39m
@@ -206,7 +212,9 @@ exports[`renders button with priority=primary 1`] = `
               [33mclass[39m=[32m"icon icon--16"[39m
               [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
-              [36m<defs>[39m
+              [36m<defs[39m
+                [33mdata-ebay-icon[39m=[32m""[39m
+              [36m>[39m
                 [36m<symbol[39m
                   [33mid[39m=[32m"icon-tick-16"[39m
                   [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -300,7 +308,9 @@ exports[`renders button with priority=secondary 1`] = `
           [33mclass[39m=[32m"icon icon--12"[39m
           [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
-          [36m<defs>[39m
+          [36m<defs[39m
+            [33mdata-ebay-icon[39m=[32m""[39m
+          [36m>[39m
             [36m<symbol[39m
               [33mid[39m=[32m"icon-chevron-down-12"[39m
               [33mviewBox[39m=[32m"0 0 12 12"[39m
@@ -338,7 +348,9 @@ exports[`renders button with priority=secondary 1`] = `
               [33mclass[39m=[32m"icon icon--16"[39m
               [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
-              [36m<defs>[39m
+              [36m<defs[39m
+                [33mdata-ebay-icon[39m=[32m""[39m
+              [36m>[39m
                 [36m<symbol[39m
                   [33mid[39m=[32m"icon-tick-16"[39m
                   [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -432,7 +444,9 @@ exports[`renders button with size=large 1`] = `
           [33mclass[39m=[32m"icon icon--12"[39m
           [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
-          [36m<defs>[39m
+          [36m<defs[39m
+            [33mdata-ebay-icon[39m=[32m""[39m
+          [36m>[39m
             [36m<symbol[39m
               [33mid[39m=[32m"icon-chevron-down-12"[39m
               [33mviewBox[39m=[32m"0 0 12 12"[39m
@@ -470,7 +484,9 @@ exports[`renders button with size=large 1`] = `
               [33mclass[39m=[32m"icon icon--16"[39m
               [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
-              [36m<defs>[39m
+              [36m<defs[39m
+                [33mdata-ebay-icon[39m=[32m""[39m
+              [36m>[39m
                 [36m<symbol[39m
                   [33mid[39m=[32m"icon-tick-16"[39m
                   [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -564,7 +580,9 @@ exports[`renders defaults 1`] = `
           [33mclass[39m=[32m"icon icon--12"[39m
           [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
-          [36m<defs>[39m
+          [36m<defs[39m
+            [33mdata-ebay-icon[39m=[32m""[39m
+          [36m>[39m
             [36m<symbol[39m
               [33mid[39m=[32m"icon-chevron-down-12"[39m
               [33mviewBox[39m=[32m"0 0 12 12"[39m
@@ -602,7 +620,9 @@ exports[`renders defaults 1`] = `
               [33mclass[39m=[32m"icon icon--16"[39m
               [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
-              [36m<defs>[39m
+              [36m<defs[39m
+                [33mdata-ebay-icon[39m=[32m""[39m
+              [36m>[39m
                 [36m<symbol[39m
                   [33mid[39m=[32m"icon-tick-16"[39m
                   [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -683,7 +703,9 @@ exports[`renders loading state 1`] = `
             [33mclass[39m=[32m"icon icon--24"[39m
             [33mfocusable[39m=[32m"false"[39m
           [36m>[39m
-            [36m<defs>[39m
+            [36m<defs[39m
+              [33mdata-ebay-icon[39m=[32m""[39m
+            [36m>[39m
               [36m<symbol[39m
                 [33mfill[39m=[32m"none"[39m
                 [33mid[39m=[32m"icon-spinner-24"[39m
@@ -728,7 +750,9 @@ exports[`renders loading state 1`] = `
           [33mclass[39m=[32m"icon icon--12"[39m
           [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
-          [36m<defs>[39m
+          [36m<defs[39m
+            [33mdata-ebay-icon[39m=[32m""[39m
+          [36m>[39m
             [36m<symbol[39m
               [33mid[39m=[32m"icon-chevron-down-12"[39m
               [33mviewBox[39m=[32m"0 0 12 12"[39m
@@ -766,7 +790,9 @@ exports[`renders loading state 1`] = `
               [33mclass[39m=[32m"icon icon--16"[39m
               [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
-              [36m<defs>[39m
+              [36m<defs[39m
+                [33mdata-ebay-icon[39m=[32m""[39m
+              [36m>[39m
                 [36m<symbol[39m
                   [33mid[39m=[32m"icon-tick-16"[39m
                   [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -862,7 +888,9 @@ exports[`renders various options 1`] = `
           [33mclass[39m=[32m"icon icon--12"[39m
           [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
-          [36m<defs>[39m
+          [36m<defs[39m
+            [33mdata-ebay-icon[39m=[32m""[39m
+          [36m>[39m
             [36m<symbol[39m
               [33mid[39m=[32m"icon-chevron-down-12"[39m
               [33mviewBox[39m=[32m"0 0 12 12"[39m
@@ -901,7 +929,9 @@ exports[`renders various options 1`] = `
               [33mclass[39m=[32m"icon icon--16"[39m
               [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
-              [36m<defs>[39m
+              [36m<defs[39m
+                [33mdata-ebay-icon[39m=[32m""[39m
+              [36m>[39m
                 [36m<symbol[39m
                   [33mid[39m=[32m"icon-tick-16"[39m
                   [33mviewBox[39m=[32m"0 0 16 16"[39m
@@ -997,7 +1027,9 @@ exports[`renders with menu items 1`] = `
           [33mclass[39m=[32m"icon icon--12"[39m
           [33mfocusable[39m=[32m"false"[39m
         [36m>[39m
-          [36m<defs>[39m
+          [36m<defs[39m
+            [33mdata-ebay-icon[39m=[32m""[39m
+          [36m>[39m
             [36m<symbol[39m
               [33mid[39m=[32m"icon-chevron-down-12"[39m
               [33mviewBox[39m=[32m"0 0 12 12"[39m
@@ -1035,7 +1067,9 @@ exports[`renders with menu items 1`] = `
               [33mclass[39m=[32m"icon icon--16"[39m
               [33mfocusable[39m=[32m"false"[39m
             [36m>[39m
-              [36m<defs>[39m
+              [36m<defs[39m
+                [33mdata-ebay-icon[39m=[32m""[39m
+              [36m>[39m
                 [36m<symbol[39m
                   [33mid[39m=[32m"icon-tick-16"[39m
                   [33mviewBox[39m=[32m"0 0 16 16"[39m

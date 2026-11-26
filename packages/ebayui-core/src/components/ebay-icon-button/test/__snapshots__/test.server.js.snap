@@ -14,7 +14,9 @@ exports[`ebay-icon-button > Renders defaults 1`] = `
       [33mclass[39m=[32m"icon icon--24"[39m
       [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
-      [36m<defs>[39m
+      [36m<defs[39m
+        [33mdata-ebay-icon[39m=[32m""[39m
+      [36m>[39m
         [36m<symbol[39m
           [33mid[39m=[32m"icon-menu-24"[39m
           [33mviewBox[39m=[32m"0 0 24 24"[39m
@@ -49,7 +51,9 @@ exports[`ebay-icon-button > passes through additional html attributes 1`] = `
     class="icon icon--24"
     focusable="false"
   >
-    <defs>
+    <defs
+      data-ebay-icon=""
+    >
       <symbol
         id="icon-menu-24"
         viewBox="0 0 24 24"
@@ -84,7 +88,9 @@ exports[`ebay-icon-button > passes through additional html attributes 2`] = `
     class="icon icon--24"
     focusable="false"
   >
-    <defs>
+    <defs
+      data-ebay-icon=""
+    >
       <symbol
         id="icon-menu-24"
         viewBox="0 0 24 24"
@@ -116,7 +122,9 @@ exports[`ebay-icon-button > renders badged icon variant 1`] = `
       [33mclass[39m=[32m"icon icon--24"[39m
       [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
-      [36m<defs>[39m
+      [36m<defs[39m
+        [33mdata-ebay-icon[39m=[32m""[39m
+      [36m>[39m
         [36m<symbol[39m
           [33mid[39m=[32m"icon-menu-24"[39m
           [33mviewBox[39m=[32m"0 0 24 24"[39m
@@ -154,7 +162,9 @@ exports[`ebay-icon-button > renders button with priority=delete 1`] = `
       [33mclass[39m=[32m"icon icon--24"[39m
       [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
-      [36m<defs>[39m
+      [36m<defs[39m
+        [33mdata-ebay-icon[39m=[32m""[39m
+      [36m>[39m
         [36m<symbol[39m
           [33mid[39m=[32m"icon-menu-24"[39m
           [33mviewBox[39m=[32m"0 0 24 24"[39m
@@ -186,7 +196,9 @@ exports[`ebay-icon-button > renders button with priority=primary 1`] = `
       [33mclass[39m=[32m"icon icon--24"[39m
       [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
-      [36m<defs>[39m
+      [36m<defs[39m
+        [33mdata-ebay-icon[39m=[32m""[39m
+      [36m>[39m
         [36m<symbol[39m
           [33mid[39m=[32m"icon-menu-24"[39m
           [33mviewBox[39m=[32m"0 0 24 24"[39m
@@ -218,7 +230,9 @@ exports[`ebay-icon-button > renders button with priority=secondary 1`] = `
       [33mclass[39m=[32m"icon icon--24"[39m
       [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
-      [36m<defs>[39m
+      [36m<defs[39m
+        [33mdata-ebay-icon[39m=[32m""[39m
+      [36m>[39m
         [36m<symbol[39m
           [33mid[39m=[32m"icon-menu-24"[39m
           [33mviewBox[39m=[32m"0 0 24 24"[39m
@@ -250,7 +264,9 @@ exports[`ebay-icon-button > renders button with size=large 1`] = `
       [33mclass[39m=[32m"icon icon--24"[39m
       [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
-      [36m<defs>[39m
+      [36m<defs[39m
+        [33mdata-ebay-icon[39m=[32m""[39m
+      [36m>[39m
         [36m<symbol[39m
           [33mid[39m=[32m"icon-menu-24"[39m
           [33mviewBox[39m=[32m"0 0 24 24"[39m
@@ -282,7 +298,9 @@ exports[`ebay-icon-button > renders button with size=small 1`] = `
       [33mclass[39m=[32m"icon icon--24"[39m
       [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
-      [36m<defs>[39m
+      [36m<defs[39m
+        [33mdata-ebay-icon[39m=[32m""[39m
+      [36m>[39m
         [36m<symbol[39m
           [33mid[39m=[32m"icon-menu-24"[39m
           [33mviewBox[39m=[32m"0 0 24 24"[39m
@@ -315,7 +333,9 @@ exports[`ebay-icon-button > renders disabled version 1`] = `
       [33mclass[39m=[32m"icon icon--24"[39m
       [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
-      [36m<defs>[39m
+      [36m<defs[39m
+        [33mdata-ebay-icon[39m=[32m""[39m
+      [36m>[39m
         [36m<symbol[39m
           [33mid[39m=[32m"icon-menu-24"[39m
           [33mviewBox[39m=[32m"0 0 24 24"[39m
@@ -346,7 +366,9 @@ exports[`ebay-icon-button > renders fake version 1`] = `
       [33mclass[39m=[32m"icon icon--24"[39m
       [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
-      [36m<defs>[39m
+      [36m<defs[39m
+        [33mdata-ebay-icon[39m=[32m""[39m
+      [36m>[39m
         [36m<symbol[39m
           [33mid[39m=[32m"icon-menu-24"[39m
           [33mviewBox[39m=[32m"0 0 24 24"[39m
@@ -378,7 +400,9 @@ exports[`ebay-icon-button > renders icon 1`] = `
       [33mclass[39m=[32m"icon icon--24"[39m
       [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
-      [36m<defs>[39m
+      [36m<defs[39m
+        [33mdata-ebay-icon[39m=[32m""[39m
+      [36m>[39m
         [36m<symbol[39m
           [33mid[39m=[32m"icon-menu-24"[39m
           [33mviewBox[39m=[32m"0 0 24 24"[39m
@@ -411,7 +435,9 @@ exports[`ebay-icon-button > renders partially disabled version 1`] = `
       [33mclass[39m=[32m"icon icon--24"[39m
       [33mfocusable[39m=[32m"false"[39m
     [36m>[39m
-      [36m<defs>[39m
+      [36m<defs[39m
+        [33mdata-ebay-icon[39m=[32m""[39m
+      [36m>[39m
         [36m<symbol[39m
           [33mid[39m=[32m"icon-menu-24"[39m
           [33mviewBox[39m=[32m"0 0 24 24"[39m

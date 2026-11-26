@@ -4,6 +4,7 @@ import template from "../icons/ebay-add-24-icon/index.marko";
 import template2 from "../icons/ebay-arrow-left-24-icon/index.marko";
 import template3 from "../icons/ebay-arrow-right-24-icon/index.marko";
 import template4 from "../icons/ebay-ai-spectrum-16-colored-icon/index.marko";
+import template5 from "../icons/ebay-cart-24-icon/index.marko";
 
 afterEach(cleanup);
 
@@ -13,6 +14,7 @@ let component;
 function checkIfHidden() {
     const svg = document.body.firstChild;
 
+    expect(svg.tagName).to.equal("svg");
     expect(svg.style.position).to.equal(
         "absolute",
         "position should be absolute",
@@ -22,23 +24,10 @@ function checkIfHidden() {
 }
 
 function checkIcon(iconId) {
-    const svg = document.body.firstChild;
-    expect(svg.tagName).to.equal("svg");
-
-    let iconAdd;
-    svg.childNodes.forEach((child) => {
-        expect(child.tagName).to.match(/symbol|defs/);
-        if (child.id === iconId) {
-            if (iconAdd) {
-                throw new Error(`Found multiple ${iconId}, expect only 1.`);
-            } else {
-                iconAdd = child;
-            }
-        }
-    });
-    if (!iconAdd) {
-        throw new Error(`${iconId} is not being added into SVG symbols`);
-    }
+    const matches = document.querySelectorAll(`#${iconId}`);
+    expect(matches, `${iconId} should be defined once`).toHaveLength(1);
+    expect(matches[0].tagName).to.equal("symbol");
+    expect(matches[0].parentNode).to.equal(document.body.firstChild);
 }
 
 describe("rendering an icon in the browser", () => {
@@ -48,17 +37,15 @@ describe("rendering an icon in the browser", () => {
 
     it("should create root SVG", () => {
         checkIfHidden();
-        expect(() => checkIcon("icon-add-24")).to.not.throw(Error);
+        checkIcon("icon-add-24");
     });
 
     it("should not have defs tag", () => {
         const icon = component.getByLabelText("icon");
 
         icon.childNodes.forEach((child) => {
-            expect(child.tagName).to.not.equal("DEFS");
+            expect(child.tagName).to.not.equal("defs");
         });
-        const defs = document.body.firstChild.firstChild;
-        expect(defs.childNodes.length).to.equal(0);
     });
 });
 
@@ -71,19 +58,11 @@ describe("rendering multiple icons in the browser", () => {
         component = await render(template, { a11yText: "another icon" });
     });
 
-    it("should create root SVG", () => {
+    it("should define each symbol once in the root SVG", () => {
         checkIfHidden();
-        const svg = document.body.firstChild;
-        expect(svg.tagName).to.equal("svg");
-
-        expect(() => checkIcon("icon-add-24")).to.not.throw(Error);
-        expect(() => checkIcon("icon-arrow-right-24")).to.not.throw(Error);
-        expect(() => checkIcon("icon-arrow-left-24")).to.not.throw(Error);
-        // Should have at least 3 icon symbols
-        expect(svg.childNodes.length).to.be.greaterThan(3);
-
-        const defs = document.body.firstChild.firstChild;
-        expect(defs.childNodes.length).to.equal(0);
+        checkIcon("icon-add-24");
+        checkIcon("icon-arrow-right-24");
+        checkIcon("icon-arrow-left-24");
     });
 });
 
@@ -92,12 +71,50 @@ describe("rendering icons with defs in the browser", () => {
         await render(template4, { a11yText: "icon" });
     });
 
-    it("should create root SVG", () => {
+    it("should parse the symbol's gradient as SVG", () => {
         checkIfHidden();
-        const svg = document.body.firstChild;
-        expect(svg.tagName).to.equal("svg");
+        checkIcon("icon-ai-spectrum-16-colored");
+        expect(
+            document.getElementById("ref-ai-spectrum-16-colored"),
+        ).toBeInstanceOf(SVGLinearGradientElement);
+    });
+});
 
-        const defs = document.body.firstChild.firstChild;
-        expect(defs.tagName).to.equal("defs");
+describe("rendering an icon whose symbol a server icon still holds", () => {
+    beforeEach(async () => {
+        document.body.insertAdjacentHTML(
+            "beforeend",
+            '<svg class="server-icon"><defs data-ebay-icon><symbol id="icon-cart-24"><path d="M0 0"></path></symbol></defs><use href="#icon-cart-24"></use></svg>',
+        );
+        await render(template5, { a11yText: "cart" });
+    });
+
+    it("moves that symbol to the root SVG, so removing the server icon keeps it", () => {
+        document.querySelector(".server-icon").remove();
+        checkIcon("icon-cart-24");
+    });
+});
+
+describe("loading the sprite module after server rendering", () => {
+    let serverIcon;
+
+    beforeEach(async () => {
+        document.body.insertAdjacentHTML(
+            "beforeend",
+            '<svg class="server-icon"><defs data-ebay-icon><symbol id="icon-server-only"></symbol></defs><use href="#icon-server-only"></use></svg>',
+        );
+        serverIcon = document.body.lastElementChild;
+        await import(/* @vite-ignore */ `../sprite.ts?fresh=${Date.now()}`);
+    });
+
+    afterEach(() => {
+        serverIcon.remove();
+        document.body.firstChild.remove();
+    });
+
+    it("moves server symbols into the root SVG", () => {
+        checkIfHidden();
+        checkIcon("icon-server-only");
+        expect(serverIcon.querySelector("defs")).toBeNull();
     });
 });
