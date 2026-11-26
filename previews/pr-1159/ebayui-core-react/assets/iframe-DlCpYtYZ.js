@@ -1,0 +1,1 @@
+import{t as e}from"./iframe-Xlao2svw.js";e();

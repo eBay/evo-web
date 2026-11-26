@@ -1,0 +1,2 @@
+import{C as e,v as t}from"./_BvufeqKM.js";import"./_CiyEOa_n.js";import"./_BNAxLnbO.js";t(`Oe0`,e=>document.querySelectorAll(`.accordion`).forEach(e=>{e.querySelectorAll(`details`).forEach(t=>{t.addEventListener(`toggle`,()=>{e.classList.add(`accordion--animated`)})})})),e();
+//# sourceMappingURL=components.accordion-BrLkJAKF.js.map

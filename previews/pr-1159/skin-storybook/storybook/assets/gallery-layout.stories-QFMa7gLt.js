@@ -1,0 +1,735 @@
+import{t as e}from"./rolldown-runtime-Dh6celcD.js";var t,n,r,i,a,o,s,c,l,u;function d(){return(d=e((()=>{t={title:`Skin/Toggle Button Group/Gallery Layout`},n=()=>`
+<div class="toggle-button-group toggle-button-group--gallery-layout">
+    <ul aria-label="Toggle buttons">
+        <li>
+            <button type="button" class="toggle-button" aria-pressed="false">
+                <span class="toggle-button__image-container">
+                    <span class="toggle-button__image">
+                        <img src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-profile-pic.jpg" alt="">
+                    </span>
+                </span>
+                <span class="toggle-button__content">
+                    <span class="toggle-button__title">
+                        <span>HTML Profile Image</span>
+                    </span>
+                    <span class="toggle-button__subtitle">Using Cover</span>
+                </span>
+            </button>
+        </li>
+        <li>
+            <button type="button" class="toggle-button" aria-pressed="false">
+                <span class="toggle-button__image-container">
+                    <span class="toggle-button__image">
+                        <img src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-landscape-pic.jpg" alt="">
+                    </span>
+                </span>
+                <span class="toggle-button__content">
+                    <span class="toggle-button__title">
+                        <span>HTML Landscape Image</span>
+                    </span>
+                    <span class="toggle-button__subtitle">Using Cover</span>
+                </span>
+            </button>
+        </li>
+        <li>
+            <button type="button" class="toggle-button" aria-pressed="false">
+                <span class="toggle-button__image-container">
+                    <span class="toggle-button__image">
+                        <img src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-square-pic.jpg" alt="">
+                    </span>
+                </span>
+                <span class="toggle-button__content">
+                    <span class="toggle-button__title">
+                        <span>HTML Square Image</span>
+                    </span>
+                    <span class="toggle-button__subtitle">Using Cover</span>
+                </span>
+            </button>
+        </li>
+    </ul>
+</div>
+`,r=()=>`
+<div class="toggle-button-group toggle-button-group--gallery-layout">
+    <ul aria-label="Toggle buttons">
+        <li>
+            <button type="button" class="toggle-button" aria-pressed="false">
+                <span class="toggle-button__image-container">
+                    <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-profile-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: contain; background-position: center 15%;">
+                    </span>
+                </span>
+                <span class="toggle-button__content">
+                    <span class="toggle-button__title">CSS Profile Image</span>
+                    <span class="toggle-button__subtitle">Using Contain</span>
+                </span>
+            </button>
+        </li>
+        <li>
+            <button type="button" class="toggle-button" aria-pressed="false">
+                <span class="toggle-button__image-container">
+                    <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-profile-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                    </span>
+                </span>
+                <span class="toggle-button__content">
+                    <span class="toggle-button__title">CSS Profile Image</span>
+                    <span class="toggle-button__subtitle">Using Cover</span>
+                </span>
+            </button>
+        </li>
+        <li>
+            <button type="button" class="toggle-button" aria-pressed="false">
+                <span class="toggle-button__image-container">
+                    <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-square-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 30%;">
+                    </span>
+                </span>
+                <span class="toggle-button__content">
+                    <span class="toggle-button__title">CSS Square Image</span>
+                    <span class="toggle-button__subtitle">Using Cover</span>
+                </span>
+            </button>
+        </li>
+    </ul>
+</div>
+`,i=()=>`
+<div style="width: 280px; border: 1px dashed orange;">
+    <div class="toggle-button-group toggle-button-group--gallery-layout">
+        <ul aria-label="Buttons">
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false">
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-profile-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false">
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-landscape-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false">
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-square-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 30%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false"> 
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-profile-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false"> 
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-landscape-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false"> 
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-square-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false"> 
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-profile-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false"> 
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-landscape-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false"> 
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-square-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>
+`,a=()=>`
+<div style="width: 320px; border: 1px dashed orange;">
+    <div class="toggle-button-group toggle-button-group--gallery-layout">
+        <ul aria-label="Buttons">
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false">
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-profile-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false">
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-landscape-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false">
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-square-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 30%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false"> 
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-profile-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false"> 
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-landscape-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false"> 
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-square-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false"> 
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-profile-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false"> 
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-landscape-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false"> 
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-square-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>
+`,o=()=>`
+<div style="width: 512px; border: 1px dashed orange;">
+    <div class="toggle-button-group toggle-button-group--gallery-layout">
+        <ul aria-label="Buttons">
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false">
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-profile-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">A very long subtitle to demo equal height buttons.</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false">
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-landscape-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false">
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-square-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 30%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false"> 
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-profile-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false"> 
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-landscape-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false"> 
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-square-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false"> 
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-profile-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false"> 
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-landscape-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false"> 
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-square-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>
+`,s=()=>`
+<div style="width: 768px; border: 1px dashed orange;">
+    <div class="toggle-button-group toggle-button-group--gallery-layout">
+        <ul aria-label="Buttons">
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false">
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-profile-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false">
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-landscape-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">A very long subtitle to demo equal height buttons.</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false">
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-square-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 30%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false"> 
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-profile-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false"> 
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-landscape-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false"> 
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-square-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false"> 
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-profile-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false"> 
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-landscape-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false"> 
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-square-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>
+`,c=()=>`
+<div style="width: 1280px; border: 1px dashed orange;">
+    <div class="toggle-button-group toggle-button-group--gallery-layout">
+        <ul aria-label="Buttons">
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false">
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-profile-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false">
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-landscape-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">A very long subtitle to demo equal height buttons.</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false">
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-square-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 30%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false"> 
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-profile-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false"> 
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-landscape-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false"> 
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-square-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false"> 
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-profile-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false"> 
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-landscape-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false"> 
+                    <span class="toggle-button__image-container">
+                        <span class="toggle-button__image" style="background-image: url(https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-square-pic.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; background-position: center 15%;">
+                        </span>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Layout Title</span>
+                        <span class="toggle-button__subtitle">Subtitle</span>
+                    </span>
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>
+`,l=()=>`
+<h5 id="toggle-button-group-m">Selection Options</h5>
+<div style="border: 1px dashed orange;">
+    <div class="toggle-button-group toggle-button-group--gallery-layout">
+        <ul aria-labelledby="toggle-button-group-m">
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false">
+                    <span class="toggle-button__icon">
+                        <svg
+                            aria-hidden="true"
+                            class="icon icon--image-64"
+                            height="64"
+                            width="64"
+                        >
+                            <use href="#icon-image-64"></use>
+                        </svg>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Title 1</span>
+                        <span class="toggle-button__subtitle">
+                            Gallery Subtitle 1
+                        </span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="true">
+                    <span class="toggle-button__icon">
+                        <svg
+                            aria-hidden="true"
+                            class="icon icon--credit-card-64"
+                            height="64"
+                            width="64"
+                        >
+                            <use href="#icon-credit-card-64"></use>
+                        </svg>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Title 2</span>
+                        <span class="toggle-button__subtitle">
+                            Gallery Subtitle 2
+                        </span>
+                    </span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="toggle-button" aria-pressed="false">
+                    <span class="toggle-button__icon">
+                        <svg
+                            aria-hidden="true"
+                            class="icon icon--bank-64"
+                            height="64"
+                            width="64"
+                        >
+                            <use href="#icon-bank-64"></use>
+                        </svg>
+                    </span>
+                    <span class="toggle-button__content">
+                        <span class="toggle-button__title">Gallery Title 3</span>
+                        <span class="toggle-button__subtitle">
+                            Gallery Subtitle 3
+                        </span>
+                    </span>
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>
+`,u=[`usingIMGTag`,`usingCSSImage`,`minContainer`,`_320container`,`_512container`,`_768container`,`_1280container`,`withIcons`]})))()}d();export{c as _1280container,a as _320container,o as _512container,s as _768container,u as __namedExportsOrder,t as default,i as minContainer,r as usingCSSImage,n as usingIMGTag,l as withIcons};
