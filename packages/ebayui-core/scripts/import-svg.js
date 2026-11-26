@@ -156,7 +156,7 @@ function generateFile(type, iconMap) {
             `import { symbol } from "./symbol";
 import type { Input as IconInput } from "../../${
                 type === "icon" ? "" : "../ebay-icon/"
-            }component-browser"
+            }index.marko"
 export type Input = Omit<IconInput, \`_\${string}\`>;
 <ebay-icon ...input _name="${name}" _size="${size}" _type="${type}" _themes=symbol/>
 `,

@@ -1,18 +1,6 @@
-import type { WithNormalizedProps } from "../../global";
+import type { Input } from "./index.marko";
 
 let rootSvg: SVGSVGElement;
-
-interface IconInput extends Omit<Marko.Input<"svg">, `on${string}`> {
-    _themes?: () => string;
-    _type: string;
-    _name: string;
-    _size?: string;
-    "a11y-variant"?: "label";
-    "a11y-text"?: Marko.HTMLAttributes["aria-label"];
-    "no-skin-classes"?: boolean;
-}
-
-export interface Input extends WithNormalizedProps<IconInput> {}
 
 class Icon extends Marko.Component<Input> {
     onMount() {
